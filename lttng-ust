@@ -1,0 +1,900 @@
+src
+├── lttng-ust-2.13.8
+│   ├── aclocal.m4
+│   ├── ChangeLog
+│   ├── CodingStyle
+│   ├── config
+│   │   ├── ar-lib
+│   │   ├── compile
+│   │   ├── config.guess
+│   │   ├── config.sub
+│   │   ├── depcomp
+│   │   ├── install-sh
+│   │   ├── ltmain.sh
+│   │   ├── missing
+│   │   └── test-driver
+│   ├── configure
+│   ├── configure.ac
+│   ├── CONTRIBUTING.md
+│   ├── doc
+│   │   ├── examples
+│   │   │   ├── clock-override
+│   │   │   │   ├── lttng-ust-clock-override-example.c
+│   │   │   │   ├── Makefile
+│   │   │   │   ├── README
+│   │   │   │   └── run-clock-override
+│   │   │   ├── cmake-multiple-shared-libraries
+│   │   │   │   ├── aligner.cpp
+│   │   │   │   ├── aligner-lib.cpp
+│   │   │   │   ├── aligner-lib.h
+│   │   │   │   ├── cmake
+│   │   │   │   │   └── FindLTTngUST.cmake
+│   │   │   │   ├── CMakeLists.txt
+│   │   │   │   ├── README.md
+│   │   │   │   ├── tester.cpp
+│   │   │   │   ├── tester-lib.cpp
+│   │   │   │   ├── tester-lib.h
+│   │   │   │   ├── tracepoint-provider.cpp
+│   │   │   │   ├── tracepoint-provider.h
+│   │   │   │   └── trace.sh
+│   │   │   ├── demo
+│   │   │   │   ├── demo.c
+│   │   │   │   ├── demo-trace
+│   │   │   │   ├── Makefile
+│   │   │   │   ├── README
+│   │   │   │   ├── tp2.c
+│   │   │   │   ├── tp3.c
+│   │   │   │   ├── tp.c
+│   │   │   │   ├── ust_tests_demo2.h
+│   │   │   │   ├── ust_tests_demo3.h
+│   │   │   │   └── ust_tests_demo.h
+│   │   │   ├── demo-tracef
+│   │   │   │   ├── demo-tracef.c
+│   │   │   │   ├── demo-vtracef.c
+│   │   │   │   ├── Makefile
+│   │   │   │   └── README
+│   │   │   ├── demo-tracelog
+│   │   │   │   ├── demo-tracelog.c
+│   │   │   │   ├── demo-vtracelog.c
+│   │   │   │   ├── Makefile
+│   │   │   │   └── README
+│   │   │   ├── easy-ust
+│   │   │   │   ├── Makefile
+│   │   │   │   ├── sample.c
+│   │   │   │   ├── sample_component_provider.h
+│   │   │   │   └── tp.c
+│   │   │   ├── gen-tp
+│   │   │   │   ├── Makefile
+│   │   │   │   ├── sample.c
+│   │   │   │   └── sample_tracepoint.tp
+│   │   │   ├── getcpu-override
+│   │   │   │   ├── lttng-ust-getcpu-override-example.c
+│   │   │   │   ├── Makefile
+│   │   │   │   ├── README
+│   │   │   │   └── run-getcpu-override
+│   │   │   ├── hello-static-lib
+│   │   │   │   ├── hello.c
+│   │   │   │   ├── Makefile
+│   │   │   │   ├── README
+│   │   │   │   ├── tp.c
+│   │   │   │   └── ust_tests_hello.h
+│   │   │   ├── java-jul
+│   │   │   │   ├── ApplicationContextExample.java
+│   │   │   │   ├── FilterChangeListenerExample.java
+│   │   │   │   ├── Hello.java
+│   │   │   │   ├── Makefile
+│   │   │   │   ├── README
+│   │   │   │   └── run
+│   │   │   ├── java-log4j
+│   │   │   │   ├── HelloLog4j.java
+│   │   │   │   ├── Makefile
+│   │   │   │   └── run
+│   │   │   ├── java-log4j2-basic
+│   │   │   │   ├── HelloLog4j2.java
+│   │   │   │   ├── log4j2.xml
+│   │   │   │   ├── Makefile
+│   │   │   │   └── run
+│   │   │   ├── java-log4j2-ctx
+│   │   │   │   ├── HelloLog4j2Ctx.java
+│   │   │   │   ├── log4j2.ctx1.xml
+│   │   │   │   ├── log4j2.ctx2.xml
+│   │   │   │   ├── Makefile
+│   │   │   │   └── run
+│   │   │   ├── java-log4j2-prog
+│   │   │   │   ├── HelloLog4j2Prog.java
+│   │   │   │   ├── Makefile
+│   │   │   │   └── run
+│   │   │   ├── Makefile.am
+│   │   │   ├── Makefile.in
+│   │   │   ├── python
+│   │   │   │   └── hello.py
+│   │   │   └── README
+│   │   ├── java-agent.txt
+│   │   ├── Makefile.am
+│   │   ├── Makefile.in
+│   │   └── man
+│   │       ├── asciidoc.conf
+│   │       ├── common-authors.txt
+│   │       ├── common-copyrights.txt
+│   │       ├── common-footer.txt
+│   │       ├── do_tracepoint.3
+│   │       ├── log-levels.txt
+│   │       ├── lttng-gen-tp.1
+│   │       ├── lttng-gen-tp.1.txt
+│   │       ├── lttng-ust.3
+│   │       ├── lttng-ust.3.txt
+│   │       ├── lttng-ust-cyg-profile.3
+│   │       ├── lttng-ust-cyg-profile.3.txt
+│   │       ├── lttng-ust-dl.3
+│   │       ├── lttng-ust-dl.3.txt
+│   │       ├── lttng_ust_do_tracepoint.3
+│   │       ├── lttng_ust_tracef.3
+│   │       ├── lttng_ust_tracef.3.txt
+│   │       ├── lttng_ust_tracelog.3
+│   │       ├── lttng_ust_tracelog.3.txt
+│   │       ├── lttng_ust_tracepoint.3
+│   │       ├── lttng_ust_tracepoint_enabled.3
+│   │       ├── lttng_ust_vtracef.3
+│   │       ├── lttng_ust_vtracelog.3
+│   │       ├── Makefile.am
+│   │       ├── Makefile.in
+│   │       ├── manpage.xsl
+│   │       ├── README.md
+│   │       ├── tracef.3
+│   │       ├── tracef.3.txt
+│   │       ├── tracef-tracelog-limitations.txt
+│   │       ├── tracelog.3
+│   │       ├── tracelog.3.txt
+│   │       ├── tracepoint.3
+│   │       └── tracepoint_enabled.3
+│   ├── extras
+│   │   ├── abi
+│   │   │   ├── 2.10
+│   │   │   │   └── x86_64-pc-linux-gnu
+│   │   │   │       ├── liblttng-ust-context-jni.so.0.xml
+│   │   │   │       ├── liblttng-ust-ctl.so.4.xml
+│   │   │   │       ├── liblttng-ust-cyg-profile-fast.so.0.xml
+│   │   │   │       ├── liblttng-ust-cyg-profile.so.0.xml
+│   │   │   │       ├── liblttng-ust-dl.so.0.xml
+│   │   │   │       ├── liblttng-ust-fd.so.0.xml
+│   │   │   │       ├── liblttng-ust-fork.so.0.xml
+│   │   │   │       ├── liblttng-ust-java.so.0.xml
+│   │   │   │       ├── liblttng-ust-jul-jni.so.0.xml
+│   │   │   │       ├── liblttng-ust-libc-wrapper.so.0.xml
+│   │   │   │       ├── liblttng-ust-log4j-jni.so.0.xml
+│   │   │   │       ├── liblttng-ust-pthread-wrapper.so.0.xml
+│   │   │   │       ├── liblttng-ust-python-agent.so.0.xml
+│   │   │   │       ├── liblttng-ust.so.0.xml
+│   │   │   │       └── liblttng-ust-tracepoint.so.0.xml
+│   │   │   ├── 2.11
+│   │   │   │   └── x86_64-pc-linux-gnu
+│   │   │   │       ├── liblttng-ust-context-jni.so.0.xml
+│   │   │   │       ├── liblttng-ust-ctl.so.4.xml
+│   │   │   │       ├── liblttng-ust-cyg-profile-fast.so.0.xml
+│   │   │   │       ├── liblttng-ust-cyg-profile.so.0.xml
+│   │   │   │       ├── liblttng-ust-dl.so.0.xml
+│   │   │   │       ├── liblttng-ust-fd.so.0.xml
+│   │   │   │       ├── liblttng-ust-fork.so.0.xml
+│   │   │   │       ├── liblttng-ust-java.so.0.xml
+│   │   │   │       ├── liblttng-ust-jul-jni.so.0.xml
+│   │   │   │       ├── liblttng-ust-libc-wrapper.so.0.xml
+│   │   │   │       ├── liblttng-ust-log4j-jni.so.0.xml
+│   │   │   │       ├── liblttng-ust-pthread-wrapper.so.0.xml
+│   │   │   │       ├── liblttng-ust-python-agent.so.0.xml
+│   │   │   │       ├── liblttng-ust.so.0.xml
+│   │   │   │       └── liblttng-ust-tracepoint.so.0.xml
+│   │   │   ├── 2.12
+│   │   │   │   └── x86_64-pc-linux-gnu
+│   │   │   │       ├── liblttng-ust-context-jni.so.0.xml
+│   │   │   │       ├── liblttng-ust-ctl.so.4.xml
+│   │   │   │       ├── liblttng-ust-cyg-profile-fast.so.0.xml
+│   │   │   │       ├── liblttng-ust-cyg-profile.so.0.xml
+│   │   │   │       ├── liblttng-ust-dl.so.0.xml
+│   │   │   │       ├── liblttng-ust-fd.so.0.xml
+│   │   │   │       ├── liblttng-ust-fork.so.0.xml
+│   │   │   │       ├── liblttng-ust-java.so.0.xml
+│   │   │   │       ├── liblttng-ust-jul-jni.so.0.xml
+│   │   │   │       ├── liblttng-ust-libc-wrapper.so.0.xml
+│   │   │   │       ├── liblttng-ust-log4j-jni.so.0.xml
+│   │   │   │       ├── liblttng-ust-pthread-wrapper.so.0.xml
+│   │   │   │       ├── liblttng-ust-python-agent.so.0.xml
+│   │   │   │       ├── liblttng-ust.so.0.xml
+│   │   │   │       └── liblttng-ust-tracepoint.so.0.xml
+│   │   │   ├── 2.13
+│   │   │   │   └── x86_64-pc-linux-gnu
+│   │   │   │       ├── liblttng-ust-common.so.1.xml
+│   │   │   │       ├── liblttng-ust-context-jni.so.0.xml
+│   │   │   │       ├── liblttng-ust-ctl.so.5.xml
+│   │   │   │       ├── liblttng-ust-cyg-profile-fast.so.1.xml
+│   │   │   │       ├── liblttng-ust-cyg-profile.so.1.xml
+│   │   │   │       ├── liblttng-ust-dl.so.1.xml
+│   │   │   │       ├── liblttng-ust-fd.so.1.xml
+│   │   │   │       ├── liblttng-ust-fork.so.1.xml
+│   │   │   │       ├── liblttng-ust-java.so.0.xml
+│   │   │   │       ├── liblttng-ust-jul-jni.so.0.xml
+│   │   │   │       ├── liblttng-ust-libc-wrapper.so.1.xml
+│   │   │   │       ├── liblttng-ust-log4j-jni.so.0.xml
+│   │   │   │       ├── liblttng-ust-pthread-wrapper.so.1.xml
+│   │   │   │       ├── liblttng-ust-python-agent.so.1.xml
+│   │   │   │       ├── liblttng-ust.so.1.xml
+│   │   │   │       └── liblttng-ust-tracepoint.so.1.xml
+│   │   │   ├── 2.9
+│   │   │   │   └── x86_64-pc-linux-gnu
+│   │   │   │       ├── liblttng-ust-context-jni.so.0.xml
+│   │   │   │       ├── liblttng-ust-ctl.so.2.xml
+│   │   │   │       ├── liblttng-ust-cyg-profile-fast.so.0.xml
+│   │   │   │       ├── liblttng-ust-cyg-profile.so.0.xml
+│   │   │   │       ├── liblttng-ust-dl.so.0.xml
+│   │   │   │       ├── liblttng-ust-fd.so.0.xml
+│   │   │   │       ├── liblttng-ust-fork.so.0.xml
+│   │   │   │       ├── liblttng-ust-java.so.0.xml
+│   │   │   │       ├── liblttng-ust-jul-jni.so.0.xml
+│   │   │   │       ├── liblttng-ust-libc-wrapper.so.0.xml
+│   │   │   │       ├── liblttng-ust-log4j-jni.so.0.xml
+│   │   │   │       ├── liblttng-ust-pthread-wrapper.so.0.xml
+│   │   │   │       ├── liblttng-ust-python-agent.so.0.xml
+│   │   │   │       ├── liblttng-ust.so.0.xml
+│   │   │   │       └── liblttng-ust-tracepoint.so.0.xml
+│   │   │   ├── dump_abi.sh
+│   │   │   ├── empty
+│   │   │   │   └── empty.so.0.xml
+│   │   │   └── README
+│   │   ├── Makefile.am
+│   │   └── Makefile.in
+│   ├── include
+│   │   ├── lttng
+│   │   │   ├── tp
+│   │   │   │   ├── lttng-ust-tracef.h
+│   │   │   │   └── lttng-ust-tracelog.h
+│   │   │   ├── tracef.h
+│   │   │   ├── tracelog.h
+│   │   │   ├── tracepoint-event.h
+│   │   │   ├── tracepoint.h
+│   │   │   ├── tracepoint-rcu.h
+│   │   │   ├── tracepoint-types.h
+│   │   │   ├── urcu
+│   │   │   │   ├── pointer.h
+│   │   │   │   ├── static
+│   │   │   │   │   ├── pointer.h
+│   │   │   │   │   └── urcu-ust.h
+│   │   │   │   └── urcu-ust.h
+│   │   │   ├── ust-abi.h
+│   │   │   ├── ust-api-compat.h
+│   │   │   ├── ust-arch.h
+│   │   │   ├── ust-cancelstate.h
+│   │   │   ├── ust-clock.h
+│   │   │   ├── ust-common.h
+│   │   │   ├── ust-compiler.h
+│   │   │   ├── ust-config.h.in
+│   │   │   ├── ust-ctl.h
+│   │   │   ├── ust-endian.h
+│   │   │   ├── ust-error.h
+│   │   │   ├── ust-events.h
+│   │   │   ├── ust-fork.h
+│   │   │   ├── ust-getcpu.h
+│   │   │   ├── ust-libc-wrapper.h
+│   │   │   ├── ust-ringbuffer-context.h
+│   │   │   ├── ust-sigbus.h
+│   │   │   ├── ust-thread.h
+│   │   │   ├── ust-tracepoint-event.h
+│   │   │   ├── ust-tracepoint-event-nowrite.h
+│   │   │   ├── ust-tracepoint-event-reset.h
+│   │   │   ├── ust-tracepoint-event-write.h
+│   │   │   ├── ust-tracer.h
+│   │   │   ├── ust-utils.h
+│   │   │   └── ust-version.h.in
+│   │   ├── Makefile.am
+│   │   └── Makefile.in
+│   ├── LICENSE
+│   ├── LICENSES
+│   │   ├── BSD-2-Clause
+│   │   ├── BSD-3-Clause
+│   │   ├── GPL-2.0
+│   │   ├── GPL-3.0
+│   │   ├── LGPL-2.1
+│   │   └── MIT
+│   ├── m4
+│   │   ├── ae_config_feature.m4
+│   │   ├── ae_in_git_repo.m4
+│   │   ├── ax_append_compile_flags.m4
+│   │   ├── ax_append_flag.m4
+│   │   ├── ax_c___attribute__.m4
+│   │   ├── ax_check_class.m4
+│   │   ├── ax_check_compile_flag.m4
+│   │   ├── ax_compare_version.m4
+│   │   ├── ax_cxx_compile_stdcxx.m4
+│   │   ├── ax_java_options.m4
+│   │   ├── ax_jni_include_dir.m4
+│   │   ├── ax_prog_jar.m4
+│   │   ├── ax_prog_javac.m4
+│   │   ├── ax_prog_javac_works.m4
+│   │   ├── ax_prog_javah.m4
+│   │   ├── ax_prog_java.m4
+│   │   ├── ax_prog_java_works.m4
+│   │   ├── ax_pthread.m4
+│   │   ├── ax_require_defined.m4
+│   │   ├── ax_sys_weak_alias.m4
+│   │   ├── ax_try_compile_java.m4
+│   │   ├── libtool.m4
+│   │   ├── lt~obsolete.m4
+│   │   ├── ltoptions.m4
+│   │   ├── ltsugar.m4
+│   │   ├── lttng_pthread_getname_np.m4
+│   │   ├── lttng_pthread_setname_np.m4
+│   │   ├── ltversion.m4
+│   │   └── pprint.m4
+│   ├── Makefile.am
+│   ├── Makefile.in
+│   ├── README.md
+│   ├── src
+│   │   ├── common
+│   │   │   ├── align.h
+│   │   │   ├── bitfield.h
+│   │   │   ├── bitmap.h
+│   │   │   ├── clock.h
+│   │   │   ├── compat
+│   │   │   │   ├── dlfcn.h
+│   │   │   │   ├── errno.h
+│   │   │   │   ├── mmap.h
+│   │   │   │   ├── pthread.h
+│   │   │   │   └── tid.h
+│   │   │   ├── config.h.in
+│   │   │   ├── core.c
+│   │   │   ├── counter
+│   │   │   │   ├── counter-api.h
+│   │   │   │   ├── counter.c
+│   │   │   │   ├── counter-config.h
+│   │   │   │   ├── counter.h
+│   │   │   │   ├── counter-internal.h
+│   │   │   │   ├── counter-types.h
+│   │   │   │   ├── shm.c
+│   │   │   │   ├── shm.h
+│   │   │   │   ├── shm_internal.h
+│   │   │   │   └── shm_types.h
+│   │   │   ├── counter-clients
+│   │   │   │   ├── clients.c
+│   │   │   │   ├── clients.h
+│   │   │   │   ├── percpu-32-modular.c
+│   │   │   │   └── percpu-64-modular.c
+│   │   │   ├── creds.h
+│   │   │   ├── dynamic-type.c
+│   │   │   ├── dynamic-type.h
+│   │   │   ├── elf.c
+│   │   │   ├── elf.h
+│   │   │   ├── err-ptr.h
+│   │   │   ├── events.c
+│   │   │   ├── events.h
+│   │   │   ├── getcpu.h
+│   │   │   ├── getenv.c
+│   │   │   ├── getenv.h
+│   │   │   ├── hash.h
+│   │   │   ├── jhash.h
+│   │   │   ├── logging.c
+│   │   │   ├── logging.h
+│   │   │   ├── macros.h
+│   │   │   ├── Makefile.am
+│   │   │   ├── Makefile.in
+│   │   │   ├── msgpack
+│   │   │   │   ├── msgpack.c
+│   │   │   │   └── msgpack.h
+│   │   │   ├── ns.h
+│   │   │   ├── patient.c
+│   │   │   ├── patient.h
+│   │   │   ├── procname.h
+│   │   │   ├── ringbuffer
+│   │   │   │   ├── api.h
+│   │   │   │   ├── backend.h
+│   │   │   │   ├── backend_internal.h
+│   │   │   │   ├── backend_types.h
+│   │   │   │   ├── frontend_api.h
+│   │   │   │   ├── frontend.h
+│   │   │   │   ├── frontend_internal.h
+│   │   │   │   ├── frontend_types.h
+│   │   │   │   ├── nohz.h
+│   │   │   │   ├── rb-init.h
+│   │   │   │   ├── ring_buffer_backend.c
+│   │   │   │   ├── ringbuffer-config.h
+│   │   │   │   ├── ring_buffer_frontend.c
+│   │   │   │   ├── shm.c
+│   │   │   │   ├── shm.h
+│   │   │   │   ├── shm_internal.h
+│   │   │   │   ├── shm_types.h
+│   │   │   │   └── vatomic.h
+│   │   │   ├── ringbuffer-clients
+│   │   │   │   ├── clients.c
+│   │   │   │   ├── clients.h
+│   │   │   │   ├── discard.c
+│   │   │   │   ├── discard-rt.c
+│   │   │   │   ├── metadata.c
+│   │   │   │   ├── metadata-template.h
+│   │   │   │   ├── overwrite.c
+│   │   │   │   ├── overwrite-rt.c
+│   │   │   │   └── template.h
+│   │   │   ├── safe-snprintf.h
+│   │   │   ├── smp.c
+│   │   │   ├── smp.h
+│   │   │   ├── snprintf
+│   │   │   │   ├── fflush.c
+│   │   │   │   ├── fileext.h
+│   │   │   │   ├── floatio.h
+│   │   │   │   ├── fvwrite.c
+│   │   │   │   ├── fvwrite.h
+│   │   │   │   ├── local.h
+│   │   │   │   ├── mbrtowc_sb.c
+│   │   │   │   ├── README
+│   │   │   │   ├── snprintf.c
+│   │   │   │   ├── various.h
+│   │   │   │   ├── vfprintf.c
+│   │   │   │   ├── wcio.h
+│   │   │   │   └── wsetup.c
+│   │   │   ├── strutils.c
+│   │   │   ├── strutils.h
+│   │   │   ├── tracepoint.h
+│   │   │   ├── tracer.h
+│   │   │   ├── ustcomm.c
+│   │   │   ├── ustcomm.h
+│   │   │   ├── ust-context-provider.h
+│   │   │   ├── ust-fd.h
+│   │   │   ├── utils.c
+│   │   │   ├── utils.h
+│   │   │   └── wait.h
+│   │   ├── lib
+│   │   │   ├── lttng-ust
+│   │   │   │   ├── bytecode.h
+│   │   │   │   ├── context-internal.h
+│   │   │   │   ├── context-provider-internal.h
+│   │   │   │   ├── event-notifier-notification.c
+│   │   │   │   ├── events.h
+│   │   │   │   ├── futex.c
+│   │   │   │   ├── futex.h
+│   │   │   │   ├── lttng-bytecode.c
+│   │   │   │   ├── lttng-bytecode.h
+│   │   │   │   ├── lttng-bytecode-interpreter.c
+│   │   │   │   ├── lttng-bytecode-specialize.c
+│   │   │   │   ├── lttng-bytecode-validator.c
+│   │   │   │   ├── lttng-context.c
+│   │   │   │   ├── lttng-context-cgroup-ns.c
+│   │   │   │   ├── lttng-context-cpu-id.c
+│   │   │   │   ├── lttng-context-ip.c
+│   │   │   │   ├── lttng-context-ipc-ns.c
+│   │   │   │   ├── lttng-context-mnt-ns.c
+│   │   │   │   ├── lttng-context-net-ns.c
+│   │   │   │   ├── lttng-context-perf-counters.c
+│   │   │   │   ├── lttng-context-pid-ns.c
+│   │   │   │   ├── lttng-context-procname.c
+│   │   │   │   ├── lttng-context-provider.c
+│   │   │   │   ├── lttng-context-pthread-id.c
+│   │   │   │   ├── lttng-context-time-ns.c
+│   │   │   │   ├── lttng-context-user-ns.c
+│   │   │   │   ├── lttng-context-uts-ns.c
+│   │   │   │   ├── lttng-context-vegid.c
+│   │   │   │   ├── lttng-context-veuid.c
+│   │   │   │   ├── lttng-context-vgid.c
+│   │   │   │   ├── lttng-context-vpid.c
+│   │   │   │   ├── lttng-context-vsgid.c
+│   │   │   │   ├── lttng-context-vsuid.c
+│   │   │   │   ├── lttng-context-vtid.c
+│   │   │   │   ├── lttng-context-vuid.c
+│   │   │   │   ├── lttng-events.c
+│   │   │   │   ├── lttng-probes.c
+│   │   │   │   ├── lttng-tracer-core.h
+│   │   │   │   ├── lttng-ust-abi.c
+│   │   │   │   ├── lttng-ust-comm.c
+│   │   │   │   ├── lttng-ust-statedump.c
+│   │   │   │   ├── lttng-ust-statedump.h
+│   │   │   │   ├── lttng-ust-statedump-provider.h
+│   │   │   │   ├── lttng-ust-tracef-provider.h
+│   │   │   │   ├── lttng-ust-tracelog-provider.h
+│   │   │   │   ├── Makefile.am
+│   │   │   │   ├── Makefile.in
+│   │   │   │   ├── perf_event.h
+│   │   │   │   ├── rculfhash.c
+│   │   │   │   ├── rculfhash.h
+│   │   │   │   ├── rculfhash-internal.h
+│   │   │   │   ├── rculfhash-mm-chunk.c
+│   │   │   │   ├── rculfhash-mm-mmap.c
+│   │   │   │   ├── rculfhash-mm-order.c
+│   │   │   │   ├── strerror.c
+│   │   │   │   ├── tracef.c
+│   │   │   │   ├── tracelog.c
+│   │   │   │   ├── ust_lib.c
+│   │   │   │   └── ust_lib.h
+│   │   │   ├── lttng-ust-common
+│   │   │   │   ├── clock.c
+│   │   │   │   ├── clock.h
+│   │   │   │   ├── fd-tracker.c
+│   │   │   │   ├── fd-tracker.h
+│   │   │   │   ├── getcpu.c
+│   │   │   │   ├── getcpu.h
+│   │   │   │   ├── lttng-ust-urcu.c
+│   │   │   │   ├── lttng-ust-urcu-pointer.c
+│   │   │   │   ├── Makefile.am
+│   │   │   │   ├── Makefile.in
+│   │   │   │   ├── ust-cancelstate.c
+│   │   │   │   └── ust-common.c
+│   │   │   ├── lttng-ust-ctl
+│   │   │   │   ├── Makefile.am
+│   │   │   │   ├── Makefile.in
+│   │   │   │   └── ustctl.c
+│   │   │   ├── lttng-ust-ctl.pc.in
+│   │   │   ├── lttng-ust-cyg-profile
+│   │   │   │   ├── lttng-ust-cyg-profile.c
+│   │   │   │   ├── lttng-ust-cyg-profile-fast.c
+│   │   │   │   ├── lttng-ust-cyg-profile-fast.h
+│   │   │   │   ├── lttng-ust-cyg-profile.h
+│   │   │   │   ├── Makefile.am
+│   │   │   │   ├── Makefile.in
+│   │   │   │   ├── run
+│   │   │   │   └── run-fast
+│   │   │   ├── lttng-ust-dl
+│   │   │   │   ├── lttng-ust-dl.c
+│   │   │   │   ├── Makefile.am
+│   │   │   │   ├── Makefile.in
+│   │   │   │   ├── ust_dl.c
+│   │   │   │   └── ust_dl.h
+│   │   │   ├── lttng-ust-fd
+│   │   │   │   ├── lttng-ust-fd.c
+│   │   │   │   ├── Makefile.am
+│   │   │   │   └── Makefile.in
+│   │   │   ├── lttng-ust-fork
+│   │   │   │   ├── Makefile.am
+│   │   │   │   ├── Makefile.in
+│   │   │   │   └── ustfork.c
+│   │   │   ├── lttng-ust-java
+│   │   │   │   ├── LTTngUst.c
+│   │   │   │   ├── lttng_ust_java.h
+│   │   │   │   ├── Makefile.am
+│   │   │   │   ├── Makefile.in
+│   │   │   │   ├── org
+│   │   │   │   │   └── lttng
+│   │   │   │   │       └── ust
+│   │   │   │   │           └── LTTngUst.java
+│   │   │   │   └── README
+│   │   │   ├── lttng-ust-java-agent
+│   │   │   │   ├── java
+│   │   │   │   │   ├── lttng-ust-agent-all
+│   │   │   │   │   │   ├── Makefile.am
+│   │   │   │   │   │   ├── Makefile.in
+│   │   │   │   │   │   └── Manifest.txt
+│   │   │   │   │   ├── lttng-ust-agent-common
+│   │   │   │   │   │   ├── Makefile.am
+│   │   │   │   │   │   ├── Makefile.in
+│   │   │   │   │   │   ├── Manifest.txt
+│   │   │   │   │   │   └── org
+│   │   │   │   │   │       └── lttng
+│   │   │   │   │   │           └── ust
+│   │   │   │   │   │               └── agent
+│   │   │   │   │   │                   ├── AbstractLttngAgent.java
+│   │   │   │   │   │                   ├── client
+│   │   │   │   │   │                   │   ├── ILttngTcpClientListener.java
+│   │   │   │   │   │                   │   ├── LttngAgentResponse.java
+│   │   │   │   │   │                   │   ├── LttngTcpSessiondClient.java
+│   │   │   │   │   │                   │   ├── SessiondCommandHeader.java
+│   │   │   │   │   │                   │   ├── SessiondCommand.java
+│   │   │   │   │   │                   │   ├── SessiondDisableAppContextCommand.java
+│   │   │   │   │   │                   │   ├── SessiondDisableEventCommand.java
+│   │   │   │   │   │                   │   ├── SessiondEnableAppContextCommand.java
+│   │   │   │   │   │                   │   ├── SessiondEnableEventCommand.java
+│   │   │   │   │   │                   │   └── SessiondListLoggersCommand.java
+│   │   │   │   │   │                   ├── context
+│   │   │   │   │   │                   │   ├── ContextInfoManager.java
+│   │   │   │   │   │                   │   ├── ContextInfoSerializer.java
+│   │   │   │   │   │                   │   ├── IContextInfoRetriever.java
+│   │   │   │   │   │                   │   └── LttngContextApi.java
+│   │   │   │   │   │                   ├── EventNamePattern.java
+│   │   │   │   │   │                   ├── filter
+│   │   │   │   │   │                   │   ├── FilterChangeNotifier.java
+│   │   │   │   │   │                   │   └── IFilterChangeListener.java
+│   │   │   │   │   │                   ├── ILttngAgent.java
+│   │   │   │   │   │                   ├── ILttngHandler.java
+│   │   │   │   │   │                   ├── LTTngAgent.java
+│   │   │   │   │   │                   ├── session
+│   │   │   │   │   │                   │   ├── EventRule.java
+│   │   │   │   │   │                   │   └── LogLevelSelector.java
+│   │   │   │   │   │                   └── utils
+│   │   │   │   │   │                       └── LttngUstAgentLogger.java
+│   │   │   │   │   ├── lttng-ust-agent-jul
+│   │   │   │   │   │   ├── Makefile.am
+│   │   │   │   │   │   ├── Makefile.in
+│   │   │   │   │   │   ├── Manifest.txt
+│   │   │   │   │   │   └── org
+│   │   │   │   │   │       └── lttng
+│   │   │   │   │   │           └── ust
+│   │   │   │   │   │               └── agent
+│   │   │   │   │   │                   └── jul
+│   │   │   │   │   │                       ├── LttngJulAgent.java
+│   │   │   │   │   │                       ├── LttngJulApi.java
+│   │   │   │   │   │                       └── LttngLogHandler.java
+│   │   │   │   │   ├── lttng-ust-agent-log4j
+│   │   │   │   │   │   ├── Makefile.am
+│   │   │   │   │   │   ├── Makefile.in
+│   │   │   │   │   │   ├── Manifest.txt
+│   │   │   │   │   │   └── org
+│   │   │   │   │   │       └── lttng
+│   │   │   │   │   │           └── ust
+│   │   │   │   │   │               └── agent
+│   │   │   │   │   │                   └── log4j
+│   │   │   │   │   │                       ├── LttngLog4jAgent.java
+│   │   │   │   │   │                       ├── LttngLog4jApi.java
+│   │   │   │   │   │                       └── LttngLogAppender.java
+│   │   │   │   │   ├── lttng-ust-agent-log4j2
+│   │   │   │   │   │   ├── Makefile.am
+│   │   │   │   │   │   ├── Makefile.in
+│   │   │   │   │   │   ├── Manifest.txt
+│   │   │   │   │   │   └── org
+│   │   │   │   │   │       └── lttng
+│   │   │   │   │   │           └── ust
+│   │   │   │   │   │               └── agent
+│   │   │   │   │   │                   └── log4j2
+│   │   │   │   │   │                       ├── LttngLog4j2Agent.java
+│   │   │   │   │   │                       ├── LttngLog4j2Api.java
+│   │   │   │   │   │                       └── LttngLogAppender.java
+│   │   │   │   │   ├── Makefile.am
+│   │   │   │   │   └── Makefile.in
+│   │   │   │   ├── jni
+│   │   │   │   │   ├── common
+│   │   │   │   │   │   ├── lttng_ust_context.c
+│   │   │   │   │   │   ├── lttng_ust_context.h
+│   │   │   │   │   │   ├── Makefile.am
+│   │   │   │   │   │   └── Makefile.in
+│   │   │   │   │   ├── jul
+│   │   │   │   │   │   ├── lttng_ust_jul.c
+│   │   │   │   │   │   ├── lttng_ust_jul.h
+│   │   │   │   │   │   ├── Makefile.am
+│   │   │   │   │   │   └── Makefile.in
+│   │   │   │   │   ├── log4j
+│   │   │   │   │   │   ├── lttng_ust_log4j2.c
+│   │   │   │   │   │   ├── lttng_ust_log4j.c
+│   │   │   │   │   │   ├── lttng_ust_log4j_tp.c
+│   │   │   │   │   │   ├── lttng_ust_log4j_tp.h
+│   │   │   │   │   │   ├── Makefile.am
+│   │   │   │   │   │   └── Makefile.in
+│   │   │   │   │   ├── Makefile.am
+│   │   │   │   │   └── Makefile.in
+│   │   │   │   ├── Makefile.am
+│   │   │   │   └── Makefile.in
+│   │   │   ├── lttng-ust-libc-wrapper
+│   │   │   │   ├── lttng-ust-malloc.c
+│   │   │   │   ├── Makefile.am
+│   │   │   │   ├── Makefile.in
+│   │   │   │   ├── README
+│   │   │   │   ├── run
+│   │   │   │   └── ust_libc.h
+│   │   │   ├── lttng-ust.pc.in
+│   │   │   ├── lttng-ust-pthread-wrapper
+│   │   │   │   ├── lttng-ust-pthread.c
+│   │   │   │   ├── Makefile.am
+│   │   │   │   ├── Makefile.in
+│   │   │   │   └── ust_pthread.h
+│   │   │   ├── lttng-ust-python-agent
+│   │   │   │   ├── lttng_ust_python.c
+│   │   │   │   ├── lttng_ust_python.h
+│   │   │   │   ├── Makefile.am
+│   │   │   │   └── Makefile.in
+│   │   │   ├── lttng-ust-tracepoint
+│   │   │   │   ├── Makefile.am
+│   │   │   │   ├── Makefile.in
+│   │   │   │   ├── tracepoint.c
+│   │   │   │   ├── tracepoint.h
+│   │   │   │   └── tracepoint-weak-test.c
+│   │   │   ├── Makefile.am
+│   │   │   └── Makefile.in
+│   │   ├── Makefile.am
+│   │   ├── Makefile.in
+│   │   └── python-lttngust
+│   │       ├── lttngust
+│   │       │   ├── agent.py
+│   │       │   ├── cmd.py
+│   │       │   ├── compat.py
+│   │       │   ├── debug.py
+│   │       │   ├── __init__.py
+│   │       │   ├── loghandler.py
+│   │       │   └── version.py.in
+│   │       ├── Makefile.am
+│   │       ├── Makefile.in
+│   │       └── setup.py.in
+│   ├── tests
+│   │   ├── benchmark
+│   │   │   ├── bench.c
+│   │   │   ├── Makefile.am
+│   │   │   ├── Makefile.in
+│   │   │   ├── ptime
+│   │   │   ├── README
+│   │   │   ├── test_benchmark
+│   │   │   ├── tp.c
+│   │   │   └── ust_tests_benchmark.h
+│   │   ├── compile
+│   │   │   ├── api0
+│   │   │   │   ├── ctf-types
+│   │   │   │   │   ├── ctf-types.c
+│   │   │   │   │   ├── Makefile.am
+│   │   │   │   │   ├── Makefile.in
+│   │   │   │   │   ├── README
+│   │   │   │   │   ├── tp.c
+│   │   │   │   │   └── ust_tests_ctf_types.h
+│   │   │   │   ├── hello
+│   │   │   │   │   ├── hello.c
+│   │   │   │   │   ├── Makefile.am
+│   │   │   │   │   ├── Makefile.in
+│   │   │   │   │   ├── README
+│   │   │   │   │   ├── tp.c
+│   │   │   │   │   └── ust_tests_hello.h
+│   │   │   │   ├── hello.cxx
+│   │   │   │   │   ├── hello.cpp
+│   │   │   │   │   ├── Makefile.am
+│   │   │   │   │   ├── Makefile.in
+│   │   │   │   │   ├── README
+│   │   │   │   │   ├── tp-cpp.cpp
+│   │   │   │   │   └── ust_tests_hello.h
+│   │   │   │   ├── hello-many
+│   │   │   │   │   ├── hello-many.c
+│   │   │   │   │   ├── Makefile.am
+│   │   │   │   │   ├── Makefile.in
+│   │   │   │   │   ├── README
+│   │   │   │   │   ├── tp.c
+│   │   │   │   │   └── ust_tests_hello_many.h
+│   │   │   │   ├── Makefile.am
+│   │   │   │   ├── Makefile.in
+│   │   │   │   └── same_line_tracepoint
+│   │   │   │       ├── Makefile.am
+│   │   │   │       ├── Makefile.in
+│   │   │   │       ├── README
+│   │   │   │       ├── same_line_tracepoint.c
+│   │   │   │       └── ust_tests_sameline.h
+│   │   │   ├── api1
+│   │   │   │   ├── hello
+│   │   │   │   │   ├── hello.c
+│   │   │   │   │   ├── Makefile.am
+│   │   │   │   │   ├── Makefile.in
+│   │   │   │   │   ├── README
+│   │   │   │   │   ├── tp.c
+│   │   │   │   │   └── ust_tests_hello.h
+│   │   │   │   ├── hello.cxx
+│   │   │   │   │   ├── hello.cpp
+│   │   │   │   │   ├── Makefile.am
+│   │   │   │   │   ├── Makefile.in
+│   │   │   │   │   ├── README
+│   │   │   │   │   ├── tp-cpp.cpp
+│   │   │   │   │   └── ust_tests_hello.h
+│   │   │   │   ├── hello-many
+│   │   │   │   │   ├── hello-many.c
+│   │   │   │   │   ├── Makefile.am
+│   │   │   │   │   ├── Makefile.in
+│   │   │   │   │   ├── README
+│   │   │   │   │   ├── tp.c
+│   │   │   │   │   └── ust_tests_hello_many.h
+│   │   │   │   ├── Makefile.am
+│   │   │   │   ├── Makefile.in
+│   │   │   │   ├── same_line_tracepoint
+│   │   │   │   │   ├── Makefile.am
+│   │   │   │   │   ├── Makefile.in
+│   │   │   │   │   ├── README
+│   │   │   │   │   ├── same_line_tracepoint.c
+│   │   │   │   │   └── ust_tests_sameline.h
+│   │   │   │   ├── test-app-ctx
+│   │   │   │   │   ├── hello.c
+│   │   │   │   │   ├── Makefile.am
+│   │   │   │   │   ├── Makefile.in
+│   │   │   │   │   ├── tp.c
+│   │   │   │   │   └── ust_tests_hello.h
+│   │   │   │   └── ust-fields
+│   │   │   │       ├── Makefile.am
+│   │   │   │       ├── Makefile.in
+│   │   │   │       ├── README
+│   │   │   │       ├── tp.c
+│   │   │   │       ├── ust-fields.c
+│   │   │   │       └── ust_tests_ust_fields.h
+│   │   │   ├── Makefile.am
+│   │   │   └── Makefile.in
+│   │   ├── Makefile.am
+│   │   ├── Makefile.in
+│   │   ├── README
+│   │   ├── regression
+│   │   │   ├── abi0-conflict
+│   │   │   │   ├── app_noust.c
+│   │   │   │   ├── app_noust_dlopen.c
+│   │   │   │   ├── app_ust.c
+│   │   │   │   ├── app_ust_dlopen.c
+│   │   │   │   ├── fake-ust.c
+│   │   │   │   ├── fake-ust.h
+│   │   │   │   ├── libone.c
+│   │   │   │   ├── libone.h
+│   │   │   │   ├── libzero.c
+│   │   │   │   ├── libzero.h
+│   │   │   │   ├── Makefile.am
+│   │   │   │   ├── Makefile.in
+│   │   │   │   ├── test_abi0_conflict
+│   │   │   │   ├── tp.c
+│   │   │   │   └── ust_tests_hello.h
+│   │   │   ├── Makefile.am
+│   │   │   └── Makefile.in
+│   │   ├── unit
+│   │   │   ├── gcc-weak-hidden
+│   │   │   │   ├── b.c
+│   │   │   │   ├── b.h
+│   │   │   │   ├── libgcc-wh1.c
+│   │   │   │   ├── libgcc-wh2.c
+│   │   │   │   ├── libgcc-wh.h
+│   │   │   │   ├── main.c
+│   │   │   │   ├── Makefile.am
+│   │   │   │   └── Makefile.in
+│   │   │   ├── libcommon
+│   │   │   │   ├── get_cpu_mask_from_sysfs.c
+│   │   │   │   ├── get_max_cpuid_from_sysfs.c
+│   │   │   │   ├── Makefile.am
+│   │   │   │   ├── Makefile.in
+│   │   │   │   ├── test_get_cpu_mask_from_sysfs
+│   │   │   │   ├── test_get_max_cpuid_from_mask.c
+│   │   │   │   ├── test_get_max_cpuid_from_sysfs
+│   │   │   │   └── test_get_possible_cpus_array_len.c
+│   │   │   ├── libmsgpack
+│   │   │   │   ├── Makefile.am
+│   │   │   │   ├── Makefile.in
+│   │   │   │   └── test_msgpack.c
+│   │   │   ├── libringbuffer
+│   │   │   │   ├── Makefile.am
+│   │   │   │   ├── Makefile.in
+│   │   │   │   └── shm.c
+│   │   │   ├── Makefile.am
+│   │   │   ├── Makefile.in
+│   │   │   ├── pthread_name
+│   │   │   │   ├── Makefile.am
+│   │   │   │   ├── Makefile.in
+│   │   │   │   └── pthread_name.c
+│   │   │   ├── snprintf
+│   │   │   │   ├── Makefile.am
+│   │   │   │   ├── Makefile.in
+│   │   │   │   ├── README
+│   │   │   │   └── snprintf.c
+│   │   │   ├── ust-elf
+│   │   │   │   ├── data
+│   │   │   │   │   ├── aarch64_be
+│   │   │   │   │   │   ├── main.elf
+│   │   │   │   │   │   └── main.elf.debug
+│   │   │   │   │   ├── armeb
+│   │   │   │   │   │   ├── main.elf
+│   │   │   │   │   │   └── main.elf.debug
+│   │   │   │   │   ├── main.c
+│   │   │   │   │   ├── pic
+│   │   │   │   │   │   ├── hello.c
+│   │   │   │   │   │   ├── hello.exec
+│   │   │   │   │   │   ├── hello.pic
+│   │   │   │   │   │   ├── hello.pie
+│   │   │   │   │   │   └── libhello.c
+│   │   │   │   │   ├── x86
+│   │   │   │   │   │   ├── main.elf
+│   │   │   │   │   │   └── main.elf.debug
+│   │   │   │   │   └── x86_64
+│   │   │   │   │       ├── main.elf
+│   │   │   │   │       └── main.elf.debug
+│   │   │   │   ├── Makefile.am
+│   │   │   │   ├── Makefile.in
+│   │   │   │   ├── README.md
+│   │   │   │   ├── test_ust_elf
+│   │   │   │   └── ust-elf.c
+│   │   │   ├── ust-error
+│   │   │   │   ├── Makefile.am
+│   │   │   │   ├── Makefile.in
+│   │   │   │   └── ust-error.c
+│   │   │   └── ust-utils
+│   │   │       ├── Makefile.am
+│   │   │       ├── Makefile.in
+│   │   │       ├── ust-utils.c
+│   │   │       ├── ust-utils-common.h
+│   │   │       └── ust-utils-cxx.cpp
+│   │   └── utils
+│   │       ├── Makefile.am
+│   │       ├── Makefile.in
+│   │       ├── tap.c
+│   │       ├── tap-driver.sh
+│   │       ├── tap.h
+│   │       ├── tap.sh
+│   │       └── utils.sh
+│   └── tools
+│       ├── lttng-gen-tp
+│       ├── Makefile.am
+│       └── Makefile.in
+├── lttng-ust-2.13.8.tar.bz2 -> /home/felix/packages/lttng-ust/lttng-ust-2.13.8.tar.bz2
+└── lttng-ust-2.13.8.tar.bz2.asc -> /home/felix/packages/lttng-ust/lttng-ust-2.13.8.tar.bz2.asc
+
+140 directories, 758 files

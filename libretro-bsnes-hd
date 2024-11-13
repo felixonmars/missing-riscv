@@ -1,0 +1,1915 @@
+src
+├── libretro-bsnes-hd
+│   ├── bsnes
+│   │   ├── Database
+│   │   │   ├── BS Memory.bml
+│   │   │   ├── Cheat Codes.bml
+│   │   │   ├── Sufami Turbo.bml
+│   │   │   └── Super Famicom.bml
+│   │   ├── emulator
+│   │   │   ├── audio
+│   │   │   │   ├── audio.cpp
+│   │   │   │   ├── audio.hpp
+│   │   │   │   └── stream.cpp
+│   │   │   ├── cheat.hpp
+│   │   │   ├── emulator.cpp
+│   │   │   ├── emulator.hpp
+│   │   │   ├── game.hpp
+│   │   │   ├── hdtoolkit.hpp
+│   │   │   ├── interface.hpp
+│   │   │   ├── memory
+│   │   │   │   ├── memory.hpp
+│   │   │   │   ├── readable.hpp
+│   │   │   │   └── writable.hpp
+│   │   │   ├── platform.hpp
+│   │   │   ├── random.hpp
+│   │   │   └── types.hpp
+│   │   ├── filter
+│   │   │   ├── 2xsai.cpp
+│   │   │   ├── filter.cpp
+│   │   │   ├── filter.hpp
+│   │   │   ├── hq2x.cpp
+│   │   │   ├── lq2x.cpp
+│   │   │   ├── none.cpp
+│   │   │   ├── ntsc-composite.cpp
+│   │   │   ├── ntsc-rf.cpp
+│   │   │   ├── ntsc-rgb.cpp
+│   │   │   ├── ntsc-svideo.cpp
+│   │   │   ├── pixellate2x.cpp
+│   │   │   ├── sai
+│   │   │   │   └── sai.cpp
+│   │   │   ├── scale2x.cpp
+│   │   │   ├── scanlines-black.cpp
+│   │   │   ├── scanlines-dark.cpp
+│   │   │   ├── scanlines-light.cpp
+│   │   │   ├── snes_ntsc
+│   │   │   │   ├── snes_ntsc.c
+│   │   │   │   ├── snes_ntsc_config.h
+│   │   │   │   ├── snes_ntsc.h
+│   │   │   │   └── snes_ntsc_impl.h
+│   │   │   ├── super-2xsai.cpp
+│   │   │   └── super-eagle.cpp
+│   │   ├── gb
+│   │   │   ├── Core
+│   │   │   │   ├── apu.c
+│   │   │   │   ├── apu.h
+│   │   │   │   ├── camera.c
+│   │   │   │   ├── camera.h
+│   │   │   │   ├── debugger.c
+│   │   │   │   ├── debugger.h
+│   │   │   │   ├── display.c
+│   │   │   │   ├── display.h
+│   │   │   │   ├── gb.c
+│   │   │   │   ├── gb.h
+│   │   │   │   ├── gb_struct_def.h
+│   │   │   │   ├── joypad.c
+│   │   │   │   ├── joypad.h
+│   │   │   │   ├── mbc.c
+│   │   │   │   ├── mbc.h
+│   │   │   │   ├── memory.c
+│   │   │   │   ├── memory.h
+│   │   │   │   ├── printer.c
+│   │   │   │   ├── printer.h
+│   │   │   │   ├── random.c
+│   │   │   │   ├── random.h
+│   │   │   │   ├── rewind.c
+│   │   │   │   ├── rewind.h
+│   │   │   │   ├── save_state.c
+│   │   │   │   ├── save_state.h
+│   │   │   │   ├── sgb_animation_logo.inc
+│   │   │   │   ├── sgb_border.inc
+│   │   │   │   ├── sgb.c
+│   │   │   │   ├── sgb.h
+│   │   │   │   ├── sm83_cpu.c
+│   │   │   │   ├── sm83_cpu.h
+│   │   │   │   ├── sm83_disassembler.c
+│   │   │   │   ├── symbol_hash.c
+│   │   │   │   ├── symbol_hash.h
+│   │   │   │   ├── timing.c
+│   │   │   │   └── timing.h
+│   │   │   ├── GNUmakefile
+│   │   │   ├── LICENSE
+│   │   │   └── README
+│   │   ├── GNUmakefile
+│   │   ├── heuristics
+│   │   │   ├── bs-memory.cpp
+│   │   │   ├── game-boy.cpp
+│   │   │   ├── heuristics.cpp
+│   │   │   ├── heuristics.hpp
+│   │   │   ├── sufami-turbo.cpp
+│   │   │   └── super-famicom.cpp
+│   │   ├── Locale
+│   │   │   └── Japanese.bml
+│   │   ├── lzma
+│   │   │   ├── 7zAlloc.c
+│   │   │   ├── 7zAlloc.h
+│   │   │   ├── 7zArcIn.c
+│   │   │   ├── 7zBuf2.c
+│   │   │   ├── 7zBuf.c
+│   │   │   ├── 7zBuf.h
+│   │   │   ├── 7zCrc.c
+│   │   │   ├── 7zCrc.h
+│   │   │   ├── 7zCrcOpt.c
+│   │   │   ├── 7zDec.c
+│   │   │   ├── 7zFile.c
+│   │   │   ├── 7zFile.h
+│   │   │   ├── 7z.h
+│   │   │   ├── 7zStream.c
+│   │   │   ├── 7zTypes.h
+│   │   │   ├── 7zVersion.h
+│   │   │   ├── 7zVersion.rc
+│   │   │   ├── Aes.c
+│   │   │   ├── Aes.h
+│   │   │   ├── AesOpt.c
+│   │   │   ├── Alloc.c
+│   │   │   ├── Alloc.h
+│   │   │   ├── Bcj2.c
+│   │   │   ├── Bcj2Enc.c
+│   │   │   ├── Bcj2.h
+│   │   │   ├── Bra86.c
+│   │   │   ├── Bra.c
+│   │   │   ├── Bra.h
+│   │   │   ├── BraIA64.c
+│   │   │   ├── Compiler.h
+│   │   │   ├── CpuArch.c
+│   │   │   ├── CpuArch.h
+│   │   │   ├── Delta.c
+│   │   │   ├── Delta.h
+│   │   │   ├── DllSecur.c
+│   │   │   ├── DllSecur.h
+│   │   │   ├── LzFind.c
+│   │   │   ├── LzFind.h
+│   │   │   ├── LzFindMt.c
+│   │   │   ├── LzFindMt.h
+│   │   │   ├── LzHash.h
+│   │   │   ├── Lzma2Dec.c
+│   │   │   ├── Lzma2Dec.h
+│   │   │   ├── Lzma2DecMt.c
+│   │   │   ├── Lzma2DecMt.h
+│   │   │   ├── Lzma2Enc.c
+│   │   │   ├── Lzma2Enc.h
+│   │   │   ├── Lzma86Dec.c
+│   │   │   ├── Lzma86Enc.c
+│   │   │   ├── Lzma86.h
+│   │   │   ├── lzma.cpp
+│   │   │   ├── LzmaDec.c
+│   │   │   ├── LzmaDec.h
+│   │   │   ├── LzmaEnc.c
+│   │   │   ├── LzmaEnc.h
+│   │   │   ├── lzma.hpp
+│   │   │   ├── LzmaLib.c
+│   │   │   ├── LzmaLib.h
+│   │   │   ├── MtCoder.c
+│   │   │   ├── MtCoder.h
+│   │   │   ├── MtDec.c
+│   │   │   ├── MtDec.h
+│   │   │   ├── Ppmd7.c
+│   │   │   ├── Ppmd7Dec.c
+│   │   │   ├── Ppmd7Enc.c
+│   │   │   ├── Ppmd7.h
+│   │   │   ├── Ppmd.h
+│   │   │   ├── Precomp.h
+│   │   │   ├── RotateDefs.h
+│   │   │   ├── Sha256.c
+│   │   │   ├── Sha256.h
+│   │   │   ├── Sort.c
+│   │   │   ├── Sort.h
+│   │   │   ├── Threads.c
+│   │   │   ├── Threads.h
+│   │   │   ├── Xz.c
+│   │   │   ├── XzCrc64.c
+│   │   │   ├── XzCrc64.h
+│   │   │   ├── XzCrc64Opt.c
+│   │   │   ├── XzDec.c
+│   │   │   ├── XzEnc.c
+│   │   │   ├── XzEnc.h
+│   │   │   ├── Xz.h
+│   │   │   └── XzIn.c
+│   │   ├── obj
+│   │   ├── out
+│   │   ├── processor
+│   │   │   ├── arm7tdmi
+│   │   │   │   ├── algorithms.cpp
+│   │   │   │   ├── arm7tdmi.cpp
+│   │   │   │   ├── arm7tdmi.hpp
+│   │   │   │   ├── disassembler.cpp
+│   │   │   │   ├── instruction.cpp
+│   │   │   │   ├── instructions-arm.cpp
+│   │   │   │   ├── instructions-thumb.cpp
+│   │   │   │   ├── memory.cpp
+│   │   │   │   ├── registers.cpp
+│   │   │   │   └── serialization.cpp
+│   │   │   ├── GNUmakefile
+│   │   │   ├── gsu
+│   │   │   │   ├── disassembler.cpp
+│   │   │   │   ├── gsu.cpp
+│   │   │   │   ├── gsu.hpp
+│   │   │   │   ├── instruction.cpp
+│   │   │   │   ├── instructions.cpp
+│   │   │   │   ├── registers.hpp
+│   │   │   │   └── serialization.cpp
+│   │   │   ├── hg51b
+│   │   │   │   ├── hg51b.cpp
+│   │   │   │   ├── hg51b.hpp
+│   │   │   │   ├── instruction.cpp
+│   │   │   │   ├── instructions.cpp
+│   │   │   │   ├── registers.cpp
+│   │   │   │   └── serialization.cpp
+│   │   │   ├── processor.hpp
+│   │   │   ├── sm83
+│   │   │   │   ├── algorithms.cpp
+│   │   │   │   ├── disassembler.cpp
+│   │   │   │   ├── instruction.cpp
+│   │   │   │   ├── instructions.cpp
+│   │   │   │   ├── memory.cpp
+│   │   │   │   ├── registers.cpp
+│   │   │   │   ├── serialization.cpp
+│   │   │   │   ├── sm83.cpp
+│   │   │   │   └── sm83.hpp
+│   │   │   ├── spc700
+│   │   │   │   ├── algorithms.cpp
+│   │   │   │   ├── disassembler.cpp
+│   │   │   │   ├── instruction.cpp
+│   │   │   │   ├── instructions.cpp
+│   │   │   │   ├── memory.cpp
+│   │   │   │   ├── serialization.cpp
+│   │   │   │   ├── spc700.cpp
+│   │   │   │   └── spc700.hpp
+│   │   │   ├── upd96050
+│   │   │   │   ├── disassembler.cpp
+│   │   │   │   ├── instructions.cpp
+│   │   │   │   ├── memory.cpp
+│   │   │   │   ├── serialization.cpp
+│   │   │   │   ├── upd96050.cpp
+│   │   │   │   └── upd96050.hpp
+│   │   │   └── wdc65816
+│   │   │       ├── algorithms.cpp
+│   │   │       ├── disassembler.cpp
+│   │   │       ├── instruction.cpp
+│   │   │       ├── instruction.hpp
+│   │   │       ├── instructions-modify.cpp
+│   │   │       ├── instructions-other.cpp
+│   │   │       ├── instructions-pc.cpp
+│   │   │       ├── instructions-read.cpp
+│   │   │       ├── instructions-write.cpp
+│   │   │       ├── memory.cpp
+│   │   │       ├── registers.hpp
+│   │   │       ├── serialization.cpp
+│   │   │       ├── wdc65816.cpp
+│   │   │       └── wdc65816.hpp
+│   │   ├── sfc
+│   │   │   ├── cartridge
+│   │   │   │   ├── cartridge.cpp
+│   │   │   │   ├── cartridge.hpp
+│   │   │   │   ├── load.cpp
+│   │   │   │   ├── save.cpp
+│   │   │   │   └── serialization.cpp
+│   │   │   ├── controller
+│   │   │   │   ├── controller.cpp
+│   │   │   │   ├── controller.hpp
+│   │   │   │   ├── gamepad
+│   │   │   │   │   ├── gamepad.cpp
+│   │   │   │   │   └── gamepad.hpp
+│   │   │   │   ├── justifier
+│   │   │   │   │   ├── justifier.cpp
+│   │   │   │   │   └── justifier.hpp
+│   │   │   │   ├── mouse
+│   │   │   │   │   ├── mouse.cpp
+│   │   │   │   │   └── mouse.hpp
+│   │   │   │   ├── super-multitap
+│   │   │   │   │   ├── super-multitap.cpp
+│   │   │   │   │   └── super-multitap.hpp
+│   │   │   │   └── super-scope
+│   │   │   │       ├── super-scope.cpp
+│   │   │   │       └── super-scope.hpp
+│   │   │   ├── coprocessor
+│   │   │   │   ├── armdsp
+│   │   │   │   │   ├── armdsp.cpp
+│   │   │   │   │   ├── armdsp.hpp
+│   │   │   │   │   ├── memory.cpp
+│   │   │   │   │   ├── registers.hpp
+│   │   │   │   │   └── serialization.cpp
+│   │   │   │   ├── coprocessor.cpp
+│   │   │   │   ├── coprocessor.hpp
+│   │   │   │   ├── cx4
+│   │   │   │   │   ├── cx4.cpp
+│   │   │   │   │   ├── cx4.hpp
+│   │   │   │   │   ├── data.cpp
+│   │   │   │   │   ├── functions.cpp
+│   │   │   │   │   ├── oam.cpp
+│   │   │   │   │   ├── opcodes.cpp
+│   │   │   │   │   └── serialization.cpp
+│   │   │   │   ├── dip
+│   │   │   │   │   ├── dip.cpp
+│   │   │   │   │   ├── dip.hpp
+│   │   │   │   │   └── serialization.cpp
+│   │   │   │   ├── dsp1
+│   │   │   │   │   ├── dsp1.cpp
+│   │   │   │   │   ├── dsp1emu.cpp
+│   │   │   │   │   ├── dsp1emu.hpp
+│   │   │   │   │   ├── dsp1.hpp
+│   │   │   │   │   └── serialization.cpp
+│   │   │   │   ├── dsp2
+│   │   │   │   │   ├── dsp2.cpp
+│   │   │   │   │   ├── dsp2.hpp
+│   │   │   │   │   ├── opcodes.cpp
+│   │   │   │   │   └── serialization.cpp
+│   │   │   │   ├── dsp4
+│   │   │   │   │   ├── dsp4.cpp
+│   │   │   │   │   ├── dsp4emu.c
+│   │   │   │   │   ├── dsp4emu.h
+│   │   │   │   │   ├── dsp4.hpp
+│   │   │   │   │   └── serialization.cpp
+│   │   │   │   ├── epsonrtc
+│   │   │   │   │   ├── epsonrtc.cpp
+│   │   │   │   │   ├── epsonrtc.hpp
+│   │   │   │   │   ├── memory.cpp
+│   │   │   │   │   ├── serialization.cpp
+│   │   │   │   │   └── time.cpp
+│   │   │   │   ├── event
+│   │   │   │   │   ├── event.cpp
+│   │   │   │   │   ├── event.hpp
+│   │   │   │   │   └── serialization.cpp
+│   │   │   │   ├── hitachidsp
+│   │   │   │   │   ├── data-rom.cpp
+│   │   │   │   │   ├── hitachidsp.cpp
+│   │   │   │   │   ├── hitachidsp.hpp
+│   │   │   │   │   ├── memory.cpp
+│   │   │   │   │   └── serialization.cpp
+│   │   │   │   ├── icd
+│   │   │   │   │   ├── boot-roms.cpp
+│   │   │   │   │   ├── icd.cpp
+│   │   │   │   │   ├── icd.hpp
+│   │   │   │   │   ├── interface.cpp
+│   │   │   │   │   ├── io.cpp
+│   │   │   │   │   └── serialization.cpp
+│   │   │   │   ├── mcc
+│   │   │   │   │   ├── mcc.cpp
+│   │   │   │   │   ├── mcc.hpp
+│   │   │   │   │   └── serialization.cpp
+│   │   │   │   ├── msu1
+│   │   │   │   │   ├── msu1.cpp
+│   │   │   │   │   ├── msu1.hpp
+│   │   │   │   │   └── serialization.cpp
+│   │   │   │   ├── necdsp
+│   │   │   │   │   ├── necdsp.cpp
+│   │   │   │   │   ├── necdsp.hpp
+│   │   │   │   │   └── serialization.cpp
+│   │   │   │   ├── obc1
+│   │   │   │   │   ├── obc1.cpp
+│   │   │   │   │   ├── obc1.hpp
+│   │   │   │   │   └── serialization.cpp
+│   │   │   │   ├── sa1
+│   │   │   │   │   ├── bwram.cpp
+│   │   │   │   │   ├── dma.cpp
+│   │   │   │   │   ├── io.cpp
+│   │   │   │   │   ├── iram.cpp
+│   │   │   │   │   ├── memory.cpp
+│   │   │   │   │   ├── rom.cpp
+│   │   │   │   │   ├── sa1.cpp
+│   │   │   │   │   ├── sa1.hpp
+│   │   │   │   │   └── serialization.cpp
+│   │   │   │   ├── sdd1
+│   │   │   │   │   ├── decompressor.cpp
+│   │   │   │   │   ├── decompressor.hpp
+│   │   │   │   │   ├── sdd1.cpp
+│   │   │   │   │   ├── sdd1.hpp
+│   │   │   │   │   └── serialization.cpp
+│   │   │   │   ├── sharprtc
+│   │   │   │   │   ├── memory.cpp
+│   │   │   │   │   ├── serialization.cpp
+│   │   │   │   │   ├── sharprtc.cpp
+│   │   │   │   │   ├── sharprtc.hpp
+│   │   │   │   │   └── time.cpp
+│   │   │   │   ├── spc7110
+│   │   │   │   │   ├── alu.cpp
+│   │   │   │   │   ├── data.cpp
+│   │   │   │   │   ├── dcu.cpp
+│   │   │   │   │   ├── decompressor.cpp
+│   │   │   │   │   ├── serialization.cpp
+│   │   │   │   │   ├── spc7110.cpp
+│   │   │   │   │   └── spc7110.hpp
+│   │   │   │   ├── st0010
+│   │   │   │   │   ├── data.hpp
+│   │   │   │   │   ├── opcodes.cpp
+│   │   │   │   │   ├── serialization.cpp
+│   │   │   │   │   ├── st0010.cpp
+│   │   │   │   │   └── st0010.hpp
+│   │   │   │   └── superfx
+│   │   │   │       ├── bus.cpp
+│   │   │   │       ├── core.cpp
+│   │   │   │       ├── io.cpp
+│   │   │   │       ├── memory.cpp
+│   │   │   │       ├── serialization.cpp
+│   │   │   │       ├── superfx.cpp
+│   │   │   │       ├── superfx.hpp
+│   │   │   │       └── timing.cpp
+│   │   │   ├── cpu
+│   │   │   │   ├── cpu.cpp
+│   │   │   │   ├── cpu.hpp
+│   │   │   │   ├── dma.cpp
+│   │   │   │   ├── io.cpp
+│   │   │   │   ├── irq.cpp
+│   │   │   │   ├── memory.cpp
+│   │   │   │   ├── serialization.cpp
+│   │   │   │   └── timing.cpp
+│   │   │   ├── dsp
+│   │   │   │   ├── blargg_common.h
+│   │   │   │   ├── blargg_config.h
+│   │   │   │   ├── blargg_endian.h
+│   │   │   │   ├── blargg_source.h
+│   │   │   │   ├── dsp.cpp
+│   │   │   │   ├── dsp.hpp
+│   │   │   │   ├── serialization.cpp
+│   │   │   │   ├── SPC_DSP.cpp
+│   │   │   │   └── SPC_DSP.h
+│   │   │   ├── expansion
+│   │   │   │   ├── 21fx
+│   │   │   │   │   ├── 21fx.cpp
+│   │   │   │   │   └── 21fx.hpp
+│   │   │   │   ├── expansion.cpp
+│   │   │   │   ├── expansion.hpp
+│   │   │   │   └── satellaview
+│   │   │   │       ├── satellaview.cpp
+│   │   │   │       └── satellaview.hpp
+│   │   │   ├── GNUmakefile
+│   │   │   ├── interface
+│   │   │   │   ├── configuration.cpp
+│   │   │   │   ├── configuration.hpp
+│   │   │   │   ├── interface.cpp
+│   │   │   │   └── interface.hpp
+│   │   │   ├── memory
+│   │   │   │   ├── memory.cpp
+│   │   │   │   ├── memory.hpp
+│   │   │   │   ├── memory-inline.hpp
+│   │   │   │   ├── protectable.hpp
+│   │   │   │   ├── readable.hpp
+│   │   │   │   └── writable.hpp
+│   │   │   ├── ppu
+│   │   │   │   ├── background.cpp
+│   │   │   │   ├── background.hpp
+│   │   │   │   ├── counter
+│   │   │   │   │   ├── counter.hpp
+│   │   │   │   │   ├── counter-inline.hpp
+│   │   │   │   │   └── serialization.cpp
+│   │   │   │   ├── io.cpp
+│   │   │   │   ├── main.cpp
+│   │   │   │   ├── mode7.cpp
+│   │   │   │   ├── mosaic.cpp
+│   │   │   │   ├── mosaic.hpp
+│   │   │   │   ├── oam.cpp
+│   │   │   │   ├── object.cpp
+│   │   │   │   ├── object.hpp
+│   │   │   │   ├── ppu.cpp
+│   │   │   │   ├── ppu.hpp
+│   │   │   │   ├── screen.cpp
+│   │   │   │   ├── screen.hpp
+│   │   │   │   ├── serialization.cpp
+│   │   │   │   ├── window.cpp
+│   │   │   │   └── window.hpp
+│   │   │   ├── ppu-fast
+│   │   │   │   ├── background.cpp
+│   │   │   │   ├── io.cpp
+│   │   │   │   ├── line.cpp
+│   │   │   │   ├── mode7.cpp
+│   │   │   │   ├── mode7hd.cpp
+│   │   │   │   ├── object.cpp
+│   │   │   │   ├── ppu.cpp
+│   │   │   │   ├── ppu.hpp
+│   │   │   │   ├── serialization.cpp
+│   │   │   │   └── window.cpp
+│   │   │   ├── sfc.hpp
+│   │   │   ├── slot
+│   │   │   │   ├── bsmemory
+│   │   │   │   │   ├── bsmemory.cpp
+│   │   │   │   │   ├── bsmemory.hpp
+│   │   │   │   │   └── serialization.cpp
+│   │   │   │   ├── slot.cpp
+│   │   │   │   ├── slot.hpp
+│   │   │   │   └── sufamiturbo
+│   │   │   │       ├── serialization.cpp
+│   │   │   │       ├── sufamiturbo.cpp
+│   │   │   │       └── sufamiturbo.hpp
+│   │   │   ├── smp
+│   │   │   │   ├── io.cpp
+│   │   │   │   ├── memory.cpp
+│   │   │   │   ├── serialization.cpp
+│   │   │   │   ├── smp.cpp
+│   │   │   │   ├── smp.hpp
+│   │   │   │   └── timing.cpp
+│   │   │   └── system
+│   │   │       ├── serialization.cpp
+│   │   │       ├── system.cpp
+│   │   │       └── system.hpp
+│   │   ├── target-bsnes
+│   │   │   ├── bsnes.cpp
+│   │   │   ├── bsnes.hpp
+│   │   │   ├── GNUmakefile
+│   │   │   ├── input
+│   │   │   │   ├── hotkeys.cpp
+│   │   │   │   ├── input.cpp
+│   │   │   │   └── input.hpp
+│   │   │   ├── presentation
+│   │   │   │   ├── presentation.cpp
+│   │   │   │   └── presentation.hpp
+│   │   │   ├── program
+│   │   │   │   ├── audio.cpp
+│   │   │   │   ├── filter.cpp
+│   │   │   │   ├── game.cpp
+│   │   │   │   ├── game-pak.cpp
+│   │   │   │   ├── game-rom.cpp
+│   │   │   │   ├── hacks.cpp
+│   │   │   │   ├── input.cpp
+│   │   │   │   ├── movies.cpp
+│   │   │   │   ├── patch.cpp
+│   │   │   │   ├── paths.cpp
+│   │   │   │   ├── platform.cpp
+│   │   │   │   ├── program.cpp
+│   │   │   │   ├── program.hpp
+│   │   │   │   ├── rewind.cpp
+│   │   │   │   ├── states.cpp
+│   │   │   │   ├── utility.cpp
+│   │   │   │   ├── video.cpp
+│   │   │   │   └── viewport.cpp
+│   │   │   ├── resource
+│   │   │   │   ├── bsnes.desktop
+│   │   │   │   ├── bsnes.ico
+│   │   │   │   ├── bsnes.Manifest
+│   │   │   │   ├── bsnes.plist
+│   │   │   │   ├── bsnes.png
+│   │   │   │   ├── bsnes.rc
+│   │   │   │   ├── bsnes.svg
+│   │   │   │   ├── GNUmakefile
+│   │   │   │   ├── icon.png
+│   │   │   │   ├── logo.png
+│   │   │   │   ├── resource.bml
+│   │   │   │   ├── resource.cpp
+│   │   │   │   ├── resource.hpp
+│   │   │   │   ├── sameboy.png
+│   │   │   │   └── system
+│   │   │   │       ├── boards.bml
+│   │   │   │       └── ipl.rom
+│   │   │   ├── settings
+│   │   │   │   ├── audio.cpp
+│   │   │   │   ├── compatibility.cpp
+│   │   │   │   ├── drivers.cpp
+│   │   │   │   ├── emulator.cpp
+│   │   │   │   ├── enhancements.cpp
+│   │   │   │   ├── hotkeys.cpp
+│   │   │   │   ├── input.cpp
+│   │   │   │   ├── paths.cpp
+│   │   │   │   ├── settings.cpp
+│   │   │   │   ├── settings.hpp
+│   │   │   │   └── video.cpp
+│   │   │   └── tools
+│   │   │       ├── cheat-editor.cpp
+│   │   │       ├── cheat-finder.cpp
+│   │   │       ├── manifest-viewer.cpp
+│   │   │       ├── state-manager.cpp
+│   │   │       ├── tools.cpp
+│   │   │       └── tools.hpp
+│   │   └── target-libretro
+│   │       ├── GNUmakefile
+│   │       ├── jni
+│   │       │   ├── Android.mk
+│   │       │   └── Application.mk
+│   │       ├── libretro-common
+│   │       │   └── include
+│   │       │       └── retro_inline.h
+│   │       ├── libretro_core_options.h
+│   │       ├── libretro_core_options_intl.h
+│   │       ├── libretro.cpp
+│   │       ├── libretro.h
+│   │       ├── link.T
+│   │       ├── program.cpp
+│   │       └── resources.hpp
+│   ├── hiro
+│   │   ├── cocoa
+│   │   │   ├── action
+│   │   │   │   ├── action.cpp
+│   │   │   │   ├── action.hpp
+│   │   │   │   ├── menu-check-item.cpp
+│   │   │   │   ├── menu-check-item.hpp
+│   │   │   │   ├── menu.cpp
+│   │   │   │   ├── menu.hpp
+│   │   │   │   ├── menu-item.cpp
+│   │   │   │   ├── menu-item.hpp
+│   │   │   │   ├── menu-radio-item.cpp
+│   │   │   │   ├── menu-radio-item.hpp
+│   │   │   │   ├── menu-separator.cpp
+│   │   │   │   └── menu-separator.hpp
+│   │   │   ├── application.cpp
+│   │   │   ├── application.hpp
+│   │   │   ├── browser-window.cpp
+│   │   │   ├── browser-window.hpp
+│   │   │   ├── desktop.cpp
+│   │   │   ├── desktop.hpp
+│   │   │   ├── font.cpp
+│   │   │   ├── font.hpp
+│   │   │   ├── group.cpp
+│   │   │   ├── group.hpp
+│   │   │   ├── header.hpp
+│   │   │   ├── keyboard.cpp
+│   │   │   ├── keyboard.hpp
+│   │   │   ├── menu-bar.cpp
+│   │   │   ├── menu-bar.hpp
+│   │   │   ├── message-window.cpp
+│   │   │   ├── message-window.hpp
+│   │   │   ├── monitor.cpp
+│   │   │   ├── monitor.hpp
+│   │   │   ├── mouse.cpp
+│   │   │   ├── mouse.hpp
+│   │   │   ├── object.cpp
+│   │   │   ├── object.hpp
+│   │   │   ├── platform.cpp
+│   │   │   ├── platform.hpp
+│   │   │   ├── popup-menu.cpp
+│   │   │   ├── popup-menu.hpp
+│   │   │   ├── sizable.cpp
+│   │   │   ├── sizable.hpp
+│   │   │   ├── status-bar.cpp
+│   │   │   ├── status-bar.hpp
+│   │   │   ├── timer.cpp
+│   │   │   ├── timer.hpp
+│   │   │   ├── utility.cpp
+│   │   │   ├── widget
+│   │   │   │   ├── button.cpp
+│   │   │   │   ├── button.hpp
+│   │   │   │   ├── canvas.cpp
+│   │   │   │   ├── canvas.hpp
+│   │   │   │   ├── check-button.cpp
+│   │   │   │   ├── check-button.hpp
+│   │   │   │   ├── check-label.cpp
+│   │   │   │   ├── check-label.hpp
+│   │   │   │   ├── combo-button.cpp
+│   │   │   │   ├── combo-button.hpp
+│   │   │   │   ├── combo-button-item.cpp
+│   │   │   │   ├── combo-button-item.hpp
+│   │   │   │   ├── console.cpp
+│   │   │   │   ├── console.hpp
+│   │   │   │   ├── frame.cpp
+│   │   │   │   ├── frame.hpp
+│   │   │   │   ├── hex-edit.cpp
+│   │   │   │   ├── hex-edit.hpp
+│   │   │   │   ├── horizontal-scroll-bar.cpp
+│   │   │   │   ├── horizontal-scroll-bar.hpp
+│   │   │   │   ├── horizontal-slider.cpp
+│   │   │   │   ├── horizontal-slider.hpp
+│   │   │   │   ├── label.cpp
+│   │   │   │   ├── label.hpp
+│   │   │   │   ├── line-edit.cpp
+│   │   │   │   ├── line-edit.hpp
+│   │   │   │   ├── progress-bar.cpp
+│   │   │   │   ├── progress-bar.hpp
+│   │   │   │   ├── radio-button.cpp
+│   │   │   │   ├── radio-button.hpp
+│   │   │   │   ├── radio-label.cpp
+│   │   │   │   ├── radio-label.hpp
+│   │   │   │   ├── tab-frame.cpp
+│   │   │   │   ├── tab-frame.hpp
+│   │   │   │   ├── tab-frame-item.cpp
+│   │   │   │   ├── tab-frame-item.hpp
+│   │   │   │   ├── table-view-cell.cpp
+│   │   │   │   ├── table-view-cell.hpp
+│   │   │   │   ├── table-view-column.cpp
+│   │   │   │   ├── table-view-column.hpp
+│   │   │   │   ├── table-view.cpp
+│   │   │   │   ├── table-view.hpp
+│   │   │   │   ├── table-view-item.cpp
+│   │   │   │   ├── table-view-item.hpp
+│   │   │   │   ├── text-edit.cpp
+│   │   │   │   ├── text-edit.hpp
+│   │   │   │   ├── vertical-scroll-bar.cpp
+│   │   │   │   ├── vertical-scroll-bar.hpp
+│   │   │   │   ├── vertical-slider.cpp
+│   │   │   │   ├── vertical-slider.hpp
+│   │   │   │   ├── viewport.cpp
+│   │   │   │   ├── viewport.hpp
+│   │   │   │   ├── widget.cpp
+│   │   │   │   └── widget.hpp
+│   │   │   ├── window.cpp
+│   │   │   └── window.hpp
+│   │   ├── components.hpp
+│   │   ├── core
+│   │   │   ├── action
+│   │   │   │   ├── action.cpp
+│   │   │   │   ├── menu-check-item.cpp
+│   │   │   │   ├── menu.cpp
+│   │   │   │   ├── menu-item.cpp
+│   │   │   │   ├── menu-radio-item.cpp
+│   │   │   │   └── menu-separator.cpp
+│   │   │   ├── alignment.cpp
+│   │   │   ├── application.cpp
+│   │   │   ├── application.hpp
+│   │   │   ├── attribute.cpp
+│   │   │   ├── attribute.hpp
+│   │   │   ├── browser-window.cpp
+│   │   │   ├── color.cpp
+│   │   │   ├── core.cpp
+│   │   │   ├── core.hpp
+│   │   │   ├── desktop.cpp
+│   │   │   ├── desktop.hpp
+│   │   │   ├── font.cpp
+│   │   │   ├── font.hpp
+│   │   │   ├── geometry.cpp
+│   │   │   ├── gradient.cpp
+│   │   │   ├── group.cpp
+│   │   │   ├── group.hpp
+│   │   │   ├── hotkey.cpp
+│   │   │   ├── keyboard.cpp
+│   │   │   ├── lock.hpp
+│   │   │   ├── menu-bar.cpp
+│   │   │   ├── message-window.cpp
+│   │   │   ├── monitor.cpp
+│   │   │   ├── monitor.hpp
+│   │   │   ├── mouse.cpp
+│   │   │   ├── mouse-cursor.cpp
+│   │   │   ├── mouse-cursor.hpp
+│   │   │   ├── object.cpp
+│   │   │   ├── object.hpp
+│   │   │   ├── popup-menu.cpp
+│   │   │   ├── position.cpp
+│   │   │   ├── shared.hpp
+│   │   │   ├── sizable.cpp
+│   │   │   ├── sizable.hpp
+│   │   │   ├── size.cpp
+│   │   │   ├── status-bar.cpp
+│   │   │   ├── text-cursor.cpp
+│   │   │   ├── text-cursor.hpp
+│   │   │   ├── timer.cpp
+│   │   │   ├── timer.hpp
+│   │   │   ├── widget
+│   │   │   │   ├── button.cpp
+│   │   │   │   ├── canvas.cpp
+│   │   │   │   ├── canvas.hpp
+│   │   │   │   ├── check-button.cpp
+│   │   │   │   ├── check-label.cpp
+│   │   │   │   ├── combo-button.cpp
+│   │   │   │   ├── combo-button-item.cpp
+│   │   │   │   ├── combo-edit.cpp
+│   │   │   │   ├── combo-edit-item.cpp
+│   │   │   │   ├── console.cpp
+│   │   │   │   ├── frame.cpp
+│   │   │   │   ├── hex-edit.cpp
+│   │   │   │   ├── horizontal-scroll-bar.cpp
+│   │   │   │   ├── horizontal-slider.cpp
+│   │   │   │   ├── icon-view.cpp
+│   │   │   │   ├── icon-view-item.cpp
+│   │   │   │   ├── label.cpp
+│   │   │   │   ├── label.hpp
+│   │   │   │   ├── line-edit.cpp
+│   │   │   │   ├── progress-bar.cpp
+│   │   │   │   ├── radio-button.cpp
+│   │   │   │   ├── radio-label.cpp
+│   │   │   │   ├── source-edit.cpp
+│   │   │   │   ├── source-edit.hpp
+│   │   │   │   ├── tab-frame.cpp
+│   │   │   │   ├── tab-frame.hpp
+│   │   │   │   ├── tab-frame-item.cpp
+│   │   │   │   ├── tab-frame-item.hpp
+│   │   │   │   ├── table-view-cell.cpp
+│   │   │   │   ├── table-view-cell.hpp
+│   │   │   │   ├── table-view-column.cpp
+│   │   │   │   ├── table-view-column.hpp
+│   │   │   │   ├── table-view.cpp
+│   │   │   │   ├── table-view.hpp
+│   │   │   │   ├── table-view-item.cpp
+│   │   │   │   ├── table-view-item.hpp
+│   │   │   │   ├── text-edit.cpp
+│   │   │   │   ├── text-edit.hpp
+│   │   │   │   ├── tree-view.cpp
+│   │   │   │   ├── tree-view.hpp
+│   │   │   │   ├── tree-view-item.cpp
+│   │   │   │   ├── tree-view-item.hpp
+│   │   │   │   ├── vertical-scroll-bar.cpp
+│   │   │   │   ├── vertical-slider.cpp
+│   │   │   │   ├── viewport.cpp
+│   │   │   │   ├── viewport.hpp
+│   │   │   │   ├── widget.cpp
+│   │   │   │   └── widget.hpp
+│   │   │   ├── window.cpp
+│   │   │   └── window.hpp
+│   │   ├── extension
+│   │   │   ├── about-dialog.cpp
+│   │   │   ├── about-dialog.hpp
+│   │   │   ├── browser-dialog.cpp
+│   │   │   ├── browser-dialog.hpp
+│   │   │   ├── extension.cpp
+│   │   │   ├── extension.hpp
+│   │   │   ├── fixed-layout.cpp
+│   │   │   ├── fixed-layout.hpp
+│   │   │   ├── horizontal-layout.cpp
+│   │   │   ├── horizontal-layout.hpp
+│   │   │   ├── horizontal-resize-grip.cpp
+│   │   │   ├── horizontal-resize-grip.hpp
+│   │   │   ├── list-view.cpp
+│   │   │   ├── list-view.hpp
+│   │   │   ├── message-dialog.cpp
+│   │   │   ├── message-dialog.hpp
+│   │   │   ├── name-dialog.cpp
+│   │   │   ├── name-dialog.hpp
+│   │   │   ├── shared.hpp
+│   │   │   ├── table-layout.cpp
+│   │   │   ├── table-layout.hpp
+│   │   │   ├── vertical-layout.cpp
+│   │   │   ├── vertical-layout.hpp
+│   │   │   ├── vertical-resize-grip.cpp
+│   │   │   └── vertical-resize-grip.hpp
+│   │   ├── GNUmakefile
+│   │   ├── gtk
+│   │   │   ├── action
+│   │   │   │   ├── action.cpp
+│   │   │   │   ├── action.hpp
+│   │   │   │   ├── menu-check-item.cpp
+│   │   │   │   ├── menu-check-item.hpp
+│   │   │   │   ├── menu.cpp
+│   │   │   │   ├── menu.hpp
+│   │   │   │   ├── menu-item.cpp
+│   │   │   │   ├── menu-item.hpp
+│   │   │   │   ├── menu-radio-item.cpp
+│   │   │   │   ├── menu-radio-item.hpp
+│   │   │   │   ├── menu-separator.cpp
+│   │   │   │   └── menu-separator.hpp
+│   │   │   ├── application.cpp
+│   │   │   ├── application.hpp
+│   │   │   ├── browser-window.cpp
+│   │   │   ├── browser-window.hpp
+│   │   │   ├── desktop.cpp
+│   │   │   ├── desktop.hpp
+│   │   │   ├── font.cpp
+│   │   │   ├── font.hpp
+│   │   │   ├── group.cpp
+│   │   │   ├── group.hpp
+│   │   │   ├── header.hpp
+│   │   │   ├── keyboard.cpp
+│   │   │   ├── keyboard.hpp
+│   │   │   ├── menu-bar.cpp
+│   │   │   ├── menu-bar.hpp
+│   │   │   ├── message-window.cpp
+│   │   │   ├── message-window.hpp
+│   │   │   ├── monitor.cpp
+│   │   │   ├── monitor.hpp
+│   │   │   ├── mouse.cpp
+│   │   │   ├── mouse.hpp
+│   │   │   ├── object.cpp
+│   │   │   ├── object.hpp
+│   │   │   ├── platform.cpp
+│   │   │   ├── platform.hpp
+│   │   │   ├── popup-menu.cpp
+│   │   │   ├── popup-menu.hpp
+│   │   │   ├── settings.cpp
+│   │   │   ├── settings.hpp
+│   │   │   ├── sizable.cpp
+│   │   │   ├── sizable.hpp
+│   │   │   ├── status-bar.cpp
+│   │   │   ├── status-bar.hpp
+│   │   │   ├── timer.cpp
+│   │   │   ├── timer.hpp
+│   │   │   ├── utility.cpp
+│   │   │   ├── widget
+│   │   │   │   ├── button.cpp
+│   │   │   │   ├── button.hpp
+│   │   │   │   ├── canvas.cpp
+│   │   │   │   ├── canvas.hpp
+│   │   │   │   ├── check-button.cpp
+│   │   │   │   ├── check-button.hpp
+│   │   │   │   ├── check-label.cpp
+│   │   │   │   ├── check-label.hpp
+│   │   │   │   ├── combo-button.cpp
+│   │   │   │   ├── combo-button.hpp
+│   │   │   │   ├── combo-button-item.cpp
+│   │   │   │   ├── combo-button-item.hpp
+│   │   │   │   ├── combo-edit.cpp
+│   │   │   │   ├── combo-edit.hpp
+│   │   │   │   ├── combo-edit-item.cpp
+│   │   │   │   ├── combo-edit-item.hpp
+│   │   │   │   ├── console.cpp
+│   │   │   │   ├── console.hpp
+│   │   │   │   ├── frame.cpp
+│   │   │   │   ├── frame.hpp
+│   │   │   │   ├── hex-edit.cpp
+│   │   │   │   ├── hex-edit.hpp
+│   │   │   │   ├── horizontal-scroll-bar.cpp
+│   │   │   │   ├── horizontal-scroll-bar.hpp
+│   │   │   │   ├── horizontal-slider.cpp
+│   │   │   │   ├── horizontal-slider.hpp
+│   │   │   │   ├── icon-view.cpp
+│   │   │   │   ├── icon-view.hpp
+│   │   │   │   ├── icon-view-item.cpp
+│   │   │   │   ├── icon-view-item.hpp
+│   │   │   │   ├── label.cpp
+│   │   │   │   ├── label.hpp
+│   │   │   │   ├── line-edit.cpp
+│   │   │   │   ├── line-edit.hpp
+│   │   │   │   ├── progress-bar.cpp
+│   │   │   │   ├── progress-bar.hpp
+│   │   │   │   ├── radio-button.cpp
+│   │   │   │   ├── radio-button.hpp
+│   │   │   │   ├── radio-label.cpp
+│   │   │   │   ├── radio-label.hpp
+│   │   │   │   ├── source-edit.cpp
+│   │   │   │   ├── source-edit.hpp
+│   │   │   │   ├── tab-frame.cpp
+│   │   │   │   ├── tab-frame.hpp
+│   │   │   │   ├── tab-frame-item.cpp
+│   │   │   │   ├── tab-frame-item.hpp
+│   │   │   │   ├── table-view-cell.cpp
+│   │   │   │   ├── table-view-cell.hpp
+│   │   │   │   ├── table-view-column.cpp
+│   │   │   │   ├── table-view-column.hpp
+│   │   │   │   ├── table-view.cpp
+│   │   │   │   ├── table-view.hpp
+│   │   │   │   ├── table-view-item.cpp
+│   │   │   │   ├── table-view-item.hpp
+│   │   │   │   ├── text-edit.cpp
+│   │   │   │   ├── text-edit.hpp
+│   │   │   │   ├── tree-view.cpp
+│   │   │   │   ├── tree-view.hpp
+│   │   │   │   ├── tree-view-item.cpp
+│   │   │   │   ├── tree-view-item.hpp
+│   │   │   │   ├── vertical-scroll-bar.cpp
+│   │   │   │   ├── vertical-scroll-bar.hpp
+│   │   │   │   ├── vertical-slider.cpp
+│   │   │   │   ├── vertical-slider.hpp
+│   │   │   │   ├── viewport.cpp
+│   │   │   │   ├── viewport.hpp
+│   │   │   │   ├── widget.cpp
+│   │   │   │   └── widget.hpp
+│   │   │   ├── window.cpp
+│   │   │   └── window.hpp
+│   │   ├── hiro.cpp
+│   │   ├── hiro.hpp
+│   │   ├── platform
+│   │   │   ├── windows
+│   │   │   │   └── keyboard.hpp
+│   │   │   └── xorg
+│   │   │       └── keyboard.hpp
+│   │   ├── qt
+│   │   │   ├── action
+│   │   │   │   ├── action.cpp
+│   │   │   │   ├── action.hpp
+│   │   │   │   ├── menu-check-item.cpp
+│   │   │   │   ├── menu-check-item.hpp
+│   │   │   │   ├── menu.cpp
+│   │   │   │   ├── menu.hpp
+│   │   │   │   ├── menu-item.cpp
+│   │   │   │   ├── menu-item.hpp
+│   │   │   │   ├── menu-radio-item.cpp
+│   │   │   │   ├── menu-radio-item.hpp
+│   │   │   │   ├── menu-separator.cpp
+│   │   │   │   └── menu-separator.hpp
+│   │   │   ├── application.cpp
+│   │   │   ├── application.hpp
+│   │   │   ├── browser-window.cpp
+│   │   │   ├── browser-window.hpp
+│   │   │   ├── desktop.cpp
+│   │   │   ├── desktop.hpp
+│   │   │   ├── font.cpp
+│   │   │   ├── font.hpp
+│   │   │   ├── group.cpp
+│   │   │   ├── group.hpp
+│   │   │   ├── header.hpp
+│   │   │   ├── keyboard.cpp
+│   │   │   ├── keyboard.hpp
+│   │   │   ├── menu-bar.cpp
+│   │   │   ├── menu-bar.hpp
+│   │   │   ├── message-window.cpp
+│   │   │   ├── message-window.hpp
+│   │   │   ├── monitor.cpp
+│   │   │   ├── monitor.hpp
+│   │   │   ├── mouse.cpp
+│   │   │   ├── mouse.hpp
+│   │   │   ├── object.cpp
+│   │   │   ├── object.hpp
+│   │   │   ├── platform.cpp
+│   │   │   ├── platform.hpp
+│   │   │   ├── popup-menu.cpp
+│   │   │   ├── popup-menu.hpp
+│   │   │   ├── qt.hpp
+│   │   │   ├── qt.moc
+│   │   │   ├── settings.cpp
+│   │   │   ├── settings.hpp
+│   │   │   ├── sizable.cpp
+│   │   │   ├── sizable.hpp
+│   │   │   ├── status-bar.cpp
+│   │   │   ├── status-bar.hpp
+│   │   │   ├── timer.cpp
+│   │   │   ├── timer.hpp
+│   │   │   ├── utility.cpp
+│   │   │   ├── widget
+│   │   │   │   ├── button.cpp
+│   │   │   │   ├── button.hpp
+│   │   │   │   ├── canvas.cpp
+│   │   │   │   ├── canvas.hpp
+│   │   │   │   ├── check-button.cpp
+│   │   │   │   ├── check-button.hpp
+│   │   │   │   ├── check-label.cpp
+│   │   │   │   ├── check-label.hpp
+│   │   │   │   ├── combo-button.cpp
+│   │   │   │   ├── combo-button.hpp
+│   │   │   │   ├── combo-button-item.cpp
+│   │   │   │   ├── combo-button-item.hpp
+│   │   │   │   ├── frame.cpp
+│   │   │   │   ├── frame.hpp
+│   │   │   │   ├── hex-edit.cpp
+│   │   │   │   ├── hex-edit.hpp
+│   │   │   │   ├── horizontal-scroll-bar.cpp
+│   │   │   │   ├── horizontal-scroll-bar.hpp
+│   │   │   │   ├── horizontal-slider.cpp
+│   │   │   │   ├── horizontal-slider.hpp
+│   │   │   │   ├── label.cpp
+│   │   │   │   ├── label.hpp
+│   │   │   │   ├── line-edit.cpp
+│   │   │   │   ├── line-edit.hpp
+│   │   │   │   ├── progress-bar.cpp
+│   │   │   │   ├── progress-bar.hpp
+│   │   │   │   ├── radio-button.cpp
+│   │   │   │   ├── radio-button.hpp
+│   │   │   │   ├── radio-label.cpp
+│   │   │   │   ├── radio-label.hpp
+│   │   │   │   ├── tab-frame.cpp
+│   │   │   │   ├── tab-frame.hpp
+│   │   │   │   ├── tab-frame-item.cpp
+│   │   │   │   ├── tab-frame-item.hpp
+│   │   │   │   ├── table-view-cell.cpp
+│   │   │   │   ├── table-view-cell.hpp
+│   │   │   │   ├── table-view-column.cpp
+│   │   │   │   ├── table-view-column.hpp
+│   │   │   │   ├── table-view.cpp
+│   │   │   │   ├── table-view.hpp
+│   │   │   │   ├── table-view-item.cpp
+│   │   │   │   ├── table-view-item.hpp
+│   │   │   │   ├── text-edit.cpp
+│   │   │   │   ├── text-edit.hpp
+│   │   │   │   ├── vertical-scroll-bar.cpp
+│   │   │   │   ├── vertical-scroll-bar.hpp
+│   │   │   │   ├── vertical-slider.cpp
+│   │   │   │   ├── vertical-slider.hpp
+│   │   │   │   ├── viewport.cpp
+│   │   │   │   ├── viewport.hpp
+│   │   │   │   ├── widget.cpp
+│   │   │   │   └── widget.hpp
+│   │   │   ├── window.cpp
+│   │   │   └── window.hpp
+│   │   ├── resource
+│   │   │   ├── GNUmakefile
+│   │   │   ├── icon
+│   │   │   │   ├── action
+│   │   │   │   │   ├── add.png
+│   │   │   │   │   ├── attach.png
+│   │   │   │   │   ├── bookmark.png
+│   │   │   │   │   ├── close.png
+│   │   │   │   │   ├── full-screen.png
+│   │   │   │   │   ├── mute.png
+│   │   │   │   │   ├── new-file.png
+│   │   │   │   │   ├── new-folder.png
+│   │   │   │   │   ├── open.png
+│   │   │   │   │   ├── properties.png
+│   │   │   │   │   ├── quit.png
+│   │   │   │   │   ├── refresh.png
+│   │   │   │   │   ├── remove.png
+│   │   │   │   │   ├── save.png
+│   │   │   │   │   ├── search.png
+│   │   │   │   │   ├── settings.png
+│   │   │   │   │   └── stop.png
+│   │   │   │   ├── application
+│   │   │   │   │   ├── browser.png
+│   │   │   │   │   ├── calculator.png
+│   │   │   │   │   ├── calendar.png
+│   │   │   │   │   ├── chat.png
+│   │   │   │   │   ├── file-manager.png
+│   │   │   │   │   ├── mail.png
+│   │   │   │   │   ├── monitor.png
+│   │   │   │   │   ├── terminal.png
+│   │   │   │   │   └── text-editor.png
+│   │   │   │   ├── device
+│   │   │   │   │   ├── clock.png
+│   │   │   │   │   ├── display.png
+│   │   │   │   │   ├── joypad.png
+│   │   │   │   │   ├── keyboard.png
+│   │   │   │   │   ├── microphone.png
+│   │   │   │   │   ├── mouse.png
+│   │   │   │   │   ├── network.png
+│   │   │   │   │   ├── optical.png
+│   │   │   │   │   ├── printer.png
+│   │   │   │   │   ├── speaker.png
+│   │   │   │   │   └── storage.png
+│   │   │   │   ├── edit
+│   │   │   │   │   ├── clear.png
+│   │   │   │   │   ├── copy.png
+│   │   │   │   │   ├── cut.png
+│   │   │   │   │   ├── delete.png
+│   │   │   │   │   ├── find.png
+│   │   │   │   │   ├── paste.png
+│   │   │   │   │   ├── redo.png
+│   │   │   │   │   ├── replace.png
+│   │   │   │   │   └── undo.png
+│   │   │   │   ├── emblem
+│   │   │   │   │   ├── archive.png
+│   │   │   │   │   ├── audio.png
+│   │   │   │   │   ├── binary.png
+│   │   │   │   │   ├── file.png
+│   │   │   │   │   ├── folder-open.png
+│   │   │   │   │   ├── folder.png
+│   │   │   │   │   ├── folder-template.png
+│   │   │   │   │   ├── font.png
+│   │   │   │   │   ├── image.png
+│   │   │   │   │   ├── markup.png
+│   │   │   │   │   ├── program.png
+│   │   │   │   │   ├── script.png
+│   │   │   │   │   ├── text.png
+│   │   │   │   │   └── video.png
+│   │   │   │   ├── go
+│   │   │   │   │   ├── down.png
+│   │   │   │   │   ├── home.png
+│   │   │   │   │   ├── left.png
+│   │   │   │   │   ├── right.png
+│   │   │   │   │   └── up.png
+│   │   │   │   ├── media
+│   │   │   │   │   ├── back.png
+│   │   │   │   │   ├── eject.png
+│   │   │   │   │   ├── flash.png
+│   │   │   │   │   ├── floppy.png
+│   │   │   │   │   ├── next.png
+│   │   │   │   │   ├── optical.png
+│   │   │   │   │   ├── pause.png
+│   │   │   │   │   ├── play.png
+│   │   │   │   │   ├── record.png
+│   │   │   │   │   ├── rewind.png
+│   │   │   │   │   ├── skip.png
+│   │   │   │   │   └── stop.png
+│   │   │   │   ├── place
+│   │   │   │   │   ├── bookmarks.png
+│   │   │   │   │   ├── desktop.png
+│   │   │   │   │   ├── home.png
+│   │   │   │   │   ├── server.png
+│   │   │   │   │   ├── settings.png
+│   │   │   │   │   └── share.png
+│   │   │   │   └── prompt
+│   │   │   │       ├── error.png
+│   │   │   │       ├── information.png
+│   │   │   │       ├── question.png
+│   │   │   │       └── warning.png
+│   │   │   ├── resource.bml
+│   │   │   ├── resource.cpp
+│   │   │   └── resource.hpp
+│   │   └── windows
+│   │       ├── action
+│   │       │   ├── action.cpp
+│   │       │   ├── action.hpp
+│   │       │   ├── menu-check-item.cpp
+│   │       │   ├── menu-check-item.hpp
+│   │       │   ├── menu.cpp
+│   │       │   ├── menu.hpp
+│   │       │   ├── menu-item.cpp
+│   │       │   ├── menu-item.hpp
+│   │       │   ├── menu-radio-item.cpp
+│   │       │   ├── menu-radio-item.hpp
+│   │       │   ├── menu-separator.cpp
+│   │       │   └── menu-separator.hpp
+│   │       ├── application.cpp
+│   │       ├── application.hpp
+│   │       ├── browser-window.cpp
+│   │       ├── browser-window.hpp
+│   │       ├── desktop.cpp
+│   │       ├── desktop.hpp
+│   │       ├── font.cpp
+│   │       ├── font.hpp
+│   │       ├── group.cpp
+│   │       ├── group.hpp
+│   │       ├── header.hpp
+│   │       ├── hiro.Manifest
+│   │       ├── hiro.rc
+│   │       ├── keyboard.cpp
+│   │       ├── keyboard.hpp
+│   │       ├── menu-bar.cpp
+│   │       ├── menu-bar.hpp
+│   │       ├── message-window.cpp
+│   │       ├── message-window.hpp
+│   │       ├── monitor.cpp
+│   │       ├── monitor.hpp
+│   │       ├── mouse.cpp
+│   │       ├── mouse.hpp
+│   │       ├── object.cpp
+│   │       ├── object.hpp
+│   │       ├── platform.cpp
+│   │       ├── platform.hpp
+│   │       ├── popup-menu.cpp
+│   │       ├── popup-menu.hpp
+│   │       ├── settings.cpp
+│   │       ├── settings.hpp
+│   │       ├── sizable.cpp
+│   │       ├── sizable.hpp
+│   │       ├── status-bar.cpp
+│   │       ├── status-bar.hpp
+│   │       ├── timer.cpp
+│   │       ├── timer.hpp
+│   │       ├── tool-tip.cpp
+│   │       ├── tool-tip.hpp
+│   │       ├── utility.cpp
+│   │       ├── widget
+│   │       │   ├── button.cpp
+│   │       │   ├── button.hpp
+│   │       │   ├── canvas.cpp
+│   │       │   ├── canvas.hpp
+│   │       │   ├── check-button.cpp
+│   │       │   ├── check-button.hpp
+│   │       │   ├── check-label.cpp
+│   │       │   ├── check-label.hpp
+│   │       │   ├── combo-button.cpp
+│   │       │   ├── combo-button.hpp
+│   │       │   ├── combo-button-item.cpp
+│   │       │   ├── combo-button-item.hpp
+│   │       │   ├── frame.cpp
+│   │       │   ├── frame.hpp
+│   │       │   ├── hex-edit.cpp
+│   │       │   ├── hex-edit.hpp
+│   │       │   ├── horizontal-scroll-bar.cpp
+│   │       │   ├── horizontal-scroll-bar.hpp
+│   │       │   ├── horizontal-slider.cpp
+│   │       │   ├── horizontal-slider.hpp
+│   │       │   ├── label.cpp
+│   │       │   ├── label.hpp
+│   │       │   ├── line-edit.cpp
+│   │       │   ├── line-edit.hpp
+│   │       │   ├── progress-bar.cpp
+│   │       │   ├── progress-bar.hpp
+│   │       │   ├── radio-button.cpp
+│   │       │   ├── radio-button.hpp
+│   │       │   ├── radio-label.cpp
+│   │       │   ├── radio-label.hpp
+│   │       │   ├── tab-frame.cpp
+│   │       │   ├── tab-frame.hpp
+│   │       │   ├── tab-frame-item.cpp
+│   │       │   ├── tab-frame-item.hpp
+│   │       │   ├── table-view-cell.cpp
+│   │       │   ├── table-view-cell.hpp
+│   │       │   ├── table-view-column.cpp
+│   │       │   ├── table-view-column.hpp
+│   │       │   ├── table-view.cpp
+│   │       │   ├── table-view.hpp
+│   │       │   ├── table-view-item.cpp
+│   │       │   ├── table-view-item.hpp
+│   │       │   ├── text-edit.cpp
+│   │       │   ├── text-edit.hpp
+│   │       │   ├── vertical-scroll-bar.cpp
+│   │       │   ├── vertical-scroll-bar.hpp
+│   │       │   ├── vertical-slider.cpp
+│   │       │   ├── vertical-slider.hpp
+│   │       │   ├── viewport.cpp
+│   │       │   ├── viewport.hpp
+│   │       │   ├── widget.cpp
+│   │       │   └── widget.hpp
+│   │       ├── window.cpp
+│   │       └── window.hpp
+│   ├── libco
+│   │   ├── aarch64.c
+│   │   ├── amd64.c
+│   │   ├── arm.c
+│   │   ├── doc
+│   │   │   ├── style.css
+│   │   │   ├── targets.html
+│   │   │   └── usage.html
+│   │   ├── fiber.c
+│   │   ├── libco.c
+│   │   ├── libco.h
+│   │   ├── ppc64v2.c
+│   │   ├── ppc.c
+│   │   ├── settings.h
+│   │   ├── sjlj.c
+│   │   ├── ucontext.c
+│   │   └── x86.c
+│   ├── LICENSE
+│   ├── nall
+│   │   ├── adaptive-array.hpp
+│   │   ├── algorithm.hpp
+│   │   ├── any.hpp
+│   │   ├── arguments.hpp
+│   │   ├── arithmetic
+│   │   │   ├── barrett.hpp
+│   │   │   ├── natural.hpp
+│   │   │   └── unsigned.hpp
+│   │   ├── arithmetic.hpp
+│   │   ├── array.hpp
+│   │   ├── array-span.hpp
+│   │   ├── array-view.hpp
+│   │   ├── atoi.hpp
+│   │   ├── beat
+│   │   │   ├── archive
+│   │   │   │   ├── container.hpp
+│   │   │   │   ├── create.hpp
+│   │   │   │   ├── extract.hpp
+│   │   │   │   └── node.hpp
+│   │   │   └── single
+│   │   │       ├── apply.hpp
+│   │   │       └── create.hpp
+│   │   ├── bit.hpp
+│   │   ├── cd
+│   │   │   ├── crc16.hpp
+│   │   │   ├── edc.hpp
+│   │   │   ├── efm.hpp
+│   │   │   ├── rspc.hpp
+│   │   │   ├── scrambler.hpp
+│   │   │   ├── session.hpp
+│   │   │   └── sync.hpp
+│   │   ├── cd.hpp
+│   │   ├── chrono.hpp
+│   │   ├── cipher
+│   │   │   └── chacha20.hpp
+│   │   ├── counting-sort.hpp
+│   │   ├── database
+│   │   │   ├── odbc.hpp
+│   │   │   └── sqlite3.hpp
+│   │   ├── decode
+│   │   │   ├── base64.hpp
+│   │   │   ├── base.hpp
+│   │   │   ├── bmp.hpp
+│   │   │   ├── bwt.hpp
+│   │   │   ├── gzip.hpp
+│   │   │   ├── html.hpp
+│   │   │   ├── huffman.hpp
+│   │   │   ├── inflate.hpp
+│   │   │   ├── lzsa.hpp
+│   │   │   ├── mtf.hpp
+│   │   │   ├── png.hpp
+│   │   │   ├── rle.hpp
+│   │   │   ├── url.hpp
+│   │   │   └── zip.hpp
+│   │   ├── directory.hpp
+│   │   ├── dl.hpp
+│   │   ├── dsp
+│   │   │   ├── dsp.hpp
+│   │   │   ├── iir
+│   │   │   │   ├── biquad.hpp
+│   │   │   │   ├── dc-removal.hpp
+│   │   │   │   └── one-pole.hpp
+│   │   │   └── resampler
+│   │   │       └── cubic.hpp
+│   │   ├── elliptic-curve
+│   │   │   ├── curve25519.hpp
+│   │   │   ├── ed25519.hpp
+│   │   │   ├── modulo25519-optimized.hpp
+│   │   │   └── modulo25519-reference.hpp
+│   │   ├── emulation
+│   │   │   └── 21fx.hpp
+│   │   ├── encode
+│   │   │   ├── base64.hpp
+│   │   │   ├── base.hpp
+│   │   │   ├── bmp.hpp
+│   │   │   ├── bwt.hpp
+│   │   │   ├── html.hpp
+│   │   │   ├── huffman.hpp
+│   │   │   ├── lzsa.hpp
+│   │   │   ├── mtf.hpp
+│   │   │   ├── rle.hpp
+│   │   │   ├── url.hpp
+│   │   │   └── zip.hpp
+│   │   ├── endian.hpp
+│   │   ├── file-buffer.hpp
+│   │   ├── file.hpp
+│   │   ├── file-map.hpp
+│   │   ├── function.hpp
+│   │   ├── galois-field.hpp
+│   │   ├── GNUmakefile
+│   │   ├── hash
+│   │   │   ├── crc16.hpp
+│   │   │   ├── crc32.hpp
+│   │   │   ├── crc64.hpp
+│   │   │   ├── hash.hpp
+│   │   │   ├── sha224.hpp
+│   │   │   ├── sha256.hpp
+│   │   │   ├── sha384.hpp
+│   │   │   └── sha512.hpp
+│   │   ├── hashset.hpp
+│   │   ├── hid.hpp
+│   │   ├── horizon
+│   │   │   └── mman.hpp
+│   │   ├── http
+│   │   │   ├── client.hpp
+│   │   │   ├── message.hpp
+│   │   │   ├── request.hpp
+│   │   │   ├── response.hpp
+│   │   │   ├── role.hpp
+│   │   │   └── server.hpp
+│   │   ├── image
+│   │   │   ├── blend.hpp
+│   │   │   ├── core.hpp
+│   │   │   ├── fill.hpp
+│   │   │   ├── interpolation.hpp
+│   │   │   ├── load.hpp
+│   │   │   ├── scale.hpp
+│   │   │   ├── static.hpp
+│   │   │   └── utility.hpp
+│   │   ├── image.hpp
+│   │   ├── induced-sort.hpp
+│   │   ├── inline-if.hpp
+│   │   ├── inode.hpp
+│   │   ├── instance.hpp
+│   │   ├── interpolation.hpp
+│   │   ├── intrinsics.hpp
+│   │   ├── iterator.hpp
+│   │   ├── literals.hpp
+│   │   ├── locale.hpp
+│   │   ├── location.hpp
+│   │   ├── mac
+│   │   │   └── poly1305.hpp
+│   │   ├── macos
+│   │   │   └── guard.hpp
+│   │   ├── main.hpp
+│   │   ├── map.hpp
+│   │   ├── matrix.hpp
+│   │   ├── matrix-multiply.hpp
+│   │   ├── maybe.hpp
+│   │   ├── memory.hpp
+│   │   ├── merge-sort.hpp
+│   │   ├── nall.hpp
+│   │   ├── path.hpp
+│   │   ├── platform.hpp
+│   │   ├── pointer.hpp
+│   │   ├── posix
+│   │   │   ├── service.hpp
+│   │   │   └── shared-memory.hpp
+│   │   ├── primitives
+│   │   │   ├── bit-field.hpp
+│   │   │   ├── bit-range.hpp
+│   │   │   ├── boolean.hpp
+│   │   │   ├── integer.hpp
+│   │   │   ├── literals.hpp
+│   │   │   ├── natural.hpp
+│   │   │   ├── real.hpp
+│   │   │   └── types.hpp
+│   │   ├── primitives.hpp
+│   │   ├── property.hpp
+│   │   ├── queue.hpp
+│   │   ├── random.hpp
+│   │   ├── range.hpp
+│   │   ├── reed-solomon.hpp
+│   │   ├── run.hpp
+│   │   ├── serial.hpp
+│   │   ├── serializer.hpp
+│   │   ├── service.hpp
+│   │   ├── set.hpp
+│   │   ├── shared-memory.hpp
+│   │   ├── shared-pointer.hpp
+│   │   ├── simd.hpp
+│   │   ├── smtp.hpp
+│   │   ├── stdint.hpp
+│   │   ├── string
+│   │   │   ├── allocator
+│   │   │   │   ├── adaptive.hpp
+│   │   │   │   ├── copy-on-write.hpp
+│   │   │   │   ├── small-string-optimization.hpp
+│   │   │   │   └── vector.hpp
+│   │   │   ├── atoi.hpp
+│   │   │   ├── cast.hpp
+│   │   │   ├── compare.hpp
+│   │   │   ├── convert.hpp
+│   │   │   ├── core.hpp
+│   │   │   ├── eval
+│   │   │   │   ├── evaluator.hpp
+│   │   │   │   ├── literal.hpp
+│   │   │   │   ├── node.hpp
+│   │   │   │   └── parser.hpp
+│   │   │   ├── find.hpp
+│   │   │   ├── format.hpp
+│   │   │   ├── markup
+│   │   │   │   ├── bml.hpp
+│   │   │   │   ├── find.hpp
+│   │   │   │   ├── node.hpp
+│   │   │   │   └── xml.hpp
+│   │   │   ├── match.hpp
+│   │   │   ├── pascal.hpp
+│   │   │   ├── replace.hpp
+│   │   │   ├── split.hpp
+│   │   │   ├── transform
+│   │   │   │   ├── cml.hpp
+│   │   │   │   └── dml.hpp
+│   │   │   ├── trim.hpp
+│   │   │   ├── utf8.hpp
+│   │   │   ├── utility.hpp
+│   │   │   ├── vector.hpp
+│   │   │   └── view.hpp
+│   │   ├── string.hpp
+│   │   ├── suffix-array.hpp
+│   │   ├── terminal.hpp
+│   │   ├── thread.hpp
+│   │   ├── traits.hpp
+│   │   ├── unique-pointer.hpp
+│   │   ├── utility.hpp
+│   │   ├── variant.hpp
+│   │   ├── varint.hpp
+│   │   ├── vector
+│   │   │   ├── access.hpp
+│   │   │   ├── assign.hpp
+│   │   │   ├── compare.hpp
+│   │   │   ├── core.hpp
+│   │   │   ├── iterator.hpp
+│   │   │   ├── memory.hpp
+│   │   │   ├── modify.hpp
+│   │   │   ├── specialization
+│   │   │   │   └── uint8_t.hpp
+│   │   │   └── utility.hpp
+│   │   ├── vector.hpp
+│   │   ├── vfs
+│   │   │   ├── fs
+│   │   │   │   └── file.hpp
+│   │   │   ├── memory
+│   │   │   │   └── file.hpp
+│   │   │   └── vfs.hpp
+│   │   ├── vfs.hpp
+│   │   ├── view.hpp
+│   │   ├── windows
+│   │   │   ├── detour.hpp
+│   │   │   ├── guard.hpp
+│   │   │   ├── guid.hpp
+│   │   │   ├── launcher.hpp
+│   │   │   ├── registry.hpp
+│   │   │   ├── service.hpp
+│   │   │   ├── shared-memory.hpp
+│   │   │   └── utf8.hpp
+│   │   └── xorg
+│   │       ├── clipboard.hpp
+│   │       ├── guard.hpp
+│   │       └── xorg.hpp
+│   ├── pack
+│   │   ├── Database
+│   │   │   ├── BS Memory.bml
+│   │   │   ├── Cheat Codes.bml
+│   │   │   ├── Sufami Turbo.bml
+│   │   │   └── Super Famicom.bml
+│   │   ├── Firmware
+│   │   │   └── place_firmware_roms_here
+│   │   ├── gamefixes
+│   │   │   ├── HyperZone.bso
+│   │   │   ├── readme.txt
+│   │   │   ├── R-Type III.bso
+│   │   │   ├── Super Mario World.bso
+│   │   │   ├── Super Metroid widescreen patch
+│   │   │   │   ├── readme.txt
+│   │   │   │   ├── Super Metroid WS.bps
+│   │   │   │   └── Super Metroid WS.bso
+│   │   │   ├── Super Punch Out.bso
+│   │   │   └── Top Gear 2.bso
+│   │   ├── GPLv3.txt
+│   │   ├── settings.bml
+│   │   └── Shaders
+│   │       ├── AANN.shader
+│   │       │   ├── AANN.fs
+│   │       │   └── manifest.bml
+│   │       ├── CRT-Geom.shader
+│   │       │   ├── crt-geom.fs
+│   │       │   ├── crt-geom.vs
+│   │       │   ├── curvature.fs
+│   │       │   └── manifest.bml
+│   │       ├── CRT-Glow.shader
+│   │       │   ├── blur_horiz.fs
+│   │       │   ├── blur_horiz.vs
+│   │       │   ├── blur_vert.fs
+│   │       │   ├── blur_vert.vs
+│   │       │   ├── gauss_horiz.fs
+│   │       │   ├── gauss_horiz.vs
+│   │       │   ├── gauss_vert.fs
+│   │       │   ├── gauss_vert.vs
+│   │       │   ├── lanczos_horiz.fs
+│   │       │   ├── lanczos_horiz.vs
+│   │       │   ├── linearize.fs
+│   │       │   ├── linearize.vs
+│   │       │   ├── manifest.bml
+│   │       │   ├── resolve.fs
+│   │       │   ├── resolve.vs
+│   │       │   ├── threshold.fs
+│   │       │   └── threshold.vs
+│   │       ├── CRT-Lottes.shader
+│   │       │   ├── bloompass.fs
+│   │       │   ├── bloompass.vs
+│   │       │   ├── manifest.bml
+│   │       │   ├── scanpass.fs
+│   │       │   └── scanpass.vs
+│   │       ├── CRT-Royale.shader
+│   │       │   ├── bloom-approx.fs
+│   │       │   ├── bloom-approx.vs
+│   │       │   ├── bloom-horizontal-reconstitute.fs
+│   │       │   ├── bloom-horizontal-reconstitute.vs
+│   │       │   ├── bloom-vertical.fs
+│   │       │   ├── bloom-vertical.vs
+│   │       │   ├── blur9fast-horizontal.fs
+│   │       │   ├── blur9fast-horizontal.vs
+│   │       │   ├── blur9fast-vertical.fs
+│   │       │   ├── blur9fast-vertical.vs
+│   │       │   ├── brightpass.fs
+│   │       │   ├── brightpass.vs
+│   │       │   ├── first-pass-linearize-crt-gamma-bob-fields.fs
+│   │       │   ├── first-pass-linearize-crt-gamma-bob-fields.vs
+│   │       │   ├── geometry-aa-last-pass.fs
+│   │       │   ├── geometry-aa-last-pass.vs
+│   │       │   ├── manifest.bml
+│   │       │   ├── mask-resize-horizontal.fs
+│   │       │   ├── mask-resize-horizontal.vs
+│   │       │   ├── mask-resize-vertical.fs
+│   │       │   ├── mask-resize-vertical.vs
+│   │       │   ├── scanlines-horizontal-apply-mask.fs
+│   │       │   ├── scanlines-horizontal-apply-mask.vs
+│   │       │   ├── scanlines-vertical-interlacing.fs
+│   │       │   ├── scanlines-vertical-interlacing.vs
+│   │       │   └── textures
+│   │       │       ├── TileableLinearApertureGrille15Wide8And5d5Spacing.png
+│   │       │       ├── TileableLinearApertureGrille15Wide8And5d5SpacingResizeTo64.png
+│   │       │       ├── TileableLinearShadowMaskEDP.png
+│   │       │       ├── TileableLinearShadowMaskEDPResizeTo64.png
+│   │       │       ├── TileableLinearShadowMask.png
+│   │       │       ├── TileableLinearShadowMaskResizeTo64.png
+│   │       │       ├── TileableLinearSlotMaskTall15Wide9And4d5Horizontal9d14VerticalSpacing.png
+│   │       │       └── TileableLinearSlotMaskTall15Wide9And4d5Horizontal9d14VerticalSpacingResizeTo64.png
+│   │       ├── GTU.shader
+│   │       │   ├── GTU-pass1.fs
+│   │       │   ├── GTU-pass2.fs
+│   │       │   ├── GTU-pass2.vs
+│   │       │   ├── GTU-pass3.fs
+│   │       │   ├── GTU-pass4.fs
+│   │       │   ├── GTU-pass4.vs
+│   │       │   └── manifest.bml
+│   │       ├── LCD-cgwg.shader
+│   │       │   ├── lcd-grid.fs
+│   │       │   ├── manifest.bml
+│   │       │   └── motion-blur.fs
+│   │       ├── MDAPT-Dedithering.shader
+│   │       │   ├── manifest.bml
+│   │       │   ├── mdapt-pass1.fs
+│   │       │   ├── mdapt-pass2.fs
+│   │       │   ├── mdapt-pass3.fs
+│   │       │   └── mdapt-pass4.fs
+│   │       ├── NTSC-MAME.shader
+│   │       │   ├── mame-ntsc.fs
+│   │       │   ├── mame-ntsc.vs
+│   │       │   ├── mame-postproc.fs
+│   │       │   ├── mame-postproc.vs
+│   │       │   └── manifest.bml
+│   │       ├── NTSC.shader
+│   │       │   ├── gaussian-scanlines.fs
+│   │       │   ├── manifest.bml
+│   │       │   ├── ntsc-pass1.fs
+│   │       │   └── ntsc-pass2.fs
+│   │       ├── PAL-Composite.shader
+│   │       │   ├── manifest.bml
+│   │       │   └── pal-r57shell.fs
+│   │       ├── Pixellate.shader
+│   │       │   ├── manifest.bml
+│   │       │   └── pixellate.fs
+│   │       ├── Retro.shader
+│   │       │   ├── gamma.fs
+│   │       │   ├── manifest.bml
+│   │       │   └── retro.fs
+│   │       ├── ScaleFX.shader
+│   │       │   ├── advanced-aa.fs
+│   │       │   ├── advanced-aa.vs
+│   │       │   ├── manifest.bml
+│   │       │   ├── scalefx-pass0.fs
+│   │       │   ├── scalefx-pass0.vs
+│   │       │   ├── scalefx-pass1.fs
+│   │       │   ├── scalefx-pass1.vs
+│   │       │   ├── scalefx-pass2.fs
+│   │       │   ├── scalefx-pass2.vs
+│   │       │   ├── scalefx-pass3.fs
+│   │       │   ├── scalefx-pass3.vs
+│   │       │   ├── scalefx-pass4.fs
+│   │       │   └── scalefx-pass4.vs
+│   │       ├── Sharp-Bilinear.shader
+│   │       │   ├── manifest.bml
+│   │       │   └── sharp-bilinear.fs
+│   │       ├── xBR-mode7-480p.shader
+│   │       │   ├── custom-jinc2-sharper.fs
+│   │       │   ├── manifest.bml
+│   │       │   ├── super-2xbr-3d-pass0.fs
+│   │       │   ├── super-2xbr-3d-pass1.fs
+│   │       │   ├── super-2xbr-3d-pass2.fs
+│   │       │   └── super-2xbr-3d-pass2.vs
+│   │       ├── xBR-mode7-960p.shader
+│   │       │   ├── custom-jinc2-sharper.fs
+│   │       │   ├── manifest.bml
+│   │       │   ├── super-4xbr-3d-pass0.fs
+│   │       │   ├── super-4xbr-3d-pass1.fs
+│   │       │   ├── super-4xbr-3d-pass2.fs
+│   │       │   └── super-4xbr-3d-pass3.fs
+│   │       └── xBRZ.shader
+│   │           ├── fxaa.fs
+│   │           ├── manifest.bml
+│   │           ├── xBRZ-Freescale-p0.fs
+│   │           └── xBRZ-Freescale-p1.fs
+│   ├── README.md
+│   ├── ruby
+│   │   ├── audio
+│   │   │   ├── alsa.cpp
+│   │   │   ├── ao.cpp
+│   │   │   ├── asio.cpp
+│   │   │   ├── asio.hpp
+│   │   │   ├── audio.cpp
+│   │   │   ├── audio.hpp
+│   │   │   ├── directsound.cpp
+│   │   │   ├── openal.cpp
+│   │   │   ├── oss.cpp
+│   │   │   ├── pulseaudio.cpp
+│   │   │   ├── pulseaudio-simple.cpp
+│   │   │   ├── wasapi.cpp
+│   │   │   ├── waveout.cpp
+│   │   │   ├── xaudio2.cpp
+│   │   │   └── xaudio2.hpp
+│   │   ├── GNUmakefile
+│   │   ├── input
+│   │   │   ├── carbon.cpp
+│   │   │   ├── input.cpp
+│   │   │   ├── input.hpp
+│   │   │   ├── joypad
+│   │   │   │   ├── directinput.cpp
+│   │   │   │   ├── iokit.cpp
+│   │   │   │   ├── sdl.cpp
+│   │   │   │   ├── udev.cpp
+│   │   │   │   └── xinput.cpp
+│   │   │   ├── keyboard
+│   │   │   │   ├── carbon.cpp
+│   │   │   │   ├── quartz.cpp
+│   │   │   │   ├── rawinput.cpp
+│   │   │   │   └── xlib.cpp
+│   │   │   ├── mouse
+│   │   │   │   ├── rawinput.cpp
+│   │   │   │   └── xlib.cpp
+│   │   │   ├── quartz.cpp
+│   │   │   ├── sdl.cpp
+│   │   │   ├── shared
+│   │   │   │   └── rawinput.cpp
+│   │   │   ├── udev.cpp
+│   │   │   ├── windows.cpp
+│   │   │   └── xlib.cpp
+│   │   ├── ruby.cpp
+│   │   ├── ruby.hpp
+│   │   └── video
+│   │       ├── cgl.cpp
+│   │       ├── direct3d.cpp
+│   │       ├── directdraw.cpp
+│   │       ├── gdi.cpp
+│   │       ├── glx2.cpp
+│   │       ├── glx.cpp
+│   │       ├── opengl
+│   │       │   ├── bind.hpp
+│   │       │   ├── main.hpp
+│   │       │   ├── opengl.hpp
+│   │       │   ├── program.hpp
+│   │       │   ├── shaders.hpp
+│   │       │   ├── surface.hpp
+│   │       │   ├── texture.hpp
+│   │       │   └── utility.hpp
+│   │       ├── video.cpp
+│   │       ├── video.hpp
+│   │       ├── wgl.cpp
+│   │       ├── xshm.cpp
+│   │       └── xvideo.cpp
+│   ├── shaders
+│   │   ├── AANN.shader
+│   │   │   ├── AANN.fs
+│   │   │   └── manifest.bml
+│   │   ├── CRT-Geom.shader
+│   │   │   ├── crt-geom.fs
+│   │   │   ├── crt-geom.vs
+│   │   │   ├── curvature.fs
+│   │   │   └── manifest.bml
+│   │   ├── CRT-Glow.shader
+│   │   │   ├── blur_horiz.fs
+│   │   │   ├── blur_horiz.vs
+│   │   │   ├── blur_vert.fs
+│   │   │   ├── blur_vert.vs
+│   │   │   ├── gauss_horiz.fs
+│   │   │   ├── gauss_horiz.vs
+│   │   │   ├── gauss_vert.fs
+│   │   │   ├── gauss_vert.vs
+│   │   │   ├── lanczos_horiz.fs
+│   │   │   ├── lanczos_horiz.vs
+│   │   │   ├── linearize.fs
+│   │   │   ├── linearize.vs
+│   │   │   ├── manifest.bml
+│   │   │   ├── resolve.fs
+│   │   │   ├── resolve.vs
+│   │   │   ├── threshold.fs
+│   │   │   └── threshold.vs
+│   │   ├── CRT-Lottes.shader
+│   │   │   ├── bloompass.fs
+│   │   │   ├── bloompass.vs
+│   │   │   ├── manifest.bml
+│   │   │   ├── scanpass.fs
+│   │   │   └── scanpass.vs
+│   │   ├── CRT-Royale.shader
+│   │   │   ├── bloom-approx.fs
+│   │   │   ├── bloom-approx.vs
+│   │   │   ├── bloom-horizontal-reconstitute.fs
+│   │   │   ├── bloom-horizontal-reconstitute.vs
+│   │   │   ├── bloom-vertical.fs
+│   │   │   ├── bloom-vertical.vs
+│   │   │   ├── blur9fast-horizontal.fs
+│   │   │   ├── blur9fast-horizontal.vs
+│   │   │   ├── blur9fast-vertical.fs
+│   │   │   ├── blur9fast-vertical.vs
+│   │   │   ├── brightpass.fs
+│   │   │   ├── brightpass.vs
+│   │   │   ├── first-pass-linearize-crt-gamma-bob-fields.fs
+│   │   │   ├── first-pass-linearize-crt-gamma-bob-fields.vs
+│   │   │   ├── geometry-aa-last-pass.fs
+│   │   │   ├── geometry-aa-last-pass.vs
+│   │   │   ├── manifest.bml
+│   │   │   ├── mask-resize-horizontal.fs
+│   │   │   ├── mask-resize-horizontal.vs
+│   │   │   ├── mask-resize-vertical.fs
+│   │   │   ├── mask-resize-vertical.vs
+│   │   │   ├── scanlines-horizontal-apply-mask.fs
+│   │   │   ├── scanlines-horizontal-apply-mask.vs
+│   │   │   ├── scanlines-vertical-interlacing.fs
+│   │   │   ├── scanlines-vertical-interlacing.vs
+│   │   │   └── textures
+│   │   │       ├── TileableLinearApertureGrille15Wide8And5d5Spacing.png
+│   │   │       ├── TileableLinearApertureGrille15Wide8And5d5SpacingResizeTo64.png
+│   │   │       ├── TileableLinearShadowMaskEDP.png
+│   │   │       ├── TileableLinearShadowMaskEDPResizeTo64.png
+│   │   │       ├── TileableLinearShadowMask.png
+│   │   │       ├── TileableLinearShadowMaskResizeTo64.png
+│   │   │       ├── TileableLinearSlotMaskTall15Wide9And4d5Horizontal9d14VerticalSpacing.png
+│   │   │       └── TileableLinearSlotMaskTall15Wide9And4d5Horizontal9d14VerticalSpacingResizeTo64.png
+│   │   ├── GTU.shader
+│   │   │   ├── GTU-pass1.fs
+│   │   │   ├── GTU-pass2.fs
+│   │   │   ├── GTU-pass2.vs
+│   │   │   ├── GTU-pass3.fs
+│   │   │   ├── GTU-pass4.fs
+│   │   │   ├── GTU-pass4.vs
+│   │   │   └── manifest.bml
+│   │   ├── LCD-cgwg.shader
+│   │   │   ├── lcd-grid.fs
+│   │   │   ├── manifest.bml
+│   │   │   └── motion-blur.fs
+│   │   ├── MDAPT-Dedithering.shader
+│   │   │   ├── manifest.bml
+│   │   │   ├── mdapt-pass1.fs
+│   │   │   ├── mdapt-pass2.fs
+│   │   │   ├── mdapt-pass3.fs
+│   │   │   └── mdapt-pass4.fs
+│   │   ├── NTSC-MAME.shader
+│   │   │   ├── mame-ntsc.fs
+│   │   │   ├── mame-ntsc.vs
+│   │   │   ├── mame-postproc.fs
+│   │   │   ├── mame-postproc.vs
+│   │   │   └── manifest.bml
+│   │   ├── NTSC.shader
+│   │   │   ├── gaussian-scanlines.fs
+│   │   │   ├── manifest.bml
+│   │   │   ├── ntsc-pass1.fs
+│   │   │   └── ntsc-pass2.fs
+│   │   ├── PAL-Composite.shader
+│   │   │   ├── manifest.bml
+│   │   │   └── pal-r57shell.fs
+│   │   ├── Pixellate.shader
+│   │   │   ├── manifest.bml
+│   │   │   └── pixellate.fs
+│   │   ├── Retro.shader
+│   │   │   ├── gamma.fs
+│   │   │   ├── manifest.bml
+│   │   │   └── retro.fs
+│   │   ├── ScaleFX.shader
+│   │   │   ├── advanced-aa.fs
+│   │   │   ├── advanced-aa.vs
+│   │   │   ├── manifest.bml
+│   │   │   ├── scalefx-pass0.fs
+│   │   │   ├── scalefx-pass0.vs
+│   │   │   ├── scalefx-pass1.fs
+│   │   │   ├── scalefx-pass1.vs
+│   │   │   ├── scalefx-pass2.fs
+│   │   │   ├── scalefx-pass2.vs
+│   │   │   ├── scalefx-pass3.fs
+│   │   │   ├── scalefx-pass3.vs
+│   │   │   ├── scalefx-pass4.fs
+│   │   │   └── scalefx-pass4.vs
+│   │   ├── Sharp-Bilinear.shader
+│   │   │   ├── manifest.bml
+│   │   │   └── sharp-bilinear.fs
+│   │   ├── xBR-mode7-480p.shader
+│   │   │   ├── custom-jinc2-sharper.fs
+│   │   │   ├── manifest.bml
+│   │   │   ├── super-2xbr-3d-pass0.fs
+│   │   │   ├── super-2xbr-3d-pass1.fs
+│   │   │   ├── super-2xbr-3d-pass2.fs
+│   │   │   └── super-2xbr-3d-pass2.vs
+│   │   ├── xBR-mode7-960p.shader
+│   │   │   ├── custom-jinc2-sharper.fs
+│   │   │   ├── manifest.bml
+│   │   │   ├── super-4xbr-3d-pass0.fs
+│   │   │   ├── super-4xbr-3d-pass1.fs
+│   │   │   ├── super-4xbr-3d-pass2.fs
+│   │   │   └── super-4xbr-3d-pass3.fs
+│   │   └── xBRZ.shader
+│   │       ├── fxaa.fs
+│   │       ├── manifest.bml
+│   │       ├── xBRZ-Freescale-p0.fs
+│   │       └── xBRZ-Freescale-p1.fs
+│   └── sourcery
+│       ├── GNUmakefile
+│       ├── obj
+│       ├── out
+│       └── sourcery.cpp
+└── libretro-bsnes-hd-flags.patch -> /home/felix/packages/libretro-bsnes-hd/libretro-bsnes-hd-flags.patch
+
+206 directories, 1707 files

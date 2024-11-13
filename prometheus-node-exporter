@@ -1,0 +1,413 @@
+src
+├── node_exporter-1.8.2
+│   ├── CHANGELOG.md
+│   ├── checkmetrics.sh
+│   ├── CODE_OF_CONDUCT.md
+│   ├── collector
+│   │   ├── arp_linux.go
+│   │   ├── bcache_linux.go
+│   │   ├── bonding_linux.go
+│   │   ├── bonding_linux_test.go
+│   │   ├── boot_time_bsd.go
+│   │   ├── boot_time_solaris.go
+│   │   ├── btrfs_linux.go
+│   │   ├── btrfs_linux_test.go
+│   │   ├── buddyinfo.go
+│   │   ├── cgroups_linux.go
+│   │   ├── collector.go
+│   │   ├── conntrack_linux.go
+│   │   ├── cpu_common.go
+│   │   ├── cpu_darwin.go
+│   │   ├── cpu_dragonfly.go
+│   │   ├── cpu_dragonfly_test.go
+│   │   ├── cpu_freebsd.go
+│   │   ├── cpufreq_common.go
+│   │   ├── cpufreq_linux.go
+│   │   ├── cpufreq_solaris.go
+│   │   ├── cpu_linux.go
+│   │   ├── cpu_linux_test.go
+│   │   ├── cpu_netbsd.go
+│   │   ├── cpu_netbsd_test.go
+│   │   ├── cpu_openbsd.go
+│   │   ├── cpu_solaris.go
+│   │   ├── cpu_vulnerabilities_linux.go
+│   │   ├── device_filter.go
+│   │   ├── device_filter_test.go
+│   │   ├── devstat_dragonfly.go
+│   │   ├── devstat_freebsd.c
+│   │   ├── devstat_freebsd.go
+│   │   ├── devstat_freebsd.h
+│   │   ├── diskstats_common.go
+│   │   ├── diskstats_darwin.go
+│   │   ├── diskstats_linux.go
+│   │   ├── diskstats_linux_test.go
+│   │   ├── diskstats_openbsd_amd64.go
+│   │   ├── diskstats_openbsd.go
+│   │   ├── dmi.go
+│   │   ├── drbd_linux.go
+│   │   ├── drm_linux.go
+│   │   ├── edac_linux.go
+│   │   ├── entropy_linux.go
+│   │   ├── ethtool_linux.go
+│   │   ├── ethtool_linux_test.go
+│   │   ├── exec_bsd.go
+│   │   ├── fibrechannel_linux.go
+│   │   ├── filefd_linux.go
+│   │   ├── filefd_linux_test.go
+│   │   ├── filesystem_bsd.go
+│   │   ├── filesystem_common.go
+│   │   ├── filesystem_freebsd.go
+│   │   ├── filesystem_linux.go
+│   │   ├── filesystem_linux_test.go
+│   │   ├── filesystem_openbsd.go
+│   │   ├── fixtures
+│   │   │   ├── e2e-64k-page-output.txt
+│   │   │   ├── e2e-output.txt
+│   │   │   ├── ethtool
+│   │   │   │   ├── bond0
+│   │   │   │   │   └── statistics
+│   │   │   │   └── eth0
+│   │   │   │       ├── driver
+│   │   │   │       ├── settings
+│   │   │   │       └── statistics
+│   │   │   ├── ip_vs_result_lbs_local_address_local_port.txt
+│   │   │   ├── ip_vs_result_lbs_local_port.txt
+│   │   │   ├── ip_vs_result_lbs_none.txt
+│   │   │   ├── ip_vs_result.txt
+│   │   │   ├── proc
+│   │   │   │   ├── 1
+│   │   │   │   │   ├── mounts
+│   │   │   │   │   └── stat
+│   │   │   │   ├── 10
+│   │   │   │   │   ├── mountinfo
+│   │   │   │   │   ├── mountstats
+│   │   │   │   │   └── stat
+│   │   │   │   ├── 11
+│   │   │   │   │   └── stat
+│   │   │   │   ├── buddyinfo
+│   │   │   │   ├── cgroups
+│   │   │   │   ├── cpuinfo
+│   │   │   │   ├── diskstats
+│   │   │   │   ├── drbd
+│   │   │   │   ├── interrupts
+│   │   │   │   ├── interrupts_aarch64
+│   │   │   │   ├── loadavg
+│   │   │   │   ├── mdstat
+│   │   │   │   ├── meminfo
+│   │   │   │   ├── net
+│   │   │   │   │   ├── arp
+│   │   │   │   │   ├── ip_vs
+│   │   │   │   │   ├── ip_vs_stats
+│   │   │   │   │   ├── netstat
+│   │   │   │   │   ├── rpc
+│   │   │   │   │   │   ├── nfs
+│   │   │   │   │   │   └── nfsd
+│   │   │   │   │   ├── snmp
+│   │   │   │   │   ├── snmp6
+│   │   │   │   │   ├── sockstat
+│   │   │   │   │   ├── sockstat6
+│   │   │   │   │   ├── softnet_stat
+│   │   │   │   │   ├── stat
+│   │   │   │   │   │   ├── arp_cache
+│   │   │   │   │   │   ├── ndisc_cache
+│   │   │   │   │   │   └── nf_conntrack
+│   │   │   │   │   ├── udp
+│   │   │   │   │   └── xfrm_stat
+│   │   │   │   ├── pressure
+│   │   │   │   │   ├── cpu
+│   │   │   │   │   ├── io
+│   │   │   │   │   └── memory
+│   │   │   │   ├── schedstat
+│   │   │   │   ├── self -> 10
+│   │   │   │   ├── slabinfo
+│   │   │   │   ├── softirqs
+│   │   │   │   ├── spl
+│   │   │   │   │   └── kstat
+│   │   │   │   │       └── zfs
+│   │   │   │   │           ├── abdstats
+│   │   │   │   │           ├── arcstats
+│   │   │   │   │           ├── dbufstats
+│   │   │   │   │           ├── dmu_tx
+│   │   │   │   │           ├── dnodestats
+│   │   │   │   │           ├── fm
+│   │   │   │   │           ├── pool1
+│   │   │   │   │           │   ├── io
+│   │   │   │   │           │   ├── objset-1
+│   │   │   │   │           │   ├── objset-2
+│   │   │   │   │           │   └── state
+│   │   │   │   │           ├── pool2
+│   │   │   │   │           │   └── state
+│   │   │   │   │           ├── poolz1
+│   │   │   │   │           │   ├── io
+│   │   │   │   │           │   ├── objset-1
+│   │   │   │   │           │   ├── objset-2
+│   │   │   │   │           │   └── state
+│   │   │   │   │           ├── vdev_cache_stats
+│   │   │   │   │           ├── vdev_mirror_stats
+│   │   │   │   │           ├── xuio_stats
+│   │   │   │   │           ├── zfetchstats
+│   │   │   │   │           └── zil
+│   │   │   │   ├── stat
+│   │   │   │   ├── sys
+│   │   │   │   │   ├── fs
+│   │   │   │   │   │   └── file-nr
+│   │   │   │   │   ├── kernel
+│   │   │   │   │   │   ├── pid_max
+│   │   │   │   │   │   ├── random
+│   │   │   │   │   │   │   ├── entropy_avail
+│   │   │   │   │   │   │   └── poolsize
+│   │   │   │   │   │   ├── seccomp
+│   │   │   │   │   │   │   └── actions_avail
+│   │   │   │   │   │   └── threads-max
+│   │   │   │   │   ├── net
+│   │   │   │   │   │   └── netfilter
+│   │   │   │   │   │       ├── nf_conntrack_count
+│   │   │   │   │   │       └── nf_conntrack_max
+│   │   │   │   │   ├── pid_max
+│   │   │   │   │   └── threads-max
+│   │   │   │   ├── vmstat
+│   │   │   │   └── zoneinfo
+│   │   │   ├── qdisc
+│   │   │   │   └── results.json
+│   │   │   ├── sys.ttar
+│   │   │   ├── textfile
+│   │   │   │   ├── client_side_timestamp
+│   │   │   │   │   └── metrics.prom
+│   │   │   │   ├── client_side_timestamp.out
+│   │   │   │   ├── different_metric_types
+│   │   │   │   │   └── metrics.prom
+│   │   │   │   ├── different_metric_types.out
+│   │   │   │   ├── glob_extra_dimension.out
+│   │   │   │   ├── histogram
+│   │   │   │   │   └── metrics.prom
+│   │   │   │   ├── histogram_extra_dimension
+│   │   │   │   │   └── metrics.prom
+│   │   │   │   ├── histogram_extra_dimension.out
+│   │   │   │   ├── histogram.out
+│   │   │   │   ├── inconsistent_metrics
+│   │   │   │   │   └── metrics.prom
+│   │   │   │   ├── inconsistent_metrics.out
+│   │   │   │   ├── metrics_merge_different_help
+│   │   │   │   │   ├── a.prom
+│   │   │   │   │   └── b.prom
+│   │   │   │   ├── metrics_merge_different_help.out
+│   │   │   │   ├── metrics_merge_empty_help
+│   │   │   │   │   ├── a.prom
+│   │   │   │   │   └── b.prom
+│   │   │   │   ├── metrics_merge_empty_help.out
+│   │   │   │   ├── metrics_merge_no_help
+│   │   │   │   │   ├── a.prom
+│   │   │   │   │   └── b.prom
+│   │   │   │   ├── metrics_merge_no_help.out
+│   │   │   │   ├── metrics_merge_same_help
+│   │   │   │   │   ├── a.prom
+│   │   │   │   │   └── b.prom
+│   │   │   │   ├── metrics_merge_same_help.out
+│   │   │   │   ├── no_metric_files
+│   │   │   │   │   └── non_matching_file.txt
+│   │   │   │   ├── no_metric_files.out
+│   │   │   │   ├── nonexistent_path.out
+│   │   │   │   ├── summary
+│   │   │   │   │   └── metrics.prom
+│   │   │   │   ├── summary_extra_dimension
+│   │   │   │   │   └── metrics.prom
+│   │   │   │   ├── summary_extra_dimension.out
+│   │   │   │   ├── summary.out
+│   │   │   │   ├── two_metric_files
+│   │   │   │   │   ├── metrics1.prom
+│   │   │   │   │   ├── metrics2.prom
+│   │   │   │   │   └── non_matching_file.txt
+│   │   │   │   └── two_metric_files.out
+│   │   │   ├── udev.ttar
+│   │   │   ├── usr
+│   │   │   │   └── lib
+│   │   │   │       └── os-release
+│   │   │   └── wifi
+│   │   │       ├── interfaces.json
+│   │   │       └── wlan0
+│   │   │           ├── bss.json
+│   │   │           └── stationinfo.json
+│   │   ├── fixtures_bindmount
+│   │   │   └── proc
+│   │   │       └── mounts
+│   │   ├── fixtures_hidepid
+│   │   │   └── proc
+│   │   │       └── mounts
+│   │   ├── helper.go
+│   │   ├── helper_test.go
+│   │   ├── hwmon_linux.go
+│   │   ├── infiniband_linux.go
+│   │   ├── interrupts_common.go
+│   │   ├── interrupts_linux.go
+│   │   ├── interrupts_linux_test.go
+│   │   ├── interrupts_openbsd_amd64.go
+│   │   ├── interrupts_openbsd.go
+│   │   ├── ipvs_linux.go
+│   │   ├── ipvs_linux_test.go
+│   │   ├── ksmd_linux.go
+│   │   ├── kvm_bsd.c
+│   │   ├── kvm_bsd.go
+│   │   ├── kvm_bsd.h
+│   │   ├── lnstat_linux.go
+│   │   ├── loadavg_bsd.go
+│   │   ├── loadavg.go
+│   │   ├── loadavg_linux.go
+│   │   ├── loadavg_linux_test.go
+│   │   ├── loadavg_solaris.go
+│   │   ├── logind_linux.go
+│   │   ├── logind_linux_test.go
+│   │   ├── mdadm_linux.go
+│   │   ├── meminfo_darwin.go
+│   │   ├── meminfo.go
+│   │   ├── meminfo_linux.go
+│   │   ├── meminfo_linux_test.go
+│   │   ├── meminfo_netbsd.go
+│   │   ├── meminfo_numa_linux.go
+│   │   ├── meminfo_numa_linux_test.go
+│   │   ├── meminfo_openbsd_amd64.go
+│   │   ├── meminfo_openbsd.go
+│   │   ├── memory_bsd.go
+│   │   ├── mountstats_linux.go
+│   │   ├── netclass_linux.go
+│   │   ├── netclass_rtnl_linux.go
+│   │   ├── netdev_bsd.go
+│   │   ├── netdev_common.go
+│   │   ├── netdev_darwin.go
+│   │   ├── netdev_linux.go
+│   │   ├── netdev_linux_test.go
+│   │   ├── netdev_openbsd_amd64.go
+│   │   ├── netdev_openbsd.go
+│   │   ├── netisr_freebsd.go
+│   │   ├── netstat_linux.go
+│   │   ├── netstat_linux_test.go
+│   │   ├── network_route_linux.go
+│   │   ├── nfsd_linux.go
+│   │   ├── nfs_linux.go
+│   │   ├── ntp.go
+│   │   ├── nvme_linux.go
+│   │   ├── os_release.go
+│   │   ├── os_release_test.go
+│   │   ├── paths.go
+│   │   ├── paths_test.go
+│   │   ├── perf_linux.go
+│   │   ├── perf_linux_test.go
+│   │   ├── powersupplyclass_darwin.go
+│   │   ├── powersupplyclass.go
+│   │   ├── powersupplyclass_linux.go
+│   │   ├── pressure_linux.go
+│   │   ├── processes_linux.go
+│   │   ├── processes_linux_test.go
+│   │   ├── qdisc_linux.go
+│   │   ├── rapl_linux.go
+│   │   ├── runit.go
+│   │   ├── schedstat_linux.go
+│   │   ├── selinux_linux.go
+│   │   ├── slabinfo_linux.go
+│   │   ├── sockstat_linux.go
+│   │   ├── softirq_linux.go
+│   │   ├── softirqs_common.go
+│   │   ├── softnet_linux.go
+│   │   ├── stat_linux.go
+│   │   ├── supervisord.go
+│   │   ├── sysctl_bsd.go
+│   │   ├── sysctl_linux.go
+│   │   ├── sysctl_openbsd_amd64.go
+│   │   ├── systemd_linux.go
+│   │   ├── systemd_linux_test.go
+│   │   ├── tapestats_linux.go
+│   │   ├── tcpstat_linux.go
+│   │   ├── tcpstat_linux_test.go
+│   │   ├── textfile.go
+│   │   ├── textfile_test.go
+│   │   ├── thermal_darwin.go
+│   │   ├── thermal_zone_linux.go
+│   │   ├── time.go
+│   │   ├── time_linux.go
+│   │   ├── time_other.go
+│   │   ├── timex.go
+│   │   ├── udp_queues_linux.go
+│   │   ├── uname_bsd.go
+│   │   ├── uname.go
+│   │   ├── uname_linux.go
+│   │   ├── vmstat_linux.go
+│   │   ├── watchdog.go
+│   │   ├── watchdog_test.go
+│   │   ├── wifi_linux.go
+│   │   ├── xfrm.go
+│   │   ├── xfrm_test.go
+│   │   ├── xfs_linux.go
+│   │   ├── zfs_freebsd.go
+│   │   ├── zfs.go
+│   │   ├── zfs_linux.go
+│   │   ├── zfs_linux_test.go
+│   │   ├── zfs_solaris.go
+│   │   └── zoneinfo_linux.go
+│   ├── CONTRIBUTING.md
+│   ├── Dockerfile
+│   ├── docs
+│   │   ├── example-16-compatibility-rules-new-to-old.yml
+│   │   ├── example-16-compatibility-rules.yml
+│   │   ├── example-17-compatibility-rules-new-to-old.yml
+│   │   ├── example-17-compatibility-rules.yml
+│   │   ├── node-mixin
+│   │   │   ├── alerts
+│   │   │   │   └── alerts.libsonnet
+│   │   │   ├── alerts.jsonnet
+│   │   │   ├── config.libsonnet
+│   │   │   ├── dashboards
+│   │   │   │   ├── dashboards.libsonnet
+│   │   │   │   ├── node.libsonnet
+│   │   │   │   └── use.libsonnet
+│   │   │   ├── dashboards.jsonnet
+│   │   │   ├── jsonnetfile.json
+│   │   │   ├── lib
+│   │   │   │   └── prom-mixin.libsonnet
+│   │   │   ├── Makefile
+│   │   │   ├── mixin.libsonnet
+│   │   │   ├── README.md
+│   │   │   ├── rules
+│   │   │   │   └── rules.libsonnet
+│   │   │   └── rules.jsonnet
+│   │   ├── TIME.md
+│   │   └── V0_16_UPGRADE_GUIDE.md
+│   ├── end-to-end-test.sh
+│   ├── example-rules.yml
+│   ├── examples
+│   │   ├── init.d
+│   │   │   └── node_exporter
+│   │   ├── launchctl
+│   │   │   ├── io.prometheus.node_exporter.plist
+│   │   │   └── README.md
+│   │   ├── openbsd-rc.d
+│   │   │   └── node_exporter
+│   │   ├── openwrt-init.d
+│   │   │   └── node_exporter
+│   │   └── systemd
+│   │       ├── node_exporter.service
+│   │       ├── node_exporter.socket
+│   │       ├── README.md
+│   │       └── sysconfig.node_exporter
+│   ├── go.mod
+│   ├── go.sum
+│   ├── LICENSE
+│   ├── MAINTAINERS.md
+│   ├── Makefile
+│   ├── Makefile.common
+│   ├── node_exporter.go
+│   ├── node_exporter_test.go
+│   ├── NOTICE
+│   ├── README.md
+│   ├── SECURITY.md
+│   ├── staticcheck.conf
+│   ├── test_image.sh
+│   ├── text_collector_examples
+│   │   └── README.md
+│   ├── tls_config_noAuth.bad.yml
+│   ├── ttar
+│   └── VERSION
+├── prometheus-node-exporter-1.8.2.tar.gz -> /home/felix/packages/prometheus-node-exporter/prometheus-node-exporter-1.8.2.tar.gz
+├── prometheus-node-exporter.conf -> /home/felix/packages/prometheus-node-exporter/prometheus-node-exporter.conf
+├── prometheus-node-exporter.service -> /home/felix/packages/prometheus-node-exporter/prometheus-node-exporter.service
+└── prometheus-node-exporter.sysusers -> /home/felix/packages/prometheus-node-exporter/prometheus-node-exporter.sysusers
+
+65 directories, 346 files

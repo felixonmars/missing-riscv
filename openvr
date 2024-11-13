@@ -1,0 +1,1037 @@
+src
+├── openvr-2.5.1
+│   ├── bin
+│   │   ├── androidarm64
+│   │   │   └── libopenvr_api.so
+│   │   ├── linux32
+│   │   │   ├── empty.dir
+│   │   │   ├── libopenvr_api.so
+│   │   │   └── libopenvr_api.so.dbg
+│   │   ├── linux64
+│   │   │   ├── empty.dir
+│   │   │   ├── libopenvr_api.so
+│   │   │   └── libopenvr_api.so.dbg
+│   │   ├── linuxarm64
+│   │   │   ├── libopenvr_api.so
+│   │   │   ├── libopenvr_api.so.dbg
+│   │   │   ├── libopenvr_api_unity.so
+│   │   │   └── libopenvr_api_unity.so.dbg
+│   │   ├── osx32
+│   │   │   ├── libopenvr_api.dylib
+│   │   │   └── libopenvr_api.dylib.dSYM
+│   │   │       └── Contents
+│   │   │           └── Resources
+│   │   │               └── DWARF
+│   │   │                   └── libopenvr_api.dylib
+│   │   ├── win32
+│   │   │   ├── openvr_api.dll
+│   │   │   ├── openvr_api.dll.sig
+│   │   │   └── openvr_api.pdb
+│   │   └── win64
+│   │       ├── openvr_api.dll
+│   │       ├── openvr_api.dll.sig
+│   │       └── openvr_api.pdb
+│   ├── CMakeLists.txt
+│   ├── codegen
+│   │   ├── api_shared.py
+│   │   ├── openvr_capi.cpp.py
+│   │   ├── openvr_capi.h.py
+│   │   ├── openvr_interop.cs.py
+│   │   └── README.md
+│   ├── controller_callouts
+│   │   ├── Callouts.eps
+│   │   └── Callouts.pdf
+│   ├── docs
+│   │   └── Driver_API_Documentation.md
+│   ├── headers
+│   │   ├── openvr_api.cs
+│   │   ├── openvr_api.json
+│   │   ├── openvr_capi.h
+│   │   ├── openvr_driver.h
+│   │   └── openvr.h
+│   ├── lib
+│   │   ├── androidarm64
+│   │   │   └── libopenvr_api.so
+│   │   ├── linux32
+│   │   │   └── libopenvr_api.so
+│   │   ├── linux64
+│   │   │   └── libopenvr_api.so
+│   │   ├── linuxarm64
+│   │   │   ├── libopenvr_api.so
+│   │   │   └── libopenvr_api_unity.so
+│   │   ├── osx32
+│   │   │   └── libopenvr_api.dylib
+│   │   ├── win32
+│   │   │   └── openvr_api.lib
+│   │   └── win64
+│   │       └── openvr_api.lib
+│   ├── LICENSE
+│   ├── README.md
+│   ├── samples
+│   │   ├── bin
+│   │   │   ├── androidarm64
+│   │   │   │   └── libopenvr_api.so
+│   │   │   ├── cube_texture.png
+│   │   │   ├── drivers
+│   │   │   │   └── sample
+│   │   │   │       ├── driver.vrdrivermanifest
+│   │   │   │       ├── resources
+│   │   │   │       │   ├── driver.vrresources
+│   │   │   │       │   ├── icons
+│   │   │   │       │   │   ├── controller_status_error.png
+│   │   │   │       │   │   ├── controller_status_off.png
+│   │   │   │       │   │   ├── controller_status_ready_alert.png
+│   │   │   │       │   │   ├── controller_status_ready_low.png
+│   │   │   │       │   │   ├── controller_status_ready.png
+│   │   │   │       │   │   ├── controller_status_searching_alert.gif
+│   │   │   │       │   │   ├── controller_status_searching.gif
+│   │   │   │       │   │   ├── controller_status_standby.png
+│   │   │   │       │   │   ├── headset_sample_status_error.png
+│   │   │   │       │   │   ├── headset_sample_status_off.png
+│   │   │   │       │   │   ├── headset_sample_status_ready_alert.png
+│   │   │   │       │   │   ├── headset_sample_status_ready_low.png
+│   │   │   │       │   │   ├── headset_sample_status_ready.png
+│   │   │   │       │   │   ├── headset_sample_status_searching_alert.gif
+│   │   │   │       │   │   ├── headset_sample_status_searching.gif
+│   │   │   │       │   │   └── headset_sample_status_standby.png
+│   │   │   │       │   ├── input
+│   │   │   │       │   │   ├── legacy_binding_mycontroller.json
+│   │   │   │       │   │   ├── mycontroller_profile.json
+│   │   │   │       │   │   └── vrcompositor_binding_mycontroller.json
+│   │   │   │       │   ├── localization
+│   │   │   │       │   │   └── localization.json
+│   │   │   │       │   └── settings
+│   │   │   │       │       └── default.vrsettings
+│   │   │   │       ├── win32
+│   │   │   │       │   └── create_empty_dir.txt
+│   │   │   │       └── win64
+│   │   │   │           └── create_empty_dir.txt
+│   │   │   ├── hellovr_actions.json
+│   │   │   ├── hellovr_bindings_generic.json
+│   │   │   ├── hellovr_bindings_vive_controller.json
+│   │   │   ├── hmd_opencv_sandbox_resources
+│   │   │   │   ├── charlesfloor.frag
+│   │   │   │   ├── charlesfloor.vert
+│   │   │   │   ├── codepage437.pgm
+│   │   │   │   ├── codepage437.png
+│   │   │   │   ├── companion.frag
+│   │   │   │   ├── companion.vert
+│   │   │   │   ├── dumb.frag
+│   │   │   │   ├── dumb.vert
+│   │   │   │   ├── hmd_opencv_sandbox_actions.json
+│   │   │   │   ├── hmd_opencv_sandbox_bindings_generic.json
+│   │   │   │   ├── pointcloud2.frag
+│   │   │   │   ├── pointcloud2.vert
+│   │   │   │   ├── pointcloud.frag
+│   │   │   │   ├── pointcloud.vert
+│   │   │   │   ├── rendermodel.frag
+│   │   │   │   ├── rendermodel.vert
+│   │   │   │   ├── terminal.frag
+│   │   │   │   ├── terminal.vert
+│   │   │   │   ├── world2.frag
+│   │   │   │   ├── world2.vert
+│   │   │   │   ├── world3.frag
+│   │   │   │   ├── world3.vert
+│   │   │   │   ├── world.frag
+│   │   │   │   └── world.vert
+│   │   │   ├── linux32
+│   │   │   │   ├── empty.dir
+│   │   │   │   └── libopenvr_api.so
+│   │   │   ├── linux64
+│   │   │   │   ├── empty.dir
+│   │   │   │   └── libopenvr_api.so
+│   │   │   ├── linuxarm64
+│   │   │   │   └── libopenvr_api.so
+│   │   │   ├── shaders
+│   │   │   │   ├── axes.hlsl
+│   │   │   │   ├── axes_ps.spv
+│   │   │   │   ├── axes_vs.spv
+│   │   │   │   ├── build_vulkan_shaders.bat
+│   │   │   │   ├── companion.hlsl
+│   │   │   │   ├── companion_ps.spv
+│   │   │   │   ├── companion_vs.spv
+│   │   │   │   ├── rendermodel.hlsl
+│   │   │   │   ├── rendermodel_ps.spv
+│   │   │   │   ├── rendermodel_vs.spv
+│   │   │   │   ├── scene.hlsl
+│   │   │   │   ├── scene_ps.spv
+│   │   │   │   └── scene_vs.spv
+│   │   │   ├── win32
+│   │   │   │   ├── glew32.dll
+│   │   │   │   ├── glut32.dll
+│   │   │   │   ├── hmd_opencv_sandbox.exe
+│   │   │   │   ├── icudt52.dll
+│   │   │   │   ├── icuin52.dll
+│   │   │   │   ├── icuuc52.dll
+│   │   │   │   ├── opencv_world341.dll
+│   │   │   │   ├── openvr_api.dll
+│   │   │   │   ├── platforms
+│   │   │   │   │   ├── qminimald.dll
+│   │   │   │   │   ├── qminimal.dll
+│   │   │   │   │   ├── qoffscreend.dll
+│   │   │   │   │   ├── qoffscreen.dll
+│   │   │   │   │   ├── qwindowsd.dll
+│   │   │   │   │   └── qwindows.dll
+│   │   │   │   ├── Qt5Cored.dll
+│   │   │   │   ├── Qt5Core.dll
+│   │   │   │   ├── Qt5Guid.dll
+│   │   │   │   ├── Qt5Gui.dll
+│   │   │   │   ├── Qt5OpenGLd.dll
+│   │   │   │   ├── Qt5OpenGL.dll
+│   │   │   │   ├── Qt5Qmld.dll
+│   │   │   │   ├── Qt5Qml.dll
+│   │   │   │   ├── Qt5Widgetsd.dll
+│   │   │   │   ├── Qt5Widgets.dll
+│   │   │   │   └── SDL2.dll
+│   │   │   └── win64
+│   │   │       ├── hmd_opencv_sandbox.exe
+│   │   │       ├── icudt54.dll
+│   │   │       ├── icuin54.dll
+│   │   │       ├── icuuc54.dll
+│   │   │       ├── opencv_world341.dll
+│   │   │       ├── openvr_api.dll
+│   │   │       ├── Qt5Cored.dll
+│   │   │       ├── Qt5Core.dll
+│   │   │       ├── Qt5Guid.dll
+│   │   │       ├── Qt5Gui.dll
+│   │   │       ├── Qt5OpenGLd.dll
+│   │   │       ├── Qt5OpenGL.dll
+│   │   │       ├── Qt5Qmld.dll
+│   │   │       ├── Qt5Qml.dll
+│   │   │       ├── Qt5Widgetsd.dll
+│   │   │       └── Qt5Widgets.dll
+│   │   ├── CMakeLists.txt
+│   │   ├── drivers
+│   │   │   ├── CMakeLists.txt
+│   │   │   ├── drivers
+│   │   │   │   ├── barebones
+│   │   │   │   │   ├── barebones
+│   │   │   │   │   │   ├── driver.vrdrivermanifest
+│   │   │   │   │   │   └── resources
+│   │   │   │   │   │       └── driver.vrresources
+│   │   │   │   │   ├── barebones.vcxproj
+│   │   │   │   │   ├── CMakeLists.txt
+│   │   │   │   │   ├── README.md
+│   │   │   │   │   └── src
+│   │   │   │   │       ├── device_provider.cpp
+│   │   │   │   │       ├── device_provider.h
+│   │   │   │   │       └── hmd_driver_factory.cpp
+│   │   │   │   ├── CMakeLists.txt
+│   │   │   │   ├── handskeletonsimulation
+│   │   │   │   │   ├── CMakeLists.txt
+│   │   │   │   │   ├── handskeletonsimulation
+│   │   │   │   │   │   ├── driver.vrdrivermanifest
+│   │   │   │   │   │   └── resources
+│   │   │   │   │   │       ├── driver.vrresources
+│   │   │   │   │   │       ├── icons
+│   │   │   │   │   │       │   ├── controller_status_error.png
+│   │   │   │   │   │       │   ├── controller_status_off.png
+│   │   │   │   │   │       │   ├── controller_status_ready_alert.png
+│   │   │   │   │   │       │   ├── controller_status_ready_low.png
+│   │   │   │   │   │       │   ├── controller_status_ready.png
+│   │   │   │   │   │       │   ├── controller_status_searching_alert.gif
+│   │   │   │   │   │       │   ├── controller_status_searching.gif
+│   │   │   │   │   │       │   └── controller_status_standby.png
+│   │   │   │   │   │       ├── input
+│   │   │   │   │   │       │   └── mycontroller_profile.json
+│   │   │   │   │   │       ├── localization
+│   │   │   │   │   │       │   └── localization.json
+│   │   │   │   │   │       └── settings
+│   │   │   │   │   │           └── default.vrsettings
+│   │   │   │   │   ├── handskeletonsimulation.vcxproj
+│   │   │   │   │   ├── README.md
+│   │   │   │   │   └── src
+│   │   │   │   │       ├── controller_device_driver.cpp
+│   │   │   │   │       ├── controller_device_driver.h
+│   │   │   │   │       ├── device_provider.cpp
+│   │   │   │   │       ├── device_provider.h
+│   │   │   │   │       ├── hand_simulation.cpp
+│   │   │   │   │       ├── hand_simulation.h
+│   │   │   │   │       └── hmd_driver_factory.cpp
+│   │   │   │   ├── README.md
+│   │   │   │   ├── simplecontroller
+│   │   │   │   │   ├── CMakeLists.txt
+│   │   │   │   │   ├── README.md
+│   │   │   │   │   ├── simplecontroller
+│   │   │   │   │   │   ├── driver.vrdrivermanifest
+│   │   │   │   │   │   └── resources
+│   │   │   │   │   │       ├── driver.vrresources
+│   │   │   │   │   │       ├── icons
+│   │   │   │   │   │       │   ├── controller_status_error.png
+│   │   │   │   │   │       │   ├── controller_status_off.png
+│   │   │   │   │   │       │   ├── controller_status_ready_alert.png
+│   │   │   │   │   │       │   ├── controller_status_ready_low.png
+│   │   │   │   │   │       │   ├── controller_status_ready.png
+│   │   │   │   │   │       │   ├── controller_status_searching_alert.gif
+│   │   │   │   │   │       │   ├── controller_status_searching.gif
+│   │   │   │   │   │       │   └── controller_status_standby.png
+│   │   │   │   │   │       ├── input
+│   │   │   │   │   │       │   └── mycontroller_profile.json
+│   │   │   │   │   │       ├── localization
+│   │   │   │   │   │       │   └── localization.json
+│   │   │   │   │   │       └── settings
+│   │   │   │   │   │           └── default.vrsettings
+│   │   │   │   │   ├── simplecontroller.vcxproj
+│   │   │   │   │   └── src
+│   │   │   │   │       ├── controller_device_driver.cpp
+│   │   │   │   │       ├── controller_device_driver.h
+│   │   │   │   │       ├── device_provider.cpp
+│   │   │   │   │       ├── device_provider.h
+│   │   │   │   │       └── hmd_driver_factory.cpp
+│   │   │   │   ├── simplehmd
+│   │   │   │   │   ├── CMakeLists.txt
+│   │   │   │   │   ├── README.md
+│   │   │   │   │   ├── simplehmd
+│   │   │   │   │   │   ├── driver.vrdrivermanifest
+│   │   │   │   │   │   └── resources
+│   │   │   │   │   │       ├── driver.vrresources
+│   │   │   │   │   │       ├── input
+│   │   │   │   │   │       │   └── mysimplehmd_profile.json
+│   │   │   │   │   │       ├── localization
+│   │   │   │   │   │       │   └── localization.json
+│   │   │   │   │   │       └── settings
+│   │   │   │   │   │           └── default.vrsettings
+│   │   │   │   │   ├── simplehmd.vcxproj
+│   │   │   │   │   └── src
+│   │   │   │   │       ├── device_provider.cpp
+│   │   │   │   │       ├── device_provider.h
+│   │   │   │   │       ├── hmd_device_driver.cpp
+│   │   │   │   │       ├── hmd_device_driver.h
+│   │   │   │   │       └── hmd_driver_factory.cpp
+│   │   │   │   ├── simpletrackers
+│   │   │   │   │   ├── CMakeLists.txt
+│   │   │   │   │   ├── README.md
+│   │   │   │   │   ├── simpletrackers
+│   │   │   │   │   │   ├── driver.vrdrivermanifest
+│   │   │   │   │   │   └── resources
+│   │   │   │   │   │       ├── driver.vrresources
+│   │   │   │   │   │       ├── input
+│   │   │   │   │   │       │   ├── mytracker_profile.json
+│   │   │   │   │   │       │   └── tracker
+│   │   │   │   │   │       │       ├── mytracker_chest_profile.json
+│   │   │   │   │   │       │       └── mytracker_waist_profile.json
+│   │   │   │   │   │       ├── localization
+│   │   │   │   │   │       │   └── localization.json
+│   │   │   │   │   │       └── settings
+│   │   │   │   │   │           └── default.vrsettings
+│   │   │   │   │   ├── simpletrackers.vcxproj
+│   │   │   │   │   └── src
+│   │   │   │   │       ├── device_provider.cpp
+│   │   │   │   │       ├── device_provider.h
+│   │   │   │   │       ├── hmd_driver_factory.cpp
+│   │   │   │   │       ├── tracker_device_driver.cpp
+│   │   │   │   │       └── tracker_device_driver.h
+│   │   │   │   └── tutorial
+│   │   │   │       ├── CMakeLists.txt
+│   │   │   │       ├── README.md
+│   │   │   │       ├── sample
+│   │   │   │       │   ├── driver.vrdrivermanifest
+│   │   │   │       │   └── resources
+│   │   │   │       │       ├── driver.vrresources
+│   │   │   │       │       ├── icons
+│   │   │   │       │       │   ├── controller_status_error.png
+│   │   │   │       │       │   ├── controller_status_off.png
+│   │   │   │       │       │   ├── controller_status_ready_alert.png
+│   │   │   │       │       │   ├── controller_status_ready_low.png
+│   │   │   │       │       │   ├── controller_status_ready.png
+│   │   │   │       │       │   ├── controller_status_searching_alert.gif
+│   │   │   │       │       │   ├── controller_status_searching.gif
+│   │   │   │       │       │   └── controller_status_standby.png
+│   │   │   │       │       └── input
+│   │   │   │       │           └── sample_profile.json
+│   │   │   │       ├── sample.vcxproj
+│   │   │   │       ├── src
+│   │   │   │       │   ├── controller_device.cpp
+│   │   │   │       │   ├── controller_device.h
+│   │   │   │       │   ├── device_provider.cpp
+│   │   │   │       │   ├── device_provider.h
+│   │   │   │       │   └── hmd_driver_factory.cpp
+│   │   │   │       └── vs-sample.sln
+│   │   │   ├── README.md
+│   │   │   ├── utils
+│   │   │   │   ├── CMakeLists.txt
+│   │   │   │   ├── driverlog
+│   │   │   │   │   ├── CMakeLists.txt
+│   │   │   │   │   ├── driverlog.cpp
+│   │   │   │   │   ├── driverlog.h
+│   │   │   │   │   └── util_driverlog.vcxproj
+│   │   │   │   ├── README.md
+│   │   │   │   └── vrmath
+│   │   │   │       ├── CMakeLists.txt
+│   │   │   │       ├── util_vrmath.vcxproj
+│   │   │   │       └── vrmath.h
+│   │   │   └── vs-openvr_samples.sln
+│   │   ├── hellovr_dx12
+│   │   │   ├── d3dx12.h
+│   │   │   ├── hellovr_dx12_main.cpp
+│   │   │   ├── hellovr_dx12.vcxproj
+│   │   │   └── hellovr_dx12.vcxproj.filters
+│   │   ├── hellovr_opengl
+│   │   │   ├── CMakeLists.txt
+│   │   │   ├── hellovr_opengl_main.cpp
+│   │   │   ├── hellovr_opengl.vcxproj
+│   │   │   └── hellovr_opengl.vcxproj.filters
+│   │   ├── hellovr_vulkan
+│   │   │   ├── CMakeLists.txt
+│   │   │   └── hellovr_vulkan_main.cpp
+│   │   ├── helloworldoverlay
+│   │   │   ├── CMakeLists.txt
+│   │   │   ├── helloworldoverlay.pro
+│   │   │   ├── main.cpp
+│   │   │   ├── openvroverlaycontroller.cpp
+│   │   │   ├── openvroverlaycontroller.h
+│   │   │   ├── overlaywidget.cpp
+│   │   │   ├── overlaywidget.h
+│   │   │   └── overlaywidget.ui
+│   │   ├── hmd_opencv_sandbox
+│   │   │   ├── camera_app.cpp
+│   │   │   ├── camera_app.h
+│   │   │   ├── chew.c
+│   │   │   ├── chew.h
+│   │   │   ├── chewtypes.h
+│   │   │   ├── common_hello.cpp
+│   │   │   ├── common_hello.h
+│   │   │   ├── geometry_object.cpp
+│   │   │   ├── geometry_object.h
+│   │   │   ├── hmd_opencv_sandbox.cpp
+│   │   │   ├── hmd_opencv_sandbox.h
+│   │   │   ├── opencv_process.cpp
+│   │   │   ├── opencv_process.h
+│   │   │   ├── os_generic.h
+│   │   │   ├── shader_file.cpp
+│   │   │   ├── shader_file.h
+│   │   │   ├── stb_image.h
+│   │   │   ├── stb_image_write.h
+│   │   │   ├── vlinterm.c
+│   │   │   ├── vlinterm.h
+│   │   │   ├── vrterminal.cpp
+│   │   │   └── vrterminal.h
+│   │   ├── README.md
+│   │   ├── samples_vs2017.sln
+│   │   ├── shared
+│   │   │   ├── compat.h
+│   │   │   ├── lodepng.cpp
+│   │   │   ├── lodepng.h
+│   │   │   ├── Matrices.cpp
+│   │   │   ├── Matrices.h
+│   │   │   ├── pathtools.cpp
+│   │   │   ├── pathtools.h
+│   │   │   ├── strtools.cpp
+│   │   │   ├── strtools.h
+│   │   │   └── Vectors.h
+│   │   ├── thirdparty
+│   │   │   ├── glew
+│   │   │   │   └── glew-1.11.0
+│   │   │   │       ├── bin
+│   │   │   │       │   ├── Release
+│   │   │   │       │   │   ├── Win32
+│   │   │   │       │   │   │   ├── glew32.dll
+│   │   │   │       │   │   │   ├── glewinfo.exe
+│   │   │   │       │   │   │   └── visualinfo.exe
+│   │   │   │       │   │   └── x64
+│   │   │   │       │   │       ├── glew32.dll
+│   │   │   │       │   │       ├── glewinfo.exe
+│   │   │   │       │   │       └── visualinfo.exe
+│   │   │   │       │   └── Release MX
+│   │   │   │       │       ├── Win32
+│   │   │   │       │       │   └── glew32mx.dll
+│   │   │   │       │       └── x64
+│   │   │   │       │           └── glew32mx.dll
+│   │   │   │       ├── doc
+│   │   │   │       │   ├── advanced.html
+│   │   │   │       │   ├── basic.html
+│   │   │   │       │   ├── build.html
+│   │   │   │       │   ├── credits.html
+│   │   │   │       │   ├── glew.css
+│   │   │   │       │   ├── glew.html
+│   │   │   │       │   ├── glew.png
+│   │   │   │       │   ├── glew.txt
+│   │   │   │       │   ├── glxew.html
+│   │   │   │       │   ├── gpl.txt
+│   │   │   │       │   ├── index.html
+│   │   │   │       │   ├── install.html
+│   │   │   │       │   ├── khronos.txt
+│   │   │   │       │   ├── log.html
+│   │   │   │       │   ├── mesa.txt
+│   │   │   │       │   ├── new.png
+│   │   │   │       │   ├── ogl_sm.jpg
+│   │   │   │       │   └── wglew.html
+│   │   │   │       ├── include
+│   │   │   │       │   └── GL
+│   │   │   │       │       ├── glew.h
+│   │   │   │       │       ├── glxew.h
+│   │   │   │       │       └── wglew.h
+│   │   │   │       ├── lib
+│   │   │   │       │   ├── Release
+│   │   │   │       │   │   ├── osx32
+│   │   │   │       │   │   │   └── libGLEW.a
+│   │   │   │       │   │   ├── Win32
+│   │   │   │       │   │   │   ├── glew32.lib
+│   │   │   │       │   │   │   └── glew32s.lib
+│   │   │   │       │   │   └── x64
+│   │   │   │       │   │       ├── glew32.lib
+│   │   │   │       │   │       └── glew32s.lib
+│   │   │   │       │   └── Release MX
+│   │   │   │       │       ├── Win32
+│   │   │   │       │       │   ├── glew32mx.lib
+│   │   │   │       │       │   └── glew32mxs.lib
+│   │   │   │       │       └── x64
+│   │   │   │       │           ├── glew32mx.lib
+│   │   │   │       │           └── glew32mxs.lib
+│   │   │   │       ├── LICENSE.txt
+│   │   │   │       ├── README.txt
+│   │   │   │       └── TODO.txt
+│   │   │   ├── sdl2-2.0.3
+│   │   │   │   ├── bin
+│   │   │   │   │   ├── linux32
+│   │   │   │   │   │   ├── libSDL2-2.0.so.0
+│   │   │   │   │   │   ├── libSDL2.so
+│   │   │   │   │   │   └── libSDL2_static.a
+│   │   │   │   │   ├── linux64
+│   │   │   │   │   │   ├── libSDL2-2.0.so.0
+│   │   │   │   │   │   ├── libSDL2-2.0.so.0.dbg
+│   │   │   │   │   │   ├── libSDL2.so
+│   │   │   │   │   │   └── libSDL2_static.a
+│   │   │   │   │   ├── osx32
+│   │   │   │   │   │   ├── libSDL2.a
+│   │   │   │   │   │   └── libSDL2.dylib
+│   │   │   │   │   ├── win32
+│   │   │   │   │   │   ├── SDL2.lib
+│   │   │   │   │   │   ├── SDL2main.lib
+│   │   │   │   │   │   └── SDL2_static.lib
+│   │   │   │   │   └── win64
+│   │   │   │   │       ├── SDL2.lib
+│   │   │   │   │       ├── SDL2main.lib
+│   │   │   │   │       └── SDL2_static.lib
+│   │   │   │   └── include
+│   │   │   │       ├── begin_code.h
+│   │   │   │       ├── close_code.h
+│   │   │   │       ├── doxyfile
+│   │   │   │       ├── SDL_assert.h
+│   │   │   │       ├── SDL_atomic.h
+│   │   │   │       ├── SDL_audio.h
+│   │   │   │       ├── SDL_bits.h
+│   │   │   │       ├── SDL_blendmode.h
+│   │   │   │       ├── SDL_clipboard.h
+│   │   │   │       ├── SDL_config_android.h
+│   │   │   │       ├── SDL_config.h
+│   │   │   │       ├── SDL_config.h.cmake
+│   │   │   │       ├── SDL_config.h.in
+│   │   │   │       ├── SDL_config_iphoneos.h
+│   │   │   │       ├── SDL_config_macosx.h
+│   │   │   │       ├── SDL_config_minimal.h
+│   │   │   │       ├── SDL_config_pandora.h
+│   │   │   │       ├── SDL_config_psp.h
+│   │   │   │       ├── SDL_config_windows.h
+│   │   │   │       ├── SDL_config_winrt.h
+│   │   │   │       ├── SDL_config_wiz.h
+│   │   │   │       ├── SDL_copying.h
+│   │   │   │       ├── SDL_cpuinfo.h
+│   │   │   │       ├── SDL_egl.h
+│   │   │   │       ├── SDL_endian.h
+│   │   │   │       ├── SDL_error.h
+│   │   │   │       ├── SDL_events.h
+│   │   │   │       ├── SDL_filesystem.h
+│   │   │   │       ├── SDL_gamecontroller.h
+│   │   │   │       ├── SDL_gesture.h
+│   │   │   │       ├── SDL.h
+│   │   │   │       ├── SDL_haptic.h
+│   │   │   │       ├── SDL_hints.h
+│   │   │   │       ├── SDL_joystick.h
+│   │   │   │       ├── SDL_keyboard.h
+│   │   │   │       ├── SDL_keycode.h
+│   │   │   │       ├── SDL_loadso.h
+│   │   │   │       ├── SDL_log.h
+│   │   │   │       ├── SDL_main.h
+│   │   │   │       ├── SDL_messagebox.h
+│   │   │   │       ├── SDL_mouse.h
+│   │   │   │       ├── SDL_mutex.h
+│   │   │   │       ├── SDL_name.h
+│   │   │   │       ├── SDL_opengles2.h
+│   │   │   │       ├── SDL_opengles.h
+│   │   │   │       ├── SDL_opengl.h
+│   │   │   │       ├── SDL_pixels.h
+│   │   │   │       ├── SDL_platform.h
+│   │   │   │       ├── SDL_power.h
+│   │   │   │       ├── SDL_quit.h
+│   │   │   │       ├── SDL_rect.h
+│   │   │   │       ├── SDL_render.h
+│   │   │   │       ├── SDL_revision.h
+│   │   │   │       ├── SDL_rwops.h
+│   │   │   │       ├── SDL_scancode.h
+│   │   │   │       ├── SDL_shape.h
+│   │   │   │       ├── SDL_stdinc.h
+│   │   │   │       ├── SDL_surface.h
+│   │   │   │       ├── SDL_system.h
+│   │   │   │       ├── SDL_syswm.h
+│   │   │   │       ├── SDL_test_assert.h
+│   │   │   │       ├── SDL_test_common.h
+│   │   │   │       ├── SDL_test_compare.h
+│   │   │   │       ├── SDL_test_crc32.h
+│   │   │   │       ├── SDL_test_font.h
+│   │   │   │       ├── SDL_test_fuzzer.h
+│   │   │   │       ├── SDL_test.h
+│   │   │   │       ├── SDL_test_harness.h
+│   │   │   │       ├── SDL_test_images.h
+│   │   │   │       ├── SDL_test_log.h
+│   │   │   │       ├── SDL_test_md5.h
+│   │   │   │       ├── SDL_test_random.h
+│   │   │   │       ├── SDL_thread.h
+│   │   │   │       ├── SDL_timer.h
+│   │   │   │       ├── SDL_touch.h
+│   │   │   │       ├── SDL_types.h
+│   │   │   │       ├── SDL_version.h
+│   │   │   │       └── SDL_video.h
+│   │   │   └── vulkan-1.0.49.0
+│   │   │       ├── include
+│   │   │       │   ├── shaderc
+│   │   │       │   │   ├── shaderc.h
+│   │   │       │   │   └── shaderc.hpp
+│   │   │       │   └── vulkan
+│   │   │       │       ├── GLSL.std.450.h
+│   │   │       │       ├── spirv.h
+│   │   │       │       ├── spirv.hpp
+│   │   │       │       ├── spirv.hpp11
+│   │   │       │       ├── spirv.json
+│   │   │       │       ├── spirv.lua
+│   │   │       │       ├── spirv.py
+│   │   │       │       ├── vk_icd.h
+│   │   │       │       ├── vk_layer_dispatch_table.h
+│   │   │       │       ├── vk_layer.h
+│   │   │       │       ├── vk_platform.h
+│   │   │       │       ├── vk_sdk_platform.h
+│   │   │       │       ├── vulkan.h
+│   │   │       │       └── vulkan.hpp
+│   │   │       └── lib
+│   │   │           ├── linux64
+│   │   │           │   └── libvulkan.so
+│   │   │           ├── win32
+│   │   │           │   └── vulkan-1.lib
+│   │   │           └── win64
+│   │   │               └── vulkan-1.lib
+│   │   ├── tracked_camera_openvr_sample
+│   │   │   ├── CMakeLists.txt
+│   │   │   ├── main.cpp
+│   │   │   ├── tracked_camera_openvr_sample.cpp
+│   │   │   ├── tracked_camera_openvr_sample.h
+│   │   │   └── tracked_camera_openvr_sample.pro
+│   │   ├── unity_keyboard_sample
+│   │   │   ├── Assets
+│   │   │   │   ├── Ground.mat
+│   │   │   │   ├── Ground.mat.meta
+│   │   │   │   ├── KeyboardSample.cs
+│   │   │   │   ├── KeyboardSample.cs.meta
+│   │   │   │   ├── KeyboardSample.unity
+│   │   │   │   ├── KeyboardSample.unity.meta
+│   │   │   │   ├── PanelMat.mat
+│   │   │   │   ├── PanelMat.mat.meta
+│   │   │   │   ├── Plugins
+│   │   │   │   │   ├── openvr_api.bundle
+│   │   │   │   │   │   ├── Contents
+│   │   │   │   │   │   │   ├── Info.plist
+│   │   │   │   │   │   │   ├── Info.plist.meta
+│   │   │   │   │   │   │   ├── MacOS
+│   │   │   │   │   │   │   │   ├── openvr_api
+│   │   │   │   │   │   │   │   └── openvr_api.meta
+│   │   │   │   │   │   │   └── MacOS.meta
+│   │   │   │   │   │   └── Contents.meta
+│   │   │   │   │   ├── openvr_api.bundle.meta
+│   │   │   │   │   ├── openvr_api.cs
+│   │   │   │   │   ├── openvr_api.cs.meta
+│   │   │   │   │   ├── x86
+│   │   │   │   │   │   ├── openvr_api.dll
+│   │   │   │   │   │   └── openvr_api.dll.meta
+│   │   │   │   │   ├── x86_64
+│   │   │   │   │   │   ├── openvr_api.dll
+│   │   │   │   │   │   └── openvr_api.dll.meta
+│   │   │   │   │   ├── x86_64.meta
+│   │   │   │   │   └── x86.meta
+│   │   │   │   ├── Plugins.meta
+│   │   │   │   ├── SteamVR
+│   │   │   │   │   ├── Editor
+│   │   │   │   │   │   ├── SteamVR_Editor.cs
+│   │   │   │   │   │   ├── SteamVR_Editor.cs.meta
+│   │   │   │   │   │   ├── SteamVR_RenderModelEditor.cs
+│   │   │   │   │   │   ├── SteamVR_RenderModelEditor.cs.meta
+│   │   │   │   │   │   ├── SteamVR_Settings.cs
+│   │   │   │   │   │   ├── SteamVR_Settings.cs.meta
+│   │   │   │   │   │   ├── SteamVR_SkyboxEditor.cs
+│   │   │   │   │   │   ├── SteamVR_SkyboxEditor.cs.meta
+│   │   │   │   │   │   ├── SteamVR_Update.cs
+│   │   │   │   │   │   └── SteamVR_Update.cs.meta
+│   │   │   │   │   ├── Editor.meta
+│   │   │   │   │   ├── Extras
+│   │   │   │   │   │   ├── SteamVR_GazeTracker.cs
+│   │   │   │   │   │   ├── SteamVR_GazeTracker.cs.meta
+│   │   │   │   │   │   ├── SteamVR_LaserPointer.cs
+│   │   │   │   │   │   ├── SteamVR_LaserPointer.cs.meta
+│   │   │   │   │   │   ├── SteamVR_Teleporter.cs
+│   │   │   │   │   │   ├── SteamVR_Teleporter.cs.meta
+│   │   │   │   │   │   ├── SteamVR_TestIK.unity
+│   │   │   │   │   │   ├── SteamVR_TestIK.unity.meta
+│   │   │   │   │   │   ├── SteamVR_TestThrow.cs
+│   │   │   │   │   │   ├── SteamVR_TestThrow.cs.meta
+│   │   │   │   │   │   ├── SteamVR_TestThrow.unity
+│   │   │   │   │   │   ├── SteamVR_TestThrow.unity.meta
+│   │   │   │   │   │   ├── SteamVR_TrackedController.cs
+│   │   │   │   │   │   └── SteamVR_TrackedController.cs.meta
+│   │   │   │   │   ├── Extras.meta
+│   │   │   │   │   ├── Materials
+│   │   │   │   │   │   ├── portalworkshop.mat
+│   │   │   │   │   │   └── portalworkshop.mat.meta
+│   │   │   │   │   ├── Materials.meta
+│   │   │   │   │   ├── Prefabs
+│   │   │   │   │   │   ├── [CameraRig].prefab
+│   │   │   │   │   │   ├── [CameraRig].prefab.meta
+│   │   │   │   │   │   ├── [Status].prefab
+│   │   │   │   │   │   ├── [Status].prefab.meta
+│   │   │   │   │   │   ├── [SteamVR].prefab
+│   │   │   │   │   │   └── [SteamVR].prefab.meta
+│   │   │   │   │   ├── Prefabs.meta
+│   │   │   │   │   ├── quickstart.pdf
+│   │   │   │   │   ├── quickstart.pdf.meta
+│   │   │   │   │   ├── readme.txt
+│   │   │   │   │   ├── readme.txt.meta
+│   │   │   │   │   ├── Resources
+│   │   │   │   │   │   ├── SteamVR_AlphaOut.shader
+│   │   │   │   │   │   ├── SteamVR_AlphaOut.shader.meta
+│   │   │   │   │   │   ├── SteamVR_BlitFlip.shader
+│   │   │   │   │   │   ├── SteamVR_BlitFlip.shader.meta
+│   │   │   │   │   │   ├── SteamVR_Blit.shader
+│   │   │   │   │   │   ├── SteamVR_Blit.shader.meta
+│   │   │   │   │   │   ├── SteamVR_ClearAll.shader
+│   │   │   │   │   │   ├── SteamVR_ClearAll.shader.meta
+│   │   │   │   │   │   ├── SteamVR_ColorOut.shader
+│   │   │   │   │   │   ├── SteamVR_ColorOut.shader.meta
+│   │   │   │   │   │   ├── SteamVR_ExternalCamera.prefab
+│   │   │   │   │   │   ├── SteamVR_ExternalCamera.prefab.meta
+│   │   │   │   │   │   ├── SteamVR_Fade.shader
+│   │   │   │   │   │   ├── SteamVR_Fade.shader.meta
+│   │   │   │   │   │   ├── SteamVR_HiddenArea.shader
+│   │   │   │   │   │   ├── SteamVR_HiddenArea.shader.meta
+│   │   │   │   │   │   ├── SteamVR_Overlay.shader
+│   │   │   │   │   │   └── SteamVR_Overlay.shader.meta
+│   │   │   │   │   ├── Resources.meta
+│   │   │   │   │   ├── Scenes
+│   │   │   │   │   │   ├── example.unity
+│   │   │   │   │   │   └── example.unity.meta
+│   │   │   │   │   ├── Scenes.meta
+│   │   │   │   │   ├── Scripts
+│   │   │   │   │   │   ├── SteamVR_Camera.cs
+│   │   │   │   │   │   ├── SteamVR_Camera.cs.meta
+│   │   │   │   │   │   ├── SteamVR_CameraFlip.cs
+│   │   │   │   │   │   ├── SteamVR_CameraFlip.cs.meta
+│   │   │   │   │   │   ├── SteamVR_CameraMask.cs
+│   │   │   │   │   │   ├── SteamVR_CameraMask.cs.meta
+│   │   │   │   │   │   ├── SteamVR_Controller.cs
+│   │   │   │   │   │   ├── SteamVR_Controller.cs.meta
+│   │   │   │   │   │   ├── SteamVR_ControllerManager.cs
+│   │   │   │   │   │   ├── SteamVR_ControllerManager.cs.meta
+│   │   │   │   │   │   ├── SteamVR.cs
+│   │   │   │   │   │   ├── SteamVR.cs.meta
+│   │   │   │   │   │   ├── SteamVR_Ears.cs
+│   │   │   │   │   │   ├── SteamVR_Ears.cs.meta
+│   │   │   │   │   │   ├── SteamVR_ExternalCamera.cs
+│   │   │   │   │   │   ├── SteamVR_ExternalCamera.cs.meta
+│   │   │   │   │   │   ├── SteamVR_Fade.cs
+│   │   │   │   │   │   ├── SteamVR_Fade.cs.meta
+│   │   │   │   │   │   ├── SteamVR_Frustum.cs
+│   │   │   │   │   │   ├── SteamVR_Frustum.cs.meta
+│   │   │   │   │   │   ├── SteamVR_GameView.cs
+│   │   │   │   │   │   ├── SteamVR_GameView.cs.meta
+│   │   │   │   │   │   ├── SteamVR_IK.cs
+│   │   │   │   │   │   ├── SteamVR_IK.cs.meta
+│   │   │   │   │   │   ├── SteamVR_LoadLevel.cs
+│   │   │   │   │   │   ├── SteamVR_LoadLevel.cs.meta
+│   │   │   │   │   │   ├── SteamVR_Menu.cs
+│   │   │   │   │   │   ├── SteamVR_Menu.cs.meta
+│   │   │   │   │   │   ├── SteamVR_Overlay.cs
+│   │   │   │   │   │   ├── SteamVR_Overlay.cs.meta
+│   │   │   │   │   │   ├── SteamVR_PlayArea.cs
+│   │   │   │   │   │   ├── SteamVR_PlayArea.cs.meta
+│   │   │   │   │   │   ├── SteamVR_Render.cs
+│   │   │   │   │   │   ├── SteamVR_Render.cs.meta
+│   │   │   │   │   │   ├── SteamVR_RenderModel.cs
+│   │   │   │   │   │   ├── SteamVR_RenderModel.cs.meta
+│   │   │   │   │   │   ├── SteamVR_Skybox.cs
+│   │   │   │   │   │   ├── SteamVR_Skybox.cs.meta
+│   │   │   │   │   │   ├── SteamVR_Stats.cs
+│   │   │   │   │   │   ├── SteamVR_Stats.cs.meta
+│   │   │   │   │   │   ├── SteamVR_Status.cs
+│   │   │   │   │   │   ├── SteamVR_Status.cs.meta
+│   │   │   │   │   │   ├── SteamVR_StatusText.cs
+│   │   │   │   │   │   ├── SteamVR_StatusText.cs.meta
+│   │   │   │   │   │   ├── SteamVR_TestController.cs
+│   │   │   │   │   │   ├── SteamVR_TestController.cs.meta
+│   │   │   │   │   │   ├── SteamVR_TrackedObject.cs
+│   │   │   │   │   │   ├── SteamVR_TrackedObject.cs.meta
+│   │   │   │   │   │   ├── SteamVR_UpdatePoses.cs
+│   │   │   │   │   │   ├── SteamVR_UpdatePoses.cs.meta
+│   │   │   │   │   │   ├── SteamVR_Utils.cs
+│   │   │   │   │   │   └── SteamVR_Utils.cs.meta
+│   │   │   │   │   ├── Scripts.meta
+│   │   │   │   │   ├── Textures
+│   │   │   │   │   │   ├── arrow.png
+│   │   │   │   │   │   ├── arrow.png.meta
+│   │   │   │   │   │   ├── background.png
+│   │   │   │   │   │   ├── background.png.meta
+│   │   │   │   │   │   ├── logo.png
+│   │   │   │   │   │   ├── logo.png.meta
+│   │   │   │   │   │   ├── overlay.renderTexture
+│   │   │   │   │   │   ├── overlay.renderTexture.meta
+│   │   │   │   │   │   ├── portalworkshop.png
+│   │   │   │   │   │   └── portalworkshop.png.meta
+│   │   │   │   │   └── Textures.meta
+│   │   │   │   ├── SteamVR.meta
+│   │   │   │   ├── UIClicker.cs
+│   │   │   │   └── UIClicker.cs.meta
+│   │   │   └── ProjectSettings
+│   │   │       ├── AudioManager.asset
+│   │   │       ├── ClusterInputManager.asset
+│   │   │       ├── DynamicsManager.asset
+│   │   │       ├── EditorBuildSettings.asset
+│   │   │       ├── EditorSettings.asset
+│   │   │       ├── GraphicsSettings.asset
+│   │   │       ├── InputManager.asset
+│   │   │       ├── NavMeshAreas.asset
+│   │   │       ├── NetworkManager.asset
+│   │   │       ├── Physics2DSettings.asset
+│   │   │       ├── ProjectSettings.asset
+│   │   │       ├── ProjectVersion.txt
+│   │   │       ├── QualitySettings.asset
+│   │   │       ├── TagManager.asset
+│   │   │       ├── TimeManager.asset
+│   │   │       ├── UnityAdsSettings.asset
+│   │   │       └── UnityConnectSettings.asset
+│   │   └── unity_teleport_sample
+│   │       ├── Assets
+│   │       │   ├── Materials
+│   │       │   │   ├── Ground.mat
+│   │       │   │   ├── Ground.mat.meta
+│   │       │   │   ├── SampleObjects.mat
+│   │       │   │   └── SampleObjects.mat.meta
+│   │       │   ├── Materials.meta
+│   │       │   ├── New Terrain.asset
+│   │       │   ├── New Terrain.asset.meta
+│   │       │   ├── Plugins
+│   │       │   │   ├── openvr_api.bundle
+│   │       │   │   │   ├── Contents
+│   │       │   │   │   │   ├── Info.plist
+│   │       │   │   │   │   ├── Info.plist.meta
+│   │       │   │   │   │   ├── MacOS
+│   │       │   │   │   │   │   ├── openvr_api
+│   │       │   │   │   │   │   └── openvr_api.meta
+│   │       │   │   │   │   └── MacOS.meta
+│   │       │   │   │   └── Contents.meta
+│   │       │   │   ├── openvr_api.bundle.meta
+│   │       │   │   ├── openvr_api.cs
+│   │       │   │   ├── openvr_api.cs.meta
+│   │       │   │   ├── x86
+│   │       │   │   │   ├── openvr_api.dll
+│   │       │   │   │   └── openvr_api.dll.meta
+│   │       │   │   ├── x86_64
+│   │       │   │   │   ├── libopenvr_api.so
+│   │       │   │   │   ├── libopenvr_api.so.meta
+│   │       │   │   │   ├── openvr_api.dll
+│   │       │   │   │   └── openvr_api.dll.meta
+│   │       │   │   ├── x86_64.meta
+│   │       │   │   └── x86.meta
+│   │       │   ├── Plugins.meta
+│   │       │   ├── SteamVR
+│   │       │   │   ├── Editor
+│   │       │   │   │   ├── SteamVR_Editor.cs
+│   │       │   │   │   ├── SteamVR_Editor.cs.meta
+│   │       │   │   │   ├── SteamVR_RenderModelEditor.cs
+│   │       │   │   │   ├── SteamVR_RenderModelEditor.cs.meta
+│   │       │   │   │   ├── SteamVR_Settings.cs
+│   │       │   │   │   ├── SteamVR_Settings.cs.meta
+│   │       │   │   │   ├── SteamVR_SkyboxEditor.cs
+│   │       │   │   │   ├── SteamVR_SkyboxEditor.cs.meta
+│   │       │   │   │   ├── SteamVR_Update.cs
+│   │       │   │   │   └── SteamVR_Update.cs.meta
+│   │       │   │   ├── Editor.meta
+│   │       │   │   ├── Extras
+│   │       │   │   │   ├── SteamVR_GazeTracker.cs
+│   │       │   │   │   ├── SteamVR_GazeTracker.cs.meta
+│   │       │   │   │   ├── SteamVR_LaserPointer.cs
+│   │       │   │   │   ├── SteamVR_LaserPointer.cs.meta
+│   │       │   │   │   ├── SteamVR_Teleporter.cs
+│   │       │   │   │   ├── SteamVR_Teleporter.cs.meta
+│   │       │   │   │   ├── SteamVR_TestIK.unity
+│   │       │   │   │   ├── SteamVR_TestIK.unity.meta
+│   │       │   │   │   ├── SteamVR_TestThrow.cs
+│   │       │   │   │   ├── SteamVR_TestThrow.cs.meta
+│   │       │   │   │   ├── SteamVR_TestThrow.unity
+│   │       │   │   │   ├── SteamVR_TestThrow.unity.meta
+│   │       │   │   │   ├── SteamVR_TrackedController.cs
+│   │       │   │   │   └── SteamVR_TrackedController.cs.meta
+│   │       │   │   ├── Extras.meta
+│   │       │   │   ├── Materials
+│   │       │   │   │   ├── portalworkshop.mat
+│   │       │   │   │   └── portalworkshop.mat.meta
+│   │       │   │   ├── Materials.meta
+│   │       │   │   ├── Prefabs
+│   │       │   │   │   ├── [CameraRig].prefab
+│   │       │   │   │   ├── [CameraRig].prefab.meta
+│   │       │   │   │   ├── [Status].prefab
+│   │       │   │   │   ├── [Status].prefab.meta
+│   │       │   │   │   ├── [SteamVR].prefab
+│   │       │   │   │   └── [SteamVR].prefab.meta
+│   │       │   │   ├── Prefabs.meta
+│   │       │   │   ├── quickstart.pdf
+│   │       │   │   ├── quickstart.pdf.meta
+│   │       │   │   ├── readme.txt
+│   │       │   │   ├── readme.txt.meta
+│   │       │   │   ├── Resources
+│   │       │   │   │   ├── SteamVR_AlphaOut.shader
+│   │       │   │   │   ├── SteamVR_AlphaOut.shader.meta
+│   │       │   │   │   ├── SteamVR_BlitFlip.shader
+│   │       │   │   │   ├── SteamVR_BlitFlip.shader.meta
+│   │       │   │   │   ├── SteamVR_Blit.shader
+│   │       │   │   │   ├── SteamVR_Blit.shader.meta
+│   │       │   │   │   ├── SteamVR_ClearAll.shader
+│   │       │   │   │   ├── SteamVR_ClearAll.shader.meta
+│   │       │   │   │   ├── SteamVR_ColorOut.shader
+│   │       │   │   │   ├── SteamVR_ColorOut.shader.meta
+│   │       │   │   │   ├── SteamVR_ExternalCamera.prefab
+│   │       │   │   │   ├── SteamVR_ExternalCamera.prefab.meta
+│   │       │   │   │   ├── SteamVR_Fade.shader
+│   │       │   │   │   ├── SteamVR_Fade.shader.meta
+│   │       │   │   │   ├── SteamVR_HiddenArea.shader
+│   │       │   │   │   ├── SteamVR_HiddenArea.shader.meta
+│   │       │   │   │   ├── SteamVR_Overlay.shader
+│   │       │   │   │   └── SteamVR_Overlay.shader.meta
+│   │       │   │   ├── Resources.meta
+│   │       │   │   ├── Scenes
+│   │       │   │   │   ├── example.unity
+│   │       │   │   │   └── example.unity.meta
+│   │       │   │   ├── Scenes.meta
+│   │       │   │   ├── Scripts
+│   │       │   │   │   ├── SteamVR_Camera.cs
+│   │       │   │   │   ├── SteamVR_Camera.cs.meta
+│   │       │   │   │   ├── SteamVR_CameraFlip.cs
+│   │       │   │   │   ├── SteamVR_CameraFlip.cs.meta
+│   │       │   │   │   ├── SteamVR_CameraMask.cs
+│   │       │   │   │   ├── SteamVR_CameraMask.cs.meta
+│   │       │   │   │   ├── SteamVR_Controller.cs
+│   │       │   │   │   ├── SteamVR_Controller.cs.meta
+│   │       │   │   │   ├── SteamVR_ControllerManager.cs
+│   │       │   │   │   ├── SteamVR_ControllerManager.cs.meta
+│   │       │   │   │   ├── SteamVR.cs
+│   │       │   │   │   ├── SteamVR.cs.meta
+│   │       │   │   │   ├── SteamVR_Ears.cs
+│   │       │   │   │   ├── SteamVR_Ears.cs.meta
+│   │       │   │   │   ├── SteamVR_ExternalCamera.cs
+│   │       │   │   │   ├── SteamVR_ExternalCamera.cs.meta
+│   │       │   │   │   ├── SteamVR_Fade.cs
+│   │       │   │   │   ├── SteamVR_Fade.cs.meta
+│   │       │   │   │   ├── SteamVR_Frustum.cs
+│   │       │   │   │   ├── SteamVR_Frustum.cs.meta
+│   │       │   │   │   ├── SteamVR_GameView.cs
+│   │       │   │   │   ├── SteamVR_GameView.cs.meta
+│   │       │   │   │   ├── SteamVR_IK.cs
+│   │       │   │   │   ├── SteamVR_IK.cs.meta
+│   │       │   │   │   ├── SteamVR_Keyboard.cs
+│   │       │   │   │   ├── SteamVR_Keyboard.cs.meta
+│   │       │   │   │   ├── SteamVR_LoadLevel.cs
+│   │       │   │   │   ├── SteamVR_LoadLevel.cs.meta
+│   │       │   │   │   ├── SteamVR_Menu.cs
+│   │       │   │   │   ├── SteamVR_Menu.cs.meta
+│   │       │   │   │   ├── SteamVR_Overlay.cs
+│   │       │   │   │   ├── SteamVR_Overlay.cs.meta
+│   │       │   │   │   ├── SteamVR_PlayArea.cs
+│   │       │   │   │   ├── SteamVR_PlayArea.cs.meta
+│   │       │   │   │   ├── SteamVR_Render.cs
+│   │       │   │   │   ├── SteamVR_Render.cs.meta
+│   │       │   │   │   ├── SteamVR_RenderModel.cs
+│   │       │   │   │   ├── SteamVR_RenderModel.cs.meta
+│   │       │   │   │   ├── SteamVR_Skybox.cs
+│   │       │   │   │   ├── SteamVR_Skybox.cs.meta
+│   │       │   │   │   ├── SteamVR_Stats.cs
+│   │       │   │   │   ├── SteamVR_Stats.cs.meta
+│   │       │   │   │   ├── SteamVR_Status.cs
+│   │       │   │   │   ├── SteamVR_Status.cs.meta
+│   │       │   │   │   ├── SteamVR_StatusText.cs
+│   │       │   │   │   ├── SteamVR_StatusText.cs.meta
+│   │       │   │   │   ├── SteamVR_TestController.cs
+│   │       │   │   │   ├── SteamVR_TestController.cs.meta
+│   │       │   │   │   ├── SteamVR_TrackedObject.cs
+│   │       │   │   │   ├── SteamVR_TrackedObject.cs.meta
+│   │       │   │   │   ├── SteamVR_UpdatePoses.cs
+│   │       │   │   │   ├── SteamVR_UpdatePoses.cs.meta
+│   │       │   │   │   ├── SteamVR_Utils.cs
+│   │       │   │   │   └── SteamVR_Utils.cs.meta
+│   │       │   │   ├── Scripts.meta
+│   │       │   │   ├── Textures
+│   │       │   │   │   ├── arrow.png
+│   │       │   │   │   ├── arrow.png.meta
+│   │       │   │   │   ├── background.png
+│   │       │   │   │   ├── background.png.meta
+│   │       │   │   │   ├── logo.png
+│   │       │   │   │   ├── logo.png.meta
+│   │       │   │   │   ├── overlay.renderTexture
+│   │       │   │   │   ├── overlay.renderTexture.meta
+│   │       │   │   │   ├── workshop.png
+│   │       │   │   │   └── workshop.png.meta
+│   │       │   │   └── Textures.meta
+│   │       │   ├── SteamVR.meta
+│   │       │   ├── unity_teleport_sample.unity
+│   │       │   ├── unity_teleport_sample.unity.meta
+│   │       │   ├── UnityVS
+│   │       │   │   ├── Editor
+│   │       │   │   │   ├── SyntaxTree.VisualStudio.Unity.Bridge.dll
+│   │       │   │   │   ├── SyntaxTree.VisualStudio.Unity.Bridge.dll.meta
+│   │       │   │   │   ├── SyntaxTree.VisualStudio.Unity.Messaging.dll
+│   │       │   │   │   └── SyntaxTree.VisualStudio.Unity.Messaging.dll.meta
+│   │       │   │   └── Editor.meta
+│   │       │   └── UnityVS.meta
+│   │       └── ProjectSettings
+│   │           ├── AudioManager.asset
+│   │           ├── ClusterInputManager.asset
+│   │           ├── DynamicsManager.asset
+│   │           ├── EditorBuildSettings.asset
+│   │           ├── EditorSettings.asset
+│   │           ├── GraphicsSettings.asset
+│   │           ├── InputManager.asset
+│   │           ├── NavMeshAreas.asset
+│   │           ├── NetworkManager.asset
+│   │           ├── Physics2DSettings.asset
+│   │           ├── ProjectSettings.asset
+│   │           ├── ProjectVersion.txt
+│   │           ├── QualitySettings.asset
+│   │           ├── TagManager.asset
+│   │           ├── TimeManager.asset
+│   │           ├── UnityAdsSettings.asset
+│   │           └── UnityConnectSettings.asset
+│   ├── src
+│   │   ├── CMakeLists.txt
+│   │   ├── Info.plist
+│   │   ├── ivrclientcore.h
+│   │   ├── json
+│   │   │   ├── json-forwards.h
+│   │   │   └── json.h
+│   │   ├── jsoncpp.cpp
+│   │   ├── openvr_api_public.cpp
+│   │   ├── openvr.pc.in
+│   │   ├── README
+│   │   └── vrcore
+│   │       ├── dirtools_public.cpp
+│   │       ├── dirtools_public.h
+│   │       ├── envvartools_public.cpp
+│   │       ├── envvartools_public.h
+│   │       ├── hmderrors_public.cpp
+│   │       ├── hmderrors_public.h
+│   │       ├── pathtools_public.cpp
+│   │       ├── pathtools_public.h
+│   │       ├── sharedlibtools_public.cpp
+│   │       ├── sharedlibtools_public.h
+│   │       ├── strtools_public.cpp
+│   │       ├── strtools_public.h
+│   │       ├── vrpathregistry_public.cpp
+│   │       └── vrpathregistry_public.h
+│   └── Toolchain-clang.cmake
+├── openvr-2.5.1.tar.gz -> /home/felix/packages/openvr/openvr-2.5.1.tar.gz
+├── openvr-fix-vsprintf_s.patch -> /home/felix/packages/openvr/openvr-fix-vsprintf_s.patch
+└── openvr-use-system-jsoncpp-1.23.7.patch -> /home/felix/packages/openvr/openvr-use-system-jsoncpp-1.23.7.patch
+
+178 directories, 857 files

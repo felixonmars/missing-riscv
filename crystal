@@ -1,0 +1,2665 @@
+src
+├── crystal-1.14.0
+│   ├── bin
+│   │   ├── check-compiler-flag
+│   │   ├── ci
+│   │   ├── crystal
+│   │   ├── crystal.bat
+│   │   └── crystal.ps1
+│   ├── Brewfile
+│   ├── CHANGELOG.0.md
+│   ├── CHANGELOG.md
+│   ├── CODE_OF_CONDUCT.md
+│   ├── CONTRIBUTING.md
+│   ├── doc
+│   │   └── assets
+│   │       └── crystal-born-and-raised.svg
+│   ├── etc
+│   │   ├── completion.bash
+│   │   ├── completion.fish
+│   │   ├── completion.zsh
+│   │   ├── gdb
+│   │   │   └── crystal_formatters.py
+│   │   ├── lldb
+│   │   │   └── crystal_formatters.py
+│   │   ├── msvc
+│   │   │   └── crystal.natvis
+│   │   └── win-ci
+│   │       ├── build-ffi.ps1
+│   │       ├── build-gc.ps1
+│   │       ├── build-iconv.ps1
+│   │       ├── build-llvm.ps1
+│   │       ├── build-mpir.ps1
+│   │       ├── build-openssl.ps1
+│   │       ├── build-pcre2.ps1
+│   │       ├── build-pcre.ps1
+│   │       ├── build-xml2.ps1
+│   │       ├── build-yaml.ps1
+│   │       ├── build-z.ps1
+│   │       ├── crystal.bmp
+│   │       ├── crystal.iss
+│   │       ├── crystal_small.bmp
+│   │       ├── cygwin-build-iconv.sh
+│   │       └── setup.ps1
+│   ├── lib
+│   │   ├── markd
+│   │   │   ├── CHANGELOG.md
+│   │   │   ├── lib -> ..
+│   │   │   ├── LICENSE
+│   │   │   ├── README.md
+│   │   │   ├── shard.yml
+│   │   │   ├── spec
+│   │   │   │   ├── api_spec.cr
+│   │   │   │   ├── fixtures
+│   │   │   │   │   ├── regression.txt
+│   │   │   │   │   ├── smart_punct.txt
+│   │   │   │   │   └── spec.txt
+│   │   │   │   ├── markd_spec.cr
+│   │   │   │   └── spec_helper.cr
+│   │   │   └── src
+│   │   │       ├── markd
+│   │   │       │   ├── html_entities.cr
+│   │   │       │   ├── mappings
+│   │   │       │   │   ├── decode.cr
+│   │   │       │   │   ├── entities.cr
+│   │   │       │   │   └── legacy.cr
+│   │   │       │   ├── node.cr
+│   │   │       │   ├── options.cr
+│   │   │       │   ├── parser.cr
+│   │   │       │   ├── parsers
+│   │   │       │   │   ├── block.cr
+│   │   │       │   │   └── inline.cr
+│   │   │       │   ├── renderer.cr
+│   │   │       │   ├── renderers
+│   │   │       │   │   └── html_renderer.cr
+│   │   │       │   ├── rule.cr
+│   │   │       │   ├── rules
+│   │   │       │   │   ├── block_quote.cr
+│   │   │       │   │   ├── code_block.cr
+│   │   │       │   │   ├── document.cr
+│   │   │       │   │   ├── heading.cr
+│   │   │       │   │   ├── html_block.cr
+│   │   │       │   │   ├── item.cr
+│   │   │       │   │   ├── list.cr
+│   │   │       │   │   ├── paragraph.cr
+│   │   │       │   │   └── thematic_break.cr
+│   │   │       │   ├── utils.cr
+│   │   │       │   └── version.cr
+│   │   │       └── markd.cr
+│   │   └── reply
+│   │       ├── CHANGELOG.md
+│   │       ├── examples
+│   │       │   ├── crystal_repl.cr
+│   │       │   └── repl.cr
+│   │       ├── lib -> ..
+│   │       ├── LICENSE
+│   │       ├── README.md
+│   │       ├── shard.yml
+│   │       ├── spec
+│   │       │   ├── auto_completion_spec.cr
+│   │       │   ├── char_reader_spec.cr
+│   │       │   ├── expression_editor_spec.cr
+│   │       │   ├── history_spec.cr
+│   │       │   ├── reader_spec.cr
+│   │       │   └── spec_helper.cr
+│   │       └── src
+│   │           ├── auto_completion.cr
+│   │           ├── char_reader.cr
+│   │           ├── expression_editor.cr
+│   │           ├── history.cr
+│   │           ├── reader.cr
+│   │           ├── reply.cr
+│   │           ├── term_cursor.cr
+│   │           └── term_size.cr
+│   ├── LICENSE
+│   ├── Makefile
+│   ├── Makefile.win
+│   ├── man
+│   │   └── crystal.1
+│   ├── NOTICE.md
+│   ├── README.md
+│   ├── samples
+│   │   ├── 2048.cr
+│   │   ├── binary-trees.cr
+│   │   ├── brainfuck.cr
+│   │   ├── channel_primes.cr
+│   │   ├── channel_select.cr
+│   │   ├── compiler
+│   │   │   ├── formatter_example.cr
+│   │   │   ├── transformer_example.cr
+│   │   │   └── visitor_example.cr
+│   │   ├── conway.cr
+│   │   ├── degree_days.cr
+│   │   ├── egrep.cr
+│   │   ├── fannkuch-redux.cr
+│   │   ├── havlak.cr
+│   │   ├── http_server.cr
+│   │   ├── impl.cr
+│   │   ├── llvm
+│   │   │   └── brainfuck.cr
+│   │   ├── Makefile
+│   │   ├── Makefile.win
+│   │   ├── mandelbrot2.cr
+│   │   ├── mandelbrot.cr
+│   │   ├── matmul.cr
+│   │   ├── meteor.cr
+│   │   ├── mt_gc_test.cr
+│   │   ├── nbodies.cr
+│   │   ├── neural_net.cr
+│   │   ├── noise.cr
+│   │   ├── pig.cr
+│   │   ├── pretty_json.cr
+│   │   ├── quine.cr
+│   │   ├── red_black_tree.cr
+│   │   ├── sdl
+│   │   │   ├── fire.cr
+│   │   │   ├── fire.txt
+│   │   │   ├── raytracer.cr
+│   │   │   ├── sdl
+│   │   │   │   ├── lib_sdl.cr
+│   │   │   │   ├── sdl.cr
+│   │   │   │   └── surface.cr
+│   │   │   ├── tv.cr
+│   │   │   └── tv.txt
+│   │   ├── sieve.cr
+│   │   ├── spectral-norm.cr
+│   │   ├── sudoku.cr
+│   │   ├── tcp_client.cr
+│   │   ├── tcp_server.cr
+│   │   ├── text_raytracer.cr
+│   │   ├── tree.cr
+│   │   └── wordcount.cr
+│   ├── scripts
+│   │   ├── docs-versions.sh
+│   │   ├── generate_data.mk
+│   │   ├── generate_grapheme_break_specs.cr
+│   │   ├── generate_grapheme_properties.cr
+│   │   ├── generate_html_entities.cr
+│   │   ├── generate_llvm_version_info.cr
+│   │   ├── generate_ssl_server_defaults.cr
+│   │   ├── generate_unicode_data.cr
+│   │   ├── generate_windows_zone_names.cr
+│   │   ├── git
+│   │   │   └── pre-commit
+│   │   ├── github-changelog.cr
+│   │   ├── grapheme_properties.ecr
+│   │   ├── html_entities.ecr
+│   │   ├── print_regex_config.cr
+│   │   ├── release-update.sh
+│   │   ├── test_ssl_server.cr
+│   │   ├── unicode_data.ecr
+│   │   ├── update-changelog.sh
+│   │   ├── update-distribution-scripts.sh
+│   │   └── windows_zone_names.ecr
+│   ├── SECURITY.md
+│   ├── shard.lock
+│   ├── shard.yml
+│   ├── shell.nix
+│   ├── spec
+│   │   ├── all_spec.cr
+│   │   ├── compiler
+│   │   │   ├── codegen
+│   │   │   │   ├── alias_spec.cr
+│   │   │   │   ├── and_spec.cr
+│   │   │   │   ├── array_literal_spec.cr
+│   │   │   │   ├── asm_spec.cr
+│   │   │   │   ├── automatic_cast_spec.cr
+│   │   │   │   ├── block_spec.cr
+│   │   │   │   ├── c_abi
+│   │   │   │   │   ├── c_abi_spec.cr
+│   │   │   │   │   └── c_abi_x86_64_spec.cr
+│   │   │   │   ├── case_spec.cr
+│   │   │   │   ├── cast_spec.cr
+│   │   │   │   ├── c_enum_spec.cr
+│   │   │   │   ├── class_spec.cr
+│   │   │   │   ├── class_var_spec.cr
+│   │   │   │   ├── closure_spec.cr
+│   │   │   │   ├── const_spec.cr
+│   │   │   │   ├── c_struct_spec.cr
+│   │   │   │   ├── c_union_spec.cr
+│   │   │   │   ├── debug_spec.cr
+│   │   │   │   ├── def_default_value_spec.cr
+│   │   │   │   ├── def_spec.cr
+│   │   │   │   ├── double_splat_spec.cr
+│   │   │   │   ├── enum_spec.cr
+│   │   │   │   ├── exception_spec.cr
+│   │   │   │   ├── experimental_spec.cr
+│   │   │   │   ├── extern_spec.cr
+│   │   │   │   ├── generic_class_spec.cr
+│   │   │   │   ├── hash_literal_spec.cr
+│   │   │   │   ├── hooks_spec.cr
+│   │   │   │   ├── if_spec.cr
+│   │   │   │   ├── is_a_spec.cr
+│   │   │   │   ├── lib_spec.cr
+│   │   │   │   ├── macro_spec.cr
+│   │   │   │   ├── magic_constants_spec.cr
+│   │   │   │   ├── method_missing_spec.cr
+│   │   │   │   ├── module_spec.cr
+│   │   │   │   ├── multi_assign_spec.cr
+│   │   │   │   ├── named_args_spec.cr
+│   │   │   │   ├── named_tuple_spec.cr
+│   │   │   │   ├── new_spec.cr
+│   │   │   │   ├── next_spec.cr
+│   │   │   │   ├── nilable_cast_spec.cr
+│   │   │   │   ├── no_return_spec.cr
+│   │   │   │   ├── not_spec.cr
+│   │   │   │   ├── offsetof_spec.cr
+│   │   │   │   ├── op_assign_spec.cr
+│   │   │   │   ├── or_spec.cr
+│   │   │   │   ├── pointer_spec.cr
+│   │   │   │   ├── previous_def_spec.cr
+│   │   │   │   ├── primitives_spec.cr
+│   │   │   │   ├── private_spec.cr
+│   │   │   │   ├── proc_spec.cr
+│   │   │   │   ├── regex_literal_spec.cr
+│   │   │   │   ├── responds_to_spec.cr
+│   │   │   │   ├── return_spec.cr
+│   │   │   │   ├── sizeof_spec.cr
+│   │   │   │   ├── special_vars_spec.cr
+│   │   │   │   ├── splat_spec.cr
+│   │   │   │   ├── ssa_spec.cr
+│   │   │   │   ├── struct_spec.cr
+│   │   │   │   ├── super_spec.cr
+│   │   │   │   ├── target_spec.cr
+│   │   │   │   ├── thread_local_spec.cr
+│   │   │   │   ├── tuple_spec.cr
+│   │   │   │   ├── type_declaration_spec.cr
+│   │   │   │   ├── uninitialized_spec.cr
+│   │   │   │   ├── union_type_spec.cr
+│   │   │   │   ├── until_spec.cr
+│   │   │   │   ├── var_spec.cr
+│   │   │   │   ├── virtual_spec.cr
+│   │   │   │   ├── void_spec.cr
+│   │   │   │   ├── while_spec.cr
+│   │   │   │   └── yield_with_scope_spec.cr
+│   │   │   ├── compiler_spec.cr
+│   │   │   ├── config_spec.cr
+│   │   │   ├── crystal
+│   │   │   │   ├── commands
+│   │   │   │   │   └── clear_cache_spec.cr
+│   │   │   │   ├── tools
+│   │   │   │   │   ├── context_spec.cr
+│   │   │   │   │   ├── doc
+│   │   │   │   │   │   ├── doc_renderer_spec.cr
+│   │   │   │   │   │   ├── generator_spec.cr
+│   │   │   │   │   │   ├── macro_spec.cr
+│   │   │   │   │   │   ├── method_spec.cr
+│   │   │   │   │   │   ├── project_info_spec.cr
+│   │   │   │   │   │   └── type_spec.cr
+│   │   │   │   │   ├── doc_spec.cr
+│   │   │   │   │   ├── expand_spec.cr
+│   │   │   │   │   ├── flags_spec.cr
+│   │   │   │   │   ├── format_spec.cr
+│   │   │   │   │   ├── hierarchy_spec.cr
+│   │   │   │   │   ├── implementations_spec.cr
+│   │   │   │   │   ├── init_spec.cr
+│   │   │   │   │   ├── playground_spec.cr
+│   │   │   │   │   ├── repl_spec.cr
+│   │   │   │   │   ├── table_print_spec.cr
+│   │   │   │   │   └── unreachable_spec.cr
+│   │   │   │   └── types_spec.cr
+│   │   │   ├── crystal_path
+│   │   │   │   ├── crystal_path_spec.cr
+│   │   │   │   ├── foo.cr
+│   │   │   │   │   └── foo.cr
+│   │   │   │   ├── other_test_files
+│   │   │   │   │   └── other_test_files.cr
+│   │   │   │   └── test_files
+│   │   │   │       ├── file_one.cr
+│   │   │   │       ├── file_two.cr
+│   │   │   │       ├── src
+│   │   │   │       │   ├── file_three.cr
+│   │   │   │       │   ├── test_files
+│   │   │   │       │   │   ├── another
+│   │   │   │       │   │   │   └── another.cr
+│   │   │   │       │   │   └── file_four.cr
+│   │   │   │       │   ├── test_files.cr
+│   │   │   │       │   └── yet_another
+│   │   │   │       │       └── yet_another.cr
+│   │   │   │       └── test_folder
+│   │   │   │           ├── file_three.cr
+│   │   │   │           ├── not_a_crystal_file.txt
+│   │   │   │           └── test_folder.cr
+│   │   │   ├── data
+│   │   │   │   ├── args_test
+│   │   │   │   ├── build
+│   │   │   │   ├── compiler_sample
+│   │   │   │   ├── ffi
+│   │   │   │   │   └── sum.c
+│   │   │   │   ├── interpreter
+│   │   │   │   │   └── sum.c
+│   │   │   │   ├── loader
+│   │   │   │   │   ├── bar.c
+│   │   │   │   │   ├── foo2.c
+│   │   │   │   │   ├── foo.c
+│   │   │   │   │   └── ld.so
+│   │   │   │   │       ├── basic2.conf
+│   │   │   │   │       ├── basic.conf
+│   │   │   │   │       └── include.conf
+│   │   │   │   └── visibility.h
+│   │   │   ├── ffi
+│   │   │   │   └── ffi_spec.cr
+│   │   │   ├── formatter
+│   │   │   │   └── formatter_spec.cr
+│   │   │   ├── interpreter
+│   │   │   │   ├── autocast_spec.cr
+│   │   │   │   ├── blocks_spec.cr
+│   │   │   │   ├── bugs_spec.cr
+│   │   │   │   ├── calls_spec.cr
+│   │   │   │   ├── casts_spec.cr
+│   │   │   │   ├── classes_spec.cr
+│   │   │   │   ├── class_vars_spec.cr
+│   │   │   │   ├── closures_spec.cr
+│   │   │   │   ├── constants_spec.cr
+│   │   │   │   ├── control_flow_spec.cr
+│   │   │   │   ├── enum_spec.cr
+│   │   │   │   ├── exceptions_spec.cr
+│   │   │   │   ├── extern_spec.cr
+│   │   │   │   ├── integration_spec.cr
+│   │   │   │   ├── is_a_spec.cr
+│   │   │   │   ├── lib_spec.cr
+│   │   │   │   ├── multidispatch_spec.cr
+│   │   │   │   ├── named_tuple_spec.cr
+│   │   │   │   ├── pointers_spec.cr
+│   │   │   │   ├── primitives_spec.cr
+│   │   │   │   ├── procs_spec.cr
+│   │   │   │   ├── responds_to_spec.cr
+│   │   │   │   ├── sizeof_spec.cr
+│   │   │   │   ├── spec_helper.cr
+│   │   │   │   ├── special_vars_spec.cr
+│   │   │   │   ├── structs_spec.cr
+│   │   │   │   ├── symbol_spec.cr
+│   │   │   │   ├── tuple_spec.cr
+│   │   │   │   ├── typeof_spec.cr
+│   │   │   │   ├── types_spec.cr
+│   │   │   │   └── unions_spec.cr
+│   │   │   ├── interpreter_spec.cr
+│   │   │   ├── lexer
+│   │   │   │   ├── lexer_comment_spec.cr
+│   │   │   │   ├── lexer_doc_spec.cr
+│   │   │   │   ├── lexer_macro_spec.cr
+│   │   │   │   ├── lexer_objects
+│   │   │   │   │   └── strings.cr
+│   │   │   │   ├── lexer_spec.cr
+│   │   │   │   ├── lexer_string_array_spec.cr
+│   │   │   │   ├── lexer_string_spec.cr
+│   │   │   │   └── location_spec.cr
+│   │   │   ├── loader
+│   │   │   │   ├── msvc_spec.cr
+│   │   │   │   ├── spec_helper.cr
+│   │   │   │   └── unix_spec.cr
+│   │   │   ├── macro
+│   │   │   │   ├── macro_expander_spec.cr
+│   │   │   │   └── macro_methods_spec.cr
+│   │   │   ├── normalize
+│   │   │   │   ├── and_spec.cr
+│   │   │   │   ├── array_literal_spec.cr
+│   │   │   │   ├── block_spec.cr
+│   │   │   │   ├── case_spec.cr
+│   │   │   │   ├── chained_comparisons_spec.cr
+│   │   │   │   ├── def_spec.cr
+│   │   │   │   ├── expressions_spec.cr
+│   │   │   │   ├── hash_literal_spec.cr
+│   │   │   │   ├── multi_assign_spec.cr
+│   │   │   │   ├── op_assign_spec.cr
+│   │   │   │   ├── or_spec.cr
+│   │   │   │   ├── proc_pointer_spec.cr
+│   │   │   │   ├── range_literal_spec.cr
+│   │   │   │   ├── regex_spec.cr
+│   │   │   │   ├── return_next_break_spec.cr
+│   │   │   │   ├── select_spec.cr
+│   │   │   │   ├── string_interpolation_spec.cr
+│   │   │   │   ├── unless_spec.cr
+│   │   │   │   └── until_spec.cr
+│   │   │   ├── parser
+│   │   │   │   ├── parser_doc_spec.cr
+│   │   │   │   ├── parser_spec.cr
+│   │   │   │   ├── to_s_spec.cr
+│   │   │   │   └── warnings_spec.cr
+│   │   │   ├── semantic
+│   │   │   │   ├── abstract_def_spec.cr
+│   │   │   │   ├── alias_spec.cr
+│   │   │   │   ├── annotation_spec.cr
+│   │   │   │   ├── array_spec.cr
+│   │   │   │   ├── automatic_cast_spec.cr
+│   │   │   │   ├── block_spec.cr
+│   │   │   │   ├── call_error_spec.cr
+│   │   │   │   ├── case_spec.cr
+│   │   │   │   ├── cast_spec.cr
+│   │   │   │   ├── c_enum_spec.cr
+│   │   │   │   ├── class_spec.cr
+│   │   │   │   ├── class_var_spec.cr
+│   │   │   │   ├── cleanup_spec.cr
+│   │   │   │   ├── closure_spec.cr
+│   │   │   │   ├── concrete_types_spec.cr
+│   │   │   │   ├── const_spec.cr
+│   │   │   │   ├── c_struct_spec.cr
+│   │   │   │   ├── c_type_spec.cr
+│   │   │   │   ├── c_union_spec.cr
+│   │   │   │   ├── def_overload_spec.cr
+│   │   │   │   ├── def_spec.cr
+│   │   │   │   ├── did_you_mean_spec.cr
+│   │   │   │   ├── doc_spec.cr
+│   │   │   │   ├── double_splat_spec.cr
+│   │   │   │   ├── enum_spec.cr
+│   │   │   │   ├── exception_spec.cr
+│   │   │   │   ├── external_internal_spec.cr
+│   │   │   │   ├── extern_spec.cr
+│   │   │   │   ├── fun_spec.cr
+│   │   │   │   ├── generic_class_spec.cr
+│   │   │   │   ├── hooks_spec.cr
+│   │   │   │   ├── if_spec.cr
+│   │   │   │   ├── initialize_spec.cr
+│   │   │   │   ├── instance_var_spec.cr
+│   │   │   │   ├── is_a_spec.cr
+│   │   │   │   ├── lib_spec.cr
+│   │   │   │   ├── macro_overload_spec.cr
+│   │   │   │   ├── macro_spec.cr
+│   │   │   │   ├── metaclass_spec.cr
+│   │   │   │   ├── method_missing_spec.cr
+│   │   │   │   ├── module_spec.cr
+│   │   │   │   ├── multi_assign_spec.cr
+│   │   │   │   ├── named_args_spec.cr
+│   │   │   │   ├── named_tuple_spec.cr
+│   │   │   │   ├── new_spec.cr
+│   │   │   │   ├── nilable_cast_spec.cr
+│   │   │   │   ├── nilable_instance_var_spec.cr
+│   │   │   │   ├── nil_spec.cr
+│   │   │   │   ├── no_return_spec.cr
+│   │   │   │   ├── not_spec.cr
+│   │   │   │   ├── offsetof_spec.cr
+│   │   │   │   ├── pointer_spec.cr
+│   │   │   │   ├── previous_def_spec.cr
+│   │   │   │   ├── primitives_spec.cr
+│   │   │   │   ├── private_spec.cr
+│   │   │   │   ├── proc_spec.cr
+│   │   │   │   ├── recursive_struct_check_spec.cr
+│   │   │   │   ├── reference_storage_spec.cr
+│   │   │   │   ├── require_spec.cr
+│   │   │   │   ├── responds_to_spec.cr
+│   │   │   │   ├── restrictions_augmenter_spec.cr
+│   │   │   │   ├── restrictions_spec.cr
+│   │   │   │   ├── return_spec.cr
+│   │   │   │   ├── sizeof_spec.cr
+│   │   │   │   ├── special_vars_spec.cr
+│   │   │   │   ├── splat_spec.cr
+│   │   │   │   ├── ssa_spec.cr
+│   │   │   │   ├── static_array_spec.cr
+│   │   │   │   ├── struct_spec.cr
+│   │   │   │   ├── super_spec.cr
+│   │   │   │   ├── tuple_spec.cr
+│   │   │   │   ├── uninitialized_spec.cr
+│   │   │   │   ├── union_spec.cr
+│   │   │   │   ├── var_spec.cr
+│   │   │   │   ├── virtual_metaclass_spec.cr
+│   │   │   │   ├── virtual_spec.cr
+│   │   │   │   ├── visibility_modifiers_spec.cr
+│   │   │   │   ├── warnings_spec.cr
+│   │   │   │   ├── while_spec.cr
+│   │   │   │   └── yield_with_scope_spec.cr
+│   │   │   ├── spec_helper.cr
+│   │   │   └── util_spec.cr
+│   │   ├── compiler_spec.cr
+│   │   ├── debug
+│   │   │   ├── arrays.cr
+│   │   │   ├── blocks.cr
+│   │   │   ├── driver.cr
+│   │   │   ├── extern_unions.cr
+│   │   │   ├── large_enums.cr
+│   │   │   ├── strings.cr
+│   │   │   ├── test.sh
+│   │   │   └── top_level.cr
+│   │   ├── generate_wasm32_spec.sh
+│   │   ├── llvm-ir
+│   │   │   ├── argless-initialize-debug-loc.cr
+│   │   │   ├── assign-unions.cr
+│   │   │   ├── cast-unions.cr
+│   │   │   ├── class-var-read-debug-loc.cr
+│   │   │   ├── const-read-debug-loc.cr
+│   │   │   ├── memcpy.cr
+│   │   │   ├── memset.cr
+│   │   │   ├── pass-closure-to-c-debug-loc.cr
+│   │   │   ├── proc-call-debug-loc.cr
+│   │   │   ├── proc-pointer-debug-loc.cr
+│   │   │   ├── test.sh
+│   │   │   ├── virtual-class-var-read-debug-loc.cr
+│   │   │   └── virtual-metaclass-var-read-debug-loc.cr
+│   │   ├── manual
+│   │   │   ├── badssl_spec.cr
+│   │   │   ├── digest_large_file_spec.cr
+│   │   │   ├── find_executable_spec.cr
+│   │   │   ├── gzip_large_file_spec.cr
+│   │   │   ├── https_client_spec.cr
+│   │   │   └── string_normalize_spec.cr
+│   │   ├── primitives
+│   │   │   ├── external_command_spec.cr
+│   │   │   ├── float_spec.cr
+│   │   │   ├── int_spec.cr
+│   │   │   ├── pointer_spec.cr
+│   │   │   ├── reference_spec.cr
+│   │   │   └── slice_spec.cr
+│   │   ├── primitives_spec.cr
+│   │   ├── spec_helper.cr
+│   │   ├── std
+│   │   │   ├── array_spec.cr
+│   │   │   ├── atomic_spec.cr
+│   │   │   ├── base64_spec.cr
+│   │   │   ├── benchmark_spec.cr
+│   │   │   ├── big
+│   │   │   │   ├── big_decimal_spec.cr
+│   │   │   │   ├── big_float_spec.cr
+│   │   │   │   ├── big_int_spec.cr
+│   │   │   │   ├── big_rational_spec.cr
+│   │   │   │   └── number_spec.cr
+│   │   │   ├── bit_array_spec.cr
+│   │   │   ├── bool_spec.cr
+│   │   │   ├── box_spec.cr
+│   │   │   ├── channel_spec.cr
+│   │   │   ├── char
+│   │   │   │   └── reader_spec.cr
+│   │   │   ├── char_spec.cr
+│   │   │   ├── class_spec.cr
+│   │   │   ├── colorize_spec.cr
+│   │   │   ├── comparable_spec.cr
+│   │   │   ├── complex_spec.cr
+│   │   │   ├── compress
+│   │   │   │   ├── deflate
+│   │   │   │   │   └── deflate_spec.cr
+│   │   │   │   ├── gzip
+│   │   │   │   │   └── gzip_spec.cr
+│   │   │   │   ├── zip
+│   │   │   │   │   ├── zip_file_spec.cr
+│   │   │   │   │   └── zip_spec.cr
+│   │   │   │   └── zlib
+│   │   │   │       ├── reader_spec.cr
+│   │   │   │       ├── stress_spec.cr
+│   │   │   │       └── writer_spec.cr
+│   │   │   ├── concurrent
+│   │   │   │   └── select_spec.cr
+│   │   │   ├── concurrent_spec.cr
+│   │   │   ├── crypto
+│   │   │   │   ├── bcrypt
+│   │   │   │   │   ├── base64_spec.cr
+│   │   │   │   │   └── password_spec.cr
+│   │   │   │   ├── bcrypt_spec.cr
+│   │   │   │   ├── blowfish_spec.cr
+│   │   │   │   └── subtle_spec.cr
+│   │   │   ├── crystal
+│   │   │   │   ├── compiler_rt
+│   │   │   │   │   ├── ashlti3_spec.cr
+│   │   │   │   │   ├── ashrti3_spec.cr
+│   │   │   │   │   ├── divmod128_spec.cr
+│   │   │   │   │   ├── fixint_spec.cr
+│   │   │   │   │   ├── float_spec.cr
+│   │   │   │   │   ├── lshrti3_spec.cr
+│   │   │   │   │   ├── mulodi4_spec.cr
+│   │   │   │   │   ├── mulosi4_spec.cr
+│   │   │   │   │   ├── muloti4_spec.cr
+│   │   │   │   │   ├── multi3_spec.cr
+│   │   │   │   │   ├── powidf2_spec.cr
+│   │   │   │   │   ├── powisf2_spec.cr
+│   │   │   │   │   └── spec_helper.cr
+│   │   │   │   ├── digest
+│   │   │   │   │   ├── md5_spec.cr
+│   │   │   │   │   └── sha1_spec.cr
+│   │   │   │   ├── hasher_spec.cr
+│   │   │   │   ├── pointer_linked_list_spec.cr
+│   │   │   │   ├── syntax_highlighter
+│   │   │   │   │   ├── colorize_spec.cr
+│   │   │   │   │   └── html_spec.cr
+│   │   │   │   └── system_spec.cr
+│   │   │   ├── csv
+│   │   │   │   ├── csv_build_spec.cr
+│   │   │   │   ├── csv_lex_spec.cr
+│   │   │   │   ├── csv_parse_spec.cr
+│   │   │   │   └── csv_spec.cr
+│   │   │   ├── data
+│   │   │   │   ├── android_tzdata
+│   │   │   │   ├── argf_test_file_1.txt
+│   │   │   │   ├── argf_test_file_2.txt
+│   │   │   │   ├── argf_test_file_3.xml
+│   │   │   │   ├── backtrace_sample
+│   │   │   │   ├── blank_test_file.txt
+│   │   │   │   ├── cipher_spec.ciphertext
+│   │   │   │   ├── collect_within_ensure
+│   │   │   │   ├── crash_backtrace_sample
+│   │   │   │   ├── dir
+│   │   │   │   │   ├── dots
+│   │   │   │   │   ├── f1.txt
+│   │   │   │   │   ├── f2.txt
+│   │   │   │   │   ├── f3.txx
+│   │   │   │   │   ├── g2.txt
+│   │   │   │   │   ├── subdir
+│   │   │   │   │   │   ├── f1.txt
+│   │   │   │   │   │   └── subdir2
+│   │   │   │   │   │       └── f2.txt
+│   │   │   │   │   └── subdir2
+│   │   │   │   ├── exception_backtrace_sample
+│   │   │   │   ├── io_data_incomplete_multibyte_sequence_2.txt
+│   │   │   │   ├── io_data_incomplete_multibyte_sequence.txt
+│   │   │   │   ├── large_single_line_string.txt
+│   │   │   │   ├── mime.types
+│   │   │   │   ├── openssl
+│   │   │   │   │   ├── openssl.crt
+│   │   │   │   │   └── openssl.key
+│   │   │   │   ├── static_file_handler
+│   │   │   │   │   ├── empty.txt
+│   │   │   │   │   ├── foo
+│   │   │   │   │   │   └── bar.txt
+│   │   │   │   │   ├── range.txt
+│   │   │   │   │   ├── test.txt
+│   │   │   │   │   └── test.txt.gz
+│   │   │   │   ├── symlink.txt -> test_file.txt
+│   │   │   │   ├── test_file.ini
+│   │   │   │   ├── test_file.txt
+│   │   │   │   ├── test.gz
+│   │   │   │   ├── test_template2.ecr
+│   │   │   │   ├── test_template3.ecr
+│   │   │   │   ├── test_template4.ecr
+│   │   │   │   ├── test_template5.ecr
+│   │   │   │   ├── test_template6.ecr
+│   │   │   │   ├── test_template7.ecr
+│   │   │   │   ├── test_template.ecr
+│   │   │   │   ├── test.zip
+│   │   │   │   ├── websocket_longpacket.bin
+│   │   │   │   ├── zoneinfo
+│   │   │   │   │   └── Foo
+│   │   │   │   │       ├── Bar
+│   │   │   │   │       └── invalid
+│   │   │   │   └── zoneinfo.zip
+│   │   │   ├── deque_spec.cr
+│   │   │   ├── digest
+│   │   │   │   ├── adler32_spec.cr
+│   │   │   │   ├── crc32_spec.cr
+│   │   │   │   ├── io_digest_spec.cr
+│   │   │   │   ├── md5_spec.cr
+│   │   │   │   ├── sha1_spec.cr
+│   │   │   │   ├── sha256_spec.cr
+│   │   │   │   ├── sha512_spec.cr
+│   │   │   │   └── spec_helper.cr
+│   │   │   ├── dir_spec.cr
+│   │   │   ├── double_spec.cr
+│   │   │   ├── ecr
+│   │   │   │   ├── ecr_lexer_spec.cr
+│   │   │   │   └── ecr_spec.cr
+│   │   │   ├── enumerable_spec.cr
+│   │   │   ├── enum_spec.cr
+│   │   │   ├── env_spec.cr
+│   │   │   ├── errno_spec.cr
+│   │   │   ├── exception
+│   │   │   │   └── call_stack_spec.cr
+│   │   │   ├── exception_spec.cr
+│   │   │   ├── fiber_spec.cr
+│   │   │   ├── file
+│   │   │   │   └── tempfile_spec.cr
+│   │   │   ├── file_spec.cr
+│   │   │   ├── file_utils_spec.cr
+│   │   │   ├── float_printer
+│   │   │   │   ├── diy_fp_spec.cr
+│   │   │   │   ├── grisu3_spec.cr
+│   │   │   │   ├── hexfloat_spec.cr
+│   │   │   │   ├── ieee_spec.cr
+│   │   │   │   ├── ryu_printf_spec.cr
+│   │   │   │   ├── ryu_printf_test_cases.cr
+│   │   │   │   └── shortest_spec.cr
+│   │   │   ├── float_spec.cr
+│   │   │   ├── gc_spec.cr
+│   │   │   ├── hash_spec.cr
+│   │   │   ├── html_spec.cr
+│   │   │   ├── http
+│   │   │   │   ├── chunked_content_spec.cr
+│   │   │   │   ├── client
+│   │   │   │   │   ├── client_spec.cr
+│   │   │   │   │   └── response_spec.cr
+│   │   │   │   ├── cookie_spec.cr
+│   │   │   │   ├── formdata
+│   │   │   │   │   ├── builder_spec.cr
+│   │   │   │   │   └── parser_spec.cr
+│   │   │   │   ├── formdata_spec.cr
+│   │   │   │   ├── headers_spec.cr
+│   │   │   │   ├── http_spec.cr
+│   │   │   │   ├── params_spec.cr
+│   │   │   │   ├── request_spec.cr
+│   │   │   │   ├── server
+│   │   │   │   │   ├── handlers
+│   │   │   │   │   │   ├── compress_handler_spec.cr
+│   │   │   │   │   │   ├── error_handler_spec.cr
+│   │   │   │   │   │   ├── handler_spec.cr
+│   │   │   │   │   │   ├── log_handler_spec.cr
+│   │   │   │   │   │   ├── static_file_handler_spec.cr
+│   │   │   │   │   │   └── websocket_handler_spec.cr
+│   │   │   │   │   ├── request_processor_spec.cr
+│   │   │   │   │   ├── response_spec.cr
+│   │   │   │   │   └── server_spec.cr
+│   │   │   │   ├── spec_helper.cr
+│   │   │   │   ├── status_spec.cr
+│   │   │   │   └── web_socket_spec.cr
+│   │   │   ├── humanize_spec.cr
+│   │   │   ├── indexable
+│   │   │   │   └── mutable_spec.cr
+│   │   │   ├── indexable_spec.cr
+│   │   │   ├── ini_spec.cr
+│   │   │   ├── int_spec.cr
+│   │   │   ├── io
+│   │   │   │   ├── argf_spec.cr
+│   │   │   │   ├── buffered_spec.cr
+│   │   │   │   ├── byte_format_spec.cr
+│   │   │   │   ├── delimited_spec.cr
+│   │   │   │   ├── file_descriptor_spec.cr
+│   │   │   │   ├── hexdump_spec.cr
+│   │   │   │   ├── io_spec.cr
+│   │   │   │   ├── memory_spec.cr
+│   │   │   │   ├── multi_writer_spec.cr
+│   │   │   │   ├── sized_spec.cr
+│   │   │   │   └── stapled_spec.cr
+│   │   │   ├── iterator_spec.cr
+│   │   │   ├── json
+│   │   │   │   ├── any_spec.cr
+│   │   │   │   ├── builder_spec.cr
+│   │   │   │   ├── lexer_spec.cr
+│   │   │   │   ├── parser_spec.cr
+│   │   │   │   ├── pull_parser_spec.cr
+│   │   │   │   ├── serializable_spec.cr
+│   │   │   │   └── serialization_spec.cr
+│   │   │   ├── kernel_spec.cr
+│   │   │   ├── levenshtein_spec.cr
+│   │   │   ├── llvm
+│   │   │   │   ├── aarch64_spec.cr
+│   │   │   │   ├── arm_abi_spec.cr
+│   │   │   │   ├── avr_spec.cr
+│   │   │   │   ├── llvm_spec.cr
+│   │   │   │   ├── type_spec.cr
+│   │   │   │   ├── x86_64_abi_spec.cr
+│   │   │   │   └── x86_abi_spec.cr
+│   │   │   ├── log
+│   │   │   │   ├── broadcast_backend_spec.cr
+│   │   │   │   ├── builder_spec.cr
+│   │   │   │   ├── context_spec.cr
+│   │   │   │   ├── dispatch_spec.cr
+│   │   │   │   ├── env_config_spec.cr
+│   │   │   │   ├── format_spec.cr
+│   │   │   │   ├── io_backend_spec.cr
+│   │   │   │   ├── log_spec.cr
+│   │   │   │   ├── main_spec.cr
+│   │   │   │   ├── metadata_spec.cr
+│   │   │   │   └── spec_spec.cr
+│   │   │   ├── math_spec.cr
+│   │   │   ├── mime
+│   │   │   │   ├── media_type_spec.cr
+│   │   │   │   ├── multipart
+│   │   │   │   │   ├── builder_spec.cr
+│   │   │   │   │   └── parser_spec.cr
+│   │   │   │   └── multipart_spec.cr
+│   │   │   ├── mime_spec.cr
+│   │   │   ├── mutex_spec.cr
+│   │   │   ├── named_tuple_spec.cr
+│   │   │   ├── number_spec.cr
+│   │   │   ├── oauth
+│   │   │   │   ├── access_token_spec.cr
+│   │   │   │   ├── authorization_header_spec.cr
+│   │   │   │   ├── consumer_spec.cr
+│   │   │   │   ├── params_spec.cr
+│   │   │   │   ├── request_token_spec.cr
+│   │   │   │   └── signature_spec.cr
+│   │   │   ├── oauth2
+│   │   │   │   ├── access_token_spec.cr
+│   │   │   │   ├── client_spec.cr
+│   │   │   │   └── session_spec.cr
+│   │   │   ├── object_spec.cr
+│   │   │   ├── openssl
+│   │   │   │   ├── cipher_spec.cr
+│   │   │   │   ├── digest_spec.cr
+│   │   │   │   ├── hmac_spec.cr
+│   │   │   │   ├── pkcs5_spec.cr
+│   │   │   │   ├── ssl
+│   │   │   │   │   ├── context_spec.cr
+│   │   │   │   │   ├── hostname_validation_spec.cr
+│   │   │   │   │   ├── server_spec.cr
+│   │   │   │   │   └── socket_spec.cr
+│   │   │   │   └── x509
+│   │   │   │       ├── certificate_spec.cr
+│   │   │   │       └── name_spec.cr
+│   │   │   ├── option_parser_spec.cr
+│   │   │   ├── path_spec.cr
+│   │   │   ├── pointer
+│   │   │   │   └── appender_spec.cr
+│   │   │   ├── pointer_spec.cr
+│   │   │   ├── pp_spec.cr
+│   │   │   ├── pretty_print_spec.cr
+│   │   │   ├── process
+│   │   │   │   ├── find_executable_spec.cr
+│   │   │   │   ├── status_spec.cr
+│   │   │   │   └── utils_spec.cr
+│   │   │   ├── process_spec.cr
+│   │   │   ├── proc_spec.cr
+│   │   │   ├── raise_spec.cr
+│   │   │   ├── random
+│   │   │   │   ├── isaac_spec.cr
+│   │   │   │   ├── pcg32_spec.cr
+│   │   │   │   └── secure_spec.cr
+│   │   │   ├── random_spec.cr
+│   │   │   ├── range_spec.cr
+│   │   │   ├── record_spec.cr
+│   │   │   ├── reference_spec.cr
+│   │   │   ├── regex
+│   │   │   │   └── match_data_spec.cr
+│   │   │   ├── regex_spec.cr
+│   │   │   ├── semantic_version_spec.cr
+│   │   │   ├── set_spec.cr
+│   │   │   ├── signal_spec.cr
+│   │   │   ├── slice_spec.cr
+│   │   │   ├── socket
+│   │   │   │   ├── address_spec.cr
+│   │   │   │   ├── addrinfo_spec.cr
+│   │   │   │   ├── socket_spec.cr
+│   │   │   │   ├── spec_helper.cr
+│   │   │   │   ├── tcp_server_spec.cr
+│   │   │   │   ├── tcp_socket_spec.cr
+│   │   │   │   ├── udp_socket_spec.cr
+│   │   │   │   ├── unix_server_spec.cr
+│   │   │   │   └── unix_socket_spec.cr
+│   │   │   ├── spec
+│   │   │   │   ├── context_spec.cr
+│   │   │   │   ├── expectations_spec.cr
+│   │   │   │   ├── filters_spec.cr
+│   │   │   │   ├── helpers
+│   │   │   │   │   └── iterate_spec.cr
+│   │   │   │   ├── hooks_spec.cr
+│   │   │   │   ├── junit_formatter_spec.cr
+│   │   │   │   ├── list_tags_spec.cr
+│   │   │   │   ├── spec_helper.cr
+│   │   │   │   └── tap_formatter_spec.cr
+│   │   │   ├── spec_helper.cr
+│   │   │   ├── spec_spec.cr
+│   │   │   ├── sprintf_spec.cr
+│   │   │   ├── static_array_spec.cr
+│   │   │   ├── string
+│   │   │   │   ├── grapheme_break_spec.cr
+│   │   │   │   ├── grapheme_spec.cr
+│   │   │   │   ├── spec_helper.cr
+│   │   │   │   └── utf16_spec.cr
+│   │   │   ├── string_builder_spec.cr
+│   │   │   ├── string_pool_spec.cr
+│   │   │   ├── string_scanner_spec.cr
+│   │   │   ├── string_spec.cr
+│   │   │   ├── struct_spec.cr
+│   │   │   ├── symbol_spec.cr
+│   │   │   ├── syscall_spec.cr
+│   │   │   ├── system
+│   │   │   │   ├── group_spec.cr
+│   │   │   │   └── user_spec.cr
+│   │   │   ├── system_error_spec.cr
+│   │   │   ├── system_spec.cr
+│   │   │   ├── thread
+│   │   │   │   ├── condition_variable_spec.cr
+│   │   │   │   └── mutex_spec.cr
+│   │   │   ├── thread_spec.cr
+│   │   │   ├── time
+│   │   │   │   ├── custom_formats_spec.cr
+│   │   │   │   ├── format_spec.cr
+│   │   │   │   ├── location_spec.cr
+│   │   │   │   ├── span_spec.cr
+│   │   │   │   └── time_spec.cr
+│   │   │   ├── tuple_spec.cr
+│   │   │   ├── uint_spec.cr
+│   │   │   ├── uri
+│   │   │   │   ├── json_spec.cr
+│   │   │   │   ├── params
+│   │   │   │   │   ├── from_www_form_spec.cr
+│   │   │   │   │   ├── serializable_spec.cr
+│   │   │   │   │   └── to_www_form_spec.cr
+│   │   │   │   ├── params_spec.cr
+│   │   │   │   └── punycode_spec.cr
+│   │   │   ├── uri_spec.cr
+│   │   │   ├── uuid
+│   │   │   │   ├── json_spec.cr
+│   │   │   │   └── yaml_spec.cr
+│   │   │   ├── uuid_spec.cr
+│   │   │   ├── va_list_spec.cr
+│   │   │   ├── wait_group_spec.cr
+│   │   │   ├── weak_ref_spec.cr
+│   │   │   ├── winerror_spec.cr
+│   │   │   ├── xml
+│   │   │   │   ├── builder_spec.cr
+│   │   │   │   ├── html_spec.cr
+│   │   │   │   ├── reader_spec.cr
+│   │   │   │   ├── xml_spec.cr
+│   │   │   │   └── xpath_spec.cr
+│   │   │   └── yaml
+│   │   │       ├── any_spec.cr
+│   │   │       ├── builder_spec.cr
+│   │   │       ├── nodes
+│   │   │       │   └── builder_spec.cr
+│   │   │       ├── schema
+│   │   │       │   ├── core_spec.cr
+│   │   │       │   └── fail_safe_spec.cr
+│   │   │       ├── serializable_spec.cr
+│   │   │       ├── serialization_spec.cr
+│   │   │       ├── yaml_pull_parser_spec.cr
+│   │   │       └── yaml_spec.cr
+│   │   ├── std_spec.cr
+│   │   ├── support
+│   │   │   ├── channel.cr
+│   │   │   ├── env.cr
+│   │   │   ├── fibers.cr
+│   │   │   ├── finalize.cr
+│   │   │   ├── interpreted.cr
+│   │   │   ├── io.cr
+│   │   │   ├── mt_abort_timeout.cr
+│   │   │   ├── number.cr
+│   │   │   ├── retry.cr
+│   │   │   ├── ssl.cr
+│   │   │   ├── string.cr
+│   │   │   ├── syntax.cr
+│   │   │   ├── tempfile.cr
+│   │   │   ├── time.cr
+│   │   │   ├── wasm32.cr
+│   │   │   └── win32.cr
+│   │   └── wasm32_std_spec.cr
+│   ├── src
+│   │   ├── annotations.cr
+│   │   ├── array.cr
+│   │   ├── atomic.cr
+│   │   ├── base64.cr
+│   │   ├── benchmark
+│   │   │   ├── bm.cr
+│   │   │   └── ips.cr
+│   │   ├── benchmark.cr
+│   │   ├── big
+│   │   │   ├── big_decimal.cr
+│   │   │   ├── big_float.cr
+│   │   │   ├── big_int.cr
+│   │   │   ├── big_rational.cr
+│   │   │   ├── json.cr
+│   │   │   ├── lib_gmp.cr
+│   │   │   ├── number.cr
+│   │   │   └── yaml.cr
+│   │   ├── big.cr
+│   │   ├── bit_array.cr
+│   │   ├── bool.cr
+│   │   ├── box.cr
+│   │   ├── channel
+│   │   │   ├── select
+│   │   │   │   ├── select_action.cr
+│   │   │   │   └── timeout_action.cr
+│   │   │   └── select.cr
+│   │   ├── channel.cr
+│   │   ├── char
+│   │   │   └── reader.cr
+│   │   ├── char.cr
+│   │   ├── class.cr
+│   │   ├── colorize.cr
+│   │   ├── comparable.cr
+│   │   ├── compiler
+│   │   │   ├── crystal
+│   │   │   │   ├── annotatable.cr
+│   │   │   │   ├── codegen
+│   │   │   │   │   ├── asm.cr
+│   │   │   │   │   ├── ast.cr
+│   │   │   │   │   ├── cache_dir.cr
+│   │   │   │   │   ├── call.cr
+│   │   │   │   │   ├── cast.cr
+│   │   │   │   │   ├── class_var.cr
+│   │   │   │   │   ├── codegen.cr
+│   │   │   │   │   ├── cond.cr
+│   │   │   │   │   ├── const.cr
+│   │   │   │   │   ├── context.cr
+│   │   │   │   │   ├── crystal_llvm_builder.cr
+│   │   │   │   │   ├── debug.cr
+│   │   │   │   │   ├── exception.cr
+│   │   │   │   │   ├── experimental.cr
+│   │   │   │   │   ├── fun.cr
+│   │   │   │   │   ├── link.cr
+│   │   │   │   │   ├── llvm_builder_helper.cr
+│   │   │   │   │   ├── llvm_id.cr
+│   │   │   │   │   ├── llvm_typer.cr
+│   │   │   │   │   ├── match.cr
+│   │   │   │   │   ├── once.cr
+│   │   │   │   │   ├── phi.cr
+│   │   │   │   │   ├── primitives.cr
+│   │   │   │   │   ├── target.cr
+│   │   │   │   │   ├── type_id.cr
+│   │   │   │   │   ├── types.cr
+│   │   │   │   │   └── unions.cr
+│   │   │   │   ├── command
+│   │   │   │   │   ├── clear_cache.cr
+│   │   │   │   │   ├── cursor.cr
+│   │   │   │   │   ├── docs.cr
+│   │   │   │   │   ├── env.cr
+│   │   │   │   │   ├── eval.cr
+│   │   │   │   │   ├── format.cr
+│   │   │   │   │   ├── playground.cr
+│   │   │   │   │   ├── repl.cr
+│   │   │   │   │   └── spec.cr
+│   │   │   │   ├── command.cr
+│   │   │   │   ├── compiler.cr
+│   │   │   │   ├── config.cr
+│   │   │   │   ├── crystal_path.cr
+│   │   │   │   ├── error.cr
+│   │   │   │   ├── exception.cr
+│   │   │   │   ├── ffi
+│   │   │   │   │   ├── call_interface.cr
+│   │   │   │   │   ├── closure.cr
+│   │   │   │   │   ├── ffi.cr
+│   │   │   │   │   ├── lib_ffi.cr
+│   │   │   │   │   └── type.cr
+│   │   │   │   ├── formatter.cr
+│   │   │   │   ├── interpreter
+│   │   │   │   │   ├── cast.cr
+│   │   │   │   │   ├── c.cr
+│   │   │   │   │   ├── class_vars.cr
+│   │   │   │   │   ├── closure_context.cr
+│   │   │   │   │   ├── closure.cr
+│   │   │   │   │   ├── compiled_block.cr
+│   │   │   │   │   ├── compiled_def.cr
+│   │   │   │   │   ├── compiled_instructions.cr
+│   │   │   │   │   ├── compiler.cr
+│   │   │   │   │   ├── constants.cr
+│   │   │   │   │   ├── context.cr
+│   │   │   │   │   ├── debug.cr
+│   │   │   │   │   ├── disassembler.cr
+│   │   │   │   │   ├── escaping_exception.cr
+│   │   │   │   │   ├── ffi_closure_context.cr
+│   │   │   │   │   ├── instruction.cr
+│   │   │   │   │   ├── instructions.cr
+│   │   │   │   │   ├── interpreter.cr
+│   │   │   │   │   ├── lib_function.cr
+│   │   │   │   │   ├── local_vars.cr
+│   │   │   │   │   ├── local_vars_gatherer.cr
+│   │   │   │   │   ├── multidispatch.cr
+│   │   │   │   │   ├── op_code.cr
+│   │   │   │   │   ├── primitives.cr
+│   │   │   │   │   ├── pry_reader.cr
+│   │   │   │   │   ├── repl.cr
+│   │   │   │   │   ├── repl_reader.cr
+│   │   │   │   │   ├── to_bool.cr
+│   │   │   │   │   └── value.cr
+│   │   │   │   ├── interpreter.cr
+│   │   │   │   ├── loader
+│   │   │   │   │   ├── msvc.cr
+│   │   │   │   │   └── unix.cr
+│   │   │   │   ├── loader.cr
+│   │   │   │   ├── macros
+│   │   │   │   │   ├── interpreter.cr
+│   │   │   │   │   ├── macros.cr
+│   │   │   │   │   ├── methods.cr
+│   │   │   │   │   └── types.cr
+│   │   │   │   ├── macros.cr
+│   │   │   │   ├── program.cr
+│   │   │   │   ├── progress_tracker.cr
+│   │   │   │   ├── semantic
+│   │   │   │   │   ├── abstract_def_checker.cr
+│   │   │   │   │   ├── ast.cr
+│   │   │   │   │   ├── bindings.cr
+│   │   │   │   │   ├── call.cr
+│   │   │   │   │   ├── call_error.cr
+│   │   │   │   │   ├── class_vars_initializer_visitor.cr
+│   │   │   │   │   ├── cleanup_transformer.cr
+│   │   │   │   │   ├── conversions.cr
+│   │   │   │   │   ├── cover.cr
+│   │   │   │   │   ├── default_arguments.cr
+│   │   │   │   │   ├── exception.cr
+│   │   │   │   │   ├── exhaustiveness_checker.cr
+│   │   │   │   │   ├── filters.cr
+│   │   │   │   │   ├── fix_missing_types.cr
+│   │   │   │   │   ├── flags.cr
+│   │   │   │   │   ├── hooks.cr
+│   │   │   │   │   ├── instance_vars_initializer_visitor.cr
+│   │   │   │   │   ├── lib.cr
+│   │   │   │   │   ├── literal_expander.cr
+│   │   │   │   │   ├── main_visitor.cr
+│   │   │   │   │   ├── match.cr
+│   │   │   │   │   ├── math_interpreter.cr
+│   │   │   │   │   ├── method_lookup.cr
+│   │   │   │   │   ├── method_missing.cr
+│   │   │   │   │   ├── new.cr
+│   │   │   │   │   ├── normalizer.cr
+│   │   │   │   │   ├── path_lookup.cr
+│   │   │   │   │   ├── recursive_struct_checker.cr
+│   │   │   │   │   ├── restrictions_augmenter.cr
+│   │   │   │   │   ├── restrictions.cr
+│   │   │   │   │   ├── semantic_visitor.cr
+│   │   │   │   │   ├── suggestions.cr
+│   │   │   │   │   ├── top_level_visitor.cr
+│   │   │   │   │   ├── to_s.cr
+│   │   │   │   │   ├── transformer.cr
+│   │   │   │   │   ├── type_declaration_processor.cr
+│   │   │   │   │   ├── type_declaration_visitor.cr
+│   │   │   │   │   ├── type_guess_visitor.cr
+│   │   │   │   │   ├── type_intersect.cr
+│   │   │   │   │   ├── type_lookup.cr
+│   │   │   │   │   ├── type_merge.cr
+│   │   │   │   │   ├── type_to_restriction.cr
+│   │   │   │   │   └── warnings.cr
+│   │   │   │   ├── semantic.cr
+│   │   │   │   ├── syntax
+│   │   │   │   │   ├── ast.cr
+│   │   │   │   │   ├── exception.cr
+│   │   │   │   │   ├── lexer.cr
+│   │   │   │   │   ├── location.cr
+│   │   │   │   │   ├── parser.cr
+│   │   │   │   │   ├── token.cr
+│   │   │   │   │   ├── to_s.cr
+│   │   │   │   │   ├── transformer.cr
+│   │   │   │   │   ├── virtual_file.cr
+│   │   │   │   │   └── visitor.cr
+│   │   │   │   ├── syntax.cr
+│   │   │   │   ├── tools
+│   │   │   │   │   ├── context.cr
+│   │   │   │   │   ├── dependencies.cr
+│   │   │   │   │   ├── doc
+│   │   │   │   │   │   ├── constant.cr
+│   │   │   │   │   │   ├── generator.cr
+│   │   │   │   │   │   ├── html
+│   │   │   │   │   │   │   ├── 404.html
+│   │   │   │   │   │   │   ├── css
+│   │   │   │   │   │   │   │   └── style.css
+│   │   │   │   │   │   │   ├── _head.html
+│   │   │   │   │   │   │   ├── js
+│   │   │   │   │   │   │   │   ├── doc.js
+│   │   │   │   │   │   │   │   ├── _navigator.js
+│   │   │   │   │   │   │   │   ├── _search.js
+│   │   │   │   │   │   │   │   ├── _usage-modal.js
+│   │   │   │   │   │   │   │   └── _versions.js
+│   │   │   │   │   │   │   ├── _list_items.html
+│   │   │   │   │   │   │   ├── _macros_inherited.html
+│   │   │   │   │   │   │   ├── main.html
+│   │   │   │   │   │   │   ├── _method_detail.html
+│   │   │   │   │   │   │   ├── _methods_inherited.html
+│   │   │   │   │   │   │   ├── _method_summary.html
+│   │   │   │   │   │   │   ├── _other_types.html
+│   │   │   │   │   │   │   ├── _sidebar.html
+│   │   │   │   │   │   │   ├── sitemap.xml
+│   │   │   │   │   │   │   └── type.html
+│   │   │   │   │   │   ├── item.cr
+│   │   │   │   │   │   ├── macro.cr
+│   │   │   │   │   │   ├── main.cr
+│   │   │   │   │   │   ├── markd_doc_renderer.cr
+│   │   │   │   │   │   ├── method.cr
+│   │   │   │   │   │   ├── project_info.cr
+│   │   │   │   │   │   ├── relative_location.cr
+│   │   │   │   │   │   ├── templates.cr
+│   │   │   │   │   │   ├── to_json.cr
+│   │   │   │   │   │   └── type.cr
+│   │   │   │   │   ├── doc.cr
+│   │   │   │   │   ├── expand.cr
+│   │   │   │   │   ├── flags.cr
+│   │   │   │   │   ├── formatter.cr
+│   │   │   │   │   ├── git.cr
+│   │   │   │   │   ├── implementations.cr
+│   │   │   │   │   ├── init
+│   │   │   │   │   │   └── template
+│   │   │   │   │   │       ├── editorconfig.ecr
+│   │   │   │   │   │       ├── example.cr.ecr
+│   │   │   │   │   │       ├── example_spec.cr.ecr
+│   │   │   │   │   │       ├── gitignore.ecr
+│   │   │   │   │   │       ├── license.ecr
+│   │   │   │   │   │       ├── readme.md.ecr
+│   │   │   │   │   │       ├── shard.yml.ecr
+│   │   │   │   │   │       └── spec_helper.cr.ecr
+│   │   │   │   │   ├── init.cr
+│   │   │   │   │   ├── playground
+│   │   │   │   │   │   ├── agent.cr
+│   │   │   │   │   │   ├── agent_instrumentor_transformer.cr
+│   │   │   │   │   │   ├── public
+│   │   │   │   │   │   │   ├── application.css
+│   │   │   │   │   │   │   ├── application.js
+│   │   │   │   │   │   │   ├── favicon.ico
+│   │   │   │   │   │   │   ├── icon.svg
+│   │   │   │   │   │   │   ├── session.js
+│   │   │   │   │   │   │   ├── settings.js
+│   │   │   │   │   │   │   └── vendor
+│   │   │   │   │   │   │       ├── ansi_up-1.3.0
+│   │   │   │   │   │   │       │   ├── ansi_up.js
+│   │   │   │   │   │   │       │   └── theme.css
+│   │   │   │   │   │   │       ├── codemirror-5.38.0
+│   │   │   │   │   │   │       │   ├── addon
+│   │   │   │   │   │   │       │   │   └── comment
+│   │   │   │   │   │   │       │   │       └── comment.js
+│   │   │   │   │   │   │       │   ├── lib
+│   │   │   │   │   │   │       │   │   ├── codemirror.css
+│   │   │   │   │   │   │       │   │   └── codemirror.js
+│   │   │   │   │   │   │       │   ├── mode
+│   │   │   │   │   │   │       │   │   └── crystal
+│   │   │   │   │   │   │       │   │       └── crystal.js
+│   │   │   │   │   │   │       │   └── theme
+│   │   │   │   │   │   │       │       └── neat.css
+│   │   │   │   │   │   │       ├── jquery-2.2.1.min.js
+│   │   │   │   │   │   │       ├── materialize-v0.97.5
+│   │   │   │   │   │   │       │   ├── css
+│   │   │   │   │   │   │       │   │   └── materialize.min.css
+│   │   │   │   │   │   │       │   └── js
+│   │   │   │   │   │   │       │       └── materialize.min.js
+│   │   │   │   │   │   │       └── octicons-19.5.0
+│   │   │   │   │   │   │           ├── octicons.css
+│   │   │   │   │   │   │           └── octicons.svg
+│   │   │   │   │   │   ├── server.cr
+│   │   │   │   │   │   └── views
+│   │   │   │   │   │       ├── _about.html
+│   │   │   │   │   │       ├── _index.html
+│   │   │   │   │   │       ├── layout.html.ecr
+│   │   │   │   │   │       ├── _settings.html
+│   │   │   │   │   │       └── _workbook.html.ecr
+│   │   │   │   │   ├── playground.cr
+│   │   │   │   │   ├── print_hierarchy.cr
+│   │   │   │   │   ├── print_types_visitor.cr
+│   │   │   │   │   ├── table_print.cr
+│   │   │   │   │   ├── typed_def_processor.cr
+│   │   │   │   │   └── unreachable.cr
+│   │   │   │   ├── types.cr
+│   │   │   │   ├── util.cr
+│   │   │   │   └── warnings.cr
+│   │   │   ├── crystal.cr
+│   │   │   └── requires.cr
+│   │   ├── complex.cr
+│   │   ├── compress
+│   │   │   ├── deflate
+│   │   │   │   ├── deflate.cr
+│   │   │   │   ├── reader.cr
+│   │   │   │   └── writer.cr
+│   │   │   ├── gzip
+│   │   │   │   ├── gzip.cr
+│   │   │   │   ├── header.cr
+│   │   │   │   ├── reader.cr
+│   │   │   │   └── writer.cr
+│   │   │   ├── zip
+│   │   │   │   ├── checksum_reader.cr
+│   │   │   │   ├── checksum_writer.cr
+│   │   │   │   ├── compression_method.cr
+│   │   │   │   ├── file.cr
+│   │   │   │   ├── file_info.cr
+│   │   │   │   ├── reader.cr
+│   │   │   │   ├── writer.cr
+│   │   │   │   └── zip.cr
+│   │   │   └── zlib
+│   │   │       ├── reader.cr
+│   │   │       ├── writer.cr
+│   │   │       └── zlib.cr
+│   │   ├── concurrent.cr
+│   │   ├── crypto
+│   │   │   ├── bcrypt
+│   │   │   │   ├── base64.cr
+│   │   │   │   ├── blowfish.cr
+│   │   │   │   └── password.cr
+│   │   │   ├── bcrypt.cr
+│   │   │   ├── blowfish.cr
+│   │   │   └── subtle.cr
+│   │   ├── crystal
+│   │   │   ├── at_exit_handlers.cr
+│   │   │   ├── atomic_semaphore.cr
+│   │   │   ├── compiler_rt
+│   │   │   │   ├── divmod128.cr
+│   │   │   │   ├── fixint.cr
+│   │   │   │   ├── float.cr
+│   │   │   │   ├── mul.cr
+│   │   │   │   ├── multi3.cr
+│   │   │   │   ├── pow.cr
+│   │   │   │   └── shift.cr
+│   │   │   ├── compiler_rt.cr
+│   │   │   ├── datum.cr
+│   │   │   ├── digest
+│   │   │   │   ├── md5.cr
+│   │   │   │   └── sha1.cr
+│   │   │   ├── dwarf
+│   │   │   │   ├── abbrev.cr
+│   │   │   │   ├── info.cr
+│   │   │   │   ├── line_numbers.cr
+│   │   │   │   └── strings.cr
+│   │   │   ├── dwarf.cr
+│   │   │   ├── elf.cr
+│   │   │   ├── fiber_channel.cr
+│   │   │   ├── hasher.cr
+│   │   │   ├── iconv.cr
+│   │   │   ├── interpreter.cr
+│   │   │   ├── lib_iconv.cr
+│   │   │   ├── mach_o.cr
+│   │   │   ├── main.cr
+│   │   │   ├── once.cr
+│   │   │   ├── pointer_linked_list.cr
+│   │   │   ├── rw_lock.cr
+│   │   │   ├── scheduler.cr
+│   │   │   ├── small_deque.cr
+│   │   │   ├── spin_lock.cr
+│   │   │   ├── syntax_highlighter
+│   │   │   │   ├── colorize.cr
+│   │   │   │   └── html.cr
+│   │   │   ├── syntax_highlighter.cr
+│   │   │   ├── system
+│   │   │   │   ├── addrinfo.cr
+│   │   │   │   ├── dir.cr
+│   │   │   │   ├── env.cr
+│   │   │   │   ├── event_loop
+│   │   │   │   │   ├── file_descriptor.cr
+│   │   │   │   │   └── socket.cr
+│   │   │   │   ├── event_loop.cr
+│   │   │   │   ├── fiber.cr
+│   │   │   │   ├── file.cr
+│   │   │   │   ├── file_descriptor.cr
+│   │   │   │   ├── file_info.cr
+│   │   │   │   ├── group.cr
+│   │   │   │   ├── mime.cr
+│   │   │   │   ├── panic.cr
+│   │   │   │   ├── path.cr
+│   │   │   │   ├── print_error.cr
+│   │   │   │   ├── process.cr
+│   │   │   │   ├── random.cr
+│   │   │   │   ├── signal.cr
+│   │   │   │   ├── socket.cr
+│   │   │   │   ├── thread_condition_variable.cr
+│   │   │   │   ├── thread.cr
+│   │   │   │   ├── thread_linked_list.cr
+│   │   │   │   ├── thread_mutex.cr
+│   │   │   │   ├── time.cr
+│   │   │   │   ├── unix
+│   │   │   │   │   ├── addrinfo.cr
+│   │   │   │   │   ├── arc4random.cr
+│   │   │   │   │   ├── dir.cr
+│   │   │   │   │   ├── env.cr
+│   │   │   │   │   ├── event_libevent.cr
+│   │   │   │   │   ├── event_loop_libevent.cr
+│   │   │   │   │   ├── fiber.cr
+│   │   │   │   │   ├── file.cr
+│   │   │   │   │   ├── file_descriptor.cr
+│   │   │   │   │   ├── file_info.cr
+│   │   │   │   │   ├── getrandom.cr
+│   │   │   │   │   ├── group.cr
+│   │   │   │   │   ├── hostname.cr
+│   │   │   │   │   ├── lib_event2.cr
+│   │   │   │   │   ├── mime.cr
+│   │   │   │   │   ├── path.cr
+│   │   │   │   │   ├── process.cr
+│   │   │   │   │   ├── pthread_condition_variable.cr
+│   │   │   │   │   ├── pthread.cr
+│   │   │   │   │   ├── pthread_mutex.cr
+│   │   │   │   │   ├── signal.cr
+│   │   │   │   │   ├── socket.cr
+│   │   │   │   │   ├── syscall.cr
+│   │   │   │   │   ├── sysconf_cpucount.cr
+│   │   │   │   │   ├── sysctl_cpucount.cr
+│   │   │   │   │   ├── time.cr
+│   │   │   │   │   ├── urandom.cr
+│   │   │   │   │   └── user.cr
+│   │   │   │   ├── unix.cr
+│   │   │   │   ├── user.cr
+│   │   │   │   ├── wasi
+│   │   │   │   │   ├── addrinfo.cr
+│   │   │   │   │   ├── cpucount.cr
+│   │   │   │   │   ├── dir.cr
+│   │   │   │   │   ├── event_loop.cr
+│   │   │   │   │   ├── fiber.cr
+│   │   │   │   │   ├── file.cr
+│   │   │   │   │   ├── file_descriptor.cr
+│   │   │   │   │   ├── group.cr
+│   │   │   │   │   ├── hostname.cr
+│   │   │   │   │   ├── lib_wasi.cr
+│   │   │   │   │   ├── main.cr
+│   │   │   │   │   ├── path.cr
+│   │   │   │   │   ├── process.cr
+│   │   │   │   │   ├── random.cr
+│   │   │   │   │   ├── signal.cr
+│   │   │   │   │   ├── socket.cr
+│   │   │   │   │   ├── thread_condition_variable.cr
+│   │   │   │   │   ├── thread.cr
+│   │   │   │   │   ├── thread_mutex.cr
+│   │   │   │   │   ├── user.cr
+│   │   │   │   │   └── wasi.cr
+│   │   │   │   ├── win32
+│   │   │   │   │   ├── addrinfo.cr
+│   │   │   │   │   ├── addrinfo_win7.cr
+│   │   │   │   │   ├── cpucount.cr
+│   │   │   │   │   ├── crypto.cr
+│   │   │   │   │   ├── dir.cr
+│   │   │   │   │   ├── env.cr
+│   │   │   │   │   ├── event_loop_iocp.cr
+│   │   │   │   │   ├── fiber.cr
+│   │   │   │   │   ├── file.cr
+│   │   │   │   │   ├── file_descriptor.cr
+│   │   │   │   │   ├── file_info.cr
+│   │   │   │   │   ├── group.cr
+│   │   │   │   │   ├── hostname.cr
+│   │   │   │   │   ├── iocp.cr
+│   │   │   │   │   ├── library_archive.cr
+│   │   │   │   │   ├── mime.cr
+│   │   │   │   │   ├── path.cr
+│   │   │   │   │   ├── process.cr
+│   │   │   │   │   ├── random.cr
+│   │   │   │   │   ├── signal.cr
+│   │   │   │   │   ├── socket.cr
+│   │   │   │   │   ├── thread_condition_variable.cr
+│   │   │   │   │   ├── thread.cr
+│   │   │   │   │   ├── thread_mutex.cr
+│   │   │   │   │   ├── time.cr
+│   │   │   │   │   ├── user.cr
+│   │   │   │   │   ├── visual_studio.cr
+│   │   │   │   │   ├── windows_registry.cr
+│   │   │   │   │   ├── windows_sdk.cr
+│   │   │   │   │   ├── wmain.cr
+│   │   │   │   │   └── zone_names.cr
+│   │   │   │   └── windows.cr
+│   │   │   ├── system.cr
+│   │   │   ├── thread_local_value.cr
+│   │   │   └── tracing.cr
+│   │   ├── csv
+│   │   │   ├── builder.cr
+│   │   │   ├── error.cr
+│   │   │   ├── lexer
+│   │   │   │   ├── io_based.cr
+│   │   │   │   └── string_based.cr
+│   │   │   ├── lexer.cr
+│   │   │   ├── parser.cr
+│   │   │   └── token.cr
+│   │   ├── csv.cr
+│   │   ├── deque.cr
+│   │   ├── digest
+│   │   │   ├── adler32.cr
+│   │   │   ├── crc32.cr
+│   │   │   ├── digest.cr
+│   │   │   ├── io_digest.cr
+│   │   │   ├── md5.cr
+│   │   │   ├── sha1.cr
+│   │   │   ├── sha256.cr
+│   │   │   └── sha512.cr
+│   │   ├── digest.cr
+│   │   ├── dir
+│   │   │   └── glob.cr
+│   │   ├── dir.cr
+│   │   ├── docs_main.cr
+│   │   ├── docs_pseudo_methods.cr
+│   │   ├── ecr
+│   │   │   ├── lexer.cr
+│   │   │   ├── macros.cr
+│   │   │   ├── process.cr
+│   │   │   └── processor.cr
+│   │   ├── ecr.cr
+│   │   ├── empty.cr
+│   │   ├── enum.cr
+│   │   ├── enumerable.cr
+│   │   ├── env.cr
+│   │   ├── errno.cr
+│   │   ├── exception
+│   │   │   ├── call_stack
+│   │   │   │   ├── dwarf.cr
+│   │   │   │   ├── elf.cr
+│   │   │   │   ├── interpreter.cr
+│   │   │   │   ├── libunwind.cr
+│   │   │   │   ├── mach_o.cr
+│   │   │   │   ├── null.cr
+│   │   │   │   └── stackwalk.cr
+│   │   │   ├── call_stack.cr
+│   │   │   └── lib_unwind.cr
+│   │   ├── exception.cr
+│   │   ├── fiber
+│   │   │   ├── context
+│   │   │   │   ├── aarch64.cr
+│   │   │   │   ├── arm.cr
+│   │   │   │   ├── i386.cr
+│   │   │   │   ├── interpreted.cr
+│   │   │   │   ├── wasm32.cr
+│   │   │   │   ├── x86_64-microsoft.cr
+│   │   │   │   └── x86_64-sysv.cr
+│   │   │   ├── context.cr
+│   │   │   └── stack_pool.cr
+│   │   ├── fiber.cr
+│   │   ├── file
+│   │   │   ├── error.cr
+│   │   │   ├── info.cr
+│   │   │   ├── preader.cr
+│   │   │   └── tempfile.cr
+│   │   ├── file.cr
+│   │   ├── file_utils.cr
+│   │   ├── float
+│   │   │   ├── printer
+│   │   │   │   ├── cached_powers.cr
+│   │   │   │   ├── diy_fp.cr
+│   │   │   │   ├── dragonbox_cache.cr
+│   │   │   │   ├── dragonbox.cr
+│   │   │   │   ├── grisu3.cr
+│   │   │   │   ├── hexfloat.cr
+│   │   │   │   ├── ieee.cr
+│   │   │   │   ├── ryu_printf.cr
+│   │   │   │   └── ryu_printf_table.cr
+│   │   │   └── printer.cr
+│   │   ├── float.cr
+│   │   ├── gc
+│   │   │   ├── boehm.cr
+│   │   │   └── none.cr
+│   │   ├── gc.cr
+│   │   ├── hash.cr
+│   │   ├── html
+│   │   │   └── entities.cr
+│   │   ├── html.cr
+│   │   ├── http
+│   │   │   ├── client
+│   │   │   │   └── response.cr
+│   │   │   ├── client.cr
+│   │   │   ├── common.cr
+│   │   │   ├── content.cr
+│   │   │   ├── cookie.cr
+│   │   │   ├── formdata
+│   │   │   │   ├── builder.cr
+│   │   │   │   ├── parser.cr
+│   │   │   │   └── part.cr
+│   │   │   ├── formdata.cr
+│   │   │   ├── headers.cr
+│   │   │   ├── log.cr
+│   │   │   ├── params.cr
+│   │   │   ├── request.cr
+│   │   │   ├── server
+│   │   │   │   ├── context.cr
+│   │   │   │   ├── handler.cr
+│   │   │   │   ├── handlers
+│   │   │   │   │   ├── compress_handler.cr
+│   │   │   │   │   ├── error_handler.cr
+│   │   │   │   │   ├── log_handler.cr
+│   │   │   │   │   ├── static_file_handler.cr
+│   │   │   │   │   ├── static_file_handler.html
+│   │   │   │   │   └── websocket_handler.cr
+│   │   │   │   ├── request_processor.cr
+│   │   │   │   └── response.cr
+│   │   │   ├── server.cr
+│   │   │   ├── status.cr
+│   │   │   ├── web_socket
+│   │   │   │   ├── close_code.cr
+│   │   │   │   └── protocol.cr
+│   │   │   └── web_socket.cr
+│   │   ├── http.cr
+│   │   ├── humanize.cr
+│   │   ├── indexable
+│   │   │   └── mutable.cr
+│   │   ├── indexable.cr
+│   │   ├── ini.cr
+│   │   ├── int.cr
+│   │   ├── intrinsics.cr
+│   │   ├── io
+│   │   │   ├── argf.cr
+│   │   │   ├── buffered.cr
+│   │   │   ├── byte_format.cr
+│   │   │   ├── console.cr
+│   │   │   ├── delimited.cr
+│   │   │   ├── encoding.cr
+│   │   │   ├── encoding_stubs.cr
+│   │   │   ├── error.cr
+│   │   │   ├── evented.cr
+│   │   │   ├── file_descriptor.cr
+│   │   │   ├── hexdump.cr
+│   │   │   ├── memory.cr
+│   │   │   ├── multi_writer.cr
+│   │   │   ├── sized.cr
+│   │   │   └── stapled.cr
+│   │   ├── io.cr
+│   │   ├── iterable.cr
+│   │   ├── iterator.cr
+│   │   ├── json
+│   │   │   ├── any.cr
+│   │   │   ├── builder.cr
+│   │   │   ├── from_json.cr
+│   │   │   ├── lexer
+│   │   │   │   ├── io_based.cr
+│   │   │   │   └── string_based.cr
+│   │   │   ├── lexer.cr
+│   │   │   ├── parser.cr
+│   │   │   ├── pull_parser.cr
+│   │   │   ├── serialization.cr
+│   │   │   ├── to_json.cr
+│   │   │   └── token.cr
+│   │   ├── json.cr
+│   │   ├── kernel.cr
+│   │   ├── levenshtein.cr
+│   │   ├── lib_c
+│   │   │   ├── aarch64-android
+│   │   │   │   └── c
+│   │   │   │       ├── arpa
+│   │   │   │       │   └── inet.cr
+│   │   │   │       ├── dirent.cr
+│   │   │   │       ├── dlfcn.cr
+│   │   │   │       ├── elf.cr
+│   │   │   │       ├── errno.cr
+│   │   │   │       ├── fcntl.cr
+│   │   │   │       ├── grp.cr
+│   │   │   │       ├── iconv.cr
+│   │   │   │       ├── link.cr
+│   │   │   │       ├── netdb.cr
+│   │   │   │       ├── netinet
+│   │   │   │       │   ├── in.cr
+│   │   │   │       │   └── tcp.cr
+│   │   │   │       ├── pthread.cr
+│   │   │   │       ├── pwd.cr
+│   │   │   │       ├── sched.cr
+│   │   │   │       ├── signal.cr
+│   │   │   │       ├── stdarg.cr
+│   │   │   │       ├── stddef.cr
+│   │   │   │       ├── stdint.cr
+│   │   │   │       ├── stdio.cr
+│   │   │   │       ├── stdlib.cr
+│   │   │   │       ├── string.cr
+│   │   │   │       ├── sys
+│   │   │   │       │   ├── file.cr
+│   │   │   │       │   ├── ioctl.cr
+│   │   │   │       │   ├── mman.cr
+│   │   │   │       │   ├── resource.cr
+│   │   │   │       │   ├── select.cr
+│   │   │   │       │   ├── socket.cr
+│   │   │   │       │   ├── stat.cr
+│   │   │   │       │   ├── syscall.cr
+│   │   │   │       │   ├── system_properties.cr
+│   │   │   │       │   ├── time.cr
+│   │   │   │       │   ├── types.cr
+│   │   │   │       │   ├── un.cr
+│   │   │   │       │   └── wait.cr
+│   │   │   │       ├── termios.cr
+│   │   │   │       ├── time.cr
+│   │   │   │       └── unistd.cr
+│   │   │   ├── aarch64-darwin
+│   │   │   │   └── c
+│   │   │   │       ├── arpa
+│   │   │   │       │   └── inet.cr
+│   │   │   │       ├── dirent.cr
+│   │   │   │       ├── dlfcn.cr
+│   │   │   │       ├── errno.cr
+│   │   │   │       ├── fcntl.cr
+│   │   │   │       ├── grp.cr
+│   │   │   │       ├── iconv.cr
+│   │   │   │       ├── mach
+│   │   │   │       │   └── mach_time.cr
+│   │   │   │       ├── netdb.cr
+│   │   │   │       ├── netinet
+│   │   │   │       │   ├── in.cr
+│   │   │   │       │   └── tcp.cr
+│   │   │   │       ├── pthread.cr
+│   │   │   │       ├── pwd.cr
+│   │   │   │       ├── sched.cr
+│   │   │   │       ├── signal.cr
+│   │   │   │       ├── stdarg.cr
+│   │   │   │       ├── stddef.cr
+│   │   │   │       ├── stdint.cr
+│   │   │   │       ├── stdio.cr
+│   │   │   │       ├── stdlib.cr
+│   │   │   │       ├── string.cr
+│   │   │   │       ├── sys
+│   │   │   │       │   ├── file.cr
+│   │   │   │       │   ├── mman.cr
+│   │   │   │       │   ├── resource.cr
+│   │   │   │       │   ├── select.cr
+│   │   │   │       │   ├── socket.cr
+│   │   │   │       │   ├── stat.cr
+│   │   │   │       │   ├── time.cr
+│   │   │   │       │   ├── types.cr
+│   │   │   │       │   ├── un.cr
+│   │   │   │       │   └── wait.cr
+│   │   │   │       ├── termios.cr
+│   │   │   │       ├── time.cr
+│   │   │   │       └── unistd.cr
+│   │   │   ├── aarch64-linux-gnu
+│   │   │   │   └── c
+│   │   │   │       ├── arpa
+│   │   │   │       │   └── inet.cr
+│   │   │   │       ├── dirent.cr
+│   │   │   │       ├── dlfcn.cr
+│   │   │   │       ├── elf.cr
+│   │   │   │       ├── errno.cr
+│   │   │   │       ├── fcntl.cr
+│   │   │   │       ├── grp.cr
+│   │   │   │       ├── iconv.cr
+│   │   │   │       ├── link.cr
+│   │   │   │       ├── netdb.cr
+│   │   │   │       ├── netinet
+│   │   │   │       │   ├── in.cr
+│   │   │   │       │   └── tcp.cr
+│   │   │   │       ├── pthread.cr
+│   │   │   │       ├── pwd.cr
+│   │   │   │       ├── sched.cr
+│   │   │   │       ├── signal.cr
+│   │   │   │       ├── stdarg.cr
+│   │   │   │       ├── stddef.cr
+│   │   │   │       ├── stdint.cr
+│   │   │   │       ├── stdio.cr
+│   │   │   │       ├── stdlib.cr
+│   │   │   │       ├── string.cr
+│   │   │   │       ├── sys
+│   │   │   │       │   ├── file.cr
+│   │   │   │       │   ├── mman.cr
+│   │   │   │       │   ├── resource.cr
+│   │   │   │       │   ├── select.cr
+│   │   │   │       │   ├── socket.cr
+│   │   │   │       │   ├── stat.cr
+│   │   │   │       │   ├── time.cr
+│   │   │   │       │   ├── types.cr
+│   │   │   │       │   ├── un.cr
+│   │   │   │       │   └── wait.cr
+│   │   │   │       ├── termios.cr
+│   │   │   │       ├── time.cr
+│   │   │   │       └── unistd.cr
+│   │   │   ├── aarch64-linux-musl
+│   │   │   │   └── c
+│   │   │   │       ├── arpa
+│   │   │   │       │   └── inet.cr
+│   │   │   │       ├── dirent.cr
+│   │   │   │       ├── dlfcn.cr
+│   │   │   │       ├── elf.cr
+│   │   │   │       ├── errno.cr
+│   │   │   │       ├── fcntl.cr
+│   │   │   │       ├── grp.cr
+│   │   │   │       ├── iconv.cr
+│   │   │   │       ├── link.cr
+│   │   │   │       ├── netdb.cr
+│   │   │   │       ├── netinet
+│   │   │   │       │   ├── in.cr
+│   │   │   │       │   └── tcp.cr
+│   │   │   │       ├── pthread.cr
+│   │   │   │       ├── pwd.cr
+│   │   │   │       ├── sched.cr
+│   │   │   │       ├── signal.cr
+│   │   │   │       ├── stdarg.cr
+│   │   │   │       ├── stddef.cr
+│   │   │   │       ├── stdint.cr
+│   │   │   │       ├── stdio.cr
+│   │   │   │       ├── stdlib.cr
+│   │   │   │       ├── string.cr
+│   │   │   │       ├── sys
+│   │   │   │       │   ├── file.cr
+│   │   │   │       │   ├── mman.cr
+│   │   │   │       │   ├── resource.cr
+│   │   │   │       │   ├── select.cr
+│   │   │   │       │   ├── socket.cr
+│   │   │   │       │   ├── stat.cr
+│   │   │   │       │   ├── time.cr
+│   │   │   │       │   ├── types.cr
+│   │   │   │       │   ├── un.cr
+│   │   │   │       │   └── wait.cr
+│   │   │   │       ├── termios.cr
+│   │   │   │       ├── time.cr
+│   │   │   │       └── unistd.cr
+│   │   │   ├── aarch64-windows-msvc -> x86_64-windows-msvc
+│   │   │   ├── amd64-unknown-openbsd -> x86_64-openbsd
+│   │   │   ├── arm-linux-gnueabihf
+│   │   │   │   └── c
+│   │   │   │       ├── arpa
+│   │   │   │       │   └── inet.cr
+│   │   │   │       ├── dirent.cr
+│   │   │   │       ├── dlfcn.cr
+│   │   │   │       ├── elf.cr
+│   │   │   │       ├── errno.cr
+│   │   │   │       ├── fcntl.cr
+│   │   │   │       ├── grp.cr
+│   │   │   │       ├── iconv.cr
+│   │   │   │       ├── link.cr
+│   │   │   │       ├── netdb.cr
+│   │   │   │       ├── netinet
+│   │   │   │       │   ├── in.cr
+│   │   │   │       │   └── tcp.cr
+│   │   │   │       ├── pthread.cr
+│   │   │   │       ├── pwd.cr
+│   │   │   │       ├── sched.cr
+│   │   │   │       ├── signal.cr
+│   │   │   │       ├── stdarg.cr
+│   │   │   │       ├── stddef.cr
+│   │   │   │       ├── stdint.cr
+│   │   │   │       ├── stdio.cr
+│   │   │   │       ├── stdlib.cr
+│   │   │   │       ├── string.cr
+│   │   │   │       ├── sys
+│   │   │   │       │   ├── file.cr
+│   │   │   │       │   ├── mman.cr
+│   │   │   │       │   ├── resource.cr
+│   │   │   │       │   ├── select.cr
+│   │   │   │       │   ├── socket.cr
+│   │   │   │       │   ├── stat.cr
+│   │   │   │       │   ├── time.cr
+│   │   │   │       │   ├── types.cr
+│   │   │   │       │   ├── un.cr
+│   │   │   │       │   └── wait.cr
+│   │   │   │       ├── termios.cr
+│   │   │   │       ├── time.cr
+│   │   │   │       └── unistd.cr
+│   │   │   ├── i386-linux-gnu
+│   │   │   │   └── c
+│   │   │   │       ├── arpa
+│   │   │   │       │   └── inet.cr
+│   │   │   │       ├── dirent.cr
+│   │   │   │       ├── dlfcn.cr
+│   │   │   │       ├── elf.cr
+│   │   │   │       ├── errno.cr
+│   │   │   │       ├── fcntl.cr
+│   │   │   │       ├── grp.cr
+│   │   │   │       ├── iconv.cr
+│   │   │   │       ├── link.cr
+│   │   │   │       ├── netdb.cr
+│   │   │   │       ├── netinet
+│   │   │   │       │   ├── in.cr
+│   │   │   │       │   └── tcp.cr
+│   │   │   │       ├── pthread.cr
+│   │   │   │       ├── pwd.cr
+│   │   │   │       ├── sched.cr
+│   │   │   │       ├── signal.cr
+│   │   │   │       ├── stdarg.cr
+│   │   │   │       ├── stddef.cr
+│   │   │   │       ├── stdint.cr
+│   │   │   │       ├── stdio.cr
+│   │   │   │       ├── stdlib.cr
+│   │   │   │       ├── string.cr
+│   │   │   │       ├── sys
+│   │   │   │       │   ├── file.cr
+│   │   │   │       │   ├── mman.cr
+│   │   │   │       │   ├── resource.cr
+│   │   │   │       │   ├── select.cr
+│   │   │   │       │   ├── socket.cr
+│   │   │   │       │   ├── stat.cr
+│   │   │   │       │   ├── time.cr
+│   │   │   │       │   ├── types.cr
+│   │   │   │       │   ├── un.cr
+│   │   │   │       │   └── wait.cr
+│   │   │   │       ├── termios.cr
+│   │   │   │       ├── time.cr
+│   │   │   │       └── unistd.cr
+│   │   │   ├── i386-linux-musl
+│   │   │   │   └── c
+│   │   │   │       ├── arpa
+│   │   │   │       │   └── inet.cr
+│   │   │   │       ├── dirent.cr
+│   │   │   │       ├── dlfcn.cr
+│   │   │   │       ├── elf.cr
+│   │   │   │       ├── errno.cr
+│   │   │   │       ├── fcntl.cr
+│   │   │   │       ├── grp.cr
+│   │   │   │       ├── iconv.cr
+│   │   │   │       ├── link.cr
+│   │   │   │       ├── netdb.cr
+│   │   │   │       ├── netinet
+│   │   │   │       │   ├── in.cr
+│   │   │   │       │   └── tcp.cr
+│   │   │   │       ├── pthread.cr
+│   │   │   │       ├── pwd.cr
+│   │   │   │       ├── sched.cr
+│   │   │   │       ├── signal.cr
+│   │   │   │       ├── stdarg.cr
+│   │   │   │       ├── stddef.cr
+│   │   │   │       ├── stdint.cr
+│   │   │   │       ├── stdio.cr
+│   │   │   │       ├── stdlib.cr
+│   │   │   │       ├── string.cr
+│   │   │   │       ├── sys
+│   │   │   │       │   ├── file.cr
+│   │   │   │       │   ├── mman.cr
+│   │   │   │       │   ├── resource.cr
+│   │   │   │       │   ├── select.cr
+│   │   │   │       │   ├── socket.cr
+│   │   │   │       │   ├── stat.cr
+│   │   │   │       │   ├── time.cr
+│   │   │   │       │   ├── types.cr
+│   │   │   │       │   ├── un.cr
+│   │   │   │       │   └── wait.cr
+│   │   │   │       ├── termios.cr
+│   │   │   │       ├── time.cr
+│   │   │   │       └── unistd.cr
+│   │   │   ├── i686-linux-gnu -> i386-linux-gnu
+│   │   │   ├── i686-linux-musl -> i386-linux-musl
+│   │   │   ├── wasm32-wasi
+│   │   │   │   └── c
+│   │   │   │       ├── arpa
+│   │   │   │       │   └── inet.cr
+│   │   │   │       ├── errno.cr
+│   │   │   │       ├── fcntl.cr
+│   │   │   │       ├── iconv.cr
+│   │   │   │       ├── netdb.cr
+│   │   │   │       ├── netinet
+│   │   │   │       │   ├── in.cr
+│   │   │   │       │   └── tcp.cr
+│   │   │   │       ├── sched.cr
+│   │   │   │       ├── stdarg.cr
+│   │   │   │       ├── stddef.cr
+│   │   │   │       ├── stdint.cr
+│   │   │   │       ├── stdio.cr
+│   │   │   │       ├── stdlib.cr
+│   │   │   │       ├── string.cr
+│   │   │   │       ├── sys
+│   │   │   │       │   ├── file.cr
+│   │   │   │       │   ├── resource.cr
+│   │   │   │       │   ├── select.cr
+│   │   │   │       │   ├── socket.cr
+│   │   │   │       │   ├── stat.cr
+│   │   │   │       │   ├── time.cr
+│   │   │   │       │   ├── times.cr
+│   │   │   │       │   └── types.cr
+│   │   │   │       ├── termios.cr
+│   │   │   │       ├── time.cr
+│   │   │   │       └── unistd.cr
+│   │   │   ├── x86_64-darwin
+│   │   │   │   └── c
+│   │   │   │       ├── arpa
+│   │   │   │       │   └── inet.cr
+│   │   │   │       ├── dirent.cr
+│   │   │   │       ├── dlfcn.cr
+│   │   │   │       ├── errno.cr
+│   │   │   │       ├── fcntl.cr
+│   │   │   │       ├── grp.cr
+│   │   │   │       ├── iconv.cr
+│   │   │   │       ├── mach
+│   │   │   │       │   └── mach_time.cr
+│   │   │   │       ├── netdb.cr
+│   │   │   │       ├── netinet
+│   │   │   │       │   ├── in.cr
+│   │   │   │       │   └── tcp.cr
+│   │   │   │       ├── pthread.cr
+│   │   │   │       ├── pwd.cr
+│   │   │   │       ├── sched.cr
+│   │   │   │       ├── signal.cr
+│   │   │   │       ├── stdarg.cr
+│   │   │   │       ├── stddef.cr
+│   │   │   │       ├── stdint.cr
+│   │   │   │       ├── stdio.cr
+│   │   │   │       ├── stdlib.cr
+│   │   │   │       ├── string.cr
+│   │   │   │       ├── sys
+│   │   │   │       │   ├── file.cr
+│   │   │   │       │   ├── mman.cr
+│   │   │   │       │   ├── resource.cr
+│   │   │   │       │   ├── select.cr
+│   │   │   │       │   ├── socket.cr
+│   │   │   │       │   ├── stat.cr
+│   │   │   │       │   ├── time.cr
+│   │   │   │       │   ├── types.cr
+│   │   │   │       │   ├── un.cr
+│   │   │   │       │   └── wait.cr
+│   │   │   │       ├── termios.cr
+│   │   │   │       ├── time.cr
+│   │   │   │       └── unistd.cr
+│   │   │   ├── x86_64-dragonfly
+│   │   │   │   └── c
+│   │   │   │       ├── arpa
+│   │   │   │       │   └── inet.cr
+│   │   │   │       ├── dirent.cr
+│   │   │   │       ├── dlfcn.cr
+│   │   │   │       ├── elf.cr
+│   │   │   │       ├── errno.cr
+│   │   │   │       ├── fcntl.cr
+│   │   │   │       ├── grp.cr
+│   │   │   │       ├── iconv.cr
+│   │   │   │       ├── link.cr
+│   │   │   │       ├── netdb.cr
+│   │   │   │       ├── netinet
+│   │   │   │       │   ├── in.cr
+│   │   │   │       │   └── tcp.cr
+│   │   │   │       ├── pthread.cr
+│   │   │   │       ├── pwd.cr
+│   │   │   │       ├── sched.cr
+│   │   │   │       ├── signal.cr
+│   │   │   │       ├── stdarg.cr
+│   │   │   │       ├── stddef.cr
+│   │   │   │       ├── stdint.cr
+│   │   │   │       ├── stdio.cr
+│   │   │   │       ├── stdlib.cr
+│   │   │   │       ├── string.cr
+│   │   │   │       ├── sys
+│   │   │   │       │   ├── file.cr
+│   │   │   │       │   ├── mman.cr
+│   │   │   │       │   ├── resource.cr
+│   │   │   │       │   ├── select.cr
+│   │   │   │       │   ├── socket.cr
+│   │   │   │       │   ├── stat.cr
+│   │   │   │       │   ├── time.cr
+│   │   │   │       │   ├── types.cr
+│   │   │   │       │   ├── un.cr
+│   │   │   │       │   └── wait.cr
+│   │   │   │       ├── sysctl.cr
+│   │   │   │       ├── termios.cr
+│   │   │   │       ├── time.cr
+│   │   │   │       └── unistd.cr
+│   │   │   ├── x86_64-freebsd
+│   │   │   │   └── c
+│   │   │   │       ├── arpa
+│   │   │   │       │   └── inet.cr
+│   │   │   │       ├── dirent.cr
+│   │   │   │       ├── dlfcn.cr
+│   │   │   │       ├── elf.cr
+│   │   │   │       ├── errno.cr
+│   │   │   │       ├── fcntl.cr
+│   │   │   │       ├── grp.cr
+│   │   │   │       ├── iconv.cr
+│   │   │   │       ├── link.cr
+│   │   │   │       ├── netdb.cr
+│   │   │   │       ├── netinet
+│   │   │   │       │   ├── in.cr
+│   │   │   │       │   └── tcp.cr
+│   │   │   │       ├── pthread.cr
+│   │   │   │       ├── pwd.cr
+│   │   │   │       ├── sched.cr
+│   │   │   │       ├── signal.cr
+│   │   │   │       ├── stdarg.cr
+│   │   │   │       ├── stddef.cr
+│   │   │   │       ├── stdint.cr
+│   │   │   │       ├── stdio.cr
+│   │   │   │       ├── stdlib.cr
+│   │   │   │       ├── string.cr
+│   │   │   │       ├── sys
+│   │   │   │       │   ├── file.cr
+│   │   │   │       │   ├── mman.cr
+│   │   │   │       │   ├── resource.cr
+│   │   │   │       │   ├── select.cr
+│   │   │   │       │   ├── socket.cr
+│   │   │   │       │   ├── stat.cr
+│   │   │   │       │   ├── time.cr
+│   │   │   │       │   ├── types.cr
+│   │   │   │       │   ├── un.cr
+│   │   │   │       │   └── wait.cr
+│   │   │   │       ├── sysctl.cr
+│   │   │   │       ├── termios.cr
+│   │   │   │       ├── time.cr
+│   │   │   │       └── unistd.cr
+│   │   │   ├── x86_64-linux-gnu
+│   │   │   │   └── c
+│   │   │   │       ├── arpa
+│   │   │   │       │   └── inet.cr
+│   │   │   │       ├── dirent.cr
+│   │   │   │       ├── dlfcn.cr
+│   │   │   │       ├── elf.cr
+│   │   │   │       ├── errno.cr
+│   │   │   │       ├── fcntl.cr
+│   │   │   │       ├── grp.cr
+│   │   │   │       ├── iconv.cr
+│   │   │   │       ├── link.cr
+│   │   │   │       ├── netdb.cr
+│   │   │   │       ├── netinet
+│   │   │   │       │   ├── in.cr
+│   │   │   │       │   └── tcp.cr
+│   │   │   │       ├── pthread.cr
+│   │   │   │       ├── pwd.cr
+│   │   │   │       ├── sched.cr
+│   │   │   │       ├── signal.cr
+│   │   │   │       ├── stdarg.cr
+│   │   │   │       ├── stddef.cr
+│   │   │   │       ├── stdint.cr
+│   │   │   │       ├── stdio.cr
+│   │   │   │       ├── stdlib.cr
+│   │   │   │       ├── string.cr
+│   │   │   │       ├── sys
+│   │   │   │       │   ├── file.cr
+│   │   │   │       │   ├── mman.cr
+│   │   │   │       │   ├── resource.cr
+│   │   │   │       │   ├── select.cr
+│   │   │   │       │   ├── socket.cr
+│   │   │   │       │   ├── stat.cr
+│   │   │   │       │   ├── time.cr
+│   │   │   │       │   ├── types.cr
+│   │   │   │       │   ├── un.cr
+│   │   │   │       │   └── wait.cr
+│   │   │   │       ├── termios.cr
+│   │   │   │       ├── time.cr
+│   │   │   │       └── unistd.cr
+│   │   │   ├── x86_64-linux-musl
+│   │   │   │   └── c
+│   │   │   │       ├── arpa
+│   │   │   │       │   └── inet.cr
+│   │   │   │       ├── dirent.cr
+│   │   │   │       ├── dlfcn.cr
+│   │   │   │       ├── elf.cr
+│   │   │   │       ├── errno.cr
+│   │   │   │       ├── fcntl.cr
+│   │   │   │       ├── grp.cr
+│   │   │   │       ├── iconv.cr
+│   │   │   │       ├── link.cr
+│   │   │   │       ├── netdb.cr
+│   │   │   │       ├── netinet
+│   │   │   │       │   ├── in.cr
+│   │   │   │       │   └── tcp.cr
+│   │   │   │       ├── pthread.cr
+│   │   │   │       ├── pwd.cr
+│   │   │   │       ├── sched.cr
+│   │   │   │       ├── signal.cr
+│   │   │   │       ├── stdarg.cr
+│   │   │   │       ├── stddef.cr
+│   │   │   │       ├── stdint.cr
+│   │   │   │       ├── stdio.cr
+│   │   │   │       ├── stdlib.cr
+│   │   │   │       ├── string.cr
+│   │   │   │       ├── sys
+│   │   │   │       │   ├── file.cr
+│   │   │   │       │   ├── mman.cr
+│   │   │   │       │   ├── resource.cr
+│   │   │   │       │   ├── select.cr
+│   │   │   │       │   ├── socket.cr
+│   │   │   │       │   ├── stat.cr
+│   │   │   │       │   ├── time.cr
+│   │   │   │       │   ├── types.cr
+│   │   │   │       │   ├── un.cr
+│   │   │   │       │   └── wait.cr
+│   │   │   │       ├── termios.cr
+│   │   │   │       ├── time.cr
+│   │   │   │       └── unistd.cr
+│   │   │   ├── x86_64-macosx-darwin -> x86_64-darwin
+│   │   │   ├── x86_64-netbsd
+│   │   │   │   └── c
+│   │   │   │       ├── arpa
+│   │   │   │       │   └── inet.cr
+│   │   │   │       ├── dirent.cr
+│   │   │   │       ├── dlfcn.cr
+│   │   │   │       ├── elf.cr
+│   │   │   │       ├── errno.cr
+│   │   │   │       ├── fcntl.cr
+│   │   │   │       ├── grp.cr
+│   │   │   │       ├── iconv.cr
+│   │   │   │       ├── link.cr
+│   │   │   │       ├── netdb.cr
+│   │   │   │       ├── netinet
+│   │   │   │       │   ├── in.cr
+│   │   │   │       │   └── tcp.cr
+│   │   │   │       ├── pthread.cr
+│   │   │   │       ├── pwd.cr
+│   │   │   │       ├── sched.cr
+│   │   │   │       ├── signal.cr
+│   │   │   │       ├── stdarg.cr
+│   │   │   │       ├── stddef.cr
+│   │   │   │       ├── stdint.cr
+│   │   │   │       ├── stdio.cr
+│   │   │   │       ├── stdlib.cr
+│   │   │   │       ├── string.cr
+│   │   │   │       ├── sys
+│   │   │   │       │   ├── file.cr
+│   │   │   │       │   ├── mman.cr
+│   │   │   │       │   ├── resource.cr
+│   │   │   │       │   ├── select.cr
+│   │   │   │       │   ├── socket.cr
+│   │   │   │       │   ├── stat.cr
+│   │   │   │       │   ├── time.cr
+│   │   │   │       │   ├── types.cr
+│   │   │   │       │   ├── un.cr
+│   │   │   │       │   └── wait.cr
+│   │   │   │       ├── sysctl.cr
+│   │   │   │       ├── termios.cr
+│   │   │   │       ├── time.cr
+│   │   │   │       └── unistd.cr
+│   │   │   ├── x86_64-openbsd
+│   │   │   │   └── c
+│   │   │   │       ├── arpa
+│   │   │   │       │   └── inet.cr
+│   │   │   │       ├── dirent.cr
+│   │   │   │       ├── dlfcn.cr
+│   │   │   │       ├── elf.cr
+│   │   │   │       ├── errno.cr
+│   │   │   │       ├── fcntl.cr
+│   │   │   │       ├── grp.cr
+│   │   │   │       ├── iconv.cr
+│   │   │   │       ├── link.cr
+│   │   │   │       ├── netdb.cr
+│   │   │   │       ├── netinet
+│   │   │   │       │   ├── in.cr
+│   │   │   │       │   └── tcp.cr
+│   │   │   │       ├── pthread.cr
+│   │   │   │       ├── pwd.cr
+│   │   │   │       ├── sched.cr
+│   │   │   │       ├── signal.cr
+│   │   │   │       ├── stdarg.cr
+│   │   │   │       ├── stddef.cr
+│   │   │   │       ├── stdint.cr
+│   │   │   │       ├── stdio.cr
+│   │   │   │       ├── stdlib.cr
+│   │   │   │       ├── string.cr
+│   │   │   │       ├── sys
+│   │   │   │       │   ├── file.cr
+│   │   │   │       │   ├── mman.cr
+│   │   │   │       │   ├── resource.cr
+│   │   │   │       │   ├── select.cr
+│   │   │   │       │   ├── socket.cr
+│   │   │   │       │   ├── stat.cr
+│   │   │   │       │   ├── time.cr
+│   │   │   │       │   ├── types.cr
+│   │   │   │       │   ├── un.cr
+│   │   │   │       │   └── wait.cr
+│   │   │   │       ├── sysctl.cr
+│   │   │   │       ├── termios.cr
+│   │   │   │       ├── time.cr
+│   │   │   │       └── unistd.cr
+│   │   │   ├── x86_64-portbld-freebsd -> x86_64-freebsd
+│   │   │   ├── x86_64-solaris
+│   │   │   │   └── c
+│   │   │   │       ├── arpa
+│   │   │   │       │   └── inet.cr
+│   │   │   │       ├── dirent.cr
+│   │   │   │       ├── dlfcn.cr
+│   │   │   │       ├── elf.cr
+│   │   │   │       ├── errno.cr
+│   │   │   │       ├── fcntl.cr
+│   │   │   │       ├── grp.cr
+│   │   │   │       ├── iconv.cr
+│   │   │   │       ├── link.cr
+│   │   │   │       ├── netdb.cr
+│   │   │   │       ├── netinet
+│   │   │   │       │   ├── in.cr
+│   │   │   │       │   └── tcp.cr
+│   │   │   │       ├── pthread.cr
+│   │   │   │       ├── pwd.cr
+│   │   │   │       ├── sched.cr
+│   │   │   │       ├── signal.cr
+│   │   │   │       ├── stdarg.cr
+│   │   │   │       ├── stddef.cr
+│   │   │   │       ├── stdint.cr
+│   │   │   │       ├── stdio.cr
+│   │   │   │       ├── stdlib.cr
+│   │   │   │       ├── string.cr
+│   │   │   │       ├── sys
+│   │   │   │       │   ├── file.cr
+│   │   │   │       │   ├── mman.cr
+│   │   │   │       │   ├── resource.cr
+│   │   │   │       │   ├── select.cr
+│   │   │   │       │   ├── socket.cr
+│   │   │   │       │   ├── stat.cr
+│   │   │   │       │   ├── time.cr
+│   │   │   │       │   ├── types.cr
+│   │   │   │       │   ├── un.cr
+│   │   │   │       │   └── wait.cr
+│   │   │   │       ├── termios.cr
+│   │   │   │       ├── time.cr
+│   │   │   │       └── unistd.cr
+│   │   │   ├── x86_64-unknown-freebsd -> x86_64-freebsd
+│   │   │   └── x86_64-windows-msvc
+│   │   │       └── c
+│   │   │           ├── afunix.cr
+│   │   │           ├── basetsd.cr
+│   │   │           ├── combaseapi.cr
+│   │   │           ├── consoleapi2.cr
+│   │   │           ├── consoleapi.cr
+│   │   │           ├── corecrt.cr
+│   │   │           ├── dbghelp.cr
+│   │   │           ├── delayimp.cr
+│   │   │           ├── direct.cr
+│   │   │           ├── errhandlingapi.cr
+│   │   │           ├── errno.cr
+│   │   │           ├── fcntl.cr
+│   │   │           ├── fileapi.cr
+│   │   │           ├── guiddef.cr
+│   │   │           ├── handleapi.cr
+│   │   │           ├── heapapi.cr
+│   │   │           ├── in6addr.cr
+│   │   │           ├── inaddr.cr
+│   │   │           ├── int_safe.cr
+│   │   │           ├── ioapiset.cr
+│   │   │           ├── io.cr
+│   │   │           ├── jobapi2.cr
+│   │   │           ├── knownfolders.cr
+│   │   │           ├── libloaderapi.cr
+│   │   │           ├── lm.cr
+│   │   │           ├── malloc.cr
+│   │   │           ├── memoryapi.cr
+│   │   │           ├── minwinbase.cr
+│   │   │           ├── mswsock.cr
+│   │   │           ├── ntifs.cr
+│   │   │           ├── ntsecapi.cr
+│   │   │           ├── ntstatus.cr
+│   │   │           ├── process.cr
+│   │   │           ├── processenv.cr
+│   │   │           ├── processthreadsapi.cr
+│   │   │           ├── profileapi.cr
+│   │   │           ├── regapix.cr
+│   │   │           ├── sddl.cr
+│   │   │           ├── sdkddkver.cr
+│   │   │           ├── security.cr
+│   │   │           ├── shlobj_core.cr
+│   │   │           ├── signal.cr
+│   │   │           ├── stdarg.cr
+│   │   │           ├── stddef.cr
+│   │   │           ├── stdint.cr
+│   │   │           ├── stdio.cr
+│   │   │           ├── stdlib.cr
+│   │   │           ├── stringapiset.cr
+│   │   │           ├── string.cr
+│   │   │           ├── synchapi.cr
+│   │   │           ├── sys
+│   │   │           │   ├── stat.cr
+│   │   │           │   ├── types.cr
+│   │   │           │   └── utime.cr
+│   │   │           ├── sysinfoapi.cr
+│   │   │           ├── timezoneapi.cr
+│   │   │           ├── tlhelp32.cr
+│   │   │           ├── userenv.cr
+│   │   │           ├── winbase.cr
+│   │   │           ├── wincrypt.cr
+│   │   │           ├── win_def.cr
+│   │   │           ├── windows.cr
+│   │   │           ├── winioctl.cr
+│   │   │           ├── winnls.cr
+│   │   │           ├── winnt.cr
+│   │   │           ├── winreg.cr
+│   │   │           ├── winsock2.cr
+│   │   │           ├── ws2def.cr
+│   │   │           ├── ws2ipdef.cr
+│   │   │           ├── ws2tcpip.cr
+│   │   │           └── wtypesbase.cr
+│   │   ├── lib_c.cr
+│   │   ├── lib_z
+│   │   │   └── lib_z.cr
+│   │   ├── llvm
+│   │   │   ├── abi
+│   │   │   │   ├── aarch64.cr
+│   │   │   │   ├── arm.cr
+│   │   │   │   ├── avr.cr
+│   │   │   │   ├── wasm32.cr
+│   │   │   │   ├── x86_64.cr
+│   │   │   │   ├── x86.cr
+│   │   │   │   └── x86_win64.cr
+│   │   │   ├── abi.cr
+│   │   │   ├── basic_block_collection.cr
+│   │   │   ├── basic_block.cr
+│   │   │   ├── builder.cr
+│   │   │   ├── context.cr
+│   │   │   ├── di_builder.cr
+│   │   │   ├── enums
+│   │   │   │   └── atomic.cr
+│   │   │   ├── enums.cr
+│   │   │   ├── ext
+│   │   │   │   ├── find-llvm-config
+│   │   │   │   ├── llvm_ext.cc
+│   │   │   │   └── llvm-versions.txt
+│   │   │   ├── function_collection.cr
+│   │   │   ├── function.cr
+│   │   │   ├── function_pass_manager.cr
+│   │   │   ├── generic_value.cr
+│   │   │   ├── global_collection.cr
+│   │   │   ├── instruction_collection.cr
+│   │   │   ├── jit_compiler.cr
+│   │   │   ├── lib_llvm
+│   │   │   │   ├── analysis.cr
+│   │   │   │   ├── bit_reader.cr
+│   │   │   │   ├── bit_writer.cr
+│   │   │   │   ├── core.cr
+│   │   │   │   ├── debug_info.cr
+│   │   │   │   ├── error.cr
+│   │   │   │   ├── execution_engine.cr
+│   │   │   │   ├── initialization.cr
+│   │   │   │   ├── ir_reader.cr
+│   │   │   │   ├── lljit.cr
+│   │   │   │   ├── orc.cr
+│   │   │   │   ├── target.cr
+│   │   │   │   ├── target_machine.cr
+│   │   │   │   ├── transforms
+│   │   │   │   │   ├── pass_builder.cr
+│   │   │   │   │   └── pass_manager_builder.cr
+│   │   │   │   └── types.cr
+│   │   │   ├── lib_llvm.cr
+│   │   │   ├── lib_llvm_ext.cr
+│   │   │   ├── memory_buffer.cr
+│   │   │   ├── module.cr
+│   │   │   ├── module_pass_manager.cr
+│   │   │   ├── operand_bundle_def.cr
+│   │   │   ├── orc
+│   │   │   │   ├── jit_dylib.cr
+│   │   │   │   ├── lljit_builder.cr
+│   │   │   │   ├── lljit.cr
+│   │   │   │   ├── thread_safe_context.cr
+│   │   │   │   └── thread_safe_module.cr
+│   │   │   ├── parameter_collection.cr
+│   │   │   ├── pass_builder_options.cr
+│   │   │   ├── pass_manager_builder.cr
+│   │   │   ├── pass_registry.cr
+│   │   │   ├── phi_table.cr
+│   │   │   ├── target.cr
+│   │   │   ├── target_data.cr
+│   │   │   ├── target_machine.cr
+│   │   │   ├── type.cr
+│   │   │   ├── value.cr
+│   │   │   └── value_methods.cr
+│   │   ├── llvm.cr
+│   │   ├── log
+│   │   │   ├── backend.cr
+│   │   │   ├── broadcast_backend.cr
+│   │   │   ├── builder.cr
+│   │   │   ├── dispatch.cr
+│   │   │   ├── entry.cr
+│   │   │   ├── format.cr
+│   │   │   ├── io_backend.cr
+│   │   │   ├── json.cr
+│   │   │   ├── log.cr
+│   │   │   ├── main.cr
+│   │   │   ├── memory_backend.cr
+│   │   │   ├── metadata.cr
+│   │   │   ├── setup.cr
+│   │   │   └── spec.cr
+│   │   ├── log.cr
+│   │   ├── macros.cr
+│   │   ├── math
+│   │   │   ├── libm.cr
+│   │   │   └── math.cr
+│   │   ├── mime
+│   │   │   ├── media_type.cr
+│   │   │   ├── multipart
+│   │   │   │   ├── builder.cr
+│   │   │   │   ├── parser.cr
+│   │   │   │   └── state.cr
+│   │   │   └── multipart.cr
+│   │   ├── mime.cr
+│   │   ├── mutex.cr
+│   │   ├── named_tuple.cr
+│   │   ├── nil.cr
+│   │   ├── number.cr
+│   │   ├── oauth
+│   │   │   ├── access_token.cr
+│   │   │   ├── authorization_header.cr
+│   │   │   ├── consumer.cr
+│   │   │   ├── error.cr
+│   │   │   ├── oauth.cr
+│   │   │   ├── params.cr
+│   │   │   ├── request_token.cr
+│   │   │   └── signature.cr
+│   │   ├── oauth2
+│   │   │   ├── access_token
+│   │   │   │   ├── access_token.cr
+│   │   │   │   ├── bearer.cr
+│   │   │   │   └── mac.cr
+│   │   │   ├── auth_scheme.cr
+│   │   │   ├── client.cr
+│   │   │   ├── error.cr
+│   │   │   ├── oauth2.cr
+│   │   │   └── session.cr
+│   │   ├── oauth2.cr
+│   │   ├── oauth.cr
+│   │   ├── object.cr
+│   │   ├── openssl
+│   │   │   ├── algorithm.cr
+│   │   │   ├── bio.cr
+│   │   │   ├── cipher.cr
+│   │   │   ├── digest.cr
+│   │   │   ├── error.cr
+│   │   │   ├── hmac.cr
+│   │   │   ├── lib_crypto.cr
+│   │   │   ├── lib_ssl.cr
+│   │   │   ├── md5.cr
+│   │   │   ├── pkcs5.cr
+│   │   │   ├── sha1.cr
+│   │   │   ├── ssl
+│   │   │   │   ├── context.cr
+│   │   │   │   ├── defaults.cr
+│   │   │   │   ├── hostname_validation.cr
+│   │   │   │   ├── server.cr
+│   │   │   │   └── socket.cr
+│   │   │   └── x509
+│   │   │       ├── certificate.cr
+│   │   │       ├── extension.cr
+│   │   │       ├── name.cr
+│   │   │       └── x509.cr
+│   │   ├── openssl.cr
+│   │   ├── option_parser.cr
+│   │   ├── path.cr
+│   │   ├── pointer.cr
+│   │   ├── prelude.cr
+│   │   ├── pretty_print.cr
+│   │   ├── primitives.cr
+│   │   ├── proc.cr
+│   │   ├── process
+│   │   │   ├── executable_path.cr
+│   │   │   ├── shell.cr
+│   │   │   └── status.cr
+│   │   ├── process.cr
+│   │   ├── raise.cr
+│   │   ├── random
+│   │   │   ├── isaac.cr
+│   │   │   ├── pcg32.cr
+│   │   │   └── secure.cr
+│   │   ├── random.cr
+│   │   ├── range
+│   │   │   └── bsearch.cr
+│   │   ├── range.cr
+│   │   ├── reference.cr
+│   │   ├── reference_storage.cr
+│   │   ├── regex
+│   │   │   ├── engine.cr
+│   │   │   ├── lib_pcre2.cr
+│   │   │   ├── lib_pcre.cr
+│   │   │   ├── match_data.cr
+│   │   │   ├── pcre2.cr
+│   │   │   └── pcre.cr
+│   │   ├── regex.cr
+│   │   ├── semantic_version.cr
+│   │   ├── set.cr
+│   │   ├── signal.cr
+│   │   ├── slice
+│   │   │   └── sort.cr
+│   │   ├── slice.cr
+│   │   ├── socket
+│   │   │   ├── address.cr
+│   │   │   ├── addrinfo.cr
+│   │   │   ├── common.cr
+│   │   │   ├── ip_socket.cr
+│   │   │   ├── server.cr
+│   │   │   ├── tcp_server.cr
+│   │   │   ├── tcp_socket.cr
+│   │   │   ├── udp_socket.cr
+│   │   │   ├── unix_server.cr
+│   │   │   └── unix_socket.cr
+│   │   ├── socket.cr
+│   │   ├── SOURCE_DATE_EPOCH
+│   │   ├── spec
+│   │   │   ├── cli.cr
+│   │   │   ├── context.cr
+│   │   │   ├── dsl.cr
+│   │   │   ├── example
+│   │   │   │   └── procsy.cr
+│   │   │   ├── example.cr
+│   │   │   ├── example_group
+│   │   │   │   └── procsy.cr
+│   │   │   ├── expectations.cr
+│   │   │   ├── filters.cr
+│   │   │   ├── formatter.cr
+│   │   │   ├── helpers
+│   │   │   │   ├── iterate.cr
+│   │   │   │   └── string.cr
+│   │   │   ├── item.cr
+│   │   │   ├── junit_formatter.cr
+│   │   │   ├── methods.cr
+│   │   │   ├── source.cr
+│   │   │   └── tap_formatter.cr
+│   │   ├── spec.cr
+│   │   ├── static_array.cr
+│   │   ├── steppable.cr
+│   │   ├── string
+│   │   │   ├── builder.cr
+│   │   │   ├── formatter.cr
+│   │   │   ├── grapheme
+│   │   │   │   ├── grapheme.cr
+│   │   │   │   └── properties.cr
+│   │   │   ├── grapheme.cr
+│   │   │   └── utf16.cr
+│   │   ├── string.cr
+│   │   ├── string_pool.cr
+│   │   ├── string_scanner.cr
+│   │   ├── struct.cr
+│   │   ├── symbol.cr
+│   │   ├── syscall
+│   │   │   ├── aarch64-linux.cr
+│   │   │   ├── arm-linux.cr
+│   │   │   ├── i386-linux.cr
+│   │   │   └── x86_64-linux.cr
+│   │   ├── syscall.cr
+│   │   ├── system
+│   │   │   ├── group.cr
+│   │   │   └── user.cr
+│   │   ├── system.cr
+│   │   ├── system_error.cr
+│   │   ├── termios.cr
+│   │   ├── time
+│   │   │   ├── format
+│   │   │   │   ├── custom
+│   │   │   │   │   ├── http_date.cr
+│   │   │   │   │   ├── iso_8601.cr
+│   │   │   │   │   ├── rfc_2822.cr
+│   │   │   │   │   ├── rfc_3339.cr
+│   │   │   │   │   └── yaml_date.cr
+│   │   │   │   ├── formatter.cr
+│   │   │   │   ├── parser.cr
+│   │   │   │   └── pattern.cr
+│   │   │   ├── format.cr
+│   │   │   ├── location
+│   │   │   │   └── loader.cr
+│   │   │   ├── location.cr
+│   │   │   └── span.cr
+│   │   ├── time.cr
+│   │   ├── tuple.cr
+│   │   ├── unicode
+│   │   │   ├── data.cr
+│   │   │   └── unicode.cr
+│   │   ├── union.cr
+│   │   ├── uri
+│   │   │   ├── encoding.cr
+│   │   │   ├── json.cr
+│   │   │   ├── params
+│   │   │   │   ├── from_www_form.cr
+│   │   │   │   ├── serializable.cr
+│   │   │   │   └── to_www_form.cr
+│   │   │   ├── params.cr
+│   │   │   ├── punycode.cr
+│   │   │   ├── uri_parser.cr
+│   │   │   └── yaml.cr
+│   │   ├── uri.cr
+│   │   ├── uuid
+│   │   │   ├── json.cr
+│   │   │   └── yaml.cr
+│   │   ├── uuid.cr
+│   │   ├── va_list.cr
+│   │   ├── value.cr
+│   │   ├── VERSION
+│   │   ├── wait_group.cr
+│   │   ├── wasi_error.cr
+│   │   ├── weak_ref.cr
+│   │   ├── winerror.cr
+│   │   ├── xml
+│   │   │   ├── attributes.cr
+│   │   │   ├── attribute_type.cr
+│   │   │   ├── builder.cr
+│   │   │   ├── error.cr
+│   │   │   ├── html_parser_options.cr
+│   │   │   ├── libxml2.cr
+│   │   │   ├── namespace.cr
+│   │   │   ├── node
+│   │   │   │   └── type.cr
+│   │   │   ├── node.cr
+│   │   │   ├── node_set.cr
+│   │   │   ├── parser_options.cr
+│   │   │   ├── reader
+│   │   │   │   └── type.cr
+│   │   │   ├── reader.cr
+│   │   │   ├── save_options.cr
+│   │   │   └── xpath_context.cr
+│   │   ├── xml.cr
+│   │   ├── yaml
+│   │   │   ├── any.cr
+│   │   │   ├── builder.cr
+│   │   │   ├── enums.cr
+│   │   │   ├── from_yaml.cr
+│   │   │   ├── lib_yaml.cr
+│   │   │   ├── nodes
+│   │   │   │   ├── builder.cr
+│   │   │   │   ├── nodes.cr
+│   │   │   │   └── parser.cr
+│   │   │   ├── nodes.cr
+│   │   │   ├── parse_context.cr
+│   │   │   ├── parser.cr
+│   │   │   ├── pull_parser.cr
+│   │   │   ├── schema
+│   │   │   │   ├── core
+│   │   │   │   │   └── parser.cr
+│   │   │   │   ├── core.cr
+│   │   │   │   └── fail_safe.cr
+│   │   │   ├── serialization.cr
+│   │   │   └── to_yaml.cr
+│   │   └── yaml.cr
+│   └── UPGRADING.md
+└── crystal-1.14.0.tar.gz -> /home/felix/packages/crystal/crystal-1.14.0.tar.gz
+
+358 directories, 2305 files

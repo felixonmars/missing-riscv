@@ -1,0 +1,161 @@
+src
+└── drone-cli
+    ├── BUILDING
+    ├── CHANGELOG.md
+    ├── docker
+    │   └── manifest.tmpl
+    ├── Dockerfile
+    ├── Dockerfile.linux.arm
+    ├── Dockerfile.linux.arm64
+    ├── drone
+    │   ├── autoscale
+    │   │   ├── autoscale.go
+    │   │   ├── autoscale_pause.go
+    │   │   ├── autoscale_resume.go
+    │   │   └── autoscale_version.go
+    │   ├── build
+    │   │   ├── build_approve.go
+    │   │   ├── build_create.go
+    │   │   ├── build_decline.go
+    │   │   ├── build.go
+    │   │   ├── build_info.go
+    │   │   ├── build_last.go
+    │   │   ├── build_list.go
+    │   │   ├── build_promote.go
+    │   │   ├── build_queue.go
+    │   │   ├── build_queue_v2.go
+    │   │   ├── build_rollback.go
+    │   │   ├── build_start.go
+    │   │   └── build_stop.go
+    │   ├── convert
+    │   │   └── convert.go
+    │   ├── cron
+    │   │   ├── cron_add.go
+    │   │   ├── cron_disable.go
+    │   │   ├── cron_enable.go
+    │   │   ├── cron_exec.go
+    │   │   ├── cron.go
+    │   │   ├── cron_info.go
+    │   │   ├── cron_list.go
+    │   │   └── cron_rm.go
+    │   ├── encrypt
+    │   │   ├── encrypt.go
+    │   │   └── registry.go
+    │   ├── exec
+    │   │   ├── env.go
+    │   │   ├── exec.go
+    │   │   └── flags.go
+    │   ├── format
+    │   │   └── format.go
+    │   ├── info
+    │   │   └── info.go
+    │   ├── internal
+    │   │   ├── util.go
+    │   │   └── util_test.go
+    │   ├── jsonnet
+    │   │   ├── jsonnet.go
+    │   │   ├── jsonnet_test.go
+    │   │   ├── nativefuncs.go
+    │   │   └── testdata
+    │   │       ├── stream_format.jsonnet
+    │   │       └── stream_format.yaml
+    │   ├── lint
+    │   │   └── lint.go
+    │   ├── log
+    │   │   ├── log.go
+    │   │   ├── log_purge.go
+    │   │   └── log_view.go
+    │   ├── main.go
+    │   ├── node
+    │   │   ├── node_create.go
+    │   │   ├── node_delete.go
+    │   │   ├── node.go
+    │   │   ├── node_import_all.go
+    │   │   ├── node_import.go
+    │   │   ├── node_info.go
+    │   │   ├── node_init.go
+    │   │   ├── node_keygen.go
+    │   │   ├── node_list.go
+    │   │   └── node_update.go
+    │   ├── orgsecret
+    │   │   ├── secret_add.go
+    │   │   ├── secret.go
+    │   │   ├── secret_info.go
+    │   │   ├── secret_list.go
+    │   │   ├── secret_rm.go
+    │   │   └── secret_set.go
+    │   ├── plugins
+    │   │   ├── admit
+    │   │   │   └── admit.go
+    │   │   ├── config
+    │   │   │   ├── config.go
+    │   │   │   └── get.go
+    │   │   ├── convert
+    │   │   │   └── convert.go
+    │   │   ├── environ
+    │   │   │   └── environ.go
+    │   │   ├── plugins.go
+    │   │   ├── registry
+    │   │   │   ├── list.go
+    │   │   │   └── registry.go
+    │   │   └── secret
+    │   │       ├── get.go
+    │   │       └── secret.go
+    │   ├── queue
+    │   │   ├── queue.go
+    │   │   ├── queue_list.go
+    │   │   ├── queue_pause.go
+    │   │   └── queue_resume.go
+    │   ├── repo
+    │   │   ├── repo_add.go
+    │   │   ├── repo_chown.go
+    │   │   ├── repo.go
+    │   │   ├── repo_info.go
+    │   │   ├── repo_list.go
+    │   │   ├── repo_repair.go
+    │   │   ├── repo_rm.go
+    │   │   ├── repo_sync.go
+    │   │   └── repo_update.go
+    │   ├── secret
+    │   │   ├── secret_add.go
+    │   │   ├── secret.go
+    │   │   ├── secret_info.go
+    │   │   ├── secret_list.go
+    │   │   ├── secret_rm.go
+    │   │   └── secret_set.go
+    │   ├── server
+    │   │   ├── server_create.go
+    │   │   ├── server_destroy.go
+    │   │   ├── server_env.go
+    │   │   ├── server.go
+    │   │   ├── server_info.go
+    │   │   ├── server_list.go
+    │   │   └── server_open.go
+    │   ├── sign
+    │   │   └── sign.go
+    │   ├── starlark
+    │   │   ├── samples
+    │   │   │   ├── docker.py
+    │   │   │   └── pipeline.py
+    │   │   └── starlark.go
+    │   ├── template
+    │   │   ├── template_add.go
+    │   │   ├── template.go
+    │   │   ├── template_info.go
+    │   │   ├── template_list.go
+    │   │   ├── template_rm.go
+    │   │   └── template_set.go
+    │   └── user
+    │       ├── user_add.go
+    │       ├── user_block.go
+    │       ├── user.go
+    │       ├── user_info.go
+    │       ├── user_list.go
+    │       ├── user_rm.go
+    │       └── user_update.go
+    ├── go.mod
+    ├── go.sum
+    ├── LICENSE
+    └── README.md
+
+35 directories, 124 files

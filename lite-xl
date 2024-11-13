@@ -1,0 +1,193 @@
+src
+├── lite-xl-2.1.5
+│   ├── build.lhelper
+│   ├── build-packages.sh
+│   ├── changelog.md
+│   ├── data
+│   │   ├── colors
+│   │   │   ├── default.lua
+│   │   │   ├── fall.lua
+│   │   │   ├── summer.lua
+│   │   │   └── textadept.lua
+│   │   ├── core
+│   │   │   ├── bit.lua
+│   │   │   ├── command.lua
+│   │   │   ├── commands
+│   │   │   │   ├── command.lua
+│   │   │   │   ├── core.lua
+│   │   │   │   ├── dialog.lua
+│   │   │   │   ├── doc.lua
+│   │   │   │   ├── files.lua
+│   │   │   │   ├── findreplace.lua
+│   │   │   │   ├── log.lua
+│   │   │   │   ├── root.lua
+│   │   │   │   └── statusbar.lua
+│   │   │   ├── commandview.lua
+│   │   │   ├── common.lua
+│   │   │   ├── config.lua
+│   │   │   ├── contextmenu.lua
+│   │   │   ├── dirwatch.lua
+│   │   │   ├── doc
+│   │   │   │   ├── highlighter.lua
+│   │   │   │   ├── init.lua
+│   │   │   │   ├── search.lua
+│   │   │   │   └── translate.lua
+│   │   │   ├── docview.lua
+│   │   │   ├── emptyview.lua
+│   │   │   ├── ime.lua
+│   │   │   ├── init.lua
+│   │   │   ├── keymap.lua
+│   │   │   ├── keymap-macos.lua
+│   │   │   ├── logview.lua
+│   │   │   ├── modkeys-generic.lua
+│   │   │   ├── modkeys-macos.lua
+│   │   │   ├── nagview.lua
+│   │   │   ├── node.lua
+│   │   │   ├── object.lua
+│   │   │   ├── regex.lua
+│   │   │   ├── rootview.lua
+│   │   │   ├── scrollbar.lua
+│   │   │   ├── start.lua
+│   │   │   ├── statusview.lua
+│   │   │   ├── strict.lua
+│   │   │   ├── style.lua
+│   │   │   ├── syntax.lua
+│   │   │   ├── titleview.lua
+│   │   │   ├── tokenizer.lua
+│   │   │   ├── utf8string.lua
+│   │   │   └── view.lua
+│   │   ├── fonts
+│   │   │   ├── FiraSans-Regular.ttf
+│   │   │   ├── icons.ttf
+│   │   │   └── JetBrainsMono-Regular.ttf
+│   │   └── plugins
+│   │       ├── autocomplete.lua
+│   │       ├── autoreload.lua
+│   │       ├── contextmenu.lua
+│   │       ├── detectindent.lua
+│   │       ├── drawwhitespace.lua
+│   │       ├── language_c.lua
+│   │       ├── language_cpp.lua
+│   │       ├── language_css.lua
+│   │       ├── language_html.lua
+│   │       ├── language_js.lua
+│   │       ├── language_lua.lua
+│   │       ├── language_md.lua
+│   │       ├── language_python.lua
+│   │       ├── language_xml.lua
+│   │       ├── lineguide.lua
+│   │       ├── linewrapping.lua
+│   │       ├── macro.lua
+│   │       ├── projectsearch.lua
+│   │       ├── quote.lua
+│   │       ├── reflow.lua
+│   │       ├── scale.lua
+│   │       ├── tabularize.lua
+│   │       ├── toolbarview.lua
+│   │       ├── treeview.lua
+│   │       ├── trimwhitespace.lua
+│   │       └── workspace.lua
+│   ├── docs
+│   │   ├── api
+│   │   │   ├── dirmonitor.lua
+│   │   │   ├── globals.lua
+│   │   │   ├── process.lua
+│   │   │   ├── regex.lua
+│   │   │   ├── renderer.lua
+│   │   │   ├── string.lua
+│   │   │   ├── system.lua
+│   │   │   └── utf8extra.lua
+│   │   └── README.md
+│   ├── LICENSE
+│   ├── licenses
+│   │   └── licenses.md
+│   ├── meson.build
+│   ├── meson_options.txt
+│   ├── README.md
+│   ├── resources
+│   │   ├── cross
+│   │   │   ├── macos-arm64.txt
+│   │   │   └── unknown-wasm32.txt
+│   │   ├── icons
+│   │   │   ├── icon.icns
+│   │   │   ├── icon.ico
+│   │   │   ├── icon.inl
+│   │   │   ├── icon.rc
+│   │   │   └── lite-xl.svg
+│   │   ├── include
+│   │   │   └── lite_xl_plugin_api.h
+│   │   ├── linux
+│   │   │   ├── org.lite_xl.lite_xl.appdata.xml
+│   │   │   └── org.lite_xl.lite_xl.desktop
+│   │   ├── macos
+│   │   │   ├── background@2x.png
+│   │   │   ├── background.png
+│   │   │   ├── background.tiff
+│   │   │   ├── Info.plist.in
+│   │   │   ├── lite-xl-dmg.py
+│   │   │   └── macos-retina-display.md
+│   │   ├── README.md
+│   │   ├── release-notes.md
+│   │   └── windows
+│   │       ├── 001-lua-unicode.diff
+│   │       ├── lite-xl.exe.manifest.in
+│   │       └── manifest.rc
+│   ├── scripts
+│   │   ├── appdmg.sh
+│   │   ├── appimage.sh
+│   │   ├── build.sh
+│   │   ├── common.sh
+│   │   ├── fontello-config.json
+│   │   ├── generate_header.sh
+│   │   ├── generate-release-notes.sh
+│   │   ├── innosetup
+│   │   │   ├── innosetup.iss.in
+│   │   │   ├── innosetup.sh
+│   │   │   ├── litexl-55px.bmp
+│   │   │   └── wizard-modern-image.bmp
+│   │   ├── install-dependencies.sh
+│   │   ├── keymap-generator
+│   │   │   ├── dkjson.lua
+│   │   │   └── keymap-generator.lua
+│   │   ├── lhelper.sh
+│   │   ├── make-universal-binaries.sh
+│   │   ├── meson.build
+│   │   ├── package.sh
+│   │   ├── README.md
+│   │   ├── repackage.sh
+│   │   └── run-local
+│   ├── src
+│   │   ├── api
+│   │   │   ├── api.c
+│   │   │   ├── api.h
+│   │   │   ├── dirmonitor
+│   │   │   │   ├── dummy.c
+│   │   │   │   ├── fsevents.c
+│   │   │   │   ├── inotify.c
+│   │   │   │   ├── kqueue.c
+│   │   │   │   └── win32.c
+│   │   │   ├── dirmonitor.c
+│   │   │   ├── process.c
+│   │   │   ├── regex.c
+│   │   │   ├── renderer.c
+│   │   │   ├── system.c
+│   │   │   └── utf8.c
+│   │   ├── bundle_open.m
+│   │   ├── main.c
+│   │   ├── meson.build
+│   │   ├── rencache.c
+│   │   ├── rencache.h
+│   │   ├── renderer.c
+│   │   ├── renderer.h
+│   │   ├── renwindow.c
+│   │   ├── renwindow.h
+│   │   ├── unidata.h
+│   │   └── utfconv.h
+│   └── subprojects
+│       ├── freetype2.wrap
+│       ├── lua.wrap
+│       ├── pcre2.wrap
+│       └── sdl2.wrap
+└── lite-xl-2.1.5.tar.gz -> /home/felix/packages/lite-xl/lite-xl-2.1.5.tar.gz
+
+26 directories, 165 files

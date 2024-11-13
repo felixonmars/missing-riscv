@@ -1,0 +1,976 @@
+src
+├── goreleaser-2.1.0
+│   ├── art.txt
+│   ├── cmd
+│   │   ├── build.go
+│   │   ├── build_test.go
+│   │   ├── check.go
+│   │   ├── check_test.go
+│   │   ├── config.go
+│   │   ├── config_test.go
+│   │   ├── docs.go
+│   │   ├── error.go
+│   │   ├── healthcheck.go
+│   │   ├── healthcheck_test.go
+│   │   ├── helper_test.go
+│   │   ├── init.go
+│   │   ├── init_test.go
+│   │   ├── man.go
+│   │   ├── release.go
+│   │   ├── release_test.go
+│   │   ├── root.go
+│   │   ├── root_test.go
+│   │   ├── schema.go
+│   │   ├── schema_test.go
+│   │   ├── testdata
+│   │   │   ├── good.yml
+│   │   │   ├── invalid.yml
+│   │   │   ├── missing_tool.yml
+│   │   │   └── unmarshal_error.yml
+│   │   └── util_test.go
+│   ├── CONTRIBUTING.md
+│   ├── Dockerfile
+│   ├── EULA.md
+│   ├── flake.lock
+│   ├── flake.nix
+│   ├── go.mod
+│   ├── go.sum
+│   ├── internal
+│   │   ├── archivefiles
+│   │   │   ├── archivefiles.go
+│   │   │   ├── archivefiles_test.go
+│   │   │   └── testdata
+│   │   │       └── a
+│   │   │           ├── a.txt
+│   │   │           └── b
+│   │   │               ├── a.txt
+│   │   │               └── c
+│   │   │                   └── d.txt
+│   │   ├── artifact
+│   │   │   ├── artifact.go
+│   │   │   ├── artifact_test.go
+│   │   │   └── testdata
+│   │   │       └── TestMarshalJSON.json.golden
+│   │   ├── builders
+│   │   │   ├── buildtarget
+│   │   │   │   ├── targets.go
+│   │   │   │   ├── targets_test.go
+│   │   │   │   └── testdata
+│   │   │   └── golang
+│   │   │       ├── build.go
+│   │   │       ├── build_test.go
+│   │   │       ├── doc.go
+│   │   │       └── testdata
+│   │   ├── client
+│   │   │   ├── client.go
+│   │   │   ├── client_test.go
+│   │   │   ├── config.go
+│   │   │   ├── config_test.go
+│   │   │   ├── gitea.go
+│   │   │   ├── gitea_test.go
+│   │   │   ├── git.go
+│   │   │   ├── github.go
+│   │   │   ├── github_test.go
+│   │   │   ├── gitlab.go
+│   │   │   ├── gitlab_test.go
+│   │   │   ├── git_test.go
+│   │   │   ├── mock.go
+│   │   │   ├── release_notes.go
+│   │   │   ├── release_notes_test.go
+│   │   │   └── testdata
+│   │   │       ├── github
+│   │   │       │   ├── compare.json
+│   │   │       │   ├── milestones.json
+│   │   │       │   ├── pull.json
+│   │   │       │   └── releasenotes.json
+│   │   │       └── gitlab
+│   │   │           ├── compare.json
+│   │   │           ├── milestone.json
+│   │   │           └── milestones.json
+│   │   ├── commitauthor
+│   │   │   ├── author.go
+│   │   │   └── author_test.go
+│   │   ├── deprecate
+│   │   │   ├── deprecate.go
+│   │   │   ├── deprecate_test.go
+│   │   │   └── testdata
+│   │   │       ├── TestNoticeCustom.txt.golden
+│   │   │       └── TestNotice.txt.golden
+│   │   ├── exec
+│   │   │   ├── exec.go
+│   │   │   ├── exec_mock.go
+│   │   │   ├── exec_mock_test.go
+│   │   │   ├── exec_test.go
+│   │   │   └── testdata
+│   │   │       └── a.txt
+│   │   ├── extrafiles
+│   │   │   ├── extra_files.go
+│   │   │   ├── extra_files_test.go
+│   │   │   └── testdata
+│   │   │       ├── file1.golden
+│   │   │       ├── file2.golden
+│   │   │       ├── file3.gold
+│   │   │       ├── sub
+│   │   │       │   └── file5.golden
+│   │   │       └── sub3
+│   │   │           └── file1.golden
+│   │   ├── gio
+│   │   │   ├── chtimes.go
+│   │   │   ├── chtimes_test.go
+│   │   │   ├── copy.go
+│   │   │   ├── copy_test.go
+│   │   │   ├── doc.go
+│   │   │   ├── hash.go
+│   │   │   ├── hash_test.go
+│   │   │   ├── safe.go
+│   │   │   ├── safe_test.go
+│   │   │   └── testdata
+│   │   │       ├── somefile_copy_perm.txt
+│   │   │       ├── somefile_copy.txt
+│   │   │       └── somefile.txt
+│   │   ├── git
+│   │   │   ├── config.go
+│   │   │   ├── config_test.go
+│   │   │   ├── git.go
+│   │   │   └── git_test.go
+│   │   ├── golden
+│   │   │   └── golden.go
+│   │   ├── http
+│   │   │   ├── http.go
+│   │   │   ├── http_test.go
+│   │   │   ├── testcert.pem
+│   │   │   ├── testdata
+│   │   │   │   └── foo.txt
+│   │   │   └── testkey.pem
+│   │   ├── ids
+│   │   │   ├── ids.go
+│   │   │   └── ids_test.go
+│   │   ├── logext
+│   │   │   ├── styles.go
+│   │   │   ├── testdata
+│   │   │   │   └── TestWriter
+│   │   │   │       └── debug.txt.golden
+│   │   │   ├── writer.go
+│   │   │   └── writer_test.go
+│   │   ├── middleware
+│   │   │   ├── errhandler
+│   │   │   │   ├── error.go
+│   │   │   │   └── error_test.go
+│   │   │   ├── logging
+│   │   │   │   ├── logging.go
+│   │   │   │   └── logging_test.go
+│   │   │   ├── middleware.go
+│   │   │   └── skip
+│   │   │       ├── skip.go
+│   │   │       └── skip_test.go
+│   │   ├── pipe
+│   │   │   ├── announce
+│   │   │   │   ├── announce.go
+│   │   │   │   └── announce_test.go
+│   │   │   ├── archive
+│   │   │   │   ├── archive.go
+│   │   │   │   ├── archive_meta_test.go
+│   │   │   │   ├── archive_test.go
+│   │   │   │   └── testdata
+│   │   │   │       └── a
+│   │   │   │           ├── a.txt
+│   │   │   │           └── b
+│   │   │   │               ├── a.txt
+│   │   │   │               └── c
+│   │   │   │                   └── d.txt
+│   │   │   ├── artifactory
+│   │   │   │   ├── artifactory.go
+│   │   │   │   └── artifactory_test.go
+│   │   │   ├── aur
+│   │   │   │   ├── aur.go
+│   │   │   │   ├── aur_test.go
+│   │   │   │   ├── doc.go
+│   │   │   │   ├── testdata
+│   │   │   │   │   ├── TestFullAur.golden
+│   │   │   │   │   ├── TestFullPipe
+│   │   │   │   │   │   ├── custom-dir.pkgbuild.golden
+│   │   │   │   │   │   ├── custom-dir.srcinfo.golden
+│   │   │   │   │   │   ├── default-gitlab.pkgbuild.golden
+│   │   │   │   │   │   ├── default-gitlab.srcinfo.golden
+│   │   │   │   │   │   ├── default.pkgbuild.golden
+│   │   │   │   │   │   ├── default.srcinfo.golden
+│   │   │   │   │   │   ├── with-more-opts.pkgbuild.golden
+│   │   │   │   │   │   └── with-more-opts.srcinfo.golden
+│   │   │   │   │   ├── TestFullSrcInfo.golden
+│   │   │   │   │   ├── TestRunPipeBinaryRelease.pkgbuild.golden
+│   │   │   │   │   ├── TestRunPipeBinaryRelease.srcinfo.golden
+│   │   │   │   │   ├── TestRunPipe.pkgbuild.golden
+│   │   │   │   │   ├── TestRunPipe.srcinfo.golden
+│   │   │   │   │   ├── TestRunPipeWrappedInDirectory.pkgbuild.golden
+│   │   │   │   │   └── TestRunPipeWrappedInDirectory.srcinfo.golden
+│   │   │   │   └── tmpl.go
+│   │   │   ├── before
+│   │   │   │   ├── before.go
+│   │   │   │   ├── before_test.go
+│   │   │   │   └── testdata
+│   │   │   │       └── foo.sh
+│   │   │   ├── blob
+│   │   │   │   ├── blob.go
+│   │   │   │   ├── blob_minio_test.go
+│   │   │   │   ├── blob_test.go
+│   │   │   │   ├── doc.go
+│   │   │   │   ├── testdata
+│   │   │   │   │   └── file.golden
+│   │   │   │   └── upload.go
+│   │   │   ├── bluesky
+│   │   │   │   ├── bluesky.go
+│   │   │   │   └── bluesky_test.go
+│   │   │   ├── brew
+│   │   │   │   ├── brew.go
+│   │   │   │   ├── brew_test.go
+│   │   │   │   ├── doc.go
+│   │   │   │   ├── template.go
+│   │   │   │   ├── templates
+│   │   │   │   │   ├── cask.rb
+│   │   │   │   │   ├── linux_packages.rb
+│   │   │   │   │   └── macos_packages.rb
+│   │   │   │   └── testdata
+│   │   │   │       ├── TestFullFormulaeLinuxOnly.rb.golden
+│   │   │   │       ├── TestFullFormulaeMacOSOnly.rb.golden
+│   │   │   │       ├── TestFullFormulae.rb.golden
+│   │   │   │       ├── TestFullPipe
+│   │   │   │       │   ├── custom_block.rb.golden
+│   │   │   │       │   ├── custom_download_strategy.rb.golden
+│   │   │   │       │   ├── custom_require.rb.golden
+│   │   │   │       │   ├── default_gitlab.rb.golden
+│   │   │   │       │   ├── default.rb.golden
+│   │   │   │       │   ├── git_remote.rb.golden
+│   │   │   │       │   ├── open_pr.rb.golden
+│   │   │   │       │   ├── valid_repository_templates.rb.golden
+│   │   │   │       │   ├── with_header.rb.golden
+│   │   │   │       │   └── with_many_headers.rb.golden
+│   │   │   │       ├── TestRunPipeBinaryRelease.rb.golden
+│   │   │   │       ├── TestRunPipeForMultipleAmd64Versions
+│   │   │   │       │   ├── v1.rb.golden
+│   │   │   │       │   ├── v2.rb.golden
+│   │   │   │       │   ├── v3.rb.golden
+│   │   │   │       │   └── v4.rb.golden
+│   │   │   │       ├── TestRunPipeForMultipleArmVersions
+│   │   │   │       │   ├── multiple_armv5.rb.golden
+│   │   │   │       │   ├── multiple_armv6.rb.golden
+│   │   │   │       │   └── multiple_armv7.rb.golden
+│   │   │   │       ├── TestRunPipeNameTemplate.rb.golden
+│   │   │   │       ├── TestRunPipePullRequest.rb.golden
+│   │   │   │       ├── TestRunPipeUniversalBinaryNotReplacing.rb.golden
+│   │   │   │       └── TestRunPipeUniversalBinary.rb.golden
+│   │   │   ├── build
+│   │   │   │   ├── build.go
+│   │   │   │   ├── build_test.go
+│   │   │   │   ├── filter.go
+│   │   │   │   └── filter_test.go
+│   │   │   ├── changelog
+│   │   │   │   ├── changelog.go
+│   │   │   │   ├── changelog_test.go
+│   │   │   │   └── testdata
+│   │   │   │       ├── changes-empty.md
+│   │   │   │       ├── changes.md
+│   │   │   │       ├── changes-really-empty.md
+│   │   │   │       ├── changes-templated-empty.md
+│   │   │   │       ├── changes-templated.md
+│   │   │   │       ├── release-footer.md
+│   │   │   │       ├── release-footer-templated.md
+│   │   │   │       ├── release-header.md
+│   │   │   │       └── release-header-templated.md
+│   │   │   ├── checksums
+│   │   │   │   ├── checksums.go
+│   │   │   │   ├── checksums_test.go
+│   │   │   │   └── testdata
+│   │   │   │       ├── foo
+│   │   │   │       │   └── bar.txt
+│   │   │   │       ├── foo.txt
+│   │   │   │       └── order
+│   │   │   │           ├── a.txt
+│   │   │   │           ├── b.txt
+│   │   │   │           ├── c.txt
+│   │   │   │           └── d.txt
+│   │   │   ├── chocolatey
+│   │   │   │   ├── chocolatey.go
+│   │   │   │   ├── chocolatey_test.go
+│   │   │   │   ├── nuspec.go
+│   │   │   │   ├── nuspec_test.go
+│   │   │   │   ├── template.go
+│   │   │   │   └── testdata
+│   │   │   │       ├── Test_buildNuspec.nuspec.golden
+│   │   │   │       ├── Test_buildTemplate.script.ps1.golden
+│   │   │   │       └── TestNuspecBytes.nuspec.golden
+│   │   │   ├── custompublishers
+│   │   │   │   ├── custompublishers.go
+│   │   │   │   └── custompublishers_test.go
+│   │   │   ├── defaults
+│   │   │   │   ├── defaults.go
+│   │   │   │   └── defaults_test.go
+│   │   │   ├── discord
+│   │   │   │   ├── discord.go
+│   │   │   │   └── discord_test.go
+│   │   │   ├── dist
+│   │   │   │   ├── dist.go
+│   │   │   │   └── dist_test.go
+│   │   │   ├── docker
+│   │   │   │   ├── api_docker.go
+│   │   │   │   ├── api.go
+│   │   │   │   ├── doc.go
+│   │   │   │   ├── docker.go
+│   │   │   │   ├── docker_test.go
+│   │   │   │   ├── manifest.go
+│   │   │   │   └── testdata
+│   │   │   │       ├── Dockerfile
+│   │   │   │       ├── Dockerfile.arch
+│   │   │   │       ├── Dockerfile.bad
+│   │   │   │       ├── Dockerfile.dummy
+│   │   │   │       ├── Dockerfile.false
+│   │   │   │       ├── Dockerfile.multiple
+│   │   │   │       ├── Dockerfile.nfpm
+│   │   │   │       ├── Dockerfile.true
+│   │   │   │       ├── Dockerfile.wrongbin
+│   │   │   │       └── extra_file.txt
+│   │   │   ├── effectiveconfig
+│   │   │   │   ├── config.go
+│   │   │   │   └── config_test.go
+│   │   │   ├── env
+│   │   │   │   ├── env.go
+│   │   │   │   └── env_test.go
+│   │   │   ├── git
+│   │   │   │   ├── doc.go
+│   │   │   │   ├── errors.go
+│   │   │   │   ├── git.go
+│   │   │   │   └── git_test.go
+│   │   │   ├── gomod
+│   │   │   │   ├── doc.go
+│   │   │   │   ├── gomod.go
+│   │   │   │   ├── gomod_proxy.go
+│   │   │   │   ├── gomod_proxy_test.go
+│   │   │   │   └── gomod_test.go
+│   │   │   ├── ko
+│   │   │   │   ├── ko.go
+│   │   │   │   ├── ko_test.go
+│   │   │   │   └── testdata
+│   │   │   │       └── app
+│   │   │   │           ├── go.mod
+│   │   │   │           └── main.go
+│   │   │   ├── krew
+│   │   │   │   ├── krew.go
+│   │   │   │   ├── krew_test.go
+│   │   │   │   └── testdata
+│   │   │   │       ├── TestFullManifest.yaml
+│   │   │   │       ├── TestFullPipe
+│   │   │   │       │   ├── default_gitlab.yaml
+│   │   │   │       │   ├── default.yaml
+│   │   │   │       │   └── git_remote.yaml
+│   │   │   │       ├── TestRunPipeForMultipleArmVersions
+│   │   │   │       │   ├── multiple_armv5.yaml
+│   │   │   │       │   ├── multiple_armv6.yaml
+│   │   │   │       │   └── multiple_armv7.yaml
+│   │   │   │       ├── TestRunPipeNameTemplate.yaml
+│   │   │   │       ├── TestRunPipePullRequest.yaml
+│   │   │   │       ├── TestRunPipeUniversalBinaryNotReplacing.yaml
+│   │   │   │       ├── TestRunPipeUniversalBinary.yaml
+│   │   │   │       └── TestSimple.yaml
+│   │   │   ├── linkedin
+│   │   │   │   ├── client.go
+│   │   │   │   ├── client_test.go
+│   │   │   │   ├── linkedin.go
+│   │   │   │   └── linkedin_test.go
+│   │   │   ├── mastodon
+│   │   │   │   ├── mastodon.go
+│   │   │   │   └── mastodon_test.go
+│   │   │   ├── mattermost
+│   │   │   │   ├── mattermost.go
+│   │   │   │   └── mattermost_test.go
+│   │   │   ├── metadata
+│   │   │   │   ├── metadata.go
+│   │   │   │   ├── metadata_test.go
+│   │   │   │   └── testdata
+│   │   │   │       └── TestRun
+│   │   │   │           ├── artifacts.json.golden
+│   │   │   │           └── metadata.json.golden
+│   │   │   ├── milestone
+│   │   │   │   ├── milestone.go
+│   │   │   │   └── milestone_test.go
+│   │   │   ├── nfpm
+│   │   │   │   ├── nfpm.go
+│   │   │   │   ├── nfpm_test.go
+│   │   │   │   └── testdata
+│   │   │   │       ├── changelog.yaml
+│   │   │   │       ├── folder
+│   │   │   │       │   └── [foo].txt
+│   │   │   │       ├── post_install.sh
+│   │   │   │       ├── post_remove.sh
+│   │   │   │       ├── pre_install.sh
+│   │   │   │       ├── pre_remove.sh
+│   │   │   │       ├── privkey.gpg
+│   │   │   │       ├── rsa.priv
+│   │   │   │       ├── testfile-386.txt
+│   │   │   │       ├── testfile-amd64v1.txt
+│   │   │   │       ├── testfile-amd64v2.txt
+│   │   │   │       ├── testfile-amd64v3.txt
+│   │   │   │       ├── testfile-amd64v4.txt
+│   │   │   │       ├── testfile-arm64.txt
+│   │   │   │       ├── testfile-arm6.txt
+│   │   │   │       ├── testfile-arm7.txt
+│   │   │   │       ├── testfile-mipshardfloat.txt
+│   │   │   │       ├── testfile-mipssoftfloat.txt
+│   │   │   │       └── testfile.txt
+│   │   │   ├── nix
+│   │   │   │   ├── licenses.go
+│   │   │   │   ├── nix.go
+│   │   │   │   ├── nix_test.go
+│   │   │   │   ├── template.go
+│   │   │   │   ├── testdata
+│   │   │   │   │   ├── TestBinInstallFormats
+│   │   │   │   │   │   ├── darwin-only-deps.golden
+│   │   │   │   │   │   ├── deps.golden
+│   │   │   │   │   │   ├── linux-only-deps.golden
+│   │   │   │   │   │   ├── mixed-deps.golden
+│   │   │   │   │   │   └── no-deps.golden
+│   │   │   │   │   └── TestRunPipe
+│   │   │   │   │       ├── deps_build.nix.golden
+│   │   │   │   │       ├── deps_publish.nix.golden
+│   │   │   │   │       ├── extra-install_build.nix.golden
+│   │   │   │   │       ├── extra-install_publish.nix.golden
+│   │   │   │   │       ├── minimal_build.nix.golden
+│   │   │   │   │       ├── minimal_publish.nix.golden
+│   │   │   │   │       ├── open-pr_build.nix.golden
+│   │   │   │   │       ├── open-pr_publish.nix.golden
+│   │   │   │   │       ├── partial_build.nix.golden
+│   │   │   │   │       ├── partial_publish.nix.golden
+│   │   │   │   │       ├── skip-upload-auto_build.nix.golden
+│   │   │   │   │       ├── skip-upload_build.nix.golden
+│   │   │   │   │       ├── unibin-replaces_build.nix.golden
+│   │   │   │   │       ├── unibin-replaces_publish.nix.golden
+│   │   │   │   │       ├── wrapped-in-dir_build.nix.golden
+│   │   │   │   │       ├── wrapped-in-dir_publish.nix.golden
+│   │   │   │   │       ├── zip-and-tar_build.nix.golden
+│   │   │   │   │       ├── zip-and-tar_publish.nix.golden
+│   │   │   │   │       ├── zip_build.nix.golden
+│   │   │   │   │       ├── zip_publish.nix.golden
+│   │   │   │   │       ├── zip-with-dependencies_build.nix.golden
+│   │   │   │   │       └── zip-with-dependencies_publish.nix.golden
+│   │   │   │   └── tmpl.nix
+│   │   │   ├── notary
+│   │   │   │   ├── macos.go
+│   │   │   │   ├── macos_test.go
+│   │   │   │   └── notary.go
+│   │   │   ├── opencollective
+│   │   │   │   ├── opencollective.go
+│   │   │   │   └── opencollective_test.go
+│   │   │   ├── partial
+│   │   │   │   ├── partial.go
+│   │   │   │   └── partial_test.go
+│   │   │   ├── pipe.go
+│   │   │   ├── pipe_test.go
+│   │   │   ├── prebuild
+│   │   │   │   ├── prebuild.go
+│   │   │   │   └── prebuild_test.go
+│   │   │   ├── project
+│   │   │   │   ├── project.go
+│   │   │   │   └── project_test.go
+│   │   │   ├── publish
+│   │   │   │   ├── publish.go
+│   │   │   │   └── publish_test.go
+│   │   │   ├── reddit
+│   │   │   │   ├── reddit.go
+│   │   │   │   └── reddit_test.go
+│   │   │   ├── release
+│   │   │   │   ├── body.go
+│   │   │   │   ├── body_test.go
+│   │   │   │   ├── doc.go
+│   │   │   │   ├── release.go
+│   │   │   │   ├── release_test.go
+│   │   │   │   ├── scm.go
+│   │   │   │   ├── scm_test.go
+│   │   │   │   └── testdata
+│   │   │   │       ├── f1.txt
+│   │   │   │       ├── TestDescribeBody.golden
+│   │   │   │       ├── TestDescribeBodyMultipleChecksums.golden
+│   │   │   │       ├── TestDescribeBodyNoDockerImagesNoBrews.golden
+│   │   │   │       ├── TestDescribeBodyWithDockerManifest.golden
+│   │   │   │       ├── TestDescribeBodyWithHeaderAndFooter.golden
+│   │   │   │       └── upload_same_name
+│   │   │   │           ├── f1
+│   │   │   │           └── f2
+│   │   │   │               └── f1
+│   │   │   ├── reportsizes
+│   │   │   │   ├── reportsizes.go
+│   │   │   │   └── reportsizes_test.go
+│   │   │   ├── sbom
+│   │   │   │   ├── sbom.go
+│   │   │   │   └── sbom_test.go
+│   │   │   ├── scoop
+│   │   │   │   ├── scoop.go
+│   │   │   │   ├── scoop_test.go
+│   │   │   │   └── testdata
+│   │   │   │       ├── Test_buildManifest
+│   │   │   │       │   ├── common.json.golden
+│   │   │   │       │   ├── gitlab_url_template.json.golden
+│   │   │   │       │   ├── pre-post-install.json.golden
+│   │   │   │       │   └── url_template.json.golden
+│   │   │   │       ├── Test_doRun
+│   │   │   │       │   ├── git_remote.json.golden
+│   │   │   │       │   ├── multiple_binaries.json.golden
+│   │   │   │       │   └── valid_public_github.json.golden
+│   │   │   │       ├── TestRunPipePullRequest.json.golden
+│   │   │   │       └── TestWrapInDirectory.json.golden
+│   │   │   ├── semver
+│   │   │   │   ├── semver.go
+│   │   │   │   └── semver_test.go
+│   │   │   ├── sign
+│   │   │   │   ├── sign_docker.go
+│   │   │   │   ├── sign_docker_test.go
+│   │   │   │   ├── sign.go
+│   │   │   │   ├── sign_test.go
+│   │   │   │   └── testdata
+│   │   │   │       ├── cosign
+│   │   │   │       │   ├── cosign.key
+│   │   │   │       │   └── cosign.pub
+│   │   │   │       ├── gnupg
+│   │   │   │       │   ├── openpgp-revocs.d
+│   │   │   │       │   │   ├── 23E7505EC0A490C582CB9B27F1D733BF0B343347.rev
+│   │   │   │       │   │   └── FB57B0585968EADC1DA28A2D4340E38ACDF3A2EF.rev
+│   │   │   │       │   ├── password
+│   │   │   │       │   ├── private-keys-v1.d
+│   │   │   │       │   │   ├── 6B365DDB6E25317FED9A739DC350E033855A833A.key
+│   │   │   │       │   │   ├── 939A5E777E4F7DFF2FA87806D0155052B5FC8F56.key
+│   │   │   │       │   │   ├── CAFB585B45AFE4EB075EC88212972B3C25FCBFF5.key
+│   │   │   │       │   │   └── FC3A9AF0226DC94FBEEE5B3E6A4387FB1BFB4CC6.key
+│   │   │   │       │   ├── pubring.gpg
+│   │   │   │       │   ├── pubring.kbx
+│   │   │   │       │   ├── secring.gpg
+│   │   │   │       │   └── trustdb.gpg
+│   │   │   │       └── README.md
+│   │   │   ├── slack
+│   │   │   │   ├── slack.go
+│   │   │   │   └── slack_test.go
+│   │   │   ├── smtp
+│   │   │   │   ├── smtp.go
+│   │   │   │   └── smtp_test.go
+│   │   │   ├── snapcraft
+│   │   │   │   ├── snapcraft.go
+│   │   │   │   ├── snapcraft_test.go
+│   │   │   │   └── testdata
+│   │   │   │       ├── extra-file-2.txt
+│   │   │   │       ├── extra-file.txt
+│   │   │   │       └── foo-completer.bash
+│   │   │   ├── snapshot
+│   │   │   │   ├── snapshot.go
+│   │   │   │   └── snapshot_test.go
+│   │   │   ├── sourcearchive
+│   │   │   │   ├── source.go
+│   │   │   │   └── source_test.go
+│   │   │   ├── teams
+│   │   │   │   ├── teams.go
+│   │   │   │   └── teams_test.go
+│   │   │   ├── telegram
+│   │   │   │   ├── telegram.go
+│   │   │   │   └── telegram_test.go
+│   │   │   ├── twitter
+│   │   │   │   ├── twitter.go
+│   │   │   │   └── twitter_test.go
+│   │   │   ├── universalbinary
+│   │   │   │   ├── testdata
+│   │   │   │   │   └── fake
+│   │   │   │   │       ├── go.mod
+│   │   │   │   │       └── main.go
+│   │   │   │   ├── universalbinary.go
+│   │   │   │   └── universalbinary_test.go
+│   │   │   ├── upload
+│   │   │   │   ├── upload.go
+│   │   │   │   └── upload_test.go
+│   │   │   ├── upx
+│   │   │   │   ├── upx.go
+│   │   │   │   └── upx_test.go
+│   │   │   ├── webhook
+│   │   │   │   ├── webhook.go
+│   │   │   │   └── webhook_test.go
+│   │   │   └── winget
+│   │   │       ├── template.go
+│   │   │       ├── testdata
+│   │   │       │   ├── TestFormatBinary
+│   │   │       │   │   ├── TestFormatBinary.installer.yaml.golden
+│   │   │       │   │   ├── TestFormatBinary.locale.en-US.yaml.golden
+│   │   │       │   │   └── TestFormatBinary.yaml.golden
+│   │   │       │   └── TestRunPipe
+│   │   │       │       ├── bad-commit-msg-tmpl
+│   │   │       │       │   ├── bad-commit-msg-tmpl.installer.yaml.golden
+│   │   │       │       │   ├── bad-commit-msg-tmpl.locale.en-US.yaml.golden
+│   │   │       │       │   └── bad-commit-msg-tmpl.yaml.golden
+│   │   │       │       ├── full
+│   │   │       │       │   ├── full.installer.yaml.golden
+│   │   │       │       │   ├── full.locale.en-US.yaml.golden
+│   │   │       │       │   └── full.yaml.golden
+│   │   │       │       ├── minimal
+│   │   │       │       │   ├── minimal.installer.yaml.golden
+│   │   │       │       │   ├── minimal.locale.en-US.yaml.golden
+│   │   │       │       │   └── minimal.yaml.golden
+│   │   │       │       ├── open-pr
+│   │   │       │       │   ├── open-pr.installer.yaml.golden
+│   │   │       │       │   ├── open-pr.locale.en-US.yaml.golden
+│   │   │       │       │   └── open-pr.yaml.golden
+│   │   │       │       ├── partial
+│   │   │       │       │   ├── partial.installer.yaml.golden
+│   │   │       │       │   ├── partial.locale.en-US.yaml.golden
+│   │   │       │       │   └── partial.yaml.golden
+│   │   │       │       ├── skip-upload
+│   │   │       │       │   ├── skip-upload.installer.yaml.golden
+│   │   │       │       │   ├── skip-upload.locale.en-US.yaml.golden
+│   │   │       │       │   └── skip-upload.yaml.golden
+│   │   │       │       ├── skip-upload-auto
+│   │   │       │       │   ├── skip-upload-auto.installer.yaml.golden
+│   │   │       │       │   ├── skip-upload-auto.locale.en-US.yaml.golden
+│   │   │       │       │   └── skip-upload-auto.yaml.golden
+│   │   │       │       ├── with-deps
+│   │   │       │       │   ├── with-deps.installer.yaml.golden
+│   │   │       │       │   ├── with-deps.locale.en-US.yaml.golden
+│   │   │       │       │   └── with-deps.yaml.golden
+│   │   │       │       └── wrapped-in-dir
+│   │   │       │           ├── wrapped-in-dir.installer.yaml.golden
+│   │   │       │           ├── wrapped-in-dir.locale.en-US.yaml.golden
+│   │   │       │           └── wrapped-in-dir.yaml.golden
+│   │   │       ├── winget.go
+│   │   │       └── winget_test.go
+│   │   ├── pipeline
+│   │   │   └── pipeline.go
+│   │   ├── semerrgroup
+│   │   │   ├── sem.go
+│   │   │   └── sem_test.go
+│   │   ├── shell
+│   │   │   ├── shell.go
+│   │   │   └── shell_test.go
+│   │   ├── skips
+│   │   │   ├── skips.go
+│   │   │   └── skips_test.go
+│   │   ├── static
+│   │   │   ├── config.go
+│   │   │   ├── config_test.go
+│   │   │   └── config.yaml
+│   │   ├── testctx
+│   │   │   └── testctx.go
+│   │   ├── testlib
+│   │   │   ├── archive.go
+│   │   │   ├── docker.go
+│   │   │   ├── git.go
+│   │   │   ├── git_test.go
+│   │   │   ├── log.go
+│   │   │   ├── mktemp.go
+│   │   │   ├── mktemp_test.go
+│   │   │   ├── path.go
+│   │   │   ├── path_test.go
+│   │   │   ├── skip.go
+│   │   │   ├── skip_test.go
+│   │   │   └── tmpl.go
+│   │   ├── tmpl
+│   │   │   ├── errors.go
+│   │   │   ├── tmpl.go
+│   │   │   └── tmpl_test.go
+│   │   └── yaml
+│   │       ├── yaml.go
+│   │       └── yaml_test.go
+│   ├── LICENSE.md
+│   ├── main.go
+│   ├── main_test.go
+│   ├── pkg
+│   │   ├── archive
+│   │   │   ├── archive.go
+│   │   │   ├── archive_test.go
+│   │   │   ├── gzip
+│   │   │   │   ├── gzip.go
+│   │   │   │   └── gzip_test.go
+│   │   │   ├── tar
+│   │   │   │   ├── tar.go
+│   │   │   │   └── tar_test.go
+│   │   │   ├── targz
+│   │   │   │   ├── targz.go
+│   │   │   │   └── targz_test.go
+│   │   │   ├── tarxz
+│   │   │   │   ├── tarxz.go
+│   │   │   │   └── tarxz_test.go
+│   │   │   ├── tarzst
+│   │   │   │   ├── tarzst.go
+│   │   │   │   └── tarzst_test.go
+│   │   │   ├── testdata
+│   │   │   │   ├── badlink.txt -> regular3.txt
+│   │   │   │   ├── foo.txt
+│   │   │   │   ├── link.txt -> regular.txt
+│   │   │   │   ├── regular.txt
+│   │   │   │   └── sub1
+│   │   │   │       ├── bar.txt
+│   │   │   │       ├── executable
+│   │   │   │       └── sub2
+│   │   │   │           └── subfoo.txt
+│   │   │   └── zip
+│   │   │       ├── zip.go
+│   │   │       └── zip_test.go
+│   │   ├── build
+│   │   │   ├── build.go
+│   │   │   └── build_test.go
+│   │   ├── config
+│   │   │   ├── config_archive_files_test.go
+│   │   │   ├── config_array_test.go
+│   │   │   ├── config_build_hook_test.go
+│   │   │   ├── config.go
+│   │   │   ├── config_homebrew_dependency_test.go
+│   │   │   ├── config_slack_test.go
+│   │   │   ├── config_test.go
+│   │   │   ├── load.go
+│   │   │   └── testdata
+│   │   │       ├── anchor.yaml
+│   │   │       ├── invalid_config.yml
+│   │   │       └── invalid.yml
+│   │   ├── context
+│   │   │   ├── context.go
+│   │   │   └── context_test.go
+│   │   ├── defaults
+│   │   │   └── defaults.go
+│   │   └── healthcheck
+│   │       ├── healthcheck.go
+│   │       └── healthcheck_test.go
+│   ├── README.md
+│   ├── scripts
+│   │   ├── cmd_docs.sh
+│   │   ├── completions.sh
+│   │   ├── entrypoint.sh
+│   │   ├── fury-upload.sh
+│   │   ├── gen-nix-licenses.sh
+│   │   ├── get-releases.sh
+│   │   ├── manpages.sh
+│   │   ├── nix-udpate-flake.sh
+│   │   ├── pages
+│   │   │   └── build.sh
+│   │   └── pre-commit.sh
+│   ├── SECURITY.md
+│   ├── Taskfile.yml
+│   ├── testdata
+│   │   └── TestVersion
+│   │       ├── all_empty.json.golden
+│   │       ├── complete.json.golden
+│   │       ├── only_version.json.golden
+│   │       ├── version_and_date.json.golden
+│   │       └── version,_date,_built_by.json.golden
+│   ├── USERS.md
+│   └── www
+│       ├── docs
+│       │   ├── blog
+│       │   │   ├── index.md
+│       │   │   └── posts
+│       │   │       ├── 2021-11-14-goreleaser-v1.md
+│       │   │       ├── 2021-12-21-goreleaser-v1.2.md
+│       │   │       ├── 2022-01-13-goreleaser-v1.3.md
+│       │   │       ├── 2022-01-23-docker-manifests.md
+│       │   │       ├── 2022-01-26-goreleaser-v1.4.md
+│       │   │       ├── 2022-02-05-cloud-native-storage.md
+│       │   │       ├── 2022-02-12-goreleaser-v1.5.md
+│       │   │       ├── 2022-02-20-azure-devops.md
+│       │   │       ├── 2022-03-06-goreleaser-v1.6.md
+│       │   │       ├── 2022-03-07-homebrew-gofish.md
+│       │   │       ├── 2022-03-20-goreleaser-v1.7.md
+│       │   │       ├── 2022-03-26-reproducible-builds.md
+│       │   │       ├── 2022-03-28-supply-chain-sec.md
+│       │   │       ├── 2022-04-15-goreleaser-v1.8.md
+│       │   │       ├── 2022-05-18-goreleaser-v1.9.md
+│       │   │       ├── 2022-05-22-nightly-actions.md
+│       │   │       ├── 2022-07-04-goreleaser-v1.10.md
+│       │   │       ├── 2022-08-28-goreleaser-v1.11.md
+│       │   │       ├── 2022-10-17-goreleaser-v1.12.md
+│       │   │       ├── 2022-11-18-goreleaser-v1.13.md
+│       │   │       ├── 2022-12-27-goreleaser-v1.14.md
+│       │   │       ├── 2023-01-10-azure-devops.md
+│       │   │       ├── 2023-01-30-goreleaser-ko.md
+│       │   │       ├── 2023-01-30-goreleaser-v1.15.md
+│       │   │       ├── 2023-03-06-goreleaser-v1.16.md
+│       │   │       ├── 2023-04-10-goreleaser-v1.17.md
+│       │   │       ├── 2023-05-05-goreleaser-v1.18.md
+│       │   │       ├── 2023-06-28-goreleaser-v1.19.md
+│       │   │       ├── 2023-08-09-goreleaser-v1.20.md
+│       │   │       ├── 2023-09-14-welcome.md
+│       │   │       ├── 2023-09-22-goreleaser-v1.21.md
+│       │   │       ├── 2023-09-27-release-cadence.md
+│       │   │       ├── 2023-10-08-slsa-generation-for-your-artifacts.md
+│       │   │       ├── 2023-11-06-goreleaser-v1.22.md
+│       │   │       ├── 2023-12-26-goreleaser-v1.23.md
+│       │   │       ├── 2024-02-05-goreleaser-v1.24.md
+│       │   │       ├── 2024-04-02-goreleaser-v1.25.md
+│       │   │       ├── 2024-05-11-goreleaser-v1.26.md
+│       │   │       └── 2024-06-04-goreleaser-v2.md
+│       │   ├── ci
+│       │   │   ├── actions.md
+│       │   │   ├── azurepipelines.md
+│       │   │   ├── circle.md
+│       │   │   ├── cirrus.md
+│       │   │   ├── cloudbuild.md
+│       │   │   ├── codefresh.md
+│       │   │   ├── drone.md
+│       │   │   ├── gitlab.md
+│       │   │   ├── index.md
+│       │   │   ├── jenkins.md
+│       │   │   ├── semaphore.md
+│       │   │   ├── travis.md
+│       │   │   └── woodpecker.md
+│       │   ├── cmd
+│       │   │   ├── goreleaser_announce.md
+│       │   │   ├── goreleaser_build.md
+│       │   │   ├── goreleaser_changelog.md
+│       │   │   ├── goreleaser_check.md
+│       │   │   ├── goreleaser_completion_bash.md
+│       │   │   ├── goreleaser_completion_fish.md
+│       │   │   ├── goreleaser_completion.md
+│       │   │   ├── goreleaser_completion_powershell.md
+│       │   │   ├── goreleaser_completion_zsh.md
+│       │   │   ├── goreleaser_continue.md
+│       │   │   ├── goreleaser_healthcheck.md
+│       │   │   ├── goreleaser_init.md
+│       │   │   ├── goreleaser_jsonschema.md
+│       │   │   ├── goreleaser.md
+│       │   │   ├── goreleaser_publish.md
+│       │   │   ├── goreleaser_release.md
+│       │   │   ├── goreleaser_subscribe.md
+│       │   │   └── goreleaser_verify-license.md
+│       │   ├── contributing.md
+│       │   ├── cookbooks
+│       │   │   ├── blog-posts.md
+│       │   │   ├── build-go-modules.md
+│       │   │   ├── cgo-and-crosscompiling.md
+│       │   │   ├── contributing.md
+│       │   │   ├── debconf-templates.md
+│       │   │   ├── goreleaser-xx.md
+│       │   │   ├── index.md
+│       │   │   ├── multi-platform-docker-images.md
+│       │   │   ├── override-image-name.md
+│       │   │   ├── private-monorepo-public-release.md
+│       │   │   ├── publish-to-nexus.md
+│       │   │   ├── release-a-library.md
+│       │   │   ├── semantic-release.md
+│       │   │   ├── set-a-custom-git-tag.md
+│       │   │   ├── using-jfrog-cli-to-publish-to-artifactory.md
+│       │   │   └── using-main.version.md
+│       │   ├── customization
+│       │   │   ├── announce
+│       │   │   │   ├── bluesky.md
+│       │   │   │   ├── discord.md
+│       │   │   │   ├── index.md
+│       │   │   │   ├── linkedin.md
+│       │   │   │   ├── mastodon.md
+│       │   │   │   ├── mattermost.md
+│       │   │   │   ├── opencollective.md
+│       │   │   │   ├── reddit.md
+│       │   │   │   ├── slack.md
+│       │   │   │   ├── smtp.md
+│       │   │   │   ├── teams.md
+│       │   │   │   ├── telegram.md
+│       │   │   │   ├── twitter.md
+│       │   │   │   └── webhook.md
+│       │   │   ├── archive.md
+│       │   │   ├── artifactory.md
+│       │   │   ├── aur.md
+│       │   │   ├── beforepublish.md
+│       │   │   ├── blob.md
+│       │   │   ├── builds.md
+│       │   │   ├── changelog.md
+│       │   │   ├── checksum.md
+│       │   │   ├── chocolatey.md
+│       │   │   ├── cloudsmith.md
+│       │   │   ├── dist.md
+│       │   │   ├── dmg.md
+│       │   │   ├── dockerhub.md
+│       │   │   ├── docker_manifest.md
+│       │   │   ├── docker.md
+│       │   │   ├── docker_sign.md
+│       │   │   ├── env.md
+│       │   │   ├── fury.md
+│       │   │   ├── git.md
+│       │   │   ├── homebrew.md
+│       │   │   ├── hooks.md
+│       │   │   ├── includes.md
+│       │   │   ├── index.md
+│       │   │   ├── ko.md
+│       │   │   ├── krew.md
+│       │   │   ├── metadata.md
+│       │   │   ├── milestone.md
+│       │   │   ├── monorepo.md
+│       │   │   ├── msi.md
+│       │   │   ├── nfpm.md
+│       │   │   ├── nightlies.md
+│       │   │   ├── nix.md
+│       │   │   ├── notarize.md
+│       │   │   ├── partial.md
+│       │   │   ├── project.md
+│       │   │   ├── publishers.md
+│       │   │   ├── release.md
+│       │   │   ├── reportsizes.md
+│       │   │   ├── sbom.md
+│       │   │   ├── scoop.md
+│       │   │   ├── sign.md
+│       │   │   ├── snapcraft.md
+│       │   │   ├── snapshots.md
+│       │   │   ├── source.md
+│       │   │   ├── templatefiles.md
+│       │   │   ├── templates.md
+│       │   │   ├── universalbinaries.md
+│       │   │   ├── upload.md
+│       │   │   ├── upx.md
+│       │   │   ├── verifiable_builds.md
+│       │   │   └── winget.md
+│       │   ├── deprecations.md
+│       │   ├── errors
+│       │   │   ├── build.md
+│       │   │   ├── dirty.md
+│       │   │   ├── docker-build.md
+│       │   │   ├── multiple-binaries-archive.md
+│       │   │   ├── multiple-tokens.md
+│       │   │   ├── no-history.md
+│       │   │   ├── no-main.md
+│       │   │   ├── release-upload.md
+│       │   │   ├── resource-not-accessible-by-integration.md
+│       │   │   ├── scoop-archive.md
+│       │   │   └── version.md
+│       │   ├── eula.md
+│       │   ├── how-it-works.md
+│       │   ├── includes
+│       │   │   ├── pro.md
+│       │   │   ├── prs.md
+│       │   │   ├── repository.md
+│       │   │   └── templates.md
+│       │   ├── index.md
+│       │   ├── install.md
+│       │   ├── intro.md
+│       │   ├── limitations
+│       │   │   ├── cgo.md
+│       │   │   └── semver.md
+│       │   ├── links.md
+│       │   ├── overrides
+│       │   │   ├── home.html
+│       │   │   └── main.html
+│       │   ├── post-checkout.md
+│       │   ├── pro.md
+│       │   ├── quick-start.md
+│       │   ├── scm
+│       │   │   ├── gitea.md
+│       │   │   ├── github.md
+│       │   │   └── gitlab.md
+│       │   ├── security.md
+│       │   ├── sponsors.md
+│       │   ├── static
+│       │   │   ├── apple-touch-icon.png
+│       │   │   ├── avatar.png
+│       │   │   ├── card.png
+│       │   │   ├── favicon.ico
+│       │   │   ├── goreleaser.svg
+│       │   │   ├── latest
+│       │   │   ├── latest-pro
+│       │   │   ├── logo.png
+│       │   │   ├── releases.json
+│       │   │   ├── releases-pro.json
+│       │   │   ├── run
+│       │   │   ├── schema.json
+│       │   │   ├── schema-pro.json
+│       │   │   └── slsa-provenance-generation.png
+│       │   └── users.md
+│       ├── htmltest.yml
+│       ├── mkdocs.yml
+│       └── README.md
+└── goreleaser-2.1.0.tar.gz -> /home/felix/packages/goreleaser/goreleaser-2.1.0.tar.gz
+
+203 directories, 771 files

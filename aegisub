@@ -1,0 +1,2085 @@
+src
+├── Aegisub
+│   ├── acinclude.m4
+│   ├── Aegisub.sln
+│   ├── autogen.sh
+│   ├── automation
+│   │   ├── autoload
+│   │   │   ├── cleantags-autoload.lua
+│   │   │   ├── karaoke-auto-leadin.lua
+│   │   │   ├── kara-templater.lua
+│   │   │   ├── macro-1-edgeblur.lua
+│   │   │   ├── macro-2-mkfullwitdh.lua
+│   │   │   ├── select-overlaps.moon
+│   │   │   └── strip-tags.lua
+│   │   ├── demos
+│   │   │   ├── future-windy-blur.lua
+│   │   │   ├── raytracer.lua
+│   │   │   └── raytracer-test1.ass
+│   │   ├── include
+│   │   │   ├── aegisub
+│   │   │   │   ├── argcheck.moon
+│   │   │   │   ├── clipboard.lua
+│   │   │   │   ├── ffi.moon
+│   │   │   │   ├── lfs.moon
+│   │   │   │   ├── re.moon
+│   │   │   │   ├── unicode.moon
+│   │   │   │   └── util.moon
+│   │   │   ├── cleantags.lua
+│   │   │   ├── clipboard.lua
+│   │   │   ├── karaskel-auto4.lua
+│   │   │   ├── karaskel.lua
+│   │   │   ├── lfs.lua
+│   │   │   ├── moonscript.lua
+│   │   │   ├── re.lua
+│   │   │   ├── unicode.lua
+│   │   │   ├── utils-auto4.lua
+│   │   │   └── utils.lua
+│   │   ├── Makefile
+│   │   ├── tests
+│   │   │   ├── aegisub.cpp
+│   │   │   ├── automation
+│   │   │   │   ├── appended-lines.lua
+│   │   │   │   ├── basic-export-test.lua
+│   │   │   │   ├── basic-tests.lua
+│   │   │   │   ├── config-dialog-test.lua
+│   │   │   │   ├── furi-test.ass
+│   │   │   │   ├── gen-absurd-t-line.lua
+│   │   │   │   ├── hello-world.lua
+│   │   │   │   ├── karaoke-parse-test.lua
+│   │   │   │   ├── kara-templater-retime.ass
+│   │   │   │   ├── progress-reporting-test.lua
+│   │   │   │   ├── selection-set-test.lua
+│   │   │   │   ├── test-filter-name-clash.lua
+│   │   │   │   ├── test-furi.lua
+│   │   │   │   ├── test-tablecopy-recursive.lua
+│   │   │   │   ├── test-text_extents.lua
+│   │   │   │   ├── text-extents-test.lua
+│   │   │   │   ├── trace-level-test.lua
+│   │   │   │   └── unicode-test.lua
+│   │   │   ├── busted.lua
+│   │   │   └── modules
+│   │   │       ├── argcheck.moon
+│   │   │       ├── lfs.moon
+│   │   │       ├── re.moon
+│   │   │       └── unicode.moon
+│   │   └── v4-docs
+│   │       ├── basic-function-interface.txt
+│   │       ├── configuration-dialogs.txt
+│   │       ├── file-streams.txt
+│   │       ├── misc.txt
+│   │       ├── overview.txt
+│   │       ├── progress-reporting.txt
+│   │       ├── subtitle-data.txt
+│   │       └── template-scripting-ideas.ass
+│   ├── build
+│   │   ├── Aegisub
+│   │   │   ├── Aegisub.targets
+│   │   │   ├── Aegisub.vcxproj
+│   │   │   ├── Aegisub.vcxproj.filters
+│   │   │   ├── Aegisub.xml
+│   │   │   └── standard-libraries.props
+│   │   ├── aegisub.props
+│   │   ├── boost
+│   │   │   ├── boost.vcxproj
+│   │   │   ├── boost.vcxproj.filters
+│   │   │   └── locale_stubs.cpp
+│   │   ├── BuildTasks
+│   │   │   ├── BuildTasks.csproj
+│   │   │   ├── DownloadTgzFile.cs
+│   │   │   ├── GitVersion.cs
+│   │   │   ├── packages.config
+│   │   │   ├── Properties
+│   │   │   │   └── AssemblyInfo.cs
+│   │   │   └── TarballProject.cs
+│   │   ├── csrihelper
+│   │   │   ├── csrihelper.vcxproj
+│   │   │   └── csrihelper.vcxproj.filters
+│   │   ├── DefaultConfiguration.props
+│   │   ├── expat
+│   │   │   ├── expat.vcxproj
+│   │   │   └── expat.vcxproj.filters
+│   │   ├── ffmpeg
+│   │   │   ├── config.h
+│   │   │   ├── configure.sh
+│   │   │   ├── config-x64.asm
+│   │   │   ├── config-x64.h
+│   │   │   ├── config-x86.asm
+│   │   │   ├── config-x86.h
+│   │   │   ├── ffmpeg.vcxproj
+│   │   │   ├── ffmpeg.vcxproj.filters
+│   │   │   ├── get-file-list.sh
+│   │   │   └── libavutil
+│   │   │       ├── avconfig.h
+│   │   │       └── ffversion.h
+│   │   ├── ffms2
+│   │   │   ├── ffms2.vcxproj
+│   │   │   └── ffms2.vcxproj.filters
+│   │   ├── fftw
+│   │   │   ├── config.h
+│   │   │   ├── fftw.vcxproj
+│   │   │   └── fftw.vcxproj.filters
+│   │   ├── freetype2
+│   │   │   ├── freetype.vcxproj
+│   │   │   ├── freetype.vcxproj.filters
+│   │   │   └── ftsystem.cpp
+│   │   ├── fribidi
+│   │   │   ├── fribidi-config.h
+│   │   │   ├── fribidi.vcxproj
+│   │   │   └── fribidi.vcxproj.filters
+│   │   ├── googletest
+│   │   │   ├── googletest.vcxproj
+│   │   │   └── googletest.vcxproj.filters
+│   │   ├── hunspell
+│   │   │   ├── hunspell.vcxproj
+│   │   │   └── hunspell.vcxproj.filters
+│   │   ├── icu
+│   │   │   ├── icu.vcxproj
+│   │   │   ├── icu.vcxproj.filters
+│   │   │   └── pack-dt.lua
+│   │   ├── install.targets
+│   │   ├── libaegisub
+│   │   │   ├── libaegisub.vcxproj
+│   │   │   └── libaegisub.vcxproj.filters
+│   │   ├── libass
+│   │   │   ├── config.h
+│   │   │   ├── dirent.h
+│   │   │   ├── libass.vcxproj
+│   │   │   ├── libass.vcxproj.filters
+│   │   │   ├── strings.h
+│   │   │   └── unistd.h
+│   │   ├── libiconv
+│   │   │   ├── libiconv.vcxproj
+│   │   │   └── libiconv.vcxproj.filters
+│   │   ├── libpng
+│   │   │   ├── libpng.vcxproj
+│   │   │   └── libpng.vcxproj.filters
+│   │   ├── libresrc
+│   │   │   ├── libresrc.vcxproj
+│   │   │   └── libresrc.vcxproj.filters
+│   │   ├── luabins
+│   │   │   ├── luabins.vcxproj
+│   │   │   └── luabins.vcxproj.filters
+│   │   ├── luajit
+│   │   │   ├── luajit.vcxproj
+│   │   │   └── luajit.vcxproj.filters
+│   │   ├── luajit-buildvm
+│   │   │   ├── luajit-buildvm.vcxproj
+│   │   │   └── luajit-buildvm.vcxproj.filters
+│   │   ├── luajit-minilua
+│   │   │   ├── luajit-minilua.vcxproj
+│   │   │   └── luajit-minilua.vcxproj.filters
+│   │   ├── paths.props
+│   │   ├── PortableInstaller
+│   │   │   ├── PortableInstaller.vcxproj
+│   │   │   └── PortableInstaller.vcxproj.filters
+│   │   ├── respack.targets
+│   │   ├── scintilla
+│   │   │   ├── catalogue.cpp
+│   │   │   ├── scintilla.vcxproj
+│   │   │   └── scintilla.vcxproj.filters
+│   │   ├── standard-outdirs.props
+│   │   ├── standard-settings.props
+│   │   ├── tasks.props
+│   │   ├── tests
+│   │   │   ├── tests.vcxproj
+│   │   │   └── tests.vcxproj.filters
+│   │   ├── universalchardet
+│   │   │   ├── universalchardet.vcxproj
+│   │   │   └── universalchardet.vcxproj.filters
+│   │   ├── userconfig
+│   │   │   ├── ft2.props.sample
+│   │   │   ├── paths.props.sample
+│   │   │   ├── readme.txt
+│   │   │   └── wx.props.sample
+│   │   ├── version.sh
+│   │   ├── wx
+│   │   │   ├── setup-build.h
+│   │   │   ├── setup-installed.h
+│   │   │   ├── stc-fi.h
+│   │   │   └── wxWidgets.vcxproj
+│   │   ├── yasm.targets
+│   │   └── zlib
+│   │       ├── zconf.h
+│   │       └── zlib.vcxproj
+│   ├── cmake
+│   │   ├── Findass.cmake
+│   │   ├── FindAviSynth.cmake
+│   │   ├── FindFFMS2.cmake
+│   │   ├── FindFFTW.cmake
+│   │   ├── FindHunspell.cmake
+│   │   ├── FindOSS.cmake
+│   │   ├── FindPortAudio.cmake
+│   │   ├── FindPulseAudio.cmake
+│   │   ├── Finduchardet.cmake
+│   │   ├── FindXAudio2redist.cmake
+│   │   └── hunspell_string_api.cpp
+│   ├── CMakeLists.test.txt
+│   ├── CMakeLists.txt
+│   ├── config.guess
+│   ├── config.sub
+│   ├── configure.ac
+│   ├── docs
+│   │   ├── art-sources
+│   │   │   ├── aegisub-blog-header2.jpg
+│   │   │   ├── aegisub-blog-header2.pdn
+│   │   │   ├── aegisub-blog-header.jpg
+│   │   │   ├── aegisub-blog-header.pdn
+│   │   │   ├── aegisub-icon-mk2.png
+│   │   │   ├── aegisub-icon-mk2.svg
+│   │   │   ├── aegisub-logo.svg
+│   │   │   ├── buttons
+│   │   │   │   ├── about_menu.svg
+│   │   │   │   ├── arrow_down_stop.svg
+│   │   │   │   ├── arrow_down.svg
+│   │   │   │   ├── arrow_sort.svg
+│   │   │   │   ├── arrow_up_stop.svg
+│   │   │   │   ├── arrow_up.svg
+│   │   │   │   ├── assdraw.svg
+│   │   │   │   ├── attach_button.svg
+│   │   │   │   ├── automation_toolbutton.svg
+│   │   │   │   ├── bugtracker_button.svg
+│   │   │   │   ├── button_audio_commit.svg
+│   │   │   │   ├── button_audio_goto.svg
+│   │   │   │   ├── button_bold.svg
+│   │   │   │   ├── button_color_four.svg
+│   │   │   │   ├── button_color_one.svg
+│   │   │   │   ├── button_color_three.svg
+│   │   │   │   ├── button_color_two.svg
+│   │   │   │   ├── button_fontname.svg
+│   │   │   │   ├── button_italics.svg
+│   │   │   │   ├── button_leadin.svg
+│   │   │   │   ├── button_leadout.svg
+│   │   │   │   ├── button_next.svg
+│   │   │   │   ├── button_pause.svg
+│   │   │   │   ├── button_playfirstfiveh.svg
+│   │   │   │   ├── button_playfivehafter.svg
+│   │   │   │   ├── button_playfivehbefore.svg
+│   │   │   │   ├── button_playlastfiveh.svg
+│   │   │   │   ├── button_playline.svg
+│   │   │   │   ├── button_playsel.svg
+│   │   │   │   ├── button_play.svg
+│   │   │   │   ├── button_playtoend.svg
+│   │   │   │   ├── button_prev.svg
+│   │   │   │   ├── button_stop.svg
+│   │   │   │   ├── button_strikeout.svg
+│   │   │   │   ├── button_track_movement.svg
+│   │   │   │   ├── button_track_move.svg
+│   │   │   │   ├── button_track_point_add.svg
+│   │   │   │   ├── button_track_point_del.svg
+│   │   │   │   ├── button_track_points.svg
+│   │   │   │   ├── button_track_split_line.svg
+│   │   │   │   ├── button_track_trail.svg
+│   │   │   │   ├── button_underline.svg
+│   │   │   │   ├── close_audio_menu.svg
+│   │   │   │   ├── close_keyframes_menu.svg
+│   │   │   │   ├── close_timecodes_menu.svg
+│   │   │   │   ├── close_video_menu.svg
+│   │   │   │   ├── contents_button.svg
+│   │   │   │   ├── copy_button.svg
+│   │   │   │   ├── cut_button.svg
+│   │   │   │   ├── delete_button.svg
+│   │   │   │   ├── detach_video_menu.svg
+│   │   │   │   ├── export_menu.svg
+│   │   │   │   ├── eyedropper_tool.svg
+│   │   │   │   ├── find_button.svg
+│   │   │   │   ├── find_next_menu.svg
+│   │   │   │   ├── find_replace_menu.svg
+│   │   │   │   ├── font_collector_button.svg
+│   │   │   │   ├── forums_button.svg
+│   │   │   │   ├── hotkeys_button.svg
+│   │   │   │   ├── irc_button.svg
+│   │   │   │   ├── jumpto_button.svg
+│   │   │   │   ├── kara_join.svg
+│   │   │   │   ├── kara_mode.svg
+│   │   │   │   ├── kara_split_accept.svg
+│   │   │   │   ├── kara_split_cancel.svg
+│   │   │   │   ├── kara_split.svg
+│   │   │   │   ├── kara_timing_copier.svg
+│   │   │   │   ├── languages_menu.svg
+│   │   │   │   ├── menu_check.svg
+│   │   │   │   ├── new_toolbutton.svg
+│   │   │   │   ├── new_window_menu.svg
+│   │   │   │   ├── open_audio_from_video_menu.svg
+│   │   │   │   ├── open_audio_menu.svg
+│   │   │   │   ├── open_keyframes_menu.svg
+│   │   │   │   ├── open_timecodes_menu.svg
+│   │   │   │   ├── open_toolbutton.svg
+│   │   │   │   ├── open_video_menu.svg
+│   │   │   │   ├── open_with_toolbutton.svg
+│   │   │   │   ├── options_button.svg
+│   │   │   │   ├── override_aspect_menu.svg
+│   │   │   │   ├── paste_button.svg
+│   │   │   │   ├── properties_toolbutton.svg
+│   │   │   │   ├── redo_button.svg
+│   │   │   │   ├── resample_toolbutton.svg
+│   │   │   │   ├── save_as_toolbutton.svg
+│   │   │   │   ├── save_keyframes_menu.svg
+│   │   │   │   ├── save_timecodes_menu.svg
+│   │   │   │   ├── save_toolbutton.svg
+│   │   │   │   ├── select_lines_button.svg
+│   │   │   │   ├── select_visible_button.svg
+│   │   │   │   ├── set_zoom_menu.svg
+│   │   │   │   ├── shift_times_toolbutton.svg
+│   │   │   │   ├── shift_to_frame.svg
+│   │   │   │   ├── show_overscan_menu_checked.svg
+│   │   │   │   ├── show_video_details_menu.svg
+│   │   │   │   ├── snap_subs_to_scene.svg
+│   │   │   │   ├── sort_times_button.svg
+│   │   │   │   ├── spellcheck_toolbutton.svg
+│   │   │   │   ├── style_toolbutton.svg
+│   │   │   │   ├── styling_toolbutton.svg
+│   │   │   │   ├── subend_to_video.svg
+│   │   │   │   ├── substart_to_video.svg
+│   │   │   │   ├── timing_processor_toolbutton.svg
+│   │   │   │   ├── toggle_audio_autocommit.svg
+│   │   │   │   ├── toggle_audio_autoscroll.svg
+│   │   │   │   ├── toggle_audio_link.svg
+│   │   │   │   ├── toggle_audio_medusa.svg
+│   │   │   │   ├── toggle_audio_nextcommit.svg
+│   │   │   │   ├── toggle_audio_spectrum.svg
+│   │   │   │   ├── toggle_audio_ssa.svg
+│   │   │   │   ├── toggle_tag_hiding.svg
+│   │   │   │   ├── toggle_video_autoscroll.svg
+│   │   │   │   ├── translation_toolbutton.svg
+│   │   │   │   ├── undo_button.svg
+│   │   │   │   ├── use_dummy_video_menu.svg
+│   │   │   │   ├── video_to_subend.svg
+│   │   │   │   ├── video_to_substart.svg
+│   │   │   │   ├── visual_clip.svg
+│   │   │   │   ├── visual_help.svg
+│   │   │   │   ├── visual_move_conv_move.svg
+│   │   │   │   ├── visual_move_conv_pos.svg
+│   │   │   │   ├── visual_move.svg
+│   │   │   │   ├── visual_realtime.svg
+│   │   │   │   ├── visual_rotatexy.svg
+│   │   │   │   ├── visual_rotatez.svg
+│   │   │   │   ├── visual_scale.svg
+│   │   │   │   ├── visual_standard.svg
+│   │   │   │   ├── visual_vector_clip_bicubic.svg
+│   │   │   │   ├── visual_vector_clip_convert.svg
+│   │   │   │   ├── visual_vector_clip_drag.svg
+│   │   │   │   ├── visual_vector_clip_freehand_smooth.svg
+│   │   │   │   ├── visual_vector_clip_freehand.svg
+│   │   │   │   ├── visual_vector_clip_insert.svg
+│   │   │   │   ├── visual_vector_clip_line.svg
+│   │   │   │   ├── visual_vector_clip_remove.svg
+│   │   │   │   ├── visual_vector_clip.svg
+│   │   │   │   ├── website_button.svg
+│   │   │   │   ├── zoom_in_button.svg
+│   │   │   │   └── zoom_out_button.svg
+│   │   │   └── splash.pdn
+│   │   ├── specs
+│   │   │   ├── as5
+│   │   │   │   ├── aegisub.png
+│   │   │   │   ├── as5.pdf
+│   │   │   │   ├── as5.tcp
+│   │   │   │   ├── as5.tex
+│   │   │   │   ├── asa.png
+│   │   │   │   ├── distort.png
+│   │   │   │   └── spec.cls
+│   │   │   └── ass-format-tests.ass
+│   │   └── wiki_convert
+│   │       ├── aegisub_convert_docs.pl
+│   │       └── convert.bat
+│   ├── header.mk
+│   ├── install-sh
+│   ├── libaegisub
+│   │   ├── ass
+│   │   │   ├── dialogue_parser.cpp
+│   │   │   ├── time.cpp
+│   │   │   └── uuencode.cpp
+│   │   ├── audio
+│   │   │   ├── provider_convert.cpp
+│   │   │   ├── provider.cpp
+│   │   │   ├── provider_dummy.cpp
+│   │   │   ├── provider_hd.cpp
+│   │   │   ├── provider_lock.cpp
+│   │   │   ├── provider_pcm.cpp
+│   │   │   └── provider_ram.cpp
+│   │   ├── common
+│   │   │   ├── cajun
+│   │   │   │   ├── elements.cpp
+│   │   │   │   ├── reader.cpp
+│   │   │   │   └── writer.cpp
+│   │   │   ├── calltip_provider.cpp
+│   │   │   ├── character_count.cpp
+│   │   │   ├── charset_6937.cpp
+│   │   │   ├── charset_6937.h
+│   │   │   ├── charset_conv.cpp
+│   │   │   ├── charset.cpp
+│   │   │   ├── color.cpp
+│   │   │   ├── dispatch.cpp
+│   │   │   ├── file_mapping.cpp
+│   │   │   ├── format.cpp
+│   │   │   ├── fs.cpp
+│   │   │   ├── hotkey.cpp
+│   │   │   ├── io.cpp
+│   │   │   ├── json.cpp
+│   │   │   ├── kana_table.cpp
+│   │   │   ├── karaoke_matcher.cpp
+│   │   │   ├── keyframe.cpp
+│   │   │   ├── line_iterator.cpp
+│   │   │   ├── log.cpp
+│   │   │   ├── mru.cpp
+│   │   │   ├── option.cpp
+│   │   │   ├── option_value.cpp
+│   │   │   ├── parser.cpp
+│   │   │   ├── parser.h
+│   │   │   ├── path.cpp
+│   │   │   ├── thesaurus.cpp
+│   │   │   ├── util.cpp
+│   │   │   ├── vfr.cpp
+│   │   │   └── ycbcr_conv.cpp
+│   │   ├── include
+│   │   │   └── libaegisub
+│   │   │       ├── access.h
+│   │   │       ├── address_of_adaptor.h
+│   │   │       ├── ass
+│   │   │       │   ├── dialogue_parser.h
+│   │   │       │   ├── smpte.h
+│   │   │       │   ├── time.h
+│   │   │       │   └── uuencode.h
+│   │   │       ├── audio
+│   │   │       │   └── provider.h
+│   │   │       ├── background_runner.h
+│   │   │       ├── cajun
+│   │   │       │   ├── elements.h
+│   │   │       │   ├── reader.h
+│   │   │       │   ├── visitor.h
+│   │   │       │   └── writer.h
+│   │   │       ├── calltip_provider.h
+│   │   │       ├── character_count.h
+│   │   │       ├── charset_conv.h
+│   │   │       ├── charset_conv_win.h
+│   │   │       ├── charset.h
+│   │   │       ├── charsets.def
+│   │   │       ├── color.h
+│   │   │       ├── dispatch.h
+│   │   │       ├── exception.h
+│   │   │       ├── file_mapping.h
+│   │   │       ├── format_flyweight.h
+│   │   │       ├── format.h
+│   │   │       ├── format_path.h
+│   │   │       ├── fs_fwd.h
+│   │   │       ├── fs.h
+│   │   │       ├── hotkey.h
+│   │   │       ├── io.h
+│   │   │       ├── json.h
+│   │   │       ├── kana_table.h
+│   │   │       ├── karaoke_matcher.h
+│   │   │       ├── keyframe.h
+│   │   │       ├── line_iterator.h
+│   │   │       ├── line_wrap.h
+│   │   │       ├── log.h
+│   │   │       ├── lua
+│   │   │       │   ├── ffi.h
+│   │   │       │   ├── modules.h
+│   │   │       │   ├── script_reader.h
+│   │   │       │   └── utils.h
+│   │   │       ├── make_unique.h
+│   │   │       ├── mru.h
+│   │   │       ├── of_type_adaptor.h
+│   │   │       ├── option.h
+│   │   │       ├── option_value.h
+│   │   │       ├── owning_intrusive_list.h
+│   │   │       ├── path.h
+│   │   │       ├── scoped_ptr.h
+│   │   │       ├── signal.h
+│   │   │       ├── spellchecker.h
+│   │   │       ├── split.h
+│   │   │       ├── thesaurus.h
+│   │   │       ├── type_name.h
+│   │   │       ├── util.h
+│   │   │       ├── util_osx.h
+│   │   │       ├── vfr.h
+│   │   │       └── ycbcr_conv.h
+│   │   ├── lagi_pre.h
+│   │   ├── lua
+│   │   │   ├── modules
+│   │   │   │   ├── lfs.cpp
+│   │   │   │   ├── lpeg.c
+│   │   │   │   ├── lpeg.h
+│   │   │   │   ├── re.cpp
+│   │   │   │   └── unicode.cpp
+│   │   │   ├── modules.cpp
+│   │   │   ├── script_reader.cpp
+│   │   │   └── utils.cpp
+│   │   ├── Makefile
+│   │   ├── osx
+│   │   │   ├── dispatch.mm
+│   │   │   ├── spellchecker.mm
+│   │   │   └── util.mm
+│   │   ├── unix
+│   │   │   ├── access.cpp
+│   │   │   ├── fs.cpp
+│   │   │   ├── log.cpp
+│   │   │   ├── path.cpp
+│   │   │   └── util.cpp
+│   │   └── windows
+│   │       ├── access.cpp
+│   │       ├── charset_conv_win.cpp
+│   │       ├── fs.cpp
+│   │       ├── lagi_pre.cpp
+│   │       ├── log_win.cpp
+│   │       ├── path_win.cpp
+│   │       └── util_win.cpp
+│   ├── LICENCE
+│   ├── m4macros
+│   │   ├── ac_agi.m4
+│   │   ├── ac_flag.m4
+│   │   ├── agi_find_libheader.m4
+│   │   ├── ax_boost_base.m4
+│   │   ├── ax_boost_chrono.m4
+│   │   ├── ax_boost_filesystem.m4
+│   │   ├── ax_boost_locale.m4
+│   │   ├── ax_boost_regex.m4
+│   │   ├── ax_boost_system.m4
+│   │   ├── ax_boost_thread.m4
+│   │   ├── ax_check_gl.m4
+│   │   ├── ax_lang_compiler_ms.m4
+│   │   ├── ax_pthread.m4
+│   │   ├── check_gnu_make.m4
+│   │   └── wxwin.m4
+│   ├── Makefile
+│   ├── Makefile.inc.in
+│   ├── Makefile.target
+│   ├── packages
+│   │   ├── desktop
+│   │   │   ├── 16x16.png
+│   │   │   ├── 22x22.png
+│   │   │   ├── 24x24.png
+│   │   │   ├── 32x32.png
+│   │   │   ├── 48x48.png
+│   │   │   ├── 64x64.png
+│   │   │   ├── aegisub.appdata.xml.template.in
+│   │   │   ├── aegisub.desktop.template.in
+│   │   │   ├── Makefile
+│   │   │   └── scalable.svg
+│   │   ├── osx_bundle
+│   │   │   └── Contents
+│   │   │       ├── Info.plist
+│   │   │       └── Resources
+│   │   │           ├── Aegisub.icns
+│   │   │           ├── assIcon.icns
+│   │   │           ├── srtIcon.icns
+│   │   │           ├── ssaIcon.icns
+│   │   │           └── txtIcon.icns
+│   │   ├── osx_dmg
+│   │   │   ├── dmg_background.png
+│   │   │   ├── dmg_set_style.applescript
+│   │   │   └── DS_Store
+│   │   └── win_installer
+│   │       ├── aegisub3_64.iss
+│   │       ├── aegisub3.iss
+│   │       ├── aegisub.bmp
+│   │       ├── aegisub-large.bmp
+│   │       ├── aegisub-large.pdn
+│   │       ├── aegisub.pdn
+│   │       ├── build_dictionary_installers.sh
+│   │       ├── dictionaries
+│   │       │   ├── fragment_dictbase.iss
+│   │       │   ├── fragment_stddict.iss
+│   │       │   └── sr_SR.iss
+│   │       ├── fragment_assdraw.iss
+│   │       ├── fragment_associations.iss
+│   │       ├── fragment_automation.iss
+│   │       ├── fragment_beautify_code.iss
+│   │       ├── fragment_codecs_32.iss
+│   │       ├── fragment_codecs_64.iss
+│   │       ├── fragment_mainprogram.iss
+│   │       ├── fragment_migrate_code.iss
+│   │       ├── fragment_opengl.iss
+│   │       ├── fragment_setupbase.iss
+│   │       ├── fragment_shell_code.iss
+│   │       ├── fragment_spelling.iss
+│   │       ├── fragment_strings.iss
+│   │       ├── fragment_strings.iss.in
+│   │       ├── fragment_translations.iss
+│   │       ├── legacy_dirlist.txt
+│   │       ├── legacy_filelist.txt
+│   │       ├── legacy_locales.txt
+│   │       ├── legacy_shortcutlist.txt
+│   │       ├── license.txt
+│   │       ├── old_dirlist.txt
+│   │       ├── old_filelist.txt
+│   │       ├── old_locales.txt
+│   │       ├── old_shortcutlist.txt
+│   │       ├── portable
+│   │       │   ├── config.json
+│   │       │   ├── create-portable-64.bat
+│   │       │   ├── create-portable.bat
+│   │       │   ├── icon.ico
+│   │       │   ├── portable-comment.txt
+│   │       │   └── side-logo.bmp
+│   │       ├── template.ass
+│   │       ├── update_strings.sh
+│   │       ├── welcome.bmp
+│   │       ├── welcome-large.bmp
+│   │       ├── welcome-large.pdn
+│   │       └── welcome.pdn
+│   ├── po
+│   │   ├── aegisub.pot
+│   │   ├── ar.po
+│   │   ├── be.po
+│   │   ├── bg.po
+│   │   ├── ca.po
+│   │   ├── cs.po
+│   │   ├── da.po
+│   │   ├── de.po
+│   │   ├── el.po
+│   │   ├── es.po
+│   │   ├── eu.po
+│   │   ├── fa.po
+│   │   ├── fi.po
+│   │   ├── fr_FR.po
+│   │   ├── gl.po
+│   │   ├── hu.po
+│   │   ├── id.po
+│   │   ├── it.po
+│   │   ├── ja.po
+│   │   ├── ko.po
+│   │   ├── LINGUAS
+│   │   ├── Makefile
+│   │   ├── make_pot.sh
+│   │   ├── nl.po
+│   │   ├── pl.po
+│   │   ├── pt_BR.po
+│   │   ├── pt_PT.po
+│   │   ├── README_ja.txt
+│   │   ├── ru.po
+│   │   ├── sr_RS@latin.po
+│   │   ├── sr_RS.po
+│   │   ├── stats.sh
+│   │   ├── uk_UA.po
+│   │   ├── vi.po
+│   │   ├── zh_CN.po
+│   │   └── zh_TW.po
+│   ├── README.md
+│   ├── src
+│   │   ├── aegisublocale.cpp
+│   │   ├── aegisublocale.h
+│   │   ├── agi_pre.cpp
+│   │   ├── agi_pre.h
+│   │   ├── ass_attachment.cpp
+│   │   ├── ass_attachment.h
+│   │   ├── ass_dialogue.cpp
+│   │   ├── ass_dialogue.h
+│   │   ├── ass_entry.cpp
+│   │   ├── ass_entry.h
+│   │   ├── ass_exporter.cpp
+│   │   ├── ass_exporter.h
+│   │   ├── ass_export_filter.cpp
+│   │   ├── ass_export_filter.h
+│   │   ├── ass_file.cpp
+│   │   ├── ass_file.h
+│   │   ├── ass_info.h
+│   │   ├── ass_karaoke.cpp
+│   │   ├── ass_karaoke.h
+│   │   ├── ass_override.cpp
+│   │   ├── ass_override.h
+│   │   ├── ass_parser.cpp
+│   │   ├── ass_parser.h
+│   │   ├── ass_style.cpp
+│   │   ├── ass_style.h
+│   │   ├── ass_style_storage.cpp
+│   │   ├── ass_style_storage.h
+│   │   ├── async_video_provider.cpp
+│   │   ├── async_video_provider.h
+│   │   ├── audio_box.cpp
+│   │   ├── audio_box.h
+│   │   ├── audio_colorscheme.cpp
+│   │   ├── audio_colorscheme.h
+│   │   ├── audio_controller.cpp
+│   │   ├── audio_controller.h
+│   │   ├── audio_display.cpp
+│   │   ├── audio_display.h
+│   │   ├── audio_karaoke.cpp
+│   │   ├── audio_karaoke.h
+│   │   ├── audio_marker.cpp
+│   │   ├── audio_marker.h
+│   │   ├── audio_player_alsa.cpp
+│   │   ├── audio_player_coreaudio.cpp
+│   │   ├── audio_player.cpp
+│   │   ├── audio_player_dsound2.cpp
+│   │   ├── audio_player_dsound.cpp
+│   │   ├── audio_player_openal.cpp
+│   │   ├── audio_player_oss.cpp
+│   │   ├── audio_player_portaudio.cpp
+│   │   ├── audio_player_portaudio.h
+│   │   ├── audio_player_pulse.cpp
+│   │   ├── audio_player_xaudio2.cpp
+│   │   ├── audio_provider_avs.cpp
+│   │   ├── audio_provider_factory.cpp
+│   │   ├── audio_provider_factory.h
+│   │   ├── audio_provider_ffmpegsource.cpp
+│   │   ├── audio_renderer.cpp
+│   │   ├── audio_renderer.h
+│   │   ├── audio_renderer_spectrum.cpp
+│   │   ├── audio_renderer_spectrum.h
+│   │   ├── audio_renderer_waveform.cpp
+│   │   ├── audio_renderer_waveform.h
+│   │   ├── audio_rendering_style.h
+│   │   ├── audio_timing_dialogue.cpp
+│   │   ├── audio_timing.h
+│   │   ├── audio_timing_karaoke.cpp
+│   │   ├── auto4_base.cpp
+│   │   ├── auto4_base.h
+│   │   ├── auto4_lua_assfile.cpp
+│   │   ├── auto4_lua.cpp
+│   │   ├── auto4_lua.cpp.orig
+│   │   ├── auto4_lua_dialog.cpp
+│   │   ├── auto4_lua_factory.h
+│   │   ├── auto4_lua.h
+│   │   ├── auto4_lua_progresssink.cpp
+│   │   ├── avisynth_wrap.cpp
+│   │   ├── avisynth_wrap.h
+│   │   ├── base_grid.cpp
+│   │   ├── base_grid.h
+│   │   ├── bitmaps
+│   │   │   ├── button
+│   │   │   │   ├── about_menu_16.png
+│   │   │   │   ├── about_menu_24.png
+│   │   │   │   ├── about_menu_32.png
+│   │   │   │   ├── about_menu_48.png
+│   │   │   │   ├── about_menu_64.png
+│   │   │   │   ├── arrow_down_16.png
+│   │   │   │   ├── arrow_down_24.png
+│   │   │   │   ├── arrow_down_32.png
+│   │   │   │   ├── arrow_down_48.png
+│   │   │   │   ├── arrow_down_64.png
+│   │   │   │   ├── arrow_down_stop_16.png
+│   │   │   │   ├── arrow_down_stop_24.png
+│   │   │   │   ├── arrow_down_stop_32.png
+│   │   │   │   ├── arrow_down_stop_48.png
+│   │   │   │   ├── arrow_down_stop_64.png
+│   │   │   │   ├── arrow_sort_16.png
+│   │   │   │   ├── arrow_sort_24.png
+│   │   │   │   ├── arrow_sort_32.png
+│   │   │   │   ├── arrow_sort_48.png
+│   │   │   │   ├── arrow_sort_64.png
+│   │   │   │   ├── arrow_up_16.png
+│   │   │   │   ├── arrow_up_24.png
+│   │   │   │   ├── arrow_up_32.png
+│   │   │   │   ├── arrow_up_48.png
+│   │   │   │   ├── arrow_up_64.png
+│   │   │   │   ├── arrow_up_stop_16.png
+│   │   │   │   ├── arrow_up_stop_24.png
+│   │   │   │   ├── arrow_up_stop_32.png
+│   │   │   │   ├── arrow_up_stop_48.png
+│   │   │   │   ├── arrow_up_stop_64.png
+│   │   │   │   ├── assdraw_16.png
+│   │   │   │   ├── assdraw_24.png
+│   │   │   │   ├── assdraw_32.png
+│   │   │   │   ├── assdraw_48.png
+│   │   │   │   ├── assdraw_64.png
+│   │   │   │   ├── attach_button_16.png
+│   │   │   │   ├── attach_button_24.png
+│   │   │   │   ├── attach_button_32.png
+│   │   │   │   ├── attach_button_48.png
+│   │   │   │   ├── attach_button_64.png
+│   │   │   │   ├── automation_toolbutton_16.png
+│   │   │   │   ├── automation_toolbutton_24.png
+│   │   │   │   ├── automation_toolbutton_32.png
+│   │   │   │   ├── automation_toolbutton_48.png
+│   │   │   │   ├── automation_toolbutton_64.png
+│   │   │   │   ├── bugtracker_button_16.png
+│   │   │   │   ├── bugtracker_button_24.png
+│   │   │   │   ├── bugtracker_button_32.png
+│   │   │   │   ├── bugtracker_button_48.png
+│   │   │   │   ├── bugtracker_button_64.png
+│   │   │   │   ├── button_align_16.png
+│   │   │   │   ├── button_align_24.png
+│   │   │   │   ├── button_align_32.png
+│   │   │   │   ├── button_align_48.png
+│   │   │   │   ├── button_align_64.png
+│   │   │   │   ├── button_audio_commit_16.png
+│   │   │   │   ├── button_audio_commit_24.png
+│   │   │   │   ├── button_audio_commit_32.png
+│   │   │   │   ├── button_audio_commit_48.png
+│   │   │   │   ├── button_audio_commit_64.png
+│   │   │   │   ├── button_audio_goto_16.png
+│   │   │   │   ├── button_audio_goto_24.png
+│   │   │   │   ├── button_audio_goto_32.png
+│   │   │   │   ├── button_audio_goto_48.png
+│   │   │   │   ├── button_audio_goto_64.png
+│   │   │   │   ├── button_bold_16.png
+│   │   │   │   ├── button_bold_24.png
+│   │   │   │   ├── button_bold_32.png
+│   │   │   │   ├── button_bold_48.png
+│   │   │   │   ├── button_bold_64.png
+│   │   │   │   ├── button_color_four_16.png
+│   │   │   │   ├── button_color_four_24.png
+│   │   │   │   ├── button_color_four_32.png
+│   │   │   │   ├── button_color_four_48.png
+│   │   │   │   ├── button_color_four_64.png
+│   │   │   │   ├── button_color_one_16.png
+│   │   │   │   ├── button_color_one_24.png
+│   │   │   │   ├── button_color_one_32.png
+│   │   │   │   ├── button_color_one_48.png
+│   │   │   │   ├── button_color_one_64.png
+│   │   │   │   ├── button_color_three_16.png
+│   │   │   │   ├── button_color_three_24.png
+│   │   │   │   ├── button_color_three_32.png
+│   │   │   │   ├── button_color_three_48.png
+│   │   │   │   ├── button_color_three_64.png
+│   │   │   │   ├── button_color_two_16.png
+│   │   │   │   ├── button_color_two_24.png
+│   │   │   │   ├── button_color_two_32.png
+│   │   │   │   ├── button_color_two_48.png
+│   │   │   │   ├── button_color_two_64.png
+│   │   │   │   ├── button_fontname_16.png
+│   │   │   │   ├── button_fontname_24.png
+│   │   │   │   ├── button_fontname_32.png
+│   │   │   │   ├── button_fontname_48.png
+│   │   │   │   ├── button_fontname_64.png
+│   │   │   │   ├── button_italics_16.png
+│   │   │   │   ├── button_italics_24.png
+│   │   │   │   ├── button_italics_32.png
+│   │   │   │   ├── button_italics_48.png
+│   │   │   │   ├── button_italics_64.png
+│   │   │   │   ├── button_leadin_16.png
+│   │   │   │   ├── button_leadin_24.png
+│   │   │   │   ├── button_leadin_32.png
+│   │   │   │   ├── button_leadin_48.png
+│   │   │   │   ├── button_leadin_64.png
+│   │   │   │   ├── button_leadout_16.png
+│   │   │   │   ├── button_leadout_24.png
+│   │   │   │   ├── button_leadout_32.png
+│   │   │   │   ├── button_leadout_48.png
+│   │   │   │   ├── button_leadout_64.png
+│   │   │   │   ├── button_next_16.png
+│   │   │   │   ├── button_next_24.png
+│   │   │   │   ├── button_next_32.png
+│   │   │   │   ├── button_next_48.png
+│   │   │   │   ├── button_next_64.png
+│   │   │   │   ├── button_pause_16.png
+│   │   │   │   ├── button_pause_24.png
+│   │   │   │   ├── button_pause_32.png
+│   │   │   │   ├── button_pause_48.png
+│   │   │   │   ├── button_pause_64.png
+│   │   │   │   ├── button_play_16.png
+│   │   │   │   ├── button_play_24.png
+│   │   │   │   ├── button_play_32.png
+│   │   │   │   ├── button_play_48.png
+│   │   │   │   ├── button_play_64.png
+│   │   │   │   ├── button_playfirstfiveh_16.png
+│   │   │   │   ├── button_playfirstfiveh_24.png
+│   │   │   │   ├── button_playfirstfiveh_32.png
+│   │   │   │   ├── button_playfirstfiveh_48.png
+│   │   │   │   ├── button_playfirstfiveh_64.png
+│   │   │   │   ├── button_playfivehafter_16.png
+│   │   │   │   ├── button_playfivehafter_24.png
+│   │   │   │   ├── button_playfivehafter_32.png
+│   │   │   │   ├── button_playfivehafter_48.png
+│   │   │   │   ├── button_playfivehafter_64.png
+│   │   │   │   ├── button_playfivehbefore_16.png
+│   │   │   │   ├── button_playfivehbefore_24.png
+│   │   │   │   ├── button_playfivehbefore_32.png
+│   │   │   │   ├── button_playfivehbefore_48.png
+│   │   │   │   ├── button_playfivehbefore_64.png
+│   │   │   │   ├── button_playlastfiveh_16.png
+│   │   │   │   ├── button_playlastfiveh_24.png
+│   │   │   │   ├── button_playlastfiveh_32.png
+│   │   │   │   ├── button_playlastfiveh_48.png
+│   │   │   │   ├── button_playlastfiveh_64.png
+│   │   │   │   ├── button_playline_16.png
+│   │   │   │   ├── button_playline_24.png
+│   │   │   │   ├── button_playline_32.png
+│   │   │   │   ├── button_playline_48.png
+│   │   │   │   ├── button_playline_64.png
+│   │   │   │   ├── button_playsel_16.png
+│   │   │   │   ├── button_playsel_24.png
+│   │   │   │   ├── button_playsel_32.png
+│   │   │   │   ├── button_playsel_48.png
+│   │   │   │   ├── button_playsel_64.png
+│   │   │   │   ├── button_playtoend_16.png
+│   │   │   │   ├── button_playtoend_24.png
+│   │   │   │   ├── button_playtoend_32.png
+│   │   │   │   ├── button_playtoend_48.png
+│   │   │   │   ├── button_playtoend_64.png
+│   │   │   │   ├── button_prev_16.png
+│   │   │   │   ├── button_prev_24.png
+│   │   │   │   ├── button_prev_32.png
+│   │   │   │   ├── button_prev_48.png
+│   │   │   │   ├── button_prev_64.png
+│   │   │   │   ├── button_stop_16.png
+│   │   │   │   ├── button_stop_24.png
+│   │   │   │   ├── button_stop_32.png
+│   │   │   │   ├── button_stop_48.png
+│   │   │   │   ├── button_stop_64.png
+│   │   │   │   ├── button_strikeout_16.png
+│   │   │   │   ├── button_strikeout_24.png
+│   │   │   │   ├── button_strikeout_32.png
+│   │   │   │   ├── button_strikeout_48.png
+│   │   │   │   ├── button_strikeout_64.png
+│   │   │   │   ├── button_underline_16.png
+│   │   │   │   ├── button_underline_24.png
+│   │   │   │   ├── button_underline_32.png
+│   │   │   │   ├── button_underline_48.png
+│   │   │   │   ├── button_underline_64.png
+│   │   │   │   ├── close_audio_menu_16.png
+│   │   │   │   ├── close_audio_menu_24.png
+│   │   │   │   ├── close_audio_menu_32.png
+│   │   │   │   ├── close_audio_menu_48.png
+│   │   │   │   ├── close_audio_menu_64.png
+│   │   │   │   ├── close_keyframes_menu_16.png
+│   │   │   │   ├── close_keyframes_menu_24.png
+│   │   │   │   ├── close_keyframes_menu_32.png
+│   │   │   │   ├── close_keyframes_menu_48.png
+│   │   │   │   ├── close_keyframes_menu_64.png
+│   │   │   │   ├── close_timecodes_menu_16.png
+│   │   │   │   ├── close_timecodes_menu_24.png
+│   │   │   │   ├── close_timecodes_menu_32.png
+│   │   │   │   ├── close_timecodes_menu_48.png
+│   │   │   │   ├── close_timecodes_menu_64.png
+│   │   │   │   ├── close_video_menu_16.png
+│   │   │   │   ├── close_video_menu_24.png
+│   │   │   │   ├── close_video_menu_32.png
+│   │   │   │   ├── close_video_menu_48.png
+│   │   │   │   ├── close_video_menu_64.png
+│   │   │   │   ├── contents_button_16.png
+│   │   │   │   ├── contents_button_24.png
+│   │   │   │   ├── contents_button_32.png
+│   │   │   │   ├── contents_button_48.png
+│   │   │   │   ├── contents_button_64.png
+│   │   │   │   ├── copy_button_16.png
+│   │   │   │   ├── copy_button_24.png
+│   │   │   │   ├── copy_button_32.png
+│   │   │   │   ├── copy_button_48.png
+│   │   │   │   ├── copy_button_64.png
+│   │   │   │   ├── cut_button_16.png
+│   │   │   │   ├── cut_button_24.png
+│   │   │   │   ├── cut_button_32.png
+│   │   │   │   ├── cut_button_48.png
+│   │   │   │   ├── cut_button_64.png
+│   │   │   │   ├── delete_button_16.png
+│   │   │   │   ├── delete_button_24.png
+│   │   │   │   ├── delete_button_32.png
+│   │   │   │   ├── delete_button_48.png
+│   │   │   │   ├── delete_button_64.png
+│   │   │   │   ├── detach_video_menu_16.png
+│   │   │   │   ├── detach_video_menu_24.png
+│   │   │   │   ├── detach_video_menu_32.png
+│   │   │   │   ├── detach_video_menu_48.png
+│   │   │   │   ├── detach_video_menu_64.png
+│   │   │   │   ├── export_menu_16.png
+│   │   │   │   ├── export_menu_24.png
+│   │   │   │   ├── export_menu_32.png
+│   │   │   │   ├── export_menu_48.png
+│   │   │   │   ├── export_menu_64.png
+│   │   │   │   ├── eyedropper_tool_16.png
+│   │   │   │   ├── eyedropper_tool_24.png
+│   │   │   │   ├── eyedropper_tool_32.png
+│   │   │   │   ├── eyedropper_tool_48.png
+│   │   │   │   ├── eyedropper_tool_64.png
+│   │   │   │   ├── find_button_16.png
+│   │   │   │   ├── find_button_24.png
+│   │   │   │   ├── find_button_32.png
+│   │   │   │   ├── find_button_48.png
+│   │   │   │   ├── find_button_64.png
+│   │   │   │   ├── find_next_menu_16.png
+│   │   │   │   ├── find_next_menu_24.png
+│   │   │   │   ├── find_next_menu_32.png
+│   │   │   │   ├── find_next_menu_48.png
+│   │   │   │   ├── find_next_menu_64.png
+│   │   │   │   ├── find_replace_menu_16.png
+│   │   │   │   ├── find_replace_menu_24.png
+│   │   │   │   ├── find_replace_menu_32.png
+│   │   │   │   ├── find_replace_menu_48.png
+│   │   │   │   ├── find_replace_menu_64.png
+│   │   │   │   ├── font_collector_button_16.png
+│   │   │   │   ├── font_collector_button_24.png
+│   │   │   │   ├── font_collector_button_32.png
+│   │   │   │   ├── font_collector_button_48.png
+│   │   │   │   ├── font_collector_button_64.png
+│   │   │   │   ├── forums_button_16.png
+│   │   │   │   ├── forums_button_24.png
+│   │   │   │   ├── forums_button_32.png
+│   │   │   │   ├── forums_button_48.png
+│   │   │   │   ├── forums_button_64.png
+│   │   │   │   ├── irc_button_16.png
+│   │   │   │   ├── irc_button_24.png
+│   │   │   │   ├── irc_button_32.png
+│   │   │   │   ├── irc_button_48.png
+│   │   │   │   ├── irc_button_64.png
+│   │   │   │   ├── jumpto_button_16.png
+│   │   │   │   ├── jumpto_button_24.png
+│   │   │   │   ├── jumpto_button_32.png
+│   │   │   │   ├── jumpto_button_48.png
+│   │   │   │   ├── jumpto_button_64.png
+│   │   │   │   ├── kara_mode_16.png
+│   │   │   │   ├── kara_mode_24.png
+│   │   │   │   ├── kara_mode_32.png
+│   │   │   │   ├── kara_mode_48.png
+│   │   │   │   ├── kara_mode_64.png
+│   │   │   │   ├── kara_split_16.png
+│   │   │   │   ├── kara_split_24.png
+│   │   │   │   ├── kara_split_32.png
+│   │   │   │   ├── kara_split_48.png
+│   │   │   │   ├── kara_split_64.png
+│   │   │   │   ├── kara_split_accept_16.png
+│   │   │   │   ├── kara_split_accept_24.png
+│   │   │   │   ├── kara_split_accept_32.png
+│   │   │   │   ├── kara_split_accept_48.png
+│   │   │   │   ├── kara_split_accept_64.png
+│   │   │   │   ├── kara_split_cancel_16.png
+│   │   │   │   ├── kara_split_cancel_24.png
+│   │   │   │   ├── kara_split_cancel_32.png
+│   │   │   │   ├── kara_split_cancel_48.png
+│   │   │   │   ├── kara_split_cancel_64.png
+│   │   │   │   ├── kara_timing_copier_16.png
+│   │   │   │   ├── kara_timing_copier_24.png
+│   │   │   │   ├── kara_timing_copier_32.png
+│   │   │   │   ├── kara_timing_copier_48.png
+│   │   │   │   ├── kara_timing_copier_64.png
+│   │   │   │   ├── languages_menu_16.png
+│   │   │   │   ├── languages_menu_24.png
+│   │   │   │   ├── languages_menu_32.png
+│   │   │   │   ├── languages_menu_48.png
+│   │   │   │   ├── languages_menu_64.png
+│   │   │   │   ├── new_toolbutton_16.png
+│   │   │   │   ├── new_toolbutton_24.png
+│   │   │   │   ├── new_toolbutton_32.png
+│   │   │   │   ├── new_toolbutton_48.png
+│   │   │   │   ├── new_toolbutton_64.png
+│   │   │   │   ├── new_window_menu_16.png
+│   │   │   │   ├── new_window_menu_24.png
+│   │   │   │   ├── new_window_menu_32.png
+│   │   │   │   ├── new_window_menu_48.png
+│   │   │   │   ├── new_window_menu_64.png
+│   │   │   │   ├── open_audio_from_video_menu_16.png
+│   │   │   │   ├── open_audio_from_video_menu_24.png
+│   │   │   │   ├── open_audio_from_video_menu_32.png
+│   │   │   │   ├── open_audio_from_video_menu_48.png
+│   │   │   │   ├── open_audio_from_video_menu_64.png
+│   │   │   │   ├── open_audio_menu_16.png
+│   │   │   │   ├── open_audio_menu_24.png
+│   │   │   │   ├── open_audio_menu_32.png
+│   │   │   │   ├── open_audio_menu_48.png
+│   │   │   │   ├── open_audio_menu_64.png
+│   │   │   │   ├── open_keyframes_menu_16.png
+│   │   │   │   ├── open_keyframes_menu_24.png
+│   │   │   │   ├── open_keyframes_menu_32.png
+│   │   │   │   ├── open_keyframes_menu_48.png
+│   │   │   │   ├── open_keyframes_menu_64.png
+│   │   │   │   ├── open_timecodes_menu_16.png
+│   │   │   │   ├── open_timecodes_menu_24.png
+│   │   │   │   ├── open_timecodes_menu_32.png
+│   │   │   │   ├── open_timecodes_menu_48.png
+│   │   │   │   ├── open_timecodes_menu_64.png
+│   │   │   │   ├── open_toolbutton_16.png
+│   │   │   │   ├── open_toolbutton_24.png
+│   │   │   │   ├── open_toolbutton_32.png
+│   │   │   │   ├── open_toolbutton_48.png
+│   │   │   │   ├── open_toolbutton_64.png
+│   │   │   │   ├── open_video_menu_16.png
+│   │   │   │   ├── open_video_menu_24.png
+│   │   │   │   ├── open_video_menu_32.png
+│   │   │   │   ├── open_video_menu_48.png
+│   │   │   │   ├── open_video_menu_64.png
+│   │   │   │   ├── open_with_toolbutton_16.png
+│   │   │   │   ├── open_with_toolbutton_24.png
+│   │   │   │   ├── open_with_toolbutton_32.png
+│   │   │   │   ├── open_with_toolbutton_48.png
+│   │   │   │   ├── open_with_toolbutton_64.png
+│   │   │   │   ├── options_button_16.png
+│   │   │   │   ├── options_button_24.png
+│   │   │   │   ├── options_button_32.png
+│   │   │   │   ├── options_button_48.png
+│   │   │   │   ├── options_button_64.png
+│   │   │   │   ├── paste_button_16.png
+│   │   │   │   ├── paste_button_24.png
+│   │   │   │   ├── paste_button_32.png
+│   │   │   │   ├── paste_button_48.png
+│   │   │   │   ├── paste_button_64.png
+│   │   │   │   ├── properties_toolbutton_16.png
+│   │   │   │   ├── properties_toolbutton_24.png
+│   │   │   │   ├── properties_toolbutton_32.png
+│   │   │   │   ├── properties_toolbutton_48.png
+│   │   │   │   ├── properties_toolbutton_64.png
+│   │   │   │   ├── redo_button_16.png
+│   │   │   │   ├── redo_button_24.png
+│   │   │   │   ├── redo_button_32.png
+│   │   │   │   ├── redo_button_48.png
+│   │   │   │   ├── redo_button_64.png
+│   │   │   │   ├── resample_toolbutton_16.png
+│   │   │   │   ├── resample_toolbutton_24.png
+│   │   │   │   ├── resample_toolbutton_32.png
+│   │   │   │   ├── resample_toolbutton_48.png
+│   │   │   │   ├── resample_toolbutton_64.png
+│   │   │   │   ├── save_as_toolbutton_16.png
+│   │   │   │   ├── save_as_toolbutton_24.png
+│   │   │   │   ├── save_as_toolbutton_32.png
+│   │   │   │   ├── save_as_toolbutton_48.png
+│   │   │   │   ├── save_as_toolbutton_64.png
+│   │   │   │   ├── save_keyframes_menu_16.png
+│   │   │   │   ├── save_keyframes_menu_24.png
+│   │   │   │   ├── save_keyframes_menu_32.png
+│   │   │   │   ├── save_keyframes_menu_48.png
+│   │   │   │   ├── save_keyframes_menu_64.png
+│   │   │   │   ├── save_timecodes_menu_16.png
+│   │   │   │   ├── save_timecodes_menu_24.png
+│   │   │   │   ├── save_timecodes_menu_32.png
+│   │   │   │   ├── save_timecodes_menu_48.png
+│   │   │   │   ├── save_timecodes_menu_64.png
+│   │   │   │   ├── save_toolbutton_16.png
+│   │   │   │   ├── save_toolbutton_24.png
+│   │   │   │   ├── save_toolbutton_32.png
+│   │   │   │   ├── save_toolbutton_48.png
+│   │   │   │   ├── save_toolbutton_64.png
+│   │   │   │   ├── select_lines_button_16.png
+│   │   │   │   ├── select_lines_button_24.png
+│   │   │   │   ├── select_lines_button_32.png
+│   │   │   │   ├── select_lines_button_48.png
+│   │   │   │   ├── select_lines_button_64.png
+│   │   │   │   ├── select_visible_button_16.png
+│   │   │   │   ├── select_visible_button_24.png
+│   │   │   │   ├── select_visible_button_32.png
+│   │   │   │   ├── select_visible_button_48.png
+│   │   │   │   ├── select_visible_button_64.png
+│   │   │   │   ├── shift_times_toolbutton_16.png
+│   │   │   │   ├── shift_times_toolbutton_24.png
+│   │   │   │   ├── shift_times_toolbutton_32.png
+│   │   │   │   ├── shift_times_toolbutton_48.png
+│   │   │   │   ├── shift_times_toolbutton_64.png
+│   │   │   │   ├── shift_to_frame_16.png
+│   │   │   │   ├── shift_to_frame_24.png
+│   │   │   │   ├── shift_to_frame_32.png
+│   │   │   │   ├── shift_to_frame_48.png
+│   │   │   │   ├── shift_to_frame_64.png
+│   │   │   │   ├── show_video_details_menu_16.png
+│   │   │   │   ├── show_video_details_menu_24.png
+│   │   │   │   ├── show_video_details_menu_32.png
+│   │   │   │   ├── show_video_details_menu_48.png
+│   │   │   │   ├── show_video_details_menu_64.png
+│   │   │   │   ├── snap_subs_to_scene_16.png
+│   │   │   │   ├── snap_subs_to_scene_24.png
+│   │   │   │   ├── snap_subs_to_scene_32.png
+│   │   │   │   ├── snap_subs_to_scene_48.png
+│   │   │   │   ├── snap_subs_to_scene_64.png
+│   │   │   │   ├── spellcheck_toolbutton_16.png
+│   │   │   │   ├── spellcheck_toolbutton_24.png
+│   │   │   │   ├── spellcheck_toolbutton_32.png
+│   │   │   │   ├── spellcheck_toolbutton_48.png
+│   │   │   │   ├── spellcheck_toolbutton_64.png
+│   │   │   │   ├── style_toolbutton_16.png
+│   │   │   │   ├── style_toolbutton_24.png
+│   │   │   │   ├── style_toolbutton_32.png
+│   │   │   │   ├── style_toolbutton_48.png
+│   │   │   │   ├── style_toolbutton_64.png
+│   │   │   │   ├── styling_toolbutton_16.png
+│   │   │   │   ├── styling_toolbutton_24.png
+│   │   │   │   ├── styling_toolbutton_32.png
+│   │   │   │   ├── styling_toolbutton_48.png
+│   │   │   │   ├── styling_toolbutton_64.png
+│   │   │   │   ├── subend_to_video_16.png
+│   │   │   │   ├── subend_to_video_24.png
+│   │   │   │   ├── subend_to_video_32.png
+│   │   │   │   ├── subend_to_video_48.png
+│   │   │   │   ├── subend_to_video_64.png
+│   │   │   │   ├── substart_to_video_16.png
+│   │   │   │   ├── substart_to_video_24.png
+│   │   │   │   ├── substart_to_video_32.png
+│   │   │   │   ├── substart_to_video_48.png
+│   │   │   │   ├── substart_to_video_64.png
+│   │   │   │   ├── timing_processor_toolbutton_16.png
+│   │   │   │   ├── timing_processor_toolbutton_24.png
+│   │   │   │   ├── timing_processor_toolbutton_32.png
+│   │   │   │   ├── timing_processor_toolbutton_48.png
+│   │   │   │   ├── timing_processor_toolbutton_64.png
+│   │   │   │   ├── toggle_audio_autocommit_16.png
+│   │   │   │   ├── toggle_audio_autocommit_24.png
+│   │   │   │   ├── toggle_audio_autocommit_32.png
+│   │   │   │   ├── toggle_audio_autocommit_48.png
+│   │   │   │   ├── toggle_audio_autocommit_64.png
+│   │   │   │   ├── toggle_audio_autoscroll_16.png
+│   │   │   │   ├── toggle_audio_autoscroll_24.png
+│   │   │   │   ├── toggle_audio_autoscroll_32.png
+│   │   │   │   ├── toggle_audio_autoscroll_48.png
+│   │   │   │   ├── toggle_audio_autoscroll_64.png
+│   │   │   │   ├── toggle_audio_link_16.png
+│   │   │   │   ├── toggle_audio_link_24.png
+│   │   │   │   ├── toggle_audio_link_32.png
+│   │   │   │   ├── toggle_audio_link_48.png
+│   │   │   │   ├── toggle_audio_link_64.png
+│   │   │   │   ├── toggle_audio_medusa_16.png
+│   │   │   │   ├── toggle_audio_medusa_24.png
+│   │   │   │   ├── toggle_audio_medusa_32.png
+│   │   │   │   ├── toggle_audio_medusa_48.png
+│   │   │   │   ├── toggle_audio_medusa_64.png
+│   │   │   │   ├── toggle_audio_nextcommit_16.png
+│   │   │   │   ├── toggle_audio_nextcommit_24.png
+│   │   │   │   ├── toggle_audio_nextcommit_32.png
+│   │   │   │   ├── toggle_audio_nextcommit_48.png
+│   │   │   │   ├── toggle_audio_nextcommit_64.png
+│   │   │   │   ├── toggle_audio_spectrum_16.png
+│   │   │   │   ├── toggle_audio_spectrum_24.png
+│   │   │   │   ├── toggle_audio_spectrum_32.png
+│   │   │   │   ├── toggle_audio_spectrum_48.png
+│   │   │   │   ├── toggle_audio_spectrum_64.png
+│   │   │   │   ├── toggle_tag_hiding_16.png
+│   │   │   │   ├── toggle_tag_hiding_24.png
+│   │   │   │   ├── toggle_tag_hiding_32.png
+│   │   │   │   ├── toggle_tag_hiding_48.png
+│   │   │   │   ├── toggle_tag_hiding_64.png
+│   │   │   │   ├── toggle_video_autoscroll_16.png
+│   │   │   │   ├── toggle_video_autoscroll_24.png
+│   │   │   │   ├── toggle_video_autoscroll_32.png
+│   │   │   │   ├── toggle_video_autoscroll_48.png
+│   │   │   │   ├── toggle_video_autoscroll_64.png
+│   │   │   │   ├── translation_toolbutton_16.png
+│   │   │   │   ├── translation_toolbutton_24.png
+│   │   │   │   ├── translation_toolbutton_32.png
+│   │   │   │   ├── translation_toolbutton_48.png
+│   │   │   │   ├── translation_toolbutton_64.png
+│   │   │   │   ├── undo_button_16.png
+│   │   │   │   ├── undo_button_24.png
+│   │   │   │   ├── undo_button_32.png
+│   │   │   │   ├── undo_button_48.png
+│   │   │   │   ├── undo_button_64.png
+│   │   │   │   ├── use_dummy_video_menu_16.png
+│   │   │   │   ├── use_dummy_video_menu_24.png
+│   │   │   │   ├── use_dummy_video_menu_32.png
+│   │   │   │   ├── use_dummy_video_menu_48.png
+│   │   │   │   ├── use_dummy_video_menu_64.png
+│   │   │   │   ├── video_to_subend_16.png
+│   │   │   │   ├── video_to_subend_24.png
+│   │   │   │   ├── video_to_subend_32.png
+│   │   │   │   ├── video_to_subend_48.png
+│   │   │   │   ├── video_to_subend_64.png
+│   │   │   │   ├── video_to_substart_16.png
+│   │   │   │   ├── video_to_substart_24.png
+│   │   │   │   ├── video_to_substart_32.png
+│   │   │   │   ├── video_to_substart_48.png
+│   │   │   │   ├── video_to_substart_64.png
+│   │   │   │   ├── visual_clip_16.png
+│   │   │   │   ├── visual_clip_24.png
+│   │   │   │   ├── visual_clip_32.png
+│   │   │   │   ├── visual_clip_48.png
+│   │   │   │   ├── visual_clip_64.png
+│   │   │   │   ├── visual_help_16.png
+│   │   │   │   ├── visual_help_24.png
+│   │   │   │   ├── visual_help_32.png
+│   │   │   │   ├── visual_help_48.png
+│   │   │   │   ├── visual_help_64.png
+│   │   │   │   ├── visual_move_16.png
+│   │   │   │   ├── visual_move_24.png
+│   │   │   │   ├── visual_move_32.png
+│   │   │   │   ├── visual_move_48.png
+│   │   │   │   ├── visual_move_64.png
+│   │   │   │   ├── visual_move_conv_move_16.png
+│   │   │   │   ├── visual_move_conv_move_24.png
+│   │   │   │   ├── visual_move_conv_move_32.png
+│   │   │   │   ├── visual_move_conv_move_48.png
+│   │   │   │   ├── visual_move_conv_move_64.png
+│   │   │   │   ├── visual_move_conv_pos_16.png
+│   │   │   │   ├── visual_move_conv_pos_24.png
+│   │   │   │   ├── visual_move_conv_pos_32.png
+│   │   │   │   ├── visual_move_conv_pos_48.png
+│   │   │   │   ├── visual_move_conv_pos_64.png
+│   │   │   │   ├── visual_rotatexy_16.png
+│   │   │   │   ├── visual_rotatexy_24.png
+│   │   │   │   ├── visual_rotatexy_32.png
+│   │   │   │   ├── visual_rotatexy_48.png
+│   │   │   │   ├── visual_rotatexy_64.png
+│   │   │   │   ├── visual_rotatez_16.png
+│   │   │   │   ├── visual_rotatez_24.png
+│   │   │   │   ├── visual_rotatez_32.png
+│   │   │   │   ├── visual_rotatez_48.png
+│   │   │   │   ├── visual_rotatez_64.png
+│   │   │   │   ├── visual_scale_16.png
+│   │   │   │   ├── visual_scale_24.png
+│   │   │   │   ├── visual_scale_32.png
+│   │   │   │   ├── visual_scale_48.png
+│   │   │   │   ├── visual_scale_64.png
+│   │   │   │   ├── visual_standard_16.png
+│   │   │   │   ├── visual_standard_24.png
+│   │   │   │   ├── visual_standard_32.png
+│   │   │   │   ├── visual_standard_48.png
+│   │   │   │   ├── visual_standard_64.png
+│   │   │   │   ├── visual_vector_clip_16.png
+│   │   │   │   ├── visual_vector_clip_24.png
+│   │   │   │   ├── visual_vector_clip_32.png
+│   │   │   │   ├── visual_vector_clip_48.png
+│   │   │   │   ├── visual_vector_clip_64.png
+│   │   │   │   ├── visual_vector_clip_bicubic_16.png
+│   │   │   │   ├── visual_vector_clip_bicubic_24.png
+│   │   │   │   ├── visual_vector_clip_bicubic_32.png
+│   │   │   │   ├── visual_vector_clip_bicubic_48.png
+│   │   │   │   ├── visual_vector_clip_bicubic_64.png
+│   │   │   │   ├── visual_vector_clip_convert_16.png
+│   │   │   │   ├── visual_vector_clip_convert_24.png
+│   │   │   │   ├── visual_vector_clip_convert_32.png
+│   │   │   │   ├── visual_vector_clip_convert_48.png
+│   │   │   │   ├── visual_vector_clip_convert_64.png
+│   │   │   │   ├── visual_vector_clip_drag_16.png
+│   │   │   │   ├── visual_vector_clip_drag_24.png
+│   │   │   │   ├── visual_vector_clip_drag_32.png
+│   │   │   │   ├── visual_vector_clip_drag_48.png
+│   │   │   │   ├── visual_vector_clip_drag_64.png
+│   │   │   │   ├── visual_vector_clip_freehand_16.png
+│   │   │   │   ├── visual_vector_clip_freehand_24.png
+│   │   │   │   ├── visual_vector_clip_freehand_32.png
+│   │   │   │   ├── visual_vector_clip_freehand_48.png
+│   │   │   │   ├── visual_vector_clip_freehand_64.png
+│   │   │   │   ├── visual_vector_clip_freehand_smooth_16.png
+│   │   │   │   ├── visual_vector_clip_freehand_smooth_24.png
+│   │   │   │   ├── visual_vector_clip_freehand_smooth_32.png
+│   │   │   │   ├── visual_vector_clip_freehand_smooth_48.png
+│   │   │   │   ├── visual_vector_clip_freehand_smooth_64.png
+│   │   │   │   ├── visual_vector_clip_insert_16.png
+│   │   │   │   ├── visual_vector_clip_insert_24.png
+│   │   │   │   ├── visual_vector_clip_insert_32.png
+│   │   │   │   ├── visual_vector_clip_insert_48.png
+│   │   │   │   ├── visual_vector_clip_insert_64.png
+│   │   │   │   ├── visual_vector_clip_line_16.png
+│   │   │   │   ├── visual_vector_clip_line_24.png
+│   │   │   │   ├── visual_vector_clip_line_32.png
+│   │   │   │   ├── visual_vector_clip_line_48.png
+│   │   │   │   ├── visual_vector_clip_line_64.png
+│   │   │   │   ├── visual_vector_clip_remove_16.png
+│   │   │   │   ├── visual_vector_clip_remove_24.png
+│   │   │   │   ├── visual_vector_clip_remove_32.png
+│   │   │   │   ├── visual_vector_clip_remove_48.png
+│   │   │   │   ├── visual_vector_clip_remove_64.png
+│   │   │   │   ├── website_button_16.png
+│   │   │   │   ├── website_button_24.png
+│   │   │   │   ├── website_button_32.png
+│   │   │   │   ├── website_button_48.png
+│   │   │   │   ├── website_button_64.png
+│   │   │   │   ├── zoom_in_button_16.png
+│   │   │   │   ├── zoom_in_button_24.png
+│   │   │   │   ├── zoom_in_button_32.png
+│   │   │   │   ├── zoom_in_button_48.png
+│   │   │   │   ├── zoom_in_button_64.png
+│   │   │   │   ├── zoom_out_button_16.png
+│   │   │   │   ├── zoom_out_button_24.png
+│   │   │   │   ├── zoom_out_button_32.png
+│   │   │   │   ├── zoom_out_button_48.png
+│   │   │   │   └── zoom_out_button_64.png
+│   │   │   ├── manifest.respack
+│   │   │   ├── misc
+│   │   │   │   ├── splash.png
+│   │   │   │   └── wxicon.png
+│   │   │   └── windows
+│   │   │       ├── eyedropper.cur
+│   │   │       └── icon.ico
+│   │   ├── block_cache.h
+│   │   ├── charset_detect.cpp
+│   │   ├── charset_detect.h
+│   │   ├── colorspace.cpp
+│   │   ├── colorspace.h
+│   │   ├── colour_button.cpp
+│   │   ├── colour_button.h
+│   │   ├── command
+│   │   │   ├── app.cpp
+│   │   │   ├── audio.cpp
+│   │   │   ├── automation.cpp
+│   │   │   ├── command.cpp
+│   │   │   ├── command.h
+│   │   │   ├── edit.cpp
+│   │   │   ├── grid.cpp
+│   │   │   ├── help.cpp
+│   │   │   ├── keyframe.cpp
+│   │   │   ├── recent.cpp
+│   │   │   ├── subtitle.cpp
+│   │   │   ├── timecode.cpp
+│   │   │   ├── time.cpp
+│   │   │   ├── tool.cpp
+│   │   │   ├── video.cpp
+│   │   │   └── vis_tool.cpp
+│   │   ├── compat.cpp
+│   │   ├── compat.h
+│   │   ├── context.cpp
+│   │   ├── crash_writer.cpp
+│   │   ├── crash_writer.h
+│   │   ├── crash_writer_minidump.cpp
+│   │   ├── dialog_about.cpp
+│   │   ├── dialog_align.cpp
+│   │   ├── dialog_attachments.cpp
+│   │   ├── dialog_automation.cpp
+│   │   ├── dialog_autosave.cpp
+│   │   ├── dialog_colorpicker.cpp
+│   │   ├── dialog_detached_video.cpp
+│   │   ├── dialog_detached_video.h
+│   │   ├── dialog_dummy_video.cpp
+│   │   ├── dialog_export.cpp
+│   │   ├── dialog_export_ebu3264.cpp
+│   │   ├── dialog_export_ebu3264.h
+│   │   ├── dialog_fonts_collector.cpp
+│   │   ├── dialog_jumpto.cpp
+│   │   ├── dialog_kara_timing_copy.cpp
+│   │   ├── dialog_log.cpp
+│   │   ├── dialog_manager.h
+│   │   ├── dialog_paste_over.cpp
+│   │   ├── dialog_paste_over.h
+│   │   ├── dialog_progress.cpp
+│   │   ├── dialog_progress.h
+│   │   ├── dialog_properties.cpp
+│   │   ├── dialog_resample.cpp
+│   │   ├── dialog_search_replace.cpp
+│   │   ├── dialog_search_replace.h
+│   │   ├── dialog_selected_choices.cpp
+│   │   ├── dialog_selection.cpp
+│   │   ├── dialogs.h
+│   │   ├── dialog_shift_times.cpp
+│   │   ├── dialog_spellchecker.cpp
+│   │   ├── dialog_style_editor.cpp
+│   │   ├── dialog_style_editor.h
+│   │   ├── dialog_style_manager.cpp
+│   │   ├── dialog_styling_assistant.cpp
+│   │   ├── dialog_styling_assistant.h
+│   │   ├── dialog_text_import.cpp
+│   │   ├── dialog_timing_processor.cpp
+│   │   ├── dialog_translation.cpp
+│   │   ├── dialog_translation.h
+│   │   ├── dialog_version_check.cpp
+│   │   ├── dialog_video_details.cpp
+│   │   ├── dialog_video_properties.cpp
+│   │   ├── dpi_aware.manifest
+│   │   ├── export_fixstyle.cpp
+│   │   ├── export_fixstyle.h
+│   │   ├── export_framerate.cpp
+│   │   ├── export_framerate.h
+│   │   ├── factory_manager.h
+│   │   ├── ffmpegsource_common.cpp
+│   │   ├── ffmpegsource_common.h
+│   │   ├── fft.cpp
+│   │   ├── fft.h
+│   │   ├── flyweight_hash.h
+│   │   ├── font_file_lister_coretext.mm
+│   │   ├── font_file_lister.cpp
+│   │   ├── font_file_lister_fontconfig.cpp
+│   │   ├── font_file_lister_gdi.cpp
+│   │   ├── font_file_lister.h
+│   │   ├── format.h
+│   │   ├── frame_main.cpp
+│   │   ├── frame_main.h
+│   │   ├── gl_text.cpp
+│   │   ├── gl_text.h
+│   │   ├── gl_wrap.cpp
+│   │   ├── gl_wrap.h
+│   │   ├── grid_column.cpp
+│   │   ├── grid_column.h
+│   │   ├── help_button.cpp
+│   │   ├── help_button.h
+│   │   ├── hotkey.cpp
+│   │   ├── hotkey_data_view_model.cpp
+│   │   ├── hotkey_data_view_model.h
+│   │   ├── image_position_picker.cpp
+│   │   ├── image_position_picker.h
+│   │   ├── include
+│   │   │   └── aegisub
+│   │   │       ├── audio_player.h
+│   │   │       ├── context.h
+│   │   │       ├── hotkey.h
+│   │   │       ├── menu.h
+│   │   │       ├── spellchecker.h
+│   │   │       ├── subtitles_provider.h
+│   │   │       ├── toolbar.h
+│   │   │       └── video_provider.h
+│   │   ├── initial_line_state.cpp
+│   │   ├── initial_line_state.h
+│   │   ├── libass_gdi_fontselect.cpp
+│   │   ├── libresrc
+│   │   │   ├── default_config.json
+│   │   │   ├── default_config_platform.json.in
+│   │   │   ├── default_config_win.json
+│   │   │   ├── default_config_win.json.in
+│   │   │   ├── default_hotkey.json
+│   │   │   ├── default_menu.json
+│   │   │   ├── default_mru.json
+│   │   │   ├── default_toolbar.json
+│   │   │   ├── libresrc.cpp
+│   │   │   ├── libresrc.h
+│   │   │   ├── Makefile
+│   │   │   ├── manifest_osx.respack
+│   │   │   ├── manifest.respack
+│   │   │   └── osx
+│   │   │       ├── default_config.json
+│   │   │       ├── default_hotkey.json
+│   │   │       └── default_menu.json
+│   │   ├── main.cpp
+│   │   ├── main.h
+│   │   ├── Makefile
+│   │   ├── MatroskaParser.c
+│   │   ├── MatroskaParser.h
+│   │   ├── menu.cpp
+│   │   ├── mkv_wrap.cpp
+│   │   ├── mkv_wrap.h
+│   │   ├── options.h
+│   │   ├── osx
+│   │   │   ├── osx_utils.mm
+│   │   │   └── retina_helper.mm
+│   │   ├── pen.cpp
+│   │   ├── pen.h
+│   │   ├── persist_location.cpp
+│   │   ├── persist_location.h
+│   │   ├── placeholder_ctrl.h
+│   │   ├── preferences_base.cpp
+│   │   ├── preferences_base.h
+│   │   ├── preferences.cpp
+│   │   ├── preferences.h
+│   │   ├── project.cpp
+│   │   ├── project.h
+│   │   ├── res
+│   │   │   ├── res.rc
+│   │   │   ├── strings.rc
+│   │   │   └── strings_utf8.rc
+│   │   ├── resolution_resampler.cpp
+│   │   ├── resolution_resampler.h
+│   │   ├── retina_helper.h
+│   │   ├── search_replace_engine.cpp
+│   │   ├── search_replace_engine.h
+│   │   ├── selection_controller.cpp
+│   │   ├── selection_controller.h
+│   │   ├── spellchecker.cpp
+│   │   ├── spellchecker_hunspell.cpp
+│   │   ├── spellchecker_hunspell.h
+│   │   ├── spline.cpp
+│   │   ├── spline_curve.cpp
+│   │   ├── spline_curve.h
+│   │   ├── spline.h
+│   │   ├── string_codec.cpp
+│   │   ├── string_codec.h
+│   │   ├── subs_controller.cpp
+│   │   ├── subs_controller.h
+│   │   ├── subs_edit_box.cpp
+│   │   ├── subs_edit_box.h
+│   │   ├── subs_edit_ctrl.cpp
+│   │   ├── subs_edit_ctrl.h
+│   │   ├── subs_edit_ctrl_stc.cpp
+│   │   ├── subs_edit_ctrl_stc.h
+│   │   ├── subs_preview.cpp
+│   │   ├── subs_preview.h
+│   │   ├── subtitle_format_ass.cpp
+│   │   ├── subtitle_format_ass.h
+│   │   ├── subtitle_format.cpp
+│   │   ├── subtitle_format_ebu3264.cpp
+│   │   ├── subtitle_format_ebu3264.h
+│   │   ├── subtitle_format_encore.cpp
+│   │   ├── subtitle_format_encore.h
+│   │   ├── subtitle_format.h
+│   │   ├── subtitle_format_microdvd.cpp
+│   │   ├── subtitle_format_microdvd.h
+│   │   ├── subtitle_format_mkv.cpp
+│   │   ├── subtitle_format_mkv.h
+│   │   ├── subtitle_format_srt.cpp
+│   │   ├── subtitle_format_srt.h
+│   │   ├── subtitle_format_ssa.cpp
+│   │   ├── subtitle_format_ssa.h
+│   │   ├── subtitle_format_transtation.cpp
+│   │   ├── subtitle_format_transtation.h
+│   │   ├── subtitle_format_ttxt.cpp
+│   │   ├── subtitle_format_ttxt.h
+│   │   ├── subtitle_format_txt.cpp
+│   │   ├── subtitle_format_txt.h
+│   │   ├── subtitles_provider.cpp
+│   │   ├── subtitles_provider_csri.cpp
+│   │   ├── subtitles_provider_csri.h
+│   │   ├── subtitles_provider_libass.cpp
+│   │   ├── subtitles_provider_libass.h
+│   │   ├── text_file_reader.cpp
+│   │   ├── text_file_reader.h
+│   │   ├── text_file_writer.cpp
+│   │   ├── text_file_writer.h
+│   │   ├── text_selection_controller.cpp
+│   │   ├── text_selection_controller.h
+│   │   ├── thesaurus.cpp
+│   │   ├── thesaurus.h
+│   │   ├── timeedit_ctrl.cpp
+│   │   ├── timeedit_ctrl.h
+│   │   ├── time_range.h
+│   │   ├── toggle_bitmap.cpp
+│   │   ├── toggle_bitmap.h
+│   │   ├── toolbar.cpp
+│   │   ├── tooltip_manager.cpp
+│   │   ├── tooltip_manager.h
+│   │   ├── utils.cpp
+│   │   ├── utils.h
+│   │   ├── validators.cpp
+│   │   ├── validators.h
+│   │   ├── value_event.h
+│   │   ├── vector2d.cpp
+│   │   ├── vector2d.h
+│   │   ├── version.cpp
+│   │   ├── version.h
+│   │   ├── video_box.cpp
+│   │   ├── video_box.h
+│   │   ├── video_controller.cpp
+│   │   ├── video_controller.h
+│   │   ├── video_display.cpp
+│   │   ├── video_display.h
+│   │   ├── video_frame.cpp
+│   │   ├── video_frame.h
+│   │   ├── video_out_gl.cpp
+│   │   ├── video_out_gl.h
+│   │   ├── video_provider_avs.cpp
+│   │   ├── video_provider_cache.cpp
+│   │   ├── video_provider_dummy.cpp
+│   │   ├── video_provider_dummy.h
+│   │   ├── video_provider_ffmpegsource.cpp
+│   │   ├── video_provider_manager.cpp
+│   │   ├── video_provider_manager.h
+│   │   ├── video_provider_yuv4mpeg.cpp
+│   │   ├── video_slider.cpp
+│   │   ├── video_slider.h
+│   │   ├── visual_feature.cpp
+│   │   ├── visual_feature.h
+│   │   ├── visual_tool_clip.cpp
+│   │   ├── visual_tool_clip.h
+│   │   ├── visual_tool.cpp
+│   │   ├── visual_tool_cross.cpp
+│   │   ├── visual_tool_cross.h
+│   │   ├── visual_tool_drag.cpp
+│   │   ├── visual_tool_drag.h
+│   │   ├── visual_tool.h
+│   │   ├── visual_tool_rotatexy.cpp
+│   │   ├── visual_tool_rotatexy.h
+│   │   ├── visual_tool_rotatez.cpp
+│   │   ├── visual_tool_rotatez.h
+│   │   ├── visual_tool_scale.cpp
+│   │   ├── visual_tool_scale.h
+│   │   ├── visual_tool_vector_clip.cpp
+│   │   └── visual_tool_vector_clip.h
+│   ├── tests
+│   │   ├── keyframe
+│   │   │   ├── aegi.txt
+│   │   │   ├── empty.txt
+│   │   │   ├── garbage.txt
+│   │   │   ├── x264.log
+│   │   │   └── xvid.txt
+│   │   ├── Makefile
+│   │   ├── options
+│   │   │   ├── all_bool.json
+│   │   │   ├── null.json
+│   │   │   └── string.json
+│   │   ├── setup.bat
+│   │   ├── setup.ps1
+│   │   ├── setup.sh
+│   │   ├── support
+│   │   │   ├── main.cpp
+│   │   │   ├── main.h
+│   │   │   ├── tests_pre.h
+│   │   │   ├── util.cpp
+│   │   │   └── util.h
+│   │   ├── tests
+│   │   │   ├── access.cpp
+│   │   │   ├── audio.cpp
+│   │   │   ├── cajun.cpp
+│   │   │   ├── calltip_provider.cpp
+│   │   │   ├── character_count.cpp
+│   │   │   ├── color.cpp
+│   │   │   ├── dialogue_lexer.cpp
+│   │   │   ├── format.cpp
+│   │   │   ├── fs.cpp
+│   │   │   ├── hotkey.cpp
+│   │   │   ├── iconv.cpp
+│   │   │   ├── ifind.cpp
+│   │   │   ├── karaoke_matcher.cpp
+│   │   │   ├── keyframe.cpp
+│   │   │   ├── line_iterator.cpp
+│   │   │   ├── line_wrap.cpp
+│   │   │   ├── mru.cpp
+│   │   │   ├── option.cpp
+│   │   │   ├── path.cpp
+│   │   │   ├── signals.cpp
+│   │   │   ├── split.cpp
+│   │   │   ├── syntax_highlight.cpp
+│   │   │   ├── thesaurus.cpp
+│   │   │   ├── time.cpp
+│   │   │   ├── type_name.cpp
+│   │   │   ├── util.cpp
+│   │   │   ├── uuencode.cpp
+│   │   │   ├── vfr.cpp
+│   │   │   └── word_split.cpp
+│   │   └── vfr
+│   │       ├── empty.txt
+│   │       ├── v1_assume_30.txt
+│   │       ├── v1_assume_30_with_override.txt
+│   │       ├── v1_assume_int.txt
+│   │       ├── v1_assume_over_1000.txt
+│   │       ├── v1_bad_seperators.txt
+│   │       ├── v1_end_less_than_start.txt
+│   │       ├── v1_float_frame_number.txt
+│   │       ├── v1_fully_contained.txt
+│   │       ├── v1_mode5.txt
+│   │       ├── v1_negative_start_of_range.txt
+│   │       ├── v1_out_of_order.txt
+│   │       ├── v1_override_over_1000.txt
+│   │       ├── v1_override_zero.txt
+│   │       ├── v1_start_end_overlap.txt
+│   │       ├── v1_start_equals_end.txt
+│   │       ├── v1_too_few_parts.txt
+│   │       ├── v1_too_many_parts.txt
+│   │       ├── v1_whitespace.txt
+│   │       ├── v2_100_frames_30_fps.txt
+│   │       ├── v2_100_frames_30_with_override.txt
+│   │       ├── v2_1fps.txt
+│   │       ├── v2_comments.txt
+│   │       ├── v2_empty.txt
+│   │       ├── v2_len_3_10.txt
+│   │       ├── v2_mode5.txt
+│   │       ├── v2_nolen.txt
+│   │       ├── v2_number_in_comment.txt
+│   │       ├── v2_out_of_order.txt
+│   │       ├── validate_base.txt
+│   │       ├── validate_different.txt
+│   │       ├── validate_longer.txt
+│   │       └── validate_shorter.txt
+│   ├── tools
+│   │   ├── Makefile
+│   │   ├── osx-bundle-restart-helper.m
+│   │   ├── osx-bundle.sed.in
+│   │   ├── osx-bundle.sh
+│   │   ├── osx-dmg.sh
+│   │   ├── osx-fix-libs.py
+│   │   ├── repack-thes-dict.cpp
+│   │   ├── respack.lua
+│   │   └── strip-icu.py
+│   └── vendor
+│       ├── csri
+│       │   ├── ac
+│       │   │   └── Makefile.am
+│       │   ├── acinclude.m4
+│       │   ├── backends
+│       │   │   ├── libass
+│       │   │   │   ├── libass_csri.c
+│       │   │   │   └── Makefile.am
+│       │   │   └── Makefile.am
+│       │   ├── bootstrap
+│       │   ├── CMakeLists.txt
+│       │   ├── configure.ac
+│       │   ├── csri_2008.vcproj
+│       │   ├── csri.pc.in
+│       │   ├── Doxyfile
+│       │   ├── frontends
+│       │   │   ├── avisynth25
+│       │   │   │   ├── avisynth.cpp
+│       │   │   │   ├── avisynth.h
+│       │   │   │   └── Makefile.am
+│       │   │   ├── cmdline
+│       │   │   │   ├── cmdmain.c
+│       │   │   │   ├── Makefile.am
+│       │   │   │   ├── render.c
+│       │   │   │   └── render.h
+│       │   │   └── Makefile.am
+│       │   ├── include
+│       │   │   ├── csri
+│       │   │   │   ├── csri.h
+│       │   │   │   ├── fmtids.h
+│       │   │   │   ├── logging.h
+│       │   │   │   ├── openerr.h
+│       │   │   │   └── stream.h
+│       │   │   ├── Makefile.am
+│       │   │   ├── subhelp.h
+│       │   │   └── visibility.h
+│       │   ├── lib
+│       │   │   ├── csrilib.h
+│       │   │   ├── list.c
+│       │   │   ├── Makefile.am
+│       │   │   ├── posix
+│       │   │   │   ├── csrilib_os.h
+│       │   │   │   └── enumerate.c
+│       │   │   ├── win32
+│       │   │   │   ├── csrilib_os.h
+│       │   │   │   └── enumerate.c
+│       │   │   └── wrap.c
+│       │   ├── LICENSE
+│       │   ├── Makefile.am
+│       │   └── subhelp
+│       │       ├── logging.c
+│       │       ├── Makefile.am
+│       │       ├── posix
+│       │       │   └── openfile.c
+│       │       └── win32
+│       │           └── openfile.c
+│       ├── googletest
+│       ├── luabins
+│       │   ├── AUTHORS
+│       │   ├── BENCHMARK
+│       │   ├── CMakeLists.txt
+│       │   ├── COPYRIGHT
+│       │   ├── etc
+│       │   │   ├── benchmark.lua
+│       │   │   ├── checkfmt.lua
+│       │   │   ├── dataset.lua
+│       │   │   ├── toluabins.lua
+│       │   │   └── tolua.lua
+│       │   ├── HISTORY
+│       │   ├── include
+│       │   ├── lib
+│       │   ├── Makefile
+│       │   ├── obj
+│       │   ├── README.md
+│       │   ├── rockspec
+│       │   │   ├── luabins-0.1.1-1.rockspec
+│       │   │   ├── luabins-0.1.1-2.rockspec
+│       │   │   ├── luabins-0.2-1.rockspec
+│       │   │   ├── luabins-0.3-1.rockspec
+│       │   │   ├── luabins-scm-1.rockspec
+│       │   │   └── luabins-scm-2.rockspec
+│       │   ├── src
+│       │   │   ├── fwrite.c
+│       │   │   ├── fwrite.h
+│       │   │   ├── load.c
+│       │   │   ├── luabins.c
+│       │   │   ├── luabins.h
+│       │   │   ├── luaheaders.h
+│       │   │   ├── luainternals.c
+│       │   │   ├── luainternals.h
+│       │   │   ├── lualess.h
+│       │   │   ├── savebuffer.c
+│       │   │   ├── savebuffer.h
+│       │   │   ├── save.c
+│       │   │   ├── saveload.h
+│       │   │   ├── write.c
+│       │   │   └── write.h
+│       │   ├── test
+│       │   │   ├── large_data.lua
+│       │   │   ├── large_data.luabins
+│       │   │   ├── test_api.c
+│       │   │   ├── test.c
+│       │   │   ├── test_fwrite_api.c
+│       │   │   ├── test.h
+│       │   │   ├── test.lua
+│       │   │   ├── test_savebuffer.c
+│       │   │   ├── test_write_api.c
+│       │   │   ├── util.c
+│       │   │   ├── util.h
+│       │   │   └── write_tests.inc
+│       │   ├── tmp
+│       │   └── TODO
+│       └── luajit
+│           ├── 0001-lj_str.c-Remove-special-case-string-interning-fastpa.patch
+│           ├── COPYRIGHT
+│           ├── doc
+│           │   ├── bluequad.css
+│           │   ├── bluequad-print.css
+│           │   ├── changes.html
+│           │   ├── contact.html
+│           │   ├── ext_c_api.html
+│           │   ├── extensions.html
+│           │   ├── ext_ffi_api.html
+│           │   ├── ext_ffi.html
+│           │   ├── ext_ffi_semantics.html
+│           │   ├── ext_ffi_tutorial.html
+│           │   ├── ext_jit.html
+│           │   ├── ext_profiler.html
+│           │   ├── faq.html
+│           │   ├── img
+│           │   │   └── contact.png
+│           │   ├── install.html
+│           │   ├── luajit.html
+│           │   ├── running.html
+│           │   └── status.html
+│           ├── dynasm
+│           │   ├── dasm_arm64.h
+│           │   ├── dasm_arm64.lua
+│           │   ├── dasm_arm.h
+│           │   ├── dasm_arm.lua
+│           │   ├── dasm_mips64.lua
+│           │   ├── dasm_mips.h
+│           │   ├── dasm_mips.lua
+│           │   ├── dasm_ppc.h
+│           │   ├── dasm_ppc.lua
+│           │   ├── dasm_proto.h
+│           │   ├── dasm_x64.lua
+│           │   ├── dasm_x86.h
+│           │   ├── dasm_x86.lua
+│           │   └── dynasm.lua
+│           ├── etc
+│           │   ├── luajit.1
+│           │   └── luajit.pc
+│           ├── Makefile
+│           ├── README
+│           ├── src
+│           │   ├── host
+│           │   │   ├── buildvm_asm.c
+│           │   │   ├── buildvm.c
+│           │   │   ├── buildvm_fold.c
+│           │   │   ├── buildvm.h
+│           │   │   ├── buildvm_libbc.h
+│           │   │   ├── buildvm_lib.c
+│           │   │   ├── buildvm_peobj.c
+│           │   │   ├── genlibbc.lua
+│           │   │   ├── genminilua.lua
+│           │   │   ├── minilua.c
+│           │   │   └── README
+│           │   ├── jit
+│           │   │   ├── bc.lua
+│           │   │   ├── bcsave.lua
+│           │   │   ├── dis_arm64be.lua
+│           │   │   ├── dis_arm64.lua
+│           │   │   ├── dis_arm.lua
+│           │   │   ├── dis_mips64el.lua
+│           │   │   ├── dis_mips64.lua
+│           │   │   ├── dis_mipsel.lua
+│           │   │   ├── dis_mips.lua
+│           │   │   ├── dis_ppc.lua
+│           │   │   ├── dis_x64.lua
+│           │   │   ├── dis_x86.lua
+│           │   │   ├── dump.lua
+│           │   │   ├── p.lua
+│           │   │   ├── v.lua
+│           │   │   └── zone.lua
+│           │   ├── lauxlib.h
+│           │   ├── lib_aux.c
+│           │   ├── lib_base.c
+│           │   ├── lib_bit.c
+│           │   ├── lib_debug.c
+│           │   ├── lib_ffi.c
+│           │   ├── lib_init.c
+│           │   ├── lib_io.c
+│           │   ├── lib_jit.c
+│           │   ├── lib_math.c
+│           │   ├── lib_os.c
+│           │   ├── lib_package.c
+│           │   ├── lib_string.c
+│           │   ├── lib_table.c
+│           │   ├── lj_alloc.c
+│           │   ├── lj_alloc.h
+│           │   ├── ljamalg.c
+│           │   ├── lj_api.c
+│           │   ├── lj_arch.h
+│           │   ├── lj_asm_arm64.h
+│           │   ├── lj_asm_arm.h
+│           │   ├── lj_asm.c
+│           │   ├── lj_asm.h
+│           │   ├── lj_asm_mips.h
+│           │   ├── lj_asm_ppc.h
+│           │   ├── lj_asm_x86.h
+│           │   ├── lj_bc.c
+│           │   ├── lj_bcdump.h
+│           │   ├── lj_bc.h
+│           │   ├── lj_bcread.c
+│           │   ├── lj_bcwrite.c
+│           │   ├── lj_buf.c
+│           │   ├── lj_buf.h
+│           │   ├── lj_carith.c
+│           │   ├── lj_carith.h
+│           │   ├── lj_ccallback.c
+│           │   ├── lj_ccallback.h
+│           │   ├── lj_ccall.c
+│           │   ├── lj_ccall.h
+│           │   ├── lj_cconv.c
+│           │   ├── lj_cconv.h
+│           │   ├── lj_cdata.c
+│           │   ├── lj_cdata.h
+│           │   ├── lj_char.c
+│           │   ├── lj_char.h
+│           │   ├── lj_clib.c
+│           │   ├── lj_clib.h
+│           │   ├── lj_cparse.c
+│           │   ├── lj_cparse.h
+│           │   ├── lj_crecord.c
+│           │   ├── lj_crecord.h
+│           │   ├── lj_ctype.c
+│           │   ├── lj_ctype.h
+│           │   ├── lj_debug.c
+│           │   ├── lj_debug.h
+│           │   ├── lj_def.h
+│           │   ├── lj_dispatch.c
+│           │   ├── lj_dispatch.h
+│           │   ├── lj_emit_arm64.h
+│           │   ├── lj_emit_arm.h
+│           │   ├── lj_emit_mips.h
+│           │   ├── lj_emit_ppc.h
+│           │   ├── lj_emit_x86.h
+│           │   ├── lj_err.c
+│           │   ├── lj_err.h
+│           │   ├── lj_errmsg.h
+│           │   ├── lj_ff.h
+│           │   ├── lj_ffrecord.c
+│           │   ├── lj_ffrecord.h
+│           │   ├── lj_frame.h
+│           │   ├── lj_func.c
+│           │   ├── lj_func.h
+│           │   ├── lj_gc.c
+│           │   ├── lj_gc.h
+│           │   ├── lj_gdbjit.c
+│           │   ├── lj_gdbjit.h
+│           │   ├── lj_ir.c
+│           │   ├── lj_ircall.h
+│           │   ├── lj_ir.h
+│           │   ├── lj_iropt.h
+│           │   ├── lj_jit.h
+│           │   ├── lj_lex.c
+│           │   ├── lj_lex.h
+│           │   ├── lj_lib.c
+│           │   ├── lj_lib.h
+│           │   ├── lj_load.c
+│           │   ├── lj_mcode.c
+│           │   ├── lj_mcode.h
+│           │   ├── lj_meta.c
+│           │   ├── lj_meta.h
+│           │   ├── lj_obj.c
+│           │   ├── lj_obj.h
+│           │   ├── lj_opt_dce.c
+│           │   ├── lj_opt_fold.c
+│           │   ├── lj_opt_loop.c
+│           │   ├── lj_opt_mem.c
+│           │   ├── lj_opt_narrow.c
+│           │   ├── lj_opt_sink.c
+│           │   ├── lj_opt_split.c
+│           │   ├── lj_parse.c
+│           │   ├── lj_parse.h
+│           │   ├── lj_profile.c
+│           │   ├── lj_profile.h
+│           │   ├── lj_record.c
+│           │   ├── lj_record.h
+│           │   ├── lj_snap.c
+│           │   ├── lj_snap.h
+│           │   ├── lj_state.c
+│           │   ├── lj_state.h
+│           │   ├── lj_str.c
+│           │   ├── lj_strfmt.c
+│           │   ├── lj_strfmt.h
+│           │   ├── lj_strfmt_num.c
+│           │   ├── lj_str.h
+│           │   ├── lj_strscan.c
+│           │   ├── lj_strscan.h
+│           │   ├── lj.supp
+│           │   ├── lj_tab.c
+│           │   ├── lj_tab.h
+│           │   ├── lj_target_arm64.h
+│           │   ├── lj_target_arm.h
+│           │   ├── lj_target.h
+│           │   ├── lj_target_mips.h
+│           │   ├── lj_target_ppc.h
+│           │   ├── lj_target_x86.h
+│           │   ├── lj_trace.c
+│           │   ├── lj_traceerr.h
+│           │   ├── lj_trace.h
+│           │   ├── lj_udata.c
+│           │   ├── lj_udata.h
+│           │   ├── lj_vmevent.c
+│           │   ├── lj_vmevent.h
+│           │   ├── lj_vm.h
+│           │   ├── lj_vmmath.c
+│           │   ├── luaconf.h
+│           │   ├── lua.h
+│           │   ├── lua.hpp
+│           │   ├── luajit.c
+│           │   ├── luajit.h
+│           │   ├── lualib.h
+│           │   ├── Makefile
+│           │   ├── Makefile.dep
+│           │   ├── msvcbuild.bat
+│           │   ├── ps4build.bat
+│           │   ├── psvitabuild.bat
+│           │   ├── vm_arm64.dasc
+│           │   ├── vm_arm.dasc
+│           │   ├── vm_mips64.dasc
+│           │   ├── vm_mips.dasc
+│           │   ├── vm_ppc.dasc
+│           │   ├── vm_x64.dasc
+│           │   ├── vm_x86.dasc
+│           │   ├── xb1build.bat
+│           │   └── xedkbuild.bat
+│           ├── unicode-io.patch
+│           └── unicode-os.patch
+└── boost-1.81.0.patch -> /home/felix/packages/aegisub/boost-1.81.0.patch
+
+130 directories, 1953 files

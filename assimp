@@ -1,0 +1,3366 @@
+src
+├── assimp-5.4.2
+│   ├── assimp.pc.in
+│   ├── BUILDBINARIES_EXAMPLE.bat
+│   ├── Build.md
+│   ├── CHANGES
+│   ├── CMakeLists.txt
+│   ├── cmake-modules
+│   │   ├── assimp-hunter-config.cmake.in
+│   │   ├── assimp-plain-config.cmake.in
+│   │   ├── cmake_uninstall.cmake.in
+│   │   ├── CoverallsClear.cmake
+│   │   ├── Coveralls.cmake
+│   │   ├── CoverallsGenerateGcov.cmake
+│   │   ├── DebSourcePPA.cmake
+│   │   ├── Findassimp.cmake
+│   │   ├── FindDevIL.cmake
+│   │   ├── FindDirectX.cmake
+│   │   ├── FindPkgMacros.cmake
+│   │   ├── FindRT.cmake
+│   │   ├── FindZLIB.cmake
+│   │   ├── HunterGate.cmake
+│   │   ├── MinGW_x86_64.cmake
+│   │   └── PrecompiledHeader.cmake
+│   ├── code
+│   │   ├── AssetLib
+│   │   │   ├── 3DS
+│   │   │   │   ├── 3DSConverter.cpp
+│   │   │   │   ├── 3DSExporter.cpp
+│   │   │   │   ├── 3DSExporter.h
+│   │   │   │   ├── 3DSHelper.h
+│   │   │   │   ├── 3DSLoader.cpp
+│   │   │   │   └── 3DSLoader.h
+│   │   │   ├── 3MF
+│   │   │   │   ├── 3MFTypes.h
+│   │   │   │   ├── 3MFXmlTags.h
+│   │   │   │   ├── D3MFExporter.cpp
+│   │   │   │   ├── D3MFExporter.h
+│   │   │   │   ├── D3MFImporter.cpp
+│   │   │   │   ├── D3MFImporter.h
+│   │   │   │   ├── D3MFOpcPackage.cpp
+│   │   │   │   ├── D3MFOpcPackage.h
+│   │   │   │   ├── XmlSerializer.cpp
+│   │   │   │   └── XmlSerializer.h
+│   │   │   ├── AC
+│   │   │   │   ├── ACLoader.cpp
+│   │   │   │   └── ACLoader.h
+│   │   │   ├── AMF
+│   │   │   │   ├── AMFImporter.cpp
+│   │   │   │   ├── AMFImporter_Geometry.cpp
+│   │   │   │   ├── AMFImporter.hpp
+│   │   │   │   ├── AMFImporter_Material.cpp
+│   │   │   │   ├── AMFImporter_Node.hpp
+│   │   │   │   └── AMFImporter_Postprocess.cpp
+│   │   │   ├── ASE
+│   │   │   │   ├── ASELoader.cpp
+│   │   │   │   ├── ASELoader.h
+│   │   │   │   ├── ASEParser.cpp
+│   │   │   │   └── ASEParser.h
+│   │   │   ├── Assbin
+│   │   │   │   ├── AssbinExporter.cpp
+│   │   │   │   ├── AssbinExporter.h
+│   │   │   │   ├── AssbinFileWriter.cpp
+│   │   │   │   ├── AssbinFileWriter.h
+│   │   │   │   ├── AssbinLoader.cpp
+│   │   │   │   └── AssbinLoader.h
+│   │   │   ├── Assjson
+│   │   │   │   ├── cencode.c
+│   │   │   │   ├── cencode.h
+│   │   │   │   ├── json_exporter.cpp
+│   │   │   │   ├── mesh_splitter.cpp
+│   │   │   │   └── mesh_splitter.h
+│   │   │   ├── Assxml
+│   │   │   │   ├── AssxmlExporter.cpp
+│   │   │   │   ├── AssxmlExporter.h
+│   │   │   │   ├── AssxmlFileWriter.cpp
+│   │   │   │   └── AssxmlFileWriter.h
+│   │   │   ├── B3D
+│   │   │   │   ├── B3DImporter.cpp
+│   │   │   │   └── B3DImporter.h
+│   │   │   ├── Blender
+│   │   │   │   ├── BlenderBMesh.cpp
+│   │   │   │   ├── BlenderBMesh.h
+│   │   │   │   ├── BlenderCustomData.cpp
+│   │   │   │   ├── BlenderCustomData.h
+│   │   │   │   ├── BlenderDNA.cpp
+│   │   │   │   ├── BlenderDNA.h
+│   │   │   │   ├── BlenderDNA.inl
+│   │   │   │   ├── BlenderIntermediate.h
+│   │   │   │   ├── BlenderLoader.cpp
+│   │   │   │   ├── BlenderLoader.h
+│   │   │   │   ├── BlenderModifier.cpp
+│   │   │   │   ├── BlenderModifier.h
+│   │   │   │   ├── BlenderScene.cpp
+│   │   │   │   ├── BlenderSceneGen.h
+│   │   │   │   ├── BlenderScene.h
+│   │   │   │   ├── BlenderTessellator.cpp
+│   │   │   │   └── BlenderTessellator.h
+│   │   │   ├── BVH
+│   │   │   │   ├── BVHLoader.cpp
+│   │   │   │   └── BVHLoader.h
+│   │   │   ├── C4D
+│   │   │   │   ├── C4DImporter.cpp
+│   │   │   │   └── C4DImporter.h
+│   │   │   ├── COB
+│   │   │   │   ├── COBLoader.cpp
+│   │   │   │   ├── COBLoader.h
+│   │   │   │   └── COBScene.h
+│   │   │   ├── Collada
+│   │   │   │   ├── ColladaExporter.cpp
+│   │   │   │   ├── ColladaExporter.h
+│   │   │   │   ├── ColladaHelper.cpp
+│   │   │   │   ├── ColladaHelper.h
+│   │   │   │   ├── ColladaLoader.cpp
+│   │   │   │   ├── ColladaLoader.h
+│   │   │   │   ├── ColladaParser.cpp
+│   │   │   │   └── ColladaParser.h
+│   │   │   ├── CSM
+│   │   │   │   ├── CSMLoader.cpp
+│   │   │   │   └── CSMLoader.h
+│   │   │   ├── DXF
+│   │   │   │   ├── DXFHelper.h
+│   │   │   │   ├── DXFLoader.cpp
+│   │   │   │   └── DXFLoader.h
+│   │   │   ├── FBX
+│   │   │   │   ├── FBXAnimation.cpp
+│   │   │   │   ├── FBXBinaryTokenizer.cpp
+│   │   │   │   ├── FBXCommon.h
+│   │   │   │   ├── FBXCompileConfig.h
+│   │   │   │   ├── FBXConverter.cpp
+│   │   │   │   ├── FBXConverter.h
+│   │   │   │   ├── FBXDeformer.cpp
+│   │   │   │   ├── FBXDocument.cpp
+│   │   │   │   ├── FBXDocument.h
+│   │   │   │   ├── FBXDocumentUtil.cpp
+│   │   │   │   ├── FBXDocumentUtil.h
+│   │   │   │   ├── FBXExporter.cpp
+│   │   │   │   ├── FBXExporter.h
+│   │   │   │   ├── FBXExportNode.cpp
+│   │   │   │   ├── FBXExportNode.h
+│   │   │   │   ├── FBXExportProperty.cpp
+│   │   │   │   ├── FBXExportProperty.h
+│   │   │   │   ├── FBXImporter.cpp
+│   │   │   │   ├── FBXImporter.h
+│   │   │   │   ├── FBXImportSettings.h
+│   │   │   │   ├── FBXMaterial.cpp
+│   │   │   │   ├── FBXMeshGeometry.cpp
+│   │   │   │   ├── FBXMeshGeometry.h
+│   │   │   │   ├── FBXModel.cpp
+│   │   │   │   ├── FBXNodeAttribute.cpp
+│   │   │   │   ├── FBXParser.cpp
+│   │   │   │   ├── FBXParser.h
+│   │   │   │   ├── FBXProperties.cpp
+│   │   │   │   ├── FBXProperties.h
+│   │   │   │   ├── FBXTokenizer.cpp
+│   │   │   │   ├── FBXTokenizer.h
+│   │   │   │   ├── FBXUtil.cpp
+│   │   │   │   └── FBXUtil.h
+│   │   │   ├── glTF
+│   │   │   │   ├── glTFAsset.h
+│   │   │   │   ├── glTFAsset.inl
+│   │   │   │   ├── glTFAssetWriter.h
+│   │   │   │   ├── glTFAssetWriter.inl
+│   │   │   │   ├── glTFCommon.cpp
+│   │   │   │   ├── glTFCommon.h
+│   │   │   │   ├── glTFExporter.cpp
+│   │   │   │   ├── glTFExporter.h
+│   │   │   │   ├── glTFImporter.cpp
+│   │   │   │   └── glTFImporter.h
+│   │   │   ├── glTF2
+│   │   │   │   ├── glTF2Asset.h
+│   │   │   │   ├── glTF2Asset.inl
+│   │   │   │   ├── glTF2AssetWriter.h
+│   │   │   │   ├── glTF2AssetWriter.inl
+│   │   │   │   ├── glTF2Exporter.cpp
+│   │   │   │   ├── glTF2Exporter.h
+│   │   │   │   ├── glTF2Importer.cpp
+│   │   │   │   └── glTF2Importer.h
+│   │   │   ├── HMP
+│   │   │   │   ├── HalfLifeFileData.h
+│   │   │   │   ├── HMPFileData.h
+│   │   │   │   ├── HMPLoader.cpp
+│   │   │   │   └── HMPLoader.h
+│   │   │   ├── IFC
+│   │   │   │   ├── IFCBoolean.cpp
+│   │   │   │   ├── IFCCurve.cpp
+│   │   │   │   ├── IFCGeometry.cpp
+│   │   │   │   ├── IFCLoader.cpp
+│   │   │   │   ├── IFCLoader.h
+│   │   │   │   ├── IFCMaterial.cpp
+│   │   │   │   ├── IFCOpenings.cpp
+│   │   │   │   ├── IFCProfile.cpp
+│   │   │   │   ├── IFCReaderGen1_2x3.cpp
+│   │   │   │   ├── IFCReaderGen2_2x3.cpp
+│   │   │   │   ├── IFCReaderGen_2x3.h
+│   │   │   │   ├── IFCReaderGen_4.cpp
+│   │   │   │   ├── IFCReaderGen_4.h
+│   │   │   │   ├── IFCUtil.cpp
+│   │   │   │   └── IFCUtil.h
+│   │   │   ├── IQM
+│   │   │   │   ├── iqm.h
+│   │   │   │   ├── IQMImporter.cpp
+│   │   │   │   └── IQMImporter.h
+│   │   │   ├── Irr
+│   │   │   │   ├── IRRLoader.cpp
+│   │   │   │   ├── IRRLoader.h
+│   │   │   │   ├── IRRMeshLoader.cpp
+│   │   │   │   ├── IRRMeshLoader.h
+│   │   │   │   ├── IRRShared.cpp
+│   │   │   │   └── IRRShared.h
+│   │   │   ├── LWO
+│   │   │   │   ├── LWOAnimation.cpp
+│   │   │   │   ├── LWOAnimation.h
+│   │   │   │   ├── LWOBLoader.cpp
+│   │   │   │   ├── LWOFileData.h
+│   │   │   │   ├── LWOLoader.cpp
+│   │   │   │   ├── LWOLoader.h
+│   │   │   │   └── LWOMaterial.cpp
+│   │   │   ├── LWS
+│   │   │   │   ├── LWSLoader.cpp
+│   │   │   │   └── LWSLoader.h
+│   │   │   ├── M3D
+│   │   │   │   ├── M3DExporter.cpp
+│   │   │   │   ├── M3DExporter.h
+│   │   │   │   ├── m3d.h
+│   │   │   │   ├── M3DImporter.cpp
+│   │   │   │   ├── M3DImporter.h
+│   │   │   │   ├── M3DMaterials.h
+│   │   │   │   ├── M3DWrapper.cpp
+│   │   │   │   └── M3DWrapper.h
+│   │   │   ├── MD2
+│   │   │   │   ├── MD2FileData.h
+│   │   │   │   ├── MD2Loader.cpp
+│   │   │   │   ├── MD2Loader.h
+│   │   │   │   └── MD2NormalTable.h
+│   │   │   ├── MD3
+│   │   │   │   ├── MD3FileData.h
+│   │   │   │   ├── MD3Loader.cpp
+│   │   │   │   └── MD3Loader.h
+│   │   │   ├── MD4
+│   │   │   │   └── MD4FileData.h
+│   │   │   ├── MD5
+│   │   │   │   ├── MD5Loader.cpp
+│   │   │   │   ├── MD5Loader.h
+│   │   │   │   ├── MD5Parser.cpp
+│   │   │   │   └── MD5Parser.h
+│   │   │   ├── MDC
+│   │   │   │   ├── MDCFileData.h
+│   │   │   │   ├── MDCLoader.cpp
+│   │   │   │   ├── MDCLoader.h
+│   │   │   │   └── MDCNormalTable.h
+│   │   │   ├── MDL
+│   │   │   │   ├── HalfLife
+│   │   │   │   │   ├── HalfLifeMDLBaseHeader.h
+│   │   │   │   │   ├── HL1FileData.h
+│   │   │   │   │   ├── HL1ImportDefinitions.h
+│   │   │   │   │   ├── HL1ImportSettings.h
+│   │   │   │   │   ├── HL1MDLLoader.cpp
+│   │   │   │   │   ├── HL1MDLLoader.h
+│   │   │   │   │   ├── HL1MeshTrivert.h
+│   │   │   │   │   ├── LogFunctions.h
+│   │   │   │   │   ├── UniqueNameGenerator.cpp
+│   │   │   │   │   └── UniqueNameGenerator.h
+│   │   │   │   ├── MDLDefaultColorMap.h
+│   │   │   │   ├── MDLFileData.h
+│   │   │   │   ├── MDLLoader.cpp
+│   │   │   │   ├── MDLLoader.h
+│   │   │   │   └── MDLMaterialLoader.cpp
+│   │   │   ├── MMD
+│   │   │   │   ├── MMDCpp14.h
+│   │   │   │   ├── MMDImporter.cpp
+│   │   │   │   ├── MMDImporter.h
+│   │   │   │   ├── MMDPmdParser.h
+│   │   │   │   ├── MMDPmxParser.cpp
+│   │   │   │   ├── MMDPmxParser.h
+│   │   │   │   └── MMDVmdParser.h
+│   │   │   ├── MS3D
+│   │   │   │   ├── MS3DLoader.cpp
+│   │   │   │   └── MS3DLoader.h
+│   │   │   ├── NDO
+│   │   │   │   ├── NDOLoader.cpp
+│   │   │   │   └── NDOLoader.h
+│   │   │   ├── NFF
+│   │   │   │   ├── NFFLoader.cpp
+│   │   │   │   └── NFFLoader.h
+│   │   │   ├── Obj
+│   │   │   │   ├── ObjExporter.cpp
+│   │   │   │   ├── ObjExporter.h
+│   │   │   │   ├── ObjFileData.h
+│   │   │   │   ├── ObjFileImporter.cpp
+│   │   │   │   ├── ObjFileImporter.h
+│   │   │   │   ├── ObjFileMtlImporter.cpp
+│   │   │   │   ├── ObjFileMtlImporter.h
+│   │   │   │   ├── ObjFileParser.cpp
+│   │   │   │   ├── ObjFileParser.h
+│   │   │   │   └── ObjTools.h
+│   │   │   ├── OFF
+│   │   │   │   ├── OFFLoader.cpp
+│   │   │   │   └── OFFLoader.h
+│   │   │   ├── Ogre
+│   │   │   │   ├── OgreBinarySerializer.cpp
+│   │   │   │   ├── OgreBinarySerializer.h
+│   │   │   │   ├── OgreImporter.cpp
+│   │   │   │   ├── OgreImporter.h
+│   │   │   │   ├── OgreMaterial.cpp
+│   │   │   │   ├── OgreParsingUtils.h
+│   │   │   │   ├── OgreStructs.cpp
+│   │   │   │   ├── OgreStructs.h
+│   │   │   │   ├── OgreXmlSerializer.cpp
+│   │   │   │   └── OgreXmlSerializer.h
+│   │   │   ├── OpenGEX
+│   │   │   │   ├── OpenGEXExporter.cpp
+│   │   │   │   ├── OpenGEXExporter.h
+│   │   │   │   ├── OpenGEXImporter.cpp
+│   │   │   │   ├── OpenGEXImporter.h
+│   │   │   │   └── OpenGEXStructs.h
+│   │   │   ├── Ply
+│   │   │   │   ├── PlyExporter.cpp
+│   │   │   │   ├── PlyExporter.h
+│   │   │   │   ├── PlyLoader.cpp
+│   │   │   │   ├── PlyLoader.h
+│   │   │   │   ├── PlyParser.cpp
+│   │   │   │   └── PlyParser.h
+│   │   │   ├── Q3BSP
+│   │   │   │   ├── Q3BSPFileData.h
+│   │   │   │   ├── Q3BSPFileImporter.cpp
+│   │   │   │   ├── Q3BSPFileImporter.h
+│   │   │   │   ├── Q3BSPFileParser.cpp
+│   │   │   │   └── Q3BSPFileParser.h
+│   │   │   ├── Q3D
+│   │   │   │   ├── Q3DLoader.cpp
+│   │   │   │   └── Q3DLoader.h
+│   │   │   ├── Raw
+│   │   │   │   ├── RawLoader.cpp
+│   │   │   │   └── RawLoader.h
+│   │   │   ├── SIB
+│   │   │   │   ├── SIBImporter.cpp
+│   │   │   │   └── SIBImporter.h
+│   │   │   ├── SMD
+│   │   │   │   ├── SMDLoader.cpp
+│   │   │   │   └── SMDLoader.h
+│   │   │   ├── Step
+│   │   │   │   ├── StepExporter.cpp
+│   │   │   │   ├── StepExporter.h
+│   │   │   │   └── STEPFile.h
+│   │   │   ├── STEPParser
+│   │   │   │   ├── STEPFileEncoding.cpp
+│   │   │   │   ├── STEPFileEncoding.h
+│   │   │   │   ├── STEPFileReader.cpp
+│   │   │   │   └── STEPFileReader.h
+│   │   │   ├── STL
+│   │   │   │   ├── STLExporter.cpp
+│   │   │   │   ├── STLExporter.h
+│   │   │   │   ├── STLLoader.cpp
+│   │   │   │   └── STLLoader.h
+│   │   │   ├── Terragen
+│   │   │   │   ├── TerragenLoader.cpp
+│   │   │   │   └── TerragenLoader.h
+│   │   │   ├── Unreal
+│   │   │   │   ├── UnrealLoader.cpp
+│   │   │   │   └── UnrealLoader.h
+│   │   │   ├── X
+│   │   │   │   ├── XFileExporter.cpp
+│   │   │   │   ├── XFileExporter.h
+│   │   │   │   ├── XFileHelper.h
+│   │   │   │   ├── XFileImporter.cpp
+│   │   │   │   ├── XFileImporter.h
+│   │   │   │   ├── XFileParser.cpp
+│   │   │   │   └── XFileParser.h
+│   │   │   ├── X3D
+│   │   │   │   ├── X3DExporter.cpp
+│   │   │   │   ├── X3DExporter.hpp
+│   │   │   │   ├── X3DGeoHelper.cpp
+│   │   │   │   ├── X3DGeoHelper.h
+│   │   │   │   ├── X3DImporter.cpp
+│   │   │   │   ├── X3DImporter_Geometry2D.cpp
+│   │   │   │   ├── X3DImporter_Geometry3D.cpp
+│   │   │   │   ├── X3DImporter_Group.cpp
+│   │   │   │   ├── X3DImporter.hpp
+│   │   │   │   ├── X3DImporter_Light.cpp
+│   │   │   │   ├── X3DImporter_Macro.hpp
+│   │   │   │   ├── X3DImporter_Metadata.cpp
+│   │   │   │   ├── X3DImporter_Networking.cpp
+│   │   │   │   ├── X3DImporter_Node.hpp
+│   │   │   │   ├── X3DImporter_Postprocess.cpp
+│   │   │   │   ├── X3DImporter_Rendering.cpp
+│   │   │   │   ├── X3DImporter_Shape.cpp
+│   │   │   │   ├── X3DImporter_Texturing.cpp
+│   │   │   │   ├── X3DXmlHelper.cpp
+│   │   │   │   └── X3DXmlHelper.h
+│   │   │   └── XGL
+│   │   │       ├── XGLLoader.cpp
+│   │   │       └── XGLLoader.h
+│   │   ├── CApi
+│   │   │   ├── AssimpCExport.cpp
+│   │   │   ├── CInterfaceIOWrapper.cpp
+│   │   │   └── CInterfaceIOWrapper.h
+│   │   ├── CMakeLists.txt
+│   │   ├── Common
+│   │   │   ├── assbin_chunks.h
+│   │   │   ├── AssertHandler.cpp
+│   │   │   ├── Assimp.cpp
+│   │   │   ├── Base64.cpp
+│   │   │   ├── BaseImporter.cpp
+│   │   │   ├── BaseProcess.cpp
+│   │   │   ├── BaseProcess.h
+│   │   │   ├── Bitmap.cpp
+│   │   │   ├── Compression.cpp
+│   │   │   ├── Compression.h
+│   │   │   ├── CreateAnimMesh.cpp
+│   │   │   ├── DefaultIOStream.cpp
+│   │   │   ├── DefaultIOSystem.cpp
+│   │   │   ├── DefaultLogger.cpp
+│   │   │   ├── DefaultProgressHandler.h
+│   │   │   ├── Exceptional.cpp
+│   │   │   ├── Exporter.cpp
+│   │   │   ├── FileLogStream.h
+│   │   │   ├── FileSystemFilter.h
+│   │   │   ├── IFF.h
+│   │   │   ├── Importer.cpp
+│   │   │   ├── Importer.h
+│   │   │   ├── ImporterRegistry.cpp
+│   │   │   ├── IOSystem.cpp
+│   │   │   ├── material.cpp
+│   │   │   ├── Maybe.h
+│   │   │   ├── PolyTools.h
+│   │   │   ├── PostStepRegistry.cpp
+│   │   │   ├── RemoveComments.cpp
+│   │   │   ├── SceneCombiner.cpp
+│   │   │   ├── scene.cpp
+│   │   │   ├── ScenePreprocessor.cpp
+│   │   │   ├── ScenePreprocessor.h
+│   │   │   ├── ScenePrivate.h
+│   │   │   ├── SGSpatialSort.cpp
+│   │   │   ├── simd.cpp
+│   │   │   ├── simd.h
+│   │   │   ├── SkeletonMeshBuilder.cpp
+│   │   │   ├── SpatialSort.cpp
+│   │   │   ├── StackAllocator.h
+│   │   │   ├── StackAllocator.inl
+│   │   │   ├── StandardShapes.cpp
+│   │   │   ├── StbCommon.h
+│   │   │   ├── StdOStreamLogStream.h
+│   │   │   ├── Subdivision.cpp
+│   │   │   ├── TargetAnimation.cpp
+│   │   │   ├── TargetAnimation.h
+│   │   │   ├── Version.cpp
+│   │   │   ├── VertexTriangleAdjacency.cpp
+│   │   │   ├── VertexTriangleAdjacency.h
+│   │   │   ├── Win32DebugLogStream.h
+│   │   │   └── ZipArchiveIOSystem.cpp
+│   │   ├── Geometry
+│   │   │   ├── GeometryUtils.cpp
+│   │   │   └── GeometryUtils.h
+│   │   ├── Material
+│   │   │   ├── MaterialSystem.cpp
+│   │   │   └── MaterialSystem.h
+│   │   ├── Pbrt
+│   │   │   ├── PbrtExporter.cpp
+│   │   │   └── PbrtExporter.h
+│   │   ├── PostProcessing
+│   │   │   ├── ArmaturePopulate.cpp
+│   │   │   ├── ArmaturePopulate.h
+│   │   │   ├── CalcTangentsProcess.cpp
+│   │   │   ├── CalcTangentsProcess.h
+│   │   │   ├── ComputeUVMappingProcess.cpp
+│   │   │   ├── ComputeUVMappingProcess.h
+│   │   │   ├── ConvertToLHProcess.cpp
+│   │   │   ├── ConvertToLHProcess.h
+│   │   │   ├── DeboneProcess.cpp
+│   │   │   ├── DeboneProcess.h
+│   │   │   ├── DropFaceNormalsProcess.cpp
+│   │   │   ├── DropFaceNormalsProcess.h
+│   │   │   ├── EmbedTexturesProcess.cpp
+│   │   │   ├── EmbedTexturesProcess.h
+│   │   │   ├── FindDegenerates.cpp
+│   │   │   ├── FindDegenerates.h
+│   │   │   ├── FindInstancesProcess.cpp
+│   │   │   ├── FindInstancesProcess.h
+│   │   │   ├── FindInvalidDataProcess.cpp
+│   │   │   ├── FindInvalidDataProcess.h
+│   │   │   ├── FixNormalsStep.cpp
+│   │   │   ├── FixNormalsStep.h
+│   │   │   ├── GenBoundingBoxesProcess.cpp
+│   │   │   ├── GenBoundingBoxesProcess.h
+│   │   │   ├── GenFaceNormalsProcess.cpp
+│   │   │   ├── GenFaceNormalsProcess.h
+│   │   │   ├── GenVertexNormalsProcess.cpp
+│   │   │   ├── GenVertexNormalsProcess.h
+│   │   │   ├── ImproveCacheLocality.cpp
+│   │   │   ├── ImproveCacheLocality.h
+│   │   │   ├── JoinVerticesProcess.cpp
+│   │   │   ├── JoinVerticesProcess.h
+│   │   │   ├── LimitBoneWeightsProcess.cpp
+│   │   │   ├── LimitBoneWeightsProcess.h
+│   │   │   ├── MakeVerboseFormat.cpp
+│   │   │   ├── MakeVerboseFormat.h
+│   │   │   ├── OptimizeGraph.cpp
+│   │   │   ├── OptimizeGraph.h
+│   │   │   ├── OptimizeMeshes.cpp
+│   │   │   ├── OptimizeMeshes.h
+│   │   │   ├── PretransformVertices.cpp
+│   │   │   ├── PretransformVertices.h
+│   │   │   ├── ProcessHelper.cpp
+│   │   │   ├── ProcessHelper.h
+│   │   │   ├── RemoveRedundantMaterials.cpp
+│   │   │   ├── RemoveRedundantMaterials.h
+│   │   │   ├── RemoveVCProcess.cpp
+│   │   │   ├── RemoveVCProcess.h
+│   │   │   ├── ScaleProcess.cpp
+│   │   │   ├── ScaleProcess.h
+│   │   │   ├── SortByPTypeProcess.cpp
+│   │   │   ├── SortByPTypeProcess.h
+│   │   │   ├── SplitByBoneCountProcess.cpp
+│   │   │   ├── SplitByBoneCountProcess.h
+│   │   │   ├── SplitLargeMeshes.cpp
+│   │   │   ├── SplitLargeMeshes.h
+│   │   │   ├── TextureTransform.cpp
+│   │   │   ├── TextureTransform.h
+│   │   │   ├── TriangulateProcess.cpp
+│   │   │   ├── TriangulateProcess.h
+│   │   │   ├── ValidateDataStructure.cpp
+│   │   │   └── ValidateDataStructure.h
+│   │   └── res
+│   │       └── assimp.rc
+│   ├── CodeConventions.md
+│   ├── CODE_OF_CONDUCT.md
+│   ├── contrib
+│   │   ├── android-cmake
+│   │   │   ├── AndroidNdkGdb.cmake
+│   │   │   ├── AndroidNdkModules.cmake
+│   │   │   ├── android.toolchain.cmake
+│   │   │   ├── ndk_links.md
+│   │   │   └── README.md
+│   │   ├── clipper
+│   │   │   ├── clipper.cpp
+│   │   │   ├── clipper.hpp
+│   │   │   └── License.txt
+│   │   ├── draco
+│   │   │   ├── AUTHORS
+│   │   │   ├── BUILDING.md
+│   │   │   ├── cmake
+│   │   │   │   ├── draco_build_definitions.cmake
+│   │   │   │   ├── draco-config.cmake.template
+│   │   │   │   ├── draco_cpu_detection.cmake
+│   │   │   │   ├── draco_dependencies.cmake
+│   │   │   │   ├── draco_emscripten.cmake
+│   │   │   │   ├── draco_flags.cmake
+│   │   │   │   ├── draco_helpers.cmake
+│   │   │   │   ├── draco_install.cmake
+│   │   │   │   ├── draco_intrinsics.cmake
+│   │   │   │   ├── draco_options.cmake
+│   │   │   │   ├── draco.pc.template
+│   │   │   │   ├── draco_sanitizer.cmake
+│   │   │   │   ├── draco_targets.cmake
+│   │   │   │   ├── draco_test_config.h.cmake
+│   │   │   │   ├── draco_tests.cmake
+│   │   │   │   ├── draco_variables.cmake
+│   │   │   │   └── toolchains
+│   │   │   │       ├── aarch64-linux-gnu.cmake
+│   │   │   │       ├── android.cmake
+│   │   │   │       ├── android-ndk-common.cmake
+│   │   │   │       ├── arm64-android-ndk-libcpp.cmake
+│   │   │   │       ├── arm64-ios.cmake
+│   │   │   │       ├── arm64-linux-gcc.cmake
+│   │   │   │       ├── arm-ios-common.cmake
+│   │   │   │       ├── arm-linux-gnueabihf.cmake
+│   │   │   │       ├── armv7-android-ndk-libcpp.cmake
+│   │   │   │       ├── armv7-ios.cmake
+│   │   │   │       ├── armv7-linux-gcc.cmake
+│   │   │   │       ├── armv7s-ios.cmake
+│   │   │   │       ├── i386-ios.cmake
+│   │   │   │       ├── x86_64-android-ndk-libcpp.cmake
+│   │   │   │       ├── x86_64-ios.cmake
+│   │   │   │       └── x86-android-ndk-libcpp.cmake
+│   │   │   ├── CMakeLists.txt
+│   │   │   ├── CMAKE.md
+│   │   │   ├── CONTRIBUTING.md
+│   │   │   ├── LICENSE
+│   │   │   ├── README.md
+│   │   │   └── src
+│   │   │       └── draco
+│   │   │           ├── animation
+│   │   │           │   ├── animation.cc
+│   │   │           │   ├── animation.h
+│   │   │           │   ├── animation_test.cc
+│   │   │           │   ├── keyframe_animation.cc
+│   │   │           │   ├── keyframe_animation_decoder.cc
+│   │   │           │   ├── keyframe_animation_decoder.h
+│   │   │           │   ├── keyframe_animation_encoder.cc
+│   │   │           │   ├── keyframe_animation_encoder.h
+│   │   │           │   ├── keyframe_animation_encoding_test.cc
+│   │   │           │   ├── keyframe_animation.h
+│   │   │           │   ├── keyframe_animation_test.cc
+│   │   │           │   ├── node_animation_data.h
+│   │   │           │   ├── skin.cc
+│   │   │           │   └── skin.h
+│   │   │           ├── attributes
+│   │   │           │   ├── attribute_octahedron_transform.cc
+│   │   │           │   ├── attribute_octahedron_transform.h
+│   │   │           │   ├── attribute_quantization_transform.cc
+│   │   │           │   ├── attribute_quantization_transform.h
+│   │   │           │   ├── attribute_transform.cc
+│   │   │           │   ├── attribute_transform_data.h
+│   │   │           │   ├── attribute_transform.h
+│   │   │           │   ├── attribute_transform_type.h
+│   │   │           │   ├── geometry_attribute.cc
+│   │   │           │   ├── geometry_attribute.h
+│   │   │           │   ├── geometry_indices.h
+│   │   │           │   ├── point_attribute.cc
+│   │   │           │   ├── point_attribute.h
+│   │   │           │   └── point_attribute_test.cc
+│   │   │           ├── compression
+│   │   │           │   ├── attributes
+│   │   │           │   │   ├── attributes_decoder.cc
+│   │   │           │   │   ├── attributes_decoder.h
+│   │   │           │   │   ├── attributes_decoder_interface.h
+│   │   │           │   │   ├── attributes_encoder.cc
+│   │   │           │   │   ├── attributes_encoder.h
+│   │   │           │   │   ├── kd_tree_attributes_decoder.cc
+│   │   │           │   │   ├── kd_tree_attributes_decoder.h
+│   │   │           │   │   ├── kd_tree_attributes_encoder.cc
+│   │   │           │   │   ├── kd_tree_attributes_encoder.h
+│   │   │           │   │   ├── kd_tree_attributes_shared.h
+│   │   │           │   │   ├── linear_sequencer.h
+│   │   │           │   │   ├── mesh_attribute_indices_encoding_data.h
+│   │   │           │   │   ├── normal_compression_utils.h
+│   │   │           │   │   ├── point_d_vector.h
+│   │   │           │   │   ├── point_d_vector_test.cc
+│   │   │           │   │   ├── points_sequencer.h
+│   │   │           │   │   ├── prediction_schemes
+│   │   │           │   │   │   ├── mesh_prediction_scheme_constrained_multi_parallelogram_decoder.h
+│   │   │           │   │   │   ├── mesh_prediction_scheme_constrained_multi_parallelogram_encoder.h
+│   │   │           │   │   │   ├── mesh_prediction_scheme_constrained_multi_parallelogram_shared.h
+│   │   │           │   │   │   ├── mesh_prediction_scheme_data.h
+│   │   │           │   │   │   ├── mesh_prediction_scheme_decoder.h
+│   │   │           │   │   │   ├── mesh_prediction_scheme_encoder.h
+│   │   │           │   │   │   ├── mesh_prediction_scheme_geometric_normal_decoder.h
+│   │   │           │   │   │   ├── mesh_prediction_scheme_geometric_normal_encoder.h
+│   │   │           │   │   │   ├── mesh_prediction_scheme_geometric_normal_predictor_area.h
+│   │   │           │   │   │   ├── mesh_prediction_scheme_geometric_normal_predictor_base.h
+│   │   │           │   │   │   ├── mesh_prediction_scheme_multi_parallelogram_decoder.h
+│   │   │           │   │   │   ├── mesh_prediction_scheme_multi_parallelogram_encoder.h
+│   │   │           │   │   │   ├── mesh_prediction_scheme_parallelogram_decoder.h
+│   │   │           │   │   │   ├── mesh_prediction_scheme_parallelogram_encoder.h
+│   │   │           │   │   │   ├── mesh_prediction_scheme_parallelogram_shared.h
+│   │   │           │   │   │   ├── mesh_prediction_scheme_tex_coords_decoder.h
+│   │   │           │   │   │   ├── mesh_prediction_scheme_tex_coords_encoder.h
+│   │   │           │   │   │   ├── mesh_prediction_scheme_tex_coords_portable_decoder.h
+│   │   │           │   │   │   ├── mesh_prediction_scheme_tex_coords_portable_encoder.h
+│   │   │           │   │   │   ├── mesh_prediction_scheme_tex_coords_portable_predictor.h
+│   │   │           │   │   │   ├── prediction_scheme_decoder_factory.h
+│   │   │           │   │   │   ├── prediction_scheme_decoder.h
+│   │   │           │   │   │   ├── prediction_scheme_decoder_interface.h
+│   │   │           │   │   │   ├── prediction_scheme_decoding_transform.h
+│   │   │           │   │   │   ├── prediction_scheme_delta_decoder.h
+│   │   │           │   │   │   ├── prediction_scheme_delta_encoder.h
+│   │   │           │   │   │   ├── prediction_scheme_encoder_factory.cc
+│   │   │           │   │   │   ├── prediction_scheme_encoder_factory.h
+│   │   │           │   │   │   ├── prediction_scheme_encoder.h
+│   │   │           │   │   │   ├── prediction_scheme_encoder_interface.h
+│   │   │           │   │   │   ├── prediction_scheme_encoding_transform.h
+│   │   │           │   │   │   ├── prediction_scheme_factory.h
+│   │   │           │   │   │   ├── prediction_scheme_interface.h
+│   │   │           │   │   │   ├── prediction_scheme_normal_octahedron_canonicalized_decoding_transform.h
+│   │   │           │   │   │   ├── prediction_scheme_normal_octahedron_canonicalized_encoding_transform.h
+│   │   │           │   │   │   ├── prediction_scheme_normal_octahedron_canonicalized_transform_base.h
+│   │   │           │   │   │   ├── prediction_scheme_normal_octahedron_canonicalized_transform_test.cc
+│   │   │           │   │   │   ├── prediction_scheme_normal_octahedron_decoding_transform.h
+│   │   │           │   │   │   ├── prediction_scheme_normal_octahedron_encoding_transform.h
+│   │   │           │   │   │   ├── prediction_scheme_normal_octahedron_transform_base.h
+│   │   │           │   │   │   ├── prediction_scheme_normal_octahedron_transform_test.cc
+│   │   │           │   │   │   ├── prediction_scheme_wrap_decoding_transform.h
+│   │   │           │   │   │   ├── prediction_scheme_wrap_encoding_transform.h
+│   │   │           │   │   │   └── prediction_scheme_wrap_transform_base.h
+│   │   │           │   │   ├── sequential_attribute_decoder.cc
+│   │   │           │   │   ├── sequential_attribute_decoder.h
+│   │   │           │   │   ├── sequential_attribute_decoders_controller.cc
+│   │   │           │   │   ├── sequential_attribute_decoders_controller.h
+│   │   │           │   │   ├── sequential_attribute_encoder.cc
+│   │   │           │   │   ├── sequential_attribute_encoder.h
+│   │   │           │   │   ├── sequential_attribute_encoders_controller.cc
+│   │   │           │   │   ├── sequential_attribute_encoders_controller.h
+│   │   │           │   │   ├── sequential_integer_attribute_decoder.cc
+│   │   │           │   │   ├── sequential_integer_attribute_decoder.h
+│   │   │           │   │   ├── sequential_integer_attribute_encoder.cc
+│   │   │           │   │   ├── sequential_integer_attribute_encoder.h
+│   │   │           │   │   ├── sequential_integer_attribute_encoding_test.cc
+│   │   │           │   │   ├── sequential_normal_attribute_decoder.cc
+│   │   │           │   │   ├── sequential_normal_attribute_decoder.h
+│   │   │           │   │   ├── sequential_normal_attribute_encoder.cc
+│   │   │           │   │   ├── sequential_normal_attribute_encoder.h
+│   │   │           │   │   ├── sequential_quantization_attribute_decoder.cc
+│   │   │           │   │   ├── sequential_quantization_attribute_decoder.h
+│   │   │           │   │   ├── sequential_quantization_attribute_encoder.cc
+│   │   │           │   │   └── sequential_quantization_attribute_encoder.h
+│   │   │           │   ├── bit_coders
+│   │   │           │   │   ├── adaptive_rans_bit_coding_shared.h
+│   │   │           │   │   ├── adaptive_rans_bit_decoder.cc
+│   │   │           │   │   ├── adaptive_rans_bit_decoder.h
+│   │   │           │   │   ├── adaptive_rans_bit_encoder.cc
+│   │   │           │   │   ├── adaptive_rans_bit_encoder.h
+│   │   │           │   │   ├── direct_bit_decoder.cc
+│   │   │           │   │   ├── direct_bit_decoder.h
+│   │   │           │   │   ├── direct_bit_encoder.cc
+│   │   │           │   │   ├── direct_bit_encoder.h
+│   │   │           │   │   ├── folded_integer_bit_decoder.h
+│   │   │           │   │   ├── folded_integer_bit_encoder.h
+│   │   │           │   │   ├── rans_bit_decoder.cc
+│   │   │           │   │   ├── rans_bit_decoder.h
+│   │   │           │   │   ├── rans_bit_encoder.cc
+│   │   │           │   │   ├── rans_bit_encoder.h
+│   │   │           │   │   ├── rans_coding_test.cc
+│   │   │           │   │   ├── symbol_bit_decoder.cc
+│   │   │           │   │   ├── symbol_bit_decoder.h
+│   │   │           │   │   ├── symbol_bit_encoder.cc
+│   │   │           │   │   └── symbol_bit_encoder.h
+│   │   │           │   ├── config
+│   │   │           │   │   ├── compression_shared.h
+│   │   │           │   │   ├── decoder_options.h
+│   │   │           │   │   ├── decoder_options_test.cc
+│   │   │           │   │   ├── draco_options.h
+│   │   │           │   │   ├── encoder_options.h
+│   │   │           │   │   └── encoding_features.h
+│   │   │           │   ├── decode.cc
+│   │   │           │   ├── decode.h
+│   │   │           │   ├── decode_test.cc
+│   │   │           │   ├── draco_compression_options.cc
+│   │   │           │   ├── draco_compression_options.h
+│   │   │           │   ├── draco_compression_options_test.cc
+│   │   │           │   ├── encode_base.h
+│   │   │           │   ├── encode.cc
+│   │   │           │   ├── encode.h
+│   │   │           │   ├── encode_test.cc
+│   │   │           │   ├── entropy
+│   │   │           │   │   ├── ans.h
+│   │   │           │   │   ├── rans_symbol_coding.h
+│   │   │           │   │   ├── rans_symbol_decoder.h
+│   │   │           │   │   ├── rans_symbol_encoder.h
+│   │   │           │   │   ├── shannon_entropy.cc
+│   │   │           │   │   ├── shannon_entropy.h
+│   │   │           │   │   ├── shannon_entropy_test.cc
+│   │   │           │   │   ├── symbol_coding_test.cc
+│   │   │           │   │   ├── symbol_decoding.cc
+│   │   │           │   │   ├── symbol_decoding.h
+│   │   │           │   │   ├── symbol_encoding.cc
+│   │   │           │   │   └── symbol_encoding.h
+│   │   │           │   ├── expert_encode.cc
+│   │   │           │   ├── expert_encode.h
+│   │   │           │   ├── mesh
+│   │   │           │   │   ├── mesh_decoder.cc
+│   │   │           │   │   ├── mesh_decoder.h
+│   │   │           │   │   ├── mesh_edgebreaker_decoder.cc
+│   │   │           │   │   ├── mesh_edgebreaker_decoder.h
+│   │   │           │   │   ├── mesh_edgebreaker_decoder_impl.cc
+│   │   │           │   │   ├── mesh_edgebreaker_decoder_impl.h
+│   │   │           │   │   ├── mesh_edgebreaker_decoder_impl_interface.h
+│   │   │           │   │   ├── mesh_edgebreaker_encoder.cc
+│   │   │           │   │   ├── mesh_edgebreaker_encoder.h
+│   │   │           │   │   ├── mesh_edgebreaker_encoder_impl.cc
+│   │   │           │   │   ├── mesh_edgebreaker_encoder_impl.h
+│   │   │           │   │   ├── mesh_edgebreaker_encoder_impl_interface.h
+│   │   │           │   │   ├── mesh_edgebreaker_encoding_test.cc
+│   │   │           │   │   ├── mesh_edgebreaker_shared.h
+│   │   │           │   │   ├── mesh_edgebreaker_traversal_decoder.h
+│   │   │           │   │   ├── mesh_edgebreaker_traversal_encoder.h
+│   │   │           │   │   ├── mesh_edgebreaker_traversal_predictive_decoder.h
+│   │   │           │   │   ├── mesh_edgebreaker_traversal_predictive_encoder.h
+│   │   │           │   │   ├── mesh_edgebreaker_traversal_valence_decoder.h
+│   │   │           │   │   ├── mesh_edgebreaker_traversal_valence_encoder.h
+│   │   │           │   │   ├── mesh_encoder.cc
+│   │   │           │   │   ├── mesh_encoder.h
+│   │   │           │   │   ├── mesh_encoder_test.cc
+│   │   │           │   │   ├── mesh_sequential_decoder.cc
+│   │   │           │   │   ├── mesh_sequential_decoder.h
+│   │   │           │   │   ├── mesh_sequential_encoder.cc
+│   │   │           │   │   ├── mesh_sequential_encoder.h
+│   │   │           │   │   └── traverser
+│   │   │           │   │       ├── depth_first_traverser.h
+│   │   │           │   │       ├── max_prediction_degree_traverser.h
+│   │   │           │   │       ├── mesh_attribute_indices_encoding_observer.h
+│   │   │           │   │       ├── mesh_traversal_sequencer.h
+│   │   │           │   │       └── traverser_base.h
+│   │   │           │   └── point_cloud
+│   │   │           │       ├── algorithms
+│   │   │           │       │   ├── dynamic_integer_points_kd_tree_decoder.cc
+│   │   │           │       │   ├── dynamic_integer_points_kd_tree_decoder.h
+│   │   │           │       │   ├── dynamic_integer_points_kd_tree_encoder.cc
+│   │   │           │       │   ├── dynamic_integer_points_kd_tree_encoder.h
+│   │   │           │       │   ├── float_points_tree_decoder.cc
+│   │   │           │       │   ├── float_points_tree_decoder.h
+│   │   │           │       │   ├── float_points_tree_encoder.cc
+│   │   │           │       │   ├── float_points_tree_encoder.h
+│   │   │           │       │   ├── integer_points_kd_tree_decoder.cc
+│   │   │           │       │   ├── integer_points_kd_tree_decoder.h
+│   │   │           │       │   ├── integer_points_kd_tree_encoder.cc
+│   │   │           │       │   ├── integer_points_kd_tree_encoder.h
+│   │   │           │       │   ├── point_cloud_compression_method.h
+│   │   │           │       │   ├── point_cloud_types.h
+│   │   │           │       │   ├── quantize_points_3.h
+│   │   │           │       │   └── queuing_policy.h
+│   │   │           │       ├── point_cloud_decoder.cc
+│   │   │           │       ├── point_cloud_decoder.h
+│   │   │           │       ├── point_cloud_encoder.cc
+│   │   │           │       ├── point_cloud_encoder.h
+│   │   │           │       ├── point_cloud_kd_tree_decoder.cc
+│   │   │           │       ├── point_cloud_kd_tree_decoder.h
+│   │   │           │       ├── point_cloud_kd_tree_encoder.cc
+│   │   │           │       ├── point_cloud_kd_tree_encoder.h
+│   │   │           │       ├── point_cloud_kd_tree_encoding_test.cc
+│   │   │           │       ├── point_cloud_sequential_decoder.cc
+│   │   │           │       ├── point_cloud_sequential_decoder.h
+│   │   │           │       ├── point_cloud_sequential_encoder.cc
+│   │   │           │       ├── point_cloud_sequential_encoder.h
+│   │   │           │       └── point_cloud_sequential_encoding_test.cc
+│   │   │           ├── core
+│   │   │           │   ├── bit_utils.cc
+│   │   │           │   ├── bit_utils.h
+│   │   │           │   ├── bounding_box.cc
+│   │   │           │   ├── bounding_box.h
+│   │   │           │   ├── buffer_bit_coding_test.cc
+│   │   │           │   ├── constants.h
+│   │   │           │   ├── cycle_timer.cc
+│   │   │           │   ├── cycle_timer.h
+│   │   │           │   ├── data_buffer.cc
+│   │   │           │   ├── data_buffer.h
+│   │   │           │   ├── decoder_buffer.cc
+│   │   │           │   ├── decoder_buffer.h
+│   │   │           │   ├── divide.cc
+│   │   │           │   ├── divide.h
+│   │   │           │   ├── draco_index_type.h
+│   │   │           │   ├── draco_index_type_vector.h
+│   │   │           │   ├── draco_test_base.h
+│   │   │           │   ├── draco_test_utils.cc
+│   │   │           │   ├── draco_test_utils.h
+│   │   │           │   ├── draco_types.cc
+│   │   │           │   ├── draco_types.h
+│   │   │           │   ├── draco_version.h
+│   │   │           │   ├── encoder_buffer.cc
+│   │   │           │   ├── encoder_buffer.h
+│   │   │           │   ├── hash_utils.cc
+│   │   │           │   ├── hash_utils.h
+│   │   │           │   ├── macros.h
+│   │   │           │   ├── math_utils.h
+│   │   │           │   ├── math_utils_test.cc
+│   │   │           │   ├── options.cc
+│   │   │           │   ├── options.h
+│   │   │           │   ├── quantization_utils.cc
+│   │   │           │   ├── quantization_utils.h
+│   │   │           │   ├── quantization_utils_test.cc
+│   │   │           │   ├── status.cc
+│   │   │           │   ├── status.h
+│   │   │           │   ├── status_or.h
+│   │   │           │   ├── status_test.cc
+│   │   │           │   ├── varint_decoding.h
+│   │   │           │   ├── varint_encoding.h
+│   │   │           │   ├── vector_d.h
+│   │   │           │   └── vector_d_test.cc
+│   │   │           ├── io
+│   │   │           │   ├── file_reader_factory.cc
+│   │   │           │   ├── file_reader_factory.h
+│   │   │           │   ├── file_reader_factory_test.cc
+│   │   │           │   ├── file_reader_interface.h
+│   │   │           │   ├── file_reader_test_common.h
+│   │   │           │   ├── file_utils.cc
+│   │   │           │   ├── file_utils.h
+│   │   │           │   ├── file_utils_test.cc
+│   │   │           │   ├── file_writer_factory.cc
+│   │   │           │   ├── file_writer_factory.h
+│   │   │           │   ├── file_writer_factory_test.cc
+│   │   │           │   ├── file_writer_interface.h
+│   │   │           │   ├── file_writer_utils.cc
+│   │   │           │   ├── file_writer_utils.h
+│   │   │           │   ├── file_writer_utils_test.cc
+│   │   │           │   ├── gltf_decoder.cc
+│   │   │           │   ├── gltf_decoder.h
+│   │   │           │   ├── gltf_decoder_test.cc
+│   │   │           │   ├── gltf_encoder.cc
+│   │   │           │   ├── gltf_encoder.h
+│   │   │           │   ├── gltf_encoder_test.cc
+│   │   │           │   ├── gltf_test_helper.cc
+│   │   │           │   ├── gltf_test_helper.h
+│   │   │           │   ├── gltf_utils.cc
+│   │   │           │   ├── gltf_utils.h
+│   │   │           │   ├── gltf_utils_test.cc
+│   │   │           │   ├── image_compression_options.h
+│   │   │           │   ├── mesh_io.cc
+│   │   │           │   ├── mesh_io.h
+│   │   │           │   ├── obj_decoder.cc
+│   │   │           │   ├── obj_decoder.h
+│   │   │           │   ├── obj_decoder_test.cc
+│   │   │           │   ├── obj_encoder.cc
+│   │   │           │   ├── obj_encoder.h
+│   │   │           │   ├── obj_encoder_test.cc
+│   │   │           │   ├── parser_utils.cc
+│   │   │           │   ├── parser_utils.h
+│   │   │           │   ├── ply_decoder.cc
+│   │   │           │   ├── ply_decoder.h
+│   │   │           │   ├── ply_decoder_test.cc
+│   │   │           │   ├── ply_encoder.cc
+│   │   │           │   ├── ply_encoder.h
+│   │   │           │   ├── ply_property_reader.h
+│   │   │           │   ├── ply_property_writer.h
+│   │   │           │   ├── ply_reader.cc
+│   │   │           │   ├── ply_reader.h
+│   │   │           │   ├── ply_reader_test.cc
+│   │   │           │   ├── point_cloud_io.cc
+│   │   │           │   ├── point_cloud_io.h
+│   │   │           │   ├── point_cloud_io_test.cc
+│   │   │           │   ├── scene_io.cc
+│   │   │           │   ├── scene_io.h
+│   │   │           │   ├── scene_io_test.cc
+│   │   │           │   ├── stdio_file_reader.cc
+│   │   │           │   ├── stdio_file_reader.h
+│   │   │           │   ├── stdio_file_reader_test.cc
+│   │   │           │   ├── stdio_file_writer.cc
+│   │   │           │   ├── stdio_file_writer.h
+│   │   │           │   ├── stdio_file_writer_test.cc
+│   │   │           │   ├── stl_decoder.cc
+│   │   │           │   ├── stl_decoder.h
+│   │   │           │   ├── stl_decoder_test.cc
+│   │   │           │   ├── stl_encoder.cc
+│   │   │           │   ├── stl_encoder.h
+│   │   │           │   ├── stl_encoder_test.cc
+│   │   │           │   ├── texture_io.cc
+│   │   │           │   ├── texture_io.h
+│   │   │           │   ├── texture_io_test.cc
+│   │   │           │   ├── tiny_gltf_utils.cc
+│   │   │           │   └── tiny_gltf_utils.h
+│   │   │           ├── javascript
+│   │   │           │   └── emscripten
+│   │   │           │       ├── decoder_functions.js
+│   │   │           │       ├── decoder_webidl_wrapper.cc
+│   │   │           │       ├── decoder_webidl_wrapper.h
+│   │   │           │       ├── draco_decoder_glue_wrapper.cc
+│   │   │           │       ├── draco_encoder_glue_wrapper.cc
+│   │   │           │       ├── draco_web_decoder.idl
+│   │   │           │       ├── draco_web_encoder.idl
+│   │   │           │       ├── encoder_webidl_wrapper.cc
+│   │   │           │       ├── encoder_webidl_wrapper.h
+│   │   │           │       ├── finalize.js
+│   │   │           │       ├── prepareCallbacks.js
+│   │   │           │       └── version.js
+│   │   │           ├── material
+│   │   │           │   ├── material.cc
+│   │   │           │   ├── material.h
+│   │   │           │   ├── material_library.cc
+│   │   │           │   ├── material_library.h
+│   │   │           │   ├── material_library_test.cc
+│   │   │           │   ├── material_test.cc
+│   │   │           │   ├── material_utils.cc
+│   │   │           │   ├── material_utils.h
+│   │   │           │   └── material_utils_test.cc
+│   │   │           ├── maya
+│   │   │           │   ├── draco_maya_plugin.cc
+│   │   │           │   └── draco_maya_plugin.h
+│   │   │           ├── mesh
+│   │   │           │   ├── corner_table.cc
+│   │   │           │   ├── corner_table.h
+│   │   │           │   ├── corner_table_iterators.h
+│   │   │           │   ├── corner_table_test.cc
+│   │   │           │   ├── mesh_are_equivalent.cc
+│   │   │           │   ├── mesh_are_equivalent.h
+│   │   │           │   ├── mesh_are_equivalent_test.cc
+│   │   │           │   ├── mesh_attribute_corner_table.cc
+│   │   │           │   ├── mesh_attribute_corner_table.h
+│   │   │           │   ├── mesh.cc
+│   │   │           │   ├── mesh_cleanup.cc
+│   │   │           │   ├── mesh_cleanup.h
+│   │   │           │   ├── mesh_cleanup_test.cc
+│   │   │           │   ├── mesh_connected_components.h
+│   │   │           │   ├── mesh_features.cc
+│   │   │           │   ├── mesh_features.h
+│   │   │           │   ├── mesh_features_test.cc
+│   │   │           │   ├── mesh.h
+│   │   │           │   ├── mesh_indices.h
+│   │   │           │   ├── mesh_misc_functions.cc
+│   │   │           │   ├── mesh_misc_functions.h
+│   │   │           │   ├── mesh_splitter.cc
+│   │   │           │   ├── mesh_splitter.h
+│   │   │           │   ├── mesh_splitter_test.cc
+│   │   │           │   ├── mesh_stripifier.cc
+│   │   │           │   ├── mesh_stripifier.h
+│   │   │           │   ├── mesh_test.cc
+│   │   │           │   ├── mesh_utils.cc
+│   │   │           │   ├── mesh_utils.h
+│   │   │           │   ├── mesh_utils_test.cc
+│   │   │           │   ├── triangle_soup_mesh_builder.cc
+│   │   │           │   ├── triangle_soup_mesh_builder.h
+│   │   │           │   ├── triangle_soup_mesh_builder_test.cc
+│   │   │           │   └── valence_cache.h
+│   │   │           ├── metadata
+│   │   │           │   ├── geometry_metadata.cc
+│   │   │           │   ├── geometry_metadata.h
+│   │   │           │   ├── metadata.cc
+│   │   │           │   ├── metadata_decoder.cc
+│   │   │           │   ├── metadata_decoder.h
+│   │   │           │   ├── metadata_encoder.cc
+│   │   │           │   ├── metadata_encoder.h
+│   │   │           │   ├── metadata_encoder_test.cc
+│   │   │           │   ├── metadata.h
+│   │   │           │   ├── metadata_test.cc
+│   │   │           │   ├── property_table.cc
+│   │   │           │   ├── property_table.h
+│   │   │           │   ├── property_table_test.cc
+│   │   │           │   ├── structural_metadata.cc
+│   │   │           │   ├── structural_metadata.h
+│   │   │           │   └── structural_metadata_test.cc
+│   │   │           ├── point_cloud
+│   │   │           │   ├── point_cloud_builder.cc
+│   │   │           │   ├── point_cloud_builder.h
+│   │   │           │   ├── point_cloud_builder_test.cc
+│   │   │           │   ├── point_cloud.cc
+│   │   │           │   ├── point_cloud.h
+│   │   │           │   └── point_cloud_test.cc
+│   │   │           ├── scene
+│   │   │           │   ├── instance_array.cc
+│   │   │           │   ├── instance_array.h
+│   │   │           │   ├── instance_array_test.cc
+│   │   │           │   ├── light.cc
+│   │   │           │   ├── light.h
+│   │   │           │   ├── light_test.cc
+│   │   │           │   ├── mesh_group.h
+│   │   │           │   ├── mesh_group_test.cc
+│   │   │           │   ├── scene_are_equivalent.cc
+│   │   │           │   ├── scene_are_equivalent.h
+│   │   │           │   ├── scene_are_equivalent_test.cc
+│   │   │           │   ├── scene.cc
+│   │   │           │   ├── scene.h
+│   │   │           │   ├── scene_indices.h
+│   │   │           │   ├── scene_node.h
+│   │   │           │   ├── scene_test.cc
+│   │   │           │   ├── scene_utils.cc
+│   │   │           │   ├── scene_utils.h
+│   │   │           │   ├── scene_utils_test.cc
+│   │   │           │   ├── trs_matrix.cc
+│   │   │           │   ├── trs_matrix.h
+│   │   │           │   └── trs_matrix_test.cc
+│   │   │           ├── texture
+│   │   │           │   ├── source_image.cc
+│   │   │           │   ├── source_image.h
+│   │   │           │   ├── texture.h
+│   │   │           │   ├── texture_library.cc
+│   │   │           │   ├── texture_library.h
+│   │   │           │   ├── texture_library_test.cc
+│   │   │           │   ├── texture_map.cc
+│   │   │           │   ├── texture_map.h
+│   │   │           │   ├── texture_map_test.cc
+│   │   │           │   ├── texture_transform.cc
+│   │   │           │   ├── texture_transform.h
+│   │   │           │   ├── texture_transform_test.cc
+│   │   │           │   ├── texture_utils.cc
+│   │   │           │   ├── texture_utils.h
+│   │   │           │   └── texture_utils_test.cc
+│   │   │           ├── tools
+│   │   │           │   ├── draco_decoder.cc
+│   │   │           │   ├── draco_encoder.cc
+│   │   │           │   ├── draco_transcoder.cc
+│   │   │           │   ├── draco_transcoder_lib.cc
+│   │   │           │   ├── draco_transcoder_lib.h
+│   │   │           │   ├── draco_transcoder_lib_test.cc
+│   │   │           │   ├── fuzz
+│   │   │           │   │   ├── build.sh
+│   │   │           │   │   ├── draco_mesh_decoder_fuzzer.cc
+│   │   │           │   │   ├── draco_mesh_decoder_without_dequantization_fuzzer.cc
+│   │   │           │   │   ├── draco_pc_decoder_fuzzer.cc
+│   │   │           │   │   └── draco_pc_decoder_without_dequantization_fuzzer.cc
+│   │   │           │   └── install_test
+│   │   │           │       ├── CMakeLists.txt
+│   │   │           │       ├── main.cc
+│   │   │           │       └── test.py
+│   │   │           └── unity
+│   │   │               ├── draco_unity_plugin.cc
+│   │   │               ├── draco_unity_plugin.h
+│   │   │               └── draco_unity_plugin_test.cc
+│   │   ├── googletest
+│   │   │   ├── BUILD.bazel
+│   │   │   ├── ci
+│   │   │   │   ├── linux-presubmit.sh
+│   │   │   │   ├── macos-presubmit.sh
+│   │   │   │   └── windows-presubmit.bat
+│   │   │   ├── CMakeLists.txt
+│   │   │   ├── CONTRIBUTING.md
+│   │   │   ├── CONTRIBUTORS
+│   │   │   ├── docs
+│   │   │   │   ├── advanced.md
+│   │   │   │   ├── assets
+│   │   │   │   │   └── css
+│   │   │   │   │       └── style.scss
+│   │   │   │   ├── community_created_documentation.md
+│   │   │   │   ├── _config.yml
+│   │   │   │   ├── _data
+│   │   │   │   │   └── navigation.yml
+│   │   │   │   ├── faq.md
+│   │   │   │   ├── gmock_cheat_sheet.md
+│   │   │   │   ├── gmock_cook_book.md
+│   │   │   │   ├── gmock_faq.md
+│   │   │   │   ├── gmock_for_dummies.md
+│   │   │   │   ├── index.md
+│   │   │   │   ├── _layouts
+│   │   │   │   │   └── default.html
+│   │   │   │   ├── pkgconfig.md
+│   │   │   │   ├── platforms.md
+│   │   │   │   ├── primer.md
+│   │   │   │   ├── quickstart-bazel.md
+│   │   │   │   ├── quickstart-cmake.md
+│   │   │   │   ├── reference
+│   │   │   │   │   ├── actions.md
+│   │   │   │   │   ├── assertions.md
+│   │   │   │   │   ├── matchers.md
+│   │   │   │   │   ├── mocking.md
+│   │   │   │   │   └── testing.md
+│   │   │   │   ├── samples.md
+│   │   │   │   └── _sass
+│   │   │   │       └── main.scss
+│   │   │   ├── googlemock
+│   │   │   │   ├── cmake
+│   │   │   │   │   ├── gmock_main.pc.in
+│   │   │   │   │   └── gmock.pc.in
+│   │   │   │   ├── CMakeLists.txt
+│   │   │   │   ├── docs
+│   │   │   │   │   └── README.md
+│   │   │   │   ├── include
+│   │   │   │   │   └── gmock
+│   │   │   │   │       ├── gmock-actions.h
+│   │   │   │   │       ├── gmock-cardinalities.h
+│   │   │   │   │       ├── gmock-function-mocker.h
+│   │   │   │   │       ├── gmock.h
+│   │   │   │   │       ├── gmock-matchers.h
+│   │   │   │   │       ├── gmock-more-actions.h
+│   │   │   │   │       ├── gmock-more-matchers.h
+│   │   │   │   │       ├── gmock-nice-strict.h
+│   │   │   │   │       ├── gmock-spec-builders.h
+│   │   │   │   │       └── internal
+│   │   │   │   │           ├── custom
+│   │   │   │   │           │   ├── gmock-generated-actions.h
+│   │   │   │   │           │   ├── gmock-matchers.h
+│   │   │   │   │           │   ├── gmock-port.h
+│   │   │   │   │           │   └── README.md
+│   │   │   │   │           ├── gmock-internal-utils.h
+│   │   │   │   │           ├── gmock-port.h
+│   │   │   │   │           └── gmock-pp.h
+│   │   │   │   ├── README.md
+│   │   │   │   ├── src
+│   │   │   │   │   ├── gmock-all.cc
+│   │   │   │   │   ├── gmock-cardinalities.cc
+│   │   │   │   │   ├── gmock.cc
+│   │   │   │   │   ├── gmock-internal-utils.cc
+│   │   │   │   │   ├── gmock_main.cc
+│   │   │   │   │   ├── gmock-matchers.cc
+│   │   │   │   │   └── gmock-spec-builders.cc
+│   │   │   │   └── test
+│   │   │   │       ├── BUILD.bazel
+│   │   │   │       ├── gmock-actions_test.cc
+│   │   │   │       ├── gmock_all_test.cc
+│   │   │   │       ├── gmock-cardinalities_test.cc
+│   │   │   │       ├── gmock_ex_test.cc
+│   │   │   │       ├── gmock-function-mocker_test.cc
+│   │   │   │       ├── gmock-internal-utils_test.cc
+│   │   │   │       ├── gmock_leak_test_.cc
+│   │   │   │       ├── gmock_leak_test.py
+│   │   │   │       ├── gmock_link2_test.cc
+│   │   │   │       ├── gmock_link_test.cc
+│   │   │   │       ├── gmock_link_test.h
+│   │   │   │       ├── gmock-matchers-arithmetic_test.cc
+│   │   │   │       ├── gmock-matchers-comparisons_test.cc
+│   │   │   │       ├── gmock-matchers-containers_test.cc
+│   │   │   │       ├── gmock-matchers-misc_test.cc
+│   │   │   │       ├── gmock-matchers_test.h
+│   │   │   │       ├── gmock-more-actions_test.cc
+│   │   │   │       ├── gmock-nice-strict_test.cc
+│   │   │   │       ├── gmock_output_test_.cc
+│   │   │   │       ├── gmock_output_test_golden.txt
+│   │   │   │       ├── gmock_output_test.py
+│   │   │   │       ├── gmock-port_test.cc
+│   │   │   │       ├── gmock-pp-string_test.cc
+│   │   │   │       ├── gmock-pp_test.cc
+│   │   │   │       ├── gmock-spec-builders_test.cc
+│   │   │   │       ├── gmock_stress_test.cc
+│   │   │   │       ├── gmock_test.cc
+│   │   │   │       └── gmock_test_utils.py
+│   │   │   ├── googletest
+│   │   │   │   ├── cmake
+│   │   │   │   │   ├── Config.cmake.in
+│   │   │   │   │   ├── gtest_main.pc.in
+│   │   │   │   │   ├── gtest.pc.in
+│   │   │   │   │   ├── internal_utils.cmake
+│   │   │   │   │   └── libgtest.la.in
+│   │   │   │   ├── CMakeLists.txt
+│   │   │   │   ├── docs
+│   │   │   │   │   └── README.md
+│   │   │   │   ├── include
+│   │   │   │   │   └── gtest
+│   │   │   │   │       ├── gtest-assertion-result.h
+│   │   │   │   │       ├── gtest-death-test.h
+│   │   │   │   │       ├── gtest.h
+│   │   │   │   │       ├── gtest-matchers.h
+│   │   │   │   │       ├── gtest-message.h
+│   │   │   │   │       ├── gtest-param-test.h
+│   │   │   │   │       ├── gtest_pred_impl.h
+│   │   │   │   │       ├── gtest-printers.h
+│   │   │   │   │       ├── gtest_prod.h
+│   │   │   │   │       ├── gtest-spi.h
+│   │   │   │   │       ├── gtest-test-part.h
+│   │   │   │   │       ├── gtest-typed-test.h
+│   │   │   │   │       └── internal
+│   │   │   │   │           ├── custom
+│   │   │   │   │           │   ├── gtest.h
+│   │   │   │   │           │   ├── gtest-port.h
+│   │   │   │   │           │   ├── gtest-printers.h
+│   │   │   │   │           │   └── README.md
+│   │   │   │   │           ├── gtest-death-test-internal.h
+│   │   │   │   │           ├── gtest-filepath.h
+│   │   │   │   │           ├── gtest-internal.h
+│   │   │   │   │           ├── gtest-param-util.h
+│   │   │   │   │           ├── gtest-port-arch.h
+│   │   │   │   │           ├── gtest-port.h
+│   │   │   │   │           ├── gtest-string.h
+│   │   │   │   │           └── gtest-type-util.h
+│   │   │   │   ├── README.md
+│   │   │   │   ├── samples
+│   │   │   │   │   ├── prime_tables.h
+│   │   │   │   │   ├── sample10_unittest.cc
+│   │   │   │   │   ├── sample1.cc
+│   │   │   │   │   ├── sample1.h
+│   │   │   │   │   ├── sample1_unittest.cc
+│   │   │   │   │   ├── sample2.cc
+│   │   │   │   │   ├── sample2.h
+│   │   │   │   │   ├── sample2_unittest.cc
+│   │   │   │   │   ├── sample3-inl.h
+│   │   │   │   │   ├── sample3_unittest.cc
+│   │   │   │   │   ├── sample4.cc
+│   │   │   │   │   ├── sample4.h
+│   │   │   │   │   ├── sample4_unittest.cc
+│   │   │   │   │   ├── sample5_unittest.cc
+│   │   │   │   │   ├── sample6_unittest.cc
+│   │   │   │   │   ├── sample7_unittest.cc
+│   │   │   │   │   ├── sample8_unittest.cc
+│   │   │   │   │   └── sample9_unittest.cc
+│   │   │   │   ├── src
+│   │   │   │   │   ├── gtest-all.cc
+│   │   │   │   │   ├── gtest-assertion-result.cc
+│   │   │   │   │   ├── gtest.cc
+│   │   │   │   │   ├── gtest-death-test.cc
+│   │   │   │   │   ├── gtest-filepath.cc
+│   │   │   │   │   ├── gtest-internal-inl.h
+│   │   │   │   │   ├── gtest_main.cc
+│   │   │   │   │   ├── gtest-matchers.cc
+│   │   │   │   │   ├── gtest-port.cc
+│   │   │   │   │   ├── gtest-printers.cc
+│   │   │   │   │   ├── gtest-test-part.cc
+│   │   │   │   │   └── gtest-typed-test.cc
+│   │   │   │   └── test
+│   │   │   │       ├── BUILD.bazel
+│   │   │   │       ├── googletest-break-on-failure-unittest_.cc
+│   │   │   │       ├── googletest-break-on-failure-unittest.py
+│   │   │   │       ├── googletest-catch-exceptions-test_.cc
+│   │   │   │       ├── googletest-catch-exceptions-test.py
+│   │   │   │       ├── googletest-color-test_.cc
+│   │   │   │       ├── googletest-color-test.py
+│   │   │   │       ├── googletest-death-test_ex_test.cc
+│   │   │   │       ├── googletest-death-test-test.cc
+│   │   │   │       ├── googletest-env-var-test_.cc
+│   │   │   │       ├── googletest-env-var-test.py
+│   │   │   │       ├── googletest-failfast-unittest_.cc
+│   │   │   │       ├── googletest-failfast-unittest.py
+│   │   │   │       ├── googletest-filepath-test.cc
+│   │   │   │       ├── googletest-filter-unittest_.cc
+│   │   │   │       ├── googletest-filter-unittest.py
+│   │   │   │       ├── googletest-global-environment-unittest_.cc
+│   │   │   │       ├── googletest-global-environment-unittest.py
+│   │   │   │       ├── googletest-json-outfiles-test.py
+│   │   │   │       ├── googletest-json-output-unittest.py
+│   │   │   │       ├── googletest-listener-test.cc
+│   │   │   │       ├── googletest-list-tests-unittest_.cc
+│   │   │   │       ├── googletest-list-tests-unittest.py
+│   │   │   │       ├── googletest-message-test.cc
+│   │   │   │       ├── googletest-options-test.cc
+│   │   │   │       ├── googletest-output-test_.cc
+│   │   │   │       ├── googletest-output-test-golden-lin.txt
+│   │   │   │       ├── googletest-output-test.py
+│   │   │   │       ├── googletest-param-test2-test.cc
+│   │   │   │       ├── googletest-param-test-invalid-name1-test_.cc
+│   │   │   │       ├── googletest-param-test-invalid-name1-test.py
+│   │   │   │       ├── googletest-param-test-invalid-name2-test_.cc
+│   │   │   │       ├── googletest-param-test-invalid-name2-test.py
+│   │   │   │       ├── googletest-param-test-test.cc
+│   │   │   │       ├── googletest-param-test-test.h
+│   │   │   │       ├── googletest-port-test.cc
+│   │   │   │       ├── googletest-printers-test.cc
+│   │   │   │       ├── googletest-setuptestsuite-test_.cc
+│   │   │   │       ├── googletest-setuptestsuite-test.py
+│   │   │   │       ├── googletest-shuffle-test_.cc
+│   │   │   │       ├── googletest-shuffle-test.py
+│   │   │   │       ├── googletest-test-part-test.cc
+│   │   │   │       ├── googletest-throw-on-failure-test_.cc
+│   │   │   │       ├── googletest-throw-on-failure-test.py
+│   │   │   │       ├── googletest-uninitialized-test_.cc
+│   │   │   │       ├── googletest-uninitialized-test.py
+│   │   │   │       ├── gtest_all_test.cc
+│   │   │   │       ├── gtest_assert_by_exception_test.cc
+│   │   │   │       ├── gtest_dirs_test.cc
+│   │   │   │       ├── gtest_environment_test.cc
+│   │   │   │       ├── gtest_help_test_.cc
+│   │   │   │       ├── gtest_help_test.py
+│   │   │   │       ├── gtest_json_test_utils.py
+│   │   │   │       ├── gtest_list_output_unittest_.cc
+│   │   │   │       ├── gtest_list_output_unittest.py
+│   │   │   │       ├── gtest_main_unittest.cc
+│   │   │   │       ├── gtest_no_test_unittest.cc
+│   │   │   │       ├── gtest_pred_impl_unittest.cc
+│   │   │   │       ├── gtest_premature_exit_test.cc
+│   │   │   │       ├── gtest_prod_test.cc
+│   │   │   │       ├── gtest_repeat_test.cc
+│   │   │   │       ├── gtest_skip_check_output_test.py
+│   │   │   │       ├── gtest_skip_environment_check_output_test.py
+│   │   │   │       ├── gtest_skip_in_environment_setup_test.cc
+│   │   │   │       ├── gtest_skip_test.cc
+│   │   │   │       ├── gtest_sole_header_test.cc
+│   │   │   │       ├── gtest_stress_test.cc
+│   │   │   │       ├── gtest_testbridge_test_.cc
+│   │   │   │       ├── gtest_testbridge_test.py
+│   │   │   │       ├── gtest_test_macro_stack_footprint_test.cc
+│   │   │   │       ├── gtest_test_utils.py
+│   │   │   │       ├── gtest_throw_on_failure_ex_test.cc
+│   │   │   │       ├── gtest-typed-test2_test.cc
+│   │   │   │       ├── gtest-typed-test_test.cc
+│   │   │   │       ├── gtest-typed-test_test.h
+│   │   │   │       ├── gtest-unittest-api_test.cc
+│   │   │   │       ├── gtest_unittest.cc
+│   │   │   │       ├── gtest_xml_outfile1_test_.cc
+│   │   │   │       ├── gtest_xml_outfile2_test_.cc
+│   │   │   │       ├── gtest_xml_outfiles_test.py
+│   │   │   │       ├── gtest_xml_output_unittest_.cc
+│   │   │   │       ├── gtest_xml_output_unittest.py
+│   │   │   │       ├── gtest_xml_test_utils.py
+│   │   │   │       ├── production.cc
+│   │   │   │       └── production.h
+│   │   │   ├── googletest_deps.bzl
+│   │   │   ├── LICENSE
+│   │   │   ├── README.md
+│   │   │   └── WORKSPACE
+│   │   ├── Open3DGC
+│   │   │   ├── o3dgcAdjacencyInfo.h
+│   │   │   ├── o3dgcArithmeticCodec.cpp
+│   │   │   ├── o3dgcArithmeticCodec.h
+│   │   │   ├── o3dgcBinaryStream.h
+│   │   │   ├── o3dgcCommon.h
+│   │   │   ├── o3dgcDVEncodeParams.h
+│   │   │   ├── o3dgcDynamicVectorDecoder.cpp
+│   │   │   ├── o3dgcDynamicVectorDecoder.h
+│   │   │   ├── o3dgcDynamicVectorEncoder.cpp
+│   │   │   ├── o3dgcDynamicVectorEncoder.h
+│   │   │   ├── o3dgcDynamicVector.h
+│   │   │   ├── o3dgcFIFO.h
+│   │   │   ├── o3dgcIndexedFaceSet.h
+│   │   │   ├── o3dgcIndexedFaceSet.inl
+│   │   │   ├── o3dgcSC3DMCDecoder.h
+│   │   │   ├── o3dgcSC3DMCDecoder.inl
+│   │   │   ├── o3dgcSC3DMCEncodeParams.h
+│   │   │   ├── o3dgcSC3DMCEncoder.h
+│   │   │   ├── o3dgcSC3DMCEncoder.inl
+│   │   │   ├── o3dgcTimer.h
+│   │   │   ├── o3dgcTools.cpp
+│   │   │   ├── o3dgcTriangleFans.cpp
+│   │   │   ├── o3dgcTriangleFans.h
+│   │   │   ├── o3dgcTriangleListDecoder.h
+│   │   │   ├── o3dgcTriangleListDecoder.inl
+│   │   │   ├── o3dgcTriangleListEncoder.h
+│   │   │   ├── o3dgcTriangleListEncoder.inl
+│   │   │   ├── o3dgcVector.h
+│   │   │   └── o3dgcVector.inl
+│   │   ├── openddlparser
+│   │   │   ├── CMakeLists.txt
+│   │   │   ├── code
+│   │   │   │   ├── DDLNode.cpp
+│   │   │   │   ├── OpenDDLCommon.cpp
+│   │   │   │   ├── OpenDDLExport.cpp
+│   │   │   │   ├── OpenDDLParser.cpp
+│   │   │   │   ├── OpenDDLStream.cpp
+│   │   │   │   └── Value.cpp
+│   │   │   ├── CREDITS
+│   │   │   ├── include
+│   │   │   │   └── openddlparser
+│   │   │   │       ├── DDLNode.h
+│   │   │   │       ├── OpenDDLCommon.h
+│   │   │   │       ├── OpenDDLExport.h
+│   │   │   │       ├── OpenDDLParser.h
+│   │   │   │       ├── OpenDDLParserUtils.h
+│   │   │   │       ├── OpenDDLStream.h
+│   │   │   │       ├── TPoolAllocator.h
+│   │   │   │       └── Value.h
+│   │   │   ├── LICENSE
+│   │   │   └── README.md
+│   │   ├── poly2tri
+│   │   │   ├── AUTHORS
+│   │   │   ├── LICENSE
+│   │   │   ├── poly2tri
+│   │   │   │   ├── common
+│   │   │   │   │   ├── shapes.cc
+│   │   │   │   │   ├── shapes.h
+│   │   │   │   │   └── utils.h
+│   │   │   │   ├── poly2tri.h
+│   │   │   │   └── sweep
+│   │   │   │       ├── advancing_front.cc
+│   │   │   │       ├── advancing_front.h
+│   │   │   │       ├── cdt.cc
+│   │   │   │       ├── cdt.h
+│   │   │   │       ├── sweep.cc
+│   │   │   │       ├── sweep_context.cc
+│   │   │   │       ├── sweep_context.h
+│   │   │   │       └── sweep.h
+│   │   │   └── README
+│   │   ├── pugixml
+│   │   │   ├── CMakeLists.txt
+│   │   │   ├── readme.txt
+│   │   │   └── src
+│   │   │       ├── pugiconfig.hpp
+│   │   │       ├── pugixml.cpp
+│   │   │       └── pugixml.hpp
+│   │   ├── rapidjson
+│   │   │   ├── include
+│   │   │   │   └── rapidjson
+│   │   │   │       ├── allocators.h
+│   │   │   │       ├── cursorstreamwrapper.h
+│   │   │   │       ├── document.h
+│   │   │   │       ├── encodedstream.h
+│   │   │   │       ├── encodings.h
+│   │   │   │       ├── error
+│   │   │   │       │   ├── en.h
+│   │   │   │       │   └── error.h
+│   │   │   │       ├── filereadstream.h
+│   │   │   │       ├── filewritestream.h
+│   │   │   │       ├── fwd.h
+│   │   │   │       ├── internal
+│   │   │   │       │   ├── biginteger.h
+│   │   │   │       │   ├── clzll.h
+│   │   │   │       │   ├── diyfp.h
+│   │   │   │       │   ├── dtoa.h
+│   │   │   │       │   ├── ieee754.h
+│   │   │   │       │   ├── itoa.h
+│   │   │   │       │   ├── meta.h
+│   │   │   │       │   ├── pow10.h
+│   │   │   │       │   ├── regex.h
+│   │   │   │       │   ├── stack.h
+│   │   │   │       │   ├── strfunc.h
+│   │   │   │       │   ├── strtod.h
+│   │   │   │       │   └── swap.h
+│   │   │   │       ├── istreamwrapper.h
+│   │   │   │       ├── memorybuffer.h
+│   │   │   │       ├── memorystream.h
+│   │   │   │       ├── msinttypes
+│   │   │   │       │   ├── inttypes.h
+│   │   │   │       │   └── stdint.h
+│   │   │   │       ├── ostreamwrapper.h
+│   │   │   │       ├── pointer.h
+│   │   │   │       ├── prettywriter.h
+│   │   │   │       ├── rapidjson.h
+│   │   │   │       ├── reader.h
+│   │   │   │       ├── schema.h
+│   │   │   │       ├── stream.h
+│   │   │   │       ├── stringbuffer.h
+│   │   │   │       ├── uri.h
+│   │   │   │       └── writer.h
+│   │   │   ├── license.txt
+│   │   │   └── readme.md
+│   │   ├── stb
+│   │   │   └── stb_image.h
+│   │   ├── unzip
+│   │   │   ├── crypt.h
+│   │   │   ├── ioapi.c
+│   │   │   ├── ioapi.h
+│   │   │   ├── MiniZip64_info.txt
+│   │   │   ├── unzip.c
+│   │   │   └── unzip.h
+│   │   ├── utf8cpp
+│   │   │   ├── doc
+│   │   │   │   ├── LICENSE
+│   │   │   │   └── README.md
+│   │   │   └── source
+│   │   │       ├── utf8
+│   │   │       │   ├── checked.h
+│   │   │       │   ├── core.h
+│   │   │       │   ├── cpp11.h
+│   │   │       │   ├── cpp17.h
+│   │   │       │   └── unchecked.h
+│   │   │       └── utf8.h
+│   │   ├── zip
+│   │   │   ├── cmake
+│   │   │   │   ├── asan-wrapper
+│   │   │   │   ├── cmake_uninstall.cmake.in
+│   │   │   │   └── Config.cmake.in
+│   │   │   ├── CMakeLists.txt
+│   │   │   ├── CONTRIBUTING.md
+│   │   │   ├── Doxyfile.in
+│   │   │   ├── README.md
+│   │   │   ├── src
+│   │   │   │   ├── miniz.h
+│   │   │   │   ├── zip.c
+│   │   │   │   └── zip.h
+│   │   │   ├── test
+│   │   │   │   ├── CMakeLists.txt
+│   │   │   │   ├── minunit.h
+│   │   │   │   ├── test_append.c
+│   │   │   │   ├── test_entry.c
+│   │   │   │   ├── test_extract.c
+│   │   │   │   ├── test_open.c
+│   │   │   │   ├── test_permissions.c
+│   │   │   │   ├── test_read.c
+│   │   │   │   └── test_write.c
+│   │   │   ├── UNLICENSE
+│   │   │   └── zip.png
+│   │   └── zlib
+│   │       ├── adler32.c
+│   │       ├── ChangeLog
+│   │       ├── CMakeLists.txt
+│   │       ├── compress.c
+│   │       ├── contrib
+│   │       │   ├── ada
+│   │       │   │   ├── buffer_demo.adb
+│   │       │   │   ├── mtest.adb
+│   │       │   │   ├── read.adb
+│   │       │   │   ├── readme.txt
+│   │       │   │   ├── test.adb
+│   │       │   │   ├── zlib.adb
+│   │       │   │   ├── zlib.ads
+│   │       │   │   ├── zlib.gpr
+│   │       │   │   ├── zlib-streams.adb
+│   │       │   │   ├── zlib-streams.ads
+│   │       │   │   ├── zlib-thin.adb
+│   │       │   │   └── zlib-thin.ads
+│   │       │   ├── amd64
+│   │       │   │   └── amd64-match.S
+│   │       │   ├── asm686
+│   │       │   │   ├── match.S
+│   │       │   │   └── README.686
+│   │       │   ├── blast
+│   │       │   │   ├── blast.c
+│   │       │   │   ├── blast.h
+│   │       │   │   ├── README
+│   │       │   │   ├── test.pk
+│   │       │   │   └── test.txt
+│   │       │   ├── delphi
+│   │       │   │   ├── readme.txt
+│   │       │   │   ├── ZLibConst.pas
+│   │       │   │   ├── zlibd32.mak
+│   │       │   │   └── ZLib.pas
+│   │       │   ├── dotzlib
+│   │       │   │   ├── DotZLib
+│   │       │   │   │   ├── AssemblyInfo.cs
+│   │       │   │   │   ├── ChecksumImpl.cs
+│   │       │   │   │   ├── CircularBuffer.cs
+│   │       │   │   │   ├── CodecBase.cs
+│   │       │   │   │   ├── Deflater.cs
+│   │       │   │   │   ├── DotZLib.cs
+│   │       │   │   │   ├── DotZLib.csproj
+│   │       │   │   │   ├── GZipStream.cs
+│   │       │   │   │   ├── Inflater.cs
+│   │       │   │   │   └── UnitTests.cs
+│   │       │   │   ├── DotZLib.build
+│   │       │   │   ├── DotZLib.chm
+│   │       │   │   ├── LICENSE_1_0.txt
+│   │       │   │   └── readme.txt
+│   │       │   ├── gcc_gvmat64
+│   │       │   │   └── gvmat64.S
+│   │       │   ├── infback9
+│   │       │   │   ├── infback9.c
+│   │       │   │   ├── infback9.h
+│   │       │   │   ├── inffix9.h
+│   │       │   │   ├── inflate9.h
+│   │       │   │   ├── inftree9.c
+│   │       │   │   ├── inftree9.h
+│   │       │   │   └── README
+│   │       │   ├── inflate86
+│   │       │   │   ├── inffas86.c
+│   │       │   │   └── inffast.S
+│   │       │   ├── iostream
+│   │       │   │   ├── test.cpp
+│   │       │   │   ├── zfstream.cpp
+│   │       │   │   └── zfstream.h
+│   │       │   ├── iostream2
+│   │       │   │   ├── zstream.h
+│   │       │   │   └── zstream_test.cpp
+│   │       │   ├── iostream3
+│   │       │   │   ├── README
+│   │       │   │   ├── test.cc
+│   │       │   │   ├── TODO
+│   │       │   │   ├── zfstream.cc
+│   │       │   │   └── zfstream.h
+│   │       │   ├── masmx64
+│   │       │   │   ├── bld_ml64.bat
+│   │       │   │   ├── gvmat64.asm
+│   │       │   │   ├── inffas8664.c
+│   │       │   │   ├── inffasx64.asm
+│   │       │   │   └── readme.txt
+│   │       │   ├── masmx86
+│   │       │   │   ├── bld_ml32.bat
+│   │       │   │   ├── inffas32.asm
+│   │       │   │   ├── match686.asm
+│   │       │   │   └── readme.txt
+│   │       │   ├── minizip
+│   │       │   │   ├── configure.ac
+│   │       │   │   ├── crypt.h
+│   │       │   │   ├── ioapi.c
+│   │       │   │   ├── ioapi.h
+│   │       │   │   ├── iowin32.c
+│   │       │   │   ├── iowin32.h
+│   │       │   │   ├── Makefile.am
+│   │       │   │   ├── make_vms.com
+│   │       │   │   ├── miniunz.c
+│   │       │   │   ├── miniunzip.1
+│   │       │   │   ├── minizip.1
+│   │       │   │   ├── MiniZip64_Changes.txt
+│   │       │   │   ├── MiniZip64_info.txt
+│   │       │   │   ├── minizip.c
+│   │       │   │   ├── minizip.pc.in
+│   │       │   │   ├── mztools.c
+│   │       │   │   ├── mztools.h
+│   │       │   │   ├── unzip.c
+│   │       │   │   ├── unzip.h
+│   │       │   │   ├── zip.c
+│   │       │   │   └── zip.h
+│   │       │   ├── pascal
+│   │       │   │   ├── example.pas
+│   │       │   │   ├── readme.txt
+│   │       │   │   ├── zlibd32.mak
+│   │       │   │   └── zlibpas.pas
+│   │       │   ├── puff
+│   │       │   │   ├── puff.c
+│   │       │   │   ├── puff.h
+│   │       │   │   ├── pufftest.c
+│   │       │   │   ├── README
+│   │       │   │   └── zeros.raw
+│   │       │   ├── README.contrib
+│   │       │   ├── testzlib
+│   │       │   │   ├── testzlib.c
+│   │       │   │   └── testzlib.txt
+│   │       │   ├── untgz
+│   │       │   │   ├── Makefile.msc
+│   │       │   │   └── untgz.c
+│   │       │   └── vstudio
+│   │       │       ├── readme.txt
+│   │       │       ├── vc10
+│   │       │       │   ├── zlib.rc
+│   │       │       │   └── zlibvc.def
+│   │       │       ├── vc11
+│   │       │       │   ├── zlib.rc
+│   │       │       │   └── zlibvc.def
+│   │       │       ├── vc12
+│   │       │       │   ├── zlib.rc
+│   │       │       │   └── zlibvc.def
+│   │       │       ├── vc14
+│   │       │       │   ├── zlib.rc
+│   │       │       │   └── zlibvc.def
+│   │       │       └── vc9
+│   │       │           ├── zlib.rc
+│   │       │           └── zlibvc.def
+│   │       ├── crc32.c
+│   │       ├── crc32.h
+│   │       ├── deflate.c
+│   │       ├── deflate.h
+│   │       ├── gzclose.c
+│   │       ├── gzguts.h
+│   │       ├── gzlib.c
+│   │       ├── gzread.c
+│   │       ├── gzwrite.c
+│   │       ├── infback.c
+│   │       ├── inffast.c
+│   │       ├── inffast.h
+│   │       ├── inffixed.h
+│   │       ├── inflate.c
+│   │       ├── inflate.h
+│   │       ├── inftrees.c
+│   │       ├── inftrees.h
+│   │       ├── LICENSE
+│   │       ├── README
+│   │       ├── trees.c
+│   │       ├── trees.h
+│   │       ├── uncompr.c
+│   │       ├── win32
+│   │       │   ├── DLL_FAQ.txt
+│   │       │   ├── Makefile.bor
+│   │       │   ├── Makefile.gcc
+│   │       │   ├── Makefile.msc
+│   │       │   ├── README-WIN32.txt
+│   │       │   ├── VisualC.txt
+│   │       │   ├── zlib1.rc
+│   │       │   └── zlib.def
+│   │       ├── zconf.h.cmakein
+│   │       ├── zconf.h.in
+│   │       ├── zconf.h.included
+│   │       ├── zlib.h
+│   │       ├── zlib.pc.cmakein
+│   │       ├── zutil.c
+│   │       └── zutil.h
+│   ├── CONTRIBUTING.md
+│   ├── CREDITS
+│   ├── doc
+│   │   ├── architecture
+│   │   │   ├── AnimationOverview.png
+│   │   │   ├── AnimationOverview.svg
+│   │   │   ├── Assimp_Arch_export.class.violet.html
+│   │   │   ├── Assimp_Arch_Import.class.violet.html
+│   │   │   ├── assimp.object.violet.html
+│   │   │   ├── assimp-process.png
+│   │   │   ├── assimp_usecase.ucase.violet.html
+│   │   │   ├── exporter.png
+│   │   │   ├── process.class.violet.html
+│   │   │   └── usecases.png
+│   │   ├── CMakeLists.txt
+│   │   ├── datastructure.xml
+│   │   ├── dox_cmd.h
+│   │   ├── dox.h
+│   │   ├── Doxyfile_Cmd
+│   │   ├── Doxyfile.in
+│   │   ├── Fileformats.md
+│   │   ├── images
+│   │   │   └── dragonsplash.png
+│   │   └── Preamble.txt
+│   ├── Dockerfile
+│   ├── fuzz
+│   │   └── assimp_fuzzer.cc
+│   ├── include
+│   │   └── assimp
+│   │       ├── aabb.h
+│   │       ├── ai_assert.h
+│   │       ├── anim.h
+│   │       ├── AssertHandler.h
+│   │       ├── Base64.hpp
+│   │       ├── BaseImporter.h
+│   │       ├── Bitmap.h
+│   │       ├── BlobIOSystem.h
+│   │       ├── ByteSwapper.h
+│   │       ├── camera.h
+│   │       ├── cexport.h
+│   │       ├── cfileio.h
+│   │       ├── cimport.h
+│   │       ├── ColladaMetaData.h
+│   │       ├── color4.h
+│   │       ├── color4.inl
+│   │       ├── commonMetaData.h
+│   │       ├── Compiler
+│   │       │   ├── poppack1.h
+│   │       │   ├── pstdint.h
+│   │       │   └── pushpack1.h
+│   │       ├── config.h.in
+│   │       ├── CreateAnimMesh.h
+│   │       ├── DefaultIOStream.h
+│   │       ├── DefaultIOSystem.h
+│   │       ├── DefaultLogger.hpp
+│   │       ├── defs.h
+│   │       ├── Exceptional.h
+│   │       ├── Exporter.hpp
+│   │       ├── fast_atof.h
+│   │       ├── GenericProperty.h
+│   │       ├── GltfMaterial.h
+│   │       ├── Hash.h
+│   │       ├── importerdesc.h
+│   │       ├── Importer.hpp
+│   │       ├── IOStreamBuffer.h
+│   │       ├── IOStream.hpp
+│   │       ├── IOSystem.hpp
+│   │       ├── light.h
+│   │       ├── LineSplitter.h
+│   │       ├── LogAux.h
+│   │       ├── Logger.hpp
+│   │       ├── LogStream.hpp
+│   │       ├── material.h
+│   │       ├── material.inl
+│   │       ├── MathFunctions.h
+│   │       ├── matrix3x3.h
+│   │       ├── matrix3x3.inl
+│   │       ├── matrix4x4.h
+│   │       ├── matrix4x4.inl
+│   │       ├── MemoryIOWrapper.h
+│   │       ├── mesh.h
+│   │       ├── metadata.h
+│   │       ├── NullLogger.hpp
+│   │       ├── ObjMaterial.h
+│   │       ├── ParsingUtils.h
+│   │       ├── pbrmaterial.h
+│   │       ├── port
+│   │       │   └── AndroidJNI
+│   │       │       ├── AndroidJNIIOSystem.h
+│   │       │       └── BundledAssetIOSystem.h
+│   │       ├── postprocess.h
+│   │       ├── Profiler.h
+│   │       ├── ProgressHandler.hpp
+│   │       ├── qnan.h
+│   │       ├── quaternion.h
+│   │       ├── quaternion.inl
+│   │       ├── RemoveComments.h
+│   │       ├── revision.h.in
+│   │       ├── SceneCombiner.h
+│   │       ├── scene.h
+│   │       ├── SGSpatialSort.h
+│   │       ├── SkeletonMeshBuilder.h
+│   │       ├── SmallVector.h
+│   │       ├── SmoothingGroups.h
+│   │       ├── SmoothingGroups.inl
+│   │       ├── SpatialSort.h
+│   │       ├── StandardShapes.h
+│   │       ├── StreamReader.h
+│   │       ├── StreamWriter.h
+│   │       ├── StringComparison.h
+│   │       ├── StringUtils.h
+│   │       ├── Subdivision.h
+│   │       ├── texture.h
+│   │       ├── TinyFormatter.h
+│   │       ├── types.h
+│   │       ├── vector2.h
+│   │       ├── vector2.inl
+│   │       ├── vector3.h
+│   │       ├── vector3.inl
+│   │       ├── version.h
+│   │       ├── Vertex.h
+│   │       ├── XmlParser.h
+│   │       ├── XMLTools.h
+│   │       └── ZipArchiveIOSystem.h
+│   ├── INSTALL
+│   ├── LICENSE
+│   ├── packaging
+│   │   └── windows-innosetup
+│   │       ├── howto-build-setup.txt
+│   │       ├── LICENSE.rtf
+│   │       ├── readme_installer.txt
+│   │       ├── readme_installer_vieweronly.txt
+│   │       ├── script_vieweronly.iss
+│   │       ├── script_x64.iss
+│   │       ├── script_x86.iss
+│   │       └── WEB
+│   ├── port
+│   │   ├── AndroidJNI
+│   │   │   ├── AndroidJNIIOSystem.cpp
+│   │   │   ├── BundledAssetIOSystem.cpp
+│   │   │   ├── CMakeLists.txt
+│   │   │   └── README.md
+│   │   ├── AssimpDelphi
+│   │   │   ├── aiColor4D.pas
+│   │   │   ├── aiMaterial.pas
+│   │   │   ├── aiMatrix3x3.pas
+│   │   │   ├── aiMatrix4x4.pas
+│   │   │   ├── aiMesh.pas
+│   │   │   ├── aiQuaternion.pas
+│   │   │   ├── aiScene.pas
+│   │   │   ├── aiTexture.pas
+│   │   │   ├── aiTypes.pas
+│   │   │   ├── aiVector2D.pas
+│   │   │   ├── aiVector3D.pas
+│   │   │   ├── assimp.pas
+│   │   │   └── Readme.txt
+│   │   ├── AssimpNET
+│   │   │   └── Readme.md
+│   │   ├── AssimpPascal
+│   │   │   └── Readme.md
+│   │   ├── assimp_rs
+│   │   │   ├── Cargo.lock
+│   │   │   ├── Cargo.toml
+│   │   │   └── src
+│   │   │       ├── camera
+│   │   │       │   └── mod.rs
+│   │   │       ├── core
+│   │   │       │   └── mod.rs
+│   │   │       ├── errors
+│   │   │       │   └── mod.rs
+│   │   │       ├── formats
+│   │   │       │   └── mod.rs
+│   │   │       ├── lib.rs
+│   │   │       ├── material
+│   │   │       │   └── mod.rs
+│   │   │       ├── postprocess
+│   │   │       │   └── mod.rs
+│   │   │       ├── shims
+│   │   │       │   └── mod.rs
+│   │   │       ├── socket
+│   │   │       │   └── mod.rs
+│   │   │       └── structs
+│   │   │           ├── anim
+│   │   │           │   ├── anim.rs
+│   │   │           │   └── mod.rs
+│   │   │           ├── blob
+│   │   │           │   ├── blob.rs
+│   │   │           │   └── mod.rs
+│   │   │           ├── bone
+│   │   │           │   ├── bone.rs
+│   │   │           │   └── mod.rs
+│   │   │           ├── camera
+│   │   │           │   ├── camera.rs
+│   │   │           │   └── mod.rs
+│   │   │           ├── color
+│   │   │           │   ├── color.rs
+│   │   │           │   └── mod.rs
+│   │   │           ├── face
+│   │   │           │   ├── face.rs
+│   │   │           │   └── mod.rs
+│   │   │           ├── key
+│   │   │           │   ├── key.rs
+│   │   │           │   └── mod.rs
+│   │   │           ├── light
+│   │   │           │   ├── light.rs
+│   │   │           │   └── mod.rs
+│   │   │           ├── material
+│   │   │           │   ├── material.rs
+│   │   │           │   └── mod.rs
+│   │   │           ├── matrix
+│   │   │           │   ├── matrix.rs
+│   │   │           │   └── mod.rs
+│   │   │           ├── memory
+│   │   │           │   ├── memory.rs
+│   │   │           │   └── mod.rs
+│   │   │           ├── mesh
+│   │   │           │   ├── mesh.rs
+│   │   │           │   └── mod.rs
+│   │   │           ├── meta
+│   │   │           │   ├── meta.rs
+│   │   │           │   └── mod.rs
+│   │   │           ├── mod.rs
+│   │   │           ├── node
+│   │   │           │   ├── mod.rs
+│   │   │           │   └── node.rs
+│   │   │           ├── plane
+│   │   │           │   ├── mod.rs
+│   │   │           │   └── plane.rs
+│   │   │           ├── quaternion
+│   │   │           │   ├── mod.rs
+│   │   │           │   └── quaternion.rs
+│   │   │           ├── ray
+│   │   │           │   ├── mod.rs
+│   │   │           │   └── ray.rs
+│   │   │           ├── scene
+│   │   │           │   ├── mod.rs
+│   │   │           │   └── scene.rs
+│   │   │           ├── string
+│   │   │           │   ├── mod.rs
+│   │   │           │   └── string.rs
+│   │   │           ├── texture
+│   │   │           │   ├── mod.rs
+│   │   │           │   └── texture.rs
+│   │   │           ├── transform
+│   │   │           │   ├── mod.rs
+│   │   │           │   └── transform.rs
+│   │   │           ├── vec
+│   │   │           │   ├── mod.rs
+│   │   │           │   └── vec.rs
+│   │   │           └── vertex
+│   │   │               ├── mod.rs
+│   │   │               └── vertex.rs
+│   │   ├── dAssimp
+│   │   │   ├── assimp
+│   │   │   │   ├── animation.d
+│   │   │   │   ├── api.d
+│   │   │   │   ├── assimp.d
+│   │   │   │   ├── camera.d
+│   │   │   │   ├── config.d
+│   │   │   │   ├── fileIO.d
+│   │   │   │   ├── light.d
+│   │   │   │   ├── loader.d
+│   │   │   │   ├── material.d
+│   │   │   │   ├── math.d
+│   │   │   │   ├── mesh.d
+│   │   │   │   ├── postprocess.d
+│   │   │   │   ├── scene.d
+│   │   │   │   ├── texture.d
+│   │   │   │   ├── types.d
+│   │   │   │   └── versionInfo.d
+│   │   │   └── README
+│   │   ├── iOS
+│   │   │   ├── build.sh
+│   │   │   ├── IPHONEOS_ARM64E_TOOLCHAIN.cmake
+│   │   │   ├── IPHONEOS_ARM64_TOOLCHAIN.cmake
+│   │   │   ├── IPHONEOS_ARMV6_TOOLCHAIN.cmake
+│   │   │   ├── IPHONEOS_ARMV7S_TOOLCHAIN.cmake
+│   │   │   ├── IPHONEOS_ARMV7_TOOLCHAIN.cmake
+│   │   │   ├── IPHONEOS_I386_TOOLCHAIN.cmake
+│   │   │   ├── IPHONEOS_X86_64_TOOLCHAIN.cmake
+│   │   │   └── README.md
+│   │   ├── jassimp
+│   │   │   ├── build.xml
+│   │   │   ├── jassimp
+│   │   │   │   └── src
+│   │   │   │       └── jassimp
+│   │   │   │           ├── AiAnimation.java
+│   │   │   │           ├── AiAnimBehavior.java
+│   │   │   │           ├── AiBlendMode.java
+│   │   │   │           ├── AiBone.java
+│   │   │   │           ├── AiBoneWeight.java
+│   │   │   │           ├── AiBuiltInWrapperProvider.java
+│   │   │   │           ├── AiCamera.java
+│   │   │   │           ├── AiClassLoaderIOSystem.java
+│   │   │   │           ├── AiColor.java
+│   │   │   │           ├── AiConfig.java
+│   │   │   │           ├── AiConfigOptions.java
+│   │   │   │           ├── AiInputStreamIOStream.java
+│   │   │   │           ├── AiIOStream.java
+│   │   │   │           ├── AiIOSystem.java
+│   │   │   │           ├── AiLight.java
+│   │   │   │           ├── AiLightType.java
+│   │   │   │           ├── AiMaterial.java
+│   │   │   │           ├── AiMatrix4f.java
+│   │   │   │           ├── AiMeshAnim.java
+│   │   │   │           ├── AiMesh.java
+│   │   │   │           ├── AiMetadataEntry.java
+│   │   │   │           ├── AiNodeAnim.java
+│   │   │   │           ├── AiNode.java
+│   │   │   │           ├── AiPostProcessSteps.java
+│   │   │   │           ├── AiPrimitiveType.java
+│   │   │   │           ├── AiProgressHandler.java
+│   │   │   │           ├── AiQuaternion.java
+│   │   │   │           ├── AiSceneFlag.java
+│   │   │   │           ├── AiScene.java
+│   │   │   │           ├── AiShadingMode.java
+│   │   │   │           ├── AiTextureInfo.java
+│   │   │   │           ├── AiTextureMapMode.java
+│   │   │   │           ├── AiTextureMapping.java
+│   │   │   │           ├── AiTextureOp.java
+│   │   │   │           ├── AiTextureType.java
+│   │   │   │           ├── AiVector.java
+│   │   │   │           ├── AiWrapperProvider.java
+│   │   │   │           ├── JaiDebug.java
+│   │   │   │           ├── JassimpConfig.java
+│   │   │   │           ├── Jassimp.java
+│   │   │   │           ├── JassimpLibraryLoader.java
+│   │   │   │           └── package-info.java
+│   │   │   ├── jassimp-native
+│   │   │   │   ├── Android.mk
+│   │   │   │   └── src
+│   │   │   │       ├── jassimp.cpp
+│   │   │   │       └── jassimp.h
+│   │   │   └── README
+│   │   └── PyAssimp
+│   │       ├── 3d_viewer_screenshot.png
+│   │       ├── gen
+│   │       │   ├── materialgen.py
+│   │       │   └── structsgen.py
+│   │       ├── LICENSE
+│   │       ├── pyassimp
+│   │       │   ├── core.py
+│   │       │   ├── errors.py
+│   │       │   ├── helper.py
+│   │       │   ├── __init__.py
+│   │       │   ├── material.py
+│   │       │   ├── postprocess.py
+│   │       │   └── structs.py
+│   │       ├── README.md
+│   │       ├── README.rst
+│   │       ├── scripts
+│   │       │   ├── 3d_viewer.py
+│   │       │   ├── 3d_viewer_py3.py
+│   │       │   ├── fixed_pipeline_3d_viewer.py
+│   │       │   ├── quicktest.py
+│   │       │   ├── README.md
+│   │       │   ├── sample.py
+│   │       │   └── transformations.py
+│   │       └── setup.py
+│   ├── Readme.md
+│   ├── samples
+│   │   ├── README
+│   │   ├── SimpleAssimpViewX
+│   │   │   ├── English.lproj
+│   │   │   │   ├── Credits.rtf
+│   │   │   │   ├── InfoPlist.strings
+│   │   │   │   ├── MainMenu.xib
+│   │   │   │   └── MyDocument.xib
+│   │   │   ├── include
+│   │   │   │   └── copy_assimp_headers_here.txt
+│   │   │   ├── main.m
+│   │   │   ├── ModelLoaderHelperClasses.h
+│   │   │   ├── ModelLoaderHelperClasses.mm
+│   │   │   ├── MyDocument.h
+│   │   │   ├── MyDocument.mm
+│   │   │   ├── MyDocument.xcdatamodel
+│   │   │   │   ├── elements
+│   │   │   │   └── layout
+│   │   │   ├── README
+│   │   │   ├── SimpleAssimpViewX-Info.plist
+│   │   │   ├── SimpleAssimpViewX_Prefix.pch
+│   │   │   └── SimpleAssimpViewX.xcodeproj
+│   │   │       ├── project.pbxproj
+│   │   │       ├── vade.mode1v3
+│   │   │       └── vade.pbxuser
+│   │   ├── SimpleOpenGL
+│   │   │   ├── CMakeLists.txt
+│   │   │   ├── Sample_SimpleOpenGL.c
+│   │   │   ├── SimpleOpenGL.sln
+│   │   │   └── SimpleOpenGL.vcproj
+│   │   ├── SimpleTexturedDirectx11
+│   │   │   ├── CMakeLists.txt
+│   │   │   └── SimpleTexturedDirectx11
+│   │   │       ├── main.cpp
+│   │   │       ├── Mesh.h
+│   │   │       ├── ModelLoader.cpp
+│   │   │       ├── ModelLoader.h
+│   │   │       ├── PixelShader.hlsl
+│   │   │       ├── SafeRelease.hpp
+│   │   │       ├── TextureLoader.cpp
+│   │   │       ├── TextureLoader.h
+│   │   │       └── VertexShader.hlsl
+│   │   └── SimpleTexturedOpenGL
+│   │       ├── CMakeLists.txt
+│   │       ├── SimpleTexturedOpenGL
+│   │       │   ├── SimpleTexturedOpenGL.vcproj
+│   │       │   └── src
+│   │       │       └── model_loading.cpp
+│   │       └── SimpleTexturedOpenGL.sln
+│   ├── scripts
+│   │   ├── adjust_header_paths.sh
+│   │   ├── android_crosscompile
+│   │   │   └── make_android.bat
+│   │   ├── BlenderImporter
+│   │   │   ├── BlenderScene.cpp.template
+│   │   │   ├── BlenderSceneGen.h.template
+│   │   │   └── genblenddna.py
+│   │   ├── OgreImporter
+│   │   │   └── assimp.tpl
+│   │   ├── scan_printf.sh
+│   │   └── StepImporter
+│   │       ├── CppGenerator.py
+│   │       ├── ExpressReader.py
+│   │       ├── extract_step_token.py
+│   │       ├── genentitylist.sh
+│   │       ├── ifc_entitylist.txt
+│   │       ├── IFCReaderGen.cpp.template
+│   │       ├── IFCReaderGen.h.template
+│   │       ├── part403ts_wg3n2635mim_lf.exp
+│   │       ├── schema_ap203e2_mim_lf.exp
+│   │       ├── schema_ifc2x3.exp
+│   │       ├── step_entitylist.txt
+│   │       ├── StepReaderGen.cpp.template
+│   │       └── StepReaderGen.h.template
+│   ├── SECURITY.md
+│   ├── test
+│   │   ├── CMakeLists.txt
+│   │   ├── headercheck
+│   │   │   ├── CMakeLists.txt
+│   │   │   └── headercheck.cpp.in
+│   │   ├── models
+│   │   │   ├── 3D
+│   │   │   │   ├── box_a.3d
+│   │   │   │   ├── box_d.3d
+│   │   │   │   └── box.uc
+│   │   │   ├── 3DS
+│   │   │   │   ├── CameraRollAnim.3ds
+│   │   │   │   ├── CameraRollAnimWithChildObject.3ds
+│   │   │   │   ├── cubes_with_alpha.3DS
+│   │   │   │   ├── cube_with_diffuse_texture.3DS
+│   │   │   │   ├── cube_with_specular_texture.3DS
+│   │   │   │   ├── CWALL02.jpg
+│   │   │   │   ├── fels.3ds
+│   │   │   │   ├── IMAGE1.jpg
+│   │   │   │   ├── IMAGE2.jpg
+│   │   │   │   ├── RotatingCube.3DS
+│   │   │   │   ├── TargetCameraAnim.3ds
+│   │   │   │   ├── test1.3ds
+│   │   │   │   ├── testFormatDetection
+│   │   │   │   ├── test.png
+│   │   │   │   └── textures.txt
+│   │   │   ├── 3MF
+│   │   │   │   └── box.3mf
+│   │   │   ├── AC
+│   │   │   │   ├── closedLine.ac
+│   │   │   │   ├── earthSpherical.jpg
+│   │   │   │   ├── nosurfaces.ac
+│   │   │   │   ├── openLine.ac
+│   │   │   │   ├── sample_subdiv.ac
+│   │   │   │   ├── SphereWithLight.ac
+│   │   │   │   ├── SphereWithLight.acc
+│   │   │   │   ├── SphereWithLight_UTF16LE.ac
+│   │   │   │   ├── SphereWithLight_UTF8BOM.ac
+│   │   │   │   ├── SphereWithLightUvScaling4X.ac
+│   │   │   │   ├── TestFormatDetection
+│   │   │   │   ├── Wuson.ac
+│   │   │   │   └── Wuson.acc
+│   │   │   ├── AMF
+│   │   │   │   ├── README
+│   │   │   │   ├── test1.amf
+│   │   │   │   ├── test2.amf
+│   │   │   │   ├── test3.amf
+│   │   │   │   ├── test4.amf
+│   │   │   │   ├── test5a.amf
+│   │   │   │   ├── test5.amf
+│   │   │   │   ├── test6.amf
+│   │   │   │   ├── test7.amf
+│   │   │   │   ├── test8.amf
+│   │   │   │   ├── test9.amf
+│   │   │   │   └── test_with_mat.amf
+│   │   │   ├── ASE
+│   │   │   │   ├── anim2.ASE
+│   │   │   │   ├── anim.ASE
+│   │   │   │   ├── CameraRollAnim.ase
+│   │   │   │   ├── CameraRollAnimWithChildObject.ase
+│   │   │   │   ├── MotionCaptureROM.ase
+│   │   │   │   ├── MotionCaptureROM.source.txt
+│   │   │   │   ├── RotatingCube.ASE
+│   │   │   │   ├── TargetCameraAnim.ase
+│   │   │   │   ├── TestFormatDetection
+│   │   │   │   ├── TestUVTransform
+│   │   │   │   │   ├── UVTransform_Normal.ASE
+│   │   │   │   │   ├── UVTransform_ScaleUV1-2_OffsetUV0-0.9_Rotate-72_mirrorU.ase
+│   │   │   │   │   ├── UVTransform_ScaleUV2x.ASE
+│   │   │   │   │   └── UVTransform_ScaleUV2x_Rotate45.ASE
+│   │   │   │   ├── ThreeCubesGreen.ASE
+│   │   │   │   ├── ThreeCubesGreen_UTF16BE.ASE
+│   │   │   │   └── ThreeCubesGreen_UTF16LE.ASE
+│   │   │   ├── B3D
+│   │   │   │   └── WusonBlitz.b3d
+│   │   │   ├── BLEND
+│   │   │   │   ├── 4Cubes4Mats_248.blend
+│   │   │   │   ├── AreaLight_269.blend
+│   │   │   │   ├── blender_269_regress1.blend
+│   │   │   │   ├── BlenderDefault_248.blend
+│   │   │   │   ├── BlenderDefault_250.blend
+│   │   │   │   ├── BlenderDefault_250_Compressed.blend
+│   │   │   │   ├── BlenderDefault_262.blend
+│   │   │   │   ├── BlenderDefault_269.blend
+│   │   │   │   ├── BlenderDefault_271.blend
+│   │   │   │   ├── BlenderDefault_276.blend
+│   │   │   │   ├── BlenderMaterial_269.blend
+│   │   │   │   ├── box.blend
+│   │   │   │   ├── CubeHierarchy_248.blend
+│   │   │   │   ├── HUMAN.blend
+│   │   │   │   ├── HUMAN.source.txt
+│   │   │   │   ├── MirroredCube_252.blend
+│   │   │   │   ├── NoisyTexturedCube_VoronoiGlob_248.blend
+│   │   │   │   ├── plane_2_textures_2_texcoords_279.blend
+│   │   │   │   ├── SmoothVsSolidCube_248.blend
+│   │   │   │   ├── Suzanne_248.blend
+│   │   │   │   ├── SuzanneSubdiv_252.blend
+│   │   │   │   ├── test_279.blend
+│   │   │   │   ├── TexturedCube_ImageGlob_248.blend
+│   │   │   │   ├── TexturedPlane_ImageUv_248.blend
+│   │   │   │   ├── TexturedPlane_ImageUvPacked_248.blend
+│   │   │   │   ├── TorusLightsCams_250_compressed.blend
+│   │   │   │   └── yxa_1.blend
+│   │   │   ├── BVH
+│   │   │   │   ├── 01_01.bvh
+│   │   │   │   ├── 01_03.bvh
+│   │   │   │   ├── 01_nn.bvh.source.txt
+│   │   │   │   └── Boxing_Toes.bvh
+│   │   │   ├── COB
+│   │   │   │   ├── axe.jpg
+│   │   │   │   ├── dwarf2.jpg
+│   │   │   │   ├── dwarf_ascii.cob
+│   │   │   │   ├── dwarf.cob
+│   │   │   │   ├── dwarf.jpg
+│   │   │   │   ├── molecule_ascii.cob
+│   │   │   │   ├── molecule.cob
+│   │   │   │   ├── spider_4_3_ascii.cob
+│   │   │   │   ├── spider_4_3.cob
+│   │   │   │   ├── spider_6_6_ascii.cob
+│   │   │   │   └── spider_6_6.cob
+│   │   │   ├── Collada
+│   │   │   │   ├── anims_with_full_rotations_between_keys.DAE
+│   │   │   │   ├── AsXML.xml
+│   │   │   │   ├── box_nested_animation.dae
+│   │   │   │   ├── cameras.dae
+│   │   │   │   ├── Cinema4D.dae
+│   │   │   │   ├── COLLADA.dae
+│   │   │   │   ├── Collada_Sample.jpg
+│   │   │   │   ├── COLLADA_triangulate.dae
+│   │   │   │   ├── ConcavePolygon.dae
+│   │   │   │   ├── cube_emptyTags.dae
+│   │   │   │   ├── cube_triangulate.dae
+│   │   │   │   ├── cube_tristrips.dae
+│   │   │   │   ├── cube_UTF16LE.dae
+│   │   │   │   ├── cube_UTF8BOM.dae
+│   │   │   │   ├── cube_with_2UVs.DAE
+│   │   │   │   ├── cube_xmlspecialchars.dae
+│   │   │   │   ├── duckCM.tga
+│   │   │   │   ├── duck.dae
+│   │   │   │   ├── duck_nomanifest.zae
+│   │   │   │   ├── duck_sample.jpg
+│   │   │   │   ├── duck_triangulate.dae
+│   │   │   │   ├── duck.zae
+│   │   │   │   ├── earthCylindrical.DAE
+│   │   │   │   ├── human.zae
+│   │   │   │   ├── kwxport_test_vcolors.dae
+│   │   │   │   ├── kwxport_test_vcolors.dae.source.txt
+│   │   │   │   ├── library_animation_clips.dae
+│   │   │   │   ├── licence.md
+│   │   │   │   ├── lights.dae
+│   │   │   │   ├── regr01.dae
+│   │   │   │   ├── sphere.dae
+│   │   │   │   ├── sphere_sample.jpg
+│   │   │   │   ├── sphere_triangulate.dae
+│   │   │   │   ├── teapot_instancenodes.DAE
+│   │   │   │   ├── teapots.DAE
+│   │   │   │   └── teapots_reference.png
+│   │   │   ├── CSM
+│   │   │   │   ├── ThomasFechten.csm
+│   │   │   │   └── ThomasFechten.source.txt
+│   │   │   ├── DXF
+│   │   │   │   ├── issue_2229.dxf
+│   │   │   │   ├── lineTest
+│   │   │   │   ├── lineTest.dxf
+│   │   │   │   ├── PinkEggFromLW.dxf
+│   │   │   │   └── wuson.dxf
+│   │   │   ├── FBX
+│   │   │   │   ├── animation_with_skeleton.fbx
+│   │   │   │   ├── box.fbx
+│   │   │   │   ├── box_orphant_embedded_texture.fbx
+│   │   │   │   ├── boxWithCompressedCTypeArray.FBX
+│   │   │   │   ├── boxWithUncompressedCTypeArray.FBX
+│   │   │   │   ├── close_to_identity_transforms.fbx
+│   │   │   │   ├── cubes_nonames.fbx
+│   │   │   │   ├── cubes_with_mirroring_and_pivot.fbx
+│   │   │   │   ├── cubes_with_names.fbx
+│   │   │   │   ├── cubes_with_outofrange_float.fbx
+│   │   │   │   ├── embedded_ascii
+│   │   │   │   │   ├── box_embedded_texture_fragmented.fbx
+│   │   │   │   │   └── box.FBX
+│   │   │   │   ├── global_settings.fbx
+│   │   │   │   ├── huesitos.fbx
+│   │   │   │   ├── maxPbrMaterial_metalRough.fbx
+│   │   │   │   ├── maxPbrMaterial_specGloss.fbx
+│   │   │   │   ├── phong_cube.fbx
+│   │   │   │   ├── spider.fbx
+│   │   │   │   └── transparentTest.fbx
+│   │   │   ├── glTF
+│   │   │   │   ├── BoxTextured-glTF
+│   │   │   │   │   ├── BoxTextured0FS.glsl
+│   │   │   │   │   ├── BoxTextured0VS.glsl
+│   │   │   │   │   ├── BoxTextured.bin
+│   │   │   │   │   ├── BoxTextured.gltf
+│   │   │   │   │   └── CesiumLogoFlat.png
+│   │   │   │   ├── BoxTextured-glTF-Binary
+│   │   │   │   │   └── BoxTextured.glb
+│   │   │   │   ├── BoxTextured-glTF-Embedded
+│   │   │   │   │   └── BoxTextured.gltf
+│   │   │   │   ├── BoxTextured-glTF-MaterialsCommon
+│   │   │   │   │   ├── BoxTextured.bin
+│   │   │   │   │   ├── BoxTextured.gltf
+│   │   │   │   │   └── CesiumLogoFlat.png
+│   │   │   │   ├── CesiumMilkTruck
+│   │   │   │   │   ├── CesiumMilkTruck0FS.glsl
+│   │   │   │   │   ├── CesiumMilkTruck0VS.glsl
+│   │   │   │   │   ├── CesiumMilkTruck1FS.glsl
+│   │   │   │   │   ├── CesiumMilkTruck1VS.glsl
+│   │   │   │   │   ├── CesiumMilkTruck.bin
+│   │   │   │   │   ├── CesiumMilkTruck.gltf
+│   │   │   │   │   └── CesiumMilkTruck.png
+│   │   │   │   ├── IncorrectVertexArrays
+│   │   │   │   │   ├── Cube.bin
+│   │   │   │   │   └── Cube_v1.gltf
+│   │   │   │   └── TwoBoxes
+│   │   │   │       ├── Box0FS.glsl
+│   │   │   │       ├── Box0VS.glsl
+│   │   │   │       ├── Box.bin
+│   │   │   │       └── TwoBoxes.gltf
+│   │   │   ├── glTF2
+│   │   │   │   ├── 2CylinderEngine-glTF-Binary
+│   │   │   │   │   └── 2CylinderEngine.glb
+│   │   │   │   ├── BoxBadNormals-glTF-Binary
+│   │   │   │   │   └── BoxBadNormals.glb
+│   │   │   │   ├── BoxTexcoords-glTF
+│   │   │   │   │   ├── boxTexcoords.bin
+│   │   │   │   │   ├── boxTexcoords.gltf
+│   │   │   │   │   └── texture.png
+│   │   │   │   ├── BoxTextured-glTF
+│   │   │   │   │   ├── BoxTextured0.bin
+│   │   │   │   │   ├── BoxTextured.gltf
+│   │   │   │   │   └── CesiumLogoFlat.png
+│   │   │   │   ├── BoxTextured-glTF-Binary
+│   │   │   │   │   └── BoxTextured.glb
+│   │   │   │   ├── BoxTextured-glTF-Embedded
+│   │   │   │   │   └── BoxTextured.gltf
+│   │   │   │   ├── BoxTextured-glTF-pbrSpecularGlossiness
+│   │   │   │   │   ├── BoxTextured0.bin
+│   │   │   │   │   ├── BoxTextured.gltf
+│   │   │   │   │   └── CesiumLogoFlat.png
+│   │   │   │   ├── BoxTextured-glTF-techniqueWebGL
+│   │   │   │   │   ├── BoxTextured0.bin
+│   │   │   │   │   ├── BoxTextured0.vert
+│   │   │   │   │   ├── BoxTextured1.frag
+│   │   │   │   │   ├── BoxTextured.gltf
+│   │   │   │   │   └── CesiumLogoFlat.png
+│   │   │   │   ├── BoxWithInfinites-glTF-Binary
+│   │   │   │   │   └── BoxWithInfinites.glb
+│   │   │   │   ├── cameras
+│   │   │   │   │   ├── Cameras.gltf
+│   │   │   │   │   └── simpleSquare.bin
+│   │   │   │   ├── ClearCoat-glTF
+│   │   │   │   │   ├── ClearCoatLabels.png
+│   │   │   │   │   ├── ClearCoatTest.bin
+│   │   │   │   │   ├── ClearCoatTest.gltf
+│   │   │   │   │   ├── PartialCoating_Alpha.png
+│   │   │   │   │   ├── PartialCoating.png
+│   │   │   │   │   ├── PlasticWrap_normals.jpg
+│   │   │   │   │   ├── RibsNormal.png
+│   │   │   │   │   └── RoughnessStripes.png
+│   │   │   │   ├── draco
+│   │   │   │   │   ├── 2CylinderEngine.bin
+│   │   │   │   │   └── 2CylinderEngine.gltf
+│   │   │   │   ├── glTF-Asset-Generator
+│   │   │   │   │   ├── LICENSE
+│   │   │   │   │   └── Mesh_PrimitiveMode
+│   │   │   │   │       ├── Mesh_PrimitiveMode_00.bin
+│   │   │   │   │       ├── Mesh_PrimitiveMode_00.gltf
+│   │   │   │   │       ├── Mesh_PrimitiveMode_01.bin
+│   │   │   │   │       ├── Mesh_PrimitiveMode_01.gltf
+│   │   │   │   │       ├── Mesh_PrimitiveMode_02.bin
+│   │   │   │   │       ├── Mesh_PrimitiveMode_02.gltf
+│   │   │   │   │       ├── Mesh_PrimitiveMode_03.bin
+│   │   │   │   │       ├── Mesh_PrimitiveMode_03.gltf
+│   │   │   │   │       ├── Mesh_PrimitiveMode_04.bin
+│   │   │   │   │       ├── Mesh_PrimitiveMode_04.gltf
+│   │   │   │   │       ├── Mesh_PrimitiveMode_05.bin
+│   │   │   │   │       ├── Mesh_PrimitiveMode_05.gltf
+│   │   │   │   │       ├── Mesh_PrimitiveMode_06.bin
+│   │   │   │   │       ├── Mesh_PrimitiveMode_06.gltf
+│   │   │   │   │       ├── Mesh_PrimitiveMode_07.bin
+│   │   │   │   │       ├── Mesh_PrimitiveMode_07.gltf
+│   │   │   │   │       ├── Mesh_PrimitiveMode_08.bin
+│   │   │   │   │       ├── Mesh_PrimitiveMode_08.gltf
+│   │   │   │   │       ├── Mesh_PrimitiveMode_09.bin
+│   │   │   │   │       ├── Mesh_PrimitiveMode_09.gltf
+│   │   │   │   │       ├── Mesh_PrimitiveMode_10.bin
+│   │   │   │   │       ├── Mesh_PrimitiveMode_10.gltf
+│   │   │   │   │       ├── Mesh_PrimitiveMode_11.bin
+│   │   │   │   │       ├── Mesh_PrimitiveMode_11.gltf
+│   │   │   │   │       ├── Mesh_PrimitiveMode_12.bin
+│   │   │   │   │       ├── Mesh_PrimitiveMode_12.gltf
+│   │   │   │   │       ├── Mesh_PrimitiveMode_13.bin
+│   │   │   │   │       ├── Mesh_PrimitiveMode_13.gltf
+│   │   │   │   │       ├── Mesh_PrimitiveMode_14.bin
+│   │   │   │   │       ├── Mesh_PrimitiveMode_14.gltf
+│   │   │   │   │       ├── Mesh_PrimitiveMode_15.bin
+│   │   │   │   │       ├── Mesh_PrimitiveMode_15.gltf
+│   │   │   │   │       └── README.md
+│   │   │   │   ├── glTF-Sample-Models
+│   │   │   │   │   └── AnimatedMorphCube-glTF
+│   │   │   │   │       ├── AnimatedMorphCube.bin
+│   │   │   │   │       └── AnimatedMorphCube.gltf
+│   │   │   │   ├── IncorrectVertexArrays
+│   │   │   │   │   ├── Cube.bin
+│   │   │   │   │   └── Cube.gltf
+│   │   │   │   ├── IndexOutOfRange
+│   │   │   │   │   ├── AllIndicesOutOfRange.bin
+│   │   │   │   │   ├── AllIndicesOutOfRange.gltf
+│   │   │   │   │   ├── IndexOutOfRange.bin
+│   │   │   │   │   └── IndexOutOfRange.gltf
+│   │   │   │   ├── issue_3269
+│   │   │   │   │   └── texcoord_crash.gltf
+│   │   │   │   ├── MissingBin
+│   │   │   │   │   └── BoxTextured.gltf
+│   │   │   │   ├── RecursiveNodes
+│   │   │   │   │   └── RecursiveNodes.gltf
+│   │   │   │   ├── SchemaFailures
+│   │   │   │   │   ├── CesiumLogoFlat.png
+│   │   │   │   │   └── sceneWrongType.gltf
+│   │   │   │   ├── simple_skin
+│   │   │   │   │   ├── quad_skin.glb
+│   │   │   │   │   └── simple_skin.gltf
+│   │   │   │   ├── TestNoRootNode
+│   │   │   │   │   ├── NoScene.gltf
+│   │   │   │   │   └── SceneWithoutNodes.gltf
+│   │   │   │   ├── textureTransform
+│   │   │   │   │   ├── Arrow.png
+│   │   │   │   │   ├── Correct.png
+│   │   │   │   │   ├── Error.png
+│   │   │   │   │   ├── NotSupported.png
+│   │   │   │   │   ├── TextureTransformTest.bin
+│   │   │   │   │   ├── TextureTransformTest.gltf
+│   │   │   │   │   └── UV.png
+│   │   │   │   └── wrongTypes
+│   │   │   │       ├── badArray.gltf
+│   │   │   │       ├── badExtension.gltf
+│   │   │   │       ├── badNumber.gltf
+│   │   │   │       ├── badObject.gltf
+│   │   │   │       ├── badString.gltf
+│   │   │   │       ├── badUint.gltf
+│   │   │   │       ├── BoxTextured0.bin
+│   │   │   │       └── CesiumLogoFlat.png
+│   │   │   ├── HMP
+│   │   │   │   ├── formatDetection
+│   │   │   │   └── terrain.hmp
+│   │   │   ├── IFC
+│   │   │   │   ├── AC14-FZK-Haus.ifc
+│   │   │   │   └── AC14-FZK-Haus.source.txt
+│   │   │   ├── invalid
+│   │   │   │   ├── box_nested_animation_4286.dae
+│   │   │   │   ├── crash-30d6d0f7c529b3b66b4131700b7a4580cd7082df.ply
+│   │   │   │   ├── empty.3ds
+│   │   │   │   ├── empty.ase
+│   │   │   │   ├── emptyIrrMesh.xml
+│   │   │   │   ├── empty.lwo
+│   │   │   │   ├── empty.md5mesh
+│   │   │   │   ├── empty.obj
+│   │   │   │   ├── empty.off
+│   │   │   │   ├── empty.ply
+│   │   │   │   ├── empty.raw
+│   │   │   │   ├── empty.smd
+│   │   │   │   ├── empty.x
+│   │   │   │   ├── malformed2.obj
+│   │   │   │   ├── malformed.obj
+│   │   │   │   ├── OutOfMemory.off
+│   │   │   │   └── readme.txt
+│   │   │   ├── IQM
+│   │   │   │   ├── Body.jpg
+│   │   │   │   ├── Head.jpg
+│   │   │   │   └── mrfixit.iqm
+│   │   │   ├── IRR
+│   │   │   │   ├── animMesh.irr
+│   │   │   │   ├── animMesh_UTF16LE.irr
+│   │   │   │   ├── assets
+│   │   │   │   │   ├── 1.png
+│   │   │   │   │   ├── axe.jpg
+│   │   │   │   │   ├── brownground_1-1.jpg
+│   │   │   │   │   ├── crackedground_1-6.jpg
+│   │   │   │   │   ├── default.png
+│   │   │   │   │   ├── default_texture.png
+│   │   │   │   │   ├── drkwood2.jpg
+│   │   │   │   │   ├── dwarf.jpg
+│   │   │   │   │   ├── dwarf.x
+│   │   │   │   │   ├── earthSpherical.jpg
+│   │   │   │   │   ├── engineflare1.jpg
+│   │   │   │   │   ├── skybox
+│   │   │   │   │   │   ├── credits.txt
+│   │   │   │   │   │   ├── default_skybox0.jpg
+│   │   │   │   │   │   ├── default_skybox1.jpg
+│   │   │   │   │   │   ├── default_skybox2.jpg
+│   │   │   │   │   │   ├── default_skybox3.jpg
+│   │   │   │   │   │   ├── default_skyboxdn.jpg
+│   │   │   │   │   │   └── default_skyboxup.jpg
+│   │   │   │   │   ├── spider.mtl
+│   │   │   │   │   ├── SpiderTex.jpg
+│   │   │   │   │   ├── UVTransformTestImg.png
+│   │   │   │   │   ├── wal67ar_small.jpg
+│   │   │   │   │   └── wal69ar_small.jpg
+│   │   │   │   ├── box.irr
+│   │   │   │   ├── box_UTF16LE.irr
+│   │   │   │   ├── cellar.irrmesh
+│   │   │   │   ├── dawfInCellar_ChildOfCellar.irr
+│   │   │   │   ├── dawfInCellar_ChildOfCellar_UTF16LE.irr
+│   │   │   │   ├── dawfInCellar_SameHierarchy.irr
+│   │   │   │   ├── dawfInCellar_SameHierarchy_UTF16LE.irr
+│   │   │   │   ├── EpisodeI_ANewDwarf.irr
+│   │   │   │   ├── EpisodeI_ANewDwarf_UTF16LE.irr
+│   │   │   │   ├── EpisodeII_TheDwarfesStrikeBack.irr
+│   │   │   │   ├── EpisodeII_TheDwarfesStrikeBack_UTF16LE.irr
+│   │   │   │   ├── instancing.irr
+│   │   │   │   ├── multipleAnimators.irr
+│   │   │   │   ├── multipleAnimators_UTF16LE.irr
+│   │   │   │   ├── scenegraphAnim.irr
+│   │   │   │   ├── scenegraphAnimMod.irr
+│   │   │   │   ├── scenegraphAnimMod_UTF16LE.irr
+│   │   │   │   ├── scenegraphAnim_UTF16LE.irr
+│   │   │   │   ├── sphere.irr
+│   │   │   │   ├── sphere_UTF16LE.irr
+│   │   │   │   └── warn_dwarf_scaling_is_intended.txt
+│   │   │   ├── IRRMesh
+│   │   │   │   ├── assets
+│   │   │   │   │   ├── 1.png
+│   │   │   │   │   ├── brownground_1-1.jpg
+│   │   │   │   │   ├── crackedground_1-6.jpg
+│   │   │   │   │   ├── drkwood2.jpg
+│   │   │   │   │   ├── engineflare1.jpg
+│   │   │   │   │   ├── SpiderTex.jpg
+│   │   │   │   │   ├── UVTransform_OffsetUV0.5-mirrorUV.png
+│   │   │   │   │   ├── UVTransform_ScaleUV1-2_OffsetUV0-0.9_Rotate-72_mirrorU.png
+│   │   │   │   │   ├── UVTransform_ScaleUV1-2_OffsetUV0-0.9_Rotate-72.png
+│   │   │   │   │   ├── UVTransform_ScaleUV2x_Rotate45.png
+│   │   │   │   │   ├── UVTransformTestImg.png
+│   │   │   │   │   ├── wal67ar_small.jpg
+│   │   │   │   │   └── wal69ar_small.jpg
+│   │   │   │   ├── cellar.irrmesh
+│   │   │   │   ├── cellar_UTF16LE.irrmesh
+│   │   │   │   ├── credits.txt
+│   │   │   │   ├── spider.irrmesh
+│   │   │   │   ├── spider_UTF16LE.irrmesh
+│   │   │   │   ├── testFormatDetection_UTF16LE.xml
+│   │   │   │   └── testFormatDetection.xml
+│   │   │   ├── JT
+│   │   │   │   └── conrod.jt
+│   │   │   ├── LWO
+│   │   │   │   ├── LWO2
+│   │   │   │   │   ├── box_2uv_1unused.lwo
+│   │   │   │   │   ├── box_2vc_1unused.lwo
+│   │   │   │   │   ├── boxuv.lwo
+│   │   │   │   │   ├── boxuv.png
+│   │   │   │   │   ├── concave_polygon.lwo
+│   │   │   │   │   ├── concave_self_intersecting.lwo
+│   │   │   │   │   ├── concrete.source.txt
+│   │   │   │   │   ├── formatDetection
+│   │   │   │   │   ├── hierarchy.lwo
+│   │   │   │   │   ├── hierarchy_smoothed.lwo
+│   │   │   │   │   ├── MappingModes
+│   │   │   │   │   │   ├── earth_cylindrical_x.lwo
+│   │   │   │   │   │   ├── earth_cylindrical_x_scale_222_wrap_21.lwo
+│   │   │   │   │   │   ├── earth_cylindrical_y.lwo
+│   │   │   │   │   │   ├── earth_cylindrical_y_scale_111.lwo
+│   │   │   │   │   │   ├── earth_cylindrical_y_scale_111_wrap_21.lwo
+│   │   │   │   │   │   ├── earth_cylindrical_z.lwo
+│   │   │   │   │   │   ├── earthCylindric.jpg
+│   │   │   │   │   │   ├── earthCylindric.txt
+│   │   │   │   │   │   ├── earth_planar_x.lwo
+│   │   │   │   │   │   ├── earth_planar_y.lwo
+│   │   │   │   │   │   ├── earth_planar_z.lwo
+│   │   │   │   │   │   ├── earth_planar_z_scale_111.lwo
+│   │   │   │   │   │   ├── earthSpherical.jpg
+│   │   │   │   │   │   ├── earthSpherical.source.txt
+│   │   │   │   │   │   ├── earth_spherical_x.lwo
+│   │   │   │   │   │   ├── earth_spherical_x_scale_222_wrap_22.lwo
+│   │   │   │   │   │   ├── earth_spherical_y.lwo
+│   │   │   │   │   │   ├── earth_spherical_z.lwo
+│   │   │   │   │   │   ├── earth_spherical_z_wrap_22.lwo
+│   │   │   │   │   │   └── earth_uv_cylindrical_y.lwo
+│   │   │   │   │   ├── ModoExport_vertNormals.lwo
+│   │   │   │   │   ├── nonplanar_polygon.lwo
+│   │   │   │   │   ├── shader_test
+│   │   │   │   │   │   ├── CellShader.lwo
+│   │   │   │   │   │   ├── fastFresnel.lwo
+│   │   │   │   │   │   ├── realFresnel.lwo
+│   │   │   │   │   │   └── SuperCellShader.lwo
+│   │   │   │   │   ├── sphere_with_gradient.lwo
+│   │   │   │   │   ├── sphere_with_mat_gloss_10pc.lwo
+│   │   │   │   │   ├── Subdivision.lwo
+│   │   │   │   │   ├── transparency.lwo
+│   │   │   │   │   ├── UglyVertexColors.lwo
+│   │   │   │   │   ├── uvtest.lwo
+│   │   │   │   │   ├── uvtest.png
+│   │   │   │   │   ├── uvtest-source.txt
+│   │   │   │   │   └── white.bmp
+│   │   │   │   ├── LWOB
+│   │   │   │   │   ├── ConcavePolygon.lwo
+│   │   │   │   │   ├── formatDetection
+│   │   │   │   │   ├── MappingModes
+│   │   │   │   │   │   └── bluewithcylindrictexz.lwo
+│   │   │   │   │   ├── sphere_with_mat_gloss_10pc.lwo
+│   │   │   │   │   └── sphere_with_mat_gloss_50pc.lwo
+│   │   │   │   └── LXOB_Modo
+│   │   │   │       ├── CrazyEngine.lxo
+│   │   │   │       └── sphereWithVertMap.lxo
+│   │   │   ├── LWS
+│   │   │   │   ├── move_x.lws
+│   │   │   │   ├── move_x_oldformat_56.lws
+│   │   │   │   ├── move_x_oldformat_6.lws
+│   │   │   │   ├── move_x_post_constant.lws
+│   │   │   │   ├── move_x_post_linear.lws
+│   │   │   │   ├── move_x_post_offset_repeat.lws
+│   │   │   │   ├── move_x_post_repeat.lws
+│   │   │   │   ├── move_x_post_reset.lws
+│   │   │   │   ├── move_xz_bezier.lws
+│   │   │   │   ├── move_xz_hermite.lws
+│   │   │   │   ├── move_xz_linear.lws
+│   │   │   │   ├── move_xz_spline.lws
+│   │   │   │   ├── move_xz_stepped.lws
+│   │   │   │   ├── move_y_pre_ofrep_post_osc.lws
+│   │   │   │   └── simple_cube.lwo
+│   │   │   ├── M3D
+│   │   │   │   ├── cube_normals.m3d
+│   │   │   │   ├── cube_usemtl.m3d
+│   │   │   │   ├── cube_with_vertexcolors.a3d
+│   │   │   │   ├── cube_with_vertexcolors.m3d
+│   │   │   │   ├── suzanne.m3d
+│   │   │   │   ├── WusonBlitz0.m3d
+│   │   │   │   ├── WusonBlitz1.m3d
+│   │   │   │   └── WusonBlitz2.m3d
+│   │   │   ├── MD2
+│   │   │   │   ├── faerie2.bmp
+│   │   │   │   ├── faerie.md2
+│   │   │   │   ├── faerie-source.txt
+│   │   │   │   ├── sidney-source.txt
+│   │   │   │   ├── sydney.bmp
+│   │   │   │   └── sydney.md2
+│   │   │   ├── MD5
+│   │   │   │   ├── SimpleCube.md5mesh
+│   │   │   │   └── SimpleCube.source.txt
+│   │   │   ├── MDC
+│   │   │   │   └── spider.mdc
+│   │   │   ├── MDL
+│   │   │   │   ├── MDL3 (3DGS A4)
+│   │   │   │   │   ├── minigun.MDL
+│   │   │   │   │   └── minigun_readme.txt
+│   │   │   │   ├── MDL5 (3DGS A5)
+│   │   │   │   │   ├── minigun_mdl5.mdl
+│   │   │   │   │   ├── minigun_mdl5_readme.txt
+│   │   │   │   │   └── PhosphoricAcid_MDl5.mdl
+│   │   │   │   ├── MDL7 (3DGS A7)
+│   │   │   │   │   ├── PhosphoricAcid_MDl7.mdl
+│   │   │   │   │   └── Sphere_DiffPinkBlueSpec_Alpha90.mdl
+│   │   │   │   └── MDL (HL1)
+│   │   │   │       ├── alpha_test.mdl
+│   │   │   │       ├── blend_additive.mdl
+│   │   │   │       ├── chrome_sphere.mdl
+│   │   │   │       ├── duplicate_bodyparts.mdl
+│   │   │   │       ├── duplicate_sequence_groups
+│   │   │   │       │   ├── duplicate_sequence_groups01.mdl
+│   │   │   │       │   ├── duplicate_sequence_groups02.mdl
+│   │   │   │       │   ├── duplicate_sequence_groups03.mdl
+│   │   │   │       │   ├── duplicate_sequence_groups04.mdl
+│   │   │   │       │   ├── duplicate_sequence_groups05.mdl
+│   │   │   │       │   ├── duplicate_sequence_groups06.mdl
+│   │   │   │       │   ├── duplicate_sequence_groups07.mdl
+│   │   │   │       │   ├── duplicate_sequence_groups08.mdl
+│   │   │   │       │   ├── duplicate_sequence_groups09.mdl
+│   │   │   │       │   └── duplicate_sequence_groups.mdl
+│   │   │   │       ├── duplicate_sequences.mdl
+│   │   │   │       ├── duplicate_submodels.mdl
+│   │   │   │       ├── man01.mdl
+│   │   │   │       ├── man.mdl
+│   │   │   │       ├── manT.mdl
+│   │   │   │       ├── multiple_roots.mdl
+│   │   │   │       ├── sequence_transitions.mdl
+│   │   │   │       ├── unnamed_bodyparts.mdl
+│   │   │   │       ├── unnamed_bones.mdl
+│   │   │   │       ├── unnamed_sequence_groups
+│   │   │   │       │   ├── unnamed_sequence_groups01.mdl
+│   │   │   │       │   ├── unnamed_sequence_groups02.mdl
+│   │   │   │       │   ├── unnamed_sequence_groups03.mdl
+│   │   │   │       │   ├── unnamed_sequence_groups04.mdl
+│   │   │   │       │   ├── unnamed_sequence_groups05.mdl
+│   │   │   │       │   ├── unnamed_sequence_groups06.mdl
+│   │   │   │       │   ├── unnamed_sequence_groups07.mdl
+│   │   │   │       │   ├── unnamed_sequence_groups08.mdl
+│   │   │   │       │   ├── unnamed_sequence_groups09.mdl
+│   │   │   │       │   └── unnamed_sequence_groups.mdl
+│   │   │   │       └── unnamed_sequences.mdl
+│   │   │   ├── MS3D
+│   │   │   │   ├── jeep1.jpg
+│   │   │   │   ├── jeep1.ms3d
+│   │   │   │   ├── jeep1.readme.txt
+│   │   │   │   ├── twospheres.ms3d
+│   │   │   │   ├── twospheres_withmats.ms3d
+│   │   │   │   └── Wuson.ms3d
+│   │   │   ├── NFF
+│   │   │   │   └── NFF
+│   │   │   │       ├── cone.nff
+│   │   │   │       ├── cylinder.nff
+│   │   │   │       ├── dodecahedron.nff
+│   │   │   │       ├── earthCylindric.jpg
+│   │   │   │       ├── earthSpherical.jpg
+│   │   │   │       ├── hexahedron.nff
+│   │   │   │       ├── ManyEarthsNotJustOne.nff
+│   │   │   │       ├── octahedron.nff
+│   │   │   │       ├── positionTest.nff
+│   │   │   │       ├── spheres.nff
+│   │   │   │       ├── tetrahedron.nff
+│   │   │   │       └── WithCamera.nff
+│   │   │   ├── OBJ
+│   │   │   │   ├── box_longline.obj
+│   │   │   │   ├── box_mat_with_spaces.obj
+│   │   │   │   ├── box.obj
+│   │   │   │   ├── box_spaces.mtl
+│   │   │   │   ├── box_UTF16BE.obj
+│   │   │   │   ├── box_without_lineending.obj
+│   │   │   │   ├── concave_polygon.mtl
+│   │   │   │   ├── concave_polygon.obj
+│   │   │   │   ├── cube_mtllib_after_g.mtl
+│   │   │   │   ├── cube_mtllib_after_g.obj
+│   │   │   │   ├── cube_usemtl.mtl
+│   │   │   │   ├── cube_usemtl.obj
+│   │   │   │   ├── cube_with_vertexcolors.obj
+│   │   │   │   ├── cube_with_vertexcolors_uni.obj
+│   │   │   │   ├── drkwood2.jpg
+│   │   │   │   ├── empty_mat.mtl
+│   │   │   │   ├── empty_mat.obj
+│   │   │   │   ├── engineflare1.jpg
+│   │   │   │   ├── multiple_spaces.obj
+│   │   │   │   ├── number_formats.obj
+│   │   │   │   ├── only_a_part_of_vertexcolors.obj
+│   │   │   │   ├── point_cloud.obj
+│   │   │   │   ├── regr01.mtl
+│   │   │   │   ├── regr01.obj
+│   │   │   │   ├── regr_3429812.mtl
+│   │   │   │   ├── regr_3429812.obj
+│   │   │   │   ├── space_in_material_name.mtl
+│   │   │   │   ├── space_in_material_name.obj
+│   │   │   │   ├── spider.mtl
+│   │   │   │   ├── spider.obj
+│   │   │   │   ├── SpiderTex.jpg
+│   │   │   │   ├── testline.obj
+│   │   │   │   ├── testmixed.obj
+│   │   │   │   ├── testpoints.obj
+│   │   │   │   ├── wal67ar_small.jpg
+│   │   │   │   ├── wal69ar_small.jpg
+│   │   │   │   └── WusonOBJ.obj
+│   │   │   ├── OFF
+│   │   │   │   ├── Cube.off
+│   │   │   │   ├── formatDetection
+│   │   │   │   ├── invalid.off
+│   │   │   │   └── Wuson.off
+│   │   │   ├── Ogre
+│   │   │   │   └── TheThing
+│   │   │   │       ├── BlockMat.material
+│   │   │   │       ├── Mesh.mesh.xml
+│   │   │   │       ├── Reference.JPG
+│   │   │   │       └── Wrinkles.jpg
+│   │   │   ├── OpenGEX
+│   │   │   │   ├── animation_example.ogex
+│   │   │   │   ├── camera.ogex
+│   │   │   │   ├── collada.ogex
+│   │   │   │   ├── empty_camera.ogex
+│   │   │   │   ├── Example.ogex
+│   │   │   │   └── light_issue1262.ogex
+│   │   │   ├── ParsingFiles
+│   │   │   │   ├── linesplitter_emptyline_test.txt
+│   │   │   │   └── linesplitter_tokenizetest.txt
+│   │   │   ├── PLY
+│   │   │   │   ├── cube_binary_header_with_RN_newline.ply
+│   │   │   │   ├── cube_binary.ply
+│   │   │   │   ├── cube.ply
+│   │   │   │   ├── cube_uv.ply
+│   │   │   │   ├── float-color.ply
+│   │   │   │   ├── issue623.ply
+│   │   │   │   ├── points.ply
+│   │   │   │   ├── pond.0.ply
+│   │   │   │   └── Wuson.ply
+│   │   │   ├── Q3D
+│   │   │   │   ├── earth.q3o
+│   │   │   │   ├── earth.source.txt
+│   │   │   │   ├── E-AT-AT.q3o
+│   │   │   │   ├── E-AT-AT.source.txt
+│   │   │   │   ├── WusonOrange.q3o
+│   │   │   │   └── WusonOrange.q3s
+│   │   │   ├── RAW
+│   │   │   │   ├── WithColor.raw
+│   │   │   │   ├── WithTexture.raw
+│   │   │   │   └── Wuson.raw
+│   │   │   ├── ReferenceImages
+│   │   │   │   ├── MappingModes
+│   │   │   │   │   ├── cylindrical.png
+│   │   │   │   │   └── spherical.png
+│   │   │   │   └── UVTransform
+│   │   │   │       ├── UVTransform_Normal.png
+│   │   │   │       ├── UVTransform_OffsetUV0.5-clampUV.png
+│   │   │   │       ├── UVTransform_OffsetUV0.5-mirrorUV.png
+│   │   │   │       ├── UVTransform_OffsetUV0.5.png
+│   │   │   │       ├── UVTransform_ScaleUV10-2_OffsetUV10-mirrorUV.png
+│   │   │   │       ├── UVTransform_ScaleUV1-2_OffsetUV0-0.9_Rotate-72_mirrorU.png
+│   │   │   │       ├── UVTransform_ScaleUV1-2_OffsetUV0-0.9_Rotate-72.png
+│   │   │   │       ├── UVTransform_ScaleUV2x.png
+│   │   │   │       └── UVTransform_ScaleUV2x_Rotate45.png
+│   │   │   ├── SIB
+│   │   │   │   ├── heffalump.sib
+│   │   │   │   ├── readme.txt
+│   │   │   │   ├── This Way Up.png
+│   │   │   │   └── UV Mapping.png
+│   │   │   ├── SMD
+│   │   │   │   ├── holy_grailref.smd
+│   │   │   │   ├── holygrail.tga
+│   │   │   │   ├── triangle.smd
+│   │   │   │   └── WusonSMD.smd
+│   │   │   ├── SourceFiles
+│   │   │   │   ├── CameraRollAnim.max
+│   │   │   │   ├── CameraRollAnimWithChildObject.max
+│   │   │   │   ├── RotatingCube.max
+│   │   │   │   └── TargetCameraAnim.max
+│   │   │   ├── STL
+│   │   │   │   ├── 3DSMaxExport.STL
+│   │   │   │   ├── formatDetection
+│   │   │   │   ├── sphereWithHole.stl
+│   │   │   │   ├── Spider_ascii.stl
+│   │   │   │   ├── Spider_binary.stl
+│   │   │   │   ├── triangle.stl
+│   │   │   │   ├── triangle_with_empty_solid.stl
+│   │   │   │   ├── triangle_with_two_solids.stl
+│   │   │   │   └── Wuson.stl
+│   │   │   ├── TER
+│   │   │   │   ├── RealisticTerrain_Large.ter
+│   │   │   │   └── RealisticTerrain.ter
+│   │   │   ├── WRL
+│   │   │   │   ├── credits.txt
+│   │   │   │   ├── MotionCaptureROM.WRL
+│   │   │   │   └── Wuson.wrl
+│   │   │   ├── X
+│   │   │   │   ├── anim_test.txt
+│   │   │   │   ├── anim_test.x
+│   │   │   │   ├── BCN_Epileptic.txt
+│   │   │   │   ├── BCN_Epileptic.X
+│   │   │   │   ├── bottom.tga
+│   │   │   │   ├── fromtruespace_bin32.x
+│   │   │   │   ├── kwxport_test_cubewithvcolors.source.txt
+│   │   │   │   ├── kwxport_test_cubewithvcolors.x
+│   │   │   │   ├── OV_GetNextToken
+│   │   │   │   ├── test_cube_binary.x
+│   │   │   │   ├── test_cube_compressed.x
+│   │   │   │   ├── test_cube_text.x
+│   │   │   │   ├── TestFormatDetection
+│   │   │   │   ├── test.png
+│   │   │   │   ├── test.txt
+│   │   │   │   ├── Testwuson.X
+│   │   │   │   ├── test.x
+│   │   │   │   ├── top.tga
+│   │   │   │   └── updown.tga
+│   │   │   ├── X3D
+│   │   │   │   ├── ComputerKeyboard.x3d
+│   │   │   │   ├── HelloX3dTrademark.x3d
+│   │   │   │   └── IndexedLineSet.x3d
+│   │   │   └── XGL
+│   │   │       ├── BCN_Epileptic.zgl
+│   │   │       ├── cubes_with_alpha.zgl
+│   │   │       ├── sample_official_asxml.xml
+│   │   │       ├── sample_official.xgl
+│   │   │       ├── sphere_with_mat_gloss_10pc.zgl
+│   │   │       ├── Spider_ascii.zgl
+│   │   │       ├── wuson_dxf.zgl
+│   │   │       └── Wuson.zgl
+│   │   ├── models-nonbsd
+│   │   │   ├── 3D
+│   │   │   │   ├── mar_rifle_a.3d
+│   │   │   │   ├── mar_rifle_d.3d
+│   │   │   │   ├── mar_rifle.source.txt
+│   │   │   │   ├── mar_rifle.uc
+│   │   │   │   └── m_rifl.bmp
+│   │   │   ├── 3DS
+│   │   │   │   ├── cart_wheel.3DS
+│   │   │   │   ├── cart_wheel.source.txt
+│   │   │   │   ├── Granate.3DS
+│   │   │   │   ├── jeep1.3ds
+│   │   │   │   ├── jeep1.3ds.readme.txt
+│   │   │   │   ├── jeep1.jpg
+│   │   │   │   ├── mar_rifle.3ds
+│   │   │   │   ├── mar_rifle.source.txt
+│   │   │   │   ├── mp5_sil.3ds
+│   │   │   │   ├── mp5sil.bmp
+│   │   │   │   ├── mp5_sil.source.txt
+│   │   │   │   ├── m_rifl.bmp
+│   │   │   │   ├── pyramob.3DS
+│   │   │   │   └── pyramob.3ds.readme.txt
+│   │   │   ├── AMF
+│   │   │   │   ├── 3_bananas.amf.7z
+│   │   │   │   └── screenshot_3_bananas.jpeg
+│   │   │   ├── ASE
+│   │   │   │   ├── mp5sil.bmp
+│   │   │   │   ├── m_rifl.bmp
+│   │   │   │   ├── Rifle2.ase
+│   │   │   │   ├── Rifle2.source.txt
+│   │   │   │   ├── Rifle.ase
+│   │   │   │   └── Rifle.source.txt
+│   │   │   ├── B3D
+│   │   │   │   ├── axe.jpg
+│   │   │   │   ├── dwarf2.b3d
+│   │   │   │   ├── dwarf2.jpg
+│   │   │   │   ├── dwarf.source.txt
+│   │   │   │   ├── turtle1.b3d
+│   │   │   │   ├── turtle1.png
+│   │   │   │   └── turtle.source.txt
+│   │   │   ├── BLEND
+│   │   │   │   ├── Bob.blend
+│   │   │   │   ├── bob.source.txt
+│   │   │   │   ├── fleurOptonl.blend
+│   │   │   │   ├── fleurOptonl.source.txt
+│   │   │   │   ├── guard1_body.png
+│   │   │   │   ├── guard1_face.png
+│   │   │   │   ├── guard1_helmet.png
+│   │   │   │   ├── iron_grill.png
+│   │   │   │   └── round_grill.png
+│   │   │   ├── DXF
+│   │   │   │   ├── rifle.dxf
+│   │   │   │   └── rifle.source.txt
+│   │   │   ├── FBX
+│   │   │   │   ├── 2013_ASCII
+│   │   │   │   │   ├── cart_wheel.source.txt
+│   │   │   │   │   ├── Cinema4D.fbx
+│   │   │   │   │   ├── COLLADA.fbx
+│   │   │   │   │   ├── ConcavePolygon.fbx
+│   │   │   │   │   ├── cube_with_2UVs.fbx
+│   │   │   │   │   ├── duckCM.tga
+│   │   │   │   │   ├── duck.fbx
+│   │   │   │   │   ├── duck_sample.jpg
+│   │   │   │   │   ├── Granate.fbx
+│   │   │   │   │   ├── jeep1.fbx
+│   │   │   │   │   ├── jeep1.fbx.readme.txt
+│   │   │   │   │   ├── jeep1.jpg
+│   │   │   │   │   ├── kwxport_test_vcolors.fbx
+│   │   │   │   │   ├── kwxport_test_vcolors.fbx.source.txt
+│   │   │   │   │   ├── mar_rifle.fbx
+│   │   │   │   │   ├── mar_rifle.source.txt
+│   │   │   │   │   ├── mp5sil.bmp
+│   │   │   │   │   ├── mp5_sil.fbx
+│   │   │   │   │   ├── mp5_sil.source.txt
+│   │   │   │   │   ├── m_rifl.bmp
+│   │   │   │   │   ├── pyramob.fbx
+│   │   │   │   │   └── pyramob.fbx.readme.txt
+│   │   │   │   └── 2013_BINARY
+│   │   │   │       ├── anims_with_full_rotations_between_keys.fbx
+│   │   │   │       ├── cart_wheel.source.txt
+│   │   │   │       ├── Cinema4D.fbx
+│   │   │   │       ├── COLLADA.fbx
+│   │   │   │       ├── ConcavePolygon.fbx
+│   │   │   │       ├── cube_with_2UVs.fbx
+│   │   │   │       ├── duck.fbx
+│   │   │   │       ├── Granate.fbx
+│   │   │   │       ├── jeep1.fbx
+│   │   │   │       ├── jeep1.fbx.readme.txt
+│   │   │   │       ├── kwxport_test_vcolors.fbx
+│   │   │   │       ├── kwxport_test_vcolors.fbx.source.txt
+│   │   │   │       ├── mar_rifle.fbx
+│   │   │   │       ├── mar_rifle.source.txt
+│   │   │   │       ├── mp5_sil.fbx
+│   │   │   │       ├── mp5_sil.source.txt
+│   │   │   │       ├── multiple_animations_test.fbx
+│   │   │   │       ├── pyramob.fbx
+│   │   │   │       └── pyramob.fbx.readme.txt
+│   │   │   ├── HMP
+│   │   │   │   └── terrain_withtexture.hmp
+│   │   │   ├── IFC
+│   │   │   │   └── linklist.txt
+│   │   │   ├── IRR
+│   │   │   │   ├── skybox
+│   │   │   │   │   ├── credits.txt
+│   │   │   │   │   ├── default_skybox0.jpg
+│   │   │   │   │   ├── default_skybox1.jpg
+│   │   │   │   │   ├── default_skybox2.jpg
+│   │   │   │   │   ├── default_skybox3.jpg
+│   │   │   │   │   ├── default_skyboxdn.jpg
+│   │   │   │   │   └── default_skyboxup.jpg
+│   │   │   │   ├── skybox_UTF16LE.xml
+│   │   │   │   └── skybox.xml
+│   │   │   ├── LWO
+│   │   │   │   └── LWO2
+│   │   │   │       ├── LWSReferences
+│   │   │   │       │   ├── MTL_ChromeUniversal.JPG
+│   │   │   │       │   ├── QuickDraw--Arm-ForeArm.lwo
+│   │   │   │       │   ├── QuickDraw--Arm-Shoulder.lwo
+│   │   │   │       │   ├── QuickDraw--Arm-Tip.lwo
+│   │   │   │       │   ├── QuickDraw--CabinPortals.lwo
+│   │   │   │       │   ├── QuickDraw--Chasis.lwo
+│   │   │   │       │   ├── QuickDraw--GP-Gun.lwo
+│   │   │   │       │   ├── QuickDraw--GP-Lid.lwo
+│   │   │   │       │   ├── QuickDraw--GP-Pod.lwo
+│   │   │   │       │   ├── QuickDraw--Laserbeam.lwo
+│   │   │   │       │   ├── QuickDraw.source.txt
+│   │   │   │       │   ├── QuickDraw--Standin-Driver.lwo
+│   │   │   │       │   ├── QuickDraw--Wheels-Back.lwo
+│   │   │   │       │   └── QuickDraw--Wheels-Front.lwo
+│   │   │   │       ├── rifle.lwo
+│   │   │   │       └── rifle.source.txt
+│   │   │   ├── LWS
+│   │   │   │   ├── QuickDraw v.2.2.lws
+│   │   │   │   └── QuickDraw v2.2.source.txt
+│   │   │   ├── M3
+│   │   │   │   └── Bunker.m3
+│   │   │   ├── MD2
+│   │   │   │   ├── dolphin_f.bmp
+│   │   │   │   ├── dolphin.md2
+│   │   │   │   ├── flag.md2
+│   │   │   │   ├── horse.md2
+│   │   │   │   └── source.txt
+│   │   │   ├── MD3
+│   │   │   │   ├── q3root
+│   │   │   │   │   ├── models
+│   │   │   │   │   │   └── mapobjects
+│   │   │   │   │   │       └── kt_kubalwagon
+│   │   │   │   │   │           ├── euro_frnt_2.tga
+│   │   │   │   │   │           ├── european_fnt.tga
+│   │   │   │   │   │           ├── european_fnt_v2.md3
+│   │   │   │   │   │           └── readme_kubalwagon.txt
+│   │   │   │   │   └── scripts
+│   │   │   │   │       └── kt_kubalwagon.shader
+│   │   │   │   ├── readme_water.txt
+│   │   │   │   ├── watercan_dmg.md3
+│   │   │   │   ├── watercan.md3
+│   │   │   │   └── water_can.tga
+│   │   │   ├── MD5
+│   │   │   │   ├── BoarMan.md5mesh
+│   │   │   │   ├── BoarMan.source.txt
+│   │   │   │   ├── Bob.md5anim
+│   │   │   │   ├── Bob.md5mesh
+│   │   │   │   ├── bob.source.txt
+│   │   │   │   ├── guard1_body.png
+│   │   │   │   ├── guard1_face.png
+│   │   │   │   ├── guard1_helmet.png
+│   │   │   │   ├── iron_grill.png
+│   │   │   │   └── round_grill.png
+│   │   │   ├── MDL
+│   │   │   │   ├── IDPO (Quake1)
+│   │   │   │   │   ├── gijoe.mdl
+│   │   │   │   │   ├── gijoe-readme.txt
+│   │   │   │   │   ├── steg.mdl
+│   │   │   │   │   ├── steg.txt
+│   │   │   │   │   ├── tekmechbot.MDL
+│   │   │   │   │   └── tekmechbot.txt
+│   │   │   │   └── MDL7 (3DGS A7)
+│   │   │   │       ├── barkD_texture.bmp
+│   │   │   │       ├── branchD_texture.png
+│   │   │   │       ├── broadleavedtreeD.mdl
+│   │   │   │       └── broadleavedtreeD_readme.rtf
+│   │   │   ├── MMD
+│   │   │   │   ├── Alicia_blade.pmx
+│   │   │   │   └── readme.txt
+│   │   │   ├── NFF
+│   │   │   │   └── NFFSense8
+│   │   │   │       ├── cokecan.mat
+│   │   │   │       ├── cokecan.nff
+│   │   │   │       ├── credits.txt
+│   │   │   │       ├── HOME4.NFF
+│   │   │   │       ├── teapot.nff
+│   │   │   │       └── WithMaterial.mat
+│   │   │   ├── OBJ
+│   │   │   │   ├── m_rifl.bmp
+│   │   │   │   ├── rifle.mtl
+│   │   │   │   ├── rifle.obj
+│   │   │   │   ├── rifle.source.txt
+│   │   │   │   ├── segment.mtl
+│   │   │   │   ├── segment.obj
+│   │   │   │   └── segment.source.txt
+│   │   │   ├── Ogre
+│   │   │   │   └── OgreSDK
+│   │   │   │       ├── fish.jpg
+│   │   │   │       ├── fish.mesh
+│   │   │   │       ├── fish.mesh.xml
+│   │   │   │       ├── fish.skeleton
+│   │   │   │       ├── fish.skeleton.xml
+│   │   │   │       ├── LICENSE
+│   │   │   │       ├── ninja.jpg
+│   │   │   │       ├── ninja.mesh
+│   │   │   │       ├── ninja.mesh.xml
+│   │   │   │       ├── ninja.skeleton
+│   │   │   │       ├── ninja.skeleton.xml
+│   │   │   │       ├── razor.jpg
+│   │   │   │       ├── razor.mesh
+│   │   │   │       ├── razor.mesh.xml
+│   │   │   │       ├── README.md
+│   │   │   │       └── Scene.material
+│   │   │   ├── PK3
+│   │   │   │   └── SGDTT3.pk3
+│   │   │   ├── PLY
+│   │   │   │   ├── ant-half.ply
+│   │   │   │   └── ant-half.ply.license
+│   │   │   ├── README.txt
+│   │   │   ├── X
+│   │   │   │   ├── axe.jpg
+│   │   │   │   ├── dwarf.jpg
+│   │   │   │   ├── dwarf-Read-Me.txt
+│   │   │   │   └── dwarf.x
+│   │   │   └── X3D
+│   │   │       └── Chevy
+│   │   │           ├── ChevyTahoe.x3d
+│   │   │           └── textures
+│   │   │               ├── ChevyTahoeTexture.jpg
+│   │   │               └── ChevyTahoeTires.jpg
+│   │   ├── other
+│   │   │   └── streamload.py
+│   │   ├── regression
+│   │   │   ├── ai_regression_ui.py
+│   │   │   ├── gen_db.py
+│   │   │   ├── README.txt
+│   │   │   ├── result_checker.py
+│   │   │   ├── run.py
+│   │   │   ├── settings.py
+│   │   │   ├── utils.py
+│   │   │   └── whitelist.csv
+│   │   ├── test.3mf
+│   │   └── unit
+│   │       ├── AbstractImportExportBase.cpp
+│   │       ├── AbstractImportExportBase.h
+│   │       ├── AssimpAPITest_aiMatrix3x3.cpp
+│   │       ├── AssimpAPITest_aiMatrix4x4.cpp
+│   │       ├── AssimpAPITest_aiQuaternion.cpp
+│   │       ├── AssimpAPITest_aiVector2D.cpp
+│   │       ├── AssimpAPITest_aiVector3D.cpp
+│   │       ├── AssimpAPITest.cpp
+│   │       ├── CCompilerTest.c
+│   │       ├── Common
+│   │       │   ├── uiScene.cpp
+│   │       │   ├── utAssertHandler.cpp
+│   │       │   ├── utBase64.cpp
+│   │       │   ├── utBaseProcess.cpp
+│   │       │   ├── utHash.cpp
+│   │       │   ├── utLineSplitter.cpp
+│   │       │   ├── utMaybe.cpp
+│   │       │   ├── utMesh.cpp
+│   │       │   ├── utSpatialSort.cpp
+│   │       │   ├── utStandardShapes.cpp
+│   │       │   └── utXmlParser.cpp
+│   │       ├── Geometry
+│   │       │   └── utGeometryUtils.cpp
+│   │       ├── ImportExport
+│   │       │   ├── Assxml
+│   │       │   │   └── utAssxmlImportExport.cpp
+│   │       │   ├── IRR
+│   │       │   │   └── utIrrImportExport.cpp
+│   │       │   ├── MDL
+│   │       │   │   ├── MDLHL1TestFiles.h
+│   │       │   │   ├── utMDLImporter_HL1_ImportSettings.cpp
+│   │       │   │   ├── utMDLImporter_HL1_Materials.cpp
+│   │       │   │   └── utMDLImporter_HL1_Nodes.cpp
+│   │       │   ├── Pbrt
+│   │       │   │   └── utPbrtImportExport.cpp
+│   │       │   ├── RAW
+│   │       │   │   └── utRAWImportExport.cpp
+│   │       │   ├── Terragen
+│   │       │   │   └── utTerragenImportExport.cpp
+│   │       │   ├── utAssjsonImportExport.cpp
+│   │       │   ├── utCOBImportExport.cpp
+│   │       │   ├── utExporter.cpp
+│   │       │   ├── utMD2Importer.cpp
+│   │       │   ├── utMD3Importer.cpp
+│   │       │   ├── utMD5Importer.cpp
+│   │       │   ├── utMDLImporter.cpp
+│   │       │   ├── utNFFImportExport.cpp
+│   │       │   ├── utOFFImportExport.cpp
+│   │       │   ├── utOgreImportExport.cpp
+│   │       │   ├── utQ3BSPFileImportExport.cpp
+│   │       │   └── utXGLImportExport.cpp
+│   │       ├── Main.cpp
+│   │       ├── MathTest.cpp
+│   │       ├── MathTest.h
+│   │       ├── RandomNumberGeneration.h
+│   │       ├── SceneDiffer.cpp
+│   │       ├── SceneDiffer.h
+│   │       ├── TestIOStream.h
+│   │       ├── TestIOSystem.h
+│   │       ├── TestModelFactory.h
+│   │       ├── UnitTestFileGenerator.h
+│   │       ├── UnitTestPCH.h
+│   │       ├── ut3DImportExport.cpp
+│   │       ├── ut3DSImportExport.cpp
+│   │       ├── utACImportExport.cpp
+│   │       ├── utAMFImportExport.cpp
+│   │       ├── utAnim.cpp
+│   │       ├── utArmaturePopulate.cpp
+│   │       ├── utASEImportExport.cpp
+│   │       ├── utAssbinImportExport.cpp
+│   │       ├── utB3DImportExport.cpp
+│   │       ├── utBatchLoader.cpp
+│   │       ├── utBlenderImportExport.cpp
+│   │       ├── utBlenderIntermediate.cpp
+│   │       ├── utBlenderWork.cpp
+│   │       ├── utBlendImportAreaLight.cpp
+│   │       ├── utBlendImportMaterials.cpp
+│   │       ├── utBVHImportExport.cpp
+│   │       ├── utColladaExport.cpp
+│   │       ├── utColladaImportExport.cpp
+│   │       ├── utCSMImportExport.cpp
+│   │       ├── utD3MFImportExport.cpp
+│   │       ├── utDefaultIOStream.cpp
+│   │       ├── utDXFImporterExporter.cpp
+│   │       ├── utExport.cpp
+│   │       ├── utFastAtof.cpp
+│   │       ├── utFBXImporterExporter.cpp
+│   │       ├── utFindDegenerates.cpp
+│   │       ├── utFindInvalidData.cpp
+│   │       ├── utFixInfacingNormals.cpp
+│   │       ├── utGenBoundingBoxesProcess.cpp
+│   │       ├── utGenNormals.cpp
+│   │       ├── utglTF2ImportExport.cpp
+│   │       ├── utglTFImportExport.cpp
+│   │       ├── utHMPImportExport.cpp
+│   │       ├── utIFCImportExport.cpp
+│   │       ├── utImporter.cpp
+│   │       ├── utImproveCacheLocality.cpp
+│   │       ├── utIOStreamBuffer.cpp
+│   │       ├── utIOSystem.cpp
+│   │       ├── utIssues.cpp
+│   │       ├── utJoinVertices.cpp
+│   │       ├── utLimitBoneWeights.cpp
+│   │       ├── UTLogStream.h
+│   │       ├── utLWOImportExport.cpp
+│   │       ├── utLWSImportExport.cpp
+│   │       ├── utM3DImportExport.cpp
+│   │       ├── utMaterialSystem.cpp
+│   │       ├── utMatrix3x3.cpp
+│   │       ├── utMatrix4x4.cpp
+│   │       ├── utMDCImportExport.cpp
+│   │       ├── utMetadata.cpp
+│   │       ├── utNoBoostTest.cpp
+│   │       ├── utObjImportExport.cpp
+│   │       ├── utObjTools.cpp
+│   │       ├── utOpenGEXImportExport.cpp
+│   │       ├── utPLYImportExport.cpp
+│   │       ├── utPMXImporter.cpp
+│   │       ├── utPretransformVertices.cpp
+│   │       ├── utProfiler.cpp
+│   │       ├── utQ3DImportExport.cpp
+│   │       ├── utRemoveComments.cpp
+│   │       ├── utRemoveComponent.cpp
+│   │       ├── utRemoveRedundantMaterials.cpp
+│   │       ├── utRemoveVCProcess.cpp
+│   │       ├── utScaleProcess.cpp
+│   │       ├── utSceneCombiner.cpp
+│   │       ├── utScene.cpp
+│   │       ├── utScenePreprocessor.cpp
+│   │       ├── utSharedPPData.cpp
+│   │       ├── utSIBImporter.cpp
+│   │       ├── utSimd.cpp
+│   │       ├── utSMDImportExport.cpp
+│   │       ├── utSortByPType.cpp
+│   │       ├── utSplitLargeMeshes.cpp
+│   │       ├── utSTLImportExport.cpp
+│   │       ├── utStringUtils.cpp
+│   │       ├── utTargetAnimation.cpp
+│   │       ├── utTextureTransform.cpp
+│   │       ├── utTriangulate.cpp
+│   │       ├── utTypes.cpp
+│   │       ├── utValidateDataStructure.cpp
+│   │       ├── utVector3.cpp
+│   │       ├── utVersion.cpp
+│   │       ├── utVertexTriangleAdjacency.cpp
+│   │       ├── utX3DImportExport.cpp
+│   │       └── utXImporterExporter.cpp
+│   └── tools
+│       ├── assimp_cmd
+│       │   ├── assimp_cmd.rc
+│       │   ├── CMakeLists.txt
+│       │   ├── CompareDump.cpp
+│       │   ├── Export.cpp
+│       │   ├── generic_inserter.hpp
+│       │   ├── ImageExtractor.cpp
+│       │   ├── Info.cpp
+│       │   ├── Main.cpp
+│       │   ├── Main.h
+│       │   └── WriteDump.cpp
+│       ├── assimp_view
+│       │   ├── AnimEvaluator.cpp
+│       │   ├── AnimEvaluator.h
+│       │   ├── AssetHelper.h
+│       │   ├── assimp_view.cpp
+│       │   ├── assimp_view.h
+│       │   ├── assimp_view.rc
+│       │   ├── Background.cpp
+│       │   ├── Background.h
+│       │   ├── banner.bmp
+│       │   ├── banner_pure.bmp
+│       │   ├── base_anim.bmp
+│       │   ├── base_display.bmp
+│       │   ├── base_inter.bmp
+│       │   ├── base.PNG
+│       │   ├── base_rendering.bmp
+│       │   ├── base_stats.bmp
+│       │   ├── Camera.h
+│       │   ├── CMakeLists.txt
+│       │   ├── Display.cpp
+│       │   ├── Display.h
+│       │   ├── fx.bmp
+│       │   ├── HelpDialog.cpp
+│       │   ├── help.rtf
+│       │   ├── HUDMask.png
+│       │   ├── HUD.png
+│       │   ├── Input.cpp
+│       │   ├── LogDisplay.cpp
+│       │   ├── LogDisplay.h
+│       │   ├── LogWindow.cpp
+│       │   ├── LogWindow.h
+│       │   ├── Material.cpp
+│       │   ├── MaterialManager.h
+│       │   ├── MeshRenderer.cpp
+│       │   ├── MeshRenderer.h
+│       │   ├── MessageProc.cpp
+│       │   ├── n.bmp
+│       │   ├── Normals.cpp
+│       │   ├── NOTE@help.rtf.txt
+│       │   ├── RenderOptions.h
+│       │   ├── resource.h
+│       │   ├── root.bmp
+│       │   ├── SceneAnimator.cpp
+│       │   ├── SceneAnimator.h
+│       │   ├── Shaders.cpp
+│       │   ├── Shaders.h
+│       │   ├── stdafx.cpp
+│       │   ├── stdafx.h
+│       │   ├── test.xcf
+│       │   ├── text1.bin
+│       │   ├── tx.bmp
+│       │   └── txi.bmp
+│       ├── coverity
+│       │   └── assimp_modeling.cpp
+│       └── shared
+│           ├── assimp_tools_icon.ico
+│           ├── assimp_tools_icon.png
+│           ├── assimp_tools_icon.svg
+│           └── default_icon.xcf
+└── assimp-5.4.2.tar.gz -> /home/felix/packages/assimp/assimp-5.4.2.tar.gz
+
+433 directories, 2931 files

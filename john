@@ -1,0 +1,1955 @@
+src
+├── john-1.9.0-jumbo-1
+│   ├── CONTRIBUTING.md
+│   ├── doc
+│   │   ├── Auditing-Kerio-Connect.md
+│   │   ├── Auditing-Openfire.md
+│   │   ├── AxCrypt-Auditing-HOWTO.md
+│   │   ├── CHANGES
+│   │   ├── CHANGES-jumbo
+│   │   ├── CONFIG
+│   │   ├── CONTACT
+│   │   ├── COPYING
+│   │   ├── CRAM-MD5.txt
+│   │   ├── CREDITS
+│   │   ├── CREDITS-jumbo
+│   │   ├── DiskCryptor-HOWTO.md
+│   │   ├── DYNAMIC
+│   │   ├── DYNAMIC_COMPILER_FORMATS.md
+│   │   ├── DYNAMIC_EXPRESSIONS
+│   │   ├── dynamic_history.txt
+│   │   ├── DYNAMIC_SCRIPTING
+│   │   ├── ENCODINGS
+│   │   ├── EXAMPLES
+│   │   ├── EXTERNAL
+│   │   ├── extras
+│   │   │   ├── AddressSanitizer-HOWTO.txt
+│   │   │   ├── HACKING.md
+│   │   │   ├── john-1.7.9-jumbo-7-licensing-stats.txt
+│   │   │   ├── john-1.7.9-jumbo-7-licensing.txt
+│   │   │   ├── libFuzzer-HOWTO.txt
+│   │   │   └── README-CUDA
+│   │   ├── FAQ
+│   │   ├── HDAA_README
+│   │   ├── INSTALL
+│   │   ├── INSTALL-FEDORA
+│   │   ├── INSTALL-UBUNTU
+│   │   ├── INSTALL-WINDOWS
+│   │   ├── Kerberos-Auditing-HOWTO.md
+│   │   ├── LICENSE
+│   │   ├── LICENSE.mpi
+│   │   ├── MARKOV
+│   │   ├── MASK
+│   │   ├── MODES
+│   │   ├── NETNTLM_README
+│   │   ├── NEWS
+│   │   ├── OFFICE
+│   │   ├── OPTIONS
+│   │   ├── pass_gen.Manifest
+│   │   ├── pcap2john.readme
+│   │   ├── PRINCE
+│   │   ├── README -> ../README.md
+│   │   ├── README.7z2john.md
+│   │   ├── README.apex
+│   │   ├── README.Apple_DMG
+│   │   ├── README.bash-completion
+│   │   ├── README.bitcoin
+│   │   ├── README.BitLocker
+│   │   ├── README.coding-style
+│   │   ├── README.cprepair
+│   │   ├── README-DISTROS
+│   │   ├── README.Ethereum
+│   │   ├── README.FileVault2
+│   │   ├── README.format-epi
+│   │   ├── README.FreeBSD
+│   │   ├── README.gpg
+│   │   ├── README.IBM_AS400
+│   │   ├── README.ios7
+│   │   ├── README.keychain
+│   │   ├── README.keyring
+│   │   ├── README.keystore
+│   │   ├── README-krb5-18-23
+│   │   ├── README.krb5tgs-17-18-23.md
+│   │   ├── README.kwallet
+│   │   ├── README.librexgen
+│   │   ├── README.LotusNotes
+│   │   ├── README.LUKS
+│   │   ├── README-MIC
+│   │   ├── README.MinGW
+│   │   ├── README.mozilla
+│   │   ├── README.mpi
+│   │   ├── README-OPENCL
+│   │   ├── README-PDF
+│   │   ├── README-PST
+│   │   ├── README.pwsafe
+│   │   ├── README.RACF
+│   │   ├── README.ssh
+│   │   ├── README-TACACS+
+│   │   ├── README.Tezos
+│   │   ├── README-ZIP
+│   │   ├── README-ZTEX
+│   │   ├── Regen-Lost-Salts.txt
+│   │   ├── RULES
+│   │   ├── RULES-hashcat
+│   │   ├── SecureMode-tutorial.md
+│   │   ├── SHOW_FORMATS.md
+│   │   ├── SIPcrack-LICENSE
+│   │   └── SUBSETS
+│   ├── README.md
+│   ├── run
+│   │   ├── 1password2john.py
+│   │   ├── 7z2john.pl
+│   │   ├── adxcsouf2john.py
+│   │   ├── aem2john.py
+│   │   ├── aix2john.pl
+│   │   ├── aix2john.py
+│   │   ├── alnum.chr
+│   │   ├── alnumspace.chr
+│   │   ├── alpha.chr
+│   │   ├── andotp2john.py
+│   │   ├── androidbackup2john.py
+│   │   ├── androidfde2john.py
+│   │   ├── ansible2john.py
+│   │   ├── apex2john.py
+│   │   ├── applenotes2john.py
+│   │   ├── aruba2john.py
+│   │   ├── ascii.chr
+│   │   ├── axcrypt2john.py
+│   │   ├── benchmark-unify
+│   │   ├── bestcrypt2john.py
+│   │   ├── bitcoin2john.py
+│   │   ├── bitshares2john.py
+│   │   ├── bitwarden2john.py
+│   │   ├── bks2john.py
+│   │   ├── blockchain2john.py
+│   │   ├── ccache2john.py
+│   │   ├── cisco2john.pl
+│   │   ├── codepage.pl
+│   │   ├── cracf2john.py
+│   │   ├── dashlane2john.py
+│   │   ├── deepsound2john.py
+│   │   ├── dictionary.rfc2865
+│   │   ├── digits.chr
+│   │   ├── diskcryptor2john.py
+│   │   ├── dmg2john.py
+│   │   ├── dns
+│   │   │   ├── _compat.py
+│   │   │   ├── exception.py
+│   │   │   ├── flags.py
+│   │   │   ├── hash.py
+│   │   │   ├── __init__.py
+│   │   │   ├── message.py
+│   │   │   ├── name.py
+│   │   │   ├── opcode.py
+│   │   │   ├── rdataclass.py
+│   │   │   ├── rdata.py
+│   │   │   ├── rdataset.py
+│   │   │   ├── rdatatype.py
+│   │   │   ├── README.txt
+│   │   │   ├── rrset.py
+│   │   │   ├── set.py
+│   │   │   ├── tokenizer.py
+│   │   │   ├── tsigkeyring.py
+│   │   │   ├── tsig.py
+│   │   │   └── wiredata.py
+│   │   ├── DPAPImk2john.py
+│   │   ├── dumb16.conf
+│   │   ├── dumb32.conf
+│   │   ├── dynamic.conf
+│   │   ├── dynamic_disabled.conf
+│   │   ├── dynamic_flat_sse_formats.conf
+│   │   ├── ecryptfs2john.py
+│   │   ├── ejabberd2john.py
+│   │   ├── electrum2john.py
+│   │   ├── encfs2john.py
+│   │   ├── enpass2john.py
+│   │   ├── ethereum2john.py
+│   │   ├── filezilla2john.py
+│   │   ├── fuzz.dic
+│   │   ├── fuzz_option.pl
+│   │   ├── geli2john.py
+│   │   ├── genincstats.rb
+│   │   ├── hccapx2john.py
+│   │   ├── hextoraw.pl
+│   │   ├── htdigest2john.py
+│   │   ├── hybrid.conf
+│   │   ├── ibmiscanner2john.py
+│   │   ├── ikescan2john.py
+│   │   ├── ios7tojohn.pl
+│   │   ├── itunes_backup2john.pl
+│   │   ├── iwork2john.py
+│   │   ├── john.bash_completion
+│   │   ├── john.conf
+│   │   ├── john.zsh_completion
+│   │   ├── jtrconf.pm
+│   │   ├── jtr_rulez.pm
+│   │   ├── kdcdump2john.py
+│   │   ├── keychain2john.py
+│   │   ├── keyring2john.py
+│   │   ├── keystore2john.py
+│   │   ├── kirbi2john.py
+│   │   ├── known_hosts2john.py
+│   │   ├── korelogic.conf
+│   │   ├── krb2john.py
+│   │   ├── kwallet2john.py
+│   │   ├── lanman.chr
+│   │   ├── lastpass2john.py
+│   │   ├── latin1.chr
+│   │   ├── ldif2john.pl
+│   │   ├── leet.pl
+│   │   ├── lib
+│   │   │   ├── ExifTool.pm
+│   │   │   ├── PDF.pm
+│   │   │   └── RandomAccess.pm
+│   │   ├── libreoffice2john.py
+│   │   ├── lion2john-alt.pl
+│   │   ├── lion2john.pl
+│   │   ├── lm_ascii.chr
+│   │   ├── lotus2john.py
+│   │   ├── lower.chr
+│   │   ├── lowernum.chr
+│   │   ├── lowerspace.chr
+│   │   ├── luks2john.py
+│   │   ├── mac2john-alt.py
+│   │   ├── mac2john.py
+│   │   ├── mailer
+│   │   ├── makechr
+│   │   ├── mcafee_epo2john.py
+│   │   ├── monero2john.py
+│   │   ├── money2john.py
+│   │   ├── mongodb2john.js
+│   │   ├── mozilla2john.py
+│   │   ├── multibit2john.py
+│   │   ├── neo2john.py
+│   │   ├── netntlm.pl
+│   │   ├── netscreen.py
+│   │   ├── network2john.lua
+│   │   ├── office2john.py
+│   │   ├── openbsd_softraid2john.py
+│   │   ├── openssl2john.py
+│   │   ├── oui.txt
+│   │   ├── padlock2john.py
+│   │   ├── pass_gen.pl
+│   │   ├── password.lst
+│   │   ├── pcap2john.py
+│   │   ├── pdf2john.pl
+│   │   ├── pem2john.py
+│   │   ├── pfx2john.py
+│   │   ├── pgpdisk2john.py
+│   │   ├── pgpsda2john.py
+│   │   ├── pgpwde2john.py
+│   │   ├── potcheck.pl
+│   │   ├── prosody2john.py
+│   │   ├── pse2john.py
+│   │   ├── ps_token2john.py
+│   │   ├── pwsafe2john.py
+│   │   ├── radius2john.pl
+│   │   ├── radius2john.py
+│   │   ├── regex_alphabets.conf
+│   │   ├── relbench
+│   │   ├── repeats16.conf
+│   │   ├── repeats32.conf
+│   │   ├── rexgen2rules.pl
+│   │   ├── rules
+│   │   │   ├── best64.rule
+│   │   │   ├── d3ad0ne.rule
+│   │   │   ├── dive.rule
+│   │   │   ├── InsidePro-PasswordsPro.rule
+│   │   │   ├── passphrase-rule1.rule
+│   │   │   ├── passphrase-rule2.rule
+│   │   │   ├── rockyou-30000.rule
+│   │   │   ├── specific.rule
+│   │   │   ├── T0XlC-insert_top_100_passwords_1_G.rule
+│   │   │   ├── T0XlC.rule
+│   │   │   └── T0XlCv1.rule
+│   │   ├── rulestack.pl
+│   │   ├── sap2john.pl
+│   │   ├── sha-dump.pl
+│   │   ├── sha-test.pl
+│   │   ├── signal2john.py
+│   │   ├── sipdump2john.py
+│   │   ├── ssh2john.py
+│   │   ├── sspr2john.py
+│   │   ├── staroffice2john.py
+│   │   ├── stats
+│   │   ├── strip2john.py
+│   │   ├── telegram2john.py
+│   │   ├── tezos2john.py
+│   │   ├── truecrypt2john.py
+│   │   ├── unrule.pl
+│   │   ├── upper.chr
+│   │   ├── uppernum.chr
+│   │   ├── utf8.chr
+│   │   ├── vdi2john.pl
+│   │   ├── vmx2john.py
+│   │   └── ztex
+│   │       ├── inouttraffic.ihx
+│   │       ├── ztex115y_bcrypt.bit
+│   │       ├── ztex115y_descrypt.bit
+│   │       ├── ztex115y_md5crypt.bit
+│   │       ├── ztex115y_sha256crypt.bit
+│   │       └── ztex115y_sha512crypt.bit
+│   └── src
+│       ├── 7z_fmt_plug.c
+│       ├── adxcrypt_fmt_plug.c
+│       ├── aes
+│       │   ├── aes.c
+│       │   ├── aes_func.h
+│       │   ├── aesni
+│       │   │   ├── asm
+│       │   │   │   ├── x64
+│       │   │   │   │   ├── do_rdtsc.s
+│       │   │   │   │   └── iaesx64.s
+│       │   │   │   └── x86
+│       │   │   │       ├── do_rdtsc.s
+│       │   │   │       └── iaesx86.s
+│       │   │   ├── iaes_asm_interface.h
+│       │   │   ├── iaesni.h
+│       │   │   ├── intel_aes.c
+│       │   │   ├── LICENSE
+│       │   │   ├── Makefile.in
+│       │   │   └── Makefile.legacy
+│       │   ├── Makefile.in
+│       │   ├── Makefile.legacy
+│       │   └── openssl
+│       │       ├── Makefile.in
+│       │       ├── Makefile.legacy
+│       │       ├── ossl_aes.c
+│       │       ├── ossl_aes_crypto.c
+│       │       └── ossl_aes.h
+│       ├── aes_ccm.h
+│       ├── aes_ccm_plug.c
+│       ├── aes_gcm.h
+│       ├── aes_gcm_plug.c
+│       ├── aes.h
+│       ├── aes_ige.h
+│       ├── aes_ige_plug.c
+│       ├── AFS_fmt.c
+│       ├── agilekeychain_common.h
+│       ├── agilekeychain_common_plug.c
+│       ├── agilekeychain_fmt_plug.c
+│       ├── aix_ssha_fmt_plug.c
+│       ├── aligned.h
+│       ├── alpha.h
+│       ├── alpha.S
+│       ├── andotp_fmt_plug.c
+│       ├── androidbackup_common.h
+│       ├── androidbackup_common_plug.c
+│       ├── androidbackup_fmt_plug.c
+│       ├── androidfde_fmt_plug.c
+│       ├── ansible_common.h
+│       ├── ansible_common_plug.c
+│       ├── ansible_fmt_plug.c
+│       ├── argon2_core.h
+│       ├── argon2_core_plug.c
+│       ├── argon2_encoding.h
+│       ├── argon2_encoding_plug.c
+│       ├── argon2_fmt_plug.c
+│       ├── argon2.h
+│       ├── argon2_opt.h
+│       ├── argon2_opt_plug.c
+│       ├── argon2_plug.c
+│       ├── argon2_ref.h
+│       ├── argon2_ref_plug.c
+│       ├── arm32le.h
+│       ├── arm64le.h
+│       ├── as400_des_fmt_plug.c
+│       ├── as400_ssha1_fmt_plug.c
+│       ├── asaMD5_fmt_plug.c
+│       ├── asn1.h
+│       ├── asn1_plug.c
+│       ├── autoconf_arch.h
+│       ├── autoconfig.h.in
+│       ├── axcrypt_common.h
+│       ├── axcrypt_common_plug.c
+│       ├── axcrypt_fmt_plug.c
+│       ├── axcrypt_variable_code.h
+│       ├── AzureAD_common.h
+│       ├── AzureAD_common_plug.c
+│       ├── AzureAD_fmt_plug.c
+│       ├── base64_convert.c
+│       ├── base64_convert.h
+│       ├── batch.c
+│       ├── batch.h
+│       ├── bcrypt_pbkdf.h
+│       ├── bcrypt_pbkdf_plug.c
+│       ├── bench.c
+│       ├── bench.h
+│       ├── best.c
+│       ├── bestcrypt_fmt_plug.c
+│       ├── best.sh
+│       ├── BF_common.c
+│       ├── BF_common.h
+│       ├── BFEgg_fmt_plug.c
+│       ├── BF_fmt.c
+│       ├── BF_std.c
+│       ├── BF_std.h
+│       ├── bf_tab.h
+│       ├── bitcoin_fmt_plug.c
+│       ├── bitlocker2john.c
+│       ├── bitlocker_common.h
+│       ├── bitlocker_common_plug.c
+│       ├── bitlocker_fmt_plug.c
+│       ├── bitlocker_variable_code.h
+│       ├── bitshares_fmt_plug.c
+│       ├── bitwarden_common.h
+│       ├── bitwarden_common_plug.c
+│       ├── bitwarden_fmt_plug.c
+│       ├── bks_fmt_plug.c
+│       ├── blackberry_ES10_fmt_plug.c
+│       ├── blake256.h
+│       ├── blake256_plug.c
+│       ├── blake2b-load-sse2.h
+│       ├── blake2b-load-sse41.h
+│       ├── blake2b_plug.c
+│       ├── blake2b-ref_plug.c
+│       ├── blake2b-round.h
+│       ├── blake2.h
+│       ├── blake2-impl.h
+│       ├── blamka-round-opt.h
+│       ├── blamka-round-ref.h
+│       ├── blf.h
+│       ├── blf_plug.c
+│       ├── blockchain_common.h
+│       ├── blockchain_common_plug.c
+│       ├── blockchain_fmt_plug.c
+│       ├── blowfish.c
+│       ├── blowfish.h
+│       ├── brg_endian.h
+│       ├── BSDI_fmt.c
+│       ├── bt.c
+│       ├── bt_hash_type_128.c
+│       ├── bt_hash_type_192.c
+│       ├── bt_hash_type_64.c
+│       ├── bt_hash_types.h
+│       ├── bt_interface.h
+│       ├── bt_twister.c
+│       ├── bt_twister.h
+│       ├── byteorder.h
+│       ├── c3_fmt.c
+│       ├── calc_stat.c
+│       ├── chacha.h
+│       ├── chacha_plug.c
+│       ├── chap_fmt_plug.c
+│       ├── charset.c
+│       ├── charset.h
+│       ├── citrix_ns_fmt_plug.c
+│       ├── clipperz_srp_fmt_plug.c
+│       ├── cloudkeychain_common.h
+│       ├── cloudkeychain_common_plug.c
+│       ├── cloudkeychain_fmt_plug.c
+│       ├── cmpt_cp.pl
+│       ├── common.c
+│       ├── common-get-hash.h
+│       ├── common.h
+│       ├── common-simd-getpos.h
+│       ├── common-simd-setkey32.h
+│       ├── common-simd-setkey64.h
+│       ├── compile
+│       ├── compiler.c
+│       ├── compiler.h
+│       ├── config.c
+│       ├── config.guess
+│       ├── config.h
+│       ├── config.sub
+│       ├── configure
+│       ├── configure.ac
+│       ├── cprepair.c
+│       ├── cq_fmt_plug.c
+│       ├── cracker.c
+│       ├── cracker.h
+│       ├── crc32.c
+│       ├── crc32_fmt_plug.c
+│       ├── crc32.h
+│       ├── cygwin_ethernet.h
+│       ├── dahua_fmt_plug.c
+│       ├── dashlane_common.h
+│       ├── dashlane_common_plug.c
+│       ├── dashlane_fmt_plug.c
+│       ├── DES_bs_b.c
+│       ├── DES_bs.c
+│       ├── DES_bs.h
+│       ├── DES_fmt.c
+│       ├── DES_std.c
+│       ├── DES_std.h
+│       ├── detect.c
+│       ├── diskcryptor_common.h
+│       ├── diskcryptor_common_plug.c
+│       ├── diskcryptor_fmt_plug.c
+│       ├── django_fmt_plug.c
+│       ├── django_scrypt_fmt_plug.c
+│       ├── DMD5_fmt_plug.c
+│       ├── dmg2john.c
+│       ├── dmg_common.h
+│       ├── dmg_common_plug.c
+│       ├── dmg_fmt_plug.c
+│       ├── DOMINOSEC8_fmt_plug.c
+│       ├── DOMINOSEC_fmt_plug.c
+│       ├── dpapimk_fmt_plug.c
+│       ├── dragonfly3_fmt_plug.c
+│       ├── dragonfly4_fmt_plug.c
+│       ├── drupal7_common.h
+│       ├── drupal7_fmt_plug.c
+│       ├── dummy.c
+│       ├── dyna-compiler-test.sh
+│       ├── dynamic_big_crypt_chopper.pl
+│       ├── dynamic_big_crypt_generator.sh
+│       ├── dynamic_big_crypt_hash.cin
+│       ├── dynamic_big_crypt_header.cin
+│       ├── dynamic_compiler.c
+│       ├── dynamic_compiler_fmt_plug.c
+│       ├── dynamic_compiler.h
+│       ├── dynamic_compiler_lib.c
+│       ├── dynamic_fmt.c
+│       ├── dynamic.h
+│       ├── dynamic_parser.c
+│       ├── dynamic_preloads.c
+│       ├── dynamic_types.h
+│       ├── dynamic_utils.c
+│       ├── dyna_salt.c
+│       ├── dyna_salt.h
+│       ├── dyna-speed.pl
+│       ├── dyna-speed.sh
+│       ├── eapmd5tojohn.c
+│       ├── ecryptfs_fmt_plug.c
+│       ├── ed25519-donna
+│       │   ├── curve25519-donna-32bit.h
+│       │   ├── curve25519-donna-64bit.h
+│       │   ├── curve25519-donna-helpers.h
+│       │   ├── ed25519-donna-32bit-tables.h
+│       │   ├── ed25519-donna-64bit-tables.h
+│       │   ├── ed25519-donna-64bit-x86-32bit.h
+│       │   ├── ed25519-donna-64bit-x86.h
+│       │   ├── ed25519-donna-basepoint-table.h
+│       │   ├── ed25519-donna.c
+│       │   ├── ed25519-donna.h
+│       │   ├── ed25519-donna-impl-base.h
+│       │   ├── ed25519-donna-portable.h
+│       │   ├── ed25519-donna-portable-identify.h
+│       │   ├── ed25519.h
+│       │   ├── ed25519-hash-custom.h
+│       │   ├── ed25519-hash.h
+│       │   ├── Makefile.in
+│       │   ├── Makefile.legacy
+│       │   ├── modm-donna-32bit.h
+│       │   └── modm-donna-64bit.h
+│       ├── ed25519.h
+│       ├── eigrp_fmt_plug.c
+│       ├── electrum_fmt_plug.c
+│       ├── encfs_common.h
+│       ├── encfs_common_plug.c
+│       ├── encfs_fmt_plug.c
+│       ├── encoding_data.h
+│       ├── enpass_common.h
+│       ├── enpass_common_plug.c
+│       ├── enpass_fmt_plug.c
+│       ├── EPI_fmt_plug.c
+│       ├── episerver_fmt_plug.c
+│       ├── ethereum_common.h
+│       ├── ethereum_common_plug.c
+│       ├── ethereum_fmt_plug.c
+│       ├── external.c
+│       ├── external.h
+│       ├── fake_salts.c
+│       ├── fake_salts.h
+│       ├── feal8.h
+│       ├── feal8_plug.c
+│       ├── FG2_fmt_plug.c
+│       ├── FGT_fmt_plug.c
+│       ├── filevault.h
+│       ├── formats.c
+│       ├── formats.h
+│       ├── formspring_fmt_plug.c
+│       ├── fuzz.c
+│       ├── fuzz.h
+│       ├── fvde_common.h
+│       ├── fvde_common_plug.c
+│       ├── fvde_fmt_plug.c
+│       ├── geli_common.h
+│       ├── geli_common_plug.c
+│       ├── geli_fmt_plug.c
+│       ├── genmkvpwd.c
+│       ├── getopt.c
+│       ├── getopt.h
+│       ├── gost3411-2012-sse41.h
+│       ├── gost3411-2012-sse41_plug.c
+│       ├── gost3411-tables.h
+│       ├── gost3411-tables_plug.c
+│       ├── gost.c
+│       ├── gost_fmt_plug.c
+│       ├── gost.h
+│       ├── gpg2john.c
+│       ├── gpg_common.h
+│       ├── gpg_common_plug.c
+│       ├── gpg_fmt_plug.c
+│       ├── gpu_common.c
+│       ├── gpu_common.h
+│       ├── gpu_sensors.h
+│       ├── groestl.h
+│       ├── groestl_plug.c
+│       ├── groestl_tables.h
+│       ├── has160_fmt_plug.c
+│       ├── has160.h
+│       ├── has160_plug.c
+│       ├── haval.c
+│       ├── haval_fmt_plug.c
+│       ├── haval_helper.c
+│       ├── hccap2john.c
+│       ├── hccap.h
+│       ├── HDAA_fmt_plug.c
+│       ├── hmacmd5.c
+│       ├── hmacMD5_fmt_plug.c
+│       ├── hmacmd5.h
+│       ├── hmacSHA1_fmt_plug.c
+│       ├── hmacSHA256_fmt_plug.c
+│       ├── hmacSHA512_fmt_plug.c
+│       ├── hmac_sha.h
+│       ├── hmac_sha_plug.c
+│       ├── hmailserver_fmt_plug.c
+│       ├── hsrp_fmt_plug.c
+│       ├── ia64.h
+│       ├── idea-JtR.h
+│       ├── idea_plug.c
+│       ├── idle.c
+│       ├── idle.h
+│       ├── ike-crack.h
+│       ├── ike_fmt_plug.c
+│       ├── inc.c
+│       ├── inc.h
+│       ├── install-sh
+│       ├── int128.h
+│       ├── int-util.h
+│       ├── IPB2_fmt_plug.c
+│       ├── itunes_common.h
+│       ├── itunes_common_plug.c
+│       ├── itunes_fmt_plug.c
+│       ├── iwork_common.h
+│       ├── iwork_common_plug.c
+│       ├── iwork_fmt_plug.c
+│       ├── jh.h
+│       ├── jh_plug.c
+│       ├── john.asm
+│       ├── john.c
+│       ├── john.com
+│       ├── john.h
+│       ├── john_mpi.c
+│       ├── john_mpi.h
+│       ├── johnswap.h
+│       ├── jtr_sha2.h
+│       ├── jumbo.c
+│       ├── jumbo.h
+│       ├── KeccakDuplex.c
+│       ├── KeccakDuplex.h
+│       ├── KeccakF-1600-64.macros
+│       ├── KeccakF-1600-interface.h
+│       ├── KeccakF-1600-opt64.c
+│       ├── KeccakF-1600-opt64-settings.h
+│       ├── KeccakF-1600-reference32BI.c
+│       ├── KeccakF-1600-reference.h
+│       ├── KeccakF-1600-unrolling.macros
+│       ├── keccak.h
+│       ├── KeccakHash.c
+│       ├── KeccakHash.h
+│       ├── keccak_plug.c
+│       ├── KeccakSponge.c
+│       ├── KeccakSponge.h
+│       ├── keepass2john.c
+│       ├── keepass_common.h
+│       ├── keepass_common_plug.c
+│       ├── keepass_fmt_plug.c
+│       ├── keychain_common.h
+│       ├── keychain_common_plug.c
+│       ├── keychain_fmt_plug.c
+│       ├── keyring_fmt_plug.c
+│       ├── keystore_common.h
+│       ├── keystore_common_plug.c
+│       ├── keystore_fmt_plug.c
+│       ├── known_hosts_fmt_plug.c
+│       ├── KRB4_fmt_plug.c
+│       ├── KRB4_std.h
+│       ├── KRB4_std_plug.c
+│       ├── krb5_asrep_common.h
+│       ├── krb5_asrep_common_plug.c
+│       ├── krb5_asrep_fmt_plug.c
+│       ├── krb5_common.h
+│       ├── krb5_common_plug.c
+│       ├── krb5_db_fmt_plug.c
+│       ├── KRB5_fmt_plug.c
+│       ├── krb5pa-md5_fmt_plug.c
+│       ├── krb5pa-sha1_fmt_plug.c
+│       ├── KRB5_std.h
+│       ├── KRB5_std_plug.c
+│       ├── krb5_tgs_fmt_plug.c
+│       ├── kwallet_fmt_plug.c
+│       ├── lastpass_cli_common.h
+│       ├── lastpass_cli_common_plug.c
+│       ├── lastpass_cli_fmt_plug.c
+│       ├── lastpass_common.h
+│       ├── lastpass_common_plug.c
+│       ├── lastpass_fmt_plug.c
+│       ├── lastpass_sniffed_fmt_plug.c
+│       ├── leet_cc_fmt_plug.c
+│       ├── LICENSE.gost
+│       ├── list.c
+│       ├── listconf.c
+│       ├── listconf.h
+│       ├── list.h
+│       ├── LM_fmt.c
+│       ├── loader.c
+│       ├── loader.h
+│       ├── logger.c
+│       ├── logger.h
+│       ├── lotus5_fmt_plug.c
+│       ├── lotus85_fmt_plug.c
+│       ├── luks_fmt_plug.c
+│       ├── luks_insane_tests.h
+│       ├── lzma
+│       │   ├── 7zTypes.h
+│       │   ├── Compiler.h
+│       │   ├── Lzma2Dec.c
+│       │   ├── Lzma2Dec.h
+│       │   ├── LzmaDec.c
+│       │   ├── LzmaDec.h
+│       │   └── Precomp.h
+│       ├── m4
+│       │   ├── ax_check_gnu_make.m4
+│       │   ├── ax_lang_compiler_ms.m4
+│       │   ├── ax_opencl.m4
+│       │   ├── ax_prog_cc_mpi.m4
+│       │   ├── ax_pthread.m4
+│       │   ├── ax_ztex.m4
+│       │   ├── jtr_arm_logic.m4
+│       │   ├── jtr_asm_magic.m4
+│       │   ├── jtr_generic_logic.m4
+│       │   ├── jtr_mic_logic.m4
+│       │   ├── jtr_ppc_logic.m4
+│       │   ├── jtr_specific_configure_help_message.m4
+│       │   ├── jtr_systems_specific_logic.m4
+│       │   ├── jtr_utility_macros.m4
+│       │   ├── jtr_x86_logic.m4
+│       │   └── pkg.m4
+│       ├── Makefile.dep
+│       ├── Makefile.in
+│       ├── Makefile.legacy
+│       ├── Makefile.stub
+│       ├── mask.c
+│       ├── mask_ext.c
+│       ├── mask_ext.h
+│       ├── mask.h
+│       ├── md2.c
+│       ├── md2_fmt_plug.c
+│       ├── md4.c
+│       ├── md4.h
+│       ├── md5.c
+│       ├── md5crypt_common.c
+│       ├── md5crypt_common.h
+│       ├── md5crypt_long_fmt.c
+│       ├── MD5_fmt.c
+│       ├── md5.h
+│       ├── MD5_std.c
+│       ├── MD5_std.h
+│       ├── mdc2dgst_plug.c
+│       ├── mdc2_fmt_plug.c
+│       ├── mdc2-JtR.h
+│       ├── md_helper.c
+│       ├── mediawiki_fmt_plug.c
+│       ├── memory.c
+│       ├── memory.h
+│       ├── mic.h
+│       ├── mips32.h
+│       ├── mips64.h
+│       ├── misc.c
+│       ├── misc.h
+│       ├── missing_getopt.c
+│       ├── missing_getopt.h
+│       ├── mkv.c
+│       ├── mkvcalcproba.c
+│       ├── mkv.h
+│       ├── mkvlib.c
+│       ├── mkvlib.h
+│       ├── mmap-windows.c
+│       ├── monero_fmt_plug.c
+│       ├── money_fmt_plug.c
+│       ├── mongodb_fmt_plug.c
+│       ├── mongodb_scram_fmt_plug.c
+│       ├── mozilla_ng_fmt_plug.c
+│       ├── mpz_int128.h
+│       ├── mscash1_fmt_plug.c
+│       ├── mscash2_fmt_plug.c
+│       ├── mscash_common.h
+│       ├── mscash_common_plug.c
+│       ├── MSCHAPv2_bs_fmt_plug.c
+│       ├── mssql05_fmt_plug.c
+│       ├── mssql12_fmt_plug.c
+│       ├── mssql-old_fmt_plug.c
+│       ├── multibit_fmt_plug.c
+│       ├── mysql_fmt_plug.c
+│       ├── mysql_netauth_fmt_plug.c
+│       ├── mysqlSHA1_fmt_plug.c
+│       ├── net_ah_fmt_plug.c
+│       ├── NETLM_fmt_plug.c
+│       ├── NETLMv2_fmt_plug.c
+│       ├── net_md5_fmt_plug.c
+│       ├── NETNTLM_bs_fmt_plug.c
+│       ├── NETNTLMv2_fmt_plug.c
+│       ├── net_sha1_fmt_plug.c
+│       ├── NETSPLITLM_fmt_plug.c
+│       ├── nonstd.c
+│       ├── notes_common.h
+│       ├── notes_common_plug.c
+│       ├── notes_fmt_plug.c
+│       ├── nsec3_fmt_plug.c
+│       ├── NS_fmt_plug.c
+│       ├── nt2_fmt_plug.c
+│       ├── ntlmv1_mschapv2_fmt_plug.c
+│       ├── nukedclan_fmt_plug.c
+│       ├── o10glogon_fmt_plug.c
+│       ├── o3logon_fmt_plug.c
+│       ├── o5logon_fmt_plug.c
+│       ├── oaes_lib.h
+│       ├── oaes_lib_plug.c
+│       ├── odf_common.h
+│       ├── odf_common_plug.c
+│       ├── odf_fmt_plug.c
+│       ├── office_common.h
+│       ├── office_common_plug.c
+│       ├── office_fmt_plug.c
+│       ├── oldoffice_fmt_plug.c
+│       ├── omp_autotune.c
+│       ├── omp_autotune.h
+│       ├── openbsdsoftraid_common.h
+│       ├── openbsdsoftraid_common_plug.c
+│       ├── openbsdsoftraid_fmt_plug.c
+│       ├── openbsdsoftraid_variable_code.h
+│       ├── opencl
+│       │   ├── 7z_kernel.cl
+│       │   ├── agile_kernel.cl
+│       │   ├── androidbackup_kernel.cl
+│       │   ├── ansible_kernel.cl
+│       │   ├── axcrypt2_kernel.cl
+│       │   ├── axcrypt_kernel.cl
+│       │   ├── bf_cpu_kernel.cl
+│       │   ├── bf_kernel.cl
+│       │   ├── bitlocker_kernel.cl
+│       │   ├── bitwarden_kernel.cl
+│       │   ├── blockchain_kernel.cl
+│       │   ├── bsd_softraid_kernel.cl
+│       │   ├── cloudkeychain_kernel.cl
+│       │   ├── cryptmd5_kernel.cl
+│       │   ├── cryptsha256_kernel_DEFAULT.cl
+│       │   ├── cryptsha256_kernel_GPU.cl
+│       │   ├── cryptsha512_kernel_DEFAULT.cl
+│       │   ├── cryptsha512_kernel_GPU.cl
+│       │   ├── DES_bs_finalize_keys_kernel.cl
+│       │   ├── DES_bs_hash_checking_kernel.cl
+│       │   ├── DES_bs_kernel.cl
+│       │   ├── DES_bs_kernel_f.cl
+│       │   ├── DES_bs_kernel_h.cl
+│       │   ├── diskcryptor_aes_kernel.cl
+│       │   ├── dmg_kernel.cl
+│       │   ├── encfs_kernel.cl
+│       │   ├── enpass_kernel.cl
+│       │   ├── ethereum_kernel.cl
+│       │   ├── fvde_kernel.cl
+│       │   ├── geli_kernel.cl
+│       │   ├── gpg_kernel.cl
+│       │   ├── iwork_kernel.cl
+│       │   ├── keepass_kernel.cl
+│       │   ├── keychain_kernel.cl
+│       │   ├── keyring_kernel.cl
+│       │   ├── keystore_kernel.cl
+│       │   ├── krb5_kernel.cl
+│       │   ├── krb5pa-md5_kernel.cl
+│       │   ├── lastpass_kernel.cl
+│       │   ├── lm_kernel_b.cl
+│       │   ├── lm_kernel_f.cl
+│       │   ├── lotus5_kernel.cl
+│       │   ├── md4_kernel.cl
+│       │   ├── md5_kernel.cl
+│       │   ├── mscash_kernel.cl
+│       │   ├── nt_kernel.cl
+│       │   ├── ntlmv2_kernel.cl
+│       │   ├── o5logon_kernel.cl
+│       │   ├── odf_kernel.cl
+│       │   ├── office_kernel.cl
+│       │   ├── oldoffice_kernel.cl
+│       │   ├── pbkdf1_hmac_sha1_kernel.cl
+│       │   ├── pbkdf2_hmac_md4_kernel.cl
+│       │   ├── pbkdf2_hmac_md5_kernel.cl
+│       │   ├── pbkdf2_hmac_sha1_kernel.cl
+│       │   ├── pbkdf2_hmac_sha1_unsplit_kernel.cl
+│       │   ├── pbkdf2_hmac_sha256_kernel.cl
+│       │   ├── pbkdf2_hmac_sha512_kernel.cl
+│       │   ├── pbkdf2_kernel.cl
+│       │   ├── pbkdf2_ripemd160_kernel.cl
+│       │   ├── pem_kernel.cl
+│       │   ├── pfx_kernel.cl
+│       │   ├── pgpdisk_kernel.cl
+│       │   ├── pgpsda_kernel.cl
+│       │   ├── pgpwde_kernel.cl
+│       │   ├── phpass_kernel.cl
+│       │   ├── pwsafe_kernel.cl
+│       │   ├── rakp_kernel.cl
+│       │   ├── rar_kernel.cl
+│       │   ├── salted_sha_kernel.cl
+│       │   ├── sap_pse_kernel.cl
+│       │   ├── sha1_kernel.cl
+│       │   ├── sha256_kernel.cl
+│       │   ├── sha512_gpl_kernel.cl
+│       │   ├── sha512_kernel.cl
+│       │   ├── solarwinds_kernel.cl
+│       │   ├── ssh_kernel.cl
+│       │   ├── sspr_kernel.cl
+│       │   ├── strip_kernel.cl
+│       │   ├── telegram_kernel.cl
+│       │   ├── tezos_kernel.cl
+│       │   ├── vmx_kernel.cl
+│       │   ├── wpapsk_kernel.cl
+│       │   ├── xsha512_kernel.cl
+│       │   └── zip_kernel.cl
+│       ├── opencl_7z_fmt_plug.c
+│       ├── opencl_aes_bitslice.h
+│       ├── opencl_aes.h
+│       ├── opencl_aes_plain.h
+│       ├── opencl_agilekeychain_fmt_plug.c
+│       ├── opencl_androidbackup_fmt_plug.c
+│       ├── opencl_ansible_fmt_plug.c
+│       ├── opencl_asn1.h
+│       ├── opencl_autotune.c
+│       ├── opencl_autotune.h
+│       ├── opencl_axcrypt2_fmt_plug.c
+│       ├── opencl_axcrypt_fmt_plug.c
+│       ├── opencl_bf_fmt_plug.c
+│       ├── opencl_bf_std.h
+│       ├── opencl_bf_std_plug.c
+│       ├── opencl_bitlocker_fmt_plug.c
+│       ├── opencl_bitlocker.h
+│       ├── opencl_bitwarden_fmt_plug.c
+│       ├── opencl_blockchain_fmt_plug.c
+│       ├── opencl_blowfish.h
+│       ├── opencl_cast.h
+│       ├── opencl_chacha.h
+│       ├── opencl_cloudkeychain_fmt_plug.c
+│       ├── opencl_cmac.h
+│       ├── opencl_common.c
+│       ├── opencl_common.h
+│       ├── opencl_dashlane_fmt_plug.c
+│       ├── opencl_DES_bs_b_plug.c
+│       ├── opencl_DES_bs_f_plug.c
+│       ├── opencl_DES_bs.h
+│       ├── opencl_DES_bs_h_plug.c
+│       ├── opencl_DES_bs_plug.c
+│       ├── opencl_DES_fmt_plug.c
+│       ├── opencl_des.h
+│       ├── opencl_DES_hst_dev_shared.h
+│       ├── opencl_DES_kernel_params.h
+│       ├── opencl_device_info.h
+│       ├── opencl_diskcryptor_aes_fmt_plug.c
+│       ├── opencl_diskcryptor_fmt_plug.c
+│       ├── opencl_dmg_fmt_plug.c
+│       ├── opencl_electrum_modern_fmt_plug.c
+│       ├── opencl_encfs_fmt_plug.c
+│       ├── opencl_enpass_fmt_plug.c
+│       ├── opencl_ethereum_fmt_plug.c
+│       ├── opencl_ethereum_presale_fmt_plug.c
+│       ├── opencl_fvde_fmt_plug.c
+│       ├── opencl_geli_fmt_plug.c
+│       ├── opencl_gpg_fmt_plug.c
+│       ├── opencl_hash_check_128.h
+│       ├── opencl_hash_check_128_plug.c
+│       ├── opencl_hmac_sha1.h
+│       ├── opencl_hmac_sha256.h
+│       ├── opencl_hmac_sha512.h
+│       ├── opencl_iwork_fmt_plug.c
+│       ├── opencl_keccak.h
+│       ├── opencl_keepass_fmt_plug.c
+│       ├── opencl_keychain_fmt_plug.c
+│       ├── opencl_keyring_fmt_plug.c
+│       ├── opencl_keystore_fmt_plug.c
+│       ├── opencl_krb5_asrep_aes_fmt_plug.c
+│       ├── opencl_krb5pa-md5_fmt_plug.c
+│       ├── opencl_krb5pa-sha1_fmt_plug.c
+│       ├── opencl_lastpass_cli_fmt_plug.c
+│       ├── opencl_lastpass_fmt_plug.c
+│       ├── opencl_lm_b_plug.c
+│       ├── opencl_lm_finalize_keys.h
+│       ├── opencl_lm_fmt_plug.c
+│       ├── opencl_lm.h
+│       ├── opencl_lm_hst_dev_shared.h
+│       ├── opencl_lm_kernel_params.h
+│       ├── opencl_lm_plug.c
+│       ├── opencl_lotus5_fmt.h
+│       ├── opencl_lotus5_fmt_plug.c
+│       ├── opencl_mask_extras.h
+│       ├── opencl_mask.h
+│       ├── opencl_md4_ctx.h
+│       ├── opencl_md4.h
+│       ├── opencl_md5crypt_fmt_plug.c
+│       ├── opencl_md5_ctx.h
+│       ├── opencl_md5.h
+│       ├── opencl_misc.h
+│       ├── opencl_mscash2_fmt_plug.c
+│       ├── opencl_mscash2_helper_plug.c
+│       ├── opencl_mscash2_helper_plug.h
+│       ├── opencl_mscash_fmt_plug.c
+│       ├── opencl_mysqlsha1_fmt_plug.c
+│       ├── opencl_nonstd.h
+│       ├── opencl_notes_fmt_plug.c
+│       ├── opencl_nt_fmt_plug.c
+│       ├── opencl_ntlmv2_fmt_plug.c
+│       ├── opencl_o5logon_fmt_plug.c
+│       ├── opencl_odf_fmt_plug.c
+│       ├── opencl_office_fmt_plug.c
+│       ├── opencl_oldoffice_fmt_plug.c
+│       ├── opencl_openbsdsoftraid_fmt_plug.c
+│       ├── opencl_pbkdf1_hmac_sha1.h
+│       ├── opencl_pbkdf2_hmac_md4_fmt_plug.c
+│       ├── opencl_pbkdf2_hmac_md4.h
+│       ├── opencl_pbkdf2_hmac_md5_fmt_plug.c
+│       ├── opencl_pbkdf2_hmac_md5.h
+│       ├── opencl_pbkdf2_hmac_sha1_fmt_plug.c
+│       ├── opencl_pbkdf2_hmac_sha1.h
+│       ├── opencl_pbkdf2_hmac_sha256_fmt_plug.c
+│       ├── opencl_pbkdf2_hmac_sha256.h
+│       ├── opencl_pbkdf2_hmac_sha512_fmt_plug.c
+│       ├── opencl_pem_fmt_plug.c
+│       ├── opencl_pfx_fmt_plug.c
+│       ├── opencl_pgpdisk_fmt_plug.c
+│       ├── opencl_pgpsda_fmt_plug.c
+│       ├── opencl_pgpwde_fmt_plug.c
+│       ├── opencl_phpass_fmt_plug.c
+│       ├── opencl_pkcs12.h
+│       ├── opencl_pwsafe_fmt_plug.c
+│       ├── opencl_rakp_fmt_plug.c
+│       ├── opencl_rar5_fmt_plug.c
+│       ├── opencl_rar_fmt_plug.c
+│       ├── opencl_rawmd4_fmt_plug.c
+│       ├── opencl_rawmd5_fmt_plug.c
+│       ├── opencl_rawsha1_fmt_plug.c
+│       ├── opencl_rawsha256_fmt_plug.c
+│       ├── opencl_rawsha256.h
+│       ├── opencl_rawsha512_fmt_plug.c
+│       ├── opencl_rawsha512_gpl_fmt_plug.c
+│       ├── opencl_rawsha512.h
+│       ├── opencl_rc4.h
+│       ├── opencl_ripemd.h
+│       ├── opencl_salted_sha_fmt_plug.c
+│       ├── opencl_sappse_fmt_plug.c
+│       ├── opencl_sboxes.h
+│       ├── opencl_sboxes-s.h
+│       ├── opencl_sha1crypt_fmt_plug.c
+│       ├── opencl_sha1_ctx.h
+│       ├── opencl_sha1.h
+│       ├── opencl_sha256crypt_fmt_plug.c
+│       ├── opencl_sha256crypt.h
+│       ├── opencl_sha256.h
+│       ├── opencl_sha2_common.h
+│       ├── opencl_sha2_common_plug.c
+│       ├── opencl_sha2_ctx.h
+│       ├── opencl_sha2.h
+│       ├── opencl_sha512crypt_fmt_plug.c
+│       ├── opencl_sha512crypt.h
+│       ├── opencl_sha512.h
+│       ├── opencl_sl3_fmt_plug.c
+│       ├── opencl_solarwinds_fmt_plug.c
+│       ├── opencl_ssh_fmt_plug.c
+│       ├── opencl_sspr_fmt_plug.c
+│       ├── opencl_strip_fmt_plug.c
+│       ├── opencl_tc_fmt_plug.c
+│       ├── opencl_telegram_fmt_plug.c
+│       ├── opencl_tezos_fmt_plug.c
+│       ├── opencl_twofish.h
+│       ├── opencl_unicode.h
+│       ├── opencl_vmx_fmt_plug.c
+│       ├── opencl_wpapmk_fmt_plug.c
+│       ├── opencl_wpapsk_fmt_plug.c
+│       ├── opencl_xsha512_fmt_plug.c
+│       ├── opencl_zip_fmt_plug.c
+│       ├── openssl_code.h
+│       ├── openssl_code_plug.c
+│       ├── openssl_enc_fmt_plug.c
+│       ├── openssl_local_overrides.h
+│       ├── options.c
+│       ├── options.h
+│       ├── oracle11_fmt_plug.c
+│       ├── oracle12c_fmt_plug.c
+│       ├── oracle_fmt_plug.c
+│       ├── os-autoconf.h
+│       ├── osc_fmt_plug.c
+│       ├── os.h
+│       ├── ospf_fmt_plug.c
+│       ├── packaging
+│       │   ├── build.sh
+│       │   ├── com.openwall.John.appdata.xml
+│       │   └── com.openwall.John.desktop
+│       ├── padlock_fmt_plug.c
+│       ├── palshop_fmt_plug.c
+│       ├── panama.c
+│       ├── panama_fmt_plug.c
+│       ├── params.c
+│       ├── params.h
+│       ├── pa-risc.h
+│       ├── path.c
+│       ├── path.h
+│       ├── pbkdf2_hmac_common.h
+│       ├── pbkdf2_hmac_common_plug.c
+│       ├── pbkdf2-hmac-md4_fmt_plug.c
+│       ├── pbkdf2_hmac_md4.h
+│       ├── pbkdf2-hmac-md5_fmt_plug.c
+│       ├── pbkdf2_hmac_md5.h
+│       ├── pbkdf2_hmac_ripemd160.h
+│       ├── pbkdf2-hmac-sha1_fmt_plug.c
+│       ├── pbkdf2_hmac_sha1.h
+│       ├── pbkdf2_hmac_sha256_fmt_plug.c
+│       ├── pbkdf2_hmac_sha256.h
+│       ├── pbkdf2-hmac-sha512_fmt_plug.c
+│       ├── pbkdf2_hmac_sha512.h
+│       ├── pbkdf2_hmac_whirlpool.h
+│       ├── pdfcrack_md5.h
+│       ├── pdfcrack_md5_plug.c
+│       ├── pdf_fmt_plug.c
+│       ├── pem_common.h
+│       ├── pem_common_plug.c
+│       ├── pem_fmt_plug.c
+│       ├── pfx_common.h
+│       ├── pfx_common_plug.c
+│       ├── pfx_fmt_plug.c
+│       ├── pgpdisk_common.h
+│       ├── pgpdisk_common_plug.c
+│       ├── pgpdisk_fmt_plug.c
+│       ├── pgpsda_common.h
+│       ├── pgpsda_common_plug.c
+│       ├── pgpsda_fmt_plug.c
+│       ├── pgpwde_common.h
+│       ├── pgpwde_common_plug.c
+│       ├── pgpwde_fmt_plug.c
+│       ├── phpass_common.h
+│       ├── phpass_common_plug.c
+│       ├── phpassMD5_fmt_plug.c
+│       ├── PHPS2_fmt_plug.c
+│       ├── PHPS_fmt_plug.c
+│       ├── pixMD5_fmt_plug.c
+│       ├── pkcs12.h
+│       ├── pkcs12_plug.c
+│       ├── pkzip.c
+│       ├── pkzip_fmt_plug.c
+│       ├── pkzip.h
+│       ├── pkzip_inffixed.h
+│       ├── plaintext_fmt_plug.c
+│       ├── plugin_deps.pl
+│       ├── PO_fmt_plug.c
+│       ├── postgres_fmt_plug.c
+│       ├── pp.c
+│       ├── ppc32alt.h
+│       ├── ppc32.h
+│       ├── ppc64alt.h
+│       ├── ppc64.h
+│       ├── ppc_cpuid.c
+│       ├── prince.h
+│       ├── pseudo_intrinsics.h
+│       ├── pst_fmt_plug.c
+│       ├── putty2john.c
+│       ├── putty_fmt_plug.c
+│       ├── pwsafe_common.h
+│       ├── pwsafe_common_plug.c
+│       ├── pwsafe_fmt_plug.c
+│       ├── qnx_common.h
+│       ├── qnx_fmt_plug.c
+│       ├── racf2john.c
+│       ├── racf_fmt_plug.c
+│       ├── racf_kdfaes_fmt_plug.c
+│       ├── radius_fmt_plug.c
+│       ├── radmin_fmt_plug.c
+│       ├── rakp_fmt_plug.c
+│       ├── rar2john.c
+│       ├── rar2john.h
+│       ├── rar5_common.h
+│       ├── rar5_fmt_plug.c
+│       ├── rar_common.c
+│       ├── rar_fmt_plug.c
+│       ├── raw2dyna.c
+│       ├── rawBLAKE2_512_fmt_plug.c
+│       ├── rawKeccak_256_fmt_plug.c
+│       ├── rawKeccak_512_fmt_plug.c
+│       ├── rawMD4_fmt_plug.c
+│       ├── rawMD5flat_fmt_plug.c
+│       ├── rawMD5_fmt_plug.c
+│       ├── rawmd5u_fmt_plug.c
+│       ├── rawSHA1_common.h
+│       ├── rawSHA1_common_plug.c
+│       ├── rawSHA1_fmt_plug.c
+│       ├── rawSHA1_linkedIn_fmt_plug.c
+│       ├── rawSHA224_fmt_plug.c
+│       ├── rawSHA256_common.h
+│       ├── rawSHA256_common_plug.c
+│       ├── rawSHA256_fmt_plug.c
+│       ├── rawSHA384_fmt_plug.c
+│       ├── rawSHA512_common.h
+│       ├── rawSHA512_common_plug.c
+│       ├── rawSHA512_fmt_plug.c
+│       ├── rc4.c
+│       ├── rc4.h
+│       ├── recovery.c
+│       ├── recovery.h
+│       ├── regex.c
+│       ├── regex.h
+│       ├── ripemd.c
+│       ├── ripemd_fmt_plug.c
+│       ├── rpp.c
+│       ├── rpp.h
+│       ├── rsvp_fmt_plug.c
+│       ├── rules.c
+│       ├── rules.h
+│       ├── rules_init_classes.h
+│       ├── rules_init_convs.h
+│       ├── salted_sha1_common.h
+│       ├── salted_sha1_common_plug.c
+│       ├── salted_sha1_fmt_plug.c
+│       ├── sapB_fmt_plug.c
+│       ├── sapG_fmt_plug.c
+│       ├── sapH_fmt_plug.c
+│       ├── sap_pse_common.h
+│       ├── sap_pse_common_plug.c
+│       ├── sap_pse_fmt_plug.c
+│       ├── sboxes.c
+│       ├── sboxes-s.c
+│       ├── sboxes-t.c
+│       ├── scrypt_fmt.c
+│       ├── scrypt_platform.h
+│       ├── secp256k1
+│       │   ├── basic-config.h
+│       │   ├── ecdsa.h
+│       │   ├── ecdsa_impl.h
+│       │   ├── eckey.h
+│       │   ├── eckey_impl.h
+│       │   ├── ecmult_const.h
+│       │   ├── ecmult_const_impl.h
+│       │   ├── ecmult_gen.h
+│       │   ├── ecmult_gen_impl.h
+│       │   ├── ecmult.h
+│       │   ├── ecmult_impl.h
+│       │   ├── ecmult_static_context.h
+│       │   ├── field_10x26.h
+│       │   ├── field_10x26_impl.h
+│       │   ├── field_5x52.h
+│       │   ├── field_5x52_impl.h
+│       │   ├── field_5x52_int128_impl.h
+│       │   ├── field.h
+│       │   ├── field_impl.h
+│       │   ├── group.h
+│       │   ├── group_impl.h
+│       │   ├── hash.h
+│       │   ├── hash_impl.h
+│       │   ├── libsecp256k1-config.h
+│       │   ├── main_impl.h
+│       │   ├── Makefile.in
+│       │   ├── Makefile.legacy
+│       │   ├── num_gmp.h
+│       │   ├── num_gmp_impl.h
+│       │   ├── num.h
+│       │   ├── num_impl.h
+│       │   ├── scalar_4x64.h
+│       │   ├── scalar_4x64_impl.h
+│       │   ├── scalar_8x32.h
+│       │   ├── scalar_8x32_impl.h
+│       │   ├── scalar.h
+│       │   ├── scalar_impl.h
+│       │   ├── scalar_low.h
+│       │   ├── scalar_low_impl.h
+│       │   ├── secp256k1.c
+│       │   ├── secp256k1_ecdh.h
+│       │   ├── secp256k1.h
+│       │   ├── secp256k1_recovery.h
+│       │   └── util.h
+│       ├── secp256k1.h
+│       ├── securezip_common.h
+│       ├── securezip_common_plug.c
+│       ├── securezip_fmt_plug.c
+│       ├── serpent.h
+│       ├── serpent_plug.c
+│       ├── sha1crypt_common.h
+│       ├── sha1crypt_common_plug.c
+│       ├── sha1crypt_fmt_plug.c
+│       ├── sha256crypt_common.h
+│       ├── sha256crypt_fmt_plug.c
+│       ├── sha2.c
+│       ├── sha2.h
+│       ├── sha3_512_fmt_plug.c
+│       ├── sha512crypt_common.h
+│       ├── sha512crypt_fmt_plug.c
+│       ├── sha.h
+│       ├── showformats.c
+│       ├── showformats.h
+│       ├── siemens-s7_fmt_plug.c
+│       ├── signal_fmt_plug.c
+│       ├── signals.c
+│       ├── signals.h
+│       ├── simd-intrinsics.c
+│       ├── simd-intrinsics.h
+│       ├── simd-intrinsics-load-flags.h
+│       ├── single.c
+│       ├── single.h
+│       ├── SIPdump.c
+│       ├── SIPdump.h
+│       ├── sip_fmt_plug.c
+│       ├── sip_fmt_plug.h
+│       ├── skein.c
+│       ├── skein_fmt_plug.c
+│       ├── SKEY_fmt_plug.c
+│       ├── SKEY_jtr.h
+│       ├── SKEY_jtr_plug.c
+│       ├── sl3_common.h
+│       ├── sl3_common_plug.c
+│       ├── sl3_fmt_plug.c
+│       ├── slow_hash.h
+│       ├── slow_hash_plug.c
+│       ├── snefru_fmt_plug.c
+│       ├── snefru.h
+│       ├── snefru_plug.c
+│       ├── snmp_fmt_plug.c
+│       ├── solarwinds_common.h
+│       ├── solarwinds_common_plug.c
+│       ├── solarwinds_fmt_plug.c
+│       ├── sparc32.h
+│       ├── sparc64.h
+│       ├── sph_haval.h
+│       ├── sph_md2.h
+│       ├── sph_panama.h
+│       ├── sph_ripemd.h
+│       ├── sph_skein.h
+│       ├── sph_tiger.h
+│       ├── sph_types.h
+│       ├── sph_whirlpool.h
+│       ├── ssha512_fmt_plug.c
+│       ├── ssh_common.h
+│       ├── ssh_common_plug.c
+│       ├── ssh_fmt_plug.c
+│       ├── ssh_variable_code.h
+│       ├── sspr_common.h
+│       ├── sspr_common_plug.c
+│       ├── sspr_fmt_plug.c
+│       ├── status.c
+│       ├── status.h
+│       ├── stdbool.h
+│       ├── stribog_fmt_plug.c
+│       ├── strip_common.h
+│       ├── strip_common_plug.c
+│       ├── strip_fmt_plug.c
+│       ├── subsets.c
+│       ├── subsets.h
+│       ├── sunmd5_fmt_plug.c
+│       ├── SybaseASE_fmt_plug.c
+│       ├── SybasePROP_fmt_plug.c
+│       ├── syb-prop_repro.h
+│       ├── syb-prop_repro_plug.c
+│       ├── symlink.c
+│       ├── tacacs_plus_fmt_plug.c
+│       ├── tcphdr.h
+│       ├── tcp_md5_fmt_plug.c
+│       ├── telegram_common.h
+│       ├── telegram_common_plug.c
+│       ├── telegram_fmt_plug.c
+│       ├── testparas.pl
+│       ├── tests
+│       │   ├── NESSIE
+│       │   │   ├── BCHASH-Rijndael-128.unverified.test-vectors.txt
+│       │   │   ├── BCHASH-Rijndael-256.unverified.test-vectors.txt
+│       │   │   ├── Md4-128.unverified.test-vectors.txt
+│       │   │   ├── Md5-128.unverified.test-vectors.txt
+│       │   │   ├── Ripemd-160.test-vectors.txt
+│       │   │   ├── Sha-2-256.unverified.test-vectors.txt
+│       │   │   ├── Sha-2-384.unverified.test-vectors.txt
+│       │   │   ├── Sha-2-512.unverified.test-vectors.txt
+│       │   │   ├── Tiger-192.test-vectors.txt
+│       │   │   ├── Whirlpool-Orig-512.verified.test-vectors.txt
+│       │   │   └── Whirlpool-Tweak-512.verified.test-vectors.txt
+│       │   ├── NIST_CAVS
+│       │   │   ├── SHA224LongMsg.rsp
+│       │   │   ├── SHA224Monte.rsp
+│       │   │   ├── SHA224ShortMsg.rsp
+│       │   │   ├── SHA256LongMsg.rsp
+│       │   │   ├── SHA256Monte.rsp
+│       │   │   ├── SHA256ShortMsg.rsp
+│       │   │   ├── SHA384LongMsg.rsp
+│       │   │   ├── SHA384Monte.rsp
+│       │   │   ├── SHA384ShortMsg.rsp
+│       │   │   ├── SHA512LongMsg.rsp
+│       │   │   ├── SHA512Monte.rsp
+│       │   │   └── SHA512ShortMsg.rsp
+│       │   └── unit-tests.c
+│       ├── tezos_common.h
+│       ├── tezos_common_plug.c
+│       ├── tezos_fmt_plug.c
+│       ├── tgtsnarf.c
+│       ├── tiger.c
+│       ├── tiger_fmt_plug.c
+│       ├── timer.c
+│       ├── timer.h
+│       ├── times.h
+│       ├── trip_fmt.c
+│       ├── truecrypt_fmt_plug.c
+│       ├── truth.pl
+│       ├── tty.c
+│       ├── tty.h
+│       ├── twofish.h
+│       ├── twofish_plug.c
+│       ├── uaf2john.c
+│       ├── uaf_encode.c
+│       ├── uaf_encode.h
+│       ├── uaf_hash.c
+│       ├── uaf_raw.h
+│       ├── unafs.c
+│       ├── undrop.c
+│       ├── unicode.c
+│       ├── UnicodeData.h
+│       ├── unicode.h
+│       ├── unicode_range.c
+│       ├── unicode_range.h
+│       ├── unique.c
+│       ├── unrar.c
+│       ├── unrarcmd.c
+│       ├── unrarcmd.h
+│       ├── unrarfilter.c
+│       ├── unrarfilter.h
+│       ├── unrar.h
+│       ├── unrarhlp.c
+│       ├── unrarhlp.h
+│       ├── unrarppm.c
+│       ├── unrarppm.h
+│       ├── unrarvm.c
+│       ├── unrarvm.h
+│       ├── unshadow.c
+│       ├── unused
+│       │   ├── analisa_test_runner.sh
+│       │   ├── bisect-script.sh
+│       │   ├── dynamic_big_crypt.c
+│       │   ├── locktest.sh
+│       │   ├── osx_as_wrapper.sh
+│       │   ├── plugify.pl
+│       │   ├── salt.pl
+│       │   ├── SHA512_qnx.pm
+│       │   └── Yosemite.patch
+│       ├── vax.h
+│       ├── vdi_fmt_plug.c
+│       ├── vms_fmt_plug.c
+│       ├── vms_std.h
+│       ├── vmx_common.h
+│       ├── vmx_common_plug.c
+│       ├── vmx_fmt_plug.c
+│       ├── vnc_fmt_plug.c
+│       ├── vncpcap2john.c
+│       ├── vtp_fmt_plug.c
+│       ├── wbb3_fmt_plug.c
+│       ├── whirlpool.c
+│       ├── whirlpool_fmt_plug.c
+│       ├── Win32-dlfcn-port.h
+│       ├── win32_memmap.c
+│       ├── win32_memmap.h
+│       ├── wordlist.c
+│       ├── wordlist.h
+│       ├── wow_srp_fmt_plug.c
+│       ├── wpapcap2john.c
+│       ├── wpapcap2john.h
+│       ├── wpapmk_fmt_plug.c
+│       ├── wpapsk_fmt_plug.c
+│       ├── wpapsk.h
+│       ├── x86-64.h
+│       ├── x86-64.S
+│       ├── x86-any.h
+│       ├── x86-mmx.h
+│       ├── x86-mmx.S
+│       ├── x86.S
+│       ├── x86-sse.h
+│       ├── x86-sse.S
+│       ├── xmpp_scram_fmt_plug.c
+│       ├── XSHA512_fmt_plug.c
+│       ├── XSHA_fmt_plug.c
+│       ├── xts.h
+│       ├── xts_plug.c
+│       ├── yescrypt
+│       │   ├── CHANGES
+│       │   ├── COMPARISON
+│       │   ├── initrom.c
+│       │   ├── insecure_memzero.c
+│       │   ├── insecure_memzero.h
+│       │   ├── Makefile
+│       │   ├── PARAMETERS
+│       │   ├── PERFORMANCE
+│       │   ├── phc.c
+│       │   ├── PHC-TEST-OK-SHA256
+│       │   ├── README
+│       │   ├── sha256.c
+│       │   ├── sha256.h
+│       │   ├── sysendian.h
+│       │   ├── tests.c
+│       │   ├── TESTS-OK
+│       │   ├── userom.c
+│       │   ├── yescrypt-common.c
+│       │   ├── yescrypt.h
+│       │   ├── yescrypt-opt.c
+│       │   ├── yescrypt-platform.c
+│       │   └── yescrypt-ref.c
+│       ├── zip2john.c
+│       ├── zip_fmt_plug.c
+│       ├── zipmonster_fmt_plug.c
+│       ├── ztex
+│       │   ├── device_bitstream.h
+│       │   ├── device.c
+│       │   ├── device_format.c
+│       │   ├── device_format.h
+│       │   ├── device.h
+│       │   ├── ez-usb
+│       │   │   ├── inouttraffic.c
+│       │   │   ├── inouttraffic.ihx
+│       │   │   └── README
+│       │   ├── fpga-bcrypt
+│       │   │   ├── bcrypt
+│       │   │   │   ├── bcrypt_arbiter.v
+│       │   │   │   ├── bcrypt_cmp_config.v
+│       │   │   │   ├── bcrypt_core
+│       │   │   │   │   ├── addr_regs.v
+│       │   │   │   │   ├── bcrypt_core.v
+│       │   │   │   │   ├── fsm.v
+│       │   │   │   │   ├── P_2x32.v
+│       │   │   │   │   ├── S.v
+│       │   │   │   │   └── unit.v
+│       │   │   │   ├── bcrypt_data.v
+│       │   │   │   ├── bcrypt_expand_key_b.v
+│       │   │   │   ├── bcrypt_proxy.v
+│       │   │   │   ├── bcrypt_test.v
+│       │   │   │   ├── bcrypt.ucf
+│       │   │   │   ├── bcrypt.v
+│       │   │   │   ├── bcrypt.vh
+│       │   │   │   ├── bcrypt_wrapper.v
+│       │   │   │   ├── comparator.v
+│       │   │   │   ├── S_data.txt
+│       │   │   │   ├── wrapper0.ucf
+│       │   │   │   ├── wrapper1.ucf
+│       │   │   │   ├── wrapper2.ucf
+│       │   │   │   ├── wrapper3.ucf
+│       │   │   │   ├── wrapper4.ucf
+│       │   │   │   └── wrapper5.ucf
+│       │   │   ├── bcrypt_summary.html
+│       │   │   ├── bcrypt.xds
+│       │   │   ├── fpga-bcrypt-ztex.xise
+│       │   │   ├── main.vh
+│       │   │   ├── pkt_comm
+│       │   │   │   ├── inpkt_header.v
+│       │   │   │   ├── outpkt_bcrypt.v
+│       │   │   │   ├── outpkt_checksum.v
+│       │   │   │   ├── outpkt_v3.v
+│       │   │   │   ├── pkt_comm_test_helper.vh
+│       │   │   │   ├── template_list_b.v
+│       │   │   │   ├── word_gen_b.v
+│       │   │   │   ├── word_gen.vh
+│       │   │   │   └── word_storage.v
+│       │   │   ├── README.md
+│       │   │   ├── util
+│       │   │   │   ├── asymm_bram.v
+│       │   │   │   ├── delay.v
+│       │   │   │   ├── ff32.v
+│       │   │   │   ├── fifo_sync.v
+│       │   │   │   ├── log2.vh
+│       │   │   │   └── sync.v
+│       │   │   ├── xpartition.pxml
+│       │   │   └── ztex_inouttraffic
+│       │   │       ├── async2sync.v
+│       │   │       ├── chip_select.v
+│       │   │       ├── clocks.ucf
+│       │   │       ├── clocks.v
+│       │   │       ├── cmt2.v
+│       │   │       ├── cmt_common.v
+│       │   │       ├── cmt_prog.v
+│       │   │       ├── hs_io_v2.v
+│       │   │       ├── input_fifo.v
+│       │   │       ├── output_fifo.v
+│       │   │       ├── output_limit_fifo.v
+│       │   │       ├── startup_spartan6.v
+│       │   │       ├── vcr.v
+│       │   │       ├── ztex_inouttraffic.ucf
+│       │   │       └── ztex_inouttraffic.v
+│       │   ├── fpga-descrypt
+│       │   │   ├── descrypt
+│       │   │   │   ├── arbiter.v
+│       │   │   │   ├── cmp_config_distrib.v
+│       │   │   │   ├── cmp_config.v
+│       │   │   │   ├── core_dout_proc.v
+│       │   │   │   ├── descrypt_core
+│       │   │   │   │   ├── crypt3_ascii2bin.v
+│       │   │   │   │   ├── descrypt16.v
+│       │   │   │   │   ├── descrypt_core.v
+│       │   │   │   │   ├── descrypt_core.xds
+│       │   │   │   │   ├── descrypt_round.v
+│       │   │   │   │   ├── descrypt.vh
+│       │   │   │   │   ├── des_loop.v
+│       │   │   │   │   ├── Eblock.v
+│       │   │   │   │   ├── IP1.v
+│       │   │   │   │   ├── pc1.v
+│       │   │   │   │   ├── rotate_1or2_pc2.v
+│       │   │   │   │   └── SP_v2.v
+│       │   │   │   ├── descrypt_test.v
+│       │   │   │   ├── descrypt.ucf
+│       │   │   │   ├── descrypt_unit.v
+│       │   │   │   ├── descrypt.v
+│       │   │   │   └── wrapper.v
+│       │   │   ├── descrypt.xds
+│       │   │   ├── descrypt-ztex.xise
+│       │   │   ├── main.vh
+│       │   │   ├── pkt_comm
+│       │   │   │   ├── inpkt_header.v
+│       │   │   │   ├── outpkt_checksum.v
+│       │   │   │   ├── outpkt_join.v
+│       │   │   │   ├── outpkt_v2.v
+│       │   │   │   ├── outpkt_v3.v
+│       │   │   │   ├── range_info_process.v
+│       │   │   │   ├── range_insert.v
+│       │   │   │   ├── template_list.v
+│       │   │   │   ├── word_gen_char_range.v
+│       │   │   │   ├── word_gen_v2.v
+│       │   │   │   └── word_gen.vh
+│       │   │   ├── README.md
+│       │   │   ├── util
+│       │   │   │   ├── cdc_reg.v
+│       │   │   │   ├── delay.v
+│       │   │   │   ├── distributor.v
+│       │   │   │   ├── extra_reg.v
+│       │   │   │   ├── ff64.v
+│       │   │   │   ├── fifo_sync.v
+│       │   │   │   ├── global_wires.v
+│       │   │   │   ├── log2.vh
+│       │   │   │   ├── square_OR.v
+│       │   │   │   ├── sync.v
+│       │   │   │   └── watchdog.v
+│       │   │   ├── xpartition.pxml
+│       │   │   ├── ztex_inouttraffic
+│       │   │   │   ├── async2sync.v
+│       │   │   │   ├── chip_select.v
+│       │   │   │   ├── clocks.ucf
+│       │   │   │   ├── clocks.v
+│       │   │   │   ├── cmt2.v
+│       │   │   │   ├── cmt_common.v
+│       │   │   │   ├── cmt_prog.v
+│       │   │   │   ├── hs_io_v2.v
+│       │   │   │   ├── input_fifo.v
+│       │   │   │   ├── output_fifo.v
+│       │   │   │   ├── output_limit_fifo.v
+│       │   │   │   ├── startup_spartan6.v
+│       │   │   │   ├── vcr.v
+│       │   │   │   ├── ztex_inouttraffic.ucf
+│       │   │   │   ├── ztex_inouttraffic.v
+│       │   │   │   └── ztex_inouttraffic.xds
+│       │   │   └── ztex_inouttraffic_summary.html
+│       │   ├── fpga-md5crypt
+│       │   │   ├── fpga-md5crypt.xise
+│       │   │   ├── main.vh
+│       │   │   ├── md5crypt
+│       │   │   │   ├── arbiter_rx.v
+│       │   │   │   ├── arbiter_tx.v
+│       │   │   │   ├── bcast_net.v
+│       │   │   │   ├── comparator.v
+│       │   │   │   ├── core_ctrl.v
+│       │   │   │   ├── cpu
+│       │   │   │   │   ├── cpu_flags.v
+│       │   │   │   │   ├── cpu_state.v
+│       │   │   │   │   ├── cpu.v
+│       │   │   │   │   ├── ff16.v
+│       │   │   │   │   ├── instruction.v
+│       │   │   │   │   ├── integer_ops.v
+│       │   │   │   │   ├── program.vh
+│       │   │   │   │   ├── registers_bram.v
+│       │   │   │   │   └── thread_number.v
+│       │   │   │   ├── md5core
+│       │   │   │   │   ├── add3_unreg.v
+│       │   │   │   │   ├── add3.v
+│       │   │   │   │   ├── ff32.v
+│       │   │   │   │   ├── md5core_test.v
+│       │   │   │   │   ├── md5core_type1.v
+│       │   │   │   │   ├── md5core_type2.v
+│       │   │   │   │   ├── md5core.v
+│       │   │   │   │   ├── md5_Kt_bram.v
+│       │   │   │   │   ├── md5_Kt_dram.v
+│       │   │   │   │   ├── shreg_ff.v
+│       │   │   │   │   └── shreg.v
+│       │   │   │   ├── md5crypt_cmp_config.v
+│       │   │   │   ├── md5crypt_test.v
+│       │   │   │   ├── md5crypt.ucf
+│       │   │   │   ├── md5crypt.v
+│       │   │   │   ├── md5engine
+│       │   │   │   │   ├── core_input.v
+│       │   │   │   │   ├── create_blk.v
+│       │   │   │   │   ├── engine.v
+│       │   │   │   │   ├── md5engine_test.v
+│       │   │   │   │   ├── memory.v
+│       │   │   │   │   ├── next_thread_num.v
+│       │   │   │   │   ├── procb_buf.v
+│       │   │   │   │   ├── procb_saved_state.v
+│       │   │   │   │   ├── process_bytes.v
+│       │   │   │   │   ├── realign4_pad.v
+│       │   │   │   │   └── thread_state.v
+│       │   │   │   ├── md5unit_test.v
+│       │   │   │   ├── md5unit.v
+│       │   │   │   ├── md5.vh
+│       │   │   │   ├── test1.ucf
+│       │   │   │   ├── unit_ctrl.v
+│       │   │   │   ├── unit_input_async.v
+│       │   │   │   └── uob16pq.v
+│       │   │   ├── md5crypt.xds
+│       │   │   ├── no-clocks-io.xds
+│       │   │   ├── pkt_comm
+│       │   │   │   ├── inpkt_config.v
+│       │   │   │   ├── inpkt_header.v
+│       │   │   │   ├── inpkt_type_init_1b.v
+│       │   │   │   ├── outpkt_checksum.v
+│       │   │   │   ├── outpkt.v
+│       │   │   │   ├── pkt_comm_test_helper.vh
+│       │   │   │   ├── template_list_b_varlen.v
+│       │   │   │   ├── word_gen_b_varlen.v
+│       │   │   │   └── word_storage.v
+│       │   │   ├── README.md
+│       │   │   ├── util
+│       │   │   │   ├── asymm_bram.v
+│       │   │   │   ├── delay.v
+│       │   │   │   ├── fifo_sync.v
+│       │   │   │   ├── log2.vh
+│       │   │   │   ├── regs2d.v
+│       │   │   │   └── sync.v
+│       │   │   ├── xpartition_mppr.pxml
+│       │   │   ├── xpartition.pxml
+│       │   │   └── ztex_inouttraffic
+│       │   │       ├── async2sync.v
+│       │   │       ├── chip_select.v
+│       │   │       ├── clocks.ucf
+│       │   │       ├── clocks.v
+│       │   │       ├── cmt2.v
+│       │   │       ├── cmt_prog.v
+│       │   │       ├── hs_io_v2.v
+│       │   │       ├── input_fifo.v
+│       │   │       ├── output_fifo.v
+│       │   │       ├── output_limit_fifo.v
+│       │   │       ├── startup_spartan6.v
+│       │   │       ├── vcr.v
+│       │   │       ├── ztex_inouttraffic.ucf
+│       │   │       └── ztex_inouttraffic.v
+│       │   ├── fpga-sha256crypt
+│       │   │   ├── CHANGES.md
+│       │   │   ├── fpga_editor.png
+│       │   │   ├── fpga-sha256crypt.xise
+│       │   │   ├── main.vh
+│       │   │   ├── no-clocks-io.xds
+│       │   │   ├── pkt_comm
+│       │   │   │   ├── inpkt_config.v
+│       │   │   │   ├── inpkt_header.v
+│       │   │   │   ├── inpkt_type_init_1b.v
+│       │   │   │   ├── outpkt_checksum.v
+│       │   │   │   ├── outpkt.v
+│       │   │   │   ├── pkt_comm_test_helper.vh
+│       │   │   │   ├── template_list_b_varlen.v
+│       │   │   │   ├── word_gen_b_varlen.v
+│       │   │   │   └── word_storage.v
+│       │   │   ├── README.md
+│       │   │   ├── sha256crypt
+│       │   │   │   ├── arbiter_rx.v
+│       │   │   │   ├── arbiter_tx.v
+│       │   │   │   ├── bcast_net.v
+│       │   │   │   ├── comparator.v
+│       │   │   │   ├── cpu
+│       │   │   │   │   ├── cpu_flags.v
+│       │   │   │   │   ├── cpu_state.v
+│       │   │   │   │   ├── cpu.v
+│       │   │   │   │   ├── instruction.v
+│       │   │   │   │   ├── integer_ops.v
+│       │   │   │   │   ├── program.vh
+│       │   │   │   │   ├── registers_bram.v
+│       │   │   │   │   └── thread_number.v
+│       │   │   │   ├── sha256core
+│       │   │   │   │   ├── add3_unreg.v
+│       │   │   │   │   ├── add3.v
+│       │   │   │   │   ├── ff16.v
+│       │   │   │   │   ├── ff32.v
+│       │   │   │   │   ├── sha256block.v
+│       │   │   │   │   ├── sha256core_test.v
+│       │   │   │   │   ├── sha256core.v
+│       │   │   │   │   ├── sha256ctx.v
+│       │   │   │   │   ├── sha256_Kt_bram.v
+│       │   │   │   │   └── shreg.v
+│       │   │   │   ├── sha256crypt_test.v
+│       │   │   │   ├── sha256crypt.ucf
+│       │   │   │   ├── sha256crypt.v
+│       │   │   │   ├── sha256engine
+│       │   │   │   │   ├── core_input.v
+│       │   │   │   │   ├── create_blk.v
+│       │   │   │   │   ├── engine.v
+│       │   │   │   │   ├── memory.v
+│       │   │   │   │   ├── next_thread_num.v
+│       │   │   │   │   ├── procb_buf.v
+│       │   │   │   │   ├── procb_saved_state.v
+│       │   │   │   │   ├── process_bytes.v
+│       │   │   │   │   ├── realign4_pad.v
+│       │   │   │   │   ├── sha256engine_test.v
+│       │   │   │   │   └── thread_state.v
+│       │   │   │   ├── sha256.vh
+│       │   │   │   ├── unit
+│       │   │   │   │   ├── core_ctrl.v
+│       │   │   │   │   ├── sha256unit_test.v
+│       │   │   │   │   ├── sha256unit.v
+│       │   │   │   │   ├── unit_ctrl.v
+│       │   │   │   │   ├── unit_input.v
+│       │   │   │   │   └── uob.v
+│       │   │   │   └── xcrypt_cmp_config.v
+│       │   │   ├── sha256crypt.xds
+│       │   │   ├── util
+│       │   │   │   ├── asymm_bram.v
+│       │   │   │   ├── delay.v
+│       │   │   │   ├── fifo_sync.v
+│       │   │   │   ├── log2.vh
+│       │   │   │   ├── regs2d.v
+│       │   │   │   └── sync.v
+│       │   │   ├── xpartition-mppr.pxml
+│       │   │   ├── xpartition.pxml
+│       │   │   └── ztex_inouttraffic
+│       │   │       ├── async2sync.v
+│       │   │       ├── chip_select.v
+│       │   │       ├── clocks.ucf
+│       │   │       ├── clocks.v
+│       │   │       ├── cmt2.v
+│       │   │       ├── cmt_prog.v
+│       │   │       ├── hs_io_v2.v
+│       │   │       ├── input_fifo.v
+│       │   │       ├── output_fifo.v
+│       │   │       ├── output_limit_fifo.v
+│       │   │       ├── startup_spartan6.v
+│       │   │       ├── vcr.v
+│       │   │       ├── ztex_inouttraffic.ucf
+│       │   │       └── ztex_inouttraffic.v
+│       │   ├── fpga-sha512crypt
+│       │   │   ├── fpga-sha512crypt.xise
+│       │   │   ├── main.vh
+│       │   │   ├── no-clocks-io.xds
+│       │   │   ├── pkt_comm
+│       │   │   │   ├── inpkt_config.v
+│       │   │   │   ├── inpkt_header.v
+│       │   │   │   ├── inpkt_type_init_1b.v
+│       │   │   │   ├── outpkt_checksum.v
+│       │   │   │   ├── outpkt.v
+│       │   │   │   ├── pkt_comm_test_helper.vh
+│       │   │   │   ├── template_list_b_varlen.v
+│       │   │   │   ├── word_gen_b_varlen.v
+│       │   │   │   └── word_storage.v
+│       │   │   ├── README.md
+│       │   │   ├── sha512crypt
+│       │   │   │   ├── arbiter_rx.v
+│       │   │   │   ├── arbiter_tx.v
+│       │   │   │   ├── bcast_net.v
+│       │   │   │   ├── comparator.v
+│       │   │   │   ├── cpu
+│       │   │   │   │   ├── cpu_flags.v
+│       │   │   │   │   ├── cpu_state.v
+│       │   │   │   │   ├── cpu.v
+│       │   │   │   │   ├── instruction.v
+│       │   │   │   │   ├── integer_ops.v
+│       │   │   │   │   ├── program.vh
+│       │   │   │   │   ├── registers_bram.v
+│       │   │   │   │   └── thread_number.v
+│       │   │   │   ├── sha512core
+│       │   │   │   │   ├── add3.v
+│       │   │   │   │   ├── block.v
+│       │   │   │   │   ├── core_test.v
+│       │   │   │   │   ├── core.v
+│       │   │   │   │   ├── ctx.v
+│       │   │   │   │   ├── ff16.v
+│       │   │   │   │   ├── ff32.v
+│       │   │   │   │   ├── ff64.v
+│       │   │   │   │   ├── sha512_Kt_bram.v
+│       │   │   │   │   └── shreg.v
+│       │   │   │   ├── sha512crypt_test.v
+│       │   │   │   ├── sha512crypt.ucf
+│       │   │   │   ├── sha512crypt.v
+│       │   │   │   ├── sha512engine
+│       │   │   │   │   ├── core_input.v
+│       │   │   │   │   ├── create_blk.v
+│       │   │   │   │   ├── engine.v
+│       │   │   │   │   ├── memory.v
+│       │   │   │   │   ├── next_thread_num.v
+│       │   │   │   │   ├── procb_buf.v
+│       │   │   │   │   ├── procb_saved_state.v
+│       │   │   │   │   ├── process_bytes.v
+│       │   │   │   │   ├── realign8_pad.v
+│       │   │   │   │   └── thread_state.v
+│       │   │   │   ├── sha512.vh
+│       │   │   │   ├── test1.ucf
+│       │   │   │   ├── unit
+│       │   │   │   │   ├── core_ctrl.v
+│       │   │   │   │   ├── sha512unit_test.v
+│       │   │   │   │   ├── sha512unit.v
+│       │   │   │   │   ├── unit_ctrl.v
+│       │   │   │   │   ├── unit_input.v
+│       │   │   │   │   └── uob.v
+│       │   │   │   └── xcrypt_cmp_config.v
+│       │   │   ├── sha512crypt.xds
+│       │   │   ├── util
+│       │   │   │   ├── asymm_bram.v
+│       │   │   │   ├── delay.v
+│       │   │   │   ├── fifo_sync.v
+│       │   │   │   ├── log2.vh
+│       │   │   │   ├── regs2d.v
+│       │   │   │   └── sync.v
+│       │   │   ├── xpartition.pxml
+│       │   │   └── ztex_inouttraffic
+│       │   │       ├── async2sync.v
+│       │   │       ├── chip_select.v
+│       │   │       ├── clocks.ucf
+│       │   │       ├── clocks.v
+│       │   │       ├── cmt2.v
+│       │   │       ├── cmt_prog.v
+│       │   │       ├── hs_io_v2.v
+│       │   │       ├── input_fifo.v
+│       │   │       ├── output_fifo.v
+│       │   │       ├── output_limit_fifo.v
+│       │   │       ├── startup_spartan6.v
+│       │   │       ├── vcr.v
+│       │   │       ├── ztex_inouttraffic.ucf
+│       │   │       └── ztex_inouttraffic.v
+│       │   ├── inouttraffic.c
+│       │   ├── inouttraffic.h
+│       │   ├── jtr_device.c
+│       │   ├── jtr_device.h
+│       │   ├── jtr_mask.c
+│       │   ├── jtr_mask.h
+│       │   ├── Makefile.in
+│       │   ├── pkt_comm
+│       │   │   ├── cmp_config.c
+│       │   │   ├── cmp_config.h
+│       │   │   ├── init_data.c
+│       │   │   ├── init_data.h
+│       │   │   ├── inpkt.c
+│       │   │   ├── inpkt.h
+│       │   │   ├── Makefile.in
+│       │   │   ├── pkt_comm.c
+│       │   │   ├── pkt_comm.h
+│       │   │   ├── word_gen.c
+│       │   │   ├── word_gen.h
+│       │   │   ├── word_list.c
+│       │   │   └── word_list.h
+│       │   ├── task.c
+│       │   ├── task.h
+│       │   ├── ztex.c
+│       │   ├── ztex.h
+│       │   ├── ztex_scan.c
+│       │   ├── ztex_scan.h
+│       │   ├── ztex_sn.c
+│       │   └── ztex_sn.h
+│       ├── ztex_bcrypt.c
+│       ├── ztex_descrypt.c
+│       ├── ztex_drupal7.c
+│       ├── ztex_md5crypt.c
+│       ├── ztex_phpass.c
+│       ├── ztex_sha256crypt.c
+│       └── ztex_sha512crypt.c
+├── john-1.9.0-jumbo-1.tar.xz -> /home/felix/packages/john/john-1.9.0-jumbo-1.tar.xz
+├── john-1.9.0-jumbo-1.tar.xz.sign -> /home/felix/packages/john/john-1.9.0-jumbo-1.tar.xz.sign
+├── john-fix-gcc11-build.patch -> /home/felix/packages/john/john-fix-gcc11-build.patch
+├── john-fix-opencl-topology.patch -> /home/felix/packages/john/john-fix-opencl-topology.patch
+├── john-pdf2john-path-fix.patch -> /home/felix/packages/john/john-pdf2john-path-fix.patch
+└── john-ssh2json-python3-compatibility.patch -> /home/felix/packages/john/john-ssh2json-python3-compatibility.patch
+
+68 directories, 1885 files

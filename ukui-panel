@@ -1,0 +1,636 @@
+src
+├── ukui-panel-3.0.6.4
+│   ├── AUTHORS
+│   ├── CHANGELOG
+│   ├── cmake
+│   │   ├── BuildPlugin.cmake
+│   │   ├── ukui-build-tools
+│   │   │   ├── find-modules
+│   │   │   │   ├── FindExif.cmake
+│   │   │   │   ├── FindGLIB.cmake
+│   │   │   │   ├── FindMenuCache.cmake
+│   │   │   │   ├── FindUDev.cmake
+│   │   │   │   ├── FindXCB.cmake
+│   │   │   │   ├── FindXdgUserDirs.cmake
+│   │   │   │   └── FindXKBCommon.cmake
+│   │   │   ├── modules
+│   │   │   │   ├── ECMFindModuleHelpers.cmake
+│   │   │   │   ├── Qt5PatchedLinguistToolsMacros.cmake
+│   │   │   │   ├── Qt5TranslationLoader.cmake
+│   │   │   │   ├── Qt5TranslationLoader.cpp.in
+│   │   │   │   ├── UKUiAppTranslationLoader.cpp.in
+│   │   │   │   ├── UKUiCompilerSettings.cmake
+│   │   │   │   ├── UKUiConfigVars.cmake
+│   │   │   │   ├── UKUiCreatePkgConfigFile.cmake
+│   │   │   │   ├── UKUiCreatePortableHeaders.cmake
+│   │   │   │   ├── UKUiLibTranslationLoader.cpp.in
+│   │   │   │   ├── UKUiPluginTranslationLoader.cpp.in
+│   │   │   │   ├── UKUiPreventInSourceBuilds.cmake
+│   │   │   │   ├── UKUiTranslate.cmake
+│   │   │   │   ├── UKUiTranslateDesktop.cmake
+│   │   │   │   ├── UKUiTranslateTs.cmake
+│   │   │   │   └── UKUiTranslationLoader.cmake
+│   │   │   ├── ukui-build-tools-config.cmake
+│   │   │   └── ukui-build-tools-config-version.cmake
+│   │   └── UkuiPluginTranslationTs.cmake
+│   ├── CMakeLists.txt
+│   ├── CMakeLists.txt.user
+│   ├── COPYING
+│   ├── debian
+│   │   ├── changelog
+│   │   ├── control
+│   │   ├── copyright
+│   │   ├── manpages
+│   │   ├── rules
+│   │   ├── source
+│   │   │   ├── format
+│   │   │   └── options
+│   │   ├── ukui-panel.postinst
+│   │   └── watch
+│   ├── doc
+│   │   ├── changlog.txt
+│   │   ├── studyLink
+│   │   └── ukui-panel-Requirements-Document.doc
+│   ├── man
+│   │   ├── panel-daemon.1
+│   │   ├── sni-daemon.1
+│   │   ├── sni-xembed-proxy.1
+│   │   ├── ukui-flash-disk.1
+│   │   └── ukui-panel.1
+│   ├── NEWS
+│   ├── panel
+│   │   ├── CMakeLists.txt
+│   │   ├── comm_func.cpp
+│   │   ├── comm_func.h
+│   │   ├── common
+│   │   │   ├── cmake
+│   │   │   │   └── ukui-config.cmake.in
+│   │   │   ├── CMakeLists.txt
+│   │   │   ├── dbus
+│   │   │   │   └── org.ukui.SingleApplication.xml
+│   │   │   ├── ukuiapplication.cpp
+│   │   │   ├── ukuiapplication.h
+│   │   │   ├── ukuiglobals.h
+│   │   │   ├── ukuigridlayout.cpp
+│   │   │   ├── ukuigridlayout.h
+│   │   │   ├── ukuiplugininfo.cpp
+│   │   │   ├── ukuiplugininfo.h
+│   │   │   ├── ukuisettings.cpp
+│   │   │   ├── ukuisettings.h
+│   │   │   ├── ukuisingleapplication.cpp
+│   │   │   ├── ukuisingleapplication.h
+│   │   │   ├── ukuitranslator.cpp
+│   │   │   └── ukuitranslator.h
+│   │   ├── common_fun
+│   │   │   ├── dbus-adaptor.cpp
+│   │   │   ├── dbus-adaptor.h
+│   │   │   ├── listengsettings.cpp
+│   │   │   ├── listengsettings.h
+│   │   │   ├── org.ukui.panel.information.xml
+│   │   │   ├── panel_commission.cpp
+│   │   │   ├── panel_commission.h
+│   │   │   ├── Readme.md
+│   │   │   ├── ukuipanel_infomation.cpp
+│   │   │   └── ukuipanel_infomation.h
+│   │   ├── customstyle.cpp
+│   │   ├── customstyle.h
+│   │   ├── highlight-effect.cpp
+│   │   ├── highlight-effect.h
+│   │   ├── img
+│   │   │   ├── nightmode-light.svg
+│   │   │   ├── nightmode-night.svg
+│   │   │   ├── setting.svg
+│   │   │   ├── startmenu.svg
+│   │   │   ├── taskview.svg
+│   │   │   ├── tick.svg
+│   │   │   ├── tray-down.svg
+│   │   │   ├── tray-left.svg
+│   │   │   ├── tray-right.svg
+│   │   │   ├── tray-up.svg
+│   │   │   └── up.svg
+│   │   ├── iukuipanel.h
+│   │   ├── iukuipanelplugin.h
+│   │   ├── main.cpp
+│   │   ├── panelpluginsmodel.cpp
+│   │   ├── panelpluginsmodel.h
+│   │   ├── plugin.cpp
+│   │   ├── plugin.h
+│   │   ├── pluginmoveprocessor.cpp
+│   │   ├── pluginmoveprocessor.h
+│   │   ├── pluginsettings.cpp
+│   │   ├── pluginsettings.h
+│   │   ├── pluginsettings_p.h
+│   │   ├── resources
+│   │   │   ├── org.ukui.panel.settings.gschema.xml
+│   │   │   ├── org.ukui.panel.tray.gschema.xml
+│   │   │   ├── panel-commission.ini
+│   │   │   ├── panel-commission.sh
+│   │   │   ├── panel.conf
+│   │   │   ├── ukui-panel_bo.ts
+│   │   │   ├── ukui-panel-config.sh
+│   │   │   ├── ukui-panel.desktop
+│   │   │   ├── ukui-panel-plugins-revise.sh
+│   │   │   ├── ukui-panel-reset.sh
+│   │   │   ├── ukui-panel_tr.ts
+│   │   │   ├── ukui-panel_zh_CN.qm
+│   │   │   ├── ukui-panel_zh_CN.ts
+│   │   │   └── ukui-session-tool-action.ini
+│   │   ├── translation
+│   │   │   └── panel_zh_CN.ts
+│   │   ├── ukuicontrolstyle.cpp
+│   │   ├── ukuicontrolstyle.h
+│   │   ├── ukuipanelapplication.cpp
+│   │   ├── ukuipanelapplication.h
+│   │   ├── ukuipanelapplication_p.h
+│   │   ├── ukuipanel.cpp
+│   │   ├── ukuipanelglobals.h
+│   │   ├── ukuipanel.h
+│   │   ├── ukuipanellayout.cpp
+│   │   ├── ukuipanellayout.h
+│   │   ├── ukuipanellimits.h
+│   │   ├── ukuipanelpluginconfigdialog.cpp
+│   │   ├── ukuipanelpluginconfigdialog.h
+│   │   ├── windownotifier.cpp
+│   │   └── windownotifier.h
+│   ├── panel-daemon
+│   │   ├── CMakeLists.txt
+│   │   ├── convert-desktop-windowid
+│   │   │   ├── convertdesktoptowinid.cpp
+│   │   │   └── convertdesktoptowinid.h
+│   │   ├── datewather
+│   │   │   ├── datewatcher.cpp
+│   │   │   └── datewatcher.h
+│   │   ├── dbus-server
+│   │   │   ├── dbus-adaptor.cpp
+│   │   │   ├── dbus-adaptor.h
+│   │   │   ├── org.ukui.panel.daemon.xml
+│   │   │   ├── Readme.md
+│   │   │   ├── server.cpp
+│   │   │   └── server.h
+│   │   ├── filewatcher
+│   │   │   ├── filewatcher.cpp
+│   │   │   └── filewatcher.h
+│   │   ├── jsonwathcer
+│   │   │   ├── jsonwacther.cpp
+│   │   │   └── jsonwacther.h
+│   │   ├── main.cpp
+│   │   ├── pin-totaskbar
+│   │   │   ├── dbus-adaptor.cpp
+│   │   │   ├── dbus-adaptor.h
+│   │   │   ├── org.ukui.panel.xml
+│   │   │   ├── pintotaskbar.cpp
+│   │   │   ├── pintotaskbar.h
+│   │   │   ├── Readme.md
+│   │   │   ├── taskbar-dbus-adaptor.cpp
+│   │   │   └── taskbar-dbus-adaptor.h
+│   │   ├── resources
+│   │   │   └── ukui-panel-daemon.desktop
+│   │   ├── watchermanager.cpp
+│   │   └── watchermanager.h
+│   ├── plugin-calendar
+│   │   ├── calendar-button-bg.png
+│   │   ├── CMakeLists.txt
+│   │   ├── html
+│   │   │   ├── arm64.css
+│   │   │   ├── arm64-en.css
+│   │   │   ├── arm64-en.html
+│   │   │   ├── arm64.html
+│   │   │   ├── hl
+│   │   │   │   ├── hl2008.js
+│   │   │   │   ├── hl2009.js
+│   │   │   │   ├── hl2010.js
+│   │   │   │   ├── hl2011.js
+│   │   │   │   ├── hl2012.js
+│   │   │   │   ├── hl2013.js
+│   │   │   │   ├── hl2014.js
+│   │   │   │   ├── hl2015.js
+│   │   │   │   ├── hl2016.js
+│   │   │   │   ├── hl2017.js
+│   │   │   │   ├── hl2018.js
+│   │   │   │   ├── hl2019.js
+│   │   │   │   ├── hl2020.js
+│   │   │   │   ├── hl2021.js
+│   │   │   │   ├── hl2022.js
+│   │   │   │   ├── hl2023.js
+│   │   │   │   ├── hl2024.js
+│   │   │   │   ├── hl2025.js
+│   │   │   │   └── hl20xx.js
+│   │   │   ├── hlnew
+│   │   │   │   ├── hl2008.js
+│   │   │   │   ├── hl2009.js
+│   │   │   │   ├── hl2010.js
+│   │   │   │   ├── hl2011.js
+│   │   │   │   ├── hl2012.js
+│   │   │   │   ├── hl2013.js
+│   │   │   │   ├── hl2014.js
+│   │   │   │   ├── hl2015.js
+│   │   │   │   ├── hl2016.js
+│   │   │   │   ├── hl2017.js
+│   │   │   │   ├── hl2018.js
+│   │   │   │   ├── hl2019.js
+│   │   │   │   ├── hl2020.js
+│   │   │   │   ├── hl2021.js
+│   │   │   │   ├── hl2022.js
+│   │   │   │   ├── hl2023.js
+│   │   │   │   ├── hl2024.js
+│   │   │   │   ├── hl2025.js
+│   │   │   │   └── hl20xx.js
+│   │   │   ├── images
+│   │   │   │   ├── down_click.png
+│   │   │   │   ├── down_hover.png
+│   │   │   │   ├── down.png
+│   │   │   │   ├── header-bg.png
+│   │   │   │   ├── next.png
+│   │   │   │   ├── prev.png
+│   │   │   │   ├── selected.png
+│   │   │   │   ├── select.png
+│   │   │   │   ├── shangban.png
+│   │   │   │   ├── up_click.png
+│   │   │   │   ├── up_hover.png
+│   │   │   │   ├── up.png
+│   │   │   │   ├── xiuxi.png
+│   │   │   │   └── zodiac
+│   │   │   │       ├── black
+│   │   │   │       │   ├── black-pig.png
+│   │   │   │       │   └── mouse-black.png
+│   │   │   │       └── blue
+│   │   │   │           ├── blue-pig.png
+│   │   │   │           └── mouse-white.png
+│   │   │   ├── index-en.js
+│   │   │   ├── index-es.js
+│   │   │   ├── index-fr.js
+│   │   │   ├── index.js
+│   │   │   ├── index-mon.js
+│   │   │   ├── index-pt.js
+│   │   │   ├── index-ru.js
+│   │   │   ├── index-solar-cn.js
+│   │   │   ├── index-solar-cn-mon.js
+│   │   │   ├── index-solar-en.js
+│   │   │   ├── index-solar-en-mon.js
+│   │   │   ├── jiejiari.js
+│   │   │   ├── LunarCalendar-en.js
+│   │   │   ├── LunarCalendar.js
+│   │   │   ├── ukui.css
+│   │   │   ├── ukui-en.css
+│   │   │   ├── ukui-en.html
+│   │   │   ├── ukui-es.html
+│   │   │   ├── ukui-fr.html
+│   │   │   ├── ukui.html
+│   │   │   ├── ukui-min.css
+│   │   │   ├── ukui-min.html
+│   │   │   ├── ukui-mon.html
+│   │   │   ├── ukui-mon-min.html
+│   │   │   ├── ukui-pt.html
+│   │   │   ├── ukui-ru.html
+│   │   │   ├── ukui-solar-cn.html
+│   │   │   ├── ukui-solar-cn-mon.html
+│   │   │   ├── ukui-solar-en.html
+│   │   │   └── ukui-solar-en-mon.html
+│   │   ├── lunarcalendarwidget
+│   │   │   ├── customstylePushbutton.cpp
+│   │   │   ├── customstylePushbutton.h
+│   │   │   ├── frmlunarcalendarwidget.cpp
+│   │   │   ├── frmlunarcalendarwidget.h
+│   │   │   ├── frmlunarcalendarwidget.ui
+│   │   │   ├── image
+│   │   │   │   ├── bg_calendar.png
+│   │   │   │   └── fontawesome-webfont.ttf
+│   │   │   ├── lunarcalendarinfo.cpp
+│   │   │   ├── lunarcalendarinfo.h
+│   │   │   ├── lunarcalendaritem.cpp
+│   │   │   ├── lunarcalendaritem.h
+│   │   │   ├── lunarcalendarmonthitem.cpp
+│   │   │   ├── lunarcalendarmonthitem.h
+│   │   │   ├── lunarcalendarwidget.cpp
+│   │   │   ├── lunarcalendarwidget.h
+│   │   │   ├── lunarcalendarwidget.pro
+│   │   │   ├── lunarcalendaryearitem.cpp
+│   │   │   ├── lunarcalendaryearitem.h
+│   │   │   ├── main.cpp
+│   │   │   ├── main.qrc
+│   │   │   ├── picturetowhite.cpp
+│   │   │   ├── picturetowhite.h
+│   │   │   ├── statelabel.cpp
+│   │   │   ├── statelabel.h
+│   │   │   └── ui_frmlunarcalendarwidget.h
+│   │   ├── resources
+│   │   │   └── calendar.desktop.in
+│   │   ├── style
+│   │   │   └── indicators.css
+│   │   ├── translation
+│   │   │   └── calendar_zh_CN.ts
+│   │   ├── ukuicalendar.cpp
+│   │   ├── ukuicalendar.h
+│   │   ├── ukuiwebviewdialog.cpp
+│   │   ├── ukuiwebviewdialog.h
+│   │   └── ukuiwebviewdialog.ui
+│   ├── plugin-nightmode
+│   │   ├── CMakeLists.txt
+│   │   ├── nightmode.cpp
+│   │   ├── nightmode.h
+│   │   ├── resources
+│   │   │   └── nightmode.desktop.in
+│   │   └── translation
+│   │       └── nightmode_zh_CN.ts
+│   ├── plugin-quicklaunch
+│   │   ├── CMakeLists.txt
+│   │   ├── json.cpp
+│   │   ├── json.h
+│   │   ├── quicklaunchaction.cpp
+│   │   ├── quicklaunchaction.h
+│   │   ├── quicklaunchbutton.cpp
+│   │   ├── quicklaunchbutton.h
+│   │   ├── resources
+│   │   │   └── quicklaunch.desktop.in
+│   │   ├── ukuiquicklaunch.cpp
+│   │   ├── ukuiquicklaunch.h
+│   │   ├── ukuiquicklaunchplugin.cpp
+│   │   └── ukuiquicklaunchplugin.h
+│   ├── plugin-segmentation
+│   │   ├── CMakeLists.txt
+│   │   ├── img
+│   │   │   ├── segmentationh.svg
+│   │   │   └── segmentation.svg
+│   │   ├── resources
+│   │   │   └── segmentation.desktop.in
+│   │   ├── segmentation.cpp
+│   │   └── segmentation.h
+│   ├── plugin-showdesktop
+│   │   ├── CMakeLists.txt
+│   │   ├── resources
+│   │   │   └── showdesktop.desktop.in
+│   │   ├── showdesktop.cpp
+│   │   ├── showdesktop.h
+│   │   └── translation
+│   │       └── showdesktop_zh_CN.ts
+│   ├── plugin-spacer
+│   │   ├── CMakeLists.txt
+│   │   ├── resources
+│   │   │   └── spacer.desktop.in
+│   │   ├── spacerconfiguration.cpp
+│   │   ├── spacerconfiguration.h
+│   │   ├── spacerconfiguration.ui
+│   │   ├── spacer.cpp
+│   │   └── spacer.h
+│   ├── plugin-startbar
+│   │   ├── CMakeLists.txt
+│   │   ├── img
+│   │   │   └── search.png
+│   │   ├── resources
+│   │   │   └── startbar.desktop.in
+│   │   ├── startbar.cpp
+│   │   ├── startbar.h
+│   │   ├── startmenu_button.cpp
+│   │   ├── startmenu_button.h
+│   │   ├── taskview_button.cpp
+│   │   ├── taskview_button.h
+│   │   └── translation
+│   │       └── startbar_zh_CN.ts
+│   ├── plugin-startmenu
+│   │   ├── CMakeLists.txt
+│   │   ├── img
+│   │   │   └── startmenu.svg
+│   │   ├── resources
+│   │   │   └── startmenu.desktop.in
+│   │   ├── startmenu.cpp
+│   │   └── startmenu.h
+│   ├── plugin-statusnotifier
+│   │   ├── CMakeLists.txt
+│   │   ├── dbusproperties.cpp
+│   │   ├── dbusproperties.h
+│   │   ├── dbustypes.cpp
+│   │   ├── dbustypes.h
+│   │   ├── org.kde.StatusNotifierItem.xml
+│   │   ├── resources
+│   │   │   └── statusnotifier.desktop.in
+│   │   ├── sniasync.cpp
+│   │   ├── sniasync.h
+│   │   ├── statusnotifierbutton.cpp
+│   │   ├── statusnotifierbutton.h
+│   │   ├── statusnotifier.cpp
+│   │   ├── statusnotifier.h
+│   │   ├── statusnotifieriteminterface.cpp
+│   │   ├── statusnotifieriteminterface.h
+│   │   ├── statusnotifier_storagearrow.cpp
+│   │   ├── statusnotifier_storagearrow.h
+│   │   ├── statusnotifierwatcher.cpp
+│   │   ├── statusnotifierwatcher.h
+│   │   ├── statusnotifierwatcher_interface.cpp
+│   │   ├── statusnotifierwatcher_interface.h
+│   │   ├── statusnotifierwidget.cpp
+│   │   ├── statusnotifierwidget.h
+│   │   └── systemtraytypedefs.h
+│   ├── plugin-taskbar
+│   │   ├── CMakeLists.txt
+│   │   ├── quicklaunchaction.cpp
+│   │   ├── quicklaunchaction.h
+│   │   ├── resources
+│   │   │   ├── name-icon.match
+│   │   │   └── taskbar.desktop.in
+│   │   ├── translation
+│   │   │   └── taskbar_zh_CN.ts
+│   │   ├── ukuigrouppopup.cpp
+│   │   ├── ukuigrouppopup.h
+│   │   ├── ukuitaskbar.cpp
+│   │   ├── ukuitaskbar.h
+│   │   ├── ukuitaskbarplugin.cpp
+│   │   ├── ukuitaskbarplugin.h
+│   │   ├── ukuitaskbutton.cpp
+│   │   ├── ukuitaskbutton.h
+│   │   ├── ukuitaskclosebutton.cpp
+│   │   ├── ukuitaskclosebutton.h
+│   │   ├── ukuitaskgroup.cpp
+│   │   ├── ukuitaskgroup.h
+│   │   ├── ukuitaskwidget.cpp
+│   │   └── ukuitaskwidget.h
+│   ├── plugin-taskbar-wayland
+│   │   ├── CMakeLists.txt
+│   │   ├── resources
+│   │   │   ├── name-icon.match
+│   │   │   └── taskbar.desktop.in
+│   │   ├── ukuigrouppopup.cpp
+│   │   ├── ukuigrouppopup.h
+│   │   ├── ukuitaskbar.cpp
+│   │   ├── ukuitaskbar.h
+│   │   ├── ukuitaskbaricon.cpp
+│   │   ├── ukuitaskbaricon.h
+│   │   ├── ukuitaskbarplugin.cpp
+│   │   ├── ukuitaskbarplugin.h
+│   │   ├── ukuitaskbutton.cpp
+│   │   ├── ukuitaskbutton.h
+│   │   ├── ukuitaskclosebutton.cpp
+│   │   ├── ukuitaskclosebutton.h
+│   │   ├── ukuitaskgroup.cpp
+│   │   ├── ukuitaskgroup.h
+│   │   ├── ukuitaskwidget.cpp
+│   │   └── ukuitaskwidget.h
+│   ├── plugin-taskview
+│   │   ├── CMakeLists.txt
+│   │   ├── img
+│   │   │   └── taskview.svg
+│   │   ├── resources
+│   │   │   └── taskview.desktop.in
+│   │   ├── taskview.cpp
+│   │   └── taskview.h
+│   ├── plugin-tray
+│   │   ├── CMakeLists.txt
+│   │   ├── resources
+│   │   │   ├── trayAppSetting.sh
+│   │   │   └── tray.desktop.in
+│   │   ├── storagearrow.cpp
+│   │   ├── storagearrow.h
+│   │   ├── traydynamicgsetting.cpp
+│   │   ├── traydynamicgsetting.h
+│   │   ├── trayicon.cpp
+│   │   ├── trayicon.h
+│   │   ├── ukuistoragewidget.cpp
+│   │   ├── ukuistoragewidget.h
+│   │   ├── ukuitray.cpp
+│   │   ├── ukuitray.h
+│   │   ├── ukuitrayplugin.cpp
+│   │   ├── ukuitrayplugin.h
+│   │   ├── ukuitraystrage.cpp
+│   │   ├── ukuitraystrage.h
+│   │   ├── xfitman.cpp
+│   │   └── xfitman.h
+│   ├── README.md
+│   ├── sni-daemon
+│   │   ├── CMakeLists.txt
+│   │   ├── main.cpp
+│   │   ├── resources
+│   │   │   └── sni-daemon.desktop
+│   │   ├── snidaemon.cpp
+│   │   ├── snidaemon.h
+│   │   ├── snideamo.cpp
+│   │   ├── snideamo.h
+│   │   ├── statusnotifieritem_interface.cpp
+│   │   ├── statusnotifieritem_interface.h
+│   │   └── systemtraytypedefs.h
+│   ├── sni-xembed-proxy
+│   │   ├── CMakeLists.txt
+│   │   ├── kf5_org.kde.StatusNotifierItem.xml
+│   │   ├── kf5_org.kde.StatusNotifierWatcher.xml
+│   │   ├── main.cpp
+│   │   ├── org.freedesktop.DBus.Properties.xml
+│   │   ├── resources
+│   │   │   └── sni-xembed-proxy.desktop
+│   │   ├── snidbus.cpp
+│   │   ├── snidbus.h
+│   │   ├── sniproxy.cpp
+│   │   ├── sniproxy.h
+│   │   ├── snixembedproxy.cpp
+│   │   ├── snixembedproxy.h
+│   │   ├── statusnotifierwatcher_interface.cpp
+│   │   ├── statusnotifierwatcher_interface.h
+│   │   ├── systemtraytypedefs.h
+│   │   └── xcbutilss.h
+│   ├── ukui-calendar
+│   │   ├── calendardbus.cpp
+│   │   ├── calendardbus.h
+│   │   ├── CMakeLists.txt
+│   │   ├── lunarcalendarwidget
+│   │   │   ├── customstylePushbutton.cpp
+│   │   │   ├── customstylePushbutton.h
+│   │   │   ├── frmlunarcalendarwidget.cpp
+│   │   │   ├── frmlunarcalendarwidget.h
+│   │   │   ├── frmlunarcalendarwidget.ui
+│   │   │   ├── image
+│   │   │   │   ├── bg_calendar.png
+│   │   │   │   └── fontawesome-webfont.ttf
+│   │   │   ├── lunarcalendarinfo.cpp
+│   │   │   ├── lunarcalendarinfo.h
+│   │   │   ├── lunarcalendaritem.cpp
+│   │   │   ├── lunarcalendaritem.h
+│   │   │   ├── lunarcalendarmonthitem.cpp
+│   │   │   ├── lunarcalendarmonthitem.h
+│   │   │   ├── lunarcalendarwidget.cpp
+│   │   │   ├── lunarcalendarwidget.h
+│   │   │   ├── lunarcalendarwidget.pro
+│   │   │   ├── lunarcalendaryearitem.cpp
+│   │   │   ├── lunarcalendaryearitem.h
+│   │   │   ├── main.cpp
+│   │   │   ├── main.qrc
+│   │   │   ├── picturetowhite.cpp
+│   │   │   ├── picturetowhite.h
+│   │   │   ├── statelabel.cpp
+│   │   │   ├── statelabel.h
+│   │   │   └── ui_frmlunarcalendarwidget.h
+│   │   ├── resources
+│   │   │   └── ukui-calendar.desktop
+│   │   ├── translation
+│   │   │   ├── ukui-calendar_zh_CN.qm
+│   │   │   └── ukui-calendar_zh_CN.ts
+│   │   ├── xatom-helper.cpp
+│   │   └── xatom-helper.h
+│   └── ukui-flash-disk
+│       ├── clickLabel.cpp
+│       ├── clickLabel.h
+│       ├── CMakeLists.txt
+│       ├── datacdrom.cpp
+│       ├── datacdrom.h
+│       ├── device-manager.cpp
+│       ├── device-manager.h
+│       ├── device-operation.cpp
+│       ├── device-operation.h
+│       ├── disk-resources
+│       │   ├── org.ukui.flash-disk.autoload.gschema.xml
+│       │   ├── ukui-flash-disk.desktop
+│       │   ├── ukui-flash-disk.pro
+│       │   ├── ukui-flash-disk_tr.qm
+│       │   ├── ukui-flash-disk_tr.ts
+│       │   ├── ukui-flash-disk_zh_CN.qm
+│       │   └── ukui-flash-disk_zh_CN.ts
+│       ├── ejectInterface.cpp
+│       ├── ejectInterface.h
+│       ├── fdapplication.cpp
+│       ├── fdapplication.h
+│       ├── fdclickwidget.cpp
+│       ├── fdclickwidget.h
+│       ├── fdframe.cpp
+│       ├── fdframe.h
+│       ├── flashdiskdata.cpp
+│       ├── flashdiskdata.h
+│       ├── gpartedinterface.cpp
+│       ├── gpartedinterface.h
+│       ├── interactivedialog.cpp
+│       ├── interactivedialog.h
+│       ├── MacroFile.h
+│       ├── MainController.cpp
+│       ├── MainController.h
+│       ├── main.cpp
+│       ├── mainwindow.cpp
+│       ├── mainwindow.h
+│       ├── mainwindow.ui
+│       ├── picture
+│       │   ├── drive-removable-media.svg
+│       │   ├── drive-removable-media-usb.png
+│       │   └── media-eject-symbolic.svg
+│       ├── qclickwidget.cpp
+│       ├── qclickwidget.h
+│       ├── QtSingleApplication
+│       │   ├── qtlocalpeer.cpp
+│       │   ├── qtlocalpeer.h
+│       │   ├── QtLockedFile
+│       │   ├── qtlockedfile.cpp
+│       │   ├── qtlockedfile.h
+│       │   ├── qtlockedfile_unix.cpp
+│       │   ├── qtlockedfile_win.cpp
+│       │   ├── QtSingleApplication
+│       │   ├── qtsingleapplication.cpp
+│       │   ├── qtsingleapplication.h
+│       │   ├── qtsingleapplication.pri
+│       │   ├── qtsinglecoreapplication.cpp
+│       │   ├── qtsinglecoreapplication.h
+│       │   └── qtsinglecoreapplication.pri
+│       ├── repair-dialog-box.cpp
+│       ├── repair-dialog-box.h
+│       ├── test-repair-dialog.cpp
+│       ├── ui_mainwindow.h
+│       ├── ukui-flash-disk.desktop
+│       ├── ukui-flash-disk.qrc
+│       ├── ukui-flash-disk.qss
+│       ├── UnionVariable.cpp
+│       └── UnionVariable.h
+└── ukui-panel-3.0.6.4.tar.gz -> /home/felix/packages/ukui-panel/ukui-panel-3.0.6.4.tar.gz
+
+84 directories, 550 files

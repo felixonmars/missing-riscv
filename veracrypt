@@ -1,0 +1,1502 @@
+src
+├── contrib
+│   └── EncryptData.ps1
+├── doc
+│   ├── chm
+│   │   ├── create_chm.bat
+│   │   ├── VeraCrypt.hhc
+│   │   ├── VeraCrypt.hhk
+│   │   ├── VeraCrypt.hhp
+│   │   └── VeraCrypt User Guide.chm
+│   ├── EFI-DCS
+│   │   ├── dcs_tpm_owner_02.pdf
+│   │   └── disk_encryption_v1_2.pdf
+│   └── html
+│       ├── Acknowledgements.html
+│       ├── Additional Security Requirements and Precautions.html
+│       ├── AES.html
+│       ├── arrow_right.gif
+│       ├── Authenticity and Integrity.html
+│       ├── Authors.html
+│       ├── Avoid Third-Party File Extensions.html
+│       ├── bank_30x30.png
+│       ├── BCH_Logo_30x30.png
+│       ├── BC_Logo_30x30.png
+│       ├── Beginner's Tutorial.html
+│       ├── Beginner's Tutorial_Image_001.jpg
+│       ├── Beginner's Tutorial_Image_002.jpg
+│       ├── Beginner's Tutorial_Image_003.jpg
+│       ├── Beginner's Tutorial_Image_004.jpg
+│       ├── Beginner's Tutorial_Image_005.jpg
+│       ├── Beginner's Tutorial_Image_007.jpg
+│       ├── Beginner's Tutorial_Image_008.jpg
+│       ├── Beginner's Tutorial_Image_009.jpg
+│       ├── Beginner's Tutorial_Image_010.jpg
+│       ├── Beginner's Tutorial_Image_011.jpg
+│       ├── Beginner's Tutorial_Image_012.jpg
+│       ├── Beginner's Tutorial_Image_013.jpg
+│       ├── Beginner's Tutorial_Image_014.jpg
+│       ├── Beginner's Tutorial_Image_015.jpg
+│       ├── Beginner's Tutorial_Image_016.jpg
+│       ├── Beginner's Tutorial_Image_017.jpg
+│       ├── Beginner's Tutorial_Image_018.jpg
+│       ├── Beginner's Tutorial_Image_019.jpg
+│       ├── Beginner's Tutorial_Image_020.jpg
+│       ├── Beginner's Tutorial_Image_021.jpg
+│       ├── Beginner's Tutorial_Image_022.jpg
+│       ├── Beginner's Tutorial_Image_023.gif
+│       ├── Beginner's Tutorial_Image_024.gif
+│       ├── Beginner's Tutorial_Image_034.png
+│       ├── BLAKE2s-256.html
+│       ├── Camellia.html
+│       ├── Cascades.html
+│       ├── Changing Passwords and Keyfiles.html
+│       ├── Choosing Passwords and Keyfiles.html
+│       ├── Command Line Usage.html
+│       ├── CompilingGuidelineLinux.html
+│       ├── CompilingGuidelines.html
+│       ├── CompilingGuidelineWin
+│       │   ├── AddNewSystemVar.jpg
+│       │   ├── CertificateCannotBeVerified.jpg
+│       │   ├── CertVerifyFails.jpg
+│       │   ├── DistributionPackageDamaged.jpg
+│       │   ├── DownloadVS2010.jpg
+│       │   ├── DownloadVS2019.jpg
+│       │   ├── DownloadVSBuildTools.jpg
+│       │   ├── gzipCommandLine.jpg
+│       │   ├── NasmCommandLine.jpg
+│       │   ├── RegeditPermissions-1.jpg
+│       │   ├── RegeditPermissions-2.jpg
+│       │   ├── RegeditPermissions-3.jpg
+│       │   ├── RegeditPermissions-4.jpg
+│       │   ├── SelectAdvancedSystemSettings.jpg
+│       │   ├── SelectEnvironmentVariables.jpg
+│       │   ├── SelectPathVariable.jpg
+│       │   ├── SelectThisPC.jpg
+│       │   ├── upxCommandLine.jpg
+│       │   ├── VS2010BuildSolution.jpg
+│       │   ├── VS2010Win32Config.jpg
+│       │   ├── VS2010X64Config.jpg
+│       │   ├── VS2019ARM64Config.jpg
+│       │   ├── VS2019BuildSolution.jpg
+│       │   └── YasmCommandLine.jpg
+│       ├── CompilingGuidelineWin.html
+│       ├── Contact.html
+│       ├── Contributed Resources.html
+│       ├── Conversion_Guide_VeraCrypt_1.26_and_Later.html
+│       ├── Converting TrueCrypt volumes and partitions.html
+│       ├── Converting TrueCrypt volumes and partitions_truecrypt_convertion.jpg
+│       ├── Creating New Volumes.html
+│       ├── Data Leaks.html
+│       ├── Default Mount Parameters.html
+│       ├── Default Mount Parameters_VeraCrypt_password_using_default_parameters.png
+│       ├── Defragmenting.html
+│       ├── Digital Signatures.html
+│       ├── Disclaimers.html
+│       ├── Documentation.html
+│       ├── Donation_Bank.html
+│       ├── Donation_donate_CHF.gif
+│       ├── Donation_donate_Dollars.gif
+│       ├── Donation_donate_Euros.gif
+│       ├── Donation_donate_GBP.gif
+│       ├── Donation_donate.gif
+│       ├── Donation_donate_PLN.gif
+│       ├── Donation_donate_YEN.gif
+│       ├── Donation.html
+│       ├── Donation_VC_BTC_Sigwit.png
+│       ├── Donation_VeraCrypt_BitcoinCash.png
+│       ├── Donation_VeraCrypt_Bitcoin_small.png
+│       ├── Donation_VeraCrypt_Ethereum.png
+│       ├── Donation_VeraCrypt_Litecoin.png
+│       ├── Donation_VeraCrypt_Monero.png
+│       ├── EMV Smart Cards.html
+│       ├── Encryption Algorithms.html
+│       ├── Encryption Scheme.html
+│       ├── Ethereum_Logo_19x30.png
+│       ├── FAQ.html
+│       ├── Favorite Volumes.html
+│       ├── flag-au.png
+│       ├── flag-au-small.png
+│       ├── flag-eu.png
+│       ├── flag-eu-small.png
+│       ├── flag-gb.png
+│       ├── flag-gb-small.png
+│       ├── flag-nz.png
+│       ├── flag-nz-small.png
+│       ├── flag-us.png
+│       ├── flag-us-small.png
+│       ├── flattr-badge-large.png
+│       ├── gf2_mul.gif
+│       ├── Hardware Acceleration.html
+│       ├── Hash Algorithms.html
+│       ├── Header Key Derivation.html
+│       ├── Hibernation File.html
+│       ├── Hidden Operating System.html
+│       ├── Hidden Volume.html
+│       ├── Home_facebook_veracrypt.png
+│       ├── Home_reddit.png
+│       ├── Home_utilities-file-archiver-3.png
+│       ├── Home_VeraCrypt_Default_Mount_Parameters.png
+│       ├── Home_VeraCrypt_menu_Default_Mount_Parameters.png
+│       ├── Hot Keys.html
+│       ├── How to Back Up Securely.html
+│       ├── Incompatibilities.html
+│       ├── Introduction.html
+│       ├── Issues and Limitations.html
+│       ├── Journaling File Systems.html
+│       ├── Keyfiles.html
+│       ├── Keyfiles in VeraCrypt.html
+│       ├── Keyfiles in VeraCrypt_Image_040.gif
+│       ├── Kuznyechik.html
+│       ├── Language Packs.html
+│       ├── Legal Information.html
+│       ├── liberapay_donate.svg
+│       ├── LTC_Logo_30x30.png
+│       ├── Main Program Window.html
+│       ├── Malware.html
+│       ├── Memory Dump Files.html
+│       ├── Miscellaneous.html
+│       ├── Modes of Operation.html
+│       ├── Monero_Logo_30x30.png
+│       ├── Mounting VeraCrypt Volumes.html
+│       ├── Multi-User Environment.html
+│       ├── Normal Dismount vs Force Dismount.html
+│       ├── Notation.html
+│       ├── Paging File.html
+│       ├── Parallelization.html
+│       ├── paypal_30x30.png
+│       ├── Personal Iterations Multiplier (PIM).html
+│       ├── Personal Iterations Multiplier (PIM)_VeraCrypt_ChangePIM_Step1.png
+│       ├── Personal Iterations Multiplier (PIM)_VeraCrypt_ChangePIM_Step2.png
+│       ├── Personal Iterations Multiplier (PIM)_VeraCrypt_ChangePIM_System_Step1.png
+│       ├── Personal Iterations Multiplier (PIM)_VeraCrypt_ChangePIM_System_Step2.png
+│       ├── Personal Iterations Multiplier (PIM)_VeraCrypt_UsePIM_Step1.png
+│       ├── Personal Iterations Multiplier (PIM)_VeraCrypt_UsePIM_Step2.png
+│       ├── Physical Security.html
+│       ├── Pipelining.html
+│       ├── Plausible Deniability.html
+│       ├── Portable Mode.html
+│       ├── Preface.html
+│       ├── Program Menu.html
+│       ├── Protection of Hidden Volumes.html
+│       ├── Protection of Hidden Volumes_Image_027.jpg
+│       ├── Protection of Hidden Volumes_Image_028.jpg
+│       ├── Protection of Hidden Volumes_Image_029.jpg
+│       ├── Protection of Hidden Volumes_Image_030.jpg
+│       ├── Protection of Hidden Volumes_Image_031.jpg
+│       ├── Random Number Generator.html
+│       ├── Reallocated Sectors.html
+│       ├── References.html
+│       ├── Release Notes.html
+│       ├── Removable Medium Volume.html
+│       ├── Removing Encryption.html
+│       ├── ru
+│       │   ├── Acknowledgements.html
+│       │   ├── Additional Security Requirements and Precautions.html
+│       │   ├── AES.html
+│       │   ├── arrow_right.gif
+│       │   ├── Authenticity and Integrity.html
+│       │   ├── Authors.html
+│       │   ├── Avoid Third-Party File Extensions.html
+│       │   ├── bank_30x30.png
+│       │   ├── BCH_Logo_30x30.png
+│       │   ├── BC_Logo_30x30.png
+│       │   ├── Beginner's Tutorial.html
+│       │   ├── Beginner's Tutorial_Image_001.png
+│       │   ├── Beginner's Tutorial_Image_002.png
+│       │   ├── Beginner's Tutorial_Image_003.png
+│       │   ├── Beginner's Tutorial_Image_004.png
+│       │   ├── Beginner's Tutorial_Image_005.png
+│       │   ├── Beginner's Tutorial_Image_007.png
+│       │   ├── Beginner's Tutorial_Image_008.png
+│       │   ├── Beginner's Tutorial_Image_009.png
+│       │   ├── Beginner's Tutorial_Image_010.png
+│       │   ├── Beginner's Tutorial_Image_011.png
+│       │   ├── Beginner's Tutorial_Image_012.png
+│       │   ├── Beginner's Tutorial_Image_013.png
+│       │   ├── Beginner's Tutorial_Image_014.png
+│       │   ├── Beginner's Tutorial_Image_015.png
+│       │   ├── Beginner's Tutorial_Image_016.png
+│       │   ├── Beginner's Tutorial_Image_017.png
+│       │   ├── Beginner's Tutorial_Image_018.png
+│       │   ├── Beginner's Tutorial_Image_019.png
+│       │   ├── Beginner's Tutorial_Image_020.png
+│       │   ├── Beginner's Tutorial_Image_021.png
+│       │   ├── Beginner's Tutorial_Image_022.png
+│       │   ├── Beginner's Tutorial_Image_023.png
+│       │   ├── Beginner's Tutorial_Image_024.png
+│       │   ├── Beginner's Tutorial_Image_034.png
+│       │   ├── BLAKE2s-256.html
+│       │   ├── Camellia.html
+│       │   ├── Cascades.html
+│       │   ├── Changing Passwords and Keyfiles.html
+│       │   ├── Choosing Passwords and Keyfiles.html
+│       │   ├── Command Line Usage.html
+│       │   ├── CompilingGuidelineLinux.html
+│       │   ├── CompilingGuidelines.html
+│       │   ├── CompilingGuidelineWin.html
+│       │   ├── Contact.html
+│       │   ├── Contributed Resources.html
+│       │   ├── Conversion_Guide_VeraCrypt_1.26_and_Later.html
+│       │   ├── Converting TrueCrypt volumes and partitions.html
+│       │   ├── Converting TrueCrypt volumes and partitions_truecrypt_convertion.png
+│       │   ├── Creating New Volumes.html
+│       │   ├── Data Leaks.html
+│       │   ├── Default Mount Parameters.html
+│       │   ├── Default Mount Parameters_VeraCrypt_password_using_default_parameters.png
+│       │   ├── Defragmenting.html
+│       │   ├── Digital Signatures.html
+│       │   ├── Disclaimers.html
+│       │   ├── Documentation.html
+│       │   ├── Donation_Bank.html
+│       │   ├── Donation_donate_CHF.gif
+│       │   ├── Donation_donate_Dollars.gif
+│       │   ├── Donation_donate_Euros.gif
+│       │   ├── Donation_donate_GBP.gif
+│       │   ├── Donation_donate.gif
+│       │   ├── Donation_donate_PLN.gif
+│       │   ├── Donation_donate_YEN.gif
+│       │   ├── Donation.html
+│       │   ├── Donation_VC_BTC_Sigwit.png
+│       │   ├── Donation_VeraCrypt_BitcoinCash.png
+│       │   ├── Donation_VeraCrypt_Bitcoin_small.png
+│       │   ├── Donation_VeraCrypt_Ethereum.png
+│       │   ├── Donation_VeraCrypt_Litecoin.png
+│       │   ├── Donation_VeraCrypt_Monero.png
+│       │   ├── EMV Smart Cards.html
+│       │   ├── Encryption Algorithms.html
+│       │   ├── Encryption Scheme.html
+│       │   ├── Ethereum_Logo_19x30.png
+│       │   ├── FAQ.html
+│       │   ├── Favorite Volumes.html
+│       │   ├── flag-au.png
+│       │   ├── flag-au-small.png
+│       │   ├── flag-eu.png
+│       │   ├── flag-eu-small.png
+│       │   ├── flag-gb.png
+│       │   ├── flag-gb-small.png
+│       │   ├── flag-nz.png
+│       │   ├── flag-nz-small.png
+│       │   ├── flag-us.png
+│       │   ├── flag-us-small.png
+│       │   ├── flattr-badge-large.png
+│       │   ├── gf2_mul.gif
+│       │   ├── Hardware Acceleration.html
+│       │   ├── Hash Algorithms.html
+│       │   ├── Header Key Derivation.html
+│       │   ├── Hibernation File.html
+│       │   ├── Hidden Operating System.html
+│       │   ├── Hidden Volume.html
+│       │   ├── Home_facebook_veracrypt.png
+│       │   ├── Home_reddit.png
+│       │   ├── Home_utilities-file-archiver-3.png
+│       │   ├── Home_VeraCrypt_Default_Mount_Parameters.png
+│       │   ├── Home_VeraCrypt_menu_Default_Mount_Parameters.png
+│       │   ├── Hot Keys.html
+│       │   ├── How to Back Up Securely.html
+│       │   ├── Incompatibilities.html
+│       │   ├── Introduction.html
+│       │   ├── Issues and Limitations.html
+│       │   ├── Journaling File Systems.html
+│       │   ├── Keyfiles.html
+│       │   ├── Keyfiles in VeraCrypt.html
+│       │   ├── Keyfiles in VeraCrypt_Image_040.png
+│       │   ├── Kuznyechik.html
+│       │   ├── Language Packs.html
+│       │   ├── Legal Information.html
+│       │   ├── liberapay_donate.svg
+│       │   ├── LTC_Logo_30x30.png
+│       │   ├── Main Program Window.html
+│       │   ├── Malware.html
+│       │   ├── Memory Dump Files.html
+│       │   ├── Miscellaneous.html
+│       │   ├── Modes of Operation.html
+│       │   ├── Monero_Logo_30x30.png
+│       │   ├── Mounting VeraCrypt Volumes.html
+│       │   ├── Multi-User Environment.html
+│       │   ├── Normal Dismount vs Force Dismount.html
+│       │   ├── Notation.html
+│       │   ├── Paging File.html
+│       │   ├── Parallelization.html
+│       │   ├── paypal_30x30.png
+│       │   ├── Personal Iterations Multiplier (PIM).html
+│       │   ├── Personal Iterations Multiplier (PIM)_VeraCrypt_ChangePIM_Step1.png
+│       │   ├── Personal Iterations Multiplier (PIM)_VeraCrypt_ChangePIM_Step2.png
+│       │   ├── Personal Iterations Multiplier (PIM)_VeraCrypt_ChangePIM_System_Step1.png
+│       │   ├── Personal Iterations Multiplier (PIM)_VeraCrypt_ChangePIM_System_Step2.png
+│       │   ├── Personal Iterations Multiplier (PIM)_VeraCrypt_UsePIM_Step1.png
+│       │   ├── Personal Iterations Multiplier (PIM)_VeraCrypt_UsePIM_Step2.png
+│       │   ├── Physical Security.html
+│       │   ├── Pipelining.html
+│       │   ├── Plausible Deniability.html
+│       │   ├── Portable Mode.html
+│       │   ├── Preface.html
+│       │   ├── Program Menu.html
+│       │   ├── Protection of Hidden Volumes.html
+│       │   ├── Protection of Hidden Volumes_Image_027.png
+│       │   ├── Protection of Hidden Volumes_Image_028.png
+│       │   ├── Protection of Hidden Volumes_Image_029.png
+│       │   ├── Protection of Hidden Volumes_Image_030.png
+│       │   ├── Protection of Hidden Volumes_Image_031.png
+│       │   ├── Random Number Generator.html
+│       │   ├── Reallocated Sectors.html
+│       │   ├── References.html
+│       │   ├── Release Notes.html
+│       │   ├── Removable Medium Volume.html
+│       │   ├── Removing Encryption.html
+│       │   ├── Security Model.html
+│       │   ├── Security Requirements and Precautions.html
+│       │   ├── Security Requirements for Hidden Volumes.html
+│       │   ├── Security Tokens & Smart Cards.html
+│       │   ├── Serpent.html
+│       │   ├── SHA-256.html
+│       │   ├── SHA-512.html
+│       │   ├── Sharing over Network.html
+│       │   ├── Source Code.html
+│       │   ├── Standard Compliance.html
+│       │   ├── Streebog.html
+│       │   ├── styles.css
+│       │   ├── Supported Operating Systems.html
+│       │   ├── Supported Systems for System Encryption.html
+│       │   ├── System Encryption.html
+│       │   ├── System Favorite Volumes.html
+│       │   ├── Technical Details.html
+│       │   ├── Trim Operation.html
+│       │   ├── Troubleshooting.html
+│       │   ├── TrueCrypt Support.html
+│       │   ├── TrueCrypt Support_truecrypt_mode_gui.png
+│       │   ├── twitter_veracrypt.PNG
+│       │   ├── Twofish.html
+│       │   ├── Unencrypted Data in RAM.html
+│       │   ├── Uninstalling VeraCrypt.html
+│       │   ├── Using VeraCrypt Without Administrator Privileges.html
+│       │   ├── VeraCrypt128x128.png
+│       │   ├── VeraCrypt Background Task.html
+│       │   ├── VeraCrypt Hidden Operating System.html
+│       │   ├── VeraCrypt License.html
+│       │   ├── VeraCrypt Memory Protection.html
+│       │   ├── VeraCrypt RAM Encryption.html
+│       │   ├── VeraCrypt Rescue Disk.html
+│       │   ├── VeraCrypt System Files.html
+│       │   ├── VeraCrypt Volume Format Specification.html
+│       │   ├── VeraCrypt Volume.html
+│       │   ├── Volume Clones.html
+│       │   ├── Wear-Leveling.html
+│       │   └── Whirlpool.html
+│       ├── Security Model.html
+│       ├── Security Requirements and Precautions.html
+│       ├── Security Requirements for Hidden Volumes.html
+│       ├── Security Tokens & Smart Cards.html
+│       ├── Serpent.html
+│       ├── SHA-256.html
+│       ├── SHA-512.html
+│       ├── Sharing over Network.html
+│       ├── Source Code.html
+│       ├── Standard Compliance.html
+│       ├── Streebog.html
+│       ├── styles.css
+│       ├── Supported Operating Systems.html
+│       ├── Supported Systems for System Encryption.html
+│       ├── System Encryption.html
+│       ├── System Favorite Volumes.html
+│       ├── Technical Details.html
+│       ├── Trim Operation.html
+│       ├── Troubleshooting.html
+│       ├── TrueCrypt Support.html
+│       ├── TrueCrypt Support_truecrypt_mode_gui.jpg
+│       ├── twitter_veracrypt.PNG
+│       ├── Twofish.html
+│       ├── Unencrypted Data in RAM.html
+│       ├── Uninstalling VeraCrypt.html
+│       ├── Using VeraCrypt Without Administrator Privileges.html
+│       ├── VeraCrypt128x128.png
+│       ├── VeraCrypt Background Task.html
+│       ├── VeraCrypt Hidden Operating System.html
+│       ├── VeraCrypt License.html
+│       ├── VeraCrypt Memory Protection.html
+│       ├── VeraCrypt RAM Encryption.html
+│       ├── VeraCrypt Rescue Disk.html
+│       ├── VeraCrypt System Files.html
+│       ├── VeraCrypt Volume Format Specification.html
+│       ├── VeraCrypt Volume.html
+│       ├── Volume Clones.html
+│       ├── Wear-Leveling.html
+│       └── Whirlpool.html
+├── License.txt
+├── no-makeself.patch -> /home/felix/packages/veracrypt/no-makeself.patch
+├── README.md
+├── src
+│   ├── Boot
+│   │   ├── EFI
+│   │   │   ├── DcsBoot32.efi
+│   │   │   ├── DcsBoot.efi
+│   │   │   ├── DcsCfg32.efi
+│   │   │   ├── DcsCfg.efi
+│   │   │   ├── DcsInfo32.efi
+│   │   │   ├── DcsInfo.efi
+│   │   │   ├── DcsInt32.efi
+│   │   │   ├── DcsInt.efi
+│   │   │   ├── DcsRe32.efi
+│   │   │   ├── DcsRe.efi
+│   │   │   ├── LegacySpeaker32.efi
+│   │   │   ├── LegacySpeaker.efi
+│   │   │   └── Readme.txt
+│   │   └── Windows
+│   │       ├── Bios.h
+│   │       ├── BootCommon.h
+│   │       ├── BootConfig.cpp
+│   │       ├── BootConfig.h
+│   │       ├── BootConsoleIo.cpp
+│   │       ├── BootConsoleIo.h
+│   │       ├── BootCrt.asm
+│   │       ├── BootDebug.cpp
+│   │       ├── BootDebug.h
+│   │       ├── BootDefs.h
+│   │       ├── BootDiskIo.cpp
+│   │       ├── BootDiskIo.h
+│   │       ├── BootEncryptedIo.cpp
+│   │       ├── BootEncryptedIo.h
+│   │       ├── BootMain.cpp
+│   │       ├── BootMain.h
+│   │       ├── BootMemory.cpp
+│   │       ├── BootMemory.h
+│   │       ├── BootSector.asm
+│   │       ├── BootStrings.h
+│   │       ├── Boot.vcproj
+│   │       ├── Boot.vcxproj
+│   │       ├── Boot.vcxproj.filters
+│   │       ├── Boot.vcxproj.user
+│   │       ├── Decompressor.c
+│   │       ├── IntFilter.cpp
+│   │       ├── IntFilter.h
+│   │       ├── Makefile
+│   │       ├── Platform.cpp
+│   │       ├── Platform.h
+│   │       ├── Release
+│   │       │   ├── BootLoader.com.gz
+│   │       │   ├── BootSector.bin
+│   │       │   └── Decompressor.com
+│   │       ├── Release_AES
+│   │       │   ├── BootLoader.com.gz
+│   │       │   └── BootSector.bin
+│   │       ├── Release_AES_SHA2
+│   │       │   ├── BootLoader.com.gz
+│   │       │   └── BootSector.bin
+│   │       ├── Release_Camellia
+│   │       │   ├── BootLoader.com.gz
+│   │       │   └── BootSector.bin
+│   │       ├── Release_Camellia_SHA2
+│   │       │   ├── BootLoader.com.gz
+│   │       │   └── BootSector.bin
+│   │       ├── Release_Serpent
+│   │       │   ├── BootLoader.com.gz
+│   │       │   └── BootSector.bin
+│   │       ├── Release_Serpent_SHA2
+│   │       │   ├── BootLoader.com.gz
+│   │       │   └── BootSector.bin
+│   │       ├── Release_SHA2
+│   │       │   ├── BootLoader.com.gz
+│   │       │   └── BootSector.bin
+│   │       ├── Release_Twofish
+│   │       │   ├── BootLoader.com.gz
+│   │       │   └── BootSector.bin
+│   │       ├── Release_Twofish_SHA2
+│   │       │   ├── BootLoader.com.gz
+│   │       │   └── BootSector.bin
+│   │       ├── Rescue
+│   │       │   ├── BootLoader.com.gz
+│   │       │   └── BootSector.bin
+│   │       ├── Rescue_AES
+│   │       │   ├── BootLoader.com.gz
+│   │       │   └── BootSector.bin
+│   │       ├── Rescue_AES_SHA2
+│   │       │   ├── BootLoader.com.gz
+│   │       │   └── BootSector.bin
+│   │       ├── Rescue_Camellia
+│   │       │   ├── BootLoader.com.gz
+│   │       │   └── BootSector.bin
+│   │       ├── Rescue_Camellia_SHA2
+│   │       │   ├── BootLoader.com.gz
+│   │       │   └── BootSector.bin
+│   │       ├── Rescue_Serpent
+│   │       │   ├── BootLoader.com.gz
+│   │       │   └── BootSector.bin
+│   │       ├── Rescue_Serpent_SHA2
+│   │       │   ├── BootLoader.com.gz
+│   │       │   └── BootSector.bin
+│   │       ├── Rescue_SHA2
+│   │       │   ├── BootLoader.com.gz
+│   │       │   └── BootSector.bin
+│   │       ├── Rescue_Twofish
+│   │       │   ├── BootLoader.com.gz
+│   │       │   └── BootSector.bin
+│   │       └── Rescue_Twofish_SHA2
+│   │           ├── BootLoader.com.gz
+│   │           └── BootSector.bin
+│   ├── Build
+│   │   ├── build_cmake_deb.sh
+│   │   ├── build_cmake_opensuse.sh
+│   │   ├── build_cmake_rpm.sh
+│   │   ├── build_veracrypt_freebsd.sh
+│   │   ├── build_veracrypt_linux_no_sse2.sh
+│   │   ├── build_veracrypt_linux.sh
+│   │   ├── build_veracrypt_macosx_legacy.sh
+│   │   ├── build_veracrypt_macosx.sh
+│   │   ├── CMakeLists.txt
+│   │   ├── Include
+│   │   │   └── Makefile.inc
+│   │   ├── Packaging
+│   │   │   ├── debian-control
+│   │   │   │   └── prerm
+│   │   │   └── rpm-control
+│   │   │       └── prerm.sh
+│   │   ├── Resources
+│   │   │   └── MacOSX
+│   │   │       ├── Info.plist.legacy.xml
+│   │   │       └── Info.plist.xml
+│   │   ├── sign_rpm.sh
+│   │   └── Tools
+│   │       └── MacOSX
+│   │           └── yasm
+│   ├── Common
+│   │   ├── Apidrvr.h
+│   │   ├── BaseCom.cpp
+│   │   ├── BaseCom.h
+│   │   ├── BootEncryption.cpp
+│   │   ├── BootEncryption.h
+│   │   ├── Cache.c
+│   │   ├── Cache.h
+│   │   ├── Cmdline.c
+│   │   ├── Cmdline.h
+│   │   ├── Combo.c
+│   │   ├── Combo.h
+│   │   ├── CommandAPDU.cpp
+│   │   ├── CommandAPDU.h
+│   │   ├── Common.h
+│   │   ├── Common.rc
+│   │   ├── Crc.c
+│   │   ├── Crc.h
+│   │   ├── Crypto.c
+│   │   ├── Crypto.h
+│   │   ├── Dictionary.c
+│   │   ├── Dictionary.h
+│   │   ├── Dlgcode.c
+│   │   ├── Dlgcode.h
+│   │   ├── EMVCard.cpp
+│   │   ├── EMVCard.h
+│   │   ├── EMVToken.cpp
+│   │   ├── EMVToken.h
+│   │   ├── EncryptionThreadPool.c
+│   │   ├── EncryptionThreadPool.h
+│   │   ├── Endian.c
+│   │   ├── Endian.h
+│   │   ├── Exception.h
+│   │   ├── Fat.c
+│   │   ├── Fat.h
+│   │   ├── Format.c
+│   │   ├── Format.h
+│   │   ├── GfMul.c
+│   │   ├── GfMul.h
+│   │   ├── IccDataExtractor.cpp
+│   │   ├── IccDataExtractor.h
+│   │   ├── Inflate.c
+│   │   ├── Inflate.h
+│   │   ├── Keyfiles.c
+│   │   ├── Keyfiles.h
+│   │   ├── Language.c
+│   │   ├── Language.h
+│   │   ├── Language.xml
+│   │   ├── libzip
+│   │   │   ├── compat.h
+│   │   │   ├── config.h
+│   │   │   ├── LICENSE
+│   │   │   ├── NEWS.md
+│   │   │   ├── zip_add.c
+│   │   │   ├── zip_add_dir.c
+│   │   │   ├── zip_add_entry.c
+│   │   │   ├── zip_algorithm_bzip2.c
+│   │   │   ├── zip_algorithm_deflate.c
+│   │   │   ├── zip_algorithm_xz.c
+│   │   │   ├── zip_algorithm_zstd.c
+│   │   │   ├── zip_buffer.c
+│   │   │   ├── zip_close.c
+│   │   │   ├── zipconf.h
+│   │   │   ├── zip_crypto_commoncrypto.c
+│   │   │   ├── zip_crypto_commoncrypto.h
+│   │   │   ├── zip_crypto_gnutls.c
+│   │   │   ├── zip_crypto_gnutls.h
+│   │   │   ├── zip_crypto.h
+│   │   │   ├── zip_crypto_mbedtls.c
+│   │   │   ├── zip_crypto_mbedtls.h
+│   │   │   ├── zip_crypto_openssl.c
+│   │   │   ├── zip_crypto_openssl.h
+│   │   │   ├── zip_crypto_win.c
+│   │   │   ├── zip_crypto_win.h
+│   │   │   ├── zip_delete.c
+│   │   │   ├── zip_dir_add.c
+│   │   │   ├── zip_dirent.c
+│   │   │   ├── zip_discard.c
+│   │   │   ├── zip_entry.c
+│   │   │   ├── zip_error.c
+│   │   │   ├── zip_error_clear.c
+│   │   │   ├── zip_error_get.c
+│   │   │   ├── zip_error_get_sys_type.c
+│   │   │   ├── zip_error_strerror.c
+│   │   │   ├── zip_error_to_str.c
+│   │   │   ├── zip_err_str.c
+│   │   │   ├── zip_extra_field_api.c
+│   │   │   ├── zip_extra_field.c
+│   │   │   ├── zip_fclose.c
+│   │   │   ├── zip_fdopen.c
+│   │   │   ├── zip_file_add.c
+│   │   │   ├── zip_file_error_clear.c
+│   │   │   ├── zip_file_error_get.c
+│   │   │   ├── zip_file_get_comment.c
+│   │   │   ├── zip_file_get_external_attributes.c
+│   │   │   ├── zip_file_get_offset.c
+│   │   │   ├── zip_file_rename.c
+│   │   │   ├── zip_file_replace.c
+│   │   │   ├── zip_file_set_comment.c
+│   │   │   ├── zip_file_set_encryption.c
+│   │   │   ├── zip_file_set_external_attributes.c
+│   │   │   ├── zip_file_set_mtime.c
+│   │   │   ├── zip_file_strerror.c
+│   │   │   ├── zip_fopen.c
+│   │   │   ├── zip_fopen_encrypted.c
+│   │   │   ├── zip_fopen_index.c
+│   │   │   ├── zip_fopen_index_encrypted.c
+│   │   │   ├── zip_fread.c
+│   │   │   ├── zip_fseek.c
+│   │   │   ├── zip_ftell.c
+│   │   │   ├── zip_get_archive_comment.c
+│   │   │   ├── zip_get_archive_flag.c
+│   │   │   ├── zip_get_encryption_implementation.c
+│   │   │   ├── zip_get_file_comment.c
+│   │   │   ├── zip_get_name.c
+│   │   │   ├── zip_get_num_entries.c
+│   │   │   ├── zip_get_num_files.c
+│   │   │   ├── zip.h
+│   │   │   ├── zip_hash.c
+│   │   │   ├── zipint.h
+│   │   │   ├── zip_io_util.c
+│   │   │   ├── zip_libzip_version.c
+│   │   │   ├── zip_memdup.c
+│   │   │   ├── zip_name_locate.c
+│   │   │   ├── zip_new.c
+│   │   │   ├── zip_open.c
+│   │   │   ├── zip_pkware.c
+│   │   │   ├── zip_progress.c
+│   │   │   ├── zip_random_unix.c
+│   │   │   ├── zip_random_uwp.c
+│   │   │   ├── zip_random_win32.c
+│   │   │   ├── zip_rename.c
+│   │   │   ├── zip_replace.c
+│   │   │   ├── zip_set_archive_comment.c
+│   │   │   ├── zip_set_archive_flag.c
+│   │   │   ├── zip_set_default_password.c
+│   │   │   ├── zip_set_file_comment.c
+│   │   │   ├── zip_set_file_compression.c
+│   │   │   ├── zip_set_name.c
+│   │   │   ├── zip_source_accept_empty.c
+│   │   │   ├── zip_source_begin_write.c
+│   │   │   ├── zip_source_begin_write_cloning.c
+│   │   │   ├── zip_source_buffer.c
+│   │   │   ├── zip_source_call.c
+│   │   │   ├── zip_source_close.c
+│   │   │   ├── zip_source_commit_write.c
+│   │   │   ├── zip_source_compress.c
+│   │   │   ├── zip_source_crc.c
+│   │   │   ├── zip_source_error.c
+│   │   │   ├── zip_source_file_common.c
+│   │   │   ├── zip_source_file.h
+│   │   │   ├── zip_source_file_stdio.c
+│   │   │   ├── zip_source_file_stdio.h
+│   │   │   ├── zip_source_file_stdio_named.c
+│   │   │   ├── zip_source_file_win32_ansi.c
+│   │   │   ├── zip_source_file_win32.c
+│   │   │   ├── zip_source_file_win32.h
+│   │   │   ├── zip_source_file_win32_named.c
+│   │   │   ├── zip_source_file_win32_utf16.c
+│   │   │   ├── zip_source_file_win32_utf8.c
+│   │   │   ├── zip_source_free.c
+│   │   │   ├── zip_source_function.c
+│   │   │   ├── zip_source_get_file_attributes.c
+│   │   │   ├── zip_source_is_deleted.c
+│   │   │   ├── zip_source_layered.c
+│   │   │   ├── zip_source_open.c
+│   │   │   ├── zip_source_pass_to_lower_layer.c
+│   │   │   ├── zip_source_pkware_decode.c
+│   │   │   ├── zip_source_pkware_encode.c
+│   │   │   ├── zip_source_read.c
+│   │   │   ├── zip_source_remove.c
+│   │   │   ├── zip_source_rollback_write.c
+│   │   │   ├── zip_source_seek.c
+│   │   │   ├── zip_source_seek_write.c
+│   │   │   ├── zip_source_stat.c
+│   │   │   ├── zip_source_supports.c
+│   │   │   ├── zip_source_tell.c
+│   │   │   ├── zip_source_tell_write.c
+│   │   │   ├── zip_source_window.c
+│   │   │   ├── zip_source_winzip_aes_decode.c
+│   │   │   ├── zip_source_winzip_aes_encode.c
+│   │   │   ├── zip_source_write.c
+│   │   │   ├── zip_source_zip.c
+│   │   │   ├── zip_source_zip_new.c
+│   │   │   ├── zip_stat.c
+│   │   │   ├── zip_stat_index.c
+│   │   │   ├── zip_stat_init.c
+│   │   │   ├── zip_strerror.c
+│   │   │   ├── zip_string.c
+│   │   │   ├── zip_unchange_all.c
+│   │   │   ├── zip_unchange_archive.c
+│   │   │   ├── zip_unchange.c
+│   │   │   ├── zip_unchange_data.c
+│   │   │   ├── zip_utf-8.c
+│   │   │   └── zip_winzip_aes.c
+│   │   ├── lzma
+│   │   │   ├── 7zTypes.h
+│   │   │   ├── 7zWindows.h
+│   │   │   ├── Alloc.c
+│   │   │   ├── Alloc.h
+│   │   │   ├── Compiler.h
+│   │   │   ├── CpuArch.c
+│   │   │   ├── CpuArch.h
+│   │   │   ├── LzFind.c
+│   │   │   ├── LzFind.h
+│   │   │   ├── LzFindMt.c
+│   │   │   ├── LzFindMt.h
+│   │   │   ├── LzFindOpt.c
+│   │   │   ├── LzHash.h
+│   │   │   ├── LzmaDec.c
+│   │   │   ├── LzmaDec.h
+│   │   │   ├── LzmaEnc.c
+│   │   │   ├── LzmaEnc.h
+│   │   │   ├── lzma-history.txt
+│   │   │   ├── LzmaLib.c
+│   │   │   ├── LzmaLib.h
+│   │   │   ├── lzma-sdk.txt
+│   │   │   ├── Precomp.h
+│   │   │   ├── Threads.c
+│   │   │   └── Threads.h
+│   │   ├── Lzma.vcxproj
+│   │   ├── Lzma.vcxproj.filters
+│   │   ├── Lzma.vcxproj.user
+│   │   ├── Lzma_vs2019.vcxproj
+│   │   ├── Lzma_vs2019.vcxproj.filters
+│   │   ├── Lzma_vs2019.vcxproj.user
+│   │   ├── Makefile
+│   │   ├── Password.c
+│   │   ├── Password.h
+│   │   ├── PCSCException.cpp
+│   │   ├── PCSCException.h
+│   │   ├── Pkcs5.c
+│   │   ├── Pkcs5.h
+│   │   ├── Progress.c
+│   │   ├── Progress.h
+│   │   ├── Random.c
+│   │   ├── Random.h
+│   │   ├── reader.h
+│   │   ├── Registry.c
+│   │   ├── Registry.h
+│   │   ├── Resource.h
+│   │   ├── ResponseAPDU.cpp
+│   │   ├── ResponseAPDU.h
+│   │   ├── SCard.cpp
+│   │   ├── SCard.h
+│   │   ├── SCardLoader.cpp
+│   │   ├── SCardLoader.h
+│   │   ├── SCardManager.cpp
+│   │   ├── SCardManager.h
+│   │   ├── SCardReader.cpp
+│   │   ├── SCardReader.h
+│   │   ├── SecurityToken.cpp
+│   │   ├── SecurityToken.h
+│   │   ├── Sources
+│   │   ├── Tcdefs.h
+│   │   ├── Tests.c
+│   │   ├── Tests.h
+│   │   ├── Textual_logo_288dpi.bmp
+│   │   ├── Textual_logo_96dpi.bmp
+│   │   ├── Textual_logo_background.bmp
+│   │   ├── TLVParser.cpp
+│   │   ├── TLVParser.h
+│   │   ├── Token.cpp
+│   │   ├── Token.h
+│   │   ├── VeraCrypt.ico
+│   │   ├── VeraCrypt_mounted.ico
+│   │   ├── VeraCrypt_Volume.ico
+│   │   ├── Volumes.c
+│   │   ├── Volumes.h
+│   │   ├── Wipe.c
+│   │   ├── Wipe.h
+│   │   ├── Xml.c
+│   │   ├── Xml.h
+│   │   ├── Xts.c
+│   │   ├── Xts.h
+│   │   ├── Zip.vcxproj
+│   │   ├── Zip.vcxproj.filters
+│   │   ├── Zip.vcxproj.user
+│   │   ├── Zip_vs2019.vcxproj
+│   │   ├── Zip_vs2019.vcxproj.user
+│   │   └── zlib
+│   │       ├── adler32.c
+│   │       ├── ChangeLog
+│   │       ├── compress.c
+│   │       ├── crc32.c
+│   │       ├── crc32.h
+│   │       ├── deflate.c
+│   │       ├── deflate.h
+│   │       ├── gzclose.c
+│   │       ├── gzguts.h
+│   │       ├── gzlib.c
+│   │       ├── gzread.c
+│   │       ├── gzwrite.c
+│   │       ├── infback.c
+│   │       ├── inffast.c
+│   │       ├── inffast.h
+│   │       ├── inffixed.h
+│   │       ├── inflate.c
+│   │       ├── inflate.h
+│   │       ├── inftrees.c
+│   │       ├── inftrees.h
+│   │       ├── README
+│   │       ├── trees.c
+│   │       ├── trees.h
+│   │       ├── uncompr.c
+│   │       ├── zconf.h
+│   │       ├── zlib.h
+│   │       ├── zutil.c
+│   │       └── zutil.h
+│   ├── COMReg
+│   │   ├── COMReg.cpp
+│   │   ├── COMReg.rc
+│   │   ├── COMReg.vcxproj
+│   │   ├── COMReg.vcxproj.filters
+│   │   ├── COMReg.vcxproj.user
+│   │   └── Resource.h
+│   ├── Core
+│   │   ├── CoreBase.cpp
+│   │   ├── CoreBase.h
+│   │   ├── CoreException.cpp
+│   │   ├── CoreException.h
+│   │   ├── Core.h
+│   │   ├── Core.make
+│   │   ├── FatFormatter.cpp
+│   │   ├── FatFormatter.h
+│   │   ├── HostDevice.cpp
+│   │   ├── HostDevice.h
+│   │   ├── MountOptions.cpp
+│   │   ├── MountOptions.h
+│   │   ├── RandomNumberGenerator.cpp
+│   │   ├── RandomNumberGenerator.h
+│   │   ├── Unix
+│   │   │   ├── CoreService.cpp
+│   │   │   ├── CoreService.h
+│   │   │   ├── CoreServiceProxy.h
+│   │   │   ├── CoreServiceRequest.cpp
+│   │   │   ├── CoreServiceRequest.h
+│   │   │   ├── CoreServiceResponse.cpp
+│   │   │   ├── CoreServiceResponse.h
+│   │   │   ├── CoreUnix.cpp
+│   │   │   ├── CoreUnix.h
+│   │   │   ├── FreeBSD
+│   │   │   │   ├── CoreFreeBSD.cpp
+│   │   │   │   ├── CoreFreeBSD.h
+│   │   │   │   └── System.h
+│   │   │   ├── Linux
+│   │   │   │   ├── CoreLinux.cpp
+│   │   │   │   ├── CoreLinux.h
+│   │   │   │   └── System.h
+│   │   │   ├── MacOSX
+│   │   │   │   ├── CoreMacOSX.cpp
+│   │   │   │   ├── CoreMacOSX.h
+│   │   │   │   └── System.h
+│   │   │   ├── MountedFilesystem.h
+│   │   │   ├── OpenBSD
+│   │   │   │   ├── CoreOpenBSD.cpp
+│   │   │   │   ├── CoreOpenBSD.h
+│   │   │   │   └── System.h
+│   │   │   ├── Solaris
+│   │   │   │   ├── CoreSolaris.cpp
+│   │   │   │   ├── CoreSolaris.h
+│   │   │   │   └── System.h
+│   │   │   └── System.h
+│   │   ├── VolumeCreator.cpp
+│   │   └── VolumeCreator.h
+│   ├── Crypto
+│   │   ├── Aescrypt.c
+│   │   ├── Aes.h
+│   │   ├── Aes_hw_cpu.asm
+│   │   ├── Aes_hw_cpu.h
+│   │   ├── Aeskey.c
+│   │   ├── Aesopt.h
+│   │   ├── AesSmall.c
+│   │   ├── AesSmall.h
+│   │   ├── AesSmall_x86.asm
+│   │   ├── Aestab.c
+│   │   ├── Aestab.h
+│   │   ├── Aes_x64.asm
+│   │   ├── Aes_x86.asm
+│   │   ├── blake2.h
+│   │   ├── blake2-impl.h
+│   │   ├── blake2s.c
+│   │   ├── blake2s-load-sse2.h
+│   │   ├── blake2s-load-sse41.h
+│   │   ├── blake2s-ref.c
+│   │   ├── blake2s-round.h
+│   │   ├── blake2s_SSE2.c
+│   │   ├── blake2s_SSE41.c
+│   │   ├── blake2s_SSSE3.c
+│   │   ├── Camellia_aesni_x64.S
+│   │   ├── Camellia_aesni_x86.S
+│   │   ├── Camellia.c
+│   │   ├── Camellia.h
+│   │   ├── CamelliaSmall.c
+│   │   ├── CamelliaSmall.h
+│   │   ├── Camellia_x64.S
+│   │   ├── Camellia_x86.S
+│   │   ├── chacha256.c
+│   │   ├── chacha256.h
+│   │   ├── chachaRng.c
+│   │   ├── chachaRng.h
+│   │   ├── chacha_u1.h
+│   │   ├── chacha_u4.h
+│   │   ├── chacha-xmm.c
+│   │   ├── config.h
+│   │   ├── cpu.c
+│   │   ├── cpu.h
+│   │   ├── Crypto.vcproj
+│   │   ├── Crypto.vcxproj
+│   │   ├── Crypto.vcxproj.filters
+│   │   ├── Crypto.vcxproj.user
+│   │   ├── Crypto_vs2019.vcxproj
+│   │   ├── Crypto_vs2019.vcxproj.user
+│   │   ├── gost89_x86.asm
+│   │   ├── jitterentropy-base.c
+│   │   ├── jitterentropy-base-user.h
+│   │   ├── jitterentropy.h
+│   │   ├── kuznyechik.c
+│   │   ├── kuznyechik.h
+│   │   ├── kuznyechik_simd.c
+│   │   ├── Makefile
+│   │   ├── Makefile.inc
+│   │   ├── misc.h
+│   │   ├── rdrand.c
+│   │   ├── rdrand.h
+│   │   ├── rdrand_ml.asm
+│   │   ├── rdseed_ml.asm
+│   │   ├── Serpent.c
+│   │   ├── SerpentFast.c
+│   │   ├── SerpentFast.h
+│   │   ├── SerpentFast_sbox.h
+│   │   ├── SerpentFast_simd.cpp
+│   │   ├── Serpent.h
+│   │   ├── sha256_avx1_x64.asm
+│   │   ├── sha256_avx1_x86.asm
+│   │   ├── sha256_avx2_x64.asm
+│   │   ├── sha256_avx2_x86.asm
+│   │   ├── sha256_sse4_x64.asm
+│   │   ├── sha256_sse4_x86.asm
+│   │   ├── sha256-x64-nayuki.S
+│   │   ├── sha256-x86-nayuki.S
+│   │   ├── Sha2.c
+│   │   ├── Sha2.h
+│   │   ├── Sha2Small.c
+│   │   ├── Sha2Small.h
+│   │   ├── sha512_avx1_x64.asm
+│   │   ├── sha512_avx1_x86.asm
+│   │   ├── sha512_avx2_x64.asm
+│   │   ├── sha512_avx2_x86.asm
+│   │   ├── sha512_sse4_x64.asm
+│   │   ├── sha512_sse4_x86.asm
+│   │   ├── sha512-x64-nayuki.S
+│   │   ├── sha512-x86-nayuki.S
+│   │   ├── Sources
+│   │   ├── Streebog.c
+│   │   ├── Streebog.h
+│   │   ├── t1ha2.c
+│   │   ├── t1ha2_selfcheck.c
+│   │   ├── t1ha_bits.h
+│   │   ├── t1ha.h
+│   │   ├── t1ha_selfcheck.c
+│   │   ├── t1ha_selfcheck.h
+│   │   ├── Twofish.c
+│   │   ├── Twofish.h
+│   │   ├── Twofish_x64.S
+│   │   ├── Twofish_x86.S
+│   │   ├── Whirlpool.c
+│   │   ├── Whirlpool.h
+│   │   ├── wolfCrypt.c
+│   │   └── wolfCrypt.md
+│   ├── Driver
+│   │   ├── BuildDriver.cmd
+│   │   ├── DriveFilter.c
+│   │   ├── DriveFilter.h
+│   │   ├── Driver.rc
+│   │   ├── Driver.vcproj
+│   │   ├── Driver.vcxproj
+│   │   ├── Driver.vcxproj.filters
+│   │   ├── Driver.vcxproj.user
+│   │   ├── DumpFilter.c
+│   │   ├── DumpFilter.h
+│   │   ├── EncryptedIoQueue.c
+│   │   ├── EncryptedIoQueue.h
+│   │   ├── Fuse
+│   │   │   ├── Driver.make
+│   │   │   ├── FuseService.cpp
+│   │   │   └── FuseService.h
+│   │   ├── Makefile
+│   │   ├── Ntdriver.c
+│   │   ├── Ntdriver.h
+│   │   ├── Ntvol.c
+│   │   ├── Ntvol.h
+│   │   ├── Resource.h
+│   │   ├── Sources
+│   │   ├── veracrypt_vs2019.vcxproj
+│   │   ├── veracrypt_vs2019.vcxproj.filters
+│   │   ├── VolumeFilter.c
+│   │   └── VolumeFilter.h
+│   ├── ExpandVolume
+│   │   ├── DlgExpandVolume.cpp
+│   │   ├── ExpandVolume.c
+│   │   ├── ExpandVolume.h
+│   │   ├── ExpandVolume.rc
+│   │   ├── ExpandVolume.vcproj
+│   │   ├── ExpandVolume.vcxproj
+│   │   ├── ExpandVolume.vcxproj.filters
+│   │   ├── ExpandVolume.vcxproj.user
+│   │   ├── ExpandVolume_vs2019.vcxproj
+│   │   ├── ExpandVolume_vs2019.vcxproj.filters
+│   │   ├── InitDataArea.c
+│   │   ├── InitDataArea.h
+│   │   ├── Logo_288dpi.bmp
+│   │   ├── Logo_96dpi.bmp
+│   │   ├── resource.h
+│   │   ├── VeraCryptExpander.manifest
+│   │   └── WinMain.cpp
+│   ├── Format
+│   │   ├── FormatCom.cpp
+│   │   ├── FormatCom.h
+│   │   ├── FormatCom.idl
+│   │   ├── Format.manifest
+│   │   ├── Format.rc
+│   │   ├── Format.vcproj
+│   │   ├── Format.vcxproj
+│   │   ├── Format.vcxproj.filters
+│   │   ├── Format.vcxproj.user
+│   │   ├── Format_vs2019.vcxproj
+│   │   ├── Format_vs2019.vcxproj.user
+│   │   ├── InPlace.c
+│   │   ├── InPlace.h
+│   │   ├── Resource.h
+│   │   ├── Tcformat.c
+│   │   ├── Tcformat.h
+│   │   └── VeraCrypt_Wizard.bmp
+│   ├── LICENSE
+│   ├── License.html
+│   ├── License.txt
+│   ├── Main
+│   │   ├── Application.cpp
+│   │   ├── Application.h
+│   │   ├── CommandLineInterface.cpp
+│   │   ├── CommandLineInterface.h
+│   │   ├── FatalErrorHandler.cpp
+│   │   ├── FatalErrorHandler.h
+│   │   ├── FavoriteVolume.cpp
+│   │   ├── FavoriteVolume.h
+│   │   ├── Forms
+│   │   │   ├── AboutDialog.cpp
+│   │   │   ├── AboutDialog.h
+│   │   │   ├── BenchmarkDialog.cpp
+│   │   │   ├── BenchmarkDialog.h
+│   │   │   ├── ChangePasswordDialog.cpp
+│   │   │   ├── ChangePasswordDialog.h
+│   │   │   ├── DeviceSelectionDialog.cpp
+│   │   │   ├── DeviceSelectionDialog.h
+│   │   │   ├── EncryptionOptionsWizardPage.cpp
+│   │   │   ├── EncryptionOptionsWizardPage.h
+│   │   │   ├── EncryptionTestDialog.cpp
+│   │   │   ├── EncryptionTestDialog.h
+│   │   │   ├── FavoriteVolumesDialog.cpp
+│   │   │   ├── FavoriteVolumesDialog.h
+│   │   │   ├── Forms.cpp
+│   │   │   ├── Forms.h
+│   │   │   ├── InfoWizardPage.cpp
+│   │   │   ├── InfoWizardPage.h
+│   │   │   ├── international.h
+│   │   │   ├── KeyfileGeneratorDialog.cpp
+│   │   │   ├── KeyfileGeneratorDialog.h
+│   │   │   ├── KeyfilesDialog.cpp
+│   │   │   ├── KeyfilesDialog.h
+│   │   │   ├── KeyfilesPanel.cpp
+│   │   │   ├── KeyfilesPanel.h
+│   │   │   ├── LegalNoticesDialog.cpp
+│   │   │   ├── LegalNoticesDialog.h
+│   │   │   ├── MainFrame.cpp
+│   │   │   ├── MainFrame.h
+│   │   │   ├── MountOptionsDialog.cpp
+│   │   │   ├── MountOptionsDialog.h
+│   │   │   ├── NewSecurityTokenKeyfileDialog.cpp
+│   │   │   ├── NewSecurityTokenKeyfileDialog.h
+│   │   │   ├── PreferencesDialog.cpp
+│   │   │   ├── PreferencesDialog.h
+│   │   │   ├── ProgressWizardPage.cpp
+│   │   │   ├── ProgressWizardPage.h
+│   │   │   ├── RandomPoolEnrichmentDialog.cpp
+│   │   │   ├── RandomPoolEnrichmentDialog.h
+│   │   │   ├── SecurityTokenKeyfilesDialog.cpp
+│   │   │   ├── SecurityTokenKeyfilesDialog.h
+│   │   │   ├── SelectDirectoryWizardPage.cpp
+│   │   │   ├── SelectDirectoryWizardPage.h
+│   │   │   ├── SingleChoiceWizardPage.h
+│   │   │   ├── TrueCrypt.fbp
+│   │   │   ├── VolumeCreationProgressWizardPage.cpp
+│   │   │   ├── VolumeCreationProgressWizardPage.h
+│   │   │   ├── VolumeCreationWizard.cpp
+│   │   │   ├── VolumeCreationWizard.h
+│   │   │   ├── VolumeFormatOptionsWizardPage.cpp
+│   │   │   ├── VolumeFormatOptionsWizardPage.h
+│   │   │   ├── VolumeLocationWizardPage.cpp
+│   │   │   ├── VolumeLocationWizardPage.h
+│   │   │   ├── VolumePasswordPanel.cpp
+│   │   │   ├── VolumePasswordPanel.h
+│   │   │   ├── VolumePasswordWizardPage.cpp
+│   │   │   ├── VolumePasswordWizardPage.h
+│   │   │   ├── VolumePimWizardPage.cpp
+│   │   │   ├── VolumePimWizardPage.h
+│   │   │   ├── VolumePropertiesDialog.cpp
+│   │   │   ├── VolumePropertiesDialog.h
+│   │   │   ├── VolumeSizeWizardPage.cpp
+│   │   │   ├── VolumeSizeWizardPage.h
+│   │   │   ├── WaitDialog.cpp
+│   │   │   ├── WaitDialog.h
+│   │   │   ├── WizardFrame.cpp
+│   │   │   ├── WizardFrame.h
+│   │   │   └── WizardPage.h
+│   │   ├── GraphicUserInterface.cpp
+│   │   ├── GraphicUserInterface.h
+│   │   ├── Hotkey.cpp
+│   │   ├── Hotkey.h
+│   │   ├── LanguageStrings.cpp
+│   │   ├── LanguageStrings.h
+│   │   ├── Main.h
+│   │   ├── Main.make
+│   │   ├── Resources.cpp
+│   │   ├── Resources.h
+│   │   ├── StringFormatter.cpp
+│   │   ├── StringFormatter.h
+│   │   ├── System.cpp
+│   │   ├── System.h
+│   │   ├── SystemPrecompiled.h
+│   │   ├── TextUserInterface.cpp
+│   │   ├── TextUserInterface.h
+│   │   ├── Unix
+│   │   │   └── Main.cpp
+│   │   ├── UserInterface.cpp
+│   │   ├── UserInterfaceException.h
+│   │   ├── UserInterface.h
+│   │   ├── UserInterfaceType.h
+│   │   ├── UserPreferences.cpp
+│   │   ├── UserPreferences.h
+│   │   ├── VolumeHistory.cpp
+│   │   ├── VolumeHistory.h
+│   │   ├── Xml.cpp
+│   │   └── Xml.h
+│   ├── Makefile
+│   ├── Mount
+│   │   ├── Drive_icon_96dpi.bmp
+│   │   ├── Drive_icon_mask_96dpi.bmp
+│   │   ├── Favorites.cpp
+│   │   ├── Favorites.h
+│   │   ├── Hotkeys.c
+│   │   ├── Hotkeys.h
+│   │   ├── Logo_288dpi.bmp
+│   │   ├── Logo_96dpi.bmp
+│   │   ├── MainCom.cpp
+│   │   ├── MainCom.h
+│   │   ├── MainCom.idl
+│   │   ├── Mount.c
+│   │   ├── Mount.h
+│   │   ├── Mount.manifest
+│   │   ├── Mount.rc
+│   │   ├── Mount.vcproj
+│   │   ├── Mount.vcxproj
+│   │   ├── Mount.vcxproj.filters
+│   │   ├── Mount.vcxproj.user
+│   │   ├── Mount_vs2019.vcxproj
+│   │   ├── Mount_vs2019.vcxproj.user
+│   │   ├── Resource.h
+│   │   ├── System_drive_icon_96dpi.bmp
+│   │   └── System_drive_icon_mask_96dpi.bmp
+│   ├── NOTICE
+│   ├── PKCS11
+│   │   ├── cryptoki.h
+│   │   ├── pkcs11f.h
+│   │   ├── pkcs11.h
+│   │   └── pkcs11t.h
+│   ├── Platform
+│   │   ├── Buffer.cpp
+│   │   ├── Buffer.h
+│   │   ├── Directory.h
+│   │   ├── Event.cpp
+│   │   ├── Event.h
+│   │   ├── Exception.cpp
+│   │   ├── Exception.h
+│   │   ├── FileCommon.cpp
+│   │   ├── File.h
+│   │   ├── FileStream.h
+│   │   ├── FilesystemPath.h
+│   │   ├── Finally.h
+│   │   ├── ForEach.h
+│   │   ├── Functor.h
+│   │   ├── Memory.cpp
+│   │   ├── Memory.h
+│   │   ├── MemoryStream.cpp
+│   │   ├── MemoryStream.h
+│   │   ├── Mutex.h
+│   │   ├── PlatformBase.h
+│   │   ├── Platform.h
+│   │   ├── Platform.make
+│   │   ├── PlatformTest.cpp
+│   │   ├── PlatformTest.h
+│   │   ├── Serializable.cpp
+│   │   ├── Serializable.h
+│   │   ├── Serializer.cpp
+│   │   ├── SerializerFactory.cpp
+│   │   ├── SerializerFactory.h
+│   │   ├── Serializer.h
+│   │   ├── SharedPtr.h
+│   │   ├── SharedVal.h
+│   │   ├── Stream.h
+│   │   ├── StringConverter.cpp
+│   │   ├── StringConverter.h
+│   │   ├── SyncEvent.h
+│   │   ├── SystemException.h
+│   │   ├── System.h
+│   │   ├── SystemInfo.h
+│   │   ├── SystemLog.h
+│   │   ├── TextReader.cpp
+│   │   ├── TextReader.h
+│   │   ├── Thread.h
+│   │   ├── Time.h
+│   │   ├── Unix
+│   │   │   ├── Directory.cpp
+│   │   │   ├── File.cpp
+│   │   │   ├── FilesystemPath.cpp
+│   │   │   ├── Mutex.cpp
+│   │   │   ├── Pipe.cpp
+│   │   │   ├── Pipe.h
+│   │   │   ├── Poller.cpp
+│   │   │   ├── Poller.h
+│   │   │   ├── Process.cpp
+│   │   │   ├── Process.h
+│   │   │   ├── SyncEvent.cpp
+│   │   │   ├── SystemException.cpp
+│   │   │   ├── System.h
+│   │   │   ├── SystemInfo.cpp
+│   │   │   ├── SystemLog.cpp
+│   │   │   ├── Thread.cpp
+│   │   │   └── Time.cpp
+│   │   └── User.h
+│   ├── Readme.txt
+│   ├── Release
+│   │   └── Setup Files
+│   │       ├── build_msi_x64.bat
+│   │       ├── Custom_InstallDirDlg.wxs
+│   │       ├── Custom_InstallDir.wxs
+│   │       ├── Product64.wxs
+│   │       ├── Strings-en.wxl
+│   │       ├── veracrypt-arm64.cat
+│   │       ├── veracrypt-arm64.sys
+│   │       ├── veracrypt.cat
+│   │       ├── veracrypt.Inf
+│   │       ├── veracrypt.sys
+│   │       ├── veracrypt-x64.cat
+│   │       └── veracrypt-x64.sys
+│   ├── Resources
+│   │   ├── Icons
+│   │   │   ├── TrueCrypt.icns
+│   │   │   ├── VeraCrypt-128x128.xpm
+│   │   │   ├── VeraCrypt-16x16.xpm
+│   │   │   ├── VeraCrypt-256x256.xpm
+│   │   │   ├── VeraCrypt-48x48.xpm
+│   │   │   ├── VeraCrypt.icns
+│   │   │   └── VeraCrypt_Volume.icns
+│   │   └── Texts
+│   │       └── License.rtf
+│   ├── Setup
+│   │   ├── ComSetup.cpp
+│   │   ├── ComSetup.h
+│   │   ├── ComSetup.rgs
+│   │   ├── Dir.c
+│   │   ├── Dir.h
+│   │   ├── FreeBSD
+│   │   │   ├── veracrypt.desktop
+│   │   │   ├── veracrypt_install_template.sh
+│   │   │   └── veracrypt-uninstall.sh
+│   │   ├── Linux
+│   │   │   ├── mount.veracrypt
+│   │   │   ├── veracrypt.desktop
+│   │   │   ├── veracrypt_install_template.sh
+│   │   │   ├── veracrypt-uninstall.sh
+│   │   │   └── veracrypt.xml
+│   │   ├── MacOSX
+│   │   │   ├── notarize.sh
+│   │   │   ├── postinstall_fuse-t.sh
+│   │   │   ├── postinstall.sh
+│   │   │   ├── template.dmg.bz2
+│   │   │   ├── VeraCrypt.entitlements.plist
+│   │   │   ├── veracrypt_fuse-t.pkgproj
+│   │   │   ├── veracrypt_Legacy.pkgproj
+│   │   │   └── veracrypt.pkgproj
+│   │   ├── Portable.manifest
+│   │   ├── Portable.rc
+│   │   ├── Portable.vcxproj
+│   │   ├── Portable.vcxproj.filters
+│   │   ├── Portable.vcxproj.user
+│   │   ├── Resource.h
+│   │   ├── SelfExtract.c
+│   │   ├── SelfExtract.h
+│   │   ├── Setup.c
+│   │   ├── Setup.h
+│   │   ├── Setup.ico
+│   │   ├── Setup.manifest
+│   │   ├── Setup.rc
+│   │   ├── Setup.vcproj
+│   │   ├── Setup.vcxproj
+│   │   ├── Setup.vcxproj.filters
+│   │   ├── Setup.vcxproj.user
+│   │   ├── VeraCrypt_setup_background.bmp
+│   │   ├── VeraCrypt_setup.bmp
+│   │   ├── Wizard.c
+│   │   └── Wizard.h
+│   ├── SetupDLL
+│   │   ├── ComSetup.cpp
+│   │   ├── ComSetup.h
+│   │   ├── ComSetup.rgs
+│   │   ├── Dir.c
+│   │   ├── Dir.h
+│   │   ├── Resource.h
+│   │   ├── Setup.c
+│   │   ├── SetupDLL.def
+│   │   ├── SetupDLL.vcproj
+│   │   ├── SetupDLL.vcxproj
+│   │   ├── SetupDLL.vcxproj.filters
+│   │   ├── SetupDLL.vcxproj.user
+│   │   ├── Setup.h
+│   │   ├── Setup.ico
+│   │   ├── Setup.manifest
+│   │   ├── Setup.rc
+│   │   ├── Setup.vcxproj.filters
+│   │   ├── Setup.vcxproj.user
+│   │   ├── VeraCrypt_setup_background.bmp
+│   │   └── VeraCrypt_setup.bmp
+│   ├── Signing
+│   │   ├── GlobalSign_R3Cross.cer
+│   │   ├── GlobalSign_SHA256_EV_CodeSigning_CA.cer
+│   │   ├── sign.bat
+│   │   ├── sign_test.bat
+│   │   ├── sign_test_debug.bat
+│   │   ├── sign_TESTSIGNING.bat
+│   │   └── TestCertificate
+│   │       ├── idrix_codeSign.pfx
+│   │       ├── idrix_Sha256CodeSign.pfx
+│   │       ├── idrix_SHA256TestRootCA.crt
+│   │       └── idrix_TestRootCA.crt
+│   ├── VeraCrypt.sln
+│   ├── VeraCrypt_vs2019.sln
+│   └── Volume
+│       ├── Cipher.cpp
+│       ├── Cipher.h
+│       ├── Crc32.h
+│       ├── EncryptionAlgorithm.cpp
+│       ├── EncryptionAlgorithm.h
+│       ├── EncryptionMode.cpp
+│       ├── EncryptionMode.h
+│       ├── EncryptionModeWolfCryptXTS.cpp
+│       ├── EncryptionModeWolfCryptXTS.h
+│       ├── EncryptionModeXTS.cpp
+│       ├── EncryptionModeXTS.h
+│       ├── EncryptionTest.cpp
+│       ├── EncryptionTest.h
+│       ├── EncryptionThreadPool.cpp
+│       ├── EncryptionThreadPool.h
+│       ├── Hash.cpp
+│       ├── Hash.h
+│       ├── Keyfile.cpp
+│       ├── Keyfile.h
+│       ├── Pkcs5Kdf.cpp
+│       ├── Pkcs5Kdf.h
+│       ├── Version.h
+│       ├── Volume.cpp
+│       ├── VolumeException.cpp
+│       ├── VolumeException.h
+│       ├── Volume.h
+│       ├── VolumeHeader.cpp
+│       ├── VolumeHeader.h
+│       ├── VolumeInfo.cpp
+│       ├── VolumeInfo.h
+│       ├── VolumeLayout.cpp
+│       ├── VolumeLayout.h
+│       ├── Volume.make
+│       ├── VolumePasswordCache.cpp
+│       ├── VolumePasswordCache.h
+│       ├── VolumePassword.cpp
+│       ├── VolumePassword.h
+│       └── VolumeSlot.h
+├── Tests
+│   ├── bench.bat
+│   ├── test.blake2s.hc
+│   ├── test.sha256.hc
+│   ├── test.sha512.hc
+│   ├── test.streebog.hc
+│   └── test.whirlpool.hc
+├── Translations
+│   ├── Language.ar.xml
+│   ├── Language.be.xml
+│   ├── Language.bg.xml
+│   ├── Language.ca.xml
+│   ├── Language.co.xml
+│   ├── Language.cs.xml
+│   ├── Language.da.xml
+│   ├── Language.de.xml
+│   ├── Language.el.xml
+│   ├── Language.es.xml
+│   ├── Language.et.xml
+│   ├── Language.eu.xml
+│   ├── Language.fa.xml
+│   ├── Language.fi.xml
+│   ├── Language.fr.xml
+│   ├── Language.he.xml
+│   ├── Language.hu.xml
+│   ├── Language.id.xml
+│   ├── Language.it.xml
+│   ├── Language.ja.xml
+│   ├── Language.ka.xml
+│   ├── Language.ko.xml
+│   ├── Language.lv.xml
+│   ├── Language.my.xml
+│   ├── Language.nb.xml
+│   ├── Language.nl.xml
+│   ├── Language.nn.xml
+│   ├── Language.pl.xml
+│   ├── Language.pt-br.xml
+│   ├── Language.ro.xml
+│   ├── Language.ru.xml
+│   ├── Language.sk.xml
+│   ├── Language.sl.xml
+│   ├── Language.sv.xml
+│   ├── Language.th.xml
+│   ├── Language.tr.xml
+│   ├── Language.uk.xml
+│   ├── Language.uz.xml
+│   ├── Language.vi.xml
+│   ├── Language.zh-cn.xml
+│   ├── Language.zh-hk.xml
+│   └── Language.zh-tw.xml
+├── VeraCrypt_1.26.15_Source.tar.bz2 -> /home/felix/packages/veracrypt/VeraCrypt_1.26.15_Source.tar.bz2
+├── VeraCrypt_1.26.15_Source.tar.bz2.sig -> /home/felix/packages/veracrypt/VeraCrypt_1.26.15_Source.tar.bz2.sig
+├── veracrypt.desktop -> /home/felix/packages/veracrypt/veracrypt.desktop
+└── wx-3.2-size-warnings.patch -> /home/felix/packages/veracrypt/wx-3.2-size-warnings.patch
+
+80 directories, 1420 files

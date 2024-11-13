@@ -1,0 +1,2608 @@
+src
+├── icu
+│   ├── APIChangeReport.html
+│   ├── APIChangeReport.md
+│   ├── as_is
+│   │   ├── bomlist.py
+│   │   ├── os390
+│   │   │   └── unpax-icu.sh
+│   │   └── os400
+│   │       ├── bldiculd.sh
+│   │       ├── convertConfigure.sed
+│   │       ├── cxxfilt.cpp
+│   │       ├── fixup-icu.sh
+│   │       ├── iculd.c
+│   │       └── unpax-icu.sh
+│   ├── build_qnx
+│   │   ├── build-hooks
+│   │   ├── linux-x86_64-o
+│   │   │   └── GNUmakefile
+│   │   ├── Makefile
+│   │   ├── nto-aarch64-le
+│   │   │   └── GNUmakefile
+│   │   └── nto-x86_64-o
+│   │       └── GNUmakefile
+│   ├── icu4c.css
+│   ├── LICENSE
+│   ├── license.html
+│   ├── packaging
+│   │   ├── distrelease.ps1
+│   │   ├── PACKAGES
+│   │   ├── README
+│   │   └── rpm
+│   │       └── icu.spec
+│   ├── readme.html
+│   └── source
+│       ├── acinclude.m4
+│       ├── aclocal.m4
+│       ├── allinone
+│       │   ├── allinone.sln
+│       │   ├── Build.Windows.IcuVersion.props
+│       │   ├── Build.Windows.Library.ProjectConfiguration.props
+│       │   ├── Build.Windows.Library.WarningSettings.ProjectConfiguration.props
+│       │   ├── Build.Windows.PlatformToolset.props
+│       │   ├── Build.Windows.ProjectConfiguration.props
+│       │   ├── Build.Windows.UWP.ProjectConfiguration.props
+│       │   ├── icucheck.bat
+│       │   └── Windows.CopyUnicodeHeaderFiles.targets
+│       ├── common
+│       │   ├── appendable.cpp
+│       │   ├── bmpset.cpp
+│       │   ├── bmpset.h
+│       │   ├── brkeng.cpp
+│       │   ├── brkeng.h
+│       │   ├── brkiter.cpp
+│       │   ├── BUILD.bazel
+│       │   ├── bytesinkutil.cpp
+│       │   ├── bytesinkutil.h
+│       │   ├── bytestream.cpp
+│       │   ├── bytestriebuilder.cpp
+│       │   ├── bytestrie.cpp
+│       │   ├── bytestrieiterator.cpp
+│       │   ├── caniter.cpp
+│       │   ├── capi_helper.h
+│       │   ├── characterproperties.cpp
+│       │   ├── chariter.cpp
+│       │   ├── charstr.cpp
+│       │   ├── charstr.h
+│       │   ├── charstrmap.h
+│       │   ├── cmemory.cpp
+│       │   ├── cmemory.h
+│       │   ├── common.rc
+│       │   ├── common_uwp.vcxproj
+│       │   ├── common.vcxproj
+│       │   ├── common.vcxproj.filters
+│       │   ├── cpputils.h
+│       │   ├── cstr.cpp
+│       │   ├── cstr.h
+│       │   ├── cstring.cpp
+│       │   ├── cstring.h
+│       │   ├── cwchar.cpp
+│       │   ├── cwchar.h
+│       │   ├── dictbe.cpp
+│       │   ├── dictbe.h
+│       │   ├── dictionarydata.cpp
+│       │   ├── dictionarydata.h
+│       │   ├── dtintrv.cpp
+│       │   ├── edits.cpp
+│       │   ├── emojiprops.cpp
+│       │   ├── emojiprops.h
+│       │   ├── errorcode.cpp
+│       │   ├── filteredbrk.cpp
+│       │   ├── filterednormalizer2.cpp
+│       │   ├── hash.h
+│       │   ├── icudataver.cpp
+│       │   ├── icuplug.cpp
+│       │   ├── icuplugimp.h
+│       │   ├── loadednormalizer2impl.cpp
+│       │   ├── localebuilder.cpp
+│       │   ├── localefallback_data.h
+│       │   ├── localematcher.cpp
+│       │   ├── localeprioritylist.cpp
+│       │   ├── localeprioritylist.h
+│       │   ├── localsvc.h
+│       │   ├── locavailable.cpp
+│       │   ├── locbased.cpp
+│       │   ├── locbased.h
+│       │   ├── locdispnames.cpp
+│       │   ├── locdistance.cpp
+│       │   ├── locdistance.h
+│       │   ├── locdspnm.cpp
+│       │   ├── locid.cpp
+│       │   ├── loclikely.cpp
+│       │   ├── loclikelysubtags.cpp
+│       │   ├── loclikelysubtags.h
+│       │   ├── locmap.cpp
+│       │   ├── locmap.h
+│       │   ├── locresdata.cpp
+│       │   ├── locutil.cpp
+│       │   ├── locutil.h
+│       │   ├── lsr.cpp
+│       │   ├── lsr.h
+│       │   ├── lstmbe.cpp
+│       │   ├── lstmbe.h
+│       │   ├── Makefile.in
+│       │   ├── messageimpl.h
+│       │   ├── messagepattern.cpp
+│       │   ├── mlbe.cpp
+│       │   ├── mlbe.h
+│       │   ├── msvcres.h
+│       │   ├── mutex.h
+│       │   ├── norm2allmodes.h
+│       │   ├── norm2_nfc_data.h
+│       │   ├── normalizer2.cpp
+│       │   ├── normalizer2impl.cpp
+│       │   ├── normalizer2impl.h
+│       │   ├── normlzr.cpp
+│       │   ├── parsepos.cpp
+│       │   ├── patternprops.cpp
+│       │   ├── patternprops.h
+│       │   ├── pluralmap.cpp
+│       │   ├── pluralmap.h
+│       │   ├── propname.cpp
+│       │   ├── propname_data.h
+│       │   ├── propname.h
+│       │   ├── propsvec.cpp
+│       │   ├── propsvec.h
+│       │   ├── punycode.cpp
+│       │   ├── punycode.h
+│       │   ├── putil.cpp
+│       │   ├── putilimp.h
+│       │   ├── rbbi_cache.cpp
+│       │   ├── rbbi_cache.h
+│       │   ├── rbbi.cpp
+│       │   ├── rbbicst.pl
+│       │   ├── rbbidata.cpp
+│       │   ├── rbbidata.h
+│       │   ├── rbbinode.cpp
+│       │   ├── rbbinode.h
+│       │   ├── rbbirb.cpp
+│       │   ├── rbbirb.h
+│       │   ├── rbbirpt.h
+│       │   ├── rbbirpt.txt
+│       │   ├── rbbiscan.cpp
+│       │   ├── rbbiscan.h
+│       │   ├── rbbisetb.cpp
+│       │   ├── rbbisetb.h
+│       │   ├── rbbistbl.cpp
+│       │   ├── rbbitblb.cpp
+│       │   ├── rbbitblb.h
+│       │   ├── resbund_cnv.cpp
+│       │   ├── resbund.cpp
+│       │   ├── resource.cpp
+│       │   ├── resource.h
+│       │   ├── restrace.cpp
+│       │   ├── restrace.h
+│       │   ├── ruleiter.cpp
+│       │   ├── ruleiter.h
+│       │   ├── schriter.cpp
+│       │   ├── serv.cpp
+│       │   ├── serv.h
+│       │   ├── servlk.cpp
+│       │   ├── servlkf.cpp
+│       │   ├── servloc.h
+│       │   ├── servls.cpp
+│       │   ├── servnotf.cpp
+│       │   ├── servnotf.h
+│       │   ├── servrbf.cpp
+│       │   ├── servslkf.cpp
+│       │   ├── sharedobject.cpp
+│       │   ├── sharedobject.h
+│       │   ├── simpleformatter.cpp
+│       │   ├── sources.txt
+│       │   ├── sprpimpl.h
+│       │   ├── static_unicode_sets.cpp
+│       │   ├── static_unicode_sets.h
+│       │   ├── stringpiece.cpp
+│       │   ├── stringtriebuilder.cpp
+│       │   ├── uarrsort.cpp
+│       │   ├── uarrsort.h
+│       │   ├── uassert.h
+│       │   ├── ubidi.cpp
+│       │   ├── ubidiimp.h
+│       │   ├── ubidiln.cpp
+│       │   ├── ubidi_props.cpp
+│       │   ├── ubidi_props_data.h
+│       │   ├── ubidi_props.h
+│       │   ├── ubiditransform.cpp
+│       │   ├── ubidiwrt.cpp
+│       │   ├── ubrk.cpp
+│       │   ├── ubrkimpl.h
+│       │   ├── ucase.cpp
+│       │   ├── ucase.h
+│       │   ├── ucasemap.cpp
+│       │   ├── ucasemap_imp.h
+│       │   ├── ucasemap_titlecase_brkiter.cpp
+│       │   ├── ucase_props_data.h
+│       │   ├── ucat.cpp
+│       │   ├── uchar.cpp
+│       │   ├── uchar_props_data.h
+│       │   ├── ucharstriebuilder.cpp
+│       │   ├── ucharstrie.cpp
+│       │   ├── ucharstrieiterator.cpp
+│       │   ├── uchriter.cpp
+│       │   ├── ucln_cmn.cpp
+│       │   ├── ucln_cmn.h
+│       │   ├── ucln.h
+│       │   ├── ucln_imp.h
+│       │   ├── ucmndata.cpp
+│       │   ├── ucmndata.h
+│       │   ├── ucnv2022.cpp
+│       │   ├── ucnv_bld.cpp
+│       │   ├── ucnv_bld.h
+│       │   ├── ucnvbocu.cpp
+│       │   ├── ucnv_cb.cpp
+│       │   ├── ucnv_cnv.cpp
+│       │   ├── ucnv_cnv.h
+│       │   ├── ucnv.cpp
+│       │   ├── ucnv_ct.cpp
+│       │   ├── ucnvdisp.cpp
+│       │   ├── ucnv_err.cpp
+│       │   ├── ucnv_ext.cpp
+│       │   ├── ucnv_ext.h
+│       │   ├── ucnvhz.cpp
+│       │   ├── ucnv_imp.h
+│       │   ├── ucnv_io.cpp
+│       │   ├── ucnv_io.h
+│       │   ├── ucnvisci.cpp
+│       │   ├── ucnvlat1.cpp
+│       │   ├── ucnv_lmb.cpp
+│       │   ├── ucnvmbcs.cpp
+│       │   ├── ucnvmbcs.h
+│       │   ├── ucnvscsu.cpp
+│       │   ├── ucnvsel.cpp
+│       │   ├── ucnv_set.cpp
+│       │   ├── ucnv_u16.cpp
+│       │   ├── ucnv_u32.cpp
+│       │   ├── ucnv_u7.cpp
+│       │   ├── ucnv_u8.cpp
+│       │   ├── ucol_data.h
+│       │   ├── ucol_swp.cpp
+│       │   ├── ucol_swp.h
+│       │   ├── ucptrie.cpp
+│       │   ├── ucptrie_impl.h
+│       │   ├── ucurr.cpp
+│       │   ├── ucurrimp.h
+│       │   ├── udata.cpp
+│       │   ├── udatamem.cpp
+│       │   ├── udatamem.h
+│       │   ├── udataswp.cpp
+│       │   ├── udataswp.h
+│       │   ├── uelement.h
+│       │   ├── uenum.cpp
+│       │   ├── uenumimp.h
+│       │   ├── uhash.cpp
+│       │   ├── uhash.h
+│       │   ├── uhash_us.cpp
+│       │   ├── uidna.cpp
+│       │   ├── uinit.cpp
+│       │   ├── uinvchar.cpp
+│       │   ├── uinvchar.h
+│       │   ├── uiter.cpp
+│       │   ├── ulayout_props.h
+│       │   ├── ulist.cpp
+│       │   ├── ulist.h
+│       │   ├── ulocale.cpp
+│       │   ├── ulocbuilder.cpp
+│       │   ├── uloc.cpp
+│       │   ├── ulocimp.h
+│       │   ├── uloc_keytype.cpp
+│       │   ├── uloc_tag.cpp
+│       │   ├── umapfile.cpp
+│       │   ├── umapfile.h
+│       │   ├── umath.cpp
+│       │   ├── umutablecptrie.cpp
+│       │   ├── umutex.cpp
+│       │   ├── umutex.h
+│       │   ├── unames.cpp
+│       │   ├── unicode
+│       │   │   ├── appendable.h
+│       │   │   ├── brkiter.h
+│       │   │   ├── bytestream.h
+│       │   │   ├── bytestriebuilder.h
+│       │   │   ├── bytestrie.h
+│       │   │   ├── caniter.h
+│       │   │   ├── casemap.h
+│       │   │   ├── char16ptr.h
+│       │   │   ├── chariter.h
+│       │   │   ├── dbbi.h
+│       │   │   ├── docmain.h
+│       │   │   ├── dtintrv.h
+│       │   │   ├── edits.h
+│       │   │   ├── enumset.h
+│       │   │   ├── errorcode.h
+│       │   │   ├── filteredbrk.h
+│       │   │   ├── icudataver.h
+│       │   │   ├── icuplug.h
+│       │   │   ├── idna.h
+│       │   │   ├── localebuilder.h
+│       │   │   ├── localematcher.h
+│       │   │   ├── localpointer.h
+│       │   │   ├── locdspnm.h
+│       │   │   ├── locid.h
+│       │   │   ├── messagepattern.h
+│       │   │   ├── normalizer2.h
+│       │   │   ├── normlzr.h
+│       │   │   ├── parseerr.h
+│       │   │   ├── parsepos.h
+│       │   │   ├── platform.h
+│       │   │   ├── ptypes.h
+│       │   │   ├── putil.h
+│       │   │   ├── rbbi.h
+│       │   │   ├── rep.h
+│       │   │   ├── resbund.h
+│       │   │   ├── schriter.h
+│       │   │   ├── simpleformatter.h
+│       │   │   ├── std_string.h
+│       │   │   ├── strenum.h
+│       │   │   ├── stringoptions.h
+│       │   │   ├── stringpiece.h
+│       │   │   ├── stringtriebuilder.h
+│       │   │   ├── symtable.h
+│       │   │   ├── ubidi.h
+│       │   │   ├── ubiditransform.h
+│       │   │   ├── ubrk.h
+│       │   │   ├── ucasemap.h
+│       │   │   ├── ucat.h
+│       │   │   ├── uchar.h
+│       │   │   ├── ucharstriebuilder.h
+│       │   │   ├── ucharstrie.h
+│       │   │   ├── uchriter.h
+│       │   │   ├── uclean.h
+│       │   │   ├── ucnv_cb.h
+│       │   │   ├── ucnv_err.h
+│       │   │   ├── ucnv.h
+│       │   │   ├── ucnvsel.h
+│       │   │   ├── uconfig.h
+│       │   │   ├── ucpmap.h
+│       │   │   ├── ucptrie.h
+│       │   │   ├── ucurr.h
+│       │   │   ├── udata.h
+│       │   │   ├── udisplaycontext.h
+│       │   │   ├── uenum.h
+│       │   │   ├── uidna.h
+│       │   │   ├── uiter.h
+│       │   │   ├── uldnames.h
+│       │   │   ├── ulocale.h
+│       │   │   ├── ulocbuilder.h
+│       │   │   ├── uloc.h
+│       │   │   ├── umachine.h
+│       │   │   ├── umisc.h
+│       │   │   ├── umutablecptrie.h
+│       │   │   ├── unifilt.h
+│       │   │   ├── unifunct.h
+│       │   │   ├── unimatch.h
+│       │   │   ├── uniset.h
+│       │   │   ├── unistr.h
+│       │   │   ├── unorm2.h
+│       │   │   ├── unorm.h
+│       │   │   ├── uobject.h
+│       │   │   ├── urename.h
+│       │   │   ├── urep.h
+│       │   │   ├── ures.h
+│       │   │   ├── uscript.h
+│       │   │   ├── uset.h
+│       │   │   ├── usetiter.h
+│       │   │   ├── ushape.h
+│       │   │   ├── usprep.h
+│       │   │   ├── ustring.h
+│       │   │   ├── ustringtrie.h
+│       │   │   ├── utext.h
+│       │   │   ├── utf16.h
+│       │   │   ├── utf32.h
+│       │   │   ├── utf8.h
+│       │   │   ├── utf.h
+│       │   │   ├── utf_old.h
+│       │   │   ├── utrace.h
+│       │   │   ├── utypes.h
+│       │   │   ├── uvernum.h
+│       │   │   └── uversion.h
+│       │   ├── unifiedcache.cpp
+│       │   ├── unifiedcache.h
+│       │   ├── unifilt.cpp
+│       │   ├── unifunct.cpp
+│       │   ├── uniquecharstr.h
+│       │   ├── uniset_closure.cpp
+│       │   ├── uniset.cpp
+│       │   ├── uniset_props.cpp
+│       │   ├── unisetspan.cpp
+│       │   ├── unisetspan.h
+│       │   ├── unistrappender.h
+│       │   ├── unistr_case.cpp
+│       │   ├── unistr_case_locale.cpp
+│       │   ├── unistr_cnv.cpp
+│       │   ├── unistr.cpp
+│       │   ├── unistr_props.cpp
+│       │   ├── unistr_titlecase_brkiter.cpp
+│       │   ├── unormcmp.cpp
+│       │   ├── unorm.cpp
+│       │   ├── unormimp.h
+│       │   ├── uobject.cpp
+│       │   ├── uposixdefs.h
+│       │   ├── uprops.cpp
+│       │   ├── uprops.h
+│       │   ├── uresbund.cpp
+│       │   ├── ures_cnv.cpp
+│       │   ├── uresdata.cpp
+│       │   ├── uresdata.h
+│       │   ├── uresimp.h
+│       │   ├── ureslocs.h
+│       │   ├── usc_impl.cpp
+│       │   ├── usc_impl.h
+│       │   ├── uscript.cpp
+│       │   ├── uscript_props.cpp
+│       │   ├── uset.cpp
+│       │   ├── uset_imp.h
+│       │   ├── usetiter.cpp
+│       │   ├── uset_props.cpp
+│       │   ├── ushape.cpp
+│       │   ├── usprep.cpp
+│       │   ├── ustack.cpp
+│       │   ├── ustrcase.cpp
+│       │   ├── ustrcase_locale.cpp
+│       │   ├── ustr_cnv.cpp
+│       │   ├── ustr_cnv.h
+│       │   ├── ustrenum.cpp
+│       │   ├── ustrenum.h
+│       │   ├── ustrfmt.cpp
+│       │   ├── ustrfmt.h
+│       │   ├── ustr_imp.h
+│       │   ├── ustring.cpp
+│       │   ├── ustr_titlecase_brkiter.cpp
+│       │   ├── ustrtrns.cpp
+│       │   ├── ustr_wcs.cpp
+│       │   ├── utext.cpp
+│       │   ├── utf_impl.cpp
+│       │   ├── util.cpp
+│       │   ├── util.h
+│       │   ├── util_props.cpp
+│       │   ├── utrace.cpp
+│       │   ├── utracimp.h
+│       │   ├── utrie2_builder.cpp
+│       │   ├── utrie2.cpp
+│       │   ├── utrie2.h
+│       │   ├── utrie2_impl.h
+│       │   ├── utrie.cpp
+│       │   ├── utrie.h
+│       │   ├── utrie_swap.cpp
+│       │   ├── uts46.cpp
+│       │   ├── utypeinfo.h
+│       │   ├── utypes.cpp
+│       │   ├── uvector.cpp
+│       │   ├── uvector.h
+│       │   ├── uvectr32.cpp
+│       │   ├── uvectr32.h
+│       │   ├── uvectr64.cpp
+│       │   ├── uvectr64.h
+│       │   ├── wintz.cpp
+│       │   └── wintz.h
+│       ├── config
+│       │   ├── dist-data.sh
+│       │   ├── dist.mk
+│       │   ├── gmakever.mk
+│       │   ├── icu-config.1.in
+│       │   ├── icu-config-bottom
+│       │   ├── icu-config-top
+│       │   ├── icu.pc.in
+│       │   ├── m4
+│       │   │   └── icu-conditional.m4
+│       │   ├── make2sh.sed
+│       │   ├── Makefile.inc.in
+│       │   ├── mh-aix-gcc
+│       │   ├── mh-aix-va
+│       │   ├── mh-alpha-linux-cc
+│       │   ├── mh-alpha-linux-gcc
+│       │   ├── mh-alpha-osf
+│       │   ├── mh-beos
+│       │   ├── mh-bsd-gcc
+│       │   ├── mh-cygwin
+│       │   ├── mh-cygwin64
+│       │   ├── mh-cygwin-msvc
+│       │   ├── mh-darwin
+│       │   ├── mh-darwin-ppc
+│       │   ├── mh-haiku
+│       │   ├── mh-hpux-acc
+│       │   ├── mh-hpux-gcc
+│       │   ├── mh-irix
+│       │   ├── mh-linux
+│       │   ├── mh-linux-va
+│       │   ├── mh-mingw
+│       │   ├── mh-mingw64
+│       │   ├── mh-mpras
+│       │   ├── mh-msys-msvc
+│       │   ├── mh-os390
+│       │   ├── mh-os400
+│       │   ├── mh-qnx
+│       │   ├── mh-solaris
+│       │   ├── mh-solaris-gcc
+│       │   ├── mh-unknown
+│       │   ├── pkgdataMakefile.in
+│       │   ├── test-icu-config.sh
+│       │   └── windows-update.sed.in
+│       ├── config.guess
+│       ├── config.sub
+│       ├── configure
+│       ├── configure.ac
+│       ├── data
+│       │   ├── BUILDRULES.py
+│       │   ├── build.xml
+│       │   ├── cldr-icu-readme.txt
+│       │   ├── dtd
+│       │   │   ├── cldr
+│       │   │   │   └── common
+│       │   │   │       └── dtd
+│       │   │   │           ├── ldml.dtd
+│       │   │   │           └── ldmlICU.dtd
+│       │   │   ├── cldr-35.1
+│       │   │   │   └── common
+│       │   │   │       └── dtd
+│       │   │   │           ├── ldml.dtd
+│       │   │   │           └── ldmlICU.dtd
+│       │   │   └── cldr-40
+│       │   │       └── common
+│       │   │           └── dtd
+│       │   │               ├── ldml.dtd
+│       │   │               └── ldmlICU.dtd
+│       │   ├── icu4j-readme.txt
+│       │   ├── icupkg.inc.in
+│       │   ├── in
+│       │   │   ├── coll
+│       │   │   │   ├── ucadata-implicithan.icu
+│       │   │   │   ├── ucadata-implicithan-icu4x.icu
+│       │   │   │   ├── ucadata-unihan.icu
+│       │   │   │   └── ucadata-unihan-icu4x.icu
+│       │   │   ├── icudt75l.dat
+│       │   │   ├── nfc.nrm
+│       │   │   ├── nfkc_cf.nrm
+│       │   │   ├── nfkc.nrm
+│       │   │   ├── nfkc_scf.nrm
+│       │   │   ├── pnames.icu
+│       │   │   ├── ubidi.icu
+│       │   │   ├── ucase.icu
+│       │   │   ├── uemoji.icu
+│       │   │   ├── ulayout.icu
+│       │   │   ├── unames.icu
+│       │   │   ├── uprops.icu
+│       │   │   └── uts46.nrm
+│       │   ├── makedata.mak
+│       │   ├── makedata_uwp.vcxproj
+│       │   ├── makedata.vcxproj
+│       │   ├── makedata.vcxproj.filters
+│       │   ├── Makefile.in
+│       │   ├── misc
+│       │   │   └── icudata.rc
+│       │   ├── pkgdataMakefile.in
+│       │   ├── sprep
+│       │   │   ├── rfc3491.txt
+│       │   │   ├── rfc3530csci.txt
+│       │   │   ├── rfc3530cs.txt
+│       │   │   ├── rfc3530mixp.txt
+│       │   │   ├── rfc3722.txt
+│       │   │   ├── rfc3920node.txt
+│       │   │   ├── rfc3920res.txt
+│       │   │   ├── rfc4011.txt
+│       │   │   ├── rfc4013.txt
+│       │   │   ├── rfc4505.txt
+│       │   │   ├── rfc4518ci.txt
+│       │   │   ├── rfc4518.txt
+│       │   │   └── sprepfiles.mk
+│       │   └── unidata
+│       │       ├── CaseFolding.txt
+│       │       ├── changes.txt
+│       │       ├── clean.sh
+│       │       ├── confusables.txt
+│       │       ├── confusablesWholeScript.txt
+│       │       ├── DerivedCoreProperties.txt
+│       │       ├── DerivedNormalizationProps.txt
+│       │       ├── emoji-sequences.txt
+│       │       ├── emoji-zwj-sequences.txt
+│       │       ├── FractionalUCA.txt
+│       │       ├── generate.sh
+│       │       ├── norm2
+│       │       │   ├── BUILD.bazel
+│       │       │   ├── nfc.txt
+│       │       │   ├── nfkc_cf.txt
+│       │       │   ├── nfkc_scf.txt
+│       │       │   ├── nfkc.txt
+│       │       │   └── uts46.txt
+│       │       ├── NormalizationCorrections.txt
+│       │       ├── NormalizationTest.txt
+│       │       ├── ppucd.txt
+│       │       ├── SpecialCasing.txt
+│       │       ├── UCARules.txt
+│       │       └── UnicodeData.txt
+│       ├── Doxyfile.in
+│       ├── extra
+│       │   ├── Makefile.in
+│       │   ├── scrptrun
+│       │   │   ├── Makefile.in
+│       │   │   ├── readme.html
+│       │   │   ├── scrptrun.cpp
+│       │   │   ├── scrptrun.h
+│       │   │   ├── sources.txt
+│       │   │   ├── srtest.cpp
+│       │   │   ├── srtest.dsp
+│       │   │   └── srtest.dsw
+│       │   └── uconv
+│       │       ├── makedata.mak
+│       │       ├── Makefile.in
+│       │       ├── pkgdata.inc.in
+│       │       ├── pkgdataMakefile.in
+│       │       ├── README
+│       │       ├── resfiles.mk
+│       │       ├── resources
+│       │       │   ├── fr.txt
+│       │       │   └── root.txt
+│       │       ├── samples
+│       │       │   ├── danish-ISO-8859-1.txt
+│       │       │   ├── eucJP.txt
+│       │       │   ├── hangul-eucKR.txt
+│       │       │   ├── hania-eucKR.txt
+│       │       │   ├── ibm-37-test.txt
+│       │       │   ├── iso8859-1.txt
+│       │       │   ├── ISO-8859-2.txt
+│       │       │   ├── ISO-8859-3.txt
+│       │       │   ├── koi8r.txt
+│       │       │   └── utf8
+│       │       │       ├── armenian.txt
+│       │       │       ├── banviet.txt
+│       │       │       ├── chinese-ulysses.txt
+│       │       │       ├── croat.txt
+│       │       │       ├── danish.txt
+│       │       │       ├── greek.txt
+│       │       │       ├── hangul.txt
+│       │       │       ├── hania.txt
+│       │       │       ├── jap.txt
+│       │       │       ├── korean.txt
+│       │       │       ├── linji.txt
+│       │       │       ├── many.txt
+│       │       │       ├── maopoem.txt
+│       │       │       ├── russian.txt
+│       │       │       ├── simplechinese.txt
+│       │       │       ├── turkish.txt
+│       │       │       └── utf-8-demo.txt
+│       │       ├── sources.txt
+│       │       ├── uconv.1.in
+│       │       ├── uconv.cpp
+│       │       ├── uconv.vcxproj
+│       │       ├── uconv.vcxproj.filters
+│       │       ├── unicode
+│       │       │   └── uwmsg.h
+│       │       └── uwmsg.c
+│       ├── i18n
+│       │   ├── alphaindex.cpp
+│       │   ├── anytrans.cpp
+│       │   ├── anytrans.h
+│       │   ├── astro.cpp
+│       │   ├── astro.h
+│       │   ├── basictz.cpp
+│       │   ├── bocsu.cpp
+│       │   ├── bocsu.h
+│       │   ├── brktrans.cpp
+│       │   ├── brktrans.h
+│       │   ├── buddhcal.cpp
+│       │   ├── buddhcal.h
+│       │   ├── BUILD.bazel
+│       │   ├── calendar.cpp
+│       │   ├── casetrn.cpp
+│       │   ├── casetrn.h
+│       │   ├── cecal.cpp
+│       │   ├── cecal.h
+│       │   ├── chnsecal.cpp
+│       │   ├── chnsecal.h
+│       │   ├── choicfmt.cpp
+│       │   ├── coleitr.cpp
+│       │   ├── collationbuilder.cpp
+│       │   ├── collationbuilder.h
+│       │   ├── collationcompare.cpp
+│       │   ├── collationcompare.h
+│       │   ├── collation.cpp
+│       │   ├── collationdatabuilder.cpp
+│       │   ├── collationdatabuilder.h
+│       │   ├── collationdata.cpp
+│       │   ├── collationdata.h
+│       │   ├── collationdatareader.cpp
+│       │   ├── collationdatareader.h
+│       │   ├── collationdatawriter.cpp
+│       │   ├── collationdatawriter.h
+│       │   ├── collationfastlatinbuilder.cpp
+│       │   ├── collationfastlatinbuilder.h
+│       │   ├── collationfastlatin.cpp
+│       │   ├── collationfastlatin.h
+│       │   ├── collationfcd.cpp
+│       │   ├── collationfcd.h
+│       │   ├── collation.h
+│       │   ├── collationiterator.cpp
+│       │   ├── collationiterator.h
+│       │   ├── collationkeys.cpp
+│       │   ├── collationkeys.h
+│       │   ├── collationroot.cpp
+│       │   ├── collationrootelements.cpp
+│       │   ├── collationrootelements.h
+│       │   ├── collationroot.h
+│       │   ├── collationruleparser.cpp
+│       │   ├── collationruleparser.h
+│       │   ├── collationsets.cpp
+│       │   ├── collationsets.h
+│       │   ├── collationsettings.cpp
+│       │   ├── collationsettings.h
+│       │   ├── collationtailoring.cpp
+│       │   ├── collationtailoring.h
+│       │   ├── collationweights.cpp
+│       │   ├── collationweights.h
+│       │   ├── coll.cpp
+│       │   ├── collunsafe.h
+│       │   ├── compactdecimalformat.cpp
+│       │   ├── coptccal.cpp
+│       │   ├── coptccal.h
+│       │   ├── cpdtrans.cpp
+│       │   ├── cpdtrans.h
+│       │   ├── csdetect.cpp
+│       │   ├── csdetect.h
+│       │   ├── csmatch.cpp
+│       │   ├── csmatch.h
+│       │   ├── csr2022.cpp
+│       │   ├── csr2022.h
+│       │   ├── csrecog.cpp
+│       │   ├── csrecog.h
+│       │   ├── csrmbcs.cpp
+│       │   ├── csrmbcs.h
+│       │   ├── csrsbcs.cpp
+│       │   ├── csrsbcs.h
+│       │   ├── csrucode.cpp
+│       │   ├── csrucode.h
+│       │   ├── csrutf8.cpp
+│       │   ├── csrutf8.h
+│       │   ├── curramt.cpp
+│       │   ├── currfmt.cpp
+│       │   ├── currfmt.h
+│       │   ├── currpinf.cpp
+│       │   ├── currunit.cpp
+│       │   ├── dangical.cpp
+│       │   ├── dangical.h
+│       │   ├── datefmt.cpp
+│       │   ├── dayperiodrules.cpp
+│       │   ├── dayperiodrules.h
+│       │   ├── dcfmtsym.cpp
+│       │   ├── decContext.cpp
+│       │   ├── decContext.h
+│       │   ├── decimfmt.cpp
+│       │   ├── decNumber.cpp
+│       │   ├── decNumber.h
+│       │   ├── decNumberLocal.h
+│       │   ├── displayoptions.cpp
+│       │   ├── double-conversion-bignum.cpp
+│       │   ├── double-conversion-bignum-dtoa.cpp
+│       │   ├── double-conversion-bignum-dtoa.h
+│       │   ├── double-conversion-bignum.h
+│       │   ├── double-conversion-cached-powers.cpp
+│       │   ├── double-conversion-cached-powers.h
+│       │   ├── double-conversion-diy-fp.h
+│       │   ├── double-conversion-double-to-string.cpp
+│       │   ├── double-conversion-double-to-string.h
+│       │   ├── double-conversion-fast-dtoa.cpp
+│       │   ├── double-conversion-fast-dtoa.h
+│       │   ├── double-conversion.h
+│       │   ├── double-conversion-ieee.h
+│       │   ├── double-conversion-string-to-double.cpp
+│       │   ├── double-conversion-string-to-double.h
+│       │   ├── double-conversion-strtod.cpp
+│       │   ├── double-conversion-strtod.h
+│       │   ├── double-conversion-utils.h
+│       │   ├── dtfmtsym.cpp
+│       │   ├── dt_impl.h
+│       │   ├── dtitvfmt.cpp
+│       │   ├── dtitv_impl.h
+│       │   ├── dtitvinf.cpp
+│       │   ├── dtptngen.cpp
+│       │   ├── dtptngen_impl.h
+│       │   ├── dtrule.cpp
+│       │   ├── erarules.cpp
+│       │   ├── erarules.h
+│       │   ├── esctrn.cpp
+│       │   ├── esctrn.h
+│       │   ├── ethpccal.cpp
+│       │   ├── ethpccal.h
+│       │   ├── fmtable_cnv.cpp
+│       │   ├── fmtable.cpp
+│       │   ├── fmtableimp.h
+│       │   ├── format.cpp
+│       │   ├── formatted_string_builder.cpp
+│       │   ├── formatted_string_builder.h
+│       │   ├── formattedval_impl.h
+│       │   ├── formattedval_iterimpl.cpp
+│       │   ├── formattedval_sbimpl.cpp
+│       │   ├── formattedvalue.cpp
+│       │   ├── fphdlimp.cpp
+│       │   ├── fphdlimp.h
+│       │   ├── fpositer.cpp
+│       │   ├── funcrepl.cpp
+│       │   ├── funcrepl.h
+│       │   ├── gender.cpp
+│       │   ├── gregocal.cpp
+│       │   ├── gregoimp.cpp
+│       │   ├── gregoimp.h
+│       │   ├── hebrwcal.cpp
+│       │   ├── hebrwcal.h
+│       │   ├── i18n.rc
+│       │   ├── i18n_uwp.vcxproj
+│       │   ├── i18n.vcxproj
+│       │   ├── i18n.vcxproj.filters
+│       │   ├── indiancal.cpp
+│       │   ├── indiancal.h
+│       │   ├── inputext.cpp
+│       │   ├── inputext.h
+│       │   ├── islamcal.cpp
+│       │   ├── islamcal.h
+│       │   ├── iso8601cal.cpp
+│       │   ├── iso8601cal.h
+│       │   ├── japancal.cpp
+│       │   ├── japancal.h
+│       │   ├── listformatter.cpp
+│       │   ├── Makefile.in
+│       │   ├── measfmt.cpp
+│       │   ├── measunit.cpp
+│       │   ├── measunit_extra.cpp
+│       │   ├── measunit_impl.h
+│       │   ├── measure.cpp
+│       │   ├── messageformat2_allocation.h
+│       │   ├── messageformat2_arguments.cpp
+│       │   ├── messageformat2_checker.cpp
+│       │   ├── messageformat2_checker.h
+│       │   ├── messageformat2.cpp
+│       │   ├── messageformat2_data_model.cpp
+│       │   ├── messageformat2_errors.cpp
+│       │   ├── messageformat2_errors.h
+│       │   ├── messageformat2_evaluation.cpp
+│       │   ├── messageformat2_evaluation.h
+│       │   ├── messageformat2_formattable.cpp
+│       │   ├── messageformat2_formatter.cpp
+│       │   ├── messageformat2_function_registry.cpp
+│       │   ├── messageformat2_function_registry_internal.h
+│       │   ├── messageformat2_macros.h
+│       │   ├── messageformat2_parser.cpp
+│       │   ├── messageformat2_parser.h
+│       │   ├── messageformat2_serializer.cpp
+│       │   ├── messageformat2_serializer.h
+│       │   ├── msgfmt.cpp
+│       │   ├── msgfmt_impl.h
+│       │   ├── name2uni.cpp
+│       │   ├── name2uni.h
+│       │   ├── nfrlist.h
+│       │   ├── nfrs.cpp
+│       │   ├── nfrs.h
+│       │   ├── nfrule.cpp
+│       │   ├── nfrule.h
+│       │   ├── nfsubs.cpp
+│       │   ├── nfsubs.h
+│       │   ├── nortrans.cpp
+│       │   ├── nortrans.h
+│       │   ├── nultrans.cpp
+│       │   ├── nultrans.h
+│       │   ├── number_affixutils.cpp
+│       │   ├── number_affixutils.h
+│       │   ├── number_asformat.cpp
+│       │   ├── number_asformat.h
+│       │   ├── number_capi.cpp
+│       │   ├── number_compact.cpp
+│       │   ├── number_compact.h
+│       │   ├── number_currencysymbols.cpp
+│       │   ├── number_currencysymbols.h
+│       │   ├── number_decimalquantity.cpp
+│       │   ├── number_decimalquantity.h
+│       │   ├── number_decimfmtprops.cpp
+│       │   ├── number_decimfmtprops.h
+│       │   ├── number_decnum.h
+│       │   ├── number_fluent.cpp
+│       │   ├── number_formatimpl.cpp
+│       │   ├── number_formatimpl.h
+│       │   ├── number_grouping.cpp
+│       │   ├── number_integerwidth.cpp
+│       │   ├── number_longnames.cpp
+│       │   ├── number_longnames.h
+│       │   ├── number_mapper.cpp
+│       │   ├── number_mapper.h
+│       │   ├── number_microprops.h
+│       │   ├── number_modifiers.cpp
+│       │   ├── number_modifiers.h
+│       │   ├── number_multiplier.cpp
+│       │   ├── number_multiplier.h
+│       │   ├── number_notation.cpp
+│       │   ├── number_output.cpp
+│       │   ├── number_padding.cpp
+│       │   ├── number_patternmodifier.cpp
+│       │   ├── number_patternmodifier.h
+│       │   ├── number_patternstring.cpp
+│       │   ├── number_patternstring.h
+│       │   ├── number_rounding.cpp
+│       │   ├── number_roundingutils.h
+│       │   ├── number_scientific.cpp
+│       │   ├── number_scientific.h
+│       │   ├── number_simple.cpp
+│       │   ├── number_skeletons.cpp
+│       │   ├── number_skeletons.h
+│       │   ├── number_symbolswrapper.cpp
+│       │   ├── number_types.h
+│       │   ├── number_usageprefs.cpp
+│       │   ├── number_usageprefs.h
+│       │   ├── number_utils.cpp
+│       │   ├── number_utils.h
+│       │   ├── number_utypes.h
+│       │   ├── numfmt.cpp
+│       │   ├── numparse_affixes.cpp
+│       │   ├── numparse_affixes.h
+│       │   ├── numparse_compositions.cpp
+│       │   ├── numparse_compositions.h
+│       │   ├── numparse_currency.cpp
+│       │   ├── numparse_currency.h
+│       │   ├── numparse_decimal.cpp
+│       │   ├── numparse_decimal.h
+│       │   ├── numparse_impl.cpp
+│       │   ├── numparse_impl.h
+│       │   ├── numparse_parsednumber.cpp
+│       │   ├── numparse_scientific.cpp
+│       │   ├── numparse_scientific.h
+│       │   ├── numparse_symbols.cpp
+│       │   ├── numparse_symbols.h
+│       │   ├── numparse_types.h
+│       │   ├── numparse_utils.h
+│       │   ├── numparse_validators.cpp
+│       │   ├── numparse_validators.h
+│       │   ├── numrange_capi.cpp
+│       │   ├── numrange_fluent.cpp
+│       │   ├── numrange_impl.cpp
+│       │   ├── numrange_impl.h
+│       │   ├── numsys.cpp
+│       │   ├── numsys_impl.h
+│       │   ├── olsontz.cpp
+│       │   ├── olsontz.h
+│       │   ├── persncal.cpp
+│       │   ├── persncal.h
+│       │   ├── pluralranges.cpp
+│       │   ├── pluralranges.h
+│       │   ├── plurfmt.cpp
+│       │   ├── plurrule.cpp
+│       │   ├── plurrule_impl.h
+│       │   ├── quant.cpp
+│       │   ├── quant.h
+│       │   ├── quantityformatter.cpp
+│       │   ├── quantityformatter.h
+│       │   ├── rbnf.cpp
+│       │   ├── rbt.cpp
+│       │   ├── rbt_data.cpp
+│       │   ├── rbt_data.h
+│       │   ├── rbt.h
+│       │   ├── rbt_pars.cpp
+│       │   ├── rbt_pars.h
+│       │   ├── rbt_rule.cpp
+│       │   ├── rbt_rule.h
+│       │   ├── rbt_set.cpp
+│       │   ├── rbt_set.h
+│       │   ├── rbtz.cpp
+│       │   ├── regexcmp.cpp
+│       │   ├── regexcmp.h
+│       │   ├── regexcst.h
+│       │   ├── regexcst.pl
+│       │   ├── regexcst.txt
+│       │   ├── regeximp.cpp
+│       │   ├── regeximp.h
+│       │   ├── regexst.cpp
+│       │   ├── regexst.h
+│       │   ├── regextxt.cpp
+│       │   ├── regextxt.h
+│       │   ├── region.cpp
+│       │   ├── region_impl.h
+│       │   ├── reldatefmt.cpp
+│       │   ├── reldtfmt.cpp
+│       │   ├── reldtfmt.h
+│       │   ├── rematch.cpp
+│       │   ├── remtrans.cpp
+│       │   ├── remtrans.h
+│       │   ├── repattrn.cpp
+│       │   ├── rulebasedcollator.cpp
+│       │   ├── scientificnumberformatter.cpp
+│       │   ├── scriptset.cpp
+│       │   ├── scriptset.h
+│       │   ├── search.cpp
+│       │   ├── selfmt.cpp
+│       │   ├── selfmtimpl.h
+│       │   ├── sharedbreakiterator.cpp
+│       │   ├── sharedbreakiterator.h
+│       │   ├── sharedcalendar.h
+│       │   ├── shareddateformatsymbols.h
+│       │   ├── sharednumberformat.h
+│       │   ├── sharedpluralrules.h
+│       │   ├── simpletz.cpp
+│       │   ├── smpdtfmt.cpp
+│       │   ├── smpdtfst.cpp
+│       │   ├── smpdtfst.h
+│       │   ├── sortkey.cpp
+│       │   ├── sources.txt
+│       │   ├── standardplural.cpp
+│       │   ├── standardplural.h
+│       │   ├── string_segment.cpp
+│       │   ├── string_segment.h
+│       │   ├── strmatch.cpp
+│       │   ├── strmatch.h
+│       │   ├── strrepl.cpp
+│       │   ├── strrepl.h
+│       │   ├── stsearch.cpp
+│       │   ├── taiwncal.cpp
+│       │   ├── taiwncal.h
+│       │   ├── timezone.cpp
+│       │   ├── titletrn.cpp
+│       │   ├── titletrn.h
+│       │   ├── tmunit.cpp
+│       │   ├── tmutamt.cpp
+│       │   ├── tmutfmt.cpp
+│       │   ├── tolowtrn.cpp
+│       │   ├── tolowtrn.h
+│       │   ├── toupptrn.cpp
+│       │   ├── toupptrn.h
+│       │   ├── translit.cpp
+│       │   ├── transreg.cpp
+│       │   ├── transreg.h
+│       │   ├── tridpars.cpp
+│       │   ├── tridpars.h
+│       │   ├── tzfmt.cpp
+│       │   ├── tzgnames.cpp
+│       │   ├── tzgnames.h
+│       │   ├── tznames.cpp
+│       │   ├── tznames_impl.cpp
+│       │   ├── tznames_impl.h
+│       │   ├── tzrule.cpp
+│       │   ├── tztrans.cpp
+│       │   ├── ucal.cpp
+│       │   ├── ucln_in.cpp
+│       │   ├── ucln_in.h
+│       │   ├── ucol.cpp
+│       │   ├── ucoleitr.cpp
+│       │   ├── ucol_imp.h
+│       │   ├── ucol_res.cpp
+│       │   ├── ucol_sit.cpp
+│       │   ├── ucsdet.cpp
+│       │   ├── udat.cpp
+│       │   ├── udateintervalformat.cpp
+│       │   ├── udatpg.cpp
+│       │   ├── ufieldpositer.cpp
+│       │   ├── uitercollationiterator.cpp
+│       │   ├── uitercollationiterator.h
+│       │   ├── ulistformatter.cpp
+│       │   ├── ulocdata.cpp
+│       │   ├── umsg.cpp
+│       │   ├── umsg_imp.h
+│       │   ├── unesctrn.cpp
+│       │   ├── unesctrn.h
+│       │   ├── uni2name.cpp
+│       │   ├── uni2name.h
+│       │   ├── unicode
+│       │   │   ├── alphaindex.h
+│       │   │   ├── basictz.h
+│       │   │   ├── calendar.h
+│       │   │   ├── choicfmt.h
+│       │   │   ├── coleitr.h
+│       │   │   ├── coll.h
+│       │   │   ├── compactdecimalformat.h
+│       │   │   ├── curramt.h
+│       │   │   ├── currpinf.h
+│       │   │   ├── currunit.h
+│       │   │   ├── datefmt.h
+│       │   │   ├── dcfmtsym.h
+│       │   │   ├── decimfmt.h
+│       │   │   ├── displayoptions.h
+│       │   │   ├── dtfmtsym.h
+│       │   │   ├── dtitvfmt.h
+│       │   │   ├── dtitvinf.h
+│       │   │   ├── dtptngen.h
+│       │   │   ├── dtrule.h
+│       │   │   ├── fieldpos.h
+│       │   │   ├── fmtable.h
+│       │   │   ├── format.h
+│       │   │   ├── formattednumber.h
+│       │   │   ├── formattedvalue.h
+│       │   │   ├── fpositer.h
+│       │   │   ├── gender.h
+│       │   │   ├── gregocal.h
+│       │   │   ├── listformatter.h
+│       │   │   ├── measfmt.h
+│       │   │   ├── measunit.h
+│       │   │   ├── measure.h
+│       │   │   ├── messageformat2_arguments.h
+│       │   │   ├── messageformat2_data_model.h
+│       │   │   ├── messageformat2_data_model_names.h
+│       │   │   ├── messageformat2_formattable.h
+│       │   │   ├── messageformat2_function_registry.h
+│       │   │   ├── messageformat2.h
+│       │   │   ├── msgfmt.h
+│       │   │   ├── nounit.h
+│       │   │   ├── numberformatter.h
+│       │   │   ├── numberrangeformatter.h
+│       │   │   ├── numfmt.h
+│       │   │   ├── numsys.h
+│       │   │   ├── plurfmt.h
+│       │   │   ├── plurrule.h
+│       │   │   ├── rbnf.h
+│       │   │   ├── rbtz.h
+│       │   │   ├── regex.h
+│       │   │   ├── region.h
+│       │   │   ├── reldatefmt.h
+│       │   │   ├── scientificnumberformatter.h
+│       │   │   ├── search.h
+│       │   │   ├── selfmt.h
+│       │   │   ├── simplenumberformatter.h
+│       │   │   ├── simpletz.h
+│       │   │   ├── smpdtfmt.h
+│       │   │   ├── sortkey.h
+│       │   │   ├── stsearch.h
+│       │   │   ├── tblcoll.h
+│       │   │   ├── timezone.h
+│       │   │   ├── tmunit.h
+│       │   │   ├── tmutamt.h
+│       │   │   ├── tmutfmt.h
+│       │   │   ├── translit.h
+│       │   │   ├── tzfmt.h
+│       │   │   ├── tznames.h
+│       │   │   ├── tzrule.h
+│       │   │   ├── tztrans.h
+│       │   │   ├── ucal.h
+│       │   │   ├── ucoleitr.h
+│       │   │   ├── ucol.h
+│       │   │   ├── ucsdet.h
+│       │   │   ├── udateintervalformat.h
+│       │   │   ├── udat.h
+│       │   │   ├── udatpg.h
+│       │   │   ├── udisplayoptions.h
+│       │   │   ├── ufieldpositer.h
+│       │   │   ├── uformattable.h
+│       │   │   ├── uformattednumber.h
+│       │   │   ├── uformattedvalue.h
+│       │   │   ├── ugender.h
+│       │   │   ├── ulistformatter.h
+│       │   │   ├── ulocdata.h
+│       │   │   ├── umsg.h
+│       │   │   ├── unirepl.h
+│       │   │   ├── unumberformatter.h
+│       │   │   ├── unumberoptions.h
+│       │   │   ├── unumberrangeformatter.h
+│       │   │   ├── unum.h
+│       │   │   ├── unumsys.h
+│       │   │   ├── upluralrules.h
+│       │   │   ├── uregex.h
+│       │   │   ├── uregion.h
+│       │   │   ├── ureldatefmt.h
+│       │   │   ├── usearch.h
+│       │   │   ├── usimplenumberformatter.h
+│       │   │   ├── uspoof.h
+│       │   │   ├── utmscale.h
+│       │   │   ├── utrans.h
+│       │   │   └── vtzone.h
+│       │   ├── units_complexconverter.cpp
+│       │   ├── units_complexconverter.h
+│       │   ├── units_converter.cpp
+│       │   ├── units_converter.h
+│       │   ├── units_data.cpp
+│       │   ├── units_data.h
+│       │   ├── units_router.cpp
+│       │   ├── units_router.h
+│       │   ├── unum.cpp
+│       │   ├── unumsys.cpp
+│       │   ├── upluralrules.cpp
+│       │   ├── uregexc.cpp
+│       │   ├── uregex.cpp
+│       │   ├── uregion.cpp
+│       │   ├── usearch.cpp
+│       │   ├── uspoof_build.cpp
+│       │   ├── uspoof_conf.cpp
+│       │   ├── uspoof_conf.h
+│       │   ├── uspoof.cpp
+│       │   ├── uspoof_impl.cpp
+│       │   ├── uspoof_impl.h
+│       │   ├── usrchimp.h
+│       │   ├── utf16collationiterator.cpp
+│       │   ├── utf16collationiterator.h
+│       │   ├── utf8collationiterator.cpp
+│       │   ├── utf8collationiterator.h
+│       │   ├── utmscale.cpp
+│       │   ├── utrans.cpp
+│       │   ├── vtzone.cpp
+│       │   ├── vzone.cpp
+│       │   ├── vzone.h
+│       │   ├── windtfmt.cpp
+│       │   ├── windtfmt.h
+│       │   ├── winnmfmt.cpp
+│       │   ├── winnmfmt.h
+│       │   ├── wintzimpl.cpp
+│       │   ├── wintzimpl.h
+│       │   ├── zonemeta.cpp
+│       │   ├── zonemeta.h
+│       │   ├── zrule.cpp
+│       │   ├── zrule.h
+│       │   ├── ztrans.cpp
+│       │   └── ztrans.h
+│       ├── icudefs.mk.in
+│       ├── install-sh
+│       ├── io
+│       │   ├── io.rc
+│       │   ├── io.vcxproj
+│       │   ├── io.vcxproj.filters
+│       │   ├── locbund.cpp
+│       │   ├── locbund.h
+│       │   ├── Makefile.in
+│       │   ├── sources.txt
+│       │   ├── sprintf.cpp
+│       │   ├── sscanf.cpp
+│       │   ├── ucln_io.cpp
+│       │   ├── ucln_io.h
+│       │   ├── ufile.cpp
+│       │   ├── ufile.h
+│       │   ├── ufmt_cmn.cpp
+│       │   ├── ufmt_cmn.h
+│       │   ├── unicode
+│       │   │   ├── ustdio.h
+│       │   │   └── ustream.h
+│       │   ├── uprintf.cpp
+│       │   ├── uprintf.h
+│       │   ├── uprntf_p.cpp
+│       │   ├── uscanf.cpp
+│       │   ├── uscanf.h
+│       │   ├── uscanf_p.cpp
+│       │   ├── ustdio.cpp
+│       │   └── ustream.cpp
+│       ├── layoutex
+│       │   ├── layout
+│       │   │   ├── ParagraphLayout.h
+│       │   │   ├── playout.h
+│       │   │   ├── plruns.h
+│       │   │   └── RunArrays.h
+│       │   ├── layoutex.rc
+│       │   ├── layoutex.vcxproj
+│       │   ├── layoutex.vcxproj.filters
+│       │   ├── LXUtilities.cpp
+│       │   ├── LXUtilities.h
+│       │   ├── Makefile.in
+│       │   ├── ParagraphLayout.cpp
+│       │   ├── playout.cpp
+│       │   ├── plruns.cpp
+│       │   ├── RunArrays.cpp
+│       │   └── sources.txt
+│       ├── Makefile.in
+│       ├── mkinstalldirs
+│       ├── python
+│       │   └── icutools
+│       │       ├── databuilder
+│       │       │   ├── comment_stripper.py
+│       │       │   ├── filtration.py
+│       │       │   ├── filtration_schema.json
+│       │       │   ├── __init__.py
+│       │       │   ├── __main__.py
+│       │       │   ├── renderers
+│       │       │   │   ├── common_exec.py
+│       │       │   │   ├── __init__.py
+│       │       │   │   └── makefile.py
+│       │       │   ├── request_types.py
+│       │       │   ├── test
+│       │       │   │   ├── filtration_test.py
+│       │       │   │   ├── __init__.py
+│       │       │   │   ├── __main__.py
+│       │       │   │   └── sample_data
+│       │       │   │       ├── brkitr
+│       │       │   │       │   └── LOCALE_DEPS.json
+│       │       │   │       ├── locales
+│       │       │   │       │   └── LOCALE_DEPS.json
+│       │       │   │       └── rbnf
+│       │       │   │           └── LOCALE_DEPS.json
+│       │       │   └── utils.py
+│       │       └── __init__.py
+│       ├── runConfigureICU
+│       ├── samples
+│       │   ├── all
+│       │   │   ├── all.sln
+│       │   │   └── samplecheck.bat
+│       │   ├── coll
+│       │   │   ├── coll.cpp
+│       │   │   ├── coll.sln
+│       │   │   ├── coll.vcxproj
+│       │   │   ├── coll.vcxproj.filters
+│       │   │   ├── Makefile
+│       │   │   └── readme.txt
+│       │   ├── defs.mk
+│       │   ├── Makefile.in
+│       │   ├── readme.txt
+│       │   ├── rules.mk
+│       │   ├── strsrch
+│       │   │   ├── Makefile
+│       │   │   ├── readme.txt
+│       │   │   ├── strsrch.cpp
+│       │   │   ├── strsrch.sln
+│       │   │   ├── strsrch.vcxproj
+│       │   │   └── strsrch.vcxproj.filters
+│       │   ├── translit
+│       │   │   ├── answers
+│       │   │   │   ├── main_1.cpp
+│       │   │   │   ├── main_2.cpp
+│       │   │   │   ├── main_3.cpp
+│       │   │   │   ├── main_4.cpp
+│       │   │   │   ├── unaccent.cpp
+│       │   │   │   └── unaccent.h
+│       │   │   ├── main.cpp
+│       │   │   ├── Makefile
+│       │   │   ├── README.TXT
+│       │   │   ├── translit.sln
+│       │   │   ├── translit.vcxproj
+│       │   │   ├── translit.vcxproj.filters
+│       │   │   ├── unaccent.cpp
+│       │   │   ├── unaccent.h
+│       │   │   ├── util.cpp
+│       │   │   └── util.h
+│       │   └── ugrep
+│       │       ├── Makefile
+│       │       ├── readme.txt
+│       │       ├── ugrep.cpp
+│       │       ├── ugrep.sln
+│       │       ├── ugrep.vcxproj
+│       │       └── ugrep.vcxproj.filters
+│       ├── stubdata
+│       │   ├── BUILD.bazel
+│       │   ├── Makefile.in
+│       │   ├── sources.txt
+│       │   ├── stubdata.cpp
+│       │   ├── stubdata.h
+│       │   ├── stubdata.vcxproj
+│       │   └── stubdata.vcxproj.filters
+│       ├── test
+│       │   ├── cintltst
+│       │   │   ├── bocu1tst.c
+│       │   │   ├── callcoll.c
+│       │   │   ├── callcoll.h
+│       │   │   ├── calldata.h
+│       │   │   ├── calltest.c
+│       │   │   ├── capitst.c
+│       │   │   ├── capitst.h
+│       │   │   ├── cbiapts.c
+│       │   │   ├── cbiapts.h
+│       │   │   ├── cbididat.c
+│       │   │   ├── cbiditransformtst.c
+│       │   │   ├── cbiditst.c
+│       │   │   ├── cbiditst.h
+│       │   │   ├── cbkittst.c
+│       │   │   ├── ccaltst.c
+│       │   │   ├── ccaltst.h
+│       │   │   ├── ccapitst.c
+│       │   │   ├── ccapitst.h
+│       │   │   ├── ccolltst.c
+│       │   │   ├── ccolltst.h
+│       │   │   ├── cconvtst.c
+│       │   │   ├── cctest.c
+│       │   │   ├── ccurrtst.c
+│       │   │   ├── ccurrtst.h
+│       │   │   ├── cdateintervalformattest.c
+│       │   │   ├── cdattst.c
+│       │   │   ├── cdattst.h
+│       │   │   ├── cdetst.c
+│       │   │   ├── cdetst.h
+│       │   │   ├── cdtdptst.c
+│       │   │   ├── cdtdptst.h
+│       │   │   ├── cdtrgtst.c
+│       │   │   ├── cdtrgtst.h
+│       │   │   ├── cestst.c
+│       │   │   ├── cestst.h
+│       │   │   ├── cfintst.c
+│       │   │   ├── cfintst.h
+│       │   │   ├── cformtst.c
+│       │   │   ├── cformtst.h
+│       │   │   ├── cfrtst.c
+│       │   │   ├── cfrtst.h
+│       │   │   ├── cg7coll.c
+│       │   │   ├── cg7coll.h
+│       │   │   ├── cgendtst.c
+│       │   │   ├── chashtst.c
+│       │   │   ├── cintltst.c
+│       │   │   ├── cintltst.h
+│       │   │   ├── cintltst.vcxproj
+│       │   │   ├── cintltst.vcxproj.filters
+│       │   │   ├── citertst.c
+│       │   │   ├── citertst.h
+│       │   │   ├── cjaptst.c
+│       │   │   ├── cjaptst.h
+│       │   │   ├── cldrtest.c
+│       │   │   ├── cloctst.c
+│       │   │   ├── cloctst.h
+│       │   │   ├── cmsccoll.c
+│       │   │   ├── cmsgtst.c
+│       │   │   ├── cmsgtst.h
+│       │   │   ├── cnmdptst.c
+│       │   │   ├── cnmdptst.h
+│       │   │   ├── cnormtst.c
+│       │   │   ├── cnormtst.h
+│       │   │   ├── cnumtst.c
+│       │   │   ├── cnumtst.h
+│       │   │   ├── cpluralrulestest.c
+│       │   │   ├── cposxtst.c
+│       │   │   ├── crelativedateformattest.c
+│       │   │   ├── crestst.c
+│       │   │   ├── crestst.h
+│       │   │   ├── creststn.c
+│       │   │   ├── creststn.h
+│       │   │   ├── cstrcase.c
+│       │   │   ├── cstrtest.c
+│       │   │   ├── cturtst.c
+│       │   │   ├── cturtst.h
+│       │   │   ├── cucdapi.c
+│       │   │   ├── cucdapi.h
+│       │   │   ├── cucdtst.c
+│       │   │   ├── currtest.c
+│       │   │   ├── custrtrn.c
+│       │   │   ├── custrtst.c
+│       │   │   ├── cutiltst.c
+│       │   │   ├── encoll.c
+│       │   │   ├── encoll.h
+│       │   │   ├── eurocreg.c
+│       │   │   ├── hpmufn.c
+│       │   │   ├── idnatest.c
+│       │   │   ├── Makefile.in
+│       │   │   ├── nccbtst.c
+│       │   │   ├── nccbtst.h
+│       │   │   ├── ncnvfbts.c
+│       │   │   ├── ncnvfbts.h
+│       │   │   ├── ncnvtst.c
+│       │   │   ├── nfsprep.c
+│       │   │   ├── nfsprep.h
+│       │   │   ├── nucnvtst.c
+│       │   │   ├── nucnvtst.h
+│       │   │   ├── putiltst.c
+│       │   │   ├── reapits.c
+│       │   │   ├── sorttest.c
+│       │   │   ├── spooftest.c
+│       │   │   ├── spreptst.c
+│       │   │   ├── sprpdata.c
+│       │   │   ├── stdnmtst.c
+│       │   │   ├── tracetst.c
+│       │   │   ├── trie2test.c
+│       │   │   ├── trietest.c
+│       │   │   ├── ucnvseltst.c
+│       │   │   ├── ucnvseltst.h
+│       │   │   ├── ucptrietest.c
+│       │   │   ├── ucsdetst.c
+│       │   │   ├── udatatst.c
+│       │   │   ├── udatpg_test.c
+│       │   │   ├── uenumtst.c
+│       │   │   ├── uformattedvaluetst.c
+│       │   │   ├── ulistfmttest.c
+│       │   │   ├── ulocaletst.c
+│       │   │   ├── ulocbuildertst.c
+│       │   │   ├── unumberformattertst.c
+│       │   │   ├── unumberrangeformattertst.c
+│       │   │   ├── uregiontest.c
+│       │   │   ├── usettest.c
+│       │   │   ├── usrchdat.inc
+│       │   │   ├── usrchtst.c
+│       │   │   ├── utexttst.c
+│       │   │   ├── utf16tst.c
+│       │   │   ├── utf8tst.c
+│       │   │   ├── utmstest.c
+│       │   │   └── utransts.c
+│       │   ├── compat
+│       │   │   ├── Makefile.in
+│       │   │   ├── readme.txt
+│       │   │   ├── tzdate.c
+│       │   │   └── tzone.pl
+│       │   ├── depstest
+│       │   │   ├── dependencies.py
+│       │   │   ├── dependencies.txt
+│       │   │   ├── depstest.py
+│       │   │   └── icu-dependencies-mode.el
+│       │   ├── fuzzer
+│       │   │   ├── break_iterator_fuzzer.cpp
+│       │   │   ├── calendar_fuzzer.cpp
+│       │   │   ├── collator_compare_fuzzer.cpp
+│       │   │   ├── collator_compare_fuzzer_seed_corpus.txt
+│       │   │   ├── collator_rulebased_fuzzer.cpp
+│       │   │   ├── collator_rulebased_fuzzer_seed_corpus.txt
+│       │   │   ├── collator_rulebased_ICU-21041.fuzz
+│       │   │   ├── converter_fuzzer.cpp
+│       │   │   ├── date_format_fuzzer.cpp
+│       │   │   ├── date_time_pattern_generator_fuzzer.cpp
+│       │   │   ├── dtfmtsym_fuzzer.cpp
+│       │   │   ├── fuzzer_driver.cpp
+│       │   │   ├── fuzzer_utils.h
+│       │   │   ├── list_format_fuzzer.cpp
+│       │   │   ├── locale_fuzzer.cpp
+│       │   │   ├── locale_morph_fuzzer.cpp
+│       │   │   ├── locale_morph_fuzzer_seed_corpus.txt
+│       │   │   ├── locale_util.cpp
+│       │   │   ├── locale_util.h
+│       │   │   ├── Makefile.in
+│       │   │   ├── normalizer2_fuzzer.cpp
+│       │   │   ├── number_format_fuzzer.cpp
+│       │   │   ├── number_formatter_fuzzer.cpp
+│       │   │   ├── plurrule_fuzzer.cpp
+│       │   │   ├── relative_date_time_formatter_fuzzer.cpp
+│       │   │   ├── rule_based_break_iterator_fuzzer.cpp
+│       │   │   ├── timezone_create_fuzzer.cpp
+│       │   │   ├── time_zone_names_fuzzer.cpp
+│       │   │   ├── ucasemap_fuzzer.cpp
+│       │   │   ├── uloc_canonicalize_fuzzer.cpp
+│       │   │   ├── uloc_canonicalize_fuzzer_seed_corpus.txt
+│       │   │   ├── uloc_for_language_tag_fuzzer.cpp
+│       │   │   ├── uloc_for_language_tag_fuzzer_seed_corpus.txt
+│       │   │   ├── uloc_get_name_fuzzer.cpp
+│       │   │   ├── uloc_get_name_fuzzer_seed_corpus.txt
+│       │   │   ├── uloc_is_right_to_left_fuzzer.cpp
+│       │   │   ├── uloc_is_right_to_left_fuzzer_seed_corpus.txt
+│       │   │   ├── uloc_open_keywords_fuzzer.cpp
+│       │   │   ├── uloc_open_keywords_fuzzer_seed_corpus.txt
+│       │   │   ├── unicodeset_fuzzer.cpp
+│       │   │   ├── unicode_string_codepage_create_fuzzer.cpp
+│       │   │   ├── uprop_fuzzer.cpp
+│       │   │   ├── uregex_open_fuzzer.cpp
+│       │   │   └── uregex_open_fuzzer.dict
+│       │   ├── hdrtst
+│       │   │   ├── dfiles.txt
+│       │   │   ├── Makefile.in
+│       │   │   ├── testinternalheaders.sh
+│       │   │   └── testtagsguards.sh
+│       │   ├── intltest
+│       │   │   ├── aliastst.cpp
+│       │   │   ├── aliastst.h
+│       │   │   ├── allcoll.cpp
+│       │   │   ├── allcoll.h
+│       │   │   ├── alphaindextst.cpp
+│       │   │   ├── alphaindextst.h
+│       │   │   ├── apicoll.cpp
+│       │   │   ├── apicoll.h
+│       │   │   ├── astrotst.cpp
+│       │   │   ├── astrotst.h
+│       │   │   ├── bidiconf.cpp
+│       │   │   ├── bytestrietest.cpp
+│       │   │   ├── calcasts.cpp
+│       │   │   ├── calcasts.h
+│       │   │   ├── callimts.cpp
+│       │   │   ├── callimts.h
+│       │   │   ├── calregts.cpp
+│       │   │   ├── calregts.h
+│       │   │   ├── caltest.cpp
+│       │   │   ├── caltestdata.h
+│       │   │   ├── caltest.h
+│       │   │   ├── caltztst.cpp
+│       │   │   ├── caltztst.h
+│       │   │   ├── canittst.cpp
+│       │   │   ├── canittst.h
+│       │   │   ├── citrtest.cpp
+│       │   │   ├── citrtest.h
+│       │   │   ├── collationtest.cpp
+│       │   │   ├── colldata.cpp
+│       │   │   ├── colldata.h
+│       │   │   ├── compactdecimalformattest.cpp
+│       │   │   ├── convtest.cpp
+│       │   │   ├── convtest.h
+│       │   │   ├── cpdtrtst.cpp
+│       │   │   ├── cpdtrtst.h
+│       │   │   ├── csdetest.cpp
+│       │   │   ├── csdetest.h
+│       │   │   ├── currcoll.cpp
+│       │   │   ├── currcoll.h
+│       │   │   ├── dadrcal.cpp
+│       │   │   ├── dadrcal.h
+│       │   │   ├── dadrfmt.cpp
+│       │   │   ├── dadrfmt.h
+│       │   │   ├── datadrivennumberformattestsuite.cpp
+│       │   │   ├── datadrivennumberformattestsuite.h
+│       │   │   ├── dcfmapts.cpp
+│       │   │   ├── dcfmapts.h
+│       │   │   ├── dcfmtest.cpp
+│       │   │   ├── dcfmtest.h
+│       │   │   ├── decoll.cpp
+│       │   │   ├── decoll.h
+│       │   │   ├── displayoptions_test.cpp
+│       │   │   ├── dtfmapts.cpp
+│       │   │   ├── dtfmapts.h
+│       │   │   ├── dtfmrgts.cpp
+│       │   │   ├── dtfmrgts.h
+│       │   │   ├── dtfmtrtts.cpp
+│       │   │   ├── dtfmtrtts.h
+│       │   │   ├── dtfmttst.cpp
+│       │   │   ├── dtfmttst.h
+│       │   │   ├── dtifmtts.cpp
+│       │   │   ├── dtifmtts.h
+│       │   │   ├── dtptngts.cpp
+│       │   │   ├── dtptngts.h
+│       │   │   ├── encoll.cpp
+│       │   │   ├── encoll.h
+│       │   │   ├── erarulestest.cpp
+│       │   │   ├── erarulestest.h
+│       │   │   ├── escoll.cpp
+│       │   │   ├── escoll.h
+│       │   │   ├── ficoll.cpp
+│       │   │   ├── ficoll.h
+│       │   │   ├── fldset.cpp
+│       │   │   ├── fldset.h
+│       │   │   ├── formatted_string_builder_test.cpp
+│       │   │   ├── formattedvaluetest.cpp
+│       │   │   ├── frcoll.cpp
+│       │   │   ├── frcoll.h
+│       │   │   ├── g7coll.cpp
+│       │   │   ├── g7coll.h
+│       │   │   ├── genderinfotest.cpp
+│       │   │   ├── icusvtst.cpp
+│       │   │   ├── icusvtst.h
+│       │   │   ├── idnaconf.cpp
+│       │   │   ├── idnaconf.h
+│       │   │   ├── idnaref.cpp
+│       │   │   ├── idnaref.h
+│       │   │   ├── incaltst.cpp
+│       │   │   ├── incaltst.h
+│       │   │   ├── intltest.cpp
+│       │   │   ├── intltest.h
+│       │   │   ├── intltest.vcxproj
+│       │   │   ├── intltest.vcxproj.filters
+│       │   │   ├── itercoll.cpp
+│       │   │   ├── itercoll.h
+│       │   │   ├── itformat.cpp
+│       │   │   ├── itformat.h
+│       │   │   ├── itmajor.cpp
+│       │   │   ├── itmajor.h
+│       │   │   ├── itrbbi.cpp
+│       │   │   ├── itrbbi.h
+│       │   │   ├── itrbnf.cpp
+│       │   │   ├── itrbnf.h
+│       │   │   ├── itrbnfp.cpp
+│       │   │   ├── itrbnfp.h
+│       │   │   ├── itrbnfrt.cpp
+│       │   │   ├── itrbnfrt.h
+│       │   │   ├── itspoof.cpp
+│       │   │   ├── itspoof.h
+│       │   │   ├── ittrans.cpp
+│       │   │   ├── ittrans.h
+│       │   │   ├── itutil.cpp
+│       │   │   ├── itutil.h
+│       │   │   ├── jacoll.cpp
+│       │   │   ├── jacoll.h
+│       │   │   ├── jamotest.cpp
+│       │   │   ├── jamotest.h
+│       │   │   ├── lcukocol.cpp
+│       │   │   ├── lcukocol.h
+│       │   │   ├── listformattertest.cpp
+│       │   │   ├── listformattertest.h
+│       │   │   ├── localebuildertest.cpp
+│       │   │   ├── localebuildertest.h
+│       │   │   ├── localematchertest.cpp
+│       │   │   ├── locnmtst.cpp
+│       │   │   ├── locnmtst.h
+│       │   │   ├── loctest.cpp
+│       │   │   ├── loctest.h
+│       │   │   ├── lstmbetst.cpp
+│       │   │   ├── lstmbetst.h
+│       │   │   ├── Makefile.in
+│       │   │   ├── measfmttest.cpp
+│       │   │   ├── messageformat2test_builtin.cpp
+│       │   │   ├── messageformat2test.cpp
+│       │   │   ├── messageformat2test_custom.cpp
+│       │   │   ├── messageformat2test_features.cpp
+│       │   │   ├── messageformat2test_fromjson.cpp
+│       │   │   ├── messageformat2test.h
+│       │   │   ├── messageformat2test_icu.cpp
+│       │   │   ├── messageformat2test_utils.h
+│       │   │   ├── miscdtfm.cpp
+│       │   │   ├── miscdtfm.h
+│       │   │   ├── mnkytst.cpp
+│       │   │   ├── mnkytst.h
+│       │   │   ├── msfmrgts.cpp
+│       │   │   ├── msfmrgts.h
+│       │   │   ├── nmfmapts.cpp
+│       │   │   ├── nmfmapts.h
+│       │   │   ├── nmfmtrt.cpp
+│       │   │   ├── nmfmtrt.h
+│       │   │   ├── normconf.cpp
+│       │   │   ├── normconf.h
+│       │   │   ├── nptrans.cpp
+│       │   │   ├── nptrans.h
+│       │   │   ├── numberformattesttuple.cpp
+│       │   │   ├── numberformattesttuple.h
+│       │   │   ├── numbertest_affixutils.cpp
+│       │   │   ├── numbertest_api.cpp
+│       │   │   ├── numbertest_decimalquantity.cpp
+│       │   │   ├── numbertest_doubleconversion.cpp
+│       │   │   ├── numbertest.h
+│       │   │   ├── numbertest_modifiers.cpp
+│       │   │   ├── numbertest_parse.cpp
+│       │   │   ├── numbertest_patternmodifier.cpp
+│       │   │   ├── numbertest_patternstring.cpp
+│       │   │   ├── numbertest_permutation.cpp
+│       │   │   ├── numbertest_range.cpp
+│       │   │   ├── numbertest_simple.cpp
+│       │   │   ├── numbertest_skeletons.cpp
+│       │   │   ├── numfmtdatadriventest.cpp
+│       │   │   ├── numfmtspectest.cpp
+│       │   │   ├── numfmtst.cpp
+│       │   │   ├── numfmtst.h
+│       │   │   ├── numrgts.cpp
+│       │   │   ├── numrgts.h
+│       │   │   ├── pluralmaptest.cpp
+│       │   │   ├── plurfmts.cpp
+│       │   │   ├── plurfmts.h
+│       │   │   ├── plurults.cpp
+│       │   │   ├── plurults.h
+│       │   │   ├── pptest.cpp
+│       │   │   ├── pptest.h
+│       │   │   ├── punyref.cpp
+│       │   │   ├── punyref.h
+│       │   │   ├── quantityformattertest.cpp
+│       │   │   ├── rbbiapts.cpp
+│       │   │   ├── rbbiapts.h
+│       │   │   ├── rbbimonkeytest.cpp
+│       │   │   ├── rbbimonkeytest.h
+│       │   │   ├── rbbitst.cpp
+│       │   │   ├── rbbitst.h
+│       │   │   ├── regcoll.cpp
+│       │   │   ├── regcoll.h
+│       │   │   ├── regextst.cpp
+│       │   │   ├── regextst.h
+│       │   │   ├── regiontst.cpp
+│       │   │   ├── regiontst.h
+│       │   │   ├── reldatefmttest.cpp
+│       │   │   ├── reptest.cpp
+│       │   │   ├── reptest.h
+│       │   │   ├── restest.cpp
+│       │   │   ├── restest.h
+│       │   │   ├── restsnew.cpp
+│       │   │   ├── restsnew.h
+│       │   │   ├── scientificnumberformattertest.cpp
+│       │   │   ├── sdtfmtts.cpp
+│       │   │   ├── sdtfmtts.h
+│       │   │   ├── selfmts.cpp
+│       │   │   ├── selfmts.h
+│       │   │   ├── sfwdchit.cpp
+│       │   │   ├── sfwdchit.h
+│       │   │   ├── simpleformattertest.cpp
+│       │   │   ├── simplethread.cpp
+│       │   │   ├── simplethread.h
+│       │   │   ├── srchtest.cpp
+│       │   │   ├── srchtest.h
+│       │   │   ├── ssearch.cpp
+│       │   │   ├── ssearch.h
+│       │   │   ├── static_unisets_test.cpp
+│       │   │   ├── strcase.cpp
+│       │   │   ├── string_segment_test.cpp
+│       │   │   ├── strtest.cpp
+│       │   │   ├── strtest.h
+│       │   │   ├── svccoll.cpp
+│       │   │   ├── svccoll.h
+│       │   │   ├── tchcfmt.cpp
+│       │   │   ├── tchcfmt.h
+│       │   │   ├── testidna.cpp
+│       │   │   ├── testidna.h
+│       │   │   ├── testidn.cpp
+│       │   │   ├── testutil.cpp
+│       │   │   ├── testutil.h
+│       │   │   ├── textfile.cpp
+│       │   │   ├── textfile.h
+│       │   │   ├── tfsmalls.cpp
+│       │   │   ├── tfsmalls.h
+│       │   │   ├── thcoll.cpp
+│       │   │   ├── thcoll.h
+│       │   │   ├── tmsgfmt.cpp
+│       │   │   ├── tmsgfmt.h
+│       │   │   ├── tokiter.cpp
+│       │   │   ├── tokiter.h
+│       │   │   ├── transapi.cpp
+│       │   │   ├── transapi.h
+│       │   │   ├── transrt.cpp
+│       │   │   ├── transrt.h
+│       │   │   ├── transtst.cpp
+│       │   │   ├── transtst.h
+│       │   │   ├── trcoll.cpp
+│       │   │   ├── trcoll.h
+│       │   │   ├── trnserr.cpp
+│       │   │   ├── trnserr.h
+│       │   │   ├── tscoll.cpp
+│       │   │   ├── tscoll.h
+│       │   │   ├── tsdate.cpp
+│       │   │   ├── tsdate.h
+│       │   │   ├── tsdcfmsy.cpp
+│       │   │   ├── tsdcfmsy.h
+│       │   │   ├── tsdtfmsy.cpp
+│       │   │   ├── tsdtfmsy.h
+│       │   │   ├── tsmthred.cpp
+│       │   │   ├── tsmthred.h
+│       │   │   ├── tsnmfmt.cpp
+│       │   │   ├── tsnmfmt.h
+│       │   │   ├── tsputil.cpp
+│       │   │   ├── tsputil.h
+│       │   │   ├── tstnorm.cpp
+│       │   │   ├── tstnorm.h
+│       │   │   ├── tstnrapi.cpp
+│       │   │   ├── tufmtts.cpp
+│       │   │   ├── tzbdtest.cpp
+│       │   │   ├── tzbdtest.h
+│       │   │   ├── tzfmttst.cpp
+│       │   │   ├── tzfmttst.h
+│       │   │   ├── tzoffloc.cpp
+│       │   │   ├── tzoffloc.h
+│       │   │   ├── tzregts.cpp
+│       │   │   ├── tzregts.h
+│       │   │   ├── tzrulets.cpp
+│       │   │   ├── tzrulets.h
+│       │   │   ├── tztest.cpp
+│       │   │   ├── tztest.h
+│       │   │   ├── ucaconf.cpp
+│       │   │   ├── ucaconf.h
+│       │   │   ├── ucdtest.cpp
+│       │   │   ├── ucdtest.h
+│       │   │   ├── ucharstrietest.cpp
+│       │   │   ├── uchar_type_build_test.cpp
+│       │   │   ├── unifiedcachetest.cpp
+│       │   │   ├── units_data_test.cpp
+│       │   │   ├── units_router_test.cpp
+│       │   │   ├── units_test.cpp
+│       │   │   ├── uobjtest.cpp
+│       │   │   ├── uobjtest.h
+│       │   │   ├── usettest.cpp
+│       │   │   ├── usettest.h
+│       │   │   ├── ustrtest.cpp
+│       │   │   ├── ustrtest.h
+│       │   │   ├── uts46test.cpp
+│       │   │   ├── utxttest.cpp
+│       │   │   ├── utxttest.h
+│       │   │   ├── uvectest.cpp
+│       │   │   ├── uvectest.h
+│       │   │   ├── v32test.cpp
+│       │   │   ├── v32test.h
+│       │   │   ├── windttst.cpp
+│       │   │   ├── windttst.h
+│       │   │   ├── winnmtst.cpp
+│       │   │   ├── winnmtst.h
+│       │   │   ├── winutil.cpp
+│       │   │   └── winutil.h
+│       │   ├── iotest
+│       │   │   ├── filetst.c
+│       │   │   ├── iotest.cpp
+│       │   │   ├── iotest.h
+│       │   │   ├── iotest.vcxproj
+│       │   │   ├── iotest.vcxproj.filters
+│       │   │   ├── Makefile.in
+│       │   │   ├── stream.cpp
+│       │   │   ├── strtst.c
+│       │   │   └── trnstst.c
+│       │   ├── letest
+│       │   │   ├── cfonts.cpp
+│       │   │   ├── cfonts.h
+│       │   │   ├── cletest.c
+│       │   │   ├── cletest.sln
+│       │   │   ├── cletest.vcxproj
+│       │   │   ├── cletest.vcxproj.filters
+│       │   │   ├── cmaps.cpp
+│       │   │   ├── cmaps.h
+│       │   │   ├── FontObject.cpp
+│       │   │   ├── FontObject.h
+│       │   │   ├── FontTableCache.cpp
+│       │   │   ├── FontTableCache.h
+│       │   │   ├── gendata.cpp
+│       │   │   ├── gendata.sln
+│       │   │   ├── gendata.vcxproj
+│       │   │   ├── gendata.vcxproj.filters
+│       │   │   ├── gendata.xml
+│       │   │   ├── letest.cpp
+│       │   │   ├── letest.h
+│       │   │   ├── letest.sln
+│       │   │   ├── letest.vcxproj
+│       │   │   ├── letest.vcxproj.filters
+│       │   │   ├── letsutil.cpp
+│       │   │   ├── letsutil.h
+│       │   │   ├── Makefile.in
+│       │   │   ├── PortableFontInstance.cpp
+│       │   │   ├── PortableFontInstance.h
+│       │   │   ├── readme.html
+│       │   │   ├── sfnt.h
+│       │   │   ├── SimpleFontInstance.cpp
+│       │   │   ├── SimpleFontInstance.h
+│       │   │   ├── testdata.cpp
+│       │   │   ├── xmlreader.cpp
+│       │   │   └── xmlreader.h
+│       │   ├── Makefile.in
+│       │   ├── perf
+│       │   │   ├── charperf
+│       │   │   │   ├── charperf.cpp
+│       │   │   │   ├── charperf.h
+│       │   │   │   ├── CharPerf.pl
+│       │   │   │   ├── CharPerf_r.pl
+│       │   │   │   ├── charperf.vcxproj
+│       │   │   │   ├── charperf.vcxproj.filters
+│       │   │   │   └── Makefile.in
+│       │   │   ├── collationperf
+│       │   │   │   ├── collperf.cpp
+│       │   │   │   ├── CollPerf.pl
+│       │   │   │   ├── Makefile.in
+│       │   │   │   └── readme.html
+│       │   │   ├── collperf
+│       │   │   │   ├── collperf.cpp
+│       │   │   │   ├── CollPerf.pl
+│       │   │   │   ├── CollPerf_r.pl
+│       │   │   │   ├── collperf.vcxproj
+│       │   │   │   ├── collperf.vcxproj.filters
+│       │   │   │   └── Makefile.in
+│       │   │   ├── collperf2
+│       │   │   │   ├── collperf2.cpp
+│       │   │   │   ├── CollPerf2_r.pl
+│       │   │   │   ├── collperf2.vcxproj
+│       │   │   │   ├── collperf2.vcxproj.filters
+│       │   │   │   └── Makefile.in
+│       │   │   ├── convperf
+│       │   │   │   ├── convperf_ansi.pl
+│       │   │   │   ├── convperf.cpp
+│       │   │   │   ├── convperf.h
+│       │   │   │   ├── convperf_iml.pl
+│       │   │   │   ├── ConvPerf_r.pl
+│       │   │   │   ├── convperf.vcxproj
+│       │   │   │   ├── convperf.vcxproj.filters
+│       │   │   │   ├── data.h
+│       │   │   │   └── Makefile.in
+│       │   │   ├── DateFmtPerf
+│       │   │   │   ├── breakdata.h
+│       │   │   │   ├── collationdata.h
+│       │   │   │   ├── datedata.h
+│       │   │   │   ├── DateFmtPerf.cpp
+│       │   │   │   ├── DateFmtPerf.h
+│       │   │   │   ├── DateFmtPerf.vcxproj
+│       │   │   │   ├── DateFmtPerf.vcxproj.filters
+│       │   │   │   ├── Makefile.in
+│       │   │   │   └── ReadMe.txt
+│       │   │   ├── dicttrieperf
+│       │   │   │   ├── dicttrieperf.cpp
+│       │   │   │   └── Makefile.in
+│       │   │   ├── howExpensiveIs
+│       │   │   │   ├── howExpensiveIs.cpp
+│       │   │   │   ├── Makefile.in
+│       │   │   │   ├── readme.txt
+│       │   │   │   ├── sieve.cpp
+│       │   │   │   └── sieve.h
+│       │   │   ├── icuperf2report.xsl
+│       │   │   ├── leperf
+│       │   │   │   ├── cfonts.cpp
+│       │   │   │   ├── cfonts.h
+│       │   │   │   ├── cmaps.cpp
+│       │   │   │   ├── cmaps.h
+│       │   │   │   ├── FontObject.cpp
+│       │   │   │   ├── FontObject.h
+│       │   │   │   ├── FontTableCache.cpp
+│       │   │   │   ├── FontTableCache.h
+│       │   │   │   ├── leperf.cpp
+│       │   │   │   ├── Makefile.in
+│       │   │   │   ├── PortableFontInstance.cpp
+│       │   │   │   ├── PortableFontInstance.h
+│       │   │   │   ├── sfnt.h
+│       │   │   │   ├── SimpleFontInstance.cpp
+│       │   │   │   ├── SimpleFontInstance.h
+│       │   │   │   ├── xmlreader.cpp
+│       │   │   │   └── xmlreader.h
+│       │   │   ├── localecanperf
+│       │   │   │   ├── localecanperf.cpp
+│       │   │   │   ├── Makefile.in
+│       │   │   │   └── runTest.sh
+│       │   │   ├── Makefile.in
+│       │   │   ├── normperf
+│       │   │   │   ├── dtfmtrtperf.cpp
+│       │   │   │   ├── dtfmtrtperf.h
+│       │   │   │   ├── dtfmtrtperf.vcxproj
+│       │   │   │   ├── dtfmtrtperf.vcxproj.filters
+│       │   │   │   ├── Makefile.in
+│       │   │   │   ├── normperf.cpp
+│       │   │   │   ├── normperf.h
+│       │   │   │   ├── NormPerf.pl
+│       │   │   │   ├── NormPerf_r.pl
+│       │   │   │   ├── normperf.vcxproj
+│       │   │   │   ├── normperf.vcxproj.filters
+│       │   │   │   └── simplenormperf.cpp
+│       │   │   ├── perf.sln
+│       │   │   ├── perldriver
+│       │   │   │   ├── Common.pl.template
+│       │   │   │   ├── Dataset.pm
+│       │   │   │   ├── Format.pm
+│       │   │   │   ├── Output.pm
+│       │   │   │   └── PerfFramework.pm
+│       │   │   ├── README
+│       │   │   ├── strsrchperf
+│       │   │   │   ├── Makefile.in
+│       │   │   │   ├── strsrchperf.cpp
+│       │   │   │   ├── strsrchperf.h
+│       │   │   │   ├── StrSrchPerf_r.pl
+│       │   │   │   ├── strsrchperf.vcxproj
+│       │   │   │   └── strsrchperf.vcxproj.filters
+│       │   │   ├── ubrkperf
+│       │   │   │   ├── Makefile.in
+│       │   │   │   ├── ubrkperf20.dsp
+│       │   │   │   ├── ubrkperf.cpp
+│       │   │   │   ├── ubrkperf.dsp
+│       │   │   │   ├── ubrkperf.h
+│       │   │   │   ├── UBrkPerf_r.pl
+│       │   │   │   ├── ubrkperf.vcxproj
+│       │   │   │   └── ubrkperf.vcxproj.filters
+│       │   │   ├── ucnvavailperf
+│       │   │   │   ├── ucnvavailperf.cpp
+│       │   │   │   └── ucnvavailperf.vcxproj
+│       │   │   ├── unisetperf
+│       │   │   │   ├── draft
+│       │   │   │   │   ├── bitset.cpp
+│       │   │   │   │   ├── contperf.bat
+│       │   │   │   │   ├── contperf.sh
+│       │   │   │   │   ├── span16perf.bat
+│       │   │   │   │   ├── span16perf.sh
+│       │   │   │   │   ├── span8perf.bat
+│       │   │   │   │   ├── span8perf.sh
+│       │   │   │   │   ├── trieset.cpp
+│       │   │   │   │   └── unicont.h
+│       │   │   │   ├── Makefile.in
+│       │   │   │   ├── unisetperf.cpp
+│       │   │   │   ├── unisetperf.pl
+│       │   │   │   └── unisetperf.vcxproj
+│       │   │   ├── usetperf
+│       │   │   │   ├── bitset.cpp
+│       │   │   │   ├── bitset.h
+│       │   │   │   ├── Makefile.in
+│       │   │   │   ├── usetperf.cpp
+│       │   │   │   ├── UsetPerf.pl
+│       │   │   │   ├── usetperf.vcxproj
+│       │   │   │   └── usetperf.vcxproj.filters
+│       │   │   ├── ustrperf
+│       │   │   │   ├── Makefile.in
+│       │   │   │   ├── stringperf.cpp
+│       │   │   │   ├── stringperf.h
+│       │   │   │   ├── StringPerf.pl
+│       │   │   │   ├── StringPerf_r.pl
+│       │   │   │   ├── stringperf.vcxproj
+│       │   │   │   └── stringperf.vcxproj.filters
+│       │   │   ├── utfperf
+│       │   │   │   ├── Makefile.in
+│       │   │   │   ├── utfperf.cpp
+│       │   │   │   ├── UtfPerf.pl
+│       │   │   │   ├── utfperf.vcxproj
+│       │   │   │   └── utfperf.vcxproj.filters
+│       │   │   └── utrie2perf
+│       │   │       ├── Makefile.in
+│       │   │       ├── utrie2perf.bat
+│       │   │       ├── utrie2perf.cpp
+│       │   │       ├── utrie2perf.sh
+│       │   │       └── utrie2perf.vcxproj
+│       │   ├── testdata
+│       │   │   ├── BidiCharacterTest.txt
+│       │   │   ├── BidiTest.txt
+│       │   │   ├── break_rules
+│       │   │   │   ├── grapheme.txt
+│       │   │   │   ├── line_cj.txt
+│       │   │   │   ├── line_loose_cj.txt
+│       │   │   │   ├── line_loose.txt
+│       │   │   │   ├── line_normal_cj.txt
+│       │   │   │   ├── line_normal.txt
+│       │   │   │   ├── line.txt
+│       │   │   │   ├── README.md
+│       │   │   │   ├── sentence.txt
+│       │   │   │   ├── word_POSIX.txt
+│       │   │   │   └── word.txt
+│       │   │   ├── BUILDRULES.py
+│       │   │   ├── Burmese_graphclust_model5_heavy_Test.txt
+│       │   │   ├── Burmese_graphclust_model5_heavy.txt
+│       │   │   ├── calendar.txt
+│       │   │   ├── casing.txt
+│       │   │   ├── cldr
+│       │   │   │   ├── localeIdentifiers
+│       │   │   │   │   ├── likelySubtags.txt
+│       │   │   │   │   ├── localeCanonicalization.txt
+│       │   │   │   │   ├── localeDisplayName.txt
+│       │   │   │   │   └── _readme.txt
+│       │   │   │   ├── personNameTest
+│       │   │   │   │   ├── af.txt
+│       │   │   │   │   ├── am.txt
+│       │   │   │   │   ├── ar.txt
+│       │   │   │   │   ├── as.txt
+│       │   │   │   │   ├── az.txt
+│       │   │   │   │   ├── be.txt
+│       │   │   │   │   ├── bg.txt
+│       │   │   │   │   ├── bn.txt
+│       │   │   │   │   ├── bs.txt
+│       │   │   │   │   ├── catalog.txt
+│       │   │   │   │   ├── ca.txt
+│       │   │   │   │   ├── chr.txt
+│       │   │   │   │   ├── cs.txt
+│       │   │   │   │   ├── cy.txt
+│       │   │   │   │   ├── da.txt
+│       │   │   │   │   ├── de_CH.txt
+│       │   │   │   │   ├── de.txt
+│       │   │   │   │   ├── dsb.txt
+│       │   │   │   │   ├── el.txt
+│       │   │   │   │   ├── en_AU.txt
+│       │   │   │   │   ├── en_CA.txt
+│       │   │   │   │   ├── en_GB.txt
+│       │   │   │   │   ├── en_IN.txt
+│       │   │   │   │   ├── en.txt
+│       │   │   │   │   ├── es_419.txt
+│       │   │   │   │   ├── es_MX.txt
+│       │   │   │   │   ├── es.txt
+│       │   │   │   │   ├── es_US.txt
+│       │   │   │   │   ├── et.txt
+│       │   │   │   │   ├── eu.txt
+│       │   │   │   │   ├── fa.txt
+│       │   │   │   │   ├── fil.txt
+│       │   │   │   │   ├── fi.txt
+│       │   │   │   │   ├── fr_CA.txt
+│       │   │   │   │   ├── fr.txt
+│       │   │   │   │   ├── ga.txt
+│       │   │   │   │   ├── gd.txt
+│       │   │   │   │   ├── gl.txt
+│       │   │   │   │   ├── gu.txt
+│       │   │   │   │   ├── ha_NE.txt
+│       │   │   │   │   ├── ha.txt
+│       │   │   │   │   ├── _header.txt
+│       │   │   │   │   ├── he.txt
+│       │   │   │   │   ├── hi_Latn.txt
+│       │   │   │   │   ├── hi.txt
+│       │   │   │   │   ├── hr.txt
+│       │   │   │   │   ├── hsb.txt
+│       │   │   │   │   ├── hu.txt
+│       │   │   │   │   ├── hy.txt
+│       │   │   │   │   ├── id.txt
+│       │   │   │   │   ├── ig.txt
+│       │   │   │   │   ├── is.txt
+│       │   │   │   │   ├── it.txt
+│       │   │   │   │   ├── ja.txt
+│       │   │   │   │   ├── jv.txt
+│       │   │   │   │   ├── ka.txt
+│       │   │   │   │   ├── kk.txt
+│       │   │   │   │   ├── km.txt
+│       │   │   │   │   ├── kn.txt
+│       │   │   │   │   ├── kok.txt
+│       │   │   │   │   ├── ko.txt
+│       │   │   │   │   ├── ky.txt
+│       │   │   │   │   ├── lo.txt
+│       │   │   │   │   ├── lt.txt
+│       │   │   │   │   ├── lv.txt
+│       │   │   │   │   ├── mk.txt
+│       │   │   │   │   ├── ml.txt
+│       │   │   │   │   ├── mn.txt
+│       │   │   │   │   ├── mr.txt
+│       │   │   │   │   ├── ms.txt
+│       │   │   │   │   ├── my.txt
+│       │   │   │   │   ├── ne.txt
+│       │   │   │   │   ├── nl.txt
+│       │   │   │   │   ├── nn.txt
+│       │   │   │   │   ├── no.txt
+│       │   │   │   │   ├── or.txt
+│       │   │   │   │   ├── pa.txt
+│       │   │   │   │   ├── pl.txt
+│       │   │   │   │   ├── ps.txt
+│       │   │   │   │   ├── pt_PT.txt
+│       │   │   │   │   ├── pt.txt
+│       │   │   │   │   ├── qu.txt
+│       │   │   │   │   ├── _readme.txt
+│       │   │   │   │   ├── ro.txt
+│       │   │   │   │   ├── ru.txt
+│       │   │   │   │   ├── sc.txt
+│       │   │   │   │   ├── sd.txt
+│       │   │   │   │   ├── si.txt
+│       │   │   │   │   ├── sk.txt
+│       │   │   │   │   ├── sl.txt
+│       │   │   │   │   ├── so.txt
+│       │   │   │   │   ├── sq.txt
+│       │   │   │   │   ├── sr_Cyrl_BA.txt
+│       │   │   │   │   ├── sr_Latn_BA.txt
+│       │   │   │   │   ├── sr_Latn.txt
+│       │   │   │   │   ├── sr.txt
+│       │   │   │   │   ├── sv.txt
+│       │   │   │   │   ├── sw_KE.txt
+│       │   │   │   │   ├── sw.txt
+│       │   │   │   │   ├── ta.txt
+│       │   │   │   │   ├── te.txt
+│       │   │   │   │   ├── tg.txt
+│       │   │   │   │   ├── th.txt
+│       │   │   │   │   ├── ti.txt
+│       │   │   │   │   ├── tk.txt
+│       │   │   │   │   ├── tr.txt
+│       │   │   │   │   ├── uk.txt
+│       │   │   │   │   ├── ur.txt
+│       │   │   │   │   ├── uz.txt
+│       │   │   │   │   ├── vi.txt
+│       │   │   │   │   ├── wo.txt
+│       │   │   │   │   ├── yo_BJ.txt
+│       │   │   │   │   ├── yo.txt
+│       │   │   │   │   ├── yue_Hans.txt
+│       │   │   │   │   ├── yue.txt
+│       │   │   │   │   ├── zh_Hant_HK.txt
+│       │   │   │   │   ├── zh_Hant.txt
+│       │   │   │   │   ├── zh.txt
+│       │   │   │   │   └── zu.txt
+│       │   │   │   └── units
+│       │   │   │       ├── _readme.txt
+│       │   │   │       ├── unitLocalePreferencesTest.txt
+│       │   │   │       ├── unitPreferencesTest.txt
+│       │   │   │       └── unitsTest.txt
+│       │   │   ├── codepointtrie
+│       │   │   │   ├── free-blocks.16.toml
+│       │   │   │   ├── free-blocks.32.toml
+│       │   │   │   ├── free-blocks.8.toml
+│       │   │   │   ├── free-blocks.small16.toml
+│       │   │   │   ├── grow-data.16.toml
+│       │   │   │   ├── grow-data.32.toml
+│       │   │   │   ├── grow-data.8.toml
+│       │   │   │   ├── grow-data.small16.toml
+│       │   │   │   ├── set1.16.toml
+│       │   │   │   ├── set1.32.toml
+│       │   │   │   ├── set1.8.toml
+│       │   │   │   ├── set1.small16.toml
+│       │   │   │   ├── set2-overlap.16.toml
+│       │   │   │   ├── set2-overlap.32.toml
+│       │   │   │   ├── set2-overlap.small16.toml
+│       │   │   │   ├── set3-initial-9.16.toml
+│       │   │   │   ├── set3-initial-9.32.toml
+│       │   │   │   ├── set3-initial-9.8.toml
+│       │   │   │   ├── set3-initial-9.small16.toml
+│       │   │   │   ├── set-empty.16.toml
+│       │   │   │   ├── set-empty.32.toml
+│       │   │   │   ├── set-empty.8.toml
+│       │   │   │   ├── set-empty.small16.toml
+│       │   │   │   ├── set-single-value.16.toml
+│       │   │   │   ├── set-single-value.32.toml
+│       │   │   │   ├── set-single-value.8.toml
+│       │   │   │   ├── set-single-value.small16.toml
+│       │   │   │   ├── short-all-same.8.toml
+│       │   │   │   ├── short-all-same.small16.toml
+│       │   │   │   ├── small0-in-fast.16.toml
+│       │   │   │   ├── small0-in-fast.32.toml
+│       │   │   │   ├── small0-in-fast.8.toml
+│       │   │   │   └── small0-in-fast.small16.toml
+│       │   │   ├── CollationTest_NON_IGNORABLE_SHORT.txt
+│       │   │   ├── CollationTest_SHIFTED_SHORT.txt
+│       │   │   ├── collationtest.txt
+│       │   │   ├── conversion.txt
+│       │   │   ├── ConverterSelectorTestUTF8.txt
+│       │   │   ├── csdetest.xml
+│       │   │   ├── dcfmtest.txt
+│       │   │   ├── default.txt
+│       │   │   ├── emoji-test.txt
+│       │   │   ├── encoded.utf16be
+│       │   │   ├── filters
+│       │   │   │   └── filtertest.txt
+│       │   │   ├── filtertest.txt
+│       │   │   ├── format.txt
+│       │   │   ├── GraphemeBreakTest.txt
+│       │   │   ├── ibm9027.ucm
+│       │   │   ├── icuio.txt
+│       │   │   ├── idna_conf.txt
+│       │   │   ├── idna_rules.txt
+│       │   │   ├── IdnaTestV2.txt
+│       │   │   ├── importtest.bin
+│       │   │   ├── letest.xml
+│       │   │   ├── LineBreakTest.txt
+│       │   │   ├── localeMatcherTest.txt
+│       │   │   ├── Makefile.in
+│       │   │   ├── mc.txt
+│       │   │   ├── metaZones.txt
+│       │   │   ├── nfs4_cis_prep.txt
+│       │   │   ├── nfs4_cs_prep_ci.txt
+│       │   │   ├── nfs4_cs_prep_cs.txt
+│       │   │   ├── nfs4_mixed_prep_p.txt
+│       │   │   ├── nfs4_mixed_prep_s.txt
+│       │   │   ├── NormalizationTest-3.2.0.txt
+│       │   │   ├── NumberFormatTestCases.txt
+│       │   │   ├── numberformattestspecification.txt
+│       │   │   ├── numberpermutationtest.txt
+│       │   │   ├── old_e_testtypes.res
+│       │   │   ├── old_l_testtypes.res
+│       │   │   ├── pkgdata.inc.in
+│       │   │   ├── pkgdataMakefile.in
+│       │   │   ├── ra.txt
+│       │   │   ├── ra.xlf
+│       │   │   ├── rbbitst.txt
+│       │   │   ├── readme.txt
+│       │   │   ├── regextst.txt
+│       │   │   ├── re_tests.txt
+│       │   │   ├── riwords.txt
+│       │   │   ├── root.txt
+│       │   │   ├── SentenceBreakTest.txt
+│       │   │   ├── sh.txt
+│       │   │   ├── sh_YU.txt
+│       │   │   ├── ssearch.xml
+│       │   │   ├── structLocale.txt
+│       │   │   ├── te_IN_REVISED.txt
+│       │   │   ├── te_IN.txt
+│       │   │   ├── test1bmp.ucm
+│       │   │   ├── test1.ucm
+│       │   │   ├── test2.ucm
+│       │   │   ├── test3.ucm
+│       │   │   ├── test4.ucm
+│       │   │   ├── test4x.ucm
+│       │   │   ├── test5.ucm
+│       │   │   ├── testaliases.txt
+│       │   │   ├── testdata.mak
+│       │   │   ├── testempty.txt
+│       │   │   ├── TestFont1.otf
+│       │   │   ├── testnorm.txt
+│       │   │   ├── testtypes.txt
+│       │   │   ├── te.txt
+│       │   │   ├── Thai_codepoints_exclusive_model5_heavy_Test.txt
+│       │   │   ├── Thai_codepoints_exclusive_model5_heavy.txt
+│       │   │   ├── Thai_graphclust_model4_heavy_Test.txt
+│       │   │   ├── Thai_graphclust_model4_heavy.txt
+│       │   │   ├── timezoneTypes.txt
+│       │   │   ├── translit_rules.txt
+│       │   │   ├── uni-text.bin
+│       │   │   ├── windowsZones.txt
+│       │   │   ├── WordBreakTest.txt
+│       │   │   └── zoneinfo64.txt
+│       │   ├── testmap
+│       │   │   ├── Makefile.in
+│       │   │   ├── readme.txt
+│       │   │   ├── testmap.c
+│       │   │   └── testmap.dsp
+│       │   └── thaitest
+│       │       ├── Makefile.in
+│       │       ├── space.txt
+│       │       ├── thaitest.cpp
+│       │       └── thaitest.dsp
+│       └── tools
+│           ├── ctestfw
+│           │   ├── ctest.c
+│           │   ├── ctestfw.vcxproj
+│           │   ├── ctestfw.vcxproj.filters
+│           │   ├── datamap.cpp
+│           │   ├── Makefile.in
+│           │   ├── sources.txt
+│           │   ├── testdata.cpp
+│           │   ├── tstdtmod.cpp
+│           │   ├── ucln_ct.c
+│           │   ├── unicode
+│           │   │   ├── ctest.h
+│           │   │   ├── datamap.h
+│           │   │   ├── testdata.h
+│           │   │   ├── testlog.h
+│           │   │   ├── testtype.h
+│           │   │   ├── tstdtmod.h
+│           │   │   ├── uperf.h
+│           │   │   └── utimer.h
+│           │   └── uperf.cpp
+│           ├── escapesrc
+│           │   ├── cptbl.h
+│           │   ├── escapesrc.cpp
+│           │   ├── expect-simple.cpp
+│           │   ├── Makefile.in
+│           │   ├── tblgen.cpp
+│           │   ├── test-nochange.cpp
+│           │   └── test-simple.cpp
+│           ├── genbrk
+│           │   ├── genbrk.1.in
+│           │   ├── genbrk.cpp
+│           │   ├── genbrk.vcxproj
+│           │   ├── genbrk.vcxproj.filters
+│           │   ├── Makefile.in
+│           │   └── sources.txt
+│           ├── genccode
+│           │   ├── genccode.8.in
+│           │   ├── genccode.c
+│           │   ├── genccode.vcxproj
+│           │   ├── genccode.vcxproj.filters
+│           │   ├── Makefile.in
+│           │   └── sources.txt
+│           ├── gencfu
+│           │   ├── gencfu.1.in
+│           │   ├── gencfu.cpp
+│           │   ├── gencfu.vcxproj
+│           │   ├── gencfu.vcxproj.filters
+│           │   ├── Makefile.in
+│           │   └── sources.txt
+│           ├── gencmn
+│           │   ├── gencmn.8.in
+│           │   ├── gencmn.c
+│           │   ├── gencmn.vcxproj
+│           │   ├── gencmn.vcxproj.filters
+│           │   ├── Makefile.in
+│           │   └── sources.txt
+│           ├── gencnval
+│           │   ├── gencnval.1.in
+│           │   ├── gencnval.c
+│           │   ├── gencnval.vcxproj
+│           │   ├── gencnval.vcxproj.filters
+│           │   ├── Makefile.in
+│           │   └── sources.txt
+│           ├── gencolusb
+│           │   ├── extract_unsafe_backwards.cpp
+│           │   ├── Makefile
+│           │   ├── README.md
+│           │   └── verify_uset.cpp
+│           ├── gendict
+│           │   ├── gendict.1.in
+│           │   ├── gendict.cpp
+│           │   ├── gendict.vcxproj
+│           │   ├── gendict.vcxproj.filters
+│           │   ├── Makefile.in
+│           │   └── sources.txt
+│           ├── gennorm2
+│           │   ├── BUILD.bazel
+│           │   ├── extradata.cpp
+│           │   ├── extradata.h
+│           │   ├── gennorm2.cpp
+│           │   ├── gennorm2.vcxproj
+│           │   ├── Makefile.in
+│           │   ├── n2builder.cpp
+│           │   ├── n2builder.h
+│           │   ├── norms.cpp
+│           │   ├── norms.h
+│           │   └── sources.txt
+│           ├── genrb
+│           │   ├── derb.1.in
+│           │   ├── derb.cpp
+│           │   ├── derb.vcxproj
+│           │   ├── derb.vcxproj.filters
+│           │   ├── errmsg.c
+│           │   ├── errmsg.h
+│           │   ├── filterrb.cpp
+│           │   ├── filterrb.h
+│           │   ├── genrb.1.in
+│           │   ├── genrb.cpp
+│           │   ├── genrb.h
+│           │   ├── genrb.vcxproj
+│           │   ├── genrb.vcxproj.filters
+│           │   ├── Makefile.in
+│           │   ├── parse.cpp
+│           │   ├── parse.h
+│           │   ├── prscmnts.cpp
+│           │   ├── prscmnts.h
+│           │   ├── rbutil.c
+│           │   ├── rbutil.h
+│           │   ├── read.c
+│           │   ├── read.h
+│           │   ├── reslist.cpp
+│           │   ├── reslist.h
+│           │   ├── rle.c
+│           │   ├── rle.h
+│           │   ├── sources.txt
+│           │   ├── ustr.c
+│           │   ├── ustr.h
+│           │   ├── wrtjava.cpp
+│           │   └── wrtxml.cpp
+│           ├── genren
+│           │   ├── genren.pl
+│           │   ├── Makefile
+│           │   └── README
+│           ├── gensprep
+│           │   ├── filterRFC3454.pl
+│           │   ├── gensprep.8.in
+│           │   ├── gensprep.c
+│           │   ├── gensprep.h
+│           │   ├── gensprep.vcxproj
+│           │   ├── gensprep.vcxproj.filters
+│           │   ├── Makefile.in
+│           │   ├── sources.txt
+│           │   └── store.c
+│           ├── gentest
+│           │   ├── genres32.c
+│           │   ├── gentest.c
+│           │   ├── gentest.h
+│           │   ├── gentest.vcxproj
+│           │   ├── gentest.vcxproj.filters
+│           │   ├── Makefile.in
+│           │   └── sources.txt
+│           ├── icuexportdata
+│           │   ├── icuexportdata.1.in
+│           │   ├── icuexportdata.cpp
+│           │   ├── icuexportdata.vcxproj
+│           │   ├── icuexportdata.vcxproj.filters
+│           │   ├── Makefile.in
+│           │   └── sources.txt
+│           ├── icuinfo
+│           │   ├── icuinfo.cpp
+│           │   ├── icuinfo.vcxproj
+│           │   ├── icuplugins_windows_sample.txt
+│           │   ├── Makefile.in
+│           │   ├── plugin_sources.txt
+│           │   ├── sources.txt
+│           │   ├── testplug.c
+│           │   ├── testplug.vcxproj
+│           │   └── testplug.vcxproj.filters
+│           ├── icupkg
+│           │   ├── icupkg.8.in
+│           │   ├── icupkg.cpp
+│           │   ├── icupkg.vcxproj
+│           │   ├── Makefile.in
+│           │   └── sources.txt
+│           ├── icuswap
+│           │   ├── icuswap.cpp
+│           │   ├── icuswap.vcxproj
+│           │   ├── Makefile.in
+│           │   └── sources.txt
+│           ├── makeconv
+│           │   ├── gencnvex.c
+│           │   ├── genmbcs.cpp
+│           │   ├── genmbcs.h
+│           │   ├── makeconv.1.in
+│           │   ├── makeconv.cpp
+│           │   ├── makeconv.h
+│           │   ├── makeconv.vcxproj
+│           │   ├── makeconv.vcxproj.filters
+│           │   ├── Makefile.in
+│           │   ├── sources.txt
+│           │   └── ucnvstat.c
+│           ├── Makefile.in
+│           ├── memcheck
+│           │   └── ICUMemCheck.pl
+│           ├── pkgdata
+│           │   ├── Makefile.in
+│           │   ├── pkgdata.1.in
+│           │   ├── pkgdata.cpp
+│           │   ├── pkgdata.vcxproj
+│           │   ├── pkgdata.vcxproj.filters
+│           │   ├── pkgtypes.c
+│           │   ├── pkgtypes.h
+│           │   └── sources.txt
+│           ├── toolutil
+│           │   ├── BUILD.bazel
+│           │   ├── collationinfo.cpp
+│           │   ├── collationinfo.h
+│           │   ├── dbgutil.cpp
+│           │   ├── dbgutil.h
+│           │   ├── denseranges.cpp
+│           │   ├── denseranges.h
+│           │   ├── filestrm.cpp
+│           │   ├── filestrm.h
+│           │   ├── filetools.cpp
+│           │   ├── filetools.h
+│           │   ├── flagparser.cpp
+│           │   ├── flagparser.h
+│           │   ├── Makefile.in
+│           │   ├── package.cpp
+│           │   ├── package.h
+│           │   ├── pkg_genc.cpp
+│           │   ├── pkg_genc.h
+│           │   ├── pkg_gencmn.cpp
+│           │   ├── pkg_gencmn.h
+│           │   ├── pkg_icu.cpp
+│           │   ├── pkg_icu.h
+│           │   ├── pkg_imp.h
+│           │   ├── pkgitems.cpp
+│           │   ├── ppucd.cpp
+│           │   ├── ppucd.h
+│           │   ├── sources.txt
+│           │   ├── swapimpl.cpp
+│           │   ├── swapimpl.h
+│           │   ├── toolutil.cpp
+│           │   ├── toolutil.h
+│           │   ├── toolutil.vcxproj
+│           │   ├── ucbuf.cpp
+│           │   ├── ucbuf.h
+│           │   ├── ucln_tu.cpp
+│           │   ├── ucm.cpp
+│           │   ├── ucm.h
+│           │   ├── ucmstate.cpp
+│           │   ├── udbgutil.cpp
+│           │   ├── udbgutil.h
+│           │   ├── unewdata.cpp
+│           │   ├── unewdata.h
+│           │   ├── uoptions.cpp
+│           │   ├── uoptions.h
+│           │   ├── uparse.cpp
+│           │   ├── uparse.h
+│           │   ├── writesrc.cpp
+│           │   ├── writesrc.h
+│           │   ├── xmlparser.cpp
+│           │   └── xmlparser.h
+│           └── tzcode
+│               ├── asctime.c
+│               ├── ialloc.c
+│               ├── icuregions
+│               ├── icuzdump.cpp
+│               ├── icuzdump.vcxproj
+│               ├── icuzdump.vcxproj.filters
+│               ├── icuzones
+│               ├── localtime.c
+│               ├── Makefile.in
+│               ├── private.h
+│               ├── readme.txt
+│               ├── scheck.c
+│               ├── tz2icu.cpp
+│               ├── tz2icu.h
+│               ├── tzfile.h
+│               ├── tzselect.ksh
+│               ├── zdump.c
+│               └── zic.c
+├── ICU-22132.patch -> /home/felix/packages/lib32-icu/ICU-22132.patch
+├── icu4c-75_1-src.tgz -> /home/felix/packages/lib32-icu/icu4c-75_1-src.tgz
+├── icu4c-75_1-src.tgz.asc -> /home/felix/packages/lib32-icu/icu4c-75_1-src.tgz.asc
+└── LICENSE -> /home/felix/packages/lib32-icu/LICENSE
+
+130 directories, 2476 files

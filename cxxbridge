@@ -1,0 +1,435 @@
+src
+├── Cargo.lock -> /home/felix/packages/cxxbridge/Cargo.lock
+├── cxx-1.0.128
+│   ├── book
+│   │   ├── book.toml
+│   │   ├── build.js
+│   │   ├── build.sh
+│   │   ├── css
+│   │   │   └── cxx.css
+│   │   ├── diagram
+│   │   │   ├── Makefile
+│   │   │   └── overview.tex
+│   │   ├── package.json
+│   │   ├── package-lock.json
+│   │   ├── README.md
+│   │   ├── src
+│   │   │   ├── 404.md
+│   │   │   ├── async.md
+│   │   │   ├── attributes.md
+│   │   │   ├── binding
+│   │   │   │   ├── box.md
+│   │   │   │   ├── cxxstring.md
+│   │   │   │   ├── cxxvector.md
+│   │   │   │   ├── fn.md
+│   │   │   │   ├── rawptr.md
+│   │   │   │   ├── result.md
+│   │   │   │   ├── sharedptr.md
+│   │   │   │   ├── slice.md
+│   │   │   │   ├── string.md
+│   │   │   │   ├── str.md
+│   │   │   │   ├── uniqueptr.md
+│   │   │   │   └── vec.md
+│   │   │   ├── bindings.md
+│   │   │   ├── build
+│   │   │   │   ├── bazel.md
+│   │   │   │   ├── cargo.md
+│   │   │   │   ├── cmake.md
+│   │   │   │   └── other.md
+│   │   │   ├── building.md
+│   │   │   ├── concepts.md
+│   │   │   ├── context.md
+│   │   │   ├── cxx.png
+│   │   │   ├── extern-c++.md
+│   │   │   ├── extern-rust.md
+│   │   │   ├── index.md
+│   │   │   ├── overview.svg
+│   │   │   ├── reference.md
+│   │   │   ├── shared.md
+│   │   │   ├── SUMMARY.md
+│   │   │   └── tutorial.md
+│   │   └── theme
+│   │       └── head.hbs
+│   ├── BUCK
+│   ├── BUILD
+│   ├── build.rs
+│   ├── Cargo.toml
+│   ├── compile_flags.txt
+│   ├── demo
+│   │   ├── BUCK
+│   │   ├── BUILD
+│   │   ├── build.rs
+│   │   ├── Cargo.toml
+│   │   ├── include
+│   │   │   └── blobstore.h
+│   │   └── src
+│   │       ├── blobstore.cc
+│   │       └── main.rs
+│   ├── flags
+│   │   ├── Cargo.toml
+│   │   ├── LICENSE-APACHE -> ../LICENSE-APACHE
+│   │   ├── LICENSE-MIT -> ../LICENSE-MIT
+│   │   └── src
+│   │       ├── impl.rs
+│   │       └── lib.rs
+│   ├── gen
+│   │   ├── build
+│   │   │   ├── build.rs
+│   │   │   ├── Cargo.toml
+│   │   │   ├── LICENSE-APACHE -> ../../LICENSE-APACHE
+│   │   │   ├── LICENSE-MIT -> ../../LICENSE-MIT
+│   │   │   └── src
+│   │   │       ├── cargo.rs
+│   │   │       ├── cfg.rs
+│   │   │       ├── deps.rs
+│   │   │       ├── error.rs
+│   │   │       ├── gen -> ../../src
+│   │   │       ├── intern.rs
+│   │   │       ├── lib.rs
+│   │   │       ├── out.rs
+│   │   │       ├── paths.rs
+│   │   │       ├── syntax -> ../../../syntax
+│   │   │       ├── target.rs
+│   │   │       └── vec.rs
+│   │   ├── cmd
+│   │   │   ├── build.rs
+│   │   │   ├── Cargo.toml
+│   │   │   ├── LICENSE-APACHE -> ../../LICENSE-APACHE
+│   │   │   ├── LICENSE-MIT -> ../../LICENSE-MIT
+│   │   │   └── src
+│   │   │       ├── app.rs
+│   │   │       ├── cfg.rs
+│   │   │       ├── gen -> ../../src
+│   │   │       ├── main.rs
+│   │   │       ├── output.rs
+│   │   │       ├── syntax -> ../../../syntax
+│   │   │       └── test.rs
+│   │   ├── lib
+│   │   │   ├── build.rs
+│   │   │   ├── Cargo.toml
+│   │   │   ├── LICENSE-APACHE -> ../../LICENSE-APACHE
+│   │   │   ├── LICENSE-MIT -> ../../LICENSE-MIT
+│   │   │   ├── src
+│   │   │   │   ├── error.rs
+│   │   │   │   ├── gen -> ../../src
+│   │   │   │   ├── lib.rs
+│   │   │   │   └── syntax -> ../../../syntax
+│   │   │   └── tests
+│   │   │       └── test.rs
+│   │   ├── README.md
+│   │   └── src
+│   │       ├── block.rs
+│   │       ├── builtin.rs
+│   │       ├── cfg.rs
+│   │       ├── check.rs
+│   │       ├── error.rs
+│   │       ├── file.rs
+│   │       ├── fs.rs
+│   │       ├── ifndef.rs
+│   │       ├── include -> ../../include
+│   │       ├── include.rs
+│   │       ├── mod.rs
+│   │       ├── namespace.rs
+│   │       ├── names.rs
+│   │       ├── nested.rs
+│   │       ├── out.rs
+│   │       └── write.rs
+│   ├── include
+│   │   └── cxx.h
+│   ├── LICENSE-APACHE
+│   ├── LICENSE-MIT
+│   ├── macro
+│   │   ├── build.rs
+│   │   ├── Cargo.toml
+│   │   ├── LICENSE-APACHE -> ../LICENSE-APACHE
+│   │   ├── LICENSE-MIT -> ../LICENSE-MIT
+│   │   ├── README.md
+│   │   └── src
+│   │       ├── clang.rs
+│   │       ├── derive.rs
+│   │       ├── expand.rs
+│   │       ├── generics.rs
+│   │       ├── lib.rs
+│   │       ├── load.rs
+│   │       ├── syntax -> ../../syntax/
+│   │       ├── tokens.rs
+│   │       └── type_id.rs
+│   ├── MODULE.bazel
+│   ├── MODULE.bazel.lock
+│   ├── README.md
+│   ├── reindeer.toml
+│   ├── rust-toolchain.toml
+│   ├── src
+│   │   ├── cxx.cc
+│   │   ├── cxx_string.rs
+│   │   ├── cxx_vector.rs
+│   │   ├── exception.rs
+│   │   ├── extern_type.rs
+│   │   ├── fmt.rs
+│   │   ├── function.rs
+│   │   ├── hash.rs
+│   │   ├── lib.rs
+│   │   ├── lossy.rs
+│   │   ├── macros
+│   │   │   ├── assert.rs
+│   │   │   └── mod.rs
+│   │   ├── memory.rs
+│   │   ├── opaque.rs
+│   │   ├── result.rs
+│   │   ├── rust_slice.rs
+│   │   ├── rust_string.rs
+│   │   ├── rust_str.rs
+│   │   ├── rust_type.rs
+│   │   ├── rust_vec.rs
+│   │   ├── shared_ptr.rs
+│   │   ├── sip.rs
+│   │   ├── symbols
+│   │   │   ├── exception.rs
+│   │   │   ├── mod.rs
+│   │   │   ├── rust_slice.rs
+│   │   │   ├── rust_string.rs
+│   │   │   ├── rust_str.rs
+│   │   │   └── rust_vec.rs
+│   │   ├── type_id.rs
+│   │   ├── unique_ptr.rs
+│   │   ├── unwind.rs
+│   │   ├── vector.rs
+│   │   └── weak_ptr.rs
+│   ├── syntax
+│   │   ├── atom.rs
+│   │   ├── attrs.rs
+│   │   ├── cfg.rs
+│   │   ├── check.rs
+│   │   ├── derive.rs
+│   │   ├── discriminant.rs
+│   │   ├── doc.rs
+│   │   ├── error.rs
+│   │   ├── file.rs
+│   │   ├── ident.rs
+│   │   ├── impls.rs
+│   │   ├── improper.rs
+│   │   ├── instantiate.rs
+│   │   ├── mangle.rs
+│   │   ├── map.rs
+│   │   ├── mod.rs
+│   │   ├── namespace.rs
+│   │   ├── names.rs
+│   │   ├── parse.rs
+│   │   ├── pod.rs
+│   │   ├── qualified.rs
+│   │   ├── report.rs
+│   │   ├── resolve.rs
+│   │   ├── set.rs
+│   │   ├── symbol.rs
+│   │   ├── tokens.rs
+│   │   ├── toposort.rs
+│   │   ├── trivial.rs
+│   │   ├── types.rs
+│   │   └── visit.rs
+│   ├── tests
+│   │   ├── BUCK
+│   │   ├── BUILD
+│   │   ├── compiletest.rs
+│   │   ├── cxx_gen.rs
+│   │   ├── cxx_string.rs
+│   │   ├── cxx_vector.rs
+│   │   ├── ffi
+│   │   │   ├── build.rs
+│   │   │   ├── Cargo.toml
+│   │   │   ├── cast.rs
+│   │   │   ├── lib.rs
+│   │   │   ├── module.rs
+│   │   │   ├── tests.cc
+│   │   │   └── tests.h
+│   │   ├── test.rs
+│   │   ├── ui
+│   │   │   ├── array_len_expr.rs
+│   │   │   ├── array_len_expr.stderr
+│   │   │   ├── array_len_suffix.rs
+│   │   │   ├── array_len_suffix.stderr
+│   │   │   ├── async_fn.rs
+│   │   │   ├── async_fn.stderr
+│   │   │   ├── bad_explicit_impl.rs
+│   │   │   ├── bad_explicit_impl.stderr
+│   │   │   ├── by_value_not_supported.rs
+│   │   │   ├── by_value_not_supported.stderr
+│   │   │   ├── const_fn.rs
+│   │   │   ├── const_fn.stderr
+│   │   │   ├── data_enums.rs
+│   │   │   ├── data_enums.stderr
+│   │   │   ├── deny_elided_lifetimes.rs
+│   │   │   ├── deny_elided_lifetimes.stderr
+│   │   │   ├── deny_missing_docs.rs
+│   │   │   ├── deny_missing_docs.stderr
+│   │   │   ├── derive_duplicate.rs
+│   │   │   ├── derive_duplicate.stderr
+│   │   │   ├── derive_noncopy.rs
+│   │   │   ├── derive_noncopy.stderr
+│   │   │   ├── drop_shared.rs
+│   │   │   ├── drop_shared.stderr
+│   │   │   ├── empty_enum.rs
+│   │   │   ├── empty_enum.stderr
+│   │   │   ├── empty_struct.rs
+│   │   │   ├── empty_struct.stderr
+│   │   │   ├── enum_inconsistent.rs
+│   │   │   ├── enum_inconsistent.stderr
+│   │   │   ├── enum_match_without_wildcard.rs
+│   │   │   ├── enum_match_without_wildcard.stderr
+│   │   │   ├── enum_out_of_bounds.rs
+│   │   │   ├── enum_out_of_bounds.stderr
+│   │   │   ├── enum_overflows.rs
+│   │   │   ├── enum_overflows.stderr
+│   │   │   ├── enum_receiver.rs
+│   │   │   ├── enum_receiver.stderr
+│   │   │   ├── enum_unsatisfiable.rs
+│   │   │   ├── enum_unsatisfiable.stderr
+│   │   │   ├── expected_named.rs
+│   │   │   ├── expected_named.stderr
+│   │   │   ├── extern_fn_abi.rs
+│   │   │   ├── extern_fn_abi.stderr
+│   │   │   ├── extern_type_bound.rs
+│   │   │   ├── extern_type_bound.stderr
+│   │   │   ├── extern_type_generic.rs
+│   │   │   ├── extern_type_generic.stderr
+│   │   │   ├── extern_type_lifetime_bound.rs
+│   │   │   ├── extern_type_lifetime_bound.stderr
+│   │   │   ├── fallible_fnptr.rs
+│   │   │   ├── fallible_fnptr.stderr
+│   │   │   ├── function_with_body.rs
+│   │   │   ├── function_with_body.stderr
+│   │   │   ├── generic_enum.rs
+│   │   │   ├── generic_enum.stderr
+│   │   │   ├── impl_trait_for_type.rs
+│   │   │   ├── impl_trait_for_type.stderr
+│   │   │   ├── include.rs
+│   │   │   ├── include.stderr
+│   │   │   ├── lifetime_extern_cxx.rs
+│   │   │   ├── lifetime_extern_cxx.stderr
+│   │   │   ├── lifetime_extern_rust.rs
+│   │   │   ├── lifetime_extern_rust.stderr
+│   │   │   ├── missing_unsafe.rs
+│   │   │   ├── missing_unsafe.stderr
+│   │   │   ├── multiple_parse_error.rs
+│   │   │   ├── multiple_parse_error.stderr
+│   │   │   ├── mut_return.rs
+│   │   │   ├── mut_return.stderr
+│   │   │   ├── nonempty_impl_block.rs
+│   │   │   ├── nonempty_impl_block.stderr
+│   │   │   ├── non_integer_discriminant_enum.rs
+│   │   │   ├── non_integer_discriminant_enum.stderr
+│   │   │   ├── nonlocal_rust_type.rs
+│   │   │   ├── nonlocal_rust_type.stderr
+│   │   │   ├── opaque_autotraits.rs
+│   │   │   ├── opaque_autotraits.stderr
+│   │   │   ├── opaque_not_sized.rs
+│   │   │   ├── opaque_not_sized.stderr
+│   │   │   ├── pin_mut_opaque.rs
+│   │   │   ├── pin_mut_opaque.stderr
+│   │   │   ├── ptr_in_fnptr.rs
+│   │   │   ├── ptr_in_fnptr.stderr
+│   │   │   ├── ptr_missing_unsafe.rs
+│   │   │   ├── ptr_missing_unsafe.stderr
+│   │   │   ├── ptr_no_const_mut.rs
+│   │   │   ├── ptr_no_const_mut.stderr
+│   │   │   ├── ptr_unsupported.rs
+│   │   │   ├── ptr_unsupported.stderr
+│   │   │   ├── raw_ident_namespace.rs
+│   │   │   ├── raw_ident_namespace.stderr
+│   │   │   ├── reference_to_reference.rs
+│   │   │   ├── reference_to_reference.stderr
+│   │   │   ├── reserved_lifetime.rs
+│   │   │   ├── reserved_lifetime.stderr
+│   │   │   ├── reserved_name.rs
+│   │   │   ├── reserved_name.stderr
+│   │   │   ├── result_no_display.rs
+│   │   │   ├── result_no_display.stderr
+│   │   │   ├── root_namespace.rs
+│   │   │   ├── root_namespace.stderr
+│   │   │   ├── rust_pinned.rs
+│   │   │   ├── rust_pinned.stderr
+│   │   │   ├── slice_of_type_alias.rs
+│   │   │   ├── slice_of_type_alias.stderr
+│   │   │   ├── slice_unsupported.rs
+│   │   │   ├── slice_unsupported.stderr
+│   │   │   ├── struct_cycle.rs
+│   │   │   ├── struct_cycle.stderr
+│   │   │   ├── type_alias_rust.rs
+│   │   │   ├── type_alias_rust.stderr
+│   │   │   ├── unique_ptr_as_mut.rs
+│   │   │   ├── unique_ptr_as_mut.stderr
+│   │   │   ├── unique_ptr_to_opaque.rs
+│   │   │   ├── unique_ptr_to_opaque.stderr
+│   │   │   ├── unique_ptr_twice.rs
+│   │   │   ├── unique_ptr_twice.stderr
+│   │   │   ├── unnamed_receiver.rs
+│   │   │   ├── unnamed_receiver.stderr
+│   │   │   ├── unpin_impl.rs
+│   │   │   ├── unpin_impl.stderr
+│   │   │   ├── unrecognized_receiver.rs
+│   │   │   ├── unrecognized_receiver.stderr
+│   │   │   ├── unsupported_elided.rs
+│   │   │   ├── unsupported_elided.stderr
+│   │   │   ├── vec_opaque.rs
+│   │   │   ├── vec_opaque.stderr
+│   │   │   ├── vector_autotraits.rs
+│   │   │   ├── vector_autotraits.stderr
+│   │   │   ├── wrong_type_id.rs
+│   │   │   └── wrong_type_id.stderr
+│   │   └── unique_ptr.rs
+│   ├── third-party
+│   │   ├── bazel
+│   │   │   ├── alias_rules.bzl
+│   │   │   ├── BUILD.anstyle-1.0.8.bazel
+│   │   │   ├── BUILD.bazel
+│   │   │   ├── BUILD.cc-1.1.15.bazel
+│   │   │   ├── BUILD.clap-4.5.16.bazel
+│   │   │   ├── BUILD.clap_builder-4.5.15.bazel
+│   │   │   ├── BUILD.clap_lex-0.7.2.bazel
+│   │   │   ├── BUILD.codespan-reporting-0.11.1.bazel
+│   │   │   ├── BUILD.once_cell-1.19.0.bazel
+│   │   │   ├── BUILD.proc-macro2-1.0.86.bazel
+│   │   │   ├── BUILD.quote-1.0.37.bazel
+│   │   │   ├── BUILD.scratch-1.0.7.bazel
+│   │   │   ├── BUILD.shlex-1.3.0.bazel
+│   │   │   ├── BUILD.syn-2.0.76.bazel
+│   │   │   ├── BUILD.termcolor-1.4.1.bazel
+│   │   │   ├── BUILD.unicode-ident-1.0.12.bazel
+│   │   │   ├── BUILD.unicode-width-0.1.13.bazel
+│   │   │   ├── BUILD.winapi-util-0.1.9.bazel
+│   │   │   ├── BUILD.windows_aarch64_gnullvm-0.52.6.bazel
+│   │   │   ├── BUILD.windows_aarch64_msvc-0.52.6.bazel
+│   │   │   ├── BUILD.windows_i686_gnu-0.52.6.bazel
+│   │   │   ├── BUILD.windows_i686_gnullvm-0.52.6.bazel
+│   │   │   ├── BUILD.windows_i686_msvc-0.52.6.bazel
+│   │   │   ├── BUILD.windows-sys-0.59.0.bazel
+│   │   │   ├── BUILD.windows-targets-0.52.6.bazel
+│   │   │   ├── BUILD.windows_x86_64_gnu-0.52.6.bazel
+│   │   │   ├── BUILD.windows_x86_64_gnullvm-0.52.6.bazel
+│   │   │   ├── BUILD.windows_x86_64_msvc-0.52.6.bazel
+│   │   │   ├── crates.bzl
+│   │   │   └── defs.bzl
+│   │   ├── BUCK
+│   │   ├── BUILD
+│   │   ├── Cargo.lock
+│   │   ├── Cargo.toml
+│   │   └── fixups
+│   │       ├── proc-macro2
+│   │       │   └── fixups.toml
+│   │       ├── scratch
+│   │       │   └── fixups.toml
+│   │       └── windows-targets
+│   │           └── fixups.toml
+│   └── tools
+│       ├── bazel
+│       │   ├── BUILD
+│       │   ├── extension.bzl
+│       │   └── rust_cxx_bridge.bzl
+│       ├── buck
+│       │   ├── rust_cxx_bridge.bzl
+│       │   └── toolchains
+│       │       └── BUCK
+│       └── cargo
+│           └── build.rs
+└── cxxbridge-1.0.128.tar.gz -> /home/felix/packages/cxxbridge/cxxbridge-1.0.128.tar.gz
+
+52 directories, 381 files

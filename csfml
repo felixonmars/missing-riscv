@@ -1,0 +1,270 @@
+src
+├── CSFML-2.6.1
+│   ├── cmake
+│   │   ├── CompilerWarnings.cmake
+│   │   ├── Config.cmake
+│   │   └── Macros.cmake
+│   ├── CMakeLists.txt
+│   ├── doc
+│   │   ├── CMakeLists.txt
+│   │   ├── doxyfile.in
+│   │   ├── doxygen.css
+│   │   ├── footer.html
+│   │   ├── header.html.in
+│   │   ├── mainpage.hpp
+│   │   └── searchOverrides.css
+│   ├── examples
+│   │   ├── CMakeLists.txt
+│   │   ├── doodle_pop.ogg
+│   │   ├── example.c
+│   │   ├── sfml_logo.png
+│   │   └── tuffy.ttf
+│   ├── include
+│   │   └── SFML
+│   │       ├── Audio
+│   │       │   ├── Export.h
+│   │       │   ├── Listener.h
+│   │       │   ├── Music.h
+│   │       │   ├── SoundBuffer.h
+│   │       │   ├── SoundBufferRecorder.h
+│   │       │   ├── Sound.h
+│   │       │   ├── SoundRecorder.h
+│   │       │   ├── SoundStatus.h
+│   │       │   ├── SoundStream.h
+│   │       │   └── Types.h
+│   │       ├── Audio.h
+│   │       ├── Config.h
+│   │       ├── GPUPreference.h
+│   │       ├── Graphics
+│   │       │   ├── BlendMode.h
+│   │       │   ├── CircleShape.h
+│   │       │   ├── Color.h
+│   │       │   ├── ConvexShape.h
+│   │       │   ├── Export.h
+│   │       │   ├── Font.h
+│   │       │   ├── FontInfo.h
+│   │       │   ├── Glsl.h
+│   │       │   ├── Glyph.h
+│   │       │   ├── Image.h
+│   │       │   ├── PrimitiveType.h
+│   │       │   ├── RectangleShape.h
+│   │       │   ├── Rect.h
+│   │       │   ├── RenderStates.h
+│   │       │   ├── RenderTexture.h
+│   │       │   ├── RenderWindow.h
+│   │       │   ├── Shader.h
+│   │       │   ├── Shape.h
+│   │       │   ├── Sprite.h
+│   │       │   ├── Text.h
+│   │       │   ├── Texture.h
+│   │       │   ├── Transformable.h
+│   │       │   ├── Transform.h
+│   │       │   ├── Types.h
+│   │       │   ├── VertexArray.h
+│   │       │   ├── VertexBuffer.h
+│   │       │   ├── Vertex.h
+│   │       │   └── View.h
+│   │       ├── Graphics.h
+│   │       ├── Network
+│   │       │   ├── Export.h
+│   │       │   ├── Ftp.h
+│   │       │   ├── Http.h
+│   │       │   ├── IpAddress.h
+│   │       │   ├── Packet.h
+│   │       │   ├── SocketSelector.h
+│   │       │   ├── SocketStatus.h
+│   │       │   ├── TcpListener.h
+│   │       │   ├── TcpSocket.h
+│   │       │   ├── Types.h
+│   │       │   └── UdpSocket.h
+│   │       ├── Network.h
+│   │       ├── OpenGL.h
+│   │       ├── System
+│   │       │   ├── Alloc.h
+│   │       │   ├── Buffer.h
+│   │       │   ├── Clock.h
+│   │       │   ├── Export.h
+│   │       │   ├── InputStream.h
+│   │       │   ├── Mutex.h
+│   │       │   ├── Sleep.h
+│   │       │   ├── Thread.h
+│   │       │   ├── Time.h
+│   │       │   ├── Types.h
+│   │       │   ├── Vector2.h
+│   │       │   └── Vector3.h
+│   │       ├── System.h
+│   │       ├── Window
+│   │       │   ├── Clipboard.h
+│   │       │   ├── Context.h
+│   │       │   ├── Cursor.h
+│   │       │   ├── Event.h
+│   │       │   ├── Export.h
+│   │       │   ├── Joystick.h
+│   │       │   ├── JoystickIdentification.h
+│   │       │   ├── Keyboard.h
+│   │       │   ├── Mouse.h
+│   │       │   ├── Sensor.h
+│   │       │   ├── Touch.h
+│   │       │   ├── Types.h
+│   │       │   ├── VideoMode.h
+│   │       │   ├── Vulkan.h
+│   │       │   ├── WindowBase.h
+│   │       │   ├── Window.h
+│   │       │   └── WindowHandle.h
+│   │       └── Window.h
+│   ├── license.md
+│   ├── readme.md
+│   ├── src
+│   │   └── SFML
+│   │       ├── Audio
+│   │       │   ├── CMakeLists.txt
+│   │       │   ├── Listener.cpp
+│   │       │   ├── Music.cpp
+│   │       │   ├── MusicStruct.h
+│   │       │   ├── SoundBuffer.cpp
+│   │       │   ├── SoundBufferRecorder.cpp
+│   │       │   ├── SoundBufferRecorderStruct.h
+│   │       │   ├── SoundBufferStruct.h
+│   │       │   ├── Sound.cpp
+│   │       │   ├── SoundRecorder.cpp
+│   │       │   ├── SoundRecorderStruct.h
+│   │       │   ├── SoundStream.cpp
+│   │       │   ├── SoundStreamStruct.h
+│   │       │   └── SoundStruct.h
+│   │       ├── CallbackStream.h
+│   │       ├── CMakeLists.txt
+│   │       ├── ConvertEvent.h
+│   │       ├── Graphics
+│   │       │   ├── BlendMode.cpp
+│   │       │   ├── CircleShape.cpp
+│   │       │   ├── CircleShapeStruct.h
+│   │       │   ├── CMakeLists.txt
+│   │       │   ├── Color.cpp
+│   │       │   ├── ConvertRenderStates.hpp
+│   │       │   ├── ConvertTransform.hpp
+│   │       │   ├── ConvexShape.cpp
+│   │       │   ├── ConvexShapeStruct.h
+│   │       │   ├── Font.cpp
+│   │       │   ├── FontStruct.h
+│   │       │   ├── Image.cpp
+│   │       │   ├── ImageStruct.h
+│   │       │   ├── RectangleShape.cpp
+│   │       │   ├── RectangleShapeStruct.h
+│   │       │   ├── Rect.cpp
+│   │       │   ├── RenderStates.cpp
+│   │       │   ├── RenderTexture.cpp
+│   │       │   ├── RenderTextureStruct.h
+│   │       │   ├── RenderWindow.cpp
+│   │       │   ├── RenderWindowStruct.h
+│   │       │   ├── Shader.cpp
+│   │       │   ├── ShaderStruct.h
+│   │       │   ├── Shape.cpp
+│   │       │   ├── ShapeStruct.h
+│   │       │   ├── Sprite.cpp
+│   │       │   ├── SpriteStruct.h
+│   │       │   ├── Text.cpp
+│   │       │   ├── TextStruct.h
+│   │       │   ├── Texture.cpp
+│   │       │   ├── TextureStruct.h
+│   │       │   ├── Transformable.cpp
+│   │       │   ├── TransformableStruct.h
+│   │       │   ├── Transform.cpp
+│   │       │   ├── VertexArray.cpp
+│   │       │   ├── VertexArrayStruct.h
+│   │       │   ├── VertexBuffer.cpp
+│   │       │   ├── VertexBufferStruct.h
+│   │       │   ├── View.cpp
+│   │       │   └── ViewStruct.h
+│   │       ├── Internal.h
+│   │       ├── Main
+│   │       │   ├── CMakeLists.txt
+│   │       │   └── SFML_Main.cpp
+│   │       ├── Network
+│   │       │   ├── CMakeLists.txt
+│   │       │   ├── Ftp.cpp
+│   │       │   ├── FtpStruct.h
+│   │       │   ├── Http.cpp
+│   │       │   ├── HttpStruct.h
+│   │       │   ├── IpAddress.cpp
+│   │       │   ├── Packet.cpp
+│   │       │   ├── PacketStruct.h
+│   │       │   ├── SocketSelector.cpp
+│   │       │   ├── SocketSelectorStruct.h
+│   │       │   ├── TcpListener.cpp
+│   │       │   ├── TcpListenerStruct.h
+│   │       │   ├── TcpSocket.cpp
+│   │       │   ├── TcpSocketStruct.h
+│   │       │   ├── UdpSocket.cpp
+│   │       │   └── UdpSocketStruct.h
+│   │       ├── System
+│   │       │   ├── Alloc.cpp
+│   │       │   ├── Buffer.cpp
+│   │       │   ├── BufferStruct.h
+│   │       │   ├── Clock.cpp
+│   │       │   ├── ClockStruct.h
+│   │       │   ├── CMakeLists.txt
+│   │       │   ├── Mutex.cpp
+│   │       │   ├── MutexStruct.h
+│   │       │   ├── Sleep.cpp
+│   │       │   ├── Thread.cpp
+│   │       │   ├── ThreadStruct.h
+│   │       │   └── Time.cpp
+│   │       └── Window
+│   │           ├── Clipboard.cpp
+│   │           ├── CMakeLists.txt
+│   │           ├── Context.cpp
+│   │           ├── ContextSettingsInternal.h
+│   │           ├── ContextStruct.h
+│   │           ├── Cursor.cpp
+│   │           ├── CursorStruct.h
+│   │           ├── Joystick.cpp
+│   │           ├── Keyboard.cpp
+│   │           ├── Mouse.cpp
+│   │           ├── Sensor.cpp
+│   │           ├── Touch.cpp
+│   │           ├── VideoMode.cpp
+│   │           ├── Vulkan.cpp
+│   │           ├── WindowBase.cpp
+│   │           ├── WindowBaseStruct.h
+│   │           ├── Window.cpp
+│   │           └── WindowStruct.h
+│   └── tools
+│       ├── BuildMacOS.sh
+│       ├── GenerateImportLibraries.ps1
+│       ├── nuget
+│       │   ├── build.docker.ps1
+│       │   ├── build.docker.sh
+│       │   ├── build.linux.sh
+│       │   ├── build.macos.sh
+│       │   ├── build.win.ps1
+│       │   ├── CSFML
+│       │   │   ├── build
+│       │   │   │   ├── netframework
+│       │   │   │   │   ├── CSFML.props
+│       │   │   │   │   └── CSFML.targets
+│       │   │   │   └── netstandard2.0
+│       │   │   │       └── CSFML.props
+│       │   │   ├── CSFML.csproj
+│       │   │   └── sfml-icon.png
+│       │   ├── docker.alpine-x64.sh
+│       │   ├── docker.debian-x64.sh
+│       │   ├── docker.fedora-x64.sh
+│       │   ├── docker.linux-arm64.sh
+│       │   ├── docker.linux-arm.sh
+│       │   ├── docker.linux-musl-x64.sh
+│       │   ├── docker.linux-x64.sh
+│       │   ├── docker.ubuntu-x64.sh
+│       │   ├── nuget.sln
+│       │   ├── pushnuget.ps1
+│       │   ├── pushnuget.sh
+│       │   └── README.md
+│       └── pkg-config
+│           ├── csfml-all.pc.in
+│           ├── csfml-audio.pc.in
+│           ├── csfml-graphics.pc.in
+│           ├── csfml-network.pc.in
+│           ├── csfml-system.pc.in
+│           └── csfml-window.pc.in
+└── csfml-2.6.1.tar.gz -> /home/felix/packages/csfml/csfml-2.6.1.tar.gz
+
+27 directories, 241 files

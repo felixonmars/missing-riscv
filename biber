@@ -1,0 +1,305 @@
+src
+├── 5f4a39d7.patch -> /home/felix/packages/biber/5f4a39d7.patch
+├── biber-2.19
+│   ├── bin
+│   │   └── biber
+│   ├── BUILDERS.README
+│   ├── Build.PL
+│   ├── Changes
+│   ├── data
+│   │   ├── bcf.xsl
+│   │   ├── biber-tool.conf
+│   │   ├── gen_latin.pl
+│   │   ├── schemata
+│   │   │   ├── bcf.rnc
+│   │   │   ├── bcf.rng
+│   │   │   ├── config.rnc
+│   │   │   ├── config.rng
+│   │   │   └── texmap.rnc
+│   │   └── texmap.xsl
+│   ├── dist
+│   │   ├── build-env-local.sh
+│   │   ├── build.sh
+│   │   ├── build-universal.sh
+│   │   ├── cygwin32
+│   │   │   └── build.sh
+│   │   ├── cygwin64
+│   │   │   └── build.sh
+│   │   ├── darwin_arm64
+│   │   │   └── build.sh
+│   │   ├── darwinlegacy_x86_64
+│   │   │   └── build.sh
+│   │   ├── darwin_x86_64
+│   │   │   └── build.sh
+│   │   ├── empty_tree.sh
+│   │   ├── freebsd_amd64
+│   │   │   ├── biber.files
+│   │   │   └── build.sh
+│   │   ├── freebsd_i386
+│   │   │   ├── biber.files
+│   │   │   └── build.sh
+│   │   ├── linux_aarch64
+│   │   │   └── build.sh
+│   │   ├── linux_aarch64-musl
+│   │   │   └── build.sh
+│   │   ├── linux_armel
+│   │   │   ├── biber.files
+│   │   │   └── build.sh
+│   │   ├── linux-musl_x86_64
+│   │   │   └── build.sh
+│   │   ├── linux_x86_32
+│   │   │   ├── build.sh
+│   │   │   └── striprpath.sh
+│   │   ├── linux_x86_64
+│   │   │   └── build.sh
+│   │   ├── MSWIN32
+│   │   │   └── build.bat
+│   │   ├── MSWIN64
+│   │   │   └── build.bat
+│   │   ├── obsolete
+│   │   │   └── darwin_x86_i386
+│   │   │       └── build.sh
+│   │   ├── re-package.sh
+│   │   ├── solaris_x86_64
+│   │   │   ├── biber.files
+│   │   │   └── build.sh
+│   │   └── xsl-transform.pl
+│   ├── doc
+│   │   └── biber.tex
+│   ├── etc
+│   │   ├── biber-tb-final.tex
+│   │   ├── bibtex.g
+│   │   ├── btparse.notes
+│   │   ├── definitions.bib
+│   │   ├── papers.bib
+│   │   ├── parser.dlg
+│   │   ├── test.tex
+│   │   ├── TUG-10-2019.pdf
+│   │   ├── TUG-10-2019.tex
+│   │   ├── tugboat.bib
+│   │   ├── tugboat.def
+│   │   └── tugtest.tex
+│   ├── htdocs
+│   │   ├── biber.css
+│   │   ├── castor.png
+│   │   └── index.html
+│   ├── lib
+│   │   ├── Biber
+│   │   │   ├── Annotation.pm
+│   │   │   ├── Config.pm
+│   │   │   ├── Constants.pm
+│   │   │   ├── DataList.pm
+│   │   │   ├── DataLists.pm
+│   │   │   ├── DataModel.pm
+│   │   │   ├── Date
+│   │   │   │   └── Format.pm
+│   │   │   ├── Entries.pm
+│   │   │   ├── Entry
+│   │   │   │   ├── Name.pm
+│   │   │   │   └── Names.pm
+│   │   │   ├── Entry.pm
+│   │   │   ├── Input
+│   │   │   │   └── file
+│   │   │   │       ├── biblatexml.pm
+│   │   │   │       └── bibtex.pm
+│   │   │   ├── Internals.pm
+│   │   │   ├── LangTag.pm
+│   │   │   ├── LangTags.pm
+│   │   │   ├── LaTeX
+│   │   │   │   ├── recode_data.xml
+│   │   │   │   └── Recode.pm
+│   │   │   ├── Output
+│   │   │   │   ├── base.pm
+│   │   │   │   ├── bbl.pm
+│   │   │   │   ├── bblxml.pm
+│   │   │   │   ├── biblatexml.pm
+│   │   │   │   ├── bibtex.pm
+│   │   │   │   └── dot.pm
+│   │   │   ├── Section.pm
+│   │   │   ├── Sections.pm
+│   │   │   ├── UCollate.pm
+│   │   │   └── Utils.pm
+│   │   └── Biber.pm
+│   ├── LICENSE
+│   ├── MANIFEST
+│   ├── MANIFEST.SKIP
+│   ├── README.md
+│   ├── RELEASE
+│   ├── t
+│   │   ├── annotations.t
+│   │   ├── basic-misc.t
+│   │   ├── bcfvalidation.t
+│   │   ├── biblatexml.t
+│   │   ├── bibtex-aliases.t
+│   │   ├── bibtex-output.t
+│   │   ├── configfile.t
+│   │   ├── crossrefs.t
+│   │   ├── datalists.t
+│   │   ├── dateformats.t
+│   │   ├── dm-constraints.t
+│   │   ├── encoding.t
+│   │   ├── extradate.t
+│   │   ├── extratitle.t
+│   │   ├── extratitleyear.t
+│   │   ├── full-bbl.t
+│   │   ├── full-bblxml.t
+│   │   ├── full-bibtex.t
+│   │   ├── full-dot.t
+│   │   ├── labelalphaname.t
+│   │   ├── labelalpha.t
+│   │   ├── labelname.t
+│   │   ├── langtags.t
+│   │   ├── maps.t
+│   │   ├── names.t
+│   │   ├── names_x.t
+│   │   ├── options.t
+│   │   ├── related-entries.t
+│   │   ├── remote-files.t
+│   │   ├── sections-complex.t
+│   │   ├── sections.t
+│   │   ├── set-dynamic.t
+│   │   ├── set-legacy.t
+│   │   ├── set-static.t
+│   │   ├── skipsg.t
+│   │   ├── skips.t
+│   │   ├── sort-case.t
+│   │   ├── sort-complex.t
+│   │   ├── sorting.t
+│   │   ├── sort-names.t
+│   │   ├── sort-order.t
+│   │   ├── sort-uc.t
+│   │   ├── tdata
+│   │   │   ├── annotations.bcf
+│   │   │   ├── annotations.bib
+│   │   │   ├── basic-misc.bcf
+│   │   │   ├── biber-test.conf
+│   │   │   ├── biblatexml.bcf
+│   │   │   ├── biblatexml.bltxml
+│   │   │   ├── bibtex-aliases.bcf
+│   │   │   ├── bibtex-aliases.bib
+│   │   │   ├── bibtex-output.bcf
+│   │   │   ├── crossrefs.bcf
+│   │   │   ├── crossrefs.bib
+│   │   │   ├── datalists.bcf
+│   │   │   ├── datalists.bib
+│   │   │   ├── datalists.bltxml
+│   │   │   ├── dateformats.bcf
+│   │   │   ├── dateformats.bib
+│   │   │   ├── dm-constraints.bcf
+│   │   │   ├── dm-constraints.bib
+│   │   │   ├── encoding1.bcf
+│   │   │   ├── encoding1.bib
+│   │   │   ├── encoding2.bcf
+│   │   │   ├── encoding2.bib
+│   │   │   ├── encoding3.bcf
+│   │   │   ├── encoding3.bib
+│   │   │   ├── encoding4.bcf
+│   │   │   ├── encoding4.bib
+│   │   │   ├── encoding5.bcf
+│   │   │   ├── encoding5.bib
+│   │   │   ├── encoding6.bcf
+│   │   │   ├── encoding6.bib
+│   │   │   ├── examples.bib
+│   │   │   ├── extradate.bcf
+│   │   │   ├── extradate.bib
+│   │   │   ├── extratitle.bcf
+│   │   │   ├── extratitle.bib
+│   │   │   ├── extratitleyear.bcf
+│   │   │   ├── extratitleyear.bib
+│   │   │   ├── full-bbl.bbl
+│   │   │   ├── full-bbl.bcf
+│   │   │   ├── full-bbl.bib
+│   │   │   ├── full-bblxml.bblxml
+│   │   │   ├── full-bblxml.bcf
+│   │   │   ├── full-bibtex.bcf
+│   │   │   ├── full-bibtex_biber.bib
+│   │   │   ├── full-dot.bcf
+│   │   │   ├── full-dot.bib
+│   │   │   ├── full-dot.dot
+│   │   │   ├── general.bcf
+│   │   │   ├── labelalpha.bcf
+│   │   │   ├── labelalpha.bib
+│   │   │   ├── labelalphaname.bcf
+│   │   │   ├── labelalphaname.bib
+│   │   │   ├── maps.bcf
+│   │   │   ├── maps.bib
+│   │   │   ├── names.bcf
+│   │   │   ├── names.bib
+│   │   │   ├── names_x.bcf
+│   │   │   ├── names_x.bib
+│   │   │   ├── options.bcf
+│   │   │   ├── options.bib
+│   │   │   ├── related.bcf
+│   │   │   ├── related.bib
+│   │   │   ├── remote-files.bcf
+│   │   │   ├── sections1.bib
+│   │   │   ├── sections2.bib
+│   │   │   ├── sections3.bib
+│   │   │   ├── sections4.bib
+│   │   │   ├── sections.bcf
+│   │   │   ├── sections-complex.bcf
+│   │   │   ├── set-dynamic.bcf
+│   │   │   ├── set-legacy.bcf
+│   │   │   ├── sets.bib
+│   │   │   ├── set-static.bcf
+│   │   │   ├── skips.bcf
+│   │   │   ├── skips.bib
+│   │   │   ├── skipsg.bcf
+│   │   │   ├── skipsg.bib
+│   │   │   ├── sort.bib
+│   │   │   ├── sort-case.bcf
+│   │   │   ├── sort-case.bib
+│   │   │   ├── sort-complex.bcf
+│   │   │   ├── sort-names.bcf
+│   │   │   ├── sort-names.bib
+│   │   │   ├── sort-order.bcf
+│   │   │   ├── sort-order.bib
+│   │   │   ├── sort-uc.bcf
+│   │   │   ├── sort-uc.bib
+│   │   │   ├── tool.bib
+│   │   │   ├── tool-test.conf
+│   │   │   ├── tool-testconfig.conf
+│   │   │   ├── tool-testsort.conf
+│   │   │   ├── translit.bcf
+│   │   │   ├── translit.bib
+│   │   │   ├── truncation.bcf
+│   │   │   ├── truncation.bib
+│   │   │   ├── uniqueness1.bcf
+│   │   │   ├── uniqueness1.bib
+│   │   │   ├── uniqueness2.bcf
+│   │   │   ├── uniqueness2.bib
+│   │   │   ├── uniqueness3.bcf
+│   │   │   ├── uniqueness3.bib
+│   │   │   ├── uniqueness4.bcf
+│   │   │   ├── uniqueness4.bib
+│   │   │   ├── uniqueness5.bcf
+│   │   │   ├── uniqueness5.bib
+│   │   │   ├── uniqueness6.bcf
+│   │   │   ├── uniqueness6.bib
+│   │   │   ├── uniqueness7.bcf
+│   │   │   ├── uniqueness7.bib
+│   │   │   ├── uniqueness-nameparts.bcf
+│   │   │   ├── uniqueness-nameparts.bib
+│   │   │   ├── xdata.bcf
+│   │   │   ├── xdata.bib
+│   │   │   └── xdata.bltxml
+│   │   ├── tool-bltxml-inout.t
+│   │   ├── tool-bltxml.t
+│   │   ├── tool-config.t
+│   │   ├── tool.t
+│   │   ├── translit.t
+│   │   ├── truncation.t
+│   │   ├── uniqueness-nameparts.t
+│   │   ├── uniqueness.t
+│   │   ├── utils.t
+│   │   └── xdata.t
+│   ├── testfiles
+│   │   ├── test.bcf
+│   │   └── test.bib
+│   ├── TODO.org
+│   └── visual.pl
+├── biber-2.19.tar.gz -> /home/felix/packages/biber/biber-2.19.tar.gz
+├── test.bib -> /home/felix/packages/biber/test.bib
+└── test.tex -> /home/felix/packages/biber/test.tex
+
+38 directories, 265 files

@@ -1,0 +1,231 @@
+src
+├── cffi-1.17.1
+│   ├── AUTHORS
+│   ├── demo
+│   │   ├── api.py
+│   │   ├── bsdopendirtype_build.py
+│   │   ├── bsdopendirtype.py
+│   │   ├── bsdopendirtype_setup.py
+│   │   ├── btrfs-snap.py
+│   │   ├── cffi-cocoa.py
+│   │   ├── _curses_build.py
+│   │   ├── _curses.py
+│   │   ├── _curses_setup.py
+│   │   ├── embedding.py
+│   │   ├── embedding_test.c
+│   │   ├── extern_python.py
+│   │   ├── extern_python_varargs.py
+│   │   ├── fastcsv.py
+│   │   ├── gmp_build.py
+│   │   ├── gmp.py
+│   │   ├── manual2.py
+│   │   ├── manual.c
+│   │   ├── pwuid_build.py
+│   │   ├── pwuid.py
+│   │   ├── py.cleanup
+│   │   ├── pyobj.py
+│   │   ├── readdir2_build.py
+│   │   ├── readdir2.py
+│   │   ├── readdir2_setup.py
+│   │   ├── readdir_build.py
+│   │   ├── readdir_ctypes.py
+│   │   ├── readdir.py
+│   │   ├── readdir_setup.py
+│   │   ├── recopendirtype_build.py
+│   │   ├── recopendirtype.py
+│   │   ├── setup_manual.py
+│   │   ├── winclipboard_build.py
+│   │   ├── winclipboard.py
+│   │   ├── xclient_build.py
+│   │   └── xclient.py
+│   ├── doc
+│   │   ├── make.bat
+│   │   ├── Makefile
+│   │   ├── misc
+│   │   │   ├── design.rst
+│   │   │   ├── grant-cffi-1.0.rst
+│   │   │   └── parse_c_type.rst
+│   │   └── source
+│   │       ├── cdef.rst
+│   │       ├── conf.py
+│   │       ├── embedding.rst
+│   │       ├── goals.rst
+│   │       ├── index.rst
+│   │       ├── installation.rst
+│   │       ├── overview.rst
+│   │       ├── ref.rst
+│   │       ├── using.rst
+│   │       └── whatsnew.rst
+│   ├── LICENSE
+│   ├── MANIFEST.in
+│   ├── pyproject.toml
+│   ├── README.md
+│   ├── setup_base.py
+│   ├── setup.cfg
+│   ├── setup.py
+│   ├── src
+│   │   ├── c
+│   │   │   ├── call_python.c
+│   │   │   ├── cdlopen.c
+│   │   │   ├── cffi1_module.c
+│   │   │   ├── _cffi_backend.c
+│   │   │   ├── cglob.c
+│   │   │   ├── commontypes.c
+│   │   │   ├── ffi_obj.c
+│   │   │   ├── file_emulator.h
+│   │   │   ├── libffi_arm64
+│   │   │   │   ├── build_libffi.bat
+│   │   │   │   ├── ffi.lib
+│   │   │   │   ├── include
+│   │   │   │   │   ├── fficonfig.h
+│   │   │   │   │   ├── ffi.h
+│   │   │   │   │   └── ffitarget.h
+│   │   │   │   └── README
+│   │   │   ├── libffi_x86_x64
+│   │   │   │   ├── ffi.c
+│   │   │   │   ├── ffi_common.h
+│   │   │   │   ├── fficonfig.h
+│   │   │   │   ├── ffi.h
+│   │   │   │   ├── ffitarget.h
+│   │   │   │   ├── LICENSE
+│   │   │   │   ├── prep_cif.c
+│   │   │   │   ├── README
+│   │   │   │   ├── README.ctypes
+│   │   │   │   ├── types.c
+│   │   │   │   ├── win32.c
+│   │   │   │   ├── win64.asm
+│   │   │   │   └── win64.obj
+│   │   │   ├── lib_obj.c
+│   │   │   ├── malloc_closure.h
+│   │   │   ├── minibuffer.h
+│   │   │   ├── misc_thread_common.h
+│   │   │   ├── misc_thread_posix.h
+│   │   │   ├── misc_win32.h
+│   │   │   ├── parse_c_type.c
+│   │   │   ├── realize_c_type.c
+│   │   │   ├── test_c.py
+│   │   │   ├── wchar_helper_3.h
+│   │   │   └── wchar_helper.h
+│   │   └── cffi
+│   │       ├── api.py
+│   │       ├── backend_ctypes.py
+│   │       ├── _cffi_errors.h
+│   │       ├── _cffi_include.h
+│   │       ├── cffi_opcode.py
+│   │       ├── commontypes.py
+│   │       ├── cparser.py
+│   │       ├── _embedding.h
+│   │       ├── error.py
+│   │       ├── ffiplatform.py
+│   │       ├── _imp_emulation.py
+│   │       ├── __init__.py
+│   │       ├── lock.py
+│   │       ├── model.py
+│   │       ├── parse_c_type.h
+│   │       ├── pkgconfig.py
+│   │       ├── recompiler.py
+│   │       ├── setuptools_ext.py
+│   │       ├── _shimmed_dist_utils.py
+│   │       ├── vengine_cpy.py
+│   │       ├── vengine_gen.py
+│   │       └── verifier.py
+│   ├── testing
+│   │   ├── cffi0
+│   │   │   ├── backend_tests.py
+│   │   │   ├── callback_in_thread.py
+│   │   │   ├── __init__.py
+│   │   │   ├── snippets
+│   │   │   │   ├── distutils_module
+│   │   │   │   │   ├── setup.py
+│   │   │   │   │   └── snip_basic_verify.py
+│   │   │   │   ├── distutils_package_1
+│   │   │   │   │   ├── setup.py
+│   │   │   │   │   └── snip_basic_verify1
+│   │   │   │   │       └── __init__.py
+│   │   │   │   ├── distutils_package_2
+│   │   │   │   │   ├── setup.py
+│   │   │   │   │   └── snip_basic_verify2
+│   │   │   │   │       └── __init__.py
+│   │   │   │   ├── infrastructure
+│   │   │   │   │   ├── setup.py
+│   │   │   │   │   └── snip_infrastructure
+│   │   │   │   │       └── __init__.py
+│   │   │   │   ├── setuptools_module
+│   │   │   │   │   ├── setup.py
+│   │   │   │   │   └── snip_setuptools_verify.py
+│   │   │   │   ├── setuptools_package_1
+│   │   │   │   │   ├── setup.py
+│   │   │   │   │   └── snip_setuptools_verify1
+│   │   │   │   │       └── __init__.py
+│   │   │   │   └── setuptools_package_2
+│   │   │   │       ├── setup.py
+│   │   │   │       └── snip_setuptools_verify2
+│   │   │   │           └── __init__.py
+│   │   │   ├── test_cdata.py
+│   │   │   ├── test_ctypes.py
+│   │   │   ├── test_ffi_backend.py
+│   │   │   ├── test_function.py
+│   │   │   ├── test_model.py
+│   │   │   ├── test_ownlib.py
+│   │   │   ├── test_parsing.py
+│   │   │   ├── test_platform.py
+│   │   │   ├── test_unicode_literals.py
+│   │   │   ├── test_verify2.py
+│   │   │   ├── test_verify.py
+│   │   │   ├── test_version.py
+│   │   │   ├── test_vgen2.py
+│   │   │   ├── test_vgen.py
+│   │   │   ├── test_zdistutils.py
+│   │   │   └── test_zintegration.py
+│   │   ├── cffi1
+│   │   │   ├── __init__.py
+│   │   │   ├── test_cffi_binary.py
+│   │   │   ├── test_commontypes.py
+│   │   │   ├── test_dlopen.py
+│   │   │   ├── test_dlopen_unicode_literals.py
+│   │   │   ├── test_ffi_obj.py
+│   │   │   ├── test_function_args.py
+│   │   │   ├── test_new_ffi_1.py
+│   │   │   ├── test_parse_c_type.py
+│   │   │   ├── test_pkgconfig.py
+│   │   │   ├── test_realize_c_type.py
+│   │   │   ├── test_recompiler.py
+│   │   │   ├── test_re_python.py
+│   │   │   ├── test_unicode_literals.py
+│   │   │   ├── test_verify1.py
+│   │   │   └── test_zdist.py
+│   │   ├── conftest.py
+│   │   ├── embedding
+│   │   │   ├── add1.py
+│   │   │   ├── add1-test.c
+│   │   │   ├── add2.py
+│   │   │   ├── add2-test.c
+│   │   │   ├── add3.py
+│   │   │   ├── add_recursive.py
+│   │   │   ├── add_recursive-test.c
+│   │   │   ├── empty.py
+│   │   │   ├── empty-test.c
+│   │   │   ├── initerror.py
+│   │   │   ├── __init__.py
+│   │   │   ├── perf.py
+│   │   │   ├── perf-test.c
+│   │   │   ├── test_basic.py
+│   │   │   ├── test_performance.py
+│   │   │   ├── test_recursive.py
+│   │   │   ├── test_thread.py
+│   │   │   ├── test_tlocal.py
+│   │   │   ├── thread1-test.c
+│   │   │   ├── thread2-test.c
+│   │   │   ├── thread3-test.c
+│   │   │   ├── thread-test.h
+│   │   │   ├── tlocal.py
+│   │   │   ├── tlocal-test.c
+│   │   │   └── withunicode.py
+│   │   ├── __init__.py
+│   │   ├── support.py
+│   │   └── udir.py
+│   └── tools
+│       └── version.py
+└── python-cffi-1.17.1.tar.gz -> /home/felix/packages/python-cffi/python-cffi-1.17.1.tar.gz
+
+30 directories, 199 files

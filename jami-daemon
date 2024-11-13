@@ -1,0 +1,1051 @@
+src
+├── dhtnet-cfe512b0632eea046f683b22e42d01eeb943d751.tar.gz -> /home/felix/packages/jami-daemon/dhtnet-cfe512b0632eea046f683b22e42d01eeb943d751.tar.gz
+├── ffmpeg-7.patch -> /home/felix/packages/jami-daemon/ffmpeg-7.patch
+├── fmt-v11.patch -> /home/felix/packages/jami-daemon/fmt-v11.patch
+├── jami-daemon
+│   ├── AUTHORS
+│   ├── autogen.sh
+│   ├── bin
+│   │   ├── dbus
+│   │   │   ├── cx.ring.Ring.CallManager.xml
+│   │   │   ├── cx.ring.Ring.ConfigurationManager.xml
+│   │   │   ├── cx.ring.Ring.Instance.xml
+│   │   │   ├── cx.ring.Ring.PluginManagerInterface.xml
+│   │   │   ├── cx.ring.Ring.PresenceManager.xml
+│   │   │   ├── cx.ring.Ring.VideoManager.xml
+│   │   │   ├── dbuscallmanager.hpp
+│   │   │   ├── dbusconfigurationmanager.hpp
+│   │   │   ├── dbusinstance.hpp
+│   │   │   ├── dbuspluginmanagerinterface.hpp
+│   │   │   ├── dbuspresencemanager.hpp
+│   │   │   ├── dbusvideomanager.hpp
+│   │   │   ├── main.cpp
+│   │   │   ├── Makefile.am
+│   │   │   ├── meson.build
+│   │   │   └── net.jami.daemon.service.in
+│   │   ├── jni
+│   │   │   ├── callmanager.i
+│   │   │   ├── configurationmanager.i
+│   │   │   ├── conversation.i
+│   │   │   ├── datatransfer.i
+│   │   │   ├── data_view.i
+│   │   │   ├── jamiservice.c.template
+│   │   │   ├── JavaJNI2CJNI_Load.py
+│   │   │   ├── jni_interface.i
+│   │   │   ├── make-swig.sh
+│   │   │   ├── managerimpl.i
+│   │   │   ├── plugin_manager_interface.i
+│   │   │   ├── presencemanager.i
+│   │   │   └── videomanager.i
+│   │   ├── Makefile.am
+│   │   ├── nodejs
+│   │   │   ├── binding.gyp.in
+│   │   │   ├── callback.h
+│   │   │   ├── callmanager.i
+│   │   │   ├── configurationmanager.i
+│   │   │   ├── conversation.i
+│   │   │   ├── index.js
+│   │   │   ├── Makefile.am
+│   │   │   ├── managerimpl.i
+│   │   │   ├── meson.build
+│   │   │   ├── nodejs_interface.i
+│   │   │   ├── presencemanager.i
+│   │   │   └── videomanager.i
+│   │   ├── osxmain.cpp
+│   │   └── winmain.cpp
+│   ├── ChangeLog
+│   ├── CMake
+│   │   ├── Default.cmake
+│   │   ├── DefaultCXX.cmake
+│   │   └── Utils.cmake
+│   ├── CMakeLists.txt
+│   ├── CODING
+│   ├── compat
+│   │   ├── CMakeLists.txt
+│   │   └── msvc
+│   │       ├── CMakeLists.txt
+│   │       ├── config.h
+│   │       ├── dlfcn.c
+│   │       ├── dlfcn.h
+│   │       ├── package.json
+│   │       ├── sys_time.h
+│   │       ├── unistd.h
+│   │       └── winmake.py
+│   ├── configure.ac
+│   ├── contrib
+│   │   ├── bootstrap
+│   │   └── src
+│   │       ├── argon2
+│   │       │   ├── 0001-build-don-t-force-AR-path.patch
+│   │       │   ├── argon2-vs2017.patch
+│   │       │   ├── package.json
+│   │       │   ├── rules.mak
+│   │       │   └── SHA512SUMS
+│   │       ├── asio
+│   │       │   ├── 0001-Disable-building-tests-and-examples.patch
+│   │       │   ├── asio-uwp.patch
+│   │       │   ├── asio-vcxproj.patch
+│   │       │   ├── package.json
+│   │       │   ├── rules.mak
+│   │       │   └── SHA512SUMS
+│   │       ├── change_prefix.sh
+│   │       ├── cyclonedx.sh
+│   │       ├── dhtnet
+│   │       │   ├── package.json
+│   │       │   └── rules.mak
+│   │       ├── ffmpeg
+│   │       │   ├── build_ffmpeg.bat
+│   │       │   ├── change-RTCP-ratio.patch
+│   │       │   ├── ios-disable-b-frames.patch
+│   │       │   ├── libopusdec-enable-FEC.patch
+│   │       │   ├── libopusenc-enable-FEC.patch
+│   │       │   ├── libopusenc-reload-packet-loss-at-encode.patch
+│   │       │   ├── package.json
+│   │       │   ├── pipewiregrab-source-filter.patch
+│   │       │   ├── remove-mjpeg-log.patch
+│   │       │   ├── rtp_ext_abs_send_time.patch
+│   │       │   ├── rules.mak
+│   │       │   ├── screen-sharing-x11-fix.patch
+│   │       │   ├── SHA512SUMS
+│   │       │   ├── windows-configure-ffnvcodec.patch
+│   │       │   ├── windows-configure-libmfx.patch
+│   │       │   ├── windows-configure-make.sh
+│   │       │   ├── windows-configure.patch
+│   │       │   └── windows-dxgi-support.patch
+│   │       ├── ffnvcodec
+│   │       │   ├── package.json
+│   │       │   └── rules.mak
+│   │       ├── fmt
+│   │       │   ├── package.json
+│   │       │   ├── rules.mak
+│   │       │   └── SHA512SUMS
+│   │       ├── freetype
+│   │       │   ├── freetype.vcxproj
+│   │       │   ├── package.json
+│   │       │   ├── rules.mak
+│   │       │   └── SHA512SUMS
+│   │       ├── get-arch.sh
+│   │       ├── gmp
+│   │       │   ├── clock_gettime.patch
+│   │       │   ├── gmp_addaddmul_1msb0.patch
+│   │       │   ├── package.json
+│   │       │   ├── rules.mak
+│   │       │   └── SHA512SUMS
+│   │       ├── gnutls
+│   │       │   ├── 0001-m4-remove-malloc-realloc.patch
+│   │       │   ├── 0001-use-system-isdigit.patch
+│   │       │   ├── gnutls-3.6.7-win32-compat.patch
+│   │       │   ├── gnutls-3.6.7-win32-vs-support.patch
+│   │       │   ├── gnutls-disable-getentropy-osx.patch
+│   │       │   ├── gnutls-mscver.patch
+│   │       │   ├── mac-keychain-lookup.patch
+│   │       │   ├── package.json
+│   │       │   ├── read-file-limits.h.patch
+│   │       │   ├── rules.mak
+│   │       │   └── SHA512SUMS
+│   │       ├── gsm
+│   │       │   ├── gsm-cross.patch
+│   │       │   ├── include_ios.patch
+│   │       │   ├── rules.mak
+│   │       │   └── SHA512SUMS
+│   │       ├── http_parser
+│   │       │   ├── http-parser-vs.patch
+│   │       │   ├── package.json
+│   │       │   ├── rules.mak
+│   │       │   └── SHA512SUMS
+│   │       ├── iconv
+│   │       │   ├── bins.patch
+│   │       │   ├── libiconv-android-ios.patch
+│   │       │   ├── libiconv-win64.patch
+│   │       │   ├── libiconv-winrt.patch
+│   │       │   ├── package.json
+│   │       │   ├── rules.mak
+│   │       │   ├── SHA512SUMS
+│   │       │   └── win32.patch
+│   │       ├── jack
+│   │       │   ├── config-osx.patch
+│   │       │   ├── rules.mak
+│   │       │   └── SHA512SUMS
+│   │       ├── jsoncpp
+│   │       │   ├── jsoncpp-vs2017.patch
+│   │       │   ├── package.json
+│   │       │   ├── rules.mak
+│   │       │   └── SHA512SUMS
+│   │       ├── libarchive
+│   │       │   ├── 0001-disable-shared-library.patch
+│   │       │   ├── 0001-win-config.patch
+│   │       │   ├── 0002-win-vs2019.patch
+│   │       │   ├── package.json
+│   │       │   ├── rules.mak
+│   │       │   └── SHA512SUMS
+│   │       ├── libgit2
+│   │       │   ├── c-standard.diff
+│   │       │   ├── package.json
+│   │       │   ├── rules.mak
+│   │       │   └── SHA512SUMS
+│   │       ├── libressl
+│   │       │   ├── 0001-build-don-t-fetch-git-tag-if-openbsd-directory-exist.patch
+│   │       │   ├── getpagesize.patch
+│   │       │   ├── rules.mak
+│   │       │   └── SHA512SUMS
+│   │       ├── liburcu
+│   │       │   ├── package.json
+│   │       │   ├── rules.mak
+│   │       │   └── SHA512SUMS
+│   │       ├── llhttp
+│   │       │   ├── rules.mak
+│   │       │   └── SHA512SUMS
+│   │       ├── lttng-ust
+│   │       │   ├── package.json
+│   │       │   ├── rules.mak
+│   │       │   └── SHA512SUMS
+│   │       ├── main.mak
+│   │       ├── media-sdk
+│   │       │   ├── package.json
+│   │       │   └── windows-static-lib-build.patch
+│   │       ├── minizip
+│   │       │   ├── package.json
+│   │       │   ├── rules.mak
+│   │       │   └── SHA512SUMS
+│   │       ├── msgpack
+│   │       │   ├── package.json
+│   │       │   ├── rules.mak
+│   │       │   └── SHA512SUMS
+│   │       ├── natpmp
+│   │       │   ├── 0001-remove-shared-libs-executables.patch
+│   │       │   ├── natpmp-win32-ssize_t.patch
+│   │       │   ├── package.json
+│   │       │   ├── rules.mak
+│   │       │   └── SHA512SUMS
+│   │       ├── nettle
+│   │       │   ├── package.json
+│   │       │   ├── rules.mak
+│   │       │   └── SHA512SUMS
+│   │       ├── onnx
+│   │       │   ├── package.json
+│   │       │   └── rules.mak
+│   │       ├── opencv
+│   │       │   ├── package.json
+│   │       │   ├── rules.mak
+│   │       │   └── SHA512SUMS
+│   │       ├── opencv_contrib
+│   │       │   ├── package.json
+│   │       │   ├── rules.mak
+│   │       │   └── SHA512SUMS
+│   │       ├── opendht
+│   │       │   ├── package.json
+│   │       │   ├── rules.mak
+│   │       │   └── SHA512SUMS
+│   │       ├── openssl
+│   │       │   ├── openssl-uwp.patch
+│   │       │   └── package.json
+│   │       ├── opus
+│   │       │   ├── package.json
+│   │       │   ├── rules.mak
+│   │       │   └── SHA512SUMS
+│   │       ├── pjproject
+│   │       │   ├── 0001-android.patch
+│   │       │   ├── 0001-win-config.patch
+│   │       │   ├── 0002-win-vs-gnutls.patch
+│   │       │   ├── 0003-disable-ios-pointtopoint.patch
+│   │       │   ├── 0004-ios-16.patch
+│   │       │   ├── package.json
+│   │       │   ├── rules.mak
+│   │       │   └── SHA512SUMS
+│   │       ├── pkg-static.sh
+│   │       ├── portaudio
+│   │       │   ├── 0001-add-get-default-comm-devices-api.patch
+│   │       │   ├── package.json
+│   │       │   ├── rules.mak
+│   │       │   └── SHA512SUMS
+│   │       ├── pthreads
+│   │       │   ├── package.json
+│   │       │   ├── pthreads-uwp.patch
+│   │       │   ├── pthreads-vs2017.patch
+│   │       │   └── pthreads-windows.patch
+│   │       ├── README
+│   │       ├── restinio
+│   │       │   ├── package.json
+│   │       │   ├── rules.mak
+│   │       │   └── SHA512SUMS
+│   │       ├── sdbus-cpp
+│   │       │   ├── rules.mak
+│   │       │   └── SHA512SUMS
+│   │       ├── secp256k1
+│   │       │   ├── package.json
+│   │       │   ├── rules.mak
+│   │       │   ├── secp256k1-vs2017.patch
+│   │       │   └── SHA512SUMS
+│   │       ├── speex
+│   │       │   ├── rules.mak
+│   │       │   └── SHA512SUMS
+│   │       ├── speexdsp
+│   │       │   ├── package.json
+│   │       │   ├── rules.mak
+│   │       │   ├── SHA512SUMS
+│   │       │   └── speexdsp_vs_proj.patch
+│   │       ├── upnp
+│   │       │   ├── libupnp-windows.patch
+│   │       │   ├── package.json
+│   │       │   ├── poll.patch
+│   │       │   ├── rules.mak
+│   │       │   ├── SHA512SUMS
+│   │       │   ├── threadpool.patch
+│   │       │   └── win_inet_pton.patch
+│   │       ├── vpx
+│   │       │   ├── package.json
+│   │       │   ├── rules.mak
+│   │       │   ├── SHA512SUMS
+│   │       │   └── windows-vpx_config.patch
+│   │       ├── webrtc-audio-processing
+│   │       │   ├── 0001-provide-cmake-for-windows.patch
+│   │       │   ├── package.json
+│   │       │   ├── rules.mak
+│   │       │   └── SHA512SUMS
+│   │       ├── x264
+│   │       │   ├── package.json
+│   │       │   ├── rules.mak
+│   │       │   └── x264-uwp.patch
+│   │       ├── yaml-cpp
+│   │       │   ├── package.json
+│   │       │   ├── rules.mak
+│   │       │   └── SHA512SUMS
+│   │       └── zlib
+│   │           ├── package.json
+│   │           ├── rules.mak
+│   │           └── SHA512SUMS
+│   ├── COPYING
+│   ├── cross-files
+│   │   ├── android_arm64_api29.txt
+│   │   └── mingw_w64_x86-64.txt
+│   ├── doc
+│   │   ├── agent
+│   │   │   ├── build.rst
+│   │   │   └── workflow.rst
+│   │   ├── doxygen
+│   │   │   ├── blank.html
+│   │   │   ├── core-doc.cfg.in
+│   │   │   ├── gtk-gui-doc.cfg.in
+│   │   │   └── Makefile.am
+│   │   ├── Makefile.am
+│   │   ├── README
+│   │   └── trace
+│   │       ├── tracepoint-analysis.rst
+│   │       └── tracepoints.rst
+│   ├── docker
+│   │   ├── Dockerfile_ubuntu_18.04
+│   │   ├── Dockerfile_ubuntu_20.04
+│   │   ├── Dockerfile_ubuntu_22.04
+│   │   └── Dockerfile_windows_mingw
+│   ├── Dockerfile
+│   ├── extras
+│   │   ├── scripts
+│   │   │   └── winmake.py
+│   │   └── tools
+│   │       ├── bootstrap
+│   │       ├── packages.mak
+│   │       └── tools.mak
+│   ├── globals.mk
+│   ├── jami.pc.in
+│   ├── m4
+│   │   ├── as-ac-expand.m4
+│   │   ├── ax_cxx_compile_stdcxx.m4
+│   │   └── ax_pthread.m4
+│   ├── Makefile.am
+│   ├── man
+│   │   ├── jamid.pod
+│   │   ├── Makefile.am
+│   │   └── README.manpages
+│   ├── meson.build
+│   ├── meson_options.txt
+│   ├── net.jami.daemon.metainfo.xml.in
+│   ├── NEWS
+│   ├── README.md
+│   ├── ringtones
+│   │   ├── 01_AfroNigeria.opus
+│   │   ├── 02_AfroNigeria.opus
+│   │   ├── 03_AcousticGuitar.opus
+│   │   ├── 04_ElectricGuitar.opus
+│   │   ├── 05_AcousticIndia.opus
+│   │   ├── 06_RingSoft.opus
+│   │   ├── 07_RingTribal.opus
+│   │   ├── 08_RingFirefly.opus
+│   │   ├── 09_ElectroCloud.opus
+│   │   ├── 10_UrbanTrap.opus
+│   │   ├── default.opus -> 01_AfroNigeria.opus
+│   │   ├── Makefile.am
+│   │   └── meson.build
+│   ├── sonar-project.properties
+│   ├── src
+│   │   ├── account_config.cpp
+│   │   ├── account_config.h
+│   │   ├── account.cpp
+│   │   ├── account_factory.cpp
+│   │   ├── account_factory.h
+│   │   ├── account.h
+│   │   ├── account_schema.h
+│   │   ├── archiver.cpp
+│   │   ├── archiver.h
+│   │   ├── base64.cpp
+│   │   ├── base64.h
+│   │   ├── buildinfo.cpp
+│   │   ├── call.cpp
+│   │   ├── call_factory.cpp
+│   │   ├── call_factory.h
+│   │   ├── call.h
+│   │   ├── call_set.h
+│   │   ├── client
+│   │   │   ├── callmanager.cpp
+│   │   │   ├── CMakeLists.txt
+│   │   │   ├── configurationmanager.cpp
+│   │   │   ├── conversation_interface.cpp
+│   │   │   ├── datatransfer.cpp
+│   │   │   ├── Makefile.am
+│   │   │   ├── plugin_manager_interface.cpp
+│   │   │   ├── presencemanager.cpp
+│   │   │   ├── ring_signal.cpp
+│   │   │   ├── ring_signal.h
+│   │   │   ├── videomanager.cpp
+│   │   │   └── videomanager.h
+│   │   ├── CMakeLists.txt
+│   │   ├── compiler_intrinsics.h
+│   │   ├── conference.cpp
+│   │   ├── conference.h
+│   │   ├── conference_protocol.cpp
+│   │   ├── conference_protocol.h
+│   │   ├── config
+│   │   │   ├── account_config_utils.h
+│   │   │   ├── CMakeLists.txt
+│   │   │   ├── Makefile.am
+│   │   │   ├── serializable.h
+│   │   │   ├── yamlparser.cpp
+│   │   │   └── yamlparser.h
+│   │   ├── connectivity
+│   │   │   ├── CMakeLists.txt
+│   │   │   ├── ip_utils.cpp
+│   │   │   ├── ip_utils.h
+│   │   │   ├── Makefile.am
+│   │   │   ├── security
+│   │   │   │   ├── CMakeLists.txt
+│   │   │   │   ├── Makefile.am
+│   │   │   │   ├── memory.cpp
+│   │   │   │   ├── memory.h
+│   │   │   │   ├── tlsvalidator.cpp
+│   │   │   │   └── tlsvalidator.h
+│   │   │   ├── sip_utils.cpp
+│   │   │   ├── sip_utils.h
+│   │   │   ├── utf8_utils.cpp
+│   │   │   └── utf8_utils.h
+│   │   ├── data_transfer.cpp
+│   │   ├── data_transfer.h
+│   │   ├── debug_utils.h
+│   │   ├── enumclass_utils.h
+│   │   ├── fileutils.cpp
+│   │   ├── fileutils.h
+│   │   ├── gittransport.cpp
+│   │   ├── gittransport.h
+│   │   ├── im
+│   │   │   ├── CMakeLists.txt
+│   │   │   ├── instant_messaging.cpp
+│   │   │   ├── instant_messaging.h
+│   │   │   ├── Makefile.am
+│   │   │   ├── message_engine.cpp
+│   │   │   └── message_engine.h
+│   │   ├── jami
+│   │   │   ├── account_const.h
+│   │   │   ├── call_const.h
+│   │   │   ├── callmanager_interface.h
+│   │   │   ├── CMakeLists.txt
+│   │   │   ├── configurationmanager_interface.h
+│   │   │   ├── conversation_interface.h
+│   │   │   ├── datatransfer_interface.h
+│   │   │   ├── def.h
+│   │   │   ├── jami.h
+│   │   │   ├── media_const.h
+│   │   │   ├── plugin_manager_interface.h
+│   │   │   ├── presence_const.h
+│   │   │   ├── presencemanager_interface.h
+│   │   │   ├── security_const.h
+│   │   │   ├── tracepoint.c
+│   │   │   ├── tracepoint-def.h
+│   │   │   ├── tracepoint.h
+│   │   │   ├── trace-tools.h
+│   │   │   └── videomanager_interface.h
+│   │   ├── jamidht
+│   │   │   ├── abstract_sip_transport.h
+│   │   │   ├── accountarchive.cpp
+│   │   │   ├── accountarchive.h
+│   │   │   ├── account_manager.cpp
+│   │   │   ├── account_manager.h
+│   │   │   ├── archive_account_manager.cpp
+│   │   │   ├── archive_account_manager.h
+│   │   │   ├── channeled_transport.cpp
+│   │   │   ├── channeled_transport.h
+│   │   │   ├── channel_handler.h
+│   │   │   ├── CMakeLists.txt
+│   │   │   ├── configkeys.h
+│   │   │   ├── contact_list.cpp
+│   │   │   ├── contact_list.h
+│   │   │   ├── conversation_channel_handler.cpp
+│   │   │   ├── conversation_channel_handler.h
+│   │   │   ├── conversation.cpp
+│   │   │   ├── conversation.h
+│   │   │   ├── conversation_module.cpp
+│   │   │   ├── conversation_module.h
+│   │   │   ├── conversationrepository.cpp
+│   │   │   ├── conversationrepository.h
+│   │   │   ├── eth
+│   │   │   │   ├── libdevcore
+│   │   │   │   │   ├── Address.h
+│   │   │   │   │   ├── CMakeLists.txt
+│   │   │   │   │   ├── CommonData.cpp
+│   │   │   │   │   ├── CommonData.h
+│   │   │   │   │   ├── Common.h
+│   │   │   │   │   ├── FixedHash.h
+│   │   │   │   │   ├── Makefile.am
+│   │   │   │   │   ├── SHA3.cpp
+│   │   │   │   │   ├── SHA3.h
+│   │   │   │   │   └── vector_ref.h
+│   │   │   │   └── libdevcrypto
+│   │   │   │       ├── CMakeLists.txt
+│   │   │   │       ├── Common.cpp
+│   │   │   │       ├── Common.h
+│   │   │   │       └── Makefile.am
+│   │   │   ├── gitserver.cpp
+│   │   │   ├── gitserver.h
+│   │   │   ├── jamiaccount_config.cpp
+│   │   │   ├── jamiaccount_config.h
+│   │   │   ├── jamiaccount.cpp
+│   │   │   ├── jamiaccount.h
+│   │   │   ├── jami_contact.h
+│   │   │   ├── Makefile.am
+│   │   │   ├── namedirectory.cpp
+│   │   │   ├── namedirectory.h
+│   │   │   ├── server_account_manager.cpp
+│   │   │   ├── server_account_manager.h
+│   │   │   ├── swarm
+│   │   │   │   ├── CMakeLists.txt
+│   │   │   │   ├── routing_table.cpp
+│   │   │   │   ├── routing_table.h
+│   │   │   │   ├── swarm_channel_handler.cpp
+│   │   │   │   ├── swarm_channel_handler.h
+│   │   │   │   ├── swarm_manager.cpp
+│   │   │   │   ├── swarm_manager.h
+│   │   │   │   ├── swarm_protocol.cpp
+│   │   │   │   └── swarm_protocol.h
+│   │   │   ├── sync_channel_handler.cpp
+│   │   │   ├── sync_channel_handler.h
+│   │   │   ├── sync_module.cpp
+│   │   │   ├── sync_module.h
+│   │   │   ├── transfer_channel_handler.cpp
+│   │   │   ├── transfer_channel_handler.h
+│   │   │   ├── typers.cpp
+│   │   │   └── typers.h
+│   │   ├── logger.cpp
+│   │   ├── logger.h
+│   │   ├── Makefile.am
+│   │   ├── manager.cpp
+│   │   ├── manager.h
+│   │   ├── map_utils.h
+│   │   ├── media
+│   │   │   ├── audio
+│   │   │   │   ├── alsa
+│   │   │   │   │   ├── alsalayer.cpp
+│   │   │   │   │   ├── alsalayer.h
+│   │   │   │   │   └── Makefile.am
+│   │   │   │   ├── audio_format.h
+│   │   │   │   ├── audio_frame_resizer.cpp
+│   │   │   │   ├── audio_frame_resizer.h
+│   │   │   │   ├── audio_input.cpp
+│   │   │   │   ├── audio_input.h
+│   │   │   │   ├── audiolayer.cpp
+│   │   │   │   ├── audiolayer.h
+│   │   │   │   ├── audioloop.cpp
+│   │   │   │   ├── audioloop.h
+│   │   │   │   ├── audio-processing
+│   │   │   │   │   ├── audio_processor.h
+│   │   │   │   │   ├── CMakeLists.txt
+│   │   │   │   │   ├── Makefile.am
+│   │   │   │   │   ├── null_audio_processor.cpp
+│   │   │   │   │   ├── null_audio_processor.h
+│   │   │   │   │   ├── speex.cpp
+│   │   │   │   │   ├── speex.h
+│   │   │   │   │   ├── webrtc.cpp
+│   │   │   │   │   └── webrtc.h
+│   │   │   │   ├── audio_receive_thread.cpp
+│   │   │   │   ├── audio_receive_thread.h
+│   │   │   │   ├── audio_rtp_session.cpp
+│   │   │   │   ├── audio_rtp_session.h
+│   │   │   │   ├── audio_sender.cpp
+│   │   │   │   ├── audio_sender.h
+│   │   │   │   ├── CMakeLists.txt
+│   │   │   │   ├── coreaudio
+│   │   │   │   │   ├── ios
+│   │   │   │   │   │   ├── corelayer.h
+│   │   │   │   │   │   └── corelayer.mm
+│   │   │   │   │   ├── Makefile.am
+│   │   │   │   │   └── osx
+│   │   │   │   │       ├── audiodevice.cpp
+│   │   │   │   │       ├── audiodevice.h
+│   │   │   │   │       ├── corelayer.h
+│   │   │   │   │       └── corelayer.mm
+│   │   │   │   ├── jack
+│   │   │   │   │   ├── jacklayer.cpp
+│   │   │   │   │   ├── jacklayer.h
+│   │   │   │   │   └── Makefile.am
+│   │   │   │   ├── Makefile.am
+│   │   │   │   ├── opensl
+│   │   │   │   │   ├── audio_common.h
+│   │   │   │   │   ├── audio_player.cpp
+│   │   │   │   │   ├── audio_player.h
+│   │   │   │   │   ├── audio_recorder.cpp
+│   │   │   │   │   ├── audio_recorder.h
+│   │   │   │   │   ├── buf_manager.h
+│   │   │   │   │   ├── Makefile.am
+│   │   │   │   │   ├── opensllayer.cpp
+│   │   │   │   │   └── opensllayer.h
+│   │   │   │   ├── portaudio
+│   │   │   │   │   ├── CMakeLists.txt
+│   │   │   │   │   ├── Makefile.am
+│   │   │   │   │   ├── portaudiolayer.cpp
+│   │   │   │   │   └── portaudiolayer.h
+│   │   │   │   ├── pulseaudio
+│   │   │   │   │   ├── audiostream.cpp
+│   │   │   │   │   ├── audiostream.h
+│   │   │   │   │   ├── Makefile.am
+│   │   │   │   │   ├── pulselayer.cpp
+│   │   │   │   │   └── pulselayer.h
+│   │   │   │   ├── resampler.cpp
+│   │   │   │   ├── resampler.h
+│   │   │   │   ├── ringbuffer.cpp
+│   │   │   │   ├── ringbuffer.h
+│   │   │   │   ├── ringbufferpool.cpp
+│   │   │   │   ├── ringbufferpool.h
+│   │   │   │   ├── sound
+│   │   │   │   │   ├── audiofile.cpp
+│   │   │   │   │   ├── audiofile.h
+│   │   │   │   │   ├── CMakeLists.txt
+│   │   │   │   │   ├── dtmf.cpp
+│   │   │   │   │   ├── dtmfgenerator.cpp
+│   │   │   │   │   ├── dtmfgenerator.h
+│   │   │   │   │   ├── dtmf.h
+│   │   │   │   │   ├── Makefile.am
+│   │   │   │   │   ├── tone.cpp
+│   │   │   │   │   ├── tone.h
+│   │   │   │   │   ├── tonelist.cpp
+│   │   │   │   │   └── tonelist.h
+│   │   │   │   ├── tonecontrol.cpp
+│   │   │   │   └── tonecontrol.h
+│   │   │   ├── CMakeLists.txt
+│   │   │   ├── congestion_control.cpp
+│   │   │   ├── congestion_control.h
+│   │   │   ├── decoder_finder.h
+│   │   │   ├── libav_deps.h
+│   │   │   ├── libav_utils.cpp
+│   │   │   ├── libav_utils.h
+│   │   │   ├── localrecorder.cpp
+│   │   │   ├── localrecorder.h
+│   │   │   ├── localrecordermanager.cpp
+│   │   │   ├── localrecordermanager.h
+│   │   │   ├── Makefile.am
+│   │   │   ├── media_attribute.cpp
+│   │   │   ├── media_attribute.h
+│   │   │   ├── media_buffer.cpp
+│   │   │   ├── media_buffer.h
+│   │   │   ├── media_codec.cpp
+│   │   │   ├── media_codec.h
+│   │   │   ├── media_decoder.cpp
+│   │   │   ├── media_decoder.h
+│   │   │   ├── media_device.h
+│   │   │   ├── media_encoder.cpp
+│   │   │   ├── media_encoder.h
+│   │   │   ├── media_filter.cpp
+│   │   │   ├── media_filter.h
+│   │   │   ├── media_io_handle.cpp
+│   │   │   ├── media_io_handle.h
+│   │   │   ├── media_player.cpp
+│   │   │   ├── media_player.h
+│   │   │   ├── media_recorder.cpp
+│   │   │   ├── media_recorder.h
+│   │   │   ├── media_stream.h
+│   │   │   ├── peerrecorder.h
+│   │   │   ├── recordable.cpp
+│   │   │   ├── recordable.h
+│   │   │   ├── rtp_session.h
+│   │   │   ├── socket_pair.cpp
+│   │   │   ├── socket_pair.h
+│   │   │   ├── srtp.c
+│   │   │   ├── srtp.h
+│   │   │   ├── system_codec_container.cpp
+│   │   │   ├── system_codec_container.h
+│   │   │   └── video
+│   │   │       ├── accel.cpp
+│   │   │       ├── accel.h
+│   │   │       ├── androidvideo
+│   │   │       │   ├── Makefile.am
+│   │   │       │   ├── video_device_impl.cpp
+│   │   │       │   └── video_device_monitor_impl.cpp
+│   │   │       ├── CMakeLists.txt
+│   │   │       ├── filter_transpose.cpp
+│   │   │       ├── filter_transpose.h
+│   │   │       ├── iosvideo
+│   │   │       │   ├── Makefile.am
+│   │   │       │   ├── video_device_impl.cpp
+│   │   │       │   └── video_device_monitor_impl.cpp
+│   │   │       ├── Makefile.am
+│   │   │       ├── osxvideo
+│   │   │       │   ├── Makefile.am
+│   │   │       │   ├── video_device_impl.mm
+│   │   │       │   └── video_device_monitor_impl.mm
+│   │   │       ├── shm_header.h
+│   │   │       ├── sinkclient.cpp
+│   │   │       ├── sinkclient.h
+│   │   │       ├── v4l2
+│   │   │       │   ├── Makefile.am
+│   │   │       │   ├── video_device_impl.cpp
+│   │   │       │   └── video_device_monitor_impl.cpp
+│   │   │       ├── video_base.cpp
+│   │   │       ├── video_base.h
+│   │   │       ├── video_device.h
+│   │   │       ├── video_device_monitor.cpp
+│   │   │       ├── video_device_monitor.h
+│   │   │       ├── video_input.cpp
+│   │   │       ├── video_input.h
+│   │   │       ├── video_mixer.cpp
+│   │   │       ├── video_mixer.h
+│   │   │       ├── video_receive_thread.cpp
+│   │   │       ├── video_receive_thread.h
+│   │   │       ├── video_rtp_session.cpp
+│   │   │       ├── video_rtp_session.h
+│   │   │       ├── video_scaler.cpp
+│   │   │       ├── video_scaler.h
+│   │   │       ├── video_sender.cpp
+│   │   │       ├── video_sender.h
+│   │   │       └── winvideo
+│   │   │           ├── capture_graph_interfaces.h
+│   │   │           ├── CMakeLists.txt
+│   │   │           ├── Makefile.am
+│   │   │           ├── video_device_impl.cpp
+│   │   │           └── video_device_monitor_impl.cpp
+│   │   ├── meson.build
+│   │   ├── noncopyable.h
+│   │   ├── observer.h
+│   │   ├── plugin
+│   │   │   ├── callservicesmanager.cpp
+│   │   │   ├── callservicesmanager.h
+│   │   │   ├── chathandler.h
+│   │   │   ├── chatservicesmanager.cpp
+│   │   │   ├── chatservicesmanager.h
+│   │   │   ├── CMakeLists.txt
+│   │   │   ├── jamiplugin.h
+│   │   │   ├── jamipluginmanager.cpp
+│   │   │   ├── jamipluginmanager.h
+│   │   │   ├── Makefile.am
+│   │   │   ├── mediahandler.h
+│   │   │   ├── pluginloader.cpp
+│   │   │   ├── pluginloader.h
+│   │   │   ├── pluginmanager.cpp
+│   │   │   ├── pluginmanager.h
+│   │   │   ├── pluginpreferencesutils.cpp
+│   │   │   ├── pluginpreferencesutils.h
+│   │   │   ├── pluginsutils.cpp
+│   │   │   ├── pluginsutils.h
+│   │   │   ├── preferencehandler.h
+│   │   │   ├── preferenceservicesmanager.cpp
+│   │   │   ├── preferenceservicesmanager.h
+│   │   │   ├── store_ca_crt.cpp
+│   │   │   ├── streamdata.h
+│   │   │   ├── webviewhandler.h
+│   │   │   ├── webviewmessage.h
+│   │   │   ├── webviewservicesmanager.cpp
+│   │   │   └── webviewservicesmanager.h
+│   │   ├── preferences.cpp
+│   │   ├── preferences.h
+│   │   ├── rational.h
+│   │   ├── registration_states.h
+│   │   ├── ring_api.cpp
+│   │   ├── ring_types.h
+│   │   ├── scheduled_executor.cpp
+│   │   ├── scheduled_executor.h
+│   │   ├── sip
+│   │   │   ├── CMakeLists.txt
+│   │   │   ├── Makefile.am
+│   │   │   ├── pres_sub_client.cpp
+│   │   │   ├── pres_sub_client.h
+│   │   │   ├── pres_sub_server.cpp
+│   │   │   ├── pres_sub_server.h
+│   │   │   ├── sdes_negotiator.cpp
+│   │   │   ├── sdes_negotiator.h
+│   │   │   ├── sdp.cpp
+│   │   │   ├── sdp.h
+│   │   │   ├── sipaccountbase_config.cpp
+│   │   │   ├── sipaccountbase_config.h
+│   │   │   ├── sipaccountbase.cpp
+│   │   │   ├── sipaccountbase.h
+│   │   │   ├── sipaccount_config.cpp
+│   │   │   ├── sipaccount_config.h
+│   │   │   ├── sipaccount.cpp
+│   │   │   ├── sipaccount.h
+│   │   │   ├── sipcall.cpp
+│   │   │   ├── sipcall.h
+│   │   │   ├── sippresence.cpp
+│   │   │   ├── sippresence.h
+│   │   │   ├── siptransport.cpp
+│   │   │   ├── siptransport.h
+│   │   │   ├── sipvoiplink.cpp
+│   │   │   └── sipvoiplink.h
+│   │   ├── string_utils.cpp
+│   │   ├── string_utils.h
+│   │   ├── threadloop.cpp
+│   │   ├── threadloop.h
+│   │   ├── uri.cpp
+│   │   ├── uri.h
+│   │   ├── vcard.cpp
+│   │   ├── vcard.h
+│   │   ├── windirent.h
+│   │   ├── winsyslog.c
+│   │   └── winsyslog.h
+│   ├── test
+│   │   ├── agent
+│   │   │   ├── agent.scm
+│   │   │   ├── build-aux
+│   │   │   │   ├── guile-wrapper.cpp
+│   │   │   │   └── pre-inst-env.in
+│   │   │   ├── examples
+│   │   │   │   ├── active-agent.scm
+│   │   │   │   ├── agent.scm -> ../agent.scm
+│   │   │   │   ├── jami -> ../jami
+│   │   │   │   └── passive-agent.scm
+│   │   │   ├── jami
+│   │   │   │   ├── account.scm
+│   │   │   │   ├── call.scm
+│   │   │   │   ├── conversation.scm
+│   │   │   │   ├── logger.scm
+│   │   │   │   └── signal.scm
+│   │   │   ├── jami.scm
+│   │   │   ├── Makefile.am
+│   │   │   ├── README.md
+│   │   │   ├── scenarios
+│   │   │   │   ├── bulk-calls
+│   │   │   │   │   ├── run-scenario.in
+│   │   │   │   │   └── scenario.scm
+│   │   │   │   └── peer-monitor
+│   │   │   │       ├── agent.scm -> ../../agent.scm
+│   │   │   │       ├── jami -> ../../jami
+│   │   │   │       └── scenario.scm
+│   │   │   └── src
+│   │   │       ├── bindings
+│   │   │       │   ├── account.h
+│   │   │       │   ├── bindings.cpp
+│   │   │       │   ├── bindings.h
+│   │   │       │   ├── call.h
+│   │   │       │   ├── conversation.h
+│   │   │       │   ├── jami.h
+│   │   │       │   ├── logger.h
+│   │   │       │   ├── signal.cpp
+│   │   │       │   └── signal.h
+│   │   │       ├── main.cpp
+│   │   │       └── utils.h
+│   │   ├── fuzzing
+│   │   │   ├── actors
+│   │   │   │   ├── alice-bob-carla.yml
+│   │   │   │   ├── alice-bob-no-upnp.yml
+│   │   │   │   ├── alice-bob.yml
+│   │   │   │   └── rdv.yml
+│   │   │   ├── common.h
+│   │   │   ├── dring-sample.yml
+│   │   │   ├── examples
+│   │   │   │   ├── fuzz-channel.cpp
+│   │   │   │   ├── fuzz-channel-request.cpp
+│   │   │   │   ├── fuzz-echo.cpp
+│   │   │   │   ├── fuzz-jami-version.cpp
+│   │   │   │   ├── fuzz-libfuzz.cpp
+│   │   │   │   ├── fuzz-msgpack.cpp
+│   │   │   │   ├── fuzz-random-over-tls.cpp
+│   │   │   │   ├── fuzz-sdp-bad-body.cpp
+│   │   │   │   ├── fuzz-sdp-huge-body.cpp
+│   │   │   │   ├── fuzz-sip-html.cpp
+│   │   │   │   ├── fuzz-sip-huge-message.cpp
+│   │   │   │   └── fuzz-sip-version.cpp
+│   │   │   ├── fuzz-msgpack.cpp
+│   │   │   ├── fuzz-spam-channel-creation.cpp
+│   │   │   ├── lib
+│   │   │   │   ├── dht.cpp
+│   │   │   │   ├── gnutls.cpp
+│   │   │   │   ├── gnutls.h
+│   │   │   │   ├── rand.cpp
+│   │   │   │   ├── sip-fmt.cpp
+│   │   │   │   ├── sip-fmt.h
+│   │   │   │   ├── sip-parser.ll
+│   │   │   │   ├── supervisor.cpp
+│   │   │   │   ├── supervisor.h
+│   │   │   │   ├── syslog.cpp
+│   │   │   │   ├── syslog.h
+│   │   │   │   ├── utils.cpp
+│   │   │   │   └── utils.h
+│   │   │   ├── Makefile.am
+│   │   │   └── scenarios
+│   │   │       └── classic-alice-and-bob.h
+│   │   ├── Makefile.am
+│   │   ├── meson.build
+│   │   ├── sip
+│   │   │   ├── Makefile.am
+│   │   │   ├── sip.cpp
+│   │   │   ├── test_SIP.cpp
+│   │   │   └── test_SIP.h
+│   │   ├── test-env.sh
+│   │   ├── test_runner.h
+│   │   └── unitTest
+│   │       ├── account_archive
+│   │       │   ├── account_archive.cpp
+│   │       │   └── migration.cpp
+│   │       ├── account_factory
+│   │       │   └── testAccount_factory.cpp
+│   │       ├── actors
+│   │       │   ├── account_list.yml
+│   │       │   ├── alice-bob-carla-davi.yml
+│   │       │   ├── alice-bob-carla.yml
+│   │       │   ├── alice-bob-no-upnp.yml
+│   │       │   ├── alice-bob-password.yml
+│   │       │   ├── alice-bob_SIP.yml
+│   │       │   ├── alice-bob.yml
+│   │       │   └── alice.yml
+│   │       ├── base64
+│   │       │   └── base64.cpp
+│   │       ├── call
+│   │       │   ├── call.cpp
+│   │       │   ├── conference.cpp
+│   │       │   ├── recorder.cpp
+│   │       │   └── sipcall.cpp
+│   │       ├── common.cpp
+│   │       ├── common.h
+│   │       ├── conversation
+│   │       │   ├── call.cpp
+│   │       │   ├── conversationcommon.cpp
+│   │       │   ├── conversationcommon.h
+│   │       │   ├── conversation.cpp
+│   │       │   ├── conversationFetchSent.cpp
+│   │       │   ├── conversationMembersEvent.cpp
+│   │       │   ├── conversationRequest.cpp
+│   │       │   ├── rsc
+│   │       │   │   └── incorrectContacts
+│   │       │   └── typers.cpp
+│   │       ├── conversationRepository
+│   │       │   └── conversationRepository.cpp
+│   │       ├── fileTransfer
+│   │       │   └── fileTransfer.cpp
+│   │       ├── fileutils
+│   │       │   └── testFileutils.cpp
+│   │       ├── ice
+│   │       │   └── ice_sdp_parser.cpp
+│   │       ├── Makefile.am
+│   │       ├── map_utils
+│   │       │   └── testMap_utils.cpp
+│   │       ├── media
+│   │       │   ├── audio
+│   │       │   │   ├── test_audio_frame_resizer.cpp
+│   │       │   │   └── test_resampler.cpp
+│   │       │   ├── jami.jpg
+│   │       │   ├── test_media_decoder.cpp
+│   │       │   ├── test_media_encoder.cpp
+│   │       │   ├── test_media_filter.cpp
+│   │       │   ├── test_media_frame.cpp
+│   │       │   ├── test_media_player.cpp
+│   │       │   ├── test.mp3
+│   │       │   ├── test_video_file.mp4
+│   │       │   └── video
+│   │       │       ├── testVideo_input.cpp
+│   │       │       └── test_video_scaler.cpp
+│   │       ├── media_negotiation
+│   │       │   ├── auto_answer.cpp
+│   │       │   ├── hold_resume.cpp
+│   │       │   └── media_negotiation.cpp
+│   │       ├── namedirectory
+│   │       │   └── namedirectory.cpp
+│   │       ├── plugins
+│   │       │   ├── plugins.cpp
+│   │       │   ├── plugin.yml
+│   │       │   ├── README
+│   │       │   ├── Test.crt
+│   │       │   ├── Test.key
+│   │       │   ├── TestSuiteCertNotFound.jpl
+│   │       │   ├── TestSuiteFileNotSign.jpl
+│   │       │   ├── TestSuite.jpl
+│   │       │   ├── TestSuiteManifestChanged.jpl
+│   │       │   ├── TestSuiteNotSign.jpl
+│   │       │   └── TestSuitePluginNotSignByIssuer.jpl
+│   │       ├── presence
+│   │       │   └── presence.cpp
+│   │       ├── revoke
+│   │       │   └── revoke.cpp
+│   │       ├── scheduler.cpp
+│   │       ├── sip_account
+│   │       │   ├── sip_basic_calls.cpp
+│   │       │   └── sip_srtp.cpp
+│   │       ├── string_utils
+│   │       │   └── testString_utils.cpp
+│   │       ├── swarm
+│   │       │   ├── bootstrap.cpp
+│   │       │   ├── nodes.h
+│   │       │   ├── routing_table.cpp
+│   │       │   ├── swarm_conversation.cpp
+│   │       │   └── swarm_spread.cpp
+│   │       ├── syncHistory
+│   │       │   └── syncHistory.cpp
+│   │       └── utf8_utils
+│   │           └── testUtf8_utils.cpp
+│   └── tools
+│       ├── asterisk
+│       │   ├── extensions.conf
+│       │   ├── keys
+│       │   │   ├── 500.crt
+│       │   │   ├── 500.csr
+│       │   │   ├── 500.key
+│       │   │   ├── 500.pem
+│       │   │   ├── 600.crt
+│       │   │   ├── 600.csr
+│       │   │   ├── 600.key
+│       │   │   ├── 600.pem
+│       │   │   ├── asterisk.crt
+│       │   │   ├── asterisk.csr
+│       │   │   ├── asterisk.key
+│       │   │   ├── asterisk.pem
+│       │   │   ├── ca.cfg
+│       │   │   ├── ca.crt
+│       │   │   ├── ca.key
+│       │   │   ├── testphone1.crt
+│       │   │   ├── testphone1.csr
+│       │   │   ├── testphone1.key
+│       │   │   ├── testphone1.pem
+│       │   │   └── tmp.cfg
+│       │   └── sip.conf
+│       ├── cpplint.py3
+│       ├── jamictrl
+│       │   ├── controller.py
+│       │   ├── errorsDring.py
+│       │   ├── __init__.py
+│       │   ├── jamictrl.py
+│       │   ├── jamictrl_testdbus.py
+│       │   ├── jami_test.py
+│       │   ├── sendfile.py
+│       │   ├── sippwrap.py
+│       │   ├── swarm.py
+│       │   ├── test_config.ini
+│       │   ├── tester.py
+│       │   ├── test_jami_dbus_interface.py
+│       │   └── toggle_video_preview.py
+│       ├── test_network.py
+│       ├── trace
+│       │   ├── audio
+│       │   │   ├── audio.py
+│       │   │   └── lttng-setup.sh
+│       │   ├── ice-transport
+│       │   │   └── stats
+│       │   ├── timeline
+│       │   │   ├── executor
+│       │   │   └── signals
+│       │   └── trace-jami
+│       └── update-copyright
+└── pjproject-8fc165b833eea6e3c88d67a541385424b129fd3f.tar.gz -> /home/felix/packages/jami-daemon/pjproject-8fc165b833eea6e3c88d67a541385424b129fd3f.tar.gz
+
+152 directories, 897 files

@@ -1,0 +1,1169 @@
+src
+├── aws-c-common-0.10.0
+│   ├── AWSCRTAndroidTestRunner
+│   │   ├── app
+│   │   │   ├── build.gradle
+│   │   │   └── src
+│   │   │       ├── androidTest
+│   │   │       │   └── java
+│   │   │       │       └── software
+│   │   │       │           └── amazon
+│   │   │       │               └── awssdk
+│   │   │       │                   └── crt
+│   │   │       │                       └── awscrtandroidtestrunner
+│   │   │       │                           ├── NativeTestFixture.kt
+│   │   │       │                           └── NativeTest.kt.in
+│   │   │       └── main
+│   │   │           ├── AndroidManifest.xml
+│   │   │           └── cpp
+│   │   │               ├── CMakeLists.txt
+│   │   │               └── native-lib.cpp
+│   │   ├── build.gradle
+│   │   ├── gradle
+│   │   │   └── wrapper
+│   │   │       ├── gradle-wrapper.jar
+│   │   │       └── gradle-wrapper.properties
+│   │   ├── gradle.properties
+│   │   ├── gradlew
+│   │   ├── gradlew.bat
+│   │   └── settings.gradle
+│   ├── bin
+│   │   └── system_info
+│   │       ├── CMakeLists.txt
+│   │       └── print_system_info.c
+│   ├── builder.json
+│   ├── cmake
+│   │   ├── aws-c-common-config.cmake
+│   │   ├── AwsCFlags.cmake
+│   │   ├── AwsCheckHeaders.cmake
+│   │   ├── AwsCRuntime.cmake
+│   │   ├── AwsFeatureTests.cmake
+│   │   ├── AwsFindPackage.cmake
+│   │   ├── AwsLibFuzzer.cmake
+│   │   ├── AwsPrebuildDependency.cmake
+│   │   ├── AwsSanitizers.cmake
+│   │   ├── AwsSharedLibSetup.cmake
+│   │   ├── AwsSIMD.cmake
+│   │   ├── AwsTestHarness.cmake
+│   │   ├── AwsThreadAffinity.cmake
+│   │   ├── AwsThreadName.cmake
+│   │   ├── CPackConfig.cmake
+│   │   └── rpm-scripts
+│   │       ├── changelog.txt
+│   │       ├── post.sh
+│   │       └── postun.sh
+│   ├── CMakeLists.txt
+│   ├── CONTRIBUTING.md
+│   ├── format-check.py
+│   ├── include
+│   │   └── aws
+│   │       ├── common
+│   │       │   ├── allocator.h
+│   │       │   ├── array_list.h
+│   │       │   ├── array_list.inl
+│   │       │   ├── assert.h
+│   │       │   ├── atomics_fallback.inl
+│   │       │   ├── atomics_gnu.inl
+│   │       │   ├── atomics_gnu_old.inl
+│   │       │   ├── atomics.h
+│   │       │   ├── atomics.inl
+│   │       │   ├── atomics_msvc.inl
+│   │       │   ├── byte_buf.h
+│   │       │   ├── byte_order.h
+│   │       │   ├── byte_order.inl
+│   │       │   ├── cache.h
+│   │       │   ├── cbor.h
+│   │       │   ├── clock.h
+│   │       │   ├── clock.inl
+│   │       │   ├── command_line_parser.h
+│   │       │   ├── common.h
+│   │       │   ├── condition_variable.h
+│   │       │   ├── config.h.in
+│   │       │   ├── cpuid.h
+│   │       │   ├── cross_process_lock.h
+│   │       │   ├── date_time.h
+│   │       │   ├── device_random.h
+│   │       │   ├── encoding.h
+│   │       │   ├── encoding.inl
+│   │       │   ├── environment.h
+│   │       │   ├── error.h
+│   │       │   ├── error.inl
+│   │       │   ├── exports.h
+│   │       │   ├── external
+│   │       │   │   └── ittnotify.h
+│   │       │   ├── fifo_cache.h
+│   │       │   ├── file.h
+│   │       │   ├── hash_table.h
+│   │       │   ├── host_utils.h
+│   │       │   ├── json.h
+│   │       │   ├── lifo_cache.h
+│   │       │   ├── linked_hash_table.h
+│   │       │   ├── linked_list.h
+│   │       │   ├── linked_list.inl
+│   │       │   ├── log_channel.h
+│   │       │   ├── log_formatter.h
+│   │       │   ├── logging.h
+│   │       │   ├── log_writer.h
+│   │       │   ├── lru_cache.h
+│   │       │   ├── macros.h
+│   │       │   ├── math.cbmc.inl
+│   │       │   ├── math.fallback.inl
+│   │       │   ├── math.gcc_arm64_asm.inl
+│   │       │   ├── math.gcc_builtin.inl
+│   │       │   ├── math.gcc_overflow.inl
+│   │       │   ├── math.gcc_x64_asm.inl
+│   │       │   ├── math.h
+│   │       │   ├── math.inl
+│   │       │   ├── math.msvc.inl
+│   │       │   ├── mutex.h
+│   │       │   ├── package.h
+│   │       │   ├── platform.h
+│   │       │   ├── posix
+│   │       │   │   └── common.inl
+│   │       │   ├── predicates.h
+│   │       │   ├── priority_queue.h
+│   │       │   ├── private
+│   │       │   │   ├── array_list.h
+│   │       │   │   ├── byte_buf.h
+│   │       │   │   ├── dlloads.h
+│   │       │   │   ├── external_module_impl.h
+│   │       │   │   ├── hash_table_impl.h
+│   │       │   │   ├── lookup3.inl
+│   │       │   │   ├── system_info_priv.h
+│   │       │   │   ├── thread_shared.h
+│   │       │   │   └── xml_parser_impl.h
+│   │       │   ├── process.h
+│   │       │   ├── ref_count.h
+│   │       │   ├── ring_buffer.h
+│   │       │   ├── ring_buffer.inl
+│   │       │   ├── rw_lock.h
+│   │       │   ├── statistics.h
+│   │       │   ├── stdbool.h
+│   │       │   ├── stdint.h
+│   │       │   ├── string.h
+│   │       │   ├── string.inl
+│   │       │   ├── system_info.h
+│   │       │   ├── system_resource_util.h
+│   │       │   ├── task_scheduler.h
+│   │       │   ├── thread.h
+│   │       │   ├── thread_scheduler.h
+│   │       │   ├── time.h
+│   │       │   ├── uri.h
+│   │       │   ├── uuid.h
+│   │       │   ├── xml_parser.h
+│   │       │   ├── zero.h
+│   │       │   └── zero.inl
+│   │       └── testing
+│   │           └── aws_test_harness.h
+│   ├── LICENSE
+│   ├── NOTICE
+│   ├── README.md
+│   ├── scripts
+│   │   ├── appverifier_ctest.py
+│   │   ├── appverifier_xml.py
+│   │   ├── import_libcbor.py
+│   │   └── latest_submodules.py
+│   ├── source
+│   │   ├── allocator.c
+│   │   ├── allocator_sba.c
+│   │   ├── android
+│   │   │   └── logging.c
+│   │   ├── arch
+│   │   │   ├── arm
+│   │   │   │   ├── auxv
+│   │   │   │   │   └── cpuid.c
+│   │   │   │   ├── darwin
+│   │   │   │   │   └── cpuid.c
+│   │   │   │   └── windows
+│   │   │   │       └── cpuid.c
+│   │   │   ├── generic
+│   │   │   │   └── cpuid.c
+│   │   │   └── intel
+│   │   │       ├── asm
+│   │   │       │   └── cpuid.c
+│   │   │       ├── cpuid.c
+│   │   │       ├── encoding_avx2.c
+│   │   │       └── msvc
+│   │   │           └── cpuid.c
+│   │   ├── array_list.c
+│   │   ├── assert.c
+│   │   ├── byte_buf.c
+│   │   ├── cache.c
+│   │   ├── cbor.c
+│   │   ├── codegen.c
+│   │   ├── command_line_parser.c
+│   │   ├── common.c
+│   │   ├── condition_variable.c
+│   │   ├── date_time.c
+│   │   ├── device_random.c
+│   │   ├── encoding.c
+│   │   ├── error.c
+│   │   ├── external
+│   │   │   ├── cJSON.c
+│   │   │   ├── cJSON.h
+│   │   │   └── libcbor
+│   │   │       ├── allocators.c
+│   │   │       ├── cbor
+│   │   │       │   ├── arrays.c
+│   │   │       │   ├── arrays.h
+│   │   │       │   ├── bytestrings.c
+│   │   │       │   ├── bytestrings.h
+│   │   │       │   ├── callbacks.c
+│   │   │       │   ├── callbacks.h
+│   │   │       │   ├── cbor_export.h
+│   │   │       │   ├── common.c
+│   │   │       │   ├── common.h
+│   │   │       │   ├── configuration.h
+│   │   │       │   ├── data.h
+│   │   │       │   ├── encoding.c
+│   │   │       │   ├── encoding.h
+│   │   │       │   ├── floats_ctrls.c
+│   │   │       │   ├── floats_ctrls.h
+│   │   │       │   ├── internal
+│   │   │       │   │   ├── builder_callbacks.c
+│   │   │       │   │   ├── builder_callbacks.h
+│   │   │       │   │   ├── encoders.c
+│   │   │       │   │   ├── encoders.h
+│   │   │       │   │   ├── loaders.c
+│   │   │       │   │   ├── loaders.h
+│   │   │       │   │   ├── memory_utils.c
+│   │   │       │   │   ├── memory_utils.h
+│   │   │       │   │   ├── stack.c
+│   │   │       │   │   ├── stack.h
+│   │   │       │   │   ├── unicode.c
+│   │   │       │   │   └── unicode.h
+│   │   │       │   ├── ints.c
+│   │   │       │   ├── ints.h
+│   │   │       │   ├── maps.c
+│   │   │       │   ├── maps.h
+│   │   │       │   ├── serialization.c
+│   │   │       │   ├── serialization.h
+│   │   │       │   ├── streaming.c
+│   │   │       │   ├── streaming.h
+│   │   │       │   ├── strings.c
+│   │   │       │   ├── strings.h
+│   │   │       │   ├── tags.c
+│   │   │       │   └── tags.h
+│   │   │       ├── cbor.c
+│   │   │       └── cbor.h
+│   │   ├── fifo_cache.c
+│   │   ├── file.c
+│   │   ├── hash_table.c
+│   │   ├── host_utils.c
+│   │   ├── json.c
+│   │   ├── lifo_cache.c
+│   │   ├── linked_hash_table.c
+│   │   ├── linux
+│   │   │   └── system_info.c
+│   │   ├── log_channel.c
+│   │   ├── log_formatter.c
+│   │   ├── logging.c
+│   │   ├── log_writer.c
+│   │   ├── lru_cache.c
+│   │   ├── math.c
+│   │   ├── memtrace.c
+│   │   ├── platform_fallback_stubs
+│   │   │   └── system_info.c
+│   │   ├── posix
+│   │   │   ├── clock.c
+│   │   │   ├── condition_variable.c
+│   │   │   ├── cross_process_lock.c
+│   │   │   ├── device_random.c
+│   │   │   ├── environment.c
+│   │   │   ├── file.c
+│   │   │   ├── mutex.c
+│   │   │   ├── process.c
+│   │   │   ├── rw_lock.c
+│   │   │   ├── system_info.c
+│   │   │   ├── system_resource_utils.c
+│   │   │   ├── thread.c
+│   │   │   └── time.c
+│   │   ├── priority_queue.c
+│   │   ├── process_common.c
+│   │   ├── ref_count.c
+│   │   ├── ring_buffer.c
+│   │   ├── statistics.c
+│   │   ├── string.c
+│   │   ├── system_info.c
+│   │   ├── task_scheduler.c
+│   │   ├── thread_scheduler.c
+│   │   ├── thread_shared.c
+│   │   ├── uri.c
+│   │   ├── uuid.c
+│   │   ├── windows
+│   │   │   ├── clock.c
+│   │   │   ├── condition_variable.c
+│   │   │   ├── cross_process_lock.c
+│   │   │   ├── device_random.c
+│   │   │   ├── environment.c
+│   │   │   ├── file.c
+│   │   │   ├── mutex.c
+│   │   │   ├── process.c
+│   │   │   ├── rw_lock.c
+│   │   │   ├── system_info.c
+│   │   │   ├── system_resource_utils.c
+│   │   │   ├── thread.c
+│   │   │   └── time.c
+│   │   └── xml_parser.c
+│   ├── tests
+│   │   ├── alloc_test.c
+│   │   ├── array_list_test.c
+│   │   ├── assert_test.c
+│   │   ├── atomics_test.c
+│   │   ├── byte_buf_test.c
+│   │   ├── byte_cursor_find_test.c
+│   │   ├── byte_order_test.c
+│   │   ├── cache_test.c
+│   │   ├── calloc_test.c
+│   │   ├── cbor_test.c
+│   │   ├── clock_test.c
+│   │   ├── CMakeLists.txt
+│   │   ├── command_line_parser_test.c
+│   │   ├── condition_variable_test.c
+│   │   ├── cpuid_test.c
+│   │   ├── cross_process_lock_tests.c
+│   │   ├── cursor_test.c
+│   │   ├── date_time_test.c
+│   │   ├── device_random_test.c
+│   │   ├── encoding_test.c
+│   │   ├── environment_test.c
+│   │   ├── error_test.c
+│   │   ├── file_test.c
+│   │   ├── fuzz
+│   │   │   ├── base64_encoding_transitive.c
+│   │   │   ├── cbor_decoding_transitive.c
+│   │   │   ├── cbor_double_encode_decode.c
+│   │   │   └── hex_encoding_transitive.c
+│   │   ├── hash_table_test.c
+│   │   ├── host_util_test.c
+│   │   ├── json_test.c
+│   │   ├── linked_hash_table_test.c
+│   │   ├── linked_list_test.c
+│   │   ├── logging
+│   │   │   ├── log_channel_test.c
+│   │   │   ├── log_formatter_test.c
+│   │   │   ├── logging_filter_debug_static_test.c
+│   │   │   ├── logging_filter_error_static_test.c
+│   │   │   ├── logging_filter_fatal_static_test.c
+│   │   │   ├── logging_filter_info_static_test.c
+│   │   │   ├── logging_filter_none_static_test.c
+│   │   │   ├── logging_filter_trace_static_test.c
+│   │   │   ├── logging_filter_warn_static_test.c
+│   │   │   ├── logging_general_test.c
+│   │   │   ├── logging_misc.c
+│   │   │   ├── logging_test_utilities.c
+│   │   │   ├── logging_test_utilities.h
+│   │   │   ├── log_writer_test.c
+│   │   │   ├── pipeline_logger_test.c
+│   │   │   ├── test_logger.c
+│   │   │   └── test_logger.h
+│   │   ├── math_test.c
+│   │   ├── memtrace_test.c
+│   │   ├── mutex_test.c
+│   │   ├── priority_queue_test.c
+│   │   ├── process_test.c
+│   │   ├── realloc_test.c
+│   │   ├── resources
+│   │   │   ├── Å Éxample.txt
+│   │   │   ├── ascii.txt
+│   │   │   ├── dir_traversal_test
+│   │   │   │   ├── first_child_dir
+│   │   │   │   │   └── child.txt
+│   │   │   │   └── root_child.txt
+│   │   │   ├── utf16be.txt
+│   │   │   ├── utf16le.txt
+│   │   │   └── utf8.txt
+│   │   ├── ring_buffer_test.c
+│   │   ├── rw_lock_test.c
+│   │   ├── split_test.c
+│   │   ├── string_test.c
+│   │   ├── system_info_tests.c
+│   │   ├── system_resource_util_test.c
+│   │   ├── task_scheduler_test.c
+│   │   ├── thread_scheduler_test.c
+│   │   ├── thread_test.c
+│   │   ├── uri_test.c
+│   │   ├── uuid_test.c
+│   │   ├── xml_parser_test.c
+│   │   └── zero_test.c
+│   ├── THIRD-PARTY-LICENSES.txt
+│   └── verification
+│       └── cbmc
+│           ├── include
+│           │   ├── aws
+│           │   │   └── common
+│           │   │       └── config.h
+│           │   ├── proof_helpers
+│           │   │   ├── aws_byte_cursor_read_common.h
+│           │   │   ├── make_common_data_structures.h
+│           │   │   ├── nondet.h
+│           │   │   ├── ring_buffer_abstract_states.h
+│           │   │   └── utils.h
+│           │   └── README.md
+│           ├── proofs
+│           │   ├── aws_add_size_checked
+│           │   │   ├── aws_add_size_checked_harness.c
+│           │   │   ├── cbmc-proof.txt
+│           │   │   └── Makefile
+│           │   ├── aws_add_size_saturating
+│           │   │   ├── aws_add_size_saturating_harness.c
+│           │   │   ├── cbmc-proof.txt
+│           │   │   └── Makefile
+│           │   ├── aws_array_eq
+│           │   │   ├── aws_array_eq_harness.c
+│           │   │   ├── cbmc-proof.txt
+│           │   │   └── Makefile
+│           │   ├── aws_array_eq_c_str
+│           │   │   ├── aws_array_eq_c_str_harness.c
+│           │   │   ├── cbmc-proof.txt
+│           │   │   └── Makefile
+│           │   ├── aws_array_eq_c_str_ignore_case
+│           │   │   ├── aws_array_eq_c_str_ignore_case_harness.c
+│           │   │   ├── cbmc-proof.txt
+│           │   │   └── Makefile
+│           │   ├── aws_array_eq_ignore_case
+│           │   │   ├── aws_array_eq_ignore_case_harness.c
+│           │   │   ├── cbmc-proof.txt
+│           │   │   └── Makefile
+│           │   ├── aws_array_list_back
+│           │   │   ├── aws_array_list_back_harness.c
+│           │   │   ├── cbmc-proof.txt
+│           │   │   └── Makefile
+│           │   ├── aws_array_list_capacity
+│           │   │   ├── aws_array_list_capacity_harness.c
+│           │   │   ├── cbmc-proof.txt
+│           │   │   └── Makefile
+│           │   ├── aws_array_list_clean_up
+│           │   │   ├── aws_array_list_clean_up_harness.c
+│           │   │   ├── cbmc-proof.txt
+│           │   │   └── Makefile
+│           │   ├── aws_array_list_clear
+│           │   │   ├── aws_array_list_clear_harness.c
+│           │   │   ├── cbmc-proof.txt
+│           │   │   └── Makefile
+│           │   ├── aws_array_list_comparator_string
+│           │   │   ├── aws_array_list_comparator_string_harness.c
+│           │   │   ├── cbmc-proof.txt
+│           │   │   └── Makefile
+│           │   ├── aws_array_list_copy
+│           │   │   ├── aws_array_list_copy_harness.c
+│           │   │   ├── cbmc-proof.txt
+│           │   │   └── Makefile
+│           │   ├── aws_array_list_ensure_capacity
+│           │   │   ├── aws_array_list_ensure_capacity_harness.c
+│           │   │   ├── cbmc-proof.txt
+│           │   │   └── Makefile
+│           │   ├── aws_array_list_erase
+│           │   │   ├── aws_array_list_erase_harness.c
+│           │   │   ├── cbmc-proof.txt
+│           │   │   └── Makefile
+│           │   ├── aws_array_list_front
+│           │   │   ├── aws_array_list_front_harness.c
+│           │   │   ├── cbmc-proof.txt
+│           │   │   └── Makefile
+│           │   ├── aws_array_list_get_at
+│           │   │   ├── aws_array_list_get_at_harness.c
+│           │   │   ├── cbmc-proof.txt
+│           │   │   └── Makefile
+│           │   ├── aws_array_list_get_at_ptr
+│           │   │   ├── aws_array_list_get_at_ptr_harness.c
+│           │   │   ├── cbmc-proof.txt
+│           │   │   └── Makefile
+│           │   ├── aws_array_list_init_dynamic
+│           │   │   ├── aws_array_list_init_dynamic_harness.c
+│           │   │   ├── cbmc-proof.txt
+│           │   │   └── Makefile
+│           │   ├── aws_array_list_init_static
+│           │   │   ├── aws_array_list_init_static_harness.c
+│           │   │   ├── cbmc-proof.txt
+│           │   │   └── Makefile
+│           │   ├── aws_array_list_length
+│           │   │   ├── aws_array_list_length_harness.c
+│           │   │   ├── cbmc-proof.txt
+│           │   │   └── Makefile
+│           │   ├── aws_array_list_pop_back
+│           │   │   ├── aws_array_list_pop_back_harness.c
+│           │   │   ├── cbmc-proof.txt
+│           │   │   └── Makefile
+│           │   ├── aws_array_list_pop_front
+│           │   │   ├── aws_array_list_pop_front_harness.c
+│           │   │   ├── cbmc-proof.txt
+│           │   │   └── Makefile
+│           │   ├── aws_array_list_pop_front_n
+│           │   │   ├── aws_array_list_pop_front_n_harness.c
+│           │   │   ├── cbmc-proof.txt
+│           │   │   └── Makefile
+│           │   ├── aws_array_list_push_back
+│           │   │   ├── aws_array_list_push_back_harness.c
+│           │   │   ├── cbmc-proof.txt
+│           │   │   └── Makefile
+│           │   ├── aws_array_list_push_front
+│           │   │   ├── aws_array_list_push_front_harness.c
+│           │   │   ├── cbmc-proof.txt
+│           │   │   └── Makefile
+│           │   ├── aws_array_list_set_at
+│           │   │   ├── aws_array_list_set_at_harness.c
+│           │   │   ├── cbmc-proof.txt
+│           │   │   └── Makefile
+│           │   ├── aws_array_list_shrink_to_fit
+│           │   │   ├── aws_array_list_shrink_to_fit_harness.c
+│           │   │   ├── cbmc-proof.txt
+│           │   │   └── Makefile
+│           │   ├── aws_array_list_sort
+│           │   │   ├── aws_array_list_sort_harness.c
+│           │   │   ├── cbmc-proof.txt
+│           │   │   └── Makefile
+│           │   ├── aws_array_list_swap
+│           │   │   ├── aws_array_list_swap_harness.c
+│           │   │   ├── cbmc-proof.txt
+│           │   │   └── Makefile
+│           │   ├── aws_array_list_swap_contents
+│           │   │   ├── aws_array_list_swap_contents_harness.c
+│           │   │   ├── cbmc-proof.txt
+│           │   │   └── Makefile
+│           │   ├── aws_byte_buf_advance
+│           │   │   ├── aws_byte_buf_advance_harness.c
+│           │   │   ├── cbmc-proof.txt
+│           │   │   └── Makefile
+│           │   ├── aws_byte_buf_append
+│           │   │   ├── aws_byte_buf_append_harness.c
+│           │   │   ├── cbmc-proof.txt
+│           │   │   └── Makefile
+│           │   ├── aws_byte_buf_append_and_update
+│           │   │   ├── aws_byte_buf_append_and_update_harness.c
+│           │   │   ├── cbmc-proof.txt
+│           │   │   └── Makefile
+│           │   ├── aws_byte_buf_append_dynamic
+│           │   │   ├── aws_byte_buf_append_dynamic_harness.c
+│           │   │   ├── cbmc-proof.txt
+│           │   │   └── Makefile
+│           │   ├── aws_byte_buf_append_with_lookup
+│           │   │   ├── aws_byte_buf_append_with_lookup_harness.c
+│           │   │   ├── cbmc-proof.txt
+│           │   │   └── Makefile
+│           │   ├── aws_byte_buf_cat
+│           │   │   ├── aws_byte_buf_cat_harness.c
+│           │   │   ├── cbmc-proof.txt
+│           │   │   └── Makefile
+│           │   ├── aws_byte_buf_clean_up
+│           │   │   ├── aws_byte_buf_clean_up_harness.c
+│           │   │   ├── cbmc-proof.txt
+│           │   │   └── Makefile
+│           │   ├── aws_byte_buf_clean_up_secure
+│           │   │   ├── aws_byte_buf_clean_up_secure_harness.c
+│           │   │   ├── cbmc-proof.txt
+│           │   │   └── Makefile
+│           │   ├── aws_byte_buf_eq
+│           │   │   ├── aws_byte_buf_eq_harness.c
+│           │   │   ├── cbmc-proof.txt
+│           │   │   └── Makefile
+│           │   ├── aws_byte_buf_eq_c_str
+│           │   │   ├── aws_byte_buf_eq_c_str_harness.c
+│           │   │   ├── cbmc-proof.txt
+│           │   │   └── Makefile
+│           │   ├── aws_byte_buf_eq_c_str_ignore_case
+│           │   │   ├── aws_byte_buf_eq_c_str_ignore_case_harness.c
+│           │   │   ├── cbmc-proof.txt
+│           │   │   └── Makefile
+│           │   ├── aws_byte_buf_eq_ignore_case
+│           │   │   ├── aws_byte_buf_eq_ignore_case_harness.c
+│           │   │   ├── cbmc-proof.txt
+│           │   │   └── Makefile
+│           │   ├── aws_byte_buf_from_array
+│           │   │   ├── aws_byte_buf_from_array_harness.c
+│           │   │   ├── cbmc-proof.txt
+│           │   │   └── Makefile
+│           │   ├── aws_byte_buf_from_c_str
+│           │   │   ├── aws_byte_buf_from_c_str_harness.c
+│           │   │   ├── cbmc-proof.txt
+│           │   │   └── Makefile
+│           │   ├── aws_byte_buf_from_empty_array
+│           │   │   ├── aws_byte_buf_from_empty_array_harness.c
+│           │   │   ├── cbmc-proof.txt
+│           │   │   └── Makefile
+│           │   ├── aws_byte_buf_init
+│           │   │   ├── aws_byte_buf_init_harness.c
+│           │   │   ├── cbmc-proof.txt
+│           │   │   └── Makefile
+│           │   ├── aws_byte_buf_init_copy
+│           │   │   ├── aws_byte_buf_init_copy_harness.c
+│           │   │   ├── cbmc-proof.txt
+│           │   │   └── Makefile
+│           │   ├── aws_byte_buf_init_copy_from_cursor
+│           │   │   ├── aws_byte_buf_init_copy_from_cursor_harness.c
+│           │   │   ├── cbmc-proof.txt
+│           │   │   └── Makefile
+│           │   ├── aws_byte_buf_reserve
+│           │   │   ├── aws_byte_buf_reserve_harness.c
+│           │   │   ├── cbmc-proof.txt
+│           │   │   └── Makefile
+│           │   ├── aws_byte_buf_reserve_relative
+│           │   │   ├── aws_byte_buf_reserve_relative_harness.c
+│           │   │   ├── cbmc-proof.txt
+│           │   │   └── Makefile
+│           │   ├── aws_byte_buf_reset
+│           │   │   ├── aws_byte_buf_reset_harness.c
+│           │   │   ├── cbmc-proof.txt
+│           │   │   └── Makefile
+│           │   ├── aws_byte_buf_secure_zero
+│           │   │   ├── aws_byte_buf_secure_zero_harness.c
+│           │   │   ├── cbmc-proof.txt
+│           │   │   └── Makefile
+│           │   ├── aws_byte_buf_write
+│           │   │   ├── aws_byte_buf_write_harness.c
+│           │   │   ├── cbmc-proof.txt
+│           │   │   └── Makefile
+│           │   ├── aws_byte_buf_write_be16
+│           │   │   ├── aws_byte_buf_write_be16_harness.c
+│           │   │   ├── cbmc-proof.txt
+│           │   │   └── Makefile
+│           │   ├── aws_byte_buf_write_be32
+│           │   │   ├── aws_byte_buf_write_be32_harness.c
+│           │   │   ├── cbmc-proof.txt
+│           │   │   └── Makefile
+│           │   ├── aws_byte_buf_write_be64
+│           │   │   ├── aws_byte_buf_write_be64_harness.c
+│           │   │   ├── cbmc-proof.txt
+│           │   │   └── Makefile
+│           │   ├── aws_byte_buf_write_from_whole_buffer
+│           │   │   ├── aws_byte_buf_write_from_whole_buffer_harness.c
+│           │   │   ├── cbmc-proof.txt
+│           │   │   └── Makefile
+│           │   ├── aws_byte_buf_write_from_whole_cursor
+│           │   │   ├── aws_byte_buf_write_from_whole_cursor_harness.c
+│           │   │   ├── cbmc-proof.txt
+│           │   │   └── Makefile
+│           │   ├── aws_byte_buf_write_from_whole_string
+│           │   │   ├── aws_byte_buf_write_from_whole_string_harness.c
+│           │   │   ├── cbmc-proof.txt
+│           │   │   └── Makefile
+│           │   ├── aws_byte_buf_write_u8
+│           │   │   ├── aws_byte_buf_write_u8_harness.c
+│           │   │   ├── cbmc-proof.txt
+│           │   │   └── Makefile
+│           │   ├── aws_byte_cursor_advance
+│           │   │   ├── aws_byte_cursor_advance_harness.c
+│           │   │   ├── cbmc-proof.txt
+│           │   │   └── Makefile
+│           │   ├── aws_byte_cursor_advance_nospec
+│           │   │   ├── aws_byte_cursor_advance_nospec_harness.c
+│           │   │   ├── cbmc-proof.txt
+│           │   │   └── Makefile
+│           │   ├── aws_byte_cursor_compare_lexical
+│           │   │   ├── aws_byte_cursor_compare_lexical_harness.c
+│           │   │   ├── cbmc-proof.txt
+│           │   │   └── Makefile
+│           │   ├── aws_byte_cursor_compare_lookup
+│           │   │   ├── aws_byte_cursor_compare_lookup_harness.c
+│           │   │   ├── cbmc-proof.txt
+│           │   │   └── Makefile
+│           │   ├── aws_byte_cursor_eq
+│           │   │   ├── aws_byte_cursor_eq_harness.c
+│           │   │   ├── cbmc-proof.txt
+│           │   │   └── Makefile
+│           │   ├── aws_byte_cursor_eq_byte_buf
+│           │   │   ├── aws_byte_cursor_eq_byte_buf_harness.c
+│           │   │   ├── cbmc-proof.txt
+│           │   │   └── Makefile
+│           │   ├── aws_byte_cursor_eq_byte_buf_ignore_case
+│           │   │   ├── aws_byte_cursor_eq_byte_buf_ignore_case_harness.c
+│           │   │   ├── cbmc-proof.txt
+│           │   │   └── Makefile
+│           │   ├── aws_byte_cursor_eq_c_str
+│           │   │   ├── aws_byte_cursor_eq_c_str_harness.c
+│           │   │   ├── cbmc-proof.txt
+│           │   │   └── Makefile
+│           │   ├── aws_byte_cursor_eq_c_str_ignore_case
+│           │   │   ├── aws_byte_cursor_eq_c_str_ignore_case_harness.c
+│           │   │   ├── cbmc-proof.txt
+│           │   │   └── Makefile
+│           │   ├── aws_byte_cursor_eq_ignore_case
+│           │   │   ├── aws_byte_cursor_eq_ignore_case_harness.c
+│           │   │   ├── cbmc-proof.txt
+│           │   │   └── Makefile
+│           │   ├── aws_byte_cursor_from_array
+│           │   │   ├── aws_byte_cursor_from_array_harness.c
+│           │   │   ├── cbmc-proof.txt
+│           │   │   └── Makefile
+│           │   ├── aws_byte_cursor_from_buf
+│           │   │   ├── aws_byte_cursor_from_buf_harness.c
+│           │   │   ├── cbmc-proof.txt
+│           │   │   └── Makefile
+│           │   ├── aws_byte_cursor_from_c_str
+│           │   │   ├── aws_byte_cursor_from_c_str_harness.c
+│           │   │   ├── cbmc-proof.txt
+│           │   │   └── Makefile
+│           │   ├── aws_byte_cursor_from_string
+│           │   │   ├── aws_byte_cursor_from_string_harness.c
+│           │   │   ├── cbmc-proof.txt
+│           │   │   └── Makefile
+│           │   ├── aws_byte_cursor_left_trim_pred
+│           │   │   ├── aws_byte_cursor_left_trim_pred_harness.c
+│           │   │   ├── cbmc-proof.txt
+│           │   │   └── Makefile
+│           │   ├── aws_byte_cursor_read
+│           │   │   ├── aws_byte_cursor_read_harness.c
+│           │   │   ├── cbmc-proof.txt
+│           │   │   └── Makefile
+│           │   ├── aws_byte_cursor_read_and_fill_buffer
+│           │   │   ├── aws_byte_cursor_read_and_fill_buffer_harness.c
+│           │   │   ├── cbmc-proof.txt
+│           │   │   └── Makefile
+│           │   ├── aws_byte_cursor_read_be16
+│           │   │   ├── aws_byte_cursor_read_be16_harness.c
+│           │   │   ├── cbmc-proof.txt
+│           │   │   └── Makefile
+│           │   ├── aws_byte_cursor_read_be32
+│           │   │   ├── aws_byte_cursor_read_be32_harness.c
+│           │   │   └── Makefile
+│           │   ├── aws_byte_cursor_read_be64
+│           │   │   ├── aws_byte_cursor_read_be64_harness.c
+│           │   │   ├── cbmc-proof.txt
+│           │   │   └── Makefile
+│           │   ├── aws_byte_cursor_read_u8
+│           │   │   ├── aws_byte_cursor_read_u8_harness.c
+│           │   │   ├── cbmc-proof.txt
+│           │   │   └── Makefile
+│           │   ├── aws_byte_cursor_right_trim_pred
+│           │   │   ├── aws_byte_cursor_right_trim_pred_harness.c
+│           │   │   ├── cbmc-proof.txt
+│           │   │   └── Makefile
+│           │   ├── aws_byte_cursor_satisfies_pred
+│           │   │   ├── aws_byte_cursor_satisfies_pred_harness.c
+│           │   │   ├── cbmc-proof.txt
+│           │   │   └── Makefile
+│           │   ├── aws_byte_cursor_trim_pred
+│           │   │   ├── aws_byte_cursor_trim_pred_harness.c
+│           │   │   ├── cbmc-proof.txt
+│           │   │   └── Makefile
+│           │   ├── aws_hash_array_ignore_case
+│           │   │   ├── aws_hash_array_ignore_case_harness.c
+│           │   │   ├── cbmc-proof.txt
+│           │   │   └── Makefile
+│           │   ├── aws_hash_byte_cursor_ptr
+│           │   │   ├── aws_hash_byte_cursor_ptr_harness.c
+│           │   │   ├── cbmc-proof.txt
+│           │   │   └── Makefile
+│           │   ├── aws_hash_byte_cursor_ptr_ignore_case
+│           │   │   ├── aws_hash_byte_cursor_ptr_ignore_case_harness.c
+│           │   │   ├── cbmc-proof.txt
+│           │   │   └── Makefile
+│           │   ├── aws_hash_callback_c_str_eq
+│           │   │   ├── aws_hash_callback_c_str_eq_harness.c
+│           │   │   ├── cbmc-proof.txt
+│           │   │   └── Makefile
+│           │   ├── aws_hash_callback_string_destroy
+│           │   │   ├── aws_hash_callback_string_destroy_harness.c
+│           │   │   ├── cbmc-proof.txt
+│           │   │   └── Makefile
+│           │   ├── aws_hash_callback_string_eq
+│           │   │   ├── aws_hash_callback_string_eq_harness.c
+│           │   │   ├── cbmc-proof.txt
+│           │   │   └── Makefile
+│           │   ├── aws_hash_c_string
+│           │   │   ├── aws_hash_c_string_harness.c
+│           │   │   ├── cbmc-proof.txt
+│           │   │   └── Makefile
+│           │   ├── aws_hash_iter_begin
+│           │   │   ├── aws_hash_iter_begin_harness.c
+│           │   │   ├── cbmc-proof.txt
+│           │   │   └── Makefile
+│           │   ├── aws_hash_iter_delete
+│           │   │   ├── aws_hash_iter_delete_harness.c
+│           │   │   ├── cbmc-proof.txt
+│           │   │   └── Makefile
+│           │   ├── aws_hash_iter_done
+│           │   │   ├── aws_hash_iter_done_harness.c
+│           │   │   ├── cbmc-proof.txt
+│           │   │   └── Makefile
+│           │   ├── aws_hash_iter_next
+│           │   │   ├── aws_hash_iter_next_harness.c
+│           │   │   ├── cbmc-proof.txt
+│           │   │   └── Makefile
+│           │   ├── aws_hash_ptr
+│           │   │   ├── aws_hash_ptr_harness.c
+│           │   │   ├── cbmc-proof.txt
+│           │   │   └── Makefile
+│           │   ├── aws_hash_string
+│           │   │   ├── aws_hash_string_harness.c
+│           │   │   ├── cbmc-proof.txt
+│           │   │   └── Makefile
+│           │   ├── aws_hash_table_clean_up
+│           │   │   ├── aws_hash_table_clean_up_harness.c
+│           │   │   ├── cbmc-proof.txt
+│           │   │   └── Makefile
+│           │   ├── aws_hash_table_clear
+│           │   │   ├── aws_hash_table_clear_harness.c
+│           │   │   ├── cbmc-proof.txt
+│           │   │   └── Makefile
+│           │   ├── aws_hash_table_create
+│           │   │   ├── aws_hash_table_create_harness.c
+│           │   │   ├── cbmc-proof.txt
+│           │   │   └── Makefile
+│           │   ├── aws_hash_table_eq
+│           │   │   ├── aws_hash_table_eq_harness.c
+│           │   │   ├── cbmc-proof.txt
+│           │   │   └── Makefile
+│           │   ├── aws_hash_table_find
+│           │   │   ├── aws_hash_table_find_harness.c
+│           │   │   ├── cbmc-proof.txt
+│           │   │   └── Makefile
+│           │   ├── aws_hash_table_foreach
+│           │   │   ├── aws_hash_table_foreach_harness.c
+│           │   │   ├── cbmc-proof.txt
+│           │   │   └── Makefile
+│           │   ├── aws_hash_table_get_entry_count
+│           │   │   ├── aws_hash_table_get_entry_count_harness.c
+│           │   │   ├── cbmc-proof.txt
+│           │   │   └── Makefile
+│           │   ├── aws_hash_table_init_bounded
+│           │   │   ├── aws_hash_table_init_bounded_harness.c
+│           │   │   ├── cbmc-proof.txt
+│           │   │   └── Makefile
+│           │   ├── aws_hash_table_init_unbounded
+│           │   │   ├── aws_hash_table_init_unbounded_harness.c
+│           │   │   ├── cbmc-proof.txt
+│           │   │   └── Makefile
+│           │   ├── aws_hash_table_move
+│           │   │   ├── aws_hash_table_move_harness.c
+│           │   │   ├── cbmc-proof.txt
+│           │   │   └── Makefile
+│           │   ├── aws_hash_table_put
+│           │   │   ├── aws_hash_table_put_harness.c
+│           │   │   ├── cbmc-proof.txt
+│           │   │   └── Makefile
+│           │   ├── aws_hash_table_remove
+│           │   │   ├── aws_hash_table_remove_harness.c
+│           │   │   ├── cbmc-proof.txt
+│           │   │   └── Makefile
+│           │   ├── aws_hash_table_swap
+│           │   │   ├── aws_hash_table_swap_harness.c
+│           │   │   ├── cbmc-proof.txt
+│           │   │   └── Makefile
+│           │   ├── aws_is_power_of_two
+│           │   │   ├── aws_is_power_of_two_harness.c
+│           │   │   ├── cbmc-proof.txt
+│           │   │   └── Makefile
+│           │   ├── aws_linked_list_back
+│           │   │   ├── aws_linked_list_back_harness.c
+│           │   │   ├── cbmc-proof.txt
+│           │   │   └── Makefile
+│           │   ├── aws_linked_list_begin
+│           │   │   ├── aws_linked_list_begin_harness.c
+│           │   │   ├── cbmc-proof.txt
+│           │   │   └── Makefile
+│           │   ├── aws_linked_list_end
+│           │   │   ├── aws_linked_list_end_harness.c
+│           │   │   ├── cbmc-proof.txt
+│           │   │   └── Makefile
+│           │   ├── aws_linked_list_front
+│           │   │   ├── aws_linked_list_front_harness.c
+│           │   │   ├── cbmc-proof.txt
+│           │   │   └── Makefile
+│           │   ├── aws_linked_list_init
+│           │   │   ├── aws_linked_list_init_harness.c
+│           │   │   ├── cbmc-proof.txt
+│           │   │   └── Makefile
+│           │   ├── aws_linked_list_insert_after
+│           │   │   ├── aws_linked_list_insert_after_harness.c
+│           │   │   ├── cbmc-proof.txt
+│           │   │   └── Makefile
+│           │   ├── aws_linked_list_insert_before
+│           │   │   ├── aws_linked_list_insert_before_harness.c
+│           │   │   ├── cbmc-proof.txt
+│           │   │   └── Makefile
+│           │   ├── aws_linked_list_next
+│           │   │   ├── aws_linked_list_next_harness.c
+│           │   │   ├── cbmc-proof.txt
+│           │   │   └── Makefile
+│           │   ├── aws_linked_list_node_reset
+│           │   │   ├── aws_linked_list_node_reset_harness.c
+│           │   │   ├── cbmc-proof.txt
+│           │   │   └── Makefile
+│           │   ├── aws_linked_list_pop_back
+│           │   │   ├── aws_linked_list_pop_back_harness.c
+│           │   │   ├── cbmc-proof.txt
+│           │   │   └── Makefile
+│           │   ├── aws_linked_list_pop_front
+│           │   │   ├── aws_linked_list_pop_front_harness.c
+│           │   │   ├── cbmc-proof.txt
+│           │   │   └── Makefile
+│           │   ├── aws_linked_list_prev
+│           │   │   ├── aws_linked_list_prev_harness.c
+│           │   │   ├── cbmc-proof.txt
+│           │   │   └── Makefile
+│           │   ├── aws_linked_list_push_back
+│           │   │   ├── aws_linked_list_push_back_harness.c
+│           │   │   ├── cbmc-proof.txt
+│           │   │   └── Makefile
+│           │   ├── aws_linked_list_push_front
+│           │   │   ├── aws_linked_list_push_front_harness.c
+│           │   │   ├── cbmc-proof.txt
+│           │   │   └── Makefile
+│           │   ├── aws_linked_list_rbegin
+│           │   │   ├── aws_linked_list_rbegin_harness.c
+│           │   │   ├── cbmc-proof.txt
+│           │   │   └── Makefile
+│           │   ├── aws_linked_list_remove
+│           │   │   ├── aws_linked_list_remove_harness.c
+│           │   │   ├── cbmc-proof.txt
+│           │   │   └── Makefile
+│           │   ├── aws_linked_list_rend
+│           │   │   ├── aws_linked_list_rend_harness.c
+│           │   │   ├── cbmc-proof.txt
+│           │   │   └── Makefile
+│           │   ├── aws_linked_list_swap_contents
+│           │   │   ├── aws_linked_list_swap_contents_harness.c
+│           │   │   ├── cbmc-proof.txt
+│           │   │   └── Makefile
+│           │   ├── aws_mul_size_checked
+│           │   │   ├── aws_mul_size_checked_harness.c
+│           │   │   ├── cbmc-proof.txt
+│           │   │   └── Makefile
+│           │   ├── aws_mul_size_saturating
+│           │   │   ├── aws_mul_size_saturating_harness.c
+│           │   │   ├── cbmc-proof.txt
+│           │   │   └── Makefile
+│           │   ├── aws_nospec_mask
+│           │   │   ├── aws_nospec_mask_harness.c
+│           │   │   ├── cbmc-proof.txt
+│           │   │   └── Makefile
+│           │   ├── aws_priority_queue_capacity
+│           │   │   ├── aws_priority_queue_capacity_harness.c
+│           │   │   ├── cbmc-proof.txt
+│           │   │   └── Makefile
+│           │   ├── aws_priority_queue_clean_up
+│           │   │   ├── aws_priority_queue_clean_up_harness.c
+│           │   │   ├── cbmc-proof.txt
+│           │   │   └── Makefile
+│           │   ├── aws_priority_queue_init_dynamic
+│           │   │   ├── aws_priority_queue_init_dynamic_harness.c
+│           │   │   ├── cbmc-proof.txt
+│           │   │   └── Makefile
+│           │   ├── aws_priority_queue_init_static
+│           │   │   ├── aws_priority_queue_init_static_harness.c
+│           │   │   ├── cbmc-proof.txt
+│           │   │   └── Makefile
+│           │   ├── aws_priority_queue_pop
+│           │   │   ├── aws_priority_queue_pop_harness.c
+│           │   │   ├── cbmc-proof.txt
+│           │   │   └── Makefile
+│           │   ├── aws_priority_queue_push
+│           │   │   ├── aws_priority_queue_push_harness.c
+│           │   │   ├── cbmc-proof.txt
+│           │   │   └── Makefile
+│           │   ├── aws_priority_queue_push_ref
+│           │   │   ├── aws_priority_queue_push_ref_harness.c
+│           │   │   ├── cbmc-proof.txt
+│           │   │   └── Makefile
+│           │   ├── aws_priority_queue_remove
+│           │   │   ├── aws_priority_queue_remove_harness.c
+│           │   │   ├── cbmc-proof.txt
+│           │   │   └── Makefile
+│           │   ├── aws_priority_queue_size
+│           │   │   ├── aws_priority_queue_size_harness.c
+│           │   │   ├── cbmc-proof.txt
+│           │   │   └── Makefile
+│           │   ├── aws_priority_queue_s_remove_node
+│           │   │   ├── aws_priority_queue_s_remove_node_harness.c
+│           │   │   ├── cbmc-proof.txt
+│           │   │   └── Makefile
+│           │   ├── aws_priority_queue_s_sift_down
+│           │   │   ├── aws_priority_queue_s_sift_down_harness.c
+│           │   │   ├── cbmc-proof.txt
+│           │   │   └── Makefile
+│           │   ├── aws_priority_queue_s_sift_either
+│           │   │   ├── aws_priority_queue_s_sift_either_harness.c
+│           │   │   ├── cbmc-proof.txt
+│           │   │   └── Makefile
+│           │   ├── aws_priority_queue_s_sift_up
+│           │   │   ├── aws_priority_queue_s_sift_up_harness.c
+│           │   │   ├── cbmc-proof.txt
+│           │   │   └── Makefile
+│           │   ├── aws_priority_queue_s_swap
+│           │   │   ├── aws_priority_queue_s_swap_harness.c
+│           │   │   ├── cbmc-proof.txt
+│           │   │   └── Makefile
+│           │   ├── aws_priority_queue_top
+│           │   │   ├── aws_priority_queue_top_harness.c
+│           │   │   ├── cbmc-proof.txt
+│           │   │   └── Makefile
+│           │   ├── aws_ptr_eq
+│           │   │   ├── aws_ptr_eq_harness.c
+│           │   │   ├── cbmc-proof.txt
+│           │   │   └── Makefile
+│           │   ├── aws_ring_buffer_acquire
+│           │   │   ├── aws_ring_buffer_acquire_harness.c
+│           │   │   ├── cbmc-proof.txt
+│           │   │   └── Makefile
+│           │   ├── aws_ring_buffer_acquire_up_to
+│           │   │   ├── aws_ring_buffer_acquire_up_to_harness.c
+│           │   │   ├── cbmc-proof.txt
+│           │   │   └── Makefile
+│           │   ├── aws_ring_buffer_buf_belongs_to_pool
+│           │   │   ├── aws_ring_buffer_buf_belongs_to_pool_harness.c
+│           │   │   ├── cbmc-proof.txt
+│           │   │   └── Makefile
+│           │   ├── aws_ring_buffer_clean_up
+│           │   │   ├── aws_ring_buffer_clean_up_harness.c
+│           │   │   ├── cbmc-proof.txt
+│           │   │   └── Makefile
+│           │   ├── aws_ring_buffer_init
+│           │   │   ├── aws_ring_buffer_init_harness.c
+│           │   │   ├── cbmc-proof.txt
+│           │   │   └── Makefile
+│           │   ├── aws_ring_buffer_release
+│           │   │   ├── aws_ring_buffer_release_harness.c
+│           │   │   ├── cbmc-proof.txt
+│           │   │   └── Makefile
+│           │   ├── aws_round_up_to_power_of_two
+│           │   │   ├── aws_round_up_to_power_of_two_harness.c
+│           │   │   ├── cbmc-proof.txt
+│           │   │   └── Makefile
+│           │   ├── aws_string_bytes
+│           │   │   ├── aws_string_bytes_harness.c
+│           │   │   ├── cbmc-proof.txt
+│           │   │   └── Makefile
+│           │   ├── aws_string_compare
+│           │   │   ├── aws_string_compare_harness.c
+│           │   │   ├── cbmc-proof.txt
+│           │   │   └── Makefile
+│           │   ├── aws_string_destroy
+│           │   │   ├── aws_string_destroy_harness.c
+│           │   │   ├── cbmc-proof.txt
+│           │   │   └── Makefile
+│           │   ├── aws_string_destroy_secure
+│           │   │   ├── aws_string_destroy_secure_harness.c
+│           │   │   ├── cbmc-proof.txt
+│           │   │   └── Makefile
+│           │   ├── aws_string_eq
+│           │   │   ├── aws_string_eq_harness.c
+│           │   │   ├── cbmc-proof.txt
+│           │   │   └── Makefile
+│           │   ├── aws_string_eq_byte_buf
+│           │   │   ├── aws_string_eq_byte_buf_harness.c
+│           │   │   ├── cbmc-proof.txt
+│           │   │   └── Makefile
+│           │   ├── aws_string_eq_byte_buf_ignore_case
+│           │   │   ├── aws_string_eq_byte_buf_ignore_case_harness.c
+│           │   │   ├── cbmc-proof.txt
+│           │   │   └── Makefile
+│           │   ├── aws_string_eq_byte_cursor
+│           │   │   ├── aws_string_eq_byte_cursor_harness.c
+│           │   │   ├── cbmc-proof.txt
+│           │   │   └── Makefile
+│           │   ├── aws_string_eq_byte_cursor_ignore_case
+│           │   │   ├── aws_string_eq_byte_cursor_ignore_case_harness.c
+│           │   │   ├── cbmc-proof.txt
+│           │   │   └── Makefile
+│           │   ├── aws_string_eq_c_str
+│           │   │   ├── aws_string_eq_c_str_harness.c
+│           │   │   ├── cbmc-proof.txt
+│           │   │   └── Makefile
+│           │   ├── aws_string_eq_c_str_ignore_case
+│           │   │   ├── aws_string_eq_c_str_ignore_case_harness.c
+│           │   │   ├── cbmc-proof.txt
+│           │   │   └── Makefile
+│           │   ├── aws_string_eq_ignore_case
+│           │   │   ├── aws_string_eq_ignore_case_harness.c
+│           │   │   ├── cbmc-proof.txt
+│           │   │   └── Makefile
+│           │   ├── aws_string_new_from_array
+│           │   │   ├── aws_string_new_from_array_harness.c
+│           │   │   ├── cbmc-proof.txt
+│           │   │   └── Makefile
+│           │   ├── aws_string_new_from_c_str
+│           │   │   ├── aws_string_new_from_c_str_harness.c
+│           │   │   ├── cbmc-proof.txt
+│           │   │   └── Makefile
+│           │   ├── aws_string_new_from_string
+│           │   │   ├── aws_string_new_from_string_harness.c
+│           │   │   ├── cbmc-proof.txt
+│           │   │   └── Makefile
+│           │   ├── build-buildspec.sh
+│           │   ├── lib
+│           │   │   ├── __init__.py
+│           │   │   ├── print_tool_versions.py
+│           │   │   └── summarize.py
+│           │   ├── Makefile.aws_array_list
+│           │   ├── Makefile.aws_byte_buf
+│           │   ├── Makefile.aws_hash_table
+│           │   ├── Makefile.aws_linked_list
+│           │   ├── Makefile.aws_priority_queue_sift
+│           │   ├── Makefile.aws_string
+│           │   ├── Makefile.cbmc_batch
+│           │   ├── Makefile.common
+│           │   ├── Makefile-project-defines
+│           │   ├── Makefile-project-targets
+│           │   ├── Makefile-project-testing
+│           │   ├── Makefile-template-defines
+│           │   ├── memcpy_using_uint64
+│           │   │   ├── cbmc-proof.txt
+│           │   │   ├── Makefile
+│           │   │   └── memcpy_using_uint64_harness.c
+│           │   ├── memset_override_0
+│           │   │   ├── cbmc-proof.txt
+│           │   │   ├── Makefile
+│           │   │   └── memset_override_0_harness.c
+│           │   ├── memset_using_uint64
+│           │   │   ├── cbmc-proof.txt
+│           │   │   ├── Makefile
+│           │   │   └── memset_using_uint64_harness.c
+│           │   ├── README.md
+│           │   ├── run-cbmc-proofs.py
+│           │   └── scripts
+│           │       ├── fixup_makefiles.py
+│           │       └── move_proofs.py
+│           ├── README.md
+│           ├── sources
+│           │   ├── make_common_data_structures.c
+│           │   ├── README.md
+│           │   └── utils.c
+│           ├── stubs
+│           │   ├── abort_override_assert_false.c
+│           │   ├── aws_array_list_swap_override.c
+│           │   ├── aws_byte_cursor_read_be16_override.c
+│           │   ├── aws_hash_iter_overrides.c
+│           │   ├── aws_hash_table_find_override.c
+│           │   ├── aws_hash_table_no_slots_override.c
+│           │   ├── aws_string_destroy_override.c
+│           │   ├── aws_string_new_from_array_override.c
+│           │   ├── empty-source-file.c
+│           │   ├── error.c
+│           │   ├── hash_table_generators.c
+│           │   ├── memcpy_override.c
+│           │   ├── memcpy_override_havoc.c
+│           │   ├── memcpy_override_no_op.c
+│           │   ├── memcpy_using_uint64.c
+│           │   ├── memmove_override.c
+│           │   ├── memmove_override_havoc.c
+│           │   ├── memmove_override_no_op.c
+│           │   ├── memset_override_0.c
+│           │   ├── memset_override.c
+│           │   ├── memset_override_havoc.c
+│           │   ├── memset_override_no_op.c
+│           │   ├── memset_using_uint64.c
+│           │   ├── qsort_override.c
+│           │   ├── README.md
+│           │   ├── s_emplace_item_override.c
+│           │   ├── s_expand_table_override.c
+│           │   ├── s_remove_entry_override.c
+│           │   ├── s_remove_node_override.c
+│           │   ├── s_sift_either_override.c
+│           │   ├── s_sift_up_override.c
+│           │   └── s_swap_override_no_op.c
+│           └── uninline
+│               ├── array_list.c
+│               ├── atomics.c
+│               ├── byte_order.c
+│               ├── clock.c
+│               ├── encoding.c
+│               ├── error.c
+│               ├── linked_list.c
+│               ├── math.c
+│               ├── ring_buffer.c
+│               ├── string.c
+│               └── zero.c
+└── aws-c-common-0.10.0.tar.gz -> /home/felix/packages/aws-c-common/aws-c-common-0.10.0.tar.gz
+
+238 directories, 929 files

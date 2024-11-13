@@ -1,0 +1,3088 @@
+src
+├── FreeRDP-3.9.0
+│   ├── ChangeLog
+│   ├── channels
+│   │   ├── ainput
+│   │   │   ├── ChannelOptions.cmake
+│   │   │   ├── client
+│   │   │   │   ├── ainput_main.c
+│   │   │   │   ├── ainput_main.h
+│   │   │   │   └── CMakeLists.txt
+│   │   │   ├── CMakeLists.txt
+│   │   │   ├── common
+│   │   │   │   └── ainput_common.h
+│   │   │   └── server
+│   │   │       ├── ainput_main.c
+│   │   │       └── CMakeLists.txt
+│   │   ├── audin
+│   │   │   ├── ChannelOptions.cmake
+│   │   │   ├── client
+│   │   │   │   ├── alsa
+│   │   │   │   │   ├── audin_alsa.c
+│   │   │   │   │   └── CMakeLists.txt
+│   │   │   │   ├── audin_main.c
+│   │   │   │   ├── audin_main.h
+│   │   │   │   ├── CMakeLists.txt
+│   │   │   │   ├── ios
+│   │   │   │   │   ├── audin_ios.m
+│   │   │   │   │   └── CMakeLists.txt
+│   │   │   │   ├── mac
+│   │   │   │   │   ├── audin_mac.m
+│   │   │   │   │   └── CMakeLists.txt
+│   │   │   │   ├── opensles
+│   │   │   │   │   ├── audin_opensl_es.c
+│   │   │   │   │   ├── CMakeLists.txt
+│   │   │   │   │   ├── opensl_io.c
+│   │   │   │   │   └── opensl_io.h
+│   │   │   │   ├── oss
+│   │   │   │   │   ├── audin_oss.c
+│   │   │   │   │   └── CMakeLists.txt
+│   │   │   │   ├── pulse
+│   │   │   │   │   ├── audin_pulse.c
+│   │   │   │   │   └── CMakeLists.txt
+│   │   │   │   ├── sndio
+│   │   │   │   │   ├── audin_sndio.c
+│   │   │   │   │   └── CMakeLists.txt
+│   │   │   │   └── winmm
+│   │   │   │       ├── audin_winmm.c
+│   │   │   │       └── CMakeLists.txt
+│   │   │   ├── CMakeLists.txt
+│   │   │   └── server
+│   │   │       ├── audin.c
+│   │   │       └── CMakeLists.txt
+│   │   ├── client
+│   │   │   ├── addin.c
+│   │   │   ├── addin.h
+│   │   │   ├── CMakeLists.txt
+│   │   │   ├── generic_dynvc.c
+│   │   │   ├── tables.c.in
+│   │   │   └── tables.h
+│   │   ├── cliprdr
+│   │   │   ├── ChannelOptions.cmake
+│   │   │   ├── client
+│   │   │   │   ├── cliprdr_format.c
+│   │   │   │   ├── cliprdr_format.h
+│   │   │   │   ├── cliprdr_main.c
+│   │   │   │   ├── cliprdr_main.h
+│   │   │   │   └── CMakeLists.txt
+│   │   │   ├── cliprdr_common.c
+│   │   │   ├── cliprdr_common.h
+│   │   │   ├── CMakeLists.txt
+│   │   │   └── server
+│   │   │       ├── cliprdr_main.c
+│   │   │       ├── cliprdr_main.h
+│   │   │       └── CMakeLists.txt
+│   │   ├── CMakeLists.txt
+│   │   ├── disp
+│   │   │   ├── ChannelOptions.cmake
+│   │   │   ├── client
+│   │   │   │   ├── CMakeLists.txt
+│   │   │   │   ├── disp_main.c
+│   │   │   │   └── disp_main.h
+│   │   │   ├── CMakeLists.txt
+│   │   │   ├── disp_common.c
+│   │   │   ├── disp_common.h
+│   │   │   └── server
+│   │   │       ├── CMakeLists.txt
+│   │   │       ├── disp_main.c
+│   │   │       └── disp_main.h
+│   │   ├── drdynvc
+│   │   │   ├── ChannelOptions.cmake
+│   │   │   ├── client
+│   │   │   │   ├── CMakeLists.txt
+│   │   │   │   ├── drdynvc_main.c
+│   │   │   │   └── drdynvc_main.h
+│   │   │   ├── CMakeLists.txt
+│   │   │   └── server
+│   │   │       ├── CMakeLists.txt
+│   │   │       ├── drdynvc_main.c
+│   │   │       └── drdynvc_main.h
+│   │   ├── drive
+│   │   │   ├── ChannelOptions.cmake
+│   │   │   ├── client
+│   │   │   │   ├── CMakeLists.txt
+│   │   │   │   ├── drive_file.c
+│   │   │   │   ├── drive_file.h
+│   │   │   │   └── drive_main.c
+│   │   │   └── CMakeLists.txt
+│   │   ├── echo
+│   │   │   ├── ChannelOptions.cmake
+│   │   │   ├── client
+│   │   │   │   ├── CMakeLists.txt
+│   │   │   │   ├── echo_main.c
+│   │   │   │   └── echo_main.h
+│   │   │   ├── CMakeLists.txt
+│   │   │   └── server
+│   │   │       ├── CMakeLists.txt
+│   │   │       └── echo_main.c
+│   │   ├── encomsp
+│   │   │   ├── ChannelOptions.cmake
+│   │   │   ├── client
+│   │   │   │   ├── CMakeLists.txt
+│   │   │   │   ├── encomsp_main.c
+│   │   │   │   └── encomsp_main.h
+│   │   │   ├── CMakeLists.txt
+│   │   │   └── server
+│   │   │       ├── CMakeLists.txt
+│   │   │       ├── encomsp_main.c
+│   │   │       └── encomsp_main.h
+│   │   ├── geometry
+│   │   │   ├── ChannelOptions.cmake
+│   │   │   ├── client
+│   │   │   │   ├── CMakeLists.txt
+│   │   │   │   ├── geometry_main.c
+│   │   │   │   └── geometry_main.h
+│   │   │   └── CMakeLists.txt
+│   │   ├── gfxredir
+│   │   │   ├── ChannelOptions.cmake
+│   │   │   ├── CMakeLists.txt
+│   │   │   ├── gfxredir_common.c
+│   │   │   ├── gfxredir_common.h
+│   │   │   └── server
+│   │   │       ├── CMakeLists.txt
+│   │   │       ├── gfxredir_main.c
+│   │   │       └── gfxredir_main.h
+│   │   ├── location
+│   │   │   ├── ChannelOptions.cmake
+│   │   │   ├── client
+│   │   │   │   ├── CMakeLists.txt
+│   │   │   │   └── location_main.c
+│   │   │   ├── CMakeLists.txt
+│   │   │   └── server
+│   │   │       ├── CMakeLists.txt
+│   │   │       └── location_main.c
+│   │   ├── parallel
+│   │   │   ├── ChannelOptions.cmake
+│   │   │   ├── client
+│   │   │   │   ├── CMakeLists.txt
+│   │   │   │   └── parallel_main.c
+│   │   │   └── CMakeLists.txt
+│   │   ├── printer
+│   │   │   ├── ChannelOptions.cmake
+│   │   │   ├── client
+│   │   │   │   ├── CMakeLists.txt
+│   │   │   │   ├── cups
+│   │   │   │   │   ├── CMakeLists.txt
+│   │   │   │   │   └── printer_cups.c
+│   │   │   │   ├── printer_main.c
+│   │   │   │   └── win
+│   │   │   │       ├── CMakeLists.txt
+│   │   │   │       └── printer_win.c
+│   │   │   ├── CMakeLists.txt
+│   │   │   └── printer.h
+│   │   ├── rail
+│   │   │   ├── ChannelOptions.cmake
+│   │   │   ├── client
+│   │   │   │   ├── client_rails.c
+│   │   │   │   ├── CMakeLists.txt
+│   │   │   │   ├── rail_main.c
+│   │   │   │   ├── rail_main.h
+│   │   │   │   ├── rail_orders.c
+│   │   │   │   └── rail_orders.h
+│   │   │   ├── CMakeLists.txt
+│   │   │   ├── rail_common.c
+│   │   │   ├── rail_common.h
+│   │   │   └── server
+│   │   │       ├── CMakeLists.txt
+│   │   │       ├── rail_main.c
+│   │   │       └── rail_main.h
+│   │   ├── rdp2tcp
+│   │   │   ├── ChannelOptions.cmake
+│   │   │   ├── client
+│   │   │   │   ├── CMakeLists.txt
+│   │   │   │   └── rdp2tcp_main.c
+│   │   │   └── CMakeLists.txt
+│   │   ├── rdpdr
+│   │   │   ├── ChannelOptions.cmake
+│   │   │   ├── client
+│   │   │   │   ├── CMakeLists.txt
+│   │   │   │   ├── devman.c
+│   │   │   │   ├── devman.h
+│   │   │   │   ├── irp.c
+│   │   │   │   ├── irp.h
+│   │   │   │   ├── rdpdr_capabilities.c
+│   │   │   │   ├── rdpdr_capabilities.h
+│   │   │   │   ├── rdpdr_main.c
+│   │   │   │   └── rdpdr_main.h
+│   │   │   ├── CMakeLists.txt
+│   │   │   └── server
+│   │   │       ├── CMakeLists.txt
+│   │   │       ├── rdpdr_main.c
+│   │   │       └── rdpdr_main.h
+│   │   ├── rdpear
+│   │   │   ├── ChannelOptions.cmake
+│   │   │   ├── client
+│   │   │   │   ├── CMakeLists.txt
+│   │   │   │   └── rdpear_main.c
+│   │   │   ├── CMakeLists.txt
+│   │   │   └── common
+│   │   │       ├── CMakeLists.txt
+│   │   │       ├── ndr.c
+│   │   │       ├── rdpear_asn1.c
+│   │   │       ├── rdpear-common
+│   │   │       │   ├── ndr.h
+│   │   │       │   ├── rdpear_asn1.h
+│   │   │       │   └── rdpear_common.h
+│   │   │       ├── rdpear_common.c
+│   │   │       └── test
+│   │   │           ├── CMakeLists.txt
+│   │   │           ├── TestNdr.c
+│   │   │           └── TestNdrEar.c
+│   │   ├── rdpecam
+│   │   │   ├── ChannelOptions.cmake
+│   │   │   ├── client
+│   │   │   │   ├── camera_device_enum_main.c
+│   │   │   │   ├── camera_device_main.c
+│   │   │   │   ├── camera.h
+│   │   │   │   ├── CMakeLists.txt
+│   │   │   │   ├── encoding.c
+│   │   │   │   └── v4l
+│   │   │   │       ├── camera_v4l.c
+│   │   │   │       └── CMakeLists.txt
+│   │   │   ├── CMakeLists.txt
+│   │   │   └── server
+│   │   │       ├── camera_device_enumerator_main.c
+│   │   │       ├── camera_device_main.c
+│   │   │       └── CMakeLists.txt
+│   │   ├── rdpei
+│   │   │   ├── ChannelOptions.cmake
+│   │   │   ├── client
+│   │   │   │   ├── CMakeLists.txt
+│   │   │   │   ├── rdpei_main.c
+│   │   │   │   └── rdpei_main.h
+│   │   │   ├── CMakeLists.txt
+│   │   │   ├── rdpei_common.c
+│   │   │   ├── rdpei_common.h
+│   │   │   └── server
+│   │   │       ├── CMakeLists.txt
+│   │   │       ├── rdpei_main.c
+│   │   │       └── rdpei_main.h
+│   │   ├── rdpemsc
+│   │   │   ├── ChannelOptions.cmake
+│   │   │   ├── CMakeLists.txt
+│   │   │   └── server
+│   │   │       ├── CMakeLists.txt
+│   │   │       └── mouse_cursor_main.c
+│   │   ├── rdpgfx
+│   │   │   ├── ChannelOptions.cmake
+│   │   │   ├── client
+│   │   │   │   ├── CMakeLists.txt
+│   │   │   │   ├── rdpgfx_codec.c
+│   │   │   │   ├── rdpgfx_codec.h
+│   │   │   │   ├── rdpgfx_main.c
+│   │   │   │   └── rdpgfx_main.h
+│   │   │   ├── CMakeLists.txt
+│   │   │   ├── rdpgfx_common.c
+│   │   │   ├── rdpgfx_common.h
+│   │   │   └── server
+│   │   │       ├── CMakeLists.txt
+│   │   │       ├── rdpgfx_main.c
+│   │   │       └── rdpgfx_main.h
+│   │   ├── rdpsnd
+│   │   │   ├── ChannelOptions.cmake
+│   │   │   ├── client
+│   │   │   │   ├── alsa
+│   │   │   │   │   ├── CMakeLists.txt
+│   │   │   │   │   └── rdpsnd_alsa.c
+│   │   │   │   ├── CMakeLists.txt
+│   │   │   │   ├── fake
+│   │   │   │   │   ├── CMakeLists.txt
+│   │   │   │   │   └── rdpsnd_fake.c
+│   │   │   │   ├── ios
+│   │   │   │   │   ├── CMakeLists.txt
+│   │   │   │   │   ├── rdpsnd_ios.c
+│   │   │   │   │   ├── TPCircularBuffer.c
+│   │   │   │   │   └── TPCircularBuffer.h
+│   │   │   │   ├── mac
+│   │   │   │   │   ├── CMakeLists.txt
+│   │   │   │   │   └── rdpsnd_mac.m
+│   │   │   │   ├── opensles
+│   │   │   │   │   ├── CMakeLists.txt
+│   │   │   │   │   ├── opensl_io.c
+│   │   │   │   │   ├── opensl_io.h
+│   │   │   │   │   └── rdpsnd_opensles.c
+│   │   │   │   ├── oss
+│   │   │   │   │   ├── CMakeLists.txt
+│   │   │   │   │   └── rdpsnd_oss.c
+│   │   │   │   ├── pulse
+│   │   │   │   │   ├── CMakeLists.txt
+│   │   │   │   │   └── rdpsnd_pulse.c
+│   │   │   │   ├── rdpsnd_main.c
+│   │   │   │   ├── rdpsnd_main.h
+│   │   │   │   ├── sndio
+│   │   │   │   │   ├── CMakeLists.txt
+│   │   │   │   │   └── rdpsnd_sndio.c
+│   │   │   │   └── winmm
+│   │   │   │       ├── CMakeLists.txt
+│   │   │   │       └── rdpsnd_winmm.c
+│   │   │   ├── CMakeLists.txt
+│   │   │   ├── common
+│   │   │   │   ├── CMakeLists.txt
+│   │   │   │   ├── rdpsnd_common.c
+│   │   │   │   └── rdpsnd_common.h
+│   │   │   └── server
+│   │   │       ├── CMakeLists.txt
+│   │   │       ├── rdpsnd_main.c
+│   │   │       └── rdpsnd_main.h
+│   │   ├── remdesk
+│   │   │   ├── ChannelOptions.cmake
+│   │   │   ├── client
+│   │   │   │   ├── CMakeLists.txt
+│   │   │   │   ├── remdesk_main.c
+│   │   │   │   └── remdesk_main.h
+│   │   │   ├── CMakeLists.txt
+│   │   │   └── server
+│   │   │       ├── CMakeLists.txt
+│   │   │       ├── remdesk_main.c
+│   │   │       └── remdesk_main.h
+│   │   ├── serial
+│   │   │   ├── ChannelOptions.cmake
+│   │   │   ├── client
+│   │   │   │   ├── CMakeLists.txt
+│   │   │   │   └── serial_main.c
+│   │   │   └── CMakeLists.txt
+│   │   ├── server
+│   │   │   ├── channels.c
+│   │   │   ├── channels.h
+│   │   │   └── CMakeLists.txt
+│   │   ├── smartcard
+│   │   │   ├── ChannelOptions.cmake
+│   │   │   ├── client
+│   │   │   │   ├── CMakeLists.txt
+│   │   │   │   ├── smartcard_main.c
+│   │   │   │   └── smartcard_main.h
+│   │   │   └── CMakeLists.txt
+│   │   ├── sshagent
+│   │   │   ├── ChannelOptions.cmake
+│   │   │   ├── client
+│   │   │   │   ├── CMakeLists.txt
+│   │   │   │   ├── sshagent_main.c
+│   │   │   │   └── sshagent_main.h
+│   │   │   └── CMakeLists.txt
+│   │   ├── telemetry
+│   │   │   ├── ChannelOptions.cmake
+│   │   │   ├── CMakeLists.txt
+│   │   │   └── server
+│   │   │       ├── CMakeLists.txt
+│   │   │       └── telemetry_main.c
+│   │   ├── tsmf
+│   │   │   ├── ChannelOptions.cmake
+│   │   │   ├── client
+│   │   │   │   ├── alsa
+│   │   │   │   │   ├── CMakeLists.txt
+│   │   │   │   │   └── tsmf_alsa.c
+│   │   │   │   ├── CMakeLists.txt
+│   │   │   │   ├── ffmpeg
+│   │   │   │   │   ├── CMakeLists.txt
+│   │   │   │   │   └── tsmf_ffmpeg.c
+│   │   │   │   ├── gstreamer
+│   │   │   │   │   ├── CMakeLists.txt
+│   │   │   │   │   ├── tsmf_gstreamer.c
+│   │   │   │   │   ├── tsmf_platform.h
+│   │   │   │   │   └── tsmf_X11.c
+│   │   │   │   ├── oss
+│   │   │   │   │   ├── CMakeLists.txt
+│   │   │   │   │   └── tsmf_oss.c
+│   │   │   │   ├── pulse
+│   │   │   │   │   ├── CMakeLists.txt
+│   │   │   │   │   └── tsmf_pulse.c
+│   │   │   │   ├── tsmf_audio.c
+│   │   │   │   ├── tsmf_audio.h
+│   │   │   │   ├── tsmf_codec.c
+│   │   │   │   ├── tsmf_codec.h
+│   │   │   │   ├── tsmf_constants.h
+│   │   │   │   ├── tsmf_decoder.c
+│   │   │   │   ├── tsmf_decoder.h
+│   │   │   │   ├── tsmf_ifman.c
+│   │   │   │   ├── tsmf_ifman.h
+│   │   │   │   ├── tsmf_main.c
+│   │   │   │   ├── tsmf_main.h
+│   │   │   │   ├── tsmf_media.c
+│   │   │   │   ├── tsmf_media.h
+│   │   │   │   └── tsmf_types.h
+│   │   │   └── CMakeLists.txt
+│   │   ├── urbdrc
+│   │   │   ├── ChannelOptions.cmake
+│   │   │   ├── client
+│   │   │   │   ├── CMakeLists.txt
+│   │   │   │   ├── data_transfer.c
+│   │   │   │   ├── data_transfer.h
+│   │   │   │   ├── libusb
+│   │   │   │   │   ├── CMakeLists.txt
+│   │   │   │   │   ├── libusb_udevice.c
+│   │   │   │   │   ├── libusb_udevice.h
+│   │   │   │   │   └── libusb_udevman.c
+│   │   │   │   ├── urbdrc_main.c
+│   │   │   │   └── urbdrc_main.h
+│   │   │   ├── CMakeLists.txt
+│   │   │   └── common
+│   │   │       ├── CMakeLists.txt
+│   │   │       ├── msusb.c
+│   │   │       ├── msusb.h
+│   │   │       ├── urbdrc_helpers.c
+│   │   │       ├── urbdrc_helpers.h
+│   │   │       └── urbdrc_types.h
+│   │   └── video
+│   │       ├── ChannelOptions.cmake
+│   │       ├── client
+│   │       │   ├── CMakeLists.txt
+│   │       │   ├── video_main.c
+│   │       │   └── video_main.h
+│   │       └── CMakeLists.txt
+│   ├── ci
+│   │   └── cmake-preloads
+│   │       ├── config-abi.txt
+│   │       ├── config-android.txt
+│   │       ├── config-coverity.txt
+│   │       ├── config-ios.txt
+│   │       ├── config-linux-all.txt
+│   │       ├── config-macosx.txt
+│   │       ├── config-oss-fuzz.cmake
+│   │       ├── config-qa.cmake
+│   │       ├── config-qa-static.cmake
+│   │       ├── config-ubuntu-1204.txt
+│   │       └── config-windows.txt
+│   ├── client
+│   │   ├── Android
+│   │   │   ├── BuildFlags.java.in
+│   │   │   └── Studio
+│   │   │       ├── aFreeRDP
+│   │   │       │   ├── build.gradle
+│   │   │       │   ├── lint.xml
+│   │   │       │   └── src
+│   │   │       │       └── main
+│   │   │       │           ├── AndroidManifest.xml
+│   │   │       │           ├── assets
+│   │   │       │           │   ├── about.css
+│   │   │       │           │   ├── about_page
+│   │   │       │           │   │   ├── about.html
+│   │   │       │           │   │   └── about_phone.html
+│   │   │       │           │   ├── background.jpg
+│   │   │       │           │   ├── de_about_page
+│   │   │       │           │   │   ├── about.html
+│   │   │       │           │   │   └── about_phone.html
+│   │   │       │           │   ├── de_help_page
+│   │   │       │           │   │   ├── gestures.html
+│   │   │       │           │   │   ├── gestures_phone.html
+│   │   │       │           │   │   ├── gestures_phone.png
+│   │   │       │           │   │   ├── gestures.png
+│   │   │       │           │   │   ├── nav_gestures.png
+│   │   │       │           │   │   ├── nav_toolbar.png
+│   │   │       │           │   │   ├── nav_touch_pointer.png
+│   │   │       │           │   │   ├── toolbar.html
+│   │   │       │           │   │   ├── toolbar_phone.html
+│   │   │       │           │   │   ├── toolbar_phone.png
+│   │   │       │           │   │   ├── toolbar.png
+│   │   │       │           │   │   ├── touch_pointer.html
+│   │   │       │           │   │   ├── touch_pointer_phone.html
+│   │   │       │           │   │   ├── touch_pointer_phone.png
+│   │   │       │           │   │   └── touch_pointer.png
+│   │   │       │           │   ├── FreeRDP_Logo.png
+│   │   │       │           │   ├── help.css
+│   │   │       │           │   └── help_page
+│   │   │       │           │       ├── gestures.html
+│   │   │       │           │       ├── gestures_phone.html
+│   │   │       │           │       ├── gestures_phone.png
+│   │   │       │           │       ├── gestures.png
+│   │   │       │           │       ├── nav_gestures.png
+│   │   │       │           │       ├── nav_toolbar.png
+│   │   │       │           │       ├── nav_touch_pointer.png
+│   │   │       │           │       ├── toolbar.html
+│   │   │       │           │       ├── toolbar_phone.html
+│   │   │       │           │       ├── toolbar_phone.png
+│   │   │       │           │       ├── toolbar.png
+│   │   │       │           │       ├── touch_pointer.html
+│   │   │       │           │       ├── touch_pointer_phone.html
+│   │   │       │           │       ├── touch_pointer_phone.png
+│   │   │       │           │       └── touch_pointer.png
+│   │   │       │           ├── java
+│   │   │       │           │   └── com
+│   │   │       │           │       └── freerdp
+│   │   │       │           │           └── afreerdp
+│   │   │       │           │               └── application
+│   │   │       │           │                   └── GlobalApp.java
+│   │   │       │           └── res
+│   │   │       │               ├── drawable
+│   │   │       │               │   ├── button_background.xml
+│   │   │       │               │   ├── icon_launcher_freerdp.png
+│   │   │       │               │   └── separator_background.xml
+│   │   │       │               ├── drawable-hdpi
+│   │   │       │               │   └── icon_launcher_freerdp.png
+│   │   │       │               ├── drawable-ldpi
+│   │   │       │               │   └── icon_launcher_freerdp.png
+│   │   │       │               ├── drawable-mdpi
+│   │   │       │               │   └── icon_launcher_freerdp.png
+│   │   │       │               ├── values
+│   │   │       │               │   └── strings.xml
+│   │   │       │               ├── values-de
+│   │   │       │               │   └── strings.xml
+│   │   │       │               ├── values-es
+│   │   │       │               │   └── strings.xml
+│   │   │       │               ├── values-fr
+│   │   │       │               │   └── strings.xml
+│   │   │       │               ├── values-ko
+│   │   │       │               │   └── strings.xml
+│   │   │       │               ├── values-nl
+│   │   │       │               │   └── strings.xml
+│   │   │       │               ├── values-zh
+│   │   │       │               │   └── strings.xml
+│   │   │       │               ├── values-zh-rTW
+│   │   │       │               │   └── strings.xml
+│   │   │       │               └── xml
+│   │   │       │                   └── searchable.xml
+│   │   │       ├── build.gradle
+│   │   │       ├── freeRDPCore
+│   │   │       │   ├── build.gradle
+│   │   │       │   ├── lint.xml
+│   │   │       │   └── src
+│   │   │       │       └── main
+│   │   │       │           ├── AndroidManifest.xml
+│   │   │       │           ├── cpp
+│   │   │       │           │   ├── android_cliprdr.c
+│   │   │       │           │   ├── android_cliprdr.h
+│   │   │       │           │   ├── android_event.c
+│   │   │       │           │   ├── android_event.h
+│   │   │       │           │   ├── android_freerdp.c
+│   │   │       │           │   ├── android_freerdp.h
+│   │   │       │           │   ├── android_freerdp_jni.h
+│   │   │       │           │   ├── android_jni_callback.c
+│   │   │       │           │   ├── android_jni_callback.h
+│   │   │       │           │   ├── android_jni_utils.c
+│   │   │       │           │   ├── android_jni_utils.h
+│   │   │       │           │   └── CMakeLists.txt
+│   │   │       │           ├── java
+│   │   │       │           │   └── com
+│   │   │       │           │       └── freerdp
+│   │   │       │           │           └── freerdpcore
+│   │   │       │           │               ├── application
+│   │   │       │           │               │   ├── GlobalApp.java
+│   │   │       │           │               │   ├── NetworkStateReceiver.java
+│   │   │       │           │               │   ├── ScreenReceiver.java
+│   │   │       │           │               │   └── SessionState.java
+│   │   │       │           │               ├── domain
+│   │   │       │           │               │   ├── BookmarkBase.java
+│   │   │       │           │               │   ├── ConnectionReference.java
+│   │   │       │           │               │   ├── ManualBookmark.java
+│   │   │       │           │               │   ├── PlaceholderBookmark.java
+│   │   │       │           │               │   └── QuickConnectBookmark.java
+│   │   │       │           │               ├── presentation
+│   │   │       │           │               │   ├── AboutActivity.java
+│   │   │       │           │               │   ├── ApplicationSettingsActivity.java
+│   │   │       │           │               │   ├── BookmarkActivity.java
+│   │   │       │           │               │   ├── HelpActivity.java
+│   │   │       │           │               │   ├── HomeActivity.java
+│   │   │       │           │               │   ├── ScrollView2D.java
+│   │   │       │           │               │   ├── SessionActivity.java
+│   │   │       │           │               │   ├── SessionView.java
+│   │   │       │           │               │   ├── ShortcutsActivity.java
+│   │   │       │           │               │   └── TouchPointerView.java
+│   │   │       │           │               ├── services
+│   │   │       │           │               │   ├── BookmarkBaseGateway.java
+│   │   │       │           │               │   ├── BookmarkDB.java
+│   │   │       │           │               │   ├── FreeRDPSuggestionProvider.java
+│   │   │       │           │               │   ├── HistoryDB.java
+│   │   │       │           │               │   ├── LibFreeRDP.java
+│   │   │       │           │               │   ├── ManualBookmarkGateway.java
+│   │   │       │           │               │   ├── QuickConnectHistoryGateway.java
+│   │   │       │           │               │   └── SessionRequestHandlerActivity.java
+│   │   │       │           │               └── utils
+│   │   │       │           │                   ├── AppCompatPreferenceActivity.java
+│   │   │       │           │                   ├── BookmarkArrayAdapter.java
+│   │   │       │           │                   ├── ButtonPreference.java
+│   │   │       │           │                   ├── ClipboardManagerProxy.java
+│   │   │       │           │                   ├── DoubleGestureDetector.java
+│   │   │       │           │                   ├── GestureDetector.java
+│   │   │       │           │                   ├── IntEditTextPreference.java
+│   │   │       │           │                   ├── IntListPreference.java
+│   │   │       │           │                   ├── KeyboardMapper.java
+│   │   │       │           │                   ├── Mouse.java
+│   │   │       │           │                   ├── RDPFileParser.java
+│   │   │       │           │                   └── SeparatedListAdapter.java
+│   │   │       │           └── res
+│   │   │       │               ├── drawable
+│   │   │       │               │   ├── button_background.xml
+│   │   │       │               │   ├── icon_button_cancel.png
+│   │   │       │               │   ├── icon_launcher_freerdp.png
+│   │   │       │               │   ├── separator_background.xml
+│   │   │       │               │   ├── sym_keyboard_arrows_black.png
+│   │   │       │               │   ├── sym_keyboard_arrows.png
+│   │   │       │               │   ├── sym_keyboard_down_arrow_black.png
+│   │   │       │               │   ├── sym_keyboard_down_arrow.png
+│   │   │       │               │   ├── sym_keyboard_left_arrow_black.png
+│   │   │       │               │   ├── sym_keyboard_left_arrow.png
+│   │   │       │               │   ├── sym_keyboard_menu_black.png
+│   │   │       │               │   ├── sym_keyboard_menu.png
+│   │   │       │               │   ├── sym_keyboard_right_arrow_black.png
+│   │   │       │               │   ├── sym_keyboard_right_arrow.png
+│   │   │       │               │   ├── sym_keyboard_up_arrow_black.png
+│   │   │       │               │   ├── sym_keyboard_up_arrow.png
+│   │   │       │               │   ├── sym_keyboard_winkey_black.png
+│   │   │       │               │   ├── sym_keyboard_winkey.png
+│   │   │       │               │   ├── touch_pointer_active.png
+│   │   │       │               │   ├── touch_pointer_default.png
+│   │   │       │               │   ├── touch_pointer_extkeyboard.png
+│   │   │       │               │   ├── touch_pointer_keyboard.png
+│   │   │       │               │   ├── touch_pointer_lclick.png
+│   │   │       │               │   ├── touch_pointer_rclick.png
+│   │   │       │               │   ├── touch_pointer_reset.png
+│   │   │       │               │   └── touch_pointer_scroll.png
+│   │   │       │               ├── drawable-hdpi
+│   │   │       │               │   ├── icon_button_add.png
+│   │   │       │               │   ├── icon_edittext_clear.png
+│   │   │       │               │   ├── icon_edittext_search.png
+│   │   │       │               │   ├── icon_launcher_freerdp.png
+│   │   │       │               │   ├── icon_menu_about.png
+│   │   │       │               │   ├── icon_menu_add.png
+│   │   │       │               │   ├── icon_menu_close.png
+│   │   │       │               │   ├── icon_menu_disconnect.png
+│   │   │       │               │   ├── icon_menu_ext_keyboard.png
+│   │   │       │               │   ├── icon_menu_help.png
+│   │   │       │               │   ├── icon_menu_preferences.png
+│   │   │       │               │   ├── icon_menu_settings.png
+│   │   │       │               │   ├── icon_menu_sys_keyboard.png
+│   │   │       │               │   ├── icon_menu_touch_pointer.png
+│   │   │       │               │   ├── icon_star_off.png
+│   │   │       │               │   ├── icon_star_on.png
+│   │   │       │               │   ├── search_plate.9.png
+│   │   │       │               │   ├── sym_keyboard_delete.png
+│   │   │       │               │   ├── sym_keyboard_feedback_delete.png
+│   │   │       │               │   ├── sym_keyboard_feedback_return.png
+│   │   │       │               │   └── sym_keyboard_return.png
+│   │   │       │               ├── drawable-ldpi
+│   │   │       │               │   ├── icon_button_add.png
+│   │   │       │               │   ├── icon_edittext_search.png
+│   │   │       │               │   ├── icon_launcher_freerdp.png
+│   │   │       │               │   ├── icon_menu_about.png
+│   │   │       │               │   ├── icon_menu_add.png
+│   │   │       │               │   ├── icon_menu_disconnect.png
+│   │   │       │               │   ├── icon_menu_exit.png
+│   │   │       │               │   ├── icon_menu_ext_keyboard.png
+│   │   │       │               │   ├── icon_menu_help.png
+│   │   │       │               │   ├── icon_menu_preferences.png
+│   │   │       │               │   ├── icon_menu_settings.png
+│   │   │       │               │   ├── icon_menu_sys_keyboard.png
+│   │   │       │               │   ├── icon_menu_touch_pointer.png
+│   │   │       │               │   ├── icon_star_off.png
+│   │   │       │               │   ├── icon_star_on.png
+│   │   │       │               │   ├── search_plate.9.png
+│   │   │       │               │   ├── sym_keyboard_delete.png
+│   │   │       │               │   ├── sym_keyboard_feedback_delete.png
+│   │   │       │               │   ├── sym_keyboard_feedback_return.png
+│   │   │       │               │   └── sym_keyboard_return.png
+│   │   │       │               ├── drawable-mdpi
+│   │   │       │               │   ├── icon_button_add.png
+│   │   │       │               │   ├── icon_edittext_clear.png
+│   │   │       │               │   ├── icon_edittext_search.png
+│   │   │       │               │   ├── icon_launcher_freerdp.png
+│   │   │       │               │   ├── icon_menu_about.png
+│   │   │       │               │   ├── icon_menu_add.png
+│   │   │       │               │   ├── icon_menu_disconnect.png
+│   │   │       │               │   ├── icon_menu_exit.png
+│   │   │       │               │   ├── icon_menu_ext_keyboard.png
+│   │   │       │               │   ├── icon_menu_help.png
+│   │   │       │               │   ├── icon_menu_preferences.png
+│   │   │       │               │   ├── icon_menu_settings.png
+│   │   │       │               │   ├── icon_menu_sys_keyboard.png
+│   │   │       │               │   ├── icon_menu_touch_pointer.png
+│   │   │       │               │   ├── icon_star_off.png
+│   │   │       │               │   ├── icon_star_on.png
+│   │   │       │               │   ├── search_plate.9.png
+│   │   │       │               │   ├── sym_keyboard_delete.png
+│   │   │       │               │   ├── sym_keyboard_feedback_delete.png
+│   │   │       │               │   ├── sym_keyboard_feedback_return.png
+│   │   │       │               │   └── sym_keyboard_return.png
+│   │   │       │               ├── layout
+│   │   │       │               │   ├── activity_about.xml
+│   │   │       │               │   ├── bookmark_list_item.xml
+│   │   │       │               │   ├── button_preference.xml
+│   │   │       │               │   ├── credentials.xml
+│   │   │       │               │   ├── dont_show_again_dialog.xml
+│   │   │       │               │   ├── home.xml
+│   │   │       │               │   ├── list_header.xml
+│   │   │       │               │   ├── session_list_item.xml
+│   │   │       │               │   ├── session.xml
+│   │   │       │               │   └── super_bar.xml
+│   │   │       │               ├── menu
+│   │   │       │               │   ├── bookmark_context_menu.xml
+│   │   │       │               │   ├── home_menu.xml
+│   │   │       │               │   └── session_menu.xml
+│   │   │       │               ├── values
+│   │   │       │               │   ├── attrs.xml
+│   │   │       │               │   ├── dimens.xml
+│   │   │       │               │   ├── integers.xml
+│   │   │       │               │   ├── strings.xml
+│   │   │       │               │   └── theme.xml
+│   │   │       │               ├── values-de
+│   │   │       │               │   └── strings.xml
+│   │   │       │               ├── values-es
+│   │   │       │               │   └── strings.xml
+│   │   │       │               ├── values-fr
+│   │   │       │               │   └── strings.xml
+│   │   │       │               ├── values-ja
+│   │   │       │               │   └── strings.xml
+│   │   │       │               ├── values-ko
+│   │   │       │               │   └── strings.xml
+│   │   │       │               ├── values-land
+│   │   │       │               │   └── dimens.xml
+│   │   │       │               ├── values-nb-rNO
+│   │   │       │               │   └── strings.xml
+│   │   │       │               ├── values-nl
+│   │   │       │               │   └── strings.xml
+│   │   │       │               ├── values-pt-rBR
+│   │   │       │               │   └── strings.xml
+│   │   │       │               ├── values-w820dp
+│   │   │       │               │   └── dimens.xml
+│   │   │       │               ├── values-zh
+│   │   │       │               │   └── strings.xml
+│   │   │       │               ├── values-zh-rTW
+│   │   │       │               │   └── strings.xml
+│   │   │       │               └── xml
+│   │   │       │                   ├── advanced_settings.xml
+│   │   │       │                   ├── bookmark_settings.xml
+│   │   │       │                   ├── credentials_settings.xml
+│   │   │       │                   ├── cursor_keyboard.xml
+│   │   │       │                   ├── debug_settings.xml
+│   │   │       │                   ├── gateway_settings.xml
+│   │   │       │                   ├── modifiers_keyboard.xml
+│   │   │       │                   ├── numpad_keyboard.xml
+│   │   │       │                   ├── performance_flags_3g.xml
+│   │   │       │                   ├── performance_flags.xml
+│   │   │       │                   ├── screen_settings_3g.xml
+│   │   │       │                   ├── screen_settings.xml
+│   │   │       │                   ├── settings_app_client.xml
+│   │   │       │                   ├── settings_app_headers.xml
+│   │   │       │                   ├── settings_app_power.xml
+│   │   │       │                   ├── settings_app_security.xml
+│   │   │       │                   ├── settings_app_ui.xml
+│   │   │       │                   └── specialkeys_keyboard.xml
+│   │   │       ├── gradle
+│   │   │       │   └── wrapper
+│   │   │       │       ├── gradle-wrapper.jar
+│   │   │       │       └── gradle-wrapper.properties
+│   │   │       ├── gradle.properties
+│   │   │       ├── gradlew
+│   │   │       ├── gradlew.bat
+│   │   │       └── settings.gradle
+│   │   ├── CMakeLists.txt
+│   │   ├── common
+│   │   │   ├── client.c
+│   │   │   ├── client_cliprdr_file.c
+│   │   │   ├── CMakeLists.txt
+│   │   │   ├── cmdline.c
+│   │   │   ├── cmdline.h
+│   │   │   ├── file.c
+│   │   │   ├── geometry.c
+│   │   │   ├── man
+│   │   │   │   ├── CMakeLists.txt
+│   │   │   │   ├── freerdp-global-config.1.in
+│   │   │   │   ├── freerdp-global-envvar.1.in
+│   │   │   │   ├── freerdp-global-links.1.in
+│   │   │   │   └── generate_argument_manpage.c
+│   │   │   ├── smartcard_cli.c
+│   │   │   └── test
+│   │   │       ├── CMakeLists.txt
+│   │   │       ├── TestClientChannels.c
+│   │   │       ├── TestClientCmdLine.c
+│   │   │       └── TestClientRdpFile.c
+│   │   ├── FreeRDP-ClientConfig.cmake.in
+│   │   ├── freerdp-client.pc.in
+│   │   ├── iOS
+│   │   │   ├── Additions
+│   │   │   │   ├── OrderedDictionary.h
+│   │   │   │   ├── OrderedDictionary.m
+│   │   │   │   ├── Toast+UIView.h
+│   │   │   │   ├── Toast+UIView.m
+│   │   │   │   ├── TSXAdditions.h
+│   │   │   │   └── TSXAdditions.m
+│   │   │   ├── AppDelegate.h
+│   │   │   ├── AppDelegate.m
+│   │   │   ├── CMakeLists.txt
+│   │   │   ├── Controllers
+│   │   │   │   ├── AboutController.h
+│   │   │   │   ├── AboutController.m
+│   │   │   │   ├── AdvancedBookmarkEditorController.h
+│   │   │   │   ├── AdvancedBookmarkEditorController.m
+│   │   │   │   ├── AppSettingsController.h
+│   │   │   │   ├── AppSettingsController.m
+│   │   │   │   ├── BookmarkEditorController.h
+│   │   │   │   ├── BookmarkEditorController.m
+│   │   │   │   ├── BookmarkGatewaySettingsController.h
+│   │   │   │   ├── BookmarkGatewaySettingsController.m
+│   │   │   │   ├── BookmarkListController.h
+│   │   │   │   ├── BookmarkListController.m
+│   │   │   │   ├── CredentialsEditorController.h
+│   │   │   │   ├── CredentialsEditorController.m
+│   │   │   │   ├── CredentialsInputController.h
+│   │   │   │   ├── CredentialsInputController.m
+│   │   │   │   ├── EditorBaseController.h
+│   │   │   │   ├── EditorBaseController.m
+│   │   │   │   ├── EditorSelectionController.h
+│   │   │   │   ├── EditorSelectionController.m
+│   │   │   │   ├── EncryptionController.h
+│   │   │   │   ├── EncryptionController.m
+│   │   │   │   ├── HelpController.h
+│   │   │   │   ├── HelpController.m
+│   │   │   │   ├── MainTabBarController.h
+│   │   │   │   ├── MainTabBarController.m
+│   │   │   │   ├── PerformanceEditorController.h
+│   │   │   │   ├── PerformanceEditorController.m
+│   │   │   │   ├── RDPSessionViewController.h
+│   │   │   │   ├── RDPSessionViewController.m
+│   │   │   │   ├── ScreenSelectionController.h
+│   │   │   │   ├── ScreenSelectionController.m
+│   │   │   │   ├── VerifyCertificateController.h
+│   │   │   │   └── VerifyCertificateController.m
+│   │   │   ├── Defaults.plist
+│   │   │   ├── FreeRDP
+│   │   │   │   ├── ios_cliprdr.h
+│   │   │   │   ├── ios_cliprdr.m
+│   │   │   │   ├── ios_freerdp_events.h
+│   │   │   │   ├── ios_freerdp_events.m
+│   │   │   │   ├── ios_freerdp.h
+│   │   │   │   ├── ios_freerdp.m
+│   │   │   │   ├── ios_freerdp_ui.h
+│   │   │   │   └── ios_freerdp_ui.m
+│   │   │   ├── iFreeRDP.plist
+│   │   │   ├── iFreeRDP-Prefix.pch
+│   │   │   ├── main.m
+│   │   │   ├── Misc
+│   │   │   │   ├── Reachability.h
+│   │   │   │   ├── Reachability.m
+│   │   │   │   ├── SFHFKeychainUtils.h
+│   │   │   │   ├── SFHFKeychainUtils.m
+│   │   │   │   ├── TSXTypes.h
+│   │   │   │   ├── Utils.h
+│   │   │   │   └── Utils.m
+│   │   │   ├── Models
+│   │   │   │   ├── Bookmark.h
+│   │   │   │   ├── Bookmark.m
+│   │   │   │   ├── ConnectionParams.h
+│   │   │   │   ├── ConnectionParams.m
+│   │   │   │   ├── Encryptor.h
+│   │   │   │   ├── Encryptor.m
+│   │   │   │   ├── GlobalDefaults.h
+│   │   │   │   ├── GlobalDefaults.m
+│   │   │   │   ├── RDPKeyboard.h
+│   │   │   │   ├── RDPKeyboard.m
+│   │   │   │   ├── RDPSession.h
+│   │   │   │   └── RDPSession.m
+│   │   │   ├── ModuleOptions.cmake
+│   │   │   ├── Resources
+│   │   │   │   ├── about_page
+│   │   │   │   │   ├── about.html
+│   │   │   │   │   ├── about_phone.html
+│   │   │   │   │   ├── background_transparent.png
+│   │   │   │   │   ├── back.jpg
+│   │   │   │   │   └── FreeRDP_Logo.png
+│   │   │   │   ├── alert-black-button@2x.png
+│   │   │   │   ├── alert-black-button.png
+│   │   │   │   ├── alert-gray-button@2x.png
+│   │   │   │   ├── alert-gray-button.png
+│   │   │   │   ├── alert-red-button@2x.png
+│   │   │   │   ├── alert-red-button.png
+│   │   │   │   ├── alert-window@2x.png
+│   │   │   │   ├── alert-window-landscape@2x.png
+│   │   │   │   ├── alert-window-landscape.png
+│   │   │   │   ├── alert-window.png
+│   │   │   │   ├── BookmarkListView.xib
+│   │   │   │   ├── BookmarkTableViewCell.xib
+│   │   │   │   ├── cancel_button_background.png
+│   │   │   │   ├── CredentialsInputView.xib
+│   │   │   │   ├── Default@2x.png
+│   │   │   │   ├── Default-568h@2x.png
+│   │   │   │   ├── Default-Landscape@2x~ipad.png
+│   │   │   │   ├── Default-Landscape~ipad.png
+│   │   │   │   ├── Default.png
+│   │   │   │   ├── Default-Portrait@2x~ipad.png
+│   │   │   │   ├── Default-Portrait~ipad.png
+│   │   │   │   ├── EditButtonTableViewCell.xib
+│   │   │   │   ├── EditFlagTableViewCell.xib
+│   │   │   │   ├── EditSecretTextTableViewCell.xib
+│   │   │   │   ├── EditSelectionTableViewCell.xib
+│   │   │   │   ├── EditSubEditTableViewCell.xib
+│   │   │   │   ├── EditTextTableViewCell.xib
+│   │   │   │   ├── en.lproj
+│   │   │   │   │   └── Localizable.strings
+│   │   │   │   ├── help_page
+│   │   │   │   │   ├── back.jpg
+│   │   │   │   │   ├── gestures.html
+│   │   │   │   │   ├── gestures_phone.html
+│   │   │   │   │   ├── gestures_phone.png
+│   │   │   │   │   ├── gestures.png
+│   │   │   │   │   ├── nav_gestures.png
+│   │   │   │   │   ├── nav_toolbar.png
+│   │   │   │   │   ├── nav_touch_pointer.png
+│   │   │   │   │   ├── toolbar.html
+│   │   │   │   │   ├── toolbar_phone.html
+│   │   │   │   │   ├── toolbar_phone.png
+│   │   │   │   │   ├── toolbar.png
+│   │   │   │   │   ├── touch_pointer.html
+│   │   │   │   │   ├── touch_pointer_phone.html
+│   │   │   │   │   ├── touch_pointer_phone.png
+│   │   │   │   │   └── touch_pointer.png
+│   │   │   │   ├── Icon@2x.png
+│   │   │   │   ├── Icon-72@2x.png
+│   │   │   │   ├── Icon-72.png
+│   │   │   │   ├── icon_accessory_star_off.png
+│   │   │   │   ├── icon_accessory_star_on.png
+│   │   │   │   ├── icon_key_arrow_down.png
+│   │   │   │   ├── icon_key_arrow_left.png
+│   │   │   │   ├── icon_key_arrow_right.png
+│   │   │   │   ├── icon_key_arrows.png
+│   │   │   │   ├── icon_key_arrow_up.png
+│   │   │   │   ├── icon_key_backspace.png
+│   │   │   │   ├── icon_key_menu.png
+│   │   │   │   ├── icon_key_return.png
+│   │   │   │   ├── icon_key_win.png
+│   │   │   │   ├── Icon.png
+│   │   │   │   ├── keyboard_button_background.png
+│   │   │   │   ├── MainWindow.xib
+│   │   │   │   ├── RDPConnectingView.xib
+│   │   │   │   ├── RDPSessionView.xib
+│   │   │   │   ├── SessionTableViewCell.xib
+│   │   │   │   ├── tabbar_icon_about.png
+│   │   │   │   ├── tabbar_icon_help.png
+│   │   │   │   ├── tabbar_icon_settings.png
+│   │   │   │   ├── toolbar_icon_disconnect.png
+│   │   │   │   ├── toolbar_icon_extkeyboad.png
+│   │   │   │   ├── toolbar_icon_home.png
+│   │   │   │   ├── toolbar_icon_keyboard.png
+│   │   │   │   ├── toolbar_icon_touchpointer.png
+│   │   │   │   ├── toolbar_icon_win.png
+│   │   │   │   ├── touch_pointer_active.png
+│   │   │   │   ├── touch_pointer_default.png
+│   │   │   │   ├── touch_pointer_extkeyboard.png
+│   │   │   │   ├── touch_pointer_keyboard.png
+│   │   │   │   ├── touch_pointer_lclick.png
+│   │   │   │   ├── touch_pointer_rclick.png
+│   │   │   │   ├── touch_pointer_reset.png
+│   │   │   │   ├── touch_pointer_scroll.png
+│   │   │   │   └── VerifyCertificateView.xib
+│   │   │   └── Views
+│   │   │       ├── AdvancedKeyboardView.h
+│   │   │       ├── AdvancedKeyboardView.m
+│   │   │       ├── BlockAlertView.h
+│   │   │       ├── BlockAlertView.m
+│   │   │       ├── BlockBackground.h
+│   │   │       ├── BlockBackground.m
+│   │   │       ├── BlockUI.h
+│   │   │       ├── BookmarkTableCell.h
+│   │   │       ├── BookmarkTableCell.m
+│   │   │       ├── EditButtonTableViewCell.h
+│   │   │       ├── EditButtonTableViewCell.m
+│   │   │       ├── EditFlagTableViewCell.h
+│   │   │       ├── EditFlagTableViewCell.m
+│   │   │       ├── EditSecretTextTableViewCell.h
+│   │   │       ├── EditSecretTextTableViewCell.m
+│   │   │       ├── EditSelectionTableViewCell.h
+│   │   │       ├── EditSelectionTableViewCell.m
+│   │   │       ├── EditSubEditTableViewCell.h
+│   │   │       ├── EditSubEditTableViewCell.m
+│   │   │       ├── EditTextTableViewCell.h
+│   │   │       ├── EditTextTableViewCell.m
+│   │   │       ├── RDPSessionView.h
+│   │   │       ├── RDPSessionView.m
+│   │   │       ├── SessionTableCell.h
+│   │   │       ├── SessionTableCell.m
+│   │   │       ├── TouchPointerView.h
+│   │   │       └── TouchPointerView.m
+│   │   ├── Mac
+│   │   │   ├── CertificateDialog.h
+│   │   │   ├── CertificateDialog.m
+│   │   │   ├── CertificateDialog.xib
+│   │   │   ├── cli
+│   │   │   │   ├── AppDelegate.h
+│   │   │   │   ├── AppDelegate.m
+│   │   │   │   ├── CMakeLists.txt
+│   │   │   │   ├── en.lproj
+│   │   │   │   │   ├── Credits.rtf
+│   │   │   │   │   ├── InfoPlist.strings
+│   │   │   │   │   └── MainMenu.xib
+│   │   │   │   ├── FreeRDP.icns
+│   │   │   │   ├── Info.plist.in
+│   │   │   │   ├── MacClient2-Info.plist
+│   │   │   │   ├── MacClient2-Prefix.pch
+│   │   │   │   ├── main.m
+│   │   │   │   ├── MainMenu.xib
+│   │   │   │   └── PkgInfo.in
+│   │   │   ├── Clipboard.h
+│   │   │   ├── Clipboard.m
+│   │   │   ├── CMakeLists.txt
+│   │   │   ├── Credits.rtf
+│   │   │   ├── en.lproj
+│   │   │   │   └── InfoPlist.strings
+│   │   │   ├── Info.plist
+│   │   │   ├── Keyboard.h
+│   │   │   ├── Keyboard.m
+│   │   │   ├── main.m
+│   │   │   ├── mf_client.h
+│   │   │   ├── mf_client.m
+│   │   │   ├── mfreerdp.h
+│   │   │   ├── ModuleOptions.cmake
+│   │   │   ├── MRDPCursor.h
+│   │   │   ├── MRDPCursor.m
+│   │   │   ├── MRDPView.h
+│   │   │   ├── MRDPView.m
+│   │   │   ├── PasswordDialog.h
+│   │   │   ├── PasswordDialog.m
+│   │   │   └── PasswordDialog.xib
+│   │   ├── Sample
+│   │   │   ├── CMakeLists.txt
+│   │   │   ├── ModuleOptions.cmake
+│   │   │   ├── tf_channels.c
+│   │   │   ├── tf_channels.h
+│   │   │   ├── tf_freerdp.c
+│   │   │   └── tf_freerdp.h
+│   │   ├── SDL
+│   │   │   ├── CMakeLists.txt
+│   │   │   ├── common
+│   │   │   │   ├── aad
+│   │   │   │   │   ├── CMakeLists.txt
+│   │   │   │   │   ├── dummy.cpp
+│   │   │   │   │   ├── qt
+│   │   │   │   │   │   └── webview_impl.cpp
+│   │   │   │   │   ├── sdl_config.hpp.in
+│   │   │   │   │   ├── sdl_webview.cpp
+│   │   │   │   │   ├── sdl_webview.hpp
+│   │   │   │   │   ├── webview_impl.hpp
+│   │   │   │   │   └── wrapper
+│   │   │   │   │       ├── README
+│   │   │   │   │       ├── webview.h
+│   │   │   │   │       └── webview_impl.cpp
+│   │   │   │   ├── CMakeLists.txt
+│   │   │   │   ├── man
+│   │   │   │   │   ├── sdl-freerdp-config.1.in
+│   │   │   │   │   └── sdl-freerdp-examples.1.in
+│   │   │   │   ├── res
+│   │   │   │   │   ├── CMakeLists.txt
+│   │   │   │   │   ├── resource.cpp.in
+│   │   │   │   │   ├── resource.hpp.in
+│   │   │   │   │   ├── sdl_resource_file.cpp
+│   │   │   │   │   ├── sdl_resource_file.hpp
+│   │   │   │   │   ├── sdl_resource_manager.cpp
+│   │   │   │   │   └── sdl_resource_manager.hpp
+│   │   │   │   ├── scoped_guard.hpp
+│   │   │   │   ├── sdl_prefs.cpp
+│   │   │   │   ├── sdl_prefs.hpp
+│   │   │   │   └── test
+│   │   │   │       ├── CMakeLists.txt
+│   │   │   │       ├── sdl-freerdp.json
+│   │   │   │       └── TestSDLPrefs.cpp
+│   │   │   ├── SDL2
+│   │   │   │   ├── CMakeLists.txt
+│   │   │   │   ├── dialogs
+│   │   │   │   │   ├── CMakeLists.txt
+│   │   │   │   │   ├── res
+│   │   │   │   │   │   ├── CMakeLists.txt
+│   │   │   │   │   │   ├── sdl2_resource_manager.cpp
+│   │   │   │   │   │   └── sdl2_resource_manager.hpp
+│   │   │   │   │   ├── sdl_button.cpp
+│   │   │   │   │   ├── sdl_button.hpp
+│   │   │   │   │   ├── sdl_buttons.cpp
+│   │   │   │   │   ├── sdl_buttons.hpp
+│   │   │   │   │   ├── sdl_connection_dialog.cpp
+│   │   │   │   │   ├── sdl_connection_dialog.hpp
+│   │   │   │   │   ├── sdl_dialogs.cpp
+│   │   │   │   │   ├── sdl_dialogs.hpp
+│   │   │   │   │   ├── sdl_input.cpp
+│   │   │   │   │   ├── sdl_input.hpp
+│   │   │   │   │   ├── sdl_input_widgets.cpp
+│   │   │   │   │   ├── sdl_input_widgets.hpp
+│   │   │   │   │   ├── sdl_select.cpp
+│   │   │   │   │   ├── sdl_select.hpp
+│   │   │   │   │   ├── sdl_selectlist.cpp
+│   │   │   │   │   ├── sdl_selectlist.hpp
+│   │   │   │   │   ├── sdl_widget.cpp
+│   │   │   │   │   ├── sdl_widget.hpp
+│   │   │   │   │   └── test
+│   │   │   │   │       ├── CMakeLists.txt
+│   │   │   │   │       └── TestSDLDialogs.cpp
+│   │   │   │   ├── man
+│   │   │   │   │   ├── CMakeLists.txt
+│   │   │   │   │   └── sdl2-freerdp.1.in
+│   │   │   │   ├── sdl_channels.cpp
+│   │   │   │   ├── sdl_channels.hpp
+│   │   │   │   ├── sdl_disp.cpp
+│   │   │   │   ├── sdl_disp.hpp
+│   │   │   │   ├── sdl_freerdp.cpp
+│   │   │   │   ├── sdl_freerdp.hpp
+│   │   │   │   ├── sdl_kbd.cpp
+│   │   │   │   ├── sdl_kbd.hpp
+│   │   │   │   ├── sdl_monitor.cpp
+│   │   │   │   ├── sdl_monitor.hpp
+│   │   │   │   ├── sdl_pointer.cpp
+│   │   │   │   ├── sdl_pointer.hpp
+│   │   │   │   ├── sdl_touch.cpp
+│   │   │   │   ├── sdl_touch.hpp
+│   │   │   │   ├── sdl_types.hpp
+│   │   │   │   ├── sdl_utils.cpp
+│   │   │   │   ├── sdl_utils.hpp
+│   │   │   │   ├── sdl_window.cpp
+│   │   │   │   └── sdl_window.hpp
+│   │   │   └── SDL3
+│   │   │       ├── CMakeLists.txt
+│   │   │       ├── dialogs
+│   │   │       │   ├── CMakeLists.txt
+│   │   │       │   ├── font
+│   │   │       │   │   ├── OFL.txt
+│   │   │       │   │   ├── OpenSans-Italic-VariableFont_wdth,wght.ttf
+│   │   │       │   │   ├── OpenSans-VariableFont_wdth,wght.ttf
+│   │   │       │   │   └── README.txt
+│   │   │       │   ├── res
+│   │   │       │   │   ├── CMakeLists.txt
+│   │   │       │   │   ├── sdl3_resource_manager.cpp
+│   │   │       │   │   └── sdl3_resource_manager.hpp
+│   │   │       │   ├── sdl_button.cpp
+│   │   │       │   ├── sdl_button.hpp
+│   │   │       │   ├── sdl_buttons.cpp
+│   │   │       │   ├── sdl_buttons.hpp
+│   │   │       │   ├── sdl_connection_dialog.cpp
+│   │   │       │   ├── sdl_connection_dialog.hpp
+│   │   │       │   ├── sdl_dialogs.cpp
+│   │   │       │   ├── sdl_dialogs.hpp
+│   │   │       │   ├── sdl_input.cpp
+│   │   │       │   ├── sdl_input.hpp
+│   │   │       │   ├── sdl_input_widgets.cpp
+│   │   │       │   ├── sdl_input_widgets.hpp
+│   │   │       │   ├── sdl_select.cpp
+│   │   │       │   ├── sdl_select.hpp
+│   │   │       │   ├── sdl_selectlist.cpp
+│   │   │       │   ├── sdl_selectlist.hpp
+│   │   │       │   ├── sdl_widget.cpp
+│   │   │       │   ├── sdl_widget.hpp
+│   │   │       │   └── test
+│   │   │       │       ├── CMakeLists.txt
+│   │   │       │       └── TestSDLDialogs.cpp
+│   │   │       ├── man
+│   │   │       │   ├── CMakeLists.txt
+│   │   │       │   └── sdl3-freerdp.1.in
+│   │   │       ├── sdl_channels.cpp
+│   │   │       ├── sdl_channels.hpp
+│   │   │       ├── sdl_clip.cpp
+│   │   │       ├── sdl_clip.hpp
+│   │   │       ├── sdl_disp.cpp
+│   │   │       ├── sdl_disp.hpp
+│   │   │       ├── sdl_freerdp.cpp
+│   │   │       ├── sdl_freerdp.hpp
+│   │   │       ├── sdl_kbd.cpp
+│   │   │       ├── sdl_kbd.hpp
+│   │   │       ├── sdl_monitor.cpp
+│   │   │       ├── sdl_monitor.hpp
+│   │   │       ├── sdl_pointer.cpp
+│   │   │       ├── sdl_pointer.hpp
+│   │   │       ├── sdl_touch.cpp
+│   │   │       ├── sdl_touch.hpp
+│   │   │       ├── sdl_types.hpp
+│   │   │       ├── sdl_utils.cpp
+│   │   │       ├── sdl_utils.hpp
+│   │   │       ├── sdl_window.cpp
+│   │   │       └── sdl_window.hpp
+│   │   ├── Wayland
+│   │   │   ├── CMakeLists.txt
+│   │   │   ├── wlf_channels.c
+│   │   │   ├── wlf_channels.h
+│   │   │   ├── wlf_cliprdr.c
+│   │   │   ├── wlf_cliprdr.h
+│   │   │   ├── wlf_disp.c
+│   │   │   ├── wlf_disp.h
+│   │   │   ├── wlf_input.c
+│   │   │   ├── wlf_input.h
+│   │   │   ├── wlf_pointer.c
+│   │   │   ├── wlf_pointer.h
+│   │   │   ├── wlfreerdp.1.in
+│   │   │   ├── wlfreerdp.c
+│   │   │   └── wlfreerdp.h
+│   │   ├── Windows
+│   │   │   ├── cli
+│   │   │   │   ├── CMakeLists.txt
+│   │   │   │   ├── wfreerdp.c
+│   │   │   │   └── wfreerdp.h
+│   │   │   ├── CMakeLists.txt
+│   │   │   ├── ModuleOptions.cmake
+│   │   │   ├── resource
+│   │   │   │   ├── close_active.bmp
+│   │   │   │   ├── close.bmp
+│   │   │   │   ├── FreeRDP.ico
+│   │   │   │   ├── lock_active.bmp
+│   │   │   │   ├── lock.bmp
+│   │   │   │   ├── minimize_active.bmp
+│   │   │   │   ├── minimize.bmp
+│   │   │   │   ├── resource.h
+│   │   │   │   ├── restore_active.bmp
+│   │   │   │   ├── restore.bmp
+│   │   │   │   ├── unlock_active.bmp
+│   │   │   │   ├── unlock.bmp
+│   │   │   │   └── wfreerdp.rc
+│   │   │   ├── wf_channels.c
+│   │   │   ├── wf_channels.h
+│   │   │   ├── wf_client.c
+│   │   │   ├── wf_client.h
+│   │   │   ├── wf_cliprdr.c
+│   │   │   ├── wf_cliprdr.h
+│   │   │   ├── wf_defaults.c
+│   │   │   ├── wf_defaults.h
+│   │   │   ├── wf_event.c
+│   │   │   ├── wf_event.h
+│   │   │   ├── wf_floatbar.c
+│   │   │   ├── wf_floatbar.h
+│   │   │   ├── wf_gdi.c
+│   │   │   ├── wf_gdi.h
+│   │   │   ├── wf_graphics.c
+│   │   │   ├── wf_graphics.h
+│   │   │   ├── wf_rail.c
+│   │   │   └── wf_rail.h
+│   │   └── X11
+│   │       ├── cli
+│   │       │   ├── CMakeLists.txt
+│   │       │   └── xfreerdp.c
+│   │       ├── CMakeLists.txt
+│   │       ├── man
+│   │       │   ├── CMakeLists.txt
+│   │       │   ├── xfreerdp.1.in
+│   │       │   ├── xfreerdp-examples.1.in
+│   │       │   └── xfreerdp-shortcuts.1.in
+│   │       ├── ModuleOptions.cmake
+│   │       ├── resource
+│   │       │   ├── close.xbm
+│   │       │   ├── lock.xbm
+│   │       │   ├── minimize.xbm
+│   │       │   ├── restore.xbm
+│   │       │   └── unlock.xbm
+│   │       ├── xf_channels.c
+│   │       ├── xf_channels.h
+│   │       ├── xf_client.c
+│   │       ├── xf_client.h
+│   │       ├── xf_cliprdr.c
+│   │       ├── xf_cliprdr.h
+│   │       ├── xf_disp.c
+│   │       ├── xf_disp.h
+│   │       ├── xf_event.c
+│   │       ├── xf_event.h
+│   │       ├── xf_floatbar.c
+│   │       ├── xf_floatbar.h
+│   │       ├── xf_gfx.c
+│   │       ├── xf_gfx.h
+│   │       ├── xf_graphics.c
+│   │       ├── xf_graphics.h
+│   │       ├── xf_input.c
+│   │       ├── xf_input.h
+│   │       ├── xf_keyboard.c
+│   │       ├── xf_keyboard.h
+│   │       ├── xf_monitor.c
+│   │       ├── xf_monitor.h
+│   │       ├── xf_rail.c
+│   │       ├── xf_rail.h
+│   │       ├── xfreerdp.h
+│   │       ├── xf_tsmf.c
+│   │       ├── xf_tsmf.h
+│   │       ├── xf_utils.c
+│   │       ├── xf_utils.h
+│   │       ├── xf_video.c
+│   │       ├── xf_video.h
+│   │       ├── xf_window.c
+│   │       └── xf_window.h
+│   ├── cmake
+│   │   ├── AddFuzzerTest.cmake
+│   │   ├── AddTargetWithResourceFile.cmake
+│   │   ├── CheckCmakeCompat.cmake
+│   │   ├── ClangDetectTool.cmake
+│   │   ├── ClangFormat.cmake
+│   │   ├── ClangTidy.cmake
+│   │   ├── ClangToolchain.cmake
+│   │   ├── CleaningConfigureFile.cmake
+│   │   ├── CommonConfigOptions.cmake
+│   │   ├── CompilerDetect.cmake
+│   │   ├── CompilerFlags.cmake
+│   │   ├── ConfigOptionsAndroid.cmake
+│   │   ├── ConfigOptions.cmake
+│   │   ├── ConfigOptionsiOS.cmake
+│   │   ├── ConfigureFreeRDP.cmake
+│   │   ├── ConfigureRPATH.cmake
+│   │   ├── ConvertFileToHexArray.cmake
+│   │   ├── CXXCompilerFlags.cmake
+│   │   ├── DetectIntrinsicSupport.cmake
+│   │   ├── DisableCompilerWarnings.cmake
+│   │   ├── Doxygen.cmake
+│   │   ├── EchoTarget.cmake
+│   │   ├── FindCairo.cmake
+│   │   ├── FindFAAC.cmake
+│   │   ├── FindFAAD2.cmake
+│   │   ├── FindFeature.cmake
+│   │   ├── FindFFmpeg.cmake
+│   │   ├── FindGSM.cmake
+│   │   ├── FindJSONC.cmake
+│   │   ├── FindKRB5.cmake
+│   │   ├── FindLAME.cmake
+│   │   ├── Findlibsystemd.cmake
+│   │   ├── Findlibusb-1.0.cmake
+│   │   ├── Findlodepng.cmake
+│   │   ├── FindMbedTLS.cmake
+│   │   ├── FindOpenH264.cmake
+│   │   ├── FindOpenSLES.cmake
+│   │   ├── FindOSS.cmake
+│   │   ├── FindPAM.cmake
+│   │   ├── FindPCSC.cmake
+│   │   ├── FindPCSCWinPR.cmake
+│   │   ├── FindPixman.cmake
+│   │   ├── Findsoxr.cmake
+│   │   ├── FindV4L.cmake
+│   │   ├── FindWayland.cmake
+│   │   ├── GenerateManpages.cmake
+│   │   ├── GetGitRevisionDescription.cmake
+│   │   ├── GetGitRevisionDescription.cmake.in
+│   │   ├── GNUInstallDirsWrapper.cmake
+│   │   ├── InstallFreeRDPMan.cmake
+│   │   ├── ios.toolchain.cmake
+│   │   ├── JsonDetect.cmake
+│   │   ├── LibFindMacros.cmake
+│   │   ├── ListTargetProperties.cmake
+│   │   ├── MergeStaticLibs.cmake
+│   │   ├── MSVCRuntime.cmake
+│   │   ├── oss-includes.h.in
+│   │   ├── pkg-config-install-prefix.cmake
+│   │   ├── PlatformDefaults.cmake
+│   │   ├── PreventInSourceBuilds.cmake
+│   │   ├── SetFreeRDPCMakeInstallDir.cmake
+│   │   ├── ShowCMakeVars.cmake
+│   │   ├── today.cmake
+│   │   ├── WarnUnmaintained.cmake
+│   │   ├── WebView2.cmake
+│   │   └── WindowsDLLVersion.rc.in
+│   ├── CMakeCPack.cmake
+│   ├── CMakeCPackOptions.cmake.in
+│   ├── CMakeLists.txt
+│   ├── compat
+│   │   └── stdbool
+│   │       └── stdbool.h
+│   ├── docs
+│   │   ├── Doxyfile
+│   │   ├── FreeRDP.vsd
+│   │   ├── mingw-example
+│   │   │   ├── build_arm64.sh
+│   │   │   ├── build_ia32.sh
+│   │   │   ├── _build.sh
+│   │   │   ├── build_x64.sh
+│   │   │   ├── docker-compose.yml
+│   │   │   ├── Dockerfile
+│   │   │   └── toolchain
+│   │   │       ├── cmake
+│   │   │       │   ├── aarch64-w64-mingw32-toolchain.cmake
+│   │   │       │   ├── i686-w64-mingw32-toolchain.cmake
+│   │   │       │   └── x86_64-w64-mingw32-toolchain.cmake
+│   │   │       └── meson
+│   │   │           ├── aarch64.txt
+│   │   │           ├── i686.txt
+│   │   │           └── x86_64.txt
+│   │   ├── PrintFormatSpecifiers.md
+│   │   ├── README.android
+│   │   ├── README.building
+│   │   ├── README.ios
+│   │   ├── README.macOS
+│   │   ├── README.mingw
+│   │   ├── README.timezones
+│   │   ├── valgrind.supp
+│   │   ├── version_detection.md
+│   │   └── wlog.md
+│   ├── external
+│   │   └── README
+│   ├── include
+│   │   ├── CMakeLists.txt
+│   │   ├── config
+│   │   │   ├── build-config.h.in
+│   │   │   ├── buildflags.h.in
+│   │   │   ├── config.h.in
+│   │   │   ├── settings_keys.h.in
+│   │   │   └── version.h.in
+│   │   └── freerdp
+│   │       ├── addin.h
+│   │       ├── altsec.h
+│   │       ├── api.h
+│   │       ├── assistance.h
+│   │       ├── autodetect.h
+│   │       ├── cache
+│   │       │   └── persistent.h
+│   │       ├── channels
+│   │       │   ├── ainput.h
+│   │       │   ├── audin.h
+│   │       │   ├── channels.h
+│   │       │   ├── cliprdr.h
+│   │       │   ├── disp.h
+│   │       │   ├── drdynvc.h
+│   │       │   ├── echo.h
+│   │       │   ├── encomsp.h
+│   │       │   ├── geometry.h
+│   │       │   ├── gfxredir.h
+│   │       │   ├── location.h
+│   │       │   ├── log.h
+│   │       │   ├── rail.h
+│   │       │   ├── rdp2tcp.h
+│   │       │   ├── rdpdr.h
+│   │       │   ├── rdpear.h
+│   │       │   ├── rdpecam.h
+│   │       │   ├── rdpei.h
+│   │       │   ├── rdpemsc.h
+│   │       │   ├── rdpewa.h
+│   │       │   ├── rdpgfx.h
+│   │       │   ├── rdpsnd.h
+│   │       │   ├── remdesk.h
+│   │       │   ├── scard.h
+│   │       │   ├── telemetry.h
+│   │       │   ├── tsmf.h
+│   │       │   ├── urbdrc.h
+│   │       │   ├── video.h
+│   │       │   └── wtsvc.h
+│   │       ├── client
+│   │       │   ├── ainput.h
+│   │       │   ├── audin.h
+│   │       │   ├── channels.h
+│   │       │   ├── client_cliprdr_file.h
+│   │       │   ├── cliprdr.h
+│   │       │   ├── cmdline.h
+│   │       │   ├── disp.h
+│   │       │   ├── drdynvc.h
+│   │       │   ├── encomsp.h
+│   │       │   ├── file.h
+│   │       │   ├── geometry.h
+│   │       │   ├── location.h
+│   │       │   ├── printer.h
+│   │       │   ├── rail.h
+│   │       │   ├── rdpei.h
+│   │       │   ├── rdpgfx.h
+│   │       │   ├── rdpsnd.h
+│   │       │   ├── remdesk.h
+│   │       │   ├── sshagent.h
+│   │       │   ├── tsmf.h
+│   │       │   ├── utils
+│   │       │   │   └── smartcard_cli.h
+│   │       │   └── video.h
+│   │       ├── client.h
+│   │       ├── codec
+│   │       │   ├── audio.h
+│   │       │   ├── bitmap.h
+│   │       │   ├── bulk.h
+│   │       │   ├── clear.h
+│   │       │   ├── color.h
+│   │       │   ├── dsp.h
+│   │       │   ├── h264.h
+│   │       │   ├── interleaved.h
+│   │       │   ├── jpeg.h
+│   │       │   ├── nsc.h
+│   │       │   ├── planar.h
+│   │       │   ├── progressive.h
+│   │       │   ├── region.h
+│   │       │   ├── rfx.h
+│   │       │   ├── yuv.h
+│   │       │   └── zgfx.h
+│   │       ├── codecs.h
+│   │       ├── constants.h
+│   │       ├── crypto
+│   │       │   ├── ber.h
+│   │       │   ├── certificate_data.h
+│   │       │   ├── certificate.h
+│   │       │   ├── certificate_store.h
+│   │       │   ├── crypto.h
+│   │       │   ├── der.h
+│   │       │   ├── er.h
+│   │       │   ├── per.h
+│   │       │   └── privatekey.h
+│   │       ├── display.h
+│   │       ├── dvc.h
+│   │       ├── emulate
+│   │       │   └── scard
+│   │       │       └── smartcard_emulate.h
+│   │       ├── error.h
+│   │       ├── event.h
+│   │       ├── extension.h
+│   │       ├── freerdp.h
+│   │       ├── gdi
+│   │       │   ├── bitmap.h
+│   │       │   ├── dc.h
+│   │       │   ├── gdi.h
+│   │       │   ├── gfx.h
+│   │       │   ├── pen.h
+│   │       │   ├── region.h
+│   │       │   ├── shape.h
+│   │       │   └── video.h
+│   │       ├── graphics.h
+│   │       ├── heartbeat.h
+│   │       ├── input.h
+│   │       ├── license.h
+│   │       ├── listener.h
+│   │       ├── locale
+│   │       │   ├── keyboard.h
+│   │       │   └── locale.h
+│   │       ├── log.h
+│   │       ├── message.h
+│   │       ├── metrics.h
+│   │       ├── peer.h
+│   │       ├── pointer.h
+│   │       ├── primary.h
+│   │       ├── primitives.h
+│   │       ├── rail.h
+│   │       ├── redirection.h
+│   │       ├── scancode.h
+│   │       ├── secondary.h
+│   │       ├── server
+│   │       │   ├── ainput.h
+│   │       │   ├── audin.h
+│   │       │   ├── channels.h
+│   │       │   ├── cliprdr.h
+│   │       │   ├── disp.h
+│   │       │   ├── drdynvc.h
+│   │       │   ├── echo.h
+│   │       │   ├── encomsp.h
+│   │       │   ├── gfxredir.h
+│   │       │   ├── location.h
+│   │       │   ├── proxy
+│   │       │   │   ├── proxy_config.h
+│   │       │   │   ├── proxy_context.h
+│   │       │   │   ├── proxy_log.h
+│   │       │   │   ├── proxy_modules_api.h
+│   │       │   │   ├── proxy_server.h
+│   │       │   │   └── proxy_types.h
+│   │       │   ├── rail.h
+│   │       │   ├── rdpdr.h
+│   │       │   ├── rdpecam-enumerator.h
+│   │       │   ├── rdpecam.h
+│   │       │   ├── rdpei.h
+│   │       │   ├── rdpemsc.h
+│   │       │   ├── rdpgfx.h
+│   │       │   ├── rdpsnd.h
+│   │       │   ├── remdesk.h
+│   │       │   ├── server-common.h
+│   │       │   ├── shadow.h
+│   │       │   └── telemetry.h
+│   │       ├── session.h
+│   │       ├── settings.h
+│   │       ├── settings_types.h
+│   │       ├── settings_types_private.h
+│   │       ├── streamdump.h
+│   │       ├── svc.h
+│   │       ├── transport_io.h
+│   │       ├── types.h
+│   │       ├── update.h
+│   │       ├── utils
+│   │       │   ├── aad.h
+│   │       │   ├── cliprdr_utils.h
+│   │       │   ├── drdynvc.h
+│   │       │   ├── encoded_types.h
+│   │       │   ├── gfx.h
+│   │       │   ├── helpers.h
+│   │       │   ├── http.h
+│   │       │   ├── passphrase.h
+│   │       │   ├── pcap.h
+│   │       │   ├── pod_arrays.h
+│   │       │   ├── profiler.h
+│   │       │   ├── proxy_utils.h
+│   │       │   ├── rdpdr_utils.h
+│   │       │   ├── ringbuffer.h
+│   │       │   ├── signal.h
+│   │       │   ├── smartcard_call.h
+│   │       │   ├── smartcardlogon.h
+│   │       │   ├── smartcard_operations.h
+│   │       │   ├── smartcard_pack.h
+│   │       │   ├── stopwatch.h
+│   │       │   └── string.h
+│   │       └── window.h
+│   ├── libfreerdp
+│   │   ├── cache
+│   │   │   ├── bitmap.c
+│   │   │   ├── bitmap.h
+│   │   │   ├── brush.c
+│   │   │   ├── brush.h
+│   │   │   ├── cache.c
+│   │   │   ├── cache.h
+│   │   │   ├── CMakeLists.txt
+│   │   │   ├── glyph.c
+│   │   │   ├── glyph.h
+│   │   │   ├── nine_grid.c
+│   │   │   ├── nine_grid.h
+│   │   │   ├── offscreen.c
+│   │   │   ├── offscreen.h
+│   │   │   ├── palette.c
+│   │   │   ├── palette.h
+│   │   │   ├── persistent.c
+│   │   │   ├── pointer.c
+│   │   │   └── pointer.h
+│   │   ├── CMakeLists.txt
+│   │   ├── codec
+│   │   │   ├── audio.c
+│   │   │   ├── bitmap.c
+│   │   │   ├── bulk.c
+│   │   │   ├── bulk.h
+│   │   │   ├── clear.c
+│   │   │   ├── CMakeLists.txt
+│   │   │   ├── color.c
+│   │   │   ├── color.h
+│   │   │   ├── dsp.c
+│   │   │   ├── dsp_fdk_aac.c
+│   │   │   ├── dsp_fdk_aac.h
+│   │   │   ├── dsp_fdk_impl.c
+│   │   │   ├── dsp_fdk_impl.h
+│   │   │   ├── dsp_ffmpeg.c
+│   │   │   ├── dsp_ffmpeg.h
+│   │   │   ├── dsp.h
+│   │   │   ├── h264.c
+│   │   │   ├── h264_ffmpeg.c
+│   │   │   ├── h264.h
+│   │   │   ├── h264_mediacodec.c
+│   │   │   ├── h264_mf.c
+│   │   │   ├── h264_openh264.c
+│   │   │   ├── include
+│   │   │   │   └── bitmap.h
+│   │   │   ├── interleaved.c
+│   │   │   ├── jpeg.c
+│   │   │   ├── mppc.c
+│   │   │   ├── mppc.h
+│   │   │   ├── ncrush.c
+│   │   │   ├── ncrush.h
+│   │   │   ├── neon
+│   │   │   │   ├── nsc_neon.c
+│   │   │   │   ├── nsc_neon.h
+│   │   │   │   ├── rfx_neon.c
+│   │   │   │   └── rfx_neon.h
+│   │   │   ├── nsc.c
+│   │   │   ├── nsc_encode.c
+│   │   │   ├── nsc_encode.h
+│   │   │   ├── nsc_types.h
+│   │   │   ├── planar.c
+│   │   │   ├── progressive.c
+│   │   │   ├── progressive.h
+│   │   │   ├── region.c
+│   │   │   ├── rfx_bitstream.h
+│   │   │   ├── rfx.c
+│   │   │   ├── rfx_constants.h
+│   │   │   ├── rfx_decode.c
+│   │   │   ├── rfx_decode.h
+│   │   │   ├── rfx_differential.h
+│   │   │   ├── rfx_dwt.c
+│   │   │   ├── rfx_dwt.h
+│   │   │   ├── rfx_encode.c
+│   │   │   ├── rfx_encode.h
+│   │   │   ├── rfx_quantization.c
+│   │   │   ├── rfx_quantization.h
+│   │   │   ├── rfx_rlgr.c
+│   │   │   ├── rfx_rlgr.h
+│   │   │   ├── rfx_types.h
+│   │   │   ├── sse
+│   │   │   │   ├── nsc_sse2.c
+│   │   │   │   ├── nsc_sse2.h
+│   │   │   │   ├── rfx_sse2.c
+│   │   │   │   └── rfx_sse2.h
+│   │   │   ├── test
+│   │   │   │   ├── CMakeLists.txt
+│   │   │   │   ├── progressive.bmp
+│   │   │   │   ├── rfx.bmp
+│   │   │   │   ├── test01.bmp
+│   │   │   │   ├── TestFreeRDPCodecClear.c
+│   │   │   │   ├── TestFreeRDPCodecCopy.c
+│   │   │   │   ├── TestFreeRDPCodecInterleaved.c
+│   │   │   │   ├── TestFreeRDPCodecMppc.c
+│   │   │   │   ├── TestFreeRDPCodecNCrush.c
+│   │   │   │   ├── TestFreeRDPCodecPlanar.c
+│   │   │   │   ├── TestFreeRDPCodecProgressive.c
+│   │   │   │   ├── TestFreeRDPCodecRemoteFX.c
+│   │   │   │   ├── TestFreeRDPCodecXCrush.c
+│   │   │   │   ├── TestFreeRDPCodecZGfx.c
+│   │   │   │   ├── TestFreeRDPRegion.c
+│   │   │   │   └── TestFuzzCodecs.c
+│   │   │   ├── xcrush.c
+│   │   │   ├── xcrush.h
+│   │   │   ├── yuv.c
+│   │   │   └── zgfx.c
+│   │   ├── common
+│   │   │   ├── addin.c
+│   │   │   ├── assistance.c
+│   │   │   ├── CMakeLists.txt
+│   │   │   ├── settings.c
+│   │   │   ├── settings_getters.c
+│   │   │   ├── settings_str.c
+│   │   │   ├── settings_str.h
+│   │   │   └── test
+│   │   │       ├── CMakeLists.txt
+│   │   │       ├── TestAddinArgv.c
+│   │   │       ├── TestCommonAssistance.c
+│   │   │       ├── TestFuzzCommonAssistanceBinToHexString.c
+│   │   │       ├── TestFuzzCommonAssistanceHexStringToBin.c
+│   │   │       └── TestFuzzCommonAssistanceParseFileBuffer.c
+│   │   ├── core
+│   │   │   ├── aad.c
+│   │   │   ├── aad.h
+│   │   │   ├── activation.c
+│   │   │   ├── activation.h
+│   │   │   ├── autodetect.c
+│   │   │   ├── autodetect.h
+│   │   │   ├── capabilities.c
+│   │   │   ├── capabilities.h
+│   │   │   ├── channels.c
+│   │   │   ├── channels.h
+│   │   │   ├── childsession.c
+│   │   │   ├── childsession.h
+│   │   │   ├── client.c
+│   │   │   ├── client.h
+│   │   │   ├── CMakeLists.txt
+│   │   │   ├── codecs.c
+│   │   │   ├── connection.c
+│   │   │   ├── connection.h
+│   │   │   ├── credssp_auth.c
+│   │   │   ├── credssp_auth.h
+│   │   │   ├── display.c
+│   │   │   ├── display.h
+│   │   │   ├── errbase.c
+│   │   │   ├── errconnect.c
+│   │   │   ├── errinfo.c
+│   │   │   ├── errinfo.h
+│   │   │   ├── fastpath.c
+│   │   │   ├── fastpath.h
+│   │   │   ├── freerdp.c
+│   │   │   ├── gateway
+│   │   │   │   ├── arm.c
+│   │   │   │   ├── arm.h
+│   │   │   │   ├── http.c
+│   │   │   │   ├── http.h
+│   │   │   │   ├── ncacn_http.c
+│   │   │   │   ├── ncacn_http.h
+│   │   │   │   ├── rdg.c
+│   │   │   │   ├── rdg.h
+│   │   │   │   ├── rpc_bind.c
+│   │   │   │   ├── rpc_bind.h
+│   │   │   │   ├── rpc.c
+│   │   │   │   ├── rpc_client.c
+│   │   │   │   ├── rpc_client.h
+│   │   │   │   ├── rpc_fault.c
+│   │   │   │   ├── rpc_fault.h
+│   │   │   │   ├── rpc.h
+│   │   │   │   ├── rts.c
+│   │   │   │   ├── rts.h
+│   │   │   │   ├── rts_signature.c
+│   │   │   │   ├── rts_signature.h
+│   │   │   │   ├── tsg.c
+│   │   │   │   ├── tsg.h
+│   │   │   │   ├── websocket.c
+│   │   │   │   ├── websocket.h
+│   │   │   │   ├── wst.c
+│   │   │   │   └── wst.h
+│   │   │   ├── gcc.c
+│   │   │   ├── gcc.h
+│   │   │   ├── graphics.c
+│   │   │   ├── graphics.h
+│   │   │   ├── heartbeat.c
+│   │   │   ├── heartbeat.h
+│   │   │   ├── info.c
+│   │   │   ├── info.h
+│   │   │   ├── input.c
+│   │   │   ├── input.h
+│   │   │   ├── license.c
+│   │   │   ├── license.h
+│   │   │   ├── listener.c
+│   │   │   ├── listener.h
+│   │   │   ├── mcs.c
+│   │   │   ├── mcs.h
+│   │   │   ├── message.c
+│   │   │   ├── message.h
+│   │   │   ├── metrics.c
+│   │   │   ├── multitransport.c
+│   │   │   ├── multitransport.h
+│   │   │   ├── nego.c
+│   │   │   ├── nego.h
+│   │   │   ├── nla.c
+│   │   │   ├── nla.h
+│   │   │   ├── orders.c
+│   │   │   ├── orders.h
+│   │   │   ├── peer.c
+│   │   │   ├── peer.h
+│   │   │   ├── proxy.c
+│   │   │   ├── proxy.h
+│   │   │   ├── rdp.c
+│   │   │   ├── rdp.h
+│   │   │   ├── rdstls.c
+│   │   │   ├── rdstls.h
+│   │   │   ├── redirection.c
+│   │   │   ├── redirection.h
+│   │   │   ├── security.c
+│   │   │   ├── security.h
+│   │   │   ├── server.c
+│   │   │   ├── server.h
+│   │   │   ├── settings.c
+│   │   │   ├── settings.h
+│   │   │   ├── smartcardlogon.c
+│   │   │   ├── state.c
+│   │   │   ├── state.h
+│   │   │   ├── streamdump.c
+│   │   │   ├── streamdump.h
+│   │   │   ├── surface.c
+│   │   │   ├── surface.h
+│   │   │   ├── tcp.c
+│   │   │   ├── tcp.h
+│   │   │   ├── test
+│   │   │   │   ├── CMakeLists.txt
+│   │   │   │   ├── settings_property_lists.h
+│   │   │   │   ├── TestConnect.c
+│   │   │   │   ├── TestFuzzCoreClient.c
+│   │   │   │   ├── TestFuzzCoreServer.c
+│   │   │   │   ├── TestFuzzCryptoCertificateDataSetPEM.c
+│   │   │   │   ├── TestSettings.c
+│   │   │   │   ├── TestStreamDump.c
+│   │   │   │   └── TestVersion.c
+│   │   │   ├── timezone.c
+│   │   │   ├── timezone.h
+│   │   │   ├── tpdu.c
+│   │   │   ├── tpdu.h
+│   │   │   ├── tpkt.c
+│   │   │   ├── tpkt.h
+│   │   │   ├── transport.c
+│   │   │   ├── transport.h
+│   │   │   ├── update.c
+│   │   │   ├── update.h
+│   │   │   ├── utils.c
+│   │   │   ├── utils.h
+│   │   │   ├── window.c
+│   │   │   └── window.h
+│   │   ├── crypto
+│   │   │   ├── base64.c
+│   │   │   ├── ber.c
+│   │   │   ├── cert_common.c
+│   │   │   ├── cert_common.h
+│   │   │   ├── certificate.c
+│   │   │   ├── certificate_data.c
+│   │   │   ├── certificate.h
+│   │   │   ├── certificate_store.c
+│   │   │   ├── CMakeLists.txt
+│   │   │   ├── crypto.c
+│   │   │   ├── crypto.h
+│   │   │   ├── der.c
+│   │   │   ├── er.c
+│   │   │   ├── opensslcompat.c
+│   │   │   ├── opensslcompat.h
+│   │   │   ├── per.c
+│   │   │   ├── privatekey.c
+│   │   │   ├── privatekey.h
+│   │   │   ├── test
+│   │   │   │   ├── CMakeLists.txt
+│   │   │   │   ├── ecdsa_sha1_cert.pem
+│   │   │   │   ├── ecdsa_sha256_cert.pem
+│   │   │   │   ├── ecdsa_sha384_cert.pem
+│   │   │   │   ├── ecdsa_sha512_cert.pem
+│   │   │   │   ├── known_hosts
+│   │   │   │   │   ├── known_hosts
+│   │   │   │   │   └── known_hosts.v2
+│   │   │   │   ├── rsa_pkcs1_sha1_cert.pem
+│   │   │   │   ├── rsa_pkcs1_sha256_cert.pem
+│   │   │   │   ├── rsa_pkcs1_sha384_cert.pem
+│   │   │   │   ├── rsa_pkcs1_sha512_cert.pem
+│   │   │   │   ├── rsa_pss_sha1_cert.pem
+│   │   │   │   ├── rsa_pss_sha256_cert.pem
+│   │   │   │   ├── rsa_pss_sha256_mgf1_sha384_cert.pem
+│   │   │   │   ├── rsa_pss_sha384_cert.pem
+│   │   │   │   ├── rsa_pss_sha512_cert.pem
+│   │   │   │   ├── TestBase64.c
+│   │   │   │   ├── TestKnownHosts.c
+│   │   │   │   ├── Test_x509_cert_info.pem
+│   │   │   │   └── Test_x509_utils.c
+│   │   │   ├── tls.c
+│   │   │   ├── tls.h
+│   │   │   ├── x509_utils.c
+│   │   │   └── x509_utils.h
+│   │   ├── emu
+│   │   │   ├── CMakeLists.txt
+│   │   │   └── scard
+│   │   │       ├── FreeRDP.ico.c
+│   │   │       ├── FreeRDP.ico.h
+│   │   │       ├── smartcard_emulate.c
+│   │   │       ├── smartcard_virtual_gids.c
+│   │   │       └── smartcard_virtual_gids.h
+│   │   ├── FreeRDPConfig.cmake.in
+│   │   ├── freerdp.pc.in
+│   │   ├── gdi
+│   │   │   ├── bitmap.c
+│   │   │   ├── brush.c
+│   │   │   ├── brush.h
+│   │   │   ├── clipping.c
+│   │   │   ├── clipping.h
+│   │   │   ├── CMakeLists.txt
+│   │   │   ├── dc.c
+│   │   │   ├── drawing.c
+│   │   │   ├── drawing.h
+│   │   │   ├── gdi.c
+│   │   │   ├── gdi.h
+│   │   │   ├── gfx.c
+│   │   │   ├── graphics.c
+│   │   │   ├── graphics.h
+│   │   │   ├── line.c
+│   │   │   ├── line.h
+│   │   │   ├── pen.c
+│   │   │   ├── region.c
+│   │   │   ├── shape.c
+│   │   │   ├── test
+│   │   │   │   ├── CMakeLists.txt
+│   │   │   │   ├── helpers.c
+│   │   │   │   ├── helpers.h
+│   │   │   │   ├── TestGdiBitBlt.c
+│   │   │   │   ├── TestGdiClip.c
+│   │   │   │   ├── TestGdiCreate.c
+│   │   │   │   ├── TestGdiEllipse.c
+│   │   │   │   ├── TestGdiLine.c
+│   │   │   │   ├── TestGdiRect.c
+│   │   │   │   ├── TestGdiRegion.c
+│   │   │   │   └── TestGdiRop3.c
+│   │   │   └── video.c
+│   │   ├── locale
+│   │   │   ├── CMakeLists.txt
+│   │   │   ├── keyboard_apple.c
+│   │   │   ├── keyboard_apple.h
+│   │   │   ├── keyboard.c
+│   │   │   ├── keyboard_layout.c
+│   │   │   ├── KeyboardLayoutMap.json
+│   │   │   ├── keyboard_sun.c
+│   │   │   ├── keyboard_sun.h
+│   │   │   ├── keyboard_x11.c
+│   │   │   ├── keyboard_x11.h
+│   │   │   ├── keyboard_xkbfile.c
+│   │   │   ├── keyboard_xkbfile.h
+│   │   │   ├── liblocale.h
+│   │   │   ├── locale.c
+│   │   │   ├── test
+│   │   │   │   ├── CMakeLists.txt
+│   │   │   │   └── TestLocaleKeyboard.c
+│   │   │   ├── xkb_layout_ids.c
+│   │   │   └── xkb_layout_ids.h
+│   │   ├── primitives
+│   │   │   ├── CMakeLists.txt
+│   │   │   ├── neon
+│   │   │   │   ├── prim_colors_neon.c
+│   │   │   │   ├── prim_YCoCg_neon.c
+│   │   │   │   └── prim_YUV_neon.c
+│   │   │   ├── opencl
+│   │   │   │   ├── primitives.cl
+│   │   │   │   ├── primitives.h.in
+│   │   │   │   └── prim_YUV_opencl.c
+│   │   │   ├── prim_add.c
+│   │   │   ├── prim_add.h
+│   │   │   ├── prim_alphaComp.c
+│   │   │   ├── prim_alphaComp.h
+│   │   │   ├── prim_andor.c
+│   │   │   ├── prim_andor.h
+│   │   │   ├── prim_colors.c
+│   │   │   ├── prim_colors.h
+│   │   │   ├── prim_copy.c
+│   │   │   ├── prim_copy.h
+│   │   │   ├── prim_internal.h
+│   │   │   ├── primitives.c
+│   │   │   ├── prim_set.c
+│   │   │   ├── prim_set.h
+│   │   │   ├── prim_shift.c
+│   │   │   ├── prim_shift.h
+│   │   │   ├── prim_sign.c
+│   │   │   ├── prim_sign.h
+│   │   │   ├── prim_templates.h
+│   │   │   ├── prim_YCoCg.c
+│   │   │   ├── prim_YCoCg.h
+│   │   │   ├── prim_YUV.c
+│   │   │   ├── prim_YUV.h
+│   │   │   ├── README.txt
+│   │   │   ├── sse
+│   │   │   │   ├── prim_add_sse3.c
+│   │   │   │   ├── prim_alphaComp_sse3.c
+│   │   │   │   ├── prim_andor_sse3.c
+│   │   │   │   ├── prim_colors_sse2.c
+│   │   │   │   ├── prim_copy_avx2.c
+│   │   │   │   ├── prim_copy_sse4_1.c
+│   │   │   │   ├── prim_set_sse2.c
+│   │   │   │   ├── prim_shift_sse3.c
+│   │   │   │   ├── prim_sign_ssse3.c
+│   │   │   │   ├── prim_YCoCg_ssse3.c
+│   │   │   │   └── prim_YUV_ssse3.c
+│   │   │   └── test
+│   │   │       ├── CMakeLists.txt
+│   │   │       ├── measure.h
+│   │   │       ├── prim_test.c
+│   │   │       ├── prim_test.h
+│   │   │       ├── TestPrimitivesAdd.c
+│   │   │       ├── TestPrimitivesAlphaComp.c
+│   │   │       ├── TestPrimitivesAndOr.c
+│   │   │       ├── TestPrimitivesColors.c
+│   │   │       ├── TestPrimitivesCopy.c
+│   │   │       ├── TestPrimitivesSet.c
+│   │   │       ├── TestPrimitivesShift.c
+│   │   │       ├── TestPrimitivesSign.c
+│   │   │       ├── TestPrimitivesYCbCr.c
+│   │   │       ├── TestPrimitivesYCoCg.c
+│   │   │       └── TestPrimitivesYUV.c
+│   │   └── utils
+│   │       ├── cliprdr_utils.c
+│   │       ├── CMakeLists.txt
+│   │       ├── drdynvc.c
+│   │       ├── encoded_types.c
+│   │       ├── gfx.c
+│   │       ├── helpers.c
+│   │       ├── http.c
+│   │       ├── passphrase.c
+│   │       ├── pcap.c
+│   │       ├── profiler.c
+│   │       ├── rdpdr_utils.c
+│   │       ├── ringbuffer.c
+│   │       ├── signal.c
+│   │       ├── smartcard_call.c
+│   │       ├── smartcard_operations.c
+│   │       ├── smartcard_pack.c
+│   │       ├── stopwatch.c
+│   │       ├── string.c
+│   │       └── test
+│   │           ├── CMakeLists.txt
+│   │           ├── TestEncodedTypes.c
+│   │           ├── TestPodArrays.c
+│   │           └── TestRingBuffer.c
+│   ├── LICENSE
+│   ├── packaging
+│   │   ├── deb
+│   │   │   └── freerdp-nightly
+│   │   │       ├── changelog
+│   │   │       ├── compat
+│   │   │       ├── control
+│   │   │       ├── copyright
+│   │   │       ├── freerdp-nightly-dbg.lintian-overrides
+│   │   │       ├── freerdp-nightly-dev.install
+│   │   │       ├── freerdp-nightly-dev.lintian-overrides
+│   │   │       ├── freerdp-nightly.install
+│   │   │       ├── freerdp-nightly.lintian-overrides
+│   │   │       ├── lintian-overrides
+│   │   │       ├── rules
+│   │   │       └── source
+│   │   │           └── format
+│   │   ├── flatpak
+│   │   │   ├── build-bundle.sh
+│   │   │   ├── com.freerdp.FreeRDP.json
+│   │   │   ├── freerdp.sh
+│   │   │   └── modules
+│   │   │       ├── cJSON.json
+│   │   │       ├── krb5.json
+│   │   │       ├── libusb.json
+│   │   │       ├── opensc.json
+│   │   │       ├── openssl.json
+│   │   │       ├── pcsc.json
+│   │   │       ├── uriparser.json
+│   │   │       └── xprop.json
+│   │   ├── rpm
+│   │   │   ├── freerdp-nightly-rpmlintrc
+│   │   │   └── freerdp-nightly.spec
+│   │   ├── scripts
+│   │   │   ├── prepare_deb_freerdp-nightly.sh
+│   │   │   └── prepare_rpm_freerdp-nightly.sh
+│   │   └── windows
+│   │       └── preload.cmake
+│   ├── rdtk
+│   │   ├── CMakeLists.txt
+│   │   ├── include
+│   │   │   ├── CMakeLists.txt
+│   │   │   └── rdtk
+│   │   │       ├── api.h
+│   │   │       └── rdtk.h
+│   │   ├── librdtk
+│   │   │   ├── CMakeLists.txt
+│   │   │   ├── rdtk_button.c
+│   │   │   ├── rdtk_button.h
+│   │   │   ├── rdtk_engine.c
+│   │   │   ├── rdtk_engine.h
+│   │   │   ├── rdtk_font.c
+│   │   │   ├── rdtk_font.h
+│   │   │   ├── rdtk_label.c
+│   │   │   ├── rdtk_label.h
+│   │   │   ├── rdtk_nine_patch.c
+│   │   │   ├── rdtk_nine_patch.h
+│   │   │   ├── rdtk_resources.c
+│   │   │   ├── rdtk_resources.h
+│   │   │   ├── rdtk_surface.c
+│   │   │   ├── rdtk_surface.h
+│   │   │   ├── rdtk_text_field.c
+│   │   │   ├── rdtk_text_field.h
+│   │   │   └── test
+│   │   │       ├── CMakeLists.txt
+│   │   │       └── TestRdTkNinePatch.c
+│   │   ├── sample
+│   │   │   ├── CMakeLists.txt
+│   │   │   └── rdtk_x11.c
+│   │   └── templates
+│   │       ├── build-config.h.in
+│   │       ├── buildflags.h.in
+│   │       ├── CMakeLists.txt
+│   │       ├── config.h.in
+│   │       ├── rdtkConfig.cmake.in
+│   │       ├── rdtk.pc.in
+│   │       └── version.h.in
+│   ├── README.md
+│   ├── resources
+│   │   ├── conv_to_ewm_prop.py
+│   │   ├── font
+│   │   │   ├── OFL.txt
+│   │   │   ├── OpenSans-Italic-VariableFont_wdth,wght.ttf
+│   │   │   ├── OpenSans-VariableFont_wdth,wght.ttf
+│   │   │   └── README.txt
+│   │   ├── FreeRDP-fav.ico
+│   │   ├── FreeRDP.ico
+│   │   ├── FreeRDP_Icon_256px.h
+│   │   ├── FreeRDP_Icon_256px.png
+│   │   ├── FreeRDP_Icon_256px.xpm
+│   │   ├── FreeRDP_Icon_96px.ico
+│   │   ├── FreeRDP_Icon.png
+│   │   ├── FreeRDP_Icon.svg
+│   │   ├── FreeRDP_Install.bmp
+│   │   ├── FreeRDP_Logo_Icon.ai
+│   │   ├── FreeRDP_Logo_Icon.svg
+│   │   ├── FreeRDP_Logo.png
+│   │   ├── FreeRDP_Logo.svg
+│   │   ├── FreeRDP_OSX.icns
+│   │   ├── icon_error.svg
+│   │   ├── icon_info.svg
+│   │   └── icon_warning.svg
+│   ├── scripts
+│   │   ├── abi-suppr.txt
+│   │   ├── android-build-32.conf
+│   │   ├── android-build-64.conf
+│   │   ├── android-build-cjson.sh
+│   │   ├── android-build-common.sh
+│   │   ├── android-build.conf
+│   │   ├── android-build-ffmpeg.sh
+│   │   ├── android-build-freerdp.sh
+│   │   ├── android-build-openh264.sh
+│   │   ├── android-build-openssl.sh
+│   │   ├── android-build-release.conf
+│   │   ├── blacklist-address-sanitizer.txt
+│   │   ├── blacklist-memory-sanitizer.txt
+│   │   ├── blacklist-thread-sanitizer.txt
+│   │   ├── bundle-mac-os.sh
+│   │   ├── create_release_tarball.sh
+│   │   ├── fetch_language_identifiers.py
+│   │   ├── gprof_generate.sh.cmake
+│   │   ├── LECHash.c
+│   │   ├── LOMHash.c
+│   │   ├── mingw64.cmake
+│   │   ├── mingw-meson.conf
+│   │   ├── mingw.sh
+│   │   ├── OpenSSL-DownloadAndBuild.command
+│   │   ├── specBytesToCode.py
+│   │   ├── test-scard.cpp
+│   │   ├── toolchains_path.py
+│   │   ├── update-windows-zones.py
+│   │   ├── xcode.sh
+│   │   └── xkb.pl
+│   ├── SECURITY.md
+│   ├── server
+│   │   ├── CMakeLists.txt
+│   │   ├── common
+│   │   │   ├── CMakeLists.txt
+│   │   │   └── server.c
+│   │   ├── FreeRDP-ServerConfig.cmake.in
+│   │   ├── freerdp-server.pc.in
+│   │   ├── Mac
+│   │   │   ├── CMakeLists.txt
+│   │   │   ├── mf_audin.c
+│   │   │   ├── mf_audin.h
+│   │   │   ├── mf_event.c
+│   │   │   ├── mf_event.h
+│   │   │   ├── mf_info.c
+│   │   │   ├── mf_info.h
+│   │   │   ├── mf_input.c
+│   │   │   ├── mf_input.h
+│   │   │   ├── mf_interface.c
+│   │   │   ├── mf_interface.h
+│   │   │   ├── mf_mountain_lion.c
+│   │   │   ├── mf_mountain_lion.h
+│   │   │   ├── mf_peer.c
+│   │   │   ├── mf_peer.h
+│   │   │   ├── mf_rdpsnd.c
+│   │   │   ├── mf_rdpsnd.h
+│   │   │   ├── mfreerdp.c
+│   │   │   ├── mfreerdp.h
+│   │   │   ├── mf_types.h
+│   │   │   └── ModuleOptions.cmake
+│   │   ├── proxy
+│   │   │   ├── channels
+│   │   │   │   ├── CMakeLists.txt
+│   │   │   │   ├── pf_channel_drdynvc.c
+│   │   │   │   ├── pf_channel_drdynvc.h
+│   │   │   │   ├── pf_channel_rdpdr.c
+│   │   │   │   ├── pf_channel_rdpdr.h
+│   │   │   │   ├── pf_channel_smartcard.c
+│   │   │   │   └── pf_channel_smartcard.h
+│   │   │   ├── cli
+│   │   │   │   ├── CMakeLists.txt
+│   │   │   │   ├── freerdp-proxy.1.in
+│   │   │   │   └── freerdp_proxy.c
+│   │   │   ├── CMakeLists.txt
+│   │   │   ├── FreeRDP-ProxyConfig.cmake.in
+│   │   │   ├── freerdp-proxy.pc.in
+│   │   │   ├── modules
+│   │   │   │   ├── bitmap-filter
+│   │   │   │   │   ├── bitmap-filter.cpp
+│   │   │   │   │   └── CMakeLists.txt
+│   │   │   │   ├── CMakeLists.txt
+│   │   │   │   ├── demo
+│   │   │   │   │   ├── CMakeLists.txt
+│   │   │   │   │   └── demo.cpp
+│   │   │   │   ├── dyn-channel-dump
+│   │   │   │   │   ├── CMakeLists.txt
+│   │   │   │   │   └── dyn-channel-dump.cpp
+│   │   │   │   └── README.md
+│   │   │   ├── pf_channel.c
+│   │   │   ├── pf_channel.h
+│   │   │   ├── pf_client.c
+│   │   │   ├── pf_client.h
+│   │   │   ├── pf_config.c
+│   │   │   ├── pf_context.c
+│   │   │   ├── pf_input.c
+│   │   │   ├── pf_input.h
+│   │   │   ├── pf_modules.c
+│   │   │   ├── pf_server.c
+│   │   │   ├── pf_server.h
+│   │   │   ├── pf_update.c
+│   │   │   ├── pf_update.h
+│   │   │   ├── pf_utils.c
+│   │   │   ├── pf_utils.h
+│   │   │   └── proxy_modules.h
+│   │   ├── Sample
+│   │   │   ├── CMakeLists.txt
+│   │   │   ├── ModuleOptions.cmake
+│   │   │   ├── rfx_test.pcap
+│   │   │   ├── sf_ainput.c
+│   │   │   ├── sf_ainput.h
+│   │   │   ├── sf_audin.c
+│   │   │   ├── sf_audin.h
+│   │   │   ├── sf_encomsp.c
+│   │   │   ├── sf_encomsp.h
+│   │   │   ├── sf_rdpsnd.c
+│   │   │   ├── sf_rdpsnd.h
+│   │   │   ├── sfreerdp.c
+│   │   │   ├── sfreerdp.h
+│   │   │   ├── test_icon.bmp
+│   │   │   ├── test_icon.jpg
+│   │   │   ├── test_icon.png
+│   │   │   ├── test_icon.ppm
+│   │   │   └── test_icon.webp
+│   │   ├── shadow
+│   │   │   ├── CMakeLists.txt
+│   │   │   ├── freerdp-shadow-cli.1.in
+│   │   │   ├── FreeRDP-ShadowConfig.cmake.in
+│   │   │   ├── freerdp-shadow.pc.in
+│   │   │   ├── Mac
+│   │   │   │   ├── CMakeLists.txt
+│   │   │   │   ├── mac_shadow.c
+│   │   │   │   └── mac_shadow.h
+│   │   │   ├── shadow_audin.c
+│   │   │   ├── shadow_audin.h
+│   │   │   ├── shadow.c
+│   │   │   ├── shadow_capture.c
+│   │   │   ├── shadow_capture.h
+│   │   │   ├── shadow_channels.c
+│   │   │   ├── shadow_channels.h
+│   │   │   ├── shadow_client.c
+│   │   │   ├── shadow_client.h
+│   │   │   ├── shadow_encoder.c
+│   │   │   ├── shadow_encoder.h
+│   │   │   ├── shadow_encomsp.c
+│   │   │   ├── shadow_encomsp.h
+│   │   │   ├── shadow.h
+│   │   │   ├── shadow_input.c
+│   │   │   ├── shadow_input.h
+│   │   │   ├── shadow_lobby.c
+│   │   │   ├── shadow_lobby.h
+│   │   │   ├── shadow_mcevent.c
+│   │   │   ├── shadow_mcevent.h
+│   │   │   ├── shadow_rdpgfx.c
+│   │   │   ├── shadow_rdpgfx.h
+│   │   │   ├── shadow_rdpsnd.c
+│   │   │   ├── shadow_rdpsnd.h
+│   │   │   ├── shadow_remdesk.c
+│   │   │   ├── shadow_remdesk.h
+│   │   │   ├── shadow_screen.c
+│   │   │   ├── shadow_screen.h
+│   │   │   ├── shadow_server.c
+│   │   │   ├── shadow_subsystem_builtin.c
+│   │   │   ├── shadow_subsystem.c
+│   │   │   ├── shadow_subsystem.h
+│   │   │   ├── shadow_surface.c
+│   │   │   ├── shadow_surface.h
+│   │   │   ├── Win
+│   │   │   │   ├── CMakeLists.txt
+│   │   │   │   ├── win_dxgi.c
+│   │   │   │   ├── win_dxgi.h
+│   │   │   │   ├── win_rdp.c
+│   │   │   │   ├── win_rdp.h
+│   │   │   │   ├── win_shadow.c
+│   │   │   │   ├── win_shadow.h
+│   │   │   │   ├── win_wds.c
+│   │   │   │   └── win_wds.h
+│   │   │   └── X11
+│   │   │       ├── CMakeLists.txt
+│   │   │       ├── x11_shadow.c
+│   │   │       └── x11_shadow.h
+│   │   └── Windows
+│   │       ├── cli
+│   │       │   ├── CMakeLists.txt
+│   │       │   ├── wfreerdp.c
+│   │       │   └── wfreerdp.h
+│   │       ├── CMakeLists.txt
+│   │       ├── ModuleOptions.cmake
+│   │       ├── wf_directsound.c
+│   │       ├── wf_directsound.h
+│   │       ├── wf_dxgi.c
+│   │       ├── wf_dxgi.h
+│   │       ├── wf_info.c
+│   │       ├── wf_info.h
+│   │       ├── wf_input.c
+│   │       ├── wf_input.h
+│   │       ├── wf_interface.c
+│   │       ├── wf_interface.h
+│   │       ├── wf_mirage.c
+│   │       ├── wf_mirage.h
+│   │       ├── wf_peer.c
+│   │       ├── wf_peer.h
+│   │       ├── wf_rdpsnd.c
+│   │       ├── wf_rdpsnd.h
+│   │       ├── wf_settings.c
+│   │       ├── wf_settings.h
+│   │       ├── wf_update.c
+│   │       ├── wf_update.h
+│   │       ├── wf_wasapi.c
+│   │       └── wf_wasapi.h
+│   ├── third-party
+│   │   └── CMakeLists.txt
+│   ├── tools
+│   │   ├── build-clang.sh
+│   │   ├── smartcard-interpreter.py
+│   │   ├── update-settings-tests
+│   │   └── wireshark
+│   │       └── rdp-udp.lua
+│   ├── uwac
+│   │   ├── CMakeLists.txt
+│   │   ├── include
+│   │   │   ├── CMakeLists.txt
+│   │   │   └── uwac
+│   │   │       ├── uwac.h
+│   │   │       └── uwac-tools.h
+│   │   ├── libuwac
+│   │   │   ├── CMakeLists.txt
+│   │   │   ├── uwac-clipboard.c
+│   │   │   ├── uwac-display.c
+│   │   │   ├── uwac-input.c
+│   │   │   ├── uwac-os.c
+│   │   │   ├── uwac-os.h
+│   │   │   ├── uwac-output.c
+│   │   │   ├── uwac-priv.h
+│   │   │   ├── uwac-tools.c
+│   │   │   ├── uwac-utils.c
+│   │   │   ├── uwac-utils.h
+│   │   │   └── uwac-window.c
+│   │   ├── protocols
+│   │   │   ├── fullscreen-shell-unstable-v1.xml
+│   │   │   ├── ivi-application.xml
+│   │   │   ├── keyboard-shortcuts-inhibit-unstable-v1.xml
+│   │   │   ├── server-decoration.xml
+│   │   │   ├── viewporter.xml
+│   │   │   ├── xdg-decoration-unstable-v1.xml
+│   │   │   └── xdg-shell.xml
+│   │   └── templates
+│   │       ├── build-config.h.in
+│   │       ├── buildflags.h.in
+│   │       ├── CMakeLists.txt
+│   │       ├── config.h.in
+│   │       ├── uwacConfig.cmake.in
+│   │       ├── uwac.pc.in
+│   │       └── version.h.in
+│   └── winpr
+│       ├── CMakeLists.txt
+│       ├── include
+│       │   ├── CMakeLists.txt
+│       │   ├── config
+│       │   │   ├── build-config.h.in
+│       │   │   ├── buildflags.h.in
+│       │   │   ├── config.h.in
+│       │   │   ├── version.h.in
+│       │   │   └── wtypes.h.in
+│       │   └── winpr
+│       │       ├── asn1.h
+│       │       ├── assert.h
+│       │       ├── bcrypt.h
+│       │       ├── bitstream.h
+│       │       ├── clipboard.h
+│       │       ├── cmdline.h
+│       │       ├── collections.h
+│       │       ├── comm.h
+│       │       ├── cred.h
+│       │       ├── crt.h
+│       │       ├── crypto.h
+│       │       ├── custom-crypto.h
+│       │       ├── debug.h
+│       │       ├── dsparse.h
+│       │       ├── endian.h
+│       │       ├── environment.h
+│       │       ├── error.h
+│       │       ├── file.h
+│       │       ├── handle.h
+│       │       ├── image.h
+│       │       ├── ini.h
+│       │       ├── input.h
+│       │       ├── interlocked.h
+│       │       ├── intrin.h
+│       │       ├── io.h
+│       │       ├── json.h
+│       │       ├── library.h
+│       │       ├── memory.h
+│       │       ├── ncrypt.h
+│       │       ├── nt.h
+│       │       ├── ntlm.h
+│       │       ├── pack.h
+│       │       ├── path.h
+│       │       ├── pipe.h
+│       │       ├── platform.h
+│       │       ├── pool.h
+│       │       ├── print.h
+│       │       ├── registry.h
+│       │       ├── rpc.h
+│       │       ├── sam.h
+│       │       ├── schannel.h
+│       │       ├── secapi.h
+│       │       ├── security.h
+│       │       ├── shell.h
+│       │       ├── smartcard.h
+│       │       ├── spec.h
+│       │       ├── ssl.h
+│       │       ├── sspicli.h
+│       │       ├── sspi.h
+│       │       ├── stream.h
+│       │       ├── string.h
+│       │       ├── strlst.h
+│       │       ├── synch.h
+│       │       ├── sysinfo.h
+│       │       ├── tchar.h
+│       │       ├── thread.h
+│       │       ├── timezone.h
+│       │       ├── tools
+│       │       │   └── makecert.h
+│       │       ├── user.h
+│       │       ├── wincrypt.h
+│       │       ├── windows.h
+│       │       ├── winpr.h
+│       │       ├── winsock.h
+│       │       ├── wlog.h
+│       │       └── wtsapi.h
+│       ├── libwinpr
+│       │   ├── bcrypt
+│       │   │   ├── bcrypt.c
+│       │   │   ├── CMakeLists.txt
+│       │   │   └── ModuleOptions.cmake
+│       │   ├── clipboard
+│       │   │   ├── clipboard.c
+│       │   │   ├── clipboard.h
+│       │   │   ├── CMakeLists.txt
+│       │   │   ├── ModuleOptions.cmake
+│       │   │   ├── synthetic.c
+│       │   │   ├── synthetic_file.c
+│       │   │   ├── synthetic_file.h
+│       │   │   └── test
+│       │   │       ├── CMakeLists.txt
+│       │   │       ├── TestClipboardFormats.c
+│       │   │       └── TestUri.c
+│       │   ├── CMakeLists.txt
+│       │   ├── comm
+│       │   │   ├── CMakeLists.txt
+│       │   │   ├── comm.c
+│       │   │   ├── comm.h
+│       │   │   ├── comm_io.c
+│       │   │   ├── comm_ioctl.c
+│       │   │   ├── comm_ioctl.h
+│       │   │   ├── comm_sercx2_sys.c
+│       │   │   ├── comm_sercx2_sys.h
+│       │   │   ├── comm_sercx_sys.c
+│       │   │   ├── comm_sercx_sys.h
+│       │   │   ├── comm_serial_sys.c
+│       │   │   ├── comm_serial_sys.h
+│       │   │   ├── ModuleOptions.cmake
+│       │   │   └── test
+│       │   │       ├── CMakeLists.txt
+│       │   │       ├── TestCommConfig.c
+│       │   │       ├── TestCommDevice.c
+│       │   │       ├── TestCommMonitor.c
+│       │   │       ├── TestControlSettings.c
+│       │   │       ├── TestGetCommState.c
+│       │   │       ├── TestHandflow.c
+│       │   │       ├── TestSerialChars.c
+│       │   │       ├── TestSetCommState.c
+│       │   │       └── TestTimeouts.c
+│       │   ├── crt
+│       │   │   ├── alignment.c
+│       │   │   ├── buffer.c
+│       │   │   ├── casing.h
+│       │   │   ├── CMakeLists.txt
+│       │   │   ├── conversion.c
+│       │   │   ├── memory.c
+│       │   │   ├── ModuleOptions.cmake
+│       │   │   ├── string.c
+│       │   │   ├── test
+│       │   │   │   ├── CMakeLists.txt
+│       │   │   │   ├── TestAlignment.c
+│       │   │   │   ├── TestFormatSpecifiers.c
+│       │   │   │   ├── TestString.c
+│       │   │   │   ├── TestTypes.c
+│       │   │   │   └── TestUnicodeConversion.c
+│       │   │   ├── unicode_android.c
+│       │   │   ├── unicode_apple.m
+│       │   │   ├── unicode_builtin.c
+│       │   │   ├── unicode.c
+│       │   │   ├── unicode.h
+│       │   │   └── unicode_icu.c
+│       │   ├── crypto
+│       │   │   ├── cert.c
+│       │   │   ├── cipher.c
+│       │   │   ├── CMakeLists.txt
+│       │   │   ├── crypto.c
+│       │   │   ├── crypto.h
+│       │   │   ├── hash.c
+│       │   │   ├── hmac_md5.c
+│       │   │   ├── hmac_md5.h
+│       │   │   ├── md4.c
+│       │   │   ├── md4.h
+│       │   │   ├── md5.c
+│       │   │   ├── md5.h
+│       │   │   ├── ModuleOptions.cmake
+│       │   │   ├── rand.c
+│       │   │   ├── rc4.c
+│       │   │   ├── rc4.h
+│       │   │   └── test
+│       │   │       ├── CMakeLists.txt
+│       │   │       ├── TestCryptoCertEnumCertificatesInStore.c
+│       │   │       ├── TestCryptoCipher.c
+│       │   │       ├── TestCryptoHash.c
+│       │   │       ├── TestCryptoProtectData.c
+│       │   │       ├── TestCryptoProtectMemory.c
+│       │   │       └── TestCryptoRand.c
+│       │   ├── dsparse
+│       │   │   ├── CMakeLists.txt
+│       │   │   ├── dsparse.c
+│       │   │   ├── ModuleOptions.cmake
+│       │   │   └── test
+│       │   │       ├── CMakeLists.txt
+│       │   │       └── TestDsMakeSpn.c
+│       │   ├── dummy.c
+│       │   ├── environment
+│       │   │   ├── CMakeLists.txt
+│       │   │   ├── environment.c
+│       │   │   ├── ModuleOptions.cmake
+│       │   │   └── test
+│       │   │       ├── CMakeLists.txt
+│       │   │       ├── TestEnvironmentGetEnvironmentStrings.c
+│       │   │       ├── TestEnvironmentGetSetEB.c
+│       │   │       ├── TestEnvironmentMergeEnvironmentStrings.c
+│       │   │       └── TestEnvironmentSetEnvironmentVariable.c
+│       │   ├── error
+│       │   │   ├── CMakeLists.txt
+│       │   │   ├── error.c
+│       │   │   ├── ModuleOptions.cmake
+│       │   │   └── test
+│       │   │       ├── CMakeLists.txt
+│       │   │       └── TestErrorSetLastError.c
+│       │   ├── file
+│       │   │   ├── CMakeLists.txt
+│       │   │   ├── file.c
+│       │   │   ├── file.h
+│       │   │   ├── generic.c
+│       │   │   ├── ModuleOptions.cmake
+│       │   │   ├── namedPipeClient.c
+│       │   │   ├── namedPipeClient.h
+│       │   │   ├── pattern.c
+│       │   │   └── test
+│       │   │       ├── CMakeLists.txt
+│       │   │       ├── TestFileCreateFile.c
+│       │   │       ├── TestFileDeleteFile.c
+│       │   │       ├── TestFileFindFirstFile.c
+│       │   │       ├── TestFileFindFirstFileEx.c
+│       │   │       ├── TestFileFindNextFile.c
+│       │   │       ├── TestFileGetStdHandle.c
+│       │   │       ├── TestFilePatternMatch.c
+│       │   │       ├── TestFileReadFile.c
+│       │   │       ├── TestFileWriteFile.c
+│       │   │       └── TestSetFileAttributes.c
+│       │   ├── handle
+│       │   │   ├── CMakeLists.txt
+│       │   │   ├── handle.c
+│       │   │   ├── handle.h
+│       │   │   ├── ModuleOptions.cmake
+│       │   │   ├── nonehandle.c
+│       │   │   └── nonehandle.h
+│       │   ├── input
+│       │   │   ├── CMakeLists.txt
+│       │   │   ├── keycode.c
+│       │   │   ├── ModuleOptions.cmake
+│       │   │   ├── scancode.c
+│       │   │   └── virtualkey.c
+│       │   ├── interlocked
+│       │   │   ├── CMakeLists.txt
+│       │   │   ├── interlocked.c
+│       │   │   ├── module_5.1.def
+│       │   │   ├── ModuleOptions.cmake
+│       │   │   └── test
+│       │   │       ├── CMakeLists.txt
+│       │   │       ├── TestInterlockedAccess.c
+│       │   │       ├── TestInterlockedDList.c
+│       │   │       └── TestInterlockedSList.c
+│       │   ├── io
+│       │   │   ├── CMakeLists.txt
+│       │   │   ├── device.c
+│       │   │   ├── io.c
+│       │   │   ├── io.h
+│       │   │   ├── ModuleOptions.cmake
+│       │   │   └── test
+│       │   │       ├── CMakeLists.txt
+│       │   │       └── TestIoGetOverlappedResult.c
+│       │   ├── library
+│       │   │   ├── CMakeLists.txt
+│       │   │   ├── library.c
+│       │   │   ├── ModuleOptions.cmake
+│       │   │   └── test
+│       │   │       ├── CMakeLists.txt
+│       │   │       ├── TestLibraryA
+│       │   │       │   ├── CMakeLists.txt
+│       │   │       │   └── TestLibraryA.c
+│       │   │       ├── TestLibraryB
+│       │   │       │   ├── CMakeLists.txt
+│       │   │       │   └── TestLibraryB.c
+│       │   │       ├── TestLibraryGetModuleFileName.c
+│       │   │       ├── TestLibraryGetProcAddress.c
+│       │   │       └── TestLibraryLoadLibrary.c
+│       │   ├── log.h
+│       │   ├── memory
+│       │   │   ├── CMakeLists.txt
+│       │   │   ├── memory.c
+│       │   │   ├── memory.h
+│       │   │   ├── ModuleOptions.cmake
+│       │   │   └── test
+│       │   │       ├── CMakeLists.txt
+│       │   │       └── TestMemoryCreateFileMapping.c
+│       │   ├── ncrypt
+│       │   │   ├── CMakeLists.txt
+│       │   │   ├── ModuleOptions.cmake
+│       │   │   ├── ncrypt.c
+│       │   │   ├── ncrypt.h
+│       │   │   ├── ncrypt_pkcs11.c
+│       │   │   ├── pkcs11-headers
+│       │   │   │   └── pkcs11.h
+│       │   │   └── test
+│       │   │       ├── CMakeLists.txt
+│       │   │       ├── TestNCryptProviders.c
+│       │   │       └── TestNCryptSmartcard.c
+│       │   ├── nt
+│       │   │   ├── CMakeLists.txt
+│       │   │   ├── ModuleOptions.cmake
+│       │   │   ├── nt.c
+│       │   │   ├── ntstatus.c
+│       │   │   └── test
+│       │   │       ├── CMakeLists.txt
+│       │   │       └── TestNtCurrentTeb.c
+│       │   ├── path
+│       │   │   ├── CMakeLists.txt
+│       │   │   ├── include
+│       │   │   │   ├── PathAllocCombine.h
+│       │   │   │   ├── PathCchAddExtension.h
+│       │   │   │   ├── PathCchAddSeparatorEx.h
+│       │   │   │   ├── PathCchAddSeparator.h
+│       │   │   │   └── PathCchAppend.h
+│       │   │   ├── ModuleOptions.cmake
+│       │   │   ├── path.c
+│       │   │   ├── shell.c
+│       │   │   ├── shell_ios.h
+│       │   │   ├── shell_ios.m
+│       │   │   └── test
+│       │   │       ├── CMakeLists.txt
+│       │   │       ├── TestPathAllocCanonicalize.c
+│       │   │       ├── TestPathAllocCombine.c
+│       │   │       ├── TestPathCchAddBackslash.c
+│       │   │       ├── TestPathCchAddBackslashEx.c
+│       │   │       ├── TestPathCchAddExtension.c
+│       │   │       ├── TestPathCchAppend.c
+│       │   │       ├── TestPathCchAppendEx.c
+│       │   │       ├── TestPathCchCanonicalize.c
+│       │   │       ├── TestPathCchCanonicalizeEx.c
+│       │   │       ├── TestPathCchCombine.c
+│       │   │       ├── TestPathCchCombineEx.c
+│       │   │       ├── TestPathCchFindExtension.c
+│       │   │       ├── TestPathCchIsRoot.c
+│       │   │       ├── TestPathCchRemoveBackslash.c
+│       │   │       ├── TestPathCchRemoveBackslashEx.c
+│       │   │       ├── TestPathCchRemoveExtension.c
+│       │   │       ├── TestPathCchRemoveFileSpec.c
+│       │   │       ├── TestPathCchRenameExtension.c
+│       │   │       ├── TestPathCchSkipRoot.c
+│       │   │       ├── TestPathCchStripPrefix.c
+│       │   │       ├── TestPathCchStripToRoot.c
+│       │   │       ├── TestPathIsUNCEx.c
+│       │   │       ├── TestPathMakePath.c
+│       │   │       └── TestPathShell.c
+│       │   ├── pipe
+│       │   │   ├── CMakeLists.txt
+│       │   │   ├── ModuleOptions.cmake
+│       │   │   ├── pipe.c
+│       │   │   ├── pipe.h
+│       │   │   └── test
+│       │   │       ├── CMakeLists.txt
+│       │   │       ├── TestPipeCreateNamedPipe.c
+│       │   │       ├── TestPipeCreateNamedPipeOverlapped.c
+│       │   │       └── TestPipeCreatePipe.c
+│       │   ├── pool
+│       │   │   ├── callback.c
+│       │   │   ├── callback_cleanup.c
+│       │   │   ├── cleanup_group.c
+│       │   │   ├── CMakeLists.txt
+│       │   │   ├── io.c
+│       │   │   ├── ModuleOptions.cmake
+│       │   │   ├── pool.c
+│       │   │   ├── pool.h
+│       │   │   ├── synch.c
+│       │   │   ├── test
+│       │   │   │   ├── CMakeLists.txt
+│       │   │   │   ├── TestPoolIO.c
+│       │   │   │   ├── TestPoolSynch.c
+│       │   │   │   ├── TestPoolThread.c
+│       │   │   │   ├── TestPoolTimer.c
+│       │   │   │   └── TestPoolWork.c
+│       │   │   ├── timer.c
+│       │   │   └── work.c
+│       │   ├── registry
+│       │   │   ├── CMakeLists.txt
+│       │   │   ├── ModuleOptions.cmake
+│       │   │   ├── registry.c
+│       │   │   ├── registry_reg.c
+│       │   │   └── registry_reg.h
+│       │   ├── rpc
+│       │   │   ├── CMakeLists.txt
+│       │   │   ├── ModuleOptions.cmake
+│       │   │   └── rpc.c
+│       │   ├── security
+│       │   │   ├── CMakeLists.txt
+│       │   │   ├── ModuleOptions.cmake
+│       │   │   ├── security.c
+│       │   │   ├── security.h
+│       │   │   └── test
+│       │   │       ├── CMakeLists.txt
+│       │   │       └── TestSecurityToken.c
+│       │   ├── shell
+│       │   │   ├── CMakeLists.txt
+│       │   │   ├── ModuleOptions.cmake
+│       │   │   └── shell.c
+│       │   ├── smartcard
+│       │   │   ├── CMakeLists.txt
+│       │   │   ├── ModuleOptions.cmake
+│       │   │   ├── smartcard.c
+│       │   │   ├── smartcard.h
+│       │   │   ├── smartcard_inspect.c
+│       │   │   ├── smartcard_inspect.h
+│       │   │   ├── smartcard_pcsc.c
+│       │   │   ├── smartcard_pcsc.h
+│       │   │   ├── smartcard_windows.c
+│       │   │   ├── smartcard_windows.h
+│       │   │   └── test
+│       │   │       ├── CMakeLists.txt
+│       │   │       ├── TestSmartCardListReaders.c
+│       │   │       └── TestSmartCardStatus.c
+│       │   ├── sspi
+│       │   │   ├── CMakeLists.txt
+│       │   │   ├── CredSSP
+│       │   │   │   ├── credssp.c
+│       │   │   │   └── credssp.h
+│       │   │   ├── Kerberos
+│       │   │   │   ├── kerberos.c
+│       │   │   │   ├── kerberos.h
+│       │   │   │   ├── krb5glue.h
+│       │   │   │   ├── krb5glue_heimdal.c
+│       │   │   │   └── krb5glue_mit.c
+│       │   │   ├── ModuleOptions.cmake
+│       │   │   ├── Negotiate
+│       │   │   │   ├── negotiate.c
+│       │   │   │   └── negotiate.h
+│       │   │   ├── NTLM
+│       │   │   │   ├── ntlm_av_pairs.c
+│       │   │   │   ├── ntlm_av_pairs.h
+│       │   │   │   ├── ntlm.c
+│       │   │   │   ├── ntlm_compute.c
+│       │   │   │   ├── ntlm_compute.h
+│       │   │   │   ├── ntlm_export.h
+│       │   │   │   ├── ntlm.h
+│       │   │   │   ├── ntlm_message.c
+│       │   │   │   └── ntlm_message.h
+│       │   │   ├── Schannel
+│       │   │   │   ├── schannel.c
+│       │   │   │   ├── schannel.h
+│       │   │   │   ├── schannel_openssl.c
+│       │   │   │   └── schannel_openssl.h
+│       │   │   ├── sspi.c
+│       │   │   ├── sspi_export.c
+│       │   │   ├── sspi_gss.c
+│       │   │   ├── sspi_gss.h
+│       │   │   ├── sspi.h
+│       │   │   ├── sspi_winpr.c
+│       │   │   ├── sspi_winpr.h
+│       │   │   └── test
+│       │   │       ├── CMakeLists.txt
+│       │   │       ├── TestAcquireCredentialsHandle.c
+│       │   │       ├── TestCredSSP.c
+│       │   │       ├── TestEnumerateSecurityPackages.c
+│       │   │       ├── TestInitializeSecurityContext.c
+│       │   │       ├── TestNTLM.c
+│       │   │       ├── TestQuerySecurityPackageInfo.c
+│       │   │       └── TestSchannel.c
+│       │   ├── sspicli
+│       │   │   ├── CMakeLists.txt
+│       │   │   ├── ModuleOptions.cmake
+│       │   │   └── sspicli.c
+│       │   ├── synch
+│       │   │   ├── address.c
+│       │   │   ├── barrier.c
+│       │   │   ├── CMakeLists.txt
+│       │   │   ├── critical.c
+│       │   │   ├── event.c
+│       │   │   ├── event.h
+│       │   │   ├── init.c
+│       │   │   ├── ModuleOptions.cmake
+│       │   │   ├── mutex.c
+│       │   │   ├── pollset.c
+│       │   │   ├── pollset.h
+│       │   │   ├── semaphore.c
+│       │   │   ├── sleep.c
+│       │   │   ├── synch.h
+│       │   │   ├── test
+│       │   │   │   ├── CMakeLists.txt
+│       │   │   │   ├── TestSynchAPC.c
+│       │   │   │   ├── TestSynchBarrier.c
+│       │   │   │   ├── TestSynchCritical.c
+│       │   │   │   ├── TestSynchEvent.c
+│       │   │   │   ├── TestSynchInit.c
+│       │   │   │   ├── TestSynchMultipleThreads.c
+│       │   │   │   ├── TestSynchMutex.c
+│       │   │   │   ├── TestSynchSemaphore.c
+│       │   │   │   ├── TestSynchThread.c
+│       │   │   │   ├── TestSynchTimerQueue.c
+│       │   │   │   ├── TestSynchWaitableTimerAPC.c
+│       │   │   │   └── TestSynchWaitableTimer.c
+│       │   │   ├── timer.c
+│       │   │   └── wait.c
+│       │   ├── sysinfo
+│       │   │   ├── CMakeLists.txt
+│       │   │   ├── cpufeatures
+│       │   │   │   ├── CMakeLists.txt
+│       │   │   │   ├── cpu-features.c
+│       │   │   │   ├── cpu-features.h
+│       │   │   │   ├── NOTICE
+│       │   │   │   └── README
+│       │   │   ├── ModuleOptions.cmake
+│       │   │   ├── sysinfo.c
+│       │   │   └── test
+│       │   │       ├── CMakeLists.txt
+│       │   │       ├── TestCPUFeatures.c
+│       │   │       ├── TestGetComputerName.c
+│       │   │       ├── TestGetNativeSystemInfo.c
+│       │   │       ├── TestLocalTime.c
+│       │   │       └── TestSystemTime.c
+│       │   ├── thread
+│       │   │   ├── apc.c
+│       │   │   ├── apc.h
+│       │   │   ├── argv.c
+│       │   │   ├── CMakeLists.txt
+│       │   │   ├── ModuleOptions.cmake
+│       │   │   ├── process.c
+│       │   │   ├── processor.c
+│       │   │   ├── test
+│       │   │   │   ├── CMakeLists.txt
+│       │   │   │   ├── TestThreadCommandLineToArgv.c
+│       │   │   │   ├── TestThreadCreateProcess.c
+│       │   │   │   └── TestThreadExitThread.c
+│       │   │   ├── thread.c
+│       │   │   ├── thread.h
+│       │   │   └── tls.c
+│       │   ├── timezone
+│       │   │   ├── CMakeLists.txt
+│       │   │   ├── ModuleOptions.cmake
+│       │   │   ├── timezone.c
+│       │   │   ├── TimeZoneIanaAbbrevMap.c
+│       │   │   ├── TimeZoneIanaAbbrevMap.h
+│       │   │   ├── TimeZoneNameMap.h
+│       │   │   ├── TimeZoneNameMap.json
+│       │   │   ├── TimeZoneNameMap_static.h
+│       │   │   ├── TimeZoneNameMapUtils.c
+│       │   │   ├── utils
+│       │   │   │   ├── CMakeLists.txt
+│       │   │   │   └── tzextract.cs
+│       │   │   ├── WindowsZones.c
+│       │   │   └── WindowsZones.h
+│       │   ├── utils
+│       │   │   ├── android.c
+│       │   │   ├── android.h
+│       │   │   ├── asn1
+│       │   │   │   └── asn1.c
+│       │   │   ├── CMakeLists.txt
+│       │   │   ├── cmdline.c
+│       │   │   ├── collections
+│       │   │   │   ├── ArrayList.c
+│       │   │   │   ├── BitStream.c
+│       │   │   │   ├── BufferPool.c
+│       │   │   │   ├── CountdownEvent.c
+│       │   │   │   ├── HashTable.c
+│       │   │   │   ├── LinkedList.c
+│       │   │   │   ├── ListDictionary.c
+│       │   │   │   ├── MessagePipe.c
+│       │   │   │   ├── MessageQueue.c
+│       │   │   │   ├── Object.c
+│       │   │   │   ├── ObjectPool.c
+│       │   │   │   ├── PubSub.c
+│       │   │   │   ├── Queue.c
+│       │   │   │   ├── Stack.c
+│       │   │   │   └── StreamPool.c
+│       │   │   ├── corkscrew
+│       │   │   │   ├── backtrace.h
+│       │   │   │   ├── debug.c
+│       │   │   │   ├── debug.h
+│       │   │   │   ├── demangle.h
+│       │   │   │   ├── map_info.h
+│       │   │   │   ├── ptrace.h
+│       │   │   │   └── symbol_table.h
+│       │   │   ├── debug.c
+│       │   │   ├── execinfo
+│       │   │   │   ├── debug.c
+│       │   │   │   └── debug.h
+│       │   │   ├── image.c
+│       │   │   ├── image.h
+│       │   │   ├── ini.c
+│       │   │   ├── json
+│       │   │   │   └── json.c
+│       │   │   ├── ModuleOptions.cmake
+│       │   │   ├── ntlm.c
+│       │   │   ├── print.c
+│       │   │   ├── sam.c
+│       │   │   ├── ssl.c
+│       │   │   ├── stream.c
+│       │   │   ├── stream.h
+│       │   │   ├── strlst.c
+│       │   │   ├── test
+│       │   │   │   ├── CMakeLists.txt
+│       │   │   │   ├── lodepng_32bit.bmp
+│       │   │   │   ├── lodepng_32bit.png
+│       │   │   │   ├── rgb.16a.bmp
+│       │   │   │   ├── rgb.16a.nocolor.bmp
+│       │   │   │   ├── rgb.16.bmp
+│       │   │   │   ├── rgb.16.nocolor.bmp
+│       │   │   │   ├── rgb.16x.bmp
+│       │   │   │   ├── rgb.16x.nocolor.bmp
+│       │   │   │   ├── rgb.24.bmp
+│       │   │   │   ├── rgb.24.nocolor.bmp
+│       │   │   │   ├── rgb.32.bmp
+│       │   │   │   ├── rgb.32.nocolor.bmp
+│       │   │   │   ├── rgb.32x.bmp
+│       │   │   │   ├── rgb.32x.nocolor.bmp
+│       │   │   │   ├── rgb.bmp
+│       │   │   │   ├── rgb.jpg
+│       │   │   │   ├── rgb.png
+│       │   │   │   ├── rgb.webp
+│       │   │   │   ├── TestArrayList.c
+│       │   │   │   ├── TestASN1.c
+│       │   │   │   ├── TestBacktrace.c
+│       │   │   │   ├── TestBitStream.c
+│       │   │   │   ├── TestBufferPool.c
+│       │   │   │   ├── TestCmdLine.c
+│       │   │   │   ├── TestHashTable.c
+│       │   │   │   ├── TestImage.c
+│       │   │   │   ├── TestIni.c
+│       │   │   │   ├── TestLinkedList.c
+│       │   │   │   ├── TestListDictionary.c
+│       │   │   │   ├── TestMessagePipe.c
+│       │   │   │   ├── TestMessageQueue.c
+│       │   │   │   ├── TestPrint.c
+│       │   │   │   ├── TestPubSub.c
+│       │   │   │   ├── TestQueue.c
+│       │   │   │   ├── TestStream.c
+│       │   │   │   ├── TestStreamPool.c
+│       │   │   │   ├── TestVersion.c
+│       │   │   │   ├── TestWLog.c
+│       │   │   │   └── TestWLogCallback.c
+│       │   │   ├── unwind
+│       │   │   │   ├── debug.c
+│       │   │   │   └── debug.h
+│       │   │   ├── windows
+│       │   │   │   ├── debug.c
+│       │   │   │   └── debug.h
+│       │   │   ├── winpr.c
+│       │   │   └── wlog
+│       │   │       ├── Appender.c
+│       │   │       ├── Appender.h
+│       │   │       ├── BinaryAppender.c
+│       │   │       ├── BinaryAppender.h
+│       │   │       ├── CallbackAppender.c
+│       │   │       ├── CallbackAppender.h
+│       │   │       ├── ConsoleAppender.c
+│       │   │       ├── ConsoleAppender.h
+│       │   │       ├── DataMessage.c
+│       │   │       ├── DataMessage.h
+│       │   │       ├── FileAppender.c
+│       │   │       ├── FileAppender.h
+│       │   │       ├── ImageMessage.c
+│       │   │       ├── ImageMessage.h
+│       │   │       ├── JournaldAppender.c
+│       │   │       ├── JournaldAppender.h
+│       │   │       ├── Layout.c
+│       │   │       ├── Layout.h
+│       │   │       ├── Message.c
+│       │   │       ├── Message.h
+│       │   │       ├── PacketMessage.c
+│       │   │       ├── PacketMessage.h
+│       │   │       ├── SyslogAppender.c
+│       │   │       ├── SyslogAppender.h
+│       │   │       ├── UdpAppender.c
+│       │   │       ├── UdpAppender.h
+│       │   │       ├── wlog.c
+│       │   │       └── wlog.h
+│       │   ├── winsock
+│       │   │   ├── CMakeLists.txt
+│       │   │   ├── ModuleOptions.cmake
+│       │   │   └── winsock.c
+│       │   └── wtsapi
+│       │       ├── CMakeLists.txt
+│       │       ├── ModuleOptions.cmake
+│       │       ├── test
+│       │       │   ├── CMakeLists.txt
+│       │       │   ├── TestWtsApiEnumerateProcesses.c
+│       │       │   ├── TestWtsApiEnumerateSessions.c
+│       │       │   ├── TestWtsApiExtraDisconnectSession.c
+│       │       │   ├── TestWtsApiExtraDynamicVirtualChannel.c
+│       │       │   ├── TestWtsApiExtraLogoffSession.c
+│       │       │   ├── TestWtsApiExtraSendMessage.c
+│       │       │   ├── TestWtsApiExtraStartRemoteSessionEx.c
+│       │       │   ├── TestWtsApiExtraVirtualChannel.c
+│       │       │   ├── TestWtsApiQuerySessionInformation.c
+│       │       │   ├── TestWtsApiSessionNotification.c
+│       │       │   ├── TestWtsApiShutdownSystem.c
+│       │       │   └── TestWtsApiWaitSystemEvent.c
+│       │       ├── wtsapi.c
+│       │       ├── wtsapi_win32.c
+│       │       └── wtsapi_win32.h
+│       ├── test
+│       │   ├── CMakeLists.txt
+│       │   ├── TestIntrinsics.c
+│       │   └── TestTypes.c
+│       ├── tools
+│       │   ├── CMakeLists.txt
+│       │   ├── hash-cli
+│       │   │   ├── CMakeLists.txt
+│       │   │   ├── hash.c
+│       │   │   └── winpr-hash.1.in
+│       │   ├── makecert
+│       │   │   ├── CMakeLists.txt
+│       │   │   └── makecert.c
+│       │   ├── makecert-cli
+│       │   │   ├── CMakeLists.txt
+│       │   │   ├── main.c
+│       │   │   └── winpr-makecert.1.in
+│       │   ├── WinPR-toolsConfig.cmake.in
+│       │   └── winpr-tools.pc.in
+│       ├── WinPRConfig.cmake.in
+│       ├── winpr.pc.in
+│       └── wlog.7.in
+├── freerdp-3.9.0-fix-overlapping-check.patch -> /home/felix/packages/freerdp/freerdp-3.9.0-fix-overlapping-check.patch
+└── freerdp-3.9.0.tar.gz -> /home/felix/packages/freerdp/freerdp-3.9.0.tar.gz
+
+413 directories, 2673 files

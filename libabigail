@@ -1,0 +1,3036 @@
+src
+└── libabigail
+    ├── abigail.m4
+    ├── ABIXML-FORMAT-VERSIONS
+    ├── AUTHORS
+    ├── autoconf-archive
+    │   ├── ax_check_python_modules.m4
+    │   ├── ax_compare_version.m4
+    │   ├── ax_prog_python_version.m4
+    │   └── ax_valgrind_check.m4
+    ├── bash-completion
+    │   ├── abicompat
+    │   ├── abidiff
+    │   ├── abidw
+    │   ├── abilint
+    │   ├── abinilint
+    │   ├── abipkgdiff
+    │   ├── abisym
+    │   ├── fedabipkgdiff
+    │   └── Makefile.am
+    ├── ChangeLog
+    ├── COMMIT-LOG-GUIDELINES
+    ├── COMPILING
+    ├── configure.ac
+    ├── CONTRIBUTING
+    ├── default.abignore
+    ├── doc
+    │   ├── api
+    │   │   └── libabigail.doxy
+    │   ├── Makefile.am
+    │   ├── manuals
+    │   │   ├── abicompat.rst
+    │   │   ├── abidiff.rst
+    │   │   ├── abidw.rst
+    │   │   ├── abilint.rst
+    │   │   ├── abipkgdiff.rst
+    │   │   ├── conf.py
+    │   │   ├── fedabipkgdiff.rst
+    │   │   ├── index.rst
+    │   │   ├── kmidiff.rst
+    │   │   ├── libabigail-concepts.rst
+    │   │   ├── libabigail-overview.rst
+    │   │   ├── libabigail-tools.rst
+    │   │   ├── Makefile.am
+    │   │   └── tools-use-libabigail.txt
+    │   ├── suppr-doc.txt
+    │   ├── vizualization
+    │   │   ├── graph
+    │   │   │   ├── gv
+    │   │   │   │   ├── sa-A.gv
+    │   │   │   │   ├── sa-base.gv
+    │   │   │   │   ├── sa-B.gv
+    │   │   │   │   ├── sa-C1.gv
+    │   │   │   │   ├── sa-C2.gv
+    │   │   │   │   ├── sa-C3.gv
+    │   │   │   │   ├── sa-C4.gv
+    │   │   │   │   ├── sa-D1.gv
+    │   │   │   │   ├── sa-D2.gv
+    │   │   │   │   ├── sa-D2v.gv
+    │   │   │   │   ├── sa-D3.gv
+    │   │   │   │   ├── sa-D3v.gv
+    │   │   │   │   ├── sa-D4v.gv
+    │   │   │   │   ├── sa-D5v1.gv
+    │   │   │   │   ├── sa-D5v2.gv
+    │   │   │   │   ├── sa-DD1.gv
+    │   │   │   │   ├── sa-DD2.gv
+    │   │   │   │   ├── sa-DD3.gv
+    │   │   │   │   ├── sa-DD4.gv
+    │   │   │   │   └── sa-DD5.gv
+    │   │   │   ├── png
+    │   │   │   │   ├── sa-A.png
+    │   │   │   │   ├── sa-base.png
+    │   │   │   │   ├── sa-B.png
+    │   │   │   │   ├── sa-C1.png
+    │   │   │   │   ├── sa-C2.png
+    │   │   │   │   ├── sa-C3.png
+    │   │   │   │   ├── sa-C4.png
+    │   │   │   │   ├── sa-D1.png
+    │   │   │   │   ├── sa-D2.png
+    │   │   │   │   ├── sa-D2v.png
+    │   │   │   │   ├── sa-D3.png
+    │   │   │   │   ├── sa-D3v.png
+    │   │   │   │   ├── sa-D4v.png
+    │   │   │   │   ├── sa-D5v1.png
+    │   │   │   │   ├── sa-D5v2.png
+    │   │   │   │   ├── sa-DD1.png
+    │   │   │   │   ├── sa-DD2.png
+    │   │   │   │   ├── sa-DD3.png
+    │   │   │   │   ├── sa-DD4.png
+    │   │   │   │   └── sa-DD5.png
+    │   │   │   ├── sources
+    │   │   │   │   ├── sa-A.cc
+    │   │   │   │   ├── sa-base.cc
+    │   │   │   │   ├── sa-B.cc
+    │   │   │   │   ├── sa-C.cc
+    │   │   │   │   ├── sa-D.cc
+    │   │   │   │   └── sa-DD.cc
+    │   │   │   └── svg
+    │   │   │       ├── sa-A.svg
+    │   │   │       ├── sa-base.svg
+    │   │   │       ├── sa-B.svg
+    │   │   │       ├── sa-C1.svg
+    │   │   │       ├── sa-C2.svg
+    │   │   │       ├── sa-C3.svg
+    │   │   │       ├── sa-C4.svg
+    │   │   │       ├── sa-D1.svg
+    │   │   │       ├── sa-D2.svg
+    │   │   │       ├── sa-D2v.svg
+    │   │   │       ├── sa-D3.svg
+    │   │   │       ├── sa-D3v.svg
+    │   │   │       ├── sa-D4v.svg
+    │   │   │       ├── sa-D5v1.svg
+    │   │   │       ├── sa-D5v2.svg
+    │   │   │       ├── sa-DD1.svg
+    │   │   │       ├── sa-DD2.svg
+    │   │   │       ├── sa-DD3.svg
+    │   │   │       ├── sa-DD4.svg
+    │   │   │       └── sa-DD5.svg
+    │   │   └── layout
+    │   │       ├── pdf
+    │   │       │   ├── sa-A.pdf
+    │   │       │   ├── sa-base.pdf
+    │   │       │   ├── sa-B.pdf
+    │   │       │   ├── sa-C1.pdf
+    │   │       │   ├── sa-C2.pdf
+    │   │       │   ├── sa-C3.pdf
+    │   │       │   ├── sa-D1.pdf
+    │   │       │   ├── sa-D2.pdf
+    │   │       │   ├── sa-D2v.pdf
+    │   │       │   ├── sa-D3.pdf
+    │   │       │   ├── sa-D3v.pdf
+    │   │       │   ├── sa-D4v.pdf
+    │   │       │   ├── sa-DD1.pdf
+    │   │       │   ├── sa-DD2.pdf
+    │   │       │   ├── sa-DD3.pdf
+    │   │       │   ├── sa-DD4.pdf
+    │   │       │   └── sa-DD5.pdf
+    │   │       ├── png
+    │   │       │   ├── sa-A.png
+    │   │       │   ├── sa-base.png
+    │   │       │   ├── sa-B.png
+    │   │       │   ├── sa-C1.png
+    │   │       │   ├── sa-C2.png
+    │   │       │   ├── sa-C3.png
+    │   │       │   ├── sa-D1.png
+    │   │       │   ├── sa-D2.png
+    │   │       │   ├── sa-D2v.png
+    │   │       │   ├── sa-D3.png
+    │   │       │   ├── sa-D3v.png
+    │   │       │   ├── sa-D4v.png
+    │   │       │   ├── sa-DD1.png
+    │   │       │   ├── sa-DD2.png
+    │   │       │   ├── sa-DD3.png
+    │   │       │   ├── sa-DD4.png
+    │   │       │   └── sa-DD5.png
+    │   │       ├── sources
+    │   │       │   ├── sa-A.cc
+    │   │       │   ├── sa-base.cc
+    │   │       │   ├── sa-B.cc
+    │   │       │   ├── sa-C.cc
+    │   │       │   ├── sa-D.cc
+    │   │       │   └── sa-DD.cc
+    │   │       └── svg
+    │   │           ├── sa-A.svg
+    │   │           ├── sa-base.svg
+    │   │           ├── sa-B.svg
+    │   │           ├── sa-C1.svg
+    │   │           ├── sa-C2.svg
+    │   │           ├── sa-C3.svg
+    │   │           ├── sa-D1.svg
+    │   │           ├── sa-D2.svg
+    │   │           ├── sa-D2v.svg
+    │   │           ├── sa-D3.svg
+    │   │           ├── sa-D3v.svg
+    │   │           ├── sa-D4v.svg
+    │   │           ├── sa-DD1.svg
+    │   │           ├── sa-DD2.svg
+    │   │           ├── sa-DD3.svg
+    │   │           ├── sa-DD4.svg
+    │   │           └── sa-DD5.svg
+    │   └── website
+    │       ├── libabigail-website.doxy
+    │       └── mainpage.txt
+    ├── docker
+    │   ├── Dockerfile.fedora
+    │   ├── Dockerfile.fedora-base
+    │   ├── Dockerfile.test
+    │   └── Dockerfile.ubuntu
+    ├── gen-changelog.py
+    ├── include
+    │   ├── abg-btf-reader.h
+    │   ├── abg-comparison.h
+    │   ├── abg-comp-filter.h
+    │   ├── abg-config.h
+    │   ├── abg-corpus.h
+    │   ├── abg-ctf-reader.h
+    │   ├── abg-cxx-compat.h
+    │   ├── abg-diff-utils.h
+    │   ├── abg-dwarf-reader.h
+    │   ├── abg-elf-based-reader.h
+    │   ├── abg-elf-reader.h
+    │   ├── abg-fe-iface.h
+    │   ├── abg-fwd.h
+    │   ├── abg-hash.h
+    │   ├── abg-ini.h
+    │   ├── abg-interned-str.h
+    │   ├── abg-ir.h
+    │   ├── abg-libxml-utils.h
+    │   ├── abg-reader.h
+    │   ├── abg-regex.h
+    │   ├── abg-reporter.h
+    │   ├── abg-sptr-utils.h
+    │   ├── abg-suppression.h
+    │   ├── abg-tools-utils.h
+    │   ├── abg-traverse.h
+    │   ├── abg-version.h.in
+    │   ├── abg-viz-common.h
+    │   ├── abg-viz-dot.h
+    │   ├── abg-viz-svg.h
+    │   ├── abg-workers.h
+    │   ├── abg-writer.h
+    │   └── Makefile.am
+    ├── install-sh
+    ├── libabigail.pc.in
+    ├── license-change-2020.txt
+    ├── LICENSE.txt
+    ├── ltmain.sh
+    ├── m4
+    ├── Makefile.am
+    ├── NEWS
+    ├── README
+    ├── README-DOCKER.md
+    ├── release-text-template.txt
+    ├── relicensing-scripts
+    │   ├── do-relicensing.sh
+    │   ├── file-licenses.orig.txt
+    │   ├── files-with-lgplv3.txt
+    │   ├── has-spdx-header.sh
+    │   └── replace-spdx-license.sh
+    ├── scripts
+    │   ├── dot_to_png.sh
+    │   ├── dot_to_svg.sh
+    │   ├── make-verbose.sh
+    │   ├── svg_to_plain_svg.sh
+    │   └── svg_to_png_and_pdf.sh
+    ├── src
+    │   ├── abg-btf-reader.cc
+    │   ├── abg-comparison.cc
+    │   ├── abg-comparison-priv.h
+    │   ├── abg-comp-filter.cc
+    │   ├── abg-config.cc
+    │   ├── abg-corpus.cc
+    │   ├── abg-corpus-priv.h
+    │   ├── abg-ctf-reader.cc
+    │   ├── abg-default-reporter.cc
+    │   ├── abg-diff-utils.cc
+    │   ├── abg-dwarf-reader.cc
+    │   ├── abg-elf-based-reader.cc
+    │   ├── abg-elf-helpers.cc
+    │   ├── abg-elf-helpers.h
+    │   ├── abg-elf-reader.cc
+    │   ├── abg-fe-iface.cc
+    │   ├── abg-hash.cc
+    │   ├── abg-ini.cc
+    │   ├── abg-internal.h
+    │   ├── abg-ir.cc
+    │   ├── abg-ir-priv.h
+    │   ├── abg-leaf-reporter.cc
+    │   ├── abg-libxml-utils.cc
+    │   ├── abg-reader.cc
+    │   ├── abg-regex.cc
+    │   ├── abg-reporter-priv.cc
+    │   ├── abg-reporter-priv.h
+    │   ├── abg-suppression.cc
+    │   ├── abg-suppression-priv.h
+    │   ├── abg-symtab-reader.cc
+    │   ├── abg-symtab-reader.h
+    │   ├── abg-tools-utils.cc
+    │   ├── abg-traverse.cc
+    │   ├── abg-viz-common.cc
+    │   ├── abg-viz-dot.cc
+    │   ├── abg-viz-svg.cc
+    │   ├── abg-workers.cc
+    │   ├── abg-writer.cc
+    │   └── Makefile.am
+    ├── tests
+    │   ├── data
+    │   │   ├── Makefile.am
+    │   │   ├── test-abicompat
+    │   │   │   ├── libtest0-fn-changed-libapp-v0.so
+    │   │   │   ├── libtest0-fn-changed-libapp-v1.so
+    │   │   │   ├── libtest1-fn-removed-v0.so
+    │   │   │   ├── libtest1-fn-removed-v1.so
+    │   │   │   ├── libtest2-var-removed-v0.so
+    │   │   │   ├── libtest2-var-removed-v1.so
+    │   │   │   ├── libtest3-fn-removed-v0.so
+    │   │   │   ├── libtest3-fn-removed-v1.so
+    │   │   │   ├── libtest4-soname-changed-v0.so
+    │   │   │   ├── libtest4-soname-changed-v1.so
+    │   │   │   ├── libtest5-fn-changed-libapp-v0.so
+    │   │   │   ├── libtest5-fn-changed-libapp-v1.so
+    │   │   │   ├── libtest6-var-changed-libapp-v0.so
+    │   │   │   ├── libtest6-var-changed-libapp-v1.so
+    │   │   │   ├── libtest7-fn-changed-libapp-v0.so
+    │   │   │   ├── libtest7-fn-changed-libapp-v1.so
+    │   │   │   ├── libtest8-fn-changed-libapp-v0.so
+    │   │   │   ├── libtest8-fn-changed-libapp-v1.so
+    │   │   │   ├── libtest9-fn-changed-v0.so
+    │   │   │   ├── libtest9-fn-changed-v1.so
+    │   │   │   ├── test0-fn-changed-0.suppr
+    │   │   │   ├── test0-fn-changed-1.suppr
+    │   │   │   ├── test0-fn-changed-app
+    │   │   │   ├── test0-fn-changed-app.cc
+    │   │   │   ├── test0-fn-changed-libapp.h
+    │   │   │   ├── test0-fn-changed-libapp-v0.cc
+    │   │   │   ├── test0-fn-changed-libapp-v1.cc
+    │   │   │   ├── test0-fn-changed-report-0.txt
+    │   │   │   ├── test0-fn-changed-report-1.txt
+    │   │   │   ├── test0-fn-changed-report-2.txt
+    │   │   │   ├── test0-fn-changed-report-3.txt
+    │   │   │   ├── test1-fn-removed-app
+    │   │   │   ├── test1-fn-removed-app.cc
+    │   │   │   ├── test1-fn-removed-report-0.txt
+    │   │   │   ├── test1-fn-removed-v0.cc
+    │   │   │   ├── test1-fn-removed-v1.cc
+    │   │   │   ├── test2-var-removed-app
+    │   │   │   ├── test2-var-removed-app.cc
+    │   │   │   ├── test2-var-removed-report-0.txt
+    │   │   │   ├── test2-var-removed-v0.cc
+    │   │   │   ├── test2-var-removed-v1.cc
+    │   │   │   ├── test3-fn-removed-app
+    │   │   │   ├── test3-fn-removed-app.cc
+    │   │   │   ├── test3-fn-removed-report-0.txt
+    │   │   │   ├── test3-fn-removed-v0.cc
+    │   │   │   ├── test3-fn-removed-v1.cc
+    │   │   │   ├── test3-fn-removed-version-script-0
+    │   │   │   ├── test3-fn-removed-version-script-1
+    │   │   │   ├── test4-soname-changed-app
+    │   │   │   ├── test4-soname-changed-app.cc
+    │   │   │   ├── test4-soname-changed-report-0.txt
+    │   │   │   ├── test4-soname-changed-v0.cc
+    │   │   │   ├── test4-soname-changed-v1.cc
+    │   │   │   ├── test5-fn-changed-app
+    │   │   │   ├── test5-fn-changed-app.cc
+    │   │   │   ├── test5-fn-changed-libapp-v0.cc
+    │   │   │   ├── test5-fn-changed-libapp-v0.h
+    │   │   │   ├── test5-fn-changed-libapp-v1.cc
+    │   │   │   ├── test5-fn-changed-libapp-v1.h
+    │   │   │   ├── test5-fn-changed-report-0.txt
+    │   │   │   ├── test5-fn-changed-report-1.txt
+    │   │   │   ├── test6-var-changed-app
+    │   │   │   ├── test6-var-changed-app.cc
+    │   │   │   ├── test6-var-changed-libapp-v0.cc
+    │   │   │   ├── test6-var-changed-libapp-v0.h
+    │   │   │   ├── test6-var-changed-libapp-v1.cc
+    │   │   │   ├── test6-var-changed-libapp-v1.h
+    │   │   │   ├── test6-var-changed-report-0.txt
+    │   │   │   ├── test6-var-changed-report-1.txt
+    │   │   │   ├── test7-fn-changed-app
+    │   │   │   ├── test7-fn-changed-app.c
+    │   │   │   ├── test7-fn-changed-libapp-v0.c
+    │   │   │   ├── test7-fn-changed-libapp-v0.h
+    │   │   │   ├── test7-fn-changed-libapp-v1.c
+    │   │   │   ├── test7-fn-changed-libapp-v1.h
+    │   │   │   ├── test7-fn-changed-report-0.txt
+    │   │   │   ├── test7-fn-changed-report-1.txt
+    │   │   │   ├── test7-fn-changed-report-2.txt
+    │   │   │   ├── test8-fn-changed-app
+    │   │   │   ├── test8-fn-changed-app.c
+    │   │   │   ├── test8-fn-changed-libapp-v0.c
+    │   │   │   ├── test8-fn-changed-libapp-v0.h
+    │   │   │   ├── test8-fn-changed-libapp-v1.c
+    │   │   │   ├── test8-fn-changed-libapp-v1.h
+    │   │   │   ├── test8-fn-changed-report-0.txt
+    │   │   │   ├── test9-fn-changed-app
+    │   │   │   ├── test9-fn-changed-app.cc
+    │   │   │   ├── test9-fn-changed-report-0.txt
+    │   │   │   ├── test9-fn-changed-v0.cc
+    │   │   │   ├── test9-fn-changed-v0.h
+    │   │   │   ├── test9-fn-changed-v1.cc
+    │   │   │   └── test9-fn-changed-v1.h
+    │   │   ├── test-abidiff
+    │   │   │   ├── empty-report.txt
+    │   │   │   ├── test-crc-0.xml
+    │   │   │   ├── test-crc-1.xml
+    │   │   │   ├── test-crc-2.xml
+    │   │   │   ├── test-crc-report-0-1.txt
+    │   │   │   ├── test-crc-report-1-0.txt
+    │   │   │   ├── test-crc-report-1-2.txt
+    │   │   │   ├── test-empty-corpus-0.xml
+    │   │   │   ├── test-empty-corpus-1.xml
+    │   │   │   ├── test-empty-corpus-2.xml
+    │   │   │   ├── test-enum0-report.txt
+    │   │   │   ├── test-enum0-v0.cc.bi
+    │   │   │   ├── test-enum0-v1.cc.bi
+    │   │   │   ├── test-enum1-report.txt
+    │   │   │   ├── test-enum1-v0.cc.bi
+    │   │   │   ├── test-enum1-v1.cc.bi
+    │   │   │   ├── test-namespace-0.xml
+    │   │   │   ├── test-namespace-1.xml
+    │   │   │   ├── test-namespace-report.txt
+    │   │   │   ├── test-PR18166-libtirpc.so
+    │   │   │   ├── test-PR18166-libtirpc.so.abi
+    │   │   │   ├── test-PR18791-report0.txt
+    │   │   │   ├── test-PR18791-v0.so.abi
+    │   │   │   ├── test-PR18791-v1.so.abi
+    │   │   │   ├── test-PR24552-v0.abi
+    │   │   │   ├── test-PR24552-v1.abi
+    │   │   │   ├── test-PR27616-squished-v0.abi
+    │   │   │   ├── test-PR27616-squished-v1.abi
+    │   │   │   ├── test-PR27616-v0.xml
+    │   │   │   ├── test-PR27616-v1.xml
+    │   │   │   ├── test-PR27985-report.txt
+    │   │   │   ├── test-PR27985-v0.c
+    │   │   │   ├── test-PR27985-v0.o
+    │   │   │   ├── test-PR27985-v0.o.abi
+    │   │   │   ├── test-PR27985-v1.c
+    │   │   │   ├── test-PR27985-v1.o
+    │   │   │   ├── test-PR27985-v1.o.abi
+    │   │   │   ├── test-qual-type0-report.txt
+    │   │   │   ├── test-qual-type0-v0.cc.bi
+    │   │   │   ├── test-qual-type0-v1.cc.bi
+    │   │   │   ├── test-struct0-report.txt
+    │   │   │   ├── test-struct0-v0.cc.bi
+    │   │   │   ├── test-struct0-v1.cc.bi
+    │   │   │   ├── test-struct1-report.txt
+    │   │   │   ├── test-struct1-v0.cc.bi
+    │   │   │   ├── test-struct1-v1.cc.bi
+    │   │   │   ├── test-var0-report.txt
+    │   │   │   ├── test-var0-v0.cc.bi
+    │   │   │   └── test-var0-v1.cc.bi
+    │   │   ├── test-abidiff-exit
+    │   │   │   ├── ada-subrange
+    │   │   │   │   ├── test1-ada-subrange
+    │   │   │   │   │   ├── test1-ada-subrange-report-1.txt
+    │   │   │   │   │   ├── test1-ada-subrange-report-2.txt
+    │   │   │   │   │   ├── v0
+    │   │   │   │   │   │   ├── test1.adb
+    │   │   │   │   │   │   ├── test1.ads
+    │   │   │   │   │   │   └── test1.o
+    │   │   │   │   │   └── v1
+    │   │   │   │   │       ├── test1.adb
+    │   │   │   │   │       ├── test1.ads
+    │   │   │   │   │       └── test1.o
+    │   │   │   │   └── test2-ada-subrange-redundant
+    │   │   │   │       ├── test2-ada-subrange-redundant-report-1.txt
+    │   │   │   │       ├── test2-ada-subrange-redundant-report-2.txt
+    │   │   │   │       ├── v0
+    │   │   │   │       │   ├── test.adb
+    │   │   │   │       │   ├── test.ads
+    │   │   │   │       │   └── test.o
+    │   │   │   │       └── v1
+    │   │   │   │           ├── test.adb
+    │   │   │   │           ├── test.ads
+    │   │   │   │           └── test.o
+    │   │   │   ├── btf
+    │   │   │   │   ├── test0-report-1.txt
+    │   │   │   │   ├── test0-report-2.txt
+    │   │   │   │   ├── test0-v0.c
+    │   │   │   │   ├── test0-v0.o
+    │   │   │   │   ├── test0-v1.c
+    │   │   │   │   └── test0-v1.o
+    │   │   │   ├── ld-2.28-210.so
+    │   │   │   ├── ld-2.28-211.so
+    │   │   │   ├── ld-2.28-21x.so.sources.txt
+    │   │   │   ├── PR30048-test-2-report-1.txt
+    │   │   │   ├── PR30048-test-2-v0.cc
+    │   │   │   ├── PR30048-test-2-v0.o
+    │   │   │   ├── PR30048-test-2-v1.cc
+    │   │   │   ├── PR30048-test-2-v1.o
+    │   │   │   ├── PR30048-test-report-0.txt
+    │   │   │   ├── PR30048-test-v0.c
+    │   │   │   ├── PR30048-test-v0.o
+    │   │   │   ├── PR30048-test-v1.c
+    │   │   │   ├── PR30048-test-v1.o
+    │   │   │   ├── PR30329
+    │   │   │   │   ├── new-image
+    │   │   │   │   │   └── usr
+    │   │   │   │   │       └── lib
+    │   │   │   │   │           ├── debug
+    │   │   │   │   │           │   ├── dwz
+    │   │   │   │   │           │   │   └── components
+    │   │   │   │   │           │   │       └── sqlite.bst
+    │   │   │   │   │           │   │           └── x86_64-unknown-linux-gnu
+    │   │   │   │   │           │   └── usr
+    │   │   │   │   │           │       └── lib
+    │   │   │   │   │           │           └── x86_64-linux-gnu
+    │   │   │   │   │           │               └── libsqlite3.so.0.8.6.debug
+    │   │   │   │   │           └── x86_64-linux-gnu
+    │   │   │   │   │               └── libsqlite3.so.0.8.6
+    │   │   │   │   ├── old-image
+    │   │   │   │   │   └── usr
+    │   │   │   │   │       └── lib
+    │   │   │   │   │           ├── debug
+    │   │   │   │   │           │   ├── dwz
+    │   │   │   │   │           │   │   └── components
+    │   │   │   │   │           │   │       └── sqlite.bst
+    │   │   │   │   │           │   │           └── x86_64-unknown-linux-gnu
+    │   │   │   │   │           │   └── usr
+    │   │   │   │   │           │       └── lib
+    │   │   │   │   │           │           └── x86_64-linux-gnu
+    │   │   │   │   │           │               └── libsqlite3.so.0.8.6.debug
+    │   │   │   │   │           └── x86_64-linux-gnu
+    │   │   │   │   │               └── libsqlite3.so.0.8.6
+    │   │   │   │   └── PR30329-report-1.txt
+    │   │   │   ├── PR30503
+    │   │   │   │   └── libsdl
+    │   │   │   │       ├── 1.2.60
+    │   │   │   │       │   └── lib64
+    │   │   │   │       │       ├── libSDL-1.2.so.1.2.60
+    │   │   │   │       │       └── libSDL-1.2.so.1.2.60.debug
+    │   │   │   │       ├── 1.2.64
+    │   │   │   │       │   └── lib64
+    │   │   │   │       │       ├── libSDL-1.2.so.1.2.64
+    │   │   │   │       │       └── libSDL-1.2.so.1.2.64.debug
+    │   │   │   │       └── libsdl-1.2.60-1.2.64-report.txt
+    │   │   │   ├── qualifier-typedef-array-report-0.txt
+    │   │   │   ├── qualifier-typedef-array-report-1.txt
+    │   │   │   ├── qualifier-typedef-array-report-2.txt
+    │   │   │   ├── qualifier-typedef-array-report-3.txt
+    │   │   │   ├── qualifier-typedef-array-v0.c
+    │   │   │   ├── qualifier-typedef-array-v0.o
+    │   │   │   ├── qualifier-typedef-array-v1.c
+    │   │   │   ├── qualifier-typedef-array-v1.o
+    │   │   │   ├── test1-voffset-change.abignore
+    │   │   │   ├── test1-voffset-change-report0.txt
+    │   │   │   ├── test1-voffset-change-report1.txt
+    │   │   │   ├── test1-voffset-change-v0.cc
+    │   │   │   ├── test1-voffset-change-v0.o
+    │   │   │   ├── test1-voffset-change-v1.cc
+    │   │   │   ├── test1-voffset-change-v1.o
+    │   │   │   ├── test2-filtered-removed-fns.abignore
+    │   │   │   ├── test2-filtered-removed-fns-report0.txt
+    │   │   │   ├── test2-filtered-removed-fns-report1.txt
+    │   │   │   ├── test2-filtered-removed-fns-v0.c
+    │   │   │   ├── test2-filtered-removed-fns-v0.o
+    │   │   │   ├── test2-filtered-removed-fns-v1.c
+    │   │   │   ├── test2-filtered-removed-fns-v1.o
+    │   │   │   ├── test-allow-type-array-suppr.txt
+    │   │   │   ├── test-allow-type-array-v0.c
+    │   │   │   ├── test-allow-type-array-v0.o
+    │   │   │   ├── test-allow-type-array-v0--v1-report-1.txt
+    │   │   │   ├── test-allow-type-array-v0--v1-report-2.txt
+    │   │   │   ├── test-allow-type-array-v0--v2-report-1.txt
+    │   │   │   ├── test-allow-type-array-v0--v2-report-2.txt
+    │   │   │   ├── test-allow-type-array-v0--v3-report-1.txt
+    │   │   │   ├── test-allow-type-array-v0--v3-report-2.txt
+    │   │   │   ├── test-allow-type-array-v1.c
+    │   │   │   ├── test-allow-type-array-v1.o
+    │   │   │   ├── test-allow-type-array-v2.c
+    │   │   │   ├── test-allow-type-array-v2.o
+    │   │   │   ├── test-allow-type-array-v3.c
+    │   │   │   ├── test-allow-type-array-v3.o
+    │   │   │   ├── test-allow-type-region-suppr.txt
+    │   │   │   ├── test-allow-type-region-v0.c
+    │   │   │   ├── test-allow-type-region-v0.o
+    │   │   │   ├── test-allow-type-region-v0--v1-report-1.txt
+    │   │   │   ├── test-allow-type-region-v0--v1-report-2.txt
+    │   │   │   ├── test-allow-type-region-v0--v2-report-1.txt
+    │   │   │   ├── test-allow-type-region-v0--v2-report-2.txt
+    │   │   │   ├── test-allow-type-region-v0--v3-report-1.txt
+    │   │   │   ├── test-allow-type-region-v0--v3-report-2.txt
+    │   │   │   ├── test-allow-type-region-v0--v4-report-1.txt
+    │   │   │   ├── test-allow-type-region-v0--v4-report-2.txt
+    │   │   │   ├── test-allow-type-region-v0--v5-report-1.txt
+    │   │   │   ├── test-allow-type-region-v0--v5-report-2.txt
+    │   │   │   ├── test-allow-type-region-v1.c
+    │   │   │   ├── test-allow-type-region-v1.o
+    │   │   │   ├── test-allow-type-region-v2.c
+    │   │   │   ├── test-allow-type-region-v2.o
+    │   │   │   ├── test-allow-type-region-v3.c
+    │   │   │   ├── test-allow-type-region-v3.o
+    │   │   │   ├── test-allow-type-region-v4.c
+    │   │   │   ├── test-allow-type-region-v4.o
+    │   │   │   ├── test-allow-type-region-v5.c
+    │   │   │   ├── test-allow-type-region-v5.o
+    │   │   │   ├── test-allow-type-suppr1.txt
+    │   │   │   ├── test-allow-type-suppr2.txt
+    │   │   │   ├── test-anon-types-report-1.txt
+    │   │   │   ├── test-anon-types-v0.c
+    │   │   │   ├── test-anon-types-v0.o
+    │   │   │   ├── test-anon-types-v1.c
+    │   │   │   ├── test-anon-types-v1.o
+    │   │   │   ├── test-anonymous-enums-change-report-v0.txt
+    │   │   │   ├── test-anonymous-enums-change-report-v1.txt
+    │   │   │   ├── test-anonymous-enums-change-v0.c
+    │   │   │   ├── test-anonymous-enums-change-v0.o
+    │   │   │   ├── test-anonymous-enums-change-v1.c
+    │   │   │   ├── test-anonymous-enums-change-v1.o
+    │   │   │   ├── test-crc-report.txt
+    │   │   │   ├── test-crc-v0.abi
+    │   │   │   ├── test-crc-v1.abi
+    │   │   │   ├── test-decl-enum-report-2.txt
+    │   │   │   ├── test-decl-enum-report-3.txt
+    │   │   │   ├── test-decl-enum-report.txt
+    │   │   │   ├── test-decl-enum-v0.c
+    │   │   │   ├── test-decl-enum-v0.o
+    │   │   │   ├── test-decl-enum-v1.c
+    │   │   │   ├── test-decl-enum-v1.o
+    │   │   │   ├── test-decl-struct-report.txt
+    │   │   │   ├── test-decl-struct-v0.c
+    │   │   │   ├── test-decl-struct-v0.o
+    │   │   │   ├── test-decl-struct-v1.c
+    │   │   │   ├── test-decl-struct-v1.o
+    │   │   │   ├── test-enumerator-changes1-report-1.txt
+    │   │   │   ├── test-enumerator-changes1-v0.c
+    │   │   │   ├── test-enumerator-changes1-v0.o
+    │   │   │   ├── test-enumerator-changes1-v1.c
+    │   │   │   ├── test-enumerator-changes1-v1.o
+    │   │   │   ├── test-fam1-report-1.txt
+    │   │   │   ├── test-fam1-report-2.txt
+    │   │   │   ├── test-fam1-report-3.txt
+    │   │   │   ├── test-fam1-report-4.txt
+    │   │   │   ├── test-fam1-report-5.txt
+    │   │   │   ├── test-fam1-suppr-1.abignore
+    │   │   │   ├── test-fam1-suppr-2.abignore
+    │   │   │   ├── test-fam1-suppr-3.abignore
+    │   │   │   ├── test-fam1-suppr-4.abignore
+    │   │   │   ├── test-fam1-v0.c
+    │   │   │   ├── test-fam1-v0.o
+    │   │   │   ├── test-fam1-v1.c
+    │   │   │   ├── test-fam1-v1.o
+    │   │   │   ├── test-fam2-report-1.txt
+    │   │   │   ├── test-fam2-v0.c
+    │   │   │   ├── test-fam2-v0.o
+    │   │   │   ├── test-fam2-v1.c
+    │   │   │   ├── test-fam2-v1.o
+    │   │   │   ├── test-fun-param-report.txt
+    │   │   │   ├── test-fun-param-v0.abi
+    │   │   │   ├── test-fun-param-v0.c
+    │   │   │   ├── test-fun-param-v0.o
+    │   │   │   ├── test-fun-param-v1.abi
+    │   │   │   ├── test-fun-param-v1.c
+    │   │   │   ├── test-fun-param-v1.o
+    │   │   │   ├── test-headers-dirs
+    │   │   │   │   ├── headers-a
+    │   │   │   │   │   ├── header-a-v0.h
+    │   │   │   │   │   └── header-a-v1.h
+    │   │   │   │   ├── headers-b
+    │   │   │   │   │   ├── header-b-v0.h
+    │   │   │   │   │   └── header-b-v1.h
+    │   │   │   │   ├── test-headers-dir-report-1.txt
+    │   │   │   │   ├── test-headers-dir-report-2.txt
+    │   │   │   │   ├── test-headers-dir-v0.c
+    │   │   │   │   ├── test-headers-dir-v0.o
+    │   │   │   │   ├── test-headers-dir-v1.c
+    │   │   │   │   └── test-headers-dir-v1.o
+    │   │   │   ├── test-ld-2.28-210.so--ld-2.28-211.so.txt
+    │   │   │   ├── test-leaf-cxx-members-report.txt
+    │   │   │   ├── test-leaf-cxx-members-v0.cc
+    │   │   │   ├── test-leaf-cxx-members-v0.o
+    │   │   │   ├── test-leaf-cxx-members-v1.cc
+    │   │   │   ├── test-leaf-cxx-members-v1.o
+    │   │   │   ├── test-leaf-fun-type-report.txt
+    │   │   │   ├── test-leaf-fun-type-v0.cc
+    │   │   │   ├── test-leaf-fun-type-v0.o
+    │   │   │   ├── test-leaf-fun-type-v1.cc
+    │   │   │   ├── test-leaf-fun-type-v1.o
+    │   │   │   ├── test-leaf-more-report.txt
+    │   │   │   ├── test-leaf-more-v0.cc
+    │   │   │   ├── test-leaf-more-v0.o
+    │   │   │   ├── test-leaf-more-v1.cc
+    │   │   │   ├── test-leaf-more-v1.o
+    │   │   │   ├── test-leaf-peeling-report.txt
+    │   │   │   ├── test-leaf-peeling-v0.cc
+    │   │   │   ├── test-leaf-peeling-v0.o
+    │   │   │   ├── test-leaf-peeling-v1.cc
+    │   │   │   ├── test-leaf-peeling-v1.o
+    │   │   │   ├── test-leaf-redundant-report.txt
+    │   │   │   ├── test-leaf-redundant-v0.c
+    │   │   │   ├── test-leaf-redundant-v0.o
+    │   │   │   ├── test-leaf-redundant-v1.c
+    │   │   │   ├── test-leaf-redundant-v1.o
+    │   │   │   ├── test-leaf-stats-report.txt
+    │   │   │   ├── test-leaf-stats-v0.cc
+    │   │   │   ├── test-leaf-stats-v0.o
+    │   │   │   ├── test-leaf-stats-v1.cc
+    │   │   │   ├── test-leaf-stats-v1.o
+    │   │   │   ├── test-loc-v0.bi
+    │   │   │   ├── test-loc-v1.bi
+    │   │   │   ├── test-loc-with-locs-report.txt
+    │   │   │   ├── test-loc-without-locs-report.txt
+    │   │   │   ├── test-member-size-report0.txt
+    │   │   │   ├── test-member-size-report1.txt
+    │   │   │   ├── test-member-size-v0.cc
+    │   │   │   ├── test-member-size-v0.o
+    │   │   │   ├── test-member-size-v1.cc
+    │   │   │   ├── test-member-size-v1.o
+    │   │   │   ├── test-missing-alias.abi
+    │   │   │   ├── test-missing-alias-report.txt
+    │   │   │   ├── test-missing-alias.suppr
+    │   │   │   ├── test-net-change.abignore
+    │   │   │   ├── test-net-change-report0.txt
+    │   │   │   ├── test-net-change-report1.txt
+    │   │   │   ├── test-net-change-report2.txt
+    │   │   │   ├── test-net-change-report3.txt
+    │   │   │   ├── test-net-change-v0.c
+    │   │   │   ├── test-net-change-v0.o
+    │   │   │   ├── test-net-change-v1.c
+    │   │   │   ├── test-net-change-v1.o
+    │   │   │   ├── test-non-leaf-array-report.txt
+    │   │   │   ├── test-non-leaf-array-v0.c
+    │   │   │   ├── test-non-leaf-array-v0.o
+    │   │   │   ├── test-non-leaf-array-v1.c
+    │   │   │   ├── test-non-leaf-array-v1.o
+    │   │   │   ├── test-no-stray-comma-report.txt
+    │   │   │   ├── test-no-stray-comma-v0.o
+    │   │   │   ├── test-no-stray-comma-v1.o
+    │   │   │   ├── test-PR28316-report.txt
+    │   │   │   ├── test-PR28316-v0.cc
+    │   │   │   ├── test-PR28316-v0.o
+    │   │   │   ├── test-PR28316-v1.cc
+    │   │   │   ├── test-PR28316-v1.o
+    │   │   │   ├── test-PR29144-report-2.txt
+    │   │   │   ├── test-PR29144-report.txt
+    │   │   │   ├── test-PR29144-v0.cc
+    │   │   │   ├── test-PR29144-v0.o
+    │   │   │   ├── test-PR29144-v1.cc
+    │   │   │   ├── test-PR29144-v1.o
+    │   │   │   ├── test-PR30034
+    │   │   │   │   ├── libabigail.abignore
+    │   │   │   │   ├── reference
+    │   │   │   │   │   ├── include
+    │   │   │   │   │   │   └── rte_log.h
+    │   │   │   │   │   └── lib64
+    │   │   │   │   │       ├── librte_eal.so -> librte_eal.so.23
+    │   │   │   │   │       ├── librte_eal.so.23 -> librte_eal.so.23.1
+    │   │   │   │   │       ├── librte_eal.so.23.1
+    │   │   │   │   │       ├── librte_kvargs.so -> librte_kvargs.so.23
+    │   │   │   │   │       ├── librte_kvargs.so.23 -> librte_kvargs.so.23.1
+    │   │   │   │   │       ├── librte_kvargs.so.23.1
+    │   │   │   │   │       ├── librte_telemetry.so -> librte_telemetry.so.23
+    │   │   │   │   │       ├── librte_telemetry.so.23 -> librte_telemetry.so.23.1
+    │   │   │   │   │       └── librte_telemetry.so.23.1
+    │   │   │   │   ├── split
+    │   │   │   │   │   ├── include
+    │   │   │   │   │   │   └── rte_log.h
+    │   │   │   │   │   └── lib64
+    │   │   │   │   │       ├── librte_eal.so -> librte_eal.so.23
+    │   │   │   │   │       ├── librte_eal.so.23 -> librte_eal.so.23.2
+    │   │   │   │   │       ├── librte_eal.so.23.2
+    │   │   │   │   │       ├── librte_kvargs.so -> librte_kvargs.so.23
+    │   │   │   │   │       ├── librte_kvargs.so.23 -> librte_kvargs.so.23.2
+    │   │   │   │   │       ├── librte_kvargs.so.23.2
+    │   │   │   │   │       ├── librte_log.so -> librte_log.so.23
+    │   │   │   │   │       ├── librte_log.so.23 -> librte_log.so.23.2
+    │   │   │   │   │       ├── librte_log.so.23.2
+    │   │   │   │   │       ├── librte_telemetry.so -> librte_telemetry.so.23
+    │   │   │   │   │       ├── librte_telemetry.so.23 -> librte_telemetry.so.23.2
+    │   │   │   │   │       └── librte_telemetry.so.23.2
+    │   │   │   │   └── test-PR30034-report-1.txt
+    │   │   │   ├── test-rhbz2114909-report-1.txt
+    │   │   │   ├── test-rhbz2114909-v0.cc
+    │   │   │   ├── test-rhbz2114909-v0.o
+    │   │   │   ├── test-rhbz2114909-v1.cc
+    │   │   │   └── test-rhbz2114909-v1.o
+    │   │   ├── test-alt-dwarf-file
+    │   │   │   ├── libstdc++
+    │   │   │   │   ├── libstdc++-report-1.txt
+    │   │   │   │   ├── libstdc++-report.txt
+    │   │   │   │   └── usr
+    │   │   │   │       ├── lib
+    │   │   │   │       │   └── debug
+    │   │   │   │       │       └── usr
+    │   │   │   │       │           └── lib64
+    │   │   │   │       │               └── libstdc++.so.6.0.30-12.1.1-1.fc37.x86_64.debug
+    │   │   │   │       └── lib64
+    │   │   │   │           └── libstdc++.so.6.0.30
+    │   │   │   ├── libtest0-common.so
+    │   │   │   ├── libtest0.so
+    │   │   │   ├── rhbz1951526
+    │   │   │   │   ├── rhbz1951526-report-0.txt
+    │   │   │   │   └── usr
+    │   │   │   │       ├── bin
+    │   │   │   │       │   └── gimp-2.10
+    │   │   │   │       └── lib
+    │   │   │   │           └── debug
+    │   │   │   │               └── usr
+    │   │   │   │                   └── bin
+    │   │   │   │                       └── gimp-2.10-2.10.22-2.el9.1.aarch64.debug
+    │   │   │   ├── test0.cc
+    │   │   │   ├── test0-common.cc
+    │   │   │   ├── test0-common-dwz.debug
+    │   │   │   ├── test0-debug-dir
+    │   │   │   │   └── test0-common-dwz.debug -> ../test0-common-dwz.debug
+    │   │   │   ├── test0.h
+    │   │   │   ├── test0-report.txt
+    │   │   │   ├── test1-libgromacs-debug-dir
+    │   │   │   │   └── usr
+    │   │   │   │       └── lib64
+    │   │   │   │           └── libgromacs_d.so.0.0.0.debug
+    │   │   │   ├── test1-libgromacs_d.so.0.0.0
+    │   │   │   └── test1-report-0.txt
+    │   │   ├── test-annotate
+    │   │   │   ├── libtest23.so.abi
+    │   │   │   ├── libtest24-drop-fns-2.so.abi
+    │   │   │   ├── libtest24-drop-fns.so.abi
+    │   │   │   ├── PR29443-missing-xx.o.annotated.abi
+    │   │   │   ├── test0.abi
+    │   │   │   ├── test13-pr18894.so.abi
+    │   │   │   ├── test14-pr18893.so.abi
+    │   │   │   ├── test15-pr18892.so.abi
+    │   │   │   ├── test17-pr19027.so.abi
+    │   │   │   ├── test18-pr19037-libvtkRenderingLIC-6.1.so.abi
+    │   │   │   ├── test19-pr19023-libtcmalloc_and_profiler.so.abi
+    │   │   │   ├── test1.abi
+    │   │   │   ├── test20-pr19025-libvtkParallelCore-6.1.so.abi
+    │   │   │   ├── test21-pr19092.so.abi
+    │   │   │   ├── test2.so.abi
+    │   │   │   ├── test3.so.abi
+    │   │   │   ├── test4.so.abi
+    │   │   │   ├── test5.o.abi
+    │   │   │   ├── test6.so.abi
+    │   │   │   ├── test7.so.abi
+    │   │   │   ├── test8-qualified-this-pointer.so.abi
+    │   │   │   ├── test-anonymous-members-0.cc
+    │   │   │   ├── test-anonymous-members-0.o
+    │   │   │   └── test-anonymous-members-0.o.abi
+    │   │   ├── test-core-diff
+    │   │   │   ├── report0.txt
+    │   │   │   ├── report10.txt
+    │   │   │   ├── report11.txt
+    │   │   │   ├── report12.txt
+    │   │   │   ├── report13.txt
+    │   │   │   ├── report1.txt
+    │   │   │   ├── report2.txt
+    │   │   │   ├── report3.txt
+    │   │   │   ├── report4.txt
+    │   │   │   ├── report5.txt
+    │   │   │   ├── report6.txt
+    │   │   │   ├── report7.txt
+    │   │   │   ├── report8.txt
+    │   │   │   └── report9.txt
+    │   │   ├── test-default-supprs
+    │   │   │   ├── dirpkg-1-dir1 -> ../test-diff-pkg/dirpkg-1-dir1
+    │   │   │   ├── dirpkg-1-dir2 -> ../test-diff-pkg/dirpkg-1-dir2
+    │   │   │   ├── dirpkg-1-dir-report-0.txt
+    │   │   │   ├── test0-type-suppr-0.suppr -> ../test-diff-suppr/test0-type-suppr-0.suppr
+    │   │   │   ├── test0-type-suppr-report-0.txt
+    │   │   │   ├── test0-type-suppr-v0.o -> ../test-diff-suppr/test0-type-suppr-v0.o
+    │   │   │   └── test0-type-suppr-v1.o -> ../test-diff-suppr/test0-type-suppr-v1.o
+    │   │   ├── test-diff-dwarf
+    │   │   │   ├── libtest12-v0.so
+    │   │   │   ├── libtest12-v1.so
+    │   │   │   ├── libtest18-alias-sym-v0.so
+    │   │   │   ├── libtest18-alias-sym-v1.so
+    │   │   │   ├── libtest19-soname-v0.so
+    │   │   │   ├── libtest19-soname-v1.so
+    │   │   │   ├── libtest20-add-fn-parm-v0.so
+    │   │   │   ├── libtest20-add-fn-parm-v1.so
+    │   │   │   ├── libtest21-redundant-fn-v0.so
+    │   │   │   ├── libtest21-redundant-fn-v1.so
+    │   │   │   ├── libtest22-changed-parm-c-v0.so
+    │   │   │   ├── libtest22-changed-parm-c-v1.so
+    │   │   │   ├── libtest-23-diff-arch-v0-32.so
+    │   │   │   ├── libtest-23-diff-arch-v0-64.so
+    │   │   │   ├── libtest24-added-fn-parms-v0.so
+    │   │   │   ├── libtest24-added-fn-parms-v1.so
+    │   │   │   ├── libtest25-removed-fn-parms-v0.so
+    │   │   │   ├── libtest25-removed-fn-parms-v1.so
+    │   │   │   ├── libtest26-added-parms-before-variadic-v0.so
+    │   │   │   ├── libtest26-added-parms-before-variadic-v1.so
+    │   │   │   ├── libtest36-ppc64-aliases-v0.so
+    │   │   │   ├── libtest36-ppc64-aliases-v1.so
+    │   │   │   ├── libtest37-union-v0.so
+    │   │   │   ├── libtest37-union-v1.so
+    │   │   │   ├── libtest38-union-v0.so
+    │   │   │   ├── libtest38-union-v1.so
+    │   │   │   ├── libtest39-union-v0.so
+    │   │   │   ├── libtest39-union-v1.so
+    │   │   │   ├── libtest40-v0.so
+    │   │   │   ├── libtest40-v1.so
+    │   │   │   ├── libtest41-PR20476-hidden-new.so
+    │   │   │   ├── libtest41-PR20476-hidden-old.so
+    │   │   │   ├── libtest43-PR22913-v0.so
+    │   │   │   ├── libtest43-PR22913-v1.so
+    │   │   │   ├── libtest9-v0.so
+    │   │   │   ├── libtest9-v1.so
+    │   │   │   ├── PR25058-liblttng-ctl2.10.so
+    │   │   │   ├── PR25058-liblttng-ctl-report-1.txt
+    │   │   │   ├── PR25058-liblttng-ctl.so
+    │   │   │   ├── test0-report.txt
+    │   │   │   ├── test0-v0.cc
+    │   │   │   ├── test0-v0.o
+    │   │   │   ├── test0-v1.cc
+    │   │   │   ├── test0-v1.o
+    │   │   │   ├── test10-report.txt
+    │   │   │   ├── test10-v0.cc
+    │   │   │   ├── test10-v0.o
+    │   │   │   ├── test10-v1.cc
+    │   │   │   ├── test10-v1.o
+    │   │   │   ├── test11-report.txt
+    │   │   │   ├── test11-v0.cc
+    │   │   │   ├── test11-v0.o
+    │   │   │   ├── test11-v1.cc
+    │   │   │   ├── test11-v1.o
+    │   │   │   ├── test12-report.txt
+    │   │   │   ├── test12-v0.c
+    │   │   │   ├── test12-v1.c
+    │   │   │   ├── test12-version-script
+    │   │   │   ├── test13-report.txt
+    │   │   │   ├── test13-v0.cc
+    │   │   │   ├── test13-v0.o
+    │   │   │   ├── test13-v1.cc
+    │   │   │   ├── test13-v1.o
+    │   │   │   ├── test14-inline-report.txt
+    │   │   │   ├── test14-inline-v0.cc
+    │   │   │   ├── test14-inline-v0.o
+    │   │   │   ├── test14-inline-v1.cc
+    │   │   │   ├── test14-inline-v1.o
+    │   │   │   ├── test15-enum-report.txt
+    │   │   │   ├── test15-enum-v0.cc
+    │   │   │   ├── test15-enum-v0.o
+    │   │   │   ├── test15-enum-v1.cc
+    │   │   │   ├── test15-enum-v1.o
+    │   │   │   ├── test16-syms-only-report.txt
+    │   │   │   ├── test16-syms-only-v0.cc
+    │   │   │   ├── test16-syms-only-v0.o
+    │   │   │   ├── test16-syms-only-v1.cc
+    │   │   │   ├── test16-syms-only-v1.o
+    │   │   │   ├── test17-non-refed-syms-report-0.txt
+    │   │   │   ├── test17-non-refed-syms-v0.cc
+    │   │   │   ├── test17-non-refed-syms-v0.o
+    │   │   │   ├── test17-non-refed-syms-v1.cc
+    │   │   │   ├── test17-non-refed-syms-v1.o
+    │   │   │   ├── test18-alias-sym-report-0.txt
+    │   │   │   ├── test18-alias-sym-v0.cc
+    │   │   │   ├── test18-alias-sym-v1.cc
+    │   │   │   ├── test18-alias-sym-version-script
+    │   │   │   ├── test19-soname-report-0.txt
+    │   │   │   ├── test19-soname-v0.cc
+    │   │   │   ├── test19-soname-v1.cc
+    │   │   │   ├── test1-report.txt
+    │   │   │   ├── test1-v0.cc
+    │   │   │   ├── test1-v0.o
+    │   │   │   ├── test1-v1.cc
+    │   │   │   ├── test1-v1.o
+    │   │   │   ├── test20-add-fn-parm-report-0.txt
+    │   │   │   ├── test20-add-fn-parm-v0.c
+    │   │   │   ├── test20-add-fn-parm-v1.c
+    │   │   │   ├── test21-redundant-fn-report-0.txt
+    │   │   │   ├── test21-redundant-fn-v0.cc
+    │   │   │   ├── test21-redundant-fn-v1.cc
+    │   │   │   ├── test22-changed-parm-c-report-0.txt
+    │   │   │   ├── test22-changed-parm-c-v0.c
+    │   │   │   ├── test22-changed-parm-c-v1.c
+    │   │   │   ├── test-23-diff-arch-report-0.txt
+    │   │   │   ├── test-23-diff-arch-v0.cc
+    │   │   │   ├── test24-added-fn-parms-report-0.txt
+    │   │   │   ├── test24-added-fn-parms-v0.c
+    │   │   │   ├── test24-added-fn-parms-v1.c
+    │   │   │   ├── test25-removed-fn-parms-report-0.txt
+    │   │   │   ├── test25-removed-fn-parms-v0.c
+    │   │   │   ├── test25-removed-fn-parms-v1.c
+    │   │   │   ├── test26-added-parms-before-variadic-report.txt
+    │   │   │   ├── test26-added-parms-before-variadic-v0.c
+    │   │   │   ├── test26-added-parms-before-variadic-v1.c
+    │   │   │   ├── test27-local-base-diff-report.txt
+    │   │   │   ├── test27-local-base-diff-v0.cc
+    │   │   │   ├── test27-local-base-diff-v0.o
+    │   │   │   ├── test27-local-base-diff-v1.cc
+    │   │   │   ├── test27-local-base-diff-v1.o
+    │   │   │   ├── test28-vtable-changes-report-0.txt
+    │   │   │   ├── test28-vtable-changes-v0.cc
+    │   │   │   ├── test28-vtable-changes-v0.o
+    │   │   │   ├── test28-vtable-changes-v1.cc
+    │   │   │   ├── test28-vtable-changes-v1.o
+    │   │   │   ├── test29-vtable-changes-report-0.txt
+    │   │   │   ├── test29-vtable-changes-v0.cc
+    │   │   │   ├── test29-vtable-changes-v0.o
+    │   │   │   ├── test29-vtable-changes-v1.cc
+    │   │   │   ├── test29-vtable-changes-v1.o
+    │   │   │   ├── test2-report.txt
+    │   │   │   ├── test2-v0.cc
+    │   │   │   ├── test2-v0.o
+    │   │   │   ├── test2-v1.cc
+    │   │   │   ├── test2-v1.o
+    │   │   │   ├── test30-vtable-changes-report-0.txt
+    │   │   │   ├── test30-vtable-changes-v0.cc
+    │   │   │   ├── test30-vtable-changes-v0.o
+    │   │   │   ├── test30-vtable-changes-v1.cc
+    │   │   │   ├── test30-vtable-changes-v1.o
+    │   │   │   ├── test31-vtable-changes-report-0.txt
+    │   │   │   ├── test31-vtable-changes-v0.cc
+    │   │   │   ├── test31-vtable-changes-v0.o
+    │   │   │   ├── test31-vtable-changes-v1.cc
+    │   │   │   ├── test31-vtable-changes-v1.o
+    │   │   │   ├── test32-fnptr-changes-report-0.txt
+    │   │   │   ├── test32-fnptr-changes-v0.cc
+    │   │   │   ├── test32-fnptr-changes-v0.o
+    │   │   │   ├── test32-fnptr-changes-v1.cc
+    │   │   │   ├── test32-fnptr-changes-v1.o
+    │   │   │   ├── test33-fnref-changes-report-0.txt
+    │   │   │   ├── test33-fnref-changes-v0.cc
+    │   │   │   ├── test33-fnref-changes-v0.o
+    │   │   │   ├── test33-fnref-changes-v1.cc
+    │   │   │   ├── test33-fnref-changes-v1.o
+    │   │   │   ├── test34-pr19173-libfoo2.so
+    │   │   │   ├── test34-pr19173-libfoo-report-0.txt
+    │   │   │   ├── test34-pr19173-libfoo.so
+    │   │   │   ├── test35-pr19173-libfoo-long.c
+    │   │   │   ├── test35-pr19173-libfoo-long-clang2.so
+    │   │   │   ├── test35-pr19173-libfoo-long-clang-report-0.txt
+    │   │   │   ├── test35-pr19173-libfoo-long-clang.so
+    │   │   │   ├── test35-pr19173-libfoo-long-gcc2.so
+    │   │   │   ├── test35-pr19173-libfoo-long-gcc-report-0.txt
+    │   │   │   ├── test35-pr19173-libfoo-long-gcc.so
+    │   │   │   ├── test36-ppc64-aliases-report-0.txt
+    │   │   │   ├── test36-ppc64-aliases-v0.cc
+    │   │   │   ├── test36-ppc64-aliases-v1.cc
+    │   │   │   ├── test37-union-report-0.txt
+    │   │   │   ├── test37-union-v0.cc
+    │   │   │   ├── test37-union-v1.cc
+    │   │   │   ├── test38-union-report-0.txt
+    │   │   │   ├── test38-union-v0.cc
+    │   │   │   ├── test38-union-v1.cc
+    │   │   │   ├── test39-union-report-0.txt
+    │   │   │   ├── test39-union-v0.cc
+    │   │   │   ├── test39-union-v1.cc
+    │   │   │   ├── test3-report.txt
+    │   │   │   ├── test3-v0.cc
+    │   │   │   ├── test3-v0.o
+    │   │   │   ├── test3-v1.cc
+    │   │   │   ├── test3-v1.o
+    │   │   │   ├── test40-report-0.txt
+    │   │   │   ├── test40-v0.c
+    │   │   │   ├── test40-v1.c
+    │   │   │   ├── test41-PR20476-hidden-report-0.txt
+    │   │   │   ├── test42-PR21296-clanggcc.cc
+    │   │   │   ├── test42-PR21296-clanggcc-report0.txt
+    │   │   │   ├── test42-PR21296-libclang.so
+    │   │   │   ├── test42-PR21296-libgcc.so
+    │   │   │   ├── test43-PR22913-report-0.txt
+    │   │   │   ├── test43-PR22913-v0.c
+    │   │   │   ├── test43-PR22913-v1.c
+    │   │   │   ├── test44-anon-struct-union-report-0.txt
+    │   │   │   ├── test44-anon-struct-union-v0.cc
+    │   │   │   ├── test44-anon-struct-union-v0.o
+    │   │   │   ├── test44-anon-struct-union-v1.cc
+    │   │   │   ├── test44-anon-struct-union-v1.o
+    │   │   │   ├── test45-anon-dm-change-report-0.txt
+    │   │   │   ├── test45-anon-dm-change-v0.cc
+    │   │   │   ├── test45-anon-dm-change-v0.o
+    │   │   │   ├── test45-anon-dm-change-v1.cc
+    │   │   │   ├── test45-anon-dm-change-v1.o
+    │   │   │   ├── test46-readme.txt
+    │   │   │   ├── test46-rust-libone.so
+    │   │   │   ├── test46-rust-libtwo.so
+    │   │   │   ├── test46-rust-report-0.txt
+    │   │   │   ├── test4-report.txt
+    │   │   │   ├── test4-v0.cc
+    │   │   │   ├── test4-v0.o
+    │   │   │   ├── test4-v1.cc
+    │   │   │   ├── test4-v1.o
+    │   │   │   ├── test5-report.txt
+    │   │   │   ├── test5-v0.cc
+    │   │   │   ├── test5-v0.o
+    │   │   │   ├── test5-v1.cc
+    │   │   │   ├── test5-v1.o
+    │   │   │   ├── test6-report.txt
+    │   │   │   ├── test6-v0.cc
+    │   │   │   ├── test6-v0.o
+    │   │   │   ├── test6-v1.cc
+    │   │   │   ├── test6-v1.o
+    │   │   │   ├── test7-report.txt
+    │   │   │   ├── test7-v0.cc
+    │   │   │   ├── test7-v0.o
+    │   │   │   ├── test7-v1.cc
+    │   │   │   ├── test7-v1.o
+    │   │   │   ├── test8-report.txt
+    │   │   │   ├── test8-v0.cc
+    │   │   │   ├── test8-v0.o
+    │   │   │   ├── test8-v1.cc
+    │   │   │   ├── test8-v1.o
+    │   │   │   ├── test9-report.txt
+    │   │   │   ├── test9-v0.cc
+    │   │   │   └── test9-v1.cc
+    │   │   ├── test-diff-dwarf-abixml
+    │   │   │   ├── PR25409-librte_bus_dpaa.so.20.0
+    │   │   │   ├── PR25409-librte_bus_dpaa.so.20.0.abi
+    │   │   │   ├── PR25409-librte_bus_dpaa.so.20.0-report-0.txt
+    │   │   │   ├── test0-pr19026-libvtkIOSQL-6.1.so.1
+    │   │   │   ├── test0-pr19026-libvtkIOSQL-6.1.so.1.abi
+    │   │   │   └── test0-pr19026-libvtkIOSQL-6.1.so.1-report-0.txt
+    │   │   ├── test-diff-filter
+    │   │   │   ├── libtest21-compatible-vars-v0.so
+    │   │   │   ├── libtest21-compatible-vars-v1.so
+    │   │   │   ├── libtest22-compatible-fns-v0.so
+    │   │   │   ├── libtest22-compatible-fns-v1.so
+    │   │   │   ├── libtest23-redundant-fn-parm-change-v0.so
+    │   │   │   ├── libtest23-redundant-fn-parm-change-v1.so
+    │   │   │   ├── libtest24-compatible-vars-v0.so
+    │   │   │   ├── libtest24-compatible-vars-v1.so
+    │   │   │   ├── libtest25-cyclic-type-v0.so
+    │   │   │   ├── libtest25-cyclic-type-v1.so
+    │   │   │   ├── libtest26-qualified-redundant-node-v0.so
+    │   │   │   ├── libtest26-qualified-redundant-node-v1.so
+    │   │   │   ├── libtest27-redundant-and-filtered-children-nodes-v0.so
+    │   │   │   ├── libtest27-redundant-and-filtered-children-nodes-v1.so
+    │   │   │   ├── libtest28-redundant-and-filtered-children-nodes-v0.so
+    │   │   │   ├── libtest28-redundant-and-filtered-children-nodes-v1.so
+    │   │   │   ├── libtest32-struct-change-v0.so
+    │   │   │   ├── libtest32-struct-change-v1.so
+    │   │   │   ├── libtest36-v0.so
+    │   │   │   ├── libtest36-v1.so
+    │   │   │   ├── libtest37-v0.so
+    │   │   │   ├── libtest37-v1.so
+    │   │   │   ├── libtest40-v0.so
+    │   │   │   ├── libtest40-v1.so
+    │   │   │   ├── libtest42-leaf-report-v0.so
+    │   │   │   ├── libtest42-leaf-report-v1.so
+    │   │   │   ├── libtest43-decl-only-def-change-leaf-report-v0.so
+    │   │   │   ├── libtest43-decl-only-def-change-leaf-report-v1.so
+    │   │   │   ├── libtest44-anonymous-data-member-v0.so
+    │   │   │   ├── libtest44-anonymous-data-member-v1.so
+    │   │   │   ├── libtest45-basic-type-change-report-0.txt
+    │   │   │   ├── libtest45-basic-type-change-report-1.txt
+    │   │   │   ├── libtest45-basic-type-change-v0.so
+    │   │   │   ├── libtest45-basic-type-change-v1.so
+    │   │   │   ├── PR24430-fold-qualified-array-clang
+    │   │   │   ├── PR24430-fold-qualified-array-gcc
+    │   │   │   ├── PR24430-fold-qualified-array-report-0.txt
+    │   │   │   ├── PR24787-libone.so
+    │   │   │   ├── PR24787-libtwo.so
+    │   │   │   ├── PR24787-one.c
+    │   │   │   ├── PR24787-report-0.txt
+    │   │   │   ├── PR24787-two.c
+    │   │   │   ├── test01-report.txt
+    │   │   │   ├── test0-report.txt
+    │   │   │   ├── test0-v0.cc
+    │   │   │   ├── test0-v0.o
+    │   │   │   ├── test0-v1.cc
+    │   │   │   ├── test0-v1.o
+    │   │   │   ├── test10-report.txt
+    │   │   │   ├── test10-v0.cc
+    │   │   │   ├── test10-v0.o
+    │   │   │   ├── test10-v1.cc
+    │   │   │   ├── test10-v1.o
+    │   │   │   ├── test11-report.txt
+    │   │   │   ├── test11-v0.cc
+    │   │   │   ├── test11-v0.o
+    │   │   │   ├── test11-v1.cc
+    │   │   │   ├── test11-v1.o
+    │   │   │   ├── test12-report.txt
+    │   │   │   ├── test12-v0.cc
+    │   │   │   ├── test12-v0.o
+    │   │   │   ├── test12-v1.cc
+    │   │   │   ├── test12-v1.o
+    │   │   │   ├── test13-report.txt
+    │   │   │   ├── test13-v0.cc
+    │   │   │   ├── test13-v0.o
+    │   │   │   ├── test13-v1.cc
+    │   │   │   ├── test13-v1.o
+    │   │   │   ├── test14-0-report.txt
+    │   │   │   ├── test14-1-report.txt
+    │   │   │   ├── test14-v0.cc
+    │   │   │   ├── test14-v0.o
+    │   │   │   ├── test14-v1.cc
+    │   │   │   ├── test14-v1.o
+    │   │   │   ├── test15-0-report.txt
+    │   │   │   ├── test15-1-report.txt
+    │   │   │   ├── test15-v0.cc
+    │   │   │   ├── test15-v0.o
+    │   │   │   ├── test15-v1.cc
+    │   │   │   ├── test15-v1.o
+    │   │   │   ├── test16-report-2.txt
+    │   │   │   ├── test16-report.txt
+    │   │   │   ├── test16-v0.cc
+    │   │   │   ├── test16-v0.o
+    │   │   │   ├── test16-v1.cc
+    │   │   │   ├── test16-v1.o
+    │   │   │   ├── test17-0-report.txt
+    │   │   │   ├── test17-1-report.txt
+    │   │   │   ├── test17-v0.cc
+    │   │   │   ├── test17-v0.o
+    │   │   │   ├── test17-v1.cc
+    │   │   │   ├── test17-v1.o
+    │   │   │   ├── test18-report.txt
+    │   │   │   ├── test18-v0.cc
+    │   │   │   ├── test18-v0.o
+    │   │   │   ├── test18-v1.cc
+    │   │   │   ├── test18-v1.o
+    │   │   │   ├── test19-enum-report-0.txt
+    │   │   │   ├── test19-enum-report-1.txt
+    │   │   │   ├── test19-enum-v0.cc
+    │   │   │   ├── test19-enum-v0.o
+    │   │   │   ├── test19-enum-v1.cc
+    │   │   │   ├── test19-enum-v1.o
+    │   │   │   ├── test1-report.txt
+    │   │   │   ├── test1-v0.cc
+    │   │   │   ├── test1-v0.o
+    │   │   │   ├── test1-v1.cc
+    │   │   │   ├── test1-v1.o
+    │   │   │   ├── test20-inline-report-0.txt
+    │   │   │   ├── test20-inline-report-1.txt
+    │   │   │   ├── test20-inline-v0.cc
+    │   │   │   ├── test20-inline-v0.o
+    │   │   │   ├── test20-inline-v1.cc
+    │   │   │   ├── test20-inline-v1.o
+    │   │   │   ├── test21-compatible-vars-report-0.txt
+    │   │   │   ├── test21-compatible-vars-report-1.txt
+    │   │   │   ├── test21-compatible-vars-v0.cc
+    │   │   │   ├── test21-compatible-vars-v1.cc
+    │   │   │   ├── test22-compatible-fns-report-0.txt
+    │   │   │   ├── test22-compatible-fns-report-1.txt
+    │   │   │   ├── test22-compatible-fns-v0.c
+    │   │   │   ├── test22-compatible-fns-v1.c
+    │   │   │   ├── test23-redundant-fn-parm-change-report-0.txt
+    │   │   │   ├── test23-redundant-fn-parm-change-v0.c
+    │   │   │   ├── test23-redundant-fn-parm-change-v1.c
+    │   │   │   ├── test24-compatible-vars-report-0.txt
+    │   │   │   ├── test24-compatible-vars-report-1.txt
+    │   │   │   ├── test24-compatible-vars-v0.c
+    │   │   │   ├── test24-compatible-vars-v1.c
+    │   │   │   ├── test25-cyclic-type-report-0.txt
+    │   │   │   ├── test25-cyclic-type-report-1.txt
+    │   │   │   ├── test25-cyclic-type-v0.cc
+    │   │   │   ├── test25-cyclic-type-v1.cc
+    │   │   │   ├── test26-qualified-redundant-node-report-0.txt
+    │   │   │   ├── test26-qualified-redundant-node-report-1.txt
+    │   │   │   ├── test26-qualified-redundant-node-v0.cc
+    │   │   │   ├── test26-qualified-redundant-node-v1.cc
+    │   │   │   ├── test27-redundant-and-filtered-children-nodes-report-0.txt
+    │   │   │   ├── test27-redundant-and-filtered-children-nodes-report-1.txt
+    │   │   │   ├── test27-redundant-and-filtered-children-nodes-report-2.txt
+    │   │   │   ├── test27-redundant-and-filtered-children-nodes-v0.cc
+    │   │   │   ├── test27-redundant-and-filtered-children-nodes-v1.cc
+    │   │   │   ├── test28-redundant-and-filtered-children-nodes-report-0.txt
+    │   │   │   ├── test28-redundant-and-filtered-children-nodes-report-1.txt
+    │   │   │   ├── test28-redundant-and-filtered-children-nodes-v0.cc
+    │   │   │   ├── test28-redundant-and-filtered-children-nodes-v1.cc
+    │   │   │   ├── test29-finer-redundancy-marking-report-0.txt
+    │   │   │   ├── test29-finer-redundancy-marking-v0.cc
+    │   │   │   ├── test29-finer-redundancy-marking-v0.o
+    │   │   │   ├── test29-finer-redundancy-marking-v1.cc
+    │   │   │   ├── test29-finer-redundancy-marking-v1.o
+    │   │   │   ├── test2-report.txt
+    │   │   │   ├── test2-v0.cc
+    │   │   │   ├── test2-v0.o
+    │   │   │   ├── test2-v1.cc
+    │   │   │   ├── test2-v1.o
+    │   │   │   ├── test30-pr18904-rvalueref-liba.so
+    │   │   │   ├── test30-pr18904-rvalueref-libb.so
+    │   │   │   ├── test30-pr18904-rvalueref-report0.txt
+    │   │   │   ├── test30-pr18904-rvalueref-report1.txt
+    │   │   │   ├── test30-pr18904-rvalueref-report2.txt
+    │   │   │   ├── test31-pr18535-libstdc++-4.8.3.so
+    │   │   │   ├── test31-pr18535-libstdc++-4.9.2.so
+    │   │   │   ├── test31-pr18535-libstdc++-report-0.txt
+    │   │   │   ├── test31-pr18535-libstdc++-report-1.txt
+    │   │   │   ├── test32-ppc64le-struct-change-report0.txt
+    │   │   │   ├── test32-ppc64le-struct-change-v0.c
+    │   │   │   ├── test32-ppc64le-struct-change-v1.c
+    │   │   │   ├── test33-libelf.so.0.8.13-gcc
+    │   │   │   ├── test33-libelf.so.0.8.13-intel16.0.3
+    │   │   │   ├── test33-report-0.txt
+    │   │   │   ├── test34-libjemalloc.so.2-gcc-6.1.0
+    │   │   │   ├── test34-libjemalloc.so.2-intel-16.0.3
+    │   │   │   ├── test34-report-0.txt
+    │   │   │   ├── test35-pr18754-no-added-syms-report-0.txt
+    │   │   │   ├── test35-pr18754-no-added-syms-report-1.txt
+    │   │   │   ├── test36-1-v0.c
+    │   │   │   ├── test36-1-v1.c
+    │   │   │   ├── test36-2-v0.c
+    │   │   │   ├── test36-2-v1.c
+    │   │   │   ├── test36-report-0.txt
+    │   │   │   ├── test37-report-0.txt
+    │   │   │   ├── test37-v0.cc
+    │   │   │   ├── test37-v1.cc
+    │   │   │   ├── test38
+    │   │   │   │   ├── Makefile
+    │   │   │   │   ├── test38-a.c
+    │   │   │   │   ├── test38-b.c
+    │   │   │   │   ├── test38-c.c
+    │   │   │   │   ├── test38.h
+    │   │   │   │   ├── test38-report-0.txt
+    │   │   │   │   ├── test38-v0
+    │   │   │   │   └── test38-v1
+    │   │   │   ├── test39
+    │   │   │   │   ├── Makefile
+    │   │   │   │   ├── test39-a-v0.c
+    │   │   │   │   ├── test39-a-v1.c
+    │   │   │   │   ├── test39-b-v0.c
+    │   │   │   │   ├── test39-b-v1.c
+    │   │   │   │   ├── test39-c-v0.c
+    │   │   │   │   ├── test39-c-v1.c
+    │   │   │   │   ├── test39.h
+    │   │   │   │   ├── test39-main.c
+    │   │   │   │   ├── test39-report-0.txt
+    │   │   │   │   ├── test39-v0
+    │   │   │   │   └── test39-v1
+    │   │   │   ├── test3-report.txt
+    │   │   │   ├── test3-v0.cc
+    │   │   │   ├── test3-v0.o
+    │   │   │   ├── test3-v1.cc
+    │   │   │   ├── test3-v1.o
+    │   │   │   ├── test40-report-0.txt
+    │   │   │   ├── test40-v0.cc
+    │   │   │   ├── test40-v1.cc
+    │   │   │   ├── test41-PR21486-abg-writer.gcc.o
+    │   │   │   ├── test41-PR21486-abg-writer.llvm.o
+    │   │   │   ├── test41-report-0.txt
+    │   │   │   ├── test42-leaf-report-output-0.txt
+    │   │   │   ├── test42-leaf-report-v0.cc
+    │   │   │   ├── test42-leaf-report-v1.cc
+    │   │   │   ├── test43-decl-only-def-change-leaf-report-0.txt
+    │   │   │   ├── test43-decl-only-def-change-leaf-report-v0.cc
+    │   │   │   ├── test43-decl-only-def-change-leaf-report-v1.cc
+    │   │   │   ├── test44-anonymous-data-member-report-0.txt
+    │   │   │   ├── test44-anonymous-data-member-report-1.txt
+    │   │   │   ├── test44-anonymous-data-member-v0.c
+    │   │   │   ├── test44-anonymous-data-member-v1.c
+    │   │   │   ├── test45-basic-type-change-v0.cc
+    │   │   │   ├── test45-basic-type-change-v1.cc
+    │   │   │   ├── test46-fn-return-qual-change-report-0.txt
+    │   │   │   ├── test46-fn-return-qual-change-v0.c
+    │   │   │   ├── test46-fn-return-qual-change-v0.o
+    │   │   │   ├── test46-fn-return-qual-change-v1.c
+    │   │   │   ├── test46-fn-return-qual-change-v1.o
+    │   │   │   ├── test47-filter-void-ptr-change-report-0.txt
+    │   │   │   ├── test47-filter-void-ptr-change-v0.c
+    │   │   │   ├── test47-filter-void-ptr-change-v0.o
+    │   │   │   ├── test47-filter-void-ptr-change-v1.c
+    │   │   │   ├── test47-filter-void-ptr-change-v1.o
+    │   │   │   ├── test4-report.txt
+    │   │   │   ├── test4-v0.cc
+    │   │   │   ├── test4-v0.o
+    │   │   │   ├── test4-v1.cc
+    │   │   │   ├── test4-v1.o
+    │   │   │   ├── test5-report.txt
+    │   │   │   ├── test5-v0.cc
+    │   │   │   ├── test5-v0.o
+    │   │   │   ├── test5-v1.cc
+    │   │   │   ├── test5-v1.o
+    │   │   │   ├── test6-report.txt
+    │   │   │   ├── test6-v0.cc
+    │   │   │   ├── test6-v0.o
+    │   │   │   ├── test6-v1.cc
+    │   │   │   ├── test6-v1.o
+    │   │   │   ├── test7-report.txt
+    │   │   │   ├── test7-v0.cc
+    │   │   │   ├── test7-v0.o
+    │   │   │   ├── test7-v1.cc
+    │   │   │   ├── test7-v1.o
+    │   │   │   ├── test8-report.txt
+    │   │   │   ├── test8-v0.cc
+    │   │   │   ├── test8-v0.o
+    │   │   │   ├── test8-v1.cc
+    │   │   │   ├── test8-v1.o
+    │   │   │   ├── test9-report.txt
+    │   │   │   ├── test9-v0.cc
+    │   │   │   ├── test9-v0.o
+    │   │   │   ├── test9-v1.cc
+    │   │   │   ├── test9-v1.o
+    │   │   │   ├── test-PR24731-report-0.txt
+    │   │   │   ├── test-PR24731-report-1.txt
+    │   │   │   ├── test-PR24731-v0.c
+    │   │   │   ├── test-PR24731-v0.o
+    │   │   │   ├── test-PR24731-v1.c
+    │   │   │   ├── test-PR24731-v1.o
+    │   │   │   ├── test-PR25661-1-report-1.txt
+    │   │   │   ├── test-PR25661-1-report-2.txt
+    │   │   │   ├── test-PR25661-1-report-3.txt
+    │   │   │   ├── test-PR25661-1-report-4.txt
+    │   │   │   ├── test-PR25661-1-v0.c
+    │   │   │   ├── test-PR25661-1-v0.o
+    │   │   │   ├── test-PR25661-1-v1.c
+    │   │   │   ├── test-PR25661-1-v1.o
+    │   │   │   ├── test-PR25661-2-report-1.txt
+    │   │   │   ├── test-PR25661-2-report-2.txt
+    │   │   │   ├── test-PR25661-2-report-3.txt
+    │   │   │   ├── test-PR25661-2-report-4.txt
+    │   │   │   ├── test-PR25661-2-v0.c
+    │   │   │   ├── test-PR25661-2-v0.o
+    │   │   │   ├── test-PR25661-2-v1.c
+    │   │   │   ├── test-PR25661-2-v1.o
+    │   │   │   ├── test-PR25661-3-report-1.txt
+    │   │   │   ├── test-PR25661-3-report-2.txt
+    │   │   │   ├── test-PR25661-3-report-3.txt
+    │   │   │   ├── test-PR25661-3-report-4.txt
+    │   │   │   ├── test-PR25661-3-v0.c
+    │   │   │   ├── test-PR25661-3-v0.o
+    │   │   │   ├── test-PR25661-3-v1.c
+    │   │   │   ├── test-PR25661-3-v1.o
+    │   │   │   ├── test-PR25661-4-report-1.txt
+    │   │   │   ├── test-PR25661-4-report-2.txt
+    │   │   │   ├── test-PR25661-4-report-3.txt
+    │   │   │   ├── test-PR25661-4-report-4.txt
+    │   │   │   ├── test-PR25661-4-v0.c
+    │   │   │   ├── test-PR25661-4-v0.o
+    │   │   │   ├── test-PR25661-4-v1.c
+    │   │   │   ├── test-PR25661-4-v1.o
+    │   │   │   ├── test-PR25661-5-report-1.txt
+    │   │   │   ├── test-PR25661-5-report-2.txt
+    │   │   │   ├── test-PR25661-5-report-3.txt
+    │   │   │   ├── test-PR25661-5-report-4.txt
+    │   │   │   ├── test-PR25661-5-v0.c
+    │   │   │   ├── test-PR25661-5-v0.o
+    │   │   │   ├── test-PR25661-5-v1.c
+    │   │   │   ├── test-PR25661-5-v1.o
+    │   │   │   ├── test-PR25661-6-report-1.txt
+    │   │   │   ├── test-PR25661-6-report-2.txt
+    │   │   │   ├── test-PR25661-6-report-3.txt
+    │   │   │   ├── test-PR25661-6-report-4.txt
+    │   │   │   ├── test-PR25661-6-v0.c
+    │   │   │   ├── test-PR25661-6-v0.o
+    │   │   │   ├── test-PR25661-6-v1.c
+    │   │   │   ├── test-PR25661-6-v1.o
+    │   │   │   ├── test-PR25661-7-report-1.txt
+    │   │   │   ├── test-PR25661-7-report-2.txt
+    │   │   │   ├── test-PR25661-7-report-3.txt
+    │   │   │   ├── test-PR25661-7-report-4.txt
+    │   │   │   ├── test-PR25661-7-v0.c
+    │   │   │   ├── test-PR25661-7-v0.o
+    │   │   │   ├── test-PR25661-7-v1.c
+    │   │   │   ├── test-PR25661-7-v1.o
+    │   │   │   ├── test-PR26309-report-0.txt
+    │   │   │   ├── test-PR26309-v0.c
+    │   │   │   ├── test-PR26309-v0.o
+    │   │   │   ├── test-PR26309-v1.c
+    │   │   │   ├── test-PR26309-v1.o
+    │   │   │   ├── test-PR26684.c
+    │   │   │   ├── test-PR26684-dwarf4.o
+    │   │   │   ├── test-PR26684-dwarf5.o
+    │   │   │   ├── test-PR26684-report-0.txt
+    │   │   │   ├── test-PR26739-2-report-0.txt
+    │   │   │   ├── test-PR26739-2-v0.c
+    │   │   │   ├── test-PR26739-2-v0.o
+    │   │   │   ├── test-PR26739-2-v1.c
+    │   │   │   ├── test-PR26739-2-v1.o
+    │   │   │   ├── test-PR26739-report-0.txt
+    │   │   │   ├── test-PR26739-v0.c
+    │   │   │   ├── test-PR26739-v0.o
+    │   │   │   ├── test-PR26739-v1.c
+    │   │   │   ├── test-PR26739-v1.o
+    │   │   │   ├── test-PR27331-report-0.txt
+    │   │   │   ├── test-PR27331-v0.c
+    │   │   │   ├── test-PR27331-v0.o
+    │   │   │   ├── test-PR27331-v1.c
+    │   │   │   ├── test-PR27331-v1.o
+    │   │   │   ├── test-PR27569-report-0.txt
+    │   │   │   ├── test-PR27569-v0.abi
+    │   │   │   ├── test-PR27569-v1.abi
+    │   │   │   ├── test-PR27598-report-0.txt
+    │   │   │   ├── test-PR27598-v0.cc
+    │   │   │   ├── test-PR27598-v0.o
+    │   │   │   ├── test-PR27598-v1.cc
+    │   │   │   ├── test-PR27598-v1.o
+    │   │   │   ├── test-PR27995.abi
+    │   │   │   ├── test-PR27995-report-0.txt
+    │   │   │   ├── test-PR28013-fn-variadic.c.0.abi
+    │   │   │   ├── test-PR28013-fn-variadic.c.1.abi
+    │   │   │   ├── test-PR28013-fn-variadic.c.report.txt
+    │   │   │   ├── test-PR29387-report.txt
+    │   │   │   ├── test-PR29387-v0.c
+    │   │   │   ├── test-PR29387-v0.o
+    │   │   │   ├── test-PR29387-v1.c
+    │   │   │   ├── test-PR29387-v1.o
+    │   │   │   ├── test-PR29811-0-report-0.txt
+    │   │   │   ├── test-PR29811-0-report-1.txt
+    │   │   │   ├── test-PR29811-0-v0.c
+    │   │   │   ├── test-PR29811-0-v0.o
+    │   │   │   ├── test-PR29811-0-v1.c
+    │   │   │   ├── test-PR29811-0-v1.o
+    │   │   │   ├── test-PR29811-unknown-size-array-dwarf-ctf.c
+    │   │   │   ├── test-PR29811-unknown-size-array-dwarf-ctf-CTF.o
+    │   │   │   ├── test-PR29811-unknown-size-array-dwarf-ctf-DWARF.o
+    │   │   │   └── test-PR29811-unknown-size-array-dwarf-ctf-report.txt
+    │   │   ├── test-diff-pkg
+    │   │   │   ├── cogl-1.22.8-2.fc33.x86_64.rpm
+    │   │   │   ├── cogl-1.22.8-2.fc33.x86_64.self-check-report-0.txt
+    │   │   │   ├── cogl-debuginfo-1.22.8-2.fc33.x86_64.rpm
+    │   │   │   ├── dbus-glib-0.104-3.fc23.armv7hl.rpm
+    │   │   │   ├── dbus-glib-0.104-3.fc23.x86_64--dbus-glib-0.104-3.fc23.armv7hl-report-0.txt
+    │   │   │   ├── dbus-glib-0.104-3.fc23.x86_64.rpm
+    │   │   │   ├── dbus-glib-0.80-3.fc12.x86_64.rpm
+    │   │   │   ├── dbus-glib-debuginfo-0.104-3.fc23.x86_64.rpm
+    │   │   │   ├── dbus-glib-debuginfo-0.80-3.fc12.x86_64.rpm
+    │   │   │   ├── dirpkg-0-dir1
+    │   │   │   │   ├── dir.abignore
+    │   │   │   │   ├── libobj-v0.so
+    │   │   │   │   └── obj-v0.cc
+    │   │   │   ├── dirpkg-0-dir2
+    │   │   │   │   ├── libobj-v0.so
+    │   │   │   │   └── obj-v0.cc
+    │   │   │   ├── dirpkg-0-report-0.txt
+    │   │   │   ├── dirpkg-1-dir1
+    │   │   │   │   ├── libobj-v0.so
+    │   │   │   │   └── obj-v0.cc
+    │   │   │   ├── dirpkg-1-dir2
+    │   │   │   │   ├── dir.abignore
+    │   │   │   │   ├── libobj-v0.so
+    │   │   │   │   └── obj-v0.cc
+    │   │   │   ├── dirpkg-1-report-0.txt
+    │   │   │   ├── dirpkg-1-report-1.txt
+    │   │   │   ├── dirpkg-2-dir1
+    │   │   │   │   ├── libobj-v0.so
+    │   │   │   │   └── obj-v0.cc
+    │   │   │   ├── dirpkg-2-dir2
+    │   │   │   │   ├── dir.abignore
+    │   │   │   │   ├── libobj-v0.so
+    │   │   │   │   └── obj-v0.cc
+    │   │   │   ├── dirpkg-2-report-0.txt
+    │   │   │   ├── dirpkg-3-dir1
+    │   │   │   │   ├── libobj-v0.so
+    │   │   │   │   └── obj-v0.cc
+    │   │   │   ├── dirpkg-3-dir2
+    │   │   │   │   ├── libobj-v0.so
+    │   │   │   │   └── obj-v0.cc
+    │   │   │   ├── dirpkg-3-report-0.txt
+    │   │   │   ├── dirpkg-3-report-1.txt
+    │   │   │   ├── dirpkg-3-report-2.txt
+    │   │   │   ├── dirpkg-3.suppr
+    │   │   │   ├── elfutils-debuginfo-0.170-4.el7.x86_64.rpm
+    │   │   │   ├── elfutils-debuginfo-0.171-1.el7.x86_64.rpm
+    │   │   │   ├── elfutils-debuginfo-0.183-1.el9.x86_64.rpm
+    │   │   │   ├── elfutils-devel-0.170-4.el7.x86_64.rpm
+    │   │   │   ├── elfutils-devel-0.171-1.el7.x86_64.rpm
+    │   │   │   ├── elfutils-libs-0.170-4.el7.x86_64-multiple-sym-vers-report-0.txt
+    │   │   │   ├── elfutils-libs-0.170-4.el7.x86_64.rpm
+    │   │   │   ├── elfutils-libs-0.171-1.el7.x86_64.rpm
+    │   │   │   ├── elfutils-libs-0.183-1.el9.x86_64.rpm
+    │   │   │   ├── elfutils-libs-debuginfo-0.183-1.el9.x86_64.rpm
+    │   │   │   ├── elfutils-libs-debuginfo-0.183-1.el9.x86_64-self-check-report-0.txt
+    │   │   │   ├── empty-pkg-libvirt-0.9.11.3-1.el7.ppc64.rpm
+    │   │   │   ├── empty-pkg-libvirt-1.2.17-13.el7_2.2.ppc64.rpm
+    │   │   │   ├── empty-pkg-report-0.txt
+    │   │   │   ├── glibc-2.32-3.fc33.aarch64.rpm
+    │   │   │   ├── glibc-2.32-3.fc33.aarch64-self-check-report-0.txt
+    │   │   │   ├── glibc-debuginfo-2.32-3.fc33.aarch64.rpm
+    │   │   │   ├── gmp-4.3.1-10.el6.ppc64.rpm
+    │   │   │   ├── gmp-4.3.1-7.el6_2.2.ppc64--gmp-4.3.1-10.el6.ppc64-report-0.txt
+    │   │   │   ├── gmp-4.3.1-7.el6_2.2.ppc64.rpm
+    │   │   │   ├── gmp-debuginfo-4.3.1-10.el6.ppc64.rpm
+    │   │   │   ├── gmp-debuginfo-4.3.1-7.el6_2.2.ppc64.rpm
+    │   │   │   ├── graphviz-2.44.0-18.el9.aarch64.rpm
+    │   │   │   ├── graphviz-2.44.0-18.el9.aarch64-self-check-report-0.txt
+    │   │   │   ├── graphviz-debuginfo-2.44.0-18.el9.aarch64.rpm
+    │   │   │   ├── gtk2-debuginfo-2.24.22-5.el7.i686.rpm
+    │   │   │   ├── gtk2-debuginfo-2.24.28-8.el7.i686.rpm
+    │   │   │   ├── gtk2-immodule-xim-2.24.22-5.el7.i686--gtk2-immodule-xim-2.24.28-8.el7.i686-report-0.txt
+    │   │   │   ├── gtk2-immodule-xim-2.24.22-5.el7.i686.rpm
+    │   │   │   ├── gtk2-immodule-xim-2.24.28-8.el7.i686.rpm
+    │   │   │   ├── GtkAda-debuginfo-2.24.2-29.fc29.x86_64.rpm
+    │   │   │   ├── GtkAda-debuginfo-2.24.2-30.fc30.x86_64.rpm
+    │   │   │   ├── GtkAda-devel-2.24.2-29.fc29.x86_64.rpm
+    │   │   │   ├── GtkAda-devel-2.24.2-30.fc30.x86_64.rpm
+    │   │   │   ├── GtkAda-gl-2.24.2-29.fc29.x86_64--2.24.2-30.fc30.x86_64-report-0.txt
+    │   │   │   ├── GtkAda-gl-2.24.2-29.fc29.x86_64.rpm
+    │   │   │   ├── GtkAda-gl-2.24.2-30.fc30.x86_64.rpm
+    │   │   │   ├── GtkAda-gl-debuginfo-2.24.2-29.fc29.x86_64.rpm
+    │   │   │   ├── GtkAda-gl-debuginfo-2.24.2-30.fc30.x86_64.rpm
+    │   │   │   ├── hdf5-1.10.6-2.fc33.x86_64.rpm
+    │   │   │   ├── hdf5-1.10.6-2.fc33.x86_64.self-check-report-0.txt
+    │   │   │   ├── hdf5-debuginfo-1.10.6-2.fc33.x86_64.rpm
+    │   │   │   ├── libcdio-0.94-1.fc26.x86_64--libcdio-0.94-2.fc26.x86_64-report.1.txt
+    │   │   │   ├── libcdio-0.94-1.fc26.x86_64.rpm
+    │   │   │   ├── libcdio-0.94-2.fc26.x86_64.rpm
+    │   │   │   ├── libcdio-debuginfo-0.94-1.fc26.x86_64.rpm
+    │   │   │   ├── libcdio-debuginfo-0.94-2.fc26.x86_64.rpm
+    │   │   │   ├── libICE-1.0.6-1.el6.x86_64.rpm
+    │   │   │   ├── libICE-1.0.6-1.el6.x86_64.rpm--libICE-1.0.9-2.el7.x86_64.rpm-report-0.txt
+    │   │   │   ├── libICE-1.0.9-2.el7.x86_64.rpm
+    │   │   │   ├── libICE-debuginfo-1.0.6-1.el6.x86_64.rpm
+    │   │   │   ├── libICE-debuginfo-1.0.9-2.el7.x86_64.rpm
+    │   │   │   ├── libsigc++-2.0-0c2a_2.4.0-1_amd64.deb
+    │   │   │   ├── libsigc++-2.0-0c2a_2.4.0-1_amd64--libsigc++-2.0-0v5_2.4.1-1ubuntu2_amd64-report-0.txt
+    │   │   │   ├── libsigc++-2.0-0c2a-dbgsym_2.4.0-1_amd64.ddeb
+    │   │   │   ├── libsigc++-2.0-0v5_2.4.1-1ubuntu2_amd64.deb
+    │   │   │   ├── libsigc++-2.0-0v5-dbgsym_2.4.1-1ubuntu2_amd64.ddeb
+    │   │   │   ├── libxcrypt-4.1.1-6.el8.x86_64--libxcrypt-4.1.1-6.el8.x86_64-output-1.txt
+    │   │   │   ├── libxcrypt-4.1.1-6.el8.x86_64--libxcrypt-compat-4.4.18-3.el9.x86_64-report-1.txt
+    │   │   │   ├── libxcrypt-4.1.1-6.el8.x86_64.rpm
+    │   │   │   ├── libxcrypt-4.4.18-3.el9.x86_64.rpm
+    │   │   │   ├── libxcrypt-compat-4.4.18-3.el9.x86_64.rpm
+    │   │   │   ├── libxcrypt-compat-debuginfo-4.4.18-3.el9.x86_64.rpm
+    │   │   │   ├── libxcrypt-debuginfo-4.1.1-6.el8.x86_64.rpm
+    │   │   │   ├── libxcrypt-debuginfo-4.4.18-3.el9.x86_64.rpm
+    │   │   │   ├── libxfce4ui-debuginfo-4.12.1-8.fc27.ppc64.rpm
+    │   │   │   ├── libxfce4ui-devel-4.12.1-8.fc27.ppc64.rpm
+    │   │   │   ├── libxfce4ui-devel-4.12.1-8.fc27.ppc64-self-report-0.txt
+    │   │   │   ├── libxfce4ui-devel-4.12.1-8.fc27.ppc64-self-report-ok-0.txt
+    │   │   │   ├── libxfce4ui-devel-debuginfo-4.12.1-8.fc27.ppc64.rpm
+    │   │   │   ├── mesa-libGLU-9.0.1-3.fc33.x86_64.rpm
+    │   │   │   ├── mesa-libGLU-9.0.1-3.fc33.x86_64.self-check-report-0.txt
+    │   │   │   ├── mesa-libGLU-debuginfo-9.0.1-3.fc33.x86_64.rpm
+    │   │   │   ├── netcdf-fortran-debuginfo-4.4.4-10.fc29.x86_64.rpm
+    │   │   │   ├── netcdf-fortran-debuginfo-4.4.4-11.fc30.x86_64.rpm
+    │   │   │   ├── netcdf-fortran-mpich-4.4.4-10.fc29.x86_64-4.4.4-11.fc30.x86_64-report-0.txt
+    │   │   │   ├── netcdf-fortran-mpich-4.4.4-10.fc29.x86_64.rpm
+    │   │   │   ├── netcdf-fortran-mpich-4.4.4-11.fc30.x86_64.rpm
+    │   │   │   ├── netcdf-fortran-mpich-debuginfo-4.4.4-10.fc29.x86_64.rpm
+    │   │   │   ├── netcdf-fortran-mpich-debuginfo-4.4.4-11.fc30.x86_64.rpm
+    │   │   │   ├── netcdf-fortran-mpich-devel-4.4.4-10.fc29.x86_64.rpm
+    │   │   │   ├── netcdf-fortran-mpich-devel-4.4.4-11.fc30.x86_64.rpm
+    │   │   │   ├── nmap-7.70-5.el8_testjcc.x86_64.rpm
+    │   │   │   ├── nmap-7.70-5.el8_testjcc.x86_64-self-check-report-0.txt
+    │   │   │   ├── nmap-debuginfo-7.70-5.el8_testjcc.x86_64.rpm
+    │   │   │   ├── nss-3.23.0-1.0.fc23.x86_64-report-0.txt
+    │   │   │   ├── nss-3.23.0-1.0.fc23.x86_64.rpm
+    │   │   │   ├── nss-3.24.0-1.0.fc23.x86_64.rpm
+    │   │   │   ├── nss-debuginfo-3.23.0-1.0.fc23.x86_64.rpm
+    │   │   │   ├── nss-debuginfo-3.24.0-1.0.fc23.x86_64.rpm
+    │   │   │   ├── nss-devel-3.23.0-1.0.fc23.x86_64.rpm
+    │   │   │   ├── nss-devel-3.24.0-1.0.fc23.x86_64.rpm
+    │   │   │   ├── PR24410-new
+    │   │   │   │   ├── poppler-debuginfo-0.73.0-8.fc30.x86_64.rpm
+    │   │   │   │   ├── poppler-qt5-0.73.0-8.fc30.x86_64.rpm
+    │   │   │   │   ├── poppler-qt5-debuginfo-0.73.0-8.fc30.x86_64.rpm
+    │   │   │   │   └── poppler-qt5-devel-0.73.0-8.fc30.x86_64.rpm
+    │   │   │   ├── PR24410-old
+    │   │   │   │   ├── poppler-debuginfo-0.73.0-4.fc30.x86_64.rpm
+    │   │   │   │   ├── poppler-qt5-0.73.0-4.fc30.x86_64.rpm
+    │   │   │   │   ├── poppler-qt5-debuginfo-0.73.0-4.fc30.x86_64.rpm
+    │   │   │   │   └── poppler-qt5-devel-0.73.0-4.fc30.x86_64.rpm
+    │   │   │   ├── PR24410-report-0.txt
+    │   │   │   ├── PR24690
+    │   │   │   │   ├── flatpak-debuginfo-1.2.4-3.fc30.x86_64.rpm
+    │   │   │   │   ├── flatpak-debuginfo-1.4.0-1.fc30.x86_64.rpm
+    │   │   │   │   ├── flatpak-devel-1.2.4-3.fc30.x86_64.rpm
+    │   │   │   │   ├── flatpak-devel-1.4.0-1.fc30.x86_64.rpm
+    │   │   │   │   ├── flatpak-libs-1.2.4-3.fc30.x86_64.rpm
+    │   │   │   │   ├── flatpak-libs-1.4.0-1.fc30.x86_64.rpm
+    │   │   │   │   ├── flatpak-libs-debuginfo-1.2.4-3.fc30.x86_64.rpm
+    │   │   │   │   ├── flatpak-libs-debuginfo-1.4.0-1.fc30.x86_64.rpm
+    │   │   │   │   └── PR24690-report-0.txt
+    │   │   │   ├── qemu-img-rhev-2.3.0-20.el7.ppc64.rpm
+    │   │   │   ├── qemu-img-rhev-2.3.0-7.el7.ppc64--qemu-img-rhev-2.3.0-20.el7.ppc64-report-0.txt
+    │   │   │   ├── qemu-img-rhev-2.3.0-7.el7.ppc64.rpm
+    │   │   │   ├── qemu-kvm-rhev-debuginfo-2.3.0-20.el7.ppc64.rpm
+    │   │   │   ├── qemu-kvm-rhev-debuginfo-2.3.0-7.el7.ppc64.rpm
+    │   │   │   ├── spice-debuginfo-0.12.4-19.el7.x86_64.rpm
+    │   │   │   ├── spice-debuginfo-0.12.8-1.el7.x86_64.rpm
+    │   │   │   ├── spice-server-0.12.4-19.el7.x86_64-0.12.8-1.el7.x86_64-report-0.txt
+    │   │   │   ├── spice-server-0.12.4-19.el7.x86_64-0.12.8-1.el7.x86_64-report-1.txt
+    │   │   │   ├── spice-server-0.12.4-19.el7.x86_64-0.12.8-1.el7.x86_64-report-2.txt
+    │   │   │   ├── spice-server-0.12.4-19.el7.x86_64-0.12.8-1.el7.x86_64-report-3.txt
+    │   │   │   ├── spice-server-0.12.4-19.el7.x86_64.rpm
+    │   │   │   ├── spice-server-0.12.8-1.el7.x86_64.rpm
+    │   │   │   ├── spice-server-devel-0.12.4-19.el7.x86_64.rpm
+    │   │   │   ├── spice-server-devel-0.12.8-1.el7.x86_64.rpm
+    │   │   │   ├── sshpass-1.07-1.fc34.x86_64.rpm
+    │   │   │   ├── sshpass-1.07-1.fc34.x86_64-self-check-report-0.txt
+    │   │   │   ├── sshpass-debuginfo-1.07-1.fc34.x86_64.rpm
+    │   │   │   ├── symlink-dir-test1
+    │   │   │   │   ├── dir1
+    │   │   │   │   │   ├── symlinks
+    │   │   │   │   │   │   ├── foo.o -> ../targets/foo.o
+    │   │   │   │   │   │   └── libfoo.so -> ../targets/libfoo.so
+    │   │   │   │   │   └── targets
+    │   │   │   │   │       ├── foo.c
+    │   │   │   │   │       ├── foo.o
+    │   │   │   │   │       └── libfoo.so
+    │   │   │   │   └── dir2
+    │   │   │   │       ├── symlinks
+    │   │   │   │       │   ├── foo.o -> ../targets/foo.o
+    │   │   │   │       │   └── libfoo.so -> ../targets/libfoo.so
+    │   │   │   │       └── targets
+    │   │   │   │           ├── foo.c
+    │   │   │   │           ├── foo.o
+    │   │   │   │           └── libfoo.so
+    │   │   │   ├── symlink-dir-test1-report0.txt
+    │   │   │   ├── symlink-dir-test1-report1.txt
+    │   │   │   ├── tarpkg-0-dir1.ta
+    │   │   │   ├── tarpkg-0-dir1.tar
+    │   │   │   ├── tarpkg-0-dir1.tar.bz2
+    │   │   │   ├── tarpkg-0-dir1.tar.gz
+    │   │   │   ├── tarpkg-0-dir2.ta
+    │   │   │   ├── tarpkg-0-dir2.tar
+    │   │   │   ├── tarpkg-0-dir2.tar.bz2
+    │   │   │   ├── tarpkg-0-dir2.tar.gz
+    │   │   │   ├── tarpkg-0-report-0.txt
+    │   │   │   ├── tarpkg-1-dir1.tar.gz
+    │   │   │   ├── tarpkg-1-dir2.tar.gz
+    │   │   │   ├── tarpkg-1-report-0.txt
+    │   │   │   ├── tbb-2017-8.20161128.fc26.x86_64.rpm
+    │   │   │   ├── tbb-2017-8.20161128.fc26.x86_64--tbb-2017-9.20170118.fc27.x86_64.txt
+    │   │   │   ├── tbb-2017-9.20170118.fc27.x86_64.rpm
+    │   │   │   ├── tbb-4.1-9.20130314.fc22.x86_64.rpm
+    │   │   │   ├── tbb-4.1-9.20130314.fc22.x86_64--tbb-4.3-3.20141204.fc23.x86_64-report-0.txt
+    │   │   │   ├── tbb-4.1-9.20130314.fc22.x86_64--tbb-4.3-3.20141204.fc23.x86_64-report-1.txt
+    │   │   │   ├── tbb-4.3-3.20141204.fc23.x86_64.rpm
+    │   │   │   ├── tbb-debuginfo-2017-8.20161128.fc26.x86_64.rpm
+    │   │   │   ├── tbb-debuginfo-2017-9.20170118.fc27.x86_64.rpm
+    │   │   │   ├── tbb-debuginfo-4.1-9.20130314.fc22.x86_64.rpm
+    │   │   │   ├── tbb-debuginfo-4.3-3.20141204.fc23.x86_64.rpm
+    │   │   │   ├── tbb-devel-4.1-9.20130314.fc22.x86_64.rpm
+    │   │   │   ├── tbb-devel-4.3-3.20141204.fc23.x86_64.rpm
+    │   │   │   ├── test-dbus-glib-0.80-3.fc12.x86_64-report-0.txt
+    │   │   │   ├── test-nonexistent-report-0.txt
+    │   │   │   ├── test-rpm-report-0.txt
+    │   │   │   ├── test-rpm-report-1.txt
+    │   │   │   ├── test-rpm-report-2.txt
+    │   │   │   ├── test-rpm-report-3.txt
+    │   │   │   ├── test-rpm-report-4.txt
+    │   │   │   ├── test-rpm-report-5.txt
+    │   │   │   └── wireshark
+    │   │   │       ├── wireshark-cli-3.4.9-1.fc36.x86_64.rpm
+    │   │   │       ├── wireshark-cli-3.4.9-1.fc36.x86_64-self-check-report.txt
+    │   │   │       ├── wireshark-cli-debuginfo-3.4.9-1.fc36.x86_64.rpm
+    │   │   │       └── wireshark-debuginfo-3.4.9-1.fc36.x86_64.rpm
+    │   │   ├── test-diff-pkg-ctf
+    │   │   │   ├── cracklib-2.9.6-15-ol8u0.x86_64.rpm
+    │   │   │   ├── cracklib-2.9.6-15-ol8u6.x86_64.rpm
+    │   │   │   ├── cracklib-2.9.6-15-ol8.x86_64-report-0.txt
+    │   │   │   ├── dirpkg-0-dir1
+    │   │   │   │   ├── dir.abignore
+    │   │   │   │   ├── libobj-v0.so
+    │   │   │   │   └── obj-v0.c
+    │   │   │   ├── dirpkg-0-dir2
+    │   │   │   │   ├── libobj-v0.so
+    │   │   │   │   └── obj-v0.c
+    │   │   │   ├── dirpkg-0-report-0.txt
+    │   │   │   ├── dirpkg-1-dir1
+    │   │   │   │   ├── libobj-v0.so
+    │   │   │   │   └── obj-v0.c
+    │   │   │   ├── dirpkg-1-dir2
+    │   │   │   │   ├── dir.abignore
+    │   │   │   │   ├── libobj-v0.so
+    │   │   │   │   └── obj-v0.c
+    │   │   │   ├── dirpkg-1-report-0.txt
+    │   │   │   ├── dirpkg-1-report-1.txt
+    │   │   │   ├── dirpkg-2-dir1
+    │   │   │   │   ├── libobj-v0.so
+    │   │   │   │   └── obj-v0.c
+    │   │   │   ├── dirpkg-2-dir2
+    │   │   │   │   ├── dir.abignore
+    │   │   │   │   ├── libobj-v0.so
+    │   │   │   │   └── obj-v0.c
+    │   │   │   ├── dirpkg-2-report-0.txt
+    │   │   │   ├── dirpkg-3-dir1
+    │   │   │   │   ├── libobj-v0.so
+    │   │   │   │   └── obj-v0.c
+    │   │   │   ├── dirpkg-3-dir2
+    │   │   │   │   ├── libobj-v0.so
+    │   │   │   │   └── obj-v0.c
+    │   │   │   ├── dirpkg-3-report-0.txt
+    │   │   │   ├── dirpkg-3-report-1.txt
+    │   │   │   ├── dirpkg-3-report-2.txt
+    │   │   │   ├── dirpkg-3.suppr
+    │   │   │   ├── elfutils-libelf-0.186-1.x86_64.rpm
+    │   │   │   ├── elfutils-libelf-0.186-2.x86_64.rpm
+    │   │   │   ├── elfutils-libelf-0.186-report-0.txt
+    │   │   │   ├── elfutils-libelf-0.186-report-1.txt
+    │   │   │   ├── gmp-6.1.2-8-ol8u0.x86_64.rpm
+    │   │   │   ├── gmp-6.2.0-10-ol9u0.x86_64.rpm
+    │   │   │   ├── gmp-6.x.x86_64-report-0.txt
+    │   │   │   ├── isl-0.16.1-6.x86_64.rpm
+    │   │   │   ├── isl-0.16.1-7.x86_64.rpm
+    │   │   │   ├── isl-0.16.1-report-0.txt
+    │   │   │   ├── isl-debuginfo-0.16.1-6.x86_64.rpm
+    │   │   │   ├── isl-debuginfo-0.16.1-7.x86_64.rpm
+    │   │   │   ├── libdwarf-20180129-4-no-ctf.x86_64.rpm
+    │   │   │   ├── libdwarf-20180129-4.x86_64.rpm
+    │   │   │   ├── libdwarf-20180129-5-no-ctf.x86_64.rpm
+    │   │   │   ├── libdwarf-20180129-5.x86_64.rpm
+    │   │   │   ├── symlink-dir-test1
+    │   │   │   │   ├── dir1
+    │   │   │   │   │   ├── symlinks
+    │   │   │   │   │   │   ├── foo.o -> ../targets/foo.o
+    │   │   │   │   │   │   └── libfoo.so -> ../targets/libfoo.so
+    │   │   │   │   │   └── targets
+    │   │   │   │   │       ├── foo.c
+    │   │   │   │   │       ├── foo.o
+    │   │   │   │   │       └── libfoo.so
+    │   │   │   │   └── dir2
+    │   │   │   │       ├── symlinks
+    │   │   │   │       │   ├── foo.o -> ../targets/foo.o
+    │   │   │   │       │   └── libfoo.so -> ../targets/libfoo.so
+    │   │   │   │       └── targets
+    │   │   │   │           ├── foo.c
+    │   │   │   │           ├── foo.o
+    │   │   │   │           └── libfoo.so
+    │   │   │   ├── symlink-dir-test1-report0.txt
+    │   │   │   ├── symlink-dir-test1-report1.txt
+    │   │   │   ├── tarpkg-0-dir1.ta
+    │   │   │   ├── tarpkg-0-dir1.tar
+    │   │   │   ├── tarpkg-0-dir1.tar.bz2
+    │   │   │   ├── tarpkg-0-dir1.tar.gz
+    │   │   │   ├── tarpkg-0-dir2.ta
+    │   │   │   ├── tarpkg-0-dir2.tar
+    │   │   │   ├── tarpkg-0-dir2.tar.bz2
+    │   │   │   ├── tarpkg-0-dir2.tar.gz
+    │   │   │   ├── tarpkg-0-report-0.txt
+    │   │   │   ├── tarpkg-1-dir1.tar.gz
+    │   │   │   ├── tarpkg-1-dir2.tar.gz
+    │   │   │   ├── tarpkg-1-report-0.txt
+    │   │   │   ├── test-rpm-report-0.txt
+    │   │   │   ├── test-rpm-report-1.txt
+    │   │   │   ├── test-rpm-report-2.txt
+    │   │   │   ├── test-rpm-report-3.txt
+    │   │   │   ├── test-rpm-report-4.txt
+    │   │   │   └── test-rpm-report-5.txt
+    │   │   ├── test-diff-suppr
+    │   │   │   ├── has-data-member-1.suppr
+    │   │   │   ├── has-data-member-2.suppr
+    │   │   │   ├── has-data-member-3.suppr
+    │   │   │   ├── has-data-member-4.suppr
+    │   │   │   ├── has-data-member-5.suppr
+    │   │   │   ├── has-data-member-6.suppr
+    │   │   │   ├── has-data-member-7.suppr
+    │   │   │   ├── libtest10-changed-parm-c-v0.so
+    │   │   │   ├── libtest10-changed-parm-c-v1.so
+    │   │   │   ├── libtest11-add-data-member-v0.so
+    │   │   │   ├── libtest11-add-data-member-v1.so
+    │   │   │   ├── libtest12-add-data-member-v0.so
+    │   │   │   ├── libtest12-add-data-member-v1.so
+    │   │   │   ├── libtest13-suppr-through-pointer-v0.so
+    │   │   │   ├── libtest13-suppr-through-pointer-v1.so
+    │   │   │   ├── libtest23-alias-filter-v0.so
+    │   │   │   ├── libtest23-alias-filter-v1.so
+    │   │   │   ├── libtest24-soname-v0.so
+    │   │   │   ├── libtest24-soname-v1.so
+    │   │   │   ├── libtest25-typedef-v0.so
+    │   │   │   ├── libtest25-typedef-v1.so
+    │   │   │   ├── libtest26-loc-suppr-v0.so
+    │   │   │   ├── libtest26-loc-suppr-v1.so
+    │   │   │   ├── libtest29-soname-v0.so
+    │   │   │   ├── libtest29-soname-v1.so
+    │   │   │   ├── libtest31.suppr
+    │   │   │   ├── libtest31-v0.so
+    │   │   │   ├── libtest31-v1.so
+    │   │   │   ├── libtest32-0.suppr
+    │   │   │   ├── libtest32-v0.so
+    │   │   │   ├── libtest32-v1.so
+    │   │   │   ├── libtest33-v0.so
+    │   │   │   ├── libtest33-v1.so
+    │   │   │   ├── libtest34-v0.so
+    │   │   │   ├── libtest34-v1.so
+    │   │   │   ├── libtest35-leaf-v0.so
+    │   │   │   ├── libtest35-leaf-v1.so
+    │   │   │   ├── libtest36-leaf-v0.so
+    │   │   │   ├── libtest36-leaf-v1.so
+    │   │   │   ├── libtest40-enumerator-changes-v0.so
+    │   │   │   ├── libtest40-enumerator-changes-v1.so
+    │   │   │   ├── libtest41-enumerator-changes-v0.so
+    │   │   │   ├── libtest41-enumerator-changes-v1.so
+    │   │   │   ├── libtest48-soname-abixml-report-1.txt
+    │   │   │   ├── libtest48-soname-abixml-report-2.txt
+    │   │   │   ├── libtest48-soname-abixml-suppr-2.txt
+    │   │   │   ├── libtest48-soname-abixml-suppr-3.txt
+    │   │   │   ├── libtest48-soname-abixml-suppr-4.txt
+    │   │   │   ├── libtest48-soname-abixml-suppr.txt
+    │   │   │   ├── libtest48-soname-abixml-v0.so
+    │   │   │   ├── libtest48-soname-abixml-v0.so.abi
+    │   │   │   ├── libtest48-soname-abixml-v1.so
+    │   │   │   ├── libtest48-soname-abixml-v1.so.abi
+    │   │   │   ├── libtest4-local-suppr-v0.so
+    │   │   │   ├── libtest4-local-suppr-v1.so
+    │   │   │   ├── libtest5-fn-suppr-v0.so
+    │   │   │   ├── libtest5-fn-suppr-v1.so
+    │   │   │   ├── libtest6-fn-suppr-v0.so
+    │   │   │   ├── libtest6-fn-suppr-v1.so
+    │   │   │   ├── libtest7-var-suppr-v0.so
+    │   │   │   ├── libtest7-var-suppr-v1.so
+    │   │   │   ├── libtest8-redundant-fn-v0.so
+    │   │   │   ├── libtest8-redundant-fn-v1.so
+    │   │   │   ├── libtest9-changed-parm-c-v0.so
+    │   │   │   ├── libtest9-changed-parm-c-v1.so
+    │   │   │   ├── PR27267
+    │   │   │   │   ├── include-dir-v0
+    │   │   │   │   │   └── include.h
+    │   │   │   │   ├── include-dir-v1
+    │   │   │   │   │   └── include.h
+    │   │   │   │   ├── libtestpr27267-v0.so
+    │   │   │   │   ├── libtestpr27267-v1.so
+    │   │   │   │   ├── report-1.txt
+    │   │   │   │   ├── v0.c
+    │   │   │   │   └── v1.c
+    │   │   │   ├── PR28073
+    │   │   │   │   ├── bitfield.suppr
+    │   │   │   │   ├── PR28073.after.o
+    │   │   │   │   ├── PR28073.after.o.abi
+    │   │   │   │   ├── PR28073.before.o
+    │   │   │   │   ├── PR28073.before.o.abi
+    │   │   │   │   ├── PR28073-bitfield-removed.c
+    │   │   │   │   ├── PR28073-bitfield-removed.o
+    │   │   │   │   ├── PR28073-bitfield-removed.o.abi
+    │   │   │   │   ├── PR28073.c
+    │   │   │   │   ├── PR28073-output-1.txt
+    │   │   │   │   └── PR28073-output-2.txt
+    │   │   │   ├── test0-type-suppr-0.suppr
+    │   │   │   ├── test0-type-suppr-1.suppr
+    │   │   │   ├── test0-type-suppr-2.suppr
+    │   │   │   ├── test0-type-suppr-3.suppr
+    │   │   │   ├── test0-type-suppr-4.suppr
+    │   │   │   ├── test0-type-suppr-5.suppr
+    │   │   │   ├── test0-type-suppr-6.suppr
+    │   │   │   ├── test0-type-suppr-report-0.txt
+    │   │   │   ├── test0-type-suppr-report-1.txt
+    │   │   │   ├── test0-type-suppr-report-2.txt
+    │   │   │   ├── test0-type-suppr-report-3.txt
+    │   │   │   ├── test0-type-suppr-report-4.txt
+    │   │   │   ├── test0-type-suppr-report-5.txt
+    │   │   │   ├── test0-type-suppr-report-6.txt
+    │   │   │   ├── test0-type-suppr-report-7.txt
+    │   │   │   ├── test0-type-suppr-v0.cc
+    │   │   │   ├── test0-type-suppr-v0.o
+    │   │   │   ├── test0-type-suppr-v1.cc
+    │   │   │   ├── test0-type-suppr-v1.o
+    │   │   │   ├── test10-changed-parm-c-report-0.txt
+    │   │   │   ├── test10-changed-parm-c-v0.c
+    │   │   │   ├── test10-changed-parm-c-v1.c
+    │   │   │   ├── test11-add-data-member-0.1.suppr
+    │   │   │   ├── test11-add-data-member-0.suppr
+    │   │   │   ├── test11-add-data-member-1.1.suppr
+    │   │   │   ├── test11-add-data-member-1.suppr
+    │   │   │   ├── test11-add-data-member-2.1.suppr
+    │   │   │   ├── test11-add-data-member-2.suppr
+    │   │   │   ├── test11-add-data-member-3.1.suppr
+    │   │   │   ├── test11-add-data-member-3.suppr
+    │   │   │   ├── test11-add-data-member-4.1.suppr
+    │   │   │   ├── test11-add-data-member-4.suppr
+    │   │   │   ├── test11-add-data-member-report-0.txt
+    │   │   │   ├── test11-add-data-member-report-1.1.txt
+    │   │   │   ├── test11-add-data-member-report-1.txt
+    │   │   │   ├── test11-add-data-member-v0.cc
+    │   │   │   ├── test11-add-data-member-v1.cc
+    │   │   │   ├── test12-add-data-member-0.1.suppr
+    │   │   │   ├── test12-add-data-member-0.suppr
+    │   │   │   ├── test12-add-data-member-1.suppr
+    │   │   │   ├── test12-add-data-member-report-0.txt
+    │   │   │   ├── test12-add-data-member-report-1.1.txt
+    │   │   │   ├── test12-add-data-member-report-1.txt
+    │   │   │   ├── test12-add-data-member-report-2.txt
+    │   │   │   ├── test12-add-data-member-v0.cc
+    │   │   │   ├── test12-add-data-member-v1.cc
+    │   │   │   ├── test13-suppr-through-pointer-0.1.suppr
+    │   │   │   ├── test13-suppr-through-pointer-0.suppr
+    │   │   │   ├── test13-suppr-through-pointer-report-0.txt
+    │   │   │   ├── test13-suppr-through-pointer-report-1.1.txt
+    │   │   │   ├── test13-suppr-through-pointer-report-1.txt
+    │   │   │   ├── test13-suppr-through-pointer-v0.cc
+    │   │   │   ├── test13-suppr-through-pointer-v1.cc
+    │   │   │   ├── test14-suppr-non-redundant-0.suppr
+    │   │   │   ├── test14-suppr-non-redundant-report-0.txt
+    │   │   │   ├── test14-suppr-non-redundant-report-1.txt
+    │   │   │   ├── test14-suppr-non-redundant-v0.cc
+    │   │   │   ├── test14-suppr-non-redundant-v0.o
+    │   │   │   ├── test14-suppr-non-redundant-v1.cc
+    │   │   │   ├── test14-suppr-non-redundant-v1.o
+    │   │   │   ├── test15-suppr-added-fn-0.suppr
+    │   │   │   ├── test15-suppr-added-fn-1.suppr
+    │   │   │   ├── test15-suppr-added-fn-2.suppr
+    │   │   │   ├── test15-suppr-added-fn-3.suppr
+    │   │   │   ├── test15-suppr-added-fn-4.suppr
+    │   │   │   ├── test15-suppr-added-fn-report-0.txt
+    │   │   │   ├── test15-suppr-added-fn-report-1.txt
+    │   │   │   ├── test15-suppr-added-fn-report-2.txt
+    │   │   │   ├── test15-suppr-added-fn-report-3.txt
+    │   │   │   ├── test15-suppr-added-fn-report-4.txt
+    │   │   │   ├── test15-suppr-added-fn-report-5.txt
+    │   │   │   ├── test15-suppr-added-fn-v0.cc
+    │   │   │   ├── test15-suppr-added-fn-v0.o
+    │   │   │   ├── test15-suppr-added-fn-v1.cc
+    │   │   │   ├── test15-suppr-added-fn-v1.o
+    │   │   │   ├── test16-suppr-removed-fn-0.suppr
+    │   │   │   ├── test16-suppr-removed-fn-1.suppr
+    │   │   │   ├── test16-suppr-removed-fn-2.suppr
+    │   │   │   ├── test16-suppr-removed-fn-3.suppr
+    │   │   │   ├── test16-suppr-removed-fn-4.suppr
+    │   │   │   ├── test16-suppr-removed-fn-report-0.txt
+    │   │   │   ├── test16-suppr-removed-fn-report-1.txt
+    │   │   │   ├── test16-suppr-removed-fn-report-2.txt
+    │   │   │   ├── test16-suppr-removed-fn-report-3.txt
+    │   │   │   ├── test16-suppr-removed-fn-report-4.txt
+    │   │   │   ├── test16-suppr-removed-fn-report-5.txt
+    │   │   │   ├── test16-suppr-removed-fn-v0.cc
+    │   │   │   ├── test16-suppr-removed-fn-v0.o
+    │   │   │   ├── test16-suppr-removed-fn-v1.cc
+    │   │   │   ├── test16-suppr-removed-fn-v1.o
+    │   │   │   ├── test17-suppr-added-var-0.suppr
+    │   │   │   ├── test17-suppr-added-var-1.suppr
+    │   │   │   ├── test17-suppr-added-var-2.suppr
+    │   │   │   ├── test17-suppr-added-var-3.suppr
+    │   │   │   ├── test17-suppr-added-var-4.suppr
+    │   │   │   ├── test17-suppr-added-var-report-0.txt
+    │   │   │   ├── test17-suppr-added-var-report-1.txt
+    │   │   │   ├── test17-suppr-added-var-report-2.txt
+    │   │   │   ├── test17-suppr-added-var-report-3.txt
+    │   │   │   ├── test17-suppr-added-var-report-4.txt
+    │   │   │   ├── test17-suppr-added-var-report-5.txt
+    │   │   │   ├── test17-suppr-added-var-v0.cc
+    │   │   │   ├── test17-suppr-added-var-v0.o
+    │   │   │   ├── test17-suppr-added-var-v1.cc
+    │   │   │   ├── test17-suppr-added-var-v1.o
+    │   │   │   ├── test18-suppr-removed-var-0.suppr
+    │   │   │   ├── test18-suppr-removed-var-1.suppr
+    │   │   │   ├── test18-suppr-removed-var-2.suppr
+    │   │   │   ├── test18-suppr-removed-var-3.suppr
+    │   │   │   ├── test18-suppr-removed-var-4.suppr
+    │   │   │   ├── test18-suppr-removed-var-report-0.txt
+    │   │   │   ├── test18-suppr-removed-var-report-1.txt
+    │   │   │   ├── test18-suppr-removed-var-report-2.txt
+    │   │   │   ├── test18-suppr-removed-var-report-3.txt
+    │   │   │   ├── test18-suppr-removed-var-report-4.txt
+    │   │   │   ├── test18-suppr-removed-var-report-5.txt
+    │   │   │   ├── test18-suppr-removed-var-v0.cc
+    │   │   │   ├── test18-suppr-removed-var-v0.o
+    │   │   │   ├── test18-suppr-removed-var-v1.cc
+    │   │   │   ├── test18-suppr-removed-var-v1.o
+    │   │   │   ├── test19-suppr-added-fn-sym-0.suppr
+    │   │   │   ├── test19-suppr-added-fn-sym-1.suppr
+    │   │   │   ├── test19-suppr-added-fn-sym-2.suppr
+    │   │   │   ├── test19-suppr-added-fn-sym-3.suppr
+    │   │   │   ├── test19-suppr-added-fn-sym-4.suppr
+    │   │   │   ├── test19-suppr-added-fn-sym-report-0.txt
+    │   │   │   ├── test19-suppr-added-fn-sym-report-1.txt
+    │   │   │   ├── test19-suppr-added-fn-sym-report-2.txt
+    │   │   │   ├── test19-suppr-added-fn-sym-report-3.txt
+    │   │   │   ├── test19-suppr-added-fn-sym-report-4.txt
+    │   │   │   ├── test19-suppr-added-fn-sym-report-5.txt
+    │   │   │   ├── test19-suppr-added-fn-sym-v0.cc
+    │   │   │   ├── test19-suppr-added-fn-sym-v0.o
+    │   │   │   ├── test19-suppr-added-fn-sym-v1.cc
+    │   │   │   ├── test19-suppr-added-fn-sym-v1.o
+    │   │   │   ├── test1-typedef-suppr-0.suppr
+    │   │   │   ├── test1-typedef-suppr-1.suppr
+    │   │   │   ├── test1-typedef-suppr.h
+    │   │   │   ├── test1-typedef-suppr-report-0.txt
+    │   │   │   ├── test1-typedef-suppr-report-1.txt
+    │   │   │   ├── test1-typedef-suppr-report-2.txt
+    │   │   │   ├── test1-typedef-suppr-v0.c
+    │   │   │   ├── test1-typedef-suppr-v0.o
+    │   │   │   ├── test1-typedef-suppr-v1.c
+    │   │   │   ├── test1-typedef-suppr-v1.o
+    │   │   │   ├── test20-suppr-removed-fn-sym-0.suppr
+    │   │   │   ├── test20-suppr-removed-fn-sym-1.suppr
+    │   │   │   ├── test20-suppr-removed-fn-sym-2.suppr
+    │   │   │   ├── test20-suppr-removed-fn-sym-3.suppr
+    │   │   │   ├── test20-suppr-removed-fn-sym-4.suppr
+    │   │   │   ├── test20-suppr-removed-fn-sym-report-0.txt
+    │   │   │   ├── test20-suppr-removed-fn-sym-report-1.txt
+    │   │   │   ├── test20-suppr-removed-fn-sym-report-2.txt
+    │   │   │   ├── test20-suppr-removed-fn-sym-report-3.txt
+    │   │   │   ├── test20-suppr-removed-fn-sym-report-4.txt
+    │   │   │   ├── test20-suppr-removed-fn-sym-report-5.txt
+    │   │   │   ├── test20-suppr-removed-fn-sym-v0.cc
+    │   │   │   ├── test20-suppr-removed-fn-sym-v0.o
+    │   │   │   ├── test20-suppr-removed-fn-sym-v1.cc
+    │   │   │   ├── test20-suppr-removed-fn-sym-v1.o
+    │   │   │   ├── test21-suppr-added-var-sym-0.suppr
+    │   │   │   ├── test21-suppr-added-var-sym-1.suppr
+    │   │   │   ├── test21-suppr-added-var-sym-2.suppr
+    │   │   │   ├── test21-suppr-added-var-sym-3.suppr
+    │   │   │   ├── test21-suppr-added-var-sym-4.suppr
+    │   │   │   ├── test21-suppr-added-var-sym-report-0.txt
+    │   │   │   ├── test21-suppr-added-var-sym-report-1.txt
+    │   │   │   ├── test21-suppr-added-var-sym-report-2.txt
+    │   │   │   ├── test21-suppr-added-var-sym-report-3.txt
+    │   │   │   ├── test21-suppr-added-var-sym-report-4.txt
+    │   │   │   ├── test21-suppr-added-var-sym-report-5.txt
+    │   │   │   ├── test21-suppr-added-var-sym-v0.cc
+    │   │   │   ├── test21-suppr-added-var-sym-v0.o
+    │   │   │   ├── test21-suppr-added-var-sym-v1.cc
+    │   │   │   ├── test21-suppr-added-var-sym-v1.o
+    │   │   │   ├── test22-suppr-removed-var-sym-0.suppr
+    │   │   │   ├── test22-suppr-removed-var-sym-1.suppr
+    │   │   │   ├── test22-suppr-removed-var-sym-2.suppr
+    │   │   │   ├── test22-suppr-removed-var-sym-3.suppr
+    │   │   │   ├── test22-suppr-removed-var-sym-4.suppr
+    │   │   │   ├── test22-suppr-removed-var-sym-report-0.txt
+    │   │   │   ├── test22-suppr-removed-var-sym-report-1.txt
+    │   │   │   ├── test22-suppr-removed-var-sym-report-2.txt
+    │   │   │   ├── test22-suppr-removed-var-sym-report-3.txt
+    │   │   │   ├── test22-suppr-removed-var-sym-report-4.txt
+    │   │   │   ├── test22-suppr-removed-var-sym-report-5.txt
+    │   │   │   ├── test22-suppr-removed-var-sym-v0.cc
+    │   │   │   ├── test22-suppr-removed-var-sym-v0.o
+    │   │   │   ├── test22-suppr-removed-var-sym-v1.cc
+    │   │   │   ├── test22-suppr-removed-var-sym-v1.o
+    │   │   │   ├── test23-alias-filter-0.suppr
+    │   │   │   ├── test23-alias-filter-1.suppr
+    │   │   │   ├── test23-alias-filter-2.suppr
+    │   │   │   ├── test23-alias-filter-3.suppr
+    │   │   │   ├── test23-alias-filter-4.suppr
+    │   │   │   ├── test23-alias-filter-report-0.txt
+    │   │   │   ├── test23-alias-filter-report-1.txt
+    │   │   │   ├── test23-alias-filter-report-2.txt
+    │   │   │   ├── test23-alias-filter-report-3.txt
+    │   │   │   ├── test23-alias-filter-report-4.txt
+    │   │   │   ├── test23-alias-filter-report-5.txt
+    │   │   │   ├── test23-alias-filter-v0.c
+    │   │   │   ├── test23-alias-filter-v1.c
+    │   │   │   ├── test23-alias-filter-version-script
+    │   │   │   ├── test24-soname-report-0.txt
+    │   │   │   ├── test24-soname-report-10.txt
+    │   │   │   ├── test24-soname-report-11.txt
+    │   │   │   ├── test24-soname-report-12.txt
+    │   │   │   ├── test24-soname-report-13.txt
+    │   │   │   ├── test24-soname-report-14.txt
+    │   │   │   ├── test24-soname-report-15.txt
+    │   │   │   ├── test24-soname-report-16.txt
+    │   │   │   ├── test24-soname-report-1.txt
+    │   │   │   ├── test24-soname-report-2.txt
+    │   │   │   ├── test24-soname-report-3.txt
+    │   │   │   ├── test24-soname-report-4.txt
+    │   │   │   ├── test24-soname-report-5.txt
+    │   │   │   ├── test24-soname-report-6.txt
+    │   │   │   ├── test24-soname-report-7.txt
+    │   │   │   ├── test24-soname-report-8.txt
+    │   │   │   ├── test24-soname-report-9.txt
+    │   │   │   ├── test24-soname-suppr-0.txt
+    │   │   │   ├── test24-soname-suppr-10.txt
+    │   │   │   ├── test24-soname-suppr-11.txt
+    │   │   │   ├── test24-soname-suppr-12.txt
+    │   │   │   ├── test24-soname-suppr-13.txt
+    │   │   │   ├── test24-soname-suppr-14.txt
+    │   │   │   ├── test24-soname-suppr-15.txt
+    │   │   │   ├── test24-soname-suppr-16.txt
+    │   │   │   ├── test24-soname-suppr-1.txt
+    │   │   │   ├── test24-soname-suppr-2.txt
+    │   │   │   ├── test24-soname-suppr-3.txt
+    │   │   │   ├── test24-soname-suppr-4.txt
+    │   │   │   ├── test24-soname-suppr-5.txt
+    │   │   │   ├── test24-soname-suppr-6.txt
+    │   │   │   ├── test24-soname-suppr-7.txt
+    │   │   │   ├── test24-soname-suppr-8.txt
+    │   │   │   ├── test24-soname-suppr-9.txt
+    │   │   │   ├── test24-soname-v0.cc
+    │   │   │   ├── test24-soname-v1.cc
+    │   │   │   ├── test25-typedef-report-0.txt
+    │   │   │   ├── test25-typedef-report-1.txt
+    │   │   │   ├── test25-typedef-suppr-0.txt
+    │   │   │   ├── test25-typedef-v0.c
+    │   │   │   ├── test25-typedef-v1.c
+    │   │   │   ├── test26-loc-suppr-0.suppr
+    │   │   │   ├── test26-loc-suppr-1.suppr
+    │   │   │   ├── test26-loc-suppr-2.suppr
+    │   │   │   ├── test26-loc-suppr.h
+    │   │   │   ├── test26-loc-suppr-report-0.txt
+    │   │   │   ├── test26-loc-suppr-report-1.txt
+    │   │   │   ├── test26-loc-suppr-report-2.txt
+    │   │   │   ├── test26-loc-suppr-report-3.txt
+    │   │   │   ├── test26-loc-suppr-v0.cc
+    │   │   │   ├── test26-loc-suppr-v1.cc
+    │   │   │   ├── test27-add-aliased-function-0.suppr
+    │   │   │   ├── test27-add-aliased-function-1.suppr
+    │   │   │   ├── test27-add-aliased-function-2.suppr
+    │   │   │   ├── test27-add-aliased-function-3.suppr
+    │   │   │   ├── test27-add-aliased-function-4.suppr
+    │   │   │   ├── test27-add-aliased-function-report-0.txt
+    │   │   │   ├── test27-add-aliased-function-report-1.txt
+    │   │   │   ├── test27-add-aliased-function-report-2.txt
+    │   │   │   ├── test27-add-aliased-function-report-3.txt
+    │   │   │   ├── test27-add-aliased-function-report-4.txt
+    │   │   │   ├── test27-add-aliased-function-report-5.txt
+    │   │   │   ├── test27-add-aliased-function-v0.cc
+    │   │   │   ├── test27-add-aliased-function-v0.o
+    │   │   │   ├── test27-add-aliased-function-v1.cc
+    │   │   │   ├── test27-add-aliased-function-v1.o
+    │   │   │   ├── test28-add-aliased-function-0.suppr
+    │   │   │   ├── test28-add-aliased-function-1.suppr
+    │   │   │   ├── test28-add-aliased-function-2.suppr
+    │   │   │   ├── test28-add-aliased-function-3.suppr
+    │   │   │   ├── test28-add-aliased-function-4.suppr
+    │   │   │   ├── test28-add-aliased-function-5.suppr
+    │   │   │   ├── test28-add-aliased-function-report-0.txt
+    │   │   │   ├── test28-add-aliased-function-report-1.txt
+    │   │   │   ├── test28-add-aliased-function-report-2.txt
+    │   │   │   ├── test28-add-aliased-function-report-3.txt
+    │   │   │   ├── test28-add-aliased-function-report-4.txt
+    │   │   │   ├── test28-add-aliased-function-report-5.txt
+    │   │   │   ├── test28-add-aliased-function-report-6.txt
+    │   │   │   ├── test28-add-aliased-function-v0.c
+    │   │   │   ├── test28-add-aliased-function-v0.o
+    │   │   │   ├── test28-add-aliased-function-v1.c
+    │   │   │   ├── test28-add-aliased-function-v1.o
+    │   │   │   ├── test29-soname-report-0.txt
+    │   │   │   ├── test29-soname-report-1.txt
+    │   │   │   ├── test29-soname-report-2.txt
+    │   │   │   ├── test29-soname-report-3.txt
+    │   │   │   ├── test29-soname-report-4.txt
+    │   │   │   ├── test29-soname-report-5.txt
+    │   │   │   ├── test29-soname-report-6.txt
+    │   │   │   ├── test29-soname-report-7.txt
+    │   │   │   ├── test29-soname-report-8.txt
+    │   │   │   ├── test29-soname-v0.cc
+    │   │   │   ├── test29-soname-v1.cc
+    │   │   │   ├── test29-suppr-0.txt
+    │   │   │   ├── test29-suppr-1.txt
+    │   │   │   ├── test29-suppr-2.txt
+    │   │   │   ├── test29-suppr-3.txt
+    │   │   │   ├── test29-suppr-4.txt
+    │   │   │   ├── test29-suppr-5.txt
+    │   │   │   ├── test29-suppr-6.txt
+    │   │   │   ├── test29-suppr-7.txt
+    │   │   │   ├── test29-suppr-8.txt
+    │   │   │   ├── test2-struct-suppr-0.suppr
+    │   │   │   ├── test2-struct-suppr-1.suppr
+    │   │   │   ├── test2-struct-suppr-report-0.txt
+    │   │   │   ├── test2-struct-suppr-report-1.txt
+    │   │   │   ├── test2-struct-suppr-v0.cc
+    │   │   │   ├── test2-struct-suppr-v0.o
+    │   │   │   ├── test2-struct-suppr-v1.cc
+    │   │   │   ├── test2-struct-suppr-v1.o
+    │   │   │   ├── test30-include-dir-v0
+    │   │   │   │   └── test30-pub-lib-v0.h
+    │   │   │   ├── test30-include-dir-v1
+    │   │   │   │   └── test30-pub-lib-v1.h
+    │   │   │   ├── test30-priv-lib-v0.cc
+    │   │   │   ├── test30-priv-lib-v0.h
+    │   │   │   ├── test30-priv-lib-v1.cc
+    │   │   │   ├── test30-priv-lib-v1.h
+    │   │   │   ├── test30-pub-lib-v0.cc
+    │   │   │   ├── test30-pub-lib-v0.so
+    │   │   │   ├── test30-pub-lib-v1.cc
+    │   │   │   ├── test30-pub-lib-v1.so
+    │   │   │   ├── test30-report-0.txt
+    │   │   │   ├── test30-report-1.txt
+    │   │   │   ├── test31-report-0.txt
+    │   │   │   ├── test31-report-1.txt
+    │   │   │   ├── test31-v0.cc
+    │   │   │   ├── test31-v1.cc
+    │   │   │   ├── test32-report-0.txt
+    │   │   │   ├── test32-report-1.txt
+    │   │   │   ├── test32-v0.c
+    │   │   │   ├── test32-v1.c
+    │   │   │   ├── test33-report-0.txt
+    │   │   │   ├── test33-suppr-1.txt
+    │   │   │   ├── test33-v0.cc
+    │   │   │   ├── test33-v0.h
+    │   │   │   ├── test33-v1.cc
+    │   │   │   ├── test33-v1.h
+    │   │   │   ├── test34-priv-include-dir-v0
+    │   │   │   │   └── test34-priv-include-v0.h
+    │   │   │   ├── test34-priv-include-dir-v1
+    │   │   │   │   └── test34-priv-include-v1.h
+    │   │   │   ├── test34-pub-include-dir-v0
+    │   │   │   │   └── test34-pub-include-v0.h
+    │   │   │   ├── test34-pub-include-dir-v1
+    │   │   │   │   └── test34-pub-include-v1.h
+    │   │   │   ├── test34-report-0.txt
+    │   │   │   ├── test34-v0.c
+    │   │   │   ├── test34-v1.c
+    │   │   │   ├── test35-leaf.1.suppr
+    │   │   │   ├── test35-leaf-report-0.1.txt
+    │   │   │   ├── test35-leaf-report-0.txt
+    │   │   │   ├── test35-leaf.suppr
+    │   │   │   ├── test35-leaf-v0.cc
+    │   │   │   ├── test35-leaf-v1.cc
+    │   │   │   ├── test36-leaf-report-0.txt
+    │   │   │   ├── test36-leaf-v0.cc
+    │   │   │   ├── test36-leaf-v1.cc
+    │   │   │   ├── test37-opaque-type-header-dir
+    │   │   │   │   ├── test37-opaque-type-header-v0.h
+    │   │   │   │   └── test37-opaque-type-header-v1.h
+    │   │   │   ├── test37-opaque-type-report-0.txt
+    │   │   │   ├── test37-opaque-type-v0.c
+    │   │   │   ├── test37-opaque-type-v0.o
+    │   │   │   ├── test37-opaque-type-v1.c
+    │   │   │   ├── test37-opaque-type-v1.o
+    │   │   │   ├── test38-char-class-in-ini.abignore
+    │   │   │   ├── test38-char-class-in-ini-report-0.txt
+    │   │   │   ├── test38-char-class-in-ini-v0.c
+    │   │   │   ├── test38-char-class-in-ini-v0.o
+    │   │   │   ├── test38-char-class-in-ini-v1.c
+    │   │   │   ├── test38-char-class-in-ini-v1.o
+    │   │   │   ├── test39-opaque-type-report-0.txt
+    │   │   │   ├── test39-opaque-type-v0.c
+    │   │   │   ├── test39-opaque-type-v0.o
+    │   │   │   ├── test39-opaque-type-v1.c
+    │   │   │   ├── test39-opaque-type-v1.o
+    │   │   │   ├── test39-public-headers-dir
+    │   │   │   │   ├── test39-header-v0.h
+    │   │   │   │   └── test39-header-v1.h
+    │   │   │   ├── test3-struct-suppr-0.suppr
+    │   │   │   ├── test3-struct-suppr-1.suppr
+    │   │   │   ├── test3-struct-suppr-report-0.txt
+    │   │   │   ├── test3-struct-suppr-report-1.txt
+    │   │   │   ├── test3-struct-suppr-report-2.txt
+    │   │   │   ├── test3-struct-suppr-v0.cc
+    │   │   │   ├── test3-struct-suppr-v0.o
+    │   │   │   ├── test3-struct-suppr-v1.cc
+    │   │   │   ├── test3-struct-suppr-v1.o
+    │   │   │   ├── test40.1-enumerator-changes-enumerator-changes-1.suppr
+    │   │   │   ├── test40.1-enumerator-changes-enumerator-changes-2.suppr
+    │   │   │   ├── test40.1-enumerator-changes-enumerator-changes-3.suppr
+    │   │   │   ├── test40.1-enumerator-changes-enumerator-changes-4.suppr
+    │   │   │   ├── test40.1-enumerator-changes-enumerator-changes-5.suppr
+    │   │   │   ├── test40.1-enumerator-changes-enumerator-changes-report-0.txt
+    │   │   │   ├── test40.1-enumerator-changes-enumerator-changes-report-1.txt
+    │   │   │   ├── test40.1-enumerator-changes-enumerator-changes-report-2.txt
+    │   │   │   ├── test40.1-enumerator-changes-enumerator-changes-report-3.txt
+    │   │   │   ├── test40.1-enumerator-changes-enumerator-changes-report-4.txt
+    │   │   │   ├── test40.1-enumerator-changes-enumerator-changes-report-5.txt
+    │   │   │   ├── test40.1-enumerator-changes-enumerator-changes-v0.c
+    │   │   │   ├── test40.1-enumerator-changes-enumerator-changes-v0.o
+    │   │   │   ├── test40.1-enumerator-changes-enumerator-changes-v1.c
+    │   │   │   ├── test40.1-enumerator-changes-enumerator-changes-v1.o
+    │   │   │   ├── test40-enumerator-changes-0.suppr
+    │   │   │   ├── test40-enumerator-changes-report-0.txt
+    │   │   │   ├── test40-enumerator-changes-v0.cc
+    │   │   │   ├── test40-enumerator-changes-v1.cc
+    │   │   │   ├── test41-enumerator-changes-0.suppr
+    │   │   │   ├── test41-enumerator-changes-report-0.txt
+    │   │   │   ├── test41-enumerator-changes-v0.cc
+    │   │   │   ├── test41-enumerator-changes-v1.cc
+    │   │   │   ├── test42-negative-suppr-type-report-0.txt
+    │   │   │   ├── test42-negative-suppr-type-report-1.txt
+    │   │   │   ├── test42-negative-suppr-type-suppr-1.txt
+    │   │   │   ├── test42-negative-suppr-type-suppr-2.txt
+    │   │   │   ├── test42-negative-suppr-type-v0.cc
+    │   │   │   ├── test42-negative-suppr-type-v0.o
+    │   │   │   ├── test42-negative-suppr-type-v1.cc
+    │   │   │   ├── test42-negative-suppr-type-v1.o
+    │   │   │   ├── test43-suppr-direct-fn-subtype-report-1.txt
+    │   │   │   ├── test43-suppr-direct-fn-subtype-suppr-1.txt
+    │   │   │   ├── test43-suppr-direct-fn-subtype-v0.cc
+    │   │   │   ├── test43-suppr-direct-fn-subtype-v0.o
+    │   │   │   ├── test43-suppr-direct-fn-subtype-v1.cc
+    │   │   │   ├── test43-suppr-direct-fn-subtype-v1.o
+    │   │   │   ├── test44-suppr-sym-name-not-regexp-report-1.txt
+    │   │   │   ├── test44-suppr-sym-name-not-regexp-report-2.txt
+    │   │   │   ├── test44-suppr-sym-name-not-regexp.suppr.txt
+    │   │   │   ├── test44-suppr-sym-name-not-regexp-v0.c
+    │   │   │   ├── test44-suppr-sym-name-not-regexp-v0.o
+    │   │   │   ├── test44-suppr-sym-name-not-regexp-v0.o.abi
+    │   │   │   ├── test44-suppr-sym-name-not-regexp-v1.c
+    │   │   │   ├── test44-suppr-sym-name-not-regexp-v1.o
+    │   │   │   ├── test44-suppr-sym-name-not-regexp-v1.o.abi
+    │   │   │   ├── test45-abi-report-1.txt
+    │   │   │   ├── test45-abi.suppr.txt
+    │   │   │   ├── test45-abi-wl.xml
+    │   │   │   ├── test45-abi.xml
+    │   │   │   ├── test46-PR25128-base.xml
+    │   │   │   ├── test46-PR25128-new.xml
+    │   │   │   ├── test46-PR25128-report-1.txt
+    │   │   │   ├── test46-PR25128-report-2.txt
+    │   │   │   ├── test47-non-reachable-types-report-10.txt
+    │   │   │   ├── test47-non-reachable-types-report-1.txt
+    │   │   │   ├── test47-non-reachable-types-report-2.txt
+    │   │   │   ├── test47-non-reachable-types-report-3.txt
+    │   │   │   ├── test47-non-reachable-types-report-4.txt
+    │   │   │   ├── test47-non-reachable-types-report-5.txt
+    │   │   │   ├── test47-non-reachable-types-report-6.txt
+    │   │   │   ├── test47-non-reachable-types-report-7.txt
+    │   │   │   ├── test47-non-reachable-types-report-8.txt
+    │   │   │   ├── test47-non-reachable-types-report-9.txt
+    │   │   │   ├── test47-non-reachable-types-suppr-1.txt
+    │   │   │   ├── test47-non-reachable-types-suppr-2.txt
+    │   │   │   ├── test47-non-reachable-types-suppr-3.txt
+    │   │   │   ├── test47-non-reachable-types-suppr-4.txt
+    │   │   │   ├── test47-non-reachable-types-suppr-5.txt
+    │   │   │   ├── test47-non-reachable-types-v0.c
+    │   │   │   ├── test47-non-reachable-types-v0.o
+    │   │   │   ├── test47-non-reachable-types-v0.o.alltypes.abixml
+    │   │   │   ├── test47-non-reachable-types-v1.c
+    │   │   │   ├── test47-non-reachable-types-v1.o
+    │   │   │   ├── test47-non-reachable-types-v1.o.alltypes.abixml
+    │   │   │   ├── test48-soname-abixml-v0.c
+    │   │   │   ├── test48-soname-abixml-v1.c
+    │   │   │   ├── test4-local-suppr-0.suppr
+    │   │   │   ├── test4-local-suppr-report-0.txt
+    │   │   │   ├── test4-local-suppr-report-1.txt
+    │   │   │   ├── test4-local-suppr-v0.c
+    │   │   │   ├── test4-local-suppr-v0.h
+    │   │   │   ├── test4-local-suppr-v1.c
+    │   │   │   ├── test4-local-suppr-v1.h
+    │   │   │   ├── test5-fn-suppr-0.suppr
+    │   │   │   ├── test5-fn-suppr-1.suppr
+    │   │   │   ├── test5-fn-suppr-2.suppr
+    │   │   │   ├── test5-fn-suppr-3.suppr
+    │   │   │   ├── test5-fn-suppr-4.suppr
+    │   │   │   ├── test5-fn-suppr-report-0.txt
+    │   │   │   ├── test5-fn-suppr-report-1.txt
+    │   │   │   ├── test5-fn-suppr-report-2.txt
+    │   │   │   ├── test5-fn-suppr-report-3.txt
+    │   │   │   ├── test5-fn-suppr-report-4.txt
+    │   │   │   ├── test5-fn-suppr-report-5.txt
+    │   │   │   ├── test5-fn-suppr-v0.cc
+    │   │   │   ├── test5-fn-suppr-v1.cc
+    │   │   │   ├── test6-fn-suppr-0.suppr
+    │   │   │   ├── test6-fn-suppr-1.suppr
+    │   │   │   ├── test6-fn-suppr-2.suppr
+    │   │   │   ├── test6-fn-suppr-3.suppr
+    │   │   │   ├── test6-fn-suppr-report-0-1.txt
+    │   │   │   ├── test6-fn-suppr-report-0.txt
+    │   │   │   ├── test6-fn-suppr-report-1.txt
+    │   │   │   ├── test6-fn-suppr-report-2.txt
+    │   │   │   ├── test6-fn-suppr-report-3.txt
+    │   │   │   ├── test6-fn-suppr-report-4.txt
+    │   │   │   ├── test6-fn-suppr-v0.cc
+    │   │   │   ├── test6-fn-suppr-v1.cc
+    │   │   │   ├── test6-fn-suppr-version-script
+    │   │   │   ├── test7-var-suppr-1.suppr
+    │   │   │   ├── test7-var-suppr-2.suppr
+    │   │   │   ├── test7-var-suppr-3.suppr
+    │   │   │   ├── test7-var-suppr-4.suppr
+    │   │   │   ├── test7-var-suppr-5.suppr
+    │   │   │   ├── test7-var-suppr-6.suppr
+    │   │   │   ├── test7-var-suppr-7.suppr
+    │   │   │   ├── test7-var-suppr-8.suppr
+    │   │   │   ├── test7-var-suppr-9.suppr
+    │   │   │   ├── test7-var-suppr-report-0.txt
+    │   │   │   ├── test7-var-suppr-report-1.txt
+    │   │   │   ├── test7-var-suppr-report-2.txt
+    │   │   │   ├── test7-var-suppr-report-3.txt
+    │   │   │   ├── test7-var-suppr-report-4.txt
+    │   │   │   ├── test7-var-suppr-report-5.txt
+    │   │   │   ├── test7-var-suppr-report-6.txt
+    │   │   │   ├── test7-var-suppr-report-7.txt
+    │   │   │   ├── test7-var-suppr-report-8.txt
+    │   │   │   ├── test7-var-suppr-report-9.txt
+    │   │   │   ├── test7-var-suppr-v0.cc
+    │   │   │   ├── test7-var-suppr-v1.cc
+    │   │   │   ├── test7-var-suppr-version-script
+    │   │   │   ├── test8-redundant-fn-report-0.txt
+    │   │   │   ├── test8-redundant-fn-report-1.txt
+    │   │   │   ├── test8-redundant-fn-v0.cc
+    │   │   │   ├── test8-redundant-fn-v1.cc
+    │   │   │   ├── test9-changed-parm-c-report-0.txt
+    │   │   │   ├── test9-changed-parm-c-report-1.txt
+    │   │   │   ├── test9-changed-parm-c-v0.c
+    │   │   │   ├── test9-changed-parm-c-v1.c
+    │   │   │   ├── test-has-data-member-inserted-at-1.1.suppr
+    │   │   │   ├── test-has-data-member-inserted-at-1.2.suppr
+    │   │   │   ├── test-has-data-member-inserted-at-1-report-1.txt
+    │   │   │   ├── test-has-data-member-inserted-at-1-report-2.txt
+    │   │   │   ├── test-has-data-member-inserted-at-1-v0.c
+    │   │   │   ├── test-has-data-member-inserted-at-1-v0.o
+    │   │   │   ├── test-has-data-member-inserted-at-1-v1.c
+    │   │   │   ├── test-has-data-member-inserted-at-1-v1.o
+    │   │   │   ├── test-has-data-member-inserted-at-2.2.suppr
+    │   │   │   ├── test-has-data-member-inserted-at-2-report.1.txt
+    │   │   │   ├── test-has-data-member-inserted-at-2-report.2.txt
+    │   │   │   ├── test-has-data-member-inserted-at-2-report.3.txt
+    │   │   │   ├── test-has-data-member-inserted-at-2-report.txt
+    │   │   │   ├── test-has-data-member-inserted-at-2.suppr
+    │   │   │   ├── test-has-data-member-inserted-at-2-v0.c
+    │   │   │   ├── test-has-data-member-inserted-at-2-v0.o
+    │   │   │   ├── test-has-data-member-inserted-at-2-v1.c
+    │   │   │   ├── test-has-data-member-inserted-at-2-v1.o
+    │   │   │   ├── test-has-data-member-inserted-at-3-v0.c
+    │   │   │   ├── test-has-data-member-inserted-at-3-v0.o
+    │   │   │   ├── test-has-data-member-inserted-at-3-v1.c
+    │   │   │   ├── test-has-data-member-inserted-at-3-v1.o
+    │   │   │   ├── test-has-data-member-inserted-between-1-report-1.txt
+    │   │   │   ├── test-has-data-member-inserted-between-1-report-2.txt
+    │   │   │   ├── test-has-data-member-inserted-between-1-report-3.txt
+    │   │   │   ├── test-has-data-member-inserted-between-1-report-4.txt
+    │   │   │   ├── test-has-data-member-inserted-between-1.suppr
+    │   │   │   ├── test-has-data-member-inserted-between-1-v0.c
+    │   │   │   ├── test-has-data-member-inserted-between-1-v0.o
+    │   │   │   ├── test-has-data-member-inserted-between-1-v1.c
+    │   │   │   ├── test-has-data-member-inserted-between-1-v1.o
+    │   │   │   ├── test-has-data-member-inserted-between-1-v2.c
+    │   │   │   ├── test-has-data-member-inserted-between-1-v2.o
+    │   │   │   ├── test-has-data-member-inserted-between-1-v3.c
+    │   │   │   ├── test-has-data-member-inserted-between-1-v3.o
+    │   │   │   ├── test-has-data-member-inserted-between-1-v4.c
+    │   │   │   ├── test-has-data-member-inserted-between-1-v4.o
+    │   │   │   ├── test-has-data-member-output-1.txt
+    │   │   │   ├── test-has-data-member-output-2.txt
+    │   │   │   ├── test-has-data-member-v0.cc
+    │   │   │   ├── test-has-data-member-v0.o
+    │   │   │   ├── test-has-data-member-v1.cc
+    │   │   │   └── test-has-data-member-v1.o
+    │   │   ├── test-fedabipkgdiff
+    │   │   │   ├── dbus-glib
+    │   │   │   │   ├── dbus-glib-0.100.2-2.fc20.x86_64.rpm
+    │   │   │   │   └── dbus-glib-0.106-1.fc23.x86_64.rpm
+    │   │   │   ├── dbus-glib-0.104-3.fc23.x86_64.rpm -> ../test-diff-pkg/dbus-glib-0.104-3.fc23.x86_64.rpm
+    │   │   │   ├── dbus-glib-0.80-3.fc12.x86_64.rpm -> ../test-diff-pkg/dbus-glib-0.80-3.fc12.x86_64.rpm
+    │   │   │   ├── dbus-glib-debuginfo-0.104-3.fc23.x86_64.rpm -> ../test-diff-pkg/dbus-glib-debuginfo-0.104-3.fc23.x86_64.rpm
+    │   │   │   ├── dbus-glib-debuginfo-0.80-3.fc12.x86_64.rpm -> ../test-diff-pkg/dbus-glib-debuginfo-0.80-3.fc12.x86_64.rpm
+    │   │   │   ├── nss-util
+    │   │   │   │   ├── nss-util-3.12.6-1.fc14.x86_64.rpm
+    │   │   │   │   ├── nss-util-3.24.0-2.0.fc25.x86_64.rpm
+    │   │   │   │   └── nss-util-devel-3.24.0-2.0.fc25.x86_64.rpm
+    │   │   │   ├── packages
+    │   │   │   │   ├── dbus-glib
+    │   │   │   │   │   ├── 0.100.2
+    │   │   │   │   │   │   └── 2.fc20
+    │   │   │   │   │   │       ├── i686
+    │   │   │   │   │   │       │   ├── dbus-glib-0.100.2-2.fc20.i686.rpm
+    │   │   │   │   │   │       │   ├── dbus-glib-debuginfo-0.100.2-2.fc20.i686.rpm
+    │   │   │   │   │   │       │   └── dbus-glib-devel-0.100.2-2.fc20.i686.rpm
+    │   │   │   │   │   │       └── x86_64
+    │   │   │   │   │   │           ├── dbus-glib-0.100.2-2.fc20.x86_64.rpm
+    │   │   │   │   │   │           ├── dbus-glib-debuginfo-0.100.2-2.fc20.x86_64.rpm
+    │   │   │   │   │   │           └── dbus-glib-devel-0.100.2-2.fc20.x86_64.rpm
+    │   │   │   │   │   └── 0.106
+    │   │   │   │   │       └── 1.fc23
+    │   │   │   │   │           ├── i686
+    │   │   │   │   │           │   ├── dbus-glib-0.106-1.fc23.i686.rpm
+    │   │   │   │   │           │   ├── dbus-glib-debuginfo-0.106-1.fc23.i686.rpm
+    │   │   │   │   │           │   └── dbus-glib-devel-0.106-1.fc23.i686.rpm
+    │   │   │   │   │           └── x86_64
+    │   │   │   │   │               ├── dbus-glib-0.106-1.fc23.x86_64.rpm
+    │   │   │   │   │               ├── dbus-glib-debuginfo-0.106-1.fc23.x86_64.rpm
+    │   │   │   │   │               └── dbus-glib-devel-0.106-1.fc23.x86_64.rpm
+    │   │   │   │   ├── nss-util
+    │   │   │   │   │   ├── 3.12.6
+    │   │   │   │   │   │   └── 1.fc14
+    │   │   │   │   │   │       └── x86_64
+    │   │   │   │   │   │           ├── nss-util-3.12.6-1.fc14.x86_64.rpm
+    │   │   │   │   │   │           ├── nss-util-debuginfo-3.12.6-1.fc14.x86_64.rpm
+    │   │   │   │   │   │           └── nss-util-devel-3.12.6-1.fc14.x86_64.rpm
+    │   │   │   │   │   └── 3.24.0
+    │   │   │   │   │       └── 2.0.fc25
+    │   │   │   │   │           └── x86_64
+    │   │   │   │   │               ├── nss-util-3.24.0-2.0.fc25.x86_64.rpm
+    │   │   │   │   │               ├── nss-util-debuginfo-3.24.0-2.0.fc25.x86_64.rpm
+    │   │   │   │   │               └── nss-util-devel-3.24.0-2.0.fc25.x86_64.rpm
+    │   │   │   │   └── vte291
+    │   │   │   │       ├── 0.39.1
+    │   │   │   │       │   └── 1.fc22
+    │   │   │   │       │       └── x86_64
+    │   │   │   │       │           ├── vte291-0.39.1-1.fc22.x86_64.rpm
+    │   │   │   │       │           ├── vte291-debuginfo-0.39.1-1.fc22.x86_64.rpm
+    │   │   │   │       │           └── vte291-devel-0.39.1-1.fc22.x86_64.rpm
+    │   │   │   │       └── 0.39.90
+    │   │   │   │           └── 1.fc22
+    │   │   │   │               └── x86_64
+    │   │   │   │                   ├── vte291-0.39.90-1.fc22.x86_64.rpm
+    │   │   │   │                   ├── vte291-debuginfo-0.39.90-1.fc22.x86_64.rpm
+    │   │   │   │                   └── vte291-devel-0.39.90-1.fc22.x86_64.rpm
+    │   │   │   ├── test0-from-fc20-to-fc23-dbus-glib-report-0.txt
+    │   │   │   ├── test1-from-fc20-to-dbus-glib-0.106-1.fc23.x86_64-report-0.txt
+    │   │   │   ├── test2-dbus-glib-0.100.2-2.fc20--dbus-glib-0.106-1.fc23-report-0.txt
+    │   │   │   ├── test3-dbus-glib-0.100.2-2.fc20.i686--dbus-glib-0.106-1.fc23.i686-report-0.txt
+    │   │   │   ├── test4-glib-0.100.2-2.fc20.x86_64.rpm-glib-0.106-1.fc23.x86_64.rpm-report-0.txt
+    │   │   │   ├── test5-same-dir-dbus-glib-0.100.2-2.fc20.x86_64--dbus-glib-0.106-1.fc23.x86_64-report-0.txt
+    │   │   │   ├── test6-nss-util-3.12.6-1.fc14.x86_64--nss-util-3.24.0-2.0.fc25.x86_64-report-0.txt
+    │   │   │   ├── test7-self-compare-from-fc23-dbus-glib-report-0.txt
+    │   │   │   └── vte291-0.39.1-1.fc22.x86_64--vte291-0.39.90-1.fc22.x86_64-report-0.txt
+    │   │   ├── test-ini
+    │   │   │   ├── test01-equal-in-property-string.abignore
+    │   │   │   ├── test01-equal-in-property-string.abignore.expected
+    │   │   │   ├── test02-buggy-property-value.abignore
+    │   │   │   └── test02-buggy-property-value.abignore.expected
+    │   │   ├── test-kmi-whitelist
+    │   │   │   ├── whitelist-with-another-single-entry
+    │   │   │   ├── whitelist-with-duplicate-entry
+    │   │   │   ├── whitelist-with-single-entry
+    │   │   │   └── whitelist-with-two-sections
+    │   │   ├── test-lookup-syms
+    │   │   │   ├── test01-report.txt
+    │   │   │   ├── test02-report.txt
+    │   │   │   ├── test0.cc
+    │   │   │   ├── test0.o
+    │   │   │   ├── test0-report.txt
+    │   │   │   ├── test1-1-report.txt
+    │   │   │   ├── test1-2-report.txt
+    │   │   │   ├── test1-32bits.so
+    │   │   │   ├── test1-3-report.txt
+    │   │   │   ├── test1.c
+    │   │   │   ├── test1.c.compiling.txt
+    │   │   │   ├── test1.so
+    │   │   │   └── test1.version-script
+    │   │   ├── test-read-btf
+    │   │   │   ├── test0.c
+    │   │   │   ├── test0.o
+    │   │   │   ├── test0.o.abi
+    │   │   │   ├── test1.c
+    │   │   │   ├── test1.o
+    │   │   │   └── test1.o.abi
+    │   │   ├── test-read-common
+    │   │   │   ├── crti.c
+    │   │   │   ├── PR26261
+    │   │   │   │   ├── Makefile
+    │   │   │   │   ├── PR26261-exe
+    │   │   │   │   ├── PR26261-main.c
+    │   │   │   │   ├── PR26261-main.o
+    │   │   │   │   ├── PR26261-obja.c
+    │   │   │   │   ├── PR26261-obja.h
+    │   │   │   │   ├── PR26261-obja.o
+    │   │   │   │   ├── PR26261-objb.c
+    │   │   │   │   ├── PR26261-objb.h
+    │   │   │   │   └── PR26261-objb.o
+    │   │   │   ├── PR27700
+    │   │   │   │   ├── include-dir
+    │   │   │   │   │   ├── priv.h
+    │   │   │   │   │   └── pub.h
+    │   │   │   │   ├── pub-incdir
+    │   │   │   │   │   └── inc.h
+    │   │   │   │   ├── test-PR27700.c
+    │   │   │   │   └── test-PR27700.o
+    │   │   │   ├── test3-alias-1.suppr
+    │   │   │   ├── test3-alias-2.suppr
+    │   │   │   ├── test3-alias-3.suppr
+    │   │   │   ├── test3-alias-4.suppr
+    │   │   │   ├── test3.c
+    │   │   │   ├── test3.so
+    │   │   │   ├── test4.c
+    │   │   │   ├── test4.so
+    │   │   │   ├── test-PR26568-1.c
+    │   │   │   ├── test-PR26568-1.o
+    │   │   │   ├── test-PR26568-2.c
+    │   │   │   └── test-PR26568-2.o
+    │   │   ├── test-read-ctf
+    │   │   │   ├── PR26261
+    │   │   │   │   └── PR26261-exe.abi
+    │   │   │   ├── PR27700
+    │   │   │   │   └── test-PR27700.abi
+    │   │   │   ├── test0
+    │   │   │   ├── test0.abi
+    │   │   │   ├── test0.c
+    │   │   │   ├── test0.hash.abi
+    │   │   │   ├── test1.c
+    │   │   │   ├── test1.so
+    │   │   │   ├── test1.so.abi
+    │   │   │   ├── test1.so.hash.abi
+    │   │   │   ├── test2.c
+    │   │   │   ├── test2.so
+    │   │   │   ├── test2.so.abi
+    │   │   │   ├── test2.so.hash.abi
+    │   │   │   ├── test3.so.abi
+    │   │   │   ├── test3.so.hash.abi
+    │   │   │   ├── test4.so.abi
+    │   │   │   ├── test4.so.hash.abi
+    │   │   │   ├── test5.c
+    │   │   │   ├── test5.o
+    │   │   │   ├── test5.o.abi
+    │   │   │   ├── test6.c
+    │   │   │   ├── test6.o.abi
+    │   │   │   ├── test7.c
+    │   │   │   ├── test7.h
+    │   │   │   ├── test7.o
+    │   │   │   ├── test7.o.abi
+    │   │   │   ├── test8.c
+    │   │   │   ├── test8.o
+    │   │   │   ├── test8.o.abi
+    │   │   │   ├── test9.c
+    │   │   │   ├── test9.o
+    │   │   │   ├── test9.o.abi
+    │   │   │   ├── test-alias.c
+    │   │   │   ├── test-alias.o
+    │   │   │   ├── test-alias.o.abi
+    │   │   │   ├── test-ambiguous-struct-A.c
+    │   │   │   ├── test-ambiguous-struct-A.o
+    │   │   │   ├── test-ambiguous-struct-A.o.hash.abi
+    │   │   │   ├── test-ambiguous-struct-B.c
+    │   │   │   ├── test-ambiguous-struct-B.o
+    │   │   │   ├── test-ambiguous-struct-B.o.hash.abi
+    │   │   │   ├── test-anonymous-fields.c
+    │   │   │   ├── test-anonymous-fields.o
+    │   │   │   ├── test-anonymous-fields.o.abi
+    │   │   │   ├── test-array-mdimension.abi
+    │   │   │   ├── test-array-mdimension.c
+    │   │   │   ├── test-array-mdimension.o
+    │   │   │   ├── test-array-of-pointers.abi
+    │   │   │   ├── test-array-of-pointers.c
+    │   │   │   ├── test-array-of-pointers.o
+    │   │   │   ├── test-array-size.abi
+    │   │   │   ├── test-array-size.c
+    │   │   │   ├── test-array-size.o
+    │   │   │   ├── test-bitfield.abi
+    │   │   │   ├── test-bitfield.c
+    │   │   │   ├── test-bitfield-enum.abi
+    │   │   │   ├── test-bitfield-enum.c
+    │   │   │   ├── test-bitfield-enum.o
+    │   │   │   ├── test-bitfield.o
+    │   │   │   ├── test-callback2.abi
+    │   │   │   ├── test-callback2.c
+    │   │   │   ├── test-callback2.o
+    │   │   │   ├── test-callback.abi
+    │   │   │   ├── test-callback.c
+    │   │   │   ├── test-callback.o
+    │   │   │   ├── test-conflicting-type-syms-a.c
+    │   │   │   ├── test-conflicting-type-syms-a.o
+    │   │   │   ├── test-conflicting-type-syms-a.o.hash.abi
+    │   │   │   ├── test-conflicting-type-syms-b.c
+    │   │   │   ├── test-conflicting-type-syms-b.o
+    │   │   │   ├── test-conflicting-type-syms-b.o.hash.abi
+    │   │   │   ├── test-const-array.abi
+    │   │   │   ├── test-const-array.c
+    │   │   │   ├── test-const-array.o
+    │   │   │   ├── test-dynamic-array.c
+    │   │   │   ├── test-dynamic-array.o
+    │   │   │   ├── test-dynamic-array.o.abi
+    │   │   │   ├── test-enum.c
+    │   │   │   ├── test-enum-ctf.o.abi
+    │   │   │   ├── test-enum-many.c
+    │   │   │   ├── test-enum-many-ctf.o.hash.abi
+    │   │   │   ├── test-enum-many.o
+    │   │   │   ├── test-enum-many.o.hash.abi
+    │   │   │   ├── test-enum.o
+    │   │   │   ├── test-enum.o.abi
+    │   │   │   ├── test-enum-symbol.c
+    │   │   │   ├── test-enum-symbol-ctf.o.hash.abi
+    │   │   │   ├── test-enum-symbol.o
+    │   │   │   ├── test-enum-symbol.o.hash.abi
+    │   │   │   ├── test-fallback.abi
+    │   │   │   ├── test-fallback.c
+    │   │   │   ├── test-fallback.o
+    │   │   │   ├── test-forward-type-decl.abi
+    │   │   │   ├── test-forward-type-decl.c
+    │   │   │   ├── test-forward-type-decl.o
+    │   │   │   ├── test-forward-undefine-type-decl.abi
+    │   │   │   ├── test-forward-undefine-type-decl.c
+    │   │   │   ├── test-forward-undefine-type-decl.o
+    │   │   │   ├── test-functions-declaration.abi
+    │   │   │   ├── test-functions-declaration.c
+    │   │   │   ├── test-functions-declaration.o
+    │   │   │   ├── test-linux-module.abi
+    │   │   │   ├── test-linux-module.c
+    │   │   │   ├── test-linux-module.ko
+    │   │   │   ├── test-list-struct.abi
+    │   │   │   ├── test-list-struct.c
+    │   │   │   ├── test-list-struct.o
+    │   │   │   ├── test-PR26568-1.o.abi
+    │   │   │   ├── test-PR26568-2.o.abi
+    │   │   │   ├── test-PR27700.abi
+    │   │   │   ├── test-struct-iteration.c
+    │   │   │   └── test-struct-iteration.o.abi
+    │   │   ├── test-read-dwarf
+    │   │   │   ├── libtest23.so
+    │   │   │   ├── libtest23.so.abi
+    │   │   │   ├── libtest24-drop-fns-2.so.abi
+    │   │   │   ├── libtest24-drop-fns.so
+    │   │   │   ├── libtest24-drop-fns.so.abi
+    │   │   │   ├── PR22015-libboost_iostreams.so
+    │   │   │   ├── PR22015-libboost_iostreams.so.abi
+    │   │   │   ├── PR22122-libftdc.so
+    │   │   │   ├── PR22122-libftdc.so.abi
+    │   │   │   ├── PR24378-fn-is-not-scope.abi
+    │   │   │   ├── PR24378-fn-is-not-scope.o
+    │   │   │   ├── PR25007-sdhci.ko
+    │   │   │   ├── PR25007-sdhci.ko.abi
+    │   │   │   ├── PR25042-libgdbm-clang-dwarf5.so.6.0.0
+    │   │   │   ├── PR25042-libgdbm-clang-dwarf5.so.6.0.0.abi
+    │   │   │   ├── PR26261
+    │   │   │   │   └── PR26261-exe.abi
+    │   │   │   ├── PR27700
+    │   │   │   │   └── test-PR27700.abi
+    │   │   │   ├── PR28584
+    │   │   │   │   ├── PR28584-smv.cc
+    │   │   │   │   ├── PR28584-smv.clang.o
+    │   │   │   │   └── PR28584-smv.clang.o.abi
+    │   │   │   ├── PR29443-missing-xx.cc
+    │   │   │   ├── PR29443-missing-xx.o
+    │   │   │   ├── PR29443-missing-xx.o.abi
+    │   │   │   ├── PR29692-kdelibs3-libkjava.so.1.0.0
+    │   │   │   ├── PR29692-kdelibs3-libkjava.so.1.0.0.abi
+    │   │   │   ├── test0
+    │   │   │   ├── test0.abi
+    │   │   │   ├── test0.cc
+    │   │   │   ├── test0.hash.abi
+    │   │   │   ├── test1
+    │   │   │   ├── test10-pr18818-gcc.so
+    │   │   │   ├── test10-pr18818-gcc.so.abi
+    │   │   │   ├── test11-pr18828.so
+    │   │   │   ├── test11-pr18828.so.abi
+    │   │   │   ├── test12-pr18844.so
+    │   │   │   ├── test12-pr18844.so.abi
+    │   │   │   ├── test13-pr18894.so
+    │   │   │   ├── test13-pr18894.so.abi
+    │   │   │   ├── test14-pr18893.so
+    │   │   │   ├── test14-pr18893.so.abi
+    │   │   │   ├── test15-pr18892.so
+    │   │   │   ├── test15-pr18892.so.abi
+    │   │   │   ├── test16-pr18904.so
+    │   │   │   ├── test16-pr18904.so.abi
+    │   │   │   ├── test17-pr19027.so
+    │   │   │   ├── test17-pr19027.so.abi
+    │   │   │   ├── test18-pr19037-libvtkRenderingLIC-6.1.so
+    │   │   │   ├── test18-pr19037-libvtkRenderingLIC-6.1.so.abi
+    │   │   │   ├── test19-pr19023-libtcmalloc_and_profiler.so
+    │   │   │   ├── test19-pr19023-libtcmalloc_and_profiler.so.abi
+    │   │   │   ├── test1.abi
+    │   │   │   ├── test1.cc
+    │   │   │   ├── test1.hash.abi
+    │   │   │   ├── test2-0.cc
+    │   │   │   ├── test20-pr19025-libvtkParallelCore-6.1.so
+    │   │   │   ├── test20-pr19025-libvtkParallelCore-6.1.so.abi
+    │   │   │   ├── test2-1.cc
+    │   │   │   ├── test21-pr19092.so
+    │   │   │   ├── test21-pr19092.so.abi
+    │   │   │   ├── test22-pr19097-libstdc++.so.6.0.17.so
+    │   │   │   ├── test22-pr19097-libstdc++.so.6.0.17.so.abi
+    │   │   │   ├── test23-first-tu.cc
+    │   │   │   ├── test23-second-tu.cc
+    │   │   │   ├── test24-drop-fns-0.suppr
+    │   │   │   ├── test24-drop-fns.cc
+    │   │   │   ├── test25-bogus-binary.elf
+    │   │   │   ├── test26-bogus-binary.elf
+    │   │   │   ├── test27-bogus-binary.elf
+    │   │   │   ├── test2.h
+    │   │   │   ├── test2.so
+    │   │   │   ├── test2.so.abi
+    │   │   │   ├── test2.so.hash.abi
+    │   │   │   ├── test3-alias-1.so.hash.abi
+    │   │   │   ├── test3-alias-2.so.hash.abi
+    │   │   │   ├── test3-alias-3.so.hash.abi
+    │   │   │   ├── test3-alias-4.so.hash.abi
+    │   │   │   ├── test3.so.abi
+    │   │   │   ├── test3.so.hash.abi
+    │   │   │   ├── test4.so.abi
+    │   │   │   ├── test4.so.hash.abi
+    │   │   │   ├── test5.cc
+    │   │   │   ├── test5.o
+    │   │   │   ├── test5.o.abi
+    │   │   │   ├── test5.o.hash.abi
+    │   │   │   ├── test6.cc
+    │   │   │   ├── test6.so
+    │   │   │   ├── test6.so.abi
+    │   │   │   ├── test6.so.hash.abi
+    │   │   │   ├── test7.cc
+    │   │   │   ├── test7.so
+    │   │   │   ├── test7.so.abi
+    │   │   │   ├── test7.so.hash.abi
+    │   │   │   ├── test8-qualified-this-pointer.cc
+    │   │   │   ├── test8-qualified-this-pointer.so
+    │   │   │   ├── test8-qualified-this-pointer.so.abi
+    │   │   │   ├── test8-qualified-this-pointer.so.hash.abi
+    │   │   │   ├── test9-pr18818-clang.so
+    │   │   │   ├── test9-pr18818-clang.so.abi
+    │   │   │   ├── test-fallback.abi
+    │   │   │   ├── test-fallback.c
+    │   │   │   ├── test-fallback.o
+    │   │   │   ├── test-libaaudio.so
+    │   │   │   ├── test-libaaudio.so.abi
+    │   │   │   ├── test-libandroid.so
+    │   │   │   ├── test-libandroid.so.abi
+    │   │   │   ├── test-PR26568-1.o.abi
+    │   │   │   ├── test-PR26568-2.o.abi
+    │   │   │   ├── test-suppressed-alias.c
+    │   │   │   ├── test-suppressed-alias.o
+    │   │   │   ├── test-suppressed-alias.o.abi
+    │   │   │   └── test-suppressed-alias.suppr
+    │   │   ├── test-read-write
+    │   │   │   ├── test0.xml
+    │   │   │   ├── test10.xml
+    │   │   │   ├── test11.xml
+    │   │   │   ├── test12.xml
+    │   │   │   ├── test13.xml
+    │   │   │   ├── test14.xml
+    │   │   │   ├── test15.xml
+    │   │   │   ├── test16.xml
+    │   │   │   ├── test17.xml
+    │   │   │   ├── test18.xml
+    │   │   │   ├── test19.xml
+    │   │   │   ├── test1.xml
+    │   │   │   ├── test20.xml
+    │   │   │   ├── test21.xml
+    │   │   │   ├── test22.xml
+    │   │   │   ├── test23.xml
+    │   │   │   ├── test24.xml
+    │   │   │   ├── test25.xml
+    │   │   │   ├── test26.xml
+    │   │   │   ├── test27.xml
+    │   │   │   ├── test28-drop-std-fns.abignore
+    │   │   │   ├── test28-drop-std-vars.abignore
+    │   │   │   ├── test28-without-std-fns-ref.xml
+    │   │   │   ├── test28-without-std-fns.xml
+    │   │   │   ├── test28-without-std-vars-ref.xml
+    │   │   │   ├── test28-without-std-vars.xml
+    │   │   │   ├── test28.xml
+    │   │   │   ├── test2.xml
+    │   │   │   ├── test3.xml
+    │   │   │   ├── test4.xml
+    │   │   │   ├── test5.xml
+    │   │   │   ├── test6.xml
+    │   │   │   ├── test7.xml
+    │   │   │   ├── test8.xml
+    │   │   │   ├── test9.xml
+    │   │   │   └── test-crc.xml
+    │   │   ├── test-symtab
+    │   │   │   ├── basic
+    │   │   │   │   ├── aliases.c
+    │   │   │   │   ├── aliases.so
+    │   │   │   │   ├── empty.c
+    │   │   │   │   ├── empty.so
+    │   │   │   │   ├── link_against_me.c
+    │   │   │   │   ├── link_against_me.so
+    │   │   │   │   ├── Makefile
+    │   │   │   │   ├── no_debug_info.c
+    │   │   │   │   ├── no_debug_info.so
+    │   │   │   │   ├── one_function_one_variable_all.whitelist
+    │   │   │   │   ├── one_function_one_variable.c
+    │   │   │   │   ├── one_function_one_variable_function.whitelist
+    │   │   │   │   ├── one_function_one_variable_irrelevant.whitelist
+    │   │   │   │   ├── one_function_one_variable.so
+    │   │   │   │   ├── one_function_one_variable_undefined.c
+    │   │   │   │   ├── one_function_one_variable_undefined.so
+    │   │   │   │   ├── one_function_one_variable_variable.whitelist
+    │   │   │   │   ├── single_function.c
+    │   │   │   │   ├── single_function.so
+    │   │   │   │   ├── single_undefined_function.c
+    │   │   │   │   ├── single_undefined_function.so
+    │   │   │   │   ├── single_undefined_variable.c
+    │   │   │   │   ├── single_undefined_variable.so
+    │   │   │   │   ├── single_variable.c
+    │   │   │   │   └── single_variable.so
+    │   │   │   ├── kernel
+    │   │   │   │   ├── empty.c
+    │   │   │   │   ├── Makefile
+    │   │   │   │   ├── one_of_each.c
+    │   │   │   │   ├── single_function.c
+    │   │   │   │   ├── single_function_gpl.c
+    │   │   │   │   ├── single_variable.c
+    │   │   │   │   └── single_variable_gpl.c
+    │   │   │   ├── kernel-4.14
+    │   │   │   │   ├── empty.c -> ../kernel/empty.c
+    │   │   │   │   ├── empty.ko
+    │   │   │   │   ├── Makefile -> ../kernel/Makefile
+    │   │   │   │   ├── one_of_each.c -> ../kernel/one_of_each.c
+    │   │   │   │   ├── one_of_each.ko
+    │   │   │   │   ├── single_function.c -> ../kernel/single_function.c
+    │   │   │   │   ├── single_function_gpl.c -> ../kernel/single_function_gpl.c
+    │   │   │   │   ├── single_function_gpl.ko
+    │   │   │   │   ├── single_function.ko
+    │   │   │   │   ├── single_variable.c -> ../kernel/single_variable.c
+    │   │   │   │   ├── single_variable_gpl.c -> ../kernel/single_variable_gpl.c
+    │   │   │   │   ├── single_variable_gpl.ko
+    │   │   │   │   └── single_variable.ko
+    │   │   │   ├── kernel-4.19
+    │   │   │   │   ├── empty.c -> ../kernel/empty.c
+    │   │   │   │   ├── empty.ko
+    │   │   │   │   ├── Makefile -> ../kernel/Makefile
+    │   │   │   │   ├── one_of_each.c -> ../kernel/one_of_each.c
+    │   │   │   │   ├── one_of_each.ko
+    │   │   │   │   ├── single_function.c -> ../kernel/single_function.c
+    │   │   │   │   ├── single_function_gpl.c -> ../kernel/single_function_gpl.c
+    │   │   │   │   ├── single_function_gpl.ko
+    │   │   │   │   ├── single_function.ko
+    │   │   │   │   ├── single_variable.c -> ../kernel/single_variable.c
+    │   │   │   │   ├── single_variable_gpl.c -> ../kernel/single_variable_gpl.c
+    │   │   │   │   ├── single_variable_gpl.ko
+    │   │   │   │   └── single_variable.ko
+    │   │   │   ├── kernel-5.4
+    │   │   │   │   ├── empty.c -> ../kernel/empty.c
+    │   │   │   │   ├── empty.ko
+    │   │   │   │   ├── Makefile -> ../kernel/Makefile
+    │   │   │   │   ├── one_of_each.c -> ../kernel/one_of_each.c
+    │   │   │   │   ├── one_of_each.ko
+    │   │   │   │   ├── single_function.c -> ../kernel/single_function.c
+    │   │   │   │   ├── single_function_gpl.c -> ../kernel/single_function_gpl.c
+    │   │   │   │   ├── single_function_gpl.ko
+    │   │   │   │   ├── single_function.ko
+    │   │   │   │   ├── single_variable.c -> ../kernel/single_variable.c
+    │   │   │   │   ├── single_variable_gpl.c -> ../kernel/single_variable_gpl.c
+    │   │   │   │   ├── single_variable_gpl.ko
+    │   │   │   │   └── single_variable.ko
+    │   │   │   ├── kernel-5.6
+    │   │   │   │   ├── empty.c -> ../kernel/empty.c
+    │   │   │   │   ├── empty.ko
+    │   │   │   │   ├── Makefile -> ../kernel/Makefile
+    │   │   │   │   ├── one_of_each.c -> ../kernel/one_of_each.c
+    │   │   │   │   ├── one_of_each.ko
+    │   │   │   │   ├── single_function.c -> ../kernel/single_function.c
+    │   │   │   │   ├── single_function_gpl.c -> ../kernel/single_function_gpl.c
+    │   │   │   │   ├── single_function_gpl.ko
+    │   │   │   │   ├── single_function.ko
+    │   │   │   │   ├── single_variable.c -> ../kernel/single_variable.c
+    │   │   │   │   ├── single_variable_gpl.c -> ../kernel/single_variable_gpl.c
+    │   │   │   │   ├── single_variable_gpl.ko
+    │   │   │   │   └── single_variable.ko
+    │   │   │   └── kernel-modversions
+    │   │   │       ├── Makefile
+    │   │   │       ├── one_of_each.c -> ../kernel/one_of_each.c
+    │   │   │       └── one_of_each.ko
+    │   │   ├── test-types-stability
+    │   │   │   ├── pr19026-libvtkIOSQL-6.1.so.1
+    │   │   │   ├── pr19138-elf0
+    │   │   │   ├── pr19139-DomainNeighborMapInst.o
+    │   │   │   ├── pr19141-get5d.o
+    │   │   │   ├── pr19142-topo.o
+    │   │   │   ├── pr19202-libmpi_gpfs.so.5.0
+    │   │   │   ├── pr19204-libtcmalloc.so.4.2.6-xlc
+    │   │   │   ├── pr19433-custom0
+    │   │   │   ├── pr19434-elf0
+    │   │   │   ├── PR27086-libstdc++.so.6.0.26
+    │   │   │   ├── PR27165-libzmq.so.5.2.3
+    │   │   │   ├── PR27165-libzmq.so.5.2.3.debug
+    │   │   │   ├── pr27980-libc.so
+    │   │   │   └── PR28450-libepetra.so.13.0
+    │   │   └── test-write-read-archive
+    │   │       ├── test0.xml
+    │   │       ├── test1.xml
+    │   │       ├── test2.xml
+    │   │       ├── test3.xml
+    │   │       └── test4.xml
+    │   ├── lib
+    │   │   ├── catch.cc
+    │   │   └── catch.hpp
+    │   ├── Makefile.am
+    │   ├── mockfedabipkgdiff.in
+    │   ├── print-diff-tree.cc
+    │   ├── runtestcanonicalizetypes.sh.in
+    │   ├── runtestdefaultsupprspy3.sh.in
+    │   ├── runtestdefaultsupprs.py.in
+    │   ├── runtestfedabipkgdiffpy3.sh.in
+    │   ├── runtestfedabipkgdiff.py.in
+    │   ├── runtestslowselfcompare.sh.in
+    │   ├── test-abicompat.cc
+    │   ├── test-abidiff.cc
+    │   ├── test-abidiff-exit.cc
+    │   ├── test-alt-dwarf-file.cc
+    │   ├── test-annotate.cc
+    │   ├── test-core-diff.cc
+    │   ├── test-cxx-compat.cc
+    │   ├── test-diff2.cc
+    │   ├── test-diff-dwarf-abixml.cc
+    │   ├── test-diff-dwarf.cc
+    │   ├── test-diff-filter.cc
+    │   ├── test-diff-pkg.cc
+    │   ├── test-diff-suppr.cc
+    │   ├── test-dot.cc
+    │   ├── test-elf-helpers.cc
+    │   ├── test-ini.cc
+    │   ├── test-ir-walker.cc
+    │   ├── test-kmi-whitelist.cc
+    │   ├── test-lookup-syms.cc
+    │   ├── test-read-btf.cc
+    │   ├── test-read-common.cc
+    │   ├── test-read-common.h
+    │   ├── test-read-ctf.cc
+    │   ├── test-read-dwarf.cc
+    │   ├── test-read-write.cc
+    │   ├── test-svg.cc
+    │   ├── test-symtab.cc
+    │   ├── test-symtab-reader.cc
+    │   ├── test-tools-utils.cc
+    │   ├── test-types-stability.cc
+    │   ├── test-utils.cc
+    │   ├── test-utils.h
+    │   ├── test-valgrind-suppressions.supp
+    │   └── update-test-output.py
+    ├── tools
+    │   ├── abicompat.cc
+    │   ├── abidiff.cc
+    │   ├── abidw.cc
+    │   ├── abilint.cc
+    │   ├── abipkgdiff.cc
+    │   ├── abisym.cc
+    │   ├── binilint.cc
+    │   ├── fedabipkgdiff
+    │   ├── kmidiff.cc
+    │   └── Makefile.am
+    ├── update-copyright.sh
+    └── VISIBILITY
+
+211 directories, 2823 files

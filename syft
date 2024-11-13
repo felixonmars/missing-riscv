@@ -1,0 +1,2865 @@
+src
+├── syft-1.9.0
+│   ├── artifacthub-repo.yml
+│   ├── cmd
+│   │   └── syft
+│   │       ├── cli
+│   │       │   ├── cli.go
+│   │       │   └── ui
+│   │       │       ├── handle_attestation.go
+│   │       │       ├── handle_attestation_test.go
+│   │       │       ├── handle_cataloger_task.go
+│   │       │       ├── handle_cataloger_task_test.go
+│   │       │       ├── handle_fetch_image.go
+│   │       │       ├── handle_fetch_image_test.go
+│   │       │       ├── handle_file_indexing.go
+│   │       │       ├── handle_file_indexing_test.go
+│   │       │       ├── handle_pull_containerd_image.go
+│   │       │       ├── handle_pull_docker_image.go
+│   │       │       ├── handle_pull_docker_image_test.go
+│   │       │       ├── handle_read_image.go
+│   │       │       ├── handle_read_image_test.go
+│   │       │       ├── handler.go
+│   │       │       ├── new_task_progress.go
+│   │       │       ├── __snapshots__
+│   │       │       │   ├── handle_attestation_test.snap
+│   │       │       │   ├── handle_cataloger_task_test.snap
+│   │       │       │   ├── handle_fetch_image_test.snap
+│   │       │       │   ├── handle_file_indexing_test.snap
+│   │       │       │   ├── handle_pull_docker_image_test.snap
+│   │       │       │   └── handle_read_image_test.snap
+│   │       │       └── util_test.go
+│   │       ├── internal
+│   │       │   ├── clio_setup_config.go
+│   │       │   ├── commands
+│   │       │   │   ├── attest.go
+│   │       │   │   ├── attest_test.go
+│   │       │   │   ├── cataloger.go
+│   │       │   │   ├── cataloger_list.go
+│   │       │   │   ├── cataloger_list_test.go
+│   │       │   │   ├── commands_test.go
+│   │       │   │   ├── convert.go
+│   │       │   │   ├── packages.go
+│   │       │   │   ├── packages_test.go
+│   │       │   │   ├── root.go
+│   │       │   │   ├── scan.go
+│   │       │   │   ├── scan_test.go
+│   │       │   │   ├── test-fixtures
+│   │       │   │   │   └── scan-configs
+│   │       │   │   │       ├── no-legacy-options.yaml
+│   │       │   │   │       ├── with-base-path.yaml
+│   │       │   │   │       ├── with-default-pull-source.yaml
+│   │       │   │   │       ├── with-exclude-binary-overlap-by-ownership.yaml
+│   │       │   │   │       ├── with-file-section.yaml
+│   │       │   │   │       └── with-file-string.yaml
+│   │       │   │   ├── update.go
+│   │       │   │   └── update_test.go
+│   │       │   ├── constants.go
+│   │       │   ├── options
+│   │       │   │   ├── attest.go
+│   │       │   │   ├── cache.go
+│   │       │   │   ├── cache_test.go
+│   │       │   │   ├── catalog.go
+│   │       │   │   ├── catalog_test.go
+│   │       │   │   ├── config.go
+│   │       │   │   ├── file.go
+│   │       │   │   ├── file_test.go
+│   │       │   │   ├── format_cyclonedx_json.go
+│   │       │   │   ├── format_cyclonedx_json_test.go
+│   │       │   │   ├── format_cyclonedx_xml.go
+│   │       │   │   ├── format_cyclonedx_xml_test.go
+│   │       │   │   ├── format.go
+│   │       │   │   ├── format_spdx_json.go
+│   │       │   │   ├── format_spdx_json_test.go
+│   │       │   │   ├── format_syft_json.go
+│   │       │   │   ├── format_syft_json_test.go
+│   │       │   │   ├── format_template.go
+│   │       │   │   ├── golang.go
+│   │       │   │   ├── java.go
+│   │       │   │   ├── javascript.go
+│   │       │   │   ├── linux_kernel.go
+│   │       │   │   ├── output_file.go
+│   │       │   │   ├── output.go
+│   │       │   │   ├── output_test.go
+│   │       │   │   ├── pkg.go
+│   │       │   │   ├── python.go
+│   │       │   │   ├── registry.go
+│   │       │   │   ├── registry_test.go
+│   │       │   │   ├── relationships.go
+│   │       │   │   ├── secret.go
+│   │       │   │   ├── source.go
+│   │       │   │   ├── source_test.go
+│   │       │   │   ├── update_check.go
+│   │       │   │   ├── writer.go
+│   │       │   │   └── writer_test.go
+│   │       │   ├── test
+│   │       │   │   └── integration
+│   │       │   │       ├── all_layers_squashed_comparison_test.go
+│   │       │   │       ├── catalog_packages_cases_test.go
+│   │       │   │       ├── catalog_packages_test.go
+│   │       │   │       ├── distro_test.go
+│   │       │   │       ├── encode_decode_cycle_test.go
+│   │       │   │       ├── files_test.go
+│   │       │   │       ├── go_compiler_detection_test.go
+│   │       │   │       ├── java_purl_test.go
+│   │       │   │       ├── license_list_test.go
+│   │       │   │       ├── mariner_distroless_test.go
+│   │       │   │       ├── node_packages_test.go
+│   │       │   │       ├── package_binary_elf_relationships_test.go
+│   │       │   │       ├── package_cataloger_convention_test.go
+│   │       │   │       ├── package_catalogers_represented_test.go
+│   │       │   │       ├── package_deduplication_test.go
+│   │       │   │       ├── package_ownership_relationship_test.go
+│   │       │   │       ├── regression_apk_scanner_buffer_size_test.go
+│   │       │   │       ├── regression_go_bin_scanner_arch_test.go
+│   │       │   │       ├── regression_java_no_main_package_test.go
+│   │       │   │       ├── regression_java_virtualpath_test.go
+│   │       │   │       ├── regression_photon_package_test.go
+│   │       │   │       ├── regression_sbom_duplicate_relationships_test.go
+│   │       │   │       ├── rust_audit_binary_test.go
+│   │       │   │       ├── sbom_cataloger_test.go
+│   │       │   │       ├── sqlite_rpmdb_test.go
+│   │       │   │       ├── test-fixtures
+│   │       │   │       │   ├── elf-test-fixtures -> ../../../../../../syft/pkg/cataloger/binary/test-fixtures/elf-test-fixtures
+│   │       │   │       │   ├── files
+│   │       │   │       │   │   └── somewhere
+│   │       │   │       │   │       └── there
+│   │       │   │       │   │           └── is
+│   │       │   │       │   │               ├── a
+│   │       │   │       │   │               │   └── file
+│   │       │   │       │   │               ├── a-small-file
+│   │       │   │       │   │               ├── a-symlink-to-a-small-file -> ./a-small-file
+│   │       │   │       │   │               └── a-symlink-to-file -> ./a/file
+│   │       │   │       │   ├── image-distro-id
+│   │       │   │       │   │   └── Dockerfile
+│   │       │   │       │   ├── image-go-bin-arch-coverage
+│   │       │   │       │   │   ├── app.go
+│   │       │   │       │   │   ├── Dockerfile
+│   │       │   │       │   │   ├── go.mod
+│   │       │   │       │   │   ├── go.sum
+│   │       │   │       │   │   └── test
+│   │       │   │       │   ├── image-golang-compiler
+│   │       │   │       │   │   └── Dockerfile
+│   │       │   │       │   ├── image-java-no-main-package
+│   │       │   │       │   │   └── Dockerfile
+│   │       │   │       │   ├── image-java-virtualpath-regression
+│   │       │   │       │   │   └── Dockerfile
+│   │       │   │       │   ├── image-large-apk-data
+│   │       │   │       │   │   └── Dockerfile
+│   │       │   │       │   ├── image-mariner-distroless
+│   │       │   │       │   │   └── Dockerfile
+│   │       │   │       │   ├── image-os-binary-overlap
+│   │       │   │       │   │   └── Dockerfile
+│   │       │   │       │   ├── image-owning-package
+│   │       │   │       │   │   └── Dockerfile
+│   │       │   │       │   ├── image-photon-all-layers
+│   │       │   │       │   │   └── Dockerfile
+│   │       │   │       │   ├── image-pkg-coverage
+│   │       │   │       │   │   ├── cocoapods
+│   │       │   │       │   │   │   └── Podfile.lock
+│   │       │   │       │   │   ├── composer
+│   │       │   │       │   │   │   └── composer.lock
+│   │       │   │       │   │   ├── conan
+│   │       │   │       │   │   │   └── conanfile.txt
+│   │       │   │       │   │   ├── Dockerfile
+│   │       │   │       │   │   ├── etc
+│   │       │   │       │   │   │   └── os-release
+│   │       │   │       │   │   ├── hackage
+│   │       │   │       │   │   │   ├── cabal.project.freeze
+│   │       │   │       │   │   │   ├── stack.yaml
+│   │       │   │       │   │   │   └── stack.yaml.lock
+│   │       │   │       │   │   ├── lib
+│   │       │   │       │   │   │   └── apk
+│   │       │   │       │   │   │       └── db
+│   │       │   │       │   │   │           └── installed
+│   │       │   │       │   │   ├── pkgs
+│   │       │   │       │   │   │   ├── dart
+│   │       │   │       │   │   │   │   └── pubspec.lock
+│   │       │   │       │   │   │   ├── dotnet
+│   │       │   │       │   │   │   │   └── TestLibrary.deps.json
+│   │       │   │       │   │   │   ├── elixir
+│   │       │   │       │   │   │   │   └── mix.lock
+│   │       │   │       │   │   │   ├── erlang
+│   │       │   │       │   │   │   │   ├── accept.app
+│   │       │   │       │   │   │   │   └── rebar.lock
+│   │       │   │       │   │   │   ├── github-actions
+│   │       │   │       │   │   │   ├── go
+│   │       │   │       │   │   │   │   └── go.mod
+│   │       │   │       │   │   │   ├── java
+│   │       │   │       │   │   │   │   ├── example-java-app-maven-0.1.0.jar
+│   │       │   │       │   │   │   │   ├── example-jenkins-plugin.hpi
+│   │       │   │       │   │   │   │   ├── generate-fixtures.md
+│   │       │   │       │   │   │   │   └── pom.xml
+│   │       │   │       │   │   │   ├── javascript
+│   │       │   │       │   │   │   │   ├── package-json
+│   │       │   │       │   │   │   │   │   └── package.json
+│   │       │   │       │   │   │   │   ├── package-lock
+│   │       │   │       │   │   │   │   │   └── package-lock.json
+│   │       │   │       │   │   │   │   └── yarn
+│   │       │   │       │   │   │   │       └── yarn.lock
+│   │       │   │       │   │   │   ├── lib
+│   │       │   │       │   │   │   │   └── apk
+│   │       │   │       │   │   │   │       └── db
+│   │       │   │       │   │   │   │           └── installed
+│   │       │   │       │   │   │   ├── nix
+│   │       │   │       │   │   │   │   └── store
+│   │       │   │       │   │   │   │       └── h0cnbmfcn93xm5dg2x27ixhag1cwndga-glibc-2.34-210-bin
+│   │       │   │       │   │   │   │           └── share
+│   │       │   │       │   │   │   │               └── man
+│   │       │   │       │   │   │   │                   └── glibc.1
+│   │       │   │       │   │   │   ├── php
+│   │       │   │       │   │   │   │   └── vendor
+│   │       │   │       │   │   │   │       └── composer
+│   │       │   │       │   │   │   │           └── installed.json
+│   │       │   │       │   │   │   ├── python
+│   │       │   │       │   │   │   │   ├── dist-info
+│   │       │   │       │   │   │   │   │   ├── METADATA
+│   │       │   │       │   │   │   │   │   ├── RECORD
+│   │       │   │       │   │   │   │   │   └── top_level.txt
+│   │       │   │       │   │   │   │   ├── egg-info
+│   │       │   │       │   │   │   │   │   ├── PKG-INFO
+│   │       │   │       │   │   │   │   │   └── top_level.txt
+│   │       │   │       │   │   │   │   ├── requires
+│   │       │   │       │   │   │   │   │   ├── requirements-dev.txt
+│   │       │   │       │   │   │   │   │   ├── requirements.txt
+│   │       │   │       │   │   │   │   │   └── test-requirements.txt
+│   │       │   │       │   │   │   │   ├── setup
+│   │       │   │       │   │   │   │   │   └── setup.py
+│   │       │   │       │   │   │   │   ├── someotherpkg-3.19.0-py3.8.egg-info
+│   │       │   │       │   │   │   │   │   ├── PKG-INFO
+│   │       │   │       │   │   │   │   │   └── top_level.txt
+│   │       │   │       │   │   │   │   └── somerequests-3.22.0.dist-info
+│   │       │   │       │   │   │   │       ├── METADATA
+│   │       │   │       │   │   │   │       └── top_level.txt
+│   │       │   │       │   │   │   ├── r
+│   │       │   │       │   │   │   │   └── base
+│   │       │   │       │   │   │   │       └── DESCRIPTION
+│   │       │   │       │   │   │   ├── rockspec
+│   │       │   │       │   │   │   │   └── kong-3.7.0-0.rockspec
+│   │       │   │       │   │   │   ├── ruby
+│   │       │   │       │   │   │   │   ├── Gemfile.lock
+│   │       │   │       │   │   │   │   └── specifications
+│   │       │   │       │   │   │   │       ├── bundler.gemspec
+│   │       │   │       │   │   │   │       └── default
+│   │       │   │       │   │   │   │           └── unbundler.gemspec
+│   │       │   │       │   │   │   ├── rust
+│   │       │   │       │   │   │   │   └── Cargo.lock
+│   │       │   │       │   │   │   ├── var
+│   │       │   │       │   │   │   │   ├── db
+│   │       │   │       │   │   │   │   │   └── pkg
+│   │       │   │       │   │   │   │   │       └── app-containers
+│   │       │   │       │   │   │   │   │           └── skopeo-1.5.1
+│   │       │   │       │   │   │   │   │               ├── CONTENTS
+│   │       │   │       │   │   │   │   │               ├── LICENSE
+│   │       │   │       │   │   │   │   │               └── SIZE
+│   │       │   │       │   │   │   │   └── lib
+│   │       │   │       │   │   │   │       ├── dpkg
+│   │       │   │       │   │   │   │       │   ├── status
+│   │       │   │       │   │   │   │       │   └── status.d
+│   │       │   │       │   │   │   │       │       ├── dash
+│   │       │   │       │   │   │   │       │       └── netbase
+│   │       │   │       │   │   │   │       ├── pacman
+│   │       │   │       │   │   │   │       │   └── local
+│   │       │   │       │   │   │   │       │       ├── ALPM_DB_VERSION
+│   │       │   │       │   │   │   │       │       └── pacman-6.0.1-5
+│   │       │   │       │   │   │   │       │           ├── desc
+│   │       │   │       │   │   │   │       │           ├── files
+│   │       │   │       │   │   │   │       │           └── mtree
+│   │       │   │       │   │   │   │       └── rpm
+│   │       │   │       │   │   │   │           ├── generate-fixture.sh
+│   │       │   │       │   │   │   │           └── Packages
+│   │       │   │       │   │   │   └── wordpress
+│   │       │   │       │   │   │       └── wp-content
+│   │       │   │       │   │   │           └── plugins
+│   │       │   │       │   │   │               └── akismet
+│   │       │   │       │   │   │                   └── akismet.php
+│   │       │   │       │   │   └── swift
+│   │       │   │       │   │       └── Package.resolved
+│   │       │   │       │   ├── image-rust-auditable
+│   │       │   │       │   │   └── Dockerfile
+│   │       │   │       │   ├── image-sbom-cataloger
+│   │       │   │       │   │   ├── Dockerfile
+│   │       │   │       │   │   ├── go.mod
+│   │       │   │       │   │   └── test.spdx.json
+│   │       │   │       │   ├── image-sqlite-rpmdb
+│   │       │   │       │   │   └── Dockerfile
+│   │       │   │       │   ├── image-suse-all-layers
+│   │       │   │       │   │   └── Dockerfile
+│   │       │   │       │   ├── image-test-java-purls
+│   │       │   │       │   │   └── Dockerfile
+│   │       │   │       │   ├── image-vertical-package-dups
+│   │       │   │       │   │   └── Dockerfile
+│   │       │   │       │   ├── Makefile
+│   │       │   │       │   ├── npm-lock
+│   │       │   │       │   │   ├── node_modules
+│   │       │   │       │   │   │   ├── collapse-white-space
+│   │       │   │       │   │   │   │   ├── index.d.ts
+│   │       │   │       │   │   │   │   ├── index.js
+│   │       │   │       │   │   │   │   ├── license
+│   │       │   │       │   │   │   │   ├── package.json
+│   │       │   │       │   │   │   │   ├── package-lock.json
+│   │       │   │       │   │   │   │   └── readme.md
+│   │       │   │       │   │   │   ├── end-of-stream
+│   │       │   │       │   │   │   │   ├── index.js
+│   │       │   │       │   │   │   │   ├── LICENSE
+│   │       │   │       │   │   │   │   ├── package.json
+│   │       │   │       │   │   │   │   └── README.md
+│   │       │   │       │   │   │   ├── insert-css
+│   │       │   │       │   │   │   │   ├── example.js
+│   │       │   │       │   │   │   │   ├── index.js
+│   │       │   │       │   │   │   │   ├── LICENSE
+│   │       │   │       │   │   │   │   ├── package.json
+│   │       │   │       │   │   │   │   ├── readme.markdown
+│   │       │   │       │   │   │   │   └── test.js
+│   │       │   │       │   │   │   ├── once
+│   │       │   │       │   │   │   │   ├── LICENSE
+│   │       │   │       │   │   │   │   ├── once.js
+│   │       │   │       │   │   │   │   ├── package.json
+│   │       │   │       │   │   │   │   └── README.md
+│   │       │   │       │   │   │   ├── pump
+│   │       │   │       │   │   │   │   ├── index.js
+│   │       │   │       │   │   │   │   ├── LICENSE
+│   │       │   │       │   │   │   │   ├── package.json
+│   │       │   │       │   │   │   │   ├── README.md
+│   │       │   │       │   │   │   │   ├── test-browser.js
+│   │       │   │       │   │   │   │   └── test-node.js
+│   │       │   │       │   │   │   └── wrappy
+│   │       │   │       │   │   │       ├── LICENSE
+│   │       │   │       │   │   │       ├── package.json
+│   │       │   │       │   │   │       ├── package-lock.json
+│   │       │   │       │   │   │       ├── README.md
+│   │       │   │       │   │   │       └── wrappy.js
+│   │       │   │       │   │   ├── package.json
+│   │       │   │       │   │   └── package-lock.json
+│   │       │   │       │   └── yarn-lock
+│   │       │   │       │       ├── node_modules
+│   │       │   │       │       │   ├── async
+│   │       │   │       │       │   │   ├── bower.json
+│   │       │   │       │       │   │   ├── LICENSE
+│   │       │   │       │       │   │   └── package.json
+│   │       │   │       │       │   ├── merge-objects
+│   │       │   │       │       │   │   ├── LICENSE.md
+│   │       │   │       │       │   │   └── package.json
+│   │       │   │       │       │   ├── resize-observer-polyfill
+│   │       │   │       │       │   │   ├── LICENSE
+│   │       │   │       │       │   │   └── package.json
+│   │       │   │       │       │   └── should-type
+│   │       │   │       │       │       ├── LICENSE
+│   │       │   │       │       │       └── package.json
+│   │       │   │       │       ├── package.json
+│   │       │   │       │       ├── packages
+│   │       │   │       │       │   └── nested-package
+│   │       │   │       │       │       ├── node_modules
+│   │       │   │       │       │       │   └── async
+│   │       │   │       │       │       │       ├── bower.json
+│   │       │   │       │       │       │       ├── component.json
+│   │       │   │       │       │       │       ├── LICENSE
+│   │       │   │       │       │       │       └── package.json
+│   │       │   │       │       │       └── package.json
+│   │       │   │       │       └── yarn.lock
+│   │       │   │       └── utils_test.go
+│   │       │   └── ui
+│   │       │       ├── capture.go
+│   │       │       ├── capture_test.go
+│   │       │       ├── event_writer.go
+│   │       │       ├── event_writer_test.go
+│   │       │       ├── log_writer.go
+│   │       │       ├── log_writer_test.go
+│   │       │       ├── no_ui.go
+│   │       │       ├── __snapshots__
+│   │       │       │   └── event_writer_test.snap
+│   │       │       └── ui.go
+│   │       └── main.go
+│   ├── CONTRIBUTING.md
+│   ├── CONTRIBUTORS.md
+│   ├── DEVELOPING.md
+│   ├── Dockerfile
+│   ├── Dockerfile.debug
+│   ├── examples
+│   │   ├── create_custom_sbom
+│   │   │   ├── alpine_configuration_cataloger.go
+│   │   │   └── main.go
+│   │   ├── create_simple_sbom
+│   │   │   └── main.go
+│   │   ├── decode_sbom
+│   │   │   ├── alpine.syft.json
+│   │   │   └── main.go
+│   │   ├── README.md
+│   │   ├── select_catalogers
+│   │   │   └── main.go
+│   │   ├── source_detection
+│   │   │   └── main.go
+│   │   ├── source_from_image
+│   │   │   └── main.go
+│   │   └── source_from_registry
+│   │       └── main.go
+│   ├── go.mod
+│   ├── go.sum
+│   ├── install.sh
+│   ├── internal
+│   │   ├── buffered_seek_reader.go
+│   │   ├── buffered_seek_reader_test.go
+│   │   ├── bus
+│   │   │   ├── bus.go
+│   │   │   └── helpers.go
+│   │   ├── cache
+│   │   │   ├── bypass.go
+│   │   │   ├── bypass_test.go
+│   │   │   ├── cache.go
+│   │   │   ├── cache_test.go
+│   │   │   ├── error_resolver.go
+│   │   │   ├── error_resolver_test.go
+│   │   │   ├── filesystem.go
+│   │   │   ├── filesystem_test.go
+│   │   │   ├── hash_type.go
+│   │   │   ├── hash_type_test.go
+│   │   │   ├── memory.go
+│   │   │   ├── memory_test.go
+│   │   │   ├── README.md
+│   │   │   ├── resolver.go
+│   │   │   └── resolver_test.go
+│   │   ├── cmptest
+│   │   │   ├── common_options.go
+│   │   │   ├── diff_reporter.go
+│   │   │   ├── license.go
+│   │   │   ├── location.go
+│   │   │   └── relationship.go
+│   │   ├── constants.go
+│   │   ├── docs.go
+│   │   ├── err_helper.go
+│   │   ├── file
+│   │   │   ├── copy.go
+│   │   │   ├── digest.go
+│   │   │   ├── digest_test.go
+│   │   │   ├── glob_match.go
+│   │   │   ├── glob_match_test.go
+│   │   │   ├── normalize_hashes.go
+│   │   │   ├── normalize_hashes_test.go
+│   │   │   ├── opener.go
+│   │   │   ├── tar_file_traversal.go
+│   │   │   ├── test-fixtures
+│   │   │   │   ├── digest.txt
+│   │   │   │   ├── generate-zip-fixture-from-source-dir.sh
+│   │   │   │   └── zip-source
+│   │   │   │       ├── b-file.txt
+│   │   │   │       └── some-dir
+│   │   │   │           └── a-file.txt
+│   │   │   ├── zip_file_helpers_test.go
+│   │   │   ├── zip_file_manifest.go
+│   │   │   ├── zip_file_manifest_test.go
+│   │   │   ├── zip_file_traversal.go
+│   │   │   ├── zip_file_traversal_test.go
+│   │   │   ├── zip_read_closer.go
+│   │   │   └── zip_read_closer_test.go
+│   │   ├── input.go
+│   │   ├── licenses
+│   │   │   ├── list.go
+│   │   │   └── parser.go
+│   │   ├── log
+│   │   │   └── log.go
+│   │   ├── mimetype
+│   │   │   ├── mimetype_helper.go
+│   │   │   └── mimetype_helper_test.go
+│   │   ├── redact
+│   │   │   └── redact.go
+│   │   ├── regex_helpers.go
+│   │   ├── regex_helpers_test.go
+│   │   ├── relationship
+│   │   │   ├── binary
+│   │   │   │   ├── binary_dependencies.go
+│   │   │   │   ├── binary_dependencies_test.go
+│   │   │   │   ├── shared_library_index.go
+│   │   │   │   ├── shared_library_index_test.go
+│   │   │   │   └── test-fixtures
+│   │   │   │       └── elf-test-fixtures -> ../../../../syft/pkg/cataloger/binary/test-fixtures/elf-test-fixtures
+│   │   │   ├── by_file_ownership.go
+│   │   │   ├── by_file_ownership_test.go
+│   │   │   ├── evident_by.go
+│   │   │   ├── evident_by_test.go
+│   │   │   ├── exclude_binaries_by_file_ownership_overlap.go
+│   │   │   ├── exclude_binaries_by_file_ownership_overlap_test.go
+│   │   │   ├── index.go
+│   │   │   ├── index_test.go
+│   │   │   ├── remove.go
+│   │   │   ├── sort.go
+│   │   │   └── to_source.go
+│   │   ├── sbomsync
+│   │   │   ├── builder.go
+│   │   │   └── builder_test.go
+│   │   ├── set.go
+│   │   ├── set_test.go
+│   │   ├── spdxlicense
+│   │   │   ├── generate
+│   │   │   │   ├── generate_license_list.go
+│   │   │   │   ├── generate_license_list_test.go
+│   │   │   │   ├── license.go
+│   │   │   │   ├── license_test.go
+│   │   │   │   └── test-fixtures
+│   │   │   │       └── licenses.json
+│   │   │   ├── license.go
+│   │   │   ├── license_list.go
+│   │   │   ├── license_list_test.go
+│   │   │   └── license_test.go
+│   │   ├── string_helpers.go
+│   │   ├── string_helpers_test.go
+│   │   ├── task
+│   │   │   ├── environment_tasks.go
+│   │   │   ├── executor.go
+│   │   │   ├── executor_test.go
+│   │   │   ├── expression.go
+│   │   │   ├── expression_test.go
+│   │   │   ├── file_tasks.go
+│   │   │   ├── file_tasks_test.go
+│   │   │   ├── package_task_factory.go
+│   │   │   ├── package_tasks.go
+│   │   │   ├── relationship_tasks.go
+│   │   │   ├── selection.go
+│   │   │   ├── selection_test.go
+│   │   │   ├── set.go
+│   │   │   ├── set_test.go
+│   │   │   └── task.go
+│   │   └── tprint.go
+│   ├── LICENSE
+│   ├── Makefile
+│   ├── README.md
+│   ├── RELEASE.md
+│   ├── schema
+│   │   ├── cyclonedx
+│   │   │   ├── cyclonedx.json
+│   │   │   ├── cyclonedx.xsd
+│   │   │   ├── Makefile
+│   │   │   ├── README.md
+│   │   │   └── spdx.xsd
+│   │   ├── json
+│   │   │   ├── README.md
+│   │   │   ├── schema-10.0.0.json
+│   │   │   ├── schema-10.0.1.json
+│   │   │   ├── schema-10.0.2.json
+│   │   │   ├── schema-1.0.0.json
+│   │   │   ├── schema-1.0.1.json
+│   │   │   ├── schema-1.0.2.json
+│   │   │   ├── schema-1.0.3.json
+│   │   │   ├── schema-1.0.4.json
+│   │   │   ├── schema-1.0.5.json
+│   │   │   ├── schema-11.0.0.json
+│   │   │   ├── schema-11.0.1.json
+│   │   │   ├── schema-11.0.2.json
+│   │   │   ├── schema-1.1.0.json
+│   │   │   ├── schema-12.0.0.json
+│   │   │   ├── schema-12.0.1.json
+│   │   │   ├── schema-13.0.0.json
+│   │   │   ├── schema-14.0.0.json
+│   │   │   ├── schema-15.0.0.json
+│   │   │   ├── schema-16.0.0.json
+│   │   │   ├── schema-16.0.11.json
+│   │   │   ├── schema-16.0.12.json
+│   │   │   ├── schema-16.0.13.json
+│   │   │   ├── schema-16.0.14.json
+│   │   │   ├── schema-16.0.1.json
+│   │   │   ├── schema-16.0.2.json
+│   │   │   ├── schema-16.0.3.json
+│   │   │   ├── schema-16.0.4.json
+│   │   │   ├── schema-16.0.5.json
+│   │   │   ├── schema-16.0.6.json
+│   │   │   ├── schema-16.0.7.json
+│   │   │   ├── schema-16.0.8.json
+│   │   │   ├── schema-16.0.9.json
+│   │   │   ├── schema-2.0.0.json
+│   │   │   ├── schema-2.0.1.json
+│   │   │   ├── schema-2.0.2.json
+│   │   │   ├── schema-3.0.0.json
+│   │   │   ├── schema-3.0.1.json
+│   │   │   ├── schema-3.1.0.json
+│   │   │   ├── schema-3.1.1.json
+│   │   │   ├── schema-3.2.1.json
+│   │   │   ├── schema-3.2.2.json
+│   │   │   ├── schema-3.2.3.json
+│   │   │   ├── schema-3.2.4.json
+│   │   │   ├── schema-3.3.0.json
+│   │   │   ├── schema-3.3.1.json
+│   │   │   ├── schema-3.3.2.json
+│   │   │   ├── schema-4.0.0.json
+│   │   │   ├── schema-4.1.0.json
+│   │   │   ├── schema-5.0.0.json
+│   │   │   ├── schema-5.0.1.json
+│   │   │   ├── schema-5.1.0.json
+│   │   │   ├── schema-6.0.0.json
+│   │   │   ├── schema-6.1.0.json
+│   │   │   ├── schema-6.2.0.json
+│   │   │   ├── schema-7.0.0.json
+│   │   │   ├── schema-7.0.1.json
+│   │   │   ├── schema-7.1.0.json
+│   │   │   ├── schema-7.1.1.json
+│   │   │   ├── schema-7.1.2.json
+│   │   │   ├── schema-7.1.3.json
+│   │   │   ├── schema-7.1.4.json
+│   │   │   ├── schema-7.1.5.json
+│   │   │   ├── schema-7.1.6.json
+│   │   │   ├── schema-8.0.0.json
+│   │   │   ├── schema-8.0.1.json
+│   │   │   ├── schema-9.0.0.json
+│   │   │   ├── schema-9.0.1.json
+│   │   │   ├── schema-9.0.2.json
+│   │   │   ├── schema-latest.json
+│   │   │   └── vnd.syft+json
+│   │   └── spdx-json
+│   │       └── spdx-schema-2.3.json
+│   ├── SECURITY.md
+│   ├── syft
+│   │   ├── artifact
+│   │   │   ├── id.go
+│   │   │   └── relationship.go
+│   │   ├── cataloging
+│   │   │   ├── archive_search.go
+│   │   │   ├── data_generation.go
+│   │   │   ├── filecataloging
+│   │   │   │   ├── config.go
+│   │   │   │   └── config_test.go
+│   │   │   ├── pkgcataloging
+│   │   │   │   ├── cataloger_reference.go
+│   │   │   │   ├── config.go
+│   │   │   │   ├── selection_request.go
+│   │   │   │   └── tags.go
+│   │   │   ├── relationships.go
+│   │   │   └── search.go
+│   │   ├── configuration_audit_trail.go
+│   │   ├── configuration_audit_trail_test.go
+│   │   ├── cpe
+│   │   │   ├── by_source_then_specificity.go
+│   │   │   ├── by_source_then_specificity_test.go
+│   │   │   ├── by_specificity.go
+│   │   │   ├── by_specificity_test.go
+│   │   │   ├── cpe.go
+│   │   │   ├── cpe_test.go
+│   │   │   ├── merge_cpes.go
+│   │   │   ├── merge_cpes_test.go
+│   │   │   └── test-fixtures
+│   │   │       └── cpe-data.json
+│   │   ├── create_sbom_config.go
+│   │   ├── create_sbom_config_test.go
+│   │   ├── create_sbom.go
+│   │   ├── event
+│   │   │   ├── event.go
+│   │   │   ├── monitor
+│   │   │   │   ├── cataloger_task_progress.go
+│   │   │   │   └── generic_task.go
+│   │   │   └── parsers
+│   │   │       └── parsers.go
+│   │   ├── file
+│   │   │   ├── cataloger
+│   │   │   │   ├── executable
+│   │   │   │   │   ├── cataloger.go
+│   │   │   │   │   ├── elf.go
+│   │   │   │   │   ├── elf_test.go
+│   │   │   │   │   ├── macho.go
+│   │   │   │   │   ├── macho_test.go
+│   │   │   │   │   ├── pe.go
+│   │   │   │   │   ├── pe_test.go
+│   │   │   │   │   └── test-fixtures
+│   │   │   │   │       ├── elf
+│   │   │   │   │       │   ├── differ
+│   │   │   │   │       │   │   └── __main__.py
+│   │   │   │   │       │   ├── Dockerfile
+│   │   │   │   │       │   ├── expected_verify
+│   │   │   │   │       │   ├── Makefile
+│   │   │   │   │       │   └── project
+│   │   │   │   │       │       ├── lib.c
+│   │   │   │   │       │       ├── lib.h
+│   │   │   │   │       │       ├── main.c
+│   │   │   │   │       │       └── Makefile
+│   │   │   │   │       └── shared-info
+│   │   │   │   │           ├── Dockerfile
+│   │   │   │   │           ├── Makefile
+│   │   │   │   │           └── project
+│   │   │   │   │               ├── hello
+│   │   │   │   │               │   ├── hello.c
+│   │   │   │   │               │   └── Makefile
+│   │   │   │   │               ├── libhello
+│   │   │   │   │               │   ├── hello.c
+│   │   │   │   │               │   ├── hello.h
+│   │   │   │   │               │   └── Makefile
+│   │   │   │   │               └── Makefile
+│   │   │   │   ├── filecontent
+│   │   │   │   │   ├── cataloger.go
+│   │   │   │   │   ├── cataloger_test.go
+│   │   │   │   │   └── test-fixtures
+│   │   │   │   │       ├── another-path.txt
+│   │   │   │   │       ├── a-path.txt
+│   │   │   │   │       └── last
+│   │   │   │   │           ├── empty
+│   │   │   │   │           │   └── empty
+│   │   │   │   │           └── path.txt
+│   │   │   │   ├── filedigest
+│   │   │   │   │   ├── cataloger.go
+│   │   │   │   │   ├── cataloger_test.go
+│   │   │   │   │   └── test-fixtures
+│   │   │   │   │       ├── image-file-type-mix
+│   │   │   │   │       │   ├── Dockerfile
+│   │   │   │   │       │   └── file-1.txt
+│   │   │   │   │       └── last
+│   │   │   │   │           ├── empty
+│   │   │   │   │           │   └── empty
+│   │   │   │   │           └── path.txt
+│   │   │   │   ├── filemetadata
+│   │   │   │   │   ├── cataloger.go
+│   │   │   │   │   ├── cataloger_test.go
+│   │   │   │   │   └── test-fixtures
+│   │   │   │   │       └── image-file-type-mix
+│   │   │   │   │           ├── Dockerfile
+│   │   │   │   │           └── file-1.txt
+│   │   │   │   └── internal
+│   │   │   │       ├── all_regular_files.go
+│   │   │   │       ├── all_regular_files_test.go
+│   │   │   │       └── test-fixtures
+│   │   │   │           ├── image-file-type-mix
+│   │   │   │           │   ├── Dockerfile
+│   │   │   │           │   └── file-1.txt
+│   │   │   │           └── symlinked-root
+│   │   │   │               ├── nested
+│   │   │   │               │   └── link-root -> ../real-root
+│   │   │   │               └── real-root
+│   │   │   │                   ├── file1.txt
+│   │   │   │                   └── nested
+│   │   │   │                       ├── file2.txt
+│   │   │   │                       └── linked-file1.txt -> ../file1.txt
+│   │   │   ├── coordinate_set.go
+│   │   │   ├── coordinate_set_test.go
+│   │   │   ├── coordinates.go
+│   │   │   ├── digest.go
+│   │   │   ├── executable.go
+│   │   │   ├── license.go
+│   │   │   ├── location.go
+│   │   │   ├── location_read_closer.go
+│   │   │   ├── location_set.go
+│   │   │   ├── location_set_test.go
+│   │   │   ├── locations.go
+│   │   │   ├── location_test.go
+│   │   │   ├── metadata.go
+│   │   │   ├── mock_resolver.go
+│   │   │   ├── resolver.go
+│   │   │   ├── search_result.go
+│   │   │   ├── selection.go
+│   │   │   └── test-fixtures
+│   │   │       └── req-resp
+│   │   │           ├── path
+│   │   │           │   └── to
+│   │   │           │       ├── rel-inside.txt -> ./the/file.txt
+│   │   │           │       └── the
+│   │   │           │           ├── file.txt
+│   │   │           │           └── rel-outside.txt -> ../../../somewhere/outside.txt
+│   │   │           ├── root-link -> ./
+│   │   │           └── somewhere
+│   │   │               └── outside.txt
+│   │   ├── format
+│   │   │   ├── common
+│   │   │   │   ├── cyclonedxhelpers
+│   │   │   │   │   ├── to_format_model.go
+│   │   │   │   │   └── to_format_model_test.go
+│   │   │   │   └── spdxhelpers
+│   │   │   │       ├── to_format_model.go
+│   │   │   │       ├── to_format_model_test.go
+│   │   │   │       ├── to_syft_model.go
+│   │   │   │       └── to_syft_model_test.go
+│   │   │   ├── cyclonedxjson
+│   │   │   │   ├── decoder.go
+│   │   │   │   ├── decoder_test.go
+│   │   │   │   ├── encoder.go
+│   │   │   │   ├── encoder_test.go
+│   │   │   │   └── test-fixtures
+│   │   │   │       ├── bad-sbom
+│   │   │   │       ├── identify
+│   │   │   │       │   ├── 1.2.json
+│   │   │   │       │   ├── 1.3.json
+│   │   │   │       │   ├── 1.4.json
+│   │   │   │       │   ├── 1.5.json
+│   │   │   │       │   ├── 1.6.json
+│   │   │   │       │   ├── micronaut-1.4.json
+│   │   │   │       │   ├── micronaut-1.5.json
+│   │   │   │       │   └── micronaut-1.6.json
+│   │   │   │       └── snapshot
+│   │   │   │           ├── TestCycloneDxDirectoryEncoder.golden
+│   │   │   │           └── TestCycloneDxImageEncoder.golden
+│   │   │   ├── cyclonedxxml
+│   │   │   │   ├── decoder.go
+│   │   │   │   ├── decoder_test.go
+│   │   │   │   ├── encoder.go
+│   │   │   │   ├── encoder_test.go
+│   │   │   │   └── test-fixtures
+│   │   │   │       ├── bad-sbom
+│   │   │   │       ├── identify
+│   │   │   │       │   ├── 1.0.xml
+│   │   │   │       │   ├── 1.1.xml
+│   │   │   │       │   ├── 1.2.xml
+│   │   │   │       │   ├── 1.3.xml
+│   │   │   │       │   ├── 1.4.xml
+│   │   │   │       │   ├── 1.5.xml
+│   │   │   │       │   └── 1.6.xml
+│   │   │   │       └── snapshot
+│   │   │   │           ├── TestCycloneDxDirectoryEncoder.golden
+│   │   │   │           └── TestCycloneDxImageEncoder.golden
+│   │   │   ├── decoders_collection.go
+│   │   │   ├── decoders_collection_test.go
+│   │   │   ├── decoders.go
+│   │   │   ├── encoders_collection.go
+│   │   │   ├── encoders_collection_test.go
+│   │   │   ├── encoders.go
+│   │   │   ├── encoders_test.go
+│   │   │   ├── github
+│   │   │   │   ├── encoder.go
+│   │   │   │   ├── encoder_test.go
+│   │   │   │   ├── internal
+│   │   │   │   │   └── model
+│   │   │   │   │       ├── github_dependency_api.go
+│   │   │   │   │       ├── model.go
+│   │   │   │   │       └── model_test.go
+│   │   │   │   └── test-fixtures
+│   │   │   │       └── snapshot
+│   │   │   │           ├── TestGithubDirectoryEncoder.golden
+│   │   │   │           └── TestGithubImageEncoder.golden
+│   │   │   ├── internal
+│   │   │   │   ├── cyclonedxutil
+│   │   │   │   │   ├── decoder.go
+│   │   │   │   │   ├── decoder_test.go
+│   │   │   │   │   ├── encoder.go
+│   │   │   │   │   ├── helpers
+│   │   │   │   │   │   ├── author.go
+│   │   │   │   │   │   ├── author_test.go
+│   │   │   │   │   │   ├── component.go
+│   │   │   │   │   │   ├── component_test.go
+│   │   │   │   │   │   ├── cpe.go
+│   │   │   │   │   │   ├── cpe_test.go
+│   │   │   │   │   │   ├── decoder.go
+│   │   │   │   │   │   ├── decoder_test.go
+│   │   │   │   │   │   ├── description.go
+│   │   │   │   │   │   ├── description_test.go
+│   │   │   │   │   │   ├── external_references.go
+│   │   │   │   │   │   ├── external_references_test.go
+│   │   │   │   │   │   ├── group.go
+│   │   │   │   │   │   ├── group_test.go
+│   │   │   │   │   │   ├── licenses.go
+│   │   │   │   │   │   ├── licenses_test.go
+│   │   │   │   │   │   ├── properties.go
+│   │   │   │   │   │   ├── property_encoder.go
+│   │   │   │   │   │   ├── property_encoder_test.go
+│   │   │   │   │   │   ├── publisher.go
+│   │   │   │   │   │   └── publisher_test.go
+│   │   │   │   │   └── versions.go
+│   │   │   │   ├── spdxutil
+│   │   │   │   │   ├── helpers
+│   │   │   │   │   │   ├── description.go
+│   │   │   │   │   │   ├── description_test.go
+│   │   │   │   │   │   ├── document_name.go
+│   │   │   │   │   │   ├── document_namespace.go
+│   │   │   │   │   │   ├── document_namespace_test.go
+│   │   │   │   │   │   ├── document_name_test.go
+│   │   │   │   │   │   ├── download_location.go
+│   │   │   │   │   │   ├── download_location_test.go
+│   │   │   │   │   │   ├── external_ref.go
+│   │   │   │   │   │   ├── external_refs.go
+│   │   │   │   │   │   ├── external_refs_test.go
+│   │   │   │   │   │   ├── file_type.go
+│   │   │   │   │   │   ├── h_digest.go
+│   │   │   │   │   │   ├── h_digest_test.go
+│   │   │   │   │   │   ├── homepage.go
+│   │   │   │   │   │   ├── homepage_test.go
+│   │   │   │   │   │   ├── license.go
+│   │   │   │   │   │   ├── license_test.go
+│   │   │   │   │   │   ├── none_if_empty.go
+│   │   │   │   │   │   ├── none_if_empty_test.go
+│   │   │   │   │   │   ├── originator_supplier.go
+│   │   │   │   │   │   ├── originator_supplier_test.go
+│   │   │   │   │   │   ├── relationship_type.go
+│   │   │   │   │   │   ├── source_info.go
+│   │   │   │   │   │   ├── source_info_test.go
+│   │   │   │   │   │   ├── spdxid.go
+│   │   │   │   │   │   └── spdxid_test.go
+│   │   │   │   │   └── versions.go
+│   │   │   │   ├── stream
+│   │   │   │   │   ├── seekable_reader.go
+│   │   │   │   │   └── seekable_reader_test.go
+│   │   │   │   └── testutil
+│   │   │   │       ├── directory_input.go
+│   │   │   │       ├── file_relationships.go
+│   │   │   │       ├── image_input.go
+│   │   │   │       ├── redactor.go
+│   │   │   │       ├── snapshot.go
+│   │   │   │       └── test-fixtures
+│   │   │   │           ├── image-simple
+│   │   │   │           │   ├── Dockerfile
+│   │   │   │           │   ├── file-1.txt
+│   │   │   │           │   └── file-2.txt
+│   │   │   │           └── snapshot
+│   │   │   │               └── stereoscope-fixture-image-simple.golden
+│   │   │   ├── spdxjson
+│   │   │   │   ├── decoder.go
+│   │   │   │   ├── decoder_test.go
+│   │   │   │   ├── encoder.go
+│   │   │   │   ├── encoder_test.go
+│   │   │   │   └── test-fixtures
+│   │   │   │       ├── identify
+│   │   │   │       │   ├── 2.2.json
+│   │   │   │       │   └── 2.3.json
+│   │   │   │       ├── snapshot
+│   │   │   │       │   ├── TestSPDX22JSONRequredProperties.golden
+│   │   │   │       │   ├── TestSPDXJSONDirectoryEncoder.golden
+│   │   │   │       │   ├── TestSPDXJSONImageEncoder.golden
+│   │   │   │       │   └── TestSPDXRelationshipOrder.golden
+│   │   │   │       └── spdx
+│   │   │   │           ├── alpine-3.10.syft.spdx.json
+│   │   │   │           ├── alpine-3.10.vendor.spdx.json
+│   │   │   │           ├── bad
+│   │   │   │           │   ├── bad-sbom
+│   │   │   │           │   ├── example7-bin.spdx.json
+│   │   │   │           │   ├── example7-golang.spdx.json
+│   │   │   │           │   ├── example7-go-module.spdx.json
+│   │   │   │           │   └── example7-third-party-modules.spdx.json
+│   │   │   │           ├── example7-bin.spdx.json
+│   │   │   │           ├── example7-golang.spdx.json
+│   │   │   │           ├── example7-go-module.spdx.json
+│   │   │   │           └── example7-third-party-modules.spdx.json
+│   │   │   ├── spdxtagvalue
+│   │   │   │   ├── decoder.go
+│   │   │   │   ├── decoder_test.go
+│   │   │   │   ├── encoder.go
+│   │   │   │   ├── encoder_test.go
+│   │   │   │   └── test-fixtures
+│   │   │   │       ├── bad-sbom
+│   │   │   │       ├── identify
+│   │   │   │       │   ├── 2.1.sbom
+│   │   │   │       │   ├── 2.2.sbom
+│   │   │   │       │   └── 2.3.sbom
+│   │   │   │       ├── snapshot
+│   │   │   │       │   ├── TestSPDXJSONSPDXIDs.golden
+│   │   │   │       │   ├── TestSPDXRelationshipOrder.golden
+│   │   │   │       │   ├── TestSPDXTagValueDirectoryEncoder.golden
+│   │   │   │       │   └── TestSPDXTagValueImageEncoder.golden
+│   │   │   │       └── tag-value.spdx
+│   │   │   ├── syftjson
+│   │   │   │   ├── decoder.go
+│   │   │   │   ├── decoder_test.go
+│   │   │   │   ├── encoder.go
+│   │   │   │   ├── encoder_test.go
+│   │   │   │   ├── model
+│   │   │   │   │   ├── document.go
+│   │   │   │   │   ├── file.go
+│   │   │   │   │   ├── linux_release.go
+│   │   │   │   │   ├── linux_release_test.go
+│   │   │   │   │   ├── package.go
+│   │   │   │   │   ├── package_test.go
+│   │   │   │   │   ├── relationship.go
+│   │   │   │   │   ├── secrets.go
+│   │   │   │   │   ├── source.go
+│   │   │   │   │   └── source_test.go
+│   │   │   │   ├── schema_test.go
+│   │   │   │   ├── test-fixtures
+│   │   │   │   │   ├── identify
+│   │   │   │   │   │   └── 11.0.0.json
+│   │   │   │   │   ├── image-alpine
+│   │   │   │   │   │   └── Dockerfile
+│   │   │   │   │   └── snapshot
+│   │   │   │   │       ├── TestDirectoryEncoder.golden
+│   │   │   │   │       ├── TestEncodeFullJSONDocument.golden
+│   │   │   │   │       └── TestImageEncoder.golden
+│   │   │   │   ├── to_format_model.go
+│   │   │   │   ├── to_format_model_test.go
+│   │   │   │   ├── to_syft_model.go
+│   │   │   │   └── to_syft_model_test.go
+│   │   │   ├── table
+│   │   │   │   ├── encoder.go
+│   │   │   │   ├── encoder_test.go
+│   │   │   │   └── test-fixtures
+│   │   │   │       └── snapshot
+│   │   │   │           └── TestTableEncoder.golden
+│   │   │   ├── template
+│   │   │   │   ├── encoder.go
+│   │   │   │   ├── encoder_test.go
+│   │   │   │   └── test-fixtures
+│   │   │   │       ├── csv-hasField.template
+│   │   │   │       ├── csv.template
+│   │   │   │       ├── legacy
+│   │   │   │       │   ├── csv-hasField.template
+│   │   │   │       │   └── csv.template
+│   │   │   │       └── snapshot
+│   │   │   │           ├── TestFormatWithOptionAndHasField.golden
+│   │   │   │           ├── TestFormatWithOptionAndHasField_Legacy.golden
+│   │   │   │           ├── TestFormatWithOption.golden
+│   │   │   │           └── TestFormatWithOption_Legacy.golden
+│   │   │   ├── test-fixtures
+│   │   │   │   └── alpine-syft.json
+│   │   │   └── text
+│   │   │       ├── encoder.go
+│   │   │       ├── encoder_test.go
+│   │   │       └── test-fixtures
+│   │   │           ├── image-simple
+│   │   │           │   ├── Dockerfile
+│   │   │           │   ├── file-1.txt
+│   │   │           │   └── file-2.txt
+│   │   │           └── snapshot
+│   │   │               ├── stereoscope-fixture-image-simple.golden
+│   │   │               ├── TestTextDirectoryEncoder.golden
+│   │   │               └── TestTextImageEncoder.golden
+│   │   ├── get_source_config.go
+│   │   ├── get_source.go
+│   │   ├── internal
+│   │   │   ├── fileresolver
+│   │   │   │   ├── chroot_context.go
+│   │   │   │   ├── chroot_context_test.go
+│   │   │   │   ├── container_image_all_layers.go
+│   │   │   │   ├── container_image_all_layers_test.go
+│   │   │   │   ├── container_image_squash.go
+│   │   │   │   ├── container_image_squash_test.go
+│   │   │   │   ├── deferred.go
+│   │   │   │   ├── deferred_test.go
+│   │   │   │   ├── directory.go
+│   │   │   │   ├── directory_indexer.go
+│   │   │   │   ├── directory_indexer_test.go
+│   │   │   │   ├── directory_test.go
+│   │   │   │   ├── directory_windows_test.go
+│   │   │   │   ├── empty.go
+│   │   │   │   ├── excluding_file.go
+│   │   │   │   ├── excluding_file_test.go
+│   │   │   │   ├── file_metadata_by_location.go
+│   │   │   │   ├── path_skipper.go
+│   │   │   │   ├── path_skipper_test.go
+│   │   │   │   ├── test-fixtures
+│   │   │   │   │   ├── bad-symlinks
+│   │   │   │   │   │   └── root
+│   │   │   │   │   │       └── place
+│   │   │   │   │   │           └── fd -> ../somewhere/self/fd
+│   │   │   │   │   ├── generate-tar-fixture-from-source-dir.sh
+│   │   │   │   │   ├── image-duplicate-path
+│   │   │   │   │   │   ├── Dockerfile
+│   │   │   │   │   │   ├── file-1.txt
+│   │   │   │   │   │   └── file-2.txt
+│   │   │   │   │   ├── image-files-deleted
+│   │   │   │   │   │   ├── Dockerfile
+│   │   │   │   │   │   ├── file-1.txt
+│   │   │   │   │   │   ├── file-3.txt -> file-1.txt
+│   │   │   │   │   │   └── target
+│   │   │   │   │   │       └── file-2.txt
+│   │   │   │   │   ├── image-simple
+│   │   │   │   │   │   ├── Dockerfile
+│   │   │   │   │   │   ├── file-1.txt
+│   │   │   │   │   │   ├── file-2.txt
+│   │   │   │   │   │   └── target
+│   │   │   │   │   │       └── really
+│   │   │   │   │   │           └── nested
+│   │   │   │   │   │               └── file-3.txt
+│   │   │   │   │   ├── image-symlinks
+│   │   │   │   │   │   ├── Dockerfile
+│   │   │   │   │   │   ├── file-1.txt
+│   │   │   │   │   │   ├── file-2.txt
+│   │   │   │   │   │   ├── nested
+│   │   │   │   │   │   │   └── nested
+│   │   │   │   │   │   │       └── file-3.txt
+│   │   │   │   │   │   ├── new-file-2.txt
+│   │   │   │   │   │   ├── new-file-4.txt
+│   │   │   │   │   │   └── parent
+│   │   │   │   │   │       └── file-4.txt
+│   │   │   │   │   ├── path-detected
+│   │   │   │   │   │   └── empty
+│   │   │   │   │   ├── path-detected-2
+│   │   │   │   │   │   └── empty
+│   │   │   │   │   ├── req-resp
+│   │   │   │   │   │   ├── path
+│   │   │   │   │   │   │   └── to
+│   │   │   │   │   │   │       ├── rel-inside.txt -> ./the/file.txt
+│   │   │   │   │   │   │       └── the
+│   │   │   │   │   │   │           ├── file.txt
+│   │   │   │   │   │   │           └── rel-outside.txt -> ../../../somewhere/outside.txt
+│   │   │   │   │   │   ├── root-link -> ./
+│   │   │   │   │   │   └── somewhere
+│   │   │   │   │   │       └── outside.txt
+│   │   │   │   │   ├── symlinked-root
+│   │   │   │   │   │   ├── nested
+│   │   │   │   │   │   │   └── link-root -> ../real-root
+│   │   │   │   │   │   └── real-root
+│   │   │   │   │   │       ├── file1.txt
+│   │   │   │   │   │       └── nested
+│   │   │   │   │   │           ├── file2.txt
+│   │   │   │   │   │           └── linked-file1.txt -> ../file1.txt
+│   │   │   │   │   ├── symlinks-base
+│   │   │   │   │   │   ├── bar -> ../../base
+│   │   │   │   │   │   ├── base
+│   │   │   │   │   │   ├── baz -> /../../base
+│   │   │   │   │   │   ├── chain -> /foo
+│   │   │   │   │   │   ├── foo -> /base
+│   │   │   │   │   │   └── sub
+│   │   │   │   │   │       ├── item
+│   │   │   │   │   │       └── link -> ../sub/item
+│   │   │   │   │   ├── symlinks-from-image-symlinks-fixture
+│   │   │   │   │   │   ├── file-1.txt
+│   │   │   │   │   │   ├── file-2.txt
+│   │   │   │   │   │   ├── file-3.txt
+│   │   │   │   │   │   ├── link-1 -> file-1.txt
+│   │   │   │   │   │   ├── link-2 -> file-2.txt
+│   │   │   │   │   │   ├── link-dead -> ./i-dont-exist.txt
+│   │   │   │   │   │   ├── link-indirect -> ./link-2
+│   │   │   │   │   │   ├── link-within -> file-3.txt
+│   │   │   │   │   │   ├── parent
+│   │   │   │   │   │   │   └── file-4.txt
+│   │   │   │   │   │   └── parent-link -> parent
+│   │   │   │   │   ├── symlinks-loop
+│   │   │   │   │   │   ├── block
+│   │   │   │   │   │   │   └── loop0 -> ../devices/loop0
+│   │   │   │   │   │   ├── devices
+│   │   │   │   │   │   │   └── loop0
+│   │   │   │   │   │   │       ├── file.target
+│   │   │   │   │   │   │       └── subsystem -> ../../block
+│   │   │   │   │   │   └── README.md
+│   │   │   │   │   ├── symlinks-multiple-roots
+│   │   │   │   │   │   ├── outside
+│   │   │   │   │   │   │   └── link_to_readme -> ../root/readme
+│   │   │   │   │   │   └── root
+│   │   │   │   │   │       ├── link_to_link_to_readme -> ../outside/link_to_readme
+│   │   │   │   │   │       └── readme
+│   │   │   │   │   ├── symlinks-prune-indexing
+│   │   │   │   │   │   ├── before-path -> path
+│   │   │   │   │   │   ├── c-file.txt -> before-path/file.txt
+│   │   │   │   │   │   ├── c-path -> before-path
+│   │   │   │   │   │   └── path
+│   │   │   │   │   │       ├── 1
+│   │   │   │   │   │       │   └── 2
+│   │   │   │   │   │       │       └── 3
+│   │   │   │   │   │       │           └── 4
+│   │   │   │   │   │       │               └── dont-index-me-twice.txt
+│   │   │   │   │   │       ├── 5
+│   │   │   │   │   │       │   └── 6
+│   │   │   │   │   │       │       └── 7
+│   │   │   │   │   │       │           └── 8
+│   │   │   │   │   │       │               └── dont-index-me-twice-either.txt
+│   │   │   │   │   │       └── file.txt
+│   │   │   │   │   ├── symlinks-simple
+│   │   │   │   │   │   ├── link_to_link_to_new_readme -> ./link_to_new_readme
+│   │   │   │   │   │   ├── link_to_new_readme -> ./readme
+│   │   │   │   │   │   └── readme
+│   │   │   │   │   └── system_paths
+│   │   │   │   │       ├── outside_root
+│   │   │   │   │       │   └── link_target
+│   │   │   │   │       │       └── place
+│   │   │   │   │       └── target
+│   │   │   │   │           ├── dev
+│   │   │   │   │           │   └── place
+│   │   │   │   │           ├── home
+│   │   │   │   │           │   └── place
+│   │   │   │   │           ├── link
+│   │   │   │   │           │   └── a-symlink -> ../../outside_root/link_target
+│   │   │   │   │           ├── proc
+│   │   │   │   │           │   └── place
+│   │   │   │   │           └── sys
+│   │   │   │   │               └── place
+│   │   │   │   ├── unindexed_directory.go
+│   │   │   │   └── unindexed_directory_test.go
+│   │   │   ├── generate.go
+│   │   │   ├── jsonschema
+│   │   │   │   ├── main.go
+│   │   │   │   └── README.md
+│   │   │   ├── packagemetadata
+│   │   │   │   ├── completion_tester.go
+│   │   │   │   ├── discover_type_names.go
+│   │   │   │   ├── discover_type_names_test.go
+│   │   │   │   ├── generate
+│   │   │   │   │   └── main.go
+│   │   │   │   ├── generated.go
+│   │   │   │   ├── names.go
+│   │   │   │   └── names_test.go
+│   │   │   ├── parsing
+│   │   │   │   └── basic_parsing.go
+│   │   │   ├── sourcemetadata
+│   │   │   │   ├── completion_tester.go
+│   │   │   │   ├── discover_type_names.go
+│   │   │   │   ├── generate
+│   │   │   │   │   └── main.go
+│   │   │   │   ├── generated.go
+│   │   │   │   ├── names.go
+│   │   │   │   └── names_test.go
+│   │   │   ├── testutil
+│   │   │   │   └── chdir.go
+│   │   │   ├── unionreader
+│   │   │   │   ├── union_reader.go
+│   │   │   │   └── union_reader_test.go
+│   │   │   └── windows
+│   │   │       └── path.go
+│   │   ├── lib.go
+│   │   ├── lib_test.go
+│   │   ├── license
+│   │   │   ├── license.go
+│   │   │   └── license_test.go
+│   │   ├── linux
+│   │   │   ├── identify_release.go
+│   │   │   ├── identify_release_test.go
+│   │   │   ├── release.go
+│   │   │   └── test-fixtures
+│   │   │       ├── bad-redhat-release
+│   │   │       ├── bad-system-release-cpe
+│   │   │       ├── centos-8
+│   │   │       ├── debian-8
+│   │   │       ├── os
+│   │   │       │   ├── almalinux
+│   │   │       │   │   └── etc
+│   │   │       │   │       └── os-release
+│   │   │       │   ├── alpine
+│   │   │       │   │   └── etc
+│   │   │       │   │       └── os-release
+│   │   │       │   ├── amazon
+│   │   │       │   │   └── etc
+│   │   │       │   │       └── os-release
+│   │   │       │   ├── arch
+│   │   │       │   │   └── etc
+│   │   │       │   │       └── os-release
+│   │   │       │   ├── busybox
+│   │   │       │   │   └── bin
+│   │   │       │   │       └── busybox
+│   │   │       │   ├── centos
+│   │   │       │   │   └── usr
+│   │   │       │   │       └── lib
+│   │   │       │   │           └── os-release
+│   │   │       │   ├── centos5
+│   │   │       │   │   └── etc
+│   │   │       │   │       └── redhat-release
+│   │   │       │   ├── centos6
+│   │   │       │   │   └── etc
+│   │   │       │   │       └── system-release-cpe
+│   │   │       │   ├── custom
+│   │   │       │   │   └── etc
+│   │   │       │   │       └── os-release
+│   │   │       │   ├── debian
+│   │   │       │   │   └── usr
+│   │   │       │   │       └── lib
+│   │   │       │   │           └── os-release
+│   │   │       │   ├── empty
+│   │   │       │   │   └── etc
+│   │   │       │   │       └── os-release
+│   │   │       │   ├── fedora
+│   │   │       │   │   └── usr
+│   │   │       │   │       └── lib
+│   │   │       │   │           └── os-release
+│   │   │       │   ├── mariner
+│   │   │       │   │   └── etc
+│   │   │       │   │       └── os-release
+│   │   │       │   ├── opensuse-leap
+│   │   │       │   │   └── etc
+│   │   │       │   │       └── os-release
+│   │   │       │   ├── oraclelinux
+│   │   │       │   │   └── etc
+│   │   │       │   │       └── os-release
+│   │   │       │   ├── photon
+│   │   │       │   │   └── etc
+│   │   │       │   │       └── os-release
+│   │   │       │   ├── redhat
+│   │   │       │   │   └── usr
+│   │   │       │   │       └── lib
+│   │   │       │   │           └── os-release
+│   │   │       │   ├── rockylinux
+│   │   │       │   │   └── etc
+│   │   │       │   │       └── os-release
+│   │   │       │   ├── sles
+│   │   │       │   │   └── etc
+│   │   │       │   │       └── os-release
+│   │   │       │   ├── ubuntu
+│   │   │       │   │   └── etc
+│   │   │       │   │       └── os-release
+│   │   │       │   └── wolfi
+│   │   │       │       └── etc
+│   │   │       │           └── os-release
+│   │   │       ├── partial-fields
+│   │   │       │   ├── missing-id
+│   │   │       │   │   └── usr
+│   │   │       │   │       └── lib
+│   │   │       │   │           └── os-release
+│   │   │       │   ├── missing-version
+│   │   │       │   │   └── usr
+│   │   │       │   │       └── lib
+│   │   │       │   │           └── os-release
+│   │   │       │   └── unknown-id
+│   │   │       │       └── usr
+│   │   │       │           └── lib
+│   │   │       │               └── os-release
+│   │   │       ├── rhel-8
+│   │   │       ├── ubuntu-20.04
+│   │   │       └── unprintable
+│   │   ├── pkg
+│   │   │   ├── alpm.go
+│   │   │   ├── apk.go
+│   │   │   ├── apk_test.go
+│   │   │   ├── binary.go
+│   │   │   ├── cataloger
+│   │   │   │   ├── alpine
+│   │   │   │   │   ├── cataloger.go
+│   │   │   │   │   ├── cataloger_test.go
+│   │   │   │   │   ├── dependency.go
+│   │   │   │   │   ├── dependency_test.go
+│   │   │   │   │   ├── package.go
+│   │   │   │   │   ├── package_test.go
+│   │   │   │   │   ├── parse_apk_db.go
+│   │   │   │   │   ├── parse_apk_db_test.go
+│   │   │   │   │   └── test-fixtures
+│   │   │   │   │       ├── base
+│   │   │   │   │       ├── empty-deps-and-provides
+│   │   │   │   │       ├── extra-file-attributes
+│   │   │   │   │       ├── glob-paths
+│   │   │   │   │       │   └── lib
+│   │   │   │   │       │       └── apk
+│   │   │   │   │       │           └── db
+│   │   │   │   │       │               └── installed
+│   │   │   │   │       ├── multiple-1
+│   │   │   │   │       │   └── lib
+│   │   │   │   │       │       └── apk
+│   │   │   │   │       │           └── db
+│   │   │   │   │       │               └── installed
+│   │   │   │   │       ├── multiple-2
+│   │   │   │   │       │   └── lib
+│   │   │   │   │       │       └── apk
+│   │   │   │   │       │           └── db
+│   │   │   │   │       │               └── installed
+│   │   │   │   │       ├── single
+│   │   │   │   │       └── very-large-entries
+│   │   │   │   ├── arch
+│   │   │   │   │   ├── cataloger.go
+│   │   │   │   │   ├── cataloger_test.go
+│   │   │   │   │   ├── dependency.go
+│   │   │   │   │   ├── dependency_test.go
+│   │   │   │   │   ├── package.go
+│   │   │   │   │   ├── package_test.go
+│   │   │   │   │   ├── parse_alpm_db.go
+│   │   │   │   │   ├── parse_alpm_db_test.go
+│   │   │   │   │   └── test-fixtures
+│   │   │   │   │       ├── files
+│   │   │   │   │       ├── glob-paths
+│   │   │   │   │       │   └── var
+│   │   │   │   │       │       └── lib
+│   │   │   │   │       │           └── pacman
+│   │   │   │   │       │               └── local
+│   │   │   │   │       │                   ├── base-1.0
+│   │   │   │   │       │                   │   ├── desc
+│   │   │   │   │       │                   │   └── files
+│   │   │   │   │       │                   └── dive-0.10.0
+│   │   │   │   │       │                       └── desc
+│   │   │   │   │       ├── installed
+│   │   │   │   │       │   └── var
+│   │   │   │   │       │       └── lib
+│   │   │   │   │       │           └── pacman
+│   │   │   │   │       │               └── local
+│   │   │   │   │       │                   ├── emacs-29.3-3
+│   │   │   │   │       │                   │   └── desc
+│   │   │   │   │       │                   ├── fuzzy-1.2-3
+│   │   │   │   │       │                   │   ├── desc
+│   │   │   │   │       │                   │   └── files
+│   │   │   │   │       │                   ├── gmp-6.2.1-2
+│   │   │   │   │       │                   │   ├── desc
+│   │   │   │   │       │                   │   ├── files
+│   │   │   │   │       │                   │   └── mtree
+│   │   │   │   │       │                   ├── madeup-20.30-4
+│   │   │   │   │       │                   │   └── desc
+│   │   │   │   │       │                   └── tree-sitter-0.22.6-1
+│   │   │   │   │       │                       └── desc
+│   │   │   │   │       └── mtree
+│   │   │   │   ├── binary
+│   │   │   │   │   ├── classifier_cataloger.go
+│   │   │   │   │   ├── classifier_cataloger_test.go
+│   │   │   │   │   ├── classifier.go
+│   │   │   │   │   ├── classifier_package.go
+│   │   │   │   │   ├── classifiers.go
+│   │   │   │   │   ├── classifier_test.go
+│   │   │   │   │   ├── elf_package_cataloger.go
+│   │   │   │   │   ├── elf_package_cataloger_test.go
+│   │   │   │   │   ├── elf_package.go
+│   │   │   │   │   ├── elf_package_test.go
+│   │   │   │   │   ├── README.md
+│   │   │   │   │   └── test-fixtures
+│   │   │   │   │       ├── capture-snippet.sh
+│   │   │   │   │       ├── classifiers
+│   │   │   │   │       │   ├── negative
+│   │   │   │   │       │   │   ├── busybox
+│   │   │   │   │       │   │   ├── go
+│   │   │   │   │       │   │   ├── libpython2.7.so
+│   │   │   │   │       │   │   └── python2.6
+│   │   │   │   │       │   └── snippets
+│   │   │   │   │       │       ├── arangodb
+│   │   │   │   │       │       │   ├── 3.11.8
+│   │   │   │   │       │       │   │   └── linux-amd64
+│   │   │   │   │       │       │   │       └── arangosh
+│   │   │   │   │       │       │   └── 3.12.0-2
+│   │   │   │   │       │       │       └── linux-amd64
+│   │   │   │   │       │       │           └── arangosh
+│   │   │   │   │       │       ├── bash
+│   │   │   │   │       │       │   └── 5.1.16
+│   │   │   │   │       │       │       └── linux-amd64
+│   │   │   │   │       │       │           └── bash
+│   │   │   │   │       │       ├── busybox
+│   │   │   │   │       │       │   └── 1.36.1
+│   │   │   │   │       │       │       └── linux-amd64
+│   │   │   │   │       │       │           ├── [
+│   │   │   │   │       │       │           └── busybox -> ./[
+│   │   │   │   │       │       ├── consul
+│   │   │   │   │       │       │   └── 1.15.2
+│   │   │   │   │       │       │       └── linux-amd64
+│   │   │   │   │       │       │           └── consul
+│   │   │   │   │       │       ├── erlang
+│   │   │   │   │       │       │   ├── 25.3.2.6
+│   │   │   │   │       │       │   │   └── linux-amd64
+│   │   │   │   │       │       │   │       └── erlexec
+│   │   │   │   │       │       │   ├── 26.2.0.0
+│   │   │   │   │       │       │   │   └── linux-amd64
+│   │   │   │   │       │       │   │       └── erlexec
+│   │   │   │   │       │       │   └── 26.2.4
+│   │   │   │   │       │       │       └── linux-amd64
+│   │   │   │   │       │       │           └── liberts_internal.a
+│   │   │   │   │       │       ├── fluent-bit
+│   │   │   │   │       │       │   ├── 2.2.1
+│   │   │   │   │       │       │   │   └── linux-arm64
+│   │   │   │   │       │       │   │       └── fluent-bit
+│   │   │   │   │       │       │   └── 3.0.2
+│   │   │   │   │       │       │       └── linux-amd64
+│   │   │   │   │       │       │           └── fluent-bit
+│   │   │   │   │       │       ├── gcc
+│   │   │   │   │       │       │   └── 12.3.0
+│   │   │   │   │       │       │       └── linux-amd64
+│   │   │   │   │       │       │           └── gcc
+│   │   │   │   │       │       ├── go
+│   │   │   │   │       │       │   └── 1.21.3
+│   │   │   │   │       │       │       └── linux-amd64
+│   │   │   │   │       │       │           └── go
+│   │   │   │   │       │       ├── go-version-hint
+│   │   │   │   │       │       │   └── 1.15
+│   │   │   │   │       │       │       └── any
+│   │   │   │   │       │       │           └── VERSION
+│   │   │   │   │       │       ├── haproxy
+│   │   │   │   │       │       │   ├── 1.5.14
+│   │   │   │   │       │       │   │   └── linux-amd64
+│   │   │   │   │       │       │   │       └── haproxy
+│   │   │   │   │       │       │   ├── 1.8.22
+│   │   │   │   │       │       │   │   └── linux-amd64
+│   │   │   │   │       │       │   │       └── haproxy
+│   │   │   │   │       │       │   └── 2.7.3
+│   │   │   │   │       │       │       └── linux-amd64
+│   │   │   │   │       │       │           └── haproxy
+│   │   │   │   │       │       ├── helm
+│   │   │   │   │       │       │   ├── 3.10.3
+│   │   │   │   │       │       │   │   └── linux-amd64
+│   │   │   │   │       │       │   │       └── helm
+│   │   │   │   │       │       │   └── 3.11.1
+│   │   │   │   │       │       │       └── linux-amd64
+│   │   │   │   │       │       │           └── helm
+│   │   │   │   │       │       ├── httpd
+│   │   │   │   │       │       │   └── 2.4.54
+│   │   │   │   │       │       │       └── linux-amd64
+│   │   │   │   │       │       │           └── httpd
+│   │   │   │   │       │       ├── java-graal-openjdk
+│   │   │   │   │       │       │   └── 17.0.3+7-jvmci-22.1-b06
+│   │   │   │   │       │       │       └── linux-amd64
+│   │   │   │   │       │       │           └── java
+│   │   │   │   │       │       ├── java-jdk-openjdk
+│   │   │   │   │       │       │   └── 21.0.2+13-LTS
+│   │   │   │   │       │       │       └── linux-amd64
+│   │   │   │   │       │       │           └── jdb
+│   │   │   │   │       │       ├── java-jre-ibm
+│   │   │   │   │       │       │   └── 1.8.0_391
+│   │   │   │   │       │       │       └── linux-amd64
+│   │   │   │   │       │       │           └── java
+│   │   │   │   │       │       ├── java-jre-openjdk
+│   │   │   │   │       │       │   ├── 11.0.17
+│   │   │   │   │       │       │   │   └── linux-amd64
+│   │   │   │   │       │       │   │       └── java
+│   │   │   │   │       │       │   └── 1.8.0_352-b08
+│   │   │   │   │       │       │       └── linux-amd64
+│   │   │   │   │       │       │           └── java
+│   │   │   │   │       │       ├── java-jre-openjdk-arm64-eclipse
+│   │   │   │   │       │       │   └── 11.0.22
+│   │   │   │   │       │       │       └── linux-arm64
+│   │   │   │   │       │       │           └── java
+│   │   │   │   │       │       ├── java-jre-openjdk-eclipse
+│   │   │   │   │       │       │   └── 11.0.22
+│   │   │   │   │       │       │       └── linux-amd64
+│   │   │   │   │       │       │           └── java
+│   │   │   │   │       │       ├── java-jre-oracle
+│   │   │   │   │       │       │   └── 19.0.1
+│   │   │   │   │       │       │       ├── darwin
+│   │   │   │   │       │       │       │   └── java
+│   │   │   │   │       │       │       └── linux-amd64
+│   │   │   │   │       │       │           └── java
+│   │   │   │   │       │       ├── mariadb
+│   │   │   │   │       │       │   └── 10.6.15
+│   │   │   │   │       │       │       └── linux-amd64
+│   │   │   │   │       │       │           └── mariadb
+│   │   │   │   │       │       ├── memcached
+│   │   │   │   │       │       │   └── 1.6.18
+│   │   │   │   │       │       │       └── linux-amd64
+│   │   │   │   │       │       │           └── memcached
+│   │   │   │   │       │       ├── mysql
+│   │   │   │   │       │       │   ├── 5.6.51
+│   │   │   │   │       │       │   │   └── linux-amd64
+│   │   │   │   │       │       │   │       └── mysql
+│   │   │   │   │       │       │   └── 8.0.34
+│   │   │   │   │       │       │       └── linux-amd64
+│   │   │   │   │       │       │           └── mysql
+│   │   │   │   │       │       ├── nginx
+│   │   │   │   │       │       │   └── 1.25.1
+│   │   │   │   │       │       │       └── linux-amd64
+│   │   │   │   │       │       │           └── nginx
+│   │   │   │   │       │       ├── nginx-openresty
+│   │   │   │   │       │       │   └── 1.21.4.3
+│   │   │   │   │       │       │       └── linux-amd64
+│   │   │   │   │       │       │           └── nginx
+│   │   │   │   │       │       ├── node
+│   │   │   │   │       │       │   └── 19.2.0
+│   │   │   │   │       │       │       └── linux-amd64
+│   │   │   │   │       │       │           └── node
+│   │   │   │   │       │       ├── openssl
+│   │   │   │   │       │       │   ├── 1.1.1w
+│   │   │   │   │       │       │   │   └── linux-arm64
+│   │   │   │   │       │       │   │       └── openssl
+│   │   │   │   │       │       │   └── 3.1.4
+│   │   │   │   │       │       │       └── linux-amd64
+│   │   │   │   │       │       │           └── openssl
+│   │   │   │   │       │       ├── percona-server
+│   │   │   │   │       │       │   └── 8.0.35
+│   │   │   │   │       │       │       └── linux-amd64
+│   │   │   │   │       │       │           └── mysql
+│   │   │   │   │       │       ├── percona-xtrabackup
+│   │   │   │   │       │       │   └── 8.0.35
+│   │   │   │   │       │       │       └── linux-amd64
+│   │   │   │   │       │       │           └── xtrabackup
+│   │   │   │   │       │       ├── percona-xtradb-cluster
+│   │   │   │   │       │       │   └── 8.0.34
+│   │   │   │   │       │       │       └── linux-amd64
+│   │   │   │   │       │       │           └── mysql
+│   │   │   │   │       │       ├── perl
+│   │   │   │   │       │       │   ├── 5.12.5
+│   │   │   │   │       │       │   │   └── linux-amd64
+│   │   │   │   │       │       │   │       └── perl
+│   │   │   │   │       │       │   ├── 5.20.0
+│   │   │   │   │       │       │   │   └── linux-amd64
+│   │   │   │   │       │       │   │       └── perl
+│   │   │   │   │       │       │   └── 5.37.8
+│   │   │   │   │       │       │       └── linux-amd64
+│   │   │   │   │       │       │           └── perl
+│   │   │   │   │       │       ├── php-apache
+│   │   │   │   │       │       │   └── 8.2.1
+│   │   │   │   │       │       │       └── linux-amd64
+│   │   │   │   │       │       │           └── libphp.so
+│   │   │   │   │       │       ├── php-cli
+│   │   │   │   │       │       │   └── 8.2.1
+│   │   │   │   │       │       │       └── linux-amd64
+│   │   │   │   │       │       │           └── php
+│   │   │   │   │       │       ├── php-fpm
+│   │   │   │   │       │       │   └── 8.2.1
+│   │   │   │   │       │       │       └── linux-amd64
+│   │   │   │   │       │       │           └── php-fpm
+│   │   │   │   │       │       ├── postgres
+│   │   │   │   │       │       │   ├── 15.1
+│   │   │   │   │       │       │   │   └── linux-amd64
+│   │   │   │   │       │       │   │       └── postgres
+│   │   │   │   │       │       │   ├── 15beta4
+│   │   │   │   │       │       │   │   └── linux-amd64
+│   │   │   │   │       │       │   │       └── postgres
+│   │   │   │   │       │       │   ├── 9.5alpha1
+│   │   │   │   │       │       │   │   └── linux-amd64
+│   │   │   │   │       │       │   │       └── postgres
+│   │   │   │   │       │       │   └── 9.6.24
+│   │   │   │   │       │       │       └── linux-amd64
+│   │   │   │   │       │       │           └── postgres
+│   │   │   │   │       │       ├── pypy-shared-lib
+│   │   │   │   │       │       │   └── 7.3.14
+│   │   │   │   │       │       │       └── linux-amd64
+│   │   │   │   │       │       │           └── libpypy3.9-c.so
+│   │   │   │   │       │       ├── python
+│   │   │   │   │       │       │   └── 3.6.3
+│   │   │   │   │       │       │       └── linux-amd64
+│   │   │   │   │       │       │           └── python3.6
+│   │   │   │   │       │       ├── python-duplicates
+│   │   │   │   │       │       │   └── 3.8.16
+│   │   │   │   │       │       │       └── linux-amd64
+│   │   │   │   │       │       │           ├── dir
+│   │   │   │   │       │       │           │   └── python3.8
+│   │   │   │   │       │       │           ├── libpython3.8.so
+│   │   │   │   │       │       │           ├── patchlevel.h
+│   │   │   │   │       │       │           └── python3.8
+│   │   │   │   │       │       ├── python-shared-lib
+│   │   │   │   │       │       │   └── 3.7.4
+│   │   │   │   │       │       │       └── linux-amd64
+│   │   │   │   │       │       │           └── libpython3.7m.so.1.0
+│   │   │   │   │       │       ├── python-with-incorrect-match
+│   │   │   │   │       │       │   └── 3.5.3
+│   │   │   │   │       │       │       └── linux-amd64
+│   │   │   │   │       │       │           └── python3.5
+│   │   │   │   │       │       ├── redis-server
+│   │   │   │   │       │       │   ├── 5.0.0
+│   │   │   │   │       │       │   │   └── linux-amd64
+│   │   │   │   │       │       │   │       └── redis-server
+│   │   │   │   │       │       │   ├── 6.0.16
+│   │   │   │   │       │       │   │   └── linux-amd64
+│   │   │   │   │       │       │   │       └── redis-server
+│   │   │   │   │       │       │   ├── 7.0.0
+│   │   │   │   │       │       │   │   └── linux-amd64
+│   │   │   │   │       │       │   │       └── redis-server
+│   │   │   │   │       │       │   └── 7.0.14
+│   │   │   │   │       │       │       └── linux-amd64
+│   │   │   │   │       │       │           └── redis-server
+│   │   │   │   │       │       ├── ruby
+│   │   │   │   │       │       │   └── 1.9.3p551
+│   │   │   │   │       │       │       └── linux-amd64
+│   │   │   │   │       │       │           └── ruby
+│   │   │   │   │       │       ├── rust-libstd
+│   │   │   │   │       │       │   ├── 1.50.0
+│   │   │   │   │       │       │   │   ├── darwin
+│   │   │   │   │       │       │   │   │   └── libstd-f6f9eec1635e636a.dylib
+│   │   │   │   │       │       │   │   └── linux-amd64
+│   │   │   │   │       │       │   │       └── libstd-6f77337c1826707d.so
+│   │   │   │   │       │       │   └── 1.67.1
+│   │   │   │   │       │       │       ├── darwin
+│   │   │   │   │       │       │       │   └── libstd-16f2b65e77054c42.dylib
+│   │   │   │   │       │       │       └── linux-amd64
+│   │   │   │   │       │       │           └── libstd-c6192dd4c4d410ac.so
+│   │   │   │   │       │       ├── rust-libstd-musl
+│   │   │   │   │       │       │   └── 1.67.1
+│   │   │   │   │       │       │       └── linux-amd64
+│   │   │   │   │       │       │           └── libstd-86aefecbddda356d.so
+│   │   │   │   │       │       ├── traefik
+│   │   │   │   │       │       │   ├── 1.7.34
+│   │   │   │   │       │       │   │   └── linux-amd64
+│   │   │   │   │       │       │   │       └── traefik
+│   │   │   │   │       │       │   ├── 2.10.7
+│   │   │   │   │       │       │   │   └── linux-amd64
+│   │   │   │   │       │       │   │       └── traefik
+│   │   │   │   │       │       │   └── 2.9.6
+│   │   │   │   │       │       │       └── linux-amd64
+│   │   │   │   │       │       │           └── traefik
+│   │   │   │   │       │       ├── util-linux
+│   │   │   │   │       │       │   └── 2.37.4
+│   │   │   │   │       │       │       └── linux-amd64
+│   │   │   │   │       │       │           └── getopt
+│   │   │   │   │       │       └── wp
+│   │   │   │   │       │           └── 2.9.0
+│   │   │   │   │       │               └── linux-amd64
+│   │   │   │   │       │                   └── wp
+│   │   │   │   │       ├── config.yaml
+│   │   │   │   │       ├── custom
+│   │   │   │   │       │   ├── extra
+│   │   │   │   │       │   │   └── foo
+│   │   │   │   │       │   └── go-1.14
+│   │   │   │   │       │       └── go
+│   │   │   │   │       ├── elf-test-fixtures
+│   │   │   │   │       │   ├── Dockerfile
+│   │   │   │   │       │   ├── elfbinwithnestedlib
+│   │   │   │   │       │   │   ├── elfsrc
+│   │   │   │   │       │   │   │   ├── hello_world.cpp
+│   │   │   │   │       │   │   │   ├── hello_world.h
+│   │   │   │   │       │   │   │   ├── makefile
+│   │   │   │   │       │   │   │   └── testbin.cpp
+│   │   │   │   │       │   │   └── makefile
+│   │   │   │   │       │   ├── elfbinwithsisterlib
+│   │   │   │   │       │   │   ├── elfsrc1
+│   │   │   │   │       │   │   │   ├── hello_world.cpp
+│   │   │   │   │       │   │   │   ├── hello_world.h
+│   │   │   │   │       │   │   │   ├── makefile
+│   │   │   │   │       │   │   │   └── testbin.cpp
+│   │   │   │   │       │   │   ├── elfsrc2
+│   │   │   │   │       │   │   │   ├── hello_world2.cpp
+│   │   │   │   │       │   │   │   ├── hello_world2.h
+│   │   │   │   │       │   │   │   ├── makefile
+│   │   │   │   │       │   │   │   └── testbin2.cpp
+│   │   │   │   │       │   │   └── makefile
+│   │   │   │   │       │   └── README.md
+│   │   │   │   │       ├── image-busybox
+│   │   │   │   │       │   └── Dockerfile
+│   │   │   │   │       ├── image-fedora-32bit
+│   │   │   │   │       │   └── Dockerfile
+│   │   │   │   │       ├── image-fedora-64bit
+│   │   │   │   │       │   └── Dockerfile
+│   │   │   │   │       ├── Makefile
+│   │   │   │   │       ├── manager
+│   │   │   │   │       │   ├── internal
+│   │   │   │   │       │   │   ├── cli
+│   │   │   │   │       │   │   │   ├── cli.go
+│   │   │   │   │       │   │   │   └── commands
+│   │   │   │   │       │   │   │       ├── add_snippet.go
+│   │   │   │   │       │   │   │       ├── download.go
+│   │   │   │   │       │   │   │       ├── list.go
+│   │   │   │   │       │   │   │       ├── root.go
+│   │   │   │   │       │   │   │       └── write_snippet.go
+│   │   │   │   │       │   │   ├── config
+│   │   │   │   │       │   │   │   ├── application.go
+│   │   │   │   │       │   │   │   ├── application_test.go
+│   │   │   │   │       │   │   │   ├── binary_from_image.go
+│   │   │   │   │       │   │   │   ├── binary_from_image_test.go
+│   │   │   │   │       │   │   │   └── testdata
+│   │   │   │   │       │   │   │       └── app-configs
+│   │   │   │   │       │   │   │           ├── bad-image-collision.yaml
+│   │   │   │   │       │   │   │           ├── bad-implicit-name-collision.yaml
+│   │   │   │   │       │   │   │           ├── bad-missing-image-platform.yaml
+│   │   │   │   │       │   │   │           ├── bad-missing-image-ref.yaml
+│   │   │   │   │       │   │   │           ├── bad-missing-image.yaml
+│   │   │   │   │       │   │   │           ├── bad-missing-paths.yaml
+│   │   │   │   │       │   │   │           ├── bad-missing-version.yaml
+│   │   │   │   │       │   │   │           ├── bad-no-name.yaml
+│   │   │   │   │       │   │   │           ├── valid-1.yaml
+│   │   │   │   │       │   │   │           └── valid-2.yaml
+│   │   │   │   │       │   │   ├── download_from_image.go
+│   │   │   │   │       │   │   ├── download_from_image_test.go
+│   │   │   │   │       │   │   ├── list_entries.go
+│   │   │   │   │       │   │   ├── list_entries_test.go
+│   │   │   │   │       │   │   ├── snippet_metadata.go
+│   │   │   │   │       │   │   ├── snippet_metadata_test.go
+│   │   │   │   │       │   │   ├── testdata
+│   │   │   │   │       │   │   │   ├── bin
+│   │   │   │   │       │   │   │   │   └── busybox
+│   │   │   │   │       │   │   │   │       └── 1.3.6
+│   │   │   │   │       │   │   │   │           ├── linux-amd64
+│   │   │   │   │       │   │   │   │           │   └── busybox
+│   │   │   │   │       │   │   │   │           └── linux-arm64
+│   │   │   │   │       │   │   │   │               └── busybox
+│   │   │   │   │       │   │   │   └── snippets
+│   │   │   │   │       │   │   │       ├── busybox
+│   │   │   │   │       │   │   │       │   └── 1.3.6
+│   │   │   │   │       │   │   │       │       ├── linux-amd64
+│   │   │   │   │       │   │   │       │       │   └── busybox
+│   │   │   │   │       │   │   │       │       └── linux-arm64
+│   │   │   │   │       │   │   │       │           └── busybox
+│   │   │   │   │       │   │   │       └── postgres
+│   │   │   │   │       │   │   │           └── 9.6.10
+│   │   │   │   │       │   │   │               └── linux-amd64
+│   │   │   │   │       │   │   │                   └── postgres
+│   │   │   │   │       │   │   ├── ui
+│   │   │   │   │       │   │   │   ├── action.go
+│   │   │   │   │       │   │   │   ├── ansi.go
+│   │   │   │   │       │   │   │   ├── binary_list.go
+│   │   │   │   │       │   │   │   ├── error.go
+│   │   │   │   │       │   │   │   └── title.go
+│   │   │   │   │       │   │   ├── utils.go
+│   │   │   │   │       │   │   └── utils_test.go
+│   │   │   │   │       │   ├── main.go
+│   │   │   │   │       │   └── testutil
+│   │   │   │   │       │       ├── snippet_or_binary.go
+│   │   │   │   │       │       └── snippet_or_binary_test.go
+│   │   │   │   │       ├── version-parts.txt
+│   │   │   │   │       └── version.txt
+│   │   │   │   ├── common
+│   │   │   │   │   └── cpe
+│   │   │   │   │       └── create.go
+│   │   │   │   ├── cpp
+│   │   │   │   │   ├── cataloger.go
+│   │   │   │   │   ├── cataloger_test.go
+│   │   │   │   │   ├── package.go
+│   │   │   │   │   ├── parse_conanfile.go
+│   │   │   │   │   ├── parse_conanfile_test.go
+│   │   │   │   │   ├── parse_conaninfo.go
+│   │   │   │   │   ├── parse_conaninfo_test.go
+│   │   │   │   │   ├── parse_conanlock.go
+│   │   │   │   │   ├── parse_conanlock_test.go
+│   │   │   │   │   └── test-fixtures
+│   │   │   │   │       ├── conanfile.txt
+│   │   │   │   │       ├── conaninfo
+│   │   │   │   │       │   └── mfast
+│   │   │   │   │       │       └── 1.2.2
+│   │   │   │   │       │           └── my_user
+│   │   │   │   │       │               └── my_channel
+│   │   │   │   │       │                   └── package
+│   │   │   │   │       │                       └── 9d1f076b471417647c2022a78d5e2c1f834289ac
+│   │   │   │   │       │                           └── conaninfo.txt
+│   │   │   │   │       ├── conan.lock
+│   │   │   │   │       ├── conanlock-v2
+│   │   │   │   │       │   └── conan.lock
+│   │   │   │   │       ├── glob-paths
+│   │   │   │   │       │   └── somewhere
+│   │   │   │   │       │       └── src
+│   │   │   │   │       │           ├── conanfile.txt
+│   │   │   │   │       │           ├── conaninfo.txt
+│   │   │   │   │       │           └── conan.lock
+│   │   │   │   │       └── README.md
+│   │   │   │   ├── dart
+│   │   │   │   │   ├── cataloger.go
+│   │   │   │   │   ├── cataloger_test.go
+│   │   │   │   │   ├── package.go
+│   │   │   │   │   ├── parse_pubspec_lock.go
+│   │   │   │   │   ├── parse_pubspec_lock_test.go
+│   │   │   │   │   └── test-fixtures
+│   │   │   │   │       ├── glob-paths
+│   │   │   │   │       │   └── src
+│   │   │   │   │       │       └── pubspec.lock
+│   │   │   │   │       └── pubspec.lock
+│   │   │   │   ├── debian
+│   │   │   │   │   ├── cataloger.go
+│   │   │   │   │   ├── cataloger_test.go
+│   │   │   │   │   ├── dependency.go
+│   │   │   │   │   ├── dependency_test.go
+│   │   │   │   │   ├── package.go
+│   │   │   │   │   ├── package_test.go
+│   │   │   │   │   ├── parse_copyright.go
+│   │   │   │   │   ├── parse_copyright_test.go
+│   │   │   │   │   ├── parse_dpkg_db.go
+│   │   │   │   │   ├── parse_dpkg_db_test.go
+│   │   │   │   │   ├── parse_dpkg_info_files.go
+│   │   │   │   │   ├── parse_dpkg_info_files_test.go
+│   │   │   │   │   └── test-fixtures
+│   │   │   │   │       ├── copyright
+│   │   │   │   │       │   ├── libaudit-common
+│   │   │   │   │       │   ├── libc6
+│   │   │   │   │       │   ├── liblzma5
+│   │   │   │   │       │   ├── python
+│   │   │   │   │       │   └── trilicense
+│   │   │   │   │       ├── glob-paths
+│   │   │   │   │       │   ├── usr
+│   │   │   │   │       │   │   └── lib
+│   │   │   │   │       │   │       └── opkg
+│   │   │   │   │       │   │           ├── info
+│   │   │   │   │       │   │           │   └── pkg-1.0.control
+│   │   │   │   │       │   │           └── status
+│   │   │   │   │       │   └── var
+│   │   │   │   │       │       └── lib
+│   │   │   │   │       │           └── dpkg
+│   │   │   │   │       │               ├── status
+│   │   │   │   │       │               └── status.d
+│   │   │   │   │       │                   └── pkg-1.0
+│   │   │   │   │       ├── image-distroless-deb
+│   │   │   │   │       │   ├── Dockerfile
+│   │   │   │   │       │   ├── usr
+│   │   │   │   │       │   │   └── share
+│   │   │   │   │       │   │       └── doc
+│   │   │   │   │       │   │           └── libsqlite3-0
+│   │   │   │   │       │   │               └── copyright
+│   │   │   │   │       │   └── var
+│   │   │   │   │       │       └── lib
+│   │   │   │   │       │           └── dpkg
+│   │   │   │   │       │               └── status.d
+│   │   │   │   │       │                   ├── libsqlite3-0
+│   │   │   │   │       │                   └── libsqlite3-0.md5sums
+│   │   │   │   │       ├── image-dpkg
+│   │   │   │   │       │   ├── Dockerfile
+│   │   │   │   │       │   ├── usr
+│   │   │   │   │       │   │   └── share
+│   │   │   │   │       │   │       └── doc
+│   │   │   │   │       │   │           └── libpam-runtime
+│   │   │   │   │       │   │               └── copyright
+│   │   │   │   │       │   └── var
+│   │   │   │   │       │       └── lib
+│   │   │   │   │       │           └── dpkg
+│   │   │   │   │       │               ├── info
+│   │   │   │   │       │               │   ├── libpam-runtime.conffiles
+│   │   │   │   │       │               │   └── libpam-runtime.md5sums
+│   │   │   │   │       │               └── status
+│   │   │   │   │       ├── info
+│   │   │   │   │       │   ├── util-linux.conffiles
+│   │   │   │   │       │   └── zlib1g.md5sums
+│   │   │   │   │       └── var
+│   │   │   │   │           └── lib
+│   │   │   │   │               └── dpkg
+│   │   │   │   │                   └── status.d
+│   │   │   │   │                       ├── coreutils-relationships
+│   │   │   │   │                       ├── doc-examples
+│   │   │   │   │                       ├── empty
+│   │   │   │   │                       ├── installed-size-4KB
+│   │   │   │   │                       ├── libpam-runtime
+│   │   │   │   │                       ├── multiple
+│   │   │   │   │                       └── single
+│   │   │   │   ├── dotnet
+│   │   │   │   │   ├── cataloger.go
+│   │   │   │   │   ├── cataloger_test.go
+│   │   │   │   │   ├── package.go
+│   │   │   │   │   ├── package_test.go
+│   │   │   │   │   ├── parse_dotnet_deps.go
+│   │   │   │   │   ├── parse_dotnet_deps_test.go
+│   │   │   │   │   ├── parse_dotnet_portable_executable.go
+│   │   │   │   │   ├── parse_dotnet_portable_executable_test.go
+│   │   │   │   │   └── test-fixtures
+│   │   │   │   │       ├── glob-paths
+│   │   │   │   │       │   └── src
+│   │   │   │   │       │       ├── something.deps.json
+│   │   │   │   │       │       ├── something.dll
+│   │   │   │   │       │       └── something.exe
+│   │   │   │   │       └── TestLibrary.deps.json
+│   │   │   │   ├── elixir
+│   │   │   │   │   ├── cataloger.go
+│   │   │   │   │   ├── cataloger_test.go
+│   │   │   │   │   ├── package.go
+│   │   │   │   │   ├── parse_mix_lock.go
+│   │   │   │   │   ├── parse_mix_lock_test.go
+│   │   │   │   │   └── test-fixtures
+│   │   │   │   │       ├── glob-paths
+│   │   │   │   │       │   └── src
+│   │   │   │   │       │       └── mix.lock
+│   │   │   │   │       └── mix.lock
+│   │   │   │   ├── erlang
+│   │   │   │   │   ├── cataloger.go
+│   │   │   │   │   ├── cataloger_test.go
+│   │   │   │   │   ├── erlang_parser.go
+│   │   │   │   │   ├── erlang_parser_test.go
+│   │   │   │   │   ├── package.go
+│   │   │   │   │   ├── parse_otp_app.go
+│   │   │   │   │   ├── parse_otp_app_test.go
+│   │   │   │   │   ├── parse_rebar_lock.go
+│   │   │   │   │   ├── parse_rebar_lock_test.go
+│   │   │   │   │   └── test-fixtures
+│   │   │   │   │       ├── glob-paths
+│   │   │   │   │       │   └── src
+│   │   │   │   │       │       ├── rabbitmq.app
+│   │   │   │   │       │       └── rebar.lock
+│   │   │   │   │       ├── rabbitmq.app
+│   │   │   │   │       ├── rebar-2.lock
+│   │   │   │   │       └── rebar.lock
+│   │   │   │   ├── generic
+│   │   │   │   │   ├── cataloger.go
+│   │   │   │   │   ├── cataloger_test.go
+│   │   │   │   │   ├── parser.go
+│   │   │   │   │   └── test-fixtures
+│   │   │   │   │       ├── another-path.txt
+│   │   │   │   │       ├── a-path.txt
+│   │   │   │   │       ├── empty.txt
+│   │   │   │   │       └── last
+│   │   │   │   │           └── path.txt
+│   │   │   │   ├── gentoo
+│   │   │   │   │   ├── cataloger.go
+│   │   │   │   │   ├── cataloger_test.go
+│   │   │   │   │   ├── parse_portage_contents.go
+│   │   │   │   │   ├── purl.go
+│   │   │   │   │   ├── purl_test.go
+│   │   │   │   │   └── test-fixtures
+│   │   │   │   │       ├── glob-paths
+│   │   │   │   │       │   └── var
+│   │   │   │   │       │       └── db
+│   │   │   │   │       │           └── pkg
+│   │   │   │   │       │               └── x
+│   │   │   │   │       │                   └── y
+│   │   │   │   │       │                       └── CONTENTS
+│   │   │   │   │       └── image-portage
+│   │   │   │   │           └── var
+│   │   │   │   │               └── db
+│   │   │   │   │                   └── pkg
+│   │   │   │   │                       └── app-containers
+│   │   │   │   │                           └── skopeo-1.5.1
+│   │   │   │   │                               ├── CONTENTS
+│   │   │   │   │                               ├── LICENSE
+│   │   │   │   │                               └── SIZE
+│   │   │   │   ├── githubactions
+│   │   │   │   │   ├── cataloger.go
+│   │   │   │   │   ├── cataloger_test.go
+│   │   │   │   │   ├── package.go
+│   │   │   │   │   ├── parse_composite_action.go
+│   │   │   │   │   ├── parse_composite_action_test.go
+│   │   │   │   │   ├── parse_workflow.go
+│   │   │   │   │   ├── parse_workflow_test.go
+│   │   │   │   │   └── test-fixtures
+│   │   │   │   │       ├── call-shared-workflow.yaml
+│   │   │   │   │       ├── composite-action.yaml
+│   │   │   │   │       ├── glob
+│   │   │   │   │       └── workflow-multi-job.yaml
+│   │   │   │   ├── golang
+│   │   │   │   │   ├── billy_adapter.go
+│   │   │   │   │   ├── billy_adapter_test.go
+│   │   │   │   │   ├── cataloger.go
+│   │   │   │   │   ├── cataloger_test.go
+│   │   │   │   │   ├── config.go
+│   │   │   │   │   ├── config_test.go
+│   │   │   │   │   ├── internal
+│   │   │   │   │   │   ├── README.md
+│   │   │   │   │   │   └── xcoff
+│   │   │   │   │   │       ├── file.go
+│   │   │   │   │   │       ├── file_test.go
+│   │   │   │   │   │       ├── testdata
+│   │   │   │   │   │       │   ├── gcc-ppc32-aix-dwarf2-exec
+│   │   │   │   │   │       │   └── gcc-ppc64-aix-dwarf2-exec
+│   │   │   │   │   │       └── xcoff.go
+│   │   │   │   │   ├── licenses.go
+│   │   │   │   │   ├── licenses_test.go
+│   │   │   │   │   ├── package.go
+│   │   │   │   │   ├── package_test.go
+│   │   │   │   │   ├── parse_go_binary.go
+│   │   │   │   │   ├── parse_go_binary_test.go
+│   │   │   │   │   ├── parse_go_mod.go
+│   │   │   │   │   ├── parse_go_mod_test.go
+│   │   │   │   │   ├── scan_binary.go
+│   │   │   │   │   ├── scan_binary_test.go
+│   │   │   │   │   ├── stdlib_package.go
+│   │   │   │   │   ├── stdlib_package_test.go
+│   │   │   │   │   ├── subfs.go
+│   │   │   │   │   ├── subfs_test.go
+│   │   │   │   │   └── test-fixtures
+│   │   │   │   │       ├── archs
+│   │   │   │   │       │   ├── Makefile
+│   │   │   │   │       │   └── src
+│   │   │   │   │       │       ├── build.sh
+│   │   │   │   │       │       ├── go.mod
+│   │   │   │   │       │       └── main.go
+│   │   │   │   │       ├── glob-paths
+│   │   │   │   │       │   ├── partial-binary
+│   │   │   │   │       │   └── src
+│   │   │   │   │       │       └── go.mod
+│   │   │   │   │       ├── go-sum-hashes
+│   │   │   │   │       │   ├── go.mod
+│   │   │   │   │       │   └── go.sum
+│   │   │   │   │       ├── image-not-a-module
+│   │   │   │   │       │   ├── Dockerfile
+│   │   │   │   │       │   ├── go.mod
+│   │   │   │   │       │   ├── go.sum
+│   │   │   │   │       │   └── main.go
+│   │   │   │   │       ├── image-small
+│   │   │   │   │       │   ├── Dockerfile
+│   │   │   │   │       │   ├── go.mod
+│   │   │   │   │       │   ├── go.sum
+│   │   │   │   │       │   └── main.go
+│   │   │   │   │       ├── licenses
+│   │   │   │   │       │   └── pkg
+│   │   │   │   │       │       └── mod
+│   │   │   │   │       │           └── github.com
+│   │   │   │   │       │               ├── !cap!o!r!g
+│   │   │   │   │       │               │   └── !cap!project@v4.111.5
+│   │   │   │   │       │               │       └── LICENSE.txt
+│   │   │   │   │       │               └── someorg
+│   │   │   │   │       │                   ├── somename@v0.3.2
+│   │   │   │   │       │                   │   └── LICENSE
+│   │   │   │   │       │                   └── strangelicense@v1.2.3
+│   │   │   │   │       │                       └── LiCeNsE.tXt
+│   │   │   │   │       ├── many-packages
+│   │   │   │   │       ├── one-package
+│   │   │   │   │       ├── repo
+│   │   │   │   │       │   └── LICENSE
+│   │   │   │   │       └── zip-fs
+│   │   │   │   │           └── github.com
+│   │   │   │   │               └── someorg
+│   │   │   │   │                   └── somepkg@version
+│   │   │   │   │                       ├── a-file
+│   │   │   │   │                       └── subdir
+│   │   │   │   │                           └── subfile
+│   │   │   │   ├── haskell
+│   │   │   │   │   ├── cataloger.go
+│   │   │   │   │   ├── cataloger_test.go
+│   │   │   │   │   ├── package.go
+│   │   │   │   │   ├── parse_cabal_freeze.go
+│   │   │   │   │   ├── parse_cabal_freeze_test.go
+│   │   │   │   │   ├── parse_stack_lock.go
+│   │   │   │   │   ├── parse_stack_lock_test.go
+│   │   │   │   │   ├── parse_stack_yaml.go
+│   │   │   │   │   ├── parse_stack_yaml_test.go
+│   │   │   │   │   └── test-fixtures
+│   │   │   │   │       ├── cabal.project.freeze
+│   │   │   │   │       ├── glob-paths
+│   │   │   │   │       │   └── src
+│   │   │   │   │       │       ├── cabal.project.freeze
+│   │   │   │   │       │       ├── stack.yaml
+│   │   │   │   │       │       └── stack.yaml.lock
+│   │   │   │   │       ├── stack.yaml
+│   │   │   │   │       └── stack.yaml.lock
+│   │   │   │   ├── internal
+│   │   │   │   │   ├── cpegenerate
+│   │   │   │   │   │   ├── apk.go
+│   │   │   │   │   │   ├── apk_test.go
+│   │   │   │   │   │   ├── candidate_by_package_type.go
+│   │   │   │   │   │   ├── candidate_by_package_type_test.go
+│   │   │   │   │   │   ├── dictionary
+│   │   │   │   │   │   │   ├── data
+│   │   │   │   │   │   │   │   └── cpe-index.json
+│   │   │   │   │   │   │   ├── generate_index.go
+│   │   │   │   │   │   │   ├── index-generator
+│   │   │   │   │   │   │   │   ├── generate.go
+│   │   │   │   │   │   │   │   ├── generate_test.go
+│   │   │   │   │   │   │   │   ├── main.go
+│   │   │   │   │   │   │   │   ├── nvd.go
+│   │   │   │   │   │   │   │   └── testdata
+│   │   │   │   │   │   │   │       ├── expected-cpe-index.json
+│   │   │   │   │   │   │   │       └── official-cpe-dictionary_v2.3.xml
+│   │   │   │   │   │   │   └── types.go
+│   │   │   │   │   │   ├── field_candidate_filter.go
+│   │   │   │   │   │   ├── field_candidate.go
+│   │   │   │   │   │   ├── field_candidate_test.go
+│   │   │   │   │   │   ├── filter.go
+│   │   │   │   │   │   ├── filter_test.go
+│   │   │   │   │   │   ├── generate.go
+│   │   │   │   │   │   ├── generate_test.go
+│   │   │   │   │   │   ├── go.go
+│   │   │   │   │   │   ├── go_test.go
+│   │   │   │   │   │   ├── java.go
+│   │   │   │   │   │   ├── java_groupid_map.go
+│   │   │   │   │   │   ├── javascript.go
+│   │   │   │   │   │   ├── java_test.go
+│   │   │   │   │   │   ├── python.go
+│   │   │   │   │   │   ├── rpm.go
+│   │   │   │   │   │   ├── ruby.go
+│   │   │   │   │   │   ├── utils.go
+│   │   │   │   │   │   ├── utils_test.go
+│   │   │   │   │   │   ├── vendors_from_url.go
+│   │   │   │   │   │   ├── vendors_from_url_test.go
+│   │   │   │   │   │   ├── wordpress.go
+│   │   │   │   │   │   └── wordpress_test.go
+│   │   │   │   │   ├── dependency
+│   │   │   │   │   │   ├── resolver.go
+│   │   │   │   │   │   └── resolver_test.go
+│   │   │   │   │   └── pkgtest
+│   │   │   │   │       ├── observing_resolver.go
+│   │   │   │   │       └── test_generic_parser.go
+│   │   │   │   ├── java
+│   │   │   │   │   ├── archive_filename.go
+│   │   │   │   │   ├── archive_filename_test.go
+│   │   │   │   │   ├── archive_parser.go
+│   │   │   │   │   ├── archive_parser_test.go
+│   │   │   │   │   ├── cataloger.go
+│   │   │   │   │   ├── cataloger_test.go
+│   │   │   │   │   ├── config.go
+│   │   │   │   │   ├── graalvm_native_image_cataloger.go
+│   │   │   │   │   ├── graalvm_native_image_cataloger_test.go
+│   │   │   │   │   ├── maven_repo_utils.go
+│   │   │   │   │   ├── package_url.go
+│   │   │   │   │   ├── package_url_test.go
+│   │   │   │   │   ├── parse_gradle_lockfile.go
+│   │   │   │   │   ├── parse_gradle_lockfile_test.go
+│   │   │   │   │   ├── parse_java_manifest.go
+│   │   │   │   │   ├── parse_java_manifest_test.go
+│   │   │   │   │   ├── parse_pom_properties.go
+│   │   │   │   │   ├── parse_pom_properties_test.go
+│   │   │   │   │   ├── parse_pom_xml.go
+│   │   │   │   │   ├── parse_pom_xml_test.go
+│   │   │   │   │   ├── save_archive_to_tmp.go
+│   │   │   │   │   ├── tar_wrapped_archive_parser.go
+│   │   │   │   │   ├── tar_wrapped_archive_parser_test.go
+│   │   │   │   │   ├── test-fixtures
+│   │   │   │   │   │   ├── glob-paths
+│   │   │   │   │   │   │   ├── archives
+│   │   │   │   │   │   │   │   ├── example.tar
+│   │   │   │   │   │   │   │   ├── example.tar.br
+│   │   │   │   │   │   │   │   ├── example.tar.bz
+│   │   │   │   │   │   │   │   ├── example.tar.bz2
+│   │   │   │   │   │   │   │   ├── example.tar.gz
+│   │   │   │   │   │   │   │   ├── example.tar.lz4
+│   │   │   │   │   │   │   │   ├── example.tar.sz
+│   │   │   │   │   │   │   │   ├── example.tar.xz
+│   │   │   │   │   │   │   │   ├── example.tar.zst
+│   │   │   │   │   │   │   │   ├── example.tar.zstd
+│   │   │   │   │   │   │   │   ├── example.tbr
+│   │   │   │   │   │   │   │   ├── example.tbz
+│   │   │   │   │   │   │   │   ├── example.tbz2
+│   │   │   │   │   │   │   │   ├── example.tgz
+│   │   │   │   │   │   │   │   ├── example.tlz4
+│   │   │   │   │   │   │   │   ├── example.tsz
+│   │   │   │   │   │   │   │   ├── example.txz
+│   │   │   │   │   │   │   │   ├── example.tzst
+│   │   │   │   │   │   │   │   ├── example.tzstd
+│   │   │   │   │   │   │   │   └── example.zip
+│   │   │   │   │   │   │   ├── java-archives
+│   │   │   │   │   │   │   │   ├── example.ear
+│   │   │   │   │   │   │   │   ├── example.hpi
+│   │   │   │   │   │   │   │   ├── example.jar
+│   │   │   │   │   │   │   │   ├── example.jpi
+│   │   │   │   │   │   │   │   ├── example.lpkg
+│   │   │   │   │   │   │   │   ├── example.nar
+│   │   │   │   │   │   │   │   ├── example.par
+│   │   │   │   │   │   │   │   ├── example.sar
+│   │   │   │   │   │   │   │   └── example.war
+│   │   │   │   │   │   │   └── src
+│   │   │   │   │   │   │       └── pom.xml
+│   │   │   │   │   │   ├── graalvm-sbom
+│   │   │   │   │   │   │   └── micronaut.json
+│   │   │   │   │   │   ├── gradle
+│   │   │   │   │   │   │   ├── build.gradle
+│   │   │   │   │   │   │   └── gradle.lockfile
+│   │   │   │   │   │   ├── jar-metadata
+│   │   │   │   │   │   │   ├── api-all-2.0.0-sources
+│   │   │   │   │   │   │   │   └── META-INF
+│   │   │   │   │   │   │   │       ├── MANIFEST.MF
+│   │   │   │   │   │   │   │       └── maven
+│   │   │   │   │   │   │   │           └── org.apache.directory.api
+│   │   │   │   │   │   │   │               ├── api-all
+│   │   │   │   │   │   │   │               │   ├── pom.properties
+│   │   │   │   │   │   │   │               │   └── pom.xml
+│   │   │   │   │   │   │   │               └── api-asn1-api
+│   │   │   │   │   │   │   │                   ├── pom.properties
+│   │   │   │   │   │   │   │                   └── pom.xml
+│   │   │   │   │   │   │   ├── com.fasterxml.jackson.core.jackson-core-2.15.2
+│   │   │   │   │   │   │   │   └── META-INF
+│   │   │   │   │   │   │   │       ├── MANIFEST.MF
+│   │   │   │   │   │   │   │       └── maven
+│   │   │   │   │   │   │   │           └── com.fasterxml.jackson.core
+│   │   │   │   │   │   │   │               └── jackson-core
+│   │   │   │   │   │   │   │                   └── pom.xml
+│   │   │   │   │   │   │   ├── jackson-core-2.15.2
+│   │   │   │   │   │   │   │   └── META-INF
+│   │   │   │   │   │   │   │       ├── MANIFEST.MF
+│   │   │   │   │   │   │   │       └── maven
+│   │   │   │   │   │   │   │           └── com.fasterxml.jackson.core
+│   │   │   │   │   │   │   │               └── jackson-core
+│   │   │   │   │   │   │   │                   └── pom.xml
+│   │   │   │   │   │   │   ├── Makefile
+│   │   │   │   │   │   │   ├── opensaml-core-3.4.6
+│   │   │   │   │   │   │   │   └── META-INF
+│   │   │   │   │   │   │   │       ├── INDEX.LIST
+│   │   │   │   │   │   │   │       ├── MANIFEST.MF
+│   │   │   │   │   │   │   │       └── maven
+│   │   │   │   │   │   │   │           └── org.opensaml
+│   │   │   │   │   │   │   │               └── opensaml-core
+│   │   │   │   │   │   │   │                   ├── pom.properties
+│   │   │   │   │   │   │   │                   └── pom.xml
+│   │   │   │   │   │   │   ├── README.md
+│   │   │   │   │   │   │   └── spring-instrumentation-4.3.0-1.0
+│   │   │   │   │   │   │       └── META-INF
+│   │   │   │   │   │   │           └── MANIFEST.MF
+│   │   │   │   │   │   ├── java-builds
+│   │   │   │   │   │   │   ├── build-example-java-app-gradle.sh
+│   │   │   │   │   │   │   ├── build-example-java-app-maven.sh
+│   │   │   │   │   │   │   ├── build-example-java-app-native-image.sh
+│   │   │   │   │   │   │   ├── build-example-jenkins-plugin.sh
+│   │   │   │   │   │   │   ├── build-example-macho-binary.sh
+│   │   │   │   │   │   │   ├── build-example-sb-app-nestedjar.sh
+│   │   │   │   │   │   │   ├── example-java-app
+│   │   │   │   │   │   │   │   ├── build.gradle
+│   │   │   │   │   │   │   │   ├── gradle.lockfile
+│   │   │   │   │   │   │   │   ├── pom.xml
+│   │   │   │   │   │   │   │   └── src
+│   │   │   │   │   │   │   │       └── main
+│   │   │   │   │   │   │   │           └── java
+│   │   │   │   │   │   │   │               └── hello
+│   │   │   │   │   │   │   │                   ├── Greeter.java
+│   │   │   │   │   │   │   │                   └── HelloWorld.java
+│   │   │   │   │   │   │   ├── example-jenkins-plugin
+│   │   │   │   │   │   │   │   ├── pom.xml
+│   │   │   │   │   │   │   │   └── src
+│   │   │   │   │   │   │   │       └── main
+│   │   │   │   │   │   │   │           ├── java
+│   │   │   │   │   │   │   │           │   └── io
+│   │   │   │   │   │   │   │           │       └── jenkins
+│   │   │   │   │   │   │   │           │           └── plugins
+│   │   │   │   │   │   │   │           │               └── sample
+│   │   │   │   │   │   │   │           │                   └── HelloWorldBuilder.java
+│   │   │   │   │   │   │   │           └── resources
+│   │   │   │   │   │   │   │               ├── index.jelly
+│   │   │   │   │   │   │   │               └── io
+│   │   │   │   │   │   │   │                   └── jenkins
+│   │   │   │   │   │   │   │                       └── plugins
+│   │   │   │   │   │   │   │                           └── sample
+│   │   │   │   │   │   │   │                               ├── HelloWorldBuilder
+│   │   │   │   │   │   │   │                               │   ├── config_fr.properties
+│   │   │   │   │   │   │   │                               │   ├── config.jelly
+│   │   │   │   │   │   │   │                               │   ├── config.properties
+│   │   │   │   │   │   │   │                               │   ├── help-name_fr.html
+│   │   │   │   │   │   │   │                               │   ├── help-name.html
+│   │   │   │   │   │   │   │                               │   ├── help-useFrench_fr.html
+│   │   │   │   │   │   │   │                               │   └── help-useFrench.html
+│   │   │   │   │   │   │   │                               ├── Messages_fr.properties
+│   │   │   │   │   │   │   │                               └── Messages.properties
+│   │   │   │   │   │   │   ├── example-sb-app
+│   │   │   │   │   │   │   │   ├── pom.xml
+│   │   │   │   │   │   │   │   └── src
+│   │   │   │   │   │   │   │       ├── main
+│   │   │   │   │   │   │   │       │   └── java
+│   │   │   │   │   │   │   │       │       └── com
+│   │   │   │   │   │   │   │       │           └── example
+│   │   │   │   │   │   │   │       │               └── springboot
+│   │   │   │   │   │   │   │       │                   ├── Application.java
+│   │   │   │   │   │   │   │       │                   └── HelloController.java
+│   │   │   │   │   │   │   │       └── test
+│   │   │   │   │   │   │   │           └── java
+│   │   │   │   │   │   │   │               └── com
+│   │   │   │   │   │   │   │                   └── example
+│   │   │   │   │   │   │   │                       └── springboot
+│   │   │   │   │   │   │   │                           ├── HelloControllerIT.java
+│   │   │   │   │   │   │   │                           └── HelloControllerTest.java
+│   │   │   │   │   │   │   └── Makefile
+│   │   │   │   │   │   ├── manifest
+│   │   │   │   │   │   │   ├── continuation
+│   │   │   │   │   │   │   ├── extra-empty-lines
+│   │   │   │   │   │   │   ├── extra-info
+│   │   │   │   │   │   │   ├── leading-space
+│   │   │   │   │   │   │   ├── small
+│   │   │   │   │   │   │   ├── standard-info
+│   │   │   │   │   │   │   └── version-with-date
+│   │   │   │   │   │   ├── maven-xml-responses
+│   │   │   │   │   │   │   ├── opensaml-parent-3.4.6.pom
+│   │   │   │   │   │   │   └── parent-7.11.2.pom
+│   │   │   │   │   │   └── pom
+│   │   │   │   │   │       ├── colon-delimited.pom.properties
+│   │   │   │   │   │       ├── colon-delimited-with-equals.pom.properties
+│   │   │   │   │   │       ├── commons-codec.pom.xml
+│   │   │   │   │   │       ├── commons-text.pom.xml
+│   │   │   │   │   │       ├── declared-iso-8859-encoded-pom.xml.base64
+│   │   │   │   │   │       ├── equals-delimited-with-colons.pom.properties
+│   │   │   │   │   │       ├── extra.pom.properties
+│   │   │   │   │   │       ├── neo4j-license-maven-plugin.pom.xml
+│   │   │   │   │   │       ├── pom.xml
+│   │   │   │   │   │       ├── small.pom.properties
+│   │   │   │   │   │       └── undeclared-iso-8859-encoded-pom.xml.base64
+│   │   │   │   │   ├── zip_wrapped_archive_parser.go
+│   │   │   │   │   └── zip_wrapped_archive_parser_test.go
+│   │   │   │   ├── javascript
+│   │   │   │   │   ├── cataloger.go
+│   │   │   │   │   ├── cataloger_test.go
+│   │   │   │   │   ├── config.go
+│   │   │   │   │   ├── package.go
+│   │   │   │   │   ├── package_test.go
+│   │   │   │   │   ├── parse_package_json.go
+│   │   │   │   │   ├── parse_package_json_test.go
+│   │   │   │   │   ├── parse_package_lock.go
+│   │   │   │   │   ├── parse_package_lock_test.go
+│   │   │   │   │   ├── parse_pnpm_lock.go
+│   │   │   │   │   ├── parse_pnpm_lock_test.go
+│   │   │   │   │   ├── parse_yarn_lock.go
+│   │   │   │   │   ├── parse_yarn_lock_test.go
+│   │   │   │   │   └── test-fixtures
+│   │   │   │   │       ├── glob-paths
+│   │   │   │   │       │   └── src
+│   │   │   │   │       │       ├── package.json
+│   │   │   │   │       │       ├── package-lock.json
+│   │   │   │   │       │       ├── pnpm-lock.yaml
+│   │   │   │   │       │       └── yarn.lock
+│   │   │   │   │       ├── pkg-json
+│   │   │   │   │       │   ├── package.json
+│   │   │   │   │       │   ├── package-license-object.json
+│   │   │   │   │       │   ├── package-license-objects.json
+│   │   │   │   │       │   ├── package-malformed-license.json
+│   │   │   │   │       │   ├── package-nested-author.json
+│   │   │   │   │       │   ├── package-no-license.json
+│   │   │   │   │       │   ├── package-partial.json
+│   │   │   │   │       │   ├── package-private.json
+│   │   │   │   │       │   └── package-repo-string.json
+│   │   │   │   │       ├── pkg-lock
+│   │   │   │   │       │   ├── alias-package-lock-1.json
+│   │   │   │   │       │   ├── alias-package-lock-2.json
+│   │   │   │   │       │   ├── array-license-package-lock.json
+│   │   │   │   │       │   ├── node_modules
+│   │   │   │   │       │   │   ├── @actions
+│   │   │   │   │       │   │   │   └── core
+│   │   │   │   │       │   │   │       └── package.json
+│   │   │   │   │       │   │   └── cowsay
+│   │   │   │   │       │   │       └── package.json
+│   │   │   │   │       │   ├── package-lock-2.json
+│   │   │   │   │       │   ├── package-lock-3.json
+│   │   │   │   │       │   └── package-lock.json
+│   │   │   │   │       ├── pnpm
+│   │   │   │   │       │   └── pnpm-lock.yaml
+│   │   │   │   │       ├── pnpm-v6
+│   │   │   │   │       │   └── pnpm-lock.yaml
+│   │   │   │   │       ├── yarn
+│   │   │   │   │       │   └── yarn.lock
+│   │   │   │   │       ├── yarn-berry
+│   │   │   │   │       │   └── yarn.lock
+│   │   │   │   │       └── yarn-remote
+│   │   │   │   │           ├── registry_response.json
+│   │   │   │   │           └── yarn.lock
+│   │   │   │   ├── kernel
+│   │   │   │   │   ├── cataloger.go
+│   │   │   │   │   ├── cataloger_test.go
+│   │   │   │   │   ├── package.go
+│   │   │   │   │   ├── parse_linux_kernel_file.go
+│   │   │   │   │   ├── parse_linux_kernel_module_file.go
+│   │   │   │   │   └── test-fixtures
+│   │   │   │   │       ├── image-kernel-and-modules
+│   │   │   │   │       │   └── Dockerfile
+│   │   │   │   │       └── Makefile
+│   │   │   │   ├── lua
+│   │   │   │   │   ├── cataloger.go
+│   │   │   │   │   ├── cataloger_test.go
+│   │   │   │   │   ├── package.go
+│   │   │   │   │   ├── package_test.go
+│   │   │   │   │   ├── parse_rockspec.go
+│   │   │   │   │   ├── parse_rockspec_test.go
+│   │   │   │   │   ├── rockspec_parser.go
+│   │   │   │   │   ├── rockspec_parser_test.go
+│   │   │   │   │   └── test-fixtures
+│   │   │   │   │       ├── glob-paths
+│   │   │   │   │       │   └── lua
+│   │   │   │   │       │       └── package.rockspec
+│   │   │   │   │       └── rockspec
+│   │   │   │   │           ├── kong-3.7.0-0.rockspec
+│   │   │   │   │           ├── kong-pgmoon-1.16.2-1.rockspec
+│   │   │   │   │           ├── lpeg-1.0.2-1.rockspec
+│   │   │   │   │           └── luasyslog-2.0.1-1.rockspec
+│   │   │   │   ├── nix
+│   │   │   │   │   ├── cataloger.go
+│   │   │   │   │   ├── cataloger_test.go
+│   │   │   │   │   ├── package.go
+│   │   │   │   │   ├── package_test.go
+│   │   │   │   │   ├── parse_nix_store_path.go
+│   │   │   │   │   ├── parse_nix_store_path_test.go
+│   │   │   │   │   └── test-fixtures
+│   │   │   │   │       └── fixture-1
+│   │   │   │   │           └── nix
+│   │   │   │   │               └── store
+│   │   │   │   │                   └── h0cnbmfcn93xm5dg2x27ixhag1cwndga-glibc-2.34-210-bin
+│   │   │   │   │                       ├── lib
+│   │   │   │   │                       │   └── glibc.so
+│   │   │   │   │                       └── share
+│   │   │   │   │                           └── man
+│   │   │   │   │                               └── glibc.1
+│   │   │   │   ├── php
+│   │   │   │   │   ├── cataloger.go
+│   │   │   │   │   ├── cataloger_test.go
+│   │   │   │   │   ├── package.go
+│   │   │   │   │   ├── package_test.go
+│   │   │   │   │   ├── parse_composer_lock.go
+│   │   │   │   │   ├── parse_composer_lock_test.go
+│   │   │   │   │   ├── parse_installed_json.go
+│   │   │   │   │   ├── parse_installed_json_test.go
+│   │   │   │   │   ├── parse_pecl_serialized.go
+│   │   │   │   │   ├── parse_pecl_serialized_test.go
+│   │   │   │   │   └── test-fixtures
+│   │   │   │   │       ├── composer.lock
+│   │   │   │   │       ├── glob-paths
+│   │   │   │   │       │   ├── php
+│   │   │   │   │       │   └── src
+│   │   │   │   │       │       ├── composer.lock
+│   │   │   │   │       │       └── installed.json
+│   │   │   │   │       ├── memcached.reg
+│   │   │   │   │       └── vendor
+│   │   │   │   │           ├── composer_1
+│   │   │   │   │           │   └── installed.json
+│   │   │   │   │           └── composer_2
+│   │   │   │   │               └── installed.json
+│   │   │   │   ├── python
+│   │   │   │   │   ├── cataloger.go
+│   │   │   │   │   ├── cataloger_test.go
+│   │   │   │   │   ├── dependency.go
+│   │   │   │   │   ├── dependency_test.go
+│   │   │   │   │   ├── package.go
+│   │   │   │   │   ├── package_test.go
+│   │   │   │   │   ├── parse_pipfile_lock.go
+│   │   │   │   │   ├── parse_pipfile_lock_test.go
+│   │   │   │   │   ├── parse_poetry_lock.go
+│   │   │   │   │   ├── parse_poetry_lock_test.go
+│   │   │   │   │   ├── parse_requirements.go
+│   │   │   │   │   ├── parse_requirements_test.go
+│   │   │   │   │   ├── parse_setup.go
+│   │   │   │   │   ├── parse_setup_test.go
+│   │   │   │   │   ├── parse_wheel_egg.go
+│   │   │   │   │   ├── parse_wheel_egg_metadata.go
+│   │   │   │   │   ├── parse_wheel_egg_metadata_test.go
+│   │   │   │   │   ├── parse_wheel_egg_record.go
+│   │   │   │   │   ├── parse_wheel_egg_record_test.go
+│   │   │   │   │   ├── test-fixtures
+│   │   │   │   │   │   ├── casesensitive
+│   │   │   │   │   │   │   ├── DIST-INFO
+│   │   │   │   │   │   │   │   ├── direct_url.json
+│   │   │   │   │   │   │   │   ├── METADATA
+│   │   │   │   │   │   │   │   ├── RECORD
+│   │   │   │   │   │   │   │   └── top_level.txt
+│   │   │   │   │   │   │   └── EGG-INFO
+│   │   │   │   │   │   │       ├── PKG-INFO
+│   │   │   │   │   │   │       ├── PKG-INFO-INVALID
+│   │   │   │   │   │   │       ├── RECORD
+│   │   │   │   │   │   │       └── top_level.txt
+│   │   │   │   │   │   ├── dist-info
+│   │   │   │   │   │   │   ├── direct_url.json
+│   │   │   │   │   │   │   ├── METADATA
+│   │   │   │   │   │   │   ├── RECORD
+│   │   │   │   │   │   │   └── top_level.txt
+│   │   │   │   │   │   ├── egg-info
+│   │   │   │   │   │   │   ├── PKG-INFO
+│   │   │   │   │   │   │   ├── PKG-INFO-INVALID
+│   │   │   │   │   │   │   ├── RECORD
+│   │   │   │   │   │   │   └── top_level.txt
+│   │   │   │   │   │   ├── empty-1.0.0-py3.8.egg-info
+│   │   │   │   │   │   ├── glob-paths
+│   │   │   │   │   │   │   ├── site-packages
+│   │   │   │   │   │   │   │   ├── v.DIST-INFO
+│   │   │   │   │   │   │   │   │   └── METADATA
+│   │   │   │   │   │   │   │   ├── w.EGG-INFO
+│   │   │   │   │   │   │   │   │   └── PKG-INFO
+│   │   │   │   │   │   │   │   ├── x.dist-info
+│   │   │   │   │   │   │   │   │   └── METADATA
+│   │   │   │   │   │   │   │   ├── y.egg-info
+│   │   │   │   │   │   │   │   │   └── PKG-INFO
+│   │   │   │   │   │   │   │   └── z.egg-info
+│   │   │   │   │   │   │   └── src
+│   │   │   │   │   │   │       ├── 1-requirements-dev.txt
+│   │   │   │   │   │   │       ├── extra-requirements.txt
+│   │   │   │   │   │   │       ├── Pipfile.lock
+│   │   │   │   │   │   │       ├── poetry.lock
+│   │   │   │   │   │   │       ├── requirements-dev.txt
+│   │   │   │   │   │   │       ├── requirements.txt
+│   │   │   │   │   │   │       └── setup.py
+│   │   │   │   │   │   ├── image-multi-site-package
+│   │   │   │   │   │   │   └── Dockerfile
+│   │   │   │   │   │   ├── installed-files
+│   │   │   │   │   │   │   └── installed-files.txt
+│   │   │   │   │   │   ├── malformed-record
+│   │   │   │   │   │   │   └── dist-info
+│   │   │   │   │   │   │       ├── METADATA
+│   │   │   │   │   │   │       └── RECORD
+│   │   │   │   │   │   ├── no-version-py3.8.egg-info
+│   │   │   │   │   │   ├── partial.dist-info
+│   │   │   │   │   │   │   └── METADATA
+│   │   │   │   │   │   ├── pipfile-lock
+│   │   │   │   │   │   │   └── Pipfile.lock
+│   │   │   │   │   │   ├── poetry
+│   │   │   │   │   │   │   ├── conflicting-with-extras
+│   │   │   │   │   │   │   │   ├── poetry.lock
+│   │   │   │   │   │   │   │   └── pyproject.toml
+│   │   │   │   │   │   │   ├── dev-deps
+│   │   │   │   │   │   │   │   └── poetry.lock
+│   │   │   │   │   │   │   ├── multiple-extras
+│   │   │   │   │   │   │   │   ├── poetry.lock
+│   │   │   │   │   │   │   │   └── pyproject.toml
+│   │   │   │   │   │   │   ├── nested-extras
+│   │   │   │   │   │   │   │   ├── poetry.lock
+│   │   │   │   │   │   │   │   └── pyproject.toml
+│   │   │   │   │   │   │   └── simple-deps
+│   │   │   │   │   │   │       ├── poetry.lock
+│   │   │   │   │   │   │       └── pyproject.toml
+│   │   │   │   │   │   ├── pyenv
+│   │   │   │   │   │   │   ├── good-config
+│   │   │   │   │   │   │   └── trixy-config
+│   │   │   │   │   │   ├── Python-2.7.egg-info
+│   │   │   │   │   │   ├── requires
+│   │   │   │   │   │   │   └── requirements.txt
+│   │   │   │   │   │   ├── setup
+│   │   │   │   │   │   │   ├── dynamic-setup.py
+│   │   │   │   │   │   │   └── setup.py
+│   │   │   │   │   │   └── test.egg-info
+│   │   │   │   │   ├── virtual_env.go
+│   │   │   │   │   └── virtual_env_test.go
+│   │   │   │   ├── r
+│   │   │   │   │   ├── cataloger.go
+│   │   │   │   │   ├── cataloger_test.go
+│   │   │   │   │   ├── package.go
+│   │   │   │   │   ├── package_test.go
+│   │   │   │   │   ├── parse_description.go
+│   │   │   │   │   ├── parse_description_test.go
+│   │   │   │   │   └── test-fixtures
+│   │   │   │   │       ├── DESCRIPTION
+│   │   │   │   │       ├── installed
+│   │   │   │   │       │   ├── base
+│   │   │   │   │       │   │   └── DESCRIPTION
+│   │   │   │   │       │   └── stringr
+│   │   │   │   │       │       └── DESCRIPTION
+│   │   │   │   │       └── map-parse
+│   │   │   │   │           ├── bad
+│   │   │   │   │           ├── eof-multiline
+│   │   │   │   │           ├── multiline
+│   │   │   │   │           ├── no-name
+│   │   │   │   │           ├── no-version
+│   │   │   │   │           └── simple
+│   │   │   │   ├── redhat
+│   │   │   │   │   ├── cataloger.go
+│   │   │   │   │   ├── cataloger_test.go
+│   │   │   │   │   ├── dependency.go
+│   │   │   │   │   ├── dependency_test.go
+│   │   │   │   │   ├── package.go
+│   │   │   │   │   ├── package_test.go
+│   │   │   │   │   ├── parse_rpm_archive.go
+│   │   │   │   │   ├── parse_rpm_archive_test.go
+│   │   │   │   │   ├── parse_rpm_db.go
+│   │   │   │   │   ├── parse_rpm_db_test.go
+│   │   │   │   │   ├── parse_rpm_manifest.go
+│   │   │   │   │   ├── parse_rpm_manifest_test.go
+│   │   │   │   │   └── test-fixtures
+│   │   │   │   │       ├── bad
+│   │   │   │   │       │   └── bad.rpm
+│   │   │   │   │       ├── container-manifest-2
+│   │   │   │   │       ├── generate-fixture.sh
+│   │   │   │   │       ├── glob-paths
+│   │   │   │   │       │   ├── dive-0.10.0.rpm
+│   │   │   │   │       │   ├── usr
+│   │   │   │   │       │   │   ├── lib
+│   │   │   │   │       │   │   │   └── sysimage
+│   │   │   │   │       │   │   │       └── rpm
+│   │   │   │   │       │   │   │           ├── Packages
+│   │   │   │   │       │   │   │           ├── Packages.db
+│   │   │   │   │       │   │   │           └── rpmdb.sqlite
+│   │   │   │   │       │   │   └── share
+│   │   │   │   │       │   │       └── rpm
+│   │   │   │   │       │   │           ├── Packages
+│   │   │   │   │       │   │           ├── Packages.db
+│   │   │   │   │       │   │           └── rpmdb.sqlite
+│   │   │   │   │       │   └── var
+│   │   │   │   │       │       └── lib
+│   │   │   │   │       │           ├── rpm
+│   │   │   │   │       │           │   ├── Packages
+│   │   │   │   │       │           │   ├── Packages.db
+│   │   │   │   │       │           │   └── rpmdb.sqlite
+│   │   │   │   │       │           └── rpmmanifest
+│   │   │   │   │       │               └── container-manifest-2
+│   │   │   │   │       ├── image-minimal
+│   │   │   │   │       │   ├── Dockerfile
+│   │   │   │   │       │   └── remove.sh
+│   │   │   │   │       ├── Makefile
+│   │   │   │   │       └── Packages
+│   │   │   │   ├── ruby
+│   │   │   │   │   ├── cataloger.go
+│   │   │   │   │   ├── cataloger_test.go
+│   │   │   │   │   ├── package.go
+│   │   │   │   │   ├── package_test.go
+│   │   │   │   │   ├── parse_gemfile_lock.go
+│   │   │   │   │   ├── parse_gemfile_lock_test.go
+│   │   │   │   │   ├── parse_gemspec.go
+│   │   │   │   │   ├── parse_gemspec_test.go
+│   │   │   │   │   └── test-fixtures
+│   │   │   │   │       ├── bundler.gemspec
+│   │   │   │   │       ├── Gemfile.lock
+│   │   │   │   │       └── glob-paths
+│   │   │   │   │           ├── specifications
+│   │   │   │   │           │   ├── pkg
+│   │   │   │   │           │   │   └── nested.gemspec
+│   │   │   │   │           │   └── root.gemspec
+│   │   │   │   │           └── src
+│   │   │   │   │               └── Gemfile.lock
+│   │   │   │   ├── rust
+│   │   │   │   │   ├── cataloger.go
+│   │   │   │   │   ├── cataloger_test.go
+│   │   │   │   │   ├── package.go
+│   │   │   │   │   ├── package_test.go
+│   │   │   │   │   ├── parse_audit_binary.go
+│   │   │   │   │   ├── parse_cargo_lock.go
+│   │   │   │   │   ├── parse_cargo_lock_test.go
+│   │   │   │   │   └── test-fixtures
+│   │   │   │   │       ├── Cargo.lock
+│   │   │   │   │       ├── glob-paths
+│   │   │   │   │       │   ├── partial-binary
+│   │   │   │   │       │   └── src
+│   │   │   │   │       │       └── Cargo.lock
+│   │   │   │   │       └── image-audit
+│   │   │   │   │           └── Dockerfile
+│   │   │   │   ├── sbom
+│   │   │   │   │   ├── cataloger.go
+│   │   │   │   │   ├── cataloger_test.go
+│   │   │   │   │   └── test-fixtures
+│   │   │   │   │       ├── alpine
+│   │   │   │   │       │   └── syft-json
+│   │   │   │   │       │       └── sbom.syft.json
+│   │   │   │   │       └── glob-paths
+│   │   │   │   │           ├── app.bom
+│   │   │   │   │           ├── app.bom.json
+│   │   │   │   │           ├── app.cdx
+│   │   │   │   │           ├── app.cdx.json
+│   │   │   │   │           ├── app.sbom
+│   │   │   │   │           ├── app.sbom.json
+│   │   │   │   │           ├── app.spdx
+│   │   │   │   │           ├── app.spdx.json
+│   │   │   │   │           ├── app.syft.json
+│   │   │   │   │           ├── bom
+│   │   │   │   │           └── sbom
+│   │   │   │   ├── swift
+│   │   │   │   │   ├── cataloger.go
+│   │   │   │   │   ├── cataloger_test.go
+│   │   │   │   │   ├── package.go
+│   │   │   │   │   ├── package_test.go
+│   │   │   │   │   ├── parse_package_resolved.go
+│   │   │   │   │   ├── parse_package_resolved_test.go
+│   │   │   │   │   ├── parse_podfile_lock.go
+│   │   │   │   │   ├── parse_podfile_lock_test.go
+│   │   │   │   │   └── test-fixtures
+│   │   │   │   │       ├── bad-version-packages.resolved
+│   │   │   │   │       ├── empty-packages.resolved
+│   │   │   │   │       ├── glob-paths
+│   │   │   │   │       │   └── src
+│   │   │   │   │       │       └── Podfile.lock
+│   │   │   │   │       ├── Package.resolved
+│   │   │   │   │       ├── PackageV3.resolved
+│   │   │   │   │       └── Podfile.lock
+│   │   │   │   └── wordpress
+│   │   │   │       ├── cataloger.go
+│   │   │   │       ├── cataloger_test.go
+│   │   │   │       ├── package.go
+│   │   │   │       ├── parse_plugin.go
+│   │   │   │       ├── parse_plugin_test.go
+│   │   │   │       └── test-fixtures
+│   │   │   │           └── glob-paths
+│   │   │   │               ├── wp-admin
+│   │   │   │               │   └── index.php
+│   │   │   │               ├── wp-content
+│   │   │   │               │   └── plugins
+│   │   │   │               │       ├── akismet
+│   │   │   │               │       │   └── akismet.php
+│   │   │   │               │       └── all-in-one-wp-migration
+│   │   │   │               │           └── all-in-one-wp-migration.php
+│   │   │   │               └── wp-includes
+│   │   │   │                   └── index.php
+│   │   │   ├── cataloger.go
+│   │   │   ├── cocoapods.go
+│   │   │   ├── collection.go
+│   │   │   ├── collection_test.go
+│   │   │   ├── conan.go
+│   │   │   ├── dart.go
+│   │   │   ├── dotnet.go
+│   │   │   ├── dpkg.go
+│   │   │   ├── elixir.go
+│   │   │   ├── erlang.go
+│   │   │   ├── evidence.go
+│   │   │   ├── file_owner.go
+│   │   │   ├── golang.go
+│   │   │   ├── hackage.go
+│   │   │   ├── java.go
+│   │   │   ├── java_test.go
+│   │   │   ├── key_value.go
+│   │   │   ├── language.go
+│   │   │   ├── language_test.go
+│   │   │   ├── license.go
+│   │   │   ├── license_set.go
+│   │   │   ├── license_set_test.go
+│   │   │   ├── license_test.go
+│   │   │   ├── linux_kernel.go
+│   │   │   ├── microsoft.go
+│   │   │   ├── nix.go
+│   │   │   ├── npm.go
+│   │   │   ├── package.go
+│   │   │   ├── package_test.go
+│   │   │   ├── php.go
+│   │   │   ├── portage.go
+│   │   │   ├── python.go
+│   │   │   ├── python_test.go
+│   │   │   ├── r.go
+│   │   │   ├── rockspec.go
+│   │   │   ├── rpm.go
+│   │   │   ├── rpm_test.go
+│   │   │   ├── ruby.go
+│   │   │   ├── rust.go
+│   │   │   ├── swift.go
+│   │   │   ├── type.go
+│   │   │   ├── type_test.go
+│   │   │   ├── url.go
+│   │   │   └── wordpress.go
+│   │   ├── sbom
+│   │   │   ├── format.go
+│   │   │   ├── sbom.go
+│   │   │   └── writer.go
+│   │   ├── source
+│   │   │   ├── alias.go
+│   │   │   ├── description.go
+│   │   │   ├── directory_metadata.go
+│   │   │   ├── directorysource
+│   │   │   │   ├── cache_excludes.go
+│   │   │   │   ├── directory_source.go
+│   │   │   │   ├── directory_source_provider.go
+│   │   │   │   ├── directory_source_test.go
+│   │   │   │   └── directory_source_win_test.go
+│   │   │   ├── exclude.go
+│   │   │   ├── file_metadata.go
+│   │   │   ├── filesource
+│   │   │   │   ├── file_source.go
+│   │   │   │   ├── file_source_provider.go
+│   │   │   │   └── file_source_test.go
+│   │   │   ├── image_metadata.go
+│   │   │   ├── internal
+│   │   │   │   └── digest_utils.go
+│   │   │   ├── provider.go
+│   │   │   ├── scope.go
+│   │   │   ├── scope_test.go
+│   │   │   ├── source.go
+│   │   │   ├── sourceproviders
+│   │   │   │   ├── source_provider_config.go
+│   │   │   │   └── source_providers.go
+│   │   │   ├── stereoscopesource
+│   │   │   │   ├── image_source.go
+│   │   │   │   ├── image_source_provider.go
+│   │   │   │   └── image_source_test.go
+│   │   │   └── test-fixtures
+│   │   │       ├── actual-path
+│   │   │       │   └── empty
+│   │   │       ├── file-index-filter
+│   │   │       │   └── empty
+│   │   │       ├── generate-tar-fixture-from-source-dir.sh
+│   │   │       ├── image-simple
+│   │   │       │   ├── Dockerfile
+│   │   │       │   ├── file-1.txt
+│   │   │       │   ├── file-2.txt
+│   │   │       │   └── target
+│   │   │       │       └── really
+│   │   │       │           └── nested
+│   │   │       │               └── file-3.txt
+│   │   │       ├── path-detected
+│   │   │       │   └── empty
+│   │   │       ├── path-detected-2
+│   │   │       │   └── empty
+│   │   │       ├── symlink -> actual-path
+│   │   │       └── system_paths
+│   │   │           ├── outside_root
+│   │   │           │   └── link_target
+│   │   │           │       └── place
+│   │   │           └── target
+│   │   │               ├── dev
+│   │   │               │   └── place
+│   │   │               ├── home
+│   │   │               │   └── place
+│   │   │               ├── link
+│   │   │               │   └── a-symlink
+│   │   │               │       └── place
+│   │   │               ├── proc
+│   │   │               │   └── place
+│   │   │               └── sys
+│   │   │                   └── place
+│   │   └── testutil
+│   │       ├── package_metadata.go
+│   │       └── README.md
+│   ├── Taskfile.yaml
+│   └── test
+│       ├── cli
+│       │   ├── all_formats_convertible_test.go
+│       │   ├── all_formats_expressible_test.go
+│       │   ├── archive_test.go
+│       │   ├── convert_cmd_test.go
+│       │   ├── cyclonedx_valid_test.go
+│       │   ├── dir_root_scan_regression_test.go
+│       │   ├── json_schema_test.go
+│       │   ├── root_cmd_test.go
+│       │   ├── scan_cmd_test.go
+│       │   ├── spdx_json_schema_test.go
+│       │   ├── spdx_tooling_validation_test.go
+│       │   ├── symlink_test.go
+│       │   ├── test-fixtures
+│       │   │   ├── archive
+│       │   │   │   └── dist-info
+│       │   │   │       ├── METADATA
+│       │   │   │       ├── RECORD
+│       │   │   │       └── top_level.txt
+│       │   │   ├── attestation
+│       │   │   │   ├── config
+│       │   │   │   │   ├── config.json
+│       │   │   │   │   ├── ctfe
+│       │   │   │   │   │   ├── ct_server.cfg
+│       │   │   │   │   │   ├── privkey.pem
+│       │   │   │   │   │   └── pubkey.pem
+│       │   │   │   │   ├── dex
+│       │   │   │   │   │   └── docker-compose-config.yaml
+│       │   │   │   │   └── logid.sh
+│       │   │   │   ├── docker-compose-config.yaml
+│       │   │   │   ├── docker-compose.yaml
+│       │   │   │   └── Dockerfile.ctfe_init
+│       │   │   ├── csv.template
+│       │   │   ├── image-bad-binaries
+│       │   │   │   ├── Dockerfile
+│       │   │   │   └── sources.list
+│       │   │   ├── image-hidden-packages
+│       │   │   │   └── Dockerfile
+│       │   │   ├── image-java-spdx-tools
+│       │   │   │   ├── Dockerfile
+│       │   │   │   └── Makefile
+│       │   │   ├── image-node-binary
+│       │   │   │   └── Dockerfile
+│       │   │   ├── image-pkg-coverage -> ../../../cmd/syft/internal/test/integration/test-fixtures/image-pkg-coverage
+│       │   │   ├── Makefile
+│       │   │   └── registry
+│       │   │       ├── Dockerfile
+│       │   │       └── Makefile
+│       │   ├── trait_assertions_test.go
+│       │   ├── utils_test.go
+│       │   └── version_cmd_test.go
+│       ├── compare
+│       │   ├── compare.py
+│       │   ├── deb.sh
+│       │   ├── mac.sh
+│       │   ├── rpm.sh
+│       │   └── test-fixtures
+│       │       └── acceptance-centos-8.2.2004.json
+│       ├── install
+│       │   ├── 0_checksums_test.sh
+│       │   ├── 1_download_snapshot_asset_test.sh
+│       │   ├── 2_download_release_asset_test.sh
+│       │   ├── 3_install_asset_test.sh
+│       │   ├── 4_prep_signature_verification_test.sh
+│       │   ├── environments
+│       │   │   ├── Dockerfile-alpine-3.6
+│       │   │   ├── Dockerfile-busybox-1.36
+│       │   │   └── Dockerfile-ubuntu-20.04
+│       │   ├── github_test.sh
+│       │   ├── Makefile
+│       │   ├── test-fixtures
+│       │   │   ├── assets
+│       │   │   │   ├── invalid
+│       │   │   │   │   ├── checksums.txt
+│       │   │   │   │   └── syft_1.5.0_linux_arm64.tar.gz
+│       │   │   │   └── valid
+│       │   │   │       ├── checksums.txt
+│       │   │   │       └── syft_1.5.0_linux_arm64.tar.gz
+│       │   │   ├── github-api-syft-v0.36.0-release.json
+│       │   │   ├── syft_0.35.1-SNAPSHOT-d461f63_checksums.txt
+│       │   │   └── syft_0.36.0_checksums.txt
+│       │   └── test_harness.sh
+│       └── rules
+│           └── rules.go
+└── syft-1.9.0.tar.gz -> /home/felix/packages/syft/syft-1.9.0.tar.gz
+
+1014 directories, 1849 files

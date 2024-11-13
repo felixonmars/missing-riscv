@@ -1,0 +1,530 @@
+src
+├── 010-hm-disable-werror.patch -> /home/felix/packages/hm/010-hm-disable-werror.patch
+├── HM-HM-18.0
+│   ├── cfg
+│   │   ├── encoder_intra_high_throughput_rext.cfg
+│   │   ├── encoder_intra_main10.cfg
+│   │   ├── encoder_intra_main10_ctc_subsample.cfg
+│   │   ├── encoder_intra_main.cfg
+│   │   ├── encoder_intra_main_ctc_subsample.cfg
+│   │   ├── encoder_intra_main_rext.cfg
+│   │   ├── encoder_intra_main_rext_subsample.cfg
+│   │   ├── encoder_lowdelay_main10.cfg
+│   │   ├── encoder_lowdelay_main.cfg
+│   │   ├── encoder_lowdelay_main_rext.cfg
+│   │   ├── encoder_lowdelay_P_main10.cfg
+│   │   ├── encoder_lowdelay_P_main.cfg
+│   │   ├── encoder_randomaccess_main10.cfg
+│   │   ├── encoder_randomaccess_main.cfg
+│   │   ├── encoder_randomaccess_main_rext.cfg
+│   │   ├── hbd
+│   │   │   ├── 12-bit.cfg
+│   │   │   ├── 16-bit.cfg
+│   │   │   └── hbd.cfg
+│   │   ├── lossless
+│   │   │   └── lossless.cfg
+│   │   ├── misc
+│   │   │   ├── encoder_lowdelay_main10_GOP4.cfg
+│   │   │   ├── encoder_lowdelay_main_field_coding.cfg
+│   │   │   ├── encoder_lowdelay_main_GOP4.cfg
+│   │   │   ├── encoder_lowdelay_main_rext_GOP4.cfg
+│   │   │   ├── encoder_lowdelay_P_main10_GOP4.cfg
+│   │   │   ├── encoder_lowdelay_P_main_GOP4.cfg
+│   │   │   ├── encoder_randomaccess_main10_GOP16.cfg
+│   │   │   ├── encoder_randomaccess_main10_GOP8.cfg
+│   │   │   ├── encoder_randomaccess_main_2tids.cfg
+│   │   │   ├── encoder_randomaccess_main_field_coding.cfg
+│   │   │   ├── encoder_randomaccess_main_field_coding_simple_GOP.cfg
+│   │   │   ├── encoder_randomaccess_main_GOP16.cfg
+│   │   │   ├── encoder_randomaccess_main_GOP8.cfg
+│   │   │   ├── encoder_randomaccess_main_rext_GOP16.cfg
+│   │   │   ├── encoder_randomaccess_main_rext_GOP8.cfg
+│   │   │   └── example_colour_remapping_sei_encoder_0.txt
+│   │   ├── per-class
+│   │   │   ├── classF.cfg
+│   │   │   ├── classH1.cfg
+│   │   │   └── classH2.cfg
+│   │   ├── per-sequence
+│   │   │   ├── ArenaOfValor.cfg
+│   │   │   ├── BasketballDrill.cfg
+│   │   │   ├── BasketballDrillText.cfg
+│   │   │   ├── BasketballDrive.cfg
+│   │   │   ├── BasketballPass.cfg
+│   │   │   ├── BasketballScreen_444.cfg
+│   │   │   ├── BasketballScreen_RGB.cfg
+│   │   │   ├── BirdsInCage_444_10bit.cfg
+│   │   │   ├── BlowingBubbles.cfg
+│   │   │   ├── BQMall.cfg
+│   │   │   ├── BQSquare.cfg
+│   │   │   ├── BQTerrace.cfg
+│   │   │   ├── Bubbles_RGB_16bit.cfg
+│   │   │   ├── Cactus.cfg
+│   │   │   ├── CADWaveform_444.cfg
+│   │   │   ├── CADWaveform_GBR.cfg
+│   │   │   ├── CADWaveform_RGB.cfg
+│   │   │   ├── Campfire.cfg
+│   │   │   ├── Cardiac_400_12bit.cfg
+│   │   │   ├── CatRobot1.cfg
+│   │   │   ├── CatRobot.cfg
+│   │   │   ├── ChinaSpeed.cfg
+│   │   │   ├── Console_444.cfg
+│   │   │   ├── Console_RGB.cfg
+│   │   │   ├── CrowdRun_444_10bit.cfg
+│   │   │   ├── CrowdRun_RGB_16bit.cfg
+│   │   │   ├── DaylightRoad2.cfg
+│   │   │   ├── Desktop_444.cfg
+│   │   │   ├── Desktop_RGB.cfg
+│   │   │   ├── Doc_444.cfg
+│   │   │   ├── Doc_RGB.cfg
+│   │   │   ├── Drums100.cfg
+│   │   │   ├── DucksAndLegs_RGB_10bit.cfg
+│   │   │   ├── DucksTakeOff_RGB_16bit.cfg
+│   │   │   ├── EBUGraphics_422_10bit.cfg
+│   │   │   ├── EBUHorse_422_10bit.cfg
+│   │   │   ├── EBUKidsSoccer_422_10bit.cfg
+│   │   │   ├── EBULupoCandlelight_444_10bit.cfg
+│   │   │   ├── EBULupoCandlelight_RGB_10bit.cfg
+│   │   │   ├── EBURainFruits_444_10bit.cfg
+│   │   │   ├── EBURainFruits_RGB_10bit+2MSB.cfg
+│   │   │   ├── EBURainFruits_RGB_10bit+4MSB.cfg
+│   │   │   ├── EBURainFruits_RGB_10bit+6MSB.cfg
+│   │   │   ├── EBURainFruits_RGB_10bit.cfg
+│   │   │   ├── EBUWaterRocksClose_422_10bit.cfg
+│   │   │   ├── FlyingGraphics_444.cfg
+│   │   │   ├── FlyingGraphics_RGB.cfg
+│   │   │   ├── FoodMarket4.cfg
+│   │   │   ├── FourPeople.cfg
+│   │   │   ├── FruitStall_RGB_16bit.cfg
+│   │   │   ├── Head_400_16bit.cfg
+│   │   │   ├── InToTree_RGB_16bit.cfg
+│   │   │   ├── Johnny.cfg
+│   │   │   ├── Kimono_422_10bit.cfg
+│   │   │   ├── Kimono_444_10bit.cfg
+│   │   │   ├── Kimono.cfg
+│   │   │   ├── Kimono_RGB_10bit+2MSB.cfg
+│   │   │   ├── Kimono_RGB_10bit+4MSB.cfg
+│   │   │   ├── Kimono_RGB_10bit+6MSB.cfg
+│   │   │   ├── Kimono_RGB_10bit.cfg
+│   │   │   ├── KristenAndSara.cfg
+│   │   │   ├── LongRunShort_400_12bit.cfg
+│   │   │   ├── Map_444.cfg
+│   │   │   ├── Map_GBR.cfg
+│   │   │   ├── Map_RGB.cfg
+│   │   │   ├── MarketPlace.cfg
+│   │   │   ├── MissionControl2_444.cfg
+│   │   │   ├── MissionControl2_RGB.cfg
+│   │   │   ├── MissionControl3_444.cfg
+│   │   │   ├── MissionControl3_RGB.cfg
+│   │   │   ├── NebutaFestival_10bit.cfg
+│   │   │   ├── OldTownCross_RGB_10bit.cfg
+│   │   │   ├── OldTownCross_RGB_16bit.cfg
+│   │   │   ├── ParkJoy_RGB_16bit.cfg
+│   │   │   ├── ParkRunning3.cfg
+│   │   │   ├── ParkScene.cfg
+│   │   │   ├── ParkScene_RGB_10bit.cfg
+│   │   │   ├── PartyScene.cfg
+│   │   │   ├── PCBLayout_444.cfg
+│   │   │   ├── PCBLayout_GBR.cfg
+│   │   │   ├── PCBLayout_RGB.cfg
+│   │   │   ├── PeopleOnStreet.cfg
+│   │   │   ├── ppt_doc_xls_444.cfg
+│   │   │   ├── ppt_doc_xls_GBR.cfg
+│   │   │   ├── ppt_doc_xls_RGB.cfg
+│   │   │   ├── Programming_444.cfg
+│   │   │   ├── Programming_GBR.cfg
+│   │   │   ├── Programming_RGB.cfg
+│   │   │   ├── RaceHorsesC.cfg
+│   │   │   ├── RaceHorses.cfg
+│   │   │   ├── RitualDance.cfg
+│   │   │   ├── Robot_444.cfg
+│   │   │   ├── Robot_RGB.cfg
+│   │   │   ├── Rollercoaster2.cfg
+│   │   │   ├── Seeking_422_10bit.cfg
+│   │   │   ├── SlideEditing.cfg
+│   │   │   ├── SlideShow_444.cfg
+│   │   │   ├── SlideShow.cfg
+│   │   │   ├── SlideShow_RGB.cfg
+│   │   │   ├── SocialNetworkMap_444.cfg
+│   │   │   ├── SocialNetworkMap_RGB.cfg
+│   │   │   ├── SteamLocomotiveTrain_10bit.cfg
+│   │   │   ├── Tango2.cfg
+│   │   │   ├── ToddlerFountain2.cfg
+│   │   │   ├── Traffic_422_10bit.cfg
+│   │   │   ├── Traffic_444_10bit.cfg
+│   │   │   ├── Traffic.cfg
+│   │   │   ├── TrafficFlow.cfg
+│   │   │   ├── Traffic_RGB_12bit.cfg
+│   │   │   ├── TwistTunnel_444.cfg
+│   │   │   ├── TwistTunnel_GBR.cfg
+│   │   │   ├── TwistTunnel_RGB.cfg
+│   │   │   ├── VenueVu_444_10bit.cfg
+│   │   │   ├── VenueVu_GBR.cfg
+│   │   │   ├── VenueVu_RGB.cfg
+│   │   │   ├── VideoConferencingDocSharing_444.cfg
+│   │   │   ├── VideoConferencingDocSharing_GBR.cfg
+│   │   │   ├── VideoConferencingDocSharing_RGB.cfg
+│   │   │   ├── Vidyo1.cfg
+│   │   │   ├── Vidyo3.cfg
+│   │   │   ├── Vidyo4.cfg
+│   │   │   ├── Viking_444.cfg
+│   │   │   ├── Viking_RGB.cfg
+│   │   │   ├── Web_444.cfg
+│   │   │   ├── WebBrowsing_444.cfg
+│   │   │   ├── WebBrowsing_GBR.cfg
+│   │   │   ├── WebBrowsing_RGB.cfg
+│   │   │   ├── Web_RGB.cfg
+│   │   │   ├── WordEditing_444.cfg
+│   │   │   ├── WordEditing_GBR.cfg
+│   │   │   └── WordEditing_RGB.cfg
+│   │   ├── per-sequence-HBD
+│   │   │   ├── CrowdRun_RGB_16bit.cfg
+│   │   │   ├── DucksTakeOff_RGB_16bit.cfg
+│   │   │   ├── H1_BalloonFestival_420_12bit.cfg
+│   │   │   ├── H1_BalloonFestival_422_12bit.cfg
+│   │   │   ├── H1_BalloonFestival_444_12bit.cfg
+│   │   │   ├── H1_FireEater2_420_12bit.cfg
+│   │   │   ├── H1_FireEater2_422_12bit.cfg
+│   │   │   ├── H1_FireEater2_444_12bit.cfg
+│   │   │   ├── H1_Hurdles_420_12bit.cfg
+│   │   │   ├── H1_Hurdles_422_12bit.cfg
+│   │   │   ├── H1_Hurdles_444_12bit.cfg
+│   │   │   ├── H1_Market3_420_12bit.cfg
+│   │   │   ├── H1_Market3_422_12bit.cfg
+│   │   │   ├── H1_Market3_444_12bit.cfg
+│   │   │   ├── H1_Starting_420_12bit.cfg
+│   │   │   ├── H1_Starting_422_12bit.cfg
+│   │   │   ├── H1_Starting_444_12bit.cfg
+│   │   │   ├── H2_DayStreet_420_12bit.cfg
+│   │   │   ├── H2_DayStreet_422_12bit.cfg
+│   │   │   ├── H2_DayStreet_444_12bit.cfg
+│   │   │   ├── H2_NightStreet_420_12bit.cfg
+│   │   │   ├── H2_NightStreet_422_12bit.cfg
+│   │   │   ├── H2_NightStreet_444_12bit.cfg
+│   │   │   ├── H2_PeopleInShoppingCenter_420_12bit.cfg
+│   │   │   ├── H2_PeopleInShoppingCenter_422_12bit.cfg
+│   │   │   ├── H2_PeopleInShoppingCenter_444_12bit.cfg
+│   │   │   ├── H2_StainedGlass_420_12bit.cfg
+│   │   │   ├── H2_StainedGlass_422_12bit.cfg
+│   │   │   ├── H2_StainedGlass_444_12bit.cfg
+│   │   │   ├── InToTree_RGB_16bit.cfg
+│   │   │   ├── OldTownCross_RGB_16bit.cfg
+│   │   │   └── ParkJoy_RGB_16bit.cfg
+│   │   ├── per-sequence-HDR
+│   │   │   ├── H1_BalloonFestival.cfg
+│   │   │   ├── H1_Cosmos1_TreeTrunk.cfg
+│   │   │   ├── H1_EBU_Hurdles.cfg
+│   │   │   ├── H1_EBU_Starting.cfg
+│   │   │   ├── H1_Market.cfg
+│   │   │   ├── H1_ShowGirl.cfg
+│   │   │   ├── H1_SunRise.cfg
+│   │   │   ├── H2_DayStreet2.cfg
+│   │   │   ├── H2_FlyingBirds3.cfg
+│   │   │   ├── H2_PeopleInShoppingCenter2.cfg
+│   │   │   └── H2_SunsetBeach3.cfg
+│   │   └── sei
+│   │       ├── ambient_viewing_environment.cfg
+│   │       ├── annotated_regions
+│   │       │   ├── anno_reg_0.txt
+│   │       │   ├── anno_reg_1.txt
+│   │       │   ├── anno_reg_2.txt
+│   │       │   ├── anno_reg_3.txt
+│   │       │   └── anno_reg_4.txt
+│   │       ├── content_colour_volume.cfg
+│   │       ├── content_light_level.cfg
+│   │       ├── equirectangular.cfg
+│   │       ├── film_grain_characteristics_analysis.cfg
+│   │       ├── film_grain_characterstics.cfg
+│   │       ├── fisheye_video.cfg
+│   │       ├── JCTVC-AD0021(JVET-T0056).cfg
+│   │       ├── omni_viewport.cfg
+│   │       ├── region_wise_packing.cfg
+│   │       ├── rns
+│   │       │   ├── rns_0.txt
+│   │       │   └── rns_2.txt
+│   │       ├── shutter_interval_info.cfg
+│   │       ├── shutter_interval_info_fix.cfg
+│   │       ├── shutter_interval_info_mul.cfg
+│   │       └── sphere_rotation.cfg
+│   ├── cmake
+│   │   └── CMakeBuild
+│   │       ├── bin
+│   │       │   ├── cmakebuild_update.py
+│   │       │   ├── cmake_docutil.py
+│   │       │   ├── cmake.py
+│   │       │   └── pyhhi
+│   │       │       ├── build
+│   │       │       │   ├── app
+│   │       │       │   │   ├── cmbldup.py
+│   │       │       │   │   ├── cmkdocapp.py
+│   │       │       │   │   ├── cmk.py
+│   │       │       │   │   └── __init__.py
+│   │       │       │   ├── cmkdoc.py
+│   │       │       │   ├── cmkfnd.py
+│   │       │       │   ├── cmksupp.py
+│   │       │       │   ├── common
+│   │       │       │   │   ├── android.py
+│   │       │       │   │   ├── bldtools.py
+│   │       │       │   │   ├── cmbldver.py
+│   │       │       │   │   ├── error.py
+│   │       │       │   │   ├── __init__.py
+│   │       │       │   │   ├── system.py
+│   │       │       │   │   ├── util.py
+│   │       │       │   │   └── ver.py
+│   │       │       │   ├── __init__.py
+│   │       │       │   └── vcsutil.py
+│   │       │       └── __init__.py
+│   │       ├── cmake
+│   │       │   ├── modules
+│   │       │   │   ├── BBuildEnv.cmake
+│   │       │   │   ├── BBuildEnvDebug.cmake
+│   │       │   │   ├── BBuildEnvLldb.cmake
+│   │       │   │   ├── BBuildEnvMingw.cmake
+│   │       │   │   └── BBuildEnvVersion.cmake
+│   │       │   └── toolchains
+│   │       │       ├── aarch64-linux-gnu-gcc-ubuntu1804.cmake
+│   │       │       ├── i686-w64-mingw32-gcc-posix-ubuntu1604.cmake
+│   │       │       ├── x86_64-w64-mingw32-gcc-posix-ubuntu1604.cmake
+│   │       │       └── x86_64-w64-mingw32-gcc-posix-ubuntu1804.cmake
+│   │       └── lldb
+│   │           ├── CMakeBuildLldbExt.py
+│   │           ├── CMakeLists.txt
+│   │           ├── lldbinit-CMakeBuild.in
+│   │           └── lldbinit_update-in.cmake
+│   ├── CMakeLists.txt
+│   ├── compat
+│   │   └── msvc
+│   │       └── stdint.h
+│   ├── COPYING
+│   ├── doc
+│   │   ├── Doxyfile
+│   │   ├── gop-structure-example.pdf
+│   │   ├── jvetdoc.cls
+│   │   ├── mainpage.h
+│   │   ├── Makefile
+│   │   ├── README_data-structure.ppt
+│   │   ├── README_software-manual.md
+│   │   ├── software-manual.pdf
+│   │   └── software-manual.tex
+│   ├── Makefile
+│   ├── README.md
+│   └── source
+│       ├── App
+│       │   ├── Parcat
+│       │   │   ├── CMakeLists.txt
+│       │   │   ├── parcat.cpp
+│       │   │   └── readme.md
+│       │   ├── SEIFilmGrainApp
+│       │   │   ├── CMakeLists.txt
+│       │   │   ├── SEIFilmGrainAppCfg.cpp
+│       │   │   ├── SEIFilmGrainAppCfg.h
+│       │   │   ├── SEIFilmGrainApp.cpp
+│       │   │   ├── SEIFilmGrainApp.h
+│       │   │   └── SEIFilmGrainMain.cpp
+│       │   ├── SEIRemovalApp
+│       │   │   ├── CMakeLists.txt
+│       │   │   ├── SEIRemovalAppCfg.cpp
+│       │   │   ├── SEIRemovalAppCfg.h
+│       │   │   ├── SEIRemovalApp.cpp
+│       │   │   ├── SEIRemovalApp.h
+│       │   │   └── seiremovalmain.cpp
+│       │   ├── TAppDecoder
+│       │   │   ├── CMakeLists.txt
+│       │   │   ├── decmain.cpp
+│       │   │   ├── TAppDecCfg.cpp
+│       │   │   ├── TAppDecCfg.h
+│       │   │   ├── TAppDecTop.cpp
+│       │   │   └── TAppDecTop.h
+│       │   ├── TAppDecoderAnalyser
+│       │   │   └── CMakeLists.txt
+│       │   ├── TAppEncoder
+│       │   │   ├── CMakeLists.txt
+│       │   │   ├── encmain.cpp
+│       │   │   ├── TAppEncCfg.cpp
+│       │   │   ├── TAppEncCfg.h
+│       │   │   ├── TAppEncTop.cpp
+│       │   │   └── TAppEncTop.h
+│       │   ├── TAppMCTSExtractor
+│       │   │   ├── CMakeLists.txt
+│       │   │   ├── mctsExtmain.cpp
+│       │   │   ├── TAppMctsExtCfg.cpp
+│       │   │   ├── TAppMctsExtCfg.h
+│       │   │   ├── TAppMctsExtTop.cpp
+│       │   │   └── TAppMctsExtTop.h
+│       │   └── utils
+│       │       ├── annexBbytecount.cpp
+│       │       ├── BitrateTargeting
+│       │       │   ├── encodeCommand.sh
+│       │       │   ├── encode.shl
+│       │       │   ├── ExtractBitrates.cpp
+│       │       │   ├── ExtractBitrates.h
+│       │       │   ├── ExtractBitratesMain.cpp
+│       │       │   ├── GuessLambdaModifiers.cpp
+│       │       │   ├── GuessLambdaModifiers.h
+│       │       │   ├── GuessLambdaModifiersMain.cpp
+│       │       │   ├── makefile
+│       │       │   ├── QuickStartGuide.pdf
+│       │       │   ├── RuntimeError.h
+│       │       │   └── targetBitrates.sh
+│       │       └── convert_NtoMbit_YCbCr.cpp
+│       └── Lib
+│           ├── libmd5
+│           │   ├── libmd5.cpp
+│           │   ├── libmd5.h
+│           │   └── MD5.h
+│           ├── TLibCommon
+│           │   ├── AccessUnit.h
+│           │   ├── CMakeLists.txt
+│           │   ├── CommonDef.h
+│           │   ├── ContextModel3DBuffer.cpp
+│           │   ├── ContextModel3DBuffer.h
+│           │   ├── ContextModel.cpp
+│           │   ├── ContextModel.h
+│           │   ├── ContextTables.h
+│           │   ├── Debug.cpp
+│           │   ├── Debug.h
+│           │   ├── NAL.h
+│           │   ├── ProfileLevelTierFeatures.cpp
+│           │   ├── ProfileLevelTierFeatures.h
+│           │   ├── SEI.cpp
+│           │   ├── SEIFilmGrainAnalyzer.cpp
+│           │   ├── SEIFilmGrainAnalyzer.h
+│           │   ├── SEIFilmGrainSynthesizer.cpp
+│           │   ├── SEIFilmGrainSynthesizer.h
+│           │   ├── SEI.h
+│           │   ├── TComBitCounter.h
+│           │   ├── TComBitStream.cpp
+│           │   ├── TComBitStream.h
+│           │   ├── TComCABACTables.cpp
+│           │   ├── TComCABACTables.h
+│           │   ├── TComChromaFormat.cpp
+│           │   ├── TComChromaFormat.h
+│           │   ├── TComCodingStatistics.h
+│           │   ├── TComDataCU.cpp
+│           │   ├── TComDataCU.h
+│           │   ├── TComInterpolationFilter.cpp
+│           │   ├── TComInterpolationFilter.h
+│           │   ├── TComList.h
+│           │   ├── TComLoopFilter.cpp
+│           │   ├── TComLoopFilter.h
+│           │   ├── TComMotionInfo.cpp
+│           │   ├── TComMotionInfo.h
+│           │   ├── TComMv.h
+│           │   ├── TComPattern.cpp
+│           │   ├── TComPattern.h
+│           │   ├── TComPic.cpp
+│           │   ├── TComPic.h
+│           │   ├── TComPicSym.cpp
+│           │   ├── TComPicSym.h
+│           │   ├── TComPicYuv.cpp
+│           │   ├── TComPicYuv.h
+│           │   ├── TComPicYuvMD5.cpp
+│           │   ├── TComPrediction.cpp
+│           │   ├── TComPrediction.h
+│           │   ├── TComRdCost.cpp
+│           │   ├── TComRdCost.h
+│           │   ├── TComRdCostWeightPrediction.cpp
+│           │   ├── TComRdCostWeightPrediction.h
+│           │   ├── TComRectangle.h
+│           │   ├── TComRom.cpp
+│           │   ├── TComRom.h
+│           │   ├── TComSampleAdaptiveOffset.cpp
+│           │   ├── TComSampleAdaptiveOffset.h
+│           │   ├── TComSlice.cpp
+│           │   ├── TComSlice.h
+│           │   ├── TComTrQuant.cpp
+│           │   ├── TComTrQuant.h
+│           │   ├── TComTU.cpp
+│           │   ├── TComTU.h
+│           │   ├── TComWeightPrediction.cpp
+│           │   ├── TComWeightPrediction.h
+│           │   ├── TComYuv.cpp
+│           │   ├── TComYuv.h
+│           │   └── TypeDef.h
+│           ├── TLibCommonAnalyser
+│           │   └── CMakeLists.txt
+│           ├── TLibDecoder
+│           │   ├── AnnexBread.cpp
+│           │   ├── AnnexBread.h
+│           │   ├── CMakeLists.txt
+│           │   ├── NALread.cpp
+│           │   ├── NALread.h
+│           │   ├── SEIread.cpp
+│           │   ├── SEIread.h
+│           │   ├── SyntaxElementParser.cpp
+│           │   ├── SyntaxElementParser.h
+│           │   ├── TDecBinCoderCABAC.cpp
+│           │   ├── TDecBinCoderCABAC.h
+│           │   ├── TDecBinCoder.h
+│           │   ├── TDecCAVLC.cpp
+│           │   ├── TDecCAVLC.h
+│           │   ├── TDecConformance.cpp
+│           │   ├── TDecConformance.h
+│           │   ├── TDecCu.cpp
+│           │   ├── TDecCu.h
+│           │   ├── TDecEntropy.cpp
+│           │   ├── TDecEntropy.h
+│           │   ├── TDecGop.cpp
+│           │   ├── TDecGop.h
+│           │   ├── TDecSbac.cpp
+│           │   ├── TDecSbac.h
+│           │   ├── TDecSlice.cpp
+│           │   ├── TDecSlice.h
+│           │   ├── TDecTop.cpp
+│           │   └── TDecTop.h
+│           ├── TLibDecoderAnalyser
+│           │   └── CMakeLists.txt
+│           ├── TLibEncoder
+│           │   ├── AnnexBwrite.h
+│           │   ├── CMakeLists.txt
+│           │   ├── NALwrite.cpp
+│           │   ├── NALwrite.h
+│           │   ├── SEIEncoder.cpp
+│           │   ├── SEIEncoder.h
+│           │   ├── SEIwrite.cpp
+│           │   ├── SEIwrite.h
+│           │   ├── SyntaxElementWriter.cpp
+│           │   ├── SyntaxElementWriter.h
+│           │   ├── TEncAnalyze.h
+│           │   ├── TEncBinCoderCABACCounter.cpp
+│           │   ├── TEncBinCoderCABACCounter.h
+│           │   ├── TEncBinCoderCABAC.cpp
+│           │   ├── TEncBinCoderCABAC.h
+│           │   ├── TEncBinCoder.h
+│           │   ├── TEncCavlc.cpp
+│           │   ├── TEncCavlc.h
+│           │   ├── TEncCfg.h
+│           │   ├── TEncCu.cpp
+│           │   ├── TEncCu.h
+│           │   ├── TEncEntropy.cpp
+│           │   ├── TEncEntropy.h
+│           │   ├── TEncGOP.cpp
+│           │   ├── TEncGOP.h
+│           │   ├── TEncPic.cpp
+│           │   ├── TEncPic.h
+│           │   ├── TEncPreanalyzer.cpp
+│           │   ├── TEncPreanalyzer.h
+│           │   ├── TEncRateCtrl.cpp
+│           │   ├── TEncRateCtrl.h
+│           │   ├── TEncSampleAdaptiveOffset.cpp
+│           │   ├── TEncSampleAdaptiveOffset.h
+│           │   ├── TEncSbac.cpp
+│           │   ├── TEncSbac.h
+│           │   ├── TEncSearch.cpp
+│           │   ├── TEncSearch.h
+│           │   ├── TEncSlice.cpp
+│           │   ├── TEncSlice.h
+│           │   ├── TEncTemporalFilter.cpp
+│           │   ├── TEncTemporalFilter.h
+│           │   ├── TEncTop.cpp
+│           │   ├── TEncTop.h
+│           │   ├── WeightPredAnalysis.cpp
+│           │   └── WeightPredAnalysis.h
+│           └── Utilities
+│               ├── CMakeLists.txt
+│               ├── program_options_lite.cpp
+│               ├── program_options_lite.h
+│               ├── TVideoIOYuv.cpp
+│               └── TVideoIOYuv.h
+└── HM-HM-18.0.tar.bz2 -> /home/felix/packages/hm/HM-HM-18.0.tar.bz2
+
+46 directories, 482 files

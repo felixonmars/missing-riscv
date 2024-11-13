@@ -1,0 +1,1320 @@
+src
+└── libvpx
+    ├── args.c
+    ├── args.h
+    ├── AUTHORS
+    ├── build
+    │   └── make
+    │       ├── ads2armasm_ms.pl
+    │       ├── ads2gas_apple.pl
+    │       ├── ads2gas.pl
+    │       ├── Android.mk
+    │       ├── armlink_adapter.sh
+    │       ├── configure.sh
+    │       ├── gen_asm_deps.sh
+    │       ├── gen_msvs_def.sh
+    │       ├── gen_msvs_sln.sh
+    │       ├── gen_msvs_vcxproj.sh
+    │       ├── iosbuild.sh
+    │       ├── ios-Info.plist
+    │       ├── Makefile
+    │       ├── msvs_common.sh
+    │       ├── rtcd.pl
+    │       ├── thumb.pm
+    │       └── version.sh
+    ├── build_debug
+    │   └── non_greedy_mv_test_files
+    │       ├── cur_frame_16x16.txt
+    │       ├── estimation_16x16.txt
+    │       ├── exhaust_16x16.txt
+    │       ├── ground_truth_16x16.txt
+    │       ├── localVar_16x16.txt
+    │       ├── raw_1_12_12.png
+    │       ├── raw_1.png
+    │       └── ref_frame_16x16.txt
+    ├── CHANGELOG
+    ├── codereview.settings
+    ├── configure
+    ├── CONTRIBUTING.md
+    ├── docs.mk
+    ├── examples
+    │   ├── decode_to_md5.c
+    │   ├── decode_with_drops.c
+    │   ├── postproc.c
+    │   ├── resize_util.c
+    │   ├── set_maps.c
+    │   ├── simple_decoder.c
+    │   ├── simple_encoder.c
+    │   ├── svc_context.h
+    │   ├── svc_encodeframe.c
+    │   ├── twopass_encoder.c
+    │   ├── vp8cx_set_ref.c
+    │   ├── vp8_multi_resolution_encoder.c
+    │   ├── vp9cx_set_ref.c
+    │   ├── vp9_lossless_encoder.c
+    │   ├── vp9_spatial_svc_encoder.c
+    │   ├── vpx_dec_fuzzer.cc
+    │   └── vpx_temporal_svc_encoder.c
+    ├── examples.mk
+    ├── ivfdec.c
+    ├── ivfdec.h
+    ├── ivfenc.c
+    ├── ivfenc.h
+    ├── keywords.dox
+    ├── libs.doxy_template
+    ├── libs.mk
+    ├── LICENSE
+    ├── mainpage.dox
+    ├── md5_utils.c
+    ├── md5_utils.h
+    ├── PATENTS
+    ├── rate_hist.c
+    ├── rate_hist.h
+    ├── README
+    ├── solution.mk
+    ├── test
+    │   ├── acm_random.h
+    │   ├── active_map_refresh_test.cc
+    │   ├── active_map_test.cc
+    │   ├── add_noise_test.cc
+    │   ├── alt_ref_aq_segment_test.cc
+    │   ├── altref_test.cc
+    │   ├── android
+    │   │   ├── Android.mk
+    │   │   ├── get_files.py
+    │   │   ├── README
+    │   │   └── scrape_gtest_log.py
+    │   ├── aq_segment_test.cc
+    │   ├── avg_test.cc
+    │   ├── bench.cc
+    │   ├── bench.h
+    │   ├── blockiness_test.cc
+    │   ├── borders_test.cc
+    │   ├── buffer.h
+    │   ├── byte_alignment_test.cc
+    │   ├── clear_system_state.h
+    │   ├── codec_factory.h
+    │   ├── comp_avg_pred_test.cc
+    │   ├── config_test.cc
+    │   ├── consistency_test.cc
+    │   ├── convolve_test.cc
+    │   ├── cpu_speed_test.cc
+    │   ├── cq_test.cc
+    │   ├── cx_set_ref.sh
+    │   ├── dct16x16_test.cc
+    │   ├── dct32x32_test.cc
+    │   ├── dct_partial_test.cc
+    │   ├── dct_test.cc
+    │   ├── decode_api_test.cc
+    │   ├── decode_corrupted.cc
+    │   ├── decode_perf_test.cc
+    │   ├── decode_svc_test.cc
+    │   ├── decode_test_driver.cc
+    │   ├── decode_test_driver.h
+    │   ├── decode_to_md5.sh
+    │   ├── decode_with_drops.sh
+    │   ├── encode_api_test.cc
+    │   ├── encode_perf_test.cc
+    │   ├── encode_test_driver.cc
+    │   ├── encode_test_driver.h
+    │   ├── error_resilience_test.cc
+    │   ├── examples.sh
+    │   ├── external_frame_buffer_test.cc
+    │   ├── fdct8x8_test.cc
+    │   ├── frame_size_tests.cc
+    │   ├── hadamard_test.cc
+    │   ├── i420_video_source.h
+    │   ├── idct8x8_test.cc
+    │   ├── idct_test.cc
+    │   ├── init_vpx_test.cc
+    │   ├── init_vpx_test.h
+    │   ├── invalid_file_test.cc
+    │   ├── ivf_video_source.h
+    │   ├── keyframe_test.cc
+    │   ├── level_test.cc
+    │   ├── lpf_test.cc
+    │   ├── md5_helper.h
+    │   ├── minmax_test.cc
+    │   ├── non_greedy_mv_test.cc
+    │   ├── partial_idct_test.cc
+    │   ├── postproc.sh
+    │   ├── pp_filter_test.cc
+    │   ├── predict_test.cc
+    │   ├── quantize_test.cc
+    │   ├── realtime_test.cc
+    │   ├── register_state_check.h
+    │   ├── resize_test.cc
+    │   ├── resize_util.sh
+    │   ├── sad_test.cc
+    │   ├── set_maps.sh
+    │   ├── set_roi.cc
+    │   ├── simple_decoder.sh
+    │   ├── simple_encoder.sh
+    │   ├── simple_encode_test.cc
+    │   ├── stress.sh
+    │   ├── sum_squares_test.cc
+    │   ├── superframe_test.cc
+    │   ├── svc_datarate_test.cc
+    │   ├── svc_end_to_end_test.cc
+    │   ├── svc_test.cc
+    │   ├── svc_test.h
+    │   ├── test-data.mk
+    │   ├── test-data.sha1
+    │   ├── test_intra_pred_speed.cc
+    │   ├── test_libvpx.cc
+    │   ├── test.mk
+    │   ├── test_rc_interface.cc
+    │   ├── test_vectors.cc
+    │   ├── test_vectors.h
+    │   ├── test_vector_test.cc
+    │   ├── tile_independence_test.cc
+    │   ├── timestamp_test.cc
+    │   ├── tools_common.sh
+    │   ├── twopass_encoder.sh
+    │   ├── user_priv_test.cc
+    │   ├── util.h
+    │   ├── variance_test.cc
+    │   ├── video_source.h
+    │   ├── vp8_boolcoder_test.cc
+    │   ├── vp8_datarate_test.cc
+    │   ├── vp8_decrypt_test.cc
+    │   ├── vp8_denoiser_sse2_test.cc
+    │   ├── vp8_fdct4x4_test.cc
+    │   ├── vp8_fragments_test.cc
+    │   ├── vp8_multi_resolution_encoder.sh
+    │   ├── vp8_ratectrl_rtc_test.cc
+    │   ├── vp9_arf_freq_test.cc
+    │   ├── vp9_block_error_test.cc
+    │   ├── vp9_boolcoder_test.cc
+    │   ├── vp9_c_vs_simd_encode.sh
+    │   ├── vp9_datarate_test.cc
+    │   ├── vp9_decrypt_test.cc
+    │   ├── vp9_denoiser_test.cc
+    │   ├── vp9_encoder_parms_get_to_decoder.cc
+    │   ├── vp9_end_to_end_test.cc
+    │   ├── vp9_ethread_test.cc
+    │   ├── vp9_ext_ratectrl_test.cc
+    │   ├── vp9_intrapred_test.cc
+    │   ├── vp9_lossless_test.cc
+    │   ├── vp9_motion_vector_test.cc
+    │   ├── vp9_quantize_test.cc
+    │   ├── vp9_ratectrl_rtc_test.cc
+    │   ├── vp9_roi_test.cc
+    │   ├── vp9_scale_test.cc
+    │   ├── vp9_skip_loopfilter_test.cc
+    │   ├── vp9_subtract_test.cc
+    │   ├── vp9_thread_test.cc
+    │   ├── vpxdec.sh
+    │   ├── vpxenc.sh
+    │   ├── vpx_image_test.cc
+    │   ├── vpx_scale_test.cc
+    │   ├── vpx_scale_test.h
+    │   ├── vpx_temporal_svc_encoder.sh
+    │   ├── webm_video_source.h
+    │   ├── y4m_test.cc
+    │   ├── y4m_video_source.h
+    │   ├── yuv_temporal_filter_test.cc
+    │   └── yuv_video_source.h
+    ├── third_party
+    │   ├── googletest
+    │   │   ├── gtest.mk
+    │   │   ├── README.libvpx
+    │   │   └── src
+    │   │       ├── CONTRIBUTORS
+    │   │       ├── include
+    │   │       │   └── gtest
+    │   │       │       ├── gtest-assertion-result.h
+    │   │       │       ├── gtest-death-test.h
+    │   │       │       ├── gtest.h
+    │   │       │       ├── gtest-matchers.h
+    │   │       │       ├── gtest-message.h
+    │   │       │       ├── gtest-param-test.h
+    │   │       │       ├── gtest_pred_impl.h
+    │   │       │       ├── gtest-printers.h
+    │   │       │       ├── gtest_prod.h
+    │   │       │       ├── gtest-spi.h
+    │   │       │       ├── gtest-test-part.h
+    │   │       │       ├── gtest-typed-test.h
+    │   │       │       └── internal
+    │   │       │           ├── custom
+    │   │       │           │   ├── gtest.h
+    │   │       │           │   ├── gtest-port.h
+    │   │       │           │   ├── gtest-printers.h
+    │   │       │           │   └── README.md
+    │   │       │           ├── gtest-death-test-internal.h
+    │   │       │           ├── gtest-filepath.h
+    │   │       │           ├── gtest-internal.h
+    │   │       │           ├── gtest-param-util.h
+    │   │       │           ├── gtest-port-arch.h
+    │   │       │           ├── gtest-port.h
+    │   │       │           ├── gtest-string.h
+    │   │       │           └── gtest-type-util.h
+    │   │       ├── LICENSE
+    │   │       ├── README.md
+    │   │       └── src
+    │   │           ├── gtest-all.cc
+    │   │           ├── gtest-assertion-result.cc
+    │   │           ├── gtest.cc
+    │   │           ├── gtest-death-test.cc
+    │   │           ├── gtest-filepath.cc
+    │   │           ├── gtest-internal-inl.h
+    │   │           ├── gtest_main.cc
+    │   │           ├── gtest-matchers.cc
+    │   │           ├── gtest-port.cc
+    │   │           ├── gtest-printers.cc
+    │   │           ├── gtest-test-part.cc
+    │   │           └── gtest-typed-test.cc
+    │   ├── libwebm
+    │   │   ├── Android.mk
+    │   │   ├── AUTHORS.TXT
+    │   │   ├── common
+    │   │   │   ├── file_util.cc
+    │   │   │   ├── file_util.h
+    │   │   │   ├── hdr_util.cc
+    │   │   │   ├── hdr_util.h
+    │   │   │   └── webmids.h
+    │   │   ├── LICENSE.TXT
+    │   │   ├── mkvmuxer
+    │   │   │   ├── mkvmuxer.cc
+    │   │   │   ├── mkvmuxer.h
+    │   │   │   ├── mkvmuxertypes.h
+    │   │   │   ├── mkvmuxerutil.cc
+    │   │   │   ├── mkvmuxerutil.h
+    │   │   │   ├── mkvwriter.cc
+    │   │   │   └── mkvwriter.h
+    │   │   ├── mkvparser
+    │   │   │   ├── mkvparser.cc
+    │   │   │   ├── mkvparser.h
+    │   │   │   ├── mkvreader.cc
+    │   │   │   └── mkvreader.h
+    │   │   ├── PATENTS.TXT
+    │   │   └── README.libvpx
+    │   ├── libyuv
+    │   │   ├── include
+    │   │   │   └── libyuv
+    │   │   │       ├── basic_types.h
+    │   │   │       ├── compare.h
+    │   │   │       ├── convert_argb.h
+    │   │   │       ├── convert_from_argb.h
+    │   │   │       ├── convert_from.h
+    │   │   │       ├── convert.h
+    │   │   │       ├── cpu_id.h
+    │   │   │       ├── macros_msa.h
+    │   │   │       ├── mjpeg_decoder.h
+    │   │   │       ├── planar_functions.h
+    │   │   │       ├── rotate_argb.h
+    │   │   │       ├── rotate.h
+    │   │   │       ├── rotate_row.h
+    │   │   │       ├── row.h
+    │   │   │       ├── scale_argb.h
+    │   │   │       ├── scale.h
+    │   │   │       ├── scale_row.h
+    │   │   │       ├── version.h
+    │   │   │       └── video_common.h
+    │   │   ├── LICENSE
+    │   │   ├── README.libvpx
+    │   │   └── source
+    │   │       ├── compare.cc
+    │   │       ├── compare_common.cc
+    │   │       ├── compare_gcc.cc
+    │   │       ├── compare_msa.cc
+    │   │       ├── compare_neon64.cc
+    │   │       ├── compare_neon.cc
+    │   │       ├── compare_win.cc
+    │   │       ├── convert_argb.cc
+    │   │       ├── convert.cc
+    │   │       ├── convert_from_argb.cc
+    │   │       ├── convert_from.cc
+    │   │       ├── convert_jpeg.cc
+    │   │       ├── convert_to_argb.cc
+    │   │       ├── convert_to_i420.cc
+    │   │       ├── cpu_id.cc
+    │   │       ├── mjpeg_decoder.cc
+    │   │       ├── mjpeg_validate.cc
+    │   │       ├── planar_functions.cc
+    │   │       ├── rotate_any.cc
+    │   │       ├── rotate_argb.cc
+    │   │       ├── rotate.cc
+    │   │       ├── rotate_common.cc
+    │   │       ├── rotate_gcc.cc
+    │   │       ├── rotate_msa.cc
+    │   │       ├── rotate_neon64.cc
+    │   │       ├── rotate_neon.cc
+    │   │       ├── rotate_win.cc
+    │   │       ├── row_any.cc
+    │   │       ├── row_common.cc
+    │   │       ├── row_gcc.cc
+    │   │       ├── row_msa.cc
+    │   │       ├── row_neon64.cc
+    │   │       ├── row_neon.cc
+    │   │       ├── row_win.cc
+    │   │       ├── scale_any.cc
+    │   │       ├── scale_argb.cc
+    │   │       ├── scale.cc
+    │   │       ├── scale_common.cc
+    │   │       ├── scale_gcc.cc
+    │   │       ├── scale_msa.cc
+    │   │       ├── scale_neon64.cc
+    │   │       ├── scale_neon.cc
+    │   │       ├── scale_win.cc
+    │   │       └── video_common.cc
+    │   └── x86inc
+    │       ├── LICENSE
+    │       ├── README.libvpx
+    │       └── x86inc.asm
+    ├── tools
+    │   ├── 3D-Reconstruction
+    │   │   ├── genY4M
+    │   │   │   └── genY4M.py
+    │   │   ├── MotionEST
+    │   │   │   ├── Anandan.py
+    │   │   │   ├── Exhaust.py
+    │   │   │   ├── GroundTruth.py
+    │   │   │   ├── HornSchunck.py
+    │   │   │   ├── MotionEST.py
+    │   │   │   ├── SearchSmooth.py
+    │   │   │   └── Util.py
+    │   │   └── sketch_3D_reconstruction
+    │   │       ├── BVH.pde
+    │   │       ├── Camera.pde
+    │   │       ├── MotionField.pde
+    │   │       ├── PointCloud.pde
+    │   │       ├── Ray_Tracing.pde
+    │   │       ├── Scene.pde
+    │   │       ├── sketch_3D_reconstruction.pde
+    │   │       ├── Transform.pde
+    │   │       └── Util.pde
+    │   ├── cpplint.py
+    │   ├── diff.py
+    │   ├── gen_authors.sh
+    │   ├── intersect-diffs.py
+    │   ├── lint-hunks.py
+    │   ├── non_greedy_mv
+    │   │   └── non_greedy_mv.py
+    │   ├── set_analyzer_env.sh
+    │   ├── tiny_ssim.c
+    │   └── wrap-commit-msg.py
+    ├── tools_common.c
+    ├── tools_common.h
+    ├── tools.mk
+    ├── usage_cx.dox
+    ├── usage.dox
+    ├── usage_dx.dox
+    ├── video_common.h
+    ├── video_reader.c
+    ├── video_reader.h
+    ├── video_writer.c
+    ├── video_writer.h
+    ├── vp8
+    │   ├── common
+    │   │   ├── alloccommon.c
+    │   │   ├── alloccommon.h
+    │   │   ├── arm
+    │   │   │   ├── loopfilter_arm.c
+    │   │   │   ├── loopfilter_arm.h
+    │   │   │   └── neon
+    │   │   │       ├── bilinearpredict_neon.c
+    │   │   │       ├── copymem_neon.c
+    │   │   │       ├── dc_only_idct_add_neon.c
+    │   │   │       ├── dequant_idct_neon.c
+    │   │   │       ├── dequantizeb_neon.c
+    │   │   │       ├── idct_blk_neon.c
+    │   │   │       ├── iwalsh_neon.c
+    │   │   │       ├── loopfiltersimplehorizontaledge_neon.c
+    │   │   │       ├── loopfiltersimpleverticaledge_neon.c
+    │   │   │       ├── mbloopfilter_neon.c
+    │   │   │       ├── shortidct4x4llm_neon.c
+    │   │   │       ├── sixtappredict_neon.c
+    │   │   │       └── vp8_loopfilter_neon.c
+    │   │   ├── blockd.c
+    │   │   ├── blockd.h
+    │   │   ├── coefupdateprobs.h
+    │   │   ├── common.h
+    │   │   ├── context.c
+    │   │   ├── debugmodes.c
+    │   │   ├── default_coef_probs.h
+    │   │   ├── dequantize.c
+    │   │   ├── entropy.c
+    │   │   ├── entropy.h
+    │   │   ├── entropymode.c
+    │   │   ├── entropymode.h
+    │   │   ├── entropymv.c
+    │   │   ├── entropymv.h
+    │   │   ├── extend.c
+    │   │   ├── extend.h
+    │   │   ├── filter.c
+    │   │   ├── filter.h
+    │   │   ├── findnearmv.c
+    │   │   ├── findnearmv.h
+    │   │   ├── generic
+    │   │   │   └── systemdependent.c
+    │   │   ├── header.h
+    │   │   ├── idct_blk.c
+    │   │   ├── idctllm.c
+    │   │   ├── invtrans.h
+    │   │   ├── loongarch
+    │   │   │   ├── idct_lsx.c
+    │   │   │   ├── loopfilter_filters_lsx.c
+    │   │   │   └── sixtap_filter_lsx.c
+    │   │   ├── loopfilter_filters.c
+    │   │   ├── loopfilter.h
+    │   │   ├── mbpitch.c
+    │   │   ├── mfqe.c
+    │   │   ├── mips
+    │   │   │   ├── dspr2
+    │   │   │   │   ├── dequantize_dspr2.c
+    │   │   │   │   ├── filter_dspr2.c
+    │   │   │   │   ├── idct_blk_dspr2.c
+    │   │   │   │   ├── idctllm_dspr2.c
+    │   │   │   │   ├── reconinter_dspr2.c
+    │   │   │   │   └── vp8_loopfilter_filters_dspr2.c
+    │   │   │   ├── mmi
+    │   │   │   │   ├── copymem_mmi.c
+    │   │   │   │   ├── dequantize_mmi.c
+    │   │   │   │   ├── idct_blk_mmi.c
+    │   │   │   │   ├── idctllm_mmi.c
+    │   │   │   │   ├── loopfilter_filters_mmi.c
+    │   │   │   │   └── sixtap_filter_mmi.c
+    │   │   │   └── msa
+    │   │   │       ├── bilinear_filter_msa.c
+    │   │   │       ├── copymem_msa.c
+    │   │   │       ├── idct_msa.c
+    │   │   │       ├── loopfilter_filters_msa.c
+    │   │   │       ├── mfqe_msa.c
+    │   │   │       ├── sixtap_filter_msa.c
+    │   │   │       └── vp8_macros_msa.h
+    │   │   ├── modecont.c
+    │   │   ├── modecont.h
+    │   │   ├── mv.h
+    │   │   ├── onyxc_int.h
+    │   │   ├── onyxd.h
+    │   │   ├── onyx.h
+    │   │   ├── postproc.c
+    │   │   ├── postproc.h
+    │   │   ├── ppflags.h
+    │   │   ├── quant_common.c
+    │   │   ├── quant_common.h
+    │   │   ├── reconinter.c
+    │   │   ├── reconinter.h
+    │   │   ├── reconintra4x4.c
+    │   │   ├── reconintra4x4.h
+    │   │   ├── reconintra.c
+    │   │   ├── reconintra.h
+    │   │   ├── rtcd.c
+    │   │   ├── rtcd_defs.pl
+    │   │   ├── setupintrarecon.c
+    │   │   ├── setupintrarecon.h
+    │   │   ├── swapyv12buffer.c
+    │   │   ├── swapyv12buffer.h
+    │   │   ├── systemdependent.h
+    │   │   ├── threading.h
+    │   │   ├── treecoder.c
+    │   │   ├── treecoder.h
+    │   │   ├── vp8_entropymodedata.h
+    │   │   ├── vp8_loopfilter.c
+    │   │   ├── vp8_skin_detection.c
+    │   │   ├── vp8_skin_detection.h
+    │   │   └── x86
+    │   │       ├── bilinear_filter_sse2.c
+    │   │       ├── dequantize_mmx.asm
+    │   │       ├── idct_blk_mmx.c
+    │   │       ├── idct_blk_sse2.c
+    │   │       ├── idctllm_mmx.asm
+    │   │       ├── idctllm_sse2.asm
+    │   │       ├── iwalsh_sse2.asm
+    │   │       ├── loopfilter_block_sse2_x86_64.asm
+    │   │       ├── loopfilter_sse2.asm
+    │   │       ├── loopfilter_x86.c
+    │   │       ├── mfqe_sse2.asm
+    │   │       ├── recon_mmx.asm
+    │   │       ├── recon_sse2.asm
+    │   │       ├── subpixel_mmx.asm
+    │   │       ├── subpixel_sse2.asm
+    │   │       ├── subpixel_ssse3.asm
+    │   │       └── vp8_asm_stubs.c
+    │   ├── decoder
+    │   │   ├── dboolhuff.c
+    │   │   ├── dboolhuff.h
+    │   │   ├── decodeframe.c
+    │   │   ├── decodemv.c
+    │   │   ├── decodemv.h
+    │   │   ├── decoderthreading.h
+    │   │   ├── detokenize.c
+    │   │   ├── detokenize.h
+    │   │   ├── ec_types.h
+    │   │   ├── error_concealment.c
+    │   │   ├── error_concealment.h
+    │   │   ├── onyxd_if.c
+    │   │   ├── onyxd_int.h
+    │   │   ├── threading.c
+    │   │   └── treereader.h
+    │   ├── encoder
+    │   │   ├── arm
+    │   │   │   └── neon
+    │   │   │       ├── denoising_neon.c
+    │   │   │       ├── fastquantizeb_neon.c
+    │   │   │       ├── shortfdct_neon.c
+    │   │   │       └── vp8_shortwalsh4x4_neon.c
+    │   │   ├── bitstream.c
+    │   │   ├── bitstream.h
+    │   │   ├── block.h
+    │   │   ├── boolhuff.c
+    │   │   ├── boolhuff.h
+    │   │   ├── copy_c.c
+    │   │   ├── dct.c
+    │   │   ├── dct_value_cost.h
+    │   │   ├── dct_value_tokens.h
+    │   │   ├── defaultcoefcounts.h
+    │   │   ├── denoising.c
+    │   │   ├── denoising.h
+    │   │   ├── encodeframe.c
+    │   │   ├── encodeframe.h
+    │   │   ├── encodeintra.c
+    │   │   ├── encodeintra.h
+    │   │   ├── encodemb.c
+    │   │   ├── encodemb.h
+    │   │   ├── encodemv.c
+    │   │   ├── encodemv.h
+    │   │   ├── ethreading.c
+    │   │   ├── ethreading.h
+    │   │   ├── firstpass.c
+    │   │   ├── firstpass.h
+    │   │   ├── lookahead.c
+    │   │   ├── lookahead.h
+    │   │   ├── loongarch
+    │   │   │   ├── dct_lsx.c
+    │   │   │   ├── encodeopt_lsx.c
+    │   │   │   └── vp8_quantize_lsx.c
+    │   │   ├── mcomp.c
+    │   │   ├── mcomp.h
+    │   │   ├── mips
+    │   │   │   ├── mmi
+    │   │   │   │   ├── dct_mmi.c
+    │   │   │   │   └── vp8_quantize_mmi.c
+    │   │   │   └── msa
+    │   │   │       ├── dct_msa.c
+    │   │   │       ├── denoising_msa.c
+    │   │   │       ├── encodeopt_msa.c
+    │   │   │       ├── quantize_msa.c
+    │   │   │       └── temporal_filter_msa.c
+    │   │   ├── modecosts.c
+    │   │   ├── modecosts.h
+    │   │   ├── mr_dissim.c
+    │   │   ├── mr_dissim.h
+    │   │   ├── onyx_if.c
+    │   │   ├── onyx_int.h
+    │   │   ├── pickinter.c
+    │   │   ├── pickinter.h
+    │   │   ├── picklpf.c
+    │   │   ├── picklpf.h
+    │   │   ├── quantize.h
+    │   │   ├── ratectrl.c
+    │   │   ├── ratectrl.h
+    │   │   ├── rdopt.c
+    │   │   ├── rdopt.h
+    │   │   ├── segmentation.c
+    │   │   ├── segmentation.h
+    │   │   ├── temporal_filter.c
+    │   │   ├── temporal_filter.h
+    │   │   ├── tokenize.c
+    │   │   ├── tokenize.h
+    │   │   ├── treewriter.c
+    │   │   ├── treewriter.h
+    │   │   ├── vp8_quantize.c
+    │   │   └── x86
+    │   │       ├── block_error_sse2.asm
+    │   │       ├── copy_sse2.asm
+    │   │       ├── copy_sse3.asm
+    │   │       ├── dct_sse2.asm
+    │   │       ├── denoising_sse2.c
+    │   │       ├── fwalsh_sse2.asm
+    │   │       ├── quantize_sse4.c
+    │   │       ├── temporal_filter_apply_sse2.asm
+    │   │       ├── vp8_enc_stubs_sse2.c
+    │   │       ├── vp8_quantize_sse2.c
+    │   │       └── vp8_quantize_ssse3.c
+    │   ├── exports_dec
+    │   ├── exports_enc
+    │   ├── vp8_common.mk
+    │   ├── vp8_cx_iface.c
+    │   ├── vp8cx.mk
+    │   ├── vp8_dx_iface.c
+    │   ├── vp8dx.mk
+    │   ├── vp8_ratectrl_rtc.cc
+    │   └── vp8_ratectrl_rtc.h
+    ├── vp9
+    │   ├── common
+    │   │   ├── arm
+    │   │   │   └── neon
+    │   │   │       ├── vp9_highbd_iht16x16_add_neon.c
+    │   │   │       ├── vp9_highbd_iht4x4_add_neon.c
+    │   │   │       ├── vp9_highbd_iht8x8_add_neon.c
+    │   │   │       ├── vp9_iht16x16_add_neon.c
+    │   │   │       ├── vp9_iht4x4_add_neon.c
+    │   │   │       ├── vp9_iht8x8_add_neon.c
+    │   │   │       └── vp9_iht_neon.h
+    │   │   ├── mips
+    │   │   │   ├── dspr2
+    │   │   │   │   ├── vp9_itrans16_dspr2.c
+    │   │   │   │   ├── vp9_itrans4_dspr2.c
+    │   │   │   │   └── vp9_itrans8_dspr2.c
+    │   │   │   └── msa
+    │   │   │       ├── vp9_idct16x16_msa.c
+    │   │   │       ├── vp9_idct4x4_msa.c
+    │   │   │       ├── vp9_idct8x8_msa.c
+    │   │   │       └── vp9_mfqe_msa.c
+    │   │   ├── ppc
+    │   │   │   └── vp9_idct_vsx.c
+    │   │   ├── vp9_alloccommon.c
+    │   │   ├── vp9_alloccommon.h
+    │   │   ├── vp9_blockd.c
+    │   │   ├── vp9_blockd.h
+    │   │   ├── vp9_common_data.c
+    │   │   ├── vp9_common_data.h
+    │   │   ├── vp9_common.h
+    │   │   ├── vp9_debugmodes.c
+    │   │   ├── vp9_entropy.c
+    │   │   ├── vp9_entropy.h
+    │   │   ├── vp9_entropymode.c
+    │   │   ├── vp9_entropymode.h
+    │   │   ├── vp9_entropymv.c
+    │   │   ├── vp9_entropymv.h
+    │   │   ├── vp9_enums.h
+    │   │   ├── vp9_filter.c
+    │   │   ├── vp9_filter.h
+    │   │   ├── vp9_frame_buffers.c
+    │   │   ├── vp9_frame_buffers.h
+    │   │   ├── vp9_idct.c
+    │   │   ├── vp9_idct.h
+    │   │   ├── vp9_loopfilter.c
+    │   │   ├── vp9_loopfilter.h
+    │   │   ├── vp9_mfqe.c
+    │   │   ├── vp9_mfqe.h
+    │   │   ├── vp9_mv.h
+    │   │   ├── vp9_mvref_common.c
+    │   │   ├── vp9_mvref_common.h
+    │   │   ├── vp9_onyxc_int.h
+    │   │   ├── vp9_postproc.c
+    │   │   ├── vp9_postproc.h
+    │   │   ├── vp9_ppflags.h
+    │   │   ├── vp9_pred_common.c
+    │   │   ├── vp9_pred_common.h
+    │   │   ├── vp9_quant_common.c
+    │   │   ├── vp9_quant_common.h
+    │   │   ├── vp9_reconinter.c
+    │   │   ├── vp9_reconinter.h
+    │   │   ├── vp9_reconintra.c
+    │   │   ├── vp9_reconintra.h
+    │   │   ├── vp9_rtcd.c
+    │   │   ├── vp9_rtcd_defs.pl
+    │   │   ├── vp9_scale.c
+    │   │   ├── vp9_scale.h
+    │   │   ├── vp9_scan.c
+    │   │   ├── vp9_scan.h
+    │   │   ├── vp9_seg_common.c
+    │   │   ├── vp9_seg_common.h
+    │   │   ├── vp9_thread_common.c
+    │   │   ├── vp9_thread_common.h
+    │   │   ├── vp9_tile_common.c
+    │   │   ├── vp9_tile_common.h
+    │   │   └── x86
+    │   │       ├── vp9_highbd_iht16x16_add_sse4.c
+    │   │       ├── vp9_highbd_iht4x4_add_sse4.c
+    │   │       ├── vp9_highbd_iht8x8_add_sse4.c
+    │   │       ├── vp9_idct_intrin_sse2.c
+    │   │       └── vp9_mfqe_sse2.asm
+    │   ├── decoder
+    │   │   ├── vp9_decodeframe.c
+    │   │   ├── vp9_decodeframe.h
+    │   │   ├── vp9_decodemv.c
+    │   │   ├── vp9_decodemv.h
+    │   │   ├── vp9_decoder.c
+    │   │   ├── vp9_decoder.h
+    │   │   ├── vp9_detokenize.c
+    │   │   ├── vp9_detokenize.h
+    │   │   ├── vp9_dsubexp.c
+    │   │   ├── vp9_dsubexp.h
+    │   │   ├── vp9_job_queue.c
+    │   │   └── vp9_job_queue.h
+    │   ├── encoder
+    │   │   ├── arm
+    │   │   │   └── neon
+    │   │   │       ├── vp9_dct_neon.c
+    │   │   │       ├── vp9_denoiser_neon.c
+    │   │   │       ├── vp9_diamond_search_sad_neon.c
+    │   │   │       ├── vp9_error_neon.c
+    │   │   │       ├── vp9_frame_scale_neon.c
+    │   │   │       ├── vp9_highbd_error_neon.c
+    │   │   │       ├── vp9_highbd_temporal_filter_neon.c
+    │   │   │       ├── vp9_quantize_neon.c
+    │   │   │       └── vp9_temporal_filter_neon.c
+    │   │   ├── mips
+    │   │   │   └── msa
+    │   │   │       ├── vp9_error_msa.c
+    │   │   │       ├── vp9_fdct16x16_msa.c
+    │   │   │       ├── vp9_fdct4x4_msa.c
+    │   │   │       ├── vp9_fdct8x8_msa.c
+    │   │   │       └── vp9_fdct_msa.h
+    │   │   ├── ppc
+    │   │   │   └── vp9_quantize_vsx.c
+    │   │   ├── vp9_alt_ref_aq.c
+    │   │   ├── vp9_alt_ref_aq.h
+    │   │   ├── vp9_aq_360.c
+    │   │   ├── vp9_aq_360.h
+    │   │   ├── vp9_aq_complexity.c
+    │   │   ├── vp9_aq_complexity.h
+    │   │   ├── vp9_aq_cyclicrefresh.c
+    │   │   ├── vp9_aq_cyclicrefresh.h
+    │   │   ├── vp9_aq_variance.c
+    │   │   ├── vp9_aq_variance.h
+    │   │   ├── vp9_bitstream.c
+    │   │   ├── vp9_bitstream.h
+    │   │   ├── vp9_block.h
+    │   │   ├── vp9_blockiness.c
+    │   │   ├── vp9_blockiness.h
+    │   │   ├── vp9_context_tree.c
+    │   │   ├── vp9_context_tree.h
+    │   │   ├── vp9_cost.c
+    │   │   ├── vp9_cost.h
+    │   │   ├── vp9_dct.c
+    │   │   ├── vp9_denoiser.c
+    │   │   ├── vp9_denoiser.h
+    │   │   ├── vp9_encodeframe.c
+    │   │   ├── vp9_encodeframe.h
+    │   │   ├── vp9_encodemb.c
+    │   │   ├── vp9_encodemb.h
+    │   │   ├── vp9_encodemv.c
+    │   │   ├── vp9_encodemv.h
+    │   │   ├── vp9_encoder.c
+    │   │   ├── vp9_encoder.h
+    │   │   ├── vp9_ethread.c
+    │   │   ├── vp9_ethread.h
+    │   │   ├── vp9_extend.c
+    │   │   ├── vp9_extend.h
+    │   │   ├── vp9_ext_ratectrl.c
+    │   │   ├── vp9_ext_ratectrl.h
+    │   │   ├── vp9_firstpass.c
+    │   │   ├── vp9_firstpass.h
+    │   │   ├── vp9_firstpass_stats.h
+    │   │   ├── vp9_frame_scale.c
+    │   │   ├── vp9_job_queue.h
+    │   │   ├── vp9_lookahead.c
+    │   │   ├── vp9_lookahead.h
+    │   │   ├── vp9_mbgraph.c
+    │   │   ├── vp9_mbgraph.h
+    │   │   ├── vp9_mcomp.c
+    │   │   ├── vp9_mcomp.h
+    │   │   ├── vp9_multi_thread.c
+    │   │   ├── vp9_multi_thread.h
+    │   │   ├── vp9_noise_estimate.c
+    │   │   ├── vp9_noise_estimate.h
+    │   │   ├── vp9_non_greedy_mv.c
+    │   │   ├── vp9_non_greedy_mv.h
+    │   │   ├── vp9_partition_models.h
+    │   │   ├── vp9_picklpf.c
+    │   │   ├── vp9_picklpf.h
+    │   │   ├── vp9_pickmode.c
+    │   │   ├── vp9_pickmode.h
+    │   │   ├── vp9_quantize.c
+    │   │   ├── vp9_quantize.h
+    │   │   ├── vp9_ratectrl.c
+    │   │   ├── vp9_ratectrl.h
+    │   │   ├── vp9_rd.c
+    │   │   ├── vp9_rd.h
+    │   │   ├── vp9_rdopt.c
+    │   │   ├── vp9_rdopt.h
+    │   │   ├── vp9_resize.c
+    │   │   ├── vp9_resize.h
+    │   │   ├── vp9_segmentation.c
+    │   │   ├── vp9_segmentation.h
+    │   │   ├── vp9_skin_detection.c
+    │   │   ├── vp9_skin_detection.h
+    │   │   ├── vp9_speed_features.c
+    │   │   ├── vp9_speed_features.h
+    │   │   ├── vp9_subexp.c
+    │   │   ├── vp9_subexp.h
+    │   │   ├── vp9_svc_layercontext.c
+    │   │   ├── vp9_svc_layercontext.h
+    │   │   ├── vp9_temporal_filter.c
+    │   │   ├── vp9_temporal_filter_constants.h
+    │   │   ├── vp9_temporal_filter.h
+    │   │   ├── vp9_tokenize.c
+    │   │   ├── vp9_tokenize.h
+    │   │   ├── vp9_tpl_model.c
+    │   │   ├── vp9_tpl_model.h
+    │   │   ├── vp9_treewriter.c
+    │   │   ├── vp9_treewriter.h
+    │   │   └── x86
+    │   │       ├── highbd_temporal_filter_sse4.c
+    │   │       ├── temporal_filter_sse4.c
+    │   │       ├── vp9_dct_intrin_sse2.c
+    │   │       ├── vp9_dct_sse2.asm
+    │   │       ├── vp9_denoiser_sse2.c
+    │   │       ├── vp9_error_avx2.c
+    │   │       ├── vp9_error_sse2.asm
+    │   │       ├── vp9_frame_scale_ssse3.c
+    │   │       ├── vp9_highbd_block_error_intrin_sse2.c
+    │   │       ├── vp9_quantize_avx2.c
+    │   │       ├── vp9_quantize_sse2.c
+    │   │       └── vp9_quantize_ssse3.c
+    │   ├── exports_dec
+    │   ├── exports_enc
+    │   ├── ratectrl_rtc.cc
+    │   ├── ratectrl_rtc.h
+    │   ├── simple_encode.cc
+    │   ├── simple_encode.h
+    │   ├── vp9_common.mk
+    │   ├── vp9_cx_iface.c
+    │   ├── vp9_cx_iface.h
+    │   ├── vp9cx.mk
+    │   ├── vp9_dx_iface.c
+    │   ├── vp9_dx_iface.h
+    │   ├── vp9dx.mk
+    │   ├── vp9_iface_common.c
+    │   └── vp9_iface_common.h
+    ├── vpx
+    │   ├── exports_com
+    │   ├── exports_dec
+    │   ├── exports_enc
+    │   ├── internal
+    │   │   ├── vpx_codec_internal.h
+    │   │   └── vpx_ratectrl_rtc.h
+    │   ├── src
+    │   │   ├── vpx_codec.c
+    │   │   ├── vpx_decoder.c
+    │   │   ├── vpx_encoder.c
+    │   │   ├── vpx_image.c
+    │   │   └── vpx_tpl.c
+    │   ├── vp8cx.h
+    │   ├── vp8dx.h
+    │   ├── vp8.h
+    │   ├── vpx_codec.h
+    │   ├── vpx_codec.mk
+    │   ├── vpx_decoder.h
+    │   ├── vpx_encoder.h
+    │   ├── vpx_ext_ratectrl.h
+    │   ├── vpx_frame_buffer.h
+    │   ├── vpx_image.h
+    │   ├── vpx_integer.h
+    │   └── vpx_tpl.h
+    ├── vpxdec.c
+    ├── vpx_dsp
+    │   ├── add_noise.c
+    │   ├── arm
+    │   │   ├── avg_neon.c
+    │   │   ├── avg_pred_neon.c
+    │   │   ├── deblock_neon.c
+    │   │   ├── fdct16x16_neon.c
+    │   │   ├── fdct16x16_neon.h
+    │   │   ├── fdct32x32_neon.c
+    │   │   ├── fdct32x32_neon.h
+    │   │   ├── fdct4x4_neon.c
+    │   │   ├── fdct4x4_neon.h
+    │   │   ├── fdct8x8_neon.c
+    │   │   ├── fdct8x8_neon.h
+    │   │   ├── fdct_neon.h
+    │   │   ├── fdct_partial_neon.c
+    │   │   ├── hadamard_neon.c
+    │   │   ├── highbd_avg_neon.c
+    │   │   ├── highbd_avg_pred_neon.c
+    │   │   ├── highbd_hadamard_neon.c
+    │   │   ├── highbd_idct16x16_add_neon.c
+    │   │   ├── highbd_idct32x32_1024_add_neon.c
+    │   │   ├── highbd_idct32x32_135_add_neon.c
+    │   │   ├── highbd_idct32x32_34_add_neon.c
+    │   │   ├── highbd_idct32x32_add_neon.c
+    │   │   ├── highbd_idct4x4_add_neon.c
+    │   │   ├── highbd_idct8x8_add_neon.c
+    │   │   ├── highbd_idct_neon.h
+    │   │   ├── highbd_intrapred_neon.c
+    │   │   ├── highbd_loopfilter_neon.c
+    │   │   ├── highbd_quantize_neon.c
+    │   │   ├── highbd_sad4d_neon.c
+    │   │   ├── highbd_sad_neon.c
+    │   │   ├── highbd_sse_neon.c
+    │   │   ├── highbd_subpel_variance_neon.c
+    │   │   ├── highbd_variance_neon.c
+    │   │   ├── highbd_variance_neon_dotprod.c
+    │   │   ├── highbd_vpx_convolve8_neon.c
+    │   │   ├── highbd_vpx_convolve_avg_neon.c
+    │   │   ├── highbd_vpx_convolve_copy_neon.c
+    │   │   ├── highbd_vpx_convolve_neon.c
+    │   │   ├── idct16x16_1_add_neon.c
+    │   │   ├── idct16x16_add_neon.c
+    │   │   ├── idct32x32_135_add_neon.c
+    │   │   ├── idct32x32_1_add_neon.c
+    │   │   ├── idct32x32_34_add_neon.c
+    │   │   ├── idct32x32_add_neon.c
+    │   │   ├── idct4x4_1_add_neon.asm
+    │   │   ├── idct4x4_1_add_neon.c
+    │   │   ├── idct4x4_add_neon.asm
+    │   │   ├── idct4x4_add_neon.c
+    │   │   ├── idct8x8_1_add_neon.c
+    │   │   ├── idct8x8_add_neon.c
+    │   │   ├── idct_neon.asm
+    │   │   ├── idct_neon.h
+    │   │   ├── intrapred_neon_asm.asm
+    │   │   ├── intrapred_neon.c
+    │   │   ├── loopfilter_16_neon.asm
+    │   │   ├── loopfilter_4_neon.asm
+    │   │   ├── loopfilter_8_neon.asm
+    │   │   ├── loopfilter_neon.c
+    │   │   ├── mem_neon.h
+    │   │   ├── quantize_neon.c
+    │   │   ├── sad4d_neon.c
+    │   │   ├── sad4d_neon_dotprod.c
+    │   │   ├── sad_neon.c
+    │   │   ├── sad_neon_dotprod.c
+    │   │   ├── save_reg_neon.asm
+    │   │   ├── sse_neon.c
+    │   │   ├── sse_neon_dotprod.c
+    │   │   ├── subpel_variance_neon.c
+    │   │   ├── subtract_neon.c
+    │   │   ├── sum_neon.h
+    │   │   ├── sum_squares_neon.c
+    │   │   ├── transpose_neon.h
+    │   │   ├── variance_neon.c
+    │   │   ├── variance_neon_dotprod.c
+    │   │   ├── vpx_convolve8_avg_horiz_filter_type1_neon.asm
+    │   │   ├── vpx_convolve8_avg_horiz_filter_type2_neon.asm
+    │   │   ├── vpx_convolve8_avg_vert_filter_type1_neon.asm
+    │   │   ├── vpx_convolve8_avg_vert_filter_type2_neon.asm
+    │   │   ├── vpx_convolve8_horiz_filter_type1_neon.asm
+    │   │   ├── vpx_convolve8_horiz_filter_type2_neon.asm
+    │   │   ├── vpx_convolve8_neon_asm.c
+    │   │   ├── vpx_convolve8_neon_asm.h
+    │   │   ├── vpx_convolve8_neon.c
+    │   │   ├── vpx_convolve8_neon_dotprod.c
+    │   │   ├── vpx_convolve8_neon.h
+    │   │   ├── vpx_convolve8_neon_i8mm.c
+    │   │   ├── vpx_convolve8_vert_filter_type1_neon.asm
+    │   │   ├── vpx_convolve8_vert_filter_type2_neon.asm
+    │   │   ├── vpx_convolve_avg_neon_asm.asm
+    │   │   ├── vpx_convolve_avg_neon.c
+    │   │   ├── vpx_convolve_copy_neon_asm.asm
+    │   │   ├── vpx_convolve_copy_neon.c
+    │   │   ├── vpx_convolve_neon.c
+    │   │   ├── vpx_convolve_neon_dotprod.c
+    │   │   ├── vpx_convolve_neon_i8mm.c
+    │   │   └── vpx_scaled_convolve8_neon.c
+    │   ├── avg.c
+    │   ├── bitreader_buffer.c
+    │   ├── bitreader_buffer.h
+    │   ├── bitreader.c
+    │   ├── bitreader.h
+    │   ├── bitwriter_buffer.c
+    │   ├── bitwriter_buffer.h
+    │   ├── bitwriter.c
+    │   ├── bitwriter.h
+    │   ├── deblock.c
+    │   ├── fastssim.c
+    │   ├── fwd_txfm.c
+    │   ├── fwd_txfm.h
+    │   ├── intrapred.c
+    │   ├── inv_txfm.c
+    │   ├── inv_txfm.h
+    │   ├── loongarch
+    │   │   ├── avg_lsx.c
+    │   │   ├── avg_pred_lsx.c
+    │   │   ├── bitdepth_conversion_lsx.h
+    │   │   ├── fwd_dct32x32_lsx.c
+    │   │   ├── fwd_txfm_lsx.c
+    │   │   ├── fwd_txfm_lsx.h
+    │   │   ├── idct32x32_lsx.c
+    │   │   ├── intrapred_lsx.c
+    │   │   ├── loopfilter_16_lsx.c
+    │   │   ├── loopfilter_4_lsx.c
+    │   │   ├── loopfilter_8_lsx.c
+    │   │   ├── loopfilter_lsx.h
+    │   │   ├── quantize_lsx.c
+    │   │   ├── sad_lsx.c
+    │   │   ├── sub_pixel_variance_lsx.c
+    │   │   ├── subtract_lsx.c
+    │   │   ├── txfm_macros_lsx.h
+    │   │   ├── variance_lsx.c
+    │   │   ├── variance_lsx.h
+    │   │   ├── vpx_convolve8_avg_horiz_lsx.c
+    │   │   ├── vpx_convolve8_avg_lsx.c
+    │   │   ├── vpx_convolve8_avg_vert_lsx.c
+    │   │   ├── vpx_convolve8_horiz_lsx.c
+    │   │   ├── vpx_convolve8_lsx.c
+    │   │   ├── vpx_convolve8_vert_lsx.c
+    │   │   ├── vpx_convolve_avg_lsx.c
+    │   │   ├── vpx_convolve_copy_lsx.c
+    │   │   └── vpx_convolve_lsx.h
+    │   ├── loopfilter.c
+    │   ├── mips
+    │   │   ├── add_noise_msa.c
+    │   │   ├── avg_msa.c
+    │   │   ├── common_dspr2.c
+    │   │   ├── common_dspr2.h
+    │   │   ├── convolve2_avg_dspr2.c
+    │   │   ├── convolve2_avg_horiz_dspr2.c
+    │   │   ├── convolve2_dspr2.c
+    │   │   ├── convolve2_horiz_dspr2.c
+    │   │   ├── convolve2_vert_dspr2.c
+    │   │   ├── convolve8_avg_dspr2.c
+    │   │   ├── convolve8_avg_horiz_dspr2.c
+    │   │   ├── convolve8_dspr2.c
+    │   │   ├── convolve8_horiz_dspr2.c
+    │   │   ├── convolve8_vert_dspr2.c
+    │   │   ├── convolve_common_dspr2.h
+    │   │   ├── deblock_msa.c
+    │   │   ├── fwd_dct32x32_msa.c
+    │   │   ├── fwd_txfm_msa.c
+    │   │   ├── fwd_txfm_msa.h
+    │   │   ├── idct16x16_msa.c
+    │   │   ├── idct32x32_msa.c
+    │   │   ├── idct4x4_msa.c
+    │   │   ├── idct8x8_msa.c
+    │   │   ├── intrapred16_dspr2.c
+    │   │   ├── intrapred4_dspr2.c
+    │   │   ├── intrapred8_dspr2.c
+    │   │   ├── intrapred_msa.c
+    │   │   ├── inv_txfm_dspr2.h
+    │   │   ├── inv_txfm_msa.h
+    │   │   ├── itrans16_dspr2.c
+    │   │   ├── itrans32_cols_dspr2.c
+    │   │   ├── itrans32_dspr2.c
+    │   │   ├── itrans4_dspr2.c
+    │   │   ├── itrans8_dspr2.c
+    │   │   ├── loopfilter_16_msa.c
+    │   │   ├── loopfilter_4_msa.c
+    │   │   ├── loopfilter_8_msa.c
+    │   │   ├── loopfilter_filters_dspr2.c
+    │   │   ├── loopfilter_filters_dspr2.h
+    │   │   ├── loopfilter_macros_dspr2.h
+    │   │   ├── loopfilter_masks_dspr2.h
+    │   │   ├── loopfilter_mb_dspr2.c
+    │   │   ├── loopfilter_mb_horiz_dspr2.c
+    │   │   ├── loopfilter_mb_vert_dspr2.c
+    │   │   ├── loopfilter_msa.h
+    │   │   ├── macros_msa.h
+    │   │   ├── sad_mmi.c
+    │   │   ├── sad_msa.c
+    │   │   ├── sub_pixel_variance_msa.c
+    │   │   ├── subtract_mmi.c
+    │   │   ├── subtract_msa.c
+    │   │   ├── sum_squares_msa.c
+    │   │   ├── txfm_macros_msa.h
+    │   │   ├── variance_mmi.c
+    │   │   ├── variance_msa.c
+    │   │   ├── vpx_convolve8_avg_horiz_msa.c
+    │   │   ├── vpx_convolve8_avg_msa.c
+    │   │   ├── vpx_convolve8_avg_vert_msa.c
+    │   │   ├── vpx_convolve8_horiz_msa.c
+    │   │   ├── vpx_convolve8_mmi.c
+    │   │   ├── vpx_convolve8_msa.c
+    │   │   ├── vpx_convolve8_vert_msa.c
+    │   │   ├── vpx_convolve_avg_msa.c
+    │   │   ├── vpx_convolve_copy_msa.c
+    │   │   └── vpx_convolve_msa.h
+    │   ├── postproc.h
+    │   ├── ppc
+    │   │   ├── bitdepth_conversion_vsx.h
+    │   │   ├── deblock_vsx.c
+    │   │   ├── fdct32x32_vsx.c
+    │   │   ├── hadamard_vsx.c
+    │   │   ├── intrapred_vsx.c
+    │   │   ├── inv_txfm_vsx.c
+    │   │   ├── inv_txfm_vsx.h
+    │   │   ├── quantize_vsx.c
+    │   │   ├── sad_vsx.c
+    │   │   ├── subtract_vsx.c
+    │   │   ├── transpose_vsx.h
+    │   │   ├── txfm_common_vsx.h
+    │   │   ├── types_vsx.h
+    │   │   ├── variance_vsx.c
+    │   │   └── vpx_convolve_vsx.c
+    │   ├── prob.c
+    │   ├── prob.h
+    │   ├── psnr.c
+    │   ├── psnr.h
+    │   ├── psnrhvs.c
+    │   ├── quantize.c
+    │   ├── quantize.h
+    │   ├── sad.c
+    │   ├── skin_detection.c
+    │   ├── skin_detection.h
+    │   ├── sse.c
+    │   ├── ssim.c
+    │   ├── ssim.h
+    │   ├── subtract.c
+    │   ├── sum_squares.c
+    │   ├── txfm_common.h
+    │   ├── variance.c
+    │   ├── variance.h
+    │   ├── vpx_convolve.c
+    │   ├── vpx_convolve.h
+    │   ├── vpx_dsp_common.h
+    │   ├── vpx_dsp.mk
+    │   ├── vpx_dsp_rtcd.c
+    │   ├── vpx_dsp_rtcd_defs.pl
+    │   ├── vpx_filter.h
+    │   └── x86
+    │       ├── add_noise_sse2.asm
+    │       ├── avg_intrin_avx2.c
+    │       ├── avg_intrin_sse2.c
+    │       ├── avg_pred_avx2.c
+    │       ├── avg_pred_sse2.c
+    │       ├── avg_ssse3_x86_64.asm
+    │       ├── bitdepth_conversion_avx2.h
+    │       ├── bitdepth_conversion_sse2.asm
+    │       ├── bitdepth_conversion_sse2.h
+    │       ├── convolve_avx2.h
+    │       ├── convolve.h
+    │       ├── convolve_sse2.h
+    │       ├── convolve_ssse3.h
+    │       ├── deblock_sse2.asm
+    │       ├── fwd_dct32x32_impl_avx2.h
+    │       ├── fwd_dct32x32_impl_sse2.h
+    │       ├── fwd_txfm_avx2.c
+    │       ├── fwd_txfm_impl_sse2.h
+    │       ├── fwd_txfm_sse2.c
+    │       ├── fwd_txfm_sse2.h
+    │       ├── fwd_txfm_ssse3_x86_64.asm
+    │       ├── highbd_convolve_avx2.c
+    │       ├── highbd_idct16x16_add_sse2.c
+    │       ├── highbd_idct16x16_add_sse4.c
+    │       ├── highbd_idct32x32_add_sse2.c
+    │       ├── highbd_idct32x32_add_sse4.c
+    │       ├── highbd_idct4x4_add_sse2.c
+    │       ├── highbd_idct4x4_add_sse4.c
+    │       ├── highbd_idct8x8_add_sse2.c
+    │       ├── highbd_idct8x8_add_sse4.c
+    │       ├── highbd_intrapred_intrin_sse2.c
+    │       ├── highbd_intrapred_intrin_ssse3.c
+    │       ├── highbd_intrapred_sse2.asm
+    │       ├── highbd_inv_txfm_sse2.h
+    │       ├── highbd_inv_txfm_sse4.h
+    │       ├── highbd_loopfilter_sse2.c
+    │       ├── highbd_quantize_intrin_avx2.c
+    │       ├── highbd_quantize_intrin_sse2.c
+    │       ├── highbd_sad4d_avx2.c
+    │       ├── highbd_sad4d_sse2.asm
+    │       ├── highbd_sad_avx2.c
+    │       ├── highbd_sad_sse2.asm
+    │       ├── highbd_subpel_variance_impl_sse2.asm
+    │       ├── highbd_variance_impl_sse2.asm
+    │       ├── highbd_variance_sse2.c
+    │       ├── intrapred_sse2.asm
+    │       ├── intrapred_ssse3.asm
+    │       ├── inv_txfm_avx2.c
+    │       ├── inv_txfm_sse2.c
+    │       ├── inv_txfm_sse2.h
+    │       ├── inv_txfm_ssse3.c
+    │       ├── inv_txfm_ssse3.h
+    │       ├── inv_wht_sse2.asm
+    │       ├── loopfilter_avx2.c
+    │       ├── loopfilter_sse2.c
+    │       ├── mem_sse2.h
+    │       ├── post_proc_sse2.c
+    │       ├── quantize_avx2.c
+    │       ├── quantize_avx.c
+    │       ├── quantize_sse2.c
+    │       ├── quantize_sse2.h
+    │       ├── quantize_ssse3.c
+    │       ├── quantize_ssse3.h
+    │       ├── sad4d_avx2.c
+    │       ├── sad4d_avx512.c
+    │       ├── sad4d_sse2.asm
+    │       ├── sad_avx2.c
+    │       ├── sad_sse2.asm
+    │       ├── sse_avx2.c
+    │       ├── sse_sse4.c
+    │       ├── ssim_opt_x86_64.asm
+    │       ├── subpel_variance_sse2.asm
+    │       ├── subtract_avx2.c
+    │       ├── subtract_sse2.asm
+    │       ├── sum_squares_sse2.c
+    │       ├── transpose_sse2.h
+    │       ├── txfm_common_sse2.h
+    │       ├── variance_avx2.c
+    │       ├── variance_sse2.c
+    │       ├── vpx_convolve_copy_sse2.asm
+    │       ├── vpx_high_subpixel_8t_sse2.asm
+    │       ├── vpx_high_subpixel_bilinear_sse2.asm
+    │       ├── vpx_subpixel_4t_intrin_sse2.c
+    │       ├── vpx_subpixel_8t_intrin_avx2.c
+    │       ├── vpx_subpixel_8t_intrin_ssse3.c
+    │       ├── vpx_subpixel_8t_sse2.asm
+    │       ├── vpx_subpixel_8t_ssse3.asm
+    │       ├── vpx_subpixel_bilinear_sse2.asm
+    │       └── vpx_subpixel_bilinear_ssse3.asm
+    ├── vpxenc.c
+    ├── vpxenc.h
+    ├── vpx_mem
+    │   ├── include
+    │   │   └── vpx_mem_intrnl.h
+    │   ├── vpx_mem.c
+    │   ├── vpx_mem.h
+    │   └── vpx_mem.mk
+    ├── vpx_ports
+    │   ├── aarch32_cpudetect.c
+    │   ├── aarch64_cpudetect.c
+    │   ├── arm_cpudetect.h
+    │   ├── arm.h
+    │   ├── asmdefs_mmi.h
+    │   ├── bitops.h
+    │   ├── compiler_attributes.h
+    │   ├── emmintrin_compat.h
+    │   ├── emms_mmx.asm
+    │   ├── emms_mmx.c
+    │   ├── float_control_word.asm
+    │   ├── loongarch_cpudetect.c
+    │   ├── loongarch.h
+    │   ├── mem.h
+    │   ├── mem_ops_aligned.h
+    │   ├── mem_ops.h
+    │   ├── mips_cpudetect.c
+    │   ├── mips.h
+    │   ├── msvc.h
+    │   ├── ppc_cpudetect.c
+    │   ├── ppc.h
+    │   ├── static_assert.h
+    │   ├── system_state.h
+    │   ├── vpx_once.h
+    │   ├── vpx_ports.mk
+    │   ├── vpx_timer.h
+    │   ├── x86_abi_support.asm
+    │   └── x86.h
+    ├── vpx_scale
+    │   ├── generic
+    │   │   ├── gen_scalers.c
+    │   │   ├── vpx_scale.c
+    │   │   ├── yv12config.c
+    │   │   └── yv12extend.c
+    │   ├── mips
+    │   │   └── dspr2
+    │   │       └── yv12extend_dspr2.c
+    │   ├── vpx_scale.h
+    │   ├── vpx_scale.mk
+    │   ├── vpx_scale_rtcd.c
+    │   ├── vpx_scale_rtcd.pl
+    │   └── yv12config.h
+    ├── vpxstats.c
+    ├── vpxstats.h
+    ├── vpx_util
+    │   ├── endian_inl.h
+    │   ├── loongson_intrinsics.h
+    │   ├── vpx_atomics.h
+    │   ├── vpx_debug_util.c
+    │   ├── vpx_debug_util.h
+    │   ├── vpx_thread.c
+    │   ├── vpx_thread.h
+    │   ├── vpx_timestamp.h
+    │   ├── vpx_util.mk
+    │   ├── vpx_write_yuv_frame.c
+    │   └── vpx_write_yuv_frame.h
+    ├── warnings.c
+    ├── warnings.h
+    ├── webmdec.cc
+    ├── webmdec.h
+    ├── webmenc.cc
+    ├── webmenc.h
+    ├── y4menc.c
+    ├── y4menc.h
+    ├── y4minput.c
+    └── y4minput.h
+
+86 directories, 1232 files

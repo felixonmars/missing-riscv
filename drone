@@ -1,0 +1,893 @@
+src
+├── drone
+│   ├── BUILDING
+│   ├── BUILDING_OSS
+│   ├── CHANGELOG.md
+│   ├── cmd
+│   │   └── drone-server
+│   │       ├── bootstrap
+│   │       │   ├── bootstrap.go
+│   │       │   └── bootstrap_test.go
+│   │       ├── config
+│   │       │   ├── config.go
+│   │       │   └── config_test.go
+│   │       ├── inject_client.go
+│   │       ├── inject_external.go
+│   │       ├── inject_license.go
+│   │       ├── inject_login.go
+│   │       ├── inject_plugin.go
+│   │       ├── inject_runner.go
+│   │       ├── inject_scheduler.go
+│   │       ├── inject_server.go
+│   │       ├── inject_service.go
+│   │       ├── inject_store.go
+│   │       ├── main.go
+│   │       ├── wire_gen.go
+│   │       └── wire.go
+│   ├── core
+│   │   ├── admission.go
+│   │   ├── batch.go
+│   │   ├── build.go
+│   │   ├── build_test.go
+│   │   ├── cancel.go
+│   │   ├── card.go
+│   │   ├── commit.go
+│   │   ├── config.go
+│   │   ├── convert.go
+│   │   ├── cron.go
+│   │   ├── cron_test.go
+│   │   ├── event.go
+│   │   ├── file.go
+│   │   ├── hook.go
+│   │   ├── hook_test.go
+│   │   ├── license.go
+│   │   ├── license_test.go
+│   │   ├── linker.go
+│   │   ├── logs.go
+│   │   ├── netrc.go
+│   │   ├── netrc_test.go
+│   │   ├── org.go
+│   │   ├── perm.go
+│   │   ├── pubsub.go
+│   │   ├── registry.go
+│   │   ├── renewer.go
+│   │   ├── repo.go
+│   │   ├── sched.go
+│   │   ├── secret.go
+│   │   ├── secret_test.go
+│   │   ├── session.go
+│   │   ├── stage.go
+│   │   ├── stage_test.go
+│   │   ├── status.go
+│   │   ├── step.go
+│   │   ├── step_test.go
+│   │   ├── syncer.go
+│   │   ├── system.go
+│   │   ├── template.go
+│   │   ├── transfer.go
+│   │   ├── trigger.go
+│   │   ├── trigger_test.go
+│   │   ├── user.go
+│   │   ├── user_test.go
+│   │   ├── validate.go
+│   │   └── webhook.go
+│   ├── docker
+│   │   ├── compose
+│   │   │   ├── drone-gitea
+│   │   │   │   └── docker-compose.yml
+│   │   │   ├── drone-github
+│   │   │   │   └── docker-compose.yml
+│   │   │   ├── gitea
+│   │   │   │   └── docker-compose.yml
+│   │   │   └── README.md
+│   │   ├── Dockerfile.agent.linux.amd64
+│   │   ├── Dockerfile.agent.linux.arm
+│   │   ├── Dockerfile.agent.linux.arm64
+│   │   ├── Dockerfile.agent.windows.1803
+│   │   ├── Dockerfile.agent.windows.1809
+│   │   ├── Dockerfile.agent.windows.1903
+│   │   ├── Dockerfile.controller.linux.amd64
+│   │   ├── Dockerfile.controller.linux.arm
+│   │   ├── Dockerfile.controller.linux.arm64
+│   │   ├── Dockerfile.controller.windows.1803
+│   │   ├── Dockerfile.controller.windows.1809
+│   │   ├── Dockerfile.server.linux.amd64
+│   │   ├── Dockerfile.server.linux.arm
+│   │   ├── Dockerfile.server.linux.arm64
+│   │   ├── manifest.agent.tmpl
+│   │   ├── manifest.controller.tmpl
+│   │   └── manifest.server.tmpl
+│   ├── go.mod
+│   ├── go.sum
+│   ├── handler
+│   │   ├── api
+│   │   │   ├── acl
+│   │   │   │   ├── acl.go
+│   │   │   │   ├── acl_test.go
+│   │   │   │   ├── check.go
+│   │   │   │   ├── check_test.go
+│   │   │   │   ├── org.go
+│   │   │   │   ├── org_test.go
+│   │   │   │   ├── repo.go
+│   │   │   │   └── repo_test.go
+│   │   │   ├── api.go
+│   │   │   ├── auth
+│   │   │   │   ├── auth.go
+│   │   │   │   └── auth_test.go
+│   │   │   ├── badge
+│   │   │   │   ├── badge.go
+│   │   │   │   ├── status.go
+│   │   │   │   └── status_test.go
+│   │   │   ├── builds
+│   │   │   │   ├── builds.go
+│   │   │   │   ├── builds_oss.go
+│   │   │   │   └── builds_test.go
+│   │   │   ├── card
+│   │   │   │   ├── create.go
+│   │   │   │   ├── create_test.go
+│   │   │   │   ├── delete.go
+│   │   │   │   ├── delete_test.go
+│   │   │   │   ├── find.go
+│   │   │   │   ├── find_test.go
+│   │   │   │   └── none.go
+│   │   │   ├── ccmenu
+│   │   │   │   ├── cc.go
+│   │   │   │   ├── ccmenu.go
+│   │   │   │   ├── ccmenu_oss.go
+│   │   │   │   ├── ccmenu_test.go
+│   │   │   │   └── cc_test.go
+│   │   │   ├── errors
+│   │   │   │   ├── errors.go
+│   │   │   │   └── errors_test.go
+│   │   │   ├── events
+│   │   │   │   ├── build.go
+│   │   │   │   ├── build_test.go
+│   │   │   │   ├── global.go
+│   │   │   │   ├── logs.go
+│   │   │   │   └── logs_test.go
+│   │   │   ├── queue
+│   │   │   │   ├── items.go
+│   │   │   │   ├── items_test.go
+│   │   │   │   ├── none.go
+│   │   │   │   ├── pause.go
+│   │   │   │   ├── pause_test.go
+│   │   │   │   ├── resume.go
+│   │   │   │   └── resume_test.go
+│   │   │   ├── render
+│   │   │   │   ├── render.go
+│   │   │   │   └── render_test.go
+│   │   │   ├── repos
+│   │   │   │   ├── all.go
+│   │   │   │   ├── builds
+│   │   │   │   │   ├── branches
+│   │   │   │   │   │   ├── create.go
+│   │   │   │   │   │   ├── create_test.go
+│   │   │   │   │   │   ├── delete.go
+│   │   │   │   │   │   ├── delete_test.go
+│   │   │   │   │   │   ├── list.go
+│   │   │   │   │   │   └── list_test.go
+│   │   │   │   │   ├── cancel.go
+│   │   │   │   │   ├── cancel_test.go
+│   │   │   │   │   ├── create.go
+│   │   │   │   │   ├── create_test.go
+│   │   │   │   │   ├── deploys
+│   │   │   │   │   │   ├── create.go
+│   │   │   │   │   │   ├── create_test.go
+│   │   │   │   │   │   ├── delete.go
+│   │   │   │   │   │   ├── delete_test.go
+│   │   │   │   │   │   ├── list.go
+│   │   │   │   │   │   └── list_test.go
+│   │   │   │   │   ├── find.go
+│   │   │   │   │   ├── find_test.go
+│   │   │   │   │   ├── latest.go
+│   │   │   │   │   ├── latest_test.go
+│   │   │   │   │   ├── list.go
+│   │   │   │   │   ├── list_test.go
+│   │   │   │   │   ├── logs
+│   │   │   │   │   │   ├── delete.go
+│   │   │   │   │   │   ├── delete_test.go
+│   │   │   │   │   │   ├── find.go
+│   │   │   │   │   │   └── find_test.go
+│   │   │   │   │   ├── promote.go
+│   │   │   │   │   ├── promote_oss.go
+│   │   │   │   │   ├── promote_test.go
+│   │   │   │   │   ├── pulls
+│   │   │   │   │   │   ├── create.go
+│   │   │   │   │   │   ├── create_test.go
+│   │   │   │   │   │   ├── delete.go
+│   │   │   │   │   │   ├── delete_test.go
+│   │   │   │   │   │   ├── list.go
+│   │   │   │   │   │   └── list_test.go
+│   │   │   │   │   ├── purge.go
+│   │   │   │   │   ├── purge_oss.go
+│   │   │   │   │   ├── purge_test.go
+│   │   │   │   │   ├── retry.go
+│   │   │   │   │   ├── retry_test.go
+│   │   │   │   │   ├── rollback.go
+│   │   │   │   │   ├── rollback_oss.go
+│   │   │   │   │   ├── rollback_test.go
+│   │   │   │   │   └── stages
+│   │   │   │   │       ├── approve.go
+│   │   │   │   │       ├── approve_test.go
+│   │   │   │   │       ├── decline.go
+│   │   │   │   │       └── decline_test.go
+│   │   │   │   ├── chown.go
+│   │   │   │   ├── chown_test.go
+│   │   │   │   ├── collabs
+│   │   │   │   │   ├── find.go
+│   │   │   │   │   ├── find_test.go
+│   │   │   │   │   ├── list.go
+│   │   │   │   │   ├── list_test.go
+│   │   │   │   │   ├── none.go
+│   │   │   │   │   ├── remove.go
+│   │   │   │   │   └── remove_test.go
+│   │   │   │   ├── crons
+│   │   │   │   │   ├── create.go
+│   │   │   │   │   ├── create_test.go
+│   │   │   │   │   ├── delete.go
+│   │   │   │   │   ├── delete_test.go
+│   │   │   │   │   ├── exec.go
+│   │   │   │   │   ├── exec_test.go
+│   │   │   │   │   ├── find.go
+│   │   │   │   │   ├── find_test.go
+│   │   │   │   │   ├── list.go
+│   │   │   │   │   ├── list_test.go
+│   │   │   │   │   ├── none.go
+│   │   │   │   │   ├── update.go
+│   │   │   │   │   └── update_test.go
+│   │   │   │   ├── disable.go
+│   │   │   │   ├── disable_test.go
+│   │   │   │   ├── enable.go
+│   │   │   │   ├── enable_test.go
+│   │   │   │   ├── encrypt
+│   │   │   │   │   ├── encrypt.go
+│   │   │   │   │   └── encrypt_test.go
+│   │   │   │   ├── find.go
+│   │   │   │   ├── find_test.go
+│   │   │   │   ├── repair.go
+│   │   │   │   ├── repair_test.go
+│   │   │   │   ├── secrets
+│   │   │   │   │   ├── create.go
+│   │   │   │   │   ├── create_test.go
+│   │   │   │   │   ├── delete.go
+│   │   │   │   │   ├── delete_test.go
+│   │   │   │   │   ├── find.go
+│   │   │   │   │   ├── find_test.go
+│   │   │   │   │   ├── list.go
+│   │   │   │   │   ├── list_test.go
+│   │   │   │   │   ├── none.go
+│   │   │   │   │   ├── update.go
+│   │   │   │   │   └── update_test.go
+│   │   │   │   ├── sign
+│   │   │   │   │   ├── sign.go
+│   │   │   │   │   └── sign_test.go
+│   │   │   │   ├── update.go
+│   │   │   │   └── update_test.go
+│   │   │   ├── request
+│   │   │   │   ├── context.go
+│   │   │   │   └── context_test.go
+│   │   │   ├── secrets
+│   │   │   │   ├── all.go
+│   │   │   │   ├── all_test.go
+│   │   │   │   ├── create.go
+│   │   │   │   ├── create_test.go
+│   │   │   │   ├── delete.go
+│   │   │   │   ├── delete_test.go
+│   │   │   │   ├── find.go
+│   │   │   │   ├── find_test.go
+│   │   │   │   ├── list.go
+│   │   │   │   ├── list_test.go
+│   │   │   │   ├── none.go
+│   │   │   │   ├── update.go
+│   │   │   │   └── update_test.go
+│   │   │   ├── system
+│   │   │   │   ├── license.go
+│   │   │   │   ├── limits.go
+│   │   │   │   ├── none.go
+│   │   │   │   ├── stats.go
+│   │   │   │   └── stats_test.go
+│   │   │   ├── template
+│   │   │   │   ├── all.go
+│   │   │   │   ├── all_test.go
+│   │   │   │   ├── create.go
+│   │   │   │   ├── create_test.go
+│   │   │   │   ├── delete.go
+│   │   │   │   ├── delete_test.go
+│   │   │   │   ├── find.go
+│   │   │   │   ├── find_test.go
+│   │   │   │   ├── list.go
+│   │   │   │   ├── list_test.go
+│   │   │   │   ├── none.go
+│   │   │   │   ├── update.go
+│   │   │   │   └── update_test.go
+│   │   │   ├── user
+│   │   │   │   ├── activity.go
+│   │   │   │   ├── find.go
+│   │   │   │   ├── find_test.go
+│   │   │   │   ├── remote
+│   │   │   │   │   ├── repo.go
+│   │   │   │   │   └── repos.go
+│   │   │   │   ├── repos.go
+│   │   │   │   ├── repos_test.go
+│   │   │   │   ├── sync.go
+│   │   │   │   ├── sync_test.go
+│   │   │   │   ├── token.go
+│   │   │   │   ├── token_test.go
+│   │   │   │   ├── update.go
+│   │   │   │   └── update_test.go
+│   │   │   └── users
+│   │   │       ├── create.go
+│   │   │       ├── create_test.go
+│   │   │       ├── delete.go
+│   │   │       ├── delete_test.go
+│   │   │       ├── find.go
+│   │   │       ├── find_test.go
+│   │   │       ├── list.go
+│   │   │       ├── list_test.go
+│   │   │       ├── repos.go
+│   │   │       ├── token.go
+│   │   │       ├── token_test.go
+│   │   │       ├── update.go
+│   │   │       └── update_test.go
+│   │   ├── health
+│   │   │   ├── health.go
+│   │   │   └── health_test.go
+│   │   └── web
+│   │       ├── hook.go
+│   │       ├── link
+│   │       │   ├── link.go
+│   │       │   └── link_test.go
+│   │       ├── login.go
+│   │       ├── login_test.go
+│   │       ├── logout.go
+│   │       ├── logout_test.go
+│   │       ├── pages.go
+│   │       ├── varz.go
+│   │       ├── varz_test.go
+│   │       ├── version.go
+│   │       ├── version_test.go
+│   │       ├── web.go
+│   │       ├── writer.go
+│   │       └── writer_test.go
+│   ├── HISTORY.md
+│   ├── LICENSE
+│   ├── livelog
+│   │   ├── livelog.go
+│   │   ├── livelog_oss.go
+│   │   ├── streamer.go
+│   │   ├── streamer_test.go
+│   │   ├── stream.go
+│   │   ├── stream_redis.go
+│   │   ├── stream_test.go
+│   │   ├── sub.go
+│   │   └── sub_test.go
+│   ├── logger
+│   │   ├── handler.go
+│   │   ├── handler_test.go
+│   │   ├── logger.go
+│   │   └── logger_test.go
+│   ├── metric
+│   │   ├── builds.go
+│   │   ├── builds_test.go
+│   │   ├── handler.go
+│   │   ├── handler_oss.go
+│   │   ├── handler_test.go
+│   │   ├── license.go
+│   │   ├── license_test.go
+│   │   ├── metric.go
+│   │   ├── metric_oss.go
+│   │   ├── repos.go
+│   │   ├── repos_test.go
+│   │   ├── sink
+│   │   │   ├── config.go
+│   │   │   ├── datadog.go
+│   │   │   ├── datadog_test.go
+│   │   │   └── tags.go
+│   │   ├── stages.go
+│   │   ├── stages_test.go
+│   │   ├── users.go
+│   │   └── users_test.go
+│   ├── mock
+│   │   ├── mock_gen.go
+│   │   ├── mock.go
+│   │   └── mockscm
+│   │       ├── mock_gen.go
+│   │       └── mock.go
+│   ├── NOTICE
+│   ├── operator
+│   │   ├── manager
+│   │   │   ├── manager.go
+│   │   │   ├── manager_test.go
+│   │   │   ├── rpc
+│   │   │   │   ├── client.go
+│   │   │   │   ├── client_test.go
+│   │   │   │   ├── error.go
+│   │   │   │   ├── server.go
+│   │   │   │   ├── server_oss.go
+│   │   │   │   ├── server_test.go
+│   │   │   │   └── types.go
+│   │   │   ├── rpc2
+│   │   │   │   ├── client.go
+│   │   │   │   ├── handler.go
+│   │   │   │   ├── server.go
+│   │   │   │   ├── server_oss.go
+│   │   │   │   └── types.go
+│   │   │   ├── setup.go
+│   │   │   ├── setup_test.go
+│   │   │   ├── teardown.go
+│   │   │   ├── teardown_test.go
+│   │   │   ├── updater.go
+│   │   │   ├── util.go
+│   │   │   └── util_test.go
+│   │   └── runner
+│   │       ├── after.go
+│   │       ├── after_test.go
+│   │       ├── before.go
+│   │       ├── before_test.go
+│   │       ├── convert.go
+│   │       ├── convert_test.go
+│   │       ├── env.go
+│   │       ├── env_test.go
+│   │       ├── machine
+│   │       │   ├── client.go
+│   │       │   ├── config.go
+│   │       │   ├── config_test.go
+│   │       │   ├── machine.go
+│   │       │   └── machine_test.go
+│   │       ├── runner.go
+│   │       ├── runner_test.go
+│   │       └── secrets.go
+│   ├── plugin
+│   │   ├── admission
+│   │   │   ├── account.go
+│   │   │   ├── account_oss.go
+│   │   │   ├── account_test.go
+│   │   │   ├── combine.go
+│   │   │   ├── combine_test.go
+│   │   │   ├── external.go
+│   │   │   ├── external_oss.go
+│   │   │   ├── external_test.go
+│   │   │   ├── nobot.go
+│   │   │   ├── nobot_oss.go
+│   │   │   ├── nobot_test.go
+│   │   │   ├── noop.go
+│   │   │   ├── open.go
+│   │   │   └── open_test.go
+│   │   ├── config
+│   │   │   ├── combine.go
+│   │   │   ├── combine_test.go
+│   │   │   ├── global.go
+│   │   │   ├── global_oss.go
+│   │   │   ├── global_test.go
+│   │   │   ├── jsonnet.go
+│   │   │   ├── jsonnet_oss.go
+│   │   │   ├── jsonnet_test.go
+│   │   │   ├── memoize.go
+│   │   │   ├── memoize_oss.go
+│   │   │   ├── memoize_test.go
+│   │   │   ├── repo.go
+│   │   │   └── repo_test.go
+│   │   ├── converter
+│   │   │   ├── combine.go
+│   │   │   ├── combine_test.go
+│   │   │   ├── jsonnet
+│   │   │   │   ├── jsonnet.go
+│   │   │   │   └── jsonnet_test.go
+│   │   │   ├── jsonnet.go
+│   │   │   ├── jsonnet_oss.go
+│   │   │   ├── jsonnet_test.go
+│   │   │   ├── legacy.go
+│   │   │   ├── legacy_oss.go
+│   │   │   ├── memoize.go
+│   │   │   ├── memoize_oss.go
+│   │   │   ├── memoize_test.go
+│   │   │   ├── noop.go
+│   │   │   ├── remote.go
+│   │   │   ├── remote_oss.go
+│   │   │   ├── remote_test.go
+│   │   │   ├── starlark
+│   │   │   │   ├── args.go
+│   │   │   │   ├── starlark.go
+│   │   │   │   ├── starlark_test.go
+│   │   │   │   └── write.go
+│   │   │   ├── starlark.go
+│   │   │   ├── starlark_oss.go
+│   │   │   ├── starlark_test.go
+│   │   │   ├── template.go
+│   │   │   ├── template_oss.go
+│   │   │   ├── template_test.go
+│   │   │   └── testdata
+│   │   │       ├── drone.yml
+│   │   │       ├── input.jsonnet
+│   │   │       ├── input.jsonnet.golden
+│   │   │       ├── jsonnet.template.yml
+│   │   │       ├── multi.star
+│   │   │       ├── multi.star.golden
+│   │   │       ├── single.jsonnet
+│   │   │       ├── single.star
+│   │   │       ├── single.star.golden
+│   │   │       ├── starlark.input-nested.star
+│   │   │       ├── starlark.input-nested.star.golden
+│   │   │       ├── starlark.input.star
+│   │   │       ├── starlark.input.star.golden
+│   │   │       ├── starlark-nested.template.yml
+│   │   │       ├── starlark.template.yml
+│   │   │       ├── yaml.input.golden
+│   │   │       ├── yaml.input.yml
+│   │   │       ├── yaml.template.comment.yml
+│   │   │       ├── yaml.template.invalid.yml
+│   │   │       └── yaml.template.yml
+│   │   ├── registry
+│   │   │   ├── auths
+│   │   │   │   ├── auth.go
+│   │   │   │   ├── auth_test.go
+│   │   │   │   └── testdata
+│   │   │   │       ├── config2.json
+│   │   │   │       └── config.json
+│   │   │   ├── combine.go
+│   │   │   ├── combine_test.go
+│   │   │   ├── encrypted.go
+│   │   │   ├── endpoint.go
+│   │   │   ├── endpoint_oss.go
+│   │   │   ├── endpoint_test.go
+│   │   │   ├── external.go
+│   │   │   ├── external_oss.go
+│   │   │   ├── external_test.go
+│   │   │   ├── file.go
+│   │   │   ├── file_oss.go
+│   │   │   ├── file_test.go
+│   │   │   ├── noop.go
+│   │   │   ├── static.go
+│   │   │   └── static_test.go
+│   │   ├── secret
+│   │   │   ├── combine.go
+│   │   │   ├── combine_test.go
+│   │   │   ├── encrypted.go
+│   │   │   ├── encrypted_test.go
+│   │   │   ├── external.go
+│   │   │   ├── external_oss.go
+│   │   │   ├── external_test.go
+│   │   │   ├── static.go
+│   │   │   └── static_test.go
+│   │   ├── validator
+│   │   │   ├── combine.go
+│   │   │   ├── combine_test.go
+│   │   │   ├── filter.go
+│   │   │   ├── filter_test.go
+│   │   │   ├── noop.go
+│   │   │   ├── remote.go
+│   │   │   ├── remote_oss.go
+│   │   │   └── remote_test.go
+│   │   └── webhook
+│   │       ├── config.go
+│   │       ├── webhook.go
+│   │       ├── webhook_oss.go
+│   │       └── webhook_test.go
+│   ├── pubsub
+│   │   ├── doc.go
+│   │   ├── hub.go
+│   │   ├── hub_redis.go
+│   │   ├── hub_test.go
+│   │   ├── pubsub.go
+│   │   ├── pubsub_oss.go
+│   │   ├── sub.go
+│   │   └── sub_test.go
+│   ├── scheduler
+│   │   ├── queue
+│   │   │   ├── canceller.go
+│   │   │   ├── canceller_redis.go
+│   │   │   ├── canceller_test.go
+│   │   │   ├── queue.go
+│   │   │   ├── queue_test.go
+│   │   │   ├── scheduler.go
+│   │   │   ├── scheduler_non_oss.go
+│   │   │   ├── scheduler_oss.go
+│   │   │   └── scheduler_redis.go
+│   │   └── scheduler.go
+│   ├── scripts
+│   │   └── build.sh
+│   ├── server
+│   │   └── server.go
+│   ├── service
+│   │   ├── canceler
+│   │   │   ├── canceler.go
+│   │   │   ├── canceler_test.go
+│   │   │   ├── match.go
+│   │   │   ├── match_test.go
+│   │   │   └── reaper
+│   │   │       ├── reaper.go
+│   │   │       ├── reaper_test.go
+│   │   │       ├── util.go
+│   │   │       └── util_test.go
+│   │   ├── commit
+│   │   │   ├── commit.go
+│   │   │   └── commit_test.go
+│   │   ├── content
+│   │   │   ├── cache
+│   │   │   │   ├── contents.go
+│   │   │   │   ├── contents_oss.go
+│   │   │   │   └── contents_test.go
+│   │   │   ├── content.go
+│   │   │   └── content_test.go
+│   │   ├── hook
+│   │   │   ├── hook.go
+│   │   │   ├── hook_test.go
+│   │   │   ├── parser
+│   │   │   │   ├── parse.go
+│   │   │   │   ├── parse_test.go
+│   │   │   │   └── testdata
+│   │   │   │       ├── bitbucket_pull_open.json
+│   │   │   │       ├── bitbucket_pull_open.json.golden
+│   │   │   │       ├── bitbucket_push.json
+│   │   │   │       ├── bitbucket_push.json.golden
+│   │   │   │       ├── bitbucket_tag.json
+│   │   │   │       ├── bitbucket_tag.json.golden
+│   │   │   │       ├── gitea_pull_open.json
+│   │   │   │       ├── gitea_pull_open.json.golden
+│   │   │   │       ├── gitea_push.json
+│   │   │   │       ├── gitea_push.json.golden
+│   │   │   │       ├── gitea_tag.json
+│   │   │   │       ├── gitea_tag.json.golden
+│   │   │   │       ├── github_pull_create.json
+│   │   │   │       ├── github_pull_create.json.golden
+│   │   │   │       ├── github_pull_sync.json
+│   │   │   │       ├── github_pull_sync.json.golden
+│   │   │   │       ├── github_push.json
+│   │   │   │       ├── github_push.json.golden
+│   │   │   │       ├── github_push_tag.json
+│   │   │   │       ├── github_push_tag.json.golden
+│   │   │   │       ├── gitlab_pull_open.json
+│   │   │   │       ├── gitlab_pull_open.json.golden
+│   │   │   │       ├── gitlab_push.json
+│   │   │   │       ├── gitlab_push.json.golden
+│   │   │   │       ├── gitlab_tag.json
+│   │   │   │       ├── gitlab_tag.json.golden
+│   │   │   │       ├── gogs_pull_create.json
+│   │   │   │       ├── gogs_push.json
+│   │   │   │       ├── gogs_push.json.golden
+│   │   │   │       ├── gogs_tag.json
+│   │   │   │       ├── gogs_tag.json.golden
+│   │   │   │       ├── stash_pull_create.json
+│   │   │   │       ├── stash_pull_create.json.golden
+│   │   │   │       ├── stash_push.json
+│   │   │   │       ├── stash_push.json.golden
+│   │   │   │       ├── stash_push_tag.json
+│   │   │   │       └── stash_push_tag.json.golden
+│   │   │   ├── util.go
+│   │   │   └── util_test.go
+│   │   ├── license
+│   │   │   ├── load.go
+│   │   │   ├── load_test.go
+│   │   │   ├── nolimit.go
+│   │   │   ├── nolimit_oss.go
+│   │   │   └── service.go
+│   │   ├── linker
+│   │   │   ├── linker.go
+│   │   │   └── linker_test.go
+│   │   ├── netrc
+│   │   │   ├── netrc.go
+│   │   │   └── netrc_test.go
+│   │   ├── org
+│   │   │   ├── cache.go
+│   │   │   ├── cache_test.go
+│   │   │   ├── org.go
+│   │   │   └── org_test.go
+│   │   ├── redisdb
+│   │   │   ├── lockerr.go
+│   │   │   └── redisdb.go
+│   │   ├── repo
+│   │   │   ├── repo.go
+│   │   │   ├── repo_test.go
+│   │   │   ├── util.go
+│   │   │   └── util_test.go
+│   │   ├── status
+│   │   │   ├── status.go
+│   │   │   ├── status_test.go
+│   │   │   ├── util.go
+│   │   │   └── util_test.go
+│   │   ├── syncer
+│   │   │   ├── filter.go
+│   │   │   ├── filter_oss.go
+│   │   │   ├── filter_test.go
+│   │   │   ├── syncer.go
+│   │   │   ├── syncer_test.go
+│   │   │   ├── util.go
+│   │   │   └── util_test.go
+│   │   ├── token
+│   │   │   ├── renew.go
+│   │   │   └── renew_test.go
+│   │   ├── transfer
+│   │   │   ├── transfer.go
+│   │   │   └── transfer_test.go
+│   │   └── user
+│   │       ├── user.go
+│   │       └── user_test.go
+│   ├── session
+│   │   ├── config.go
+│   │   ├── session.go
+│   │   ├── session_test.go
+│   │   └── testdata
+│   │       └── mapping.json
+│   ├── store
+│   │   ├── batch
+│   │   │   ├── batch.go
+│   │   │   └── batch_test.go
+│   │   ├── batch2
+│   │   │   ├── batch.go
+│   │   │   └── batch_test.go
+│   │   ├── build
+│   │   │   ├── build.go
+│   │   │   ├── build_test.go
+│   │   │   └── scan.go
+│   │   ├── card
+│   │   │   ├── card.go
+│   │   │   ├── card_oss.go
+│   │   │   ├── card_test.go
+│   │   │   └── scan.go
+│   │   ├── cron
+│   │   │   ├── cron.go
+│   │   │   ├── cron_oss.go
+│   │   │   ├── cron_test.go
+│   │   │   └── scan.go
+│   │   ├── logs
+│   │   │   ├── azureblob.go
+│   │   │   ├── azureblob_oss.go
+│   │   │   ├── combine.go
+│   │   │   ├── logs.go
+│   │   │   ├── logs_test.go
+│   │   │   ├── s3.go
+│   │   │   ├── s3_oss.go
+│   │   │   ├── s3_test.go
+│   │   │   └── scan.go
+│   │   ├── perm
+│   │   │   ├── perm.go
+│   │   │   ├── perm_test.go
+│   │   │   └── scan.go
+│   │   ├── repos
+│   │   │   ├── repos.go
+│   │   │   ├── repos_test.go
+│   │   │   ├── scan.go
+│   │   │   ├── scan_test.go
+│   │   │   ├── testdata
+│   │   │   │   ├── repo.json
+│   │   │   │   └── repo.json.golden
+│   │   │   └── type.go
+│   │   ├── secret
+│   │   │   ├── global
+│   │   │   │   ├── scan.go
+│   │   │   │   ├── secret.go
+│   │   │   │   ├── secret_oss.go
+│   │   │   │   └── secret_test.go
+│   │   │   ├── scan.go
+│   │   │   ├── secret.go
+│   │   │   ├── secret_oss.go
+│   │   │   └── secret_test.go
+│   │   ├── shared
+│   │   │   ├── db
+│   │   │   │   ├── conn.go
+│   │   │   │   ├── conn_oss.go
+│   │   │   │   ├── conn_test.go
+│   │   │   │   ├── db.go
+│   │   │   │   ├── dbtest
+│   │   │   │   │   └── dbtest.go
+│   │   │   │   ├── db_test.go
+│   │   │   │   ├── error.go
+│   │   │   │   └── nop.go
+│   │   │   ├── encrypt
+│   │   │   │   ├── aesgcm.go
+│   │   │   │   ├── aesgcm_test.go
+│   │   │   │   ├── encrypt.go
+│   │   │   │   ├── none.go
+│   │   │   │   └── none_test.go
+│   │   │   └── migrate
+│   │   │       ├── mysql
+│   │   │       │   ├── ddl_gen.go
+│   │   │       │   ├── ddl.go
+│   │   │       │   └── files
+│   │   │       │       ├── 001_create_table_user.sql
+│   │   │       │       ├── 002_create_table_repos.sql
+│   │   │       │       ├── 003_create_table_perms.sql
+│   │   │       │       ├── 004_create_table_builds.sql
+│   │   │       │       ├── 005_create_table_stages.sql
+│   │   │       │       ├── 006_create_table_steps.sql
+│   │   │       │       ├── 007_create_table_logs.sql
+│   │   │       │       ├── 008_create_table_cron.sql
+│   │   │       │       ├── 009_create_table_secrets.sql
+│   │   │       │       ├── 010_create_table_nodes.sql
+│   │   │       │       ├── 011_add_column_builds_cron.sql
+│   │   │       │       ├── 012_create_table_global_secrets.sql
+│   │   │       │       ├── 013_add_column_builds_deploy_id.sql
+│   │   │       │       ├── 014_create_table_refs.sql
+│   │   │       │       ├── 015_create_table_templates.sql
+│   │   │       │       ├── 016_add_columns_steps.sql
+│   │   │       │       ├── 017_create_table_cards.sql
+│   │   │       │       └── 018_amend_table_cards.sql
+│   │   │       ├── postgres
+│   │   │       │   ├── ddl_gen.go
+│   │   │       │   ├── ddl.go
+│   │   │       │   └── files
+│   │   │       │       ├── 001_create_table_user.sql
+│   │   │       │       ├── 002_create_table_repos.sql
+│   │   │       │       ├── 003_create_table_perms.sql
+│   │   │       │       ├── 004_create_table_builds.sql
+│   │   │       │       ├── 005_create_table_stages.sql
+│   │   │       │       ├── 006_create_table_steps.sql
+│   │   │       │       ├── 007_create_table_logs.sql
+│   │   │       │       ├── 008_create_table_cron.sql
+│   │   │       │       ├── 009_create_table_secrets.sql
+│   │   │       │       ├── 010_create_table_nodes.sql
+│   │   │       │       ├── 011_add_column_builds_cron.sql
+│   │   │       │       ├── 012_create_table_org_secrets.sql
+│   │   │       │       ├── 013_add_column_builds_deploy_id.sql
+│   │   │       │       ├── 015_create_table_refs.sql
+│   │   │       │       ├── 016_create_template_tables.sql
+│   │   │       │       ├── 017_add_columns_steps.sql
+│   │   │       │       ├── 018_create_table_cards.sql
+│   │   │       │       └── 019_amend_table_cards.sql
+│   │   │       ├── README.md
+│   │   │       └── sqlite
+│   │   │           ├── ddl_gen.go
+│   │   │           ├── ddl.go
+│   │   │           └── files
+│   │   │               ├── 001_create_table_user.sql
+│   │   │               ├── 002_create_table_repos.sql
+│   │   │               ├── 003_create_table_perms.sql
+│   │   │               ├── 004_create_table_builds.sql
+│   │   │               ├── 005_create_table_stages.sql
+│   │   │               ├── 006_create_table_steps.sql
+│   │   │               ├── 007_create_table_logs.sql
+│   │   │               ├── 008_create_table_cron.sql
+│   │   │               ├── 009_create_table_secrets.sql
+│   │   │               ├── 010_create_table_nodes.sql
+│   │   │               ├── 011_add_column_builds_cron.sql
+│   │   │               ├── 012_create_table_org_secrets.sql
+│   │   │               ├── 013_add_column_builds_deploy_id.sql
+│   │   │               ├── 014_create_table_refs.sql
+│   │   │               ├── 015_create_template_tables.sql
+│   │   │               ├── 016_add_columns_steps.sql
+│   │   │               ├── 017_create_table_cards.sql
+│   │   │               └── 018_amend_table_cards.sql
+│   │   ├── stage
+│   │   │   ├── scan.go
+│   │   │   ├── stage.go
+│   │   │   ├── stage_test.go
+│   │   │   └── type.go
+│   │   ├── step
+│   │   │   ├── scan.go
+│   │   │   ├── step.go
+│   │   │   └── step_test.go
+│   │   ├── store.go
+│   │   ├── template
+│   │   │   ├── scan.go
+│   │   │   ├── template.go
+│   │   │   ├── template_oss.go
+│   │   │   └── template_test.go
+│   │   └── user
+│   │       ├── scan.go
+│   │       ├── user.go
+│   │       └── user_test.go
+│   ├── Taskfile.yml
+│   ├── trigger
+│   │   ├── change.go
+│   │   ├── change_test.go
+│   │   ├── cron
+│   │   │   ├── cron.go
+│   │   │   ├── cron_oss.go
+│   │   │   └── cron_test.go
+│   │   ├── dag
+│   │   │   ├── dag.go
+│   │   │   └── dag_test.go
+│   │   ├── skip.go
+│   │   ├── skip_test.go
+│   │   ├── trigger.go
+│   │   └── trigger_test.go
+│   ├── version
+│   │   ├── version.go
+│   │   └── version_test.go
+│   └── web
+│       └── README
+├── systemd.service -> /home/felix/packages/drone/systemd.service
+├── sysusers.conf -> /home/felix/packages/drone/sysusers.conf
+└── tmpfiles.conf -> /home/felix/packages/drone/tmpfiles.conf
+
+130 directories, 761 files

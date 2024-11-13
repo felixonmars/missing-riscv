@@ -1,0 +1,1231 @@
+src
+└── uv
+    ├── assets
+    │   ├── badge
+    │   │   └── v0.json
+    │   ├── png
+    │   │   ├── Astral.png
+    │   │   ├── install-cold.png
+    │   │   ├── install-warm.png
+    │   │   ├── resolve-cold.png
+    │   │   └── resolve-warm.png
+    │   └── svg
+    │       ├── Astral.svg
+    │       ├── Benchmark-Dark.svg
+    │       └── Benchmark-Light.svg
+    ├── BENCHMARKS.md
+    ├── Cargo.lock
+    ├── Cargo.toml
+    ├── CHANGELOG.md
+    ├── clippy.toml
+    ├── CONTRIBUTING.md
+    ├── crates
+    │   ├── README.md
+    │   ├── uv
+    │   │   ├── Cargo.toml
+    │   │   ├── src
+    │   │   │   ├── bin
+    │   │   │   │   ├── uv.rs
+    │   │   │   │   └── uvx.rs
+    │   │   │   ├── commands
+    │   │   │   │   ├── build_backend.rs
+    │   │   │   │   ├── build_frontend.rs
+    │   │   │   │   ├── cache_clean.rs
+    │   │   │   │   ├── cache_dir.rs
+    │   │   │   │   ├── cache_prune.rs
+    │   │   │   │   ├── diagnostics.rs
+    │   │   │   │   ├── help.rs
+    │   │   │   │   ├── mod.rs
+    │   │   │   │   ├── pip
+    │   │   │   │   │   ├── check.rs
+    │   │   │   │   │   ├── compile.rs
+    │   │   │   │   │   ├── freeze.rs
+    │   │   │   │   │   ├── install.rs
+    │   │   │   │   │   ├── latest.rs
+    │   │   │   │   │   ├── list.rs
+    │   │   │   │   │   ├── loggers.rs
+    │   │   │   │   │   ├── mod.rs
+    │   │   │   │   │   ├── operations.rs
+    │   │   │   │   │   ├── show.rs
+    │   │   │   │   │   ├── sync.rs
+    │   │   │   │   │   ├── tree.rs
+    │   │   │   │   │   └── uninstall.rs
+    │   │   │   │   ├── project
+    │   │   │   │   │   ├── add.rs
+    │   │   │   │   │   ├── environment.rs
+    │   │   │   │   │   ├── export.rs
+    │   │   │   │   │   ├── init.rs
+    │   │   │   │   │   ├── lock.rs
+    │   │   │   │   │   ├── mod.rs
+    │   │   │   │   │   ├── remove.rs
+    │   │   │   │   │   ├── run.rs
+    │   │   │   │   │   ├── sync.rs
+    │   │   │   │   │   └── tree.rs
+    │   │   │   │   ├── publish.rs
+    │   │   │   │   ├── python
+    │   │   │   │   │   ├── dir.rs
+    │   │   │   │   │   ├── find.rs
+    │   │   │   │   │   ├── install.rs
+    │   │   │   │   │   ├── list.rs
+    │   │   │   │   │   ├── mod.rs
+    │   │   │   │   │   ├── pin.rs
+    │   │   │   │   │   └── uninstall.rs
+    │   │   │   │   ├── reporters.rs
+    │   │   │   │   ├── self_update.rs
+    │   │   │   │   ├── suggestions.json
+    │   │   │   │   ├── tool
+    │   │   │   │   │   ├── common.rs
+    │   │   │   │   │   ├── dir.rs
+    │   │   │   │   │   ├── install.rs
+    │   │   │   │   │   ├── list.rs
+    │   │   │   │   │   ├── mod.rs
+    │   │   │   │   │   ├── run.rs
+    │   │   │   │   │   ├── uninstall.rs
+    │   │   │   │   │   ├── update_shell.rs
+    │   │   │   │   │   └── upgrade.rs
+    │   │   │   │   ├── venv.rs
+    │   │   │   │   └── version.rs
+    │   │   │   ├── lib.rs
+    │   │   │   ├── logging.rs
+    │   │   │   ├── printer.rs
+    │   │   │   ├── settings.rs
+    │   │   │   └── version
+    │   │   │       └── tests.rs
+    │   │   └── tests
+    │   │       └── it
+    │   │           ├── branching_urls.rs
+    │   │           ├── build_backend.rs
+    │   │           ├── build.rs
+    │   │           ├── cache_clean.rs
+    │   │           ├── cache_prune.rs
+    │   │           ├── common
+    │   │           │   └── mod.rs
+    │   │           ├── ecosystem.rs
+    │   │           ├── edit.rs
+    │   │           ├── export.rs
+    │   │           ├── help.rs
+    │   │           ├── init.rs
+    │   │           ├── lock.rs
+    │   │           ├── lock_scenarios.rs
+    │   │           ├── main.rs
+    │   │           ├── pip_check.rs
+    │   │           ├── pip_compile.rs
+    │   │           ├── pip_compile_scenarios.rs
+    │   │           ├── pip_freeze.rs
+    │   │           ├── pip_install.rs
+    │   │           ├── pip_install_scenarios.rs
+    │   │           ├── pip_list.rs
+    │   │           ├── pip_show.rs
+    │   │           ├── pip_sync.rs
+    │   │           ├── pip_tree.rs
+    │   │           ├── pip_uninstall.rs
+    │   │           ├── publish.rs
+    │   │           ├── python_dir.rs
+    │   │           ├── python_find.rs
+    │   │           ├── python_install.rs
+    │   │           ├── python_pin.rs
+    │   │           ├── run.rs
+    │   │           ├── self_update.rs
+    │   │           ├── show_settings.rs
+    │   │           ├── snapshots
+    │   │           │   ├── it__ecosystem__black-lock-file.snap
+    │   │           │   ├── it__ecosystem__black-uv-lock-output.snap
+    │   │           │   ├── it__ecosystem__github-wikidata-bot-lock-file.snap
+    │   │           │   ├── it__ecosystem__github-wikidata-bot-uv-lock-output.snap
+    │   │           │   ├── it__ecosystem__home-assistant-core-lock-file.snap
+    │   │           │   ├── it__ecosystem__home-assistant-core-uv-lock-output.snap
+    │   │           │   ├── it__ecosystem__packse-lock-file.snap
+    │   │           │   ├── it__ecosystem__packse-uv-lock-output.snap
+    │   │           │   ├── it__ecosystem__saleor-lock-file.snap
+    │   │           │   ├── it__ecosystem__saleor-uv-lock-output.snap
+    │   │           │   ├── it__ecosystem__transformers-lock-file.snap
+    │   │           │   ├── it__ecosystem__transformers-uv-lock-output.snap
+    │   │           │   ├── it__ecosystem__warehouse-lock-file.snap
+    │   │           │   ├── it__ecosystem__warehouse-uv-lock-output.snap
+    │   │           │   ├── it__workflow__jax_instability-2.snap
+    │   │           │   ├── it__workflow__packse_add_remove_existing_package_noop-2.snap
+    │   │           │   ├── it__workflow__packse_add_remove_one_package-2.snap
+    │   │           │   └── it__workflow__packse_promote_transitive_to_direct_then_remove-2.snap
+    │   │           ├── sync.rs
+    │   │           ├── tool_dir.rs
+    │   │           ├── tool_install.rs
+    │   │           ├── tool_list.rs
+    │   │           ├── tool_run.rs
+    │   │           ├── tool_uninstall.rs
+    │   │           ├── tool_upgrade.rs
+    │   │           ├── tree.rs
+    │   │           ├── venv.rs
+    │   │           ├── workflow.rs
+    │   │           └── workspace.rs
+    │   ├── uv-auth
+    │   │   ├── Cargo.toml
+    │   │   └── src
+    │   │       ├── cache
+    │   │       │   └── tests.rs
+    │   │       ├── cache.rs
+    │   │       ├── credentials
+    │   │       │   └── tests.rs
+    │   │       ├── credentials.rs
+    │   │       ├── keyring
+    │   │       │   └── tests.rs
+    │   │       ├── keyring.rs
+    │   │       ├── lib.rs
+    │   │       ├── middleware
+    │   │       │   └── tests.rs
+    │   │       ├── middleware.rs
+    │   │       ├── realm
+    │   │       │   └── tests.rs
+    │   │       └── realm.rs
+    │   ├── uv-bench
+    │   │   ├── benches
+    │   │   │   ├── distribution_filename.rs
+    │   │   │   └── uv.rs
+    │   │   ├── Cargo.toml
+    │   │   ├── inputs
+    │   │   │   └── platform_tags.rs
+    │   │   └── src
+    │   │       └── lib.rs
+    │   ├── uv-build-backend
+    │   │   ├── Cargo.toml
+    │   │   └── src
+    │   │       ├── lib.rs
+    │   │       ├── metadata
+    │   │       │   └── tests.rs
+    │   │       ├── metadata.rs
+    │   │       ├── pep639_glob
+    │   │       │   └── tests.rs
+    │   │       ├── pep639_glob.rs
+    │   │       └── tests.rs
+    │   ├── uv-build-frontend
+    │   │   ├── Cargo.toml
+    │   │   └── src
+    │   │       ├── error.rs
+    │   │       └── lib.rs
+    │   ├── uv-cache
+    │   │   ├── Cargo.toml
+    │   │   └── src
+    │   │       ├── archive.rs
+    │   │       ├── by_timestamp.rs
+    │   │       ├── cli.rs
+    │   │       ├── lib.rs
+    │   │       ├── removal.rs
+    │   │       └── wheel.rs
+    │   ├── uv-cache-info
+    │   │   ├── Cargo.toml
+    │   │   └── src
+    │   │       ├── cache_info.rs
+    │   │       ├── git_info.rs
+    │   │       ├── lib.rs
+    │   │       └── timestamp.rs
+    │   ├── uv-cache-key
+    │   │   ├── Cargo.toml
+    │   │   └── src
+    │   │       ├── cache_key.rs
+    │   │       ├── canonical_url
+    │   │       │   └── tests.rs
+    │   │       ├── canonical_url.rs
+    │   │       ├── digest.rs
+    │   │       └── lib.rs
+    │   ├── uv-cli
+    │   │   ├── build.rs
+    │   │   ├── Cargo.toml
+    │   │   └── src
+    │   │       ├── comma
+    │   │       │   └── tests.rs
+    │   │       ├── comma.rs
+    │   │       ├── compat.rs
+    │   │       ├── lib.rs
+    │   │       ├── options.rs
+    │   │       ├── version
+    │   │       │   └── tests.rs
+    │   │       └── version.rs
+    │   ├── uv-client
+    │   │   ├── Cargo.toml
+    │   │   ├── README.md
+    │   │   ├── src
+    │   │   │   ├── base_client.rs
+    │   │   │   ├── cached_client.rs
+    │   │   │   ├── error.rs
+    │   │   │   ├── flat_index.rs
+    │   │   │   ├── html
+    │   │   │   │   └── tests.rs
+    │   │   │   ├── html.rs
+    │   │   │   ├── httpcache
+    │   │   │   │   ├── control
+    │   │   │   │   │   └── tests.rs
+    │   │   │   │   ├── control.rs
+    │   │   │   │   └── mod.rs
+    │   │   │   ├── lib.rs
+    │   │   │   ├── linehaul.rs
+    │   │   │   ├── middleware.rs
+    │   │   │   ├── registry_client
+    │   │   │   │   └── tests.rs
+    │   │   │   ├── registry_client.rs
+    │   │   │   ├── remote_metadata.rs
+    │   │   │   ├── rkyvutil.rs
+    │   │   │   └── tls.rs
+    │   │   └── tests
+    │   │       └── it
+    │   │           ├── main.rs
+    │   │           ├── remote_metadata.rs
+    │   │           └── user_agent_version.rs
+    │   ├── uv-configuration
+    │   │   ├── Cargo.toml
+    │   │   └── src
+    │   │       ├── authentication.rs
+    │   │       ├── bounds.rs
+    │   │       ├── build_options
+    │   │       │   └── tests.rs
+    │   │       ├── build_options.rs
+    │   │       ├── concurrency.rs
+    │   │       ├── config_settings
+    │   │       │   └── tests.rs
+    │   │       ├── config_settings.rs
+    │   │       ├── constraints.rs
+    │   │       ├── dev.rs
+    │   │       ├── editable.rs
+    │   │       ├── export_format.rs
+    │   │       ├── extras.rs
+    │   │       ├── hash.rs
+    │   │       ├── install_options.rs
+    │   │       ├── lib.rs
+    │   │       ├── name_specifiers.rs
+    │   │       ├── overrides.rs
+    │   │       ├── package_options.rs
+    │   │       ├── preview.rs
+    │   │       ├── project_build_backend.rs
+    │   │       ├── sources.rs
+    │   │       ├── target_triple.rs
+    │   │       ├── trusted_host
+    │   │       │   └── tests.rs
+    │   │       ├── trusted_host.rs
+    │   │       ├── trusted_publishing.rs
+    │   │       └── vcs.rs
+    │   ├── uv-console
+    │   │   ├── Cargo.toml
+    │   │   └── src
+    │   │       └── lib.rs
+    │   ├── uv-dev
+    │   │   ├── builder.dockerfile
+    │   │   ├── Cargo.toml
+    │   │   ├── src
+    │   │   │   ├── clear_compile.rs
+    │   │   │   ├── compile.rs
+    │   │   │   ├── generate_all.rs
+    │   │   │   ├── generate_cli_reference
+    │   │   │   │   └── tests.rs
+    │   │   │   ├── generate_cli_reference.rs
+    │   │   │   ├── generate_env_vars_reference
+    │   │   │   │   └── tests.rs
+    │   │   │   ├── generate_env_vars_reference.rs
+    │   │   │   ├── generate_json_schema
+    │   │   │   │   └── tests.rs
+    │   │   │   ├── generate_json_schema.rs
+    │   │   │   ├── generate_options_reference
+    │   │   │   │   └── tests.rs
+    │   │   │   ├── generate_options_reference.rs
+    │   │   │   ├── main.rs
+    │   │   │   ├── render_benchmarks.rs
+    │   │   │   └── wheel_metadata.rs
+    │   │   └── test_sdist_building.sh
+    │   ├── uv-dirs
+    │   │   ├── Cargo.toml
+    │   │   └── src
+    │   │       └── lib.rs
+    │   ├── uv-dispatch
+    │   │   ├── Cargo.toml
+    │   │   └── src
+    │   │       └── lib.rs
+    │   ├── uv-distribution
+    │   │   ├── Cargo.toml
+    │   │   └── src
+    │   │       ├── archive.rs
+    │   │       ├── distribution_database.rs
+    │   │       ├── download.rs
+    │   │       ├── error.rs
+    │   │       ├── index
+    │   │       │   ├── built_wheel_index.rs
+    │   │       │   ├── cached_wheel.rs
+    │   │       │   ├── mod.rs
+    │   │       │   └── registry_wheel_index.rs
+    │   │       ├── lib.rs
+    │   │       ├── locks.rs
+    │   │       ├── metadata
+    │   │       │   ├── lowering.rs
+    │   │       │   ├── mod.rs
+    │   │       │   └── requires_dist.rs
+    │   │       ├── reporter.rs
+    │   │       └── source
+    │   │           ├── built_wheel_metadata.rs
+    │   │           ├── mod.rs
+    │   │           └── revision.rs
+    │   ├── uv-distribution-filename
+    │   │   ├── Cargo.toml
+    │   │   └── src
+    │   │       ├── build_tag.rs
+    │   │       ├── egg
+    │   │       │   └── tests.rs
+    │   │       ├── egg.rs
+    │   │       ├── extension.rs
+    │   │       ├── lib.rs
+    │   │       ├── snapshots
+    │   │       │   ├── uv_distribution_filename__wheel__tests__ok_build_tag.snap
+    │   │       │   ├── uv_distribution_filename__wheel__tests__ok_multiple_tags.snap
+    │   │       │   └── uv_distribution_filename__wheel__tests__ok_single_tags.snap
+    │   │       ├── source_dist
+    │   │       │   └── tests.rs
+    │   │       ├── source_dist.rs
+    │   │       ├── wheel
+    │   │       │   ├── snapshots
+    │   │       │   │   ├── uv_distribution_filename__wheel__tests__ok_build_tag.snap
+    │   │       │   │   ├── uv_distribution_filename__wheel__tests__ok_multiple_tags.snap
+    │   │       │   │   └── uv_distribution_filename__wheel__tests__ok_single_tags.snap
+    │   │       │   └── tests.rs
+    │   │       └── wheel.rs
+    │   ├── uv-distribution-types
+    │   │   ├── Cargo.toml
+    │   │   └── src
+    │   │       ├── annotation.rs
+    │   │       ├── any.rs
+    │   │       ├── buildable.rs
+    │   │       ├── cached.rs
+    │   │       ├── dependency_metadata.rs
+    │   │       ├── diagnostic.rs
+    │   │       ├── error.rs
+    │   │       ├── file.rs
+    │   │       ├── hash.rs
+    │   │       ├── id.rs
+    │   │       ├── index_name.rs
+    │   │       ├── index.rs
+    │   │       ├── index_url.rs
+    │   │       ├── installed.rs
+    │   │       ├── lib.rs
+    │   │       ├── origin.rs
+    │   │       ├── pip_index.rs
+    │   │       ├── prioritized_distribution.rs
+    │   │       ├── resolution.rs
+    │   │       ├── resolved.rs
+    │   │       ├── specified_requirement.rs
+    │   │       └── traits.rs
+    │   ├── uv-extract
+    │   │   ├── Cargo.toml
+    │   │   └── src
+    │   │       ├── error.rs
+    │   │       ├── hash.rs
+    │   │       ├── lib.rs
+    │   │       ├── stream.rs
+    │   │       ├── sync.rs
+    │   │       ├── tar.rs
+    │   │       └── vendor
+    │   │           ├── cloneable_seekable_reader.rs
+    │   │           ├── LICENSE
+    │   │           └── mod.rs
+    │   ├── uv-fs
+    │   │   ├── Cargo.toml
+    │   │   └── src
+    │   │       ├── cachedir.rs
+    │   │       ├── lib.rs
+    │   │       ├── path
+    │   │       │   └── tests.rs
+    │   │       ├── path.rs
+    │   │       └── which.rs
+    │   ├── uv-git
+    │   │   ├── Cargo.toml
+    │   │   └── src
+    │   │       ├── credentials.rs
+    │   │       ├── git.rs
+    │   │       ├── lib.rs
+    │   │       ├── resolver.rs
+    │   │       ├── sha
+    │   │       │   └── tests.rs
+    │   │       ├── sha.rs
+    │   │       └── source.rs
+    │   ├── uv-installer
+    │   │   ├── Cargo.toml
+    │   │   └── src
+    │   │       ├── compile.rs
+    │   │       ├── installer.rs
+    │   │       ├── lib.rs
+    │   │       ├── pip_compileall.py
+    │   │       ├── plan.rs
+    │   │       ├── preparer.rs
+    │   │       ├── satisfies.rs
+    │   │       ├── site_packages.rs
+    │   │       └── uninstall.rs
+    │   ├── uv-install-wheel
+    │   │   ├── Cargo.toml
+    │   │   └── src
+    │   │       ├── lib.rs
+    │   │       ├── linker.rs
+    │   │       ├── record.rs
+    │   │       ├── script.rs
+    │   │       ├── uninstall.rs
+    │   │       └── wheel.rs
+    │   ├── uv-macros
+    │   │   ├── Cargo.toml
+    │   │   └── src
+    │   │       ├── lib.rs
+    │   │       └── options_metadata.rs
+    │   ├── uv-metadata
+    │   │   ├── Cargo.toml
+    │   │   └── src
+    │   │       └── lib.rs
+    │   ├── uv-normalize
+    │   │   ├── Cargo.toml
+    │   │   └── src
+    │   │       ├── dist_info_name
+    │   │       │   └── tests.rs
+    │   │       ├── dist_info_name.rs
+    │   │       ├── extra_name.rs
+    │   │       ├── group_name.rs
+    │   │       ├── lib.rs
+    │   │       ├── package_name.rs
+    │   │       └── tests.rs
+    │   ├── uv-once-map
+    │   │   ├── Cargo.toml
+    │   │   └── src
+    │   │       └── lib.rs
+    │   ├── uv-options-metadata
+    │   │   ├── Cargo.toml
+    │   │   └── src
+    │   │       ├── lib.rs
+    │   │       └── tests.rs
+    │   ├── uv-pep440
+    │   │   ├── Cargo.toml
+    │   │   ├── CHANGELOG.md
+    │   │   ├── License-Apache
+    │   │   ├── License-BSD
+    │   │   ├── Readme.md
+    │   │   └── src
+    │   │       ├── lib.rs
+    │   │       ├── tests.rs
+    │   │       ├── version
+    │   │       │   └── tests.rs
+    │   │       ├── version_ranges.rs
+    │   │       ├── version.rs
+    │   │       ├── version_specifier
+    │   │       │   └── tests.rs
+    │   │       └── version_specifier.rs
+    │   ├── uv-pep508
+    │   │   ├── Cargo.toml
+    │   │   ├── Changelog.md
+    │   │   ├── License-Apache
+    │   │   ├── License-BSD
+    │   │   ├── Readme.md
+    │   │   └── src
+    │   │       ├── cursor.rs
+    │   │       ├── lib.rs
+    │   │       ├── marker
+    │   │       │   ├── algebra
+    │   │       │   │   └── tests.rs
+    │   │       │   ├── algebra.rs
+    │   │       │   ├── environment.rs
+    │   │       │   ├── mod.rs
+    │   │       │   ├── parse.rs
+    │   │       │   ├── simplify.rs
+    │   │       │   └── tree.rs
+    │   │       ├── origin.rs
+    │   │       ├── tests.rs
+    │   │       ├── unnamed.rs
+    │   │       ├── verbatim_url
+    │   │       │   └── tests.rs
+    │   │       └── verbatim_url.rs
+    │   ├── uv-performance-flate2-backend
+    │   │   ├── Cargo.lock
+    │   │   ├── Cargo.toml
+    │   │   └── src
+    │   │       └── lib.rs
+    │   ├── uv-performance-memory-allocator
+    │   │   ├── Cargo.lock
+    │   │   ├── Cargo.toml
+    │   │   └── src
+    │   │       └── lib.rs
+    │   ├── uv-platform-tags
+    │   │   ├── Cargo.toml
+    │   │   └── src
+    │   │       ├── lib.rs
+    │   │       ├── platform.rs
+    │   │       ├── tags
+    │   │       │   └── tests.rs
+    │   │       └── tags.rs
+    │   ├── uv-publish
+    │   │   ├── Cargo.toml
+    │   │   └── src
+    │   │       ├── lib.rs
+    │   │       ├── tests.rs
+    │   │       └── trusted_publishing.rs
+    │   ├── uv-pypi-types
+    │   │   ├── Cargo.toml
+    │   │   └── src
+    │   │       ├── base_url.rs
+    │   │       ├── direct_url.rs
+    │   │       ├── lenient_requirement
+    │   │       │   └── tests.rs
+    │   │       ├── lenient_requirement.rs
+    │   │       ├── lib.rs
+    │   │       ├── marker_environment.rs
+    │   │       ├── metadata
+    │   │       │   ├── metadata10.rs
+    │   │       │   ├── metadata12.rs
+    │   │       │   ├── metadata23
+    │   │       │   │   └── tests.rs
+    │   │       │   ├── metadata23.rs
+    │   │       │   ├── metadata_resolver
+    │   │       │   │   └── tests.rs
+    │   │       │   ├── metadata_resolver.rs
+    │   │       │   ├── mod.rs
+    │   │       │   ├── pyproject_toml
+    │   │       │   │   └── tests.rs
+    │   │       │   ├── pyproject_toml.rs
+    │   │       │   ├── requires_txt
+    │   │       │   │   └── tests.rs
+    │   │       │   └── requires_txt.rs
+    │   │       ├── parsed_url
+    │   │       │   └── tests.rs
+    │   │       ├── parsed_url.rs
+    │   │       ├── requirement
+    │   │       │   └── tests.rs
+    │   │       ├── requirement.rs
+    │   │       ├── scheme.rs
+    │   │       ├── simple_json
+    │   │       │   └── tests.rs
+    │   │       ├── simple_json.rs
+    │   │       └── supported_environments.rs
+    │   ├── uv-python
+    │   │   ├── Cargo.toml
+    │   │   ├── download-metadata.json
+    │   │   ├── fetch-download-metadata.py
+    │   │   ├── python
+    │   │   │   ├── get_interpreter_info.py
+    │   │   │   ├── __init__.py
+    │   │   │   └── packaging
+    │   │   │       ├── _elffile.py
+    │   │   │       ├── __init__.py
+    │   │   │       ├── LICENSE.APACHE
+    │   │   │       ├── LICENSE.BSD
+    │   │   │       ├── _manylinux.py
+    │   │   │       ├── _musllinux.py
+    │   │   │       └── README.md
+    │   │   ├── src
+    │   │   │   ├── cpuinfo.rs
+    │   │   │   ├── discovery
+    │   │   │   │   └── tests.rs
+    │   │   │   ├── discovery.rs
+    │   │   │   ├── downloads.inc
+    │   │   │   ├── downloads.inc.mustache
+    │   │   │   ├── downloads.rs
+    │   │   │   ├── environment.rs
+    │   │   │   ├── implementation.rs
+    │   │   │   ├── installation.rs
+    │   │   │   ├── interpreter
+    │   │   │   │   └── tests.rs
+    │   │   │   ├── interpreter.rs
+    │   │   │   ├── libc
+    │   │   │   │   └── tests.rs
+    │   │   │   ├── libc.rs
+    │   │   │   ├── lib.rs
+    │   │   │   ├── managed.rs
+    │   │   │   ├── microsoft_store.rs
+    │   │   │   ├── platform.rs
+    │   │   │   ├── pointer_size.rs
+    │   │   │   ├── prefix.rs
+    │   │   │   ├── py_launcher.rs
+    │   │   │   ├── python_version
+    │   │   │   │   └── tests.rs
+    │   │   │   ├── python_version.rs
+    │   │   │   ├── target.rs
+    │   │   │   ├── tests.rs
+    │   │   │   ├── version_files.rs
+    │   │   │   └── virtualenv.rs
+    │   │   └── template-download-metadata.py
+    │   ├── uv-requirements
+    │   │   ├── Cargo.toml
+    │   │   └── src
+    │   │       ├── extras.rs
+    │   │       ├── lib.rs
+    │   │       ├── lookahead.rs
+    │   │       ├── sources.rs
+    │   │       ├── source_tree.rs
+    │   │       ├── specification.rs
+    │   │       ├── unnamed.rs
+    │   │       └── upgrade.rs
+    │   ├── uv-requirements-txt
+    │   │   ├── Cargo.toml
+    │   │   ├── src
+    │   │   │   ├── lib.rs
+    │   │   │   ├── requirement.rs
+    │   │   │   └── snapshots
+    │   │   │       ├── uv_requirements_txt__test__line-endings-basic.txt.snap
+    │   │   │       ├── uv_requirements_txt__test__line-endings-constraints-a.txt.snap
+    │   │   │       ├── uv_requirements_txt__test__line-endings-constraints-b.txt.snap
+    │   │   │       ├── uv_requirements_txt__test__line-endings-empty.txt.snap
+    │   │   │       ├── uv_requirements_txt__test__line-endings-for-poetry.txt.snap
+    │   │   │       ├── uv_requirements_txt__test__line-endings-include-a.txt.snap
+    │   │   │       ├── uv_requirements_txt__test__line-endings-include-b.txt.snap
+    │   │   │       ├── uv_requirements_txt__test__line-endings-poetry-with-hashes.txt.snap
+    │   │   │       ├── uv_requirements_txt__test__line-endings-small.txt.snap
+    │   │   │       ├── uv_requirements_txt__test__line-endings-whitespace.txt.snap
+    │   │   │       ├── uv_requirements_txt__test__parse-basic.txt.snap
+    │   │   │       ├── uv_requirements_txt__test__parse-constraints-a.txt.snap
+    │   │   │       ├── uv_requirements_txt__test__parse-constraints-b.txt.snap
+    │   │   │       ├── uv_requirements_txt__test__parse-empty.txt.snap
+    │   │   │       ├── uv_requirements_txt__test__parse-for-poetry.txt.snap
+    │   │   │       ├── uv_requirements_txt__test__parse-include-a.txt.snap
+    │   │   │       ├── uv_requirements_txt__test__parse-include-b.txt.snap
+    │   │   │       ├── uv_requirements_txt__test__parse-poetry-with-hashes.txt.snap
+    │   │   │       ├── uv_requirements_txt__test__parse-small.txt.snap
+    │   │   │       ├── uv_requirements_txt__test__parse-unix-bare-url.txt.snap
+    │   │   │       ├── uv_requirements_txt__test__parse-unix-editable.txt.snap
+    │   │   │       ├── uv_requirements_txt__test__parse-unix-hash.txt.snap
+    │   │   │       ├── uv_requirements_txt__test__parse-unix-semicolon.txt.snap
+    │   │   │       ├── uv_requirements_txt__test__parse-whitespace.txt.snap
+    │   │   │       ├── uv_requirements_txt__test__parse-windows-bare-url.txt.snap
+    │   │   │       └── uv_requirements_txt__test__parse-windows-editable.txt.snap
+    │   │   └── test-data
+    │   │       └── requirements-txt
+    │   │           ├── bare-url.txt
+    │   │           ├── basic.txt
+    │   │           ├── constraints-a.txt
+    │   │           ├── constraints-b.txt
+    │   │           ├── editable.txt
+    │   │           ├── empty.txt
+    │   │           ├── for-poetry.txt
+    │   │           ├── hash.txt
+    │   │           ├── include-a.txt
+    │   │           ├── include-b.txt
+    │   │           ├── poetry-with-hashes.txt
+    │   │           ├── semicolon.txt
+    │   │           ├── small.txt
+    │   │           └── whitespace.txt
+    │   ├── uv-resolver
+    │   │   ├── Cargo.toml
+    │   │   └── src
+    │   │       ├── bare.rs
+    │   │       ├── candidate_selector.rs
+    │   │       ├── dependency_mode.rs
+    │   │       ├── dependency_provider.rs
+    │   │       ├── error.rs
+    │   │       ├── exclude_newer.rs
+    │   │       ├── exclusions.rs
+    │   │       ├── flat_index.rs
+    │   │       ├── fork_indexes.rs
+    │   │       ├── fork_urls.rs
+    │   │       ├── graph_ops.rs
+    │   │       ├── lib.rs
+    │   │       ├── lock
+    │   │       │   ├── map.rs
+    │   │       │   ├── mod.rs
+    │   │       │   ├── requirements_txt.rs
+    │   │       │   ├── snapshots
+    │   │       │   │   ├── uv_resolver__lock__tests__hash_optional_missing.snap
+    │   │       │   │   ├── uv_resolver__lock__tests__hash_optional_present.snap
+    │   │       │   │   ├── uv_resolver__lock__tests__hash_required_present.snap
+    │   │       │   │   ├── uv_resolver__lock__tests__missing_dependency_source_ambiguous.snap
+    │   │       │   │   ├── uv_resolver__lock__tests__missing_dependency_source_unambiguous.snap
+    │   │       │   │   ├── uv_resolver__lock__tests__missing_dependency_source_version_ambiguous.snap
+    │   │       │   │   ├── uv_resolver__lock__tests__missing_dependency_source_version_unambiguous.snap
+    │   │       │   │   ├── uv_resolver__lock__tests__missing_dependency_version_ambiguous.snap
+    │   │       │   │   ├── uv_resolver__lock__tests__missing_dependency_version_unambiguous.snap
+    │   │       │   │   ├── uv_resolver__lock__tests__source_direct_has_subdir.snap
+    │   │       │   │   ├── uv_resolver__lock__tests__source_direct_no_subdir.snap
+    │   │       │   │   ├── uv_resolver__lock__tests__source_directory.snap
+    │   │       │   │   └── uv_resolver__lock__tests__source_editable.snap
+    │   │       │   ├── target.rs
+    │   │       │   ├── tests.rs
+    │   │       │   └── tree.rs
+    │   │       ├── manifest.rs
+    │   │       ├── marker.rs
+    │   │       ├── options.rs
+    │   │       ├── pins.rs
+    │   │       ├── preferences.rs
+    │   │       ├── prerelease.rs
+    │   │       ├── pubgrub
+    │   │       │   ├── dependencies.rs
+    │   │       │   ├── distribution.rs
+    │   │       │   ├── mod.rs
+    │   │       │   ├── package.rs
+    │   │       │   ├── priority.rs
+    │   │       │   └── report.rs
+    │   │       ├── python_requirement.rs
+    │   │       ├── redirect
+    │   │       │   └── tests.rs
+    │   │       ├── redirect.rs
+    │   │       ├── requires_python
+    │   │       │   └── tests.rs
+    │   │       ├── requires_python.rs
+    │   │       ├── resolution
+    │   │       │   ├── display.rs
+    │   │       │   ├── graph.rs
+    │   │       │   ├── mod.rs
+    │   │       │   └── requirements_txt.rs
+    │   │       ├── resolution_mode.rs
+    │   │       ├── resolver
+    │   │       │   ├── availability.rs
+    │   │       │   ├── batch_prefetch.rs
+    │   │       │   ├── environment.rs
+    │   │       │   ├── fork_map.rs
+    │   │       │   ├── groups.rs
+    │   │       │   ├── indexes.rs
+    │   │       │   ├── index.rs
+    │   │       │   ├── mod.rs
+    │   │       │   ├── provider.rs
+    │   │       │   ├── reporter.rs
+    │   │       │   └── urls.rs
+    │   │       ├── version_map.rs
+    │   │       └── yanks.rs
+    │   ├── uv-scripts
+    │   │   ├── Cargo.toml
+    │   │   └── src
+    │   │       ├── lib.rs
+    │   │       └── tests.rs
+    │   ├── uv-settings
+    │   │   ├── Cargo.toml
+    │   │   └── src
+    │   │       ├── combine.rs
+    │   │       ├── lib.rs
+    │   │       └── settings.rs
+    │   ├── uv-shell
+    │   │   ├── Cargo.toml
+    │   │   └── src
+    │   │       ├── lib.rs
+    │   │       └── windows.rs
+    │   ├── uv-state
+    │   │   ├── Cargo.toml
+    │   │   └── src
+    │   │       └── lib.rs
+    │   ├── uv-static
+    │   │   ├── Cargo.toml
+    │   │   └── src
+    │   │       ├── env_vars.rs
+    │   │       └── lib.rs
+    │   ├── uv-tool
+    │   │   ├── Cargo.toml
+    │   │   └── src
+    │   │       ├── lib.rs
+    │   │       ├── receipt.rs
+    │   │       └── tool.rs
+    │   ├── uv-trampoline
+    │   │   ├── build.rs
+    │   │   ├── Cargo.lock
+    │   │   ├── Cargo.toml
+    │   │   ├── README.md
+    │   │   ├── rust-toolchain.toml
+    │   │   ├── src
+    │   │   │   ├── bin
+    │   │   │   │   ├── uv-trampoline-console.rs
+    │   │   │   │   └── uv-trampoline-gui.rs
+    │   │   │   ├── bounce.rs
+    │   │   │   ├── diagnostics.rs
+    │   │   │   └── lib.rs
+    │   │   └── trampolines
+    │   │       ├── uv-trampoline-aarch64-console.exe
+    │   │       ├── uv-trampoline-aarch64-gui.exe
+    │   │       ├── uv-trampoline-i686-console.exe
+    │   │       ├── uv-trampoline-i686-gui.exe
+    │   │       ├── uv-trampoline-x86_64-console.exe
+    │   │       └── uv-trampoline-x86_64-gui.exe
+    │   ├── uv-trampoline-builder
+    │   │   ├── Cargo.toml
+    │   │   └── src
+    │   │       └── lib.rs
+    │   ├── uv-types
+    │   │   ├── Cargo.toml
+    │   │   └── src
+    │   │       ├── builds.rs
+    │   │       ├── downloads.rs
+    │   │       ├── hash.rs
+    │   │       ├── lib.rs
+    │   │       ├── requirements.rs
+    │   │       └── traits.rs
+    │   ├── uv-version
+    │   │   ├── Cargo.toml
+    │   │   └── src
+    │   │       ├── lib.rs
+    │   │       └── tests.rs
+    │   ├── uv-virtualenv
+    │   │   ├── Cargo.toml
+    │   │   ├── README.md
+    │   │   └── src
+    │   │       ├── activator
+    │   │       │   ├── activate
+    │   │       │   ├── activate.bat
+    │   │       │   ├── activate.csh
+    │   │       │   ├── activate.fish
+    │   │       │   ├── activate.nu
+    │   │       │   ├── activate.ps1
+    │   │       │   ├── activate_this.py
+    │   │       │   ├── deactivate.bat
+    │   │       │   └── pydoc.bat
+    │   │       ├── lib.rs
+    │   │       ├── _virtualenv.py
+    │   │       └── virtualenv.rs
+    │   ├── uv-warnings
+    │   │   ├── Cargo.toml
+    │   │   └── src
+    │   │       └── lib.rs
+    │   └── uv-workspace
+    │       ├── Cargo.toml
+    │       └── src
+    │           ├── dependency_groups.rs
+    │           ├── lib.rs
+    │           ├── pyproject_mut.rs
+    │           ├── pyproject.rs
+    │           ├── workspace
+    │           │   └── tests.rs
+    │           └── workspace.rs
+    ├── Dockerfile
+    ├── docs
+    │   ├── assets
+    │   │   ├── favicon.ico
+    │   │   ├── logo-letter.svg
+    │   │   ├── uv_gui_script_hello_world.png
+    │   │   └── uv_gui_script_hello_world_pyqt.png
+    │   ├── concepts
+    │   │   ├── cache.md
+    │   │   ├── dependencies.md
+    │   │   ├── index.md
+    │   │   ├── projects.md
+    │   │   ├── python-versions.md
+    │   │   ├── resolution.md
+    │   │   ├── tools.md
+    │   │   └── workspaces.md
+    │   ├── configuration
+    │   │   ├── authentication.md
+    │   │   ├── environment.md
+    │   │   ├── files.md
+    │   │   ├── indexes.md
+    │   │   ├── index.md
+    │   │   └── installer.md
+    │   ├── getting-started
+    │   │   ├── features.md
+    │   │   ├── first-steps.md
+    │   │   ├── help.md
+    │   │   ├── index.md
+    │   │   └── installation.md
+    │   ├── guides
+    │   │   ├── index.md
+    │   │   ├── install-python.md
+    │   │   ├── integration
+    │   │   │   ├── alternative-indexes.md
+    │   │   │   ├── dependency-bots.md
+    │   │   │   ├── docker.md
+    │   │   │   ├── fastapi.md
+    │   │   │   ├── github.md
+    │   │   │   ├── gitlab.md
+    │   │   │   ├── index.md
+    │   │   │   ├── jupyter.md
+    │   │   │   └── pre-commit.md
+    │   │   ├── projects.md
+    │   │   ├── publish.md
+    │   │   ├── scripts.md
+    │   │   └── tools.md
+    │   ├── index.md
+    │   ├── js
+    │   │   └── extra.js
+    │   ├── pip
+    │   │   ├── compatibility.md
+    │   │   ├── compile.md
+    │   │   ├── dependencies.md
+    │   │   ├── environments.md
+    │   │   ├── index.md
+    │   │   ├── inspection.md
+    │   │   └── packages.md
+    │   ├── reference
+    │   │   ├── benchmarks.md
+    │   │   ├── build_failures.md
+    │   │   ├── cli.md
+    │   │   ├── index.md
+    │   │   ├── platforms.md
+    │   │   ├── resolver-internals.md
+    │   │   ├── settings.md
+    │   │   └── versioning.md
+    │   ├── requirements.in
+    │   ├── requirements-insiders.in
+    │   ├── requirements-insiders.txt
+    │   ├── requirements.txt
+    │   └── stylesheets
+    │       └── extra.css
+    ├── ecosystem
+    │   ├── airflow
+    │   │   ├── LICENSE
+    │   │   ├── NOTICE
+    │   │   └── pyproject.toml
+    │   ├── black
+    │   │   ├── LICENSE
+    │   │   ├── PKG-INFO
+    │   │   └── pyproject.toml
+    │   ├── github-wikidata-bot
+    │   │   ├── License
+    │   │   └── pyproject.toml
+    │   ├── home-assistant-core
+    │   │   ├── LICENSE.md
+    │   │   └── pyproject.toml
+    │   ├── packse
+    │   │   ├── LICENSE-APACHE
+    │   │   ├── LICENSE-MIT
+    │   │   └── pyproject.toml
+    │   ├── saleor
+    │   │   ├── LICENSE
+    │   │   └── pyproject.toml
+    │   ├── transformers
+    │   │   ├── LICENSE
+    │   │   └── pyproject.toml
+    │   └── warehouse
+    │       ├── LICENSE
+    │       └── pyproject.toml
+    ├── LICENSE-APACHE
+    ├── LICENSE-MIT
+    ├── mkdocs.insiders.yml
+    ├── mkdocs.public.yml
+    ├── mkdocs.template.yml
+    ├── PIP_COMPATIBILITY.md
+    ├── pyproject.toml
+    ├── python
+    │   └── uv
+    │       ├── _build_backend.py
+    │       ├── _find_uv.py
+    │       ├── __init__.py
+    │       ├── __main__.py
+    │       └── py.typed
+    ├── README.md
+    ├── ruff.toml
+    ├── rust-toolchain.toml
+    ├── scripts
+    │   ├── benchmark
+    │   │   ├── pyproject.toml
+    │   │   ├── README.md
+    │   │   ├── src
+    │   │   │   └── benchmark
+    │   │   │       ├── __init__.py
+    │   │   │       ├── resolver.py
+    │   │   │       └── tools.py
+    │   │   └── uv.lock
+    │   ├── check_cache_compat.py
+    │   ├── check_embedded_python.py
+    │   ├── check_system_python.py
+    │   ├── links
+    │   │   ├── bz2-1.0.0.tar.bz2
+    │   │   ├── extras-0.0.1.tar.gz
+    │   │   ├── extras-0.0.2.tar.gz
+    │   │   ├── maturin-1.4.0-py3-none-any.whl
+    │   │   ├── maturin-2.0.0-py3-none-linux_x86_64.whl
+    │   │   ├── ok-1.0.0-py3-none-any.whl
+    │   │   ├── ok-2.0.0-py3-none-any.whl
+    │   │   ├── simple_launcher-0.1.0-py3-none-any.whl
+    │   │   ├── tqdm-1000.0.0-py3-none-any.whl
+    │   │   ├── tqdm-4.66.1-py3-none-manylinux_2_12_x86_64.manylinux2010_x86_64.musllinux_1_1_x86_64.whl
+    │   │   ├── tqdm-999.0.0.tar.gz
+    │   │   ├── validation-1.0.0-py3-none-any.whl
+    │   │   ├── validation-2.0.0-py3-none-any.whl
+    │   │   └── validation-3.0.0-py3-none-any.whl
+    │   ├── packages
+    │   │   ├── anyio_local
+    │   │   │   ├── anyio
+    │   │   │   │   └── __init__.py
+    │   │   │   └── pyproject.toml
+    │   │   ├── black_editable
+    │   │   │   ├── black
+    │   │   │   │   └── __init__.py
+    │   │   │   └── pyproject.toml
+    │   │   ├── dependent_locals
+    │   │   │   ├── first_local
+    │   │   │   │   ├── first_local
+    │   │   │   │   │   └── __init__.py
+    │   │   │   │   ├── pyproject.toml
+    │   │   │   │   └── README.md
+    │   │   │   └── second_local
+    │   │   │       ├── pyproject.toml
+    │   │   │       ├── README.md
+    │   │   │       └── second_local
+    │   │   │           └── __init__.py
+    │   │   ├── deptry_reproducer
+    │   │   │   ├── Cargo.lock
+    │   │   │   ├── Cargo.toml
+    │   │   │   ├── deptry_reproducer-0.1.0.tar.gz
+    │   │   │   ├── pyproject.toml
+    │   │   │   ├── python
+    │   │   │   │   └── deptry_reproducer
+    │   │   │   │       ├── foo.py
+    │   │   │   │       └── __init__.py
+    │   │   │   └── src
+    │   │   │       └── lib.rs
+    │   │   ├── hatchling_dynamic
+    │   │   │   ├── hatch_build.py
+    │   │   │   ├── hatchling_dynamic
+    │   │   │   │   └── __init__.py
+    │   │   │   └── pyproject.toml
+    │   │   ├── hatchling_editable
+    │   │   │   ├── hatchling_editable
+    │   │   │   │   └── __init__.py
+    │   │   │   ├── logging
+    │   │   │   │   └── __init__.py
+    │   │   │   ├── pyproject.toml
+    │   │   │   └── README.md
+    │   │   ├── keyring_test_plugin
+    │   │   │   ├── keyrings
+    │   │   │   │   ├── __init__.py
+    │   │   │   │   └── test_keyring.py
+    │   │   │   └── pyproject.toml
+    │   │   ├── poetry_editable
+    │   │   │   ├── poetry_editable
+    │   │   │   │   └── __init__.py
+    │   │   │   └── pyproject.toml
+    │   │   ├── README.md
+    │   │   ├── root_editable
+    │   │   │   ├── pyproject.toml
+    │   │   │   ├── README.md
+    │   │   │   └── root_editable
+    │   │   │       └── __init__.py
+    │   │   ├── setup_cfg_editable
+    │   │   │   ├── setup.cfg
+    │   │   │   ├── setup_cfg_editable
+    │   │   │   │   └── __init__.py
+    │   │   │   └── setup.py
+    │   │   ├── setup_py_editable
+    │   │   │   ├── setup.py
+    │   │   │   └── setup_py_editable
+    │   │   │       └── __init__.py
+    │   │   ├── setuptools_editable
+    │   │   │   ├── pyproject.toml
+    │   │   │   └── setuptools_editable
+    │   │   │       └── __init__.py
+    │   │   └── uv_backend
+    │   │       ├── pyproject.toml
+    │   │       ├── README.md
+    │   │       └── src
+    │   │           └── uv_backend
+    │   │               └── __init__.py
+    │   ├── popular_packages
+    │   │   ├── download.sh
+    │   │   └── pypi_10k_most_dependents.ipynb
+    │   ├── publish
+    │   │   └── test_publish.py
+    │   ├── release.sh
+    │   ├── requirements
+    │   │   ├── airflow.in
+    │   │   ├── all-kinds.in
+    │   │   ├── backtracking
+    │   │   │   ├── apache-beam-dill.in
+    │   │   │   ├── numpy-numba.in
+    │   │   │   ├── numpy-sparse.in
+    │   │   │   ├── sentry.in
+    │   │   │   └── starlette-fastapi.in
+    │   │   ├── bio_embeddings.in
+    │   │   ├── black.in
+    │   │   ├── boto3.in
+    │   │   ├── compiled
+    │   │   │   ├── all-kinds.txt
+    │   │   │   ├── black.txt
+    │   │   │   ├── boto3.txt
+    │   │   │   ├── dtlssocket.txt
+    │   │   │   ├── flyte.txt
+    │   │   │   ├── jupyter.txt
+    │   │   │   ├── pdm_2193.txt
+    │   │   │   ├── scispacy.txt
+    │   │   │   └── trio.txt
+    │   │   ├── dtlssocket.in
+    │   │   ├── flyte.in
+    │   │   ├── home-assistant.in
+    │   │   ├── jupyter.in
+    │   │   ├── meine_stadt_transparent.in
+    │   │   ├── pdm_2193.in
+    │   │   ├── pydantic.in
+    │   │   ├── scispacy.in
+    │   │   ├── slow.in
+    │   │   ├── transformers
+    │   │   │   └── pyproject.toml
+    │   │   ├── transformers-extras.in
+    │   │   └── trio.in
+    │   ├── scenarios
+    │   │   ├── generate.py
+    │   │   ├── requirements.in
+    │   │   ├── requirements.txt
+    │   │   └── templates
+    │   │       ├── compile.mustache
+    │   │       ├── install.mustache
+    │   │       └── lock.mustache
+    │   ├── sync_scenarios.sh
+    │   ├── transform_readme.py
+    │   ├── update_schemastore.py
+    │   ├── uv-run-remote-script-test.py
+    │   └── workspaces
+    │       ├── albatross-in-example
+    │       │   ├── check_installed_albatross.py
+    │       │   ├── examples
+    │       │   │   └── bird-feeder
+    │       │   │       ├── check_installed_bird_feeder.py
+    │       │   │       ├── pyproject.toml
+    │       │   │       └── src
+    │       │   │           └── bird_feeder
+    │       │   │               └── __init__.py
+    │       │   ├── pyproject.toml
+    │       │   └── src
+    │       │       └── albatross
+    │       │           └── __init__.py
+    │       ├── albatross-just-project
+    │       │   ├── check_installed_albatross.py
+    │       │   ├── pyproject.toml
+    │       │   └── src
+    │       │       └── albatross
+    │       │           └── __init__.py
+    │       ├── albatross-project-in-excluded
+    │       │   ├── excluded
+    │       │   │   └── bird-feeder
+    │       │   │       ├── check_installed_bird_feeder.py
+    │       │   │       ├── pyproject.toml
+    │       │   │       └── src
+    │       │   │           └── bird_feeder
+    │       │   │               └── __init__.py
+    │       │   ├── packages
+    │       │   │   └── seeds
+    │       │   │       ├── pyproject.toml
+    │       │   │       └── src
+    │       │   │           └── seeds
+    │       │   │               └── __init__.py
+    │       │   ├── pyproject.toml
+    │       │   └── src
+    │       │       └── albatross
+    │       │           └── __init__.py
+    │       ├── albatross-root-workspace
+    │       │   ├── check_installed_albatross.py
+    │       │   ├── packages
+    │       │   │   ├── bird-feeder
+    │       │   │   │   ├── check_installed_bird_feeder.py
+    │       │   │   │   ├── pyproject.toml
+    │       │   │   │   └── src
+    │       │   │   │       └── bird_feeder
+    │       │   │   │           └── __init__.py
+    │       │   │   └── seeds
+    │       │   │       ├── pyproject.toml
+    │       │   │       └── src
+    │       │   │           └── seeds
+    │       │   │               └── __init__.py
+    │       │   ├── pyproject.toml
+    │       │   └── src
+    │       │       └── albatross
+    │       │           └── __init__.py
+    │       └── albatross-virtual-workspace
+    │           ├── packages
+    │           │   ├── albatross
+    │           │   │   ├── check_installed_albatross.py
+    │           │   │   ├── pyproject.toml
+    │           │   │   └── src
+    │           │   │       └── albatross
+    │           │   │           └── __init__.py
+    │           │   ├── bird-feeder
+    │           │   │   ├── check_installed_bird_feeder.py
+    │           │   │   ├── pyproject.toml
+    │           │   │   └── src
+    │           │   │       └── bird_feeder
+    │           │   │           └── __init__.py
+    │           │   └── seeds
+    │           │       ├── pyproject.toml
+    │           │       └── src
+    │           │           └── seeds
+    │           │               └── __init__.py
+    │           └── pyproject.toml
+    ├── STYLE.md
+    ├── _typos.toml
+    └── uv.schema.json
+
+306 directories, 923 files

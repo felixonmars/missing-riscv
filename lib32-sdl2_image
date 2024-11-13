@@ -1,0 +1,462 @@
+src
+└── SDL_image
+    ├── acinclude
+    │   ├── ax_compute_relative_paths.m4
+    │   ├── ax_normalize_path.m4
+    │   ├── ax_recursive_eval.m4
+    │   ├── libtool.m4
+    │   ├── lt~obsolete.m4
+    │   ├── ltoptions.m4
+    │   ├── ltsugar.m4
+    │   ├── ltversion.m4
+    │   ├── pkg.m4
+    │   ├── sdl2.m4
+    │   └── tar.m4
+    ├── aclocal.m4
+    ├── Android.mk
+    ├── ar-lib
+    ├── autogen.sh
+    ├── build-scripts
+    │   ├── android-prefab.sh
+    │   └── test-versioning.sh
+    ├── CHANGES.txt
+    ├── cmake
+    │   ├── CommonFindSDL2.cmake
+    │   ├── Findlibjxl.cmake
+    │   ├── FindPrivateSDL2.cmake
+    │   ├── FindSDL2main.cmake
+    │   ├── FindSDL2test.cmake
+    │   ├── Findwebp.cmake
+    │   ├── PrivateSdlFunctions.cmake
+    │   └── test
+    │       ├── CMakeLists.txt
+    │       └── main.c
+    ├── CMakeLists.txt
+    ├── compile
+    ├── config.guess
+    ├── config.sub
+    ├── configure
+    ├── configure.ac
+    ├── depcomp
+    ├── docs
+    │   ├── README-emscripten.txt
+    │   ├── README-versions.md
+    │   └── release_checklist.md
+    ├── examples
+    │   ├── showanim.c
+    │   └── showimage.c
+    ├── external
+    │   ├── dav1d
+    │   ├── download.sh
+    │   ├── Get-GitModules.ps1
+    │   ├── jpeg
+    │   ├── libavif
+    │   ├── libjxl
+    │   ├── libpng
+    │   ├── libtiff
+    │   ├── libwebp
+    │   └── zlib
+    ├── include
+    │   └── SDL_image.h
+    ├── install-sh
+    ├── LICENSE.txt
+    ├── ltmain.sh
+    ├── Makefile.am
+    ├── Makefile.in
+    ├── Makefile.os2
+    ├── mingw
+    │   └── pkg-support
+    │       └── cmake
+    │           ├── sdl2_image-config.cmake
+    │           └── sdl2_image-config-version.cmake
+    ├── missing
+    ├── README.txt
+    ├── sdl2_image-config.cmake.in
+    ├── SDL2_imageConfig.cmake.in
+    ├── sdl2_image-config-version.cmake.in
+    ├── SDL2_image.pc.in
+    ├── SDL2_image.spec.in
+    ├── src
+    │   ├── IMG_avif.c
+    │   ├── IMG_bmp.c
+    │   ├── IMG.c
+    │   ├── IMG_gif.c
+    │   ├── IMG_ImageIO.m
+    │   ├── IMG_jpg.c
+    │   ├── IMG_jxl.c
+    │   ├── IMG_lbm.c
+    │   ├── IMG_pcx.c
+    │   ├── IMG_png.c
+    │   ├── IMG_pnm.c
+    │   ├── IMG_qoi.c
+    │   ├── IMG_stb.c
+    │   ├── IMG_svg.c
+    │   ├── IMG_tga.c
+    │   ├── IMG_tif.c
+    │   ├── IMG_webp.c
+    │   ├── IMG_WIC.c
+    │   ├── IMG_xcf.c
+    │   ├── IMG_xpm.c
+    │   ├── IMG_xv.c
+    │   ├── IMG_xxx.c
+    │   ├── miniz.h
+    │   ├── nanosvg.h
+    │   ├── nanosvgrast.h
+    │   ├── qoi.h
+    │   ├── stb_image.h
+    │   ├── tiny_jpeg.h
+    │   └── version.rc
+    ├── test
+    │   ├── CMakeLists.txt
+    │   ├── main.c
+    │   ├── Makefile.am
+    │   ├── Makefile.in
+    │   ├── Makefile.os2
+    │   ├── palette.bmp
+    │   ├── palette.gif
+    │   ├── README.md
+    │   ├── sample.avif
+    │   ├── sample.bmp
+    │   ├── sample.cur
+    │   ├── sample.ico
+    │   ├── sample.jpg
+    │   ├── sample.jxl
+    │   ├── sample.pcx
+    │   ├── sample.png
+    │   ├── sample.pnm
+    │   ├── sample.qoi
+    │   ├── sample.tga
+    │   ├── sample.tif
+    │   ├── sample.webp
+    │   ├── sample.xcf
+    │   ├── sample.xpm
+    │   ├── svg64.bmp
+    │   ├── svg.bmp
+    │   ├── svg-class.bmp
+    │   ├── svg-class.svg
+    │   ├── svg.svg
+    │   └── template.test.in
+    ├── test-driver
+    ├── touch-autofoo.sh
+    ├── VisualC
+    │   ├── clean.sh
+    │   ├── external
+    │   │   ├── include
+    │   │   │   ├── avif
+    │   │   │   │   └── avif.h
+    │   │   │   ├── tiffconf.h
+    │   │   │   ├── tiff.h
+    │   │   │   ├── tiffio.h
+    │   │   │   ├── tiffvers.h
+    │   │   │   └── webp
+    │   │   │       ├── decode.h
+    │   │   │       ├── demux.h
+    │   │   │       ├── encode.h
+    │   │   │       ├── mux_types.h
+    │   │   │       └── types.h
+    │   │   └── optional
+    │   │       ├── x64
+    │   │       │   ├── libavif-16.dll
+    │   │       │   ├── libtiff-5.dll
+    │   │       │   ├── libwebp-7.dll
+    │   │       │   ├── libwebpdemux-2.dll
+    │   │       │   ├── LICENSE.avif.txt
+    │   │       │   ├── LICENSE.dav1d.txt
+    │   │       │   ├── LICENSE.tiff.txt
+    │   │       │   └── LICENSE.webp.txt
+    │   │       └── x86
+    │   │           ├── libavif-16.dll
+    │   │           ├── libtiff-5.dll
+    │   │           ├── libwebp-7.dll
+    │   │           ├── libwebpdemux-2.dll
+    │   │           ├── LICENSE.avif.txt
+    │   │           ├── LICENSE.dav1d.txt
+    │   │           ├── LICENSE.tiff.txt
+    │   │           └── LICENSE.webp.txt
+    │   ├── pkg-support
+    │   │   └── cmake
+    │   │       ├── sdl2_image-config.cmake
+    │   │       └── sdl2_image-config-version.cmake
+    │   ├── resource.h
+    │   ├── SDL_image.sln
+    │   ├── SDL_image.vcxproj
+    │   ├── SDL_image.vcxproj.filters
+    │   ├── showimage
+    │   │   ├── showimage.vcxproj
+    │   │   └── showimage.vcxproj.filters
+    │   └── Version.rc
+    ├── VisualC-WinRT
+    │   ├── SDL_image-UWP.sln
+    │   ├── SDL_image-UWP.vcxproj
+    │   └── SDL_image-UWP.vcxproj.filters
+    └── Xcode
+        ├── avif
+        │   ├── avif.xcodeproj
+        │   │   └── project.pbxproj
+        │   └── dav1d
+        │       ├── arm64
+        │       │   └── config.h
+        │       ├── armv7
+        │       │   └── config.h
+        │       ├── vcs_version.h
+        │       ├── version.h
+        │       └── x86_64
+        │           └── config.h
+        ├── config.xcconfig
+        ├── Info-Framework.plist
+        ├── iOS
+        │   └── SDL2.framework
+        │       ├── default.metallib
+        │       ├── Headers
+        │       │   ├── begin_code.h
+        │       │   ├── close_code.h
+        │       │   ├── SDL_assert.h
+        │       │   ├── SDL_atomic.h
+        │       │   ├── SDL_audio.h
+        │       │   ├── SDL_bits.h
+        │       │   ├── SDL_blendmode.h
+        │       │   ├── SDL_clipboard.h
+        │       │   ├── SDL_config.h
+        │       │   ├── SDL_config_iphoneos.h
+        │       │   ├── SDL_copying.h
+        │       │   ├── SDL_cpuinfo.h
+        │       │   ├── SDL_endian.h
+        │       │   ├── SDL_error.h
+        │       │   ├── SDL_events.h
+        │       │   ├── SDL_filesystem.h
+        │       │   ├── SDL_gamecontroller.h
+        │       │   ├── SDL_gesture.h
+        │       │   ├── SDL.h
+        │       │   ├── SDL_haptic.h
+        │       │   ├── SDL_hidapi.h
+        │       │   ├── SDL_hints.h
+        │       │   ├── SDL_joystick.h
+        │       │   ├── SDL_keyboard.h
+        │       │   ├── SDL_keycode.h
+        │       │   ├── SDL_loadso.h
+        │       │   ├── SDL_locale.h
+        │       │   ├── SDL_log.h
+        │       │   ├── SDL_main.h
+        │       │   ├── SDL_messagebox.h
+        │       │   ├── SDL_metal.h
+        │       │   ├── SDL_misc.h
+        │       │   ├── SDL_mouse.h
+        │       │   ├── SDL_mutex.h
+        │       │   ├── SDL_name.h
+        │       │   ├── SDL_opengles2_gl2ext.h
+        │       │   ├── SDL_opengles2_gl2.h
+        │       │   ├── SDL_opengles2_gl2platform.h
+        │       │   ├── SDL_opengles2.h
+        │       │   ├── SDL_opengles2_khrplatform.h
+        │       │   ├── SDL_opengles.h
+        │       │   ├── SDL_opengl_glext.h
+        │       │   ├── SDL_opengl.h
+        │       │   ├── SDL_pixels.h
+        │       │   ├── SDL_platform.h
+        │       │   ├── SDL_power.h
+        │       │   ├── SDL_quit.h
+        │       │   ├── SDL_rect.h
+        │       │   ├── SDL_render.h
+        │       │   ├── SDL_revision.h
+        │       │   ├── SDL_rwops.h
+        │       │   ├── SDL_scancode.h
+        │       │   ├── SDL_sensor.h
+        │       │   ├── SDL_shape.h
+        │       │   ├── SDL_stdinc.h
+        │       │   ├── SDL_surface.h
+        │       │   ├── SDL_system.h
+        │       │   ├── SDL_syswm.h
+        │       │   ├── SDL_thread.h
+        │       │   ├── SDL_timer.h
+        │       │   ├── SDL_touch.h
+        │       │   ├── SDL_types.h
+        │       │   ├── SDL_version.h
+        │       │   ├── SDL_video.h
+        │       │   └── SDL_vulkan.h
+        │       ├── Info.plist
+        │       ├── License.txt
+        │       ├── ReadMe.txt
+        │       └── SDL2
+        ├── jxl
+        │   ├── jxl
+        │   │   └── jxl_export.h
+        │   └── jxl.xcodeproj
+        │       └── project.pbxproj
+        ├── macOS
+        │   └── SDL2.framework
+        │       ├── Headers -> Versions/Current/Headers
+        │       ├── Resources -> Versions/Current/Resources
+        │       ├── SDL2 -> Versions/Current/SDL2
+        │       └── Versions
+        │           ├── A
+        │           │   ├── _CodeSignature
+        │           │   │   └── CodeResources
+        │           │   ├── Headers
+        │           │   │   ├── begin_code.h
+        │           │   │   ├── close_code.h
+        │           │   │   ├── SDL_assert.h
+        │           │   │   ├── SDL_atomic.h
+        │           │   │   ├── SDL_audio.h
+        │           │   │   ├── SDL_bits.h
+        │           │   │   ├── SDL_blendmode.h
+        │           │   │   ├── SDL_clipboard.h
+        │           │   │   ├── SDL_config.h
+        │           │   │   ├── SDL_config_macosx.h
+        │           │   │   ├── SDL_copying.h
+        │           │   │   ├── SDL_cpuinfo.h
+        │           │   │   ├── SDL_endian.h
+        │           │   │   ├── SDL_error.h
+        │           │   │   ├── SDL_events.h
+        │           │   │   ├── SDL_filesystem.h
+        │           │   │   ├── SDL_gamecontroller.h
+        │           │   │   ├── SDL_gesture.h
+        │           │   │   ├── SDL.h
+        │           │   │   ├── SDL_haptic.h
+        │           │   │   ├── SDL_hidapi.h
+        │           │   │   ├── SDL_hints.h
+        │           │   │   ├── SDL_joystick.h
+        │           │   │   ├── SDL_keyboard.h
+        │           │   │   ├── SDL_keycode.h
+        │           │   │   ├── SDL_loadso.h
+        │           │   │   ├── SDL_locale.h
+        │           │   │   ├── SDL_log.h
+        │           │   │   ├── SDL_main.h
+        │           │   │   ├── SDL_messagebox.h
+        │           │   │   ├── SDL_metal.h
+        │           │   │   ├── SDL_misc.h
+        │           │   │   ├── SDL_mouse.h
+        │           │   │   ├── SDL_mutex.h
+        │           │   │   ├── SDL_name.h
+        │           │   │   ├── SDL_opengles2_gl2ext.h
+        │           │   │   ├── SDL_opengles2_gl2.h
+        │           │   │   ├── SDL_opengles2_gl2platform.h
+        │           │   │   ├── SDL_opengles2.h
+        │           │   │   ├── SDL_opengles2_khrplatform.h
+        │           │   │   ├── SDL_opengles.h
+        │           │   │   ├── SDL_opengl_glext.h
+        │           │   │   ├── SDL_opengl.h
+        │           │   │   ├── SDL_pixels.h
+        │           │   │   ├── SDL_platform.h
+        │           │   │   ├── SDL_power.h
+        │           │   │   ├── SDL_quit.h
+        │           │   │   ├── SDL_rect.h
+        │           │   │   ├── SDL_render.h
+        │           │   │   ├── SDL_revision.h
+        │           │   │   ├── SDL_rwops.h
+        │           │   │   ├── SDL_scancode.h
+        │           │   │   ├── SDL_sensor.h
+        │           │   │   ├── SDL_shape.h
+        │           │   │   ├── SDL_stdinc.h
+        │           │   │   ├── SDL_surface.h
+        │           │   │   ├── SDL_system.h
+        │           │   │   ├── SDL_syswm.h
+        │           │   │   ├── SDL_thread.h
+        │           │   │   ├── SDL_timer.h
+        │           │   │   ├── SDL_touch.h
+        │           │   │   ├── SDL_types.h
+        │           │   │   ├── SDL_version.h
+        │           │   │   ├── SDL_video.h
+        │           │   │   └── SDL_vulkan.h
+        │           │   ├── Resources
+        │           │   │   ├── default.metallib
+        │           │   │   ├── Info.plist
+        │           │   │   ├── License.txt
+        │           │   │   └── ReadMe.txt
+        │           │   └── SDL2
+        │           └── Current -> A
+        ├── package
+        ├── pkg-support
+        │   ├── mkpackage.sh
+        │   ├── resources
+        │   │   ├── CMake
+        │   │   │   ├── sdl2_image-config.cmake
+        │   │   │   └── sdl2_image-config-version.cmake
+        │   │   ├── ReadMe.txt
+        │   │   └── Welcome.txt
+        │   └── SDL_image.info
+        ├── SDL_image.xcodeproj
+        │   └── project.pbxproj
+        ├── showimage
+        │   ├── macOS
+        │   │   └── macOS.entitlements
+        │   ├── SDL_uikit_main.c
+        │   └── showimage.xcodeproj
+        │       └── project.pbxproj
+        ├── tvOS
+        │   └── SDL2.framework
+        │       ├── default.metallib
+        │       ├── Headers
+        │       │   ├── begin_code.h
+        │       │   ├── close_code.h
+        │       │   ├── SDL_assert.h
+        │       │   ├── SDL_atomic.h
+        │       │   ├── SDL_audio.h
+        │       │   ├── SDL_bits.h
+        │       │   ├── SDL_blendmode.h
+        │       │   ├── SDL_clipboard.h
+        │       │   ├── SDL_config.h
+        │       │   ├── SDL_config_iphoneos.h
+        │       │   ├── SDL_copying.h
+        │       │   ├── SDL_cpuinfo.h
+        │       │   ├── SDL_endian.h
+        │       │   ├── SDL_error.h
+        │       │   ├── SDL_events.h
+        │       │   ├── SDL_filesystem.h
+        │       │   ├── SDL_gamecontroller.h
+        │       │   ├── SDL_gesture.h
+        │       │   ├── SDL.h
+        │       │   ├── SDL_haptic.h
+        │       │   ├── SDL_hidapi.h
+        │       │   ├── SDL_hints.h
+        │       │   ├── SDL_joystick.h
+        │       │   ├── SDL_keyboard.h
+        │       │   ├── SDL_keycode.h
+        │       │   ├── SDL_loadso.h
+        │       │   ├── SDL_locale.h
+        │       │   ├── SDL_log.h
+        │       │   ├── SDL_main.h
+        │       │   ├── SDL_messagebox.h
+        │       │   ├── SDL_metal.h
+        │       │   ├── SDL_misc.h
+        │       │   ├── SDL_mouse.h
+        │       │   ├── SDL_mutex.h
+        │       │   ├── SDL_name.h
+        │       │   ├── SDL_opengles2_gl2ext.h
+        │       │   ├── SDL_opengles2_gl2.h
+        │       │   ├── SDL_opengles2_gl2platform.h
+        │       │   ├── SDL_opengles2.h
+        │       │   ├── SDL_opengles2_khrplatform.h
+        │       │   ├── SDL_opengles.h
+        │       │   ├── SDL_opengl_glext.h
+        │       │   ├── SDL_opengl.h
+        │       │   ├── SDL_pixels.h
+        │       │   ├── SDL_platform.h
+        │       │   ├── SDL_power.h
+        │       │   ├── SDL_quit.h
+        │       │   ├── SDL_rect.h
+        │       │   ├── SDL_render.h
+        │       │   ├── SDL_revision.h
+        │       │   ├── SDL_rwops.h
+        │       │   ├── SDL_scancode.h
+        │       │   ├── SDL_sensor.h
+        │       │   ├── SDL_shape.h
+        │       │   ├── SDL_stdinc.h
+        │       │   ├── SDL_surface.h
+        │       │   ├── SDL_system.h
+        │       │   ├── SDL_syswm.h
+        │       │   ├── SDL_thread.h
+        │       │   ├── SDL_timer.h
+        │       │   ├── SDL_touch.h
+        │       │   ├── SDL_types.h
+        │       │   ├── SDL_version.h
+        │       │   ├── SDL_video.h
+        │       │   └── SDL_vulkan.h
+        │       ├── Info.plist
+        │       ├── License.txt
+        │       ├── ReadMe.txt
+        │       └── SDL2
+        └── webp
+            └── webp.xcodeproj
+                └── project.pbxproj
+
+70 directories, 390 files

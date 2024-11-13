@@ -1,0 +1,1695 @@
+src
+├── docker-machine-0.16.2.tar.gz -> /home/felix/packages/docker-machine/docker-machine-0.16.2.tar.gz
+└── machine-0.16.2
+    ├── appveyor.yml
+    ├── CHANGELOG.md
+    ├── circle.yml
+    ├── cmd
+    │   └── docker-machine
+    │       ├── machine.go
+    │       └── machine_test.go
+    ├── commands
+    │   ├── active.go
+    │   ├── active_test.go
+    │   ├── commands.go
+    │   ├── commandstest
+    │   │   ├── fake_command_line.go
+    │   │   └── stdout_capture.go
+    │   ├── commands_test.go
+    │   ├── config.go
+    │   ├── create.go
+    │   ├── create_test.go
+    │   ├── env.go
+    │   ├── env_test.go
+    │   ├── flag_sort.go
+    │   ├── inspect.go
+    │   ├── inspect_test.go
+    │   ├── ip.go
+    │   ├── ip_test.go
+    │   ├── kill.go
+    │   ├── kill_test.go
+    │   ├── ls.go
+    │   ├── ls_test.go
+    │   ├── mcndirs
+    │   │   ├── utils.go
+    │   │   └── utils_test.go
+    │   ├── mount.go
+    │   ├── mount_test.go
+    │   ├── provision.go
+    │   ├── provision_test.go
+    │   ├── regeneratecerts.go
+    │   ├── restart.go
+    │   ├── rm.go
+    │   ├── rm_test.go
+    │   ├── scp.go
+    │   ├── scp_test.go
+    │   ├── scp_unix.go
+    │   ├── scp_windows.go
+    │   ├── ssh.go
+    │   ├── ssh_test.go
+    │   ├── start.go
+    │   ├── status.go
+    │   ├── stop.go
+    │   ├── stop_test.go
+    │   ├── upgrade.go
+    │   ├── url.go
+    │   ├── url_test.go
+    │   ├── version.go
+    │   └── version_test.go
+    ├── contrib
+    │   └── completion
+    │       ├── bash
+    │       │   ├── docker-machine.bash
+    │       │   ├── docker-machine-prompt.bash
+    │       │   └── docker-machine-wrapper.bash
+    │       └── zsh
+    │           └── _docker-machine
+    ├── CONTRIBUTING.md
+    ├── doc.go
+    ├── Dockerfile
+    ├── docs
+    │   └── README.md
+    ├── drivers
+    │   ├── amazonec2
+    │   │   ├── amazonec2.go
+    │   │   ├── amazonec2_test.go
+    │   │   ├── awscredentials.go
+    │   │   ├── awscredentials_test.go
+    │   │   ├── ec2client.go
+    │   │   ├── logger.go
+    │   │   ├── region.go
+    │   │   └── stub_test.go
+    │   ├── azure
+    │   │   ├── azure.go
+    │   │   ├── azureutil
+    │   │   │   ├── auth.go
+    │   │   │   ├── authorizer.go
+    │   │   │   ├── azureutil.go
+    │   │   │   ├── cleanup.go
+    │   │   │   ├── clients.go
+    │   │   │   ├── context.go
+    │   │   │   ├── inspector.go
+    │   │   │   ├── naming.go
+    │   │   │   ├── powerstate.go
+    │   │   │   ├── tenantid.go
+    │   │   │   └── util.go
+    │   │   ├── logutil
+    │   │   │   └── logfields.go
+    │   │   ├── util.go
+    │   │   └── util_test.go
+    │   ├── digitalocean
+    │   │   ├── digitalocean.go
+    │   │   └── digitalocean_test.go
+    │   ├── driverutil
+    │   │   ├── util.go
+    │   │   └── util_test.go
+    │   ├── errdriver
+    │   │   └── error.go
+    │   ├── exoscale
+    │   │   ├── exoscale.go
+    │   │   └── exoscale_test.go
+    │   ├── fakedriver
+    │   │   └── fakedriver.go
+    │   ├── generic
+    │   │   ├── generic.go
+    │   │   └── generic_test.go
+    │   ├── google
+    │   │   ├── compute_util.go
+    │   │   ├── compute_util_test.go
+    │   │   ├── google.go
+    │   │   └── google_test.go
+    │   ├── hyperv
+    │   │   ├── hyperv.go
+    │   │   ├── hyperv_test.go
+    │   │   └── powershell.go
+    │   ├── none
+    │   │   └── driver.go
+    │   ├── openstack
+    │   │   ├── client.go
+    │   │   ├── openstack.go
+    │   │   └── openstack_test.go
+    │   ├── rackspace
+    │   │   ├── client.go
+    │   │   ├── rackspace.go
+    │   │   └── rackspace_test.go
+    │   ├── softlayer
+    │   │   ├── driver.go
+    │   │   ├── driver_test.go
+    │   │   └── softlayer.go
+    │   ├── virtualbox
+    │   │   ├── disk.go
+    │   │   ├── disk_test.go
+    │   │   ├── ip.go
+    │   │   ├── misc.go
+    │   │   ├── network.go
+    │   │   ├── network_test.go
+    │   │   ├── vbm.go
+    │   │   ├── vbm_test.go
+    │   │   ├── virtualbox_darwin.go
+    │   │   ├── virtualbox_darwin_test.go
+    │   │   ├── virtualbox_freebsd.go
+    │   │   ├── virtualbox.go
+    │   │   ├── virtualbox_linux.go
+    │   │   ├── virtualbox_linux_test.go
+    │   │   ├── virtualbox_openbsd.go
+    │   │   ├── virtualbox_test.go
+    │   │   ├── virtualbox_windows.go
+    │   │   ├── vm.go
+    │   │   ├── vm_test.go
+    │   │   ├── vtx.go
+    │   │   ├── vtx_intel.go
+    │   │   ├── vtx_other.go
+    │   │   └── vtx_test.go
+    │   ├── vmwarefusion
+    │   │   ├── fusion_darwin.go
+    │   │   ├── fusion_darwin_test.go
+    │   │   ├── fusion.go
+    │   │   ├── vmrun_darwin.go
+    │   │   └── vmx_darwin.go
+    │   ├── vmwarevcloudair
+    │   │   ├── vcloudair.go
+    │   │   └── vcloudlair_test.go
+    │   └── vmwarevsphere
+    │       ├── vsphere.go
+    │       └── vsphere_test.go
+    ├── experimental
+    │   ├── b2d_migration.md
+    │   ├── b2d_migration_tasks.md
+    │   └── README.md
+    ├── Gopkg.lock
+    ├── Gopkg.toml
+    ├── its
+    │   ├── cli
+    │   │   ├── create_rm_test.go
+    │   │   ├── driver_help_test.go
+    │   │   ├── help_test.go
+    │   │   ├── inspect_test.go
+    │   │   ├── ls_test.go
+    │   │   ├── status_test.go
+    │   │   └── url_test.go
+    │   ├── tester.go
+    │   └── thirdparty
+    │       └── commands_test.go
+    ├── libmachine
+    │   ├── auth
+    │   │   └── auth.go
+    │   ├── cert
+    │   │   ├── bootstrap.go
+    │   │   ├── cert.go
+    │   │   └── cert_test.go
+    │   ├── check
+    │   │   ├── check.go
+    │   │   └── check_test.go
+    │   ├── crashreport
+    │   │   ├── crash_report.go
+    │   │   ├── crash_report_logger.go
+    │   │   ├── crash_report_test.go
+    │   │   ├── os_darwin.go
+    │   │   ├── os_freebsd.go
+    │   │   ├── os_linux.go
+    │   │   ├── os_openbsd.go
+    │   │   ├── os_windows.go
+    │   │   └── os_windows_test.go
+    │   ├── drivers
+    │   │   ├── base.go
+    │   │   ├── base_test.go
+    │   │   ├── check.go
+    │   │   ├── drivers.go
+    │   │   ├── notsupported.go
+    │   │   ├── plugin
+    │   │   │   ├── localbinary
+    │   │   │   │   ├── plugin.go
+    │   │   │   │   └── plugin_test.go
+    │   │   │   └── register_driver.go
+    │   │   ├── rpc
+    │   │   │   ├── client_driver.go
+    │   │   │   ├── server_driver.go
+    │   │   │   └── server_driver_test.go
+    │   │   ├── serial.go
+    │   │   ├── serial_test.go
+    │   │   └── utils.go
+    │   ├── engine
+    │   │   └── engine.go
+    │   ├── examples
+    │   │   └── main.go
+    │   ├── host
+    │   │   ├── host.go
+    │   │   ├── host_test.go
+    │   │   ├── host_v0.go
+    │   │   ├── host_v2.go
+    │   │   ├── migrate.go
+    │   │   ├── migrate_test.go
+    │   │   ├── migrate_v0_v1.go
+    │   │   ├── migrate_v0_v1_test.go
+    │   │   ├── migrate_v0_v3_test.go
+    │   │   ├── migrate_v1_v2.go
+    │   │   ├── migrate_v1_v2_test.go
+    │   │   └── migrate_v2_v3.go
+    │   ├── hosttest
+    │   │   └── default_test_host.go
+    │   ├── libmachine.go
+    │   ├── libmachinetest
+    │   │   └── fake_api.go
+    │   ├── log
+    │   │   ├── fmt_machine_logger.go
+    │   │   ├── fmt_machine_logger_test.go
+    │   │   ├── history_recorder.go
+    │   │   ├── history_recorder_test.go
+    │   │   ├── log.go
+    │   │   ├── log_test.go
+    │   │   └── machine_logger.go
+    │   ├── mcndockerclient
+    │   │   ├── docker_client.go
+    │   │   ├── docker_host.go
+    │   │   ├── docker_versioner.go
+    │   │   └── fake_docker_versioner.go
+    │   ├── mcnerror
+    │   │   └── errors.go
+    │   ├── mcnflag
+    │   │   └── flag.go
+    │   ├── mcnutils
+    │   │   ├── b2d.go
+    │   │   ├── b2d_test.go
+    │   │   ├── utils.go
+    │   │   └── utils_test.go
+    │   ├── persist
+    │   │   ├── filestore.go
+    │   │   ├── filestore_test.go
+    │   │   ├── persisttest
+    │   │   │   ├── fakestore.go
+    │   │   │   └── fakestore_test.go
+    │   │   └── store.go
+    │   ├── provider
+    │   │   └── provider.go
+    │   ├── provision
+    │   │   ├── arch.go
+    │   │   ├── arch_test.go
+    │   │   ├── boot2docker.go
+    │   │   ├── centos.go
+    │   │   ├── configure_swarm.go
+    │   │   ├── coreos.go
+    │   │   ├── debian.go
+    │   │   ├── debian_test.go
+    │   │   ├── engine_config_context.go
+    │   │   ├── errors.go
+    │   │   ├── fake_provisioner.go
+    │   │   ├── fedora.go
+    │   │   ├── generic.go
+    │   │   ├── oraclelinux.go
+    │   │   ├── os_release.go
+    │   │   ├── os_release_test.go
+    │   │   ├── pkgaction
+    │   │   │   ├── pkg_action.go
+    │   │   │   └── pkg_action_test.go
+    │   │   ├── provisioner.go
+    │   │   ├── provisiontest
+    │   │   │   ├── sshcommander.go
+    │   │   │   └── sshcommander_test.go
+    │   │   ├── rancheros.go
+    │   │   ├── redhat.go
+    │   │   ├── redhat_ssh_commander.go
+    │   │   ├── redhat_test.go
+    │   │   ├── serviceaction
+    │   │   │   ├── service_action.go
+    │   │   │   └── service_action_test.go
+    │   │   ├── suse.go
+    │   │   ├── systemd.go
+    │   │   ├── ubuntu_systemd.go
+    │   │   ├── ubuntu_systemd_test.go
+    │   │   ├── ubuntu_upstart.go
+    │   │   ├── ubuntu_upstart_test.go
+    │   │   ├── utils.go
+    │   │   └── utils_test.go
+    │   ├── shell
+    │   │   ├── shell.go
+    │   │   ├── shell_test.go
+    │   │   ├── shell_unix_test.go
+    │   │   ├── shell_windows.go
+    │   │   └── shell_windows_test.go
+    │   ├── ssh
+    │   │   ├── client.go
+    │   │   ├── client_test.go
+    │   │   ├── keys.go
+    │   │   ├── keys_test.go
+    │   │   ├── sshtest
+    │   │   │   └── fake_client.go
+    │   │   └── ssh_test.go
+    │   ├── state
+    │   │   ├── state.go
+    │   │   └── state_test.go
+    │   ├── swarm
+    │   │   └── swarm.go
+    │   ├── version
+    │   │   └── version.go
+    │   └── versioncmp
+    │       ├── compare.go
+    │       └── compare_test.go
+    ├── LICENSE
+    ├── MAINTAINERS
+    ├── Makefile
+    ├── Makefile.inc
+    ├── mk
+    │   ├── build.mk
+    │   ├── coverage.mk
+    │   ├── dev.mk
+    │   ├── main.mk
+    │   ├── test.mk
+    │   └── validate.mk
+    ├── README.md
+    ├── ROADMAP.md
+    ├── script
+    │   ├── build_in_container.sh
+    │   ├── release
+    │   │   └── github-release-template.md
+    │   ├── release.sh
+    │   └── validate-dco
+    ├── test
+    │   ├── integration
+    │   │   ├── amazonec2
+    │   │   │   ├── amazon.bats
+    │   │   │   ├── create-ebsinstance.bats
+    │   │   │   └── createwithkeypair.bats
+    │   │   ├── core
+    │   │   │   ├── certs-extra-san.bats
+    │   │   │   ├── core-commands.bats
+    │   │   │   ├── crashreport.bats
+    │   │   │   ├── engine-options.bats
+    │   │   │   ├── env_shell.bats
+    │   │   │   ├── inspect_format.bats
+    │   │   │   ├── regenerate-certs.bats
+    │   │   │   ├── scp.bats
+    │   │   │   ├── ssh-backends.bats
+    │   │   │   └── swarm-options.bats
+    │   │   ├── helpers.bash
+    │   │   ├── run-bats.sh
+    │   │   └── virtualbox
+    │   │       ├── certs-checksum.bats
+    │   │       ├── create-with-upgrading.bats
+    │   │       ├── custom-mem-disk.bats
+    │   │       ├── dns.bats
+    │   │       ├── guards.bats
+    │   │       ├── pause-save-start.bats
+    │   │       └── upgrade.bats
+    │   └── provision
+    │       ├── rancheros.bats
+    │       └── redhat.bats
+    ├── vendor
+    │   ├── github.com
+    │   │   ├── aws
+    │   │   │   └── aws-sdk-go
+    │   │   │       ├── aws
+    │   │   │       │   ├── awserr
+    │   │   │       │   │   ├── error.go
+    │   │   │       │   │   └── types.go
+    │   │   │       │   ├── awsutil
+    │   │   │       │   │   ├── copy.go
+    │   │   │       │   │   ├── equal.go
+    │   │   │       │   │   ├── path_value.go
+    │   │   │       │   │   ├── prettify.go
+    │   │   │       │   │   └── string_value.go
+    │   │   │       │   ├── client
+    │   │   │       │   │   ├── client.go
+    │   │   │       │   │   ├── default_retryer.go
+    │   │   │       │   │   └── metadata
+    │   │   │       │   │       └── client_info.go
+    │   │   │       │   ├── config.go
+    │   │   │       │   ├── convert_types.go
+    │   │   │       │   ├── corehandlers
+    │   │   │       │   │   ├── handlers.go
+    │   │   │       │   │   └── param_validator.go
+    │   │   │       │   ├── credentials
+    │   │   │       │   │   ├── chain_provider.go
+    │   │   │       │   │   ├── credentials.go
+    │   │   │       │   │   ├── ec2rolecreds
+    │   │   │       │   │   │   └── ec2_role_provider.go
+    │   │   │       │   │   ├── endpointcreds
+    │   │   │       │   │   │   └── provider.go
+    │   │   │       │   │   ├── env_provider.go
+    │   │   │       │   │   ├── example.ini
+    │   │   │       │   │   ├── shared_credentials_provider.go
+    │   │   │       │   │   ├── static_provider.go
+    │   │   │       │   │   └── stscreds
+    │   │   │       │   │       └── assume_role_provider.go
+    │   │   │       │   ├── defaults
+    │   │   │       │   │   └── defaults.go
+    │   │   │       │   ├── ec2metadata
+    │   │   │       │   │   ├── api.go
+    │   │   │       │   │   └── service.go
+    │   │   │       │   ├── errors.go
+    │   │   │       │   ├── logger.go
+    │   │   │       │   ├── request
+    │   │   │       │   │   ├── handlers.go
+    │   │   │       │   │   ├── http_request_1_4.go
+    │   │   │       │   │   ├── http_request.go
+    │   │   │       │   │   ├── offset_reader.go
+    │   │   │       │   │   ├── request.go
+    │   │   │       │   │   ├── request_pagination.go
+    │   │   │       │   │   ├── retryer.go
+    │   │   │       │   │   └── validation.go
+    │   │   │       │   ├── session
+    │   │   │       │   │   ├── doc.go
+    │   │   │       │   │   ├── env_config.go
+    │   │   │       │   │   ├── session.go
+    │   │   │       │   │   └── shared_config.go
+    │   │   │       │   ├── signer
+    │   │   │       │   │   └── v4
+    │   │   │       │   │       ├── header_rules.go
+    │   │   │       │   │       └── v4.go
+    │   │   │       │   ├── types.go
+    │   │   │       │   └── version.go
+    │   │   │       ├── LICENSE.txt
+    │   │   │       ├── NOTICE.txt
+    │   │   │       ├── private
+    │   │   │       │   ├── endpoints
+    │   │   │       │   │   ├── endpoints.go
+    │   │   │       │   │   ├── endpoints.json
+    │   │   │       │   │   └── endpoints_map.go
+    │   │   │       │   ├── protocol
+    │   │   │       │   │   ├── ec2query
+    │   │   │       │   │   │   ├── build.go
+    │   │   │       │   │   │   └── unmarshal.go
+    │   │   │       │   │   ├── idempotency.go
+    │   │   │       │   │   ├── query
+    │   │   │       │   │   │   ├── build.go
+    │   │   │       │   │   │   ├── queryutil
+    │   │   │       │   │   │   │   └── queryutil.go
+    │   │   │       │   │   │   ├── unmarshal_error.go
+    │   │   │       │   │   │   └── unmarshal.go
+    │   │   │       │   │   ├── rest
+    │   │   │       │   │   │   ├── build.go
+    │   │   │       │   │   │   ├── payload.go
+    │   │   │       │   │   │   └── unmarshal.go
+    │   │   │       │   │   ├── unmarshal.go
+    │   │   │       │   │   └── xml
+    │   │   │       │   │       └── xmlutil
+    │   │   │       │   │           ├── build.go
+    │   │   │       │   │           ├── unmarshal.go
+    │   │   │       │   │           └── xml_to_struct.go
+    │   │   │       │   └── waiter
+    │   │   │       │       └── waiter.go
+    │   │   │       └── service
+    │   │   │           ├── ec2
+    │   │   │           │   ├── api.go
+    │   │   │           │   ├── customizations.go
+    │   │   │           │   ├── service.go
+    │   │   │           │   └── waiters.go
+    │   │   │           └── sts
+    │   │   │               ├── api.go
+    │   │   │               ├── customizations.go
+    │   │   │               └── service.go
+    │   │   ├── Azure
+    │   │   │   ├── azure-sdk-for-go
+    │   │   │   │   ├── arm
+    │   │   │   │   │   ├── compute
+    │   │   │   │   │   │   ├── availabilitysets.go
+    │   │   │   │   │   │   ├── client.go
+    │   │   │   │   │   │   ├── models.go
+    │   │   │   │   │   │   ├── usageoperations.go
+    │   │   │   │   │   │   ├── version.go
+    │   │   │   │   │   │   ├── virtualmachineextensionimages.go
+    │   │   │   │   │   │   ├── virtualmachineextensions.go
+    │   │   │   │   │   │   ├── virtualmachineimages.go
+    │   │   │   │   │   │   ├── virtualmachinescalesets.go
+    │   │   │   │   │   │   ├── virtualmachinescalesetvms.go
+    │   │   │   │   │   │   ├── virtualmachines.go
+    │   │   │   │   │   │   └── virtualmachinesizes.go
+    │   │   │   │   │   ├── network
+    │   │   │   │   │   │   ├── applicationgateways.go
+    │   │   │   │   │   │   ├── client.go
+    │   │   │   │   │   │   ├── expressroutecircuitauthorizations.go
+    │   │   │   │   │   │   ├── expressroutecircuitpeerings.go
+    │   │   │   │   │   │   ├── expressroutecircuits.go
+    │   │   │   │   │   │   ├── expressrouteserviceproviders.go
+    │   │   │   │   │   │   ├── interfaces.go
+    │   │   │   │   │   │   ├── loadbalancers.go
+    │   │   │   │   │   │   ├── localnetworkgateways.go
+    │   │   │   │   │   │   ├── models.go
+    │   │   │   │   │   │   ├── publicipaddresses.go
+    │   │   │   │   │   │   ├── routes.go
+    │   │   │   │   │   │   ├── routetables.go
+    │   │   │   │   │   │   ├── securitygroups.go
+    │   │   │   │   │   │   ├── securityrules.go
+    │   │   │   │   │   │   ├── subnets.go
+    │   │   │   │   │   │   ├── usages.go
+    │   │   │   │   │   │   ├── version.go
+    │   │   │   │   │   │   ├── virtualnetworkgatewayconnections.go
+    │   │   │   │   │   │   ├── virtualnetworkgateways.go
+    │   │   │   │   │   │   ├── virtualnetworkpeerings.go
+    │   │   │   │   │   │   └── virtualnetworks.go
+    │   │   │   │   │   ├── resources
+    │   │   │   │   │   │   ├── resources
+    │   │   │   │   │   │   │   ├── client.go
+    │   │   │   │   │   │   │   ├── deploymentoperations.go
+    │   │   │   │   │   │   │   ├── deployments.go
+    │   │   │   │   │   │   │   ├── groups.go
+    │   │   │   │   │   │   │   ├── models.go
+    │   │   │   │   │   │   │   ├── providers.go
+    │   │   │   │   │   │   │   ├── resources.go
+    │   │   │   │   │   │   │   ├── tags.go
+    │   │   │   │   │   │   │   └── version.go
+    │   │   │   │   │   │   └── subscriptions
+    │   │   │   │   │   │       ├── client.go
+    │   │   │   │   │   │       ├── models.go
+    │   │   │   │   │   │       ├── subscriptions.go
+    │   │   │   │   │   │       ├── tenants.go
+    │   │   │   │   │   │       └── version.go
+    │   │   │   │   │   └── storage
+    │   │   │   │   │       ├── accounts.go
+    │   │   │   │   │       ├── client.go
+    │   │   │   │   │       ├── models.go
+    │   │   │   │   │       ├── usageoperations.go
+    │   │   │   │   │       └── version.go
+    │   │   │   │   ├── LICENSE
+    │   │   │   │   └── storage
+    │   │   │   │       ├── blob.go
+    │   │   │   │       ├── client.go
+    │   │   │   │       ├── file.go
+    │   │   │   │       ├── queue.go
+    │   │   │   │       ├── README.md
+    │   │   │   │       ├── table_entities.go
+    │   │   │   │       ├── table.go
+    │   │   │   │       └── util.go
+    │   │   │   ├── go-ansiterm
+    │   │   │   │   ├── constants.go
+    │   │   │   │   ├── context.go
+    │   │   │   │   ├── csi_entry_state.go
+    │   │   │   │   ├── csi_param_state.go
+    │   │   │   │   ├── escape_intermediate_state.go
+    │   │   │   │   ├── escape_state.go
+    │   │   │   │   ├── event_handler.go
+    │   │   │   │   ├── ground_state.go
+    │   │   │   │   ├── LICENSE
+    │   │   │   │   ├── osc_string_state.go
+    │   │   │   │   ├── parser_action_helpers.go
+    │   │   │   │   ├── parser_actions.go
+    │   │   │   │   ├── parser.go
+    │   │   │   │   ├── README.md
+    │   │   │   │   ├── states.go
+    │   │   │   │   ├── utilities.go
+    │   │   │   │   └── winterm
+    │   │   │   │       ├── ansi.go
+    │   │   │   │       ├── api.go
+    │   │   │   │       ├── attr_translation.go
+    │   │   │   │       ├── cursor_helpers.go
+    │   │   │   │       ├── erase_helpers.go
+    │   │   │   │       ├── scroll_helper.go
+    │   │   │   │       ├── utilities.go
+    │   │   │   │       └── win_event_handler.go
+    │   │   │   └── go-autorest
+    │   │   │       ├── autorest
+    │   │   │       │   ├── autorest.go
+    │   │   │       │   ├── azure
+    │   │   │       │   │   ├── async.go
+    │   │   │       │   │   ├── azure.go
+    │   │   │       │   │   ├── config.go
+    │   │   │       │   │   ├── devicetoken.go
+    │   │   │       │   │   ├── environments.go
+    │   │   │       │   │   ├── persist.go
+    │   │   │       │   │   └── token.go
+    │   │   │       │   ├── client.go
+    │   │   │       │   ├── date
+    │   │   │       │   │   ├── date.go
+    │   │   │       │   │   ├── time.go
+    │   │   │       │   │   ├── timerfc1123.go
+    │   │   │       │   │   └── utility.go
+    │   │   │       │   ├── error.go
+    │   │   │       │   ├── preparer.go
+    │   │   │       │   ├── responder.go
+    │   │   │       │   ├── sender.go
+    │   │   │       │   ├── to
+    │   │   │       │   │   └── convert.go
+    │   │   │       │   ├── utility.go
+    │   │   │       │   ├── validation
+    │   │   │       │   │   └── validation.go
+    │   │   │       │   └── version.go
+    │   │   │       └── LICENSE
+    │   │   ├── bugsnag
+    │   │   │   ├── bugsnag-go
+    │   │   │   │   ├── appengine.go
+    │   │   │   │   ├── bugsnag.go
+    │   │   │   │   ├── CHANGELOG.md
+    │   │   │   │   ├── configuration.go
+    │   │   │   │   ├── CONTRIBUTING.md
+    │   │   │   │   ├── doc.go
+    │   │   │   │   ├── errors
+    │   │   │   │   │   ├── error.go
+    │   │   │   │   │   ├── parse_panic.go
+    │   │   │   │   │   ├── README.md
+    │   │   │   │   │   └── stackframe.go
+    │   │   │   │   ├── event.go
+    │   │   │   │   ├── json_tags.go
+    │   │   │   │   ├── LICENSE.txt
+    │   │   │   │   ├── Makefile
+    │   │   │   │   ├── metadata.go
+    │   │   │   │   ├── middleware.go
+    │   │   │   │   ├── notifier.go
+    │   │   │   │   ├── panicwrap.go
+    │   │   │   │   ├── payload.go
+    │   │   │   │   └── README.md
+    │   │   │   ├── osext
+    │   │   │   │   ├── LICENSE
+    │   │   │   │   ├── osext.go
+    │   │   │   │   ├── osext_plan9.go
+    │   │   │   │   ├── osext_procfs.go
+    │   │   │   │   ├── osext_sysctl.go
+    │   │   │   │   └── osext_windows.go
+    │   │   │   └── panicwrap
+    │   │   │       ├── CHANGELOG.md
+    │   │   │       ├── dup2.go
+    │   │   │       ├── dup3.go
+    │   │   │       ├── LICENSE
+    │   │   │       ├── monitor.go
+    │   │   │       ├── monitor_windows.go
+    │   │   │       ├── panicwrap.go
+    │   │   │       └── README.md
+    │   │   ├── cenkalti
+    │   │   │   └── backoff
+    │   │   │       ├── backoff.go
+    │   │   │       ├── exponential.go
+    │   │   │       ├── LICENSE
+    │   │   │       ├── README.md
+    │   │   │       ├── retry.go
+    │   │   │       └── ticker.go
+    │   │   ├── codegangsta
+    │   │   │   └── cli
+    │   │   │       ├── app.go
+    │   │   │       ├── cli.go
+    │   │   │       ├── command.go
+    │   │   │       ├── context.go
+    │   │   │       ├── flag.go
+    │   │   │       ├── help.go
+    │   │   │       ├── LICENSE
+    │   │   │       └── README.md
+    │   │   ├── davecgh
+    │   │   │   └── go-spew
+    │   │   │       ├── LICENSE
+    │   │   │       └── spew
+    │   │   │           ├── bypass.go
+    │   │   │           ├── bypasssafe.go
+    │   │   │           ├── common.go
+    │   │   │           ├── config.go
+    │   │   │           ├── doc.go
+    │   │   │           ├── dump.go
+    │   │   │           ├── format.go
+    │   │   │           └── spew.go
+    │   │   ├── dgrijalva
+    │   │   │   └── jwt-go
+    │   │   │       ├── claims.go
+    │   │   │       ├── doc.go
+    │   │   │       ├── ecdsa.go
+    │   │   │       ├── ecdsa_utils.go
+    │   │   │       ├── errors.go
+    │   │   │       ├── hmac.go
+    │   │   │       ├── LICENSE
+    │   │   │       ├── map_claims.go
+    │   │   │       ├── MIGRATION_GUIDE.md
+    │   │   │       ├── none.go
+    │   │   │       ├── parser.go
+    │   │   │       ├── README.md
+    │   │   │       ├── rsa.go
+    │   │   │       ├── rsa_pss.go
+    │   │   │       ├── rsa_utils.go
+    │   │   │       ├── signing_method.go
+    │   │   │       ├── token.go
+    │   │   │       └── VERSION_HISTORY.md
+    │   │   ├── digitalocean
+    │   │   │   └── godo
+    │   │   │       ├── account.go
+    │   │   │       ├── action.go
+    │   │   │       ├── certificates.go
+    │   │   │       ├── CHANGELOG.md
+    │   │   │       ├── CONTRIBUTING.md
+    │   │   │       ├── doc.go
+    │   │   │       ├── domains.go
+    │   │   │       ├── droplet_actions.go
+    │   │   │       ├── droplets.go
+    │   │   │       ├── errors.go
+    │   │   │       ├── floating_ips_actions.go
+    │   │   │       ├── floating_ips.go
+    │   │   │       ├── godo.go
+    │   │   │       ├── image_actions.go
+    │   │   │       ├── images.go
+    │   │   │       ├── keys.go
+    │   │   │       ├── LICENSE.txt
+    │   │   │       ├── links.go
+    │   │   │       ├── load_balancers.go
+    │   │   │       ├── README.md
+    │   │   │       ├── regions.go
+    │   │   │       ├── sizes.go
+    │   │   │       ├── snapshots.go
+    │   │   │       ├── storage_actions.go
+    │   │   │       ├── storage.go
+    │   │   │       ├── strings.go
+    │   │   │       ├── tags.go
+    │   │   │       └── timestamp.go
+    │   │   ├── docker
+    │   │   │   ├── docker
+    │   │   │   │   ├── AUTHORS
+    │   │   │   │   ├── contrib
+    │   │   │   │   │   └── syntax
+    │   │   │   │   │       └── vim
+    │   │   │   │   │           └── LICENSE
+    │   │   │   │   ├── docs
+    │   │   │   │   │   └── static_files
+    │   │   │   │   │       └── contributors.png
+    │   │   │   │   ├── hack
+    │   │   │   │   │   └── generate-authors.sh
+    │   │   │   │   ├── integration-cli
+    │   │   │   │   │   └── fixtures
+    │   │   │   │   │       └── https
+    │   │   │   │   │           ├── ca.pem -> ../../../integration/testdata/https/ca.pem
+    │   │   │   │   │           ├── client-cert.pem -> ../../../integration/testdata/https/client-cert.pem
+    │   │   │   │   │           ├── client-key.pem -> ../../../integration/testdata/https/client-key.pem
+    │   │   │   │   │           ├── server-cert.pem -> ../../../integration/testdata/https/server-cert.pem
+    │   │   │   │   │           └── server-key.pem -> ../../../integration/testdata/https/server-key.pem
+    │   │   │   │   ├── LICENSE
+    │   │   │   │   ├── NOTICE
+    │   │   │   │   ├── pkg
+    │   │   │   │   │   ├── symlink
+    │   │   │   │   │   │   ├── LICENSE.APACHE
+    │   │   │   │   │   │   └── LICENSE.BSD
+    │   │   │   │   │   └── term
+    │   │   │   │   │       ├── ascii.go
+    │   │   │   │   │       ├── proxy.go
+    │   │   │   │   │       ├── tc.go
+    │   │   │   │   │       ├── term.go
+    │   │   │   │   │       ├── termios_bsd.go
+    │   │   │   │   │       ├── termios_linux.go
+    │   │   │   │   │       ├── term_windows.go
+    │   │   │   │   │       ├── windows
+    │   │   │   │   │       │   ├── ansi_reader.go
+    │   │   │   │   │       │   ├── ansi_writer.go
+    │   │   │   │   │       │   ├── console.go
+    │   │   │   │   │       │   └── windows.go
+    │   │   │   │   │       └── winsize.go
+    │   │   │   │   └── project
+    │   │   │   │       └── CONTRIBUTING.md -> ../CONTRIBUTING.md
+    │   │   │   └── go-units
+    │   │   │       ├── circle.yml
+    │   │   │       ├── CONTRIBUTING.md
+    │   │   │       ├── duration.go
+    │   │   │       ├── LICENSE.code
+    │   │   │       ├── LICENSE.docs
+    │   │   │       ├── MAINTAINERS
+    │   │   │       ├── README.md
+    │   │   │       ├── size.go
+    │   │   │       └── ulimit.go
+    │   │   ├── exoscale
+    │   │   │   └── egoscale
+    │   │   │       ├── accounts.go
+    │   │   │       ├── accounts_type.go
+    │   │   │       ├── accounttype_string.go
+    │   │   │       ├── addresses.go
+    │   │   │       ├── addresses_type.go
+    │   │   │       ├── affinity_groups.go
+    │   │   │       ├── apis.go
+    │   │   │       ├── apis_type.go
+    │   │   │       ├── async_jobs.go
+    │   │   │       ├── async_jobs_type.go
+    │   │   │       ├── AUTHORS
+    │   │   │       ├── CHANGELOG.md
+    │   │   │       ├── client.go
+    │   │   │       ├── client_type.go
+    │   │   │       ├── dns.go
+    │   │   │       ├── doc.go
+    │   │   │       ├── errorcode_string.go
+    │   │   │       ├── events.go
+    │   │   │       ├── gopher.png
+    │   │   │       ├── Gopkg.lock
+    │   │   │       ├── Gopkg.toml
+    │   │   │       ├── jobstatustype_string.go
+    │   │   │       ├── keypairs.go
+    │   │   │       ├── keypairs_type.go
+    │   │   │       ├── LICENSE
+    │   │   │       ├── limits.go
+    │   │   │       ├── Makefile
+    │   │   │       ├── network_offerings.go
+    │   │   │       ├── network_offerings_type.go
+    │   │   │       ├── networks.go
+    │   │   │       ├── networks_type.go
+    │   │   │       ├── nics.go
+    │   │   │       ├── nics_type.go
+    │   │   │       ├── README.md
+    │   │   │       ├── request.go
+    │   │   │       ├── request_type.go
+    │   │   │       ├── resource_metadata.go
+    │   │   │       ├── resource_metadata_type.go
+    │   │   │       ├── security_groups.go
+    │   │   │       ├── security_groups_type.go
+    │   │   │       ├── serialization.go
+    │   │   │       ├── service_offerings.go
+    │   │   │       ├── service_offerings_type.go
+    │   │   │       ├── snapshots.go
+    │   │   │       ├── snapshots_type.go
+    │   │   │       ├── tags.go
+    │   │   │       ├── tags_type.go
+    │   │   │       ├── templates.go
+    │   │   │       ├── templates_type.go
+    │   │   │       ├── users.go
+    │   │   │       ├── users_type.go
+    │   │   │       ├── version.go
+    │   │   │       ├── virtual_machines.go
+    │   │   │       ├── virtual_machines_type.go
+    │   │   │       ├── vm_groups.go
+    │   │   │       ├── volumes.go
+    │   │   │       ├── volumes_type.go
+    │   │   │       ├── zones.go
+    │   │   │       └── zones_type.go
+    │   │   ├── go-ini
+    │   │   │   └── ini
+    │   │   │       ├── ini.go
+    │   │   │       ├── LICENSE
+    │   │   │       ├── README.md
+    │   │   │       ├── README_ZH.md
+    │   │   │       └── struct.go
+    │   │   ├── golang
+    │   │   │   └── protobuf
+    │   │   │       ├── AUTHORS
+    │   │   │       ├── CONTRIBUTORS
+    │   │   │       ├── LICENSE
+    │   │   │       └── proto
+    │   │   │           ├── clone.go
+    │   │   │           ├── decode.go
+    │   │   │           ├── encode.go
+    │   │   │           ├── equal.go
+    │   │   │           ├── extensions.go
+    │   │   │           ├── lib.go
+    │   │   │           ├── Makefile
+    │   │   │           ├── message_set.go
+    │   │   │           ├── pointer_reflect.go
+    │   │   │           ├── pointer_unsafe.go
+    │   │   │           ├── properties.go
+    │   │   │           ├── text.go
+    │   │   │           └── text_parser.go
+    │   │   ├── google
+    │   │   │   └── go-querystring
+    │   │   │       ├── LICENSE
+    │   │   │       └── query
+    │   │   │           └── encode.go
+    │   │   ├── intel-go
+    │   │   │   └── cpuid
+    │   │   │       ├── cpuid_amd64.go
+    │   │   │       ├── cpuid.go
+    │   │   │       ├── cpuidlow_amd64.s
+    │   │   │       ├── LICENSE
+    │   │   │       └── README.md
+    │   │   ├── jinzhu
+    │   │   │   └── copier
+    │   │   │       ├── copier.go
+    │   │   │       ├── Guardfile
+    │   │   │       ├── License
+    │   │   │       ├── README.md
+    │   │   │       └── wercker.yml
+    │   │   ├── jmespath
+    │   │   │   └── go-jmespath
+    │   │   │       ├── api.go
+    │   │   │       ├── astnodetype_string.go
+    │   │   │       ├── functions.go
+    │   │   │       ├── interpreter.go
+    │   │   │       ├── lexer.go
+    │   │   │       ├── LICENSE
+    │   │   │       ├── Makefile
+    │   │   │       ├── parser.go
+    │   │   │       ├── README.md
+    │   │   │       ├── toktype_string.go
+    │   │   │       └── util.go
+    │   │   ├── mitchellh
+    │   │   │   └── mapstructure
+    │   │   │       ├── decode_hooks.go
+    │   │   │       ├── error.go
+    │   │   │       ├── LICENSE
+    │   │   │       ├── mapstructure.go
+    │   │   │       └── README.md
+    │   │   ├── pmezard
+    │   │   │   └── go-difflib
+    │   │   │       ├── difflib
+    │   │   │       │   └── difflib.go
+    │   │   │       └── LICENSE
+    │   │   ├── rackspace
+    │   │   │   └── gophercloud
+    │   │   │       ├── auth_options.go
+    │   │   │       ├── auth_results.go
+    │   │   │       ├── CONTRIBUTING.md
+    │   │   │       ├── CONTRIBUTORS.md
+    │   │   │       ├── doc.go
+    │   │   │       ├── endpoint_search.go
+    │   │   │       ├── LICENSE
+    │   │   │       ├── openstack
+    │   │   │       │   ├── auth_env.go
+    │   │   │       │   ├── client.go
+    │   │   │       │   ├── compute
+    │   │   │       │   │   └── v2
+    │   │   │       │   │       ├── extensions
+    │   │   │       │   │       │   ├── floatingip
+    │   │   │       │   │       │   │   ├── doc.go
+    │   │   │       │   │       │   │   ├── fixtures.go
+    │   │   │       │   │       │   │   ├── requests.go
+    │   │   │       │   │       │   │   ├── results.go
+    │   │   │       │   │       │   │   └── urls.go
+    │   │   │       │   │       │   ├── keypairs
+    │   │   │       │   │       │   │   ├── doc.go
+    │   │   │       │   │       │   │   ├── fixtures.go
+    │   │   │       │   │       │   │   ├── requests.go
+    │   │   │       │   │       │   │   ├── results.go
+    │   │   │       │   │       │   │   └── urls.go
+    │   │   │       │   │       │   └── startstop
+    │   │   │       │   │       │       ├── doc.go
+    │   │   │       │   │       │       ├── fixtures.go
+    │   │   │       │   │       │       └── requests.go
+    │   │   │       │   │       ├── flavors
+    │   │   │       │   │       │   ├── doc.go
+    │   │   │       │   │       │   ├── requests.go
+    │   │   │       │   │       │   ├── results.go
+    │   │   │       │   │       │   └── urls.go
+    │   │   │       │   │       ├── images
+    │   │   │       │   │       │   ├── doc.go
+    │   │   │       │   │       │   ├── requests.go
+    │   │   │       │   │       │   ├── results.go
+    │   │   │       │   │       │   └── urls.go
+    │   │   │       │   │       └── servers
+    │   │   │       │   │           ├── doc.go
+    │   │   │       │   │           ├── fixtures.go
+    │   │   │       │   │           ├── requests.go
+    │   │   │       │   │           ├── results.go
+    │   │   │       │   │           ├── urls.go
+    │   │   │       │   │           └── util.go
+    │   │   │       │   ├── endpoint_location.go
+    │   │   │       │   ├── identity
+    │   │   │       │   │   ├── v2
+    │   │   │       │   │   │   ├── tenants
+    │   │   │       │   │   │   │   ├── doc.go
+    │   │   │       │   │   │   │   ├── fixtures.go
+    │   │   │       │   │   │   │   ├── requests.go
+    │   │   │       │   │   │   │   ├── results.go
+    │   │   │       │   │   │   │   └── urls.go
+    │   │   │       │   │   │   └── tokens
+    │   │   │       │   │   │       ├── doc.go
+    │   │   │       │   │   │       ├── errors.go
+    │   │   │       │   │   │       ├── fixtures.go
+    │   │   │       │   │   │       ├── requests.go
+    │   │   │       │   │   │       ├── results.go
+    │   │   │       │   │   │       └── urls.go
+    │   │   │       │   │   └── v3
+    │   │   │       │   │       └── tokens
+    │   │   │       │   │           ├── doc.go
+    │   │   │       │   │           ├── errors.go
+    │   │   │       │   │           ├── requests.go
+    │   │   │       │   │           ├── results.go
+    │   │   │       │   │           └── urls.go
+    │   │   │       │   ├── networking
+    │   │   │       │   │   └── v2
+    │   │   │       │   │       ├── extensions
+    │   │   │       │   │       │   └── layer3
+    │   │   │       │   │       │       └── floatingips
+    │   │   │       │   │       │           ├── requests.go
+    │   │   │       │   │       │           ├── results.go
+    │   │   │       │   │       │           └── urls.go
+    │   │   │       │   │       ├── networks
+    │   │   │       │   │       │   ├── doc.go
+    │   │   │       │   │       │   ├── errors.go
+    │   │   │       │   │       │   ├── requests.go
+    │   │   │       │   │       │   ├── results.go
+    │   │   │       │   │       │   └── urls.go
+    │   │   │       │   │       └── ports
+    │   │   │       │   │           ├── doc.go
+    │   │   │       │   │           ├── errors.go
+    │   │   │       │   │           ├── requests.go
+    │   │   │       │   │           ├── results.go
+    │   │   │       │   │           └── urls.go
+    │   │   │       │   └── utils
+    │   │   │       │       └── choose_version.go
+    │   │   │       ├── pagination
+    │   │   │       │   ├── http.go
+    │   │   │       │   ├── linked.go
+    │   │   │       │   ├── marker.go
+    │   │   │       │   ├── null.go
+    │   │   │       │   ├── pager.go
+    │   │   │       │   ├── pkg.go
+    │   │   │       │   └── single.go
+    │   │   │       ├── params.go
+    │   │   │       ├── provider_client.go
+    │   │   │       ├── rackspace
+    │   │   │       │   ├── auth_env.go
+    │   │   │       │   ├── client.go
+    │   │   │       │   └── identity
+    │   │   │       │       └── v2
+    │   │   │       │           └── tokens
+    │   │   │       │               ├── delegate.go
+    │   │   │       │               └── doc.go
+    │   │   │       ├── README.md
+    │   │   │       ├── results.go
+    │   │   │       ├── service_client.go
+    │   │   │       ├── testhelper
+    │   │   │       │   ├── client
+    │   │   │       │   │   └── fake.go
+    │   │   │       │   ├── convenience.go
+    │   │   │       │   ├── doc.go
+    │   │   │       │   └── http_responses.go
+    │   │   │       ├── UPGRADING.md
+    │   │   │       └── util.go
+    │   │   ├── samalba
+    │   │   │   └── dockerclient
+    │   │   │       ├── auth.go
+    │   │   │       ├── dockerclient.go
+    │   │   │       ├── example_responses.go
+    │   │   │       ├── interface.go
+    │   │   │       ├── LICENSE
+    │   │   │       ├── README.md
+    │   │   │       ├── types.go
+    │   │   │       └── utils.go
+    │   │   ├── sirupsen
+    │   │   │   └── logrus
+    │   │   │       ├── alt_exit.go
+    │   │   │       ├── appveyor.yml
+    │   │   │       ├── CHANGELOG.md
+    │   │   │       ├── doc.go
+    │   │   │       ├── entry.go
+    │   │   │       ├── exported.go
+    │   │   │       ├── formatter.go
+    │   │   │       ├── hooks.go
+    │   │   │       ├── json_formatter.go
+    │   │   │       ├── LICENSE
+    │   │   │       ├── logger.go
+    │   │   │       ├── logrus.go
+    │   │   │       ├── README.md
+    │   │   │       ├── terminal_bsd.go
+    │   │   │       ├── terminal_check_appengine.go
+    │   │   │       ├── terminal_check_notappengine.go
+    │   │   │       ├── terminal_linux.go
+    │   │   │       ├── text_formatter.go
+    │   │   │       └── writer.go
+    │   │   ├── skarademir
+    │   │   │   └── naturalsort
+    │   │   │       ├── LICENSE.md
+    │   │   │       ├── naturalsort.go
+    │   │   │       └── README.md
+    │   │   ├── stretchr
+    │   │   │   ├── objx
+    │   │   │   │   ├── accessors.go
+    │   │   │   │   ├── constants.go
+    │   │   │   │   ├── conversions.go
+    │   │   │   │   ├── doc.go
+    │   │   │   │   ├── LICENSE.md
+    │   │   │   │   ├── map.go
+    │   │   │   │   ├── mutations.go
+    │   │   │   │   ├── README.md
+    │   │   │   │   ├── security.go
+    │   │   │   │   ├── tests.go
+    │   │   │   │   ├── type_specific_codegen.go
+    │   │   │   │   └── value.go
+    │   │   │   └── testify
+    │   │   │       ├── assert
+    │   │   │       │   ├── assertion_forward.go
+    │   │   │       │   ├── assertion_forward.go.tmpl
+    │   │   │       │   ├── assertions.go
+    │   │   │       │   ├── doc.go
+    │   │   │       │   ├── errors.go
+    │   │   │       │   ├── forward_assertions.go
+    │   │   │       │   └── http_assertions.go
+    │   │   │       ├── LICENCE.txt
+    │   │   │       ├── LICENSE
+    │   │   │       └── mock
+    │   │   │           ├── doc.go
+    │   │   │           └── mock.go
+    │   │   ├── tent
+    │   │   │   └── http-link-go
+    │   │   │       ├── LICENSE
+    │   │   │       ├── link.go
+    │   │   │       └── README.md
+    │   │   └── vmware
+    │   │       ├── govcloudair
+    │   │       │   ├── api.go
+    │   │       │   ├── catalog.go
+    │   │       │   ├── catalogitem.go
+    │   │       │   ├── edgegateway.go
+    │   │       │   ├── LICENSE
+    │   │       │   ├── org.go
+    │   │       │   ├── orgvdcnetwork.go
+    │   │       │   ├── Readme.md
+    │   │       │   ├── task.go
+    │   │       │   ├── types
+    │   │       │   │   └── v56
+    │   │       │   │       └── types.go
+    │   │       │   ├── vapp.go
+    │   │       │   ├── vapptemplate.go
+    │   │       │   └── vdc.go
+    │   │       └── govmomi
+    │   │           ├── CHANGELOG.md
+    │   │           ├── client.go
+    │   │           ├── CONTRIBUTING.md
+    │   │           ├── CONTRIBUTORS
+    │   │           ├── find
+    │   │           │   ├── error.go
+    │   │           │   └── finder.go
+    │   │           ├── govc
+    │   │           │   └── test
+    │   │           │       └── license.bats
+    │   │           ├── guest
+    │   │           │   ├── auth_manager.go
+    │   │           │   ├── file_manager.go
+    │   │           │   ├── operations_manager.go
+    │   │           │   └── process_manager.go
+    │   │           ├── LICENSE.txt
+    │   │           ├── list
+    │   │           │   ├── lister.go
+    │   │           │   ├── path.go
+    │   │           │   └── recurser.go
+    │   │           ├── Makefile
+    │   │           ├── object
+    │   │           │   ├── authorization_manager.go
+    │   │           │   ├── cluster_compute_resource.go
+    │   │           │   ├── common.go
+    │   │           │   ├── compute_resource.go
+    │   │           │   ├── custom_fields_manager.go
+    │   │           │   ├── customization_spec_manager.go
+    │   │           │   ├── datacenter.go
+    │   │           │   ├── datastore.go
+    │   │           │   ├── diagnostic_manager.go
+    │   │           │   ├── distributed_virtual_portgroup.go
+    │   │           │   ├── distributed_virtual_switch.go
+    │   │           │   ├── extension_manager.go
+    │   │           │   ├── file_manager.go
+    │   │           │   ├── folder.go
+    │   │           │   ├── history_collector.go
+    │   │           │   ├── host_account_manager.go
+    │   │           │   ├── host_config_manager.go
+    │   │           │   ├── host_datastore_browser.go
+    │   │           │   ├── host_datastore_system.go
+    │   │           │   ├── host_firewall_system.go
+    │   │           │   ├── host_network_system.go
+    │   │           │   ├── host_storage_system.go
+    │   │           │   ├── host_system.go
+    │   │           │   ├── host_virtual_nic_manager.go
+    │   │           │   ├── host_vsan_system.go
+    │   │           │   ├── http_nfc_lease.go
+    │   │           │   ├── list_view.go
+    │   │           │   ├── network.go
+    │   │           │   ├── network_reference.go
+    │   │           │   ├── option_manager.go
+    │   │           │   ├── ovf_manager.go
+    │   │           │   ├── resource_pool.go
+    │   │           │   ├── search_index.go
+    │   │           │   ├── storage_pod.go
+    │   │           │   ├── storage_resource_manager.go
+    │   │           │   ├── task.go
+    │   │           │   ├── types.go
+    │   │           │   ├── virtual_app.go
+    │   │           │   ├── virtual_device_list.go
+    │   │           │   ├── virtual_disk_manager.go
+    │   │           │   ├── virtual_machine.go
+    │   │           │   └── vmware_distributed_virtual_switch.go
+    │   │           ├── property
+    │   │           │   ├── collector.go
+    │   │           │   └── wait.go
+    │   │           ├── README.md
+    │   │           ├── scripts
+    │   │           │   ├── contributors.sh
+    │   │           │   └── license.sh
+    │   │           ├── session
+    │   │           │   ├── keep_alive.go
+    │   │           │   └── manager.go
+    │   │           ├── task
+    │   │           │   ├── error.go
+    │   │           │   └── wait.go
+    │   │           └── vim25
+    │   │               ├── client.go
+    │   │               ├── debug
+    │   │               │   └── debug.go
+    │   │               ├── doc.go
+    │   │               ├── methods
+    │   │               │   ├── internal.go
+    │   │               │   ├── methods.go
+    │   │               │   └── service_content.go
+    │   │               ├── mo
+    │   │               │   ├── ancestors.go
+    │   │               │   ├── entity.go
+    │   │               │   ├── extra.go
+    │   │               │   ├── mo.go
+    │   │               │   ├── reference.go
+    │   │               │   ├── registry.go
+    │   │               │   ├── retrieve.go
+    │   │               │   └── type_info.go
+    │   │               ├── progress
+    │   │               │   ├── aggregator.go
+    │   │               │   ├── doc.go
+    │   │               │   ├── prefix.go
+    │   │               │   ├── reader.go
+    │   │               │   ├── report.go
+    │   │               │   ├── scale.go
+    │   │               │   ├── sinker.go
+    │   │               │   └── tee.go
+    │   │               ├── retry.go
+    │   │               ├── soap
+    │   │               │   ├── client.go
+    │   │               │   ├── debug.go
+    │   │               │   ├── error.go
+    │   │               │   └── soap.go
+    │   │               ├── types
+    │   │               │   ├── base.go
+    │   │               │   ├── enum.go
+    │   │               │   ├── fault.go
+    │   │               │   ├── helpers.go
+    │   │               │   ├── if.go
+    │   │               │   ├── internal.go
+    │   │               │   ├── registry.go
+    │   │               │   └── types.go
+    │   │               └── xml
+    │   │                   ├── extras.go
+    │   │                   ├── LICENSE
+    │   │                   ├── marshal.go
+    │   │                   ├── read.go
+    │   │                   ├── typeinfo.go
+    │   │                   └── xml.go
+    │   ├── golang.org
+    │   │   └── x
+    │   │       ├── crypto
+    │   │       │   ├── AUTHORS
+    │   │       │   ├── CONTRIBUTORS
+    │   │       │   ├── curve25519
+    │   │       │   │   ├── const_amd64.h
+    │   │       │   │   ├── const_amd64.s
+    │   │       │   │   ├── cswap_amd64.s
+    │   │       │   │   ├── curve25519.go
+    │   │       │   │   ├── doc.go
+    │   │       │   │   ├── freeze_amd64.s
+    │   │       │   │   ├── ladderstep_amd64.s
+    │   │       │   │   ├── mont25519_amd64.go
+    │   │       │   │   ├── mul_amd64.s
+    │   │       │   │   └── square_amd64.s
+    │   │       │   ├── ed25519
+    │   │       │   │   ├── ed25519.go
+    │   │       │   │   └── internal
+    │   │       │   │       └── edwards25519
+    │   │       │   │           ├── const.go
+    │   │       │   │           └── edwards25519.go
+    │   │       │   ├── LICENSE
+    │   │       │   ├── PATENTS
+    │   │       │   └── ssh
+    │   │       │       ├── buffer.go
+    │   │       │       ├── certs.go
+    │   │       │       ├── channel.go
+    │   │       │       ├── cipher.go
+    │   │       │       ├── client_auth.go
+    │   │       │       ├── client.go
+    │   │       │       ├── common.go
+    │   │       │       ├── connection.go
+    │   │       │       ├── doc.go
+    │   │       │       ├── handshake.go
+    │   │       │       ├── kex.go
+    │   │       │       ├── keys.go
+    │   │       │       ├── mac.go
+    │   │       │       ├── messages.go
+    │   │       │       ├── mux.go
+    │   │       │       ├── server.go
+    │   │       │       ├── session.go
+    │   │       │       ├── streamlocal.go
+    │   │       │       ├── tcpip.go
+    │   │       │       ├── terminal
+    │   │       │       │   ├── terminal.go
+    │   │       │       │   ├── util_bsd.go
+    │   │       │       │   ├── util.go
+    │   │       │       │   ├── util_linux.go
+    │   │       │       │   ├── util_plan9.go
+    │   │       │       │   ├── util_solaris.go
+    │   │       │       │   └── util_windows.go
+    │   │       │       └── transport.go
+    │   │       ├── net
+    │   │       │   ├── AUTHORS
+    │   │       │   ├── context
+    │   │       │   │   ├── context.go
+    │   │       │   │   └── ctxhttp
+    │   │       │   │       ├── cancelreq.go
+    │   │       │   │       ├── cancelreq_go14.go
+    │   │       │   │       └── ctxhttp.go
+    │   │       │   ├── CONTRIBUTORS
+    │   │       │   ├── LICENSE
+    │   │       │   └── PATENTS
+    │   │       ├── oauth2
+    │   │       │   ├── AUTHORS
+    │   │       │   ├── client_appengine.go
+    │   │       │   ├── CONTRIBUTING.md
+    │   │       │   ├── CONTRIBUTORS
+    │   │       │   ├── google
+    │   │       │   │   ├── appengine.go
+    │   │       │   │   ├── appengine_hook.go
+    │   │       │   │   ├── appenginevm_hook.go
+    │   │       │   │   ├── default.go
+    │   │       │   │   ├── google.go
+    │   │       │   │   ├── jwt.go
+    │   │       │   │   └── sdk.go
+    │   │       │   ├── internal
+    │   │       │   │   ├── oauth2.go
+    │   │       │   │   ├── token.go
+    │   │       │   │   └── transport.go
+    │   │       │   ├── jws
+    │   │       │   │   └── jws.go
+    │   │       │   ├── jwt
+    │   │       │   │   └── jwt.go
+    │   │       │   ├── LICENSE
+    │   │       │   ├── oauth2.go
+    │   │       │   ├── README.md
+    │   │       │   ├── token.go
+    │   │       │   └── transport.go
+    │   │       └── sys
+    │   │           ├── AUTHORS
+    │   │           ├── CONTRIBUTORS
+    │   │           ├── LICENSE
+    │   │           ├── PATENTS
+    │   │           ├── unix
+    │   │           │   ├── affinity_linux.go
+    │   │           │   ├── asm_darwin_386.s
+    │   │           │   ├── asm_darwin_amd64.s
+    │   │           │   ├── asm_darwin_arm64.s
+    │   │           │   ├── asm_darwin_arm.s
+    │   │           │   ├── asm_dragonfly_amd64.s
+    │   │           │   ├── asm_freebsd_386.s
+    │   │           │   ├── asm_freebsd_amd64.s
+    │   │           │   ├── asm_freebsd_arm.s
+    │   │           │   ├── asm_linux_386.s
+    │   │           │   ├── asm_linux_amd64.s
+    │   │           │   ├── asm_linux_arm64.s
+    │   │           │   ├── asm_linux_arm.s
+    │   │           │   ├── asm_linux_mips64x.s
+    │   │           │   ├── asm_linux_mipsx.s
+    │   │           │   ├── asm_linux_ppc64x.s
+    │   │           │   ├── asm_linux_s390x.s
+    │   │           │   ├── asm_netbsd_386.s
+    │   │           │   ├── asm_netbsd_amd64.s
+    │   │           │   ├── asm_netbsd_arm.s
+    │   │           │   ├── asm_openbsd_386.s
+    │   │           │   ├── asm_openbsd_amd64.s
+    │   │           │   ├── asm_openbsd_arm.s
+    │   │           │   ├── asm_solaris_amd64.s
+    │   │           │   ├── bluetooth_linux.go
+    │   │           │   ├── cap_freebsd.go
+    │   │           │   ├── constants.go
+    │   │           │   ├── dev_darwin.go
+    │   │           │   ├── dev_dragonfly.go
+    │   │           │   ├── dev_freebsd.go
+    │   │           │   ├── dev_linux.go
+    │   │           │   ├── dev_netbsd.go
+    │   │           │   ├── dev_openbsd.go
+    │   │           │   ├── dirent.go
+    │   │           │   ├── endian_big.go
+    │   │           │   ├── endian_little.go
+    │   │           │   ├── env_unix.go
+    │   │           │   ├── errors_freebsd_386.go
+    │   │           │   ├── errors_freebsd_amd64.go
+    │   │           │   ├── errors_freebsd_arm.go
+    │   │           │   ├── flock.go
+    │   │           │   ├── flock_linux_32bit.go
+    │   │           │   ├── gccgo_c.c
+    │   │           │   ├── gccgo.go
+    │   │           │   ├── gccgo_linux_amd64.go
+    │   │           │   ├── mkall.sh
+    │   │           │   ├── mkerrors.sh
+    │   │           │   ├── mkpost.go
+    │   │           │   ├── mksyscall.pl
+    │   │           │   ├── mksyscall_solaris.pl
+    │   │           │   ├── mksysctl_openbsd.pl
+    │   │           │   ├── mksysnum_darwin.pl
+    │   │           │   ├── mksysnum_dragonfly.pl
+    │   │           │   ├── mksysnum_freebsd.pl
+    │   │           │   ├── mksysnum_netbsd.pl
+    │   │           │   ├── mksysnum_openbsd.pl
+    │   │           │   ├── openbsd_pledge.go
+    │   │           │   ├── pagesize_unix.go
+    │   │           │   ├── race0.go
+    │   │           │   ├── race.go
+    │   │           │   ├── README.md
+    │   │           │   ├── sockcmsg_linux.go
+    │   │           │   ├── sockcmsg_unix.go
+    │   │           │   ├── str.go
+    │   │           │   ├── syscall_bsd.go
+    │   │           │   ├── syscall_darwin_386.go
+    │   │           │   ├── syscall_darwin_amd64.go
+    │   │           │   ├── syscall_darwin_arm64.go
+    │   │           │   ├── syscall_darwin_arm.go
+    │   │           │   ├── syscall_darwin.go
+    │   │           │   ├── syscall_dragonfly_amd64.go
+    │   │           │   ├── syscall_dragonfly.go
+    │   │           │   ├── syscall_freebsd_386.go
+    │   │           │   ├── syscall_freebsd_amd64.go
+    │   │           │   ├── syscall_freebsd_arm.go
+    │   │           │   ├── syscall_freebsd.go
+    │   │           │   ├── syscall.go
+    │   │           │   ├── syscall_linux_386.go
+    │   │           │   ├── syscall_linux_amd64_gc.go
+    │   │           │   ├── syscall_linux_amd64.go
+    │   │           │   ├── syscall_linux_arm64.go
+    │   │           │   ├── syscall_linux_arm.go
+    │   │           │   ├── syscall_linux_gc.go
+    │   │           │   ├── syscall_linux.go
+    │   │           │   ├── syscall_linux_mips64x.go
+    │   │           │   ├── syscall_linux_mipsx.go
+    │   │           │   ├── syscall_linux_ppc64x.go
+    │   │           │   ├── syscall_linux_s390x.go
+    │   │           │   ├── syscall_linux_sparc64.go
+    │   │           │   ├── syscall_netbsd_386.go
+    │   │           │   ├── syscall_netbsd_amd64.go
+    │   │           │   ├── syscall_netbsd_arm.go
+    │   │           │   ├── syscall_netbsd.go
+    │   │           │   ├── syscall_openbsd_386.go
+    │   │           │   ├── syscall_openbsd_amd64.go
+    │   │           │   ├── syscall_openbsd_arm.go
+    │   │           │   ├── syscall_openbsd.go
+    │   │           │   ├── syscall_solaris_amd64.go
+    │   │           │   ├── syscall_solaris.go
+    │   │           │   ├── syscall_unix_gc.go
+    │   │           │   ├── syscall_unix.go
+    │   │           │   ├── timestruct.go
+    │   │           │   ├── types_darwin.go
+    │   │           │   ├── types_dragonfly.go
+    │   │           │   ├── types_freebsd.go
+    │   │           │   ├── types_netbsd.go
+    │   │           │   ├── types_openbsd.go
+    │   │           │   ├── types_solaris.go
+    │   │           │   ├── zerrors_darwin_386.go
+    │   │           │   ├── zerrors_darwin_amd64.go
+    │   │           │   ├── zerrors_darwin_arm64.go
+    │   │           │   ├── zerrors_darwin_arm.go
+    │   │           │   ├── zerrors_dragonfly_amd64.go
+    │   │           │   ├── zerrors_freebsd_386.go
+    │   │           │   ├── zerrors_freebsd_amd64.go
+    │   │           │   ├── zerrors_freebsd_arm.go
+    │   │           │   ├── zerrors_linux_386.go
+    │   │           │   ├── zerrors_linux_amd64.go
+    │   │           │   ├── zerrors_linux_arm64.go
+    │   │           │   ├── zerrors_linux_arm.go
+    │   │           │   ├── zerrors_linux_mips64.go
+    │   │           │   ├── zerrors_linux_mips64le.go
+    │   │           │   ├── zerrors_linux_mips.go
+    │   │           │   ├── zerrors_linux_mipsle.go
+    │   │           │   ├── zerrors_linux_ppc64.go
+    │   │           │   ├── zerrors_linux_ppc64le.go
+    │   │           │   ├── zerrors_linux_s390x.go
+    │   │           │   ├── zerrors_linux_sparc64.go
+    │   │           │   ├── zerrors_netbsd_386.go
+    │   │           │   ├── zerrors_netbsd_amd64.go
+    │   │           │   ├── zerrors_netbsd_arm.go
+    │   │           │   ├── zerrors_openbsd_386.go
+    │   │           │   ├── zerrors_openbsd_amd64.go
+    │   │           │   ├── zerrors_openbsd_arm.go
+    │   │           │   ├── zerrors_solaris_amd64.go
+    │   │           │   ├── zptrace386_linux.go
+    │   │           │   ├── zptracearm_linux.go
+    │   │           │   ├── zptracemipsle_linux.go
+    │   │           │   ├── zptracemips_linux.go
+    │   │           │   ├── zsyscall_darwin_386.go
+    │   │           │   ├── zsyscall_darwin_amd64.go
+    │   │           │   ├── zsyscall_darwin_arm64.go
+    │   │           │   ├── zsyscall_darwin_arm.go
+    │   │           │   ├── zsyscall_dragonfly_amd64.go
+    │   │           │   ├── zsyscall_freebsd_386.go
+    │   │           │   ├── zsyscall_freebsd_amd64.go
+    │   │           │   ├── zsyscall_freebsd_arm.go
+    │   │           │   ├── zsyscall_linux_386.go
+    │   │           │   ├── zsyscall_linux_amd64.go
+    │   │           │   ├── zsyscall_linux_arm64.go
+    │   │           │   ├── zsyscall_linux_arm.go
+    │   │           │   ├── zsyscall_linux_mips64.go
+    │   │           │   ├── zsyscall_linux_mips64le.go
+    │   │           │   ├── zsyscall_linux_mips.go
+    │   │           │   ├── zsyscall_linux_mipsle.go
+    │   │           │   ├── zsyscall_linux_ppc64.go
+    │   │           │   ├── zsyscall_linux_ppc64le.go
+    │   │           │   ├── zsyscall_linux_s390x.go
+    │   │           │   ├── zsyscall_linux_sparc64.go
+    │   │           │   ├── zsyscall_netbsd_386.go
+    │   │           │   ├── zsyscall_netbsd_amd64.go
+    │   │           │   ├── zsyscall_netbsd_arm.go
+    │   │           │   ├── zsyscall_openbsd_386.go
+    │   │           │   ├── zsyscall_openbsd_amd64.go
+    │   │           │   ├── zsyscall_openbsd_arm.go
+    │   │           │   ├── zsyscall_solaris_amd64.go
+    │   │           │   ├── zsysctl_openbsd_386.go
+    │   │           │   ├── zsysctl_openbsd_amd64.go
+    │   │           │   ├── zsysctl_openbsd_arm.go
+    │   │           │   ├── zsysnum_darwin_386.go
+    │   │           │   ├── zsysnum_darwin_amd64.go
+    │   │           │   ├── zsysnum_darwin_arm64.go
+    │   │           │   ├── zsysnum_darwin_arm.go
+    │   │           │   ├── zsysnum_dragonfly_amd64.go
+    │   │           │   ├── zsysnum_freebsd_386.go
+    │   │           │   ├── zsysnum_freebsd_amd64.go
+    │   │           │   ├── zsysnum_freebsd_arm.go
+    │   │           │   ├── zsysnum_linux_386.go
+    │   │           │   ├── zsysnum_linux_amd64.go
+    │   │           │   ├── zsysnum_linux_arm64.go
+    │   │           │   ├── zsysnum_linux_arm.go
+    │   │           │   ├── zsysnum_linux_mips64.go
+    │   │           │   ├── zsysnum_linux_mips64le.go
+    │   │           │   ├── zsysnum_linux_mips.go
+    │   │           │   ├── zsysnum_linux_mipsle.go
+    │   │           │   ├── zsysnum_linux_ppc64.go
+    │   │           │   ├── zsysnum_linux_ppc64le.go
+    │   │           │   ├── zsysnum_linux_s390x.go
+    │   │           │   ├── zsysnum_linux_sparc64.go
+    │   │           │   ├── zsysnum_netbsd_386.go
+    │   │           │   ├── zsysnum_netbsd_amd64.go
+    │   │           │   ├── zsysnum_netbsd_arm.go
+    │   │           │   ├── zsysnum_openbsd_386.go
+    │   │           │   ├── zsysnum_openbsd_amd64.go
+    │   │           │   ├── zsysnum_openbsd_arm.go
+    │   │           │   ├── ztypes_darwin_386.go
+    │   │           │   ├── ztypes_darwin_amd64.go
+    │   │           │   ├── ztypes_darwin_arm64.go
+    │   │           │   ├── ztypes_darwin_arm.go
+    │   │           │   ├── ztypes_dragonfly_amd64.go
+    │   │           │   ├── ztypes_freebsd_386.go
+    │   │           │   ├── ztypes_freebsd_amd64.go
+    │   │           │   ├── ztypes_freebsd_arm.go
+    │   │           │   ├── ztypes_linux_386.go
+    │   │           │   ├── ztypes_linux_amd64.go
+    │   │           │   ├── ztypes_linux_arm64.go
+    │   │           │   ├── ztypes_linux_arm.go
+    │   │           │   ├── ztypes_linux_mips64.go
+    │   │           │   ├── ztypes_linux_mips64le.go
+    │   │           │   ├── ztypes_linux_mips.go
+    │   │           │   ├── ztypes_linux_mipsle.go
+    │   │           │   ├── ztypes_linux_ppc64.go
+    │   │           │   ├── ztypes_linux_ppc64le.go
+    │   │           │   ├── ztypes_linux_s390x.go
+    │   │           │   ├── ztypes_linux_sparc64.go
+    │   │           │   ├── ztypes_netbsd_386.go
+    │   │           │   ├── ztypes_netbsd_amd64.go
+    │   │           │   ├── ztypes_netbsd_arm.go
+    │   │           │   ├── ztypes_openbsd_386.go
+    │   │           │   ├── ztypes_openbsd_amd64.go
+    │   │           │   ├── ztypes_openbsd_arm.go
+    │   │           │   └── ztypes_solaris_amd64.go
+    │   │           └── windows
+    │   │               ├── asm_windows_386.s
+    │   │               ├── asm_windows_amd64.s
+    │   │               ├── dll_windows.go
+    │   │               ├── env_windows.go
+    │   │               ├── eventlog.go
+    │   │               ├── exec_windows.go
+    │   │               ├── memory_windows.go
+    │   │               ├── mksyscall.go
+    │   │               ├── race0.go
+    │   │               ├── race.go
+    │   │               ├── registry
+    │   │               │   ├── key.go
+    │   │               │   ├── mksyscall.go
+    │   │               │   ├── syscall.go
+    │   │               │   ├── value.go
+    │   │               │   └── zsyscall_windows.go
+    │   │               ├── security_windows.go
+    │   │               ├── service.go
+    │   │               ├── str.go
+    │   │               ├── syscall.go
+    │   │               ├── syscall_windows.go
+    │   │               ├── types_windows_386.go
+    │   │               ├── types_windows_amd64.go
+    │   │               ├── types_windows.go
+    │   │               └── zsyscall_windows.go
+    │   └── google.golang.org
+    │       ├── api
+    │       │   ├── AUTHORS
+    │       │   ├── compute
+    │       │   │   └── v1
+    │       │   │       ├── compute-api.json
+    │       │   │       └── compute-gen.go
+    │       │   ├── CONTRIBUTORS
+    │       │   ├── gensupport
+    │       │   │   ├── backoff.go
+    │       │   │   ├── buffer.go
+    │       │   │   ├── doc.go
+    │       │   │   ├── go18.go
+    │       │   │   ├── header.go
+    │       │   │   ├── jsonfloat.go
+    │       │   │   ├── json.go
+    │       │   │   ├── media.go
+    │       │   │   ├── not_go18.go
+    │       │   │   ├── params.go
+    │       │   │   ├── resumable.go
+    │       │   │   ├── retry.go
+    │       │   │   └── send.go
+    │       │   ├── googleapi
+    │       │   │   ├── googleapi.go
+    │       │   │   ├── internal
+    │       │   │   │   └── uritemplates
+    │       │   │   │       ├── LICENSE
+    │       │   │   │       ├── uritemplates.go
+    │       │   │   │       └── utils.go
+    │       │   │   └── types.go
+    │       │   └── LICENSE
+    │       ├── appengine
+    │       │   ├── appengine.go
+    │       │   ├── appengine_vm.go
+    │       │   ├── errors.go
+    │       │   ├── identity.go
+    │       │   ├── internal
+    │       │   │   ├── api_classic.go
+    │       │   │   ├── api_common.go
+    │       │   │   ├── api.go
+    │       │   │   ├── app_identity
+    │       │   │   │   ├── app_identity_service.pb.go
+    │       │   │   │   └── app_identity_service.proto
+    │       │   │   ├── app_id.go
+    │       │   │   ├── base
+    │       │   │   │   ├── api_base.pb.go
+    │       │   │   │   └── api_base.proto
+    │       │   │   ├── datastore
+    │       │   │   │   ├── datastore_v3.pb.go
+    │       │   │   │   └── datastore_v3.proto
+    │       │   │   ├── identity_classic.go
+    │       │   │   ├── identity.go
+    │       │   │   ├── identity_vm.go
+    │       │   │   ├── internal.go
+    │       │   │   ├── log
+    │       │   │   │   ├── log_service.pb.go
+    │       │   │   │   └── log_service.proto
+    │       │   │   ├── metadata.go
+    │       │   │   ├── modules
+    │       │   │   │   ├── modules_service.pb.go
+    │       │   │   │   └── modules_service.proto
+    │       │   │   ├── net.go
+    │       │   │   ├── regen.sh
+    │       │   │   ├── remote_api
+    │       │   │   │   ├── remote_api.pb.go
+    │       │   │   │   └── remote_api.proto
+    │       │   │   ├── transaction.go
+    │       │   │   └── urlfetch
+    │       │   │       ├── urlfetch_service.pb.go
+    │       │   │       └── urlfetch_service.proto
+    │       │   ├── LICENSE
+    │       │   ├── namespace.go
+    │       │   ├── README.md
+    │       │   ├── timeout.go
+    │       │   └── urlfetch
+    │       │       └── urlfetch.go
+    │       └── cloud
+    │           ├── AUTHORS
+    │           ├── compute
+    │           │   └── metadata
+    │           │       └── metadata.go
+    │           ├── CONTRIBUTORS
+    │           ├── internal
+    │           │   └── cloud.go
+    │           └── LICENSE
+    └── version
+        └── version.go
+
+297 directories, 1396 files

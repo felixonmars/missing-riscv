@@ -1,0 +1,566 @@
+src
+├── cargo-guppy-cargo-hakari-0.9.14
+│   ├── cargo-guppy
+│   │   ├── Cargo.toml
+│   │   ├── README.md
+│   │   ├── README.tpl
+│   │   └── src
+│   │       ├── core.rs
+│   │       ├── diff.rs
+│   │       ├── lib.rs
+│   │       ├── main.rs
+│   │       └── mv.rs
+│   ├── Cargo.lock
+│   ├── Cargo.toml
+│   ├── clippy.toml
+│   ├── CODE_OF_CONDUCT.md
+│   ├── CONTRIBUTING.md
+│   ├── fixtures
+│   │   ├── Cargo.toml
+│   │   ├── determinator-paths
+│   │   │   ├── git-diff.out
+│   │   │   ├── guppy-linux.json
+│   │   │   ├── guppy-win.json
+│   │   │   └── README.md
+│   │   ├── guppy
+│   │   │   ├── hakari
+│   │   │   │   ├── metadata_guppy_44b62fa-0.toml
+│   │   │   │   ├── metadata_guppy_44b62fa-1.toml
+│   │   │   │   ├── metadata_guppy_44b62fa-2.toml
+│   │   │   │   ├── metadata_guppy_44b62fa-3.toml
+│   │   │   │   ├── metadata_guppy_78cb7e8-0.toml
+│   │   │   │   ├── metadata_guppy_78cb7e8-1.toml
+│   │   │   │   ├── metadata_guppy_78cb7e8-2.toml
+│   │   │   │   ├── metadata_guppy_78cb7e8-3.toml
+│   │   │   │   ├── metadata_guppy_869476c-0.toml
+│   │   │   │   ├── metadata_guppy_869476c-1.toml
+│   │   │   │   ├── metadata_guppy_869476c-2.toml
+│   │   │   │   ├── metadata_guppy_869476c-3.toml
+│   │   │   │   ├── metadata_guppy_c9b4f76-0.toml
+│   │   │   │   ├── metadata_guppy_c9b4f76-1.toml
+│   │   │   │   ├── metadata_guppy_c9b4f76-2.toml
+│   │   │   │   └── metadata_guppy_c9b4f76-3.toml
+│   │   │   ├── metadata_guppy_44b62fa.json
+│   │   │   ├── metadata_guppy_78cb7e8.json
+│   │   │   ├── metadata_guppy_869476c.json
+│   │   │   ├── metadata_guppy_c9b4f76.json
+│   │   │   ├── package-rules.toml
+│   │   │   ├── path-rules.toml
+│   │   │   └── summaries
+│   │   │       ├── metadata_guppy_44b62fa-0.toml
+│   │   │       ├── metadata_guppy_44b62fa-1.toml
+│   │   │       ├── metadata_guppy_44b62fa-2.toml
+│   │   │       ├── metadata_guppy_44b62fa-3.toml
+│   │   │       ├── metadata_guppy_44b62fa-4.toml
+│   │   │       ├── metadata_guppy_44b62fa-5.toml
+│   │   │       ├── metadata_guppy_44b62fa-6.toml
+│   │   │       ├── metadata_guppy_44b62fa-7.toml
+│   │   │       ├── metadata_guppy_78cb7e8-0.toml
+│   │   │       ├── metadata_guppy_78cb7e8-1.toml
+│   │   │       ├── metadata_guppy_78cb7e8-2.toml
+│   │   │       ├── metadata_guppy_78cb7e8-3.toml
+│   │   │       ├── metadata_guppy_78cb7e8-4.toml
+│   │   │       ├── metadata_guppy_78cb7e8-5.toml
+│   │   │       ├── metadata_guppy_78cb7e8-6.toml
+│   │   │       ├── metadata_guppy_78cb7e8-7.toml
+│   │   │       ├── metadata_guppy_869476c-0.toml
+│   │   │       ├── metadata_guppy_869476c-1.toml
+│   │   │       ├── metadata_guppy_869476c-2.toml
+│   │   │       ├── metadata_guppy_869476c-3.toml
+│   │   │       ├── metadata_guppy_869476c-4.toml
+│   │   │       ├── metadata_guppy_869476c-5.toml
+│   │   │       ├── metadata_guppy_869476c-6.toml
+│   │   │       ├── metadata_guppy_869476c-7.toml
+│   │   │       ├── metadata_guppy_c9b4f76-0.toml
+│   │   │       ├── metadata_guppy_c9b4f76-1.toml
+│   │   │       ├── metadata_guppy_c9b4f76-2.toml
+│   │   │       ├── metadata_guppy_c9b4f76-3.toml
+│   │   │       ├── metadata_guppy_c9b4f76-4.toml
+│   │   │       ├── metadata_guppy_c9b4f76-5.toml
+│   │   │       ├── metadata_guppy_c9b4f76-6.toml
+│   │   │       └── metadata_guppy_c9b4f76-7.toml
+│   │   ├── invalid
+│   │   │   ├── build_targets_duplicate_lib.json
+│   │   │   ├── build_targets_empty_kinds.json
+│   │   │   ├── build_targets_non_bin.json
+│   │   │   ├── duplicate_workspace_names.json
+│   │   │   └── optional_dev_dep.json
+│   │   ├── large
+│   │   │   ├── hakari
+│   │   │   │   ├── metadata_libra-0.toml
+│   │   │   │   ├── metadata_libra-1.toml
+│   │   │   │   ├── metadata_libra-2.toml
+│   │   │   │   ├── metadata_libra-3.toml
+│   │   │   │   ├── metadata_libra_9ffd93b-0.toml
+│   │   │   │   ├── metadata_libra_9ffd93b-1.toml
+│   │   │   │   ├── metadata_libra_9ffd93b-2.toml
+│   │   │   │   ├── metadata_libra_9ffd93b-3.toml
+│   │   │   │   ├── metadata_libra_f0091a4-0.toml
+│   │   │   │   ├── metadata_libra_f0091a4-1.toml
+│   │   │   │   ├── metadata_libra_f0091a4-2.toml
+│   │   │   │   └── metadata_libra_f0091a4-3.toml
+│   │   │   ├── metadata_libra_9ffd93b.json
+│   │   │   ├── metadata_libra_f0091a4.json
+│   │   │   ├── metadata_libra.json
+│   │   │   └── summaries
+│   │   │       ├── metadata_libra-0.toml
+│   │   │       ├── metadata_libra-1.toml
+│   │   │       ├── metadata_libra-2.toml
+│   │   │       ├── metadata_libra-3.toml
+│   │   │       ├── metadata_libra-4.toml
+│   │   │       ├── metadata_libra-5.toml
+│   │   │       ├── metadata_libra-6.toml
+│   │   │       ├── metadata_libra-7.toml
+│   │   │       ├── metadata_libra_9ffd93b-0.toml
+│   │   │       ├── metadata_libra_9ffd93b-1.toml
+│   │   │       ├── metadata_libra_9ffd93b-2.toml
+│   │   │       ├── metadata_libra_9ffd93b-3.toml
+│   │   │       ├── metadata_libra_9ffd93b-4.toml
+│   │   │       ├── metadata_libra_9ffd93b-5.toml
+│   │   │       ├── metadata_libra_9ffd93b-6.toml
+│   │   │       ├── metadata_libra_9ffd93b-7.toml
+│   │   │       ├── metadata_libra_f0091a4-0.toml
+│   │   │       ├── metadata_libra_f0091a4-1.toml
+│   │   │       ├── metadata_libra_f0091a4-2.toml
+│   │   │       ├── metadata_libra_f0091a4-3.toml
+│   │   │       ├── metadata_libra_f0091a4-4.toml
+│   │   │       ├── metadata_libra_f0091a4-5.toml
+│   │   │       ├── metadata_libra_f0091a4-6.toml
+│   │   │       └── metadata_libra_f0091a4-7.toml
+│   │   ├── README.md
+│   │   ├── small
+│   │   │   ├── alternate-registries.json
+│   │   │   ├── builddep.json
+│   │   │   ├── hakari
+│   │   │   │   ├── metadata1-0.toml
+│   │   │   │   ├── metadata1-1.toml
+│   │   │   │   ├── metadata1-2.toml
+│   │   │   │   ├── metadata1-3.toml
+│   │   │   │   ├── metadata2-0.toml
+│   │   │   │   ├── metadata2-1.toml
+│   │   │   │   ├── metadata2-2.toml
+│   │   │   │   ├── metadata2-3.toml
+│   │   │   │   ├── metadata_alternate_registries-0.toml
+│   │   │   │   ├── metadata_alternate_registries-1.toml
+│   │   │   │   ├── metadata_alternate_registries-2.toml
+│   │   │   │   ├── metadata_alternate_registries-3.toml
+│   │   │   │   ├── metadata_builddep-0.toml
+│   │   │   │   ├── metadata_builddep-1.toml
+│   │   │   │   ├── metadata_builddep-2.toml
+│   │   │   │   ├── metadata_builddep-3.toml
+│   │   │   │   ├── metadata_build_targets1-0.toml
+│   │   │   │   ├── metadata_build_targets1-1.toml
+│   │   │   │   ├── metadata_build_targets1-2.toml
+│   │   │   │   ├── metadata_build_targets1-3.toml
+│   │   │   │   ├── metadata_cycle1-0.toml
+│   │   │   │   ├── metadata_cycle1-1.toml
+│   │   │   │   ├── metadata_cycle1-2.toml
+│   │   │   │   ├── metadata_cycle1-3.toml
+│   │   │   │   ├── metadata_cycle2-0.toml
+│   │   │   │   ├── metadata_cycle2-1.toml
+│   │   │   │   ├── metadata_cycle2-2.toml
+│   │   │   │   ├── metadata_cycle2-3.toml
+│   │   │   │   ├── metadata_cycle_features-0.toml
+│   │   │   │   ├── metadata_cycle_features-1.toml
+│   │   │   │   ├── metadata_cycle_features-2.toml
+│   │   │   │   ├── metadata_cycle_features-3.toml
+│   │   │   │   ├── metadata_dups-0.toml
+│   │   │   │   ├── metadata_dups-1.toml
+│   │   │   │   ├── metadata_dups-2.toml
+│   │   │   │   ├── metadata_dups-3.toml
+│   │   │   │   ├── metadata_proc_macro1-0.toml
+│   │   │   │   ├── metadata_proc_macro1-1.toml
+│   │   │   │   ├── metadata_proc_macro1-2.toml
+│   │   │   │   ├── metadata_proc_macro1-3.toml
+│   │   │   │   ├── metadata_targets1-0.toml
+│   │   │   │   ├── metadata_targets1-1.toml
+│   │   │   │   ├── metadata_targets1-2.toml
+│   │   │   │   ├── metadata_targets1-3.toml
+│   │   │   │   ├── metadata_weak_namespaced_features-0.toml
+│   │   │   │   ├── metadata_weak_namespaced_features-1.toml
+│   │   │   │   ├── metadata_weak_namespaced_features-2.toml
+│   │   │   │   └── metadata_weak_namespaced_features-3.toml
+│   │   │   ├── metadata1.json
+│   │   │   ├── metadata2.json
+│   │   │   ├── metadata_build_targets1.json
+│   │   │   ├── metadata_cycle1.json
+│   │   │   ├── metadata_cycle2.json
+│   │   │   ├── metadata_cycle_features.json
+│   │   │   ├── metadata_dups.json
+│   │   │   ├── metadata_proc_macro1.json
+│   │   │   ├── metadata_targets1.json
+│   │   │   ├── summaries
+│   │   │   │   ├── metadata1-0.toml
+│   │   │   │   ├── metadata1-1.toml
+│   │   │   │   ├── metadata1-2.toml
+│   │   │   │   ├── metadata1-3.toml
+│   │   │   │   ├── metadata1-4.toml
+│   │   │   │   ├── metadata1-5.toml
+│   │   │   │   ├── metadata1-6.toml
+│   │   │   │   ├── metadata1-7.toml
+│   │   │   │   ├── metadata2-0.toml
+│   │   │   │   ├── metadata2-1.toml
+│   │   │   │   ├── metadata2-2.toml
+│   │   │   │   ├── metadata2-3.toml
+│   │   │   │   ├── metadata2-4.toml
+│   │   │   │   ├── metadata2-5.toml
+│   │   │   │   ├── metadata2-6.toml
+│   │   │   │   ├── metadata2-7.toml
+│   │   │   │   ├── metadata_alternate_registries-0.toml
+│   │   │   │   ├── metadata_alternate_registries-1.toml
+│   │   │   │   ├── metadata_alternate_registries-2.toml
+│   │   │   │   ├── metadata_alternate_registries-3.toml
+│   │   │   │   ├── metadata_alternate_registries-4.toml
+│   │   │   │   ├── metadata_alternate_registries-5.toml
+│   │   │   │   ├── metadata_alternate_registries-6.toml
+│   │   │   │   ├── metadata_alternate_registries-7.toml
+│   │   │   │   ├── metadata_builddep-0.toml
+│   │   │   │   ├── metadata_builddep-1.toml
+│   │   │   │   ├── metadata_builddep-2.toml
+│   │   │   │   ├── metadata_builddep-3.toml
+│   │   │   │   ├── metadata_builddep-4.toml
+│   │   │   │   ├── metadata_builddep-5.toml
+│   │   │   │   ├── metadata_builddep-6.toml
+│   │   │   │   ├── metadata_builddep-7.toml
+│   │   │   │   ├── metadata_build_targets1-0.toml
+│   │   │   │   ├── metadata_build_targets1-1.toml
+│   │   │   │   ├── metadata_build_targets1-2.toml
+│   │   │   │   ├── metadata_build_targets1-3.toml
+│   │   │   │   ├── metadata_build_targets1-4.toml
+│   │   │   │   ├── metadata_build_targets1-5.toml
+│   │   │   │   ├── metadata_build_targets1-6.toml
+│   │   │   │   ├── metadata_build_targets1-7.toml
+│   │   │   │   ├── metadata_cycle1-0.toml
+│   │   │   │   ├── metadata_cycle1-1.toml
+│   │   │   │   ├── metadata_cycle1-2.toml
+│   │   │   │   ├── metadata_cycle1-3.toml
+│   │   │   │   ├── metadata_cycle1-4.toml
+│   │   │   │   ├── metadata_cycle1-5.toml
+│   │   │   │   ├── metadata_cycle1-6.toml
+│   │   │   │   ├── metadata_cycle1-7.toml
+│   │   │   │   ├── metadata_cycle2-0.toml
+│   │   │   │   ├── metadata_cycle2-1.toml
+│   │   │   │   ├── metadata_cycle2-2.toml
+│   │   │   │   ├── metadata_cycle2-3.toml
+│   │   │   │   ├── metadata_cycle2-4.toml
+│   │   │   │   ├── metadata_cycle2-5.toml
+│   │   │   │   ├── metadata_cycle2-6.toml
+│   │   │   │   ├── metadata_cycle2-7.toml
+│   │   │   │   ├── metadata_cycle_features-0.toml
+│   │   │   │   ├── metadata_cycle_features-1.toml
+│   │   │   │   ├── metadata_cycle_features-2.toml
+│   │   │   │   ├── metadata_cycle_features-3.toml
+│   │   │   │   ├── metadata_cycle_features-4.toml
+│   │   │   │   ├── metadata_cycle_features-5.toml
+│   │   │   │   ├── metadata_cycle_features-6.toml
+│   │   │   │   ├── metadata_cycle_features-7.toml
+│   │   │   │   ├── metadata_dups-0.toml
+│   │   │   │   ├── metadata_dups-1.toml
+│   │   │   │   ├── metadata_dups-2.toml
+│   │   │   │   ├── metadata_dups-3.toml
+│   │   │   │   ├── metadata_dups-4.toml
+│   │   │   │   ├── metadata_dups-5.toml
+│   │   │   │   ├── metadata_dups-6.toml
+│   │   │   │   ├── metadata_dups-7.toml
+│   │   │   │   ├── metadata_proc_macro1-0.toml
+│   │   │   │   ├── metadata_proc_macro1-1.toml
+│   │   │   │   ├── metadata_proc_macro1-2.toml
+│   │   │   │   ├── metadata_proc_macro1-3.toml
+│   │   │   │   ├── metadata_proc_macro1-4.toml
+│   │   │   │   ├── metadata_proc_macro1-5.toml
+│   │   │   │   ├── metadata_proc_macro1-6.toml
+│   │   │   │   ├── metadata_proc_macro1-7.toml
+│   │   │   │   ├── metadata_targets1-0.toml
+│   │   │   │   ├── metadata_targets1-1.toml
+│   │   │   │   ├── metadata_targets1-2.toml
+│   │   │   │   ├── metadata_targets1-3.toml
+│   │   │   │   ├── metadata_targets1-4.toml
+│   │   │   │   ├── metadata_targets1-5.toml
+│   │   │   │   ├── metadata_targets1-6.toml
+│   │   │   │   ├── metadata_targets1-7.toml
+│   │   │   │   ├── metadata_weak_namespaced_features-0.toml
+│   │   │   │   ├── metadata_weak_namespaced_features-1.toml
+│   │   │   │   ├── metadata_weak_namespaced_features-2.toml
+│   │   │   │   ├── metadata_weak_namespaced_features-3.toml
+│   │   │   │   ├── metadata_weak_namespaced_features-4.toml
+│   │   │   │   ├── metadata_weak_namespaced_features-5.toml
+│   │   │   │   ├── metadata_weak_namespaced_features-6.toml
+│   │   │   │   └── metadata_weak_namespaced_features-7.toml
+│   │   │   └── weak-namespaced-features.json
+│   │   ├── src
+│   │   │   ├── dep_helpers.rs
+│   │   │   ├── details.rs
+│   │   │   ├── json.rs
+│   │   │   └── lib.rs
+│   │   └── workspace
+│   │       └── inside-outside
+│   │           ├── aarch64-active
+│   │           │   ├── Cargo.toml
+│   │           │   └── src
+│   │           │       └── lib.rs
+│   │           ├── external
+│   │           │   ├── Cargo.toml
+│   │           │   └── src
+│   │           │       └── lib.rs
+│   │           ├── inactive
+│   │           │   ├── Cargo.toml
+│   │           │   └── src
+│   │           │       └── lib.rs
+│   │           ├── transitive
+│   │           │   ├── Cargo.toml
+│   │           │   └── src
+│   │           │       └── lib.rs
+│   │           ├── workspace
+│   │           │   ├── Cargo.lock
+│   │           │   ├── Cargo.toml
+│   │           │   ├── internal
+│   │           │   │   ├── Cargo.toml
+│   │           │   │   └── src
+│   │           │   │       └── lib.rs
+│   │           │   ├── internal-macro
+│   │           │   │   ├── build.rs
+│   │           │   │   ├── Cargo.toml
+│   │           │   │   └── src
+│   │           │   │       └── lib.rs
+│   │           │   ├── main
+│   │           │   │   ├── build.rs
+│   │           │   │   ├── Cargo.toml
+│   │           │   │   └── src
+│   │           │   │       └── lib.rs
+│   │           │   ├── side
+│   │           │   │   ├── Cargo.toml
+│   │           │   │   └── src
+│   │           │   │       └── lib.rs
+│   │           │   └── src
+│   │           │       └── lib.rs
+│   │           └── x86-active
+│   │               ├── Cargo.toml
+│   │               └── src
+│   │                   └── lib.rs
+│   ├── guppy
+│   │   ├── Cargo.toml
+│   │   ├── CHANGELOG.md
+│   │   ├── examples
+│   │   │   ├── deps.rs
+│   │   │   ├── print_by_level.rs
+│   │   │   ├── print_dot.rs
+│   │   │   ├── remove_dev_only.rs
+│   │   │   └── topo_sort.rs
+│   │   ├── README.md
+│   │   ├── README.tpl
+│   │   ├── src
+│   │   │   ├── debug_ignore.rs
+│   │   │   ├── dependency_kind.rs
+│   │   │   ├── errors.rs
+│   │   │   ├── graph
+│   │   │   │   ├── build.rs
+│   │   │   │   ├── build_targets.rs
+│   │   │   │   ├── cargo
+│   │   │   │   │   ├── build.rs
+│   │   │   │   │   ├── cargo_api.rs
+│   │   │   │   │   └── mod.rs
+│   │   │   │   ├── cycles.rs
+│   │   │   │   ├── feature
+│   │   │   │   │   ├── build.rs
+│   │   │   │   │   ├── cycles.rs
+│   │   │   │   │   ├── feature_list.rs
+│   │   │   │   │   ├── graph_impl.rs
+│   │   │   │   │   ├── mod.rs
+│   │   │   │   │   ├── proptest_helpers.rs
+│   │   │   │   │   ├── query.rs
+│   │   │   │   │   ├── resolve.rs
+│   │   │   │   │   └── weak.rs
+│   │   │   │   ├── graph_impl.rs
+│   │   │   │   ├── mod.rs
+│   │   │   │   ├── proptest_helpers.rs
+│   │   │   │   ├── query_core.rs
+│   │   │   │   ├── query.rs
+│   │   │   │   ├── resolve_core.rs
+│   │   │   │   ├── resolve.rs
+│   │   │   │   ├── summaries
+│   │   │   │   │   └── package_set.rs
+│   │   │   │   └── summaries.rs
+│   │   │   ├── lib.rs
+│   │   │   ├── macros.rs
+│   │   │   ├── metadata_command.rs
+│   │   │   ├── package_id.rs
+│   │   │   ├── petgraph_support
+│   │   │   │   ├── dfs.rs
+│   │   │   │   ├── dot.rs
+│   │   │   │   ├── edge_ref.rs
+│   │   │   │   ├── mod.rs
+│   │   │   │   ├── scc.rs
+│   │   │   │   ├── topo.rs
+│   │   │   │   └── walk.rs
+│   │   │   ├── platform
+│   │   │   │   ├── mod.rs
+│   │   │   │   ├── platform_eval.rs
+│   │   │   │   ├── platform_spec.rs
+│   │   │   │   ├── proptest_helpers.rs
+│   │   │   │   └── summaries.rs
+│   │   │   ├── sorted_set.rs
+│   │   │   └── unit_tests
+│   │   │       ├── dot_tests.rs
+│   │   │       └── mod.rs
+│   │   └── tests
+│   │       └── graph-tests
+│   │           ├── feature_helpers.rs
+│   │           ├── graph_tests.rs
+│   │           ├── invalid_tests.rs
+│   │           ├── main.rs
+│   │           ├── proptest_helpers.rs
+│   │           └── weak_namespaced.rs
+│   ├── guppy-cmdlib
+│   │   ├── Cargo.toml
+│   │   └── src
+│   │       ├── lib.rs
+│   │       └── proptest.rs
+│   ├── guppy-summaries
+│   │   ├── Cargo.toml
+│   │   ├── CHANGELOG.md
+│   │   ├── README.md
+│   │   ├── README.tpl
+│   │   └── src
+│   │       ├── diff.rs
+│   │       ├── lib.rs
+│   │       ├── report.rs
+│   │       ├── summary.rs
+│   │       └── unit_tests
+│   │           ├── basic_tests.rs
+│   │           └── mod.rs
+│   ├── internal-tools
+│   │   ├── benchmarks
+│   │   │   ├── benches
+│   │   │   │   └── package_graph.rs
+│   │   │   └── Cargo.toml
+│   │   ├── cargo-compare
+│   │   │   ├── Cargo.toml
+│   │   │   ├── proptest-regressions
+│   │   │   │   └── tests
+│   │   │   │       └── workspace_tests.txt
+│   │   │   └── src
+│   │   │       ├── check.rs
+│   │   │       ├── common.rs
+│   │   │       ├── diff.rs
+│   │   │       ├── lib.rs
+│   │   │       ├── main.rs
+│   │   │       ├── tests
+│   │   │       │   ├── fixtures.rs
+│   │   │       │   ├── mod.rs
+│   │   │       │   ├── proptest_helpers.rs
+│   │   │       │   └── workspace_tests.rs
+│   │   │       └── type_conversions.rs
+│   │   ├── fixture-manager
+│   │   │   ├── Cargo.toml
+│   │   │   ├── src
+│   │   │   │   ├── context.rs
+│   │   │   │   ├── hakari_toml.rs
+│   │   │   │   ├── lib.rs
+│   │   │   │   ├── main.rs
+│   │   │   │   └── summaries.rs
+│   │   │   └── tests
+│   │   │       └── unchanged_tests.rs
+│   │   └── proptest-ext
+│   │       ├── Cargo.toml
+│   │       └── src
+│   │           └── lib.rs
+│   ├── LICENSE-APACHE
+│   ├── LICENSE-MIT
+│   ├── README.md
+│   ├── rustfmt.toml
+│   ├── scripts
+│   │   ├── fix-readmes.awk
+│   │   └── regenerate-readmes.sh
+│   ├── target-spec
+│   │   ├── build.rs
+│   │   ├── Cargo.toml
+│   │   ├── CHANGELOG.md
+│   │   ├── README.md
+│   │   ├── README.tpl
+│   │   └── src
+│   │       ├── errors.rs
+│   │       ├── lib.rs
+│   │       ├── platform.rs
+│   │       ├── proptest_helpers.rs
+│   │       ├── simple_eval.rs
+│   │       ├── spec.rs
+│   │       ├── summaries.rs
+│   │       └── triple.rs
+│   ├── tools
+│   │   ├── cargo-hakari
+│   │   │   ├── Cargo.toml
+│   │   │   ├── CHANGELOG.md
+│   │   │   ├── README.md
+│   │   │   ├── README.tpl
+│   │   │   ├── screenshots
+│   │   │   │   ├── init.png
+│   │   │   │   ├── manage-deps.png
+│   │   │   │   └── remove-deps.png
+│   │   │   └── src
+│   │   │       ├── cargo_cli.rs
+│   │   │       ├── command.rs
+│   │   │       ├── docs
+│   │   │       │   ├── about.rs
+│   │   │       │   ├── config.rs
+│   │   │       │   ├── mod.rs
+│   │   │       │   └── publishing.rs
+│   │   │       ├── helpers.rs
+│   │   │       ├── lib.rs
+│   │   │       ├── main.rs
+│   │   │       ├── output.rs
+│   │   │       └── publish.rs
+│   │   ├── determinator
+│   │   │   ├── Cargo.toml
+│   │   │   ├── CHANGELOG.md
+│   │   │   ├── default-rules.toml
+│   │   │   ├── README.md
+│   │   │   ├── README.tpl
+│   │   │   ├── src
+│   │   │   │   ├── determinator.rs
+│   │   │   │   ├── errors.rs
+│   │   │   │   ├── lib.rs
+│   │   │   │   ├── paths0.rs
+│   │   │   │   └── rules.rs
+│   │   │   └── tests
+│   │   │       └── determinator_tests.rs
+│   │   └── hakari
+│   │       ├── Cargo.toml
+│   │       ├── CHANGELOG.md
+│   │       ├── README.md
+│   │       ├── README.tpl
+│   │       ├── src
+│   │       │   ├── cargo_toml.rs
+│   │       │   ├── cli_ops
+│   │       │   │   ├── initialize.rs
+│   │       │   │   ├── manage_deps.rs
+│   │       │   │   ├── mod.rs
+│   │       │   │   └── workspace_ops.rs
+│   │       │   ├── explain
+│   │       │   │   ├── display.rs
+│   │       │   │   ├── mod.rs
+│   │       │   │   └── simplify.rs
+│   │       │   ├── hakari.rs
+│   │       │   ├── helpers.rs
+│   │       │   ├── lib.rs
+│   │       │   ├── proptest_helpers.rs
+│   │       │   ├── summaries.rs
+│   │       │   ├── toml_out.rs
+│   │       │   └── verify
+│   │       │       ├── display.rs
+│   │       │       └── mod.rs
+│   │       └── templates
+│   │           ├── crate
+│   │           │   ├── build.rs
+│   │           │   ├── Cargo.toml-in
+│   │           │   └── src
+│   │           │       └── lib.rs
+│   │           └── hakari.toml-in
+│   └── workspace-hack
+│       ├── build.rs
+│       ├── Cargo.toml
+│       ├── README.md
+│       └── src
+│           └── lib.rs
+└── cargo-hakari-0.9.14.tar.gz -> /home/felix/packages/cargo-hakari/cargo-hakari-0.9.14.tar.gz
+
+90 directories, 474 files

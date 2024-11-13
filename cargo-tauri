@@ -1,0 +1,892 @@
+src
+├── cargo-tauri-1.5.11.tar.gz -> /home/felix/packages/cargo-tauri/cargo-tauri-1.5.11.tar.gz
+└── tauri-tauri-cli-v1.5.11
+    ├── app-icon.png
+    ├── ARCHITECTURE.md
+    ├── audits
+    │   └── Radically_Open_Security-v1-report.pdf
+    ├── Cargo.lock
+    ├── Cargo.toml
+    ├── core
+    │   ├── tauri
+    │   │   ├── build.rs
+    │   │   ├── Cargo.toml
+    │   │   ├── CHANGELOG.md
+    │   │   ├── LICENSE_APACHE-2.0
+    │   │   ├── LICENSE_MIT
+    │   │   ├── README.md
+    │   │   ├── scripts
+    │   │   │   ├── bundle.global.js
+    │   │   │   ├── bundle.js
+    │   │   │   ├── core.js
+    │   │   │   ├── freeze_prototype.js
+    │   │   │   ├── init.js
+    │   │   │   ├── ipc.js
+    │   │   │   ├── isolation.js
+    │   │   │   ├── pattern.js
+    │   │   │   ├── stringify-ipc-message-fn.js
+    │   │   │   └── toggle-devtools.js
+    │   │   ├── src
+    │   │   │   ├── api
+    │   │   │   │   ├── cli
+    │   │   │   │   │   └── macros.rs
+    │   │   │   │   ├── cli.rs
+    │   │   │   │   ├── dialog.rs
+    │   │   │   │   ├── dir.rs
+    │   │   │   │   ├── error.rs
+    │   │   │   │   ├── file
+    │   │   │   │   │   ├── extract.rs
+    │   │   │   │   │   └── file_move.rs
+    │   │   │   │   ├── file.rs
+    │   │   │   │   ├── http.rs
+    │   │   │   │   ├── ipc.rs
+    │   │   │   │   ├── mod.rs
+    │   │   │   │   ├── notification.rs
+    │   │   │   │   ├── os.rs
+    │   │   │   │   ├── path.rs
+    │   │   │   │   ├── process
+    │   │   │   │   │   └── command.rs
+    │   │   │   │   ├── process.rs
+    │   │   │   │   ├── shell.rs
+    │   │   │   │   └── version.rs
+    │   │   │   ├── app
+    │   │   │   │   └── tray.rs
+    │   │   │   ├── app.rs
+    │   │   │   ├── asset_protocol.rs
+    │   │   │   ├── async_runtime.rs
+    │   │   │   ├── command.rs
+    │   │   │   ├── endpoints
+    │   │   │   │   ├── app.rs
+    │   │   │   │   ├── clipboard.rs
+    │   │   │   │   ├── cli.rs
+    │   │   │   │   ├── dialog.rs
+    │   │   │   │   ├── event.rs
+    │   │   │   │   ├── file_system.rs
+    │   │   │   │   ├── global_shortcut.rs
+    │   │   │   │   ├── http.rs
+    │   │   │   │   ├── notification.rs
+    │   │   │   │   ├── operating_system.rs
+    │   │   │   │   ├── path.rs
+    │   │   │   │   ├── process.rs
+    │   │   │   │   ├── shell.rs
+    │   │   │   │   └── window.rs
+    │   │   │   ├── endpoints.rs
+    │   │   │   ├── error.rs
+    │   │   │   ├── event.rs
+    │   │   │   ├── hooks.rs
+    │   │   │   ├── lib.rs
+    │   │   │   ├── manager.rs
+    │   │   │   ├── pattern.rs
+    │   │   │   ├── plugin.rs
+    │   │   │   ├── scope
+    │   │   │   │   ├── fs.rs
+    │   │   │   │   ├── http.rs
+    │   │   │   │   ├── ipc.rs
+    │   │   │   │   ├── mod.rs
+    │   │   │   │   └── shell.rs
+    │   │   │   ├── state.rs
+    │   │   │   ├── test
+    │   │   │   │   ├── mock_runtime.rs
+    │   │   │   │   └── mod.rs
+    │   │   │   ├── updater
+    │   │   │   │   ├── core.rs
+    │   │   │   │   ├── error.rs
+    │   │   │   │   └── mod.rs
+    │   │   │   ├── window
+    │   │   │   │   └── menu.rs
+    │   │   │   └── window.rs
+    │   │   └── test
+    │   │       ├── api
+    │   │       │   ├── test_binary
+    │   │       │   └── test.txt
+    │   │       ├── fixture
+    │   │       │   ├── config.json
+    │   │       │   ├── dist
+    │   │       │   │   └── index.html
+    │   │       │   ├── src-tauri
+    │   │       │   │   ├── icons
+    │   │       │   │   │   ├── icon.ico
+    │   │       │   │   │   ├── icon.ico~dev
+    │   │       │   │   │   └── icon.png
+    │   │       │   │   └── tauri.conf.json
+    │   │       │   └── test.txt
+    │   │       └── updater
+    │   │           └── fixture
+    │   │               ├── archives
+    │   │               │   ├── archive.linux.tar.gz
+    │   │               │   ├── archive.linux.tar.gz.sig
+    │   │               │   ├── archive.macos.tar.gz
+    │   │               │   ├── archive.macos.tar.gz.sig
+    │   │               │   ├── archive.windows.zip
+    │   │               │   └── archive.windows.zip.sig
+    │   │               ├── bad_signature
+    │   │               │   ├── update.key
+    │   │               │   └── update.key.pub
+    │   │               └── good_signature
+    │   │                   ├── update.key
+    │   │                   └── update.key.pub
+    │   ├── tauri-build
+    │   │   ├── Cargo.toml
+    │   │   ├── CHANGELOG.md
+    │   │   ├── LICENSE_APACHE-2.0
+    │   │   ├── LICENSE_MIT
+    │   │   ├── README.md
+    │   │   └── src
+    │   │       ├── allowlist.rs
+    │   │       ├── codegen
+    │   │       │   ├── context.rs
+    │   │       │   └── mod.rs
+    │   │       ├── lib.rs
+    │   │       ├── static_vcruntime.rs
+    │   │       └── window-app-manifest.xml
+    │   ├── tauri-codegen
+    │   │   ├── Cargo.toml
+    │   │   ├── CHANGELOG.md
+    │   │   ├── LICENSE_APACHE-2.0
+    │   │   ├── LICENSE_MIT
+    │   │   ├── README.md
+    │   │   └── src
+    │   │       ├── context.rs
+    │   │       ├── embedded_assets.rs
+    │   │       ├── lib.rs
+    │   │       └── vendor
+    │   │           ├── blake3_reference.rs
+    │   │           └── mod.rs
+    │   ├── tauri-config-schema
+    │   │   ├── build.rs
+    │   │   ├── Cargo.toml
+    │   │   ├── schema.json
+    │   │   └── src
+    │   │       └── main.rs
+    │   ├── tauri-macros
+    │   │   ├── Cargo.toml
+    │   │   ├── CHANGELOG.md
+    │   │   ├── LICENSE_APACHE-2.0
+    │   │   ├── LICENSE_MIT
+    │   │   ├── README.md
+    │   │   └── src
+    │   │       ├── command
+    │   │       │   ├── handler.rs
+    │   │       │   ├── mod.rs
+    │   │       │   └── wrapper.rs
+    │   │       ├── command_module.rs
+    │   │       ├── context.rs
+    │   │       ├── lib.rs
+    │   │       └── runtime.rs
+    │   ├── tauri-runtime
+    │   │   ├── build.rs
+    │   │   ├── Cargo.toml
+    │   │   ├── CHANGELOG.md
+    │   │   ├── LICENSE_APACHE-2.0
+    │   │   ├── LICENSE_MIT
+    │   │   ├── README.md
+    │   │   └── src
+    │   │       ├── http
+    │   │       │   ├── mod.rs
+    │   │       │   ├── request.rs
+    │   │       │   └── response.rs
+    │   │       ├── lib.rs
+    │   │       ├── menu.rs
+    │   │       ├── monitor.rs
+    │   │       ├── webview.rs
+    │   │       ├── window
+    │   │       │   └── dpi.rs
+    │   │       └── window.rs
+    │   ├── tauri-runtime-wry
+    │   │   ├── build.rs
+    │   │   ├── Cargo.toml
+    │   │   ├── CHANGELOG.md
+    │   │   ├── LICENSE_APACHE-2.0
+    │   │   ├── LICENSE_MIT
+    │   │   ├── README.md
+    │   │   └── src
+    │   │       ├── clipboard.rs
+    │   │       ├── global_shortcut.rs
+    │   │       ├── lib.rs
+    │   │       ├── system_tray.rs
+    │   │       └── webview.rs
+    │   ├── tauri-utils
+    │   │   ├── Cargo.toml
+    │   │   ├── CHANGELOG.md
+    │   │   ├── LICENSE_APACHE-2.0
+    │   │   ├── LICENSE_MIT
+    │   │   ├── README.md
+    │   │   └── src
+    │   │       ├── assets.rs
+    │   │       ├── config
+    │   │       │   └── parse.rs
+    │   │       ├── config.rs
+    │   │       ├── html.rs
+    │   │       ├── io.rs
+    │   │       ├── lib.rs
+    │   │       ├── mime_type.rs
+    │   │       ├── pattern
+    │   │       │   ├── isolation.js
+    │   │       │   ├── isolation.rs
+    │   │       │   └── mod.rs
+    │   │       ├── platform
+    │   │       │   └── starting_binary.rs
+    │   │       ├── platform.rs
+    │   │       └── resources.rs
+    │   └── tests
+    │       ├── app-updater
+    │       │   ├── build.rs
+    │       │   ├── Cargo.toml
+    │       │   ├── frameworks
+    │       │   │   └── test.framework
+    │       │   │       ├── Headers -> Versions/Current/Headers
+    │       │   │       ├── Modules -> Versions/Current/Modules
+    │       │   │       ├── Resources -> Versions/Current/Resources
+    │       │   │       └── Versions
+    │       │   │           ├── A
+    │       │   │           │   ├── _CodeSignature
+    │       │   │           │   │   └── CodeResources
+    │       │   │           │   ├── Headers
+    │       │   │           │   │   └── test.h
+    │       │   │           │   ├── Modules
+    │       │   │           │   │   └── module.modulemap
+    │       │   │           │   ├── Resources
+    │       │   │           │   │   └── Info.plist
+    │       │   │           │   └── test
+    │       │   │           └── Current -> A
+    │       │   ├── src
+    │       │   │   └── main.rs
+    │       │   ├── tauri.conf.json
+    │       │   └── tests
+    │       │       └── update.rs
+    │       └── restart
+    │           ├── build.rs
+    │           ├── Cargo.toml
+    │           ├── LICENSE_APACHE-2.0 -> ../../../LICENSE_APACHE-2.0
+    │           ├── LICENSE_MIT -> ../../../LICENSE_MIT
+    │           ├── LICENSE.spdx -> ../../../LICENSE.spdx
+    │           ├── src
+    │           │   └── main.rs
+    │           └── tests
+    │               └── restart.rs
+    ├── dependabot.yml
+    ├── examples
+    │   ├── api
+    │   │   ├── dist
+    │   │   │   ├── assets
+    │   │   │   │   ├── index.css
+    │   │   │   │   └── index.js
+    │   │   │   ├── index.html
+    │   │   │   └── tauri_logo.png
+    │   │   ├── index.html
+    │   │   ├── isolation-dist
+    │   │   │   ├── index.html
+    │   │   │   └── index.js
+    │   │   ├── jsconfig.json
+    │   │   ├── package.json
+    │   │   ├── public
+    │   │   │   └── tauri_logo.png
+    │   │   ├── README.md
+    │   │   ├── screenshot.png
+    │   │   ├── src
+    │   │   │   ├── app.css
+    │   │   │   ├── App.svelte
+    │   │   │   ├── main.js
+    │   │   │   └── views
+    │   │   │       ├── App.svelte
+    │   │   │       ├── Clipboard.svelte
+    │   │   │       ├── Cli.svelte
+    │   │   │       ├── Communication.svelte
+    │   │   │       ├── Dialog.svelte
+    │   │   │       ├── FileSystem.svelte
+    │   │   │       ├── Http.svelte
+    │   │   │       ├── Notifications.svelte
+    │   │   │       ├── Shell.svelte
+    │   │   │       ├── Shortcuts.svelte
+    │   │   │       ├── Updater.svelte
+    │   │   │       ├── WebRTC.svelte
+    │   │   │       ├── Welcome.svelte
+    │   │   │       └── Window.svelte
+    │   │   ├── src-tauri
+    │   │   │   ├── build.rs
+    │   │   │   ├── Cargo.lock
+    │   │   │   ├── Cargo.toml
+    │   │   │   ├── Cross.toml
+    │   │   │   ├── Info.plist
+    │   │   │   ├── locales
+    │   │   │   │   └── pt-BR.wxl
+    │   │   │   ├── src
+    │   │   │   │   ├── cmd.rs
+    │   │   │   │   ├── lib.rs
+    │   │   │   │   ├── main.rs
+    │   │   │   │   └── tray.rs
+    │   │   │   └── tauri.conf.json
+    │   │   ├── unocss.config.js
+    │   │   ├── vite.config.js
+    │   │   └── yarn.lock
+    │   ├── commands
+    │   │   ├── commands.rs
+    │   │   ├── index.html
+    │   │   ├── main.rs
+    │   │   ├── README.md
+    │   │   └── tauri.conf.json
+    │   ├── helloworld
+    │   │   ├── index.html
+    │   │   ├── main.rs
+    │   │   ├── README.md
+    │   │   └── tauri.conf.json
+    │   ├── isolation
+    │   │   ├── dist
+    │   │   │   ├── index.html
+    │   │   │   └── linked.js
+    │   │   ├── isolation-dist
+    │   │   │   ├── index.html
+    │   │   │   └── index.js
+    │   │   ├── main.rs
+    │   │   ├── README.md
+    │   │   └── tauri.conf.json
+    │   ├── multiwindow
+    │   │   ├── index.html
+    │   │   ├── main.rs
+    │   │   ├── README.md
+    │   │   └── tauri.conf.json
+    │   ├── navigation
+    │   │   ├── main.rs
+    │   │   ├── public
+    │   │   │   ├── index.html
+    │   │   │   ├── index.js
+    │   │   │   ├── nested
+    │   │   │   │   ├── index.html
+    │   │   │   │   ├── index.js
+    │   │   │   │   ├── secondary.html
+    │   │   │   │   └── secondary.js
+    │   │   │   ├── secondary.html
+    │   │   │   └── secondary.js
+    │   │   ├── README.md
+    │   │   └── tauri.conf.json
+    │   ├── parent-window
+    │   │   ├── index.html
+    │   │   ├── main.rs
+    │   │   ├── README.md
+    │   │   └── tauri.conf.json
+    │   ├── README.md
+    │   ├── resources
+    │   │   ├── index.html
+    │   │   ├── package.json
+    │   │   ├── README.md
+    │   │   └── src-tauri
+    │   │       ├── assets
+    │   │       │   └── index.js
+    │   │       ├── build.rs
+    │   │       ├── Cargo.lock
+    │   │       ├── Cargo.toml
+    │   │       ├── src
+    │   │       │   └── main.rs
+    │   │       └── tauri.conf.json
+    │   ├── sidecar
+    │   │   ├── index.html
+    │   │   ├── package.json
+    │   │   ├── README.md
+    │   │   ├── scripts
+    │   │   │   └── move-binary.js
+    │   │   ├── src
+    │   │   │   ├── communication.js
+    │   │   │   └── index.js
+    │   │   ├── src-tauri
+    │   │   │   ├── build.rs
+    │   │   │   ├── Cargo.lock
+    │   │   │   ├── Cargo.toml
+    │   │   │   ├── src
+    │   │   │   │   └── main.rs
+    │   │   │   └── tauri.conf.json
+    │   │   └── yarn.lock
+    │   ├── splashscreen
+    │   │   ├── dist
+    │   │   │   ├── icon.png
+    │   │   │   ├── index.html
+    │   │   │   └── splashscreen.html
+    │   │   ├── main.rs
+    │   │   ├── README.md
+    │   │   └── tauri.conf.json
+    │   ├── state
+    │   │   ├── index.html
+    │   │   ├── main.rs
+    │   │   ├── README.md
+    │   │   └── tauri.conf.json
+    │   ├── streaming
+    │   │   ├── index.html
+    │   │   ├── main.rs
+    │   │   ├── README.md
+    │   │   └── tauri.conf.json
+    │   ├── tauri-dynamic-lib
+    │   │   ├── README.md
+    │   │   ├── src-app1
+    │   │   │   ├── Cargo.lock
+    │   │   │   ├── Cargo.toml
+    │   │   │   └── src
+    │   │   │       └── main.rs
+    │   │   └── src-tauri
+    │   │       ├── build.rs
+    │   │       ├── Cargo.lock
+    │   │       ├── Cargo.toml
+    │   │       ├── src
+    │   │       │   ├── index.html
+    │   │       │   └── lib.rs
+    │   │       └── tauri.conf.json
+    │   ├── updater
+    │   │   ├── entitlements.plist
+    │   │   ├── index.html
+    │   │   ├── package.json
+    │   │   ├── README.md
+    │   │   ├── src-tauri
+    │   │   │   ├── build.rs
+    │   │   │   ├── Cargo.lock
+    │   │   │   ├── Cargo.toml
+    │   │   │   ├── src
+    │   │   │   │   └── main.rs
+    │   │   │   └── tauri.conf.json
+    │   │   └── yarn.lock
+    │   ├── web
+    │   │   ├── core
+    │   │   │   ├── api
+    │   │   │   │   ├── Cargo.toml
+    │   │   │   │   └── src
+    │   │   │   │       └── lib.rs
+    │   │   │   ├── Cargo.lock
+    │   │   │   ├── Cargo.toml
+    │   │   │   ├── tauri
+    │   │   │   │   ├── build.rs
+    │   │   │   │   ├── Cargo.toml
+    │   │   │   │   ├── src
+    │   │   │   │   │   └── main.rs
+    │   │   │   │   └── tauri.conf.json
+    │   │   │   └── wasm
+    │   │   │       ├── Cargo.toml
+    │   │   │       └── src
+    │   │   │           └── lib.rs
+    │   │   ├── package.json
+    │   │   ├── README.md
+    │   │   ├── src
+    │   │   │   ├── api
+    │   │   │   │   ├── desktop
+    │   │   │   │   │   └── index.js
+    │   │   │   │   └── web
+    │   │   │   │       └── index.js
+    │   │   │   ├── app.d.ts
+    │   │   │   ├── app.html
+    │   │   │   └── routes
+    │   │   │       ├── +page.js
+    │   │   │       └── +page.svelte
+    │   │   ├── static
+    │   │   │   └── favicon.png
+    │   │   ├── svelte.config.js
+    │   │   ├── tsconfig.json
+    │   │   ├── vite.config.ts
+    │   │   └── yarn.lock
+    │   └── workspace
+    │       ├── Cargo.lock
+    │       ├── Cargo.toml
+    │       ├── core
+    │       │   ├── Cargo.toml
+    │       │   └── src
+    │       │       └── lib.rs
+    │       ├── index.html
+    │       └── src-tauri
+    │           ├── build.rs
+    │           ├── Cargo.toml
+    │           ├── src
+    │           │   └── main.rs
+    │           └── tauri.conf.json
+    ├── LICENSE_APACHE-2.0
+    ├── LICENSE_MIT
+    ├── LICENSE.spdx
+    ├── package.json
+    ├── README.md
+    ├── renovate.json
+    ├── rustfmt.toml
+    ├── SECURITY.md
+    └── tooling
+        ├── api
+        │   ├── CHANGELOG.md
+        │   ├── LICENSE_APACHE-2.0
+        │   ├── LICENSE_MIT
+        │   ├── package.json
+        │   ├── README.md
+        │   ├── rollup.config.ts
+        │   ├── src
+        │   │   ├── app.ts
+        │   │   ├── clipboard.ts
+        │   │   ├── cli.ts
+        │   │   ├── dialog.ts
+        │   │   ├── event.ts
+        │   │   ├── fs.ts
+        │   │   ├── globalShortcut.ts
+        │   │   ├── helpers
+        │   │   │   ├── event.ts
+        │   │   │   ├── os-check.ts
+        │   │   │   └── tauri.ts
+        │   │   ├── http.ts
+        │   │   ├── index.ts
+        │   │   ├── mocks.ts
+        │   │   ├── notification.ts
+        │   │   ├── os.ts
+        │   │   ├── path.ts
+        │   │   ├── process.ts
+        │   │   ├── shell.ts
+        │   │   ├── tauri.ts
+        │   │   ├── updater.ts
+        │   │   └── window.ts
+        │   ├── tsconfig.json
+        │   └── yarn.lock
+        ├── bench
+        │   ├── Cargo.lock
+        │   ├── Cargo.toml
+        │   ├── README.md
+        │   ├── src
+        │   │   ├── build_benchmark_jsons.rs
+        │   │   ├── run_benchmark.rs
+        │   │   └── utils.rs
+        │   └── tests
+        │       ├── Cargo.toml
+        │       ├── cpu_intensive
+        │       │   ├── public
+        │       │   │   ├── index.css
+        │       │   │   ├── index.html
+        │       │   │   ├── site.js
+        │       │   │   └── worker.js
+        │       │   └── src-tauri
+        │       │       ├── build.rs
+        │       │       ├── Cargo.toml
+        │       │       ├── src
+        │       │       │   └── main.rs
+        │       │       └── tauri.conf.json
+        │       ├── files_transfer
+        │       │   ├── public
+        │       │   │   └── index.html
+        │       │   └── src-tauri
+        │       │       ├── build.rs
+        │       │       ├── Cargo.toml
+        │       │       ├── src
+        │       │       │   └── main.rs
+        │       │       └── tauri.conf.json
+        │       └── helloworld
+        │           ├── public
+        │           │   └── index.html
+        │           └── src-tauri
+        │               ├── build.rs
+        │               ├── Cargo.toml
+        │               ├── src
+        │               │   └── main.rs
+        │               └── tauri.conf.json
+        ├── bundler
+        │   ├── Cargo.toml
+        │   ├── CHANGELOG.md
+        │   ├── License_Apache.md
+        │   ├── License_MIT.md
+        │   ├── README.md
+        │   └── src
+        │       ├── bundle
+        │       │   ├── category.rs
+        │       │   ├── common.rs
+        │       │   ├── linux
+        │       │   │   ├── appimage.rs
+        │       │   │   ├── debian.rs
+        │       │   │   ├── mod.rs
+        │       │   │   ├── rpm.rs
+        │       │   │   └── templates
+        │       │   │       ├── appimage
+        │       │   │       └── main.desktop
+        │       │   ├── macos
+        │       │   │   ├── app.rs
+        │       │   │   ├── dmg.rs
+        │       │   │   ├── icon.rs
+        │       │   │   ├── ios.rs
+        │       │   │   ├── mod.rs
+        │       │   │   ├── sign.rs
+        │       │   │   └── templates
+        │       │   │       └── dmg
+        │       │   │           ├── bundle_dmg
+        │       │   │           ├── eula-resources-template.xml
+        │       │   │           └── template.applescript
+        │       │   ├── path_utils.rs
+        │       │   ├── platform.rs
+        │       │   ├── settings.rs
+        │       │   ├── updater_bundle.rs
+        │       │   └── windows
+        │       │       ├── mod.rs
+        │       │       ├── msi
+        │       │       │   ├── default-locale-strings.xml
+        │       │       │   ├── languages.json
+        │       │       │   └── wix.rs
+        │       │       ├── msi.rs
+        │       │       ├── nsis.rs
+        │       │       ├── sign.rs
+        │       │       ├── templates
+        │       │       │   ├── installer.nsi
+        │       │       │   ├── install-task.ps1
+        │       │       │   ├── main.wxs
+        │       │       │   ├── nsis-languages
+        │       │       │   │   ├── Arabic.nsh
+        │       │       │   │   ├── Bulgarian.nsh
+        │       │       │   │   ├── Dutch.nsh
+        │       │       │   │   ├── English.nsh
+        │       │       │   │   ├── French.nsh
+        │       │       │   │   ├── German.nsh
+        │       │       │   │   ├── Japanese.nsh
+        │       │       │   │   ├── Korean.nsh
+        │       │       │   │   ├── Persian.nsh
+        │       │       │   │   ├── PortugueseBR.nsh
+        │       │       │   │   ├── SimpChinese.nsh
+        │       │       │   │   ├── SpanishInternational.nsh
+        │       │       │   │   ├── Spanish.nsh
+        │       │       │   │   ├── Swedish.nsh
+        │       │       │   │   ├── TradChinese.nsh
+        │       │       │   │   └── Turkish.nsh
+        │       │       │   ├── uninstall-task.ps1
+        │       │       │   └── update-task.xml
+        │       │       └── util.rs
+        │       ├── bundle.rs
+        │       ├── error.rs
+        │       └── lib.rs
+        ├── cli
+        │   ├── build.rs
+        │   ├── Cargo.lock
+        │   ├── Cargo.toml
+        │   ├── CHANGELOG.md
+        │   ├── ENVIRONMENT_VARIABLES.md
+        │   ├── LICENSE_APACHE-2.0
+        │   ├── LICENSE_MIT
+        │   ├── metadata.json
+        │   ├── node
+        │   │   ├── build.rs
+        │   │   ├── Cargo.toml
+        │   │   ├── CHANGELOG.md
+        │   │   ├── index.d.ts
+        │   │   ├── index.js
+        │   │   ├── jest.config.js
+        │   │   ├── LICENSE_APACHE-2.0
+        │   │   ├── LICENSE_MIT
+        │   │   ├── main.d.ts
+        │   │   ├── main.js
+        │   │   ├── npm
+        │   │   │   ├── darwin-arm64
+        │   │   │   │   ├── package.json
+        │   │   │   │   └── README.md
+        │   │   │   ├── darwin-x64
+        │   │   │   │   ├── package.json
+        │   │   │   │   └── README.md
+        │   │   │   ├── linux-arm64-gnu
+        │   │   │   │   ├── package.json
+        │   │   │   │   └── README.md
+        │   │   │   ├── linux-arm64-musl
+        │   │   │   │   ├── package.json
+        │   │   │   │   └── README.md
+        │   │   │   ├── linux-arm-gnueabihf
+        │   │   │   │   ├── package.json
+        │   │   │   │   └── README.md
+        │   │   │   ├── linux-x64-gnu
+        │   │   │   │   ├── package.json
+        │   │   │   │   └── README.md
+        │   │   │   ├── linux-x64-musl
+        │   │   │   │   ├── package.json
+        │   │   │   │   └── README.md
+        │   │   │   ├── win32-arm64-msvc
+        │   │   │   │   ├── package.json
+        │   │   │   │   └── README.md
+        │   │   │   ├── win32-ia32-msvc
+        │   │   │   │   ├── package.json
+        │   │   │   │   └── README.md
+        │   │   │   └── win32-x64-msvc
+        │   │   │       ├── package.json
+        │   │   │       └── README.md
+        │   │   ├── package.json
+        │   │   ├── README.md
+        │   │   ├── src
+        │   │   │   └── lib.rs
+        │   │   ├── tauri.js
+        │   │   ├── test
+        │   │   │   └── jest
+        │   │   │       ├── fixtures
+        │   │   │       │   ├── app
+        │   │   │       │   │   ├── dist
+        │   │   │       │   │   │   └── index.html
+        │   │   │       │   │   ├── index.js
+        │   │   │       │   │   ├── package.json
+        │   │   │       │   │   └── src-tauri
+        │   │   │       │   │       ├── build.rs
+        │   │   │       │   │       ├── Cargo.toml
+        │   │   │       │   │       ├── icons
+        │   │   │       │   │       │   ├── 128x128@2x.png
+        │   │   │       │   │       │   ├── 128x128.png
+        │   │   │       │   │       │   ├── 32x32.png
+        │   │   │       │   │       │   ├── icon.icns
+        │   │   │       │   │       │   ├── icon.ico
+        │   │   │       │   │       │   └── icon.png
+        │   │   │       │   │       ├── rustfmt.toml
+        │   │   │       │   │       ├── src
+        │   │   │       │   │       │   └── main.rs
+        │   │   │       │   │       └── tauri.conf.json
+        │   │   │       │   ├── app-test-setup.js
+        │   │   │       │   └── empty
+        │   │   │       │       ├── dist
+        │   │   │       │       │   └── index.html
+        │   │   │       │       └── package.json
+        │   │   │       ├── helpers
+        │   │   │       │   ├── logger.js
+        │   │   │       │   └── spawn.js
+        │   │   │       ├── jest.setup.js
+        │   │   │       └── __tests__
+        │   │   │           └── template.spec.js
+        │   │   └── yarn.lock
+        │   ├── README.md
+        │   ├── schema.json
+        │   ├── scripts
+        │   │   ├── kill-children.sh
+        │   │   └── vswhere.exe
+        │   ├── src
+        │   │   ├── build.rs
+        │   │   ├── completions.rs
+        │   │   ├── dev.rs
+        │   │   ├── helpers
+        │   │   │   ├── app_paths.rs
+        │   │   │   ├── auto-reload.js
+        │   │   │   ├── config.rs
+        │   │   │   ├── framework.rs
+        │   │   │   ├── icns.json
+        │   │   │   ├── mod.rs
+        │   │   │   ├── template.rs
+        │   │   │   ├── updater_signature.rs
+        │   │   │   └── web_dev_server.rs
+        │   │   ├── icon.rs
+        │   │   ├── info
+        │   │   │   ├── app.rs
+        │   │   │   ├── env_nodejs.rs
+        │   │   │   ├── env_rust.rs
+        │   │   │   ├── env_system.rs
+        │   │   │   ├── mod.rs
+        │   │   │   ├── packages_nodejs.rs
+        │   │   │   └── packages_rust.rs
+        │   │   ├── init.rs
+        │   │   ├── interface
+        │   │   │   ├── mod.rs
+        │   │   │   ├── rust
+        │   │   │   │   ├── cargo_config.rs
+        │   │   │   │   ├── desktop.rs
+        │   │   │   │   └── manifest.rs
+        │   │   │   └── rust.rs
+        │   │   ├── lib.rs
+        │   │   ├── main.rs
+        │   │   ├── plugin
+        │   │   │   └── init.rs
+        │   │   ├── plugin.rs
+        │   │   ├── signer
+        │   │   │   ├── generate.rs
+        │   │   │   └── sign.rs
+        │   │   └── signer.rs
+        │   ├── tauri-dev-watcher.gitignore
+        │   ├── tauri.gitignore
+        │   └── templates
+        │       ├── app
+        │       │   └── src-tauri
+        │       │       ├── build.rs
+        │       │       ├── Cargo.crate-manifest
+        │       │       ├── icons
+        │       │       │   ├── 128x128@2x.png
+        │       │       │   ├── 128x128.png
+        │       │       │   ├── 32x32.png
+        │       │       │   ├── icon.icns
+        │       │       │   ├── icon.ico
+        │       │       │   ├── icon.png
+        │       │       │   ├── Square107x107Logo.png
+        │       │       │   ├── Square142x142Logo.png
+        │       │       │   ├── Square150x150Logo.png
+        │       │       │   ├── Square284x284Logo.png
+        │       │       │   ├── Square30x30Logo.png
+        │       │       │   ├── Square310x310Logo.png
+        │       │       │   ├── Square44x44Logo.png
+        │       │       │   ├── Square71x71Logo.png
+        │       │       │   ├── Square89x89Logo.png
+        │       │       │   └── StoreLogo.png
+        │       │       ├── src
+        │       │       │   └── main.rs
+        │       │       └── tauri.conf.json
+        │       ├── plugin
+        │       │   ├── backend
+        │       │   │   ├── Cargo.crate-manifest
+        │       │   │   ├── examples
+        │       │   │   │   └── vanilla
+        │       │   │   │       ├── package.json
+        │       │   │   │       ├── public
+        │       │   │   │       │   └── index.html
+        │       │   │   │       └── src-tauri
+        │       │   │   │           ├── build.rs
+        │       │   │   │           ├── Cargo.crate-manifest
+        │       │   │   │           ├── icons
+        │       │   │   │           │   ├── 128x128@2x.png
+        │       │   │   │           │   ├── 128x128.png
+        │       │   │   │           │   ├── 32x32.png
+        │       │   │   │           │   ├── icon.icns
+        │       │   │   │           │   ├── icon.ico
+        │       │   │   │           │   └── icon.png
+        │       │   │   │           ├── rustfmt.toml
+        │       │   │   │           ├── src
+        │       │   │   │           │   └── main.rs
+        │       │   │   │           └── tauri.conf.json
+        │       │   │   ├── README.md
+        │       │   │   └── src
+        │       │   │       └── lib.rs
+        │       │   └── with-api
+        │       │       ├── Cargo.crate-manifest
+        │       │       ├── examples
+        │       │       │   └── tauri-app
+        │       │       │       ├── index.html
+        │       │       │       ├── jsconfig.json
+        │       │       │       ├── package.json
+        │       │       │       ├── public
+        │       │       │       │   ├── svelte.svg
+        │       │       │       │   ├── tauri.svg
+        │       │       │       │   └── vite.svg
+        │       │       │       ├── README.md
+        │       │       │       ├── src
+        │       │       │       │   ├── App.svelte
+        │       │       │       │   ├── lib
+        │       │       │       │   │   └── Greet.svelte
+        │       │       │       │   ├── main.js
+        │       │       │       │   ├── style.css
+        │       │       │       │   └── vite-env.d.ts
+        │       │       │       ├── src-tauri
+        │       │       │       │   ├── build.rs
+        │       │       │       │   ├── Cargo.toml
+        │       │       │       │   ├── icons
+        │       │       │       │   │   ├── 128x128@2x.png
+        │       │       │       │   │   ├── 128x128.png
+        │       │       │       │   │   ├── 32x32.png
+        │       │       │       │   │   ├── icon.icns
+        │       │       │       │   │   ├── icon.ico
+        │       │       │       │   │   └── icon.png
+        │       │       │       │   ├── src
+        │       │       │       │   │   └── main.rs
+        │       │       │       │   └── tauri.conf.json
+        │       │       │       └── vite.config.js
+        │       │       ├── package.json
+        │       │       ├── README.md
+        │       │       ├── src
+        │       │       │   └── lib.rs
+        │       │       ├── webview-dist
+        │       │       │   ├── index.d.ts
+        │       │       │   └── index.js
+        │       │       └── webview-src
+        │       │           ├── index.ts
+        │       │           ├── rollup.config.js
+        │       │           └── tsconfig.json
+        │       └── tauri.conf.json
+        └── webdriver
+            ├── Cargo.lock
+            ├── Cargo.toml
+            ├── CHANGELOG.md
+            ├── LICENSE_APACHE-2.0 -> ../../LICENSE_APACHE-2.0
+            ├── LICENSE_MIT -> ../../LICENSE_MIT
+            ├── LICENSE.spdx -> ../../LICENSE.spdx
+            ├── README.md
+            └── src
+                ├── cli.rs
+                ├── main.rs
+                ├── server.rs
+                └── webdriver.rs
+
+223 directories, 667 files

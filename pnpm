@@ -1,0 +1,3324 @@
+src
+└── pnpm
+    ├── cache
+    │   ├── api
+    │   │   ├── CHANGELOG.md
+    │   │   ├── package.json
+    │   │   ├── README.md
+    │   │   ├── src
+    │   │   │   ├── cacheDelete.ts
+    │   │   │   ├── cacheList.ts
+    │   │   │   ├── cacheView.ts
+    │   │   │   └── index.ts
+    │   │   ├── tsconfig.json
+    │   │   └── tsconfig.lint.json
+    │   └── commands
+    │       ├── CHANGELOG.md
+    │       ├── package.json
+    │       ├── README.md
+    │       ├── src
+    │       │   ├── cache.cmd.ts
+    │       │   └── index.ts
+    │       ├── test
+    │       │   ├── cacheDelete.cmd.test.ts
+    │       │   ├── cacheList.cmd.test.ts
+    │       │   ├── cacheView.cmd.test.ts
+    │       │   └── tsconfig.json
+    │       ├── tsconfig.json
+    │       └── tsconfig.lint.json
+    ├── catalogs
+    │   ├── config
+    │   │   ├── CHANGELOG.md
+    │   │   ├── package.json
+    │   │   ├── README.md
+    │   │   ├── src
+    │   │   │   ├── getCatalogsFromWorkspaceManifest.ts
+    │   │   │   └── index.ts
+    │   │   ├── test
+    │   │   │   ├── getCatalogsFromWorkspaceManifest.test.ts
+    │   │   │   └── tsconfig.json
+    │   │   ├── tsconfig.json
+    │   │   └── tsconfig.lint.json
+    │   ├── protocol-parser
+    │   │   ├── CHANGELOG.md
+    │   │   ├── package.json
+    │   │   ├── README.md
+    │   │   ├── src
+    │   │   │   ├── index.ts
+    │   │   │   └── parseCatalogProtocol.ts
+    │   │   ├── test
+    │   │   │   ├── parseCatalogProtocol.test.ts
+    │   │   │   └── tsconfig.json
+    │   │   ├── tsconfig.json
+    │   │   └── tsconfig.lint.json
+    │   ├── resolver
+    │   │   ├── CHANGELOG.md
+    │   │   ├── package.json
+    │   │   ├── README.md
+    │   │   ├── src
+    │   │   │   ├── index.ts
+    │   │   │   ├── matchCatalogResolveResult.ts
+    │   │   │   └── resolveFromCatalog.ts
+    │   │   ├── test
+    │   │   │   ├── resolveFromCatalog.test.ts
+    │   │   │   └── tsconfig.json
+    │   │   ├── tsconfig.json
+    │   │   └── tsconfig.lint.json
+    │   └── types
+    │       ├── CHANGELOG.md
+    │       ├── package.json
+    │       ├── README.md
+    │       ├── src
+    │       │   └── index.ts
+    │       ├── tsconfig.json
+    │       └── tsconfig.lint.json
+    ├── cli
+    │   ├── cli-meta
+    │   │   ├── CHANGELOG.md
+    │   │   ├── package.json
+    │   │   ├── README.md
+    │   │   ├── src
+    │   │   │   └── index.ts
+    │   │   ├── test
+    │   │   │   ├── getCurrentPackageName.test.ts
+    │   │   │   └── tsconfig.json
+    │   │   ├── tsconfig.json
+    │   │   └── tsconfig.lint.json
+    │   ├── cli-utils
+    │   │   ├── CHANGELOG.md
+    │   │   ├── package.json
+    │   │   ├── README.md
+    │   │   ├── src
+    │   │   │   ├── getConfig.ts
+    │   │   │   ├── index.ts
+    │   │   │   ├── packageIsInstallable.ts
+    │   │   │   ├── readDepNameCompletions.ts
+    │   │   │   ├── readProjectManifest.ts
+    │   │   │   ├── recursiveSummary.ts
+    │   │   │   └── style.ts
+    │   │   ├── test
+    │   │   │   ├── getConfig.test.ts
+    │   │   │   └── tsconfig.json
+    │   │   ├── tsconfig.json
+    │   │   └── tsconfig.lint.json
+    │   ├── command
+    │   │   ├── CHANGELOG.md
+    │   │   ├── package.json
+    │   │   ├── README.md
+    │   │   ├── src
+    │   │   │   └── index.ts
+    │   │   ├── tsconfig.json
+    │   │   └── tsconfig.lint.json
+    │   ├── common-cli-options-help
+    │   │   ├── CHANGELOG.md
+    │   │   ├── package.json
+    │   │   ├── README.md
+    │   │   ├── src
+    │   │   │   └── index.ts
+    │   │   ├── tsconfig.json
+    │   │   └── tsconfig.lint.json
+    │   ├── default-reporter
+    │   │   ├── CHANGELOG.md
+    │   │   ├── package.json
+    │   │   ├── README.md
+    │   │   ├── src
+    │   │   │   ├── constants.ts
+    │   │   │   ├── index.ts
+    │   │   │   ├── mergeOutputs.ts
+    │   │   │   ├── reporterForClient
+    │   │   │   │   ├── index.ts
+    │   │   │   │   ├── outputConstants.ts
+    │   │   │   │   ├── pkgsDiff.ts
+    │   │   │   │   ├── reportBigTarballsProgress.ts
+    │   │   │   │   ├── reportContext.ts
+    │   │   │   │   ├── reportDeprecations.ts
+    │   │   │   │   ├── reportExecutionTime.ts
+    │   │   │   │   ├── reportHooks.ts
+    │   │   │   │   ├── reportInstallChecks.ts
+    │   │   │   │   ├── reportLifecycleScripts.ts
+    │   │   │   │   ├── reportMisc.ts
+    │   │   │   │   ├── reportPeerDependencyIssues.ts
+    │   │   │   │   ├── reportProgress.ts
+    │   │   │   │   ├── reportRequestRetry.ts
+    │   │   │   │   ├── reportScope.ts
+    │   │   │   │   ├── reportSkippedOptionalDependencies.ts
+    │   │   │   │   ├── reportStats.ts
+    │   │   │   │   ├── reportSummary.ts
+    │   │   │   │   ├── reportUpdateCheck.ts
+    │   │   │   │   └── utils
+    │   │   │   │       ├── formatPrefix.ts
+    │   │   │   │       ├── formatWarn.ts
+    │   │   │   │       └── zooming.ts
+    │   │   │   ├── reporterForServer.ts
+    │   │   │   └── reportError.ts
+    │   │   ├── test
+    │   │   │   ├── filterLogHook.ts
+    │   │   │   ├── index.ts
+    │   │   │   ├── is-positive-meta.json
+    │   │   │   ├── pnpm-meta.json
+    │   │   │   ├── reportingContext.ts
+    │   │   │   ├── reportingDeprecations.ts
+    │   │   │   ├── reportingErrors.ts
+    │   │   │   ├── reportingExecutionTime.ts
+    │   │   │   ├── reportingLifecycleScripts.ts
+    │   │   │   ├── reportingPeerDependencyIssues.ts
+    │   │   │   ├── reportingProgress.ts
+    │   │   │   ├── reportingRequestRetry.ts
+    │   │   │   ├── reportingScope.ts
+    │   │   │   ├── reportingUpdateCheck.ts
+    │   │   │   ├── __snapshots__
+    │   │   │   │   └── reportingUpdateCheck.ts.snap
+    │   │   │   └── tsconfig.json
+    │   │   ├── tsconfig.json
+    │   │   └── tsconfig.lint.json
+    │   └── parse-cli-args
+    │       ├── CHANGELOG.md
+    │       ├── package.json
+    │       ├── README.md
+    │       ├── src
+    │       │   └── index.ts
+    │       ├── test
+    │       │   ├── index.ts
+    │       │   └── tsconfig.json
+    │       ├── tsconfig.json
+    │       └── tsconfig.lint.json
+    ├── CODE_OF_CONDUCT.md
+    ├── commitlint.config.cjs
+    ├── completion
+    │   └── plugin-commands-completion
+    │       ├── CHANGELOG.md
+    │       ├── package.json
+    │       ├── src
+    │       │   ├── complete.test.ts
+    │       │   ├── complete.ts
+    │       │   ├── completionServer.ts
+    │       │   ├── generateCompletion.ts
+    │       │   ├── getOptionType.test.ts
+    │       │   ├── getOptionType.ts
+    │       │   ├── getShell.test.ts
+    │       │   ├── getShell.ts
+    │       │   ├── index.ts
+    │       │   ├── optionTypesToCompletions.test.ts
+    │       │   └── optionTypesToCompletions.ts
+    │       ├── test
+    │       │   ├── generateCompletion.ts
+    │       │   └── tsconfig.json
+    │       ├── tsconfig.json
+    │       └── tsconfig.lint.json
+    ├── config
+    │   ├── config
+    │   │   ├── CHANGELOG.md
+    │   │   ├── package.json
+    │   │   ├── README.md
+    │   │   ├── src
+    │   │   │   ├── auth.test.ts
+    │   │   │   ├── auth.ts
+    │   │   │   ├── checkGlobalBinDir.ts
+    │   │   │   ├── concurrency.ts
+    │   │   │   ├── Config.ts
+    │   │   │   ├── dirs.ts
+    │   │   │   ├── getNetworkConfigs.ts
+    │   │   │   ├── getOptionsFromRootManifest.ts
+    │   │   │   ├── index.ts
+    │   │   │   ├── inheritPickedConfig.ts
+    │   │   │   ├── readLocalConfig.ts
+    │   │   │   └── types.ts
+    │   │   ├── test
+    │   │   │   ├── cafile.txt
+    │   │   │   ├── concurrency.test.ts
+    │   │   │   ├── dirs.test.ts
+    │   │   │   ├── fixtures
+    │   │   │   │   ├── has-env-in-key
+    │   │   │   │   ├── pkg-using-workspaces
+    │   │   │   │   │   └── package.json
+    │   │   │   │   └── pkg-with-valid-workspace-yaml
+    │   │   │   │       └── pnpm-workspace.yaml
+    │   │   │   ├── getOptionsFromRootManifest.test.ts
+    │   │   │   ├── global-bin-dir
+    │   │   │   │   └── etc
+    │   │   │   │       └── npmrc
+    │   │   │   ├── globalBinDir.test.ts
+    │   │   │   ├── global-bin-dir-windows
+    │   │   │   │   └── etc
+    │   │   │   │       └── npmrc
+    │   │   │   ├── has-workspace-yaml
+    │   │   │   │   └── pnpm-workspace.yaml
+    │   │   │   ├── index.ts
+    │   │   │   ├── scoped-registries.ini
+    │   │   │   ├── tsconfig.json
+    │   │   │   └── using-test-pattern
+    │   │   ├── tsconfig.json
+    │   │   └── tsconfig.lint.json
+    │   ├── matcher
+    │   │   ├── CHANGELOG.md
+    │   │   ├── package.json
+    │   │   ├── README.md
+    │   │   ├── src
+    │   │   │   └── index.ts
+    │   │   ├── test
+    │   │   │   ├── index.ts
+    │   │   │   └── tsconfig.json
+    │   │   ├── tsconfig.json
+    │   │   └── tsconfig.lint.json
+    │   ├── normalize-registries
+    │   │   ├── CHANGELOG.md
+    │   │   ├── package.json
+    │   │   ├── README.md
+    │   │   ├── src
+    │   │   │   └── index.ts
+    │   │   ├── tsconfig.json
+    │   │   └── tsconfig.lint.json
+    │   ├── package-is-installable
+    │   │   ├── CHANGELOG.md
+    │   │   ├── package.json
+    │   │   ├── README.md
+    │   │   ├── src
+    │   │   │   ├── checkEngine.ts
+    │   │   │   ├── checkPlatform.ts
+    │   │   │   └── index.ts
+    │   │   ├── test
+    │   │   │   ├── checkEngine.ts
+    │   │   │   ├── checkPlatform.ts
+    │   │   │   └── tsconfig.json
+    │   │   ├── tsconfig.json
+    │   │   └── tsconfig.lint.json
+    │   ├── parse-overrides
+    │   │   ├── CHANGELOG.md
+    │   │   ├── package.json
+    │   │   ├── README.md
+    │   │   ├── src
+    │   │   │   └── index.ts
+    │   │   ├── test
+    │   │   │   ├── index.ts
+    │   │   │   └── tsconfig.json
+    │   │   ├── tsconfig.json
+    │   │   └── tsconfig.lint.json
+    │   ├── pick-registry-for-package
+    │   │   ├── CHANGELOG.md
+    │   │   ├── package.json
+    │   │   ├── README.md
+    │   │   ├── src
+    │   │   │   └── index.ts
+    │   │   ├── test
+    │   │   │   ├── index.spec.ts
+    │   │   │   └── tsconfig.json
+    │   │   ├── tsconfig.json
+    │   │   └── tsconfig.lint.json
+    │   └── plugin-commands-config
+    │       ├── CHANGELOG.md
+    │       ├── package.json
+    │       ├── README.md
+    │       ├── src
+    │       │   ├── ConfigCommandOptions.ts
+    │       │   ├── configGet.ts
+    │       │   ├── configList.ts
+    │       │   ├── configSet.ts
+    │       │   ├── config.ts
+    │       │   ├── get.ts
+    │       │   ├── index.ts
+    │       │   └── set.ts
+    │       ├── test
+    │       │   ├── configDelete.test.ts
+    │       │   ├── configGet.test.ts
+    │       │   ├── configList.test.ts
+    │       │   ├── configSet.test.ts
+    │       │   ├── managingAuthSettings.test.ts
+    │       │   └── tsconfig.json
+    │       ├── tsconfig.json
+    │       └── tsconfig.lint.json
+    ├── CONTRIBUTING.md
+    ├── crypto
+    │   ├── object-hasher
+    │   │   ├── CHANGELOG.md
+    │   │   ├── package.json
+    │   │   ├── README.md
+    │   │   ├── src
+    │   │   │   └── index.ts
+    │   │   ├── test
+    │   │   │   ├── index.ts
+    │   │   │   └── tsconfig.json
+    │   │   ├── tsconfig.json
+    │   │   └── tsconfig.lint.json
+    │   └── polyfill
+    │       ├── CHANGELOG.md
+    │       ├── package.json
+    │       ├── README.md
+    │       ├── src
+    │       │   └── index.ts
+    │       ├── tsconfig.json
+    │       └── tsconfig.lint.json
+    ├── cspell.json
+    ├── dedupe
+    │   ├── check
+    │   │   ├── CHANGELOG.md
+    │   │   ├── package.json
+    │   │   ├── README.md
+    │   │   ├── src
+    │   │   │   ├── DedupeCheckIssuesError.ts
+    │   │   │   ├── dedupeDiffCheck.ts
+    │   │   │   └── index.ts
+    │   │   ├── test
+    │   │   │   ├── dedupeDiffCheck.ts
+    │   │   │   └── tsconfig.json
+    │   │   ├── tsconfig.json
+    │   │   └── tsconfig.lint.json
+    │   ├── issues-renderer
+    │   │   ├── CHANGELOG.md
+    │   │   ├── package.json
+    │   │   ├── README.md
+    │   │   ├── src
+    │   │   │   └── index.ts
+    │   │   ├── test
+    │   │   │   ├── index.ts
+    │   │   │   ├── __snapshots__
+    │   │   │   │   └── index.ts.snap
+    │   │   │   └── tsconfig.json
+    │   │   ├── tsconfig.json
+    │   │   └── tsconfig.lint.json
+    │   └── types
+    │       ├── CHANGELOG.md
+    │       ├── package.json
+    │       ├── README.md
+    │       ├── src
+    │       │   ├── DedupeCheckIssues.ts
+    │       │   └── index.ts
+    │       ├── tsconfig.json
+    │       └── tsconfig.lint.json
+    ├── deps
+    │   ├── graph-builder
+    │   │   ├── CHANGELOG.md
+    │   │   ├── package.json
+    │   │   ├── README.md
+    │   │   ├── src
+    │   │   │   ├── index.ts
+    │   │   │   └── lockfileToDepGraph.ts
+    │   │   ├── tsconfig.json
+    │   │   └── tsconfig.lint.json
+    │   └── graph-sequencer
+    │       ├── CHANGELOG.md
+    │       ├── package.json
+    │       ├── README.md
+    │       ├── src
+    │       │   └── index.ts
+    │       ├── test
+    │       │   ├── index.ts
+    │       │   └── tsconfig.json
+    │       ├── tsconfig.json
+    │       └── tsconfig.lint.json
+    ├── env
+    │   ├── node.fetcher
+    │   │   ├── CHANGELOG.md
+    │   │   ├── package.json
+    │   │   ├── README.md
+    │   │   ├── src
+    │   │   │   ├── getNodeTarball.ts
+    │   │   │   ├── index.ts
+    │   │   │   └── normalizeArch.ts
+    │   │   ├── test
+    │   │   │   ├── getNodeTarball.test.ts
+    │   │   │   ├── node.test.ts
+    │   │   │   ├── normalizeArch.test.ts
+    │   │   │   └── tsconfig.json
+    │   │   ├── tsconfig.json
+    │   │   └── tsconfig.lint.json
+    │   ├── node.resolver
+    │   │   ├── CHANGELOG.md
+    │   │   ├── package.json
+    │   │   ├── README.md
+    │   │   ├── src
+    │   │   │   └── index.ts
+    │   │   ├── test
+    │   │   │   ├── resolveNodeVersions.test.ts
+    │   │   │   ├── resolveNodeVersion.test.ts
+    │   │   │   └── tsconfig.json
+    │   │   ├── tsconfig.json
+    │   │   └── tsconfig.lint.json
+    │   ├── path
+    │   │   ├── CHANGELOG.md
+    │   │   ├── package.json
+    │   │   ├── README.md
+    │   │   ├── src
+    │   │   │   └── index.ts
+    │   │   ├── test
+    │   │   │   ├── index.ts
+    │   │   │   └── tsconfig.json
+    │   │   ├── tsconfig.json
+    │   │   └── tsconfig.lint.json
+    │   ├── plugin-commands-env
+    │   │   ├── CHANGELOG.md
+    │   │   ├── package.json
+    │   │   ├── README.md
+    │   │   ├── src
+    │   │   │   ├── downloadNodeVersion.ts
+    │   │   │   ├── envAdd.ts
+    │   │   │   ├── envList.ts
+    │   │   │   ├── envRemove.ts
+    │   │   │   ├── env.ts
+    │   │   │   ├── envUse.ts
+    │   │   │   ├── getNodeMirror.ts
+    │   │   │   ├── index.ts
+    │   │   │   ├── node.ts
+    │   │   │   ├── parseEnvSpecifier.ts
+    │   │   │   ├── parseNodeSpecifier.ts
+    │   │   │   └── utils.ts
+    │   │   ├── test
+    │   │   │   ├── env.test.ts
+    │   │   │   ├── fixtures
+    │   │   │   │   └── node-16.4.0-release-info.json
+    │   │   │   ├── getNodeMirror.test.ts
+    │   │   │   ├── node.test.ts
+    │   │   │   ├── parseEnvSpecifier.ts
+    │   │   │   ├── parseNodeSpecifier.ts
+    │   │   │   └── tsconfig.json
+    │   │   ├── tsconfig.json
+    │   │   └── tsconfig.lint.json
+    │   └── system-node-version
+    │       ├── CHANGELOG.md
+    │       ├── package.json
+    │       ├── README.md
+    │       ├── src
+    │       │   └── index.ts
+    │       ├── test
+    │       │   ├── getSystemNodeVersion.test.ts
+    │       │   └── tsconfig.json
+    │       ├── tsconfig.json
+    │       └── tsconfig.lint.json
+    ├── eslint.config.mjs
+    ├── exec
+    │   ├── build-modules
+    │   │   ├── CHANGELOG.md
+    │   │   ├── package.json
+    │   │   ├── README.md
+    │   │   ├── src
+    │   │   │   ├── buildSequence.ts
+    │   │   │   └── index.ts
+    │   │   ├── test
+    │   │   │   ├── buildSequence.test.ts
+    │   │   │   └── tsconfig.json
+    │   │   ├── tsconfig.json
+    │   │   └── tsconfig.lint.json
+    │   ├── lifecycle
+    │   │   ├── CHANGELOG.md
+    │   │   ├── package.json
+    │   │   ├── README.md
+    │   │   ├── src
+    │   │   │   ├── index.ts
+    │   │   │   ├── runLifecycleHooksConcurrently.ts
+    │   │   │   └── runLifecycleHook.ts
+    │   │   ├── test
+    │   │   │   ├── fixtures
+    │   │   │   │   ├── escape-args
+    │   │   │   │   │   ├── echo.sh
+    │   │   │   │   │   └── package.json
+    │   │   │   │   ├── gyp-with-preinstall
+    │   │   │   │   │   ├── binding.gyp
+    │   │   │   │   │   └── package.json
+    │   │   │   │   ├── inspect-frozen-lockfile
+    │   │   │   │   │   ├── package.json
+    │   │   │   │   │   └── postinstall.js
+    │   │   │   │   ├── simple
+    │   │   │   │   │   └── package.json
+    │   │   │   │   ├── with-many-scripts
+    │   │   │   │   │   └── package.json
+    │   │   │   │   └── without-script-start-serverjs
+    │   │   │   │       └── package.json
+    │   │   │   ├── index.ts
+    │   │   │   └── tsconfig.json
+    │   │   ├── tsconfig.json
+    │   │   └── tsconfig.lint.json
+    │   ├── pkg-requires-build
+    │   │   ├── CHANGELOG.md
+    │   │   ├── package.json
+    │   │   ├── README.md
+    │   │   ├── src
+    │   │   │   └── index.ts
+    │   │   ├── tsconfig.json
+    │   │   └── tsconfig.lint.json
+    │   ├── plugin-commands-rebuild
+    │   │   ├── CHANGELOG.md
+    │   │   ├── package.json
+    │   │   ├── README.md
+    │   │   ├── src
+    │   │   │   ├── implementation
+    │   │   │   │   ├── extendRebuildOptions.ts
+    │   │   │   │   └── index.ts
+    │   │   │   ├── index.ts
+    │   │   │   ├── rebuild.ts
+    │   │   │   └── recursive.ts
+    │   │   ├── test
+    │   │   │   ├── index.ts
+    │   │   │   ├── recursive.ts
+    │   │   │   ├── tsconfig.json
+    │   │   │   └── utils
+    │   │   │       └── index.ts
+    │   │   ├── tsconfig.json
+    │   │   └── tsconfig.lint.json
+    │   ├── plugin-commands-script-runners
+    │   │   ├── CHANGELOG.md
+    │   │   ├── package.json
+    │   │   ├── README.md
+    │   │   ├── src
+    │   │   │   ├── buildCommandNotFoundHint.ts
+    │   │   │   ├── create.ts
+    │   │   │   ├── dlx.ts
+    │   │   │   ├── exec.ts
+    │   │   │   ├── existsInDir.ts
+    │   │   │   ├── index.ts
+    │   │   │   ├── makeEnv.ts
+    │   │   │   ├── regexpCommand.ts
+    │   │   │   ├── restart.ts
+    │   │   │   ├── runRecursive.ts
+    │   │   │   ├── run.ts
+    │   │   │   └── test.ts
+    │   │   ├── test
+    │   │   │   ├── create.ts
+    │   │   │   ├── dlx.createCacheKey.test.ts
+    │   │   │   ├── dlx.e2e.ts
+    │   │   │   ├── dlx.ts
+    │   │   │   ├── exec.e2e.ts
+    │   │   │   ├── exec.logs.ts
+    │   │   │   ├── exec.ts
+    │   │   │   ├── index.ts
+    │   │   │   ├── makeEnv.test.ts
+    │   │   │   ├── runCompletion.ts
+    │   │   │   ├── runRecursive.ts
+    │   │   │   ├── testRecursive.ts
+    │   │   │   ├── tsconfig.json
+    │   │   │   └── utils
+    │   │   │       └── index.ts
+    │   │   ├── tsconfig.json
+    │   │   └── tsconfig.lint.json
+    │   ├── prepare-package
+    │   │   ├── CHANGELOG.md
+    │   │   ├── package.json
+    │   │   ├── README.md
+    │   │   ├── src
+    │   │   │   └── index.ts
+    │   │   ├── test
+    │   │   │   ├── __fixtures__
+    │   │   │   │   ├── has-prepublish-script
+    │   │   │   │   │   ├── package.json
+    │   │   │   │   │   └── pnpm-lock.yaml
+    │   │   │   │   ├── has-prepublish-script-and-main-file
+    │   │   │   │   │   ├── main.js
+    │   │   │   │   │   ├── package.json
+    │   │   │   │   │   └── pnpm-lock.yaml
+    │   │   │   │   └── has-prepublish-script-in-workspace
+    │   │   │   │       ├── package.json
+    │   │   │   │       ├── packages
+    │   │   │   │       │   └── foo
+    │   │   │   │       │       └── package.json
+    │   │   │   │       ├── pnpm-lock.yaml
+    │   │   │   │       └── pnpm-workspace.yaml
+    │   │   │   ├── index.ts
+    │   │   │   └── tsconfig.json
+    │   │   ├── tsconfig.json
+    │   │   └── tsconfig.lint.json
+    │   └── run-npm
+    │       ├── CHANGELOG.md
+    │       ├── package.json
+    │       ├── README.md
+    │       ├── src
+    │       │   └── index.ts
+    │       ├── tsconfig.json
+    │       └── tsconfig.lint.json
+    ├── fetching
+    │   ├── directory-fetcher
+    │   │   ├── CHANGELOG.md
+    │   │   ├── package.json
+    │   │   ├── README.md
+    │   │   ├── src
+    │   │   │   └── index.ts
+    │   │   ├── test
+    │   │   │   ├── fixtures
+    │   │   │   │   ├── no-manifest
+    │   │   │   │   │   └── index.js
+    │   │   │   │   ├── pkg-with-broken-symlink
+    │   │   │   │   │   ├── index.js
+    │   │   │   │   │   ├── not-exists -> broken-symlink
+    │   │   │   │   │   └── package.json
+    │   │   │   │   ├── pkg-with-symlinked-dir-and-files
+    │   │   │   │   │   └── package.json
+    │   │   │   │   └── simple-pkg
+    │   │   │   │       ├── index.js
+    │   │   │   │       ├── package.json
+    │   │   │   │       └── test.js
+    │   │   │   ├── index.ts
+    │   │   │   └── tsconfig.json
+    │   │   ├── tsconfig.json
+    │   │   └── tsconfig.lint.json
+    │   ├── fetcher-base
+    │   │   ├── CHANGELOG.md
+    │   │   ├── package.json
+    │   │   ├── README.md
+    │   │   ├── src
+    │   │   │   └── index.ts
+    │   │   ├── tsconfig.json
+    │   │   └── tsconfig.lint.json
+    │   ├── git-fetcher
+    │   │   ├── CHANGELOG.md
+    │   │   ├── package.json
+    │   │   ├── README.md
+    │   │   ├── src
+    │   │   │   └── index.ts
+    │   │   ├── test
+    │   │   │   ├── index.ts
+    │   │   │   └── tsconfig.json
+    │   │   ├── tsconfig.json
+    │   │   └── tsconfig.lint.json
+    │   ├── pick-fetcher
+    │   │   ├── CHANGELOG.md
+    │   │   ├── package.json
+    │   │   ├── README.md
+    │   │   ├── src
+    │   │   │   └── index.ts
+    │   │   ├── test
+    │   │   │   ├── pickFetcher.ts
+    │   │   │   └── tsconfig.json
+    │   │   ├── tsconfig.json
+    │   │   └── tsconfig.lint.json
+    │   └── tarball-fetcher
+    │       ├── CHANGELOG.md
+    │       ├── package.json
+    │       ├── README.md
+    │       ├── src
+    │       │   ├── errorTypes
+    │       │   │   ├── BadTarballError.ts
+    │       │   │   └── index.ts
+    │       │   ├── gitHostedTarballFetcher.ts
+    │       │   ├── index.ts
+    │       │   ├── localTarballFetcher.ts
+    │       │   └── remoteTarballFetcher.ts
+    │       ├── test
+    │       │   ├── fetch.ts
+    │       │   ├── fixtures
+    │       │   │   ├── babel-helper-hoist-variables-6.24.1.tgz
+    │       │   │   ├── babel-helper-hoist-variables-7.0.0-alpha.10.tgz
+    │       │   │   └── tarball-with-duplicate-files
+    │       │   │       ├── archive.tar
+    │       │   │       └── create.sh
+    │       │   └── tsconfig.json
+    │       ├── tsconfig.json
+    │       └── tsconfig.lint.json
+    ├── __fixtures__
+    │   ├── circular
+    │   │   ├── package.json
+    │   │   └── pnpm-lock.yaml
+    │   ├── custom-modules-dir
+    │   │   ├── package.json
+    │   │   ├── packages
+    │   │   │   ├── bar
+    │   │   │   │   └── package.json
+    │   │   │   └── foo
+    │   │   │       └── package.json
+    │   │   ├── pnpm-lock.yaml
+    │   │   └── pnpm-workspace.yaml
+    │   ├── empty
+    │   │   ├── package.json
+    │   │   └── pnpm-lock.yaml
+    │   ├── fixture
+    │   │   ├── package.json
+    │   │   └── pnpm-lock.yaml
+    │   ├── fixture-with-external-shrinkwrap
+    │   │   ├── pkg
+    │   │   │   └── package.json
+    │   │   ├── pnpm-lock.yaml
+    │   │   └── pnpm-workspace.yaml
+    │   ├── fixtureWithLinks
+    │   │   ├── general
+    │   │   │   ├── package.json
+    │   │   │   └── pnpm-lock.yaml
+    │   │   ├── pnpm-workspace.yaml
+    │   │   └── with-links-only
+    │   │       ├── package.json
+    │   │       └── pnpm-lock.yaml
+    │   ├── fixture-with-no-pkg-name-and-no-version
+    │   │   ├── package.json
+    │   │   └── pnpm-lock.yaml
+    │   ├── fixture-with-no-pkg-version
+    │   │   ├── package.json
+    │   │   └── pnpm-lock.yaml
+    │   ├── general
+    │   │   ├── package.json
+    │   │   └── pnpm-lock.yaml
+    │   ├── has-2-outdated-deps
+    │   │   ├── node_modules
+    │   │   ├── package.json
+    │   │   └── pnpm-lock.yaml
+    │   ├── has-broken-symlink
+    │   │   └── has-broken-symlink.tar.gz
+    │   ├── has-major-outdated-deps
+    │   │   ├── node_modules
+    │   │   ├── package.json
+    │   │   └── pnpm-lock.yaml
+    │   ├── has-no-lockfile
+    │   │   └── package.json
+    │   ├── has-not-outdated-deps
+    │   │   ├── node_modules
+    │   │   │   ├── is-negative -> .pnpm/is-negative@2.1.0/node_modules/is-negative
+    │   │   │   └── is-positive -> .pnpm/is-positive@3.1.0/node_modules/is-positive
+    │   │   ├── package.json
+    │   │   └── pnpm-lock.yaml
+    │   ├── has-npm-shrinkwrap-json
+    │   │   ├── npm-shrinkwrap.json
+    │   │   └── package.json
+    │   ├── has-outdated-deps
+    │   │   ├── node_modules
+    │   │   ├── package.json
+    │   │   └── pnpm-lock.yaml
+    │   ├── has-outdated-deps-and-external-shrinkwrap
+    │   │   ├── node_modules
+    │   │   ├── pkg
+    │   │   │   └── package.json
+    │   │   ├── pnpm-lock.yaml
+    │   │   └── pnpm-workspace.yaml
+    │   ├── has-outdated-deps-using-catalog-protocol
+    │   │   ├── node_modules
+    │   │   │   └── is-negative -> .pnpm/is-negative@1.0.0/node_modules/is-negative
+    │   │   ├── package.json
+    │   │   ├── pnpm-lock.yaml
+    │   │   └── pnpm-workspace.yaml
+    │   ├── has-package-lock-json
+    │   │   ├── package.json
+    │   │   └── package-lock.json
+    │   ├── has-package-lock-v3-json
+    │   │   ├── package.json
+    │   │   └── package-lock.json
+    │   ├── has-yarn2-lock
+    │   │   ├── package.json
+    │   │   └── yarn.lock
+    │   ├── has-yarn-lock
+    │   │   ├── package.json
+    │   │   └── yarn.lock
+    │   ├── hello-world-js-bin
+    │   │   ├── index.js
+    │   │   └── package.json
+    │   ├── local-pkg
+    │   │   ├── index.js
+    │   │   ├── package.json
+    │   │   └── pnpm-lock.yaml
+    │   ├── local-scoped-pkg
+    │   │   ├── index.js
+    │   │   ├── package.json
+    │   │   └── pnpm-lock.yaml
+    │   ├── monorepo
+    │   │   ├── package
+    │   │   │   └── package.json
+    │   │   ├── pnpm-lock.yaml
+    │   │   └── pnpm-workspace.yaml
+    │   ├── multiple-scripts-error-exit
+    │   │   ├── dev-bar.js
+    │   │   ├── dev-foo.js
+    │   │   ├── package.json
+    │   │   ├── pnpm-lock.yaml
+    │   │   └── process-foo.js
+    │   ├── package.yaml
+    │   ├── pkg-with-external-lockfile
+    │   │   ├── pkg
+    │   │   │   └── package.json
+    │   │   ├── pnpm-lock.yaml
+    │   │   └── pnpm-workspace.yaml
+    │   ├── pnpm-lock.yaml
+    │   ├── pnpm-workspace.yaml
+    │   ├── tar-pkg
+    │   │   ├── index.js
+    │   │   ├── package.json
+    │   │   ├── pnpm-lock.yaml
+    │   │   └── tar-pkg-1.0.0.tgz
+    │   ├── with-aliased-dep
+    │   │   ├── package.json
+    │   │   └── pnpm-lock.yaml
+    │   ├── with-file-dep
+    │   │   ├── package.json
+    │   │   └── pnpm-lock.yaml
+    │   ├── with-git-protocol-dep
+    │   │   ├── package.json
+    │   │   └── pnpm-lock.yaml
+    │   ├── with-non-package-dep
+    │   │   ├── package.json
+    │   │   └── pnpm-lock.yaml
+    │   ├── with-peer
+    │   │   ├── package.json
+    │   │   └── pnpm-lock.yaml
+    │   ├── with-pnpm-update-ignore
+    │   │   ├── package.json
+    │   │   └── pnpm-lock.yaml
+    │   ├── with-unsaved-deps
+    │   │   ├── package.json
+    │   │   └── pnpm-lock.yaml
+    │   ├── workspace-external-depends-deep
+    │   │   ├── package.json
+    │   │   ├── packages
+    │   │   │   ├── f
+    │   │   │   │   └── package.json
+    │   │   │   └── g
+    │   │   │       └── package.json
+    │   │   ├── pnpm-lock.yaml
+    │   │   └── pnpm-workspace.yaml
+    │   ├── workspace-has-shared-npm-shrinkwrap-json
+    │   │   ├── npm-shrinkwrap.json
+    │   │   ├── package.json
+    │   │   ├── packages
+    │   │   │   ├── bar
+    │   │   │   │   └── package.json
+    │   │   │   └── foo
+    │   │   │       └── package.json
+    │   │   ├── pnpm-lock.yaml
+    │   │   └── pnpm-workspace.yaml
+    │   ├── workspace-has-shared-package-lock-json
+    │   │   ├── package.json
+    │   │   ├── package-lock.json
+    │   │   ├── packages
+    │   │   │   ├── bar
+    │   │   │   │   └── package.json
+    │   │   │   └── foo
+    │   │   │       └── package.json
+    │   │   ├── pnpm-lock.yaml
+    │   │   └── pnpm-workspace.yaml
+    │   ├── workspace-has-shared-yarn-lock
+    │   │   ├── package.json
+    │   │   ├── packages
+    │   │   │   ├── bar
+    │   │   │   │   └── package.json
+    │   │   │   └── foo
+    │   │   │       └── package.json
+    │   │   ├── pnpm-lock.yaml
+    │   │   ├── pnpm-workspace.yaml
+    │   │   └── yarn.lock
+    │   ├── workspace-with-2-pkgs
+    │   │   ├── package.json
+    │   │   ├── packages
+    │   │   │   ├── bar
+    │   │   │   │   └── package.json
+    │   │   │   └── foo
+    │   │   │       └── package.json
+    │   │   ├── pnpm-lock.yaml
+    │   │   └── pnpm-workspace.yaml
+    │   ├── workspace-with-different-deps
+    │   │   ├── package.json
+    │   │   ├── packages
+    │   │   │   ├── bar
+    │   │   │   │   └── package.json
+    │   │   │   └── foo
+    │   │   │       └── package.json
+    │   │   ├── pnpm-lock.yaml
+    │   │   └── pnpm-workspace.yaml
+    │   ├── workspace-with-lockfile-dupes
+    │   │   ├── package.json
+    │   │   ├── packages
+    │   │   │   ├── bar
+    │   │   │   │   └── package.json
+    │   │   │   └── foo
+    │   │   │       └── package.json
+    │   │   ├── pnpm-lock.yaml
+    │   │   └── pnpm-workspace.yaml
+    │   ├── workspace-with-lockfile-subdep-dupes
+    │   │   ├── package.json
+    │   │   ├── packages
+    │   │   │   ├── bar
+    │   │   │   │   └── package.json
+    │   │   │   └── foo
+    │   │   │       └── package.json
+    │   │   ├── pnpm-lock.yaml
+    │   │   └── pnpm-workspace.yaml
+    │   ├── workspace-with-nested-workspace-deps
+    │   │   ├── package.json
+    │   │   ├── packages
+    │   │   │   ├── a
+    │   │   │   │   └── package.json
+    │   │   │   ├── b
+    │   │   │   │   └── package.json
+    │   │   │   └── c
+    │   │   │       └── package.json
+    │   │   ├── pnpm-lock.yaml
+    │   │   └── pnpm-workspace.yaml
+    │   └── workspace-with-private-pkgs
+    │       ├── package.json
+    │       ├── packages
+    │       │   ├── private
+    │       │   │   └── package.json
+    │       │   └── public
+    │       │       └── package.json
+    │       ├── pnpm-lock.yaml
+    │       └── pnpm-workspace.yaml
+    ├── fs
+    │   ├── find-packages
+    │   │   ├── CHANGELOG.md
+    │   │   ├── example.js
+    │   │   ├── package.json
+    │   │   ├── README.md
+    │   │   ├── src
+    │   │   │   └── index.ts
+    │   │   ├── test
+    │   │   │   ├── fixtures
+    │   │   │   │   ├── many-pkgs
+    │   │   │   │   │   ├── components
+    │   │   │   │   │   │   ├── component-1
+    │   │   │   │   │   │   │   └── package.json
+    │   │   │   │   │   │   └── component-2
+    │   │   │   │   │   │       └── package.json
+    │   │   │   │   │   └── libs
+    │   │   │   │   │       └── foo
+    │   │   │   │   │           └── package.json
+    │   │   │   │   ├── many-pkgs-2
+    │   │   │   │   │   ├── components
+    │   │   │   │   │   │   ├── component-1
+    │   │   │   │   │   │   │   └── package.json
+    │   │   │   │   │   │   └── component-2
+    │   │   │   │   │   │       └── package.json
+    │   │   │   │   │   ├── libs
+    │   │   │   │   │   │   └── foo
+    │   │   │   │   │   │       └── package.json
+    │   │   │   │   │   └── package.json
+    │   │   │   │   ├── many-pkgs-with-different-manifest-types
+    │   │   │   │   │   ├── components
+    │   │   │   │   │   │   ├── component-1
+    │   │   │   │   │   │   │   └── package.yaml
+    │   │   │   │   │   │   └── component-2
+    │   │   │   │   │   │       └── package.json5
+    │   │   │   │   │   └── libs
+    │   │   │   │   │       └── foo
+    │   │   │   │   │           └── package.json
+    │   │   │   │   └── one-pkg
+    │   │   │   │       └── foo
+    │   │   │   │           └── package.json
+    │   │   │   ├── index.ts
+    │   │   │   └── tsconfig.json
+    │   │   ├── tsconfig.json
+    │   │   └── tsconfig.lint.json
+    │   ├── graceful-fs
+    │   │   ├── CHANGELOG.md
+    │   │   ├── package.json
+    │   │   ├── README.md
+    │   │   ├── src
+    │   │   │   └── index.ts
+    │   │   ├── tsconfig.json
+    │   │   └── tsconfig.lint.json
+    │   ├── hard-link-dir
+    │   │   ├── CHANGELOG.md
+    │   │   ├── package.json
+    │   │   ├── README.md
+    │   │   ├── src
+    │   │   │   └── index.ts
+    │   │   ├── test
+    │   │   │   ├── index.ts
+    │   │   │   └── tsconfig.json
+    │   │   ├── tsconfig.json
+    │   │   └── tsconfig.lint.json
+    │   ├── indexed-pkg-importer
+    │   │   ├── CHANGELOG.md
+    │   │   ├── package.json
+    │   │   ├── README.md
+    │   │   ├── src
+    │   │   │   ├── importIndexedDir.ts
+    │   │   │   └── index.ts
+    │   │   ├── test
+    │   │   │   ├── createImportPackage.test.ts
+    │   │   │   ├── importIndexedDir.test.ts
+    │   │   │   ├── importingPkgWithInvalidFiles.ts
+    │   │   │   └── tsconfig.json
+    │   │   ├── tsconfig.json
+    │   │   └── tsconfig.lint.json
+    │   ├── is-empty-dir-or-nothing
+    │   │   ├── CHANGELOG.md
+    │   │   ├── package.json
+    │   │   ├── README.md
+    │   │   ├── src
+    │   │   │   └── index.ts
+    │   │   ├── test
+    │   │   │   ├── __fixtures__
+    │   │   │   │   ├── dir-with-dirs
+    │   │   │   │   │   └── subdir
+    │   │   │   │   └── dir-with-files
+    │   │   │   │       └── file.js
+    │   │   │   ├── index.test.ts
+    │   │   │   └── tsconfig.json
+    │   │   ├── tsconfig.json
+    │   │   └── tsconfig.lint.json
+    │   ├── packlist
+    │   │   ├── CHANGELOG.md
+    │   │   ├── package.json
+    │   │   ├── README.md
+    │   │   ├── src
+    │   │   │   └── index.ts
+    │   │   ├── tsconfig.json
+    │   │   └── tsconfig.lint.json
+    │   ├── read-modules-dir
+    │   │   ├── CHANGELOG.md
+    │   │   ├── package.json
+    │   │   ├── README.md
+    │   │   ├── src
+    │   │   │   └── index.ts
+    │   │   ├── tsconfig.json
+    │   │   └── tsconfig.lint.json
+    │   └── symlink-dependency
+    │       ├── CHANGELOG.md
+    │       ├── package.json
+    │       ├── README.md
+    │       ├── src
+    │       │   ├── index.ts
+    │       │   └── symlinkDirectRootDependency.ts
+    │       ├── test
+    │       │   ├── symlinkDirectRootDependency.test.ts
+    │       │   └── tsconfig.json
+    │       ├── tsconfig.json
+    │       └── tsconfig.lint.json
+    ├── FUNDING.json
+    ├── hooks
+    │   ├── pnpmfile
+    │   │   ├── CHANGELOG.md
+    │   │   ├── package.json
+    │   │   ├── README.md
+    │   │   ├── src
+    │   │   │   ├── getPnpmfilePath.test.ts
+    │   │   │   ├── getPnpmfilePath.ts
+    │   │   │   ├── Hooks.ts
+    │   │   │   ├── index.ts
+    │   │   │   ├── requireHooks.ts
+    │   │   │   └── requirePnpmfile.ts
+    │   │   ├── test
+    │   │   │   ├── __fixtures__
+    │   │   │   │   ├── filterLog.js
+    │   │   │   │   ├── globalFilterLog.js
+    │   │   │   │   ├── readPackageNoObject.js
+    │   │   │   │   ├── readPackageNoReturn.js
+    │   │   │   │   └── undefined.js
+    │   │   │   ├── index.ts
+    │   │   │   └── tsconfig.json
+    │   │   ├── tsconfig.json
+    │   │   └── tsconfig.lint.json
+    │   ├── read-package-hook
+    │   │   ├── CHANGELOG.md
+    │   │   ├── package.json
+    │   │   ├── README.md
+    │   │   ├── src
+    │   │   │   ├── createOptionalDependenciesRemover.ts
+    │   │   │   ├── createPackageExtender.ts
+    │   │   │   ├── createReadPackageHook.ts
+    │   │   │   ├── createVersionsOverrider.ts
+    │   │   │   ├── index.ts
+    │   │   │   ├── isIntersectingRange.ts
+    │   │   │   └── isSubRange.ts
+    │   │   ├── test
+    │   │   │   ├── createOptionalDependenciesRemover.test.ts
+    │   │   │   ├── createPackageExtender.test.ts
+    │   │   │   ├── createReadPackageHook.ts
+    │   │   │   ├── createVersionOverrider.test.ts
+    │   │   │   └── tsconfig.json
+    │   │   ├── tsconfig.json
+    │   │   └── tsconfig.lint.json
+    │   └── types
+    │       ├── CHANGELOG.md
+    │       ├── package.json
+    │       ├── README.md
+    │       ├── src
+    │       │   └── index.ts
+    │       ├── tsconfig.json
+    │       └── tsconfig.lint.json
+    ├── LICENSE
+    ├── lint-commits.sh
+    ├── lockfile
+    │   ├── audit
+    │   │   ├── CHANGELOG.md
+    │   │   ├── example.js
+    │   │   ├── package.json
+    │   │   ├── README.md
+    │   │   ├── src
+    │   │   │   ├── index.ts
+    │   │   │   ├── lockfileToAuditTree.ts
+    │   │   │   └── types.ts
+    │   │   ├── test
+    │   │   │   ├── __fixtures__
+    │   │   │   │   ├── one-project
+    │   │   │   │   │   └── package.json
+    │   │   │   │   └── project-without-version
+    │   │   │   │       └── package.json
+    │   │   │   ├── index.ts
+    │   │   │   └── tsconfig.json
+    │   │   ├── tsconfig.json
+    │   │   └── tsconfig.lint.json
+    │   ├── detect-dep-types
+    │   │   ├── CHANGELOG.md
+    │   │   ├── package.json
+    │   │   ├── README.md
+    │   │   ├── src
+    │   │   │   └── index.ts
+    │   │   ├── tsconfig.json
+    │   │   └── tsconfig.lint.json
+    │   ├── filtering
+    │   │   ├── CHANGELOG.md
+    │   │   ├── package.json
+    │   │   ├── README.md
+    │   │   ├── src
+    │   │   │   ├── filterImporter.ts
+    │   │   │   ├── filterLockfileByImportersAndEngine.ts
+    │   │   │   ├── filterLockfileByImporters.ts
+    │   │   │   ├── filterLockfile.ts
+    │   │   │   └── index.ts
+    │   │   ├── test
+    │   │   │   ├── filterByImportersAndEngine.ts
+    │   │   │   ├── filterByImporters.ts
+    │   │   │   └── tsconfig.json
+    │   │   ├── tsconfig.json
+    │   │   └── tsconfig.lint.json
+    │   ├── fs
+    │   │   ├── CHANGELOG.md
+    │   │   ├── package.json
+    │   │   ├── README.md
+    │   │   ├── src
+    │   │   │   ├── errors
+    │   │   │   │   ├── index.ts
+    │   │   │   │   └── LockfileBreakingChangeError.ts
+    │   │   │   ├── existsWantedLockfile.ts
+    │   │   │   ├── getLockfileImporterId.ts
+    │   │   │   ├── gitBranchLockfile.ts
+    │   │   │   ├── gitMergeFile.ts
+    │   │   │   ├── index.ts
+    │   │   │   ├── lockfileFormatConverters.ts
+    │   │   │   ├── lockfileName.ts
+    │   │   │   ├── logger.ts
+    │   │   │   ├── read.ts
+    │   │   │   ├── sortLockfileKeys.ts
+    │   │   │   └── write.ts
+    │   │   ├── test
+    │   │   │   ├── fixtures
+    │   │   │   │   ├── 1
+    │   │   │   │   │   ├── node_modules
+    │   │   │   │   │   └── pnpm-lock.yaml
+    │   │   │   │   ├── 2
+    │   │   │   │   │   ├── node_modules
+    │   │   │   │   │   └── pnpm-lock.yaml
+    │   │   │   │   ├── 3
+    │   │   │   │   │   └── pnpm-lock.yaml
+    │   │   │   │   ├── 4
+    │   │   │   │   │   └── pnpm-lock.yaml
+    │   │   │   │   ├── 5
+    │   │   │   │   │   └── pnpm-lock.yaml
+    │   │   │   │   ├── 6
+    │   │   │   │   │   ├── otherFile.md
+    │   │   │   │   │   ├── pnpm-lock.branch.yaml
+    │   │   │   │   │   └── pnpm-lock.yaml
+    │   │   │   │   └── 7
+    │   │   │   │       └── pnpm-lock.yaml
+    │   │   │   ├── gitBranchLockfile.test.ts
+    │   │   │   ├── lockfileFormatConverters.test.ts
+    │   │   │   ├── lockfileName.test.ts
+    │   │   │   ├── lockfileV6Converters.test.ts
+    │   │   │   ├── normalizeLockfile.test.ts
+    │   │   │   ├── read.test.ts
+    │   │   │   ├── __snapshots__
+    │   │   │   │   └── write.test.ts.snap
+    │   │   │   ├── sortLockfileKeys.test.ts
+    │   │   │   ├── tsconfig.json
+    │   │   │   └── write.test.ts
+    │   │   ├── tsconfig.json
+    │   │   └── tsconfig.lint.json
+    │   ├── lockfile-to-pnp
+    │   │   ├── CHANGELOG.md
+    │   │   ├── package.json
+    │   │   ├── README.md
+    │   │   ├── src
+    │   │   │   └── index.ts
+    │   │   ├── test
+    │   │   │   ├── index.ts
+    │   │   │   └── tsconfig.json
+    │   │   ├── tsconfig.json
+    │   │   └── tsconfig.lint.json
+    │   ├── merger
+    │   │   ├── CHANGELOG.md
+    │   │   ├── package.json
+    │   │   ├── README.md
+    │   │   ├── src
+    │   │   │   └── index.ts
+    │   │   ├── test
+    │   │   │   ├── index.ts
+    │   │   │   └── tsconfig.json
+    │   │   ├── tsconfig.json
+    │   │   └── tsconfig.lint.json
+    │   ├── plugin-commands-audit
+    │   │   ├── CHANGELOG.md
+    │   │   ├── package.json
+    │   │   ├── README.md
+    │   │   ├── src
+    │   │   │   ├── audit.ts
+    │   │   │   ├── fix.ts
+    │   │   │   └── index.ts
+    │   │   ├── test
+    │   │   │   ├── fix.ts
+    │   │   │   ├── fixtures
+    │   │   │   │   ├── has-vulnerabilities
+    │   │   │   │   │   ├── package.json
+    │   │   │   │   │   └── pnpm-lock.yaml
+    │   │   │   │   └── pnpm-workspace.yaml
+    │   │   │   ├── index.ts
+    │   │   │   ├── __snapshots__
+    │   │   │   │   └── index.ts.snap
+    │   │   │   ├── tsconfig.json
+    │   │   │   └── utils
+    │   │   │       └── responses
+    │   │   │           ├── all-vulnerabilities-response.json
+    │   │   │           ├── dev-vulnerabilities-only-response.json
+    │   │   │           ├── index.ts
+    │   │   │           ├── no-vulnerabilities-response.json
+    │   │   │           └── update.ts
+    │   │   ├── tsconfig.json
+    │   │   └── tsconfig.lint.json
+    │   ├── preferred-versions
+    │   │   ├── CHANGELOG.md
+    │   │   ├── package.json
+    │   │   ├── README.md
+    │   │   ├── src
+    │   │   │   └── index.ts
+    │   │   ├── tsconfig.json
+    │   │   └── tsconfig.lint.json
+    │   ├── pruner
+    │   │   ├── CHANGELOG.md
+    │   │   ├── package.json
+    │   │   ├── README.md
+    │   │   ├── src
+    │   │   │   └── index.ts
+    │   │   ├── test
+    │   │   │   ├── index.ts
+    │   │   │   └── tsconfig.json
+    │   │   ├── tsconfig.json
+    │   │   └── tsconfig.lint.json
+    │   ├── settings-checker
+    │   │   ├── CHANGELOG.md
+    │   │   ├── package.json
+    │   │   ├── README.md
+    │   │   ├── src
+    │   │   │   ├── calcPatchHashes.ts
+    │   │   │   ├── createOverridesMapFromParsed.ts
+    │   │   │   ├── getOutdatedLockfileSetting.ts
+    │   │   │   └── index.ts
+    │   │   ├── tsconfig.json
+    │   │   └── tsconfig.lint.json
+    │   ├── types
+    │   │   ├── CHANGELOG.md
+    │   │   ├── package.json
+    │   │   ├── README.md
+    │   │   ├── src
+    │   │   │   ├── index.ts
+    │   │   │   └── lockfileFileTypes.ts
+    │   │   ├── tsconfig.json
+    │   │   └── tsconfig.lint.json
+    │   ├── utils
+    │   │   ├── CHANGELOG.md
+    │   │   ├── package.json
+    │   │   ├── README.md
+    │   │   ├── src
+    │   │   │   ├── extendProjectsWithTargetDirs.ts
+    │   │   │   ├── index.ts
+    │   │   │   ├── nameVerFromPkgSnapshot.ts
+    │   │   │   ├── packageIdFromSnapshot.ts
+    │   │   │   ├── packageIsIndependent.ts
+    │   │   │   ├── pkgSnapshotToResolution.ts
+    │   │   │   └── refIsLocalTarball.ts
+    │   │   ├── test
+    │   │   │   ├── nameVerFromPkgSnapshot.ts
+    │   │   │   ├── pkgSnapshotToResolution.ts
+    │   │   │   └── tsconfig.json
+    │   │   ├── tsconfig.json
+    │   │   └── tsconfig.lint.json
+    │   ├── verification
+    │   │   ├── CHANGELOG.md
+    │   │   ├── package.json
+    │   │   ├── README.md
+    │   │   ├── src
+    │   │   │   ├── allCatalogsAreUpToDate.ts
+    │   │   │   ├── allProjectsAreUpToDate.ts
+    │   │   │   ├── index.ts
+    │   │   │   └── satisfiesPackageManifest.ts
+    │   │   ├── test
+    │   │   │   ├── allProjectsAreUpToDate.test.ts
+    │   │   │   ├── satisfiesPackageManifest.ts
+    │   │   │   └── tsconfig.json
+    │   │   ├── tsconfig.json
+    │   │   └── tsconfig.lint.json
+    │   └── walker
+    │       ├── CHANGELOG.md
+    │       ├── package.json
+    │       ├── README.md
+    │       ├── src
+    │       │   └── index.ts
+    │       ├── tsconfig.json
+    │       └── tsconfig.lint.json
+    ├── modules-mounter
+    │   └── daemon
+    │       ├── bin
+    │       │   └── mount-modules.js
+    │       ├── CHANGELOG.md
+    │       ├── package.json
+    │       ├── README.md
+    │       ├── src
+    │       │   ├── cafsExplorer.ts
+    │       │   ├── cli.ts
+    │       │   ├── createFuseHandlers.ts
+    │       │   └── makeVirtualNodeModules.ts
+    │       ├── test
+    │       │   ├── createFuseHandlers.test.ts
+    │       │   ├── __fixtures__
+    │       │   │   └── simple
+    │       │   │       ├── package.json
+    │       │   │       ├── pnpm-lock.yaml
+    │       │   │       └── pnpm-workspace.yaml
+    │       │   ├── makeVirtualNodeModules.test.ts
+    │       │   ├── __snapshots__
+    │       │   │   └── makeVirtualNodeModules.test.ts.snap
+    │       │   └── tsconfig.json
+    │       ├── tsconfig.json
+    │       └── tsconfig.lint.json
+    ├── network
+    │   ├── auth-header
+    │   │   ├── CHANGELOG.md
+    │   │   ├── package.json
+    │   │   ├── README.md
+    │   │   ├── src
+    │   │   │   ├── getAuthHeadersFromConfig.ts
+    │   │   │   ├── helpers
+    │   │   │   │   └── removePort.ts
+    │   │   │   └── index.ts
+    │   │   ├── test
+    │   │   │   ├── getAuthHeaderByURI.ts
+    │   │   │   ├── getAuthHeadersFromConfig.test.ts
+    │   │   │   ├── removePort.test.ts
+    │   │   │   ├── tsconfig.json
+    │   │   │   └── utils
+    │   │   │       ├── test-exec.bat
+    │   │   │       ├── test-exec-error.bat
+    │   │   │       ├── test-exec-error.js
+    │   │   │       └── test-exec.js
+    │   │   ├── tsconfig.json
+    │   │   └── tsconfig.lint.json
+    │   ├── fetch
+    │   │   ├── CHANGELOG.md
+    │   │   ├── package.json
+    │   │   ├── README.md
+    │   │   ├── src
+    │   │   │   ├── fetchFromRegistry.ts
+    │   │   │   ├── fetch.ts
+    │   │   │   └── index.ts
+    │   │   ├── test
+    │   │   │   ├── __certs__
+    │   │   │   │   ├── ca-crt.pem
+    │   │   │   │   ├── ca-crt.srl
+    │   │   │   │   ├── ca-key.pem
+    │   │   │   │   ├── client-crt.pem
+    │   │   │   │   ├── client-csr.pem
+    │   │   │   │   ├── client-key.pem
+    │   │   │   │   ├── server-crt.pem
+    │   │   │   │   ├── server-csr.pem
+    │   │   │   │   └── server-key.pem
+    │   │   │   ├── fetchFromRegistry.test.ts
+    │   │   │   └── tsconfig.json
+    │   │   ├── tsconfig.json
+    │   │   └── tsconfig.lint.json
+    │   └── fetching-types
+    │       ├── CHANGELOG.md
+    │       ├── package.json
+    │       ├── README.md
+    │       ├── src
+    │       │   └── index.ts
+    │       ├── tsconfig.json
+    │       └── tsconfig.lint.json
+    ├── package.json
+    ├── packages
+    │   ├── calc-dep-state
+    │   │   ├── CHANGELOG.md
+    │   │   ├── package.json
+    │   │   ├── README.md
+    │   │   ├── src
+    │   │   │   └── index.ts
+    │   │   ├── test
+    │   │   │   ├── index.ts
+    │   │   │   ├── lockfileToDepGraph.test.ts
+    │   │   │   └── tsconfig.json
+    │   │   ├── tsconfig.json
+    │   │   └── tsconfig.lint.json
+    │   ├── constants
+    │   │   ├── CHANGELOG.md
+    │   │   ├── package.json
+    │   │   ├── README.md
+    │   │   ├── src
+    │   │   │   └── index.ts
+    │   │   ├── tsconfig.json
+    │   │   └── tsconfig.lint.json
+    │   ├── core-loggers
+    │   │   ├── CHANGELOG.md
+    │   │   ├── package.json
+    │   │   ├── README.md
+    │   │   ├── src
+    │   │   │   ├── all.ts
+    │   │   │   ├── contextLogger.ts
+    │   │   │   ├── deprecationLogger.ts
+    │   │   │   ├── executionTimeLogger.ts
+    │   │   │   ├── fetchingProgressLogger.ts
+    │   │   │   ├── hookLogger.ts
+    │   │   │   ├── index.ts
+    │   │   │   ├── installCheckLogger.ts
+    │   │   │   ├── lifecycleLogger.ts
+    │   │   │   ├── linkLogger.ts
+    │   │   │   ├── packageImportMethodLogger.ts
+    │   │   │   ├── packageManifestLogger.ts
+    │   │   │   ├── peerDependencyIssues.ts
+    │   │   │   ├── progressLogger.ts
+    │   │   │   ├── registryLogger.ts
+    │   │   │   ├── removalLogger.ts
+    │   │   │   ├── requestRetryLogger.ts
+    │   │   │   ├── rootLogger.ts
+    │   │   │   ├── scopeLogger.ts
+    │   │   │   ├── skippedOptionalDependencyLogger.ts
+    │   │   │   ├── stageLogger.ts
+    │   │   │   ├── statsLogger.ts
+    │   │   │   ├── summaryLogger.ts
+    │   │   │   └── updateCheckLogger.ts
+    │   │   ├── tsconfig.json
+    │   │   └── tsconfig.lint.json
+    │   ├── crypto.base32-hash
+    │   │   ├── CHANGELOG.md
+    │   │   ├── package.json
+    │   │   ├── README.md
+    │   │   ├── src
+    │   │   │   └── index.ts
+    │   │   ├── test
+    │   │   │   ├── index.ts
+    │   │   │   └── tsconfig.json
+    │   │   ├── tsconfig.json
+    │   │   └── tsconfig.lint.json
+    │   ├── dependency-path
+    │   │   ├── CHANGELOG.md
+    │   │   ├── example.js
+    │   │   ├── package.json
+    │   │   ├── README.md
+    │   │   ├── src
+    │   │   │   └── index.ts
+    │   │   ├── test
+    │   │   │   ├── index.ts
+    │   │   │   └── tsconfig.json
+    │   │   ├── tsconfig.json
+    │   │   └── tsconfig.lint.json
+    │   ├── error
+    │   │   ├── CHANGELOG.md
+    │   │   ├── package.json
+    │   │   ├── README.md
+    │   │   ├── src
+    │   │   │   └── index.ts
+    │   │   ├── test
+    │   │   │   ├── index.ts
+    │   │   │   └── tsconfig.json
+    │   │   ├── tsconfig.json
+    │   │   └── tsconfig.lint.json
+    │   ├── git-utils
+    │   │   ├── CHANGELOG.md
+    │   │   ├── example.js
+    │   │   ├── package.json
+    │   │   ├── README.md
+    │   │   ├── src
+    │   │   │   └── index.ts
+    │   │   ├── test
+    │   │   │   ├── index.test.ts
+    │   │   │   └── tsconfig.json
+    │   │   ├── tsconfig.json
+    │   │   └── tsconfig.lint.json
+    │   ├── logger
+    │   │   ├── package.json
+    │   │   ├── README.md
+    │   │   ├── src
+    │   │   │   ├── index.ts
+    │   │   │   ├── LogBase.ts
+    │   │   │   ├── logger.ts
+    │   │   │   ├── LogLevel.ts
+    │   │   │   ├── streamParser.ts
+    │   │   │   └── writeToConsole.ts
+    │   │   ├── test
+    │   │   │   ├── index.test.ts
+    │   │   │   └── tsconfig.json
+    │   │   ├── tsconfig.json
+    │   │   └── tsconfig.lint.json
+    │   ├── make-dedicated-lockfile
+    │   │   ├── bin
+    │   │   │   └── make-dedicated-lockfile.js
+    │   │   ├── CHANGELOG.md
+    │   │   ├── package.json
+    │   │   ├── README.md
+    │   │   ├── src
+    │   │   │   ├── bin.ts
+    │   │   │   └── index.ts
+    │   │   ├── test
+    │   │   │   ├── fixtures
+    │   │   │   │   └── fixture
+    │   │   │   │       ├── packages
+    │   │   │   │       │   ├── is-negative
+    │   │   │   │       │   │   ├── example
+    │   │   │   │       │   │   │   └── package.json
+    │   │   │   │       │   │   └── package.json
+    │   │   │   │       │   └── is-positive
+    │   │   │   │       │       └── package.json
+    │   │   │   │       ├── pnpm-lock.yaml
+    │   │   │   │       └── pnpm-workspace.yaml
+    │   │   │   ├── index.ts
+    │   │   │   └── tsconfig.json
+    │   │   ├── tsconfig.json
+    │   │   └── tsconfig.lint.json
+    │   ├── parse-wanted-dependency
+    │   │   ├── CHANGELOG.md
+    │   │   ├── package.json
+    │   │   ├── README.md
+    │   │   ├── src
+    │   │   │   └── index.ts
+    │   │   ├── tsconfig.json
+    │   │   └── tsconfig.lint.json
+    │   ├── plugin-commands-doctor
+    │   │   ├── CHANGELOG.md
+    │   │   ├── package.json
+    │   │   ├── README.md
+    │   │   ├── src
+    │   │   │   ├── doctor.ts
+    │   │   │   └── index.ts
+    │   │   ├── test
+    │   │   │   ├── index.ts
+    │   │   │   └── tsconfig.json
+    │   │   ├── tsconfig.json
+    │   │   └── tsconfig.lint.json
+    │   ├── plugin-commands-init
+    │   │   ├── CHANGELOG.md
+    │   │   ├── fixtures
+    │   │   │   └── init-module
+    │   │   ├── package.json
+    │   │   ├── README.md
+    │   │   ├── src
+    │   │   │   ├── index.ts
+    │   │   │   ├── init.ts
+    │   │   │   └── utils.ts
+    │   │   ├── test
+    │   │   │   ├── init.test.ts
+    │   │   │   ├── tsconfig.json
+    │   │   │   └── utils.test.ts
+    │   │   ├── tsconfig.json
+    │   │   └── tsconfig.lint.json
+    │   ├── plugin-commands-setup
+    │   │   ├── CHANGELOG.md
+    │   │   ├── package.json
+    │   │   ├── README.md
+    │   │   ├── src
+    │   │   │   ├── index.ts
+    │   │   │   └── setup.ts
+    │   │   ├── test
+    │   │   │   ├── setup.test.ts
+    │   │   │   └── tsconfig.json
+    │   │   ├── tsconfig.json
+    │   │   └── tsconfig.lint.json
+    │   ├── render-peer-issues
+    │   │   ├── CHANGELOG.md
+    │   │   ├── package.json
+    │   │   ├── README.md
+    │   │   ├── src
+    │   │   │   └── index.ts
+    │   │   ├── test
+    │   │   │   ├── index.ts
+    │   │   │   ├── __snapshots__
+    │   │   │   │   └── index.ts.snap
+    │   │   │   └── tsconfig.json
+    │   │   ├── tsconfig.json
+    │   │   └── tsconfig.lint.json
+    │   ├── types
+    │   │   ├── CHANGELOG.md
+    │   │   ├── package.json
+    │   │   ├── README.md
+    │   │   ├── src
+    │   │   │   ├── env.ts
+    │   │   │   ├── index.ts
+    │   │   │   ├── misc.ts
+    │   │   │   ├── options.ts
+    │   │   │   ├── package.ts
+    │   │   │   ├── peerDependencyIssues.ts
+    │   │   │   └── project.ts
+    │   │   ├── tsconfig.json
+    │   │   └── tsconfig.lint.json
+    │   └── which-version-is-pinned
+    │       ├── CHANGELOG.md
+    │       ├── package.json
+    │       ├── README.md
+    │       ├── src
+    │       │   └── index.ts
+    │       ├── test
+    │       │   ├── index.ts
+    │       │   └── tsconfig.json
+    │       ├── tsconfig.json
+    │       └── tsconfig.lint.json
+    ├── __patches__
+    │   ├── graceful-fs@4.2.11.patch
+    │   ├── mdast-util-to-string@2.0.0.patch
+    │   └── pkg.patch
+    ├── patching
+    │   ├── apply-patch
+    │   │   ├── CHANGELOG.md
+    │   │   ├── __fixtures__
+    │   │   │   ├── applicable.patch
+    │   │   │   ├── invalid.patch
+    │   │   │   ├── non-applicable.patch
+    │   │   │   ├── patch-target.txt
+    │   │   │   └── successfully-patched.txt
+    │   │   ├── package.json
+    │   │   ├── README.md
+    │   │   ├── src
+    │   │   │   └── index.ts
+    │   │   ├── test
+    │   │   │   ├── applyPatchToDir.ts
+    │   │   │   └── tsconfig.json
+    │   │   ├── tsconfig.json
+    │   │   └── tsconfig.lint.json
+    │   ├── config
+    │   │   ├── CHANGELOG.md
+    │   │   ├── package.json
+    │   │   ├── README.md
+    │   │   ├── src
+    │   │   │   └── index.ts
+    │   │   ├── test
+    │   │   │   ├── index.test.ts
+    │   │   │   └── tsconfig.json
+    │   │   ├── tsconfig.json
+    │   │   └── tsconfig.lint.json
+    │   ├── plugin-commands-patching
+    │   │   ├── CHANGELOG.md
+    │   │   ├── package.json
+    │   │   ├── README.md
+    │   │   ├── src
+    │   │   │   ├── getEditDirPath.ts
+    │   │   │   ├── getPatchedDependency.ts
+    │   │   │   ├── index.ts
+    │   │   │   ├── patchCommit.ts
+    │   │   │   ├── patchRemove.ts
+    │   │   │   ├── patch.ts
+    │   │   │   ├── stateFile.ts
+    │   │   │   └── writePackage.ts
+    │   │   ├── test
+    │   │   │   ├── getEditDirPath.test.ts
+    │   │   │   ├── patch.test.ts
+    │   │   │   ├── tsconfig.json
+    │   │   │   └── utils
+    │   │   │       └── index.ts
+    │   │   ├── tsconfig.json
+    │   │   └── tsconfig.lint.json
+    │   └── types
+    │       ├── CHANGELOG.md
+    │       ├── package.json
+    │       ├── README.md
+    │       ├── src
+    │       │   └── index.ts
+    │       ├── tsconfig.json
+    │       └── tsconfig.lint.json
+    ├── pkg-manager
+    │   ├── client
+    │   │   ├── CHANGELOG.md
+    │   │   ├── package.json
+    │   │   ├── README.md
+    │   │   ├── src
+    │   │   │   └── index.ts
+    │   │   ├── test
+    │   │   │   ├── index.ts
+    │   │   │   └── tsconfig.json
+    │   │   ├── tsconfig.json
+    │   │   └── tsconfig.lint.json
+    │   ├── core
+    │   │   ├── CHANGELOG.md
+    │   │   ├── package.json
+    │   │   ├── README.md
+    │   │   ├── src
+    │   │   │   ├── api.ts
+    │   │   │   ├── getPeerDependencyIssues.ts
+    │   │   │   ├── index.ts
+    │   │   │   ├── install
+    │   │   │   │   ├── extendInstallOptions.ts
+    │   │   │   │   ├── index.test.ts
+    │   │   │   │   ├── index.ts
+    │   │   │   │   ├── link.ts
+    │   │   │   │   └── reportPeerDependencyIssues.ts
+    │   │   │   ├── link
+    │   │   │   │   ├── index.ts
+    │   │   │   │   └── options.ts
+    │   │   │   ├── parseWantedDependencies.ts
+    │   │   │   ├── pnpmPkgJson.ts
+    │   │   │   ├── types.ts
+    │   │   │   └── uninstall
+    │   │   │       └── removeDeps.ts
+    │   │   ├── test
+    │   │   │   ├── api.ts
+    │   │   │   ├── breakingChanges.ts
+    │   │   │   ├── brokenLockfileIntegrity.ts
+    │   │   │   ├── cache.ts
+    │   │   │   ├── catalogs.ts
+    │   │   │   ├── fixtures
+    │   │   │   │   ├── dep-of-pkg-with-1-dep.json
+    │   │   │   │   ├── lockfile-v5
+    │   │   │   │   │   └── pnpm-lock.yaml
+    │   │   │   │   ├── missing-pkg-name
+    │   │   │   │   │   └── package.json
+    │   │   │   │   ├── missing-pkg-name.tgz
+    │   │   │   │   ├── patch-pkg
+    │   │   │   │   │   └── is-positive@1.0.0.patch
+    │   │   │   │   ├── pkg-with-1-dep-100.0.0.tgz
+    │   │   │   │   ├── pkg-with-1-dep.json
+    │   │   │   │   ├── pkg-with-bundled-dependencies
+    │   │   │   │   │   └── pkg-with-bundled-dependencies-1.0.0.tgz
+    │   │   │   │   ├── pkg-with-bundle-dependencies-true
+    │   │   │   │   │   └── pkg-with-bundle-dependencies-true-1.0.0.tgz
+    │   │   │   │   ├── symlink-workspace
+    │   │   │   │   │   ├── app1
+    │   │   │   │   │   │   └── packages
+    │   │   │   │   │   │       └── public
+    │   │   │   │   │   │           ├── bar
+    │   │   │   │   │   │           │   └── package.json
+    │   │   │   │   │   │           └── foo
+    │   │   │   │   │   │               ├── package.json
+    │   │   │   │   │   │               └── pnpm-lock.yaml
+    │   │   │   │   │   └── app2
+    │   │   │   │   │       └── packages
+    │   │   │   │   ├── tar-pkg-with-dep-1
+    │   │   │   │   │   ├── package.json
+    │   │   │   │   │   └── tar-pkg-with-dep-1.0.0.tgz
+    │   │   │   │   ├── tar-pkg-with-dep-2
+    │   │   │   │   │   ├── package.json
+    │   │   │   │   │   └── tar-pkg-with-dep-1.0.0.tgz
+    │   │   │   │   ├── tar-pkg-with-peers
+    │   │   │   │   │   ├── index.js
+    │   │   │   │   │   ├── package.json
+    │   │   │   │   │   └── tar-pkg-with-peers-1.0.0.tgz
+    │   │   │   │   └── tooling-that-needs-node-path
+    │   │   │   │       └── index.es6.js
+    │   │   │   ├── getPeerDependencyIssues.test.ts
+    │   │   │   ├── hoistedNodeLinker
+    │   │   │   │   ├── install.ts
+    │   │   │   │   └── uninstall.ts
+    │   │   │   ├── install
+    │   │   │   │   ├── aliases.ts
+    │   │   │   │   ├── auth.ts
+    │   │   │   │   ├── autoInstallPeers.ts
+    │   │   │   │   ├── bundledDependencies.ts
+    │   │   │   │   ├── dedupeDirectDeps.ts
+    │   │   │   │   ├── dedupeInWorkspace.ts
+    │   │   │   │   ├── dedupe.ts
+    │   │   │   │   ├── deepRecursive.ts
+    │   │   │   │   ├── defaultPeerDependencies.ts
+    │   │   │   │   ├── errors.ts
+    │   │   │   │   ├── excludeLinksFromLockfile.ts
+    │   │   │   │   ├── fixLockfile.ts
+    │   │   │   │   ├── fromRepo.ts
+    │   │   │   │   ├── fromTarball.ts
+    │   │   │   │   ├── frozenLockfile.ts
+    │   │   │   │   ├── gitBranchLockfile.test.ts
+    │   │   │   │   ├── hoist.ts
+    │   │   │   │   ├── hooks.ts
+    │   │   │   │   ├── ignoredOptionalDependencies.ts
+    │   │   │   │   ├── injectLocalPackages.ts
+    │   │   │   │   ├── installationChecks.ts
+    │   │   │   │   ├── lifecycleScripts.ts
+    │   │   │   │   ├── local.ts
+    │   │   │   │   ├── lockfileDir.ts
+    │   │   │   │   ├── lockfileOnly.ts
+    │   │   │   │   ├── misc.ts
+    │   │   │   │   ├── modulesCache.ts
+    │   │   │   │   ├── modulesDir.ts
+    │   │   │   │   ├── multipleImporters.ts
+    │   │   │   │   ├── only.ts
+    │   │   │   │   ├── optionalDependencies.ts
+    │   │   │   │   ├── overrides.ts
+    │   │   │   │   ├── packageExtensions.ts
+    │   │   │   │   ├── patch.ts
+    │   │   │   │   ├── peerDependencies.ts
+    │   │   │   │   ├── reporting.ts
+    │   │   │   │   ├── resolutionMode.ts
+    │   │   │   │   ├── setExtraNodePath.ts
+    │   │   │   │   ├── sideEffects.ts
+    │   │   │   │   ├── stats.ts
+    │   │   │   │   ├── store.ts
+    │   │   │   │   ├── update.ts
+    │   │   │   │   ├── updatingPkgJson.ts
+    │   │   │   │   └── virtualStoreDirMaxLength.ts
+    │   │   │   ├── link.ts
+    │   │   │   ├── lockfile.ts
+    │   │   │   ├── offline.ts
+    │   │   │   ├── packageImportMethods.ts
+    │   │   │   ├── prune.ts
+    │   │   │   ├── registry-mirror
+    │   │   │   │   ├── is-positive-3.1.0.tgz
+    │   │   │   │   └── is-positive.json
+    │   │   │   ├── tsconfig.json
+    │   │   │   ├── uninstall.ts
+    │   │   │   ├── unlink.ts
+    │   │   │   └── utils
+    │   │   │       ├── index.ts
+    │   │   │       ├── simple-package.json
+    │   │   │       └── testDefaults.ts
+    │   │   ├── tsconfig.json
+    │   │   └── tsconfig.lint.json
+    │   ├── direct-dep-linker
+    │   │   ├── CHANGELOG.md
+    │   │   ├── package.json
+    │   │   ├── README.md
+    │   │   ├── src
+    │   │   │   ├── index.ts
+    │   │   │   └── linkDirectDeps.ts
+    │   │   ├── tsconfig.json
+    │   │   └── tsconfig.lint.json
+    │   ├── get-context
+    │   │   ├── CHANGELOG.md
+    │   │   ├── package.json
+    │   │   ├── README.md
+    │   │   ├── src
+    │   │   │   ├── checkCompatibility
+    │   │   │   │   ├── BreakingChangeError.ts
+    │   │   │   │   ├── ErrorRelatedSources.ts
+    │   │   │   │   ├── index.ts
+    │   │   │   │   ├── ModulesBreakingChangeError.ts
+    │   │   │   │   ├── UnexpectedStoreError.ts
+    │   │   │   │   └── UnexpectedVirtualStoreDirError.ts
+    │   │   │   ├── index.ts
+    │   │   │   └── readLockfiles.ts
+    │   │   ├── test
+    │   │   │   ├── index.ts
+    │   │   │   └── tsconfig.json
+    │   │   ├── tsconfig.json
+    │   │   └── tsconfig.lint.json
+    │   ├── headless
+    │   │   ├── CHANGELOG.md
+    │   │   ├── package.json
+    │   │   ├── README.md
+    │   │   ├── src
+    │   │   │   ├── index.ts
+    │   │   │   ├── linkHoistedModules.ts
+    │   │   │   └── lockfileToHoistedDepGraph.ts
+    │   │   ├── test
+    │   │   │   ├── fixtures
+    │   │   │   │   ├── deps-have-lifecycle-scripts
+    │   │   │   │   │   ├── package.json
+    │   │   │   │   │   └── pnpm-lock.yaml
+    │   │   │   │   ├── has-glob
+    │   │   │   │   │   ├── package.json
+    │   │   │   │   │   └── pnpm-lock.yaml
+    │   │   │   │   ├── has-glob-and-rimraf
+    │   │   │   │   │   ├── package.json
+    │   │   │   │   │   └── pnpm-lock.yaml
+    │   │   │   │   ├── has-incompatible-optional-subdep
+    │   │   │   │   │   ├── package.json
+    │   │   │   │   │   └── pnpm-lock.yaml
+    │   │   │   │   ├── has-local-dep
+    │   │   │   │   │   ├── pkg
+    │   │   │   │   │   │   ├── package.json
+    │   │   │   │   │   │   └── pnpm-lock.yaml
+    │   │   │   │   │   └── tar-pkg-1.0.0.tgz
+    │   │   │   │   ├── has-local-dir-dep
+    │   │   │   │   │   ├── example
+    │   │   │   │   │   │   ├── package.json
+    │   │   │   │   │   │   └── pnpm-lock.yaml
+    │   │   │   │   │   ├── package.json
+    │   │   │   │   │   └── pnpm-lock.yaml
+    │   │   │   │   ├── has-nonexistent-optional-dep
+    │   │   │   │   │   ├── package.json
+    │   │   │   │   │   └── pnpm-lock.yaml
+    │   │   │   │   ├── has-several-versions-of-same-pkg
+    │   │   │   │   │   ├── package.json
+    │   │   │   │   │   └── pnpm-lock.yaml
+    │   │   │   │   ├── ignore-package-manifest
+    │   │   │   │   │   └── pnpm-lock.yaml
+    │   │   │   │   ├── pnpm-workspace.yaml
+    │   │   │   │   ├── prod-dep-is-dev-subdep
+    │   │   │   │   │   ├── package.json
+    │   │   │   │   │   └── pnpm-lock.yaml
+    │   │   │   │   ├── reinstall-peer-deps
+    │   │   │   │   │   ├── package.json
+    │   │   │   │   │   └── pnpm-lock.yaml
+    │   │   │   │   ├── resolved-peer-deps-in-subdeps
+    │   │   │   │   │   ├── package.json
+    │   │   │   │   │   └── pnpm-lock.yaml
+    │   │   │   │   ├── side-effects
+    │   │   │   │   │   ├── package.json
+    │   │   │   │   │   └── pnpm-lock.yaml
+    │   │   │   │   ├── side-effects-of-subdep
+    │   │   │   │   │   ├── package.json
+    │   │   │   │   │   └── pnpm-lock.yaml
+    │   │   │   │   ├── simple
+    │   │   │   │   │   ├── package.json
+    │   │   │   │   │   └── pnpm-lock.yaml
+    │   │   │   │   ├── simple-shamefully-flatten
+    │   │   │   │   │   ├── package.json
+    │   │   │   │   │   └── pnpm-lock.yaml
+    │   │   │   │   ├── simple-with-more-deps
+    │   │   │   │   │   ├── package.json
+    │   │   │   │   │   └── pnpm-lock.yaml
+    │   │   │   │   ├── simple-with-optional-dep
+    │   │   │   │   │   ├── package.json
+    │   │   │   │   │   └── pnpm-lock.yaml
+    │   │   │   │   ├── with-1-dep
+    │   │   │   │   │   ├── package.json
+    │   │   │   │   │   └── pnpm-lock.yaml
+    │   │   │   │   ├── workspace
+    │   │   │   │   │   ├── bar
+    │   │   │   │   │   │   └── package.json
+    │   │   │   │   │   ├── foo
+    │   │   │   │   │   │   └── package.json
+    │   │   │   │   │   ├── pnpm-lock.yaml
+    │   │   │   │   │   └── pnpm-workspace.yaml
+    │   │   │   │   └── workspace2
+    │   │   │   │       ├── bar
+    │   │   │   │       │   └── package.json
+    │   │   │   │       ├── foo
+    │   │   │   │       │   └── package.json
+    │   │   │   │       ├── pnpm-lock.yaml
+    │   │   │   │       └── pnpm-workspace.yaml
+    │   │   │   ├── index.ts
+    │   │   │   ├── tsconfig.json
+    │   │   │   └── utils
+    │   │   │       └── testDefaults.ts
+    │   │   ├── tsconfig.json
+    │   │   └── tsconfig.lint.json
+    │   ├── hoist
+    │   │   ├── CHANGELOG.md
+    │   │   ├── package.json
+    │   │   ├── README.md
+    │   │   ├── src
+    │   │   │   └── index.ts
+    │   │   ├── tsconfig.json
+    │   │   └── tsconfig.lint.json
+    │   ├── link-bins
+    │   │   ├── CHANGELOG.md
+    │   │   ├── package.json
+    │   │   ├── README.md
+    │   │   ├── src
+    │   │   │   └── index.ts
+    │   │   ├── test
+    │   │   │   ├── fixtures
+    │   │   │   │   ├── bin-dir
+    │   │   │   │   │   └── pkg
+    │   │   │   │   │       ├── bin
+    │   │   │   │   │       │   └── subdir
+    │   │   │   │   │       │       └── index.js
+    │   │   │   │   │       └── package.json
+    │   │   │   │   ├── bin-name-conflicts
+    │   │   │   │   │   └── node_modules
+    │   │   │   │   │       ├── bar
+    │   │   │   │   │       │   ├── index.js
+    │   │   │   │   │       │   └── package.json
+    │   │   │   │   │       └── foo
+    │   │   │   │   │           ├── index.js
+    │   │   │   │   │           └── package.json
+    │   │   │   │   ├── bin-name-conflicts-no-own-name
+    │   │   │   │   │   └── node_modules
+    │   │   │   │   │       ├── bar
+    │   │   │   │   │       │   ├── index.js
+    │   │   │   │   │       │   └── package.json
+    │   │   │   │   │       └── foo
+    │   │   │   │   │           ├── index.js
+    │   │   │   │   │           └── package.json
+    │   │   │   │   ├── bin-not-exist
+    │   │   │   │   │   └── node_modules
+    │   │   │   │   │       └── foo
+    │   │   │   │   │           └── package.json
+    │   │   │   │   ├── bin-window-shebang
+    │   │   │   │   │   └── node_modules
+    │   │   │   │   │       └── crlf
+    │   │   │   │   │           ├── bin
+    │   │   │   │   │           │   ├── crlf.js
+    │   │   │   │   │           │   └── lf.js
+    │   │   │   │   │           └── package.json
+    │   │   │   │   ├── different-versions
+    │   │   │   │   │   └── node_modules
+    │   │   │   │   │       ├── my-command-greater
+    │   │   │   │   │       │   ├── index.js
+    │   │   │   │   │       │   └── package.json
+    │   │   │   │   │       ├── my-command-lesser
+    │   │   │   │   │       │   ├── index.js
+    │   │   │   │   │       │   └── package.json
+    │   │   │   │   │       └── my-command-middle
+    │   │   │   │   │           ├── index.js
+    │   │   │   │   │           └── package.json
+    │   │   │   │   ├── dir-with-no-manifest
+    │   │   │   │   │   └── node_modules
+    │   │   │   │   │       └── dir-with-no-manifest
+    │   │   │   │   ├── exotic-manifest
+    │   │   │   │   │   └── node_modules
+    │   │   │   │   │       └── simple
+    │   │   │   │   │           ├── index.js
+    │   │   │   │   │           └── package.yaml
+    │   │   │   │   ├── foobar
+    │   │   │   │   │   └── node_modules
+    │   │   │   │   │       ├── bar
+    │   │   │   │   │       │   ├── index.js
+    │   │   │   │   │       │   └── package.json
+    │   │   │   │   │       └── foo
+    │   │   │   │   │           ├── index.js
+    │   │   │   │   │           └── package.json
+    │   │   │   │   ├── matching-alias-vs-matching-name
+    │   │   │   │   │   └── node_modules
+    │   │   │   │   │       ├── my-command
+    │   │   │   │   │       │   ├── index.js
+    │   │   │   │   │       │   └── package.json
+    │   │   │   │   │       └── original-my-command
+    │   │   │   │   │           ├── index.js
+    │   │   │   │   │           └── package.json
+    │   │   │   │   ├── no-bin
+    │   │   │   │   │   ├── node_modules
+    │   │   │   │   │   │   └── simple
+    │   │   │   │   │   │       ├── index.js
+    │   │   │   │   │   │       └── package.json
+    │   │   │   │   │   ├── packages
+    │   │   │   │   │   │   └── simple
+    │   │   │   │   │   │       ├── index.js
+    │   │   │   │   │   │       └── package.json
+    │   │   │   │   │   └── pnpm-workspace.yaml
+    │   │   │   │   ├── no-name
+    │   │   │   │   │   └── node_modules
+    │   │   │   │   │       └── simple
+    │   │   │   │   │           ├── index.js
+    │   │   │   │   │           └── package.json
+    │   │   │   │   ├── pnpm-cli
+    │   │   │   │   │   └── node_modules
+    │   │   │   │   │       └── pnpm
+    │   │   │   │   │           ├── index.js
+    │   │   │   │   │           └── package.json
+    │   │   │   │   └── simple-fixture
+    │   │   │   │       └── node_modules
+    │   │   │   │           └── simple
+    │   │   │   │               ├── index.js
+    │   │   │   │               └── package.json
+    │   │   │   ├── index.ts
+    │   │   │   └── tsconfig.json
+    │   │   ├── tsconfig.json
+    │   │   └── tsconfig.lint.json
+    │   ├── modules-cleaner
+    │   │   ├── CHANGELOG.md
+    │   │   ├── package.json
+    │   │   ├── README.md
+    │   │   ├── src
+    │   │   │   ├── index.ts
+    │   │   │   ├── prune.ts
+    │   │   │   └── removeDirectDependency.ts
+    │   │   ├── tsconfig.json
+    │   │   └── tsconfig.lint.json
+    │   ├── modules-yaml
+    │   │   ├── CHANGELOG.md
+    │   │   ├── package.json
+    │   │   ├── README.md
+    │   │   ├── src
+    │   │   │   └── index.ts
+    │   │   ├── test
+    │   │   │   ├── fixtures
+    │   │   │   │   ├── empty-modules-yaml
+    │   │   │   │   ├── old-no-shamefully-hoist
+    │   │   │   │   └── old-shamefully-hoist
+    │   │   │   ├── index.ts
+    │   │   │   └── tsconfig.json
+    │   │   ├── tsconfig.json
+    │   │   └── tsconfig.lint.json
+    │   ├── package-bins
+    │   │   ├── CHANGELOG.md
+    │   │   ├── package.json
+    │   │   ├── README.md
+    │   │   ├── src
+    │   │   │   └── index.ts
+    │   │   ├── test
+    │   │   │   ├── fixtures
+    │   │   │   │   └── bin-dir
+    │   │   │   │       ├── rootBin.js
+    │   │   │   │       └── subdir
+    │   │   │   │           └── subBin.js
+    │   │   │   ├── index.ts
+    │   │   │   └── tsconfig.json
+    │   │   ├── tsconfig.json
+    │   │   └── tsconfig.lint.json
+    │   ├── package-requester
+    │   │   ├── CHANGELOG.md
+    │   │   ├── package.json
+    │   │   ├── README.md
+    │   │   ├── src
+    │   │   │   ├── equalOrSemverEqual.ts
+    │   │   │   ├── index.ts
+    │   │   │   └── packageRequester.ts
+    │   │   ├── test
+    │   │   │   ├── equalOrSemverEqual.test.ts
+    │   │   │   ├── fixtures
+    │   │   │   │   ├── is-positive-1.0.0.tgz
+    │   │   │   │   ├── pnpm-package-requester-0.8.1.tgz
+    │   │   │   │   └── pnpm-package-requester-4.1.2.tgz
+    │   │   │   ├── index.ts
+    │   │   │   └── tsconfig.json
+    │   │   ├── tsconfig.json
+    │   │   └── tsconfig.lint.json
+    │   ├── plugin-commands-installation
+    │   │   ├── CHANGELOG.md
+    │   │   ├── package.json
+    │   │   ├── README.md
+    │   │   ├── src
+    │   │   │   ├── add.ts
+    │   │   │   ├── ci.ts
+    │   │   │   ├── dedupe.ts
+    │   │   │   ├── fetch.ts
+    │   │   │   ├── getPinnedVersion.ts
+    │   │   │   ├── getSaveType.ts
+    │   │   │   ├── import
+    │   │   │   │   ├── index.ts
+    │   │   │   │   └── yarnUtil.ts
+    │   │   │   ├── index.ts
+    │   │   │   ├── installDeps.ts
+    │   │   │   ├── install.ts
+    │   │   │   ├── link.ts
+    │   │   │   ├── nodeExecPath.ts
+    │   │   │   ├── prune.ts
+    │   │   │   ├── recursive.ts
+    │   │   │   ├── remove.ts
+    │   │   │   ├── unlink.ts
+    │   │   │   ├── update
+    │   │   │   │   ├── getUpdateChoices.ts
+    │   │   │   │   └── index.ts
+    │   │   │   └── updateWorkspaceDependencies.ts
+    │   │   ├── test
+    │   │   │   ├── addRecursive.ts
+    │   │   │   ├── add.ts
+    │   │   │   ├── dedupe.ts
+    │   │   │   ├── disallowWorkspaceCycles.test.ts
+    │   │   │   ├── fetch.ts
+    │   │   │   ├── __fixtures__
+    │   │   │   │   └── patchedDependencies
+    │   │   │   │       ├── console-log-replace-1st-line.patch
+    │   │   │   │       ├── console-log-replace-2nd-line.patch
+    │   │   │   │       ├── console-log-replace-3rd-line.patch
+    │   │   │   │       └── console-log-replace-4th-line.patch
+    │   │   │   ├── getPinnedVersion.ts
+    │   │   │   ├── getSaveType.ts
+    │   │   │   ├── global.ts
+    │   │   │   ├── importRecursive.ts
+    │   │   │   ├── import.ts
+    │   │   │   ├── install.ts
+    │   │   │   ├── linkRecursive.ts
+    │   │   │   ├── link.ts
+    │   │   │   ├── miscRecursive.ts
+    │   │   │   ├── patchedDependencies.ts
+    │   │   │   ├── peerDependencies.ts
+    │   │   │   ├── prune.ts
+    │   │   │   ├── remove
+    │   │   │   │   ├── completion.ts
+    │   │   │   │   └── remove.ts
+    │   │   │   ├── __snapshots__
+    │   │   │   │   └── dedupe.ts.snap
+    │   │   │   ├── tsconfig.json
+    │   │   │   ├── update
+    │   │   │   │   ├── getUpdateChoices.test.ts
+    │   │   │   │   ├── interactive.ts
+    │   │   │   │   ├── issue-7415.ts
+    │   │   │   │   ├── recursive.ts
+    │   │   │   │   └── update.ts
+    │   │   │   ├── updateWorkspaceDependencies.test.ts
+    │   │   │   ├── utils
+    │   │   │   │   └── index.ts
+    │   │   │   └── warnCyclicDependencies.ts
+    │   │   ├── tsconfig.json
+    │   │   └── tsconfig.lint.json
+    │   ├── read-projects-context
+    │   │   ├── CHANGELOG.md
+    │   │   ├── package.json
+    │   │   ├── README.md
+    │   │   ├── src
+    │   │   │   └── index.ts
+    │   │   ├── tsconfig.json
+    │   │   └── tsconfig.lint.json
+    │   ├── real-hoist
+    │   │   ├── CHANGELOG.md
+    │   │   ├── package.json
+    │   │   ├── README.md
+    │   │   ├── src
+    │   │   │   └── index.ts
+    │   │   ├── test
+    │   │   │   ├── index.ts
+    │   │   │   └── tsconfig.json
+    │   │   ├── tsconfig.json
+    │   │   └── tsconfig.lint.json
+    │   ├── remove-bins
+    │   │   ├── CHANGELOG.md
+    │   │   ├── package.json
+    │   │   ├── README.md
+    │   │   ├── src
+    │   │   │   ├── index.ts
+    │   │   │   └── removeBins.ts
+    │   │   ├── tsconfig.json
+    │   │   └── tsconfig.lint.json
+    │   └── resolve-dependencies
+    │       ├── CHANGELOG.md
+    │       ├── package.json
+    │       ├── README.md
+    │       ├── src
+    │       │   ├── dedupeInjectedDeps.ts
+    │       │   ├── depPathToRef.ts
+    │       │   ├── getCatalogSnapshots.ts
+    │       │   ├── getNonDevWantedDependencies.ts
+    │       │   ├── getWantedDependencies.ts
+    │       │   ├── hoistPeers.ts
+    │       │   ├── index.ts
+    │       │   ├── mergePeers.ts
+    │       │   ├── nextNodeId.ts
+    │       │   ├── parentIdsContainSequence.ts
+    │       │   ├── replaceVersionInPref.ts
+    │       │   ├── resolveDependencies.ts
+    │       │   ├── resolveDependencyTree.ts
+    │       │   ├── resolvePeers.ts
+    │       │   ├── safeIsInnerLink.ts
+    │       │   ├── toResolveImporter.ts
+    │       │   ├── updateLockfile.ts
+    │       │   ├── updateProjectManifest.ts
+    │       │   └── wantedDepIsLocallyAvailable.ts
+    │       ├── test
+    │       │   ├── dedupeDepPaths.test.ts
+    │       │   ├── hoistPeers.test.ts
+    │       │   ├── parentIdsContainSequence.test.ts
+    │       │   ├── replaceVersionInPref.test.ts
+    │       │   ├── resolvePeers.ts
+    │       │   └── tsconfig.json
+    │       ├── tsconfig.json
+    │       └── tsconfig.lint.json
+    ├── pkg-manifest
+    │   ├── exportable-manifest
+    │   │   ├── CHANGELOG.md
+    │   │   ├── package.json
+    │   │   ├── README.md
+    │   │   ├── src
+    │   │   │   ├── index.ts
+    │   │   │   └── overridePublishConfig.ts
+    │   │   ├── test
+    │   │   │   ├── index.test.ts
+    │   │   │   ├── overridePublishConfig.test.ts
+    │   │   │   └── tsconfig.json
+    │   │   ├── tsconfig.json
+    │   │   └── tsconfig.lint.json
+    │   ├── manifest-utils
+    │   │   ├── CHANGELOG.md
+    │   │   ├── package.json
+    │   │   ├── README.md
+    │   │   ├── src
+    │   │   │   ├── filterDependenciesByType.ts
+    │   │   │   ├── getAllDependenciesFromManifest.ts
+    │   │   │   ├── getAllUniqueSpecs.ts
+    │   │   │   ├── getDependencyTypeFromManifest.ts
+    │   │   │   ├── getPref.ts
+    │   │   │   ├── getSpecFromPackageManifest.ts
+    │   │   │   ├── index.ts
+    │   │   │   └── updateProjectManifestObject.ts
+    │   │   ├── test
+    │   │   │   ├── getAllUniqueSpecs.test.ts
+    │   │   │   ├── getDependencyTypeFromManifest.test.ts
+    │   │   │   ├── getPref.test.ts
+    │   │   │   ├── getSpecFromPackageManifest.test.ts
+    │   │   │   ├── index.ts
+    │   │   │   ├── tsconfig.json
+    │   │   │   └── updateProjectManifestObject.test.ts
+    │   │   ├── tsconfig.json
+    │   │   └── tsconfig.lint.json
+    │   ├── read-package-json
+    │   │   ├── CHANGELOG.md
+    │   │   ├── package.json
+    │   │   ├── README.md
+    │   │   ├── src
+    │   │   │   └── index.ts
+    │   │   ├── test
+    │   │   │   ├── fixtures
+    │   │   │   │   └── invalid-name
+    │   │   │   │       └── package.json
+    │   │   │   ├── index.ts
+    │   │   │   └── tsconfig.json
+    │   │   ├── tsconfig.json
+    │   │   └── tsconfig.lint.json
+    │   ├── read-project-manifest
+    │   │   ├── CHANGELOG.md
+    │   │   ├── __fixtures__
+    │   │   │   ├── commented-package-json5
+    │   │   │   │   ├── modified.json5
+    │   │   │   │   └── package.json5
+    │   │   │   ├── invalid-package-json
+    │   │   │   │   └── package.json
+    │   │   │   ├── invalid-package-json5
+    │   │   │   │   └── package.json5
+    │   │   │   ├── invalid-package-yaml
+    │   │   │   │   └── package.yaml
+    │   │   │   ├── package-json
+    │   │   │   │   └── package.json
+    │   │   │   ├── package-json5
+    │   │   │   │   └── package.json5
+    │   │   │   └── package-yaml
+    │   │   │       └── package.yaml
+    │   │   ├── package.json
+    │   │   ├── README.md
+    │   │   ├── src
+    │   │   │   ├── index.ts
+    │   │   │   └── readFile.ts
+    │   │   ├── test
+    │   │   │   ├── index.ts
+    │   │   │   └── tsconfig.json
+    │   │   ├── tsconfig.json
+    │   │   └── tsconfig.lint.json
+    │   └── write-project-manifest
+    │       ├── CHANGELOG.md
+    │       ├── package.json
+    │       ├── README.md
+    │       ├── src
+    │       │   └── index.ts
+    │       ├── test
+    │       │   ├── index.ts
+    │       │   └── tsconfig.json
+    │       ├── tsconfig.json
+    │       └── tsconfig.lint.json
+    ├── pnpm
+    │   ├── artifacts
+    │   │   ├── exe
+    │   │   │   ├── CHANGELOG.md
+    │   │   │   ├── NOTES.md
+    │   │   │   ├── package.json
+    │   │   │   ├── pnpm
+    │   │   │   ├── prepare.js
+    │   │   │   ├── README.md
+    │   │   │   ├── scripts
+    │   │   │   │   └── build-artifacts.ts
+    │   │   │   └── setup.js
+    │   │   ├── linux-arm64
+    │   │   │   ├── CHANGELOG.md
+    │   │   │   ├── package.json
+    │   │   │   └── README.md
+    │   │   ├── linuxstatic-arm64
+    │   │   ├── linux-x64
+    │   │   │   ├── CHANGELOG.md
+    │   │   │   ├── package.json
+    │   │   │   └── README.md
+    │   │   ├── macos-arm64
+    │   │   │   ├── CHANGELOG.md
+    │   │   │   ├── package.json
+    │   │   │   └── README.md
+    │   │   ├── macos-x64
+    │   │   │   ├── CHANGELOG.md
+    │   │   │   ├── package.json
+    │   │   │   └── README.md
+    │   │   ├── win-arm64
+    │   │   │   ├── CHANGELOG.md
+    │   │   │   ├── package.json
+    │   │   │   └── README.md
+    │   │   └── win-x64
+    │   │       ├── CHANGELOG.md
+    │   │       ├── package.json
+    │   │       └── README.md
+    │   ├── bin
+    │   │   ├── pnpm.cjs
+    │   │   └── pnpx.cjs
+    │   ├── bundle.ts
+    │   ├── CHANGELOG.md
+    │   ├── dev
+    │   │   ├── CHANGELOG.md
+    │   │   ├── package.json
+    │   │   └── pd.js
+    │   ├── LICENSE
+    │   ├── node-gyp-bin
+    │   │   ├── node-gyp
+    │   │   └── node-gyp.cmd
+    │   ├── package.json
+    │   ├── package-linux-arm64.json
+    │   ├── package-linuxstatic-arm64.json
+    │   ├── package-linuxstatic-x64.json
+    │   ├── package-linux-x64.json
+    │   ├── package-macos-arm64.json
+    │   ├── package-macos-x64.json
+    │   ├── package-win-arm64.json
+    │   ├── package-win-x64.json
+    │   ├── pnpmrc
+    │   ├── README.md
+    │   ├── src
+    │   │   ├── checkForUpdates.test.ts
+    │   │   ├── checkForUpdates.ts
+    │   │   ├── cmd
+    │   │   │   ├── bin.ts
+    │   │   │   ├── help.ts
+    │   │   │   ├── index.ts
+    │   │   │   ├── installTest.ts
+    │   │   │   ├── recursive.ts
+    │   │   │   └── root.ts
+    │   │   ├── errorHandler.ts
+    │   │   ├── formatError.ts
+    │   │   ├── main.ts
+    │   │   ├── parseCliArgs.ts
+    │   │   ├── pnpm.ts
+    │   │   ├── reporter
+    │   │   │   ├── index.ts
+    │   │   │   └── silentReporter.ts
+    │   │   ├── runNpm.ts
+    │   │   ├── shorthands.ts
+    │   │   ├── switchCliVersion.ts
+    │   │   └── types.ts
+    │   ├── test
+    │   │   ├── bin.ts
+    │   │   ├── cli.ts
+    │   │   ├── dlx.ts
+    │   │   ├── errorHandler.test.ts
+    │   │   ├── exec.ts
+    │   │   ├── filterProd.test.ts
+    │   │   ├── formatError.test.ts
+    │   │   ├── help.spec.ts
+    │   │   ├── hooks.ts
+    │   │   ├── install
+    │   │   │   ├── global.ts
+    │   │   │   ├── hoist.ts
+    │   │   │   ├── hooks.ts
+    │   │   │   ├── lifecycleScripts.ts
+    │   │   │   ├── misc.ts
+    │   │   │   ├── only.ts
+    │   │   │   ├── optional.ts
+    │   │   │   ├── preferOffline.ts
+    │   │   │   ├── selfUpdate.ts
+    │   │   │   └── sideEffects.ts
+    │   │   ├── link.ts
+    │   │   ├── monorepo
+    │   │   │   ├── dedupePeers.test.ts
+    │   │   │   ├── index.ts
+    │   │   │   └── peerDependencies.ts
+    │   │   ├── recursive
+    │   │   │   ├── misc.ts
+    │   │   │   ├── rebuild.ts
+    │   │   │   ├── run.ts
+    │   │   │   └── update.ts
+    │   │   ├── root.ts
+    │   │   ├── run.ts
+    │   │   ├── server.ts
+    │   │   ├── switchingVersions.test.ts
+    │   │   ├── tsconfig.json
+    │   │   ├── uninstall.ts
+    │   │   ├── update.ts
+    │   │   └── utils
+    │   │       ├── distTags.ts
+    │   │       ├── execPnpm.ts
+    │   │       ├── index.ts
+    │   │       ├── isPortInUse.ts
+    │   │       ├── localPkg.ts
+    │   │       ├── retryLoadJsonFile.ts
+    │   │       ├── simple-package.json
+    │   │       └── testDefaults.ts
+    │   ├── tsconfig.json
+    │   └── tsconfig.lint.json
+    ├── pnpm-lock.yaml
+    ├── pnpm-workspace.yaml
+    ├── README.md
+    ├── releasing
+    │   ├── plugin-commands-deploy
+    │   │   ├── CHANGELOG.md
+    │   │   ├── package.json
+    │   │   ├── README.md
+    │   │   ├── src
+    │   │   │   ├── deployCatalogHook.ts
+    │   │   │   ├── deployHook.ts
+    │   │   │   ├── deploy.ts
+    │   │   │   └── index.ts
+    │   │   ├── test
+    │   │   │   ├── deployCatalogHook.ts
+    │   │   │   ├── deployHook.test.ts
+    │   │   │   ├── deploy.test.ts
+    │   │   │   ├── tsconfig.json
+    │   │   │   └── utils
+    │   │   │       └── index.ts
+    │   │   ├── tsconfig.json
+    │   │   └── tsconfig.lint.json
+    │   └── plugin-commands-publishing
+    │       ├── CHANGELOG.md
+    │       ├── fixtures
+    │       │   ├── has-bin
+    │       │   │   ├── exec
+    │       │   │   ├── index.js
+    │       │   │   ├── other-exec
+    │       │   │   └── package.json
+    │       │   └── readme
+    │       │       ├── package.json
+    │       │       └── README.md
+    │       ├── package.json
+    │       ├── README.md
+    │       ├── src
+    │       │   ├── index.ts
+    │       │   ├── pack.ts
+    │       │   ├── publish.ts
+    │       │   └── recursivePublish.ts
+    │       ├── test
+    │       │   ├── gitChecks.ts
+    │       │   ├── pack.ts
+    │       │   ├── publish.ts
+    │       │   ├── recursivePublish.ts
+    │       │   ├── __snapshots__
+    │       │   │   └── recursivePublish.ts.snap
+    │       │   ├── tsconfig.json
+    │       │   └── utils
+    │       │       ├── index.ts
+    │       │       ├── tokenHelperBasic.bat
+    │       │       ├── tokenHelperBasic.js
+    │       │       ├── tokenHelperBearer.bat
+    │       │       └── tokenHelperBearer.js
+    │       ├── tsconfig.json
+    │       └── tsconfig.lint.json
+    ├── renovate.json
+    ├── resolving
+    │   ├── default-resolver
+    │   │   ├── CHANGELOG.md
+    │   │   ├── package.json
+    │   │   ├── README.md
+    │   │   ├── src
+    │   │   │   └── index.ts
+    │   │   ├── test
+    │   │   │   ├── index.ts
+    │   │   │   └── tsconfig.json
+    │   │   ├── tsconfig.json
+    │   │   └── tsconfig.lint.json
+    │   ├── git-resolver
+    │   │   ├── CHANGELOG.md
+    │   │   ├── example.js
+    │   │   ├── __mocks__
+    │   │   │   ├── graceful-git.js
+    │   │   │   └── @pnpm
+    │   │   │       └── fetch.js
+    │   │   ├── package.json
+    │   │   ├── README.md
+    │   │   ├── src
+    │   │   │   ├── createGitHostedPkgId.ts
+    │   │   │   ├── index.ts
+    │   │   │   └── parsePref.ts
+    │   │   ├── test
+    │   │   │   ├── createGitHostedPkgId.test.ts
+    │   │   │   ├── index.ts
+    │   │   │   ├── parsePref.test.ts
+    │   │   │   └── tsconfig.json
+    │   │   ├── tsconfig.json
+    │   │   └── tsconfig.lint.json
+    │   ├── local-resolver
+    │   │   ├── CHANGELOG.md
+    │   │   ├── example.js
+    │   │   ├── example-package
+    │   │   │   ├── package.json
+    │   │   │   └── README.md
+    │   │   ├── package.json
+    │   │   ├── README.md
+    │   │   ├── src
+    │   │   │   ├── index.ts
+    │   │   │   └── parsePref.ts
+    │   │   ├── test
+    │   │   │   ├── index.ts
+    │   │   │   ├── pnpm-local-resolver-0.1.1.tgz
+    │   │   │   └── tsconfig.json
+    │   │   ├── tsconfig.json
+    │   │   └── tsconfig.lint.json
+    │   ├── npm-resolver
+    │   │   ├── CHANGELOG.md
+    │   │   ├── example.js
+    │   │   ├── package.json
+    │   │   ├── README.md
+    │   │   ├── src
+    │   │   │   ├── fetch.ts
+    │   │   │   ├── index.ts
+    │   │   │   ├── parsePref.ts
+    │   │   │   ├── pickPackageFromMeta.ts
+    │   │   │   ├── pickPackage.ts
+    │   │   │   ├── toRaw.ts
+    │   │   │   └── workspacePrefToNpm.ts
+    │   │   ├── test
+    │   │   │   ├── fixtures
+    │   │   │   │   ├── bad-dates.json
+    │   │   │   │   ├── broken-integrity.json
+    │   │   │   │   ├── is-positive-broken.json
+    │   │   │   │   ├── is-positive-full.json
+    │   │   │   │   ├── is-positive.json
+    │   │   │   │   ├── is-positive-with-deprecated.json
+    │   │   │   │   ├── JSON.json
+    │   │   │   │   ├── sindresorhus-is.json
+    │   │   │   │   └── unpublished.json
+    │   │   │   ├── index.ts
+    │   │   │   ├── publishedBy.test.ts
+    │   │   │   ├── tsconfig.json
+    │   │   │   └── workspacePrefToNpm.test.ts
+    │   │   ├── tsconfig.json
+    │   │   └── tsconfig.lint.json
+    │   ├── resolver-base
+    │   │   ├── CHANGELOG.md
+    │   │   ├── package.json
+    │   │   ├── README.md
+    │   │   ├── src
+    │   │   │   └── index.ts
+    │   │   ├── tsconfig.json
+    │   │   └── tsconfig.lint.json
+    │   └── tarball-resolver
+    │       ├── CHANGELOG.md
+    │       ├── example.js
+    │       ├── package.json
+    │       ├── README.md
+    │       ├── src
+    │       │   └── index.ts
+    │       ├── test
+    │       │   ├── index.ts
+    │       │   └── tsconfig.json
+    │       ├── tsconfig.json
+    │       └── tsconfig.lint.json
+    ├── reviewing
+    │   ├── dependencies-hierarchy
+    │   │   ├── CHANGELOG.md
+    │   │   ├── example
+    │   │   │   ├── index.js
+    │   │   │   ├── package.json
+    │   │   │   ├── pnpm-lock.yaml
+    │   │   │   └── pnpm-workspace.yaml
+    │   │   ├── package.json
+    │   │   ├── README.md
+    │   │   ├── src
+    │   │   │   ├── buildDependenciesHierarchy.ts
+    │   │   │   ├── createPackagesSearcher.ts
+    │   │   │   ├── DependenciesCache.ts
+    │   │   │   ├── getPkgInfo.ts
+    │   │   │   ├── getTreeNodeChildId.ts
+    │   │   │   ├── getTree.ts
+    │   │   │   ├── index.ts
+    │   │   │   ├── PackageNode.ts
+    │   │   │   ├── TreeNodeId.ts
+    │   │   │   └── types.ts
+    │   │   ├── test
+    │   │   │   ├── circularTree.json
+    │   │   │   ├── createPackagesSearcher.spec.ts
+    │   │   │   ├── getTree.test.ts
+    │   │   │   ├── index.ts
+    │   │   │   └── tsconfig.json
+    │   │   ├── tsconfig.json
+    │   │   └── tsconfig.lint.json
+    │   ├── license-scanner
+    │   │   ├── CHANGELOG.md
+    │   │   ├── package.json
+    │   │   ├── README.md
+    │   │   ├── src
+    │   │   │   ├── getPkgInfo.ts
+    │   │   │   ├── index.ts
+    │   │   │   ├── licenses.ts
+    │   │   │   └── lockfileToLicenseNodeTree.ts
+    │   │   ├── test
+    │   │   │   ├── getPkgInfo.spec.ts
+    │   │   │   ├── licenses.spec.ts
+    │   │   │   └── tsconfig.json
+    │   │   ├── tsconfig.json
+    │   │   └── tsconfig.lint.json
+    │   ├── list
+    │   │   ├── CHANGELOG.md
+    │   │   ├── example
+    │   │   │   ├── index.js
+    │   │   │   ├── package.json
+    │   │   │   ├── pnpm-lock.yaml
+    │   │   │   └── pnpm-workspace.yaml
+    │   │   ├── package.json
+    │   │   ├── pnpm-lock.yaml
+    │   │   ├── README.md
+    │   │   ├── src
+    │   │   │   ├── getPkgInfo.ts
+    │   │   │   ├── index.ts
+    │   │   │   ├── pruneTree.ts
+    │   │   │   ├── readPkg.ts
+    │   │   │   ├── renderJson.ts
+    │   │   │   ├── renderParseable.ts
+    │   │   │   ├── renderTree.ts
+    │   │   │   └── types.ts
+    │   │   ├── test
+    │   │   │   ├── index.ts
+    │   │   │   ├── pnpm-workspace.yaml
+    │   │   │   └── tsconfig.json
+    │   │   ├── tsconfig.json
+    │   │   └── tsconfig.lint.json
+    │   ├── outdated
+    │   │   ├── CHANGELOG.md
+    │   │   ├── package.json
+    │   │   ├── README.md
+    │   │   ├── src
+    │   │   │   ├── createManifestGetter.ts
+    │   │   │   ├── index.ts
+    │   │   │   ├── outdatedDepsOfProjects.ts
+    │   │   │   └── outdated.ts
+    │   │   ├── test
+    │   │   │   ├── getManifest.spec.ts
+    │   │   │   ├── outdated.spec.ts
+    │   │   │   └── tsconfig.json
+    │   │   ├── tsconfig.json
+    │   │   └── tsconfig.lint.json
+    │   ├── plugin-commands-licenses
+    │   │   ├── CHANGELOG.md
+    │   │   ├── package.json
+    │   │   ├── README.md
+    │   │   ├── src
+    │   │   │   ├── index.ts
+    │   │   │   ├── LicensesCommandResult.ts
+    │   │   │   ├── licensesList.ts
+    │   │   │   ├── licenses.ts
+    │   │   │   └── outputRenderer.ts
+    │   │   ├── test
+    │   │   │   ├── fixtures
+    │   │   │   │   ├── complex-licenses
+    │   │   │   │   │   ├── package.json
+    │   │   │   │   │   └── pnpm-lock.yaml
+    │   │   │   │   ├── file-mode-test
+    │   │   │   │   │   ├── package.json
+    │   │   │   │   │   └── pnpm-lock.yaml
+    │   │   │   │   ├── pnpm-workspace.yaml
+    │   │   │   │   ├── simple-licenses
+    │   │   │   │   │   ├── package.json
+    │   │   │   │   │   └── pnpm-lock.yaml
+    │   │   │   │   ├── with-dev-dependency
+    │   │   │   │   │   ├── package.json
+    │   │   │   │   │   └── pnpm-lock.yaml
+    │   │   │   │   ├── with-file-protocol
+    │   │   │   │   │   ├── package.json
+    │   │   │   │   │   ├── pnpm-lock.yaml
+    │   │   │   │   │   └── sub-dep
+    │   │   │   │   │       ├── package.json
+    │   │   │   │   │       └── pnpm-lock.yaml
+    │   │   │   │   ├── with-git-protocol-caps
+    │   │   │   │   │   ├── package.json
+    │   │   │   │   │   └── pnpm-lock.yaml
+    │   │   │   │   ├── with-git-protocol-patched-deps
+    │   │   │   │   │   ├── package.json
+    │   │   │   │   │   ├── patches
+    │   │   │   │   │   │   └── is-positive@3.1.0.patch
+    │   │   │   │   │   └── pnpm-lock.yaml
+    │   │   │   │   ├── with-git-protocol-peer-deps
+    │   │   │   │   │   └── package.json
+    │   │   │   │   └── workspace-licenses
+    │   │   │   │       ├── bar
+    │   │   │   │       │   ├── package.json
+    │   │   │   │       │   └── pnpm-lock.yaml
+    │   │   │   │       ├── foo
+    │   │   │   │       │   ├── package.json
+    │   │   │   │       │   └── pnpm-lock.yaml
+    │   │   │   │       ├── package.json
+    │   │   │   │       ├── pnpm-lock.yaml
+    │   │   │   │       └── pnpm-workspace.yaml
+    │   │   │   ├── index.ts
+    │   │   │   ├── __snapshots__
+    │   │   │   │   └── index.ts.snap
+    │   │   │   ├── tsconfig.json
+    │   │   │   └── utils
+    │   │   │       └── index.ts
+    │   │   ├── tsconfig.json
+    │   │   └── tsconfig.lint.json
+    │   ├── plugin-commands-listing
+    │   │   ├── CHANGELOG.md
+    │   │   ├── package.json
+    │   │   ├── README.md
+    │   │   ├── src
+    │   │   │   ├── index.ts
+    │   │   │   ├── list.ts
+    │   │   │   ├── ll.ts
+    │   │   │   ├── recursive.ts
+    │   │   │   └── why.ts
+    │   │   ├── test
+    │   │   │   ├── index.ts
+    │   │   │   ├── json.ts
+    │   │   │   ├── recursive.ts
+    │   │   │   ├── tsconfig.json
+    │   │   │   ├── utils
+    │   │   │   │   └── index.ts
+    │   │   │   └── why.ts
+    │   │   ├── tsconfig.json
+    │   │   └── tsconfig.lint.json
+    │   └── plugin-commands-outdated
+    │       ├── CHANGELOG.md
+    │       ├── package.json
+    │       ├── README.md
+    │       ├── src
+    │       │   ├── index.ts
+    │       │   ├── outdated.ts
+    │       │   ├── recursive.ts
+    │       │   └── utils.ts
+    │       ├── test
+    │       │   ├── index.ts
+    │       │   ├── recursive.ts
+    │       │   ├── tsconfig.json
+    │       │   └── utils
+    │       │       └── index.ts
+    │       ├── tsconfig.json
+    │       └── tsconfig.lint.json
+    ├── SECURITY.md
+    ├── store
+    │   ├── cafs
+    │   │   ├── CHANGELOG.md
+    │   │   ├── __fixtures__
+    │   │   │   ├── devextreme-17.1.6.tgz
+    │   │   │   └── node-gyp-6.1.0.tgz
+    │   │   ├── package.json
+    │   │   ├── README.md
+    │   │   ├── src
+    │   │   │   ├── addFilesFromDir.ts
+    │   │   │   ├── addFilesFromTarball.ts
+    │   │   │   ├── checkPkgFilesIntegrity.ts
+    │   │   │   ├── getFilePathInCafs.ts
+    │   │   │   ├── index.ts
+    │   │   │   ├── parseJson.ts
+    │   │   │   ├── parseTarball.ts
+    │   │   │   ├── readManifestFromStore.ts
+    │   │   │   ├── writeBufferToCafs.ts
+    │   │   │   └── writeFile.ts
+    │   │   ├── test
+    │   │   │   ├── fixtures
+    │   │   │   │   ├── broken-symlink
+    │   │   │   │   │   ├── doesnt-exist -> ../doesnt-exist
+    │   │   │   │   │   └── subdir
+    │   │   │   │   │       └── should-exist.txt
+    │   │   │   │   ├── colorize-semver-diff.tgz
+    │   │   │   │   ├── jquery.dirtyforms-2.0.0.tgz
+    │   │   │   │   ├── one-file
+    │   │   │   │   │   └── foo.txt
+    │   │   │   │   ├── parsers-3.0.0-rc.48.1.tgz
+    │   │   │   │   └── vue.examples.todomvc.todo-store-0.0.1.tgz
+    │   │   │   ├── index.ts
+    │   │   │   ├── optimisticRenameOverwrite.test.ts
+    │   │   │   ├── tsconfig.json
+    │   │   │   └── writeBufferToCafs.test.ts
+    │   │   ├── tsconfig.json
+    │   │   └── tsconfig.lint.json
+    │   ├── cafs-types
+    │   │   ├── CHANGELOG.md
+    │   │   ├── package.json
+    │   │   ├── README.md
+    │   │   ├── src
+    │   │   │   └── index.ts
+    │   │   ├── tsconfig.json
+    │   │   └── tsconfig.lint.json
+    │   ├── create-cafs-store
+    │   │   ├── CHANGELOG.md
+    │   │   ├── package.json
+    │   │   ├── README.md
+    │   │   ├── src
+    │   │   │   └── index.ts
+    │   │   ├── tsconfig.json
+    │   │   └── tsconfig.lint.json
+    │   ├── package-store
+    │   │   ├── CHANGELOG.md
+    │   │   ├── package.json
+    │   │   ├── README.md
+    │   │   ├── src
+    │   │   │   ├── index.ts
+    │   │   │   └── storeController
+    │   │   │       ├── index.ts
+    │   │   │       └── prune.ts
+    │   │   ├── test
+    │   │   │   ├── index.ts
+    │   │   │   └── tsconfig.json
+    │   │   ├── tsconfig.json
+    │   │   └── tsconfig.lint.json
+    │   ├── plugin-commands-server
+    │   │   ├── CHANGELOG.md
+    │   │   ├── package.json
+    │   │   ├── README.md
+    │   │   ├── src
+    │   │   │   ├── index.ts
+    │   │   │   ├── server.ts
+    │   │   │   ├── start.ts
+    │   │   │   ├── status.ts
+    │   │   │   └── stop.ts
+    │   │   ├── tsconfig.json
+    │   │   └── tsconfig.lint.json
+    │   ├── plugin-commands-store
+    │   │   ├── CHANGELOG.md
+    │   │   ├── package.json
+    │   │   ├── README.md
+    │   │   ├── src
+    │   │   │   ├── cleanExpiredDlxCache.test.ts
+    │   │   │   ├── cleanExpiredDlxCache.ts
+    │   │   │   ├── index.ts
+    │   │   │   ├── storeAdd.ts
+    │   │   │   ├── storePrune.ts
+    │   │   │   ├── storeStatus
+    │   │   │   │   ├── extendStoreStatusOptions.ts
+    │   │   │   │   └── index.ts
+    │   │   │   ├── store.ts
+    │   │   │   └── types.ts
+    │   │   ├── test
+    │   │   │   ├── storeAdd.ts
+    │   │   │   ├── storePath.ts
+    │   │   │   ├── storePrune.ts
+    │   │   │   ├── storeStatus.ts
+    │   │   │   └── tsconfig.json
+    │   │   ├── tsconfig.json
+    │   │   └── tsconfig.lint.json
+    │   ├── plugin-commands-store-inspecting
+    │   │   ├── CHANGELOG.md
+    │   │   ├── package.json
+    │   │   ├── README.md
+    │   │   ├── src
+    │   │   │   ├── catFile.ts
+    │   │   │   ├── catIndex.ts
+    │   │   │   ├── findHash.ts
+    │   │   │   └── index.ts
+    │   │   ├── test
+    │   │   │   ├── catFile.ts
+    │   │   │   ├── catIndex.ts
+    │   │   │   ├── findHash.ts
+    │   │   │   └── tsconfig.json
+    │   │   ├── tsconfig.json
+    │   │   └── tsconfig.lint.json
+    │   ├── server
+    │   │   ├── CHANGELOG.md
+    │   │   ├── example
+    │   │   │   ├── client.js
+    │   │   │   └── server.js
+    │   │   ├── package.json
+    │   │   ├── README.md
+    │   │   ├── src
+    │   │   │   ├── connectStoreController.ts
+    │   │   │   ├── createServer.ts
+    │   │   │   ├── index.ts
+    │   │   │   └── lock.ts
+    │   │   ├── test
+    │   │   │   ├── __fixtures__
+    │   │   │   │   └── side-effect-fake-dir
+    │   │   │   │       ├── side-effect.js
+    │   │   │   │       └── side-effect.txt
+    │   │   │   ├── index.ts
+    │   │   │   └── tsconfig.json
+    │   │   ├── tsconfig.json
+    │   │   └── tsconfig.lint.json
+    │   ├── store-connection-manager
+    │   │   ├── CHANGELOG.md
+    │   │   ├── package.json
+    │   │   ├── README.md
+    │   │   ├── src
+    │   │   │   ├── createNewStoreController.ts
+    │   │   │   ├── index.ts
+    │   │   │   ├── runServerInBackground.ts
+    │   │   │   └── serverConnectionInfoDir.ts
+    │   │   ├── tsconfig.json
+    │   │   └── tsconfig.lint.json
+    │   ├── store-controller-types
+    │   │   ├── CHANGELOG.md
+    │   │   ├── package.json
+    │   │   ├── README.md
+    │   │   ├── src
+    │   │   │   └── index.ts
+    │   │   ├── tsconfig.json
+    │   │   └── tsconfig.lint.json
+    │   └── store-path
+    │       ├── CHANGELOG.md
+    │       ├── __mocks__
+    │       │   ├── can-link.js
+    │       │   ├── fs.js
+    │       │   ├── os.js
+    │       │   ├── path-temp.js
+    │       │   ├── root-link-target.js
+    │       │   └── touch.js
+    │       ├── package.json
+    │       ├── README.md
+    │       ├── src
+    │       │   └── index.ts
+    │       ├── test
+    │       │   ├── index.ts
+    │       │   └── tsconfig.json
+    │       ├── tsconfig.json
+    │       └── tsconfig.lint.json
+    ├── text
+    │   └── comments-parser
+    │       ├── CHANGELOG.md
+    │       ├── package.json
+    │       ├── README.md
+    │       ├── src
+    │       │   ├── CommentSpecifier.ts
+    │       │   ├── extractComments.ts
+    │       │   ├── index.ts
+    │       │   └── insertComments.ts
+    │       ├── test
+    │       │   ├── index.ts
+    │       │   └── tsconfig.json
+    │       ├── tsconfig.json
+    │       └── tsconfig.lint.json
+    ├── tools
+    │   ├── path
+    │   │   ├── CHANGELOG.md
+    │   │   ├── package.json
+    │   │   ├── README.md
+    │   │   ├── src
+    │   │   │   └── index.ts
+    │   │   ├── tsconfig.json
+    │   │   └── tsconfig.lint.json
+    │   └── plugin-commands-self-updater
+    │       ├── CHANGELOG.md
+    │       ├── package.json
+    │       ├── README.md
+    │       ├── src
+    │       │   ├── index.ts
+    │       │   └── selfUpdate.ts
+    │       ├── test
+    │       │   ├── pnpm-9.1.0.tgz
+    │       │   ├── selfUpdate.test.ts
+    │       │   └── tsconfig.json
+    │       ├── tsconfig.json
+    │       └── tsconfig.lint.json
+    ├── tsconfig.lint.json
+    ├── __typecheck__
+    │   └── package.json
+    ├── __typings__
+    │   ├── CHANGELOG.md
+    │   ├── index.d.ts
+    │   ├── local.d.ts
+    │   ├── package.json
+    │   └── typed.d.ts
+    ├── __utils__
+    │   ├── assert-project
+    │   │   ├── CHANGELOG.md
+    │   │   ├── package.json
+    │   │   ├── README.md
+    │   │   ├── src
+    │   │   │   ├── index.ts
+    │   │   │   └── isExecutable.ts
+    │   │   ├── test
+    │   │   │   ├── fixture
+    │   │   │   │   └── project
+    │   │   │   │       ├── package.json
+    │   │   │   │       ├── pnpm-lock.yaml
+    │   │   │   │       └── pnpm-workspace.yaml
+    │   │   │   ├── index.ts
+    │   │   │   └── tsconfig.json
+    │   │   ├── tsconfig.json
+    │   │   └── tsconfig.lint.json
+    │   ├── assert-store
+    │   │   ├── CHANGELOG.md
+    │   │   ├── package.json
+    │   │   ├── README.md
+    │   │   ├── src
+    │   │   │   └── index.ts
+    │   │   ├── test
+    │   │   │   ├── fixture
+    │   │   │   │   └── project
+    │   │   │   │       ├── package.json
+    │   │   │   │       ├── pnpm-lock.yaml
+    │   │   │   │       └── pnpm-workspace.yaml
+    │   │   │   ├── index.ts
+    │   │   │   └── tsconfig.json
+    │   │   ├── tsconfig.json
+    │   │   └── tsconfig.lint.json
+    │   ├── build-artifacts
+    │   │   ├── main.mjs
+    │   │   ├── package.json
+    │   │   └── README.md
+    │   ├── eslint-config
+    │   │   ├── CHANGELOG.md
+    │   │   ├── index.js
+    │   │   ├── package.json
+    │   │   └── README.md
+    │   ├── get-release-text
+    │   │   ├── CHANGELOG.md
+    │   │   ├── package.json
+    │   │   ├── src
+    │   │   │   └── main.ts
+    │   │   ├── tsconfig.json
+    │   │   └── tsconfig.lint.json
+    │   ├── jest-config
+    │   │   ├── CHANGELOG.md
+    │   │   ├── config.js
+    │   │   ├── globalSetup.js
+    │   │   ├── globalTeardown.js
+    │   │   ├── jest-preset.js
+    │   │   ├── package.json
+    │   │   └── setupFilesAfterEnv.js
+    │   ├── prepare
+    │   │   ├── CHANGELOG.md
+    │   │   ├── package.json
+    │   │   ├── src
+    │   │   │   └── index.ts
+    │   │   ├── tsconfig.json
+    │   │   └── tsconfig.lint.json
+    │   ├── scripts
+    │   │   ├── package.json
+    │   │   ├── src
+    │   │   │   ├── copy-artifacts.ts
+    │   │   │   └── typecheck-only.ts
+    │   │   ├── tsconfig.json
+    │   │   └── tsconfig.lint.json
+    │   ├── test-fixtures
+    │   │   ├── CHANGELOG.md
+    │   │   ├── package.json
+    │   │   ├── README.md
+    │   │   ├── src
+    │   │   │   └── index.ts
+    │   │   ├── tsconfig.json
+    │   │   └── tsconfig.lint.json
+    │   ├── test-ipc-server
+    │   │   ├── bin
+    │   │   │   └── test-ipc-server-client.js
+    │   │   ├── package.json
+    │   │   ├── README.md
+    │   │   ├── src
+    │   │   │   ├── clientBin.ts
+    │   │   │   ├── computeHandlePath.ts
+    │   │   │   ├── index.ts
+    │   │   │   └── TestIpcServer.ts
+    │   │   ├── test
+    │   │   │   ├── TestIpcServer.test.ts
+    │   │   │   └── tsconfig.json
+    │   │   ├── tsconfig.json
+    │   │   └── tsconfig.lint.json
+    │   └── tsconfig
+    │       ├── CHANGELOG.md
+    │       ├── package.json
+    │       ├── README.md
+    │       └── tsconfig.json
+    ├── verdaccio.yaml
+    ├── worker
+    │   ├── CHANGELOG.md
+    │   ├── package.json
+    │   ├── README.md
+    │   ├── src
+    │   │   ├── index.ts
+    │   │   ├── types.ts
+    │   │   └── worker.ts
+    │   ├── tsconfig.json
+    │   └── tsconfig.lint.json
+    └── workspace
+        ├── filter-packages-from-dir
+        │   ├── CHANGELOG.md
+        │   ├── package.json
+        │   ├── README.md
+        │   ├── src
+        │   │   └── index.ts
+        │   ├── tsconfig.json
+        │   └── tsconfig.lint.json
+        ├── filter-workspace-packages
+        │   ├── CHANGELOG.md
+        │   ├── package.json
+        │   ├── README.md
+        │   ├── src
+        │   │   ├── getChangedPackages.ts
+        │   │   ├── index.ts
+        │   │   └── parsePackageSelector.ts
+        │   ├── test
+        │   │   ├── index.ts
+        │   │   ├── parsePackageSelector.ts
+        │   │   └── tsconfig.json
+        │   ├── tsconfig.json
+        │   └── tsconfig.lint.json
+        ├── find-packages
+        │   ├── CHANGELOG.md
+        │   ├── package.json
+        │   ├── README.md
+        │   ├── src
+        │   │   └── index.ts
+        │   ├── test
+        │   │   ├── __fixtures__
+        │   │   │   ├── bad-engine
+        │   │   │   │   ├── pkg
+        │   │   │   │   │   └── package.json
+        │   │   │   │   └── pnpm-workspace.yaml
+        │   │   │   └── warning-for-non-root-project
+        │   │   │       ├── package.json
+        │   │   │       ├── packages
+        │   │   │       │   ├── bar
+        │   │   │       │   │   └── package.json
+        │   │   │       │   └── foo
+        │   │   │       │       └── package.json
+        │   │   │       └── pnpm-workspace.yaml
+        │   │   ├── index.ts
+        │   │   └── tsconfig.json
+        │   ├── tsconfig.json
+        │   └── tsconfig.lint.json
+        ├── find-workspace-dir
+        │   ├── CHANGELOG.md
+        │   ├── package.json
+        │   ├── README.md
+        │   ├── src
+        │   │   └── index.ts
+        │   ├── test
+        │   │   ├── index.ts
+        │   │   └── tsconfig.json
+        │   ├── tsconfig.json
+        │   └── tsconfig.lint.json
+        ├── pkgs-graph
+        │   ├── CHANGELOG.md
+        │   ├── package.json
+        │   ├── README.md
+        │   ├── src
+        │   │   └── index.ts
+        │   ├── test
+        │   │   ├── index.ts
+        │   │   └── tsconfig.json
+        │   ├── tsconfig.json
+        │   └── tsconfig.lint.json
+        ├── read-manifest
+        │   ├── CHANGELOG.md
+        │   ├── package.json
+        │   ├── README.md
+        │   ├── src
+        │   │   ├── catalogs.ts
+        │   │   ├── errors
+        │   │   │   └── InvalidWorkspaceManifestError.ts
+        │   │   └── index.ts
+        │   ├── test
+        │   │   ├── __fixtures__
+        │   │   │   ├── array
+        │   │   │   │   └── pnpm-workspace.yaml
+        │   │   │   ├── catalog-invalid-array
+        │   │   │   │   └── pnpm-workspace.yaml
+        │   │   │   ├── catalog-invalid-object
+        │   │   │   │   └── pnpm-workspace.yaml
+        │   │   │   ├── catalog-invalid-specifier
+        │   │   │   │   └── pnpm-workspace.yaml
+        │   │   │   ├── catalog-ok
+        │   │   │   │   └── pnpm-workspace.yaml
+        │   │   │   ├── catalogs-conflicting-defaults
+        │   │   │   │   └── pnpm-workspace.yaml
+        │   │   │   ├── catalogs-invalid-array
+        │   │   │   │   └── pnpm-workspace.yaml
+        │   │   │   ├── catalogs-invalid-named-catalog-array
+        │   │   │   │   └── pnpm-workspace.yaml
+        │   │   │   ├── catalogs-invalid-named-catalog-object
+        │   │   │   │   └── pnpm-workspace.yaml
+        │   │   │   ├── catalogs-invalid-named-catalog-specifier
+        │   │   │   │   └── pnpm-workspace.yaml
+        │   │   │   ├── catalogs-invalid-object
+        │   │   │   │   └── pnpm-workspace.yaml
+        │   │   │   ├── catalogs-ok
+        │   │   │   │   └── pnpm-workspace.yaml
+        │   │   │   ├── empty
+        │   │   │   │   └── pnpm-workspace.yaml
+        │   │   │   ├── no-workspace-file
+        │   │   │   │   └── pkg
+        │   │   │   │       └── package.json
+        │   │   │   ├── null
+        │   │   │   │   └── pnpm-workspace.yaml
+        │   │   │   ├── ok
+        │   │   │   │   └── pnpm-workspace.yaml
+        │   │   │   ├── packages-contains-empty
+        │   │   │   │   └── pnpm-workspace.yaml
+        │   │   │   ├── packages-contains-number
+        │   │   │   │   └── pnpm-workspace.yaml
+        │   │   │   ├── packages-empty
+        │   │   │   │   └── pnpm-workspace.yaml
+        │   │   │   ├── packages-string
+        │   │   │   │   └── pnpm-workspace.yaml
+        │   │   │   └── string
+        │   │   │       └── pnpm-workspace.yaml
+        │   │   ├── index.ts
+        │   │   └── tsconfig.json
+        │   ├── tsconfig.json
+        │   └── tsconfig.lint.json
+        ├── resolve-workspace-range
+        │   ├── CHANGELOG.md
+        │   ├── package.json
+        │   ├── README.md
+        │   ├── src
+        │   │   └── index.ts
+        │   ├── tsconfig.json
+        │   └── tsconfig.lint.json
+        ├── sort-packages
+        │   ├── CHANGELOG.md
+        │   ├── package.json
+        │   ├── README.md
+        │   ├── src
+        │   │   └── index.ts
+        │   ├── tsconfig.json
+        │   └── tsconfig.lint.json
+        └── spec-parser
+            ├── CHANGELOG.md
+            ├── package.json
+            ├── README.md
+            ├── src
+            │   └── index.ts
+            ├── test
+            │   ├── tsconfig.json
+            │   └── workspace-spec.test.ts
+            ├── tsconfig.json
+            └── tsconfig.lint.json
+
+902 directories, 2420 files

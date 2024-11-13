@@ -1,0 +1,79 @@
+src
+├── Ropper-1.13.10
+│   ├── AUTHORS
+│   ├── COPYING
+│   ├── Dockerfile
+│   ├── filebytes
+│   ├── README.md
+│   ├── requirements.txt
+│   ├── ropper
+│   │   ├── arch.py
+│   │   ├── common
+│   │   │   ├── abstract.py
+│   │   │   ├── coloredstring.py
+│   │   │   ├── enum.py
+│   │   │   ├── error.py
+│   │   │   ├── __init__.py
+│   │   │   └── utils.py
+│   │   ├── console.py
+│   │   ├── gadget.py
+│   │   ├── __init__.py
+│   │   ├── loaders
+│   │   │   ├── elf.py
+│   │   │   ├── __init__.py
+│   │   │   ├── loader.py
+│   │   │   ├── mach_o.py
+│   │   │   ├── pe.py
+│   │   │   └── raw.py
+│   │   ├── __main__.py
+│   │   ├── options.py
+│   │   ├── printer
+│   │   │   ├── elfprinter.py
+│   │   │   ├── __init__.py
+│   │   │   ├── machprinter.py
+│   │   │   ├── peprinter.py
+│   │   │   ├── printer.py
+│   │   │   └── rawprinter.py
+│   │   ├── ropchain
+│   │   │   ├── arch
+│   │   │   │   ├── __init__.py
+│   │   │   │   ├── ropchainx86_64.py
+│   │   │   │   └── ropchainx86.py
+│   │   │   ├── __init__.py
+│   │   │   └── ropchain.py
+│   │   ├── rop.py
+│   │   ├── search.py
+│   │   ├── semantic.py
+│   │   ├── service.py
+│   │   └── z3helper.py
+│   ├── Ropper.py
+│   ├── sample.py
+│   ├── setup.py
+│   ├── test-binaries
+│   │   ├── cmd-x86_64.exe
+│   │   ├── cmd-x86.exe
+│   │   ├── hang-mutate_bytes2_3da2c4818ffe26a52b06b348969026f3_.exe
+│   │   ├── ls-arm
+│   │   ├── ls-arm64
+│   │   ├── ls-macho-x86_64
+│   │   ├── ls-mipsel
+│   │   ├── ls-ppc
+│   │   ├── ls-x86
+│   │   ├── ls-x86_64
+│   │   └── win10-ntdll.dll
+│   ├── testcases
+│   │   ├── __init__.py
+│   │   ├── test_arm64.py
+│   │   ├── test_arm.py
+│   │   ├── test_console.py
+│   │   ├── test_general.py
+│   │   ├── test_mips.py
+│   │   ├── test_ppc.py
+│   │   ├── test_x86_64.py
+│   │   └── test_x86.py
+│   ├── test.py
+│   ├── test.sh
+│   └── tox.ini
+└── ropper-1.13.10.tar.gz -> /home/felix/packages/ropper/ropper-1.13.10.tar.gz
+
+11 directories, 66 files

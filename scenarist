@@ -1,0 +1,3514 @@
+src
+├── KITScenarist
+│   ├── build
+│   │   ├── Mac
+│   │   │   ├── cover_en.png
+│   │   │   ├── cover_es.png
+│   │   │   ├── cover_fr.png
+│   │   │   ├── cover.png
+│   │   │   ├── create_dmg_granny.sh
+│   │   │   ├── create_dmg.sh
+│   │   │   └── make_dmg.sh
+│   │   ├── Rpm
+│   │   │   ├── make_all_rpm.sh
+│   │   │   ├── scenarist_i386
+│   │   │   │   └── usr
+│   │   │   │       ├── bin
+│   │   │   │       │   └── scenarist
+│   │   │   │       └── share
+│   │   │   │           ├── KIT
+│   │   │   │           │   └── Scenarist
+│   │   │   │           │       ├── qt.conf
+│   │   │   │           │       └── README
+│   │   │   │           └── pixmaps
+│   │   │   │               └── scenarist.png
+│   │   │   ├── scenarist_x86_64
+│   │   │   │   └── usr
+│   │   │   │       ├── bin
+│   │   │   │       │   └── scenarist
+│   │   │   │       └── share
+│   │   │   │           └── pixmaps
+│   │   │   │               └── scenarist.png
+│   │   │   └── translations
+│   │   │       ├── kitscenarist-en.spec
+│   │   │       ├── kitscenarist-es.spec
+│   │   │       ├── kitscenarist-fr.spec
+│   │   │       ├── kitscenarist-ru.spec
+│   │   │       ├── scenarist-en.desktop
+│   │   │       ├── scenarist-es.desktop
+│   │   │       ├── scenarist-fr.desktop
+│   │   │       └── scenarist-ru.desktop
+│   │   ├── Ubuntu
+│   │   │   ├── make-deb_amd64.sh
+│   │   │   ├── make-deb_i386.sh
+│   │   │   ├── scenarist_amd64
+│   │   │   │   ├── DEBIAN
+│   │   │   │   │   ├── control
+│   │   │   │   │   ├── copyright
+│   │   │   │   │   ├── mime
+│   │   │   │   │   └── postinst
+│   │   │   │   └── usr
+│   │   │   │       ├── bin
+│   │   │   │       │   └── scenarist
+│   │   │   │       └── share
+│   │   │   │           ├── applications
+│   │   │   │           │   └── scenarist.desktop
+│   │   │   │           └── pixmaps
+│   │   │   │               └── scenarist.png
+│   │   │   ├── scenarist_i386
+│   │   │   │   ├── DEBIAN
+│   │   │   │   │   ├── control
+│   │   │   │   │   ├── copyright
+│   │   │   │   │   ├── mime
+│   │   │   │   │   └── postinst
+│   │   │   │   └── usr
+│   │   │   │       ├── bin
+│   │   │   │       │   └── scenarist
+│   │   │   │       └── share
+│   │   │   │           ├── applications
+│   │   │   │           │   └── scenarist.desktop
+│   │   │   │           ├── KIT
+│   │   │   │           │   └── Scenarist
+│   │   │   │           │       ├── qt.conf
+│   │   │   │           │       └── README
+│   │   │   │           └── pixmaps
+│   │   │   │               └── scenarist.png
+│   │   │   └── translations
+│   │   │       ├── amd64
+│   │   │       │   ├── en
+│   │   │       │   │   └── control
+│   │   │       │   ├── es
+│   │   │       │   │   └── control
+│   │   │       │   ├── fr
+│   │   │       │   │   └── control
+│   │   │       │   └── ru
+│   │   │       │       └── control
+│   │   │       └── i386
+│   │   │           ├── en
+│   │   │           │   └── control
+│   │   │           ├── es
+│   │   │           │   └── control
+│   │   │           ├── fr
+│   │   │           │   └── control
+│   │   │           └── ru
+│   │   │               └── control
+│   │   └── Windows
+│   │       ├── breakpad
+│   │       │   ├── dump_syms.exe
+│   │       │   └── minidump_stackwalk.exe
+│   │       └── Scenarist.nsi
+│   ├── LICENSE
+│   ├── other
+│   │   ├── Final Draft templates
+│   │   │   ├── Classic TV Templates
+│   │   │   │   ├── fd8_30-Rock.fdxt.zip
+│   │   │   │   ├── fd8_90210.fdxt.zip
+│   │   │   │   ├── fd8_According-to-Jim.fdxt.zip
+│   │   │   │   ├── fd8_Boston-Legal.fdxt.zip
+│   │   │   │   ├── fd8_Breaking-Bad.fdxt.zip
+│   │   │   │   ├── fd8_Cold-Case.fdxt.zip
+│   │   │   │   ├── fd8_Coronation-Street-(UK).fdxt.zip
+│   │   │   │   ├── fd8_CSI-Miami.fdxt.zip
+│   │   │   │   ├── fd8_CSI-NY.fdxt.zip
+│   │   │   │   ├── fd8_Days-of-Our-Lives.fdxt.zip
+│   │   │   │   ├── fd8_Desperate-Housewives.fdxt.zip
+│   │   │   │   ├── fd8_Entourage.fdxt.zip
+│   │   │   │   ├── fd8_Everybody-Hates-Chris.fdxt.zip
+│   │   │   │   ├── fd8_Fringe.fdxt.zip
+│   │   │   │   ├── fd8_Gary-Unmarried.fdxt.zip
+│   │   │   │   ├── fd8_Ghost-Whisperer.fdxt.zip
+│   │   │   │   ├── fd8_Guiding-Light.fdxt.zip
+│   │   │   │   ├── fd8_Hannah-Montana.fdxt.zip
+│   │   │   │   ├── fd8_Heroes.fdxt.zip
+│   │   │   │   ├── fd8_House.fdxt.zip
+│   │   │   │   ├── fd8_Jam-and-Jerusalem-aka-Clatterford-(UK).fdxt.zip
+│   │   │   │   ├── fd8_Jam-and-Jerusalem-aka-Clatterford-(UK).fdxt.zip.part
+│   │   │   │   ├── fd8_Law-and-Order-CI.fdxt.zip
+│   │   │   │   ├── fd8_Law-and-Order.fdxt.zip
+│   │   │   │   ├── fd8_Life-on-Mars.fdxt.zip
+│   │   │   │   ├── fd8_Lost.fdxt.zip
+│   │   │   │   ├── fd8_Medium.fdxt.zip
+│   │   │   │   ├── fd8_My-Name-Is-Earl.fdxt.zip
+│   │   │   │   ├── fd8_NUMB3RS.fdxt.zip
+│   │   │   │   ├── fd8_One-Tree-Hill.fdxt.zip
+│   │   │   │   ├── fd8_Prison-Break.fdxt.zip
+│   │   │   │   ├── fd8_Rescue-Me.fdxt.zip
+│   │   │   │   ├── fd8_Rita-Rocks.fdxt.zip
+│   │   │   │   ├── fd8_Samantha-Who.fdxt.zip
+│   │   │   │   ├── fd8_Smallville.fdxt.zip
+│   │   │   │   ├── fd8_Terminator-Sarah-Connor-Chronicles.fdxt.zip
+│   │   │   │   ├── fd8_The-Bill-(UK).fdxt.zip
+│   │   │   │   ├── fd8_The-Cleaner.fdxt.zip
+│   │   │   │   ├── fd8_The-Closer.fdxt.zip
+│   │   │   │   ├── fd8_The-Office.fdxt.zip
+│   │   │   │   ├── fd8_The-Shield.fdxt.zip
+│   │   │   │   ├── fd8_The-Suite-Life-on-Deck.fdxt.zip
+│   │   │   │   ├── fd8_The-Unit.fdxt.zip
+│   │   │   │   ├── fd8_Ugly-Betty.fdxt.zip
+│   │   │   │   ├── fd8_Without-a-Trace.fdxt.zip
+│   │   │   │   ├── fd9_24.fdxt
+│   │   │   │   ├── fd9_30 Rock.fdxt
+│   │   │   │   ├── fd9_According to Jim.fdxt
+│   │   │   │   ├── fd9_Alias.fdxt
+│   │   │   │   ├── fd9_Arrested Development.fdxt
+│   │   │   │   ├── fd9_Boston Legal.fdxt
+│   │   │   │   ├── fd9_Breaking Bad.fdxt
+│   │   │   │   ├── fd9_Buffy the Vampire Slayer.fdxt
+│   │   │   │   ├── fd9_Cold Case.fdxt
+│   │   │   │   ├── fd9_Coronation Street (UK).fdxt
+│   │   │   │   ├── fd9_CSI Miami.fdxt
+│   │   │   │   ├── fd9_CSI NY.fdxt
+│   │   │   │   ├── fd9_Days of Our Lives.fdxt
+│   │   │   │   ├── fd9_Desperate Housewives.fdxt
+│   │   │   │   ├── fd9_Entourage.fdxt
+│   │   │   │   ├── fd9_ER.fdxt
+│   │   │   │   ├── fd9_Everybody Hates Chris.fdxt
+│   │   │   │   ├── fd9_Everybody Loves Raymond.fdxt
+│   │   │   │   ├── fd9_Frasier.fdxt
+│   │   │   │   ├── fd9_Friends.fdxt
+│   │   │   │   ├── fd9_Fringe.fdxt
+│   │   │   │   ├── fd9_Gary Unmarried.fdxt
+│   │   │   │   ├── fd9_Guiding Light.fdxt
+│   │   │   │   ├── fd9_Hannah Montana.fdxt
+│   │   │   │   ├── fd9_Heroes.fdxt
+│   │   │   │   ├── fd9_House.fdxt
+│   │   │   │   ├── fd9_Jam and Jerusalem aka Clatterford (UK).fdxt
+│   │   │   │   ├── fd9_Law and Order CI.fdxt
+│   │   │   │   ├── fd9_Law and Order.fdxt
+│   │   │   │   ├── fd9_Life on Mars.fdxt
+│   │   │   │   ├── fd9_Lost.fdxt
+│   │   │   │   ├── fd9_Mad TV.fdxt
+│   │   │   │   ├── fd9_Malcolm in the Middle.fdxt
+│   │   │   │   ├── fd9_Medium.fdxt
+│   │   │   │   ├── fd9_Monk.fdxt
+│   │   │   │   ├── fd9_My Name is Earl.fdxt
+│   │   │   │   ├── fd9_Nip Tuck.fdxt
+│   │   │   │   ├── fd9_NUMB3RS.fdxt
+│   │   │   │   ├── fd9_One Tree Hill.fdxt
+│   │   │   │   ├── fd9_Prison Break.fdxt
+│   │   │   │   ├── fd9_Rescue Me.fdxt
+│   │   │   │   ├── fd9_Rita Rocks.fdxt
+│   │   │   │   ├── fd9_Samantha Who.fdxt
+│   │   │   │   ├── fd9_Scrubs.fdxt
+│   │   │   │   ├── fd9_Sex and the City.fdxt
+│   │   │   │   ├── fd9_Six Feet Under.fdxt
+│   │   │   │   ├── fd9_Smallville.fdxt
+│   │   │   │   ├── fd9_Terminator Sarah Connor Chronicles.fdxt
+│   │   │   │   ├── fd9_That 70s Show.fdxt
+│   │   │   │   ├── fd9_The Bill (UK).fdxt
+│   │   │   │   ├── fd9_The Cleaner.fdxt
+│   │   │   │   ├── fd9_The Closer.fdxt
+│   │   │   │   ├── fd9_The Good Wife.fdxt
+│   │   │   │   ├── fd9_The Office.fdxt
+│   │   │   │   ├── fd9_The Shield.fdxt
+│   │   │   │   ├── fd9_The Sopranos.fdxt
+│   │   │   │   ├── fd9_The Suite Life on Deck.fdxt
+│   │   │   │   ├── fd9_The Unit.fdxt
+│   │   │   │   ├── fd9_The West Wing.fdxt
+│   │   │   │   ├── fd9_The Wire.fdxt
+│   │   │   │   ├── fd9_The X-Files.fdxt
+│   │   │   │   ├── fd9_Ugly Betty.fdxt
+│   │   │   │   ├── fd9_Weeds.fdxt
+│   │   │   │   ├── fd9_Will and Grace.fdxt
+│   │   │   │   └── fd9_Without a Trace.fdxt
+│   │   │   ├── CurrentTV Templates
+│   │   │   │   ├── fd10_Blue Bloods.fdxt
+│   │   │   │   ├── fd10_Bones.fdxt
+│   │   │   │   ├── fd10_Criminal Minds.fdxt
+│   │   │   │   ├── fd10_CSI.fdxt
+│   │   │   │   ├── fd10_Doctors (UK).fdxt
+│   │   │   │   ├── fd10_Elementary.fdxt
+│   │   │   │   ├── fd10_Family Guy.fdxt
+│   │   │   │   ├── fd10_General Hospital.fdxt
+│   │   │   │   ├── fd10_Greys Anatomy.fdxt
+│   │   │   │   ├── fd10_Holby City (UK).fdxt
+│   │   │   │   ├── fd10_Law and Order SVU.fdxt
+│   │   │   │   ├── fd10_Modern Family.fdxt
+│   │   │   │   ├── fd10_NCIS.fdxt
+│   │   │   │   ├── fd10_New Girl.fdxt
+│   │   │   │   ├── fd10_Pretty Little Liars.fdxt
+│   │   │   │   ├── fd10_Saturday Night Live.fdxt
+│   │   │   │   ├── fd10_Single Ladies.fdxt
+│   │   │   │   ├── fd10_South Park.fdxt
+│   │   │   │   ├── fd10_Supernatural.fdxt
+│   │   │   │   ├── fd10_The Simpsons.fdxt
+│   │   │   │   ├── fd10_True Blood.fdxt
+│   │   │   │   ├── fd10_Workaholics.fdxt
+│   │   │   │   ├── fd8_Bones.fdxt.zip
+│   │   │   │   ├── fd8_Casualty-(UK).fdxt.zip
+│   │   │   │   ├── fd8_Community.fdxt
+│   │   │   │   ├── fd8_Criminal-Minds.fdxt.zip
+│   │   │   │   ├── fd8_CSI.fdxt.zip
+│   │   │   │   ├── fd8_Doctors-(UK).fdxt.zip
+│   │   │   │   ├── fd8_Eastenders-(UK).fdxt.zip
+│   │   │   │   ├── fd8_Emmerdale-(UK).fdxt.zip
+│   │   │   │   ├── fd8_Family-Guy.fdxt.zip
+│   │   │   │   ├── fd8_General-Hospital.fdxt.zip
+│   │   │   │   ├── fd8_Greys-Anatomy.fdxt.zip
+│   │   │   │   ├── fd8_Holby-City-(UK).fdxt.zip
+│   │   │   │   ├── fd8_How-I-Met-Your-Mother.fdxt.zip
+│   │   │   │   ├── fd8_Law-and-Order-SVU.fdxt.zip
+│   │   │   │   ├── fd8_Mad-Men.fdxt.zip
+│   │   │   │   ├── fd8_Modern-Family.fdxt
+│   │   │   │   ├── fd8_NCIS.fdxt.zip
+│   │   │   │   ├── fd8_Parks-and-Recreation.fdxt
+│   │   │   │   ├── fd8_Saturday-Night-Live.fdxt
+│   │   │   │   ├── fd8_South-Park.fdxt.zip
+│   │   │   │   ├── fd8_The-Simpsons.fdxt.zip
+│   │   │   │   ├── fd8_The-Young-and-the-Restless.fdxt.zip
+│   │   │   │   ├── fd8_True-Blood.fdxt.zip
+│   │   │   │   ├── fd8_Two-and-a-Half-Men.fdxt.zip
+│   │   │   │   ├── fd9_Blue Bloods(1).fdxt
+│   │   │   │   ├── fd9_Boardwalk Empire.fdxt
+│   │   │   │   ├── fd9_Bones.fdxt
+│   │   │   │   ├── fd9_Community.fdxt
+│   │   │   │   ├── fd9_Criminal Minds.fdxt
+│   │   │   │   ├── fd9_CSI.fdxt
+│   │   │   │   ├── fd9_Doctors (UK).fdxt
+│   │   │   │   ├── fd9_Elementary.fdxt
+│   │   │   │   ├── fd9_Family Guy.fdxt
+│   │   │   │   ├── fd9_General Hospital.fdxt
+│   │   │   │   ├── fd9_Greys Anatomy.fdxt
+│   │   │   │   ├── fd9_Holby City (UK).fdxt
+│   │   │   │   ├── fd9_Hot in Cleveland.fdxt
+│   │   │   │   ├── fd9_How I Met Your Mother.fdxt
+│   │   │   │   ├── fd9_Key and Peele.fdxt
+│   │   │   │   ├── fd9_Law and Order SVU.fdxt
+│   │   │   │   ├── fd9_Mad Men.fdxt
+│   │   │   │   ├── fd9_Modern-Family.fdxt
+│   │   │   │   ├── fd9_NCIS.fdxt
+│   │   │   │   ├── fd9_New Girl.fdxt
+│   │   │   │   ├── fd9_Nurse Jackie.fdxt
+│   │   │   │   ├── fd9_Parenthood.fdxt
+│   │   │   │   ├── fd9_Parks-and-Recreation.fdxt
+│   │   │   │   ├── fd9_Pretty Little Liars.fdxt
+│   │   │   │   ├── fd9_Psych.fdxt
+│   │   │   │   ├── fd9_Saturday-Night-Live.fdxt
+│   │   │   │   ├── fd9_Single Ladies.fdxt
+│   │   │   │   ├── fd9_Sons of Anarchy.fdxt
+│   │   │   │   ├── fd9_South Park.fdxt
+│   │   │   │   ├── fd9_Supernatural.fdxt
+│   │   │   │   ├── fd9_The Simpsons.fdxt
+│   │   │   │   ├── fd9_True Blood.fdxt
+│   │   │   │   ├── fd9_Two and a Half Men.fdxt
+│   │   │   │   └── fd9_Workaholics.fdxt
+│   │   │   ├── EDU Templates
+│   │   │   │   ├── fd10_Chris Vogler The Writers Journey.fdxt
+│   │   │   │   ├── fd10_Eric Edson The Story Solution Feature.fdxt
+│   │   │   │   ├── fd10_Jen Grisanti Pilot Worksheet.fdxt
+│   │   │   │   ├── fd10_Michael Hauge 6 Stage Structure.fdxt
+│   │   │   │   ├── fd10_NewYorkFilmAcademy Comic Book.fdxt
+│   │   │   │   ├── fd10_Richard Walter.fdxt
+│   │   │   │   ├── fd10_Screenplay 135 StoryStructure.fdxt
+│   │   │   │   ├── fd9_Buddy Love.fdx
+│   │   │   │   ├── fd9_Dude with a Problem.fdx
+│   │   │   │   ├── fd9_Fool Triumphant.fdx
+│   │   │   │   ├── fd9_Golden Fleece.fdx
+│   │   │   │   ├── fd9_Institutionalized.fdx
+│   │   │   │   ├── fd9_Monster in the House.fdx
+│   │   │   │   ├── fd9_Out of the Bottle.fdx
+│   │   │   │   ├── fd9_Rites of Passage.fdx
+│   │   │   │   ├── fd9_Superhero.fdx
+│   │   │   │   └── fd9_Whydunit.fdx
+│   │   │   └── Standard Templates
+│   │   │       ├── fd10_Art and Craft of Screenwriting Dramatic TV Show Bible.fdxt
+│   │   │       ├── fd10_Art and Craft of Screenwriting Web Series Bible.fdxt
+│   │   │       ├── fd10_BBC Screenplay.fdxt
+│   │   │       ├── fd10_BBC Screenplay for TV.fdxt
+│   │   │       ├── fd10_BBC Taped Sitcom.fdxt
+│   │   │       ├── fd10_BBC Three-Camera Show.fdxt
+│   │   │       ├── fd10_Beat Board and Story Map Template.fdxt
+│   │   │       ├── fd10_Broadway Musical.fdxt
+│   │   │       ├── fd10_Dark Horse Graphic Novel.fdxt
+│   │   │       ├── fd10_Dramatists Guild Modern Stageplay.fdxt
+│   │   │       ├── fd10_Dramatists Guild Musical.fdxt
+│   │   │       ├── fd10_Dramatists Guild Traditional Stageplay.fdxt
+│   │   │       ├── fd10_Graphic Novel.fdxt
+│   │   │       ├── fd10_Half-Hour Sitcom.fdxt
+│   │   │       ├── fd10_Image Comics Graphic Novel.fdxt
+│   │   │       ├── fd10_Index Cards for outlining.fdxt
+│   │   │       ├── fd10_Manuscript.fdxt
+│   │   │       ├── fd10_Novel.fdxt
+│   │   │       ├── fd10_One-Hour TV Drama.fdxt
+│   │   │       ├── fd10_Outline.fdxt
+│   │   │       ├── fd10_Plot Outline.fdxt
+│   │   │       ├── fd10_Query Letter.fdxt
+│   │   │       ├── fd10_Screenplay (Cole and Haag).fdxt
+│   │   │       ├── fd10_Screenplay.fdxt
+│   │   │       ├── fd10_Screenplay (Warner Brothers).fdxt
+│   │   │       ├── fd10_Stageplay.fdxt
+│   │   │       ├── fd10_Text Document.fdxt
+│   │   │       ├── fd10_Treatment.fdxt
+│   │   │       ├── fd10_US Screenplay (French).fdxt
+│   │   │       ├── fd10_US Screenplay (German).fdxt
+│   │   │       ├── fd10_US Screenplay (Spanish).fdxt
+│   │   │       ├── fd8_FD-Production-BBC-Screenplay.fdxt.zip
+│   │   │       ├── fd8_FD-Production-BBC-Screenplay-for-TV.fdxt.zip
+│   │   │       ├── fd8_FD-Production-BBC-Taped-Sitcom.fdxt.zip
+│   │   │       ├── fd8_FD-Production-Broadway-Musical.fdxt
+│   │   │       ├── fd8_FD-Production-Dark-Horse-Graphic-Novel.fdxt.zip
+│   │   │       ├── fd8_FD-Production-DG-Modern-Stageplay.fdxt.zip
+│   │   │       ├── fd8_FD-Production-DG-Musical.fdxt.zip
+│   │   │       ├── fd8_FD-Production-DG-Traditional-Stageplay.fdxt.zip
+│   │   │       ├── fd8_FD-Production-Graphic-Novel.fdxt.zip
+│   │   │       ├── fd8_FD-Production-Half-Hour-Sitcom.fdxt.zip
+│   │   │       ├── fd8_FD-Production-Image-Comics-Graphic-Novel.fdxt.zip
+│   │   │       ├── fd8_FD-Production-Index-Cards-for-Outlining.fdxt.zip
+│   │   │       ├── fd8_FD-Production-Manuscript.fdxt.zip
+│   │   │       ├── fd8_FD-Production-Novel.fdxt.zip
+│   │   │       ├── fd8_FD-Production-One-Hour-TV-Drama.fdxt.zip
+│   │   │       ├── fd8_FD-Production-Outline.fdxt.zip
+│   │   │       ├── fd8_FD-Production-Plot-Outline.fdxt.zip
+│   │   │       ├── fd8_FD-Production-Query-Letter.fdxt.zip
+│   │   │       ├── fd8_FD-Production-Screenplay-(Cole-&-Haag).fdxt.zip
+│   │   │       ├── fd8_FD-Production-Screenplay.fdxt.zip
+│   │   │       ├── fd8_FD-Production-Screenplay-(Warner-Brothers).fdxt.zip
+│   │   │       ├── fd8_FD-Production-Text-Document.fdxt.zip
+│   │   │       ├── fd8_FD-Production-Treatment.fdxt.zip
+│   │   │       ├── fd8_FD-Production-US-Screenplay-(French).fdxt.zip
+│   │   │       ├── fd8_FD-Production-US-Screenplay-(German).fdxt.zip
+│   │   │       ├── fd8_FD-Production-US-Screenplay-(Spanish).fdxt.zip
+│   │   │       ├── fd9_BBC Screenplay.fdxt
+│   │   │       ├── fd9_BBC Screenplay for TV.fdxt
+│   │   │       ├── fd9_BBC Taped Sitcom.fdxt
+│   │   │       ├── fd9_BBC Three-Camera Show.fdxt
+│   │   │       ├── fd9_Broadway Musical.fdxt
+│   │   │       ├── fd9_Dark Horse Graphic Novel.fdxt
+│   │   │       ├── fd9_Dramatists Guild Modern Stageplay.fdxt
+│   │   │       ├── fd9_Dramatists Guild Musical.fdxt
+│   │   │       ├── fd9_Dramatists Guild Traditional Stageplay.fdxt
+│   │   │       ├── fd9_Graphic Novel.fdxt
+│   │   │       ├── fd9_Half-Hour Sitcom.fdxt
+│   │   │       ├── fd9_Image Comics Graphic Novel.fdxt
+│   │   │       ├── fd9_Index Cards for outlining.fdxt
+│   │   │       ├── fd9_Manuscript.fdxt
+│   │   │       ├── fd9_Novel.fdxt
+│   │   │       ├── fd9_One-Hour TV Drama.fdxt
+│   │   │       ├── fd9_Outline.fdxt
+│   │   │       ├── fd9_Plot Outline.fdxt
+│   │   │       ├── fd9_Query Letter.fdxt
+│   │   │       ├── fd9_Screenplay (Cole and Haag).fdxt
+│   │   │       ├── fd9_Screenplay.fdxt
+│   │   │       ├── fd9_Screenplay (Warner Brothers).fdxt
+│   │   │       ├── fd9_Stageplay.fdxt
+│   │   │       ├── fd9_Text Document.fdxt
+│   │   │       ├── fd9_Treatment.fdxt
+│   │   │       ├── fd9_US Screenplay (French).fdxt
+│   │   │       ├── fd9_US Screenplay (German).fdxt
+│   │   │       └── fd9_US Screenplay (Spanish).fdxt
+│   │   ├── format
+│   │   │   ├── ФОРМАТ РАЗМЕТКИ СЦЕНАРИЯ.doc
+│   │   │   └── формат разметки сценария (выжимка).odt
+│   │   └── rtf_export
+│   │       ├── description
+│   │       ├── template.rtf
+│   │       └── Word2007RTFSpec9.pdf
+│   ├── README.md
+│   ├── src
+│   │   ├── bin
+│   │   │   ├── scenarist-core
+│   │   │   ├── scenarist-desktop
+│   │   │   │   ├── Application.cpp
+│   │   │   │   ├── Application.h
+│   │   │   │   ├── Info.plist
+│   │   │   │   ├── logo.icns
+│   │   │   │   ├── logo.ico
+│   │   │   │   ├── main.cpp
+│   │   │   │   ├── ManagementLayer
+│   │   │   │   │   ├── ApplicationManager.cpp
+│   │   │   │   │   ├── ApplicationManager.h
+│   │   │   │   │   ├── Export
+│   │   │   │   │   │   ├── ExportManager.cpp
+│   │   │   │   │   │   └── ExportManager.h
+│   │   │   │   │   ├── Import
+│   │   │   │   │   │   ├── ImportManager.cpp
+│   │   │   │   │   │   └── ImportManager.h
+│   │   │   │   │   ├── MenuManager.cpp
+│   │   │   │   │   ├── MenuManager.h
+│   │   │   │   │   ├── Onboarding
+│   │   │   │   │   │   ├── OnboardingManager.cpp
+│   │   │   │   │   │   └── OnboardingManager.h
+│   │   │   │   │   ├── Research
+│   │   │   │   │   │   ├── ResearchManager.cpp
+│   │   │   │   │   │   └── ResearchManager.h
+│   │   │   │   │   ├── Scenario
+│   │   │   │   │   │   ├── ScenarioCardsManager.cpp
+│   │   │   │   │   │   ├── ScenarioCardsManager.h
+│   │   │   │   │   │   ├── ScenarioManager.cpp
+│   │   │   │   │   │   ├── ScenarioManager.h
+│   │   │   │   │   │   ├── ScenarioNavigatorManager.cpp
+│   │   │   │   │   │   ├── ScenarioNavigatorManager.h
+│   │   │   │   │   │   ├── ScenarioSceneDescriptionManager.cpp
+│   │   │   │   │   │   ├── ScenarioSceneDescriptionManager.h
+│   │   │   │   │   │   ├── ScenarioTextEditManager.cpp
+│   │   │   │   │   │   ├── ScenarioTextEditManager.h
+│   │   │   │   │   │   ├── ScriptBookmarksManager.cpp
+│   │   │   │   │   │   ├── ScriptBookmarksManager.h
+│   │   │   │   │   │   ├── ScriptDictionariesManager.cpp
+│   │   │   │   │   │   └── ScriptDictionariesManager.h
+│   │   │   │   │   ├── Settings
+│   │   │   │   │   │   ├── SettingsManager.cpp
+│   │   │   │   │   │   ├── SettingsManager.h
+│   │   │   │   │   │   ├── SettingsTemplatesManager.cpp
+│   │   │   │   │   │   └── SettingsTemplatesManager.h
+│   │   │   │   │   ├── StartUp
+│   │   │   │   │   │   ├── StartUpManager.cpp
+│   │   │   │   │   │   └── StartUpManager.h
+│   │   │   │   │   ├── Statistics
+│   │   │   │   │   │   ├── StatisticsManager.cpp
+│   │   │   │   │   │   └── StatisticsManager.h
+│   │   │   │   │   └── Tools
+│   │   │   │   │       ├── ToolsManager.cpp
+│   │   │   │   │       └── ToolsManager.h
+│   │   │   │   ├── scenario_settings_keys
+│   │   │   │   ├── Scenarist.rc
+│   │   │   │   ├── settings_keys
+│   │   │   │   └── UserInterfaceLayer
+│   │   │   │       ├── Account
+│   │   │   │       │   ├── ChangePasswordDialog.cpp
+│   │   │   │       │   ├── ChangePasswordDialog.h
+│   │   │   │       │   ├── ChangePasswordDialog.ui
+│   │   │   │       │   ├── LoginDialog.cpp
+│   │   │   │       │   ├── LoginDialog.h
+│   │   │   │       │   ├── LoginDialog.ui
+│   │   │   │       │   ├── RenewSubscriptionDialog.cpp
+│   │   │   │       │   ├── RenewSubscriptionDialog.h
+│   │   │   │       │   └── RenewSubscriptionDialog.ui
+│   │   │   │       ├── Application
+│   │   │   │       │   ├── AboutDialog.cpp
+│   │   │   │       │   ├── AboutDialog.h
+│   │   │   │       │   ├── AboutDialog.ui
+│   │   │   │       │   ├── ApplicationView.cpp
+│   │   │   │       │   ├── ApplicationView.h
+│   │   │   │       │   ├── CrashReportDialog.cpp
+│   │   │   │       │   ├── CrashReportDialog.h
+│   │   │   │       │   ├── CrashReportDialog.ui
+│   │   │   │       │   ├── MenuView.cpp
+│   │   │   │       │   ├── MenuView.h
+│   │   │   │       │   ├── MenuView.ui
+│   │   │   │       │   ├── UpdateDialog.cpp
+│   │   │   │       │   ├── UpdateDialog.h
+│   │   │   │       │   └── UpdateDialog.ui
+│   │   │   │       ├── Export
+│   │   │   │       │   ├── ExportDialog.cpp
+│   │   │   │       │   ├── ExportDialog.h
+│   │   │   │       │   └── ExportDialog.ui
+│   │   │   │       ├── Import
+│   │   │   │       │   ├── ImportDialog.cpp
+│   │   │   │       │   ├── ImportDialog.h
+│   │   │   │       │   └── ImportDialog.ui
+│   │   │   │       ├── Onboarding
+│   │   │   │       │   ├── OnboardingView.cpp
+│   │   │   │       │   ├── OnboardingView.h
+│   │   │   │       │   └── OnboardingView.ui
+│   │   │   │       ├── Project
+│   │   │   │       │   ├── AddProjectDialog.cpp
+│   │   │   │       │   ├── AddProjectDialog.h
+│   │   │   │       │   ├── AddProjectDialog.ui
+│   │   │   │       │   ├── ProjectVersionDialog.cpp
+│   │   │   │       │   ├── ProjectVersionDialog.h
+│   │   │   │       │   ├── ProjectVersionDialog.ui
+│   │   │   │       │   ├── ShareDialog.cpp
+│   │   │   │       │   ├── ShareDialog.h
+│   │   │   │       │   └── ShareDialog.ui
+│   │   │   │       ├── Research
+│   │   │   │       │   ├── ResearchItemDialog.cpp
+│   │   │   │       │   ├── ResearchItemDialog.h
+│   │   │   │       │   ├── ResearchItemDialog.ui
+│   │   │   │       │   ├── ResearchView.cpp
+│   │   │   │       │   ├── ResearchView.h
+│   │   │   │       │   └── ResearchView.ui
+│   │   │   │       ├── Scenario
+│   │   │   │       │   ├── ScenarioCards
+│   │   │   │       │   │   ├── CardsResizer.cpp
+│   │   │   │       │   │   ├── CardsResizer.h
+│   │   │   │       │   │   ├── CardsResizer.ui
+│   │   │   │       │   │   ├── CardsSearchWidget.cpp
+│   │   │   │       │   │   ├── CardsSearchWidget.h
+│   │   │   │       │   │   ├── PrintCardsDialog.cpp
+│   │   │   │       │   │   ├── PrintCardsDialog.h
+│   │   │   │       │   │   ├── PrintCardsDialog.ui
+│   │   │   │       │   │   ├── ScenarioCardsView.cpp
+│   │   │   │       │   │   └── ScenarioCardsView.h
+│   │   │   │       │   ├── ScenarioDraftNavigator
+│   │   │   │       │   │   └── ScenarioDraft.cpp.autosave
+│   │   │   │       │   ├── ScenarioItemDialog
+│   │   │   │       │   │   ├── ScenarioItemDialog.cpp
+│   │   │   │       │   │   ├── ScenarioItemDialog.h
+│   │   │   │       │   │   └── ScenarioItemDialog.ui
+│   │   │   │       │   ├── ScenarioNavigator
+│   │   │   │       │   │   ├── ScenarioNavigator.cpp
+│   │   │   │       │   │   └── ScenarioNavigator.h
+│   │   │   │       │   ├── ScenarioSceneDescription
+│   │   │   │       │   │   ├── ScenarioSceneDescription.cpp
+│   │   │   │       │   │   └── ScenarioSceneDescription.h
+│   │   │   │       │   ├── ScenarioTextEdit
+│   │   │   │       │   │   ├── ScenarioFastFormatWidget.cpp
+│   │   │   │       │   │   ├── ScenarioFastFormatWidget.h
+│   │   │   │       │   │   ├── ScenarioReviewItemDelegate.cpp
+│   │   │   │       │   │   ├── ScenarioReviewItemDelegate.h
+│   │   │   │       │   │   ├── ScenarioReviewPanel.cpp
+│   │   │   │       │   │   ├── ScenarioReviewPanel.h
+│   │   │   │       │   │   ├── ScenarioReviewView.cpp
+│   │   │   │       │   │   ├── ScenarioReviewView.h
+│   │   │   │       │   │   ├── ScenarioTextEditWidget.cpp
+│   │   │   │       │   │   ├── ScenarioTextEditWidget.h
+│   │   │   │       │   │   ├── ScriptZenModeControls.cpp
+│   │   │   │       │   │   └── ScriptZenModeControls.h
+│   │   │   │       │   ├── ScriptBookmarks
+│   │   │   │       │   │   ├── BookmarkDialog.cpp
+│   │   │   │       │   │   ├── BookmarkDialog.h
+│   │   │   │       │   │   ├── BookmarkDialog.ui
+│   │   │   │       │   │   ├── ScriptBookmarks.cpp
+│   │   │   │       │   │   └── ScriptBookmarks.h
+│   │   │   │       │   └── ScriptDictionaries
+│   │   │   │       │       ├── ScriptDictionaries.cpp
+│   │   │   │       │       └── ScriptDictionaries.h
+│   │   │   │       ├── Settings
+│   │   │   │       │   ├── LanguageDialog.cpp
+│   │   │   │       │   ├── LanguageDialog.h
+│   │   │   │       │   ├── LanguageDialog.ui
+│   │   │   │       │   ├── SettingsView.cpp
+│   │   │   │       │   ├── SettingsView.h
+│   │   │   │       │   ├── SettingsView.ui
+│   │   │   │       │   ├── TemplateDialog.cpp
+│   │   │   │       │   ├── TemplateDialog.h
+│   │   │   │       │   └── TemplateDialog.ui
+│   │   │   │       ├── StartUp
+│   │   │   │       │   ├── StartUpView.cpp
+│   │   │   │       │   ├── StartUpView.h
+│   │   │   │       │   └── StartUpView.ui
+│   │   │   │       ├── Statistics
+│   │   │   │       │   ├── ShevronButton.cpp.autosave
+│   │   │   │       │   ├── ShevronButton.h.autosave
+│   │   │   │       │   ├── StatisticSettings.ui~
+│   │   │   │       │   ├── StatisticsSettings.cpp
+│   │   │   │       │   ├── StatisticsSettings.h
+│   │   │   │       │   ├── StatisticsSettings.ui
+│   │   │   │       │   ├── StatisticsView.cpp
+│   │   │   │       │   └── StatisticsView.h
+│   │   │   │       ├── _tools
+│   │   │   │       │   ├── UIConfigurator.cpp
+│   │   │   │       │   ├── UIConfigurator.h
+│   │   │   │       │   └── UIConfigurator.ui
+│   │   │   │       └── Tools
+│   │   │   │           ├── ToolsSettings.cpp
+│   │   │   │           ├── ToolsSettings.h
+│   │   │   │           ├── ToolsSettings.ui
+│   │   │   │           ├── ToolsView.cpp
+│   │   │   │           └── ToolsView.h
+│   │   │   └── scenarist-desktop.pro
+│   │   ├── devtools
+│   │   │   └── patch-reader
+│   │   │       ├── main.cpp
+│   │   │       ├── patch-reader.pro
+│   │   │       ├── widget.cpp
+│   │   │       └── widget.h
+│   │   ├── libs
+│   │   │   ├── fileformats
+│   │   │   │   ├── docx_reader.cpp
+│   │   │   │   ├── docx_reader.h
+│   │   │   │   ├── docx_writer.cpp
+│   │   │   │   ├── docx_writer.h
+│   │   │   │   ├── fileformats.pro
+│   │   │   │   ├── format_helpers.h
+│   │   │   │   ├── format_manager.cpp
+│   │   │   │   ├── format_manager.h
+│   │   │   │   ├── format_reader.h
+│   │   │   │   ├── odt_reader.cpp
+│   │   │   │   ├── odt_reader.h
+│   │   │   │   ├── qtzip
+│   │   │   │   │   ├── qtzip.cpp
+│   │   │   │   │   ├── QtZipReader
+│   │   │   │   │   ├── qtzipreader.h
+│   │   │   │   │   ├── QtZipWriter
+│   │   │   │   │   └── qtzipwriter.h
+│   │   │   │   ├── rtf_reader.cpp
+│   │   │   │   ├── rtf_reader.h
+│   │   │   │   ├── rtf_tokenizer.cpp
+│   │   │   │   ├── rtf_tokenizer.h
+│   │   │   │   ├── txt_reader.cpp
+│   │   │   │   └── txt_reader.h
+│   │   │   ├── hunspell
+│   │   │   │   ├── ABOUT-NLS
+│   │   │   │   ├── aclocal.m4
+│   │   │   │   ├── AUTHORS
+│   │   │   │   ├── AUTHORS.myspell
+│   │   │   │   ├── BUGS
+│   │   │   │   ├── ChangeLog
+│   │   │   │   ├── ChangeLog.O
+│   │   │   │   ├── config.guess
+│   │   │   │   ├── config.h
+│   │   │   │   ├── config.h.in
+│   │   │   │   ├── config.rpath
+│   │   │   │   ├── config.status
+│   │   │   │   ├── config.sub
+│   │   │   │   ├── configure
+│   │   │   │   ├── configure.ac
+│   │   │   │   ├── COPYING
+│   │   │   │   ├── COPYING.LGPL
+│   │   │   │   ├── COPYING.MPL
+│   │   │   │   ├── depcomp
+│   │   │   │   ├── hunspell.pc
+│   │   │   │   ├── hunspell.pc.in
+│   │   │   │   ├── hunspell.pro
+│   │   │   │   ├── INSTALL
+│   │   │   │   ├── install-sh
+│   │   │   │   ├── intl
+│   │   │   │   │   ├── bindtextdom.c
+│   │   │   │   │   ├── ChangeLog
+│   │   │   │   │   ├── config.charset
+│   │   │   │   │   ├── dcgettext.c
+│   │   │   │   │   ├── dcigettext.c
+│   │   │   │   │   ├── dcngettext.c
+│   │   │   │   │   ├── dgettext.c
+│   │   │   │   │   ├── dngettext.c
+│   │   │   │   │   ├── eval-plural.h
+│   │   │   │   │   ├── explodename.c
+│   │   │   │   │   ├── export.h
+│   │   │   │   │   ├── finddomain.c
+│   │   │   │   │   ├── gettext.c
+│   │   │   │   │   ├── gettextP.h
+│   │   │   │   │   ├── gmo.h
+│   │   │   │   │   ├── hash-string.c
+│   │   │   │   │   ├── hash-string.h
+│   │   │   │   │   ├── intl-compat.c
+│   │   │   │   │   ├── intl-exports.c
+│   │   │   │   │   ├── l10nflist.c
+│   │   │   │   │   ├── langprefs.c
+│   │   │   │   │   ├── libgnuintl.h.in
+│   │   │   │   │   ├── libintl.rc
+│   │   │   │   │   ├── loadinfo.h
+│   │   │   │   │   ├── loadmsgcat.c
+│   │   │   │   │   ├── localcharset.c
+│   │   │   │   │   ├── localcharset.h
+│   │   │   │   │   ├── locale.alias
+│   │   │   │   │   ├── localealias.c
+│   │   │   │   │   ├── localename.c
+│   │   │   │   │   ├── lock.c
+│   │   │   │   │   ├── lock.h
+│   │   │   │   │   ├── log.c
+│   │   │   │   │   ├── Makefile.in
+│   │   │   │   │   ├── ngettext.c
+│   │   │   │   │   ├── os2compat.c
+│   │   │   │   │   ├── os2compat.h
+│   │   │   │   │   ├── osdep.c
+│   │   │   │   │   ├── plural.c
+│   │   │   │   │   ├── plural-exp.c
+│   │   │   │   │   ├── plural-exp.h
+│   │   │   │   │   ├── plural.y
+│   │   │   │   │   ├── printf-args.c
+│   │   │   │   │   ├── printf-args.h
+│   │   │   │   │   ├── printf.c
+│   │   │   │   │   ├── printf-parse.c
+│   │   │   │   │   ├── printf-parse.h
+│   │   │   │   │   ├── ref-add.sin
+│   │   │   │   │   ├── ref-del.sin
+│   │   │   │   │   ├── relocatable.c
+│   │   │   │   │   ├── relocatable.h
+│   │   │   │   │   ├── textdomain.c
+│   │   │   │   │   ├── tsearch.c
+│   │   │   │   │   ├── tsearch.h
+│   │   │   │   │   ├── vasnprintf.c
+│   │   │   │   │   ├── vasnprintf.h
+│   │   │   │   │   ├── vasnwprintf.h
+│   │   │   │   │   ├── VERSION
+│   │   │   │   │   ├── version.c
+│   │   │   │   │   ├── wprintf-parse.h
+│   │   │   │   │   └── xsize.h
+│   │   │   │   ├── libtool
+│   │   │   │   ├── license.hunspell
+│   │   │   │   ├── license.myspell
+│   │   │   │   ├── m4
+│   │   │   │   │   ├── ChangeLog
+│   │   │   │   │   ├── codeset.m4
+│   │   │   │   │   ├── gettext.m4
+│   │   │   │   │   ├── glibc21.m4
+│   │   │   │   │   ├── glibc2.m4
+│   │   │   │   │   ├── iconv.m4
+│   │   │   │   │   ├── intdiv0.m4
+│   │   │   │   │   ├── intldir.m4
+│   │   │   │   │   ├── intl.m4
+│   │   │   │   │   ├── intlmacosx.m4
+│   │   │   │   │   ├── intmax.m4
+│   │   │   │   │   ├── inttypes_h.m4
+│   │   │   │   │   ├── inttypes-pri.m4
+│   │   │   │   │   ├── isc-posix.m4
+│   │   │   │   │   ├── lcmessage.m4
+│   │   │   │   │   ├── lib-ld.m4
+│   │   │   │   │   ├── lib-link.m4
+│   │   │   │   │   ├── lib-prefix.m4
+│   │   │   │   │   ├── libtool.m4
+│   │   │   │   │   ├── lock.m4
+│   │   │   │   │   ├── longlong.m4
+│   │   │   │   │   ├── lt~obsolete.m4
+│   │   │   │   │   ├── ltoptions.m4
+│   │   │   │   │   ├── ltsugar.m4
+│   │   │   │   │   ├── ltversion.m4
+│   │   │   │   │   ├── Makefile.am
+│   │   │   │   │   ├── Makefile.in
+│   │   │   │   │   ├── nls.m4
+│   │   │   │   │   ├── po.m4
+│   │   │   │   │   ├── printf-posix.m4
+│   │   │   │   │   ├── progtest.m4
+│   │   │   │   │   ├── README
+│   │   │   │   │   ├── size_max.m4
+│   │   │   │   │   ├── stdint_h.m4
+│   │   │   │   │   ├── uintmax_t.m4
+│   │   │   │   │   ├── visibility.m4
+│   │   │   │   │   ├── wchar_t.m4
+│   │   │   │   │   ├── wint_t.m4
+│   │   │   │   │   └── xsize.m4
+│   │   │   │   ├── Makefile.am
+│   │   │   │   ├── Makefile.in
+│   │   │   │   ├── man
+│   │   │   │   │   ├── hu
+│   │   │   │   │   │   ├── hunspell.1
+│   │   │   │   │   │   ├── hunspell.4
+│   │   │   │   │   │   ├── Makefile.am
+│   │   │   │   │   │   └── Makefile.in
+│   │   │   │   │   ├── hunspell.1
+│   │   │   │   │   ├── hunspell.3
+│   │   │   │   │   ├── hunspell.4
+│   │   │   │   │   ├── hunzip.1
+│   │   │   │   │   ├── hzip.1
+│   │   │   │   │   ├── Makefile.am
+│   │   │   │   │   └── Makefile.in
+│   │   │   │   ├── missing
+│   │   │   │   ├── mkinstalldirs
+│   │   │   │   ├── NEWS
+│   │   │   │   ├── po
+│   │   │   │   │   ├── boldquot.sed
+│   │   │   │   │   ├── en@boldquot.header
+│   │   │   │   │   ├── en@quot.header
+│   │   │   │   │   ├── hu.gmo
+│   │   │   │   │   ├── hunspell.pot
+│   │   │   │   │   ├── hu.po
+│   │   │   │   │   ├── insert-header.sin
+│   │   │   │   │   ├── it.gmo
+│   │   │   │   │   ├── it.po
+│   │   │   │   │   ├── LINGUAS
+│   │   │   │   │   ├── Makefile.in
+│   │   │   │   │   ├── Makefile.in.in
+│   │   │   │   │   ├── Makevars
+│   │   │   │   │   ├── POTFILES
+│   │   │   │   │   ├── POTFILES.in
+│   │   │   │   │   ├── quot.sed
+│   │   │   │   │   ├── remove-potcdate.sin
+│   │   │   │   │   ├── Rules-quot
+│   │   │   │   │   └── stamp-po
+│   │   │   │   ├── README
+│   │   │   │   ├── README.myspell
+│   │   │   │   ├── src
+│   │   │   │   │   ├── hunspell
+│   │   │   │   │   │   ├── affentry.cxx
+│   │   │   │   │   │   ├── affentry.hxx
+│   │   │   │   │   │   ├── affixmgr.cxx
+│   │   │   │   │   │   ├── affixmgr.hxx
+│   │   │   │   │   │   ├── atypes.hxx
+│   │   │   │   │   │   ├── baseaffix.hxx
+│   │   │   │   │   │   ├── csutil.cxx
+│   │   │   │   │   │   ├── csutil.hxx
+│   │   │   │   │   │   ├── dictmgr.cxx
+│   │   │   │   │   │   ├── dictmgr.hxx
+│   │   │   │   │   │   ├── filemgr.cxx
+│   │   │   │   │   │   ├── filemgr.hxx
+│   │   │   │   │   │   ├── hashmgr.cxx
+│   │   │   │   │   │   ├── hashmgr.hxx
+│   │   │   │   │   │   ├── htypes.hxx
+│   │   │   │   │   │   ├── hunspell.cxx
+│   │   │   │   │   │   ├── hunspell.dsp
+│   │   │   │   │   │   ├── hunspell.h
+│   │   │   │   │   │   ├── hunspell.hxx
+│   │   │   │   │   │   ├── hunvisapi.h
+│   │   │   │   │   │   ├── hunvisapi.h.in
+│   │   │   │   │   │   ├── hunzip.cxx
+│   │   │   │   │   │   ├── hunzip.hxx
+│   │   │   │   │   │   ├── langnum.hxx
+│   │   │   │   │   │   ├── license.hunspell
+│   │   │   │   │   │   ├── license.myspell
+│   │   │   │   │   │   ├── Makefile.am
+│   │   │   │   │   │   ├── Makefile.in
+│   │   │   │   │   │   ├── makefile.mk
+│   │   │   │   │   │   ├── phonet.cxx
+│   │   │   │   │   │   ├── phonet.hxx
+│   │   │   │   │   │   ├── README
+│   │   │   │   │   │   ├── replist.cxx
+│   │   │   │   │   │   ├── replist.hxx
+│   │   │   │   │   │   ├── suggestmgr.cxx
+│   │   │   │   │   │   ├── suggestmgr.hxx
+│   │   │   │   │   │   ├── utf_info.cxx
+│   │   │   │   │   │   └── w_char.hxx
+│   │   │   │   │   ├── Makefile.am
+│   │   │   │   │   ├── Makefile.in
+│   │   │   │   │   ├── parsers
+│   │   │   │   │   │   ├── firstparser.cxx
+│   │   │   │   │   │   ├── firstparser.hxx
+│   │   │   │   │   │   ├── htmlparser.cxx
+│   │   │   │   │   │   ├── htmlparser.hxx
+│   │   │   │   │   │   ├── latexparser.cxx
+│   │   │   │   │   │   ├── latexparser.hxx
+│   │   │   │   │   │   ├── Makefile.am
+│   │   │   │   │   │   ├── Makefile.in
+│   │   │   │   │   │   ├── manparser.cxx
+│   │   │   │   │   │   ├── manparser.hxx
+│   │   │   │   │   │   ├── testparser.cxx
+│   │   │   │   │   │   ├── textparser.cxx
+│   │   │   │   │   │   └── textparser.hxx
+│   │   │   │   │   ├── tools
+│   │   │   │   │   │   ├── affixcompress
+│   │   │   │   │   │   ├── analyze.cxx
+│   │   │   │   │   │   ├── chmorph.cxx
+│   │   │   │   │   │   ├── example.cxx
+│   │   │   │   │   │   ├── hunspell.cxx
+│   │   │   │   │   │   ├── hunzip.cxx
+│   │   │   │   │   │   ├── hzip.c
+│   │   │   │   │   │   ├── ispellaff2myspell
+│   │   │   │   │   │   ├── makealias
+│   │   │   │   │   │   ├── Makefile.am
+│   │   │   │   │   │   ├── Makefile.in
+│   │   │   │   │   │   ├── munch.c
+│   │   │   │   │   │   ├── munch.h
+│   │   │   │   │   │   ├── unmunch.c
+│   │   │   │   │   │   ├── unmunch.h
+│   │   │   │   │   │   ├── wordforms
+│   │   │   │   │   │   └── wordlist2hunspell
+│   │   │   │   │   └── win_api
+│   │   │   │   │       ├── config.h
+│   │   │   │   │       ├── hunspelldll.cxx
+│   │   │   │   │       ├── hunspelldll.dev
+│   │   │   │   │       ├── hunspelldll.h
+│   │   │   │   │       ├── Hunspell.rc
+│   │   │   │   │       ├── Hunspell.sln
+│   │   │   │   │       ├── hunspell.vcproj
+│   │   │   │   │       ├── libhunspell.vcproj
+│   │   │   │   │       ├── Makefile.am
+│   │   │   │   │       ├── Makefile.cygwin
+│   │   │   │   │       ├── Makefile.in
+│   │   │   │   │       ├── README
+│   │   │   │   │       └── testparser.vcproj
+│   │   │   │   ├── stamp-h1
+│   │   │   │   ├── tests
+│   │   │   │   │   ├── 1463589.aff
+│   │   │   │   │   ├── 1463589.dic
+│   │   │   │   │   ├── 1463589.sug
+│   │   │   │   │   ├── 1463589.test
+│   │   │   │   │   ├── 1463589_utf.aff
+│   │   │   │   │   ├── 1463589_utf.dic
+│   │   │   │   │   ├── 1463589_utf.sug
+│   │   │   │   │   ├── 1463589_utf.test
+│   │   │   │   │   ├── 1463589_utf.wrong
+│   │   │   │   │   ├── 1463589.wrong
+│   │   │   │   │   ├── 1592880.aff
+│   │   │   │   │   ├── 1592880.dic
+│   │   │   │   │   ├── 1592880.good
+│   │   │   │   │   ├── 1592880.test
+│   │   │   │   │   ├── 1695964.aff
+│   │   │   │   │   ├── 1695964.dic
+│   │   │   │   │   ├── 1695964.sug
+│   │   │   │   │   ├── 1695964.test
+│   │   │   │   │   ├── 1695964.wrong
+│   │   │   │   │   ├── 1706659.aff
+│   │   │   │   │   ├── 1706659.dic
+│   │   │   │   │   ├── 1706659.test
+│   │   │   │   │   ├── 1706659.wrong
+│   │   │   │   │   ├── 1975530.aff
+│   │   │   │   │   ├── 1975530.dic
+│   │   │   │   │   ├── 1975530.good
+│   │   │   │   │   ├── 1975530.test
+│   │   │   │   │   ├── 1975530.wrong
+│   │   │   │   │   ├── 2970240.aff
+│   │   │   │   │   ├── 2970240.dic
+│   │   │   │   │   ├── 2970240.good
+│   │   │   │   │   ├── 2970240.test
+│   │   │   │   │   ├── 2970240.wrong
+│   │   │   │   │   ├── 2970242.aff
+│   │   │   │   │   ├── 2970242.dic
+│   │   │   │   │   ├── 2970242.good
+│   │   │   │   │   ├── 2970242.test
+│   │   │   │   │   ├── 2970242.wrong
+│   │   │   │   │   ├── 2999225.aff
+│   │   │   │   │   ├── 2999225.dic
+│   │   │   │   │   ├── 2999225.good
+│   │   │   │   │   ├── 2999225.test
+│   │   │   │   │   ├── affixes.aff
+│   │   │   │   │   ├── affixes.dic
+│   │   │   │   │   ├── affixes.good
+│   │   │   │   │   ├── affixes.test
+│   │   │   │   │   ├── alias2.aff
+│   │   │   │   │   ├── alias2.dic
+│   │   │   │   │   ├── alias2.good
+│   │   │   │   │   ├── alias2.morph
+│   │   │   │   │   ├── alias2.test
+│   │   │   │   │   ├── alias3.aff
+│   │   │   │   │   ├── alias3.dic
+│   │   │   │   │   ├── alias3.good
+│   │   │   │   │   ├── alias3.morph
+│   │   │   │   │   ├── alias3.test
+│   │   │   │   │   ├── alias.aff
+│   │   │   │   │   ├── alias.dic
+│   │   │   │   │   ├── alias.good
+│   │   │   │   │   ├── alias.test
+│   │   │   │   │   ├── allcaps2.aff
+│   │   │   │   │   ├── allcaps2.dic
+│   │   │   │   │   ├── allcaps2.good
+│   │   │   │   │   ├── allcaps2.sug
+│   │   │   │   │   ├── allcaps2.test
+│   │   │   │   │   ├── allcaps2.wrong
+│   │   │   │   │   ├── allcaps3.aff
+│   │   │   │   │   ├── allcaps3.dic
+│   │   │   │   │   ├── allcaps3.good
+│   │   │   │   │   ├── allcaps3.test
+│   │   │   │   │   ├── allcaps3.wrong
+│   │   │   │   │   ├── allcaps.aff
+│   │   │   │   │   ├── allcaps.dic
+│   │   │   │   │   ├── allcaps.good
+│   │   │   │   │   ├── allcaps.sug
+│   │   │   │   │   ├── allcaps.test
+│   │   │   │   │   ├── allcaps_utf.aff
+│   │   │   │   │   ├── allcaps_utf.dic
+│   │   │   │   │   ├── allcaps_utf.good
+│   │   │   │   │   ├── allcaps_utf.sug
+│   │   │   │   │   ├── allcaps_utf.test
+│   │   │   │   │   ├── allcaps_utf.wrong
+│   │   │   │   │   ├── allcaps.wrong
+│   │   │   │   │   ├── arabic.aff
+│   │   │   │   │   ├── arabic.dic
+│   │   │   │   │   ├── arabic.test
+│   │   │   │   │   ├── arabic.wrong
+│   │   │   │   │   ├── base.aff
+│   │   │   │   │   ├── base.dic
+│   │   │   │   │   ├── base.good
+│   │   │   │   │   ├── base.sug
+│   │   │   │   │   ├── base.test
+│   │   │   │   │   ├── base_utf.aff
+│   │   │   │   │   ├── base_utf.dic
+│   │   │   │   │   ├── base_utf.good
+│   │   │   │   │   ├── base_utf.sug
+│   │   │   │   │   ├── base_utf.test
+│   │   │   │   │   ├── base_utf.wrong
+│   │   │   │   │   ├── base.wrong
+│   │   │   │   │   ├── break.aff
+│   │   │   │   │   ├── breakdefault.aff
+│   │   │   │   │   ├── breakdefault.dic
+│   │   │   │   │   ├── breakdefault.good
+│   │   │   │   │   ├── breakdefault.sug
+│   │   │   │   │   ├── breakdefault.test
+│   │   │   │   │   ├── breakdefault.wrong
+│   │   │   │   │   ├── break.dic
+│   │   │   │   │   ├── break.good
+│   │   │   │   │   ├── breakoff.aff
+│   │   │   │   │   ├── breakoff.dic
+│   │   │   │   │   ├── breakoff.good
+│   │   │   │   │   ├── breakoff.test
+│   │   │   │   │   ├── breakoff.wrong
+│   │   │   │   │   ├── break.test
+│   │   │   │   │   ├── break.wrong
+│   │   │   │   │   ├── checkcompoundcase2.aff
+│   │   │   │   │   ├── checkcompoundcase2.dic
+│   │   │   │   │   ├── checkcompoundcase2.good
+│   │   │   │   │   ├── checkcompoundcase2.test
+│   │   │   │   │   ├── checkcompoundcase2.wrong
+│   │   │   │   │   ├── checkcompoundcase.aff
+│   │   │   │   │   ├── checkcompoundcase.dic
+│   │   │   │   │   ├── checkcompoundcase.good
+│   │   │   │   │   ├── checkcompoundcase.test
+│   │   │   │   │   ├── checkcompoundcaseutf.aff
+│   │   │   │   │   ├── checkcompoundcaseutf.dic
+│   │   │   │   │   ├── checkcompoundcaseutf.good
+│   │   │   │   │   ├── checkcompoundcaseutf.test
+│   │   │   │   │   ├── checkcompoundcaseutf.wrong
+│   │   │   │   │   ├── checkcompoundcase.wrong
+│   │   │   │   │   ├── checkcompounddup.aff
+│   │   │   │   │   ├── checkcompounddup.dic
+│   │   │   │   │   ├── checkcompounddup.good
+│   │   │   │   │   ├── checkcompounddup.test
+│   │   │   │   │   ├── checkcompounddup.wrong
+│   │   │   │   │   ├── checkcompoundpattern2.aff
+│   │   │   │   │   ├── checkcompoundpattern2.dic
+│   │   │   │   │   ├── checkcompoundpattern2.good
+│   │   │   │   │   ├── checkcompoundpattern2.test
+│   │   │   │   │   ├── checkcompoundpattern2.wrong
+│   │   │   │   │   ├── checkcompoundpattern3.aff
+│   │   │   │   │   ├── checkcompoundpattern3.dic
+│   │   │   │   │   ├── checkcompoundpattern3.good
+│   │   │   │   │   ├── checkcompoundpattern3.test
+│   │   │   │   │   ├── checkcompoundpattern3.wrong
+│   │   │   │   │   ├── checkcompoundpattern4.aff
+│   │   │   │   │   ├── checkcompoundpattern4.dic
+│   │   │   │   │   ├── checkcompoundpattern4.good
+│   │   │   │   │   ├── checkcompoundpattern4.test
+│   │   │   │   │   ├── checkcompoundpattern4.wrong
+│   │   │   │   │   ├── checkcompoundpattern.aff
+│   │   │   │   │   ├── checkcompoundpattern.dic
+│   │   │   │   │   ├── checkcompoundpattern.good
+│   │   │   │   │   ├── checkcompoundpattern.test
+│   │   │   │   │   ├── checkcompoundpattern.wrong
+│   │   │   │   │   ├── checkcompoundrep.aff
+│   │   │   │   │   ├── checkcompoundrep.dic
+│   │   │   │   │   ├── checkcompoundrep.good
+│   │   │   │   │   ├── checkcompoundrep.test
+│   │   │   │   │   ├── checkcompoundrep.wrong
+│   │   │   │   │   ├── checkcompoundtriple.aff
+│   │   │   │   │   ├── checkcompoundtriple.dic
+│   │   │   │   │   ├── checkcompoundtriple.good
+│   │   │   │   │   ├── checkcompoundtriple.test
+│   │   │   │   │   ├── checkcompoundtriple.wrong
+│   │   │   │   │   ├── checksharps.aff
+│   │   │   │   │   ├── checksharps.dic
+│   │   │   │   │   ├── checksharps.good
+│   │   │   │   │   ├── checksharps.sug
+│   │   │   │   │   ├── checksharps.test
+│   │   │   │   │   ├── checksharpsutf.aff
+│   │   │   │   │   ├── checksharpsutf.dic
+│   │   │   │   │   ├── checksharpsutf.good
+│   │   │   │   │   ├── checksharpsutf.sug
+│   │   │   │   │   ├── checksharpsutf.test
+│   │   │   │   │   ├── checksharpsutf.wrong
+│   │   │   │   │   ├── checksharps.wrong
+│   │   │   │   │   ├── circumfix.aff
+│   │   │   │   │   ├── circumfix.dic
+│   │   │   │   │   ├── circumfix.good
+│   │   │   │   │   ├── circumfix.morph
+│   │   │   │   │   ├── circumfix.test
+│   │   │   │   │   ├── circumfix.wrong
+│   │   │   │   │   ├── colons_in_words.aff
+│   │   │   │   │   ├── colons_in_words.dic
+│   │   │   │   │   ├── colons_in_words.test
+│   │   │   │   │   ├── complexprefixes2.aff
+│   │   │   │   │   ├── complexprefixes2.dic
+│   │   │   │   │   ├── complexprefixes2.good
+│   │   │   │   │   ├── complexprefixes2.test
+│   │   │   │   │   ├── complexprefixes.aff
+│   │   │   │   │   ├── complexprefixes.dic
+│   │   │   │   │   ├── complexprefixes.good
+│   │   │   │   │   ├── complexprefixes.test
+│   │   │   │   │   ├── complexprefixesutf.aff
+│   │   │   │   │   ├── complexprefixesutf.dic
+│   │   │   │   │   ├── complexprefixesutf.good
+│   │   │   │   │   ├── complexprefixesutf.test
+│   │   │   │   │   ├── complexprefixesutf.wrong
+│   │   │   │   │   ├── complexprefixes.wrong
+│   │   │   │   │   ├── compoundaffix2.aff
+│   │   │   │   │   ├── compoundaffix2.dic
+│   │   │   │   │   ├── compoundaffix2.good
+│   │   │   │   │   ├── compoundaffix2.test
+│   │   │   │   │   ├── compoundaffix3.aff
+│   │   │   │   │   ├── compoundaffix3.dic
+│   │   │   │   │   ├── compoundaffix3.good
+│   │   │   │   │   ├── compoundaffix3.test
+│   │   │   │   │   ├── compoundaffix3.wrong
+│   │   │   │   │   ├── compoundaffix.aff
+│   │   │   │   │   ├── compoundaffix.dic
+│   │   │   │   │   ├── compoundaffix.good
+│   │   │   │   │   ├── compoundaffix.test
+│   │   │   │   │   ├── compoundaffix.wrong
+│   │   │   │   │   ├── compoundflag.aff
+│   │   │   │   │   ├── compoundflag.dic
+│   │   │   │   │   ├── compoundflag.good
+│   │   │   │   │   ├── compoundflag.test
+│   │   │   │   │   ├── compoundflag.wrong
+│   │   │   │   │   ├── compoundrule2.aff
+│   │   │   │   │   ├── compoundrule2.dic
+│   │   │   │   │   ├── compoundrule2.good
+│   │   │   │   │   ├── compoundrule2.test
+│   │   │   │   │   ├── compoundrule2.wrong
+│   │   │   │   │   ├── compoundrule3.aff
+│   │   │   │   │   ├── compoundrule3.dic
+│   │   │   │   │   ├── compoundrule3.good
+│   │   │   │   │   ├── compoundrule3.test
+│   │   │   │   │   ├── compoundrule3.wrong
+│   │   │   │   │   ├── compoundrule4.aff
+│   │   │   │   │   ├── compoundrule4.dic
+│   │   │   │   │   ├── compoundrule4.good
+│   │   │   │   │   ├── compoundrule4.test
+│   │   │   │   │   ├── compoundrule4.wrong
+│   │   │   │   │   ├── compoundrule5.aff
+│   │   │   │   │   ├── compoundrule5.dic
+│   │   │   │   │   ├── compoundrule5.good
+│   │   │   │   │   ├── compoundrule5.morph
+│   │   │   │   │   ├── compoundrule5.test
+│   │   │   │   │   ├── compoundrule5.wrong
+│   │   │   │   │   ├── compoundrule6.aff
+│   │   │   │   │   ├── compoundrule6.dic
+│   │   │   │   │   ├── compoundrule6.good
+│   │   │   │   │   ├── compoundrule6.test
+│   │   │   │   │   ├── compoundrule6.wrong
+│   │   │   │   │   ├── compoundrule7.aff
+│   │   │   │   │   ├── compoundrule7.dic
+│   │   │   │   │   ├── compoundrule7.good
+│   │   │   │   │   ├── compoundrule7.test
+│   │   │   │   │   ├── compoundrule7.wrong
+│   │   │   │   │   ├── compoundrule8.aff
+│   │   │   │   │   ├── compoundrule8.dic
+│   │   │   │   │   ├── compoundrule8.good
+│   │   │   │   │   ├── compoundrule8.test
+│   │   │   │   │   ├── compoundrule8.wrong
+│   │   │   │   │   ├── compoundrule.aff
+│   │   │   │   │   ├── compoundrule.dic
+│   │   │   │   │   ├── compoundrule.good
+│   │   │   │   │   ├── compoundrule.test
+│   │   │   │   │   ├── compoundrule.wrong
+│   │   │   │   │   ├── condition.aff
+│   │   │   │   │   ├── conditionalprefix.aff
+│   │   │   │   │   ├── conditionalprefix.dic
+│   │   │   │   │   ├── conditionalprefix.good
+│   │   │   │   │   ├── conditionalprefix.morph
+│   │   │   │   │   ├── conditionalprefix.test
+│   │   │   │   │   ├── conditionalprefix.wrong
+│   │   │   │   │   ├── condition.dic
+│   │   │   │   │   ├── condition.good
+│   │   │   │   │   ├── condition.test
+│   │   │   │   │   ├── condition_utf.aff
+│   │   │   │   │   ├── condition_utf.dic
+│   │   │   │   │   ├── condition_utf.good
+│   │   │   │   │   ├── condition_utf.test
+│   │   │   │   │   ├── condition_utf.wrong
+│   │   │   │   │   ├── condition.wrong
+│   │   │   │   │   ├── digits_in_words.aff
+│   │   │   │   │   ├── digits_in_words.dic
+│   │   │   │   │   ├── digits_in_words.test
+│   │   │   │   │   ├── digits_in_words.wrong
+│   │   │   │   │   ├── encoding.aff
+│   │   │   │   │   ├── encoding.dic
+│   │   │   │   │   ├── encoding.good
+│   │   │   │   │   ├── encoding.test
+│   │   │   │   │   ├── flag.aff
+│   │   │   │   │   ├── flag.dic
+│   │   │   │   │   ├── flag.good
+│   │   │   │   │   ├── flaglong.aff
+│   │   │   │   │   ├── flaglong.dic
+│   │   │   │   │   ├── flaglong.good
+│   │   │   │   │   ├── flaglong.test
+│   │   │   │   │   ├── flagnum.aff
+│   │   │   │   │   ├── flagnum.dic
+│   │   │   │   │   ├── flagnum.good
+│   │   │   │   │   ├── flagnum.test
+│   │   │   │   │   ├── flag.test
+│   │   │   │   │   ├── flagutf8.aff
+│   │   │   │   │   ├── flagutf8.dic
+│   │   │   │   │   ├── flagutf8.good
+│   │   │   │   │   ├── flagutf8.test
+│   │   │   │   │   ├── fogemorpheme.aff
+│   │   │   │   │   ├── fogemorpheme.dic
+│   │   │   │   │   ├── fogemorpheme.good
+│   │   │   │   │   ├── fogemorpheme.test
+│   │   │   │   │   ├── fogemorpheme.wrong
+│   │   │   │   │   ├── forbiddenword.aff
+│   │   │   │   │   ├── forbiddenword.dic
+│   │   │   │   │   ├── forbiddenword.good
+│   │   │   │   │   ├── forbiddenword.test
+│   │   │   │   │   ├── forbiddenword.wrong
+│   │   │   │   │   ├── forceucase.aff
+│   │   │   │   │   ├── forceucase.dic
+│   │   │   │   │   ├── forceucase.good
+│   │   │   │   │   ├── forceucase.sug
+│   │   │   │   │   ├── forceucase.test
+│   │   │   │   │   ├── forceucase.wrong
+│   │   │   │   │   ├── fullstrip.aff
+│   │   │   │   │   ├── fullstrip.dic
+│   │   │   │   │   ├── fullstrip.good
+│   │   │   │   │   ├── fullstrip.test
+│   │   │   │   │   ├── germancompounding.aff
+│   │   │   │   │   ├── germancompounding.dic
+│   │   │   │   │   ├── germancompounding.good
+│   │   │   │   │   ├── germancompoundingold.aff
+│   │   │   │   │   ├── germancompoundingold.dic
+│   │   │   │   │   ├── germancompoundingold.good
+│   │   │   │   │   ├── germancompoundingold.test
+│   │   │   │   │   ├── germancompoundingold.wrong
+│   │   │   │   │   ├── germancompounding.test
+│   │   │   │   │   ├── germancompounding.wrong
+│   │   │   │   │   ├── i35725.aff
+│   │   │   │   │   ├── i35725.dic
+│   │   │   │   │   ├── i35725.good
+│   │   │   │   │   ├── i35725.sug
+│   │   │   │   │   ├── i35725.test
+│   │   │   │   │   ├── i35725.wrong
+│   │   │   │   │   ├── i53643.aff
+│   │   │   │   │   ├── i53643.dic
+│   │   │   │   │   ├── i53643.good
+│   │   │   │   │   ├── i53643.test
+│   │   │   │   │   ├── i53643.wrong
+│   │   │   │   │   ├── i54633.aff
+│   │   │   │   │   ├── i54633.dic
+│   │   │   │   │   ├── i54633.good
+│   │   │   │   │   ├── i54633.sug
+│   │   │   │   │   ├── i54633.test
+│   │   │   │   │   ├── i54633.wrong
+│   │   │   │   │   ├── i54980.aff
+│   │   │   │   │   ├── i54980.dic
+│   │   │   │   │   ├── i54980.good
+│   │   │   │   │   ├── i54980.test
+│   │   │   │   │   ├── i58202.aff
+│   │   │   │   │   ├── i58202.dic
+│   │   │   │   │   ├── i58202.good
+│   │   │   │   │   ├── i58202.sug
+│   │   │   │   │   ├── i58202.test
+│   │   │   │   │   ├── i58202.wrong
+│   │   │   │   │   ├── i68568.aff
+│   │   │   │   │   ├── i68568.dic
+│   │   │   │   │   ├── i68568.test
+│   │   │   │   │   ├── i68568utf.aff
+│   │   │   │   │   ├── i68568utf.dic
+│   │   │   │   │   ├── i68568utf.test
+│   │   │   │   │   ├── i68568utf.wrong
+│   │   │   │   │   ├── i68568.wrong
+│   │   │   │   │   ├── iconv.aff
+│   │   │   │   │   ├── iconv.dic
+│   │   │   │   │   ├── iconv.good
+│   │   │   │   │   ├── iconv.test
+│   │   │   │   │   ├── ignore.aff
+│   │   │   │   │   ├── ignore.dic
+│   │   │   │   │   ├── ignore.good
+│   │   │   │   │   ├── ignore.test
+│   │   │   │   │   ├── ignoreutf.aff
+│   │   │   │   │   ├── ignoreutf.dic
+│   │   │   │   │   ├── ignoreutf.good
+│   │   │   │   │   ├── ignoreutf.test
+│   │   │   │   │   ├── IJ.aff
+│   │   │   │   │   ├── IJ.dic
+│   │   │   │   │   ├── IJ.good
+│   │   │   │   │   ├── IJ.sug
+│   │   │   │   │   ├── IJ.test
+│   │   │   │   │   ├── IJ.wrong
+│   │   │   │   │   ├── keepcase.aff
+│   │   │   │   │   ├── keepcase.dic
+│   │   │   │   │   ├── keepcase.good
+│   │   │   │   │   ├── keepcase.sug
+│   │   │   │   │   ├── keepcase.test
+│   │   │   │   │   ├── keepcase.wrong
+│   │   │   │   │   ├── korean.aff
+│   │   │   │   │   ├── korean.dic
+│   │   │   │   │   ├── korean.good
+│   │   │   │   │   ├── korean.test
+│   │   │   │   │   ├── korean.wrong
+│   │   │   │   │   ├── Makefile.am
+│   │   │   │   │   ├── Makefile.in
+│   │   │   │   │   ├── map.aff
+│   │   │   │   │   ├── map.dic
+│   │   │   │   │   ├── map.sug
+│   │   │   │   │   ├── map.test
+│   │   │   │   │   ├── maputf.aff
+│   │   │   │   │   ├── maputf.dic
+│   │   │   │   │   ├── maputf.sug
+│   │   │   │   │   ├── maputf.test
+│   │   │   │   │   ├── maputf.wrong
+│   │   │   │   │   ├── map.wrong
+│   │   │   │   │   ├── morph.aff
+│   │   │   │   │   ├── morph.dic
+│   │   │   │   │   ├── morph.good
+│   │   │   │   │   ├── morph.morph
+│   │   │   │   │   ├── morph.test
+│   │   │   │   │   ├── needaffix2.aff
+│   │   │   │   │   ├── needaffix2.dic
+│   │   │   │   │   ├── needaffix2.good
+│   │   │   │   │   ├── needaffix2.morph
+│   │   │   │   │   ├── needaffix2.test
+│   │   │   │   │   ├── needaffix3.aff
+│   │   │   │   │   ├── needaffix3.dic
+│   │   │   │   │   ├── needaffix3.good
+│   │   │   │   │   ├── needaffix3.test
+│   │   │   │   │   ├── needaffix3.wrong
+│   │   │   │   │   ├── needaffix4.aff
+│   │   │   │   │   ├── needaffix4.dic
+│   │   │   │   │   ├── needaffix4.good
+│   │   │   │   │   ├── needaffix4.test
+│   │   │   │   │   ├── needaffix5.aff
+│   │   │   │   │   ├── needaffix5.dic
+│   │   │   │   │   ├── needaffix5.good
+│   │   │   │   │   ├── needaffix5.test
+│   │   │   │   │   ├── needaffix5.wrong
+│   │   │   │   │   ├── needaffix.aff
+│   │   │   │   │   ├── needaffix.dic
+│   │   │   │   │   ├── needaffix.good
+│   │   │   │   │   ├── needaffix.test
+│   │   │   │   │   ├── needaffix.wrong
+│   │   │   │   │   ├── ngram_utf_fix.aff
+│   │   │   │   │   ├── ngram_utf_fix.dic
+│   │   │   │   │   ├── ngram_utf_fix.good
+│   │   │   │   │   ├── ngram_utf_fix.sug
+│   │   │   │   │   ├── ngram_utf_fix.test
+│   │   │   │   │   ├── ngram_utf_fix.wrong
+│   │   │   │   │   ├── nosuggest.aff
+│   │   │   │   │   ├── nosuggest.dic
+│   │   │   │   │   ├── nosuggest.good
+│   │   │   │   │   ├── nosuggest.sug
+│   │   │   │   │   ├── nosuggest.test
+│   │   │   │   │   ├── nosuggest.wrong
+│   │   │   │   │   ├── oconv.aff
+│   │   │   │   │   ├── oconv.dic
+│   │   │   │   │   ├── oconv.good
+│   │   │   │   │   ├── oconv.sug
+│   │   │   │   │   ├── oconv.test
+│   │   │   │   │   ├── oconv.wrong
+│   │   │   │   │   ├── onlyincompound2.aff
+│   │   │   │   │   ├── onlyincompound2.dic
+│   │   │   │   │   ├── onlyincompound2.good
+│   │   │   │   │   ├── onlyincompound2.test
+│   │   │   │   │   ├── onlyincompound2.wrong
+│   │   │   │   │   ├── onlyincompound.aff
+│   │   │   │   │   ├── onlyincompound.dic
+│   │   │   │   │   ├── onlyincompound.good
+│   │   │   │   │   ├── onlyincompound.sug
+│   │   │   │   │   ├── onlyincompound.test
+│   │   │   │   │   ├── onlyincompound.wrong
+│   │   │   │   │   ├── opentaal_cpdpat2.aff
+│   │   │   │   │   ├── opentaal_cpdpat2.dic
+│   │   │   │   │   ├── opentaal_cpdpat2.good
+│   │   │   │   │   ├── opentaal_cpdpat2.test
+│   │   │   │   │   ├── opentaal_cpdpat2.wrong
+│   │   │   │   │   ├── opentaal_cpdpat.aff
+│   │   │   │   │   ├── opentaal_cpdpat.dic
+│   │   │   │   │   ├── opentaal_cpdpat.good
+│   │   │   │   │   ├── opentaal_cpdpat.test
+│   │   │   │   │   ├── opentaal_cpdpat.wrong
+│   │   │   │   │   ├── opentaal_forbiddenword1.aff
+│   │   │   │   │   ├── opentaal_forbiddenword1.dic
+│   │   │   │   │   ├── opentaal_forbiddenword1.good
+│   │   │   │   │   ├── opentaal_forbiddenword1.sug
+│   │   │   │   │   ├── opentaal_forbiddenword1.test
+│   │   │   │   │   ├── opentaal_forbiddenword1.wrong
+│   │   │   │   │   ├── opentaal_forbiddenword2.aff
+│   │   │   │   │   ├── opentaal_forbiddenword2.dic
+│   │   │   │   │   ├── opentaal_forbiddenword2.good
+│   │   │   │   │   ├── opentaal_forbiddenword2.sug
+│   │   │   │   │   ├── opentaal_forbiddenword2.test
+│   │   │   │   │   ├── opentaal_forbiddenword2.wrong
+│   │   │   │   │   ├── opentaal_keepcase.aff
+│   │   │   │   │   ├── opentaal_keepcase.dic
+│   │   │   │   │   ├── opentaal_keepcase.good
+│   │   │   │   │   ├── opentaal_keepcase.sug
+│   │   │   │   │   ├── opentaal_keepcase.test
+│   │   │   │   │   ├── opentaal_keepcase.wrong
+│   │   │   │   │   ├── phone.aff
+│   │   │   │   │   ├── phone.dic
+│   │   │   │   │   ├── phone.sug
+│   │   │   │   │   ├── phone.test
+│   │   │   │   │   ├── phone.wrong
+│   │   │   │   │   ├── rep.aff
+│   │   │   │   │   ├── rep.dic
+│   │   │   │   │   ├── rep.sug
+│   │   │   │   │   ├── rep.test
+│   │   │   │   │   ├── reputf.aff
+│   │   │   │   │   ├── reputf.dic
+│   │   │   │   │   ├── reputf.sug
+│   │   │   │   │   ├── reputf.test
+│   │   │   │   │   ├── reputf.wrong
+│   │   │   │   │   ├── rep.wrong
+│   │   │   │   │   ├── simplifiedtriple.aff
+│   │   │   │   │   ├── simplifiedtriple.dic
+│   │   │   │   │   ├── simplifiedtriple.good
+│   │   │   │   │   ├── simplifiedtriple.test
+│   │   │   │   │   ├── simplifiedtriple.wrong
+│   │   │   │   │   ├── slash.aff
+│   │   │   │   │   ├── slash.dic
+│   │   │   │   │   ├── slash.good
+│   │   │   │   │   ├── slash.test
+│   │   │   │   │   ├── sug.aff
+│   │   │   │   │   ├── sug.dic
+│   │   │   │   │   ├── suggestiontest
+│   │   │   │   │   │   ├── List_of_common_misspellings.txt
+│   │   │   │   │   │   ├── Makefile.am
+│   │   │   │   │   │   ├── Makefile.in
+│   │   │   │   │   │   ├── Makefile.orig
+│   │   │   │   │   │   ├── prepare
+│   │   │   │   │   │   ├── README
+│   │   │   │   │   │   └── test
+│   │   │   │   │   ├── sug.sug
+│   │   │   │   │   ├── sug.test
+│   │   │   │   │   ├── sugutf.aff
+│   │   │   │   │   ├── sugutf.dic
+│   │   │   │   │   ├── sugutf.sug
+│   │   │   │   │   ├── sugutf.test
+│   │   │   │   │   ├── sugutf.wrong
+│   │   │   │   │   ├── sug.wrong
+│   │   │   │   │   ├── utf8.aff
+│   │   │   │   │   ├── utf8_bom2.aff
+│   │   │   │   │   ├── utf8_bom2.dic
+│   │   │   │   │   ├── utf8_bom2.good
+│   │   │   │   │   ├── utf8_bom2.test
+│   │   │   │   │   ├── utf8_bom.aff
+│   │   │   │   │   ├── utf8_bom.dic
+│   │   │   │   │   ├── utf8_bom.good
+│   │   │   │   │   ├── utf8_bom.test
+│   │   │   │   │   ├── utf8.dic
+│   │   │   │   │   ├── utf8.good
+│   │   │   │   │   ├── utf8_nonbmp.aff
+│   │   │   │   │   ├── utf8_nonbmp.dic
+│   │   │   │   │   ├── utf8_nonbmp.good
+│   │   │   │   │   ├── utf8_nonbmp.sug
+│   │   │   │   │   ├── utf8_nonbmp.test
+│   │   │   │   │   ├── utf8_nonbmp.wrong
+│   │   │   │   │   ├── utf8.test
+│   │   │   │   │   ├── utfcompound.aff
+│   │   │   │   │   ├── utfcompound.dic
+│   │   │   │   │   ├── utfcompound.good
+│   │   │   │   │   ├── utfcompound.test
+│   │   │   │   │   ├── utfcompound.wrong
+│   │   │   │   │   ├── warn.aff
+│   │   │   │   │   ├── warn.dic
+│   │   │   │   │   ├── warn.good
+│   │   │   │   │   ├── warn.test
+│   │   │   │   │   ├── zeroaffix.aff
+│   │   │   │   │   ├── zeroaffix.dic
+│   │   │   │   │   ├── zeroaffix.good
+│   │   │   │   │   ├── zeroaffix.morph
+│   │   │   │   │   └── zeroaffix.test
+│   │   │   │   ├── THANKS
+│   │   │   │   └── TODO
+│   │   │   ├── libs.pro
+│   │   │   ├── mythes
+│   │   │   │   ├── license.readme
+│   │   │   │   ├── mythes.cpp
+│   │   │   │   ├── MyThesGlobal.h
+│   │   │   │   ├── mythes.h
+│   │   │   │   └── mythes.pro
+│   │   │   ├── qBreakpad
+│   │   │   │   ├── AUTHORS
+│   │   │   │   ├── CHANGELOG
+│   │   │   │   ├── config.pri
+│   │   │   │   ├── handler
+│   │   │   │   │   ├── handler.pro
+│   │   │   │   │   ├── QBreakpadHandler.cpp
+│   │   │   │   │   ├── QBreakpadHandler.h
+│   │   │   │   │   └── singletone
+│   │   │   │   │       ├── call_once.h
+│   │   │   │   │       └── singleton.h
+│   │   │   │   ├── LICENSE.LGPL
+│   │   │   │   ├── qBreakpad.pri
+│   │   │   │   ├── qBreakpad.pro
+│   │   │   │   ├── README.md
+│   │   │   │   ├── third_party
+│   │   │   │   │   ├── breakpad
+│   │   │   │   │   │   ├── aclocal.m4
+│   │   │   │   │   │   ├── android
+│   │   │   │   │   │   │   ├── common-functions.sh
+│   │   │   │   │   │   │   ├── google_breakpad
+│   │   │   │   │   │   │   │   └── Android.mk
+│   │   │   │   │   │   │   ├── run-checks.sh
+│   │   │   │   │   │   │   ├── sample_app
+│   │   │   │   │   │   │   │   ├── jni
+│   │   │   │   │   │   │   │   │   ├── Android.mk
+│   │   │   │   │   │   │   │   │   ├── Application.mk
+│   │   │   │   │   │   │   │   │   └── test_breakpad.cpp
+│   │   │   │   │   │   │   │   └── README
+│   │   │   │   │   │   │   ├── test-driver
+│   │   │   │   │   │   │   └── test-shell.sh
+│   │   │   │   │   │   ├── AUTHORS
+│   │   │   │   │   │   ├── autotools
+│   │   │   │   │   │   │   ├── ar-lib
+│   │   │   │   │   │   │   ├── compile
+│   │   │   │   │   │   │   ├── config.guess
+│   │   │   │   │   │   │   ├── config.sub
+│   │   │   │   │   │   │   ├── depcomp
+│   │   │   │   │   │   │   ├── install-sh
+│   │   │   │   │   │   │   ├── ltmain.sh
+│   │   │   │   │   │   │   ├── missing
+│   │   │   │   │   │   │   └── test-driver
+│   │   │   │   │   │   ├── breakpad-client.pc.in
+│   │   │   │   │   │   ├── breakpad.pc.in
+│   │   │   │   │   │   ├── ChangeLog
+│   │   │   │   │   │   ├── codereview.settings
+│   │   │   │   │   │   ├── configure
+│   │   │   │   │   │   ├── configure.ac
+│   │   │   │   │   │   ├── DEPS
+│   │   │   │   │   │   ├── docs
+│   │   │   │   │   │   │   ├── breakpad.png
+│   │   │   │   │   │   │   ├── breakpad.svg
+│   │   │   │   │   │   │   ├── client_design.md
+│   │   │   │   │   │   │   ├── contributing_to_breakpad.md
+│   │   │   │   │   │   │   ├── exception_handling.md
+│   │   │   │   │   │   │   ├── getting_started_with_breakpad.md
+│   │   │   │   │   │   │   ├── linux_starter_guide.md
+│   │   │   │   │   │   │   ├── linux_system_calls.md
+│   │   │   │   │   │   │   ├── mac_breakpad_starter_guide.md
+│   │   │   │   │   │   │   ├── mozilla_brown_bag_talk.md
+│   │   │   │   │   │   │   ├── OWNERS
+│   │   │   │   │   │   │   ├── processor_design.md
+│   │   │   │   │   │   │   ├── stack_walking.md
+│   │   │   │   │   │   │   ├── symbol_files.md
+│   │   │   │   │   │   │   └── windows_client_integration.md
+│   │   │   │   │   │   ├── INSTALL
+│   │   │   │   │   │   ├── LICENSE
+│   │   │   │   │   │   ├── m4
+│   │   │   │   │   │   │   ├── ax_cxx_compile_stdcxx.m4
+│   │   │   │   │   │   │   ├── ax_pthread.m4
+│   │   │   │   │   │   │   ├── libtool.m4
+│   │   │   │   │   │   │   ├── lt~obsolete.m4
+│   │   │   │   │   │   │   ├── ltoptions.m4
+│   │   │   │   │   │   │   ├── ltsugar.m4
+│   │   │   │   │   │   │   └── ltversion.m4
+│   │   │   │   │   │   ├── NEWS
+│   │   │   │   │   │   ├── README.ANDROID
+│   │   │   │   │   │   ├── README.md
+│   │   │   │   │   │   └── src
+│   │   │   │   │   │       ├── breakpad_googletest_includes.h
+│   │   │   │   │   │       ├── build
+│   │   │   │   │   │       │   ├── all.gyp
+│   │   │   │   │   │       │   ├── common.gypi
+│   │   │   │   │   │       │   ├── filename_rules.gypi
+│   │   │   │   │   │       │   ├── gyp_breakpad
+│   │   │   │   │   │       │   └── testing.gypi
+│   │   │   │   │   │       ├── client
+│   │   │   │   │   │       │   ├── apple
+│   │   │   │   │   │       │   │   └── Framework
+│   │   │   │   │   │       │   │       └── BreakpadDefines.h
+│   │   │   │   │   │       │   ├── ios
+│   │   │   │   │   │       │   │   ├── BreakpadController.h
+│   │   │   │   │   │       │   │   ├── BreakpadController.mm
+│   │   │   │   │   │       │   │   ├── Breakpad.h
+│   │   │   │   │   │       │   │   ├── Breakpad.mm
+│   │   │   │   │   │       │   │   ├── Breakpad_Prefix.pch
+│   │   │   │   │   │       │   │   ├── Breakpad.xcodeproj
+│   │   │   │   │   │       │   │   │   └── project.pbxproj
+│   │   │   │   │   │       │   │   └── handler
+│   │   │   │   │   │       │   │       ├── ios_exception_minidump_generator.h
+│   │   │   │   │   │       │   │       └── ios_exception_minidump_generator.mm
+│   │   │   │   │   │       │   ├── linux
+│   │   │   │   │   │       │   │   ├── crash_generation
+│   │   │   │   │   │       │   │   │   ├── client_info.h
+│   │   │   │   │   │       │   │   │   ├── crash_generation_client.cc
+│   │   │   │   │   │       │   │   │   ├── crash_generation_client.h
+│   │   │   │   │   │       │   │   │   ├── crash_generation_server.cc
+│   │   │   │   │   │       │   │   │   └── crash_generation_server.h
+│   │   │   │   │   │       │   │   ├── data
+│   │   │   │   │   │       │   │   │   ├── linux-gate-amd.sym
+│   │   │   │   │   │       │   │   │   └── linux-gate-intel.sym
+│   │   │   │   │   │       │   │   ├── dump_writer_common
+│   │   │   │   │   │       │   │   │   ├── mapping_info.h
+│   │   │   │   │   │       │   │   │   ├── raw_context_cpu.h
+│   │   │   │   │   │       │   │   │   ├── thread_info.cc
+│   │   │   │   │   │       │   │   │   ├── thread_info.h
+│   │   │   │   │   │       │   │   │   ├── ucontext_reader.cc
+│   │   │   │   │   │       │   │   │   └── ucontext_reader.h
+│   │   │   │   │   │       │   │   ├── handler
+│   │   │   │   │   │       │   │   │   ├── exception_handler.cc
+│   │   │   │   │   │       │   │   │   ├── exception_handler.h
+│   │   │   │   │   │       │   │   │   ├── exception_handler_unittest.cc
+│   │   │   │   │   │       │   │   │   ├── microdump_extra_info.h
+│   │   │   │   │   │       │   │   │   ├── minidump_descriptor.cc
+│   │   │   │   │   │       │   │   │   └── minidump_descriptor.h
+│   │   │   │   │   │       │   │   ├── log
+│   │   │   │   │   │       │   │   │   ├── log.cc
+│   │   │   │   │   │       │   │   │   └── log.h
+│   │   │   │   │   │       │   │   ├── microdump_writer
+│   │   │   │   │   │       │   │   │   ├── microdump_writer.cc
+│   │   │   │   │   │       │   │   │   ├── microdump_writer.h
+│   │   │   │   │   │       │   │   │   └── microdump_writer_unittest.cc
+│   │   │   │   │   │       │   │   ├── minidump_writer
+│   │   │   │   │   │       │   │   │   ├── cpu_set.h
+│   │   │   │   │   │       │   │   │   ├── cpu_set_unittest.cc
+│   │   │   │   │   │       │   │   │   ├── directory_reader.h
+│   │   │   │   │   │       │   │   │   ├── directory_reader_unittest.cc
+│   │   │   │   │   │       │   │   │   ├── line_reader.h
+│   │   │   │   │   │       │   │   │   ├── line_reader_unittest.cc
+│   │   │   │   │   │       │   │   │   ├── linux_core_dumper.cc
+│   │   │   │   │   │       │   │   │   ├── linux_core_dumper.h
+│   │   │   │   │   │       │   │   │   ├── linux_core_dumper_unittest.cc
+│   │   │   │   │   │       │   │   │   ├── linux_dumper.cc
+│   │   │   │   │   │       │   │   │   ├── linux_dumper.h
+│   │   │   │   │   │       │   │   │   ├── linux_dumper_unittest_helper.cc
+│   │   │   │   │   │       │   │   │   ├── linux_ptrace_dumper.cc
+│   │   │   │   │   │       │   │   │   ├── linux_ptrace_dumper.h
+│   │   │   │   │   │       │   │   │   ├── linux_ptrace_dumper_unittest.cc
+│   │   │   │   │   │       │   │   │   ├── minidump_writer.cc
+│   │   │   │   │   │       │   │   │   ├── minidump_writer.h
+│   │   │   │   │   │       │   │   │   ├── minidump_writer_unittest.cc
+│   │   │   │   │   │       │   │   │   ├── minidump_writer_unittest_utils.cc
+│   │   │   │   │   │       │   │   │   ├── minidump_writer_unittest_utils.h
+│   │   │   │   │   │       │   │   │   ├── proc_cpuinfo_reader.h
+│   │   │   │   │   │       │   │   │   └── proc_cpuinfo_reader_unittest.cc
+│   │   │   │   │   │       │   │   └── sender
+│   │   │   │   │   │       │   │       └── google_crash_report_sender.cc
+│   │   │   │   │   │       │   ├── mac
+│   │   │   │   │   │       │   │   ├── Breakpad.xcodeproj
+│   │   │   │   │   │       │   │   │   └── project.pbxproj
+│   │   │   │   │   │       │   │   ├── crash_generation
+│   │   │   │   │   │       │   │   │   ├── client_info.h
+│   │   │   │   │   │       │   │   │   ├── ConfigFile.h
+│   │   │   │   │   │       │   │   │   ├── ConfigFile.mm
+│   │   │   │   │   │       │   │   │   ├── crash_generation_client.cc
+│   │   │   │   │   │       │   │   │   ├── crash_generation_client.h
+│   │   │   │   │   │       │   │   │   ├── crash_generation_server.cc
+│   │   │   │   │   │       │   │   │   ├── crash_generation_server.h
+│   │   │   │   │   │       │   │   │   ├── Inspector.h
+│   │   │   │   │   │       │   │   │   ├── InspectorMain.mm
+│   │   │   │   │   │       │   │   │   └── Inspector.mm
+│   │   │   │   │   │       │   │   ├── Framework
+│   │   │   │   │   │       │   │   │   ├── Breakpad.h
+│   │   │   │   │   │       │   │   │   ├── Breakpad.mm
+│   │   │   │   │   │       │   │   │   ├── Breakpad_Prefix.pch
+│   │   │   │   │   │       │   │   │   ├── Info.plist
+│   │   │   │   │   │       │   │   │   ├── OnDemandServer.h
+│   │   │   │   │   │       │   │   │   └── OnDemandServer.mm
+│   │   │   │   │   │       │   │   ├── handler
+│   │   │   │   │   │       │   │   │   ├── breakpad_nlist_64.cc
+│   │   │   │   │   │       │   │   │   ├── breakpad_nlist_64.h
+│   │   │   │   │   │       │   │   │   ├── dynamic_images.cc
+│   │   │   │   │   │       │   │   │   ├── dynamic_images.h
+│   │   │   │   │   │       │   │   │   ├── exception_handler.cc
+│   │   │   │   │   │       │   │   │   ├── exception_handler.h
+│   │   │   │   │   │       │   │   │   ├── mach_vm_compat.h
+│   │   │   │   │   │       │   │   │   ├── minidump_generator.cc
+│   │   │   │   │   │       │   │   │   ├── minidump_generator.h
+│   │   │   │   │   │       │   │   │   ├── minidump_tests32-Info.plist
+│   │   │   │   │   │       │   │   │   ├── minidump_tests64-Info.plist
+│   │   │   │   │   │       │   │   │   ├── minidump_test.xcodeproj
+│   │   │   │   │   │       │   │   │   │   └── project.pbxproj
+│   │   │   │   │   │       │   │   │   ├── obj-cTestCases-Info.plist
+│   │   │   │   │   │       │   │   │   ├── protected_memory_allocator.cc
+│   │   │   │   │   │       │   │   │   ├── protected_memory_allocator.h
+│   │   │   │   │   │       │   │   │   ├── testcases
+│   │   │   │   │   │       │   │   │   │   ├── breakpad_nlist_test.cc
+│   │   │   │   │   │       │   │   │   │   ├── breakpad_nlist_test.h
+│   │   │   │   │   │       │   │   │   │   ├── dwarftests.h
+│   │   │   │   │   │       │   │   │   │   ├── dwarftests.mm
+│   │   │   │   │   │       │   │   │   │   ├── DynamicImagesTests.cc
+│   │   │   │   │   │       │   │   │   │   ├── DynamicImagesTests.h
+│   │   │   │   │   │       │   │   │   │   └── testdata
+│   │   │   │   │   │       │   │   │   │       ├── dump_syms_dwarf_data
+│   │   │   │   │   │       │   │   │   │       └── dump_syms_i386_breakpad.sym
+│   │   │   │   │   │       │   │   │   └── ucontext_compat.h
+│   │   │   │   │   │       │   │   ├── sender
+│   │   │   │   │   │       │   │   │   ├── Breakpad.xib
+│   │   │   │   │   │       │   │   │   ├── crash_report_sender.h
+│   │   │   │   │   │       │   │   │   ├── crash_report_sender.icns
+│   │   │   │   │   │       │   │   │   ├── crash_report_sender-Info.plist
+│   │   │   │   │   │       │   │   │   ├── crash_report_sender.m
+│   │   │   │   │   │       │   │   │   ├── da.lproj
+│   │   │   │   │   │       │   │   │   │   ├── InfoPlist.strings
+│   │   │   │   │   │       │   │   │   │   └── Localizable.strings
+│   │   │   │   │   │       │   │   │   ├── de.lproj
+│   │   │   │   │   │       │   │   │   │   ├── InfoPlist.strings
+│   │   │   │   │   │       │   │   │   │   └── Localizable.strings
+│   │   │   │   │   │       │   │   │   ├── English.lproj
+│   │   │   │   │   │       │   │   │   │   ├── InfoPlist.strings
+│   │   │   │   │   │       │   │   │   │   └── Localizable.strings
+│   │   │   │   │   │       │   │   │   ├── es.lproj
+│   │   │   │   │   │       │   │   │   │   ├── InfoPlist.strings
+│   │   │   │   │   │       │   │   │   │   └── Localizable.strings
+│   │   │   │   │   │       │   │   │   ├── fr.lproj
+│   │   │   │   │   │       │   │   │   │   ├── InfoPlist.strings
+│   │   │   │   │   │       │   │   │   │   └── Localizable.strings
+│   │   │   │   │   │       │   │   │   ├── goArrow.png
+│   │   │   │   │   │       │   │   │   ├── it.lproj
+│   │   │   │   │   │       │   │   │   │   ├── InfoPlist.strings
+│   │   │   │   │   │       │   │   │   │   └── Localizable.strings
+│   │   │   │   │   │       │   │   │   ├── ja.lproj
+│   │   │   │   │   │       │   │   │   │   ├── InfoPlist.strings
+│   │   │   │   │   │       │   │   │   │   └── Localizable.strings
+│   │   │   │   │   │       │   │   │   ├── nl.lproj
+│   │   │   │   │   │       │   │   │   │   ├── InfoPlist.strings
+│   │   │   │   │   │       │   │   │   │   └── Localizable.strings
+│   │   │   │   │   │       │   │   │   ├── no.lproj
+│   │   │   │   │   │       │   │   │   │   ├── InfoPlist.strings
+│   │   │   │   │   │       │   │   │   │   └── Localizable.strings
+│   │   │   │   │   │       │   │   │   ├── ReporterIcon.graffle
+│   │   │   │   │   │       │   │   │   ├── sl.lproj
+│   │   │   │   │   │       │   │   │   │   ├── InfoPlist.strings
+│   │   │   │   │   │       │   │   │   │   └── Localizable.strings
+│   │   │   │   │   │       │   │   │   ├── sv.lproj
+│   │   │   │   │   │       │   │   │   │   ├── InfoPlist.strings
+│   │   │   │   │   │       │   │   │   │   └── Localizable.strings
+│   │   │   │   │   │       │   │   │   ├── tr.lproj
+│   │   │   │   │   │       │   │   │   │   ├── InfoPlist.strings
+│   │   │   │   │   │       │   │   │   │   └── Localizable.strings
+│   │   │   │   │   │       │   │   │   ├── uploader.h
+│   │   │   │   │   │       │   │   │   └── uploader.mm
+│   │   │   │   │   │       │   │   ├── testapp
+│   │   │   │   │   │       │   │   │   ├── bomb.icns
+│   │   │   │   │   │       │   │   │   ├── Controller.h
+│   │   │   │   │   │       │   │   │   ├── Controller.m
+│   │   │   │   │   │       │   │   │   ├── crashduringload
+│   │   │   │   │   │       │   │   │   ├── crashInMain
+│   │   │   │   │   │       │   │   │   ├── English.lproj
+│   │   │   │   │   │       │   │   │   │   ├── InfoPlist.strings
+│   │   │   │   │   │       │   │   │   │   └── MainMenu.xib
+│   │   │   │   │   │       │   │   │   ├── Info.plist
+│   │   │   │   │   │       │   │   │   ├── main.m
+│   │   │   │   │   │       │   │   │   ├── TestClass.h
+│   │   │   │   │   │       │   │   │   └── TestClass.mm
+│   │   │   │   │   │       │   │   ├── tests
+│   │   │   │   │   │       │   │   │   ├── BreakpadFramework_Test.mm
+│   │   │   │   │   │       │   │   │   ├── crash_generation_server_test.cc
+│   │   │   │   │   │       │   │   │   ├── exception_handler_test.cc
+│   │   │   │   │   │       │   │   │   ├── minidump_generator_test.cc
+│   │   │   │   │   │       │   │   │   ├── minidump_generator_test_helper.cc
+│   │   │   │   │   │       │   │   │   ├── spawn_child_process.h
+│   │   │   │   │   │       │   │   │   └── testlogging.h
+│   │   │   │   │   │       │   │   └── UnitTests-Info.plist
+│   │   │   │   │   │       │   ├── minidump_file_writer.cc
+│   │   │   │   │   │       │   ├── minidump_file_writer.h
+│   │   │   │   │   │       │   ├── minidump_file_writer-inl.h
+│   │   │   │   │   │       │   ├── minidump_file_writer_unittest.cc
+│   │   │   │   │   │       │   ├── solaris
+│   │   │   │   │   │       │   │   └── handler
+│   │   │   │   │   │       │   │       ├── exception_handler.cc
+│   │   │   │   │   │       │   │       ├── exception_handler.h
+│   │   │   │   │   │       │   │       ├── exception_handler_test.cc
+│   │   │   │   │   │       │   │       ├── minidump_generator.cc
+│   │   │   │   │   │       │   │       ├── minidump_generator.h
+│   │   │   │   │   │       │   │       ├── minidump_test.cc
+│   │   │   │   │   │       │   │       ├── solaris_lwp.cc
+│   │   │   │   │   │       │   │       └── solaris_lwp.h
+│   │   │   │   │   │       │   └── windows
+│   │   │   │   │   │       │       ├── breakpad_client.gyp
+│   │   │   │   │   │       │       ├── common
+│   │   │   │   │   │       │       │   ├── auto_critical_section.h
+│   │   │   │   │   │       │       │   └── ipc_protocol.h
+│   │   │   │   │   │       │       ├── crash_generation
+│   │   │   │   │   │       │       │   ├── client_info.cc
+│   │   │   │   │   │       │       │   ├── client_info.h
+│   │   │   │   │   │       │       │   ├── crash_generation_client.cc
+│   │   │   │   │   │       │       │   ├── crash_generation_client.h
+│   │   │   │   │   │       │       │   ├── crash_generation.gyp
+│   │   │   │   │   │       │       │   ├── crash_generation_server.cc
+│   │   │   │   │   │       │       │   ├── crash_generation_server.h
+│   │   │   │   │   │       │       │   ├── minidump_generator.cc
+│   │   │   │   │   │       │       │   ├── minidump_generator.h
+│   │   │   │   │   │       │       │   └── ReadMe.txt
+│   │   │   │   │   │       │       ├── handler
+│   │   │   │   │   │       │       │   ├── exception_handler.cc
+│   │   │   │   │   │       │       │   ├── exception_handler.gyp
+│   │   │   │   │   │       │       │   └── exception_handler.h
+│   │   │   │   │   │       │       ├── sender
+│   │   │   │   │   │       │       │   ├── crash_report_sender.cc
+│   │   │   │   │   │       │       │   ├── crash_report_sender.gyp
+│   │   │   │   │   │       │       │   └── crash_report_sender.h
+│   │   │   │   │   │       │       ├── tests
+│   │   │   │   │   │       │       │   └── crash_generation_app
+│   │   │   │   │   │       │       │       ├── abstract_class.cc
+│   │   │   │   │   │       │       │       ├── abstract_class.h
+│   │   │   │   │   │       │       │       ├── crash_generation_app.cc
+│   │   │   │   │   │       │       │       ├── crash_generation_app.gyp
+│   │   │   │   │   │       │       │       ├── crash_generation_app.h
+│   │   │   │   │   │       │       │       ├── crash_generation_app.ico
+│   │   │   │   │   │       │       │       ├── crash_generation_app.rc
+│   │   │   │   │   │       │       │       ├── resource.h
+│   │   │   │   │   │       │       │       └── small.ico
+│   │   │   │   │   │       │       └── unittests
+│   │   │   │   │   │       │           ├── client_tests.gyp
+│   │   │   │   │   │       │           ├── crash_generation_server_test.cc
+│   │   │   │   │   │       │           ├── dump_analysis.cc
+│   │   │   │   │   │       │           ├── dump_analysis.h
+│   │   │   │   │   │       │           ├── exception_handler_death_test.cc
+│   │   │   │   │   │       │           ├── exception_handler_nesting_test.cc
+│   │   │   │   │   │       │           ├── exception_handler_test.cc
+│   │   │   │   │   │       │           ├── exception_handler_test.h
+│   │   │   │   │   │       │           ├── minidump_test.cc
+│   │   │   │   │   │       │           └── testing.gyp
+│   │   │   │   │   │       ├── common
+│   │   │   │   │   │       │   ├── android
+│   │   │   │   │   │       │   │   ├── breakpad_getcontext.S
+│   │   │   │   │   │       │   │   ├── breakpad_getcontext_unittest.cc
+│   │   │   │   │   │       │   │   ├── include
+│   │   │   │   │   │       │   │   │   ├── elf.h
+│   │   │   │   │   │       │   │   │   ├── link.h
+│   │   │   │   │   │       │   │   │   ├── sgidefs.h
+│   │   │   │   │   │       │   │   │   ├── stab.h
+│   │   │   │   │   │       │   │   │   ├── sys
+│   │   │   │   │   │       │   │   │   │   ├── procfs.h
+│   │   │   │   │   │       │   │   │   │   ├── signal.h
+│   │   │   │   │   │       │   │   │   │   └── user.h
+│   │   │   │   │   │       │   │   │   └── ucontext.h
+│   │   │   │   │   │       │   │   ├── testing
+│   │   │   │   │   │       │   │   │   ├── include
+│   │   │   │   │   │       │   │   │   │   └── wchar.h
+│   │   │   │   │   │       │   │   │   ├── mkdtemp.h
+│   │   │   │   │   │       │   │   │   └── pthread_fixes.h
+│   │   │   │   │   │       │   │   └── ucontext_constants.h
+│   │   │   │   │   │       │   ├── basictypes.h
+│   │   │   │   │   │       │   ├── byte_cursor.h
+│   │   │   │   │   │       │   ├── byte_cursor_unittest.cc
+│   │   │   │   │   │       │   ├── common.gyp
+│   │   │   │   │   │       │   ├── convert_UTF.c
+│   │   │   │   │   │       │   ├── convert_UTF.h
+│   │   │   │   │   │       │   ├── dwarf
+│   │   │   │   │   │       │   │   ├── bytereader.cc
+│   │   │   │   │   │       │   │   ├── bytereader.h
+│   │   │   │   │   │       │   │   ├── bytereader-inl.h
+│   │   │   │   │   │       │   │   ├── bytereader_unittest.cc
+│   │   │   │   │   │       │   │   ├── cfi_assembler.cc
+│   │   │   │   │   │       │   │   ├── cfi_assembler.h
+│   │   │   │   │   │       │   │   ├── dwarf2diehandler.cc
+│   │   │   │   │   │       │   │   ├── dwarf2diehandler.h
+│   │   │   │   │   │       │   │   ├── dwarf2diehandler_unittest.cc
+│   │   │   │   │   │       │   │   ├── dwarf2enums.h
+│   │   │   │   │   │       │   │   ├── dwarf2reader.cc
+│   │   │   │   │   │       │   │   ├── dwarf2reader_cfi_unittest.cc
+│   │   │   │   │   │       │   │   ├── dwarf2reader_die_unittest.cc
+│   │   │   │   │   │       │   │   ├── dwarf2reader.h
+│   │   │   │   │   │       │   │   ├── dwarf2reader_test_common.h
+│   │   │   │   │   │       │   │   ├── functioninfo.cc
+│   │   │   │   │   │       │   │   ├── functioninfo.h
+│   │   │   │   │   │       │   │   ├── line_state_machine.h
+│   │   │   │   │   │       │   │   └── types.h
+│   │   │   │   │   │       │   ├── dwarf_cfi_to_module.cc
+│   │   │   │   │   │       │   ├── dwarf_cfi_to_module.h
+│   │   │   │   │   │       │   ├── dwarf_cfi_to_module_unittest.cc
+│   │   │   │   │   │       │   ├── dwarf_cu_to_module.cc
+│   │   │   │   │   │       │   ├── dwarf_cu_to_module.h
+│   │   │   │   │   │       │   ├── dwarf_cu_to_module_unittest.cc
+│   │   │   │   │   │       │   ├── dwarf_line_to_module.cc
+│   │   │   │   │   │       │   ├── dwarf_line_to_module.h
+│   │   │   │   │   │       │   ├── dwarf_line_to_module_unittest.cc
+│   │   │   │   │   │       │   ├── language.cc
+│   │   │   │   │   │       │   ├── language.h
+│   │   │   │   │   │       │   ├── linux
+│   │   │   │   │   │       │   │   ├── crc32.cc
+│   │   │   │   │   │       │   │   ├── crc32.h
+│   │   │   │   │   │       │   │   ├── dump_symbols.cc
+│   │   │   │   │   │       │   │   ├── dump_symbols.h
+│   │   │   │   │   │       │   │   ├── dump_symbols_unittest.cc
+│   │   │   │   │   │       │   │   ├── eintr_wrapper.h
+│   │   │   │   │   │       │   │   ├── elf_core_dump.cc
+│   │   │   │   │   │       │   │   ├── elf_core_dump.h
+│   │   │   │   │   │       │   │   ├── elf_core_dump_unittest.cc
+│   │   │   │   │   │       │   │   ├── elf_gnu_compat.h
+│   │   │   │   │   │       │   │   ├── elf_symbols_to_module.cc
+│   │   │   │   │   │       │   │   ├── elf_symbols_to_module.h
+│   │   │   │   │   │       │   │   ├── elf_symbols_to_module_unittest.cc
+│   │   │   │   │   │       │   │   ├── elfutils.cc
+│   │   │   │   │   │       │   │   ├── elfutils.h
+│   │   │   │   │   │       │   │   ├── elfutils-inl.h
+│   │   │   │   │   │       │   │   ├── file_id.cc
+│   │   │   │   │   │       │   │   ├── file_id.h
+│   │   │   │   │   │       │   │   ├── file_id_unittest.cc
+│   │   │   │   │   │       │   │   ├── google_crashdump_uploader.cc
+│   │   │   │   │   │       │   │   ├── google_crashdump_uploader.h
+│   │   │   │   │   │       │   │   ├── google_crashdump_uploader_test.cc
+│   │   │   │   │   │       │   │   ├── guid_creator.cc
+│   │   │   │   │   │       │   │   ├── guid_creator.h
+│   │   │   │   │   │       │   │   ├── http_upload.cc
+│   │   │   │   │   │       │   │   ├── http_upload.h
+│   │   │   │   │   │       │   │   ├── ignore_ret.h
+│   │   │   │   │   │       │   │   ├── libcurl_wrapper.cc
+│   │   │   │   │   │       │   │   ├── libcurl_wrapper.h
+│   │   │   │   │   │       │   │   ├── linux_libc_support.cc
+│   │   │   │   │   │       │   │   ├── linux_libc_support.h
+│   │   │   │   │   │       │   │   ├── linux_libc_support_unittest.cc
+│   │   │   │   │   │       │   │   ├── memory_mapped_file.cc
+│   │   │   │   │   │       │   │   ├── memory_mapped_file.h
+│   │   │   │   │   │       │   │   ├── memory_mapped_file_unittest.cc
+│   │   │   │   │   │       │   │   ├── safe_readlink.cc
+│   │   │   │   │   │       │   │   ├── safe_readlink.h
+│   │   │   │   │   │       │   │   ├── safe_readlink_unittest.cc
+│   │   │   │   │   │       │   │   ├── synth_elf.cc
+│   │   │   │   │   │       │   │   ├── synth_elf.h
+│   │   │   │   │   │       │   │   ├── synth_elf_unittest.cc
+│   │   │   │   │   │       │   │   └── tests
+│   │   │   │   │   │       │   │       ├── auto_testfile.h
+│   │   │   │   │   │       │   │       ├── crash_generator.cc
+│   │   │   │   │   │       │   │       └── crash_generator.h
+│   │   │   │   │   │       │   ├── mac
+│   │   │   │   │   │       │   │   ├── arch_utilities.cc
+│   │   │   │   │   │       │   │   ├── arch_utilities.h
+│   │   │   │   │   │       │   │   ├── bootstrap_compat.cc
+│   │   │   │   │   │       │   │   ├── bootstrap_compat.h
+│   │   │   │   │   │       │   │   ├── BreakpadDebug.xcconfig
+│   │   │   │   │   │       │   │   ├── BreakpadRelease.xcconfig
+│   │   │   │   │   │       │   │   ├── Breakpad.xcconfig
+│   │   │   │   │   │       │   │   ├── byteswap.h
+│   │   │   │   │   │       │   │   ├── dump_syms.cc
+│   │   │   │   │   │       │   │   ├── dump_syms.h
+│   │   │   │   │   │       │   │   ├── file_id.cc
+│   │   │   │   │   │       │   │   ├── file_id.h
+│   │   │   │   │   │       │   │   ├── GTMDefines.h
+│   │   │   │   │   │       │   │   ├── GTMLogger.h
+│   │   │   │   │   │       │   │   ├── GTMLogger.m
+│   │   │   │   │   │       │   │   ├── HTTPMultipartUpload.h
+│   │   │   │   │   │       │   │   ├── HTTPMultipartUpload.m
+│   │   │   │   │   │       │   │   ├── launch_reporter.cc
+│   │   │   │   │   │       │   │   ├── launch_reporter.h
+│   │   │   │   │   │       │   │   ├── MachIPC.h
+│   │   │   │   │   │       │   │   ├── MachIPC.mm
+│   │   │   │   │   │       │   │   ├── macho_id.cc
+│   │   │   │   │   │       │   │   ├── macho_id.h
+│   │   │   │   │   │       │   │   ├── macho_reader.cc
+│   │   │   │   │   │       │   │   ├── macho_reader.h
+│   │   │   │   │   │       │   │   ├── macho_reader_unittest.cc
+│   │   │   │   │   │       │   │   ├── macho_utilities.cc
+│   │   │   │   │   │       │   │   ├── macho_utilities.h
+│   │   │   │   │   │       │   │   ├── macho_walker.cc
+│   │   │   │   │   │       │   │   ├── macho_walker.h
+│   │   │   │   │   │       │   │   ├── scoped_task_suspend-inl.h
+│   │   │   │   │   │       │   │   ├── string_utilities.cc
+│   │   │   │   │   │       │   │   ├── string_utilities.h
+│   │   │   │   │   │       │   │   ├── super_fat_arch.h
+│   │   │   │   │   │       │   │   └── testing
+│   │   │   │   │   │       │   │       ├── GTMSenTestCase.h
+│   │   │   │   │   │       │   │       └── GTMSenTestCase.m
+│   │   │   │   │   │       │   ├── md5.cc
+│   │   │   │   │   │       │   ├── md5.h
+│   │   │   │   │   │       │   ├── memory.h
+│   │   │   │   │   │       │   ├── memory_range.h
+│   │   │   │   │   │       │   ├── memory_range_unittest.cc
+│   │   │   │   │   │       │   ├── memory_unittest.cc
+│   │   │   │   │   │       │   ├── minidump_type_helper.h
+│   │   │   │   │   │       │   ├── module.cc
+│   │   │   │   │   │       │   ├── module.h
+│   │   │   │   │   │       │   ├── module_unittest.cc
+│   │   │   │   │   │       │   ├── scoped_ptr.h
+│   │   │   │   │   │       │   ├── simple_string_dictionary.cc
+│   │   │   │   │   │       │   ├── simple_string_dictionary.h
+│   │   │   │   │   │       │   ├── simple_string_dictionary_unittest.cc
+│   │   │   │   │   │       │   ├── solaris
+│   │   │   │   │   │       │   │   ├── dump_symbols.cc
+│   │   │   │   │   │       │   │   ├── dump_symbols.h
+│   │   │   │   │   │       │   │   ├── file_id.cc
+│   │   │   │   │   │       │   │   ├── file_id.h
+│   │   │   │   │   │       │   │   ├── guid_creator.cc
+│   │   │   │   │   │       │   │   ├── guid_creator.h
+│   │   │   │   │   │       │   │   └── message_output.h
+│   │   │   │   │   │       │   ├── stabs_reader.cc
+│   │   │   │   │   │       │   ├── stabs_reader.h
+│   │   │   │   │   │       │   ├── stabs_reader_unittest.cc
+│   │   │   │   │   │       │   ├── stabs_to_module.cc
+│   │   │   │   │   │       │   ├── stabs_to_module.h
+│   │   │   │   │   │       │   ├── stabs_to_module_unittest.cc
+│   │   │   │   │   │       │   ├── stdio.h
+│   │   │   │   │   │       │   ├── string_conversion.cc
+│   │   │   │   │   │       │   ├── string_conversion.h
+│   │   │   │   │   │       │   ├── symbol_data.h
+│   │   │   │   │   │       │   ├── test_assembler.cc
+│   │   │   │   │   │       │   ├── test_assembler.h
+│   │   │   │   │   │       │   ├── test_assembler_unittest.cc
+│   │   │   │   │   │       │   ├── testdata
+│   │   │   │   │   │       │   │   └── func-line-pairing.h
+│   │   │   │   │   │       │   ├── tests
+│   │   │   │   │   │       │   │   ├── auto_tempdir.h
+│   │   │   │   │   │       │   │   ├── file_utils.cc
+│   │   │   │   │   │       │   │   └── file_utils.h
+│   │   │   │   │   │       │   ├── unordered.h
+│   │   │   │   │   │       │   ├── using_std_string.h
+│   │   │   │   │   │       │   └── windows
+│   │   │   │   │   │       │       ├── common_windows.gyp
+│   │   │   │   │   │       │       ├── dia_util.cc
+│   │   │   │   │   │       │       ├── dia_util.h
+│   │   │   │   │   │       │       ├── guid_string.cc
+│   │   │   │   │   │       │       ├── guid_string.h
+│   │   │   │   │   │       │       ├── http_upload.cc
+│   │   │   │   │   │       │       ├── http_upload.h
+│   │   │   │   │   │       │       ├── omap.cc
+│   │   │   │   │   │       │       ├── omap.h
+│   │   │   │   │   │       │       ├── omap_internal.h
+│   │   │   │   │   │       │       ├── omap_unittest.cc
+│   │   │   │   │   │       │       ├── pdb_source_line_writer.cc
+│   │   │   │   │   │       │       ├── pdb_source_line_writer.h
+│   │   │   │   │   │       │       ├── string_utils.cc
+│   │   │   │   │   │       │       └── string_utils-inl.h
+│   │   │   │   │   │       ├── config.h.in
+│   │   │   │   │   │       ├── google_breakpad
+│   │   │   │   │   │       │   ├── common
+│   │   │   │   │   │       │   │   ├── breakpad_types.h
+│   │   │   │   │   │       │   │   ├── minidump_cpu_amd64.h
+│   │   │   │   │   │       │   │   ├── minidump_cpu_arm64.h
+│   │   │   │   │   │       │   │   ├── minidump_cpu_arm.h
+│   │   │   │   │   │       │   │   ├── minidump_cpu_mips.h
+│   │   │   │   │   │       │   │   ├── minidump_cpu_ppc64.h
+│   │   │   │   │   │       │   │   ├── minidump_cpu_ppc.h
+│   │   │   │   │   │       │   │   ├── minidump_cpu_sparc.h
+│   │   │   │   │   │       │   │   ├── minidump_cpu_x86.h
+│   │   │   │   │   │       │   │   ├── minidump_exception_linux.h
+│   │   │   │   │   │       │   │   ├── minidump_exception_mac.h
+│   │   │   │   │   │       │   │   ├── minidump_exception_ps3.h
+│   │   │   │   │   │       │   │   ├── minidump_exception_solaris.h
+│   │   │   │   │   │       │   │   ├── minidump_exception_win32.h
+│   │   │   │   │   │       │   │   ├── minidump_format.h
+│   │   │   │   │   │       │   │   └── minidump_size.h
+│   │   │   │   │   │       │   └── processor
+│   │   │   │   │   │       │       ├── basic_source_line_resolver.h
+│   │   │   │   │   │       │       ├── call_stack.h
+│   │   │   │   │   │       │       ├── code_module.h
+│   │   │   │   │   │       │       ├── code_modules.h
+│   │   │   │   │   │       │       ├── dump_context.h
+│   │   │   │   │   │       │       ├── dump_object.h
+│   │   │   │   │   │       │       ├── exploitability.h
+│   │   │   │   │   │       │       ├── fast_source_line_resolver.h
+│   │   │   │   │   │       │       ├── memory_region.h
+│   │   │   │   │   │       │       ├── microdump.h
+│   │   │   │   │   │       │       ├── microdump_processor.h
+│   │   │   │   │   │       │       ├── minidump.h
+│   │   │   │   │   │       │       ├── minidump_processor.h
+│   │   │   │   │   │       │       ├── process_result.h
+│   │   │   │   │   │       │       ├── process_state.h
+│   │   │   │   │   │       │       ├── proc_maps_linux.h
+│   │   │   │   │   │       │       ├── source_line_resolver_base.h
+│   │   │   │   │   │       │       ├── source_line_resolver_interface.h
+│   │   │   │   │   │       │       ├── stack_frame_cpu.h
+│   │   │   │   │   │       │       ├── stack_frame.h
+│   │   │   │   │   │       │       ├── stack_frame_symbolizer.h
+│   │   │   │   │   │       │       ├── stackwalker.h
+│   │   │   │   │   │       │       ├── symbol_supplier.h
+│   │   │   │   │   │       │       └── system_info.h
+│   │   │   │   │   │       ├── processor
+│   │   │   │   │   │       │   ├── address_map.h
+│   │   │   │   │   │       │   ├── address_map-inl.h
+│   │   │   │   │   │       │   ├── address_map_unittest.cc
+│   │   │   │   │   │       │   ├── basic_code_module.h
+│   │   │   │   │   │       │   ├── basic_code_modules.cc
+│   │   │   │   │   │       │   ├── basic_code_modules.h
+│   │   │   │   │   │       │   ├── basic_source_line_resolver.cc
+│   │   │   │   │   │       │   ├── basic_source_line_resolver_types.h
+│   │   │   │   │   │       │   ├── basic_source_line_resolver_unittest.cc
+│   │   │   │   │   │       │   ├── call_stack.cc
+│   │   │   │   │   │       │   ├── cfi_frame_info.cc
+│   │   │   │   │   │       │   ├── cfi_frame_info.h
+│   │   │   │   │   │       │   ├── cfi_frame_info-inl.h
+│   │   │   │   │   │       │   ├── cfi_frame_info_unittest.cc
+│   │   │   │   │   │       │   ├── contained_range_map.h
+│   │   │   │   │   │       │   ├── contained_range_map-inl.h
+│   │   │   │   │   │       │   ├── contained_range_map_unittest.cc
+│   │   │   │   │   │       │   ├── disassembler_x86.cc
+│   │   │   │   │   │       │   ├── disassembler_x86.h
+│   │   │   │   │   │       │   ├── disassembler_x86_unittest.cc
+│   │   │   │   │   │       │   ├── dump_context.cc
+│   │   │   │   │   │       │   ├── dump_object.cc
+│   │   │   │   │   │       │   ├── exploitability.cc
+│   │   │   │   │   │       │   ├── exploitability_linux.cc
+│   │   │   │   │   │       │   ├── exploitability_linux.h
+│   │   │   │   │   │       │   ├── exploitability_unittest.cc
+│   │   │   │   │   │       │   ├── exploitability_win.cc
+│   │   │   │   │   │       │   ├── exploitability_win.h
+│   │   │   │   │   │       │   ├── fast_source_line_resolver.cc
+│   │   │   │   │   │       │   ├── fast_source_line_resolver_types.h
+│   │   │   │   │   │       │   ├── fast_source_line_resolver_unittest.cc
+│   │   │   │   │   │       │   ├── linked_ptr.h
+│   │   │   │   │   │       │   ├── logging.cc
+│   │   │   │   │   │       │   ├── logging.h
+│   │   │   │   │   │       │   ├── map_serializers.h
+│   │   │   │   │   │       │   ├── map_serializers-inl.h
+│   │   │   │   │   │       │   ├── map_serializers_unittest.cc
+│   │   │   │   │   │       │   ├── microdump.cc
+│   │   │   │   │   │       │   ├── microdump_processor.cc
+│   │   │   │   │   │       │   ├── microdump_processor_unittest.cc
+│   │   │   │   │   │       │   ├── microdump_stackwalk.cc
+│   │   │   │   │   │       │   ├── microdump_stackwalk_machine_readable_test
+│   │   │   │   │   │       │   ├── microdump_stackwalk_test
+│   │   │   │   │   │       │   ├── microdump_stackwalk_test_vars
+│   │   │   │   │   │       │   ├── minidump.cc
+│   │   │   │   │   │       │   ├── minidump_dump.cc
+│   │   │   │   │   │       │   ├── minidump_dump_test
+│   │   │   │   │   │       │   ├── minidump_processor.cc
+│   │   │   │   │   │       │   ├── minidump_processor_unittest.cc
+│   │   │   │   │   │       │   ├── minidump_stackwalk.cc
+│   │   │   │   │   │       │   ├── minidump_stackwalk_machine_readable_test
+│   │   │   │   │   │       │   ├── minidump_stackwalk_test
+│   │   │   │   │   │       │   ├── minidump_unittest.cc
+│   │   │   │   │   │       │   ├── module_comparer.cc
+│   │   │   │   │   │       │   ├── module_comparer.h
+│   │   │   │   │   │       │   ├── module_factory.h
+│   │   │   │   │   │       │   ├── module_serializer.cc
+│   │   │   │   │   │       │   ├── module_serializer.h
+│   │   │   │   │   │       │   ├── pathname_stripper.cc
+│   │   │   │   │   │       │   ├── pathname_stripper.h
+│   │   │   │   │   │       │   ├── pathname_stripper_unittest.cc
+│   │   │   │   │   │       │   ├── postfix_evaluator.h
+│   │   │   │   │   │       │   ├── postfix_evaluator-inl.h
+│   │   │   │   │   │       │   ├── postfix_evaluator_unittest.cc
+│   │   │   │   │   │       │   ├── processor.gyp
+│   │   │   │   │   │       │   ├── processor_tools.gypi
+│   │   │   │   │   │       │   ├── process_state.cc
+│   │   │   │   │   │       │   ├── proc_maps_linux.cc
+│   │   │   │   │   │       │   ├── proc_maps_linux_unittest.cc
+│   │   │   │   │   │       │   ├── proto
+│   │   │   │   │   │       │   │   ├── process_state.proto
+│   │   │   │   │   │       │   │   └── README
+│   │   │   │   │   │       │   ├── range_map.h
+│   │   │   │   │   │       │   ├── range_map-inl.h
+│   │   │   │   │   │       │   ├── range_map_unittest.cc
+│   │   │   │   │   │       │   ├── simple_serializer.h
+│   │   │   │   │   │       │   ├── simple_serializer-inl.h
+│   │   │   │   │   │       │   ├── simple_symbol_supplier.cc
+│   │   │   │   │   │       │   ├── simple_symbol_supplier.h
+│   │   │   │   │   │       │   ├── source_line_resolver_base.cc
+│   │   │   │   │   │       │   ├── source_line_resolver_base_types.h
+│   │   │   │   │   │       │   ├── stack_frame_cpu.cc
+│   │   │   │   │   │       │   ├── stack_frame_symbolizer.cc
+│   │   │   │   │   │       │   ├── stackwalk_common.cc
+│   │   │   │   │   │       │   ├── stackwalk_common.h
+│   │   │   │   │   │       │   ├── stackwalker_address_list.cc
+│   │   │   │   │   │       │   ├── stackwalker_address_list.h
+│   │   │   │   │   │       │   ├── stackwalker_address_list_unittest.cc
+│   │   │   │   │   │       │   ├── stackwalker_amd64.cc
+│   │   │   │   │   │       │   ├── stackwalker_amd64.h
+│   │   │   │   │   │       │   ├── stackwalker_amd64_unittest.cc
+│   │   │   │   │   │       │   ├── stackwalker_arm64.cc
+│   │   │   │   │   │       │   ├── stackwalker_arm64.h
+│   │   │   │   │   │       │   ├── stackwalker_arm64_unittest.cc
+│   │   │   │   │   │       │   ├── stackwalker_arm.cc
+│   │   │   │   │   │       │   ├── stackwalker_arm.h
+│   │   │   │   │   │       │   ├── stackwalker_arm_unittest.cc
+│   │   │   │   │   │       │   ├── stackwalker.cc
+│   │   │   │   │   │       │   ├── stackwalker_mips64_unittest.cc
+│   │   │   │   │   │       │   ├── stackwalker_mips.cc
+│   │   │   │   │   │       │   ├── stackwalker_mips.h
+│   │   │   │   │   │       │   ├── stackwalker_mips_unittest.cc
+│   │   │   │   │   │       │   ├── stackwalker_ppc64.cc
+│   │   │   │   │   │       │   ├── stackwalker_ppc64.h
+│   │   │   │   │   │       │   ├── stackwalker_ppc.cc
+│   │   │   │   │   │       │   ├── stackwalker_ppc.h
+│   │   │   │   │   │       │   ├── stackwalker_selftest.cc
+│   │   │   │   │   │       │   ├── stackwalker_selftest_sol.s
+│   │   │   │   │   │       │   ├── stackwalker_sparc.cc
+│   │   │   │   │   │       │   ├── stackwalker_sparc.h
+│   │   │   │   │   │       │   ├── stackwalker_unittest_utils.h
+│   │   │   │   │   │       │   ├── stackwalker_x86.cc
+│   │   │   │   │   │       │   ├── stackwalker_x86.h
+│   │   │   │   │   │       │   ├── stackwalker_x86_unittest.cc
+│   │   │   │   │   │       │   ├── static_address_map.h
+│   │   │   │   │   │       │   ├── static_address_map-inl.h
+│   │   │   │   │   │       │   ├── static_address_map_unittest.cc
+│   │   │   │   │   │       │   ├── static_contained_range_map.h
+│   │   │   │   │   │       │   ├── static_contained_range_map-inl.h
+│   │   │   │   │   │       │   ├── static_contained_range_map_unittest.cc
+│   │   │   │   │   │       │   ├── static_map.h
+│   │   │   │   │   │       │   ├── static_map-inl.h
+│   │   │   │   │   │       │   ├── static_map_iterator.h
+│   │   │   │   │   │       │   ├── static_map_iterator-inl.h
+│   │   │   │   │   │       │   ├── static_map_unittest.cc
+│   │   │   │   │   │       │   ├── static_range_map.h
+│   │   │   │   │   │       │   ├── static_range_map-inl.h
+│   │   │   │   │   │       │   ├── static_range_map_unittest.cc
+│   │   │   │   │   │       │   ├── symbolic_constants_win.cc
+│   │   │   │   │   │       │   ├── symbolic_constants_win.h
+│   │   │   │   │   │       │   ├── synth_minidump.cc
+│   │   │   │   │   │       │   ├── synth_minidump.h
+│   │   │   │   │   │       │   ├── synth_minidump_unittest.cc
+│   │   │   │   │   │       │   ├── synth_minidump_unittest_data.h
+│   │   │   │   │   │       │   ├── testdata
+│   │   │   │   │   │       │   │   ├── ascii_read_av_block_write.dmp
+│   │   │   │   │   │       │   │   ├── ascii_read_av_clobber_write.dmp
+│   │   │   │   │   │       │   │   ├── ascii_read_av_conditional.dmp
+│   │   │   │   │   │       │   │   ├── ascii_read_av.dmp
+│   │   │   │   │   │       │   │   ├── ascii_read_av_then_jmp.dmp
+│   │   │   │   │   │       │   │   ├── ascii_read_av_xchg_write.dmp
+│   │   │   │   │   │       │   │   ├── ascii_write_av_arg_to_call.dmp
+│   │   │   │   │   │       │   │   ├── ascii_write_av.dmp
+│   │   │   │   │   │       │   │   ├── exec_av_on_stack.dmp
+│   │   │   │   │   │       │   │   ├── linux_divide_by_zero.dmp
+│   │   │   │   │   │       │   │   ├── linux_executable_heap.dmp
+│   │   │   │   │   │       │   │   ├── linux_executable_stack.dmp
+│   │   │   │   │   │       │   │   ├── linux_inside_module_exe_region1.dmp
+│   │   │   │   │   │       │   │   ├── linux_inside_module_exe_region2.dmp
+│   │   │   │   │   │       │   │   ├── linux_jmp_to_0.dmp
+│   │   │   │   │   │       │   │   ├── linux_jmp_to_module_not_exe_region.dmp
+│   │   │   │   │   │       │   │   ├── linux_null_dereference.dmp
+│   │   │   │   │   │       │   │   ├── linux_null_read_av.dmp
+│   │   │   │   │   │       │   │   ├── linux_outside_module.dmp
+│   │   │   │   │   │       │   │   ├── linux_overflow.dmp
+│   │   │   │   │   │       │   │   ├── linux_raise_sigabrt.dmp
+│   │   │   │   │   │       │   │   ├── linux_stack_pointer_in_module.dmp
+│   │   │   │   │   │       │   │   ├── linux_stack_pointer_in_stack.dmp
+│   │   │   │   │   │       │   │   ├── linux_stacksmash.dmp
+│   │   │   │   │   │       │   │   ├── linux_test_app.cc
+│   │   │   │   │   │       │   │   ├── linux_write_to_nonwritable_module.dmp
+│   │   │   │   │   │       │   │   ├── linux_write_to_nonwritable_region_math.dmp
+│   │   │   │   │   │       │   │   ├── linux_write_to_outside_module.dmp
+│   │   │   │   │   │       │   │   ├── linux_write_to_outside_module_via_math.dmp
+│   │   │   │   │   │       │   │   ├── linux_write_to_under_4k.dmp
+│   │   │   │   │   │       │   │   ├── microdump-arm64.dmp
+│   │   │   │   │   │       │   │   ├── microdump-arm.dmp
+│   │   │   │   │   │       │   │   ├── microdump-multiple.dmp
+│   │   │   │   │   │       │   │   ├── microdump.stackwalk-arm64.out
+│   │   │   │   │   │       │   │   ├── microdump.stackwalk-arm.out
+│   │   │   │   │   │       │   │   ├── microdump.stackwalk.machine_readable-arm64.out
+│   │   │   │   │   │       │   │   ├── microdump.stackwalk.machine_readable-arm.out
+│   │   │   │   │   │       │   │   ├── microdump-x86.dmp
+│   │   │   │   │   │       │   │   ├── minidump2.dmp
+│   │   │   │   │   │       │   │   ├── minidump2.dump.out
+│   │   │   │   │   │       │   │   ├── minidump2.stackwalk.machine_readable.out
+│   │   │   │   │   │       │   │   ├── minidump2.stackwalk.out
+│   │   │   │   │   │       │   │   ├── module0.out
+│   │   │   │   │   │       │   │   ├── module1.out
+│   │   │   │   │   │       │   │   ├── module2.out
+│   │   │   │   │   │       │   │   ├── module3_bad.out
+│   │   │   │   │   │       │   │   ├── module4_bad.out
+│   │   │   │   │   │       │   │   ├── null_read_av.dmp
+│   │   │   │   │   │       │   │   ├── null_write_av.dmp
+│   │   │   │   │   │       │   │   ├── read_av_clobber_write.dmp
+│   │   │   │   │   │       │   │   ├── read_av_conditional.dmp
+│   │   │   │   │   │       │   │   ├── read_av_non_null.dmp
+│   │   │   │   │   │       │   │   ├── stack_exhaustion.dmp
+│   │   │   │   │   │       │   │   ├── symbols
+│   │   │   │   │   │       │   │   │   ├── kernel32.pdb
+│   │   │   │   │   │       │   │   │   │   └── BCE8785C57B44245A669896B6A19B9542
+│   │   │   │   │   │       │   │   │   │       └── kernel32.sym
+│   │   │   │   │   │       │   │   │   ├── microdump
+│   │   │   │   │   │       │   │   │   │   └── breakpad_unittests
+│   │   │   │   │   │       │   │   │   │       ├── D6D1FEC9A15DE7F38A236898871A2E770
+│   │   │   │   │   │       │   │   │   │       │   └── breakpad_unittests.sym
+│   │   │   │   │   │       │   │   │   │       └── DA7778FB66018A4E9B4110ED06E730D00
+│   │   │   │   │   │       │   │   │   │           └── breakpad_unittests.sym
+│   │   │   │   │   │       │   │   │   ├── null_read_av
+│   │   │   │   │   │       │   │   │   │   └── 7B7D1968FF0D47AE4366E9C3A7E1B6750
+│   │   │   │   │   │       │   │   │   │       └── null_read_av.sym
+│   │   │   │   │   │       │   │   │   ├── overflow
+│   │   │   │   │   │       │   │   │   │   └── B0E1FC01EF48E39CAF5C881D2DF0C3840
+│   │   │   │   │   │       │   │   │   │       └── overflow.sym
+│   │   │   │   │   │       │   │   │   └── test_app.pdb
+│   │   │   │   │   │       │   │   │       └── 5A9832E5287241C1838ED98914E9B7FF1
+│   │   │   │   │   │       │   │   │           └── test_app.sym
+│   │   │   │   │   │       │   │   ├── test_app.cc
+│   │   │   │   │   │       │   │   └── write_av_non_null.dmp
+│   │   │   │   │   │       │   ├── tokenize.cc
+│   │   │   │   │   │       │   ├── tokenize.h
+│   │   │   │   │   │       │   └── windows_frame_info.h
+│   │   │   │   │   │       ├── third_party
+│   │   │   │   │   │       │   ├── curl
+│   │   │   │   │   │       │   │   ├── COPYING
+│   │   │   │   │   │       │   │   ├── curlbuild.h
+│   │   │   │   │   │       │   │   ├── curl.h
+│   │   │   │   │   │       │   │   ├── curlrules.h
+│   │   │   │   │   │       │   │   ├── curlver.h
+│   │   │   │   │   │       │   │   ├── easy.h
+│   │   │   │   │   │       │   │   ├── mprintf.h
+│   │   │   │   │   │       │   │   ├── multi.h
+│   │   │   │   │   │       │   │   ├── stdcheaders.h
+│   │   │   │   │   │       │   │   ├── typecheck-gcc.h
+│   │   │   │   │   │       │   │   └── types.h
+│   │   │   │   │   │       │   ├── libdisasm
+│   │   │   │   │   │       │   │   ├── ia32_implicit.c
+│   │   │   │   │   │       │   │   ├── ia32_implicit.h
+│   │   │   │   │   │       │   │   ├── ia32_insn.c
+│   │   │   │   │   │       │   │   ├── ia32_insn.h
+│   │   │   │   │   │       │   │   ├── ia32_invariant.c
+│   │   │   │   │   │       │   │   ├── ia32_invariant.h
+│   │   │   │   │   │       │   │   ├── ia32_modrm.c
+│   │   │   │   │   │       │   │   ├── ia32_modrm.h
+│   │   │   │   │   │       │   │   ├── ia32_opcode_tables.c
+│   │   │   │   │   │       │   │   ├── ia32_opcode_tables.h
+│   │   │   │   │   │       │   │   ├── ia32_operand.c
+│   │   │   │   │   │       │   │   ├── ia32_operand.h
+│   │   │   │   │   │       │   │   ├── ia32_reg.c
+│   │   │   │   │   │       │   │   ├── ia32_reg.h
+│   │   │   │   │   │       │   │   ├── ia32_settings.c
+│   │   │   │   │   │       │   │   ├── ia32_settings.h
+│   │   │   │   │   │       │   │   ├── libdisasm.gyp
+│   │   │   │   │   │       │   │   ├── libdis.h
+│   │   │   │   │   │       │   │   ├── qword.h
+│   │   │   │   │   │       │   │   ├── swig
+│   │   │   │   │   │       │   │   │   ├── libdisasm.i
+│   │   │   │   │   │       │   │   │   ├── libdisasm_oop.i
+│   │   │   │   │   │       │   │   │   ├── perl
+│   │   │   │   │   │       │   │   │   │   └── Makefile-swig
+│   │   │   │   │   │       │   │   │   ├── python
+│   │   │   │   │   │       │   │   │   │   └── Makefile-swig
+│   │   │   │   │   │       │   │   │   ├── README
+│   │   │   │   │   │       │   │   │   ├── ruby
+│   │   │   │   │   │       │   │   │   │   ├── extconf.rb
+│   │   │   │   │   │       │   │   │   │   └── Makefile-swig
+│   │   │   │   │   │       │   │   │   └── tcl
+│   │   │   │   │   │       │   │   │       └── Makefile-swig
+│   │   │   │   │   │       │   │   ├── TODO
+│   │   │   │   │   │       │   │   ├── x86_disasm.c
+│   │   │   │   │   │       │   │   ├── x86_format.c
+│   │   │   │   │   │       │   │   ├── x86_imm.c
+│   │   │   │   │   │       │   │   ├── x86_imm.h
+│   │   │   │   │   │       │   │   ├── x86_insn.c
+│   │   │   │   │   │       │   │   ├── x86_misc.c
+│   │   │   │   │   │       │   │   ├── x86_operand_list.c
+│   │   │   │   │   │       │   │   └── x86_operand_list.h
+│   │   │   │   │   │       │   ├── linux
+│   │   │   │   │   │       │   │   └── include
+│   │   │   │   │   │       │   │       └── gflags
+│   │   │   │   │   │       │   │           ├── gflags_completions.h
+│   │   │   │   │   │       │   │           └── gflags.h
+│   │   │   │   │   │       │   └── mac_headers
+│   │   │   │   │   │       │       ├── architecture
+│   │   │   │   │   │       │       │   └── byte_order.h
+│   │   │   │   │   │       │       ├── i386
+│   │   │   │   │   │       │       │   └── _types.h
+│   │   │   │   │   │       │       ├── mach
+│   │   │   │   │   │       │       │   ├── boolean.h
+│   │   │   │   │   │       │       │   ├── i386
+│   │   │   │   │   │       │       │   │   ├── boolean.h
+│   │   │   │   │   │       │       │   │   ├── vm_param.h
+│   │   │   │   │   │       │       │   │   └── vm_types.h
+│   │   │   │   │   │       │       │   ├── machine
+│   │   │   │   │   │       │       │   │   ├── boolean.h
+│   │   │   │   │   │       │       │   │   ├── thread_state.h
+│   │   │   │   │   │       │       │   │   ├── thread_status.h
+│   │   │   │   │   │       │       │   │   └── vm_types.h
+│   │   │   │   │   │       │       │   ├── machine.h
+│   │   │   │   │   │       │       │   ├── thread_status.h
+│   │   │   │   │   │       │       │   └── vm_prot.h
+│   │   │   │   │   │       │       ├── mach-o
+│   │   │   │   │   │       │       │   ├── arch.h
+│   │   │   │   │   │       │       │   ├── fat.h
+│   │   │   │   │   │       │       │   ├── loader.h
+│   │   │   │   │   │       │       │   └── nlist.h
+│   │   │   │   │   │       │       └── README
+│   │   │   │   │   │       └── tools
+│   │   │   │   │   │           ├── linux
+│   │   │   │   │   │           │   ├── core2md
+│   │   │   │   │   │           │   │   └── core2md.cc
+│   │   │   │   │   │           │   ├── dump_syms
+│   │   │   │   │   │           │   │   └── dump_syms.cc
+│   │   │   │   │   │           │   ├── md2core
+│   │   │   │   │   │           │   │   ├── minidump-2-core.cc
+│   │   │   │   │   │           │   │   ├── minidump_memory_range.h
+│   │   │   │   │   │           │   │   └── minidump_memory_range_unittest.cc
+│   │   │   │   │   │           │   ├── symupload
+│   │   │   │   │   │           │   │   ├── minidump_upload.cc
+│   │   │   │   │   │           │   │   └── sym_upload.cc
+│   │   │   │   │   │           │   └── tools_linux.gypi
+│   │   │   │   │   │           ├── mac
+│   │   │   │   │   │           │   ├── crash_report
+│   │   │   │   │   │           │   │   ├── crash_report.mm
+│   │   │   │   │   │           │   │   ├── crash_report.xcodeproj
+│   │   │   │   │   │           │   │   │   └── project.pbxproj
+│   │   │   │   │   │           │   │   ├── on_demand_symbol_supplier.h
+│   │   │   │   │   │           │   │   └── on_demand_symbol_supplier.mm
+│   │   │   │   │   │           │   ├── dump_syms
+│   │   │   │   │   │           │   │   ├── dump_syms_tool.cc
+│   │   │   │   │   │           │   │   ├── dump_syms.xcodeproj
+│   │   │   │   │   │           │   │   │   └── project.pbxproj
+│   │   │   │   │   │           │   │   └── macho_dump.cc
+│   │   │   │   │   │           │   ├── symupload
+│   │   │   │   │   │           │   │   ├── minidump_upload.m
+│   │   │   │   │   │           │   │   ├── symupload.m
+│   │   │   │   │   │           │   │   └── symupload.xcodeproj
+│   │   │   │   │   │           │   │       └── project.pbxproj
+│   │   │   │   │   │           │   ├── tools_mac.gypi
+│   │   │   │   │   │           │   └── upload_system_symbols
+│   │   │   │   │   │           │       ├── arch_constants.h
+│   │   │   │   │   │           │       ├── arch_reader.go
+│   │   │   │   │   │           │       └── upload_system_symbols.go
+│   │   │   │   │   │           ├── python
+│   │   │   │   │   │           │   ├── filter_syms.py
+│   │   │   │   │   │           │   └── tests
+│   │   │   │   │   │           │       └── filter_syms_unittest.py
+│   │   │   │   │   │           ├── solaris
+│   │   │   │   │   │           │   └── dump_syms
+│   │   │   │   │   │           │       ├── dump_syms.cc
+│   │   │   │   │   │           │       ├── run_regtest.sh
+│   │   │   │   │   │           │       └── testdata
+│   │   │   │   │   │           │           ├── dump_syms_regtest.cc
+│   │   │   │   │   │           │           ├── dump_syms_regtest.stabs
+│   │   │   │   │   │           │           └── dump_syms_regtest.sym
+│   │   │   │   │   │           ├── tools.gyp
+│   │   │   │   │   │           └── windows
+│   │   │   │   │   │               ├── binaries
+│   │   │   │   │   │               │   ├── dump_syms.exe
+│   │   │   │   │   │               │   └── symupload.exe
+│   │   │   │   │   │               ├── converter
+│   │   │   │   │   │               │   ├── ms_symbol_server_converter.cc
+│   │   │   │   │   │               │   ├── ms_symbol_server_converter.gyp
+│   │   │   │   │   │               │   └── ms_symbol_server_converter.h
+│   │   │   │   │   │               ├── dump_syms
+│   │   │   │   │   │               │   ├── dump_syms.cc
+│   │   │   │   │   │               │   ├── dump_syms.gyp
+│   │   │   │   │   │               │   ├── dump_syms_unittest.cc
+│   │   │   │   │   │               │   ├── run_regtest.sh
+│   │   │   │   │   │               │   └── testdata
+│   │   │   │   │   │               │       ├── dump_syms_regtest64.pdb
+│   │   │   │   │   │               │       ├── dump_syms_regtest64.sym
+│   │   │   │   │   │               │       ├── dump_syms_regtest.cc
+│   │   │   │   │   │               │       ├── dump_syms_regtest.pdb
+│   │   │   │   │   │               │       ├── dump_syms_regtest.sym
+│   │   │   │   │   │               │       ├── omap_reorder_bbs.pdb
+│   │   │   │   │   │               │       ├── omap_reorder_bbs.sym
+│   │   │   │   │   │               │       ├── omap_reorder_funcs.pdb
+│   │   │   │   │   │               │       ├── omap_reorder_funcs.sym
+│   │   │   │   │   │               │       ├── omap_stretched_filled.pdb
+│   │   │   │   │   │               │       ├── omap_stretched_filled.sym
+│   │   │   │   │   │               │       ├── omap_stretched.pdb
+│   │   │   │   │   │               │       └── omap_stretched.sym
+│   │   │   │   │   │               ├── refresh_binaries.bat
+│   │   │   │   │   │               └── symupload
+│   │   │   │   │   │                   ├── symupload.cc
+│   │   │   │   │   │                   └── symupload.gyp
+│   │   │   │   │   ├── breakpad.pri
+│   │   │   │   │   ├── lss
+│   │   │   │   │   │   ├── codereview.settings
+│   │   │   │   │   │   ├── linux_syscall_support.h
+│   │   │   │   │   │   └── README.md
+│   │   │   │   │   └── README
+│   │   │   │   └── TODO
+│   │   │   ├── qgumboparser
+│   │   │   │   ├── gumbo-parser
+│   │   │   │   │   ├── appveyor.yml
+│   │   │   │   │   ├── autogen.sh
+│   │   │   │   │   ├── CHANGES.md
+│   │   │   │   │   ├── configure.ac
+│   │   │   │   │   ├── CONTRIBUTING.md
+│   │   │   │   │   ├── COPYING
+│   │   │   │   │   ├── DEBUGGING.md
+│   │   │   │   │   ├── Doxyfile
+│   │   │   │   │   ├── examples
+│   │   │   │   │   │   ├── clean_text.cc
+│   │   │   │   │   │   ├── find_links.cc
+│   │   │   │   │   │   ├── get_title.c
+│   │   │   │   │   │   ├── positions_of_class.cc
+│   │   │   │   │   │   ├── prettyprint.cc
+│   │   │   │   │   │   └── serialize.cc
+│   │   │   │   │   ├── genperf.py
+│   │   │   │   │   ├── gentags.py
+│   │   │   │   │   ├── gtest.gyp
+│   │   │   │   │   ├── gumbo_parser.gyp
+│   │   │   │   │   ├── gumbo.pc.in
+│   │   │   │   │   ├── python
+│   │   │   │   │   │   └── gumbo
+│   │   │   │   │   │       ├── gumboc.py
+│   │   │   │   │   │       ├── gumboc_tags.py
+│   │   │   │   │   │       ├── gumboc_test.py
+│   │   │   │   │   │       ├── html5lib_adapter.py
+│   │   │   │   │   │       ├── html5lib_adapter_test.py
+│   │   │   │   │   │       ├── __init__.py
+│   │   │   │   │   │       ├── soup_adapter.py
+│   │   │   │   │   │       └── soup_adapter_test.py
+│   │   │   │   │   ├── README.md
+│   │   │   │   │   ├── setup.py
+│   │   │   │   │   ├── src
+│   │   │   │   │   │   ├── attribute.c
+│   │   │   │   │   │   ├── attribute.h
+│   │   │   │   │   │   ├── char_ref.c
+│   │   │   │   │   │   ├── char_ref.h
+│   │   │   │   │   │   ├── char_ref.rl
+│   │   │   │   │   │   ├── error.c
+│   │   │   │   │   │   ├── error.h
+│   │   │   │   │   │   ├── gumbo.h
+│   │   │   │   │   │   ├── insertion_mode.h
+│   │   │   │   │   │   ├── parser.c
+│   │   │   │   │   │   ├── parser.h
+│   │   │   │   │   │   ├── string_buffer.c
+│   │   │   │   │   │   ├── string_buffer.h
+│   │   │   │   │   │   ├── string_piece.c
+│   │   │   │   │   │   ├── string_piece.h
+│   │   │   │   │   │   ├── tag.c
+│   │   │   │   │   │   ├── tag_enum.h
+│   │   │   │   │   │   ├── tag_gperf.h
+│   │   │   │   │   │   ├── tag.in
+│   │   │   │   │   │   ├── tag_sizes.h
+│   │   │   │   │   │   ├── tag_strings.h
+│   │   │   │   │   │   ├── tokenizer.c
+│   │   │   │   │   │   ├── tokenizer.h
+│   │   │   │   │   │   ├── tokenizer_states.h
+│   │   │   │   │   │   ├── token_type.h
+│   │   │   │   │   │   ├── utf8.c
+│   │   │   │   │   │   ├── utf8.h
+│   │   │   │   │   │   ├── util.c
+│   │   │   │   │   │   ├── util.h
+│   │   │   │   │   │   ├── vector.c
+│   │   │   │   │   │   └── vector.h
+│   │   │   │   │   ├── testdata
+│   │   │   │   │   │   ├── AUTHORS.rst
+│   │   │   │   │   │   ├── encoding
+│   │   │   │   │   │   │   ├── chardet
+│   │   │   │   │   │   │   │   └── test_big5.txt
+│   │   │   │   │   │   │   ├── tests1.dat
+│   │   │   │   │   │   │   ├── tests2.dat
+│   │   │   │   │   │   │   └── test-yahoo-jp.dat
+│   │   │   │   │   │   ├── LICENSE
+│   │   │   │   │   │   ├── sanitizer
+│   │   │   │   │   │   │   └── tests1.dat
+│   │   │   │   │   │   ├── serializer
+│   │   │   │   │   │   │   ├── core.test
+│   │   │   │   │   │   │   ├── injectmeta.test
+│   │   │   │   │   │   │   ├── optionaltags.test
+│   │   │   │   │   │   │   ├── options.test
+│   │   │   │   │   │   │   └── whitespace.test
+│   │   │   │   │   │   ├── sniffer
+│   │   │   │   │   │   │   └── htmlOrFeed.json
+│   │   │   │   │   │   ├── tokenizer
+│   │   │   │   │   │   │   ├── contentModelFlags.test
+│   │   │   │   │   │   │   ├── domjs.test
+│   │   │   │   │   │   │   ├── entities.test
+│   │   │   │   │   │   │   ├── escapeFlag.test
+│   │   │   │   │   │   │   ├── namedEntities.test
+│   │   │   │   │   │   │   ├── numericEntities.test
+│   │   │   │   │   │   │   ├── pendingSpecChanges.test
+│   │   │   │   │   │   │   ├── README.md
+│   │   │   │   │   │   │   ├── test1.test
+│   │   │   │   │   │   │   ├── test2.test
+│   │   │   │   │   │   │   ├── test3.test
+│   │   │   │   │   │   │   ├── test4.test
+│   │   │   │   │   │   │   ├── unicodeCharsProblematic.test
+│   │   │   │   │   │   │   ├── unicodeChars.test
+│   │   │   │   │   │   │   └── xmlViolation.test
+│   │   │   │   │   │   ├── tree-construction
+│   │   │   │   │   │   │   ├── adoption01.dat
+│   │   │   │   │   │   │   ├── adoption02.dat
+│   │   │   │   │   │   │   ├── comments01.dat
+│   │   │   │   │   │   │   ├── doctype01.dat
+│   │   │   │   │   │   │   ├── domjs-unsafe.dat
+│   │   │   │   │   │   │   ├── entities01.dat
+│   │   │   │   │   │   │   ├── entities02.dat
+│   │   │   │   │   │   │   ├── foreign-fragment.dat
+│   │   │   │   │   │   │   ├── html5test-com.dat
+│   │   │   │   │   │   │   ├── inbody01.dat
+│   │   │   │   │   │   │   ├── isindex.dat
+│   │   │   │   │   │   │   ├── main-element.dat
+│   │   │   │   │   │   │   ├── pending-spec-changes.dat
+│   │   │   │   │   │   │   ├── pending-spec-changes-plain-text-unsafe.dat
+│   │   │   │   │   │   │   ├── plain-text-unsafe.dat
+│   │   │   │   │   │   │   ├── README.md
+│   │   │   │   │   │   │   ├── ruby.dat
+│   │   │   │   │   │   │   ├── scriptdata01.dat
+│   │   │   │   │   │   │   ├── scripted
+│   │   │   │   │   │   │   │   ├── adoption01.dat
+│   │   │   │   │   │   │   │   ├── ark.dat
+│   │   │   │   │   │   │   │   └── webkit01.dat
+│   │   │   │   │   │   │   ├── tables01.dat
+│   │   │   │   │   │   │   ├── template.dat
+│   │   │   │   │   │   │   ├── tests10.dat
+│   │   │   │   │   │   │   ├── tests11.dat
+│   │   │   │   │   │   │   ├── tests12.dat
+│   │   │   │   │   │   │   ├── tests14.dat
+│   │   │   │   │   │   │   ├── tests15.dat
+│   │   │   │   │   │   │   ├── tests16.dat
+│   │   │   │   │   │   │   ├── tests17.dat
+│   │   │   │   │   │   │   ├── tests18.dat
+│   │   │   │   │   │   │   ├── tests19.dat
+│   │   │   │   │   │   │   ├── tests1.dat
+│   │   │   │   │   │   │   ├── tests20.dat
+│   │   │   │   │   │   │   ├── tests21.dat
+│   │   │   │   │   │   │   ├── tests22.dat
+│   │   │   │   │   │   │   ├── tests23.dat
+│   │   │   │   │   │   │   ├── tests24.dat
+│   │   │   │   │   │   │   ├── tests25.dat
+│   │   │   │   │   │   │   ├── tests26.dat
+│   │   │   │   │   │   │   ├── tests2.dat
+│   │   │   │   │   │   │   ├── tests3.dat
+│   │   │   │   │   │   │   ├── tests4.dat
+│   │   │   │   │   │   │   ├── tests5.dat
+│   │   │   │   │   │   │   ├── tests6.dat
+│   │   │   │   │   │   │   ├── tests7.dat
+│   │   │   │   │   │   │   ├── tests8.dat
+│   │   │   │   │   │   │   ├── tests9.dat
+│   │   │   │   │   │   │   ├── tests_innerHTML_1.dat
+│   │   │   │   │   │   │   ├── tricky01.dat
+│   │   │   │   │   │   │   ├── webkit01.dat
+│   │   │   │   │   │   │   └── webkit02.dat
+│   │   │   │   │   │   └── validator
+│   │   │   │   │   │       ├── attributes.test
+│   │   │   │   │   │       ├── base-href-attribute.test
+│   │   │   │   │   │       ├── base-target-attribute.test
+│   │   │   │   │   │       ├── blockquote-cite-attribute.test
+│   │   │   │   │   │       ├── classattribute.test
+│   │   │   │   │   │       ├── contenteditableattribute.test
+│   │   │   │   │   │       ├── contextmenuattribute.test
+│   │   │   │   │   │       ├── dirattribute.test
+│   │   │   │   │   │       ├── draggableattribute.test
+│   │   │   │   │   │       ├── html-xmlns-attribute.test
+│   │   │   │   │   │       ├── idattribute.test
+│   │   │   │   │   │       ├── inputattributes.test
+│   │   │   │   │   │       ├── irrelevantattribute.test
+│   │   │   │   │   │       ├── langattribute.test
+│   │   │   │   │   │       ├── link-href-attribute.test
+│   │   │   │   │   │       ├── link-hreflang-attribute.test
+│   │   │   │   │   │       ├── link-rel-attribute.test
+│   │   │   │   │   │       ├── li-value-attribute.test
+│   │   │   │   │   │       ├── ol-start-attribute.test
+│   │   │   │   │   │       ├── starttags.test
+│   │   │   │   │   │       ├── style-scoped-attribute.test
+│   │   │   │   │   │       └── tabindexattribute.test
+│   │   │   │   │   ├── tests
+│   │   │   │   │   │   ├── attribute.cc
+│   │   │   │   │   │   ├── char_ref.cc
+│   │   │   │   │   │   ├── parser.cc
+│   │   │   │   │   │   ├── string_buffer.cc
+│   │   │   │   │   │   ├── string_piece.cc
+│   │   │   │   │   │   ├── test_utils.cc
+│   │   │   │   │   │   ├── test_utils.h
+│   │   │   │   │   │   ├── tokenizer.cc
+│   │   │   │   │   │   ├── utf8.cc
+│   │   │   │   │   │   └── vector.cc
+│   │   │   │   │   ├── THANKS
+│   │   │   │   │   └── visualc
+│   │   │   │   │       ├── gumbo.vcxproj
+│   │   │   │   │       ├── gumbo.vcxproj.filters
+│   │   │   │   │       └── include
+│   │   │   │   │           └── strings.h
+│   │   │   │   ├── helper.h
+│   │   │   │   ├── HtmlTag.h
+│   │   │   │   ├── LICENSE
+│   │   │   │   ├── qgumboattribute.cpp
+│   │   │   │   ├── qgumboattribute.h
+│   │   │   │   ├── qgumbodocument.cpp
+│   │   │   │   ├── qgumbodocument.h
+│   │   │   │   ├── qgumbonode.cpp
+│   │   │   │   ├── qgumbonode.h
+│   │   │   │   └── qgumboparser.pro
+│   │   │   └── webloader
+│   │   │       ├── LICENSE
+│   │   │       ├── README.md
+│   │   │       ├── src
+│   │   │       │   ├── HttpMultiPart.cpp
+│   │   │       │   ├── HttpMultiPart.h
+│   │   │       │   ├── NetworkQueue.cpp
+│   │   │       │   ├── NetworkQueue.h
+│   │   │       │   ├── NetworkRequest.cpp
+│   │   │       │   ├── NetworkRequest.h
+│   │   │       │   ├── NetworkRequestLoader.cpp
+│   │   │       │   ├── NetworkRequestLoader.h
+│   │   │       │   ├── NetworkTypes.h
+│   │   │       │   ├── WebLoader.cpp
+│   │   │       │   ├── WebLoader.h
+│   │   │       │   ├── WebRequest.cpp
+│   │   │       │   ├── WebRequest.h
+│   │   │       │   ├── WebRequestParameters.cpp
+│   │   │       │   └── WebRequestParameters.h
+│   │   │       └── webloader.pro
+│   │   ├── Scenarist.pro
+│   │   └── _scripts
+│   │       ├── run_linguist
+│   │       └── update_ts
+│   └── ui
+│       ├── coupon-186.xcf
+│       ├── coupon-365.xcf
+│       ├── full-logo-big.png
+│       ├── logo.icns
+│       ├── logo.ico
+│       ├── logo_old.xcf
+│       ├── logo.png
+│       ├── logo.xcf
+│       ├── new-logo-source.psd
+│       └── new-logo-updated.xcf
+├── KITScenaristCore
+│   ├── 3rd_party
+│   │   ├── Delegates
+│   │   │   ├── ComboBoxItemDelegate
+│   │   │   │   ├── ComboBoxItemDelegate.cpp
+│   │   │   │   └── ComboBoxItemDelegate.h
+│   │   │   ├── KeySequenceDelegate
+│   │   │   │   ├── KeySequenceDelegate.cpp
+│   │   │   │   └── KeySequenceDelegate.h
+│   │   │   ├── TreeViewDelegate
+│   │   │   │   └── TreeViewШеуьDelegate.cpp
+│   │   │   └── TreeViewItemDelegate
+│   │   │       ├── TreeViewItemDelegate.cpp
+│   │   │       └── TreeViewItemDelegate.h
+│   │   ├── Helpers
+│   │   │   ├── BackupHelper.cpp
+│   │   │   ├── BackupHelper.h
+│   │   │   ├── ColorHelper.h
+│   │   │   ├── DiffMatchPatch.cpp
+│   │   │   ├── DiffMatchPatch.h
+│   │   │   ├── DiffMatchPatchHelper.h
+│   │   │   ├── FileHelper.h
+│   │   │   ├── ImageHelper.h
+│   │   │   ├── PasswordStorage.h
+│   │   │   ├── QVariantMapWriter.h
+│   │   │   ├── RunOnce.cpp
+│   │   │   ├── RunOnce.h
+│   │   │   ├── ScrollerHelper.h
+│   │   │   ├── ShortcutHelper.h
+│   │   │   ├── StyleHelper.h
+│   │   │   ├── StyleSheetHelper.h
+│   │   │   ├── TextEditHelper.h
+│   │   │   ├── TextUtils.h
+│   │   │   ├── Validators.h
+│   │   │   └── XmlHelper.h
+│   │   ├── Styles
+│   │   │   └── TreeViewProxyStyle
+│   │   │       ├── TreeViewProxyStyle.cpp
+│   │   │       └── TreeViewProxyStyle.h
+│   │   └── Widgets
+│   │       ├── AcceptebleLineEdit
+│   │       │   ├── AcceptebleLineEdit.cpp
+│   │       │   └── AcceptebleLineEdit.h
+│   │       ├── CardsEdit
+│   │       │   ├── ActItem.cpp
+│   │       │   ├── ActItem.h
+│   │       │   ├── CardItem.cpp
+│   │       │   ├── CardItem.h
+│   │       │   ├── CardsScene.cpp
+│   │       │   ├── CardsScene.h
+│   │       │   ├── CardsUndoStack.cpp
+│   │       │   ├── CardsUndoStack.h
+│   │       │   ├── CardsView.cpp
+│   │       │   ├── CardsView.h
+│   │       │   ├── ScalableGraphicsView.cpp
+│   │       │   └── ScalableGraphicsView.h
+│   │       ├── CircularProgressBar
+│   │       │   ├── CircularProgressBar.cpp
+│   │       │   └── CircularProgressBar.h
+│   │       ├── ClickableLabel
+│   │       │   ├── ClickableFrame.cpp
+│   │       │   ├── ClickableFrame.h
+│   │       │   ├── ClickableLabel.cpp
+│   │       │   └── ClickableLabel.h
+│   │       ├── ColoredToolButton
+│   │       │   ├── ColoredToolButton.cpp
+│   │       │   ├── ColoredToolButton.h
+│   │       │   ├── ColorsPane.cpp
+│   │       │   ├── ColorsPane.h
+│   │       │   ├── GoogleColorsPane.cpp
+│   │       │   ├── GoogleColorsPane.h
+│   │       │   ├── WordHighlightColorsPane.cpp
+│   │       │   └── WordHighlightColorsPane.h
+│   │       ├── CompletableTextEdit
+│   │       │   ├── CompletableTextEdit.cpp
+│   │       │   └── CompletableTextEdit.h
+│   │       ├── ElidedButton
+│   │       │   ├── ElidedButton.cpp
+│   │       │   └── ElidedButton.h
+│   │       ├── ElidedLabel
+│   │       │   ├── ElidedLabel.cpp
+│   │       │   └── ElidedLabel.h
+│   │       ├── FlatButton
+│   │       │   ├── FlatButton.cpp
+│   │       │   └── FlatButton.h
+│   │       ├── HierarchicalHeaderView
+│   │       │   ├── HierarchicalHeaderView.cpp
+│   │       │   ├── HierarchicalHeaderView.h
+│   │       │   ├── HierarchicalTableModel.cpp
+│   │       │   └── HierarchicalTableModel.h
+│   │       ├── ImagesPane
+│   │       │   ├── AddImageButton.cpp
+│   │       │   ├── AddImageButton.h
+│   │       │   ├── FlowLayout.cpp
+│   │       │   ├── FlowLayout.h
+│   │       │   ├── ImageLabel.cpp
+│   │       │   ├── ImageLabel.h
+│   │       │   ├── ImagePreview.cpp
+│   │       │   ├── ImagePreview.h
+│   │       │   ├── ImagesPane.cpp
+│   │       │   └── ImagesPane.h
+│   │       ├── InputView
+│   │       │   ├── InputView.cpp
+│   │       │   └── InputView.h
+│   │       ├── MaterialComboBox
+│   │       │   ├── MaterialComboBox.cpp
+│   │       │   └── MaterialComboBox.h
+│   │       ├── MaterialLineEdit
+│   │       │   ├── MaterialLineEdit.cpp
+│   │       │   └── MaterialLineEdit.h
+│   │       ├── PagesTextEdit
+│   │       │   ├── PageMetrics.cpp
+│   │       │   ├── PageMetrics.h
+│   │       │   ├── PageTextEdit.cpp
+│   │       │   ├── PageTextEdit.h
+│   │       │   └── PageTextEdit_p.h
+│   │       ├── PasswordLineEdit
+│   │       │   ├── PasswordLineEdit.cpp
+│   │       │   └── PasswordLineEdit.h
+│   │       ├── PhotosChooser
+│   │       │   ├── PhotoLabel.cpp
+│   │       │   ├── PhotoLabel.h
+│   │       │   ├── PhotoPreview.cpp
+│   │       │   ├── PhotoPreview.h
+│   │       │   ├── PhotosChooser.cpp
+│   │       │   └── PhotosChooser.h
+│   │       ├── QCutomPlot
+│   │       │   ├── qcustomplot.cpp
+│   │       │   ├── qcustomplotextended.cpp
+│   │       │   ├── qcustomplotextended.h
+│   │       │   └── qcustomplot.h
+│   │       ├── QLightBoxWidget
+│   │       │   ├── qlightboxdialog.cpp
+│   │       │   ├── qlightboxdialog.h
+│   │       │   ├── qlightboxinputdialog.cpp
+│   │       │   ├── qlightboxinputdialog.h
+│   │       │   ├── qlightboxmessage.cpp
+│   │       │   ├── qlightboxmessage.h
+│   │       │   ├── qlightboxprogress.cpp
+│   │       │   ├── qlightboxprogress.h
+│   │       │   ├── qlightboxwidget.cpp
+│   │       │   └── qlightboxwidget.h
+│   │       ├── QProgressIndicator
+│   │       │   ├── QProgressIndicator.cpp
+│   │       │   └── QProgressIndicator.h
+│   │       ├── QtMindMap
+│   │       │   ├── include
+│   │       │   │   ├── commands.h
+│   │       │   │   ├── edge.h
+│   │       │   │   ├── graphlogic.h
+│   │       │   │   ├── graphwidget.h
+│   │       │   │   └── node.h
+│   │       │   ├── QtMindMap
+│   │       │   │   ├── applications-system.svg
+│   │       │   │   ├── dialog-information.svg
+│   │       │   │   ├── dialog-warning.svg
+│   │       │   │   ├── help-browser.svg
+│   │       │   │   ├── mail-attachment.svg
+│   │       │   │   ├── qtmindmap.svg
+│   │       │   │   ├── system-users.svg
+│   │       │   │   ├── user-trash-full.svg
+│   │       │   │   └── x-office-calendar.svg
+│   │       │   └── src
+│   │       │       ├── commands.cpp
+│   │       │       ├── edge.cpp
+│   │       │       ├── graphlogic.cpp
+│   │       │       ├── graphwidget.cpp
+│   │       │       └── node.cpp
+│   │       ├── QWidgetListView
+│   │       │   ├── qtmodelwidget.cpp
+│   │       │   ├── qtmodelwidget.h
+│   │       │   ├── qwidgetlistview.cpp
+│   │       │   └── qwidgetlistview.h
+│   │       ├── ScalableWrapper
+│   │       │   ├── ScalableWrapper.cpp
+│   │       │   └── ScalableWrapper.h
+│   │       ├── SearchWidget
+│   │       │   ├── SearchWidget.cpp
+│   │       │   └── SearchWidget.h
+│   │       ├── SideBar
+│   │       │   ├── SideBar.cpp
+│   │       │   └── SideBar.h
+│   │       ├── SimpleTextEditor
+│   │       │   ├── SimpleTextEditor.cpp
+│   │       │   ├── SimpleTextEditor.h
+│   │       │   ├── SimpleTextEditorWidget.cpp
+│   │       │   └── SimpleTextEditorWidget.h
+│   │       ├── SlidingPanel
+│   │       │   ├── SlidingPanel.cpp
+│   │       │   └── SlidingPanel.h
+│   │       ├── SpellCheckTextEdit
+│   │       │   ├── SpellChecker.cpp
+│   │       │   ├── SpellChecker.h
+│   │       │   ├── SpellCheckHighlighter.cpp
+│   │       │   ├── SpellCheckHighlighter.h
+│   │       │   ├── SpellCheckTextEdit.cpp
+│   │       │   ├── SpellCheckTextEdit.h
+│   │       │   ├── SyntaxHighlighter.cpp
+│   │       │   └── SyntaxHighlighter.h
+│   │       ├── Stepper
+│   │       │   ├── Stepper.cpp
+│   │       │   └── Stepper.h
+│   │       ├── TabBar
+│   │       │   ├── TabBar.cpp
+│   │       │   └── TabBar.h
+│   │       ├── TabBarExpanded
+│   │       │   ├── TabBarExpanded.cpp
+│   │       │   └── TabBarExpanded.h
+│   │       ├── ToolTipLabel
+│   │       │   ├── ToolTipLabel.cpp
+│   │       │   └── ToolTipLabel.h
+│   │       └── WAF
+│   │           ├── AbstractAnimator.h
+│   │           ├── Animation
+│   │           │   ├── Animation.cpp
+│   │           │   ├── Animation.h
+│   │           │   ├── AnimationPrivate.h
+│   │           │   ├── CircleFill
+│   │           │   │   ├── CircleFillAnimator.cpp
+│   │           │   │   ├── CircleFillAnimator.h
+│   │           │   │   ├── CircleFillDecorator.cpp
+│   │           │   │   └── CircleFillDecorator.h
+│   │           │   ├── Expand
+│   │           │   │   ├── ExpandAnimator.cpp
+│   │           │   │   ├── ExpandAnimator.h
+│   │           │   │   ├── ExpandDecorator.cpp
+│   │           │   │   └── ExpandDecorator.h
+│   │           │   ├── SideSlide
+│   │           │   │   ├── SideSlideAnimator.cpp
+│   │           │   │   ├── SideSlideAnimator.h
+│   │           │   │   ├── SideSlideDecorator.cpp
+│   │           │   │   └── SideSlideDecorator.h
+│   │           │   └── Slide
+│   │           │       ├── SlideAnimator.cpp
+│   │           │       ├── SlideAnimator.h
+│   │           │       ├── SlideForegroundDecorator.cpp
+│   │           │       └── SlideForegroundDecorator.h
+│   │           ├── StackedWidgetAnimation
+│   │           │   ├── StackedWidgetAnimation.cpp
+│   │           │   ├── StackedWidgetAnimation.h
+│   │           │   ├── StackedWidgetAnimationPrivate.h
+│   │           │   ├── StackedWidgetFadeIn
+│   │           │   │   ├── StackedWidgetFadeInAnimator.cpp
+│   │           │   │   ├── StackedWidgetFadeInAnimator.h
+│   │           │   │   ├── StackedWidgetFadeInDecorator.cpp
+│   │           │   │   └── StackedWidgetFadeInDecorator.h
+│   │           │   ├── StackedWidgetSlide
+│   │           │   │   ├── StackedWidgetSlideAnimator.cpp
+│   │           │   │   ├── StackedWidgetSlideAnimator.h
+│   │           │   │   ├── StackedWidgetSlideDecorator.cpp
+│   │           │   │   └── StackedWidgetSlideDecorator.h
+│   │           │   └── StackedWidgetSlideOver
+│   │           │       ├── StackedWidgetSlideOverAnimator.cpp
+│   │           │       ├── StackedWidgetSlideOverAnimator.h
+│   │           │       ├── StackedWidgetSlideOverDecorator.cpp
+│   │           │       └── StackedWidgetSlideOverDecorator.h
+│   │           └── WAF.h
+│   ├── BusinessLayer
+│   │   ├── Chronometry
+│   │   │   ├── AbstractChronometer.h
+│   │   │   ├── CharactersChronometer.cpp
+│   │   │   ├── CharactersChronometer.h
+│   │   │   ├── ChronometerFacade.cpp
+│   │   │   ├── ChronometerFacade.h
+│   │   │   ├── ConfigurableChronometer.cpp
+│   │   │   ├── ConfigurableChronometer.h
+│   │   │   ├── PagesChronometer.cpp
+│   │   │   └── PagesChronometer.h
+│   │   ├── Counters
+│   │   │   ├── Counter.h
+│   │   │   ├── CountersFacade.cpp
+│   │   │   └── CountersFacade.h
+│   │   ├── Export
+│   │   │   ├── AbstractExporter.cpp
+│   │   │   ├── AbstractExporter.h
+│   │   │   ├── DocxExporter.cpp
+│   │   │   ├── DocxExporter.h
+│   │   │   ├── FdxExporter.cpp
+│   │   │   ├── FdxExporter.h
+│   │   │   ├── FountainExporter.cpp
+│   │   │   ├── FountainExporter.h
+│   │   │   ├── PdfExporter.cpp
+│   │   │   └── PdfExporter.h
+│   │   ├── Import
+│   │   │   ├── AbstractImporter.h
+│   │   │   ├── CeltxImporter.cpp
+│   │   │   ├── CeltxImporter.h
+│   │   │   ├── DocumentImporter.cpp
+│   │   │   ├── DocumentImporter.h
+│   │   │   ├── FdxImporter.cpp
+│   │   │   ├── FdxImporter.h
+│   │   │   ├── FountainImporter.cpp
+│   │   │   ├── FountainImporter.h
+│   │   │   ├── KitScenaristImporter.cpp
+│   │   │   ├── KitScenaristImporter.h
+│   │   │   ├── TrelbyImporter.cpp
+│   │   │   └── TrelbyImporter.h
+│   │   ├── Research
+│   │   │   ├── ResearchModel.cpp
+│   │   │   ├── ResearchModel.h
+│   │   │   ├── ResearchModelItem.cpp
+│   │   │   └── ResearchModelItem.h
+│   │   ├── ScenarioDocument
+│   │   │   ├── ScenarioDocument.cpp
+│   │   │   ├── ScenarioDocument.h
+│   │   │   ├── ScenarioModel.cpp
+│   │   │   ├── ScenarioModel.h
+│   │   │   ├── ScenarioModelItem.cpp
+│   │   │   ├── ScenarioModelItem.h
+│   │   │   ├── ScenarioReviewModel.cpp
+│   │   │   ├── ScenarioReviewModel.h
+│   │   │   ├── ScenarioTemplate.cpp
+│   │   │   ├── ScenarioTemplate.h
+│   │   │   ├── ScenarioTextBlockInfo.cpp
+│   │   │   ├── ScenarioTextBlockInfo.h
+│   │   │   ├── ScenarioTextBlockParsers.cpp
+│   │   │   ├── ScenarioTextBlockParsers.h
+│   │   │   ├── ScenarioTextDocument.cpp
+│   │   │   ├── ScenarioTextDocument.h
+│   │   │   ├── ScenarioXml.cpp
+│   │   │   ├── ScenarioXml.h
+│   │   │   ├── ScriptBookmarksModel.cpp
+│   │   │   ├── ScriptBookmarksModel.h
+│   │   │   ├── ScriptTextCorrector.cpp
+│   │   │   ├── ScriptTextCorrector.h
+│   │   │   ├── ScriptTextCursor.cpp
+│   │   │   └── ScriptTextCursor.h
+│   │   ├── Statistics
+│   │   │   ├── Plots
+│   │   │   │   ├── AbstractPlot.h
+│   │   │   │   ├── CharactersActivityPlot.cpp
+│   │   │   │   ├── CharactersActivityPlot.h
+│   │   │   │   ├── StoryStructureAnalisysPlot.cpp
+│   │   │   │   └── StoryStructureAnalisysPlot.h
+│   │   │   ├── Reports
+│   │   │   │   ├── AbstractReport.h
+│   │   │   │   ├── CastReport.cpp
+│   │   │   │   ├── CastReport.h
+│   │   │   │   ├── CharacterReport.cpp
+│   │   │   │   ├── CharacterReport.h
+│   │   │   │   ├── LocationReport.cpp
+│   │   │   │   ├── LocationReport.h
+│   │   │   │   ├── SceneReport.cpp
+│   │   │   │   ├── SceneReport.h
+│   │   │   │   ├── SummaryReport.cpp
+│   │   │   │   └── SummaryReport.h
+│   │   │   ├── StatisticsFacade.cpp
+│   │   │   ├── StatisticsFacade.h
+│   │   │   └── StatisticsParameters.h
+│   │   └── Tools
+│   │       ├── CompareScriptVersionsTool.cpp
+│   │       ├── CompareScriptVersionsTool.h
+│   │       ├── RestoreFromBackupTool.cpp
+│   │       └── RestoreFromBackupTool.h
+│   ├── DataLayer
+│   │   ├── Database
+│   │   │   ├── Database.cpp
+│   │   │   ├── Database.h
+│   │   │   └── DatabaseHelper.h
+│   │   ├── DataMappingLayer
+│   │   │   ├── AbstractMapper.cpp
+│   │   │   ├── AbstractMapper.h
+│   │   │   ├── CharacterStateMapper.cpp
+│   │   │   ├── CharacterStateMapper.h
+│   │   │   ├── DatabaseHistoryMapper.cpp
+│   │   │   ├── DatabaseHistoryMapper.h
+│   │   │   ├── MapperFacade.cpp
+│   │   │   ├── MapperFacade.h
+│   │   │   ├── PlaceMapper.cpp
+│   │   │   ├── PlaceMapper.h
+│   │   │   ├── ResearchMapper.cpp
+│   │   │   ├── ResearchMapper.h
+│   │   │   ├── ScenarioChangeMapper.cpp
+│   │   │   ├── ScenarioChangeMapper.h
+│   │   │   ├── ScenarioDataMapper.cpp
+│   │   │   ├── ScenarioDataMapper.h
+│   │   │   ├── ScenarioDayMapper.cpp
+│   │   │   ├── ScenarioDayMapper.h
+│   │   │   ├── ScenarioMapper.cpp
+│   │   │   ├── ScenarioMapper.h
+│   │   │   ├── ScriptVersionMapper.cpp
+│   │   │   ├── ScriptVersionMapper.h
+│   │   │   ├── SettingsMapper.cpp
+│   │   │   ├── SettingsMapper.h
+│   │   │   ├── TimeMapper.cpp
+│   │   │   ├── TimeMapper.h
+│   │   │   ├── TransitionMapper.cpp
+│   │   │   └── TransitionMapper.h
+│   │   └── DataStorageLayer
+│   │       ├── CharacterStateStorage.cpp
+│   │       ├── CharacterStateStorage.h
+│   │       ├── DatabaseHistoryStorage.cpp
+│   │       ├── DatabaseHistoryStorage.h
+│   │       ├── PlaceStorage.cpp
+│   │       ├── PlaceStorage.h
+│   │       ├── ResearchStorage.cpp
+│   │       ├── ResearchStorage.h
+│   │       ├── ScenarioChangeStorage.cpp
+│   │       ├── ScenarioChangeStorage.h
+│   │       ├── ScenarioDataStorage.cpp
+│   │       ├── ScenarioDataStorage.h
+│   │       ├── ScenarioDayStorage.cpp
+│   │       ├── ScenarioDayStorage.h
+│   │       ├── ScenarioStorage.cpp
+│   │       ├── ScenarioStorage.h
+│   │       ├── ScriptVersionStorage.cpp
+│   │       ├── ScriptVersionStorage.h
+│   │       ├── SettingsStorage.cpp
+│   │       ├── SettingsStorage.h
+│   │       ├── StorageFacade.cpp
+│   │       ├── StorageFacade.h
+│   │       ├── TimeStorage.cpp
+│   │       ├── TimeStorage.h
+│   │       ├── TransitionStorage.cpp
+│   │       └── TransitionStorage.h
+│   ├── Domain
+│   │   ├── CharacterState.cpp
+│   │   ├── CharacterState.h
+│   │   ├── DomainObject.cpp
+│   │   ├── DomainObject.h
+│   │   ├── Identifier.cpp
+│   │   ├── Identifier.h
+│   │   ├── Place.cpp
+│   │   ├── Place.h
+│   │   ├── Research.cpp
+│   │   ├── Research.h
+│   │   ├── ScenarioChange.cpp
+│   │   ├── ScenarioChange.h
+│   │   ├── Scenario.cpp
+│   │   ├── ScenarioData.cpp
+│   │   ├── ScenarioData.h
+│   │   ├── ScenarioDay.cpp
+│   │   ├── ScenarioDay.h
+│   │   ├── Scenario.h
+│   │   ├── SceneTime.cpp
+│   │   ├── SceneTime.h
+│   │   ├── ScriptVersion.cpp
+│   │   ├── ScriptVersion.h
+│   │   ├── Transition.cpp
+│   │   └── Transition.h
+│   ├── LICENSE
+│   ├── ManagementLayer
+│   │   ├── Project
+│   │   │   ├── Project.cpp
+│   │   │   ├── Project.h
+│   │   │   ├── ProjectsManager.cpp
+│   │   │   └── ProjectsManager.h
+│   │   └── Synchronization
+│   │       ├── Sync.h
+│   │       ├── SynchronizationManager.cpp
+│   │       └── SynchronizationManager.h
+│   ├── README.md
+│   ├── Resources
+│   │   ├── Fonts
+│   │   │   ├── courbi.ttf
+│   │   │   ├── courb.ttf
+│   │   │   ├── courier-prime-bold-italic.ttf
+│   │   │   ├── courier-prime-bold.ttf
+│   │   │   ├── courier-prime-italic.ttf
+│   │   │   ├── courier-prime.ttf
+│   │   │   ├── couri.ttf
+│   │   │   ├── cour.ttf
+│   │   │   ├── embed
+│   │   │   │   ├── courierprime-bold-italic.odttf
+│   │   │   │   ├── courierprime-bold.odttf
+│   │   │   │   ├── courierprime-italic.odttf
+│   │   │   │   └── courierprime-regular.odttf
+│   │   │   ├── Roboto-Black.ttf
+│   │   │   ├── Roboto-Bold.ttf
+│   │   │   ├── Roboto-Medium.ttf
+│   │   │   ├── Roboto-Regular.ttf
+│   │   │   └── Roboto-Thin.ttf
+│   │   ├── Icons
+│   │   │   ├── alert.png
+│   │   │   ├── cards.png
+│   │   │   ├── Editing
+│   │   │   │   ├── accept_green.png
+│   │   │   │   ├── copy-to-script.png
+│   │   │   │   └── red_cross.png
+│   │   │   ├── empty.png
+│   │   │   ├── help.png
+│   │   │   ├── logo.png
+│   │   │   └── MindMap
+│   │   │       ├── add-child.png
+│   │   │       ├── add-edge.png
+│   │   │       ├── add-root.png
+│   │   │       ├── add-sibling.png
+│   │   │       ├── remove-edge.png
+│   │   │       ├── remove-node.png
+│   │   │       ├── scale-down.png
+│   │   │       └── scale-up.png
+│   │   ├── Iconset
+│   │   │   ├── account-multiple.svg
+│   │   │   ├── account-plus.svg
+│   │   │   ├── account.svg
+│   │   │   ├── application.svg
+│   │   │   ├── apps.svg
+│   │   │   ├── arrange-bring-to-front.svg
+│   │   │   ├── arrow-left.svg
+│   │   │   ├── autorenew.svg
+│   │   │   ├── bookmark-plus.svg
+│   │   │   ├── bookmark-remove.svg
+│   │   │   ├── bookmark.svg
+│   │   │   ├── book-open-variant.svg
+│   │   │   ├── chart-areaspline.svg
+│   │   │   ├── chart-line.svg
+│   │   │   ├── check.svg
+│   │   │   ├── chevron-down.svg
+│   │   │   ├── chevron-left.svg
+│   │   │   ├── chevron-up.svg
+│   │   │   ├── clipboard-pulse.svg
+│   │   │   ├── clipboard-text.svg
+│   │   │   ├── close.svg
+│   │   │   ├── cloud-upload.svg
+│   │   │   ├── content-save.svg
+│   │   │   ├── delete.svg
+│   │   │   ├── dots-vertical.svg
+│   │   │   ├── export.svg
+│   │   │   ├── eye-off.svg
+│   │   │   ├── eye.svg
+│   │   │   ├── file-document-box.svg
+│   │   │   ├── file-tree.svg
+│   │   │   ├── folder-outline.svg
+│   │   │   ├── folder.svg
+│   │   │   ├── format-bold.svg
+│   │   │   ├── format-clear.svg
+│   │   │   ├── format-color-fill.svg
+│   │   │   ├── format-color-text.svg
+│   │   │   ├── format-italic.svg
+│   │   │   ├── format-size.svg
+│   │   │   ├── format-title.svg
+│   │   │   ├── format-underline.svg
+│   │   │   ├── fullscreen-exit.svg
+│   │   │   ├── fullscreen.svg
+│   │   │   ├── grid.svg
+│   │   │   ├── help-circle.svg
+│   │   │   ├── home-multiple.svg
+│   │   │   ├── home.svg
+│   │   │   ├── image-multiple.svg
+│   │   │   ├── image.svg
+│   │   │   ├── import.svg
+│   │   │   ├── Indicator
+│   │   │   │   ├── connected.png
+│   │   │   │   ├── disconnected.png
+│   │   │   │   ├── synced.png
+│   │   │   │   └── unsynced.png
+│   │   │   ├── keyboard-close.svg
+│   │   │   ├── layers.svg
+│   │   │   ├── lock-open.svg
+│   │   │   ├── lock-reset.svg
+│   │   │   ├── lock.svg
+│   │   │   ├── logout.svg
+│   │   │   ├── magnify.svg
+│   │   │   ├── menu.svg
+│   │   │   ├── message-draw.svg
+│   │   │   ├── message-text.svg
+│   │   │   ├── mind-map.svg
+│   │   │   ├── pencil-off.svg
+│   │   │   ├── pencil.svg
+│   │   │   ├── playlist-plus.svg
+│   │   │   ├── plus.svg
+│   │   │   ├── printer.svg
+│   │   │   ├── redo.svg
+│   │   │   ├── refresh.svg
+│   │   │   ├── settings.svg
+│   │   │   ├── share-variant.svg
+│   │   │   ├── sitemap.svg
+│   │   │   ├── square.svg
+│   │   │   ├── text-subject.svg
+│   │   │   ├── thumb-up.svg
+│   │   │   ├── timer.svg
+│   │   │   ├── undo.svg
+│   │   │   ├── view-agenda.svg
+│   │   │   ├── view-list.svg
+│   │   │   ├── web.svg
+│   │   │   └── wrench.svg
+│   │   ├── Images
+│   │   │   ├── avatar.png
+│   │   │   ├── cards-print-landscape-1.png
+│   │   │   ├── cards-print-landscape-2.png
+│   │   │   ├── cards-print-landscape-4.png
+│   │   │   ├── cards-print-landscape-6.png
+│   │   │   ├── cards-print-landscape-8.png
+│   │   │   ├── cards-print-portrait-1.png
+│   │   │   ├── cards-print-portrait-2.png
+│   │   │   ├── cards-print-portrait-4.png
+│   │   │   ├── cards-print-portrait-6.png
+│   │   │   ├── cards-print-portrait-8.png
+│   │   │   ├── corkboard.jpg
+│   │   │   └── logo.png
+│   │   ├── MyThesDictionaries
+│   │   │   ├── en.dat
+│   │   │   ├── en.idx
+│   │   │   ├── es.dat
+│   │   │   ├── es.idx
+│   │   │   ├── fr.dat
+│   │   │   ├── fr.idx
+│   │   │   ├── ru.dat
+│   │   │   ├── ru.idx
+│   │   │   ├── uk.dat
+│   │   │   └── uk.idx
+│   │   ├── ResourcesMobile.qrc
+│   │   ├── Resources.qrc
+│   │   ├── Sound
+│   │   │   ├── backspace.wav
+│   │   │   ├── key-01.wav
+│   │   │   ├── key-02.wav
+│   │   │   ├── key-03.wav
+│   │   │   ├── key-04.wav
+│   │   │   ├── return.wav
+│   │   │   └── space.wav
+│   │   ├── Templates
+│   │   │   ├── arabic.kitss
+│   │   │   ├── chinese.kitss
+│   │   │   ├── final_draft_a4.kitss
+│   │   │   ├── final_draft_letter.kitss
+│   │   │   ├── hebrew.kitss
+│   │   │   ├── mobile.kitss
+│   │   │   ├── russian_courier_prime.kitss
+│   │   │   └── russian.kitss
+│   │   ├── Translations
+│   │   │   ├── empty_qt_translation
+│   │   │   │   ├── qtbase_.ts
+│   │   │   │   └── qt_.ts
+│   │   │   ├── qt_ar.qm
+│   │   │   ├── qtbase_ar.qm
+│   │   │   ├── qtbase_be.qm
+│   │   │   ├── qtbase_be.ts
+│   │   │   ├── qtbase_de.qm
+│   │   │   ├── qtbase_en.qm
+│   │   │   ├── qtbase_es.qm
+│   │   │   ├── qtbase_fr.qm
+│   │   │   ├── qtbase_he.qm
+│   │   │   ├── qtbase_hu.qm
+│   │   │   ├── qtbase_it.qm
+│   │   │   ├── qtbase_pl.qm
+│   │   │   ├── qtbase_pt.qm
+│   │   │   ├── qtbase_ru.qm
+│   │   │   ├── qtbase_sl.qm
+│   │   │   ├── qtbase_tr.qm
+│   │   │   ├── qtbase_tr.ts
+│   │   │   ├── qt_de.qm
+│   │   │   ├── qt_es.qm
+│   │   │   ├── qt_fa.qm
+│   │   │   ├── qt_fr.qm
+│   │   │   ├── qt_he.qm
+│   │   │   ├── qt_hu.qm
+│   │   │   ├── qt_it.qm
+│   │   │   ├── qt_kz.qm
+│   │   │   ├── qt_nl.qm
+│   │   │   ├── qt_pl.qm
+│   │   │   ├── qt_pt.qm
+│   │   │   ├── qt_ru.qm
+│   │   │   ├── qt_sl.qm
+│   │   │   ├── qt_sv.qm
+│   │   │   ├── qt_tr.qm
+│   │   │   ├── qt_zh.qm
+│   │   │   ├── Scenarist_ar.qm
+│   │   │   ├── Scenarist_ar.ts
+│   │   │   ├── Scenarist_az.qm
+│   │   │   ├── Scenarist_az.ts
+│   │   │   ├── Scenarist_be.qm
+│   │   │   ├── Scenarist_be.ts
+│   │   │   ├── Scenarist_cs.ts
+│   │   │   ├── Scenarist_da.qm
+│   │   │   ├── Scenarist_da.ts
+│   │   │   ├── Scenarist_de.qm
+│   │   │   ├── Scenarist_de.ts
+│   │   │   ├── Scenarist_el.qm
+│   │   │   ├── Scenarist_el.ts
+│   │   │   ├── Scenarist_en.qm
+│   │   │   ├── Scenarist_en.ts
+│   │   │   ├── Scenarist_es.qm
+│   │   │   ├── Scenarist_es.ts
+│   │   │   ├── Scenarist_fa.qm
+│   │   │   ├── Scenarist_fa.ts
+│   │   │   ├── Scenarist_fr.qm
+│   │   │   ├── Scenarist_fr.ts
+│   │   │   ├── Scenarist_gl.qm
+│   │   │   ├── Scenarist_gl.ts
+│   │   │   ├── Scenarist_he.qm
+│   │   │   ├── Scenarist_he.ts
+│   │   │   ├── Scenarist_hr.qm
+│   │   │   ├── Scenarist_hr.ts
+│   │   │   ├── Scenarist_hu.qm
+│   │   │   ├── Scenarist_hu.ts
+│   │   │   ├── Scenarist_it.qm
+│   │   │   ├── Scenarist_it.ts
+│   │   │   ├── Scenarist_jp.qm
+│   │   │   ├── Scenarist_jp.ts
+│   │   │   ├── Scenarist_km.qm
+│   │   │   ├── Scenarist_km.ts
+│   │   │   ├── Scenarist_kz.qm
+│   │   │   ├── Scenarist_kz.ts
+│   │   │   ├── ScenaristMobile_de.qm
+│   │   │   ├── ScenaristMobile_de.ts
+│   │   │   ├── ScenaristMobile_en.qm
+│   │   │   ├── ScenaristMobile_en.ts
+│   │   │   ├── ScenaristMobile_es.qm
+│   │   │   ├── ScenaristMobile_es.ts
+│   │   │   ├── ScenaristMobile_fa.qm
+│   │   │   ├── ScenaristMobile_fa.ts
+│   │   │   ├── ScenaristMobile_fr.qm
+│   │   │   ├── ScenaristMobile_fr.ts
+│   │   │   ├── ScenaristMobile_it.qm
+│   │   │   ├── ScenaristMobile_it.ts
+│   │   │   ├── ScenaristMobile_jp.qm
+│   │   │   ├── ScenaristMobile_jp.ts
+│   │   │   ├── ScenaristMobile_kz.qm
+│   │   │   ├── ScenaristMobile_kz.ts
+│   │   │   ├── ScenaristMobile_pt.qm
+│   │   │   ├── ScenaristMobile_pt.ts
+│   │   │   ├── ScenaristMobile_ru.qm
+│   │   │   ├── ScenaristMobile_ru.ts
+│   │   │   ├── ScenaristMobile_tr.qm
+│   │   │   ├── ScenaristMobile_tr.ts
+│   │   │   ├── ScenaristMobile_ua.qm
+│   │   │   ├── ScenaristMobile_ua.ts
+│   │   │   ├── ScenaristMobile_zn.qm
+│   │   │   ├── ScenaristMobile_zn.ts
+│   │   │   ├── Scenarist_nl.qm
+│   │   │   ├── Scenarist_nl.ts
+│   │   │   ├── Scenarist_pl.qm
+│   │   │   ├── Scenarist_pl.ts
+│   │   │   ├── Scenarist_pt_br.qm
+│   │   │   ├── Scenarist_pt_br.ts
+│   │   │   ├── Scenarist_pt.qm
+│   │   │   ├── Scenarist_pt.ts
+│   │   │   ├── Scenarist_ru.qm
+│   │   │   ├── Scenarist_ru.ts
+│   │   │   ├── Scenarist_sl.qm
+│   │   │   ├── Scenarist_sl.ts
+│   │   │   ├── Scenarist_sr.qm
+│   │   │   ├── Scenarist_sr.ts
+│   │   │   ├── Scenarist_sv.qm
+│   │   │   ├── Scenarist_sv.ts
+│   │   │   ├── Scenarist_ta.ts
+│   │   │   ├── Scenarist_te.qm
+│   │   │   ├── Scenarist_te.ts
+│   │   │   ├── Scenarist_tr.qm
+│   │   │   ├── Scenarist_tr.ts
+│   │   │   ├── Scenarist_ua.qm
+│   │   │   ├── Scenarist_ua.ts
+│   │   │   ├── Scenarist_zn.qm
+│   │   │   └── Scenarist_zn.ts
+│   │   ├── Translations.qrc
+│   │   └── UI
+│   │       ├── checkbox-checked.png
+│   │       ├── checkbox-unchecked-dark.png
+│   │       ├── checkbox-unchecked.png
+│   │       ├── downarrow-dark.png
+│   │       ├── downarrow-disable.png
+│   │       ├── downarrow.png
+│   │       ├── leftarrow-dark.png
+│   │       ├── leftarrow.png
+│   │       ├── radiobutton-checked.png
+│   │       ├── radiobutton-unchecked-dark.png
+│   │       ├── radiobutton-unchecked.png
+│   │       ├── rightarrow-dark.png
+│   │       ├── rightarrow.png
+│   │       ├── style-android.qss
+│   │       ├── style-desktop-compact.qss
+│   │       ├── style-desktop-compact-rtl.qss
+│   │       ├── style-desktop.qss
+│   │       ├── style-desktop-rtl.qss
+│   │       ├── uparrow-dark.png
+│   │       ├── uparrow-disable.png
+│   │       └── uparrow.png
+│   └── UserInterfaceLayer
+│       ├── ProjectsList
+│       │   ├── ProjectFileWidget.cpp
+│       │   ├── ProjectFileWidget.h
+│       │   ├── ProjectFileWidget.ui
+│       │   ├── ProjectsList.cpp
+│       │   ├── ProjectsList.h
+│       │   ├── ProjectUserWidget.cpp
+│       │   ├── ProjectUserWidget.h
+│       │   └── ProjectUserWidget.ui
+│       ├── ScenarioNavigator
+│       │   ├── ScenarioNavigatorItemDelegate.cpp
+│       │   ├── ScenarioNavigatorItemDelegate.h
+│       │   ├── ScenarioNavigatorProxyStyle.cpp
+│       │   └── ScenarioNavigatorProxyStyle.h
+│       ├── ScenarioReview
+│       │   ├── ScenarioReviewItemDelegate.cpp
+│       │   └── ScenarioReviewItemDelegate.h
+│       ├── ScenarioTextEdit
+│       │   ├── Handlers
+│       │   │   ├── AbstractKeyHandler.cpp
+│       │   │   ├── AbstractKeyHandler.h
+│       │   │   ├── ActionHandler.cpp
+│       │   │   ├── ActionHandler.h
+│       │   │   ├── CharacterHandler.cpp
+│       │   │   ├── CharacterHandler.h
+│       │   │   ├── DialogHandler.cpp
+│       │   │   ├── DialogHandler.h
+│       │   │   ├── FolderFooterHandler.cpp
+│       │   │   ├── FolderFooterHandler.h
+│       │   │   ├── FolderHeaderHandler.cpp
+│       │   │   ├── FolderHeaderHandler.h
+│       │   │   ├── KeyPressHandlerFacade.cpp
+│       │   │   ├── KeyPressHandlerFacade.h
+│       │   │   ├── LyricsHandler.cpp
+│       │   │   ├── LyricsHandler.h
+│       │   │   ├── NoprintableTextHandler.cpp
+│       │   │   ├── NoprintableTextHandler.h
+│       │   │   ├── NoteHandler.cpp
+│       │   │   ├── NoteHandler.h
+│       │   │   ├── ParentheticalHandler.cpp
+│       │   │   ├── ParentheticalHandler.h
+│       │   │   ├── PreHandler.cpp
+│       │   │   ├── PreHandler.h
+│       │   │   ├── PrepareHandler.cpp
+│       │   │   ├── PrepareHandler.h
+│       │   │   ├── SceneCharactersHandler.cpp
+│       │   │   ├── SceneCharactersHandler.h
+│       │   │   ├── SceneDescriptionHandler.cpp
+│       │   │   ├── SceneDescriptionHandler.h
+│       │   │   ├── SceneHeadingHandler.cpp
+│       │   │   ├── SceneHeadingHandler.h
+│       │   │   ├── StandardKeyHandler.cpp
+│       │   │   ├── StandardKeyHandler.h
+│       │   │   ├── TitleHandler.cpp
+│       │   │   ├── TitleHandler.h
+│       │   │   ├── TitleHeaderHandler.h
+│       │   │   ├── TransitionHandler.cpp
+│       │   │   └── TransitionHandler.h
+│       │   ├── ScenarioLineEdit.cpp
+│       │   ├── ScenarioLineEdit.h
+│       │   ├── ScenarioTextEdit.cpp
+│       │   ├── ScenarioTextEdit.h
+│       │   ├── ScenarioTextEditHelpers.cpp
+│       │   ├── ScenarioTextEditHelpers.h
+│       │   ├── ScenarioTextEditPrivate.cpp
+│       │   └── ScenarioTextEditPrivate.h
+│       └── ScriptVersions
+│           ├── ScriptVersionsList.cpp
+│           ├── ScriptVersionsList.h
+│           ├── ScriptVersionWidget.cpp
+│           ├── ScriptVersionWidget.h
+│           └── ScriptVersionWidget.ui
+├── scenarist.appdata.xml -> /home/felix/packages/scenarist/scenarist.appdata.xml
+└── scenarist.mime.xml -> /home/felix/packages/scenarist/scenarist.mime.xml
+
+372 directories, 3140 files

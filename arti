@@ -1,0 +1,1692 @@
+src
+├── arti-1.3.0.tar.gz -> /home/felix/packages/arti/arti-1.3.0.tar.gz
+└── arti-arti-v1.3.0
+    ├── arti-corpora
+    ├── Cargo.lock
+    ├── Cargo.toml
+    ├── CHANGELOG.md
+    ├── clippy-nightly.toml
+    ├── clippy-nontest.toml
+    ├── clippy.toml
+    ├── CODE_OF_CONDUCT
+    ├── CONTRIBUTING.md
+    ├── crates
+    │   ├── arti
+    │   │   ├── build.rs
+    │   │   ├── Cargo.toml
+    │   │   ├── README.md
+    │   │   ├── src
+    │   │   │   ├── arti-example-config.toml
+    │   │   │   ├── cfg.rs
+    │   │   │   ├── dns.rs
+    │   │   │   ├── exit.rs
+    │   │   │   ├── lib.rs
+    │   │   │   ├── logging
+    │   │   │   │   └── time.rs
+    │   │   │   ├── logging.rs
+    │   │   │   ├── main.rs
+    │   │   │   ├── oldest-supported-config.toml
+    │   │   │   ├── onion_proxy_disabled.rs
+    │   │   │   ├── onion_proxy.rs
+    │   │   │   ├── process.rs
+    │   │   │   ├── reload_cfg.rs
+    │   │   │   ├── rpc
+    │   │   │   │   ├── conntarget.rs
+    │   │   │   │   ├── proxyinfo.rs
+    │   │   │   │   └── session.rs
+    │   │   │   ├── rpc.rs
+    │   │   │   ├── socks.rs
+    │   │   │   ├── subcommands
+    │   │   │   │   ├── hsc.rs
+    │   │   │   │   ├── hss.rs
+    │   │   │   │   └── proxy.rs
+    │   │   │   └── subcommands.rs
+    │   │   └── tests
+    │   │       ├── cli_tests.rs
+    │   │       ├── README.md
+    │   │       └── testcases
+    │   │           ├── hsc
+    │   │           │   ├── conf
+    │   │           │   │   └── hsc.toml
+    │   │           │   ├── get-key-error.stderr
+    │   │           │   ├── get-key-error.stdout
+    │   │           │   ├── get-key-error.toml
+    │   │           │   ├── help.stderr
+    │   │           │   ├── help.stdout
+    │   │           │   ├── help.toml
+    │   │           │   ├── hsc.in
+    │   │           │   │   ├── hsc.toml
+    │   │           │   │   └── local
+    │   │           │   │       ├── keystore
+    │   │           │   │       │   └── client
+    │   │           │   │       │       └── mnyizjj7m3hpcr7i5afph3zt7maa65johyu2ruis6z7cmnjmaj3h6tad
+    │   │           │   │       │           └── ks_hsc_desc_enc.x25519_private
+    │   │           │   │       └── state
+    │   │           │   │           ├── circuit_timeouts.json
+    │   │           │   │           ├── guards.json
+    │   │           │   │           └── state.lock
+    │   │           │   ├── hsc.md -> ../../../../../doc/hsc.md
+    │   │           │   ├── key_help.stderr
+    │   │           │   ├── key_help.stdout
+    │   │           │   └── key_help.toml
+    │   │           ├── hsc-feature-missing
+    │   │           │   ├── hsc.in
+    │   │           │   │   ├── hsc.toml
+    │   │           │   │   └── local
+    │   │           │   │       ├── keystore
+    │   │           │   │       │   └── client
+    │   │           │   │       │       └── mnyizjj7m3hpcr7i5afph3zt7maa65johyu2ruis6z7cmnjmaj3h6tad
+    │   │           │   │       │           └── ks_hsc_desc_enc.x25519_private
+    │   │           │   │       └── state
+    │   │           │   │           ├── circuit_timeouts.json
+    │   │           │   │           ├── guards.json
+    │   │           │   │           └── state.lock
+    │   │           │   └── hsc.md
+    │   │           ├── hss
+    │   │           │   ├── help.stderr
+    │   │           │   ├── help.stdout
+    │   │           │   ├── help.toml
+    │   │           │   ├── hss.in
+    │   │           │   │   ├── hss.toml
+    │   │           │   │   └── local
+    │   │           │   │       └── keystore
+    │   │           │   │           └── hss
+    │   │           │   │               └── acutus-cepa
+    │   │           │   │                   └── ks_hs_id.ed25519_expanded_private
+    │   │           │   └── hss.md
+    │   │           └── hss-feature-missing
+    │   │               ├── hss.in
+    │   │               │   ├── hss.toml
+    │   │               │   └── local
+    │   │               │       └── keystore
+    │   │               │           └── hss
+    │   │               │               └── acutus-cepa
+    │   │               │                   └── ks_hs_id.ed25519_expanded_private
+    │   │               └── hss.md
+    │   ├── arti-bench
+    │   │   ├── Cargo.toml
+    │   │   ├── README.md
+    │   │   └── src
+    │   │       └── main.rs
+    │   ├── arti-client
+    │   │   ├── Cargo.toml
+    │   │   ├── examples
+    │   │   │   ├── advanced_isolation.rs
+    │   │   │   ├── hook-tcp.rs
+    │   │   │   ├── lazy-init.rs
+    │   │   │   ├── one_hop_circuit.rs
+    │   │   │   ├── readme.rs
+    │   │   │   ├── readme-with-report.rs
+    │   │   │   └── snowflake.rs
+    │   │   ├── README.md
+    │   │   └── src
+    │   │       ├── address.rs
+    │   │       ├── builder.rs
+    │   │       ├── client.rs
+    │   │       ├── config.rs
+    │   │       ├── err
+    │   │       │   └── hint.rs
+    │   │       ├── err.rs
+    │   │       ├── lib.rs
+    │   │       ├── rpc.rs
+    │   │       ├── status.rs
+    │   │       └── util.rs
+    │   ├── arti-config
+    │   │   ├── Cargo.toml
+    │   │   ├── README.md
+    │   │   └── src
+    │   │       └── lib.rs
+    │   ├── arti-relay
+    │   │   ├── Cargo.toml
+    │   │   ├── README.md
+    │   │   └── src
+    │   │       ├── builder.rs
+    │   │       ├── config.rs
+    │   │       ├── err.rs
+    │   │       ├── main.rs
+    │   │       └── relay.rs
+    │   ├── arti-rpc-client-core
+    │   │   ├── arti-rpc-client-core.h
+    │   │   ├── Cargo.toml
+    │   │   ├── cbindgen.toml
+    │   │   ├── cbindgen.warnings
+    │   │   ├── README.md
+    │   │   └── src
+    │   │       ├── conn
+    │   │       │   ├── auth.rs
+    │   │       │   ├── connimpl.rs
+    │   │       │   └── stream.rs
+    │   │       ├── conn.rs
+    │   │       ├── ffi
+    │   │       │   ├── err.rs
+    │   │       │   └── util.rs
+    │   │       ├── ffi.rs
+    │   │       ├── lib.rs
+    │   │       ├── llconn.rs
+    │   │       ├── msgs
+    │   │       │   ├── request.rs
+    │   │       │   └── response.rs
+    │   │       ├── msgs.rs
+    │   │       └── util.rs
+    │   ├── arti-rpcserver
+    │   │   ├── Cargo.toml
+    │   │   ├── README.md
+    │   │   └── src
+    │   │       ├── cancel.rs
+    │   │       ├── codecs.rs
+    │   │       ├── connection
+    │   │       │   └── auth.rs
+    │   │       ├── connection.rs
+    │   │       ├── err.rs
+    │   │       ├── globalid.rs
+    │   │       ├── lib.rs
+    │   │       ├── mgr.rs
+    │   │       ├── msgs
+    │   │       │   └── invalid.rs
+    │   │       ├── msgs.rs
+    │   │       ├── objmap
+    │   │       │   └── methods.rs
+    │   │       ├── objmap.rs
+    │   │       ├── session.rs
+    │   │       └── stream.rs
+    │   ├── arti-testing
+    │   │   ├── Cargo.toml
+    │   │   ├── README.md
+    │   │   └── src
+    │   │       ├── config.rs
+    │   │       ├── dirfilter.rs
+    │   │       ├── main.rs
+    │   │       ├── rt
+    │   │       │   ├── badtcp.rs
+    │   │       │   └── count.rs
+    │   │       ├── rt.rs
+    │   │       └── traces.rs
+    │   ├── caret
+    │   │   ├── Cargo.toml
+    │   │   ├── README.md
+    │   │   ├── src
+    │   │   │   └── lib.rs
+    │   │   └── tests
+    │   │       └── example_int.rs
+    │   ├── equix
+    │   │   ├── bench
+    │   │   │   ├── benches
+    │   │   │   │   └── equix_bench.rs
+    │   │   │   ├── Cargo.lock
+    │   │   │   └── Cargo.toml
+    │   │   ├── Cargo.toml
+    │   │   ├── fuzz
+    │   │   │   ├── Cargo.toml
+    │   │   │   ├── corpus -> ../../../arti-corpora/equix/
+    │   │   │   └── fuzz_targets
+    │   │   │       └── buckets.rs
+    │   │   ├── GPL-3
+    │   │   ├── LGPL-3
+    │   │   ├── README.md
+    │   │   ├── src
+    │   │   │   ├── bucket_array
+    │   │   │   │   ├── hash.rs
+    │   │   │   │   └── mem.rs
+    │   │   │   ├── bucket_array.rs
+    │   │   │   ├── collision.rs
+    │   │   │   ├── err.rs
+    │   │   │   ├── lib.rs
+    │   │   │   ├── solution.rs
+    │   │   │   └── solver.rs
+    │   │   └── tests
+    │   │       ├── equix_hash.rs
+    │   │       ├── equix_verify.rs
+    │   │       └── tor_equix_vectors.rs
+    │   ├── fslock-guard
+    │   │   ├── Cargo.toml
+    │   │   ├── README.md
+    │   │   └── src
+    │   │       └── lib.rs
+    │   ├── fs-mistrust
+    │   │   ├── Cargo.toml
+    │   │   ├── README.md
+    │   │   └── src
+    │   │       ├── anon_home.rs
+    │   │       ├── dir.rs
+    │   │       ├── disable.rs
+    │   │       ├── err.rs
+    │   │       ├── imp.rs
+    │   │       ├── lib.rs
+    │   │       ├── testing.rs
+    │   │       ├── user
+    │   │       │   └── serde_support.rs
+    │   │       ├── user.rs
+    │   │       └── walk.rs
+    │   ├── hashx
+    │   │   ├── bench
+    │   │   │   ├── benches
+    │   │   │   │   ├── hashx_bench.rs
+    │   │   │   │   └── hashx_cachegrind.rs
+    │   │   │   ├── Cargo.lock
+    │   │   │   └── Cargo.toml
+    │   │   ├── Cargo.toml
+    │   │   ├── fuzz
+    │   │   │   ├── Cargo.toml
+    │   │   │   ├── corpus -> ../../../arti-corpora/hashx/
+    │   │   │   └── fuzz_targets
+    │   │   │       └── rng.rs
+    │   │   ├── GPL-3
+    │   │   ├── LGPL-3
+    │   │   ├── README.md
+    │   │   ├── src
+    │   │   │   ├── compiler
+    │   │   │   │   ├── aarch64.rs
+    │   │   │   │   ├── util.rs
+    │   │   │   │   └── x86_64.rs
+    │   │   │   ├── compiler.rs
+    │   │   │   ├── constraints.rs
+    │   │   │   ├── err.rs
+    │   │   │   ├── generator.rs
+    │   │   │   ├── lib.rs
+    │   │   │   ├── program.rs
+    │   │   │   ├── rand.rs
+    │   │   │   ├── register.rs
+    │   │   │   ├── scheduler.rs
+    │   │   │   └── siphash.rs
+    │   │   └── tests
+    │   │       ├── hashx_gen.rs
+    │   │       └── hashx_vectors.rs
+    │   ├── oneshot-fused-workaround
+    │   │   ├── Cargo.toml
+    │   │   ├── README.md
+    │   │   └── src
+    │   │       └── lib.rs
+    │   ├── retry-error
+    │   │   ├── Cargo.toml
+    │   │   ├── README.md
+    │   │   └── src
+    │   │       └── lib.rs
+    │   ├── safelog
+    │   │   ├── Cargo.toml
+    │   │   ├── README.md
+    │   │   ├── semver.md
+    │   │   └── src
+    │   │       ├── err.rs
+    │   │       ├── flags.rs
+    │   │       ├── impls.rs
+    │   │       └── lib.rs
+    │   ├── slotmap-careful
+    │   │   ├── Cargo.toml
+    │   │   ├── README.md
+    │   │   └── src
+    │   │       ├── key_data.rs
+    │   │       └── lib.rs
+    │   ├── test-temp-dir
+    │   │   ├── Cargo.toml
+    │   │   ├── README.md
+    │   │   └── src
+    │   │       └── lib.rs
+    │   ├── tor-async-utils
+    │   │   ├── Cargo.toml
+    │   │   ├── README.md
+    │   │   └── src
+    │   │       ├── join_read_write.rs
+    │   │       ├── lib.rs
+    │   │       ├── peekable_stream.rs
+    │   │       ├── prepare_send.rs
+    │   │       ├── sink_close_channel.rs
+    │   │       ├── sinkext.rs
+    │   │       ├── sink_try_send.rs
+    │   │       ├── stream_peek.rs
+    │   │       └── watch.rs
+    │   ├── tor-basic-utils
+    │   │   ├── Cargo.toml
+    │   │   ├── README.md
+    │   │   └── src
+    │   │       ├── byte_qty.rs
+    │   │       ├── iter.rs
+    │   │       ├── lib.rs
+    │   │       ├── n_key_list.rs
+    │   │       ├── n_key_set.rs
+    │   │       ├── rangebounds.rs
+    │   │       ├── retry.rs
+    │   │       └── test_rng.rs
+    │   ├── tor-bytes
+    │   │   ├── Cargo.toml
+    │   │   ├── fuzz
+    │   │   │   ├── Cargo.toml
+    │   │   │   ├── corpus -> ../../../arti-corpora/tor-bytes/
+    │   │   │   └── fuzz_targets
+    │   │   │       └── reading.rs
+    │   │   ├── README.md
+    │   │   ├── semver.md
+    │   │   └── src
+    │   │       ├── err.rs
+    │   │       ├── impls.rs
+    │   │       ├── lib.rs
+    │   │       ├── reader.rs
+    │   │       ├── secretbuf.rs
+    │   │       └── writer.rs
+    │   ├── tor-cell
+    │   │   ├── Cargo.toml
+    │   │   ├── fuzz
+    │   │   │   ├── Cargo.toml
+    │   │   │   ├── corpus -> ../../../arti-corpora/tor-cell
+    │   │   │   └── fuzz_targets
+    │   │   │       ├── chanmsg.rs
+    │   │   │       └── relaymsg.rs
+    │   │   ├── README.md
+    │   │   ├── src
+    │   │   │   ├── chancell
+    │   │   │   │   ├── codec.rs
+    │   │   │   │   └── msg.rs
+    │   │   │   ├── chancell.rs
+    │   │   │   ├── err.rs
+    │   │   │   ├── lib.rs
+    │   │   │   ├── relaycell
+    │   │   │   │   ├── extend.rs
+    │   │   │   │   ├── hs
+    │   │   │   │   │   ├── est_intro.rs
+    │   │   │   │   │   ├── ext.rs
+    │   │   │   │   │   ├── intro_payload.rs
+    │   │   │   │   │   ├── pow
+    │   │   │   │   │   │   ├── v1.rs
+    │   │   │   │   │   │   └── v1_stub.rs
+    │   │   │   │   │   └── pow.rs
+    │   │   │   │   ├── hs.rs
+    │   │   │   │   ├── msg.rs
+    │   │   │   │   └── udp.rs
+    │   │   │   ├── relaycell.rs
+    │   │   │   ├── restrict.rs
+    │   │   │   └── slicewriter.rs
+    │   │   └── tests
+    │   │       ├── test_chancell.rs
+    │   │       ├── test_relaycell.rs
+    │   │       ├── testvec_chanmsg.rs
+    │   │       └── testvec_relaymsg.rs
+    │   ├── tor-cert
+    │   │   ├── Cargo.toml
+    │   │   ├── fuzz
+    │   │   │   ├── Cargo.toml
+    │   │   │   ├── corpus -> ../../../arti-corpora/tor-cert
+    │   │   │   └── fuzz_targets
+    │   │   │       ├── cert.rs
+    │   │   │       └── rsacert.rs
+    │   │   ├── README.md
+    │   │   ├── src
+    │   │   │   ├── encode.rs
+    │   │   │   ├── err.rs
+    │   │   │   ├── lib.rs
+    │   │   │   └── rsa.rs
+    │   │   └── tests
+    │   │       ├── invalid_certs.rs
+    │   │       └── testvec_certs.rs
+    │   ├── tor-chanmgr
+    │   │   ├── Cargo.toml
+    │   │   ├── README.md
+    │   │   └── src
+    │   │       ├── builder.rs
+    │   │       ├── config.rs
+    │   │       ├── err.rs
+    │   │       ├── event.rs
+    │   │       ├── factory.rs
+    │   │       ├── lib.rs
+    │   │       ├── mgr
+    │   │       │   ├── select.rs
+    │   │       │   ├── state
+    │   │       │   │   └── padding_test.rs
+    │   │       │   └── state.rs
+    │   │       ├── mgr.rs
+    │   │       ├── testing.rs
+    │   │       ├── transport
+    │   │       │   ├── default.rs
+    │   │       │   └── proxied.rs
+    │   │       └── transport.rs
+    │   ├── tor-checkable
+    │   │   ├── Cargo.toml
+    │   │   ├── README.md
+    │   │   └── src
+    │   │       ├── lib.rs
+    │   │       ├── signed.rs
+    │   │       └── timed.rs
+    │   ├── tor-circmgr
+    │   │   ├── Cargo.toml
+    │   │   ├── README.md
+    │   │   ├── semver.md
+    │   │   └── src
+    │   │       ├── build
+    │   │       │   └── guardstatus.rs
+    │   │       ├── build.rs
+    │   │       ├── config.rs
+    │   │       ├── err.rs
+    │   │       ├── hspool
+    │   │       │   ├── config.rs
+    │   │       │   └── pool.rs
+    │   │       ├── hspool.rs
+    │   │       ├── impls.rs
+    │   │       ├── isolation.rs
+    │   │       ├── lib.rs
+    │   │       ├── mgr
+    │   │       │   └── streams.rs
+    │   │       ├── mgr.rs
+    │   │       ├── mocks.rs
+    │   │       ├── path
+    │   │       │   ├── dirpath.rs
+    │   │       │   ├── exitpath.rs
+    │   │       │   ├── hspath
+    │   │       │   │   └── vanguards.rs
+    │   │       │   └── hspath.rs
+    │   │       ├── path.rs
+    │   │       ├── preemptive.rs
+    │   │       ├── timeouts
+    │   │       │   ├── estimator.rs
+    │   │       │   ├── pareto.rs
+    │   │       │   └── readonly.rs
+    │   │       ├── timeouts.rs
+    │   │       └── usage.rs
+    │   ├── tor-config
+    │   │   ├── Cargo.toml
+    │   │   ├── README.md
+    │   │   └── src
+    │   │       ├── cmdline.rs
+    │   │       ├── err.rs
+    │   │       ├── file_watcher.rs
+    │   │       ├── flatten.rs
+    │   │       ├── lib.rs
+    │   │       ├── list_builder.rs
+    │   │       ├── listen.rs
+    │   │       ├── load.rs
+    │   │       ├── misc.rs
+    │   │       ├── mistrust.rs
+    │   │       ├── mut_cfg.rs
+    │   │       ├── sources.rs
+    │   │       └── testing.rs
+    │   ├── tor-config-path
+    │   │   ├── Cargo.toml
+    │   │   ├── README.md
+    │   │   └── src
+    │   │       └── lib.rs
+    │   ├── tor-congestion
+    │   │   ├── Cargo.toml
+    │   │   ├── README.md
+    │   │   └── src
+    │   │       ├── err.rs
+    │   │       ├── lib.rs
+    │   │       └── rtt.rs
+    │   ├── tor-consdiff
+    │   │   ├── Cargo.toml
+    │   │   ├── fuzz
+    │   │   │   ├── Cargo.toml
+    │   │   │   ├── corpus -> ../../../arti-corpora/tor-consdiff
+    │   │   │   └── fuzz_targets
+    │   │   │       └── compare_diffs.rs
+    │   │   ├── README.md
+    │   │   ├── src
+    │   │   │   ├── err.rs
+    │   │   │   └── lib.rs
+    │   │   ├── testdata
+    │   │   │   ├── consensus1.txt
+    │   │   │   ├── consensus2.txt
+    │   │   │   └── diff1.txt
+    │   │   └── tests
+    │   │       └── testvec.rs
+    │   ├── tor-dirclient
+    │   │   ├── Cargo.toml
+    │   │   ├── README.md
+    │   │   └── src
+    │   │       ├── err.rs
+    │   │       ├── lib.rs
+    │   │       ├── request.rs
+    │   │       ├── response.rs
+    │   │       └── util.rs
+    │   ├── tor-dirmgr
+    │   │   ├── Cargo.toml
+    │   │   ├── README.md
+    │   │   ├── src
+    │   │   │   ├── authority.rs
+    │   │   │   ├── bootstrap.rs
+    │   │   │   ├── bridgedesc
+    │   │   │   │   └── bdtest.rs
+    │   │   │   ├── bridgedesc.rs
+    │   │   │   ├── config.rs
+    │   │   │   ├── docid.rs
+    │   │   │   ├── docmeta.rs
+    │   │   │   ├── err.rs
+    │   │   │   ├── event.rs
+    │   │   │   ├── filter.rs
+    │   │   │   ├── lib.rs
+    │   │   │   ├── retry.rs
+    │   │   │   ├── shared_ref.rs
+    │   │   │   ├── state.rs
+    │   │   │   ├── storage
+    │   │   │   │   └── sqlite.rs
+    │   │   │   └── storage.rs
+    │   │   └── testdata
+    │   │       ├── cert-5696.txt
+    │   │       ├── cert-5A23.txt
+    │   │       ├── cert-7C47.txt
+    │   │       ├── mdconsensus1.txt
+    │   │       ├── mdconsensus2.txt
+    │   │       ├── microdescs.txt
+    │   │       └── routerdesc1.txt
+    │   ├── tor-error
+    │   │   ├── Cargo.toml
+    │   │   ├── README.md
+    │   │   ├── semver.md
+    │   │   └── src
+    │   │       ├── internal.rs
+    │   │       ├── lib.rs
+    │   │       ├── misc.rs
+    │   │       ├── report.rs
+    │   │       ├── retriable.rs
+    │   │       └── tracing.rs
+    │   ├── tor-events
+    │   │   ├── Cargo.toml
+    │   │   ├── README.md
+    │   │   └── src
+    │   │       ├── events.rs
+    │   │       └── lib.rs
+    │   ├── tor-general-addr
+    │   │   ├── Cargo.toml
+    │   │   ├── fuzz
+    │   │   │   ├── Cargo.toml
+    │   │   │   └── fuzz_targets
+    │   │   │       ├── general_addr.rs
+    │   │   │       └── roundtrip_addr.rs
+    │   │   ├── README.md
+    │   │   └── src
+    │   │       ├── general.rs
+    │   │       ├── lib.rs
+    │   │       └── unix.rs
+    │   ├── tor-geoip
+    │   │   ├── Cargo.toml
+    │   │   ├── data
+    │   │   │   ├── geoip
+    │   │   │   └── geoip6
+    │   │   ├── README.md
+    │   │   └── src
+    │   │       ├── err.rs
+    │   │       └── lib.rs
+    │   ├── tor-guardmgr
+    │   │   ├── Cargo.toml
+    │   │   ├── data
+    │   │   │   └── fallback_dirs.rs
+    │   │   ├── README.md
+    │   │   ├── src
+    │   │   │   ├── bridge
+    │   │   │   │   ├── config
+    │   │   │   │   │   └── err.rs
+    │   │   │   │   ├── config.rs
+    │   │   │   │   ├── descs.rs
+    │   │   │   │   └── relay.rs
+    │   │   │   ├── bridge_disabled.rs
+    │   │   │   ├── bridge.rs
+    │   │   │   ├── config.rs
+    │   │   │   ├── daemon.rs
+    │   │   │   ├── dirstatus.rs
+    │   │   │   ├── err.rs
+    │   │   │   ├── events.rs
+    │   │   │   ├── fallback
+    │   │   │   │   └── set.rs
+    │   │   │   ├── fallback.rs
+    │   │   │   ├── filter.rs
+    │   │   │   ├── guard.rs
+    │   │   │   ├── ids.rs
+    │   │   │   ├── lib.rs
+    │   │   │   ├── pending.rs
+    │   │   │   ├── sample
+    │   │   │   │   └── candidate.rs
+    │   │   │   ├── sample.rs
+    │   │   │   ├── skew.rs
+    │   │   │   ├── util.rs
+    │   │   │   ├── vanguards
+    │   │   │   │   ├── config.rs
+    │   │   │   │   ├── err.rs
+    │   │   │   │   └── set.rs
+    │   │   │   └── vanguards.rs
+    │   │   └── testdata
+    │   │       ├── vanguards_invalid.json
+    │   │       └── vanguards.json
+    │   ├── tor-hsclient
+    │   │   ├── Cargo.toml
+    │   │   ├── README.md
+    │   │   └── src
+    │   │       ├── connect.rs
+    │   │       ├── err.rs
+    │   │       ├── isol_map.rs
+    │   │       ├── keys.rs
+    │   │       ├── lib.rs
+    │   │       ├── pow
+    │   │       │   ├── v1.rs
+    │   │       │   └── v1_stub.rs
+    │   │       ├── pow.rs
+    │   │       ├── proto_oneshot.rs
+    │   │       ├── relay_info.rs
+    │   │       └── state.rs
+    │   ├── tor-hscrypto
+    │   │   ├── Cargo.toml
+    │   │   ├── README.md
+    │   │   ├── src
+    │   │   │   ├── lib.rs
+    │   │   │   ├── macros.rs
+    │   │   │   ├── ope.rs
+    │   │   │   ├── ops.rs
+    │   │   │   ├── pk.rs
+    │   │   │   ├── pow
+    │   │   │   │   ├── err.rs
+    │   │   │   │   ├── v1
+    │   │   │   │   │   ├── challenge.rs
+    │   │   │   │   │   ├── err.rs
+    │   │   │   │   │   ├── solve.rs
+    │   │   │   │   │   ├── types.rs
+    │   │   │   │   │   └── verify.rs
+    │   │   │   │   ├── v1.rs
+    │   │   │   │   └── v1_stub.rs
+    │   │   │   ├── pow.rs
+    │   │   │   └── time.rs
+    │   │   └── tests
+    │   │       └── pow_v1_vectors.rs
+    │   ├── tor-hsrproxy
+    │   │   ├── Cargo.toml
+    │   │   ├── README.md
+    │   │   └── src
+    │   │       ├── config.rs
+    │   │       ├── lib.rs
+    │   │       └── proxy.rs
+    │   ├── tor-hsservice
+    │   │   ├── Cargo.toml
+    │   │   ├── README.md
+    │   │   └── src
+    │   │       ├── anon_level.rs
+    │   │       ├── config
+    │   │       │   ├── restricted_discovery
+    │   │       │   │   └── key_provider.rs
+    │   │       │   └── restricted_discovery.rs
+    │   │       ├── config.rs
+    │   │       ├── err.rs
+    │   │       ├── helpers.rs
+    │   │       ├── internal_prelude.rs
+    │   │       ├── ipt_establish.rs
+    │   │       ├── ipt_lid.rs
+    │   │       ├── ipt_mgr
+    │   │       │   └── persist.rs
+    │   │       ├── ipt_mgr.rs
+    │   │       ├── ipt_set.rs
+    │   │       ├── keys.rs
+    │   │       ├── lib.rs
+    │   │       ├── netdir.rs
+    │   │       ├── publish
+    │   │       │   ├── backoff.rs
+    │   │       │   ├── descriptor.rs
+    │   │       │   ├── reactor.rs
+    │   │       │   └── reupload_timer.rs
+    │   │       ├── publish.rs
+    │   │       ├── rend_handshake.rs
+    │   │       ├── replay.rs
+    │   │       ├── req.rs
+    │   │       ├── state_dir.md
+    │   │       ├── status.rs
+    │   │       ├── timeout_track.rs
+    │   │       └── time_store.rs
+    │   ├── tor-key-forge
+    │   │   ├── Cargo.toml
+    │   │   ├── README.md
+    │   │   └── src
+    │   │       ├── err.rs
+    │   │       ├── key_type.rs
+    │   │       ├── lib.rs
+    │   │       ├── macros.rs
+    │   │       ├── ssh.rs
+    │   │       └── traits.rs
+    │   ├── tor-keymgr
+    │   │   ├── Cargo.toml
+    │   │   ├── README.md
+    │   │   ├── semver.md
+    │   │   ├── src
+    │   │   │   ├── arti_path.rs
+    │   │   │   ├── config.rs
+    │   │   │   ├── dummy.rs
+    │   │   │   ├── err.rs
+    │   │   │   ├── key_specifier
+    │   │   │   │   └── derive.rs
+    │   │   │   ├── key_specifier.rs
+    │   │   │   ├── keystore
+    │   │   │   │   ├── arti
+    │   │   │   │   │   ├── err.rs
+    │   │   │   │   │   └── ssh.rs
+    │   │   │   │   ├── arti.rs
+    │   │   │   │   ├── ctor
+    │   │   │   │   │   ├── client.rs
+    │   │   │   │   │   ├── err.rs
+    │   │   │   │   │   └── service.rs
+    │   │   │   │   ├── ctor.rs
+    │   │   │   │   ├── ephemeral
+    │   │   │   │   │   └── err.rs
+    │   │   │   │   ├── ephemeral.rs
+    │   │   │   │   └── fs_utils.rs
+    │   │   │   ├── keystore.rs
+    │   │   │   ├── lib.rs
+    │   │   │   ├── mgr.rs
+    │   │   │   └── test_utils.rs
+    │   │   └── testdata
+    │   │       ├── alice.auth_private
+    │   │       ├── bob.auth_private
+    │   │       ├── carol.auth_private
+    │   │       ├── dan.auth_private
+    │   │       ├── dsa_openssh.private
+    │   │       ├── ed25519_expanded_openssh_bad.private
+    │   │       ├── ed25519_expanded_openssh.private
+    │   │       ├── ed25519_expanded_openssh.public
+    │   │       ├── ed25519_openssh_bad.private
+    │   │       ├── ed25519_openssh_bad.public
+    │   │       ├── ed25519_openssh.private
+    │   │       ├── ed25519_openssh.public
+    │   │       ├── tor-service
+    │   │       │   ├── hostname
+    │   │       │   ├── hs_ed25519_public_key
+    │   │       │   └── hs_ed25519_secret_key
+    │   │       ├── x25519_openssh.private
+    │   │       ├── x25519_openssh.public
+    │   │       ├── x25519_openssh_unknown_algorithm.private
+    │   │       └── x25519_openssh_unknown_algorithm.public
+    │   ├── tor-linkspec
+    │   │   ├── Cargo.toml
+    │   │   ├── README.md
+    │   │   └── src
+    │   │       ├── decode.rs
+    │   │       ├── ids
+    │   │       │   ├── by_id.rs
+    │   │       │   └── set.rs
+    │   │       ├── ids.rs
+    │   │       ├── lib.rs
+    │   │       ├── ls.rs
+    │   │       ├── owned.rs
+    │   │       ├── traits.rs
+    │   │       ├── transport.rs
+    │   │       └── verbatim.rs
+    │   ├── tor-llcrypto
+    │   │   ├── Cargo.toml
+    │   │   ├── fuzz
+    │   │   │   ├── Cargo.toml
+    │   │   │   ├── corpus -> ../../../arti-corpora/tor-llcrypto/
+    │   │   │   └── fuzz_targets
+    │   │   │       └── x509_rsa_kludge.rs
+    │   │   ├── README.md
+    │   │   ├── src
+    │   │   │   ├── cipher.rs
+    │   │   │   ├── d.rs
+    │   │   │   ├── lib.rs
+    │   │   │   ├── pk
+    │   │   │   │   ├── ed25519.rs
+    │   │   │   │   ├── keymanip.rs
+    │   │   │   │   └── rsa.rs
+    │   │   │   ├── pk.rs
+    │   │   │   ├── traits.rs
+    │   │   │   ├── util
+    │   │   │   │   └── ct.rs
+    │   │   │   └── util.rs
+    │   │   ├── testdata
+    │   │   │   ├── tor.der
+    │   │   │   └── tpo.der
+    │   │   └── tests
+    │   │       ├── misc.rs
+    │   │       └── testvec.rs
+    │   ├── tor-log-ratelim
+    │   │   ├── Cargo.toml
+    │   │   ├── README.md
+    │   │   └── src
+    │   │       ├── lib.rs
+    │   │       ├── logstate.rs
+    │   │       ├── macros.rs
+    │   │       └── ratelim.rs
+    │   ├── tor-memquota
+    │   │   ├── Cargo.toml
+    │   │   ├── README.md
+    │   │   └── src
+    │   │       ├── config.rs
+    │   │       ├── drop_bomb.rs
+    │   │       ├── drop_reentrancy.rs
+    │   │       ├── error.rs
+    │   │       ├── if_enabled.rs
+    │   │       ├── internal_prelude.rs
+    │   │       ├── lib.rs
+    │   │       ├── memory_cost_derive.rs
+    │   │       ├── memory_cost.rs
+    │   │       ├── mq_queue.rs
+    │   │       ├── mtracker
+    │   │       │   ├── bookkeeping.rs
+    │   │       │   ├── reclaim
+    │   │       │   │   └── deferred_drop.rs
+    │   │       │   ├── reclaim.rs
+    │   │       │   ├── test.rs
+    │   │       │   └── total_qty_notifier.rs
+    │   │       ├── mtracker.rs
+    │   │       ├── refcount.rs
+    │   │       └── utils.rs
+    │   ├── tor-netdir
+    │   │   ├── Cargo.toml
+    │   │   ├── README.md
+    │   │   └── src
+    │   │       ├── details.rs
+    │   │       ├── err.rs
+    │   │       ├── hsdir_params.rs
+    │   │       ├── hsdir_ring.rs
+    │   │       ├── lib.rs
+    │   │       ├── params.rs
+    │   │       ├── testnet.rs
+    │   │       ├── testprovider.rs
+    │   │       └── weight.rs
+    │   ├── tor-netdoc
+    │   │   ├── Cargo.toml
+    │   │   ├── fuzz
+    │   │   │   ├── Cargo.toml
+    │   │   │   ├── corpus -> ../../../arti-corpora/tor-netdoc/
+    │   │   │   └── fuzz_targets
+    │   │   │       ├── authcert.rs
+    │   │   │       ├── consensus.rs
+    │   │   │       ├── hsdesc.rs
+    │   │   │       ├── mds.rs
+    │   │   │       ├── nsconsensus.rs
+    │   │   │       └── routers.rs
+    │   │   ├── README.md
+    │   │   ├── src
+    │   │   │   ├── build.rs
+    │   │   │   ├── doc
+    │   │   │   │   ├── authcert
+    │   │   │   │   │   └── build.rs
+    │   │   │   │   ├── authcert.rs
+    │   │   │   │   ├── hsdesc
+    │   │   │   │   │   ├── build
+    │   │   │   │   │   │   ├── inner.rs
+    │   │   │   │   │   │   ├── middle.rs
+    │   │   │   │   │   │   └── outer.rs
+    │   │   │   │   │   ├── build.rs
+    │   │   │   │   │   ├── desc_enc.rs
+    │   │   │   │   │   ├── inner.rs
+    │   │   │   │   │   ├── middle.rs
+    │   │   │   │   │   ├── outer.rs
+    │   │   │   │   │   ├── pow
+    │   │   │   │   │   │   ├── v1.rs
+    │   │   │   │   │   │   └── v1_stub.rs
+    │   │   │   │   │   └── pow.rs
+    │   │   │   │   ├── hsdesc.rs
+    │   │   │   │   ├── microdesc
+    │   │   │   │   │   └── build.rs
+    │   │   │   │   ├── microdesc.rs
+    │   │   │   │   ├── netstatus
+    │   │   │   │   │   ├── build.rs
+    │   │   │   │   │   ├── rs
+    │   │   │   │   │   │   ├── build.rs
+    │   │   │   │   │   │   ├── md.rs
+    │   │   │   │   │   │   └── ns.rs
+    │   │   │   │   │   └── rs.rs
+    │   │   │   │   ├── netstatus.rs
+    │   │   │   │   └── routerdesc.rs
+    │   │   │   ├── doc.rs
+    │   │   │   ├── err.rs
+    │   │   │   ├── lib.rs
+    │   │   │   ├── parse
+    │   │   │   │   ├── keyword.rs
+    │   │   │   │   ├── macros.rs
+    │   │   │   │   ├── parser.rs
+    │   │   │   │   ├── rules.rs
+    │   │   │   │   └── tokenize.rs
+    │   │   │   ├── parse.rs
+    │   │   │   ├── types
+    │   │   │   │   ├── family.rs
+    │   │   │   │   ├── misc.rs
+    │   │   │   │   ├── policy
+    │   │   │   │   │   ├── addrpolicy.rs
+    │   │   │   │   │   └── portpolicy.rs
+    │   │   │   │   ├── policy.rs
+    │   │   │   │   └── version.rs
+    │   │   │   ├── types.rs
+    │   │   │   ├── util
+    │   │   │   │   ├── batching_split_before.rs
+    │   │   │   │   ├── intern.rs
+    │   │   │   │   └── str.rs
+    │   │   │   └── util.rs
+    │   │   └── testdata
+    │   │       ├── authcert1.txt
+    │   │       ├── authcerts2.txt
+    │   │       ├── authcerts3.txt
+    │   │       ├── bad-certs
+    │   │       │   ├── bad-cc-tag
+    │   │       │   ├── bad-fingerprint
+    │   │       │   ├── bad-version
+    │   │       │   ├── wrong-end
+    │   │       │   └── wrong-start
+    │   │       ├── bad-mdconsensus
+    │   │       │   ├── bad-flags
+    │   │       │   ├── bad-md-digest
+    │   │       │   ├── bad-params
+    │   │       │   ├── bad-weight
+    │   │       │   ├── bad-weights
+    │   │       │   ├── wrong-order
+    │   │       │   ├── wrong-start
+    │   │       │   └── wrong-version
+    │   │       ├── bad-mds
+    │   │       │   ├── bogus-policy
+    │   │       │   ├── wrong-id
+    │   │       │   └── wrong-start
+    │   │       ├── bad-routerdesc
+    │   │       │   ├── bad-cc-sign
+    │   │       │   ├── bad-ed-sk-in-cert
+    │   │       │   ├── bad-ipv6policy
+    │   │       │   ├── bad-sig-order
+    │   │       │   ├── bad-start1
+    │   │       │   ├── bad-start2
+    │   │       │   ├── mismatched-ed-sk-in-cert
+    │   │       │   ├── mismatched-fp
+    │   │       │   ├── no-ed-id-key-in-cert
+    │   │       │   ├── no-ed-sk
+    │   │       │   └── non-ed-sk-in-cert
+    │   │       ├── hsdesc1.txt
+    │   │       ├── hsdesc2.txt
+    │   │       ├── hsdesc-inner-pow-empty.txt
+    │   │       ├── hsdesc-inner-pow-v1.txt
+    │   │       ├── hsdesc-inner.txt
+    │   │       ├── mdconsensus1.txt
+    │   │       ├── microdesc1.txt
+    │   │       ├── microdesc2.txt
+    │   │       ├── microdesc3.txt
+    │   │       ├── nsconsensus1.txt
+    │   │       ├── routerdesc1.txt
+    │   │       └── routerdesc2.txt
+    │   ├── tor-persist
+    │   │   ├── Cargo.toml
+    │   │   ├── README.md
+    │   │   └── src
+    │   │       ├── err.rs
+    │   │       ├── fs
+    │   │       │   └── clean.rs
+    │   │       ├── fs_mistrust_error_ext.rs
+    │   │       ├── fs.rs
+    │   │       ├── handle.rs
+    │   │       ├── hsnickname.rs
+    │   │       ├── lib.rs
+    │   │       ├── load_store.rs
+    │   │       ├── slug.rs
+    │   │       ├── state_dir.rs
+    │   │       └── testing.rs
+    │   ├── tor-proto
+    │   │   ├── Cargo.toml
+    │   │   ├── README.md
+    │   │   ├── src
+    │   │   │   ├── channel
+    │   │   │   │   ├── circmap.rs
+    │   │   │   │   ├── codec.rs
+    │   │   │   │   ├── handshake.rs
+    │   │   │   │   ├── padding.rs
+    │   │   │   │   ├── params.rs
+    │   │   │   │   ├── reactor.rs
+    │   │   │   │   └── unique_id.rs
+    │   │   │   ├── channel.rs
+    │   │   │   ├── circuit
+    │   │   │   │   ├── celltypes.rs
+    │   │   │   │   ├── halfcirc.rs
+    │   │   │   │   ├── halfstream.rs
+    │   │   │   │   ├── handshake.rs
+    │   │   │   │   ├── msghandler.rs
+    │   │   │   │   ├── path.rs
+    │   │   │   │   ├── reactor
+    │   │   │   │   │   └── syncview.rs
+    │   │   │   │   ├── reactor.rs
+    │   │   │   │   ├── sendme.rs
+    │   │   │   │   ├── streammap.rs
+    │   │   │   │   └── unique_id.rs
+    │   │   │   ├── circuit.rs
+    │   │   │   ├── crypto
+    │   │   │   │   ├── binding.rs
+    │   │   │   │   ├── cell.rs
+    │   │   │   │   ├── handshake
+    │   │   │   │   │   ├── fast.rs
+    │   │   │   │   │   ├── hs_ntor.rs
+    │   │   │   │   │   ├── ntor.rs
+    │   │   │   │   │   └── ntor_v3.rs
+    │   │   │   │   ├── handshake.rs
+    │   │   │   │   ├── ll
+    │   │   │   │   │   └── kdf.rs
+    │   │   │   │   ├── ll.rs
+    │   │   │   │   └── testing.rs
+    │   │   │   ├── crypto.rs
+    │   │   │   ├── lib.rs
+    │   │   │   ├── memquota.rs
+    │   │   │   ├── stream
+    │   │   │   │   ├── cmdcheck.rs
+    │   │   │   │   ├── ctrl.rs
+    │   │   │   │   ├── data.rs
+    │   │   │   │   ├── flow_control.rs
+    │   │   │   │   ├── incoming.rs
+    │   │   │   │   ├── params.rs
+    │   │   │   │   ├── raw.rs
+    │   │   │   │   └── resolve.rs
+    │   │   │   ├── stream.rs
+    │   │   │   ├── util
+    │   │   │   │   ├── ct.rs
+    │   │   │   │   ├── err.rs
+    │   │   │   │   ├── keyed_futures_unordered.rs
+    │   │   │   │   ├── skew.rs
+    │   │   │   │   ├── sometimes_unbounded_sink.rs
+    │   │   │   │   ├── stream_poll_set.rs
+    │   │   │   │   └── ts.rs
+    │   │   │   └── util.rs
+    │   │   └── testdata
+    │   │       └── cell_crypt.rs
+    │   ├── tor-protover
+    │   │   ├── Cargo.toml
+    │   │   ├── README.md
+    │   │   └── src
+    │   │       └── lib.rs
+    │   ├── tor-ptmgr
+    │   │   ├── Cargo.toml
+    │   │   ├── examples
+    │   │   │   └── run-pt.rs
+    │   │   ├── fuzz
+    │   │   │   ├── Cargo.toml
+    │   │   │   └── fuzz_targets
+    │   │   │       └── ptmessage.rs
+    │   │   ├── README.md
+    │   │   └── src
+    │   │       ├── config.rs
+    │   │       ├── err.rs
+    │   │       ├── ipc.rs
+    │   │       ├── lib.rs
+    │   │       └── managed.rs
+    │   ├── tor-relay-crypto
+    │   │   ├── Cargo.toml
+    │   │   ├── README.md
+    │   │   └── src
+    │   │       ├── certs.rs
+    │   │       ├── lib.rs
+    │   │       └── pk.rs
+    │   ├── tor-relay-selection
+    │   │   ├── Cargo.toml
+    │   │   ├── README.md
+    │   │   └── src
+    │   │       ├── config.rs
+    │   │       ├── lib.rs
+    │   │       ├── restriction.rs
+    │   │       ├── selector.rs
+    │   │       ├── target_port.rs
+    │   │       └── usage.rs
+    │   ├── tor-rpcbase
+    │   │   ├── Cargo.toml
+    │   │   ├── README.md
+    │   │   └── src
+    │   │       ├── dispatch
+    │   │       │   └── description.rs
+    │   │       ├── dispatch.rs
+    │   │       ├── err.rs
+    │   │       ├── lib.rs
+    │   │       ├── method.rs
+    │   │       ├── obj
+    │   │       │   └── cast.rs
+    │   │       └── obj.rs
+    │   ├── tor-rtcompat
+    │   │   ├── Cargo.toml
+    │   │   ├── misc
+    │   │   │   └── matrix
+    │   │   ├── README.md
+    │   │   ├── semver.md
+    │   │   ├── src
+    │   │   │   ├── async_std.rs
+    │   │   │   ├── coarse_time.rs
+    │   │   │   ├── compound.rs
+    │   │   │   ├── dyn_time.rs
+    │   │   │   ├── general.rs
+    │   │   │   ├── impls
+    │   │   │   │   ├── async_std.rs
+    │   │   │   │   ├── native_tls.rs
+    │   │   │   │   ├── rustls.rs
+    │   │   │   │   └── tokio.rs
+    │   │   │   ├── impls.rs
+    │   │   │   ├── lib.rs
+    │   │   │   ├── opaque.rs
+    │   │   │   ├── scheduler.rs
+    │   │   │   ├── task.rs
+    │   │   │   ├── test.pfx
+    │   │   │   ├── timer.rs
+    │   │   │   ├── tokio.rs
+    │   │   │   ├── traits.rs
+    │   │   │   ├── unimpl.rs
+    │   │   │   └── unix.rs
+    │   │   └── test-data-generator
+    │   │       └── make-cert.c
+    │   ├── tor-rtmock
+    │   │   ├── Cargo.toml
+    │   │   ├── README.md
+    │   │   ├── src
+    │   │   │   ├── io.rs
+    │   │   │   ├── lib.rs
+    │   │   │   ├── net.rs
+    │   │   │   ├── net_runtime.rs
+    │   │   │   ├── runtime.rs
+    │   │   │   ├── simple_time.rs
+    │   │   │   ├── sleep_runtime.rs
+    │   │   │   ├── task.rs
+    │   │   │   ├── time_core.rs
+    │   │   │   ├── time.rs
+    │   │   │   └── util.rs
+    │   │   └── tests
+    │   │       └── rtcompat_timing.rs
+    │   ├── tor-socksproto
+    │   │   ├── Cargo.toml
+    │   │   ├── fuzz
+    │   │   │   ├── Cargo.toml
+    │   │   │   ├── corpus -> ../../../arti-corpora/tor-socksproto/
+    │   │   │   └── fuzz_targets
+    │   │   │       ├── client.rs
+    │   │   │       └── request.rs
+    │   │   ├── README.md
+    │   │   ├── semver.md
+    │   │   └── src
+    │   │       ├── err.rs
+    │   │       ├── handshake
+    │   │       │   ├── client.rs
+    │   │       │   ├── framework.rs
+    │   │       │   └── proxy.rs
+    │   │       ├── handshake.rs
+    │   │       ├── lib.rs
+    │   │       └── msg.rs
+    │   └── tor-units
+    │       ├── Cargo.toml
+    │       ├── README.md
+    │       └── src
+    │           └── lib.rs
+    ├── debian
+    │   ├── arti.docs
+    │   ├── changelog
+    │   ├── config.toml
+    │   ├── control
+    │   ├── copyright
+    │   ├── rules
+    │   ├── source
+    │   │   └── format
+    │   └── watch
+    ├── doc
+    │   ├── Android.md
+    │   ├── bridges.md
+    │   ├── Compatibility.md
+    │   ├── dev
+    │   │   ├── Architecture.md
+    │   │   ├── ExportedApiSketch.md
+    │   │   ├── hs-overview.md
+    │   │   ├── metrics
+    │   │   │   └── heap_and_download_size.md
+    │   │   ├── netdoc-builder.md
+    │   │   ├── notes
+    │   │   │   ├── BridgeIssues.md
+    │   │   │   ├── bw-rate-limit.md
+    │   │   │   ├── client-auth.md
+    │   │   │   ├── CONFIG-NOTES.md
+    │   │   │   ├── Errors.md
+    │   │   │   ├── ffi_and_rpc_sketch.md
+    │   │   │   ├── hssvc-high-level-apis.md
+    │   │   │   ├── hssvc-ipt-algorithms.md
+    │   │   │   ├── key-management-keygen.md
+    │   │   │   ├── key-management.md
+    │   │   │   ├── key-management-paths.md
+    │   │   │   ├── keymgr-porcelain.md
+    │   │   │   ├── memory-limit.md
+    │   │   │   ├── onion_service_keys.md
+    │   │   │   ├── onion-service-notes.md
+    │   │   │   ├── relay-sketch.md
+    │   │   │   ├── restricted-discovery-reloads.md
+    │   │   │   ├── state-management-cli.md
+    │   │   │   └── vanguards.md
+    │   │   ├── Release.md
+    │   │   ├── rpc-book
+    │   │   │   └── src
+    │   │   │       ├── rpc-connect-sketch.md
+    │   │   │       ├── rpc-cookie-sketch.md
+    │   │   │       └── rpc-meta-draft.md
+    │   │   ├── Safelogging.md
+    │   │   ├── semver_status.md
+    │   │   ├── testing
+    │   │   │   ├── HowToBreak.md
+    │   │   │   └── Profiling.md
+    │   │   └── ZeroizeStrategy.md
+    │   ├── FAQ.md
+    │   ├── hsc.md
+    │   ├── iOS.md
+    │   ├── LGPL-and-rust.md
+    │   ├── OnionService.md
+    │   ├── safer-build.md
+    │   ├── Semver.md
+    │   ├── SupportPolicy.md
+    │   └── TROUBLESHOOTING.md
+    ├── examples
+    │   ├── axum
+    │   │   └── axum-hello-world
+    │   │       ├── Cargo.toml
+    │   │       ├── README.md
+    │   │       └── src
+    │   │           └── main.rs
+    │   ├── gsoc2023
+    │   │   ├── connection-checker
+    │   │   │   ├── bridges
+    │   │   │   │   ├── bridge_meek.txt
+    │   │   │   │   ├── bridge_obfs4.txt
+    │   │   │   │   └── bridge_snowflake.txt
+    │   │   │   ├── Cargo.toml
+    │   │   │   ├── README.md
+    │   │   │   └── src
+    │   │   │       └── main.rs
+    │   │   ├── dns-resolver
+    │   │   │   ├── Cargo.toml
+    │   │   │   ├── README.md
+    │   │   │   └── src
+    │   │   │       ├── dns.rs
+    │   │   │       └── main.rs
+    │   │   ├── download-manager
+    │   │   │   ├── Cargo.toml
+    │   │   │   ├── README.md
+    │   │   │   └── src
+    │   │   │       └── main.rs
+    │   │   ├── obfs4-checker
+    │   │   │   ├── Cargo.toml
+    │   │   │   ├── obfs4_test_bridges.json
+    │   │   │   ├── README.md
+    │   │   │   └── src
+    │   │   │       ├── checking.rs
+    │   │   │       └── main.rs
+    │   │   ├── pt-proxy
+    │   │   │   ├── Cargo.toml
+    │   │   │   ├── README.md
+    │   │   │   └── src
+    │   │   │       └── main.rs
+    │   │   └── README.md
+    │   └── hyper
+    │       ├── hyper-http-client-example
+    │       │   ├── Cargo.toml
+    │       │   ├── README.md
+    │       │   └── src
+    │       │       └── main.rs
+    │       └── hyper-http-hs-example
+    │           ├── Cargo.toml
+    │           ├── README.md
+    │           └── src
+    │               └── main.rs
+    ├── GPL-3
+    ├── LGPL-3
+    ├── LICENSE-APACHE
+    ├── LICENSE-MIT
+    ├── maint
+    │   ├── add_warning
+    │   ├── adhoc-add-lint-blocks
+    │   ├── binary_size
+    │   ├── bump_nodep
+    │   ├── cargo_audit
+    │   ├── cargo-check-publishable
+    │   ├── cargo_check_target
+    │   ├── cargo-crate-owners
+    │   ├── cargo-publish
+    │   ├── cargo_sort
+    │   ├── cbindgen
+    │   ├── changed_crates
+    │   ├── changelog-syntax-fiddle
+    │   ├── check_all_lockfiles
+    │   ├── check-cli-help
+    │   ├── check_doc_features
+    │   ├── check_env
+    │   ├── check_licenses
+    │   ├── check_todos
+    │   ├── check_toposort
+    │   ├── check_tree
+    │   ├── ci_log_span
+    │   ├── common -> rust-maint-common
+    │   ├── coverage
+    │   ├── coverage_fuzz_corpora
+    │   ├── crates-io-utils.sh
+    │   ├── docker_reproducible_build
+    │   ├── downgrade_dependencies
+    │   ├── every-crate
+    │   ├── exclude_contributors.txt
+    │   ├── extract-md-links
+    │   ├── fixup-features
+    │   │   ├── Cargo.toml
+    │   │   └── src
+    │   │       ├── changes.rs
+    │   │       ├── graph.rs
+    │   │       └── main.rs
+    │   ├── fuzz_it_all
+    │   ├── gen_md_links
+    │   ├── hooks
+    │   │   ├── pre-commit
+    │   │   └── pre-push
+    │   ├── keygen-openssh-test
+    │   │   ├── Cargo.toml
+    │   │   ├── generate
+    │   │   ├── README.md
+    │   │   └── src
+    │   │       ├── args.rs
+    │   │       └── main.rs
+    │   ├── list_crates
+    │   ├── list_crates.py -> list_crates
+    │   ├── matrix-check
+    │   ├── matrix_test_cfg
+    │   ├── postprocess_coverage_cobertura
+    │   ├── postprocess_coverage_html
+    │   ├── preserve
+    │   ├── python-lints
+    │   ├── reproducible_build
+    │   ├── rpc-docs-tool
+    │   ├── rust-maint-common
+    │   │   ├── apt-install
+    │   │   ├── bash-utils.sh
+    │   │   ├── common -> .
+    │   │   ├── forbid-absolute-shebangs
+    │   │   ├── forbid-hard-tabs
+    │   │   ├── forbid-script-extensions
+    │   │   ├── forbid-script-underscores
+    │   │   ├── for-every-commit
+    │   │   ├── maint -> .
+    │   │   ├── README.md
+    │   │   ├── shellcheck-all
+    │   │   ├── test-project
+    │   │   │   ├── Cargo.toml
+    │   │   │   ├── maint -> ../maint
+    │   │   │   └── src
+    │   │   │       └── main.rs
+    │   │   ├── update-shell-includes
+    │   │   └── via-cargo-install-in-ci
+    │   ├── semver-checks
+    │   ├── shellcheck_all -> common/shellcheck-all
+    │   ├── stunt
+    │   │   └── fake-cc
+    │   ├── tag-arti-release
+    │   ├── test-all-crates
+    │   ├── thanks
+    │   ├── update-md-links
+    │   ├── via-cargo-install-in-ci.cache-id
+    │   └── with_coverage
+    ├── python
+    │   ├── arti_rpc
+    │   │   ├── pyproject.toml
+    │   │   ├── README.md
+    │   │   └── src
+    │   │       └── arti_rpc
+    │   │           ├── ffi.py
+    │   │           ├── __init__.py
+    │   │           └── rpc.py
+    │   └── arti_rpc_tests
+    │       ├── pyproject.toml
+    │       ├── README.md
+    │       ├── run
+    │       └── src
+    │           └── arti_rpc_tests
+    │               ├── context.py
+    │               ├── __init__.py
+    │               ├── __main__.py
+    │               ├── runner.py
+    │               └── tests
+    │                   ├── basic.py
+    │                   ├── connect.py
+    │                   ├── __init__.py
+    │                   ├── meta_features.py
+    │                   └── release_obj.py
+    ├── README.md
+    ├── tests
+    │   ├── chutney
+    │   │   ├── arti-bench
+    │   │   ├── integration-e2e
+    │   │   ├── integration-e2e-shadow
+    │   │   ├── setup
+    │   │   ├── stop-arti
+    │   │   ├── teardown
+    │   │   └── test
+    │   └── shadow
+    │       ├── conf
+    │       │   ├── arti.bridge.toml
+    │       │   ├── arti.common.toml
+    │       │   ├── arti.extra.toml
+    │       │   ├── arti.obfs4-client.toml
+    │       │   ├── arti.onion-auth.toml
+    │       │   ├── arti.onion.toml
+    │       │   ├── authgen.pw
+    │       │   ├── authgen.torrc
+    │       │   ├── shadowresolv.conf
+    │       │   ├── tgen.artionionclient-auth-2.graphml.xml
+    │       │   ├── tgen.artionionclient-auth-ctor-store.graphml.xml
+    │       │   ├── tgen.artionionclient-auth.graphml.xml
+    │       │   ├── tgen.artionionclientfullvanguards.graphml.xml
+    │       │   ├── tgen.artionionclient.graphml.xml
+    │       │   ├── tgen.client.graphml.xml
+    │       │   ├── tgen.onionserver.graphml.xml
+    │       │   ├── tgen.server.graphml.xml
+    │       │   ├── tgen.torclient.graphml.xml
+    │       │   ├── tgen.toronionclient-auth.graphml.xml
+    │       │   ├── tgen.toronionclient.graphml.xml
+    │       │   ├── tor.authority.torrc
+    │       │   ├── tor.bridge.torrc
+    │       │   ├── tor.client.torrc
+    │       │   ├── tor.common.torrc
+    │       │   ├── tor.exit.torrc
+    │       │   ├── tor.non-exit.torrc
+    │       │   ├── tor.obfs4-server.torrc
+    │       │   ├── tor.onionserver.torrc
+    │       │   └── tor.relay.torrc
+    │       ├── README.md
+    │       ├── run
+    │       ├── shadow.data.template
+    │       │   └── hosts
+    │       │       ├── 4uthority
+    │       │       │   ├── fingerprint
+    │       │       │   ├── fingerprint-ed25519
+    │       │       │   ├── keys
+    │       │       │   │   ├── authority_certificate
+    │       │       │   │   ├── authority_identity_key
+    │       │       │   │   ├── authority_signing_key
+    │       │       │   │   ├── ed25519_master_id_public_key
+    │       │       │   │   ├── ed25519_master_id_secret_key
+    │       │       │   │   ├── ed25519_signing_cert
+    │       │       │   │   ├── ed25519_signing_secret_key
+    │       │       │   │   ├── secret_id_key
+    │       │       │   │   └── secret_onion_key
+    │       │       │   ├── torrc
+    │       │       │   └── torrc-defaults
+    │       │       ├── articlient
+    │       │       │   └── arti.d
+    │       │       │       ├── arti.common.toml -> ../../../../conf/arti.common.toml
+    │       │       │       └── arti.extra.toml -> ../../../../conf/arti.extra.toml
+    │       │       ├── articlient-bridge
+    │       │       │   └── arti.d
+    │       │       │       ├── arti.bridge.toml -> ../../../../conf/arti.bridge.toml
+    │       │       │       ├── arti.common.toml -> ../../../../conf/arti.common.toml
+    │       │       │       └── arti.extra.toml -> ../../../../conf/arti.extra.toml
+    │       │       ├── articlient-bridge-obfs4
+    │       │       │   └── arti.d
+    │       │       │       ├── arti.bridge.toml -> ../../../../conf/arti.bridge.toml
+    │       │       │       ├── arti.common.toml -> ../../../../conf/arti.common.toml
+    │       │       │       ├── arti.extra.toml -> ../../../../conf/arti.extra.toml
+    │       │       │       └── arti.obfs4-client.toml -> ../../../../conf/arti.obfs4-client.toml
+    │       │       ├── articlient-extra
+    │       │       │   └── arti.d
+    │       │       │       ├── arti.common.toml -> ../../../../conf/arti.common.toml
+    │       │       │       └── arti.extra.toml -> ../../../../conf/arti.extra.toml
+    │       │       ├── articlient-onion
+    │       │       │   └── arti.d
+    │       │       │       ├── arti.common.toml -> ../../../../conf/arti.common.toml
+    │       │       │       ├── arti.extra.toml -> ../../../../conf/arti.extra.toml
+    │       │       │       └── arti.onion.toml -> ../../../../conf/arti.onion.toml
+    │       │       ├── articlient-onion-artiserver
+    │       │       │   └── arti.d
+    │       │       │       ├── arti.common.toml -> ../../../../conf/arti.common.toml
+    │       │       │       ├── arti.extra.toml -> ../../../../conf/arti.extra.toml
+    │       │       │       └── arti.onion.toml -> ../../../../conf/arti.onion.toml
+    │       │       ├── articlient-onion-artiserver-auth
+    │       │       │   ├── arti.d
+    │       │       │   │   ├── arti.common.toml -> ../../../../conf/arti.common.toml
+    │       │       │   │   ├── arti.extra.toml -> ../../../../conf/arti.extra.toml
+    │       │       │   │   └── arti.onion.toml -> ../../../../conf/arti.onion.toml
+    │       │       │   └── keystore
+    │       │       │       └── client
+    │       │       │           └── fpqqmiwzqiv63jczrshh4qcmlxw6gujcai3arobq23wikt7hk7ojadid
+    │       │       │               └── ks_hsc_desc_enc.x25519_private
+    │       │       ├── articlient-onion-artiserver-auth-2
+    │       │       │   ├── arti.d
+    │       │       │   │   ├── arti.common.toml -> ../../../../conf/arti.common.toml
+    │       │       │   │   ├── arti.extra.toml -> ../../../../conf/arti.extra.toml
+    │       │       │   │   └── arti.onion.toml -> ../../../../conf/arti.onion.toml
+    │       │       │   └── keystore
+    │       │       │       └── client
+    │       │       │           └── fpqqmiwzqiv63jczrshh4qcmlxw6gujcai3arobq23wikt7hk7ojadid
+    │       │       │               └── ks_hsc_desc_enc.x25519_private
+    │       │       ├── articlient-onion-artiserver-auth-ctor
+    │       │       │   ├── arti.d
+    │       │       │   │   ├── arti-auth-ctor.onion.toml
+    │       │       │   │   ├── arti.common.toml -> ../../../../conf/arti.common.toml
+    │       │       │   │   └── arti.extra.toml -> ../../../../conf/arti.extra.toml
+    │       │       │   └── ctor-store
+    │       │       │       └── alice.auth_private
+    │       │       ├── articlient-onion-artiserver-full-vanguards
+    │       │       │   └── arti.d
+    │       │       │       ├── arti.common.toml -> ../../../../conf/arti.common.toml
+    │       │       │       ├── arti.extra.toml -> ../../../../conf/arti.extra.toml
+    │       │       │       └── arti.onion.toml -> ../../../../conf/arti.onion.toml
+    │       │       ├── articlient-onion-auth
+    │       │       │   ├── arti.d
+    │       │       │   │   ├── arti.common.toml -> ../../../../conf/arti.common.toml
+    │       │       │   │   ├── arti.extra.toml -> ../../../../conf/arti.extra.toml
+    │       │       │   │   └── arti.onion.toml -> ../../../../conf/arti.onion.toml
+    │       │       │   └── keystore
+    │       │       │       └── client
+    │       │       │           └── yr4tcjsgag3l7ar4kt5j2gav22nfs5uaktys5yy2yuuisjreu7ty6aad
+    │       │       │               └── ks_hsc_desc_enc.x25519_private
+    │       │       ├── bridge
+    │       │       │   ├── fingerprint
+    │       │       │   ├── keys
+    │       │       │   │   ├── secret_id_key
+    │       │       │   │   ├── secret_onion_key
+    │       │       │   │   └── secret_onion_key_ntor
+    │       │       │   ├── torrc
+    │       │       │   └── torrc-defaults
+    │       │       ├── bridge-obfs4
+    │       │       │   ├── fingerprint
+    │       │       │   ├── keys
+    │       │       │   │   ├── secret_id_key
+    │       │       │   │   ├── secret_onion_key
+    │       │       │   │   └── secret_onion_key_ntor
+    │       │       │   ├── pt_state
+    │       │       │   │   ├── obfs4_bridgeline.txt
+    │       │       │   │   └── obfs4_state.json
+    │       │       │   ├── torrc
+    │       │       │   └── torrc-defaults
+    │       │       ├── exit1
+    │       │       │   ├── fingerprint
+    │       │       │   ├── keys
+    │       │       │   │   ├── secret_id_key
+    │       │       │   │   ├── secret_onion_key
+    │       │       │   │   └── secret_onion_key_ntor
+    │       │       │   ├── torrc
+    │       │       │   └── torrc-defaults
+    │       │       ├── exit2
+    │       │       │   ├── fingerprint
+    │       │       │   ├── keys
+    │       │       │   │   ├── secret_id_key
+    │       │       │   │   ├── secret_onion_key
+    │       │       │   │   └── secret_onion_key_ntor
+    │       │       │   ├── torrc
+    │       │       │   └── torrc-defaults
+    │       │       ├── fileserver-onion
+    │       │       │   ├── hs
+    │       │       │   │   ├── hostname
+    │       │       │   │   ├── hs_ed25519_public_key
+    │       │       │   │   └── hs_ed25519_secret_key
+    │       │       │   ├── torrc
+    │       │       │   └── torrc-defaults
+    │       │       ├── fileserver-onion-arti
+    │       │       │   ├── arti.d
+    │       │       │   │   ├── arti.common.toml -> ../../../../conf/arti.common.toml
+    │       │       │   │   └── arti.extra.toml -> ../../../../conf/arti.extra.toml
+    │       │       │   └── keystore
+    │       │       │       └── hss
+    │       │       │           └── tgen_hs
+    │       │       │               ├── kp_hs_id.ed25519_public
+    │       │       │               └── ks_hs_id.ed25519_expanded_private
+    │       │       ├── fileserver-onion-arti-auth
+    │       │       │   ├── arti.d
+    │       │       │   │   ├── arti.common.toml -> ../../../../conf/arti.common.toml
+    │       │       │   │   ├── arti.extra.toml -> ../../../../conf/arti.extra.toml
+    │       │       │   │   └── arti.onion-auth.toml -> ../../../../conf/arti.onion-auth.toml
+    │       │       │   ├── authorized_clients
+    │       │       │   │   └── default.auth
+    │       │       │   └── keystore
+    │       │       │       └── hss
+    │       │       │           └── tgen_hs
+    │       │       │               └── ks_hs_id.ed25519_expanded_private
+    │       │       ├── fileserver-onion-arti-auth-ctor
+    │       │       │   ├── arti.d
+    │       │       │   │   ├── arti.common.toml -> ../../../../conf/arti.common.toml
+    │       │       │   │   ├── arti.extra.toml -> ../../../../conf/arti.extra.toml
+    │       │       │   │   └── arti-onion-auth-ctor.toml
+    │       │       │   └── ctor-store
+    │       │       │       ├── authorized_clients
+    │       │       │       │   └── alice.auth
+    │       │       │       ├── hostname
+    │       │       │       ├── hs_ed25519_public_key
+    │       │       │       └── hs_ed25519_secret_key
+    │       │       ├── fileserver-onion-arti-full-vanguards
+    │       │       │   ├── arti.d
+    │       │       │   │   ├── arti.common.toml -> ../../../../conf/arti.common.toml
+    │       │       │   │   └── arti.extra.toml -> ../../../../conf/arti.extra.toml
+    │       │       │   └── keystore
+    │       │       │       └── hss
+    │       │       │           └── tgen_hs
+    │       │       │               └── ks_hs_id.ed25519_expanded_private
+    │       │       ├── fileserver-onion-auth
+    │       │       │   ├── hs
+    │       │       │   │   ├── authorized_clients
+    │       │       │   │   │   └── default.auth
+    │       │       │   │   ├── hostname
+    │       │       │   │   ├── hs_ed25519_public_key
+    │       │       │   │   └── hs_ed25519_secret_key
+    │       │       │   ├── torrc
+    │       │       │   └── torrc-defaults
+    │       │       ├── relay1
+    │       │       │   ├── fingerprint
+    │       │       │   ├── keys
+    │       │       │   │   ├── secret_id_key
+    │       │       │   │   ├── secret_onion_key
+    │       │       │   │   └── secret_onion_key_ntor
+    │       │       │   ├── torrc
+    │       │       │   └── torrc-defaults
+    │       │       ├── relay2
+    │       │       │   ├── fingerprint
+    │       │       │   ├── keys
+    │       │       │   │   ├── secret_id_key
+    │       │       │   │   ├── secret_onion_key
+    │       │       │   │   └── secret_onion_key_ntor
+    │       │       │   ├── torrc
+    │       │       │   └── torrc-defaults
+    │       │       ├── relay3
+    │       │       │   ├── fingerprint
+    │       │       │   ├── keys
+    │       │       │   │   ├── ed25519_master_id_public_key
+    │       │       │   │   ├── ed25519_master_id_secret_key
+    │       │       │   │   ├── ed25519_signing_cert
+    │       │       │   │   ├── ed25519_signing_secret_key
+    │       │       │   │   ├── secret_id_key
+    │       │       │   │   ├── secret_onion_key
+    │       │       │   │   └── secret_onion_key_ntor
+    │       │       │   ├── torrc
+    │       │       │   └── torrc-defaults
+    │       │       ├── relay4
+    │       │       │   ├── fingerprint
+    │       │       │   ├── keys
+    │       │       │   │   ├── ed25519_master_id_public_key
+    │       │       │   │   ├── ed25519_master_id_secret_key
+    │       │       │   │   ├── ed25519_signing_cert
+    │       │       │   │   ├── ed25519_signing_secret_key
+    │       │       │   │   ├── secret_id_key
+    │       │       │   │   ├── secret_onion_key
+    │       │       │   │   └── secret_onion_key_ntor
+    │       │       │   ├── torrc
+    │       │       │   └── torrc-defaults
+    │       │       ├── torclient-onion-artiserver
+    │       │       │   ├── torrc
+    │       │       │   └── torrc-defaults
+    │       │       └── torclient-onion-artiserver-full-vanguards
+    │       │           ├── torrc
+    │       │           └── torrc-defaults
+    │       └── shadow.yaml
+    ├── tomlfmt.toml
+    └── WANT_FROM_OTHER_CRATES
+
+418 directories, 1272 files

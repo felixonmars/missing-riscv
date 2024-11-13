@@ -1,0 +1,1431 @@
+src
+├── workerd-1.20241106.0
+│   ├── build
+│   │   ├── BUILD.ada-url
+│   │   ├── BUILD.dawn
+│   │   ├── BUILD.nbytes
+│   │   ├── BUILD.pyodide
+│   │   ├── BUILD.pyodide_packages
+│   │   ├── BUILD.simdutf
+│   │   ├── BUILD.sqlite3
+│   │   ├── BUILD.vulkan_headers
+│   │   ├── BUILD.vulkan_utility_libraries
+│   │   ├── BUILD.wpt
+│   │   ├── BUILD.zlib
+│   │   ├── capnp_embed.bzl
+│   │   ├── cc_ast_dump.bzl
+│   │   ├── ci.bazelrc
+│   │   ├── deps
+│   │   │   ├── BUILD
+│   │   │   ├── build_deps.jsonc
+│   │   │   ├── deps.jsonc
+│   │   │   ├── deps.schema.json
+│   │   │   ├── gen
+│   │   │   │   ├── build_deps.bzl
+│   │   │   │   ├── dep_ada_url.bzl
+│   │   │   │   ├── dep_aspect_bazel_lib.bzl
+│   │   │   │   ├── dep_aspect_rules_esbuild.bzl
+│   │   │   │   ├── dep_aspect_rules_js.bzl
+│   │   │   │   ├── dep_aspect_rules_ts.bzl
+│   │   │   │   ├── dep_bazel_skylib.bzl
+│   │   │   │   ├── dep_build_bazel_apple_support.bzl
+│   │   │   │   ├── dep_capnp_cpp.bzl
+│   │   │   │   ├── dep_cargo_bazel_linux_arm64.bzl
+│   │   │   │   ├── dep_cargo_bazel_linux_x64.bzl
+│   │   │   │   ├── dep_cargo_bazel_macos_arm64.bzl
+│   │   │   │   ├── dep_cargo_bazel_macos_x64.bzl
+│   │   │   │   ├── dep_cargo_bazel_win_x64.bzl
+│   │   │   │   ├── dep_com_google_protobuf.bzl
+│   │   │   │   ├── dep_cxxbridge_cmd.bzl
+│   │   │   │   ├── dep_dawn.bzl
+│   │   │   │   ├── dep_rules_pkg.bzl
+│   │   │   │   ├── dep_rules_python.bzl
+│   │   │   │   ├── dep_rules_rust.bzl
+│   │   │   │   ├── deps.bzl
+│   │   │   │   ├── dep_simdutf.bzl
+│   │   │   │   ├── dep_spirv_headers.bzl
+│   │   │   │   ├── dep_ssl.bzl
+│   │   │   │   ├── dep_vulkan_headers.bzl
+│   │   │   │   └── dep_vulkan_utility_libraries.bzl
+│   │   │   ├── requirements.in
+│   │   │   ├── requirements.txt
+│   │   │   └── update-deps.py
+│   │   ├── http.bzl
+│   │   ├── js_capnp_library.bzl
+│   │   ├── js_file.bzl
+│   │   ├── kj_test.bzl
+│   │   ├── lint.bazelrc
+│   │   ├── perfetto
+│   │   │   └── perfetto_cfg.bzl
+│   │   ├── pyodide_bucket.bzl
+│   │   ├── run_binary_target.bzl
+│   │   ├── typescript.bzl
+│   │   ├── wd_capnp_library.bzl
+│   │   ├── wd_cc_benchmark.bzl
+│   │   ├── wd_cc_binary.bzl
+│   │   ├── wd_cc_capnp_library.bzl
+│   │   ├── wd_cc_library.bzl
+│   │   ├── wd_js_bundle.bzl
+│   │   ├── wd_rust_binary.bzl
+│   │   ├── wd_rust_capnp_library.bzl
+│   │   ├── wd_rust_crate.bzl
+│   │   ├── wd_test.bzl
+│   │   ├── wd_ts_bundle.bzl
+│   │   ├── wd_ts_project.bzl
+│   │   ├── wd_ts_test.bzl
+│   │   ├── wd_ts_type_test.bzl
+│   │   └── wpt_test.bzl
+│   ├── BUILD.bazel
+│   ├── build-releases.sh
+│   ├── CODE_OF_CONDUCT.md
+│   ├── compile_flags.txt
+│   ├── CONTRIBUTING.md
+│   ├── deps
+│   │   └── rust
+│   │       ├── BUILD.bazel
+│   │       ├── BUILD.cxxbridge-cmd
+│   │       ├── BUILD.lolhtml
+│   │       ├── cargo.bzl
+│   │       ├── Cargo.lock
+│   │       └── crates
+│   │           ├── alias_rules.bzl
+│   │           ├── BUILD.addr2line-0.24.2.bazel
+│   │           ├── BUILD.adler2-2.0.0.bazel
+│   │           ├── BUILD.ahash-0.8.11.bazel
+│   │           ├── BUILD.anstream-0.6.17.bazel
+│   │           ├── BUILD.anstyle-1.0.8.bazel
+│   │           ├── BUILD.anstyle-parse-0.2.6.bazel
+│   │           ├── BUILD.anstyle-query-1.1.2.bazel
+│   │           ├── BUILD.anstyle-wincon-3.0.6.bazel
+│   │           ├── BUILD.anyhow-1.0.91.bazel
+│   │           ├── BUILD.backtrace-0.3.74.bazel
+│   │           ├── BUILD.bazel
+│   │           ├── BUILD.bitflags-1.3.2.bazel
+│   │           ├── BUILD.bitflags-2.6.0.bazel
+│   │           ├── BUILD.byteorder-1.5.0.bazel
+│   │           ├── BUILD.bytes-1.8.0.bazel
+│   │           ├── BUILD.capnp-0.20.3.bazel
+│   │           ├── BUILD.capnpc-0.20.0.bazel
+│   │           ├── BUILD.cc-1.1.31.bazel
+│   │           ├── BUILD.cfg_aliases-0.2.1.bazel
+│   │           ├── BUILD.cfg-if-1.0.0.bazel
+│   │           ├── BUILD.clang-ast-0.1.26.bazel
+│   │           ├── BUILD.clap-4.5.20.bazel
+│   │           ├── BUILD.clap_builder-4.5.20.bazel
+│   │           ├── BUILD.clap_derive-4.5.18.bazel
+│   │           ├── BUILD.clap_lex-0.7.2.bazel
+│   │           ├── BUILD.codespan-reporting-0.11.1.bazel
+│   │           ├── BUILD.colorchoice-1.0.3.bazel
+│   │           ├── BUILD.convert_case-0.4.0.bazel
+│   │           ├── BUILD.crc32fast-1.4.2.bazel
+│   │           ├── BUILD.cssparser-0.27.2.bazel
+│   │           ├── BUILD.cssparser-macros-0.6.1.bazel
+│   │           ├── BUILD.cxx-1.0.129.bazel
+│   │           ├── BUILD.cxxbridge-flags-1.0.129.bazel
+│   │           ├── BUILD.cxxbridge-macro-1.0.129.bazel
+│   │           ├── BUILD.derive_more-0.99.18.bazel
+│   │           ├── BUILD.dtoa-1.0.9.bazel
+│   │           ├── BUILD.dtoa-short-0.3.5.bazel
+│   │           ├── BUILD.embedded-io-0.6.1.bazel
+│   │           ├── BUILD.encoding_rs-0.8.34.bazel
+│   │           ├── BUILD.flate2-1.0.34.bazel
+│   │           ├── BUILD.fxhash-0.2.1.bazel
+│   │           ├── BUILD.getrandom-0.1.16.bazel
+│   │           ├── BUILD.gimli-0.31.1.bazel
+│   │           ├── BUILD.hashbrown-0.13.2.bazel
+│   │           ├── BUILD.heck-0.5.0.bazel
+│   │           ├── BUILD.hermit-abi-0.3.9.bazel
+│   │           ├── BUILD.is_terminal_polyfill-1.70.1.bazel
+│   │           ├── BUILD.itoa-0.4.8.bazel
+│   │           ├── BUILD.itoa-1.0.11.bazel
+│   │           ├── BUILD.lazycell-1.3.0.bazel
+│   │           ├── BUILD.lazy_static-1.5.0.bazel
+│   │           ├── BUILD.libc-0.2.161.bazel
+│   │           ├── BUILD.link-cplusplus-1.0.9.bazel
+│   │           ├── BUILD.log-0.4.22.bazel
+│   │           ├── BUILD.lolhtml-1.1.1.bazel
+│   │           ├── BUILD.lol_html-2.0.0.bazel
+│   │           ├── BUILD.matches-0.1.10.bazel
+│   │           ├── BUILD.memchr-2.7.4.bazel
+│   │           ├── BUILD.mime-0.3.17.bazel
+│   │           ├── BUILD.miniz_oxide-0.8.0.bazel
+│   │           ├── BUILD.mio-1.0.2.bazel
+│   │           ├── BUILD.nix-0.29.0.bazel
+│   │           ├── BUILD.nodrop-0.1.14.bazel
+│   │           ├── BUILD.object-0.36.5.bazel
+│   │           ├── BUILD.once_cell-1.20.2.bazel
+│   │           ├── BUILD.phf-0.8.0.bazel
+│   │           ├── BUILD.phf_codegen-0.8.0.bazel
+│   │           ├── BUILD.phf_generator-0.8.0.bazel
+│   │           ├── BUILD.phf_macros-0.8.0.bazel
+│   │           ├── BUILD.phf_shared-0.8.0.bazel
+│   │           ├── BUILD.pico-args-0.5.0.bazel
+│   │           ├── BUILD.pin-project-lite-0.2.14.bazel
+│   │           ├── BUILD.ppv-lite86-0.2.20.bazel
+│   │           ├── BUILD.precomputed-hash-0.1.1.bazel
+│   │           ├── BUILD.proc-macro2-1.0.89.bazel
+│   │           ├── BUILD.proc-macro-hack-0.5.20+deprecated.bazel
+│   │           ├── BUILD.quote-1.0.37.bazel
+│   │           ├── BUILD.rand-0.7.3.bazel
+│   │           ├── BUILD.rand_chacha-0.2.2.bazel
+│   │           ├── BUILD.rand_core-0.5.1.bazel
+│   │           ├── BUILD.rand_hc-0.2.0.bazel
+│   │           ├── BUILD.rand_pcg-0.2.1.bazel
+│   │           ├── BUILD.rustc-demangle-0.1.24.bazel
+│   │           ├── BUILD.rustc-hash-2.0.0.bazel
+│   │           ├── BUILD.rustc_version-0.4.1.bazel
+│   │           ├── BUILD.ryu-1.0.18.bazel
+│   │           ├── BUILD.selectors-0.22.0.bazel
+│   │           ├── BUILD.semver-1.0.23.bazel
+│   │           ├── BUILD.serde-1.0.213.bazel
+│   │           ├── BUILD.serde_derive-1.0.213.bazel
+│   │           ├── BUILD.serde_json-1.0.132.bazel
+│   │           ├── BUILD.servo_arc-0.1.1.bazel
+│   │           ├── BUILD.shlex-1.3.0.bazel
+│   │           ├── BUILD.signal-hook-registry-1.4.2.bazel
+│   │           ├── BUILD.siphasher-0.3.11.bazel
+│   │           ├── BUILD.smallvec-1.13.2.bazel
+│   │           ├── BUILD.socket2-0.5.7.bazel
+│   │           ├── BUILD.stable_deref_trait-1.2.0.bazel
+│   │           ├── BUILD.strsim-0.11.1.bazel
+│   │           ├── BUILD.syn-1.0.109.bazel
+│   │           ├── BUILD.syn-2.0.85.bazel
+│   │           ├── BUILD.termcolor-1.4.1.bazel
+│   │           ├── BUILD.thin-slice-0.1.1.bazel
+│   │           ├── BUILD.thiserror-1.0.65.bazel
+│   │           ├── BUILD.thiserror-impl-1.0.65.bazel
+│   │           ├── BUILD.tokio-1.41.0.bazel
+│   │           ├── BUILD.tracing-0.1.40.bazel
+│   │           ├── BUILD.tracing-core-0.1.32.bazel
+│   │           ├── BUILD.unicode-ident-1.0.13.bazel
+│   │           ├── BUILD.unicode-width-0.1.14.bazel
+│   │           ├── BUILD.utf8parse-0.2.2.bazel
+│   │           ├── BUILD.version_check-0.9.5.bazel
+│   │           ├── BUILD.wasi-0.11.0+wasi-snapshot-preview1.bazel
+│   │           ├── BUILD.wasi-0.9.0+wasi-snapshot-preview1.bazel
+│   │           ├── BUILD.winapi-util-0.1.9.bazel
+│   │           ├── BUILD.windows_aarch64_gnullvm-0.52.6.bazel
+│   │           ├── BUILD.windows_aarch64_msvc-0.52.6.bazel
+│   │           ├── BUILD.windows_i686_gnu-0.52.6.bazel
+│   │           ├── BUILD.windows_i686_gnullvm-0.52.6.bazel
+│   │           ├── BUILD.windows_i686_msvc-0.52.6.bazel
+│   │           ├── BUILD.windows-sys-0.52.0.bazel
+│   │           ├── BUILD.windows-sys-0.59.0.bazel
+│   │           ├── BUILD.windows-targets-0.52.6.bazel
+│   │           ├── BUILD.windows_x86_64_gnu-0.52.6.bazel
+│   │           ├── BUILD.windows_x86_64_gnullvm-0.52.6.bazel
+│   │           ├── BUILD.windows_x86_64_msvc-0.52.6.bazel
+│   │           ├── BUILD.zerocopy-0.7.35.bazel
+│   │           ├── BUILD.zerocopy-derive-0.7.35.bazel
+│   │           ├── crates.bzl
+│   │           └── defs.bzl
+│   ├── Dockerfile.release
+│   ├── docs
+│   │   ├── api-updates.md
+│   │   ├── assets
+│   │   │   ├── banner.png
+│   │   │   ├── vscode-dev-container-modal.png
+│   │   │   └── vscode-dev-container-progress.png
+│   │   ├── benchmarking.md
+│   │   ├── development.md
+│   │   ├── pyodide.md
+│   │   ├── v8-updates.md
+│   │   └── vscode.md
+│   ├── doxyfile
+│   ├── empty
+│   │   └── empty
+│   ├── githooks
+│   │   ├── pre-commit
+│   │   ├── pre-push
+│   │   └── README
+│   ├── icudata-embed.capnp
+│   ├── justfile
+│   ├── LICENSE
+│   ├── npm
+│   │   ├── lib
+│   │   │   ├── node-install.ts
+│   │   │   ├── node-path.ts
+│   │   │   ├── node-platform.ts
+│   │   │   └── node-shim.ts
+│   │   ├── scripts
+│   │   │   ├── build-shim-package.mjs
+│   │   │   ├── build-types-package.mjs
+│   │   │   └── bump-version.mjs
+│   │   ├── workerd
+│   │   │   ├── package.json
+│   │   │   └── README.md
+│   │   ├── workerd-darwin-64
+│   │   │   ├── package.json
+│   │   │   └── README.md
+│   │   ├── workerd-darwin-arm64
+│   │   │   ├── package.json
+│   │   │   └── README.md
+│   │   ├── workerd-linux-64
+│   │   │   ├── package.json
+│   │   │   └── README.md
+│   │   ├── workerd-linux-arm64
+│   │   │   ├── package.json
+│   │   │   └── README.md
+│   │   ├── workerd-windows-64
+│   │   │   ├── package.json
+│   │   │   └── README.md
+│   │   └── workers-types
+│   │       ├── entrypoints.svg
+│   │       ├── package.json
+│   │       └── README.md
+│   ├── package.json
+│   ├── patches
+│   │   ├── bazel-lib
+│   │   │   └── 0001-chore-deps-upgrade-to-newest-bsdtar.patch
+│   │   ├── capnp-ts@0.7.0.patch
+│   │   ├── perfetto
+│   │   │   └── 0001-Rename-ui-build-to-ui-build.sh-to-allow-bazel-build-.patch
+│   │   ├── sqlite
+│   │   │   ├── 0001-row-counts-plain.patch
+│   │   │   ├── 0002-macOS-missing-PATH-fix.patch
+│   │   │   ├── 0003-sqlite-complete-early-exit.patch
+│   │   │   └── README.md
+│   │   └── v8
+│   │       ├── 0001-Allow-manually-setting-ValueDeserializer-format-vers.patch
+│   │       ├── 0002-Allow-manually-setting-ValueSerializer-format-versio.patch
+│   │       ├── 0003-Add-ArrayBuffer-MaybeNew.patch
+│   │       ├── 0004-Allow-Windows-builds-under-Bazel.patch
+│   │       ├── 0005-Disable-bazel-whole-archive-build.patch
+│   │       ├── 0006-Speed-up-V8-bazel-build-by-always-using-target-cfg.patch
+│   │       ├── 0007-Implement-Promise-Context-Tagging.patch
+│   │       ├── 0008-Enable-V8-shared-linkage.patch
+│   │       ├── 0009-Randomize-the-initial-ExecutionContextId-used-by-the.patch
+│   │       ├── 0010-increase-visibility-of-virtual-method.patch
+│   │       ├── 0011-Add-ValueSerializer-SetTreatFunctionsAsHostObjects.patch
+│   │       ├── 0012-Set-torque-generator-path-to-external-v8.-This-allow.patch
+│   │       ├── 0013-Modify-where-to-look-for-fp16-dependency.-This-depen.patch
+│   │       ├── 0014-Expose-v8-Symbol-GetDispose.patch
+│   │       ├── 0015-Rename-V8_COMPRESS_POINTERS_IN_ISOLATE_CAGE-V8_COMPR.patch
+│   │       ├── 0016-Revert-TracedReference-deref-API-removal.patch
+│   │       ├── 0017-Revert-heap-Add-masm-specific-unwinding-annotations-.patch
+│   │       ├── 0018-Update-illegal-invocation-error-message-in-v8.patch
+│   │       ├── 0019-Implement-cross-request-context-promise-resolve-hand.patch
+│   │       └── 0020-Modify-where-to-look-for-fast_float-dependency.patch
+│   ├── pnpm-lock.yaml
+│   ├── README.md
+│   ├── RELEASE.md
+│   ├── samples
+│   │   ├── async-context
+│   │   │   ├── config.capnp
+│   │   │   └── worker.js
+│   │   ├── BUILD.bazel
+│   │   ├── durable-objects-chat
+│   │   │   ├── chat.html
+│   │   │   ├── chat.js
+│   │   │   └── config.capnp
+│   │   ├── eventsource
+│   │   │   ├── config.capnp
+│   │   │   ├── README.md
+│   │   │   ├── server.js
+│   │   │   └── worker.js
+│   │   ├── extensions
+│   │   │   ├── binding.js
+│   │   │   ├── burrito-shop.capnp
+│   │   │   ├── burrito-shop-impl.js
+│   │   │   ├── burrito-shop.js
+│   │   │   ├── config.capnp
+│   │   │   ├── kitchen.js
+│   │   │   ├── README.md
+│   │   │   ├── recipes.json
+│   │   │   └── worker.js
+│   │   ├── hello-wasm
+│   │   │   ├── Cargo.lock
+│   │   │   ├── Cargo.toml
+│   │   │   ├── config.capnp
+│   │   │   ├── README.md
+│   │   │   └── src
+│   │   │       ├── lib.rs
+│   │   │       └── utils.rs
+│   │   ├── helloworld
+│   │   │   ├── config.capnp
+│   │   │   ├── README.md
+│   │   │   └── worker.js
+│   │   ├── helloworld_esm
+│   │   │   ├── config.capnp
+│   │   │   ├── README.md
+│   │   │   └── worker.js
+│   │   ├── memory-cache
+│   │   │   ├── config.capnp
+│   │   │   ├── README.md
+│   │   │   └── worker.js
+│   │   ├── module_fallback
+│   │   │   ├── cjs.js
+│   │   │   ├── config.capnp
+│   │   │   ├── fallback.js
+│   │   │   ├── README.md
+│   │   │   └── worker.js
+│   │   ├── nodejs-compat
+│   │   │   ├── config.capnp
+│   │   │   ├── README.md
+│   │   │   └── worker.js
+│   │   ├── nodejs-compat-crypto
+│   │   │   ├── config.capnp
+│   │   │   ├── README.md
+│   │   │   └── worker.js
+│   │   ├── nodejs-compat-diagnosticschannel
+│   │   │   ├── config.capnp
+│   │   │   ├── library.js
+│   │   │   ├── README.md
+│   │   │   └── worker.js
+│   │   ├── nodejs-compat-module
+│   │   │   ├── bar.js
+│   │   │   ├── config.capnp
+│   │   │   ├── foo.js
+│   │   │   ├── README.md
+│   │   │   └── worker.js
+│   │   ├── nodejs-compat-streams
+│   │   │   ├── config.capnp
+│   │   │   ├── README.md
+│   │   │   └── worker.js
+│   │   ├── nodejs-compat-streams-split2
+│   │   │   ├── config.capnp
+│   │   │   ├── README.md
+│   │   │   ├── split2.js
+│   │   │   └── worker.js
+│   │   ├── pyodide
+│   │   │   ├── config.capnp
+│   │   │   └── worker.py
+│   │   ├── pyodide-fastapi
+│   │   │   ├── config.capnp
+│   │   │   └── worker.py
+│   │   ├── pyodide-langchain
+│   │   │   ├── config.capnp
+│   │   │   └── worker.py
+│   │   ├── pyodide-secret
+│   │   │   ├── config.capnp
+│   │   │   └── worker.py
+│   │   ├── repl-server
+│   │   │   ├── client.js
+│   │   │   ├── config.capnp
+│   │   │   ├── README.md
+│   │   │   └── worker.js
+│   │   ├── repl-server-python
+│   │   │   ├── client.js
+│   │   │   ├── config.capnp
+│   │   │   ├── README.md
+│   │   │   └── worker.py
+│   │   ├── static-files-from-disk
+│   │   │   ├── config.capnp
+│   │   │   ├── content-dir
+│   │   │   │   └── index.html
+│   │   │   └── static.js
+│   │   ├── tail-workers
+│   │   │   ├── config.capnp
+│   │   │   ├── tail.js
+│   │   │   └── worker.js
+│   │   ├── tcp
+│   │   │   ├── config.capnp
+│   │   │   └── gopher.js
+│   │   └── unit-tests
+│   │       ├── config.capnp
+│   │       └── worker.js
+│   ├── SECURITY.md
+│   ├── src
+│   │   ├── cloudflare
+│   │   │   ├── ai.ts
+│   │   │   ├── BUILD.bazel
+│   │   │   ├── email.ts
+│   │   │   ├── eslint.config.mjs
+│   │   │   ├── internal
+│   │   │   │   ├── ai-api.ts
+│   │   │   │   ├── compatibility-flags.d.ts
+│   │   │   │   ├── d1-api.ts
+│   │   │   │   ├── email.d.ts
+│   │   │   │   ├── images-api.ts
+│   │   │   │   ├── images.d.ts
+│   │   │   │   ├── pipeline-transform.ts
+│   │   │   │   ├── sockets.d.ts
+│   │   │   │   ├── test
+│   │   │   │   │   ├── ai
+│   │   │   │   │   │   ├── ai-api-test.js
+│   │   │   │   │   │   ├── ai-api-test.py
+│   │   │   │   │   │   ├── ai-api-test.wd-test
+│   │   │   │   │   │   ├── ai-mock.js
+│   │   │   │   │   │   ├── BUILD.bazel
+│   │   │   │   │   │   └── python-ai-api-test.wd-test
+│   │   │   │   │   ├── d1
+│   │   │   │   │   │   ├── BUILD.bazel
+│   │   │   │   │   │   ├── d1-api-test-common.js
+│   │   │   │   │   │   ├── d1-api-test.js
+│   │   │   │   │   │   ├── d1-api-test.py
+│   │   │   │   │   │   ├── d1-api-test.wd-test
+│   │   │   │   │   │   ├── d1-api-test-with-sessions.js
+│   │   │   │   │   │   ├── d1-api-test-with-sessions.wd-test
+│   │   │   │   │   │   ├── d1-mock.js
+│   │   │   │   │   │   └── python-d1-api-test.wd-test
+│   │   │   │   │   ├── images
+│   │   │   │   │   │   ├── BUILD.bazel
+│   │   │   │   │   │   ├── images-api-test.js
+│   │   │   │   │   │   ├── images-api-test.wd-test
+│   │   │   │   │   │   └── images-upstream-mock.js
+│   │   │   │   │   ├── pipeline-transform
+│   │   │   │   │   │   ├── BUILD.bazel
+│   │   │   │   │   │   ├── transform-test.js
+│   │   │   │   │   │   └── transform.wd-test
+│   │   │   │   │   ├── vectorize
+│   │   │   │   │   │   ├── BUILD.bazel
+│   │   │   │   │   │   ├── python-vectorize-api-test.wd-test
+│   │   │   │   │   │   ├── vectorize-api-test.js
+│   │   │   │   │   │   ├── vectorize-api-test.py
+│   │   │   │   │   │   ├── vectorize-api-test.wd-test
+│   │   │   │   │   │   └── vectorize-mock.js
+│   │   │   │   │   └── workflows
+│   │   │   │   │       ├── BUILD.bazel
+│   │   │   │   │       ├── workflows-api-test.js
+│   │   │   │   │       ├── workflows-api-test.wd-test
+│   │   │   │   │       └── workflows-mock.js
+│   │   │   │   ├── vectorize-api.ts
+│   │   │   │   ├── vectorize.d.ts
+│   │   │   │   ├── workers.d.ts
+│   │   │   │   ├── workflows-api.ts
+│   │   │   │   └── workflows.d.ts
+│   │   │   ├── pipeline-transform.ts
+│   │   │   ├── README.md
+│   │   │   ├── sockets.ts
+│   │   │   ├── tsconfig.json
+│   │   │   ├── vectorize.ts
+│   │   │   ├── workers.ts
+│   │   │   └── workflows.ts
+│   │   ├── node
+│   │   │   ├── assert
+│   │   │   │   └── strict.ts
+│   │   │   ├── assert.ts
+│   │   │   ├── async_hooks.ts
+│   │   │   ├── buffer.ts
+│   │   │   ├── BUILD.bazel
+│   │   │   ├── crypto.ts
+│   │   │   ├── diagnostics_channel.ts
+│   │   │   ├── eslint.config.mjs
+│   │   │   ├── events.ts
+│   │   │   ├── internal
+│   │   │   │   ├── async_hooks.d.ts
+│   │   │   │   ├── buffer.d.ts
+│   │   │   │   ├── compatibility-flags.d.ts
+│   │   │   │   ├── constants.ts
+│   │   │   │   ├── crypto_dh.ts
+│   │   │   │   ├── crypto.d.ts
+│   │   │   │   ├── crypto_hash.ts
+│   │   │   │   ├── crypto_hkdf.ts
+│   │   │   │   ├── crypto_keys.ts
+│   │   │   │   ├── crypto_pbkdf2.ts
+│   │   │   │   ├── crypto_random.ts
+│   │   │   │   ├── crypto_scrypt.ts
+│   │   │   │   ├── crypto_spkac.ts
+│   │   │   │   ├── crypto_util.ts
+│   │   │   │   ├── crypto_x509.ts
+│   │   │   │   ├── debuglog.ts
+│   │   │   │   ├── diagnostics_channel.d.ts
+│   │   │   │   ├── events.ts
+│   │   │   │   ├── internal_assertionerror.ts
+│   │   │   │   ├── internal_assert.ts
+│   │   │   │   ├── internal_buffer.ts
+│   │   │   │   ├── internal_comparisons.ts
+│   │   │   │   ├── internal_diffs.ts
+│   │   │   │   ├── internal_errors.ts
+│   │   │   │   ├── internal_inspect.ts
+│   │   │   │   ├── internal_path.ts
+│   │   │   │   ├── internal_querystring.ts
+│   │   │   │   ├── internal_stringdecoder.ts
+│   │   │   │   ├── internal_types.ts
+│   │   │   │   ├── internal_url.ts
+│   │   │   │   ├── internal_utils.ts
+│   │   │   │   ├── internal_zlib_base.ts
+│   │   │   │   ├── internal_zlib_constants.ts
+│   │   │   │   ├── internal_zlib.ts
+│   │   │   │   ├── legacy_url.ts
+│   │   │   │   ├── mock.js
+│   │   │   │   ├── module.d.ts
+│   │   │   │   ├── process.ts
+│   │   │   │   ├── streams_adapters.js
+│   │   │   │   ├── streams_compose.js
+│   │   │   │   ├── streams_duplex.js
+│   │   │   │   ├── streams_legacy.js
+│   │   │   │   ├── streams_pipeline.js
+│   │   │   │   ├── streams_promises.js
+│   │   │   │   ├── streams_readable.js
+│   │   │   │   ├── streams_transform.d.ts
+│   │   │   │   ├── streams_transform.js
+│   │   │   │   ├── streams_util.d.ts
+│   │   │   │   ├── streams_util.js
+│   │   │   │   ├── streams_writable.js
+│   │   │   │   ├── url.d.ts
+│   │   │   │   ├── util.d.ts
+│   │   │   │   ├── validators.ts
+│   │   │   │   ├── workers.d.ts
+│   │   │   │   └── zlib.d.ts
+│   │   │   ├── module.ts
+│   │   │   ├── path
+│   │   │   │   ├── posix.ts
+│   │   │   │   └── win32.ts
+│   │   │   ├── path.ts
+│   │   │   ├── process.ts
+│   │   │   ├── querystring.ts
+│   │   │   ├── README.md
+│   │   │   ├── stream
+│   │   │   │   ├── consumers.js
+│   │   │   │   ├── promises.js
+│   │   │   │   └── web.js
+│   │   │   ├── _stream_duplex.js
+│   │   │   ├── stream.js
+│   │   │   ├── _stream_passthrough.js
+│   │   │   ├── _stream_readable.js
+│   │   │   ├── _stream_transform.js
+│   │   │   ├── _stream_writable.js
+│   │   │   ├── string_decoder.ts
+│   │   │   ├── test.js
+│   │   │   ├── tsconfig.json
+│   │   │   ├── url.ts
+│   │   │   ├── util
+│   │   │   │   └── types.ts
+│   │   │   ├── util.ts
+│   │   │   └── zlib.ts
+│   │   ├── pyodide
+│   │   │   ├── BUILD.bazel
+│   │   │   ├── internal
+│   │   │   │   ├── asgi.py
+│   │   │   │   ├── jaeger.ts
+│   │   │   │   ├── loadPackage.ts
+│   │   │   │   ├── metadatafs.ts
+│   │   │   │   ├── metadata.ts
+│   │   │   │   ├── patches
+│   │   │   │   │   ├── aiohttp.py
+│   │   │   │   │   └── httpx.py
+│   │   │   │   ├── pool
+│   │   │   │   │   ├── builtin_wrappers.ts
+│   │   │   │   │   ├── emscriptenSetup.ts
+│   │   │   │   │   └── esbuild.config.mjs
+│   │   │   │   ├── python.ts
+│   │   │   │   ├── readOnlyFS.ts
+│   │   │   │   ├── setupPackages.ts
+│   │   │   │   ├── snapshot.ts
+│   │   │   │   ├── tarfs.ts
+│   │   │   │   ├── tar.ts
+│   │   │   │   ├── topLevelEntropy
+│   │   │   │   │   ├── entropy_import_context.py
+│   │   │   │   │   ├── entropy_import_context.py.d.ts
+│   │   │   │   │   ├── entropy_patches.py
+│   │   │   │   │   ├── entropy_patches.py.d.ts
+│   │   │   │   │   ├── import_patch_manager.py
+│   │   │   │   │   ├── import_patch_manager.py.d.ts
+│   │   │   │   │   ├── __init__.py
+│   │   │   │   │   └── lib.ts
+│   │   │   │   ├── util.ts
+│   │   │   │   └── workers.py
+│   │   │   ├── pyodide_extra.capnp
+│   │   │   ├── python-entrypoint-helper.ts
+│   │   │   ├── python-entrypoint.js
+│   │   │   ├── README.md
+│   │   │   ├── tsconfig.json
+│   │   │   ├── types
+│   │   │   │   ├── artifacts.d.ts
+│   │   │   │   ├── disk_cache.d.ts
+│   │   │   │   ├── emscripten.d.ts
+│   │   │   │   ├── Error.d.ts
+│   │   │   │   ├── FS.d.ts
+│   │   │   │   ├── internalJaeger.d.ts
+│   │   │   │   ├── limiter.d.ts
+│   │   │   │   ├── packages_tar_reader.d.ts
+│   │   │   │   ├── pyodide.asm.d.ts
+│   │   │   │   ├── pyodide-bucket.d.ts
+│   │   │   │   ├── Pyodide.d.ts
+│   │   │   │   ├── pyodide-lock.d.ts
+│   │   │   │   ├── python_stdlib.zip.d.ts
+│   │   │   │   ├── runtime-generated
+│   │   │   │   │   └── metadata.d.ts
+│   │   │   │   └── unsafe-eval.d.ts
+│   │   │   └── upload_bundle.py
+│   │   ├── rust
+│   │   │   ├── cxx-integration
+│   │   │   │   ├── BUILD.bazel
+│   │   │   │   ├── cxx-bridge.h
+│   │   │   │   ├── lib.rs
+│   │   │   │   └── tokio.rs
+│   │   │   ├── cxx-integration-test
+│   │   │   │   ├── BUILD.bazel
+│   │   │   │   ├── cxx-rust-integration-test.c++
+│   │   │   │   ├── cxx-rust-integration-test.h
+│   │   │   │   └── lib.rs
+│   │   │   └── gen-compile-cache
+│   │   │       ├── BUILD.bazel
+│   │   │       ├── cxx-bridge.c++
+│   │   │       ├── cxx-bridge.h
+│   │   │       └── main.rs
+│   │   ├── workerd
+│   │   │   ├── api
+│   │   │   │   ├── actor-alarms-delete-test.js
+│   │   │   │   ├── actor-alarms-delete-test.wd-test
+│   │   │   │   ├── actor-alarms-test.js
+│   │   │   │   ├── actor-alarms-test.wd-test
+│   │   │   │   ├── actor.c++
+│   │   │   │   ├── actor.h
+│   │   │   │   ├── actor-state.c++
+│   │   │   │   ├── actor-state.h
+│   │   │   │   ├── actor-state-iocontext-test.c++
+│   │   │   │   ├── actor-state-test.c++
+│   │   │   │   ├── analytics-engine.c++
+│   │   │   │   ├── analytics-engine.capnp
+│   │   │   │   ├── analytics-engine.h
+│   │   │   │   ├── analytics-engine-impl.h
+│   │   │   │   ├── analytics-engine-test.js
+│   │   │   │   ├── analytics-engine-test.wd-test
+│   │   │   │   ├── api-rtti-test.c++
+│   │   │   │   ├── basics.c++
+│   │   │   │   ├── basics.h
+│   │   │   │   ├── basics-test.c++
+│   │   │   │   ├── blob.c++
+│   │   │   │   ├── blob.h
+│   │   │   │   ├── BUILD.bazel
+│   │   │   │   ├── cache.c++
+│   │   │   │   ├── cache.h
+│   │   │   │   ├── cf-property.c++
+│   │   │   │   ├── cf-property.h
+│   │   │   │   ├── cf-property-test.c++
+│   │   │   │   ├── crypto
+│   │   │   │   │   ├── aes.c++
+│   │   │   │   │   ├── aes-test.c++
+│   │   │   │   │   ├── crypto.c++
+│   │   │   │   │   ├── crypto.h
+│   │   │   │   │   ├── dh.c++
+│   │   │   │   │   ├── dh.h
+│   │   │   │   │   ├── dh-primes.h
+│   │   │   │   │   ├── digest.c++
+│   │   │   │   │   ├── digest.h
+│   │   │   │   │   ├── ec.c++
+│   │   │   │   │   ├── ec.h
+│   │   │   │   │   ├── hkdf.c++
+│   │   │   │   │   ├── impl.c++
+│   │   │   │   │   ├── impl.h
+│   │   │   │   │   ├── impl-test.c++
+│   │   │   │   │   ├── kdf.h
+│   │   │   │   │   ├── keys.c++
+│   │   │   │   │   ├── keys.h
+│   │   │   │   │   ├── pbkdf2.c++
+│   │   │   │   │   ├── prime.c++
+│   │   │   │   │   ├── prime.h
+│   │   │   │   │   ├── rsa.c++
+│   │   │   │   │   ├── rsa.h
+│   │   │   │   │   ├── scrypt.c++
+│   │   │   │   │   ├── spkac.c++
+│   │   │   │   │   ├── spkac.h
+│   │   │   │   │   ├── x509.c++
+│   │   │   │   │   └── x509.h
+│   │   │   │   ├── data-url.c++
+│   │   │   │   ├── data-url.h
+│   │   │   │   ├── data-url-test.c++
+│   │   │   │   ├── deferred-proxy.h
+│   │   │   │   ├── deferred-proxy-test.c++
+│   │   │   │   ├── encoding.c++
+│   │   │   │   ├── encoding.h
+│   │   │   │   ├── events.c++
+│   │   │   │   ├── events.h
+│   │   │   │   ├── eventsource.c++
+│   │   │   │   ├── eventsource.h
+│   │   │   │   ├── form-data.c++
+│   │   │   │   ├── form-data.h
+│   │   │   │   ├── global-scope.c++
+│   │   │   │   ├── global-scope.h
+│   │   │   │   ├── gpu
+│   │   │   │   │   ├── BUILD.bazel
+│   │   │   │   │   ├── gpu-adapter.c++
+│   │   │   │   │   ├── gpu-adapter.h
+│   │   │   │   │   ├── gpu-adapter-info.c++
+│   │   │   │   │   ├── gpu-adapter-info.h
+│   │   │   │   │   ├── gpu-async-runner.c++
+│   │   │   │   │   ├── gpu-async-runner.h
+│   │   │   │   │   ├── gpu-bindgroup.c++
+│   │   │   │   │   ├── gpu-bindgroup.h
+│   │   │   │   │   ├── gpu-bindgroup-layout.c++
+│   │   │   │   │   ├── gpu-bindgroup-layout.h
+│   │   │   │   │   ├── gpu-buffer.c++
+│   │   │   │   │   ├── gpu-buffer.h
+│   │   │   │   │   ├── gpu.c++
+│   │   │   │   │   ├── gpu-command-buffer.h
+│   │   │   │   │   ├── gpu-command-encoder.c++
+│   │   │   │   │   ├── gpu-command-encoder.h
+│   │   │   │   │   ├── gpu-compute-pass-encoder.c++
+│   │   │   │   │   ├── gpu-compute-pass-encoder.h
+│   │   │   │   │   ├── gpu-compute-pipeline.c++
+│   │   │   │   │   ├── gpu-compute-pipeline.h
+│   │   │   │   │   ├── gpu-device.c++
+│   │   │   │   │   ├── gpu-device.h
+│   │   │   │   │   ├── gpu-errors.h
+│   │   │   │   │   ├── gpu.h
+│   │   │   │   │   ├── gpu-pipeline-layout.h
+│   │   │   │   │   ├── gpu-query-set.c++
+│   │   │   │   │   ├── gpu-query-set.h
+│   │   │   │   │   ├── gpu-queue.c++
+│   │   │   │   │   ├── gpu-queue.h
+│   │   │   │   │   ├── gpu-render-pass-encoder.c++
+│   │   │   │   │   ├── gpu-render-pass-encoder.h
+│   │   │   │   │   ├── gpu-render-pipeline.h
+│   │   │   │   │   ├── gpu-sampler.h
+│   │   │   │   │   ├── gpu-shader-module.c++
+│   │   │   │   │   ├── gpu-shader-module.h
+│   │   │   │   │   ├── gpu-supported-features.c++
+│   │   │   │   │   ├── gpu-supported-features.h
+│   │   │   │   │   ├── gpu-supported-limits.h
+│   │   │   │   │   ├── gpu-texture.c++
+│   │   │   │   │   ├── gpu-texture.h
+│   │   │   │   │   ├── gpu-texture-view.h
+│   │   │   │   │   ├── gpu-utils.c++
+│   │   │   │   │   ├── gpu-utils.h
+│   │   │   │   │   ├── webgpu-buffer-test.gpu-wd-test
+│   │   │   │   │   ├── webgpu-buffer-test.js
+│   │   │   │   │   ├── webgpu-compute-test.gpu-wd-test
+│   │   │   │   │   ├── webgpu-compute-test.js
+│   │   │   │   │   ├── webgpu-errors-test.gpu-wd-test
+│   │   │   │   │   ├── webgpu-errors-test.js
+│   │   │   │   │   ├── webgpu-windowless-test.gpu-wd-test
+│   │   │   │   │   ├── webgpu-windowless-test.js
+│   │   │   │   │   ├── webgpu-write-test.gpu-wd-test
+│   │   │   │   │   └── webgpu-write-test.js
+│   │   │   │   ├── hibernatable-web-socket.c++
+│   │   │   │   ├── hibernatable-web-socket.h
+│   │   │   │   ├── hibernation-event-params.h
+│   │   │   │   ├── html-rewriter.c++
+│   │   │   │   ├── html-rewriter.h
+│   │   │   │   ├── http.c++
+│   │   │   │   ├── http.h
+│   │   │   │   ├── http-standard-test.js
+│   │   │   │   ├── http-standard-test.wd-test
+│   │   │   │   ├── http-test.js
+│   │   │   │   ├── http-test-ts.ts
+│   │   │   │   ├── http-test-ts.ts-wd-test
+│   │   │   │   ├── http-test.wd-test
+│   │   │   │   ├── hyperdrive.c++
+│   │   │   │   ├── hyperdrive.h
+│   │   │   │   ├── kv.c++
+│   │   │   │   ├── kv.h
+│   │   │   │   ├── memory-cache.c++
+│   │   │   │   ├── memory-cache.h
+│   │   │   │   ├── modules.h
+│   │   │   │   ├── node
+│   │   │   │   │   ├── async-hooks.c++
+│   │   │   │   │   ├── async-hooks.h
+│   │   │   │   │   ├── buffer.c++
+│   │   │   │   │   ├── buffer.h
+│   │   │   │   │   ├── buffer-string-search.h
+│   │   │   │   │   ├── buffer-test.c++
+│   │   │   │   │   ├── BUILD.bazel
+│   │   │   │   │   ├── crypto.c++
+│   │   │   │   │   ├── crypto.h
+│   │   │   │   │   ├── crypto-keys.c++
+│   │   │   │   │   ├── diagnostics-channel.c++
+│   │   │   │   │   ├── diagnostics-channel.h
+│   │   │   │   │   ├── i18n.c++
+│   │   │   │   │   ├── i18n.h
+│   │   │   │   │   ├── module.c++
+│   │   │   │   │   ├── module.h
+│   │   │   │   │   ├── node.h
+│   │   │   │   │   ├── tests
+│   │   │   │   │   │   ├── assert-test.js
+│   │   │   │   │   │   ├── assert-test.wd-test
+│   │   │   │   │   │   ├── buffer-nodejs-test.js
+│   │   │   │   │   │   ├── buffer-nodejs-test.wd-test
+│   │   │   │   │   │   ├── crypto_dh-test.js
+│   │   │   │   │   │   ├── crypto_dh-test.wd-test
+│   │   │   │   │   │   ├── crypto_hash-test.js
+│   │   │   │   │   │   ├── crypto_hash-test.wd-test
+│   │   │   │   │   │   ├── crypto_hkdf-test.js
+│   │   │   │   │   │   ├── crypto_hkdf-test.wd-test
+│   │   │   │   │   │   ├── crypto_hmac-test.js
+│   │   │   │   │   │   ├── crypto_hmac-test.wd-test
+│   │   │   │   │   │   ├── crypto_keys-test.js
+│   │   │   │   │   │   ├── crypto_keys-test.wd-test
+│   │   │   │   │   │   ├── crypto_pbkdf2-test.js
+│   │   │   │   │   │   ├── crypto_pbkdf2-test.wd-test
+│   │   │   │   │   │   ├── crypto_random-test.js
+│   │   │   │   │   │   ├── crypto_random-test.wd-test
+│   │   │   │   │   │   ├── crypto_scrypt-test.js
+│   │   │   │   │   │   ├── crypto_scrypt-test.wd-test
+│   │   │   │   │   │   ├── crypto_spkac-test.js
+│   │   │   │   │   │   ├── crypto_spkac-test.wd-test
+│   │   │   │   │   │   ├── crypto_x509-test.js
+│   │   │   │   │   │   ├── crypto_x509-test.wd-test
+│   │   │   │   │   │   ├── diagnostics-channel-test.js
+│   │   │   │   │   │   ├── diagnostics-channel-test.wd-test
+│   │   │   │   │   │   ├── legacy_url-nodejs-test.js
+│   │   │   │   │   │   ├── legacy_url-nodejs-test.wd-test
+│   │   │   │   │   │   ├── mimetype-test.js
+│   │   │   │   │   │   ├── mimetype-test.wd-test
+│   │   │   │   │   │   ├── module-create-require-test.js
+│   │   │   │   │   │   ├── module-create-require-test.wd-test
+│   │   │   │   │   │   ├── node-compat-v2-test.js
+│   │   │   │   │   │   ├── node-compat-v2-test.wd-test
+│   │   │   │   │   │   ├── path-test.js
+│   │   │   │   │   │   ├── path-test.wd-test
+│   │   │   │   │   │   ├── process-exit-test.js
+│   │   │   │   │   │   ├── process-exit-test.wd-test
+│   │   │   │   │   │   ├── process-nodejs-test.js
+│   │   │   │   │   │   ├── process-nodejs-test.wd-test
+│   │   │   │   │   │   ├── querystring-nodejs-test.js
+│   │   │   │   │   │   ├── querystring-nodejs-test.wd-test
+│   │   │   │   │   │   ├── streams-test.js
+│   │   │   │   │   │   ├── streams-test.wd-test
+│   │   │   │   │   │   ├── string-decoder-test.js
+│   │   │   │   │   │   ├── string-decoder-test.wd-test
+│   │   │   │   │   │   ├── sys-nodejs-test.js
+│   │   │   │   │   │   ├── sys-nodejs-test.wd-test
+│   │   │   │   │   │   ├── url-nodejs-test.js
+│   │   │   │   │   │   ├── url-nodejs-test.wd-test
+│   │   │   │   │   │   ├── util-nodejs-test.js
+│   │   │   │   │   │   ├── util-nodejs-test.wd-test
+│   │   │   │   │   │   ├── zlib-nodejs-test.js
+│   │   │   │   │   │   └── zlib-nodejs-test.wd-test
+│   │   │   │   │   ├── url.c++
+│   │   │   │   │   ├── url.h
+│   │   │   │   │   ├── util.c++
+│   │   │   │   │   ├── util.h
+│   │   │   │   │   ├── zlib-util.c++
+│   │   │   │   │   └── zlib-util.h
+│   │   │   │   ├── pyodide
+│   │   │   │   │   ├── pyodide.c++
+│   │   │   │   │   ├── pyodide.h
+│   │   │   │   │   └── pyodide-test.c++
+│   │   │   │   ├── queue.c++
+│   │   │   │   ├── queue.h
+│   │   │   │   ├── queue-test.js
+│   │   │   │   ├── queue-test.wd-test
+│   │   │   │   ├── r2-admin.c++
+│   │   │   │   ├── r2-admin.h
+│   │   │   │   ├── r2-api.capnp
+│   │   │   │   ├── r2-bucket.c++
+│   │   │   │   ├── r2-bucket.h
+│   │   │   │   ├── r2.h
+│   │   │   │   ├── r2-multipart.c++
+│   │   │   │   ├── r2-multipart.h
+│   │   │   │   ├── r2-rpc.c++
+│   │   │   │   ├── r2-rpc.h
+│   │   │   │   ├── r2-test.js
+│   │   │   │   ├── r2-test.wd-test
+│   │   │   │   ├── rtti.c++
+│   │   │   │   ├── rtti.h
+│   │   │   │   ├── rtti-test.js
+│   │   │   │   ├── rtti-test.wd-test
+│   │   │   │   ├── scheduled.c++
+│   │   │   │   ├── scheduled.h
+│   │   │   │   ├── sockets.c++
+│   │   │   │   ├── sockets.h
+│   │   │   │   ├── sql.c++
+│   │   │   │   ├── sql.h
+│   │   │   │   ├── sql-test.js
+│   │   │   │   ├── sql-test.wd-test
+│   │   │   │   ├── streams
+│   │   │   │   │   ├── common.c++
+│   │   │   │   │   ├── common.h
+│   │   │   │   │   ├── compression.c++
+│   │   │   │   │   ├── compression.h
+│   │   │   │   │   ├── encoding.c++
+│   │   │   │   │   ├── encoding.h
+│   │   │   │   │   ├── identitytransformstream-backpressure-test.js
+│   │   │   │   │   ├── identitytransformstream-backpressure-test.wd-test
+│   │   │   │   │   ├── internal.c++
+│   │   │   │   │   ├── internal.h
+│   │   │   │   │   ├── internal-test.c++
+│   │   │   │   │   ├── queue.c++
+│   │   │   │   │   ├── queue.h
+│   │   │   │   │   ├── queue-test.c++
+│   │   │   │   │   ├── readable.c++
+│   │   │   │   │   ├── readable.h
+│   │   │   │   │   ├── README.md
+│   │   │   │   │   ├── standard.c++
+│   │   │   │   │   ├── standard.h
+│   │   │   │   │   ├── standard-test.c++
+│   │   │   │   │   ├── streams-test.js
+│   │   │   │   │   ├── streams-test.wd-test
+│   │   │   │   │   ├── transform.c++
+│   │   │   │   │   ├── transform.h
+│   │   │   │   │   ├── writable.c++
+│   │   │   │   │   └── writable.h
+│   │   │   │   ├── streams.h
+│   │   │   │   ├── system-streams.c++
+│   │   │   │   ├── system-streams.h
+│   │   │   │   ├── tests
+│   │   │   │   │   ├── abortable-fetch-test.js
+│   │   │   │   │   ├── abortable-fetch-test.wd-test
+│   │   │   │   │   ├── abort-internal-streams-test.js
+│   │   │   │   │   ├── abort-internal-streams-test.wd-test
+│   │   │   │   │   ├── abortsignal-test.js
+│   │   │   │   │   ├── abortsignal-test.wd-test
+│   │   │   │   │   ├── actor-stub-test.js
+│   │   │   │   │   ├── actor-stub-test.wd-test
+│   │   │   │   │   ├── als-only-test.js
+│   │   │   │   │   ├── als-only-test.wd-test
+│   │   │   │   │   ├── als-test.js
+│   │   │   │   │   ├── als-test.wd-test
+│   │   │   │   │   ├── blob2-test.js
+│   │   │   │   │   ├── blob2-test.wd-test
+│   │   │   │   │   ├── blob-test.js
+│   │   │   │   │   ├── blob-test.wd-test
+│   │   │   │   │   ├── commonjs-module-test.js
+│   │   │   │   │   ├── commonjs-module-test.wd-test
+│   │   │   │   │   ├── compat-flags-test.js
+│   │   │   │   │   ├── compat-flags-test.wd-test
+│   │   │   │   │   ├── cross-context-promise-test.js
+│   │   │   │   │   ├── cross-context-promise-test.wd-test
+│   │   │   │   │   ├── crypto-extras-test.js
+│   │   │   │   │   ├── crypto-extras-test.wd-test
+│   │   │   │   │   ├── crypto-impl-asymmetric-test.js
+│   │   │   │   │   ├── crypto-impl-asymmetric-test.wd-test
+│   │   │   │   │   ├── crypto-streams-test.js
+│   │   │   │   │   ├── crypto-streams-test.wd-test
+│   │   │   │   │   ├── data-url-fetch-test.js
+│   │   │   │   │   ├── data-url-fetch-test.wd-test
+│   │   │   │   │   ├── encoding-test.js
+│   │   │   │   │   ├── encoding-test.wd-test
+│   │   │   │   │   ├── error-in-error-event-test.js
+│   │   │   │   │   ├── error-in-error-event-test.wd-test
+│   │   │   │   │   ├── eventsource-test.js
+│   │   │   │   │   ├── eventsource-test.wd-test
+│   │   │   │   │   ├── events-test.js
+│   │   │   │   │   ├── events-test.wd-test
+│   │   │   │   │   ├── fetch-test.js
+│   │   │   │   │   ├── fetch-test.wd-test
+│   │   │   │   │   ├── form-data-legacy-test.js
+│   │   │   │   │   ├── form-data-legacy-test.wd-test
+│   │   │   │   │   ├── form-data-test.js
+│   │   │   │   │   ├── form-data-test.wd-test
+│   │   │   │   │   ├── global-scope-test.js
+│   │   │   │   │   ├── global-scope-test.wd-test
+│   │   │   │   │   ├── htmlrewriter-test.js
+│   │   │   │   │   ├── htmlrewriter-test.wd-test
+│   │   │   │   │   ├── js-rpc-flag.js
+│   │   │   │   │   ├── js-rpc-flag.wd-test
+│   │   │   │   │   ├── js-rpc-socket-test.wd-test
+│   │   │   │   │   ├── js-rpc-test.js
+│   │   │   │   │   ├── js-rpc-test.wd-test
+│   │   │   │   │   ├── memory-cache-test.js
+│   │   │   │   │   ├── memory-cache-test.wd-test
+│   │   │   │   │   ├── module-test.js
+│   │   │   │   │   ├── module-test.wd-test
+│   │   │   │   │   ├── navigator-beacon-test.js
+│   │   │   │   │   ├── navigator-beacon-test.wd-test
+│   │   │   │   │   ├── new-module-registry-test.js
+│   │   │   │   │   ├── new-module-registry-test.wd-test
+│   │   │   │   │   ├── no-to-string-tag-test.js
+│   │   │   │   │   ├── no-to-string-tag-test.wd-test
+│   │   │   │   │   ├── reporterror-test.js
+│   │   │   │   │   ├── reporterror-test.wd-test
+│   │   │   │   │   ├── response-json.js
+│   │   │   │   │   ├── response-json.wd-test
+│   │   │   │   │   ├── scheduler-test.js
+│   │   │   │   │   ├── scheduler-test.wd-test
+│   │   │   │   │   ├── streams-test.js
+│   │   │   │   │   ├── streams-test.wd-test
+│   │   │   │   │   ├── unsafe-test.js
+│   │   │   │   │   ├── unsafe-test.wd-test
+│   │   │   │   │   ├── url-test.js
+│   │   │   │   │   ├── url-test.wd-test
+│   │   │   │   │   ├── websocket-hibernation.js
+│   │   │   │   │   └── websocket-hibernation.wd-test
+│   │   │   │   ├── trace.c++
+│   │   │   │   ├── trace.h
+│   │   │   │   ├── tsconfig.json
+│   │   │   │   ├── unsafe.c++
+│   │   │   │   ├── unsafe.h
+│   │   │   │   ├── url.c++
+│   │   │   │   ├── url.h
+│   │   │   │   ├── urlpattern.c++
+│   │   │   │   ├── urlpattern.h
+│   │   │   │   ├── url-standard.c++
+│   │   │   │   ├── url-standard.h
+│   │   │   │   ├── util.c++
+│   │   │   │   ├── util.h
+│   │   │   │   ├── util-test.c++
+│   │   │   │   ├── web-socket.c++
+│   │   │   │   ├── web-socket.h
+│   │   │   │   ├── worker-rpc.c++
+│   │   │   │   ├── worker-rpc.h
+│   │   │   │   └── wpt
+│   │   │   │       ├── BUILD.bazel
+│   │   │   │       ├── urlpattern-test.js
+│   │   │   │       └── url-test.js
+│   │   │   ├── io
+│   │   │   │   ├── actor-cache.c++
+│   │   │   │   ├── actor-cache.h
+│   │   │   │   ├── actor-cache-test.c++
+│   │   │   │   ├── actor-id.h
+│   │   │   │   ├── actor-sqlite.c++
+│   │   │   │   ├── actor-sqlite.h
+│   │   │   │   ├── actor-sqlite-test.c++
+│   │   │   │   ├── actor-storage.c++
+│   │   │   │   ├── actor-storage.capnp
+│   │   │   │   ├── actor-storage.h
+│   │   │   │   ├── BUILD.bazel
+│   │   │   │   ├── cdp.capnp
+│   │   │   │   ├── compatibility-date.c++
+│   │   │   │   ├── compatibility-date.capnp
+│   │   │   │   ├── compatibility-date.h
+│   │   │   │   ├── compatibility-date-test.c++
+│   │   │   │   ├── features.c++
+│   │   │   │   ├── features.capnp
+│   │   │   │   ├── features.h
+│   │   │   │   ├── hibernation-manager.c++
+│   │   │   │   ├── hibernation-manager.h
+│   │   │   │   ├── io-channels.h
+│   │   │   │   ├── io-context.c++
+│   │   │   │   ├── io-context.h
+│   │   │   │   ├── io-gate.c++
+│   │   │   │   ├── io-gate.h
+│   │   │   │   ├── io-gate-test.c++
+│   │   │   │   ├── io-own.c++
+│   │   │   │   ├── io-own.h
+│   │   │   │   ├── io-thread-context.c++
+│   │   │   │   ├── io-thread-context.h
+│   │   │   │   ├── io-timers.c++
+│   │   │   │   ├── io-timers.h
+│   │   │   │   ├── io-util.c++
+│   │   │   │   ├── io-util.h
+│   │   │   │   ├── limit-enforcer.h
+│   │   │   │   ├── observer.c++
+│   │   │   │   ├── observer.h
+│   │   │   │   ├── observer-test.c++
+│   │   │   │   ├── outcome.capnp
+│   │   │   │   ├── promise-wrapper.h
+│   │   │   │   ├── promise-wrapper-test.c++
+│   │   │   │   ├── request-tracker.c++
+│   │   │   │   ├── request-tracker.h
+│   │   │   │   ├── script-version.capnp
+│   │   │   │   ├── supported-compatibility-date.capnp
+│   │   │   │   ├── supported-compatibility-date.txt
+│   │   │   │   ├── trace.c++
+│   │   │   │   ├── trace.h
+│   │   │   │   ├── trace-test.c++
+│   │   │   │   ├── worker.c++
+│   │   │   │   ├── worker-entrypoint.c++
+│   │   │   │   ├── worker-entrypoint.h
+│   │   │   │   ├── worker.h
+│   │   │   │   ├── worker-interface.c++
+│   │   │   │   ├── worker-interface.capnp
+│   │   │   │   └── worker-interface.h
+│   │   │   ├── jsg
+│   │   │   │   ├── async-context.c++
+│   │   │   │   ├── async-context.h
+│   │   │   │   ├── buffersource.c++
+│   │   │   │   ├── buffersource.h
+│   │   │   │   ├── buffersource-test.c++
+│   │   │   │   ├── BUILD.bazel
+│   │   │   │   ├── compile-cache.c++
+│   │   │   │   ├── compile-cache.h
+│   │   │   │   ├── disable-memoize-test.c++
+│   │   │   │   ├── dom-exception.c++
+│   │   │   │   ├── dom-exception.h
+│   │   │   │   ├── dom-exception-test.c++
+│   │   │   │   ├── exception.c++
+│   │   │   │   ├── exception.h
+│   │   │   │   ├── function.h
+│   │   │   │   ├── function-test.c++
+│   │   │   │   ├── inspector.c++
+│   │   │   │   ├── inspector.h
+│   │   │   │   ├── iterator.c++
+│   │   │   │   ├── iterator.h
+│   │   │   │   ├── iterator-test.c++
+│   │   │   │   ├── jsg.c++
+│   │   │   │   ├── jsg.h
+│   │   │   │   ├── jsg-test.c++
+│   │   │   │   ├── jsg-test.h
+│   │   │   │   ├── jsvalue.c++
+│   │   │   │   ├── jsvalue.h
+│   │   │   │   ├── jsvalue-test.c++
+│   │   │   │   ├── macro-meta.h
+│   │   │   │   ├── macro-meta-test.c++
+│   │   │   │   ├── memory.c++
+│   │   │   │   ├── memory.h
+│   │   │   │   ├── memory-test.c++
+│   │   │   │   ├── meta.h
+│   │   │   │   ├── modules.c++
+│   │   │   │   ├── modules.capnp
+│   │   │   │   ├── modules.h
+│   │   │   │   ├── modules-new.c++
+│   │   │   │   ├── modules-new.h
+│   │   │   │   ├── modules-new-test.c++
+│   │   │   │   ├── observer.h
+│   │   │   │   ├── promise.c++
+│   │   │   │   ├── promise.h
+│   │   │   │   ├── promise-test.c++
+│   │   │   │   ├── README.md
+│   │   │   │   ├── resource.c++
+│   │   │   │   ├── resource.h
+│   │   │   │   ├── resource-test-bootstrap.js
+│   │   │   │   ├── resource-test-builtin.js
+│   │   │   │   ├── resource-test.c++
+│   │   │   │   ├── resource-test.capnp
+│   │   │   │   ├── rtti.capnp
+│   │   │   │   ├── rtti.h
+│   │   │   │   ├── rtti-test.c++
+│   │   │   │   ├── rtti-test.capnp
+│   │   │   │   ├── ser.c++
+│   │   │   │   ├── ser.h
+│   │   │   │   ├── ser-test.c++
+│   │   │   │   ├── setup.c++
+│   │   │   │   ├── setup.h
+│   │   │   │   ├── setup-test.c++
+│   │   │   │   ├── struct.h
+│   │   │   │   ├── struct-test.c++
+│   │   │   │   ├── tracing-test.c++
+│   │   │   │   ├── type-wrapper.h
+│   │   │   │   ├── type-wrapper-test.c++
+│   │   │   │   ├── url.c++
+│   │   │   │   ├── url.h
+│   │   │   │   ├── url-test.c++
+│   │   │   │   ├── util.c++
+│   │   │   │   ├── util.h
+│   │   │   │   ├── util-test.c++
+│   │   │   │   ├── v8-platform-wrapper.c++
+│   │   │   │   ├── v8-platform-wrapper.h
+│   │   │   │   ├── value.h
+│   │   │   │   ├── value-test.c++
+│   │   │   │   ├── web-idl.h
+│   │   │   │   ├── web-idl-test.c++
+│   │   │   │   ├── wrappable.c++
+│   │   │   │   └── wrappable.h
+│   │   │   ├── README.md
+│   │   │   ├── server
+│   │   │   │   ├── actor-id-impl.c++
+│   │   │   │   ├── actor-id-impl.h
+│   │   │   │   ├── actor-id-impl-test.c++
+│   │   │   │   ├── alarm-scheduler.c++
+│   │   │   │   ├── alarm-scheduler.h
+│   │   │   │   ├── BUILD.bazel
+│   │   │   │   ├── server.c++
+│   │   │   │   ├── server.h
+│   │   │   │   ├── server-test.c++
+│   │   │   │   ├── tests
+│   │   │   │   │   ├── BUILD.bazel
+│   │   │   │   │   ├── compile-tests
+│   │   │   │   │   │   ├── BUILD.bazel
+│   │   │   │   │   │   ├── compile-helloworld-test.ok
+│   │   │   │   │   │   └── compile-test.sh
+│   │   │   │   │   ├── extensions
+│   │   │   │   │   │   ├── binding.js
+│   │   │   │   │   │   ├── BUILD.bazel
+│   │   │   │   │   │   ├── extension.capnp
+│   │   │   │   │   │   ├── extensions-test.js
+│   │   │   │   │   │   ├── extensions-test.wd-test
+│   │   │   │   │   │   ├── internal-module.js
+│   │   │   │   │   │   └── module.js
+│   │   │   │   │   ├── inspector
+│   │   │   │   │   │   ├── BUILD.bazel
+│   │   │   │   │   │   ├── config.capnp
+│   │   │   │   │   │   ├── driver.mjs
+│   │   │   │   │   │   └── index.mjs
+│   │   │   │   │   ├── python
+│   │   │   │   │   │   ├── BUILD.bazel
+│   │   │   │   │   │   ├── env-param
+│   │   │   │   │   │   │   ├── env.wd-test
+│   │   │   │   │   │   │   └── worker.py
+│   │   │   │   │   │   ├── hello
+│   │   │   │   │   │   │   ├── hello.wd-test
+│   │   │   │   │   │   │   └── worker.py
+│   │   │   │   │   │   ├── import_tests.bzl
+│   │   │   │   │   │   ├── py_wd_test.bzl
+│   │   │   │   │   │   ├── random
+│   │   │   │   │   │   │   ├── random.wd-test
+│   │   │   │   │   │   │   └── worker.py
+│   │   │   │   │   │   ├── sdk
+│   │   │   │   │   │   │   ├── sdk.wd-test
+│   │   │   │   │   │   │   ├── server.py
+│   │   │   │   │   │   │   └── worker.py
+│   │   │   │   │   │   └── subdirectory
+│   │   │   │   │   │       ├── a.py
+│   │   │   │   │   │       ├── subdir
+│   │   │   │   │   │       │   ├── a.py
+│   │   │   │   │   │       │   └── __init__.py
+│   │   │   │   │   │       └── subdirectory.wd-test
+│   │   │   │   │   ├── server-harness.mjs
+│   │   │   │   │   ├── unsafe-eval
+│   │   │   │   │   │   ├── BUILD.bazel
+│   │   │   │   │   │   ├── extension.capnp
+│   │   │   │   │   │   ├── module.js
+│   │   │   │   │   │   ├── unsafe-eval-test.js
+│   │   │   │   │   │   └── unsafe-eval-test.wd-test
+│   │   │   │   │   └── unsafe-module
+│   │   │   │   │       ├── BUILD.bazel
+│   │   │   │   │       ├── unsafe-module-test.js
+│   │   │   │   │       └── unsafe-module-test.wd-test
+│   │   │   │   ├── v8-platform-impl.c++
+│   │   │   │   ├── v8-platform-impl.h
+│   │   │   │   ├── workerd-api.c++
+│   │   │   │   ├── workerd-api.h
+│   │   │   │   ├── workerd.c++
+│   │   │   │   ├── workerd.capnp
+│   │   │   │   └── workerd-meta.capnp
+│   │   │   ├── tests
+│   │   │   │   ├── bench-api-headers.c++
+│   │   │   │   ├── bench-global-scope.c++
+│   │   │   │   ├── bench-json.c++
+│   │   │   │   ├── bench-kj-headers.c++
+│   │   │   │   ├── bench-mimetype.c++
+│   │   │   │   ├── bench-regex.c++
+│   │   │   │   ├── bench-tools.h
+│   │   │   │   ├── BUILD.bazel
+│   │   │   │   ├── performance-test.js
+│   │   │   │   ├── performance-test.wd-test
+│   │   │   │   ├── test-fixture.c++
+│   │   │   │   ├── test-fixture.h
+│   │   │   │   └── test-fixture-test.c++
+│   │   │   ├── tools
+│   │   │   │   ├── BUILD.bazel
+│   │   │   │   ├── param-extractor.rs
+│   │   │   │   └── param-names-ast.c++
+│   │   │   └── util
+│   │   │       ├── abortable.h
+│   │   │       ├── autogate.c++
+│   │   │       ├── autogate.h
+│   │   │       ├── batch-queue.h
+│   │   │       ├── batch-queue-test.c++
+│   │   │       ├── BUILD.bazel
+│   │   │       ├── canceler.h
+│   │   │       ├── capnp-mock.c++
+│   │   │       ├── capnp-mock.h
+│   │   │       ├── color-util.h
+│   │   │       ├── duration-exceeded-logger.h
+│   │   │       ├── duration-exceeded-logger-test.c++
+│   │   │       ├── http-util.h
+│   │   │       ├── mimetype.c++
+│   │   │       ├── mimetype.h
+│   │   │       ├── mimetype-test.c++
+│   │   │       ├── own-util.h
+│   │   │       ├── perfetto-tracing.c++
+│   │   │       ├── perfetto-tracing.h
+│   │   │       ├── sentry.h
+│   │   │       ├── sqlite.c++
+│   │   │       ├── sqlite.h
+│   │   │       ├── sqlite-kv.c++
+│   │   │       ├── sqlite-kv.h
+│   │   │       ├── sqlite-kv-test.c++
+│   │   │       ├── sqlite-metadata.c++
+│   │   │       ├── sqlite-metadata.h
+│   │   │       ├── sqlite-metadata-test.c++
+│   │   │       ├── sqlite-test.c++
+│   │   │       ├── stream-utils.c++
+│   │   │       ├── stream-utils.h
+│   │   │       ├── string-buffer.h
+│   │   │       ├── string-buffer-test.c++
+│   │   │       ├── strings.c++
+│   │   │       ├── strings.h
+│   │   │       ├── symbolizer.c++
+│   │   │       ├── test.h
+│   │   │       ├── test-test.c++
+│   │   │       ├── thread-scopes.c++
+│   │   │       ├── thread-scopes.h
+│   │   │       ├── uncaught-exception-source.h
+│   │   │       ├── use-perfetto-categories.h
+│   │   │       ├── uuid.c++
+│   │   │       ├── uuid.h
+│   │   │       ├── uuid-test.c++
+│   │   │       ├── wait-list.c++
+│   │   │       ├── wait-list.h
+│   │   │       ├── wait-list-test.c++
+│   │   │       ├── weak-refs.h
+│   │   │       └── xthreadnotifier.h
+│   │   └── wpt
+│   │       ├── BUILD.bazel
+│   │       └── harness.js
+│   ├── tools
+│   │   ├── base.eslint.config.mjs
+│   │   ├── BUILD.bazel
+│   │   ├── cross
+│   │   │   ├── format.json
+│   │   │   └── format.py
+│   │   ├── unix
+│   │   │   ├── apply-big-move.sh
+│   │   │   ├── clangd-check.sh
+│   │   │   ├── create-external.sh
+│   │   │   ├── create-internal-pr.sh
+│   │   │   ├── find-python3.sh
+│   │   │   ├── fix-copyrights.sh
+│   │   │   └── workspace-status.sh
+│   │   └── windows
+│   │       ├── bazel-env.bat
+│   │       ├── create-external.bat
+│   │       ├── install-deps.bat
+│   │       ├── vsconfig.json
+│   │       └── workspace-status.cmd
+│   ├── types
+│   │   ├── BUILD.bazel
+│   │   ├── defines
+│   │   │   ├── ai.d.ts
+│   │   │   ├── cf.d.ts
+│   │   │   ├── d1.d.ts
+│   │   │   ├── disposable.d.ts
+│   │   │   ├── email.d.ts
+│   │   │   ├── hyperdrive.d.ts
+│   │   │   ├── images.d.ts
+│   │   │   ├── pages.d.ts
+│   │   │   ├── pipelines.d.ts
+│   │   │   ├── pipeline-transform.d.ts
+│   │   │   ├── pubsub.d.ts
+│   │   │   ├── ratelimit.d.ts
+│   │   │   ├── rpc.d.ts
+│   │   │   ├── sockets.d.ts
+│   │   │   ├── vectorize.d.ts
+│   │   │   ├── versions.d.ts
+│   │   │   ├── wfp.d.ts
+│   │   │   └── workflows.d.ts
+│   │   ├── eslint.config.mjs
+│   │   ├── README.md
+│   │   ├── scripts
+│   │   │   ├── build-types.ts
+│   │   │   ├── build-worker.ts
+│   │   │   └── config.capnp
+│   │   ├── src
+│   │   │   ├── cloudflare.ts
+│   │   │   ├── generator
+│   │   │   │   ├── index.ts
+│   │   │   │   ├── parameter-names.ts
+│   │   │   │   ├── structure.ts
+│   │   │   │   └── type.ts
+│   │   │   ├── index.ts
+│   │   │   ├── print.ts
+│   │   │   ├── program.ts
+│   │   │   ├── standards.ts
+│   │   │   ├── transforms
+│   │   │   │   ├── ambient.ts
+│   │   │   │   ├── class-to-interface.ts
+│   │   │   │   ├── comments.ts
+│   │   │   │   ├── globals.ts
+│   │   │   │   ├── helpers.ts
+│   │   │   │   ├── importable.ts
+│   │   │   │   ├── import-resolve.ts
+│   │   │   │   ├── index.ts
+│   │   │   │   ├── internal-namespace.ts
+│   │   │   │   ├── iterators.ts
+│   │   │   │   ├── onmessage-declaration.ts
+│   │   │   │   └── overrides
+│   │   │   │       ├── compiler.ts
+│   │   │   │       └── index.ts
+│   │   │   └── worker
+│   │   │       ├── index.ts
+│   │   │       ├── raw.d.ts
+│   │   │       ├── rtti.d.ts
+│   │   │       └── virtual.d.ts
+│   │   ├── test
+│   │   │   ├── generator
+│   │   │   │   ├── index.spec.ts
+│   │   │   │   ├── structure.spec.ts
+│   │   │   │   └── type.spec.ts
+│   │   │   ├── index.spec.ts
+│   │   │   ├── print.spec.ts
+│   │   │   ├── transforms
+│   │   │   │   ├── class-to-interface.spec.ts
+│   │   │   │   ├── globals.spec.ts
+│   │   │   │   ├── iterators.spec.ts
+│   │   │   │   └── overrides
+│   │   │   │       └── index.spec.ts
+│   │   │   └── types
+│   │   │       ├── cf.ts
+│   │   │       ├── d1.ts
+│   │   │       ├── do.ts
+│   │   │       ├── rpc.ts
+│   │   │       └── tsconfig.json
+│   │   └── tsconfig.json
+│   └── WORKSPACE
+└── workerd-1.20241106.0.tar.gz -> /home/felix/packages/workerd/workerd-1.20241106.0.tar.gz
+
+130 directories, 1299 files

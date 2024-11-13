@@ -1,0 +1,1575 @@
+src
+└── magnum
+    ├── CMakeLists.txt
+    ├── CONTRIBUTING.md
+    ├── COPYING
+    ├── CREDITS.md
+    ├── doc
+    │   ├── 00-page-order.dox
+    │   ├── animation.dox
+    │   ├── building.dox
+    │   ├── changelog.dox
+    │   ├── changelog-old.dox
+    │   ├── cmake.dox
+    │   ├── coding-style.dox
+    │   ├── colormap-inferno.png
+    │   ├── colormap-magma.png
+    │   ├── colormap-plasma.png
+    │   ├── colormap-turbo.png
+    │   ├── colormap-viridis.png
+    │   ├── compilation-speedup.dox
+    │   ├── conf-public.py
+    │   ├── conf.py
+    │   ├── credits.dox
+    │   ├── custom-buildsystems.dox
+    │   ├── custom-buildsystems-order.dot
+    │   ├── custom-buildsystems-order-plugins.dot
+    │   ├── debug-tools.dox
+    │   ├── developers.dox
+    │   ├── Doxyfile
+    │   ├── Doxyfile-mcss
+    │   ├── Doxyfile-public
+    │   ├── favicon.ico
+    │   ├── features.dox
+    │   ├── file-formats.dox
+    │   ├── generated
+    │   │   ├── CMakeLists.txt
+    │   │   ├── colormaps.cpp
+    │   │   ├── easings.cpp
+    │   │   ├── primitives.cpp
+    │   │   ├── README.md
+    │   │   ├── shaders.cpp
+    │   │   ├── vector-distancefield.png
+    │   │   ├── vector.png
+    │   │   └── vector.svg
+    │   ├── getting-started-blue.png
+    │   ├── getting-started.dox
+    │   ├── getting-started.png
+    │   ├── mainpage.dox
+    │   ├── matrix-vector.dox
+    │   ├── method-chaining.dox
+    │   ├── namespaces.dox
+    │   ├── openal.dox
+    │   ├── openal-support.dox
+    │   ├── opengl.dox
+    │   ├── opengl-mapping.dox
+    │   ├── opengl-support.dox
+    │   ├── opengl-workarounds.dox
+    │   ├── opengl-wrapping.dox
+    │   ├── platform.dox
+    │   ├── platforms-android.dox
+    │   ├── platforms.dox
+    │   ├── platforms-gl.dox
+    │   ├── platforms-html5.dox
+    │   ├── platforms-ios.dox
+    │   ├── platforms-linux.dox
+    │   ├── platforms-macos.dox
+    │   ├── platforms-windows.dox
+    │   ├── plugins.dox
+    │   ├── portability.dox
+    │   ├── primitives-axis2d.png
+    │   ├── primitives-axis3d.png
+    │   ├── primitives-capsule2dwireframe.png
+    │   ├── primitives-capsule3dsolid.png
+    │   ├── primitives-capsule3dwireframe.png
+    │   ├── primitives-circle2dsolid.png
+    │   ├── primitives-circle2dwireframe.png
+    │   ├── primitives-circle3dsolid.png
+    │   ├── primitives-circle3dwireframe.png
+    │   ├── primitives-conesolid.png
+    │   ├── primitives-conewireframe.png
+    │   ├── primitives-crosshair2d.png
+    │   ├── primitives-crosshair3d.png
+    │   ├── primitives-cubesolid.png
+    │   ├── primitives-cubewireframe.png
+    │   ├── primitives-cylindersolid.png
+    │   ├── primitives-cylinderwireframe.png
+    │   ├── primitives-gradient2dhorizontal.png
+    │   ├── primitives-gradient2d.png
+    │   ├── primitives-gradient2dvertical.png
+    │   ├── primitives-gradient3dhorizontal.png
+    │   ├── primitives-gradient3d.png
+    │   ├── primitives-gradient3dvertical.png
+    │   ├── primitives-grid3dsolid.png
+    │   ├── primitives-grid3dwireframe.png
+    │   ├── primitives-icospheresolid.png
+    │   ├── primitives-icospherewireframe.png
+    │   ├── primitives-line2d.png
+    │   ├── primitives-line3d.png
+    │   ├── primitives-planesolid.png
+    │   ├── primitives-planewireframe.png
+    │   ├── primitives-squaresolid.png
+    │   ├── primitives-squarewireframe.png
+    │   ├── primitives-uvspheresolid.png
+    │   ├── primitives-uvspherewireframe.png
+    │   ├── scenegraph.dox
+    │   ├── scenegraph-features.dot
+    │   ├── scenegraph-hierarchy.dot
+    │   ├── shaders-distancefieldvector.png
+    │   ├── shaders.dox
+    │   ├── shaders-flat.png
+    │   ├── shaders-meshvisualizer2d.png
+    │   ├── shaders-meshvisualizer2d-primitiveid.png
+    │   ├── shaders-meshvisualizer3d.png
+    │   ├── shaders-meshvisualizer3d-primitiveid.png
+    │   ├── shaders-phong.png
+    │   ├── shaders-vector.png
+    │   ├── shaders-vertexcolor.png
+    │   ├── singles.dox
+    │   ├── snippets
+    │   │   ├── CMakeLists.txt
+    │   │   ├── coding-style.h
+    │   │   ├── configure.h.cmake
+    │   │   ├── debugtools-compareimage.ansi
+    │   │   ├── debugtools-compareimage.cpp
+    │   │   ├── debugtools-frameprofiler.ansi
+    │   │   ├── debugtools-frameprofiler.cpp
+    │   │   ├── easings-backinout.svg
+    │   │   ├── easings-backinout-thumb.svg
+    │   │   ├── easings-backin.svg
+    │   │   ├── easings-backin-thumb.svg
+    │   │   ├── easings-backout.svg
+    │   │   ├── easings-backout-thumb.svg
+    │   │   ├── easings-bounceinout.svg
+    │   │   ├── easings-bounceinout-thumb.svg
+    │   │   ├── easings-bouncein.svg
+    │   │   ├── easings-bouncein-thumb.svg
+    │   │   ├── easings-bounceout.svg
+    │   │   ├── easings-bounceout-thumb.svg
+    │   │   ├── easings-circularinout.svg
+    │   │   ├── easings-circularinout-thumb.svg
+    │   │   ├── easings-circularin.svg
+    │   │   ├── easings-circularin-thumb.svg
+    │   │   ├── easings-circularout.svg
+    │   │   ├── easings-circularout-thumb.svg
+    │   │   ├── easings-cubicinout.svg
+    │   │   ├── easings-cubicinout-thumb.svg
+    │   │   ├── easings-cubicin.svg
+    │   │   ├── easings-cubicin-thumb.svg
+    │   │   ├── easings-cubicout.svg
+    │   │   ├── easings-cubicout-thumb.svg
+    │   │   ├── easings-elasticinout.svg
+    │   │   ├── easings-elasticinout-thumb.svg
+    │   │   ├── easings-elasticin.svg
+    │   │   ├── easings-elasticin-thumb.svg
+    │   │   ├── easings-elasticout.svg
+    │   │   ├── easings-elasticout-thumb.svg
+    │   │   ├── easings-exponentialinout.svg
+    │   │   ├── easings-exponentialinout-thumb.svg
+    │   │   ├── easings-exponentialin.svg
+    │   │   ├── easings-exponentialin-thumb.svg
+    │   │   ├── easings-exponentialout.svg
+    │   │   ├── easings-exponentialout-thumb.svg
+    │   │   ├── easings-linear.svg
+    │   │   ├── easings-linear-thumb.svg
+    │   │   ├── easings-quadraticinout.svg
+    │   │   ├── easings-quadraticinout-thumb.svg
+    │   │   ├── easings-quadraticin.svg
+    │   │   ├── easings-quadraticin-thumb.svg
+    │   │   ├── easings-quadraticout.svg
+    │   │   ├── easings-quadraticout-thumb.svg
+    │   │   ├── easings-quarticinout.svg
+    │   │   ├── easings-quarticinout-thumb.svg
+    │   │   ├── easings-quarticin.svg
+    │   │   ├── easings-quarticin-thumb.svg
+    │   │   ├── easings-quarticout.svg
+    │   │   ├── easings-quarticout-thumb.svg
+    │   │   ├── easings-quinticinout.svg
+    │   │   ├── easings-quinticinout-thumb.svg
+    │   │   ├── easings-quinticin.svg
+    │   │   ├── easings-quinticin-thumb.svg
+    │   │   ├── easings-quinticout.svg
+    │   │   ├── easings-quinticout-thumb.svg
+    │   │   ├── easings-sineinout.svg
+    │   │   ├── easings-sineinout-thumb.svg
+    │   │   ├── easings-sinein.svg
+    │   │   ├── easings-sinein-thumb.svg
+    │   │   ├── easings-sineout.svg
+    │   │   ├── easings-sineout-thumb.svg
+    │   │   ├── easings-smootherstep.svg
+    │   │   ├── easings-smootherstep-thumb.svg
+    │   │   ├── easings-smoothstep.svg
+    │   │   ├── easings-smoothstep-thumb.svg
+    │   │   ├── easings-step.svg
+    │   │   ├── easings-step-thumb.svg
+    │   │   ├── getting-started-blue.cpp
+    │   │   ├── getting-started.cpp
+    │   │   ├── image1.tga
+    │   │   ├── image2.tga
+    │   │   ├── MagnumAnimation.cpp
+    │   │   ├── MagnumAnimation-custom.cpp
+    │   │   ├── MagnumAudio.cpp
+    │   │   ├── MagnumAudio-scenegraph.cpp
+    │   │   ├── Magnum.cpp
+    │   │   ├── MagnumDebugTools.cpp
+    │   │   ├── MagnumDebugTools-gl.cpp
+    │   │   ├── MagnumGL.cpp
+    │   │   ├── MagnumGL-framebuffer.cpp
+    │   │   ├── MagnumMathAlgorithms.cpp
+    │   │   ├── MagnumMath.cpp
+    │   │   ├── MagnumMath-cpp14.cpp
+    │   │   ├── MagnumMeshTools.cpp
+    │   │   ├── MagnumMeshTools-gl.cpp
+    │   │   ├── MagnumMeshTools-stl.cpp
+    │   │   ├── MagnumPlatform.cpp
+    │   │   ├── MagnumPlatform-custom.cpp
+    │   │   ├── MagnumPlatform-portability.cpp
+    │   │   ├── MagnumPlatform-windowless.cpp
+    │   │   ├── MagnumPlatform-windowless-custom.cpp
+    │   │   ├── MagnumPlatform-windowless-thread.cpp
+    │   │   ├── MagnumPrimitives.cpp
+    │   │   ├── MagnumSceneGraph.cpp
+    │   │   ├── MagnumSceneGraph-gl.cpp
+    │   │   ├── MagnumShaders.cpp
+    │   │   ├── MagnumText.cpp
+    │   │   ├── MagnumTrade.cpp
+    │   │   ├── MagnumVk.cpp
+    │   │   ├── MathColor3-debug.ansi
+    │   │   ├── MathColor4-debug.ansi
+    │   │   ├── platforms-html5.cpp
+    │   │   ├── plugins.cpp
+    │   │   └── README.md
+    │   ├── tips.dox
+    │   ├── transformations.dox
+    │   ├── troubleshooting.dox
+    │   ├── types.dox
+    │   ├── utilities.dox
+    │   └── vulkan.dox
+    ├── modules
+    │   ├── CMakeLists.txt
+    │   ├── FindCorrade.cmake
+    │   ├── FindEGL.cmake
+    │   ├── FindGLFW.cmake
+    │   ├── FindMagnum.cmake
+    │   ├── FindNodeJs.cmake
+    │   ├── FindOpenAL.cmake
+    │   ├── FindOpenGLES2.cmake
+    │   ├── FindOpenGLES3.cmake
+    │   ├── FindSDL2.cmake
+    │   └── MagnumConfig.cmake
+    ├── package
+    │   ├── archlinux
+    │   │   ├── magnum
+    │   │   │   └── PKGBUILD
+    │   │   ├── magnum-git
+    │   │   │   └── PKGBUILD
+    │   │   ├── PKGBUILD
+    │   │   ├── PKGBUILD-android-arm64
+    │   │   ├── PKGBUILD-clang
+    │   │   ├── PKGBUILD-clang-addressanitizer
+    │   │   ├── PKGBUILD-clang-analyzer
+    │   │   ├── PKGBUILD-clang-libc++
+    │   │   ├── PKGBUILD-coverage
+    │   │   ├── PKGBUILD-emscripten
+    │   │   ├── PKGBUILD-emscripten-wasm
+    │   │   ├── PKGBUILD-emscripten-wasm-webgl2
+    │   │   ├── PKGBUILD-emscripten-webgl2
+    │   │   ├── PKGBUILD-es2
+    │   │   ├── PKGBUILD-es2desktop
+    │   │   ├── PKGBUILD-es3
+    │   │   ├── PKGBUILD-es3desktop
+    │   │   ├── PKGBUILD-gcc48
+    │   │   ├── PKGBUILD-mingw-w64
+    │   │   └── PKGBUILD-release
+    │   ├── ci
+    │   │   ├── appveyor-cache-reset.txt
+    │   │   ├── appveyor-desktop.bat
+    │   │   ├── appveyor-desktop-gles.bat
+    │   │   ├── appveyor-desktop-mingw.bat
+    │   │   ├── appveyor-desktop-vulkan.bat
+    │   │   ├── appveyor-lcov.sh
+    │   │   ├── appveyor-rt.bat
+    │   │   ├── appveyor.yml
+    │   │   ├── leaksanitizer.conf
+    │   │   ├── libvulkan.cpp
+    │   │   ├── travis-android-arm.sh
+    │   │   ├── travis-desktop-gles.sh
+    │   │   ├── travis-desktop.sh
+    │   │   ├── travis-desktop-vulkan.sh
+    │   │   ├── travis-emscripten.sh
+    │   │   ├── travis-ios-simulator.sh
+    │   │   └── travis.yml
+    │   ├── debian
+    │   │   ├── changelog
+    │   │   ├── compat
+    │   │   ├── control
+    │   │   ├── copyright
+    │   │   ├── magnum-dev.install
+    │   │   ├── magnum.install
+    │   │   ├── rules
+    │   │   └── source
+    │   │       └── format
+    │   ├── gentoo
+    │   │   └── dev-libs
+    │   │       └── magnum
+    │   │           ├── magnum-9999.ebuild
+    │   │           └── Manifest
+    │   ├── homebrew
+    │   │   └── magnum.rb
+    │   ├── hunter
+    │   │   ├── HunterAddPackages.cmake
+    │   │   └── HunterInit.cmake
+    │   └── msys
+    │       ├── magnum
+    │       │   └── PKGBUILD
+    │       └── PKGBUILD
+    ├── README.md
+    ├── src
+    │   ├── CMakeLists.txt
+    │   ├── dummy.cpp
+    │   ├── Magnum
+    │   │   ├── AbstractResourceLoader.h
+    │   │   ├── Animation
+    │   │   │   ├── Animation.h
+    │   │   │   ├── CMakeLists.txt
+    │   │   │   ├── Easing.h
+    │   │   │   ├── Interpolation.cpp
+    │   │   │   ├── Interpolation.h
+    │   │   │   ├── Player.cpp
+    │   │   │   ├── Player.h
+    │   │   │   ├── Player.hpp
+    │   │   │   ├── Test
+    │   │   │   │   ├── Benchmark.cpp
+    │   │   │   │   ├── CMakeLists.txt
+    │   │   │   │   ├── EasingTest.cpp
+    │   │   │   │   ├── InterpolationTest.cpp
+    │   │   │   │   ├── PlayerCustomTest.cpp
+    │   │   │   │   ├── PlayerTest.cpp
+    │   │   │   │   ├── TrackTest.cpp
+    │   │   │   │   └── TrackViewTest.cpp
+    │   │   │   └── Track.h
+    │   │   ├── Array.h
+    │   │   ├── Audio
+    │   │   │   ├── AbstractImporter.cpp
+    │   │   │   ├── AbstractImporter.h
+    │   │   │   ├── al-info.cpp
+    │   │   │   ├── al-info.html
+    │   │   │   ├── Audio.cpp
+    │   │   │   ├── Audio.h
+    │   │   │   ├── Buffer.cpp
+    │   │   │   ├── BufferFormat.cpp
+    │   │   │   ├── BufferFormat.h
+    │   │   │   ├── Buffer.h
+    │   │   │   ├── CMakeLists.txt
+    │   │   │   ├── configure.h.cmake
+    │   │   │   ├── Context.cpp
+    │   │   │   ├── Context.h
+    │   │   │   ├── Extensions.h
+    │   │   │   ├── Listener.cpp
+    │   │   │   ├── Listener.h
+    │   │   │   ├── MacOSXBundleInfo.plist.in
+    │   │   │   ├── Playable.cpp
+    │   │   │   ├── PlayableGroup.cpp
+    │   │   │   ├── PlayableGroup.h
+    │   │   │   ├── Playable.h
+    │   │   │   ├── Renderer.cpp
+    │   │   │   ├── Renderer.h
+    │   │   │   ├── Source.cpp
+    │   │   │   ├── Source.h
+    │   │   │   ├── Test
+    │   │   │   │   ├── AbstractImporterTest.cpp
+    │   │   │   │   ├── BufferALTest.cpp
+    │   │   │   │   ├── BufferFormatTest.cpp
+    │   │   │   │   ├── CMakeLists.txt
+    │   │   │   │   ├── configure.h.cmake
+    │   │   │   │   ├── ContextALTest.cpp
+    │   │   │   │   ├── ContextTest.cpp
+    │   │   │   │   ├── file.bin
+    │   │   │   │   ├── GlobalStateAcrossLibrariesALTest.cpp
+    │   │   │   │   ├── GlobalStateAcrossLibrariesLibrary.cpp
+    │   │   │   │   ├── GlobalStateAcrossLibrariesLibrary.h
+    │   │   │   │   ├── ListenerALTest.cpp
+    │   │   │   │   ├── PlayableALTest.cpp
+    │   │   │   │   ├── RendererALTest.cpp
+    │   │   │   │   ├── RendererTest.cpp
+    │   │   │   │   ├── SourceALTest.cpp
+    │   │   │   │   └── SourceTest.cpp
+    │   │   │   └── visibility.h
+    │   │   ├── British.h
+    │   │   ├── CMakeLists.txt
+    │   │   ├── configure.h.cmake
+    │   │   ├── DebugTools
+    │   │   │   ├── BufferData.cpp
+    │   │   │   ├── BufferData.h
+    │   │   │   ├── CMakeLists.txt
+    │   │   │   ├── ColorMap.cpp
+    │   │   │   ├── ColorMap.h
+    │   │   │   ├── CompareImage.cpp
+    │   │   │   ├── CompareImage.h
+    │   │   │   ├── DebugTools.h
+    │   │   │   ├── ForceRenderer.cpp
+    │   │   │   ├── ForceRenderer.h
+    │   │   │   ├── FrameProfiler.cpp
+    │   │   │   ├── FrameProfiler.h
+    │   │   │   ├── Implementation
+    │   │   │   │   ├── colormap-to-srgb.py
+    │   │   │   │   └── ForceRendererTransformation.h
+    │   │   │   ├── ObjectRenderer.cpp
+    │   │   │   ├── ObjectRenderer.h
+    │   │   │   ├── Profiler.cpp
+    │   │   │   ├── Profiler.h
+    │   │   │   ├── ResourceManager.cpp
+    │   │   │   ├── ResourceManager.h
+    │   │   │   ├── resources.conf
+    │   │   │   ├── Screenshot.cpp
+    │   │   │   ├── Screenshot.h
+    │   │   │   ├── Test
+    │   │   │   │   ├── BufferDataGLTest.cpp
+    │   │   │   │   ├── CMakeLists.txt
+    │   │   │   │   ├── CompareImageActual.tga
+    │   │   │   │   ├── CompareImageCompressed.dds
+    │   │   │   │   ├── CompareImageExpected.tga
+    │   │   │   │   ├── CompareImageTest.cpp
+    │   │   │   │   ├── configure.h.cmake
+    │   │   │   │   ├── ForceRenderer2D.tga
+    │   │   │   │   ├── ForceRenderer3D.tga
+    │   │   │   │   ├── ForceRendererGLTest.cpp
+    │   │   │   │   ├── ForceRendererTest.cpp
+    │   │   │   │   ├── FrameProfilerGLTest.cpp
+    │   │   │   │   ├── FrameProfilerTest.cpp
+    │   │   │   │   ├── ObjectRenderer2D.tga
+    │   │   │   │   ├── ObjectRenderer3D.tga
+    │   │   │   │   ├── ObjectRendererGLTest.cpp
+    │   │   │   │   ├── ScreenshotGLTest.cpp
+    │   │   │   │   └── TextureImageGLTest.cpp
+    │   │   │   ├── TextureImage.cpp
+    │   │   │   ├── TextureImage.frag
+    │   │   │   ├── TextureImage.h
+    │   │   │   ├── TextureImage.vert
+    │   │   │   └── visibility.h
+    │   │   ├── DimensionTraits.h
+    │   │   ├── FileCallback.cpp
+    │   │   ├── FileCallback.h
+    │   │   ├── GL
+    │   │   │   ├── AbstractFramebuffer.cpp
+    │   │   │   ├── AbstractFramebuffer.h
+    │   │   │   ├── AbstractObject.cpp
+    │   │   │   ├── AbstractObject.h
+    │   │   │   ├── AbstractQuery.cpp
+    │   │   │   ├── AbstractQuery.h
+    │   │   │   ├── AbstractShaderProgram.cpp
+    │   │   │   ├── AbstractShaderProgram.h
+    │   │   │   ├── AbstractTexture.cpp
+    │   │   │   ├── AbstractTexture.h
+    │   │   │   ├── Attribute.cpp
+    │   │   │   ├── Attribute.h
+    │   │   │   ├── Buffer.cpp
+    │   │   │   ├── Buffer.h
+    │   │   │   ├── BufferImage.cpp
+    │   │   │   ├── BufferImage.h
+    │   │   │   ├── BufferTexture.cpp
+    │   │   │   ├── BufferTextureFormat.h
+    │   │   │   ├── BufferTexture.h
+    │   │   │   ├── CMakeLists.txt
+    │   │   │   ├── Context.cpp
+    │   │   │   ├── Context.h
+    │   │   │   ├── CubeMapTextureArray.cpp
+    │   │   │   ├── CubeMapTextureArray.h
+    │   │   │   ├── CubeMapTexture.cpp
+    │   │   │   ├── CubeMapTexture.h
+    │   │   │   ├── DebugOutput.cpp
+    │   │   │   ├── DebugOutput.h
+    │   │   │   ├── DefaultFramebuffer.cpp
+    │   │   │   ├── DefaultFramebuffer.h
+    │   │   │   ├── Extensions.h
+    │   │   │   ├── Framebuffer.cpp
+    │   │   │   ├── Framebuffer.h
+    │   │   │   ├── GL.h
+    │   │   │   ├── ImageFormat.h
+    │   │   │   ├── Implementation
+    │   │   │   │   ├── BufferState.cpp
+    │   │   │   │   ├── BufferState.h
+    │   │   │   │   ├── compressedPixelFormatMapping.hpp
+    │   │   │   │   ├── ContextState.cpp
+    │   │   │   │   ├── ContextState.h
+    │   │   │   │   ├── DebugState.cpp
+    │   │   │   │   ├── DebugState.h
+    │   │   │   │   ├── driverSpecific.cpp
+    │   │   │   │   ├── FramebufferState.cpp
+    │   │   │   │   ├── FramebufferState.h
+    │   │   │   │   ├── maxTextureSize.cpp
+    │   │   │   │   ├── maxTextureSize.h
+    │   │   │   │   ├── MeshState.cpp
+    │   │   │   │   ├── MeshState.h
+    │   │   │   │   ├── pixelFormatMapping.hpp
+    │   │   │   │   ├── QueryState.cpp
+    │   │   │   │   ├── QueryState.h
+    │   │   │   │   ├── RendererState.cpp
+    │   │   │   │   ├── RendererState.h
+    │   │   │   │   ├── ShaderProgramState.cpp
+    │   │   │   │   ├── ShaderProgramState.h
+    │   │   │   │   ├── ShaderState.cpp
+    │   │   │   │   ├── ShaderState.h
+    │   │   │   │   ├── State.cpp
+    │   │   │   │   ├── State.h
+    │   │   │   │   ├── TextureState.cpp
+    │   │   │   │   ├── TextureState.h
+    │   │   │   │   ├── TransformFeedbackState.cpp
+    │   │   │   │   └── TransformFeedbackState.h
+    │   │   │   ├── Mesh.cpp
+    │   │   │   ├── Mesh.h
+    │   │   │   ├── MeshView.cpp
+    │   │   │   ├── MeshView.h
+    │   │   │   ├── MultisampleTexture.cpp
+    │   │   │   ├── MultisampleTexture.h
+    │   │   │   ├── OpenGL.cpp
+    │   │   │   ├── OpenGL.h
+    │   │   │   ├── OpenGLTester.cpp
+    │   │   │   ├── OpenGLTester.h
+    │   │   │   ├── PipelineStatisticsQuery.h
+    │   │   │   ├── PixelFormat.cpp
+    │   │   │   ├── PixelFormat.h
+    │   │   │   ├── PrimitiveQuery.cpp
+    │   │   │   ├── PrimitiveQuery.h
+    │   │   │   ├── RectangleTexture.cpp
+    │   │   │   ├── RectangleTexture.h
+    │   │   │   ├── Renderbuffer.cpp
+    │   │   │   ├── RenderbufferFormat.h
+    │   │   │   ├── Renderbuffer.h
+    │   │   │   ├── Renderer.cpp
+    │   │   │   ├── Renderer.h
+    │   │   │   ├── SampleQuery.h
+    │   │   │   ├── Sampler.cpp
+    │   │   │   ├── Sampler.h
+    │   │   │   ├── Shader.cpp
+    │   │   │   ├── Shader.h
+    │   │   │   ├── Test
+    │   │   │   │   ├── AbstractObjectGLTest.cpp
+    │   │   │   │   ├── AbstractQueryGLTest.cpp
+    │   │   │   │   ├── AbstractShaderProgramGLTest.cpp
+    │   │   │   │   ├── AbstractShaderProgramGLTestFiles
+    │   │   │   │   │   ├── ComputeShader.comp
+    │   │   │   │   │   ├── MyDoubleShader.frag
+    │   │   │   │   │   ├── MyDoubleShader.vert
+    │   │   │   │   │   ├── MyShader.frag
+    │   │   │   │   │   ├── MyShaderFragmentOutputs.frag
+    │   │   │   │   │   ├── MyShader.vert
+    │   │   │   │   │   ├── resources.conf
+    │   │   │   │   │   ├── UniformBlockShader.frag
+    │   │   │   │   │   └── UniformBlockShader.vert
+    │   │   │   │   ├── AbstractShaderProgramTest.cpp
+    │   │   │   │   ├── AbstractTextureGLTest.cpp
+    │   │   │   │   ├── AttributeTest.cpp
+    │   │   │   │   ├── BufferGLTest.cpp
+    │   │   │   │   ├── BufferImageGLTest.cpp
+    │   │   │   │   ├── BufferImageTest.cpp
+    │   │   │   │   ├── BufferTest.cpp
+    │   │   │   │   ├── BufferTextureGLTest.cpp
+    │   │   │   │   ├── BufferTextureTest.cpp
+    │   │   │   │   ├── CMakeLists.txt
+    │   │   │   │   ├── configure.h.cmake
+    │   │   │   │   ├── ContextGLTest.cpp
+    │   │   │   │   ├── ContextTest.cpp
+    │   │   │   │   ├── CubeMapTextureArrayGLTest.cpp
+    │   │   │   │   ├── CubeMapTextureArrayTest.cpp
+    │   │   │   │   ├── CubeMapTextureGLTest.cpp
+    │   │   │   │   ├── CubeMapTextureTest.cpp
+    │   │   │   │   ├── DebugOutputGLTest.cpp
+    │   │   │   │   ├── DebugOutputTest.cpp
+    │   │   │   │   ├── DefaultFramebufferTest.cpp
+    │   │   │   │   ├── FramebufferGLTest.cpp
+    │   │   │   │   ├── FramebufferTest.cpp
+    │   │   │   │   ├── GlobalStateAcrossLibrariesGLTest.cpp
+    │   │   │   │   ├── GlobalStateAcrossLibrariesLibrary.cpp
+    │   │   │   │   ├── GlobalStateAcrossLibrariesLibrary.h
+    │   │   │   │   ├── MeshGLTest.cpp
+    │   │   │   │   ├── MeshTest.cpp
+    │   │   │   │   ├── MultisampleTextureGLTest.cpp
+    │   │   │   │   ├── MultisampleTextureTest.cpp
+    │   │   │   │   ├── PipelineStatisticsQueryGLTest.cpp
+    │   │   │   │   ├── PipelineStatisticsQueryTest.cpp
+    │   │   │   │   ├── PixelFormatTest.cpp
+    │   │   │   │   ├── PixelStorageGLTest.cpp
+    │   │   │   │   ├── PrimitiveQueryGLTest.cpp
+    │   │   │   │   ├── PrimitiveQueryTest.cpp
+    │   │   │   │   ├── RectangleTextureGLTest.cpp
+    │   │   │   │   ├── RectangleTextureTest.cpp
+    │   │   │   │   ├── RenderbufferGLTest.cpp
+    │   │   │   │   ├── RenderbufferTest.cpp
+    │   │   │   │   ├── RendererGLTest.cpp
+    │   │   │   │   ├── RendererGLTestFiles
+    │   │   │   │   │   └── pointcoord.tga
+    │   │   │   │   ├── RendererTest.cpp
+    │   │   │   │   ├── SampleQueryGLTest.cpp
+    │   │   │   │   ├── SampleQueryTest.cpp
+    │   │   │   │   ├── SamplerTest.cpp
+    │   │   │   │   ├── ShaderGLTest.cpp
+    │   │   │   │   ├── ShaderGLTestFiles
+    │   │   │   │   │   └── shader.glsl
+    │   │   │   │   ├── ShaderTest.cpp
+    │   │   │   │   ├── TextureArrayGLTest.cpp
+    │   │   │   │   ├── TextureArrayTest.cpp
+    │   │   │   │   ├── TextureGLTest.cpp
+    │   │   │   │   ├── TextureTest.cpp
+    │   │   │   │   ├── TimeQueryGLTest.cpp
+    │   │   │   │   ├── TimeQueryTest.cpp
+    │   │   │   │   ├── TransformFeedbackGLTest.cpp
+    │   │   │   │   ├── TransformFeedbackTest.cpp
+    │   │   │   │   └── VersionTest.cpp
+    │   │   │   ├── TextureArray.cpp
+    │   │   │   ├── TextureArray.h
+    │   │   │   ├── Texture.cpp
+    │   │   │   ├── TextureFormat.cpp
+    │   │   │   ├── TextureFormat.h
+    │   │   │   ├── Texture.h
+    │   │   │   ├── TimeQuery.h
+    │   │   │   ├── TransformFeedback.cpp
+    │   │   │   ├── TransformFeedback.h
+    │   │   │   ├── Version.cpp
+    │   │   │   ├── Version.h
+    │   │   │   └── visibility.h
+    │   │   ├── Image.cpp
+    │   │   ├── Image.h
+    │   │   ├── ImageView.cpp
+    │   │   ├── ImageView.h
+    │   │   ├── Implementation
+    │   │   │   ├── compressedPixelFormatMapping.hpp
+    │   │   │   ├── ImageProperties.h
+    │   │   │   ├── meshIndexTypeMapping.hpp
+    │   │   │   ├── meshPrimitiveMapping.hpp
+    │   │   │   ├── pixelFormatMapping.hpp
+    │   │   │   ├── vertexFormatMapping.hpp
+    │   │   │   ├── WindowsWeakSymbol.cpp
+    │   │   │   └── WindowsWeakSymbol.h
+    │   │   ├── Magnum.h
+    │   │   ├── Math
+    │   │   │   ├── Algorithms
+    │   │   │   │   ├── CMakeLists.txt
+    │   │   │   │   ├── GaussJordan.h
+    │   │   │   │   ├── GramSchmidt.h
+    │   │   │   │   ├── KahanSum.h
+    │   │   │   │   ├── Qr.h
+    │   │   │   │   ├── Svd.h
+    │   │   │   │   └── Test
+    │   │   │   │       ├── CMakeLists.txt
+    │   │   │   │       ├── GaussJordanTest.cpp
+    │   │   │   │       ├── GramSchmidtTest.cpp
+    │   │   │   │       ├── KahanSumTest.cpp
+    │   │   │   │       ├── QrTest.cpp
+    │   │   │   │       └── SvdTest.cpp
+    │   │   │   ├── Angle.cpp
+    │   │   │   ├── Angle.h
+    │   │   │   ├── Bezier.h
+    │   │   │   ├── BoolVector.h
+    │   │   │   ├── CMakeLists.txt
+    │   │   │   ├── Color.cpp
+    │   │   │   ├── Color.h
+    │   │   │   ├── Complex.h
+    │   │   │   ├── ConfigurationValue.h
+    │   │   │   ├── Constants.h
+    │   │   │   ├── CubicHermite.h
+    │   │   │   ├── Distance.h
+    │   │   │   ├── DualComplex.h
+    │   │   │   ├── Dual.h
+    │   │   │   ├── DualQuaternion.h
+    │   │   │   ├── Frustum.h
+    │   │   │   ├── FunctionsBatch.h
+    │   │   │   ├── Functions.cpp
+    │   │   │   ├── Functions.h
+    │   │   │   ├── Geometry
+    │   │   │   │   ├── CMakeLists.txt
+    │   │   │   │   ├── Distance.h
+    │   │   │   │   └── Intersection.h
+    │   │   │   ├── Half.cpp
+    │   │   │   ├── Half.h
+    │   │   │   ├── Implementation
+    │   │   │   │   ├── generateHalfTables.py
+    │   │   │   │   └── halfTables.hpp
+    │   │   │   ├── instantiation.cpp
+    │   │   │   ├── Intersection.h
+    │   │   │   ├── Math.h
+    │   │   │   ├── Matrix3.h
+    │   │   │   ├── Matrix4.h
+    │   │   │   ├── Matrix.h
+    │   │   │   ├── PackingBatch.cpp
+    │   │   │   ├── PackingBatch.h
+    │   │   │   ├── Packing.cpp
+    │   │   │   ├── Packing.h
+    │   │   │   ├── Quaternion.h
+    │   │   │   ├── Range.h
+    │   │   │   ├── RectangularMatrix.h
+    │   │   │   ├── StrictWeakOrdering.h
+    │   │   │   ├── Swizzle.h
+    │   │   │   ├── Tags.h
+    │   │   │   ├── Test
+    │   │   │   │   ├── AngleTest.cpp
+    │   │   │   │   ├── BezierTest.cpp
+    │   │   │   │   ├── BoolVectorTest.cpp
+    │   │   │   │   ├── CMakeLists.txt
+    │   │   │   │   ├── ColorTest.cpp
+    │   │   │   │   ├── ComplexTest.cpp
+    │   │   │   │   ├── ConfigurationValueTest.cpp
+    │   │   │   │   ├── ConstantsTest.cpp
+    │   │   │   │   ├── CubicHermiteTest.cpp
+    │   │   │   │   ├── DistanceTest.cpp
+    │   │   │   │   ├── DualComplexTest.cpp
+    │   │   │   │   ├── DualQuaternionTest.cpp
+    │   │   │   │   ├── DualTest.cpp
+    │   │   │   │   ├── FrustumTest.cpp
+    │   │   │   │   ├── FunctionsBatchTest.cpp
+    │   │   │   │   ├── FunctionsBenchmark.cpp
+    │   │   │   │   ├── FunctionsTest.cpp
+    │   │   │   │   ├── HalfTest.cpp
+    │   │   │   │   ├── InterpolationBenchmark.cpp
+    │   │   │   │   ├── IntersectionBenchmark.cpp
+    │   │   │   │   ├── IntersectionTest.cpp
+    │   │   │   │   ├── Matrix3Test.cpp
+    │   │   │   │   ├── Matrix4Test.cpp
+    │   │   │   │   ├── MatrixBenchmark.cpp
+    │   │   │   │   ├── MatrixTest.cpp
+    │   │   │   │   ├── PackingBatchTest.cpp
+    │   │   │   │   ├── PackingTest.cpp
+    │   │   │   │   ├── QuaternionTest.cpp
+    │   │   │   │   ├── RangeTest.cpp
+    │   │   │   │   ├── RectangularMatrixTest.cpp
+    │   │   │   │   ├── StrictWeakOrderingTest.cpp
+    │   │   │   │   ├── SwizzleTest.cpp
+    │   │   │   │   ├── TagsTest.cpp
+    │   │   │   │   ├── TypeTraitsTest.cpp
+    │   │   │   │   ├── UnitTest.cpp
+    │   │   │   │   ├── Vector2Test.cpp
+    │   │   │   │   ├── Vector3Test.cpp
+    │   │   │   │   ├── Vector4Test.cpp
+    │   │   │   │   ├── VectorBenchmark.cpp
+    │   │   │   │   └── VectorTest.cpp
+    │   │   │   ├── TypeTraits.h
+    │   │   │   ├── Unit.h
+    │   │   │   ├── Vector2.h
+    │   │   │   ├── Vector3.h
+    │   │   │   ├── Vector4.h
+    │   │   │   └── Vector.h
+    │   │   ├── Mesh.cpp
+    │   │   ├── Mesh.h
+    │   │   ├── MeshTools
+    │   │   │   ├── CMakeLists.txt
+    │   │   │   ├── Combine.cpp
+    │   │   │   ├── Combine.h
+    │   │   │   ├── CombineIndexedArrays.cpp
+    │   │   │   ├── CombineIndexedArrays.h
+    │   │   │   ├── Compile.cpp
+    │   │   │   ├── Compile.h
+    │   │   │   ├── CompressIndices.cpp
+    │   │   │   ├── CompressIndices.h
+    │   │   │   ├── Concatenate.cpp
+    │   │   │   ├── Concatenate.h
+    │   │   │   ├── Duplicate.cpp
+    │   │   │   ├── Duplicate.h
+    │   │   │   ├── FlipNormals.cpp
+    │   │   │   ├── FlipNormals.h
+    │   │   │   ├── FullScreenTriangle.cpp
+    │   │   │   ├── FullScreenTriangle.h
+    │   │   │   ├── GenerateFlatNormals.h
+    │   │   │   ├── GenerateIndices.cpp
+    │   │   │   ├── GenerateIndices.h
+    │   │   │   ├── GenerateNormals.cpp
+    │   │   │   ├── GenerateNormals.h
+    │   │   │   ├── Implementation
+    │   │   │   │   └── Tipsify.h
+    │   │   │   ├── Interleave.cpp
+    │   │   │   ├── Interleave.h
+    │   │   │   ├── Reference.cpp
+    │   │   │   ├── Reference.h
+    │   │   │   ├── RemoveDuplicates.cpp
+    │   │   │   ├── RemoveDuplicates.h
+    │   │   │   ├── sceneconverter.cpp
+    │   │   │   ├── Subdivide.h
+    │   │   │   ├── Test
+    │   │   │   │   ├── CMakeLists.txt
+    │   │   │   │   ├── CombineIndexedArraysTest.cpp
+    │   │   │   │   ├── CombineTest.cpp
+    │   │   │   │   ├── CompileGLTest.cpp
+    │   │   │   │   ├── CompileTestFiles
+    │   │   │   │   │   ├── color2D.tga
+    │   │   │   │   │   ├── color3D.tga
+    │   │   │   │   │   ├── flat2D.tga
+    │   │   │   │   │   ├── flat3D.tga
+    │   │   │   │   │   ├── phong-flat.tga
+    │   │   │   │   │   ├── phong-smooth.tga
+    │   │   │   │   │   ├── phong.tga
+    │   │   │   │   │   ├── tbn.tga
+    │   │   │   │   │   ├── textured2D.tga
+    │   │   │   │   │   └── textured3D.tga
+    │   │   │   │   ├── CompressIndicesTest.cpp
+    │   │   │   │   ├── ConcatenateTest.cpp
+    │   │   │   │   ├── configure.h.cmake
+    │   │   │   │   ├── DuplicateTest.cpp
+    │   │   │   │   ├── FlipNormalsTest.cpp
+    │   │   │   │   ├── FullScreenTriangleGLTest.cpp
+    │   │   │   │   ├── GenerateIndicesTest.cpp
+    │   │   │   │   ├── GenerateNormalsTest.cpp
+    │   │   │   │   ├── InterleaveTest.cpp
+    │   │   │   │   ├── ReferenceTest.cpp
+    │   │   │   │   ├── RemoveDuplicatesTest.cpp
+    │   │   │   │   ├── resources.conf
+    │   │   │   │   ├── SubdivideTest.cpp
+    │   │   │   │   ├── TipsifyTest.cpp
+    │   │   │   │   └── TransformTest.cpp
+    │   │   │   ├── Tipsify.cpp
+    │   │   │   ├── Tipsify.h
+    │   │   │   ├── Transform.h
+    │   │   │   └── visibility.h
+    │   │   ├── PixelFormat.cpp
+    │   │   ├── PixelFormat.h
+    │   │   ├── PixelStorage.cpp
+    │   │   ├── PixelStorage.h
+    │   │   ├── Platform
+    │   │   │   ├── AbstractXApplication.cpp
+    │   │   │   ├── AbstractXApplication.h
+    │   │   │   ├── AndroidApplication.cpp
+    │   │   │   ├── AndroidApplication.h
+    │   │   │   ├── CMakeLists.txt
+    │   │   │   ├── EmscriptenApplication.cpp
+    │   │   │   ├── EmscriptenApplication.h
+    │   │   │   ├── EmscriptenApplication.js
+    │   │   │   ├── GLContext.h
+    │   │   │   ├── GlfwApplication.cpp
+    │   │   │   ├── GlfwApplication.h
+    │   │   │   ├── gl-info.cpp
+    │   │   │   ├── gl-info.html
+    │   │   │   ├── GlxApplication.cpp
+    │   │   │   ├── GlxApplication.h
+    │   │   │   ├── Implementation
+    │   │   │   │   ├── AbstractContextHandler.h
+    │   │   │   │   ├── DpiScaling.cpp
+    │   │   │   │   ├── DpiScaling.h
+    │   │   │   │   ├── DpiScaling.mm
+    │   │   │   │   ├── EglContextHandler.cpp
+    │   │   │   │   ├── EglContextHandler.h
+    │   │   │   │   ├── Egl.cpp
+    │   │   │   │   ├── Egl.h
+    │   │   │   │   ├── GlxContextHandler.cpp
+    │   │   │   │   ├── GlxContextHandler.h
+    │   │   │   │   ├── OpenGLFunctionLoader.cpp
+    │   │   │   │   └── OpenGLFunctionLoader.h
+    │   │   │   ├── MacOSXBundleInfo.plist.in
+    │   │   │   ├── Platform.h
+    │   │   │   ├── ScreenedApplication.h
+    │   │   │   ├── ScreenedApplication.hpp
+    │   │   │   ├── Screen.h
+    │   │   │   ├── Sdl2Application.cpp
+    │   │   │   ├── Sdl2Application.h
+    │   │   │   ├── Test
+    │   │   │   │   ├── AndroidApplicationTest.cpp
+    │   │   │   │   ├── AndroidManifest.xml
+    │   │   │   │   ├── CMakeLists.txt
+    │   │   │   │   ├── EmscriptenApplicationTest.cpp
+    │   │   │   │   ├── EmscriptenApplicationTest.html
+    │   │   │   │   ├── GlfwApplicationTest.cpp
+    │   │   │   │   ├── GlfwApplicationTest.plist
+    │   │   │   │   ├── GlxApplicationTest.cpp
+    │   │   │   │   ├── icon-16.tga
+    │   │   │   │   ├── icon-32.tga
+    │   │   │   │   ├── icon-64.tga
+    │   │   │   │   ├── resources.conf
+    │   │   │   │   ├── Sdl2ApplicationTest.cpp
+    │   │   │   │   ├── Sdl2ApplicationTest.html
+    │   │   │   │   ├── Sdl2ApplicationTest.plist
+    │   │   │   │   ├── WindowlessCglApplicationTest.cpp
+    │   │   │   │   ├── WindowlessEglApplicationTest.cpp
+    │   │   │   │   ├── WindowlessEglApplicationTest.html
+    │   │   │   │   ├── WindowlessGlxApplicationTest.cpp
+    │   │   │   │   ├── WindowlessIosApplicationTest.cpp
+    │   │   │   │   ├── WindowlessWglApplicationTest.cpp
+    │   │   │   │   ├── WindowlessWindowsEglApplicationTest.cpp
+    │   │   │   │   ├── WindowsHiDPI.manifest
+    │   │   │   │   ├── WindowsHiDPI.rc
+    │   │   │   │   └── XEglApplicationTest.cpp
+    │   │   │   ├── WebApplication.css
+    │   │   │   ├── WindowlessCglApplication.cpp
+    │   │   │   ├── WindowlessCglApplication.h
+    │   │   │   ├── WindowlessEglApplication.cpp
+    │   │   │   ├── WindowlessEglApplication.h
+    │   │   │   ├── WindowlessEmscriptenApplication.js
+    │   │   │   ├── WindowlessGlxApplication.cpp
+    │   │   │   ├── WindowlessGlxApplication.h
+    │   │   │   ├── WindowlessIosApplication.h
+    │   │   │   ├── WindowlessIosApplication.mm
+    │   │   │   ├── WindowlessWglApplication.cpp
+    │   │   │   ├── WindowlessWglApplication.h
+    │   │   │   ├── WindowlessWindowsEglApplication.cpp
+    │   │   │   ├── WindowlessWindowsEglApplication.h
+    │   │   │   ├── XEglApplication.cpp
+    │   │   │   └── XEglApplication.h
+    │   │   ├── Primitives
+    │   │   │   ├── Axis.cpp
+    │   │   │   ├── Axis.h
+    │   │   │   ├── Capsule.cpp
+    │   │   │   ├── Capsule.h
+    │   │   │   ├── Circle.cpp
+    │   │   │   ├── Circle.h
+    │   │   │   ├── CMakeLists.txt
+    │   │   │   ├── Cone.cpp
+    │   │   │   ├── Cone.h
+    │   │   │   ├── Crosshair.cpp
+    │   │   │   ├── Crosshair.h
+    │   │   │   ├── Cube.cpp
+    │   │   │   ├── Cube.h
+    │   │   │   ├── Cylinder.cpp
+    │   │   │   ├── Cylinder.h
+    │   │   │   ├── Gradient.cpp
+    │   │   │   ├── Gradient.h
+    │   │   │   ├── Grid.cpp
+    │   │   │   ├── Grid.h
+    │   │   │   ├── Icosphere.cpp
+    │   │   │   ├── Icosphere.h
+    │   │   │   ├── Implementation
+    │   │   │   │   ├── Spheroid.cpp
+    │   │   │   │   ├── Spheroid.h
+    │   │   │   │   ├── WireframeSpheroid.cpp
+    │   │   │   │   └── WireframeSpheroid.h
+    │   │   │   ├── Line.cpp
+    │   │   │   ├── Line.h
+    │   │   │   ├── Plane.cpp
+    │   │   │   ├── Plane.h
+    │   │   │   ├── Square.cpp
+    │   │   │   ├── Square.h
+    │   │   │   ├── Test
+    │   │   │   │   ├── AxisTest.cpp
+    │   │   │   │   ├── CapsuleTest.cpp
+    │   │   │   │   ├── CircleTest.cpp
+    │   │   │   │   ├── CMakeLists.txt
+    │   │   │   │   ├── ConeTest.cpp
+    │   │   │   │   ├── CrosshairTest.cpp
+    │   │   │   │   ├── CubeTest.cpp
+    │   │   │   │   ├── CylinderTest.cpp
+    │   │   │   │   ├── data.glsl
+    │   │   │   │   ├── GradientTest.cpp
+    │   │   │   │   ├── GridTest.cpp
+    │   │   │   │   ├── IcosphereTest.cpp
+    │   │   │   │   ├── LineTest.cpp
+    │   │   │   │   ├── PlaneTest.cpp
+    │   │   │   │   ├── SquareTest.cpp
+    │   │   │   │   └── UVSphereTest.cpp
+    │   │   │   ├── UVSphere.cpp
+    │   │   │   ├── UVSphere.h
+    │   │   │   └── visibility.h
+    │   │   ├── Resource.cpp
+    │   │   ├── Resource.h
+    │   │   ├── ResourceManager.h
+    │   │   ├── Sampler.cpp
+    │   │   ├── Sampler.h
+    │   │   ├── SceneGraph
+    │   │   │   ├── AbstractFeature.h
+    │   │   │   ├── AbstractFeature.hpp
+    │   │   │   ├── AbstractGroupedFeature.h
+    │   │   │   ├── AbstractObject.h
+    │   │   │   ├── AbstractTransformation.h
+    │   │   │   ├── AbstractTranslation.h
+    │   │   │   ├── AbstractTranslationRotation2D.h
+    │   │   │   ├── AbstractTranslationRotation3D.h
+    │   │   │   ├── AbstractTranslationRotationScaling2D.h
+    │   │   │   ├── AbstractTranslationRotationScaling3D.h
+    │   │   │   ├── Animable.cpp
+    │   │   │   ├── AnimableGroup.h
+    │   │   │   ├── Animable.h
+    │   │   │   ├── Animable.hpp
+    │   │   │   ├── Camera.h
+    │   │   │   ├── Camera.hpp
+    │   │   │   ├── CMakeLists.txt
+    │   │   │   ├── Drawable.h
+    │   │   │   ├── Drawable.hpp
+    │   │   │   ├── DualComplexTransformation.h
+    │   │   │   ├── DualQuaternionTransformation.h
+    │   │   │   ├── FeatureGroup.h
+    │   │   │   ├── FeatureGroup.hpp
+    │   │   │   ├── instantiation.cpp
+    │   │   │   ├── MatrixTransformation2D.h
+    │   │   │   ├── MatrixTransformation2D.hpp
+    │   │   │   ├── MatrixTransformation3D.h
+    │   │   │   ├── MatrixTransformation3D.hpp
+    │   │   │   ├── Object.h
+    │   │   │   ├── Object.hpp
+    │   │   │   ├── RigidMatrixTransformation2D.h
+    │   │   │   ├── RigidMatrixTransformation2D.hpp
+    │   │   │   ├── RigidMatrixTransformation3D.h
+    │   │   │   ├── RigidMatrixTransformation3D.hpp
+    │   │   │   ├── SceneGraph.h
+    │   │   │   ├── Scene.h
+    │   │   │   ├── Test
+    │   │   │   │   ├── AnimableTest.cpp
+    │   │   │   │   ├── CameraTest.cpp
+    │   │   │   │   ├── CMakeLists.txt
+    │   │   │   │   ├── DualComplexTransformationTest.cpp
+    │   │   │   │   ├── DualQuaternionTransformationTest.cpp
+    │   │   │   │   ├── MatrixTransformation2DTest.cpp
+    │   │   │   │   ├── MatrixTransformation3DTest.cpp
+    │   │   │   │   ├── ObjectTest.cpp
+    │   │   │   │   ├── RigidMatrixTransformation2DTest.cpp
+    │   │   │   │   ├── RigidMatrixTransformation3DTest.cpp
+    │   │   │   │   ├── SceneTest.cpp
+    │   │   │   │   ├── TranslationRotationScalingTransformation2DTest.cpp
+    │   │   │   │   ├── TranslationRotationScalingTransformation3DTest.cpp
+    │   │   │   │   └── TranslationTransformationTest.cpp
+    │   │   │   ├── TranslationRotationScalingTransformation2D.h
+    │   │   │   ├── TranslationRotationScalingTransformation3D.h
+    │   │   │   ├── TranslationTransformation.h
+    │   │   │   └── visibility.h
+    │   │   ├── Shaders
+    │   │   │   ├── AbstractVector.cpp
+    │   │   │   ├── AbstractVector.h
+    │   │   │   ├── AbstractVector.vert
+    │   │   │   ├── CMakeLists.txt
+    │   │   │   ├── compatibility.glsl
+    │   │   │   ├── DistanceFieldVector.cpp
+    │   │   │   ├── DistanceFieldVector.frag
+    │   │   │   ├── DistanceFieldVector.h
+    │   │   │   ├── Flat.cpp
+    │   │   │   ├── Flat.frag
+    │   │   │   ├── Flat.h
+    │   │   │   ├── Flat.vert
+    │   │   │   ├── FullScreenTriangle.glsl
+    │   │   │   ├── generic.glsl
+    │   │   │   ├── Generic.h
+    │   │   │   ├── Implementation
+    │   │   │   │   └── CreateCompatibilityShader.h
+    │   │   │   ├── MeshVisualizer.cpp
+    │   │   │   ├── MeshVisualizer.frag
+    │   │   │   ├── MeshVisualizer.geom
+    │   │   │   ├── MeshVisualizer.h
+    │   │   │   ├── MeshVisualizer.vert
+    │   │   │   ├── Phong.cpp
+    │   │   │   ├── Phong.frag
+    │   │   │   ├── Phong.h
+    │   │   │   ├── Phong.vert
+    │   │   │   ├── resources.conf
+    │   │   │   ├── Shaders.h
+    │   │   │   ├── Test
+    │   │   │   │   ├── CMakeLists.txt
+    │   │   │   │   ├── configure.h.cmake
+    │   │   │   │   ├── DistanceFieldVectorGLTest.cpp
+    │   │   │   │   ├── DistanceFieldVectorTest.cpp
+    │   │   │   │   ├── FlatGLTest.cpp
+    │   │   │   │   ├── FlatTest.cpp
+    │   │   │   │   ├── FlatTestFiles
+    │   │   │   │   │   ├── colored2D.tga
+    │   │   │   │   │   ├── colored3D.tga
+    │   │   │   │   │   ├── defaults.tga
+    │   │   │   │   │   ├── instanced2D.tga
+    │   │   │   │   │   ├── instanced3D.tga
+    │   │   │   │   │   ├── textured2D-alpha-mask0.5.tga
+    │   │   │   │   │   ├── textured2D-alpha.tga
+    │   │   │   │   │   ├── textured2D.tga
+    │   │   │   │   │   ├── textured3D-alpha-mask0.5.tga
+    │   │   │   │   │   ├── textured3D-alpha.tga
+    │   │   │   │   │   ├── textured3D.tga
+    │   │   │   │   │   ├── vertexColor2D.tga
+    │   │   │   │   │   └── vertexColor3D.tga
+    │   │   │   │   ├── GenericTest.cpp
+    │   │   │   │   ├── MeshVisualizerGLTest.cpp
+    │   │   │   │   ├── MeshVisualizerTest.cpp
+    │   │   │   │   ├── MeshVisualizerTestFiles
+    │   │   │   │   │   ├── bitangents-from-tangents.tga
+    │   │   │   │   │   ├── defaults-objectid2D.tga
+    │   │   │   │   │   ├── defaults-objectid3D.tga
+    │   │   │   │   │   ├── defaults-primitiveid2D.tga
+    │   │   │   │   │   ├── defaults-primitiveid3D.tga
+    │   │   │   │   │   ├── defaults-tbn.tga
+    │   │   │   │   │   ├── defaults-vertexid2D.tga
+    │   │   │   │   │   ├── defaults-vertexid3D.tga
+    │   │   │   │   │   ├── defaults-wireframe2D.tga
+    │   │   │   │   │   ├── defaults-wireframe3D.tga
+    │   │   │   │   │   ├── objectid2D.tga
+    │   │   │   │   │   ├── objectid3D.tga
+    │   │   │   │   │   ├── primitiveid2D.tga
+    │   │   │   │   │   ├── primitiveid3D.tga
+    │   │   │   │   │   ├── primitiveid-tn.tga
+    │   │   │   │   │   ├── tbn.tga
+    │   │   │   │   │   ├── tbn-wide.tga
+    │   │   │   │   │   ├── vertexid2D.tga
+    │   │   │   │   │   ├── vertexid3D.tga
+    │   │   │   │   │   ├── wireframe2D.tga
+    │   │   │   │   │   ├── wireframe3D.tga
+    │   │   │   │   │   ├── wireframe-nogeo2D.tga
+    │   │   │   │   │   ├── wireframe-nogeo3D.tga
+    │   │   │   │   │   ├── wireframe-nogeo-objectid2D.tga
+    │   │   │   │   │   ├── wireframe-nogeo-objectid3D.tga
+    │   │   │   │   │   ├── wireframe-objectid2D.tga
+    │   │   │   │   │   ├── wireframe-objectid3D.tga
+    │   │   │   │   │   ├── wireframe-perspective.tga
+    │   │   │   │   │   ├── wireframe-primitiveid-tn.tga
+    │   │   │   │   │   ├── wireframe-tn-smooth.tga
+    │   │   │   │   │   ├── wireframe-vertexid2D.tga
+    │   │   │   │   │   ├── wireframe-vertexid3D.tga
+    │   │   │   │   │   ├── wireframe-wide2D.tga
+    │   │   │   │   │   └── wireframe-wide3D.tga
+    │   │   │   │   ├── PhongGLTest.cpp
+    │   │   │   │   ├── PhongTest.cpp
+    │   │   │   │   ├── PhongTestFiles
+    │   │   │   │   │   ├── colored.tga
+    │   │   │   │   │   ├── defaults.tga
+    │   │   │   │   │   ├── instanced-normal.tga
+    │   │   │   │   │   ├── instanced.tga
+    │   │   │   │   │   ├── shininess0-overflow.tga
+    │   │   │   │   │   ├── shininess0.tga
+    │   │   │   │   │   ├── shininess10.tga
+    │   │   │   │   │   ├── shininess80.tga
+    │   │   │   │   │   ├── shininess-black-specular.tga
+    │   │   │   │   │   ├── textured-ambient.tga
+    │   │   │   │   │   ├── textured-diffuse-alpha-mask0.5.tga
+    │   │   │   │   │   ├── textured-diffuse-alpha.tga
+    │   │   │   │   │   ├── textured-diffuse.tga
+    │   │   │   │   │   ├── textured-diffuse-transformed.tga
+    │   │   │   │   │   ├── textured-normal.tga
+    │   │   │   │   │   ├── textured-specular.tga
+    │   │   │   │   │   ├── textured.tga
+    │   │   │   │   │   └── vertexColor.tga
+    │   │   │   │   ├── TestFiles
+    │   │   │   │   │   ├── alpha-mask1.0.tga
+    │   │   │   │   │   ├── alpha-texture.tga
+    │   │   │   │   │   ├── ambient-texture.tga
+    │   │   │   │   │   ├── checkerboard.svg
+    │   │   │   │   │   ├── diffuse-alpha-texture.tga
+    │   │   │   │   │   ├── diffuse-texture.tga
+    │   │   │   │   │   ├── normal-texture.tga
+    │   │   │   │   │   ├── README.md
+    │   │   │   │   │   ├── specular-texture.tga
+    │   │   │   │   │   ├── vector-distancefield.tga
+    │   │   │   │   │   └── vector.tga
+    │   │   │   │   ├── VectorGLTest.cpp
+    │   │   │   │   ├── VectorTest.cpp
+    │   │   │   │   ├── VectorTestFiles
+    │   │   │   │   │   ├── defaults-distancefield.tga
+    │   │   │   │   │   ├── defaults.tga
+    │   │   │   │   │   ├── outline2D.tga
+    │   │   │   │   │   ├── outline3D.tga
+    │   │   │   │   │   ├── smooth0.1-2D.tga
+    │   │   │   │   │   ├── smooth0.1-3D.tga
+    │   │   │   │   │   ├── smooth0.2-2D.tga
+    │   │   │   │   │   ├── smooth0.2-3D.tga
+    │   │   │   │   │   ├── vector2D.tga
+    │   │   │   │   │   └── vector3D.tga
+    │   │   │   │   ├── VertexColorGLTest.cpp
+    │   │   │   │   ├── VertexColorTest.cpp
+    │   │   │   │   └── VertexColorTestFiles
+    │   │   │   │       ├── vertexColor2D.tga
+    │   │   │   │       └── vertexColor3D.tga
+    │   │   │   ├── Vector.cpp
+    │   │   │   ├── Vector.frag
+    │   │   │   ├── Vector.h
+    │   │   │   ├── VertexColor.cpp
+    │   │   │   ├── VertexColor.frag
+    │   │   │   ├── VertexColor.h
+    │   │   │   ├── VertexColor.vert
+    │   │   │   └── visibility.h
+    │   │   ├── Tags.h
+    │   │   ├── Test
+    │   │   │   ├── ArrayTest.cpp
+    │   │   │   ├── CMakeLists.txt
+    │   │   │   ├── FileCallbackTest.cpp
+    │   │   │   ├── ImageTest.cpp
+    │   │   │   ├── ImageViewTest.cpp
+    │   │   │   ├── MeshTest.cpp
+    │   │   │   ├── PixelFormatTest.cpp
+    │   │   │   ├── PixelStorageTest.cpp
+    │   │   │   ├── ResourceManagerTest.cpp
+    │   │   │   ├── SamplerTest.cpp
+    │   │   │   ├── TagsTest.cpp
+    │   │   │   ├── VersionTest.cpp
+    │   │   │   └── VertexFormatTest.cpp
+    │   │   ├── Text
+    │   │   │   ├── AbstractFontConverter.cpp
+    │   │   │   ├── AbstractFontConverter.h
+    │   │   │   ├── AbstractFont.cpp
+    │   │   │   ├── AbstractFont.h
+    │   │   │   ├── AbstractGlyphCache.cpp
+    │   │   │   ├── AbstractGlyphCache.h
+    │   │   │   ├── Alignment.h
+    │   │   │   ├── CMakeLists.txt
+    │   │   │   ├── configure.h.cmake
+    │   │   │   ├── DistanceFieldGlyphCache.cpp
+    │   │   │   ├── DistanceFieldGlyphCache.h
+    │   │   │   ├── fontconverter.cpp
+    │   │   │   ├── GlyphCache.cpp
+    │   │   │   ├── GlyphCache.h
+    │   │   │   ├── Renderer.cpp
+    │   │   │   ├── Renderer.h
+    │   │   │   ├── Test
+    │   │   │   │   ├── AbstractFontConverterTest.cpp
+    │   │   │   │   ├── AbstractFontTest.cpp
+    │   │   │   │   ├── AbstractGlyphCacheTest.cpp
+    │   │   │   │   ├── AbstractLayouterTest.cpp
+    │   │   │   │   ├── CMakeLists.txt
+    │   │   │   │   ├── configure.h.cmake
+    │   │   │   │   ├── data.bin
+    │   │   │   │   ├── DistanceFieldGlyphCacheGLTest.cpp
+    │   │   │   │   ├── GlyphCacheGLTest.cpp
+    │   │   │   │   └── RendererGLTest.cpp
+    │   │   │   ├── Text.h
+    │   │   │   └── visibility.h
+    │   │   ├── TextureTools
+    │   │   │   ├── Atlas.cpp
+    │   │   │   ├── Atlas.h
+    │   │   │   ├── CMakeLists.txt
+    │   │   │   ├── distancefieldconverter.cpp
+    │   │   │   ├── DistanceField.cpp
+    │   │   │   ├── DistanceField.h
+    │   │   │   ├── DistanceFieldShader.frag
+    │   │   │   ├── DistanceFieldShader.vert
+    │   │   │   ├── resources.conf
+    │   │   │   ├── Test
+    │   │   │   │   ├── AtlasTest.cpp
+    │   │   │   │   ├── CMakeLists.txt
+    │   │   │   │   ├── configure.h.cmake
+    │   │   │   │   ├── DistanceFieldGLTest.cpp
+    │   │   │   │   └── DistanceFieldGLTestFiles
+    │   │   │   │       ├── input.tga
+    │   │   │   │       └── output.tga
+    │   │   │   └── visibility.h
+    │   │   ├── Timeline.cpp
+    │   │   ├── Timeline.h
+    │   │   ├── Trade
+    │   │   │   ├── AbstractImageConverter.cpp
+    │   │   │   ├── AbstractImageConverter.h
+    │   │   │   ├── AbstractImporter.cpp
+    │   │   │   ├── AbstractImporter.h
+    │   │   │   ├── AbstractMaterialData.cpp
+    │   │   │   ├── AbstractMaterialData.h
+    │   │   │   ├── AbstractSceneConverter.cpp
+    │   │   │   ├── AbstractSceneConverter.h
+    │   │   │   ├── AnimationData.cpp
+    │   │   │   ├── AnimationData.h
+    │   │   │   ├── ArrayAllocator.cpp
+    │   │   │   ├── ArrayAllocator.h
+    │   │   │   ├── CameraData.cpp
+    │   │   │   ├── CameraData.h
+    │   │   │   ├── CMakeLists.txt
+    │   │   │   ├── configure.h.cmake
+    │   │   │   ├── Data.cpp
+    │   │   │   ├── Data.h
+    │   │   │   ├── imageconverter.cpp
+    │   │   │   ├── ImageData.cpp
+    │   │   │   ├── ImageData.h
+    │   │   │   ├── Implementation
+    │   │   │   │   ├── arrayUtilities.h
+    │   │   │   │   └── converterUtilities.h
+    │   │   │   ├── LightData.cpp
+    │   │   │   ├── LightData.h
+    │   │   │   ├── MeshData2D.cpp
+    │   │   │   ├── MeshData2D.h
+    │   │   │   ├── MeshData3D.cpp
+    │   │   │   ├── MeshData3D.h
+    │   │   │   ├── MeshData.cpp
+    │   │   │   ├── MeshData.h
+    │   │   │   ├── MeshObjectData2D.cpp
+    │   │   │   ├── MeshObjectData2D.h
+    │   │   │   ├── MeshObjectData3D.cpp
+    │   │   │   ├── MeshObjectData3D.h
+    │   │   │   ├── ObjectData2D.cpp
+    │   │   │   ├── ObjectData2D.h
+    │   │   │   ├── ObjectData3D.cpp
+    │   │   │   ├── ObjectData3D.h
+    │   │   │   ├── PhongMaterialData.cpp
+    │   │   │   ├── PhongMaterialData.h
+    │   │   │   ├── SceneData.cpp
+    │   │   │   ├── SceneData.h
+    │   │   │   ├── Test
+    │   │   │   │   ├── AbstractImageConverterTest.cpp
+    │   │   │   │   ├── AbstractImporterTest.cpp
+    │   │   │   │   ├── AbstractSceneConverterTest.cpp
+    │   │   │   │   ├── AnimationDataTest.cpp
+    │   │   │   │   ├── CameraDataTest.cpp
+    │   │   │   │   ├── CMakeLists.txt
+    │   │   │   │   ├── configure.h.cmake
+    │   │   │   │   ├── DataTest.cpp
+    │   │   │   │   ├── file.bin
+    │   │   │   │   ├── ImageDataTest.cpp
+    │   │   │   │   ├── LightDataTest.cpp
+    │   │   │   │   ├── MaterialDataTest.cpp
+    │   │   │   │   ├── MeshData2DTest.cpp
+    │   │   │   │   ├── MeshData3DTest.cpp
+    │   │   │   │   ├── MeshDataTest.cpp
+    │   │   │   │   ├── ObjectData2DTest.cpp
+    │   │   │   │   ├── ObjectData3DTest.cpp
+    │   │   │   │   ├── SceneDataTest.cpp
+    │   │   │   │   └── TextureDataTest.cpp
+    │   │   │   ├── TextureData.cpp
+    │   │   │   ├── TextureData.h
+    │   │   │   ├── Trade.h
+    │   │   │   └── visibility.h
+    │   │   ├── Types.h
+    │   │   ├── version.h.cmake
+    │   │   ├── VertexFormat.cpp
+    │   │   ├── VertexFormat.h
+    │   │   ├── visibility.h
+    │   │   └── Vk
+    │   │       ├── CMakeLists.txt
+    │   │       ├── Enums.cpp
+    │   │       ├── Enums.h
+    │   │       ├── Implementation
+    │   │       │   ├── compressedPixelFormatMapping.hpp
+    │   │       │   ├── pixelFormatMapping.hpp
+    │   │       │   └── vertexFormatMapping.hpp
+    │   │       ├── Integration.h
+    │   │       ├── Test
+    │   │       │   ├── CMakeLists.txt
+    │   │       │   ├── EnumsTest.cpp
+    │   │       │   └── IntegrationTest.cpp
+    │   │       ├── visibility.h
+    │   │       ├── Vk.h
+    │   │       └── Vulkan.h
+    │   ├── MagnumExternal
+    │   │   ├── CMakeLists.txt
+    │   │   ├── OpenAL
+    │   │   │   ├── CMakeLists.txt
+    │   │   │   └── extensions.h
+    │   │   ├── OpenGL
+    │   │   │   ├── CMakeLists.txt
+    │   │   │   ├── GL
+    │   │   │   │   ├── CMakeLists.txt
+    │   │   │   │   ├── extensions.txt
+    │   │   │   │   ├── flextGL.cpp
+    │   │   │   │   ├── flextGL.cpp.template
+    │   │   │   │   ├── flextGL.h
+    │   │   │   │   ├── flextGL.h.template
+    │   │   │   │   ├── flextGLPlatform.cpp
+    │   │   │   │   └── flextGLPlatform.cpp.template
+    │   │   │   ├── GLES2
+    │   │   │   │   ├── CMakeLists.txt
+    │   │   │   │   ├── Emscripten
+    │   │   │   │   │   ├── extensions.txt
+    │   │   │   │   │   └── flextGLEmscripten.h.template
+    │   │   │   │   ├── extensions.txt
+    │   │   │   │   ├── flextGL.cpp
+    │   │   │   │   ├── flextGL.cpp.template
+    │   │   │   │   ├── flextGLEmscripten.h
+    │   │   │   │   ├── flextGL.h
+    │   │   │   │   ├── flextGL.h.template
+    │   │   │   │   ├── flextGLPlatform.cpp
+    │   │   │   │   ├── flextGLPlatform.cpp.template
+    │   │   │   │   ├── flextGLPlatformIOS.cpp
+    │   │   │   │   ├── flextGLPlatformIOS.cpp.template
+    │   │   │   │   ├── flextGLPlatformWindowsDesktop.cpp
+    │   │   │   │   ├── flextGLPlatformWindowsDesktop.cpp.template
+    │   │   │   │   ├── flextGLWindowsDesktop.cpp
+    │   │   │   │   ├── flextGLWindowsDesktop.cpp.template
+    │   │   │   │   ├── flextGLWindowsDesktop.h
+    │   │   │   │   └── flextGLWindowsDesktop.h.template
+    │   │   │   ├── GLES3
+    │   │   │   │   ├── CMakeLists.txt
+    │   │   │   │   ├── Emscripten
+    │   │   │   │   │   ├── extensions.txt
+    │   │   │   │   │   └── flextGLEmscripten.h.template
+    │   │   │   │   ├── extensions.txt
+    │   │   │   │   ├── flextGL.cpp
+    │   │   │   │   ├── flextGL.cpp.template
+    │   │   │   │   ├── flextGLEmscripten.h
+    │   │   │   │   ├── flextGL.h
+    │   │   │   │   ├── flextGL.h.template
+    │   │   │   │   ├── flextGLPlatform.cpp
+    │   │   │   │   ├── flextGLPlatform.cpp.template
+    │   │   │   │   ├── flextGLPlatformIOS.cpp
+    │   │   │   │   ├── flextGLPlatformIOS.cpp.template
+    │   │   │   │   ├── flextGLPlatformWindowsDesktop.cpp
+    │   │   │   │   ├── flextGLPlatformWindowsDesktop.cpp.template
+    │   │   │   │   ├── flextGLWindowsDesktop.cpp
+    │   │   │   │   ├── flextGLWindowsDesktop.cpp.template
+    │   │   │   │   ├── flextGLWindowsDesktop.h
+    │   │   │   │   └── flextGLWindowsDesktop.h.template
+    │   │   │   ├── KHR
+    │   │   │   │   ├── CMakeLists.txt
+    │   │   │   │   └── khrplatform.h
+    │   │   │   └── update-flextgl.sh
+    │   │   └── Vulkan
+    │   │       ├── CMakeLists.txt
+    │   │       ├── extensions.txt
+    │   │       ├── flextVk.cpp
+    │   │       ├── flextVk.cpp.template
+    │   │       ├── flextVkGlobal.h
+    │   │       ├── flextVkGlobal.h.template
+    │   │       ├── flextVk.h
+    │   │       ├── flextVk.h.template
+    │   │       └── update-flextgl.sh
+    │   ├── MagnumPlugins
+    │   │   ├── AnyAudioImporter
+    │   │   │   ├── AnyAudioImporter.conf
+    │   │   │   ├── AnyImporter.cpp
+    │   │   │   ├── AnyImporter.h
+    │   │   │   ├── CMakeLists.txt
+    │   │   │   ├── configure.h.cmake
+    │   │   │   ├── importStaticPlugin.cpp
+    │   │   │   └── Test
+    │   │   │       ├── AnyAudioImporterTest.cpp
+    │   │   │       ├── CMakeLists.txt
+    │   │   │       └── configure.h.cmake
+    │   │   ├── AnyImageConverter
+    │   │   │   ├── AnyImageConverter.conf
+    │   │   │   ├── AnyImageConverter.cpp
+    │   │   │   ├── AnyImageConverter.h
+    │   │   │   ├── CMakeLists.txt
+    │   │   │   ├── configure.h.cmake
+    │   │   │   ├── importStaticPlugin.cpp
+    │   │   │   └── Test
+    │   │   │       ├── AnyImageConverterTest.cpp
+    │   │   │       ├── CMakeLists.txt
+    │   │   │       └── configure.h.cmake
+    │   │   ├── AnyImageImporter
+    │   │   │   ├── AnyImageImporter.conf
+    │   │   │   ├── AnyImageImporter.cpp
+    │   │   │   ├── AnyImageImporter.h
+    │   │   │   ├── CMakeLists.txt
+    │   │   │   ├── configure.h.cmake
+    │   │   │   ├── importStaticPlugin.cpp
+    │   │   │   └── Test
+    │   │   │       ├── AnyImageImporterTest.cpp
+    │   │   │       ├── CMakeLists.txt
+    │   │   │       ├── configure.h.cmake
+    │   │   │       ├── gray.jpg
+    │   │   │       ├── image.exr
+    │   │   │       ├── pngs.ico
+    │   │   │       ├── rgba_dxt1.dds
+    │   │   │       ├── rgb.basis
+    │   │   │       ├── rgb.hdr
+    │   │   │       ├── rgb.png
+    │   │   │       └── rgb.tga
+    │   │   ├── AnySceneConverter
+    │   │   │   ├── AnySceneConverter.conf
+    │   │   │   ├── AnySceneConverter.cpp
+    │   │   │   ├── AnySceneConverter.h
+    │   │   │   ├── CMakeLists.txt
+    │   │   │   ├── configure.h.cmake
+    │   │   │   ├── importStaticPlugin.cpp
+    │   │   │   └── Test
+    │   │   │       ├── AnySceneConverterTest.cpp
+    │   │   │       ├── CMakeLists.txt
+    │   │   │       └── configure.h.cmake
+    │   │   ├── AnySceneImporter
+    │   │   │   ├── AnySceneImporter.conf
+    │   │   │   ├── AnySceneImporter.cpp
+    │   │   │   ├── AnySceneImporter.h
+    │   │   │   ├── CMakeLists.txt
+    │   │   │   ├── configure.h.cmake
+    │   │   │   ├── importStaticPlugin.cpp
+    │   │   │   └── Test
+    │   │   │       ├── AnySceneImporterTest.cpp
+    │   │   │       ├── CMakeLists.txt
+    │   │   │       └── configure.h.cmake
+    │   │   ├── CMakeLists.txt
+    │   │   ├── MagnumFont
+    │   │   │   ├── CMakeLists.txt
+    │   │   │   ├── configure.h.cmake
+    │   │   │   ├── importStaticPlugin.cpp
+    │   │   │   ├── MagnumFont.conf
+    │   │   │   ├── MagnumFont.cpp
+    │   │   │   ├── MagnumFont.h
+    │   │   │   └── Test
+    │   │   │       ├── CMakeLists.txt
+    │   │   │       ├── configure.h.cmake
+    │   │   │       ├── font.conf
+    │   │   │       ├── font.tga
+    │   │   │       ├── MagnumFontGLTest.cpp
+    │   │   │       └── MagnumFontTest.cpp
+    │   │   ├── MagnumFontConverter
+    │   │   │   ├── CMakeLists.txt
+    │   │   │   ├── configure.h.cmake
+    │   │   │   ├── importStaticPlugin.cpp
+    │   │   │   ├── MagnumFontConverter.conf
+    │   │   │   ├── MagnumFontConverter.cpp
+    │   │   │   ├── MagnumFontConverter.h
+    │   │   │   └── Test
+    │   │   │       ├── CMakeLists.txt
+    │   │   │       ├── configure.h.cmake
+    │   │   │       └── MagnumFontConverterTest.cpp
+    │   │   ├── ObjImporter
+    │   │   │   ├── CMakeLists.txt
+    │   │   │   ├── configure.h.cmake
+    │   │   │   ├── importStaticPlugin.cpp
+    │   │   │   ├── ObjImporter.conf
+    │   │   │   ├── ObjImporter.cpp
+    │   │   │   ├── ObjImporter.h
+    │   │   │   └── Test
+    │   │   │       ├── CMakeLists.txt
+    │   │   │       ├── configure.h.cmake
+    │   │   │       ├── emptyFile.obj
+    │   │   │       ├── keywords.obj
+    │   │   │       ├── lineMesh.obj
+    │   │   │       ├── missingData.obj
+    │   │   │       ├── mixedPrimitives.obj
+    │   │   │       ├── moreMeshes.obj
+    │   │   │       ├── namedMesh.obj
+    │   │   │       ├── normals.obj
+    │   │   │       ├── ObjImporterTest.cpp
+    │   │   │       ├── optionalCoordinates.obj
+    │   │   │       ├── pointMesh.obj
+    │   │   │       ├── textureCoordinatesNormals.obj
+    │   │   │       ├── textureCoordinates.obj
+    │   │   │       ├── triangleMesh.obj
+    │   │   │       ├── unnamedFirstMesh.obj
+    │   │   │       ├── wrongIndexCount.obj
+    │   │   │       ├── wrongNumberCount.obj
+    │   │   │       └── wrongNumbers.obj
+    │   │   ├── TgaImageConverter
+    │   │   │   ├── CMakeLists.txt
+    │   │   │   ├── configure.h.cmake
+    │   │   │   ├── importStaticPlugin.cpp
+    │   │   │   ├── Test
+    │   │   │   │   ├── CMakeLists.txt
+    │   │   │   │   ├── configure.h.cmake
+    │   │   │   │   └── TgaImageConverterTest.cpp
+    │   │   │   ├── TgaImageConverter.conf
+    │   │   │   ├── TgaImageConverter.cpp
+    │   │   │   └── TgaImageConverter.h
+    │   │   ├── TgaImporter
+    │   │   │   ├── CMakeLists.txt
+    │   │   │   ├── configure.h.cmake
+    │   │   │   ├── importStaticPlugin.cpp
+    │   │   │   ├── Test
+    │   │   │   │   ├── CMakeLists.txt
+    │   │   │   │   ├── configure.h.cmake
+    │   │   │   │   ├── file.tga
+    │   │   │   │   └── TgaImporterTest.cpp
+    │   │   │   ├── TgaHeader.h
+    │   │   │   ├── TgaImporter.conf
+    │   │   │   ├── TgaImporter.cpp
+    │   │   │   └── TgaImporter.h
+    │   │   └── WavAudioImporter
+    │   │       ├── CMakeLists.txt
+    │   │       ├── configure.h.cmake
+    │   │       ├── importStaticPlugin.cpp
+    │   │       ├── Test
+    │   │       │   ├── CMakeLists.txt
+    │   │       │   ├── configure.h.cmake
+    │   │       │   ├── invalidDataChunk.wav
+    │   │       │   ├── invalidFactChunk.wav
+    │   │       │   ├── invalidLength.wav
+    │   │       │   ├── invalidPadding.wav
+    │   │       │   ├── mono16be.wav
+    │   │       │   ├── mono16.wav
+    │   │       │   ├── mono24.wav
+    │   │       │   ├── mono32fbe.wav
+    │   │       │   ├── mono32f.wav
+    │   │       │   ├── mono4.wav
+    │   │       │   ├── mono8ALaw.wav
+    │   │       │   ├── mono8junk.wav
+    │   │       │   ├── mono8MuLaw.wav
+    │   │       │   ├── mono8.wav
+    │   │       │   ├── stereo12.wav
+    │   │       │   ├── stereo16.wav
+    │   │       │   ├── stereo24.wav
+    │   │       │   ├── stereo32f.wav
+    │   │       │   ├── stereo32.wav
+    │   │       │   ├── stereo4.wav
+    │   │       │   ├── stereo64fbe.wav
+    │   │       │   ├── stereo64f.wav
+    │   │       │   ├── stereo8ALaw.wav
+    │   │       │   ├── stereo8MuLaw.wav
+    │   │       │   ├── stereo8.wav
+    │   │       │   ├── surround51Channel16.wav
+    │   │       │   ├── surround71Channel24.wav
+    │   │       │   ├── unsupportedChannelCount.wav
+    │   │       │   ├── unsupportedFormat.wav
+    │   │       │   ├── WavHeaderTest.cpp
+    │   │       │   ├── WavImporterTest.cpp
+    │   │       │   ├── wrongSignature.wav
+    │   │       │   └── zeroSamples.wav
+    │   │       ├── WavAudioImporter.conf
+    │   │       ├── WavHeader.cpp
+    │   │       ├── WavHeader.h
+    │   │       ├── WavImporter.cpp
+    │   │       └── WavImporter.h
+    │   └── singles
+    │       ├── base.h
+    │       ├── generate.sh
+    │       └── MagnumMath.hpp
+    └── toolchains
+
+110 directories, 1463 files

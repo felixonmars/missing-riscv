@@ -1,0 +1,198 @@
+src
+├── rubberband-4.0.0
+│   ├── CHANGELOG
+│   ├── com
+│   │   └── breakfastquay
+│   │       └── rubberband
+│   │           ├── RubberBandLiveShifter.java
+│   │           ├── RubberBandStretcher.java
+│   │           └── test
+│   │               └── RubberBandTest.java
+│   ├── COMPILING.md
+│   ├── CONTRIBUTING.md
+│   ├── COPYING
+│   ├── cross
+│   │   ├── ios-simulator.txt
+│   │   ├── ios.txt
+│   │   ├── macos-arm64.txt
+│   │   ├── macos-universal.txt
+│   │   ├── macos-x86_64.txt
+│   │   ├── windows-clang.txt
+│   │   └── windows-cl.txt
+│   ├── dotnet
+│   │   ├── README.md
+│   │   ├── rubberband-dll
+│   │   │   ├── dllmain.cpp
+│   │   │   ├── rubberband-dll.cpp
+│   │   │   ├── stdafx.cpp
+│   │   │   ├── stdafx.h
+│   │   │   └── targetver.h
+│   │   ├── rubberband-dll.vcxproj
+│   │   ├── rubberband-dll.vcxproj.filters
+│   │   ├── rubberband-library.vcxproj
+│   │   ├── rubberband-sharp
+│   │   │   ├── Install.ps1
+│   │   │   ├── RubberBandNativeMethods.cs
+│   │   │   ├── RubberBandNativeMethodsWin32.cs
+│   │   │   ├── RubberBandNativeMethodsx64.cs
+│   │   │   ├── rubberband-sharp.csproj
+│   │   │   ├── rubberband-sharp.nuspec
+│   │   │   ├── rubberband-sharp.targets
+│   │   │   └── RubberBandStretcher.cs
+│   │   └── rubberband.sln
+│   ├── Doxyfile
+│   ├── ladspa-lv2
+│   │   ├── ladspa-plugin.list
+│   │   ├── ladspa-plugin.map
+│   │   ├── ladspa-rubberband.cat
+│   │   ├── ladspa-rubberband.rdf
+│   │   ├── libmain-ladspa.cpp
+│   │   ├── libmain-lv2.cpp
+│   │   ├── lv2-plugin.list
+│   │   ├── lv2-plugin.map
+│   │   ├── RubberBandLivePitchShifter.cpp
+│   │   ├── RubberBandLivePitchShifter.h
+│   │   ├── rubberband.lv2
+│   │   │   ├── lv2-rubberband.ttl
+│   │   │   └── manifest.ttl
+│   │   ├── RubberBandPitchShifter.cpp
+│   │   ├── RubberBandPitchShifter.h
+│   │   ├── RubberBandR3PitchShifter.cpp
+│   │   └── RubberBandR3PitchShifter.h
+│   ├── main
+│   │   └── main.cpp
+│   ├── meson.build
+│   ├── meson_options.txt
+│   ├── otherbuilds
+│   │   ├── Android.mk
+│   │   ├── check.sh
+│   │   ├── deploy
+│   │   │   ├── macos.sh
+│   │   │   ├── source.sh
+│   │   │   └── win.bat
+│   │   ├── docker
+│   │   │   ├── Dockerfile.in
+│   │   │   └── run.sh
+│   │   ├── Makefile.ios
+│   │   ├── Makefile.linux
+│   │   ├── Makefile.macos
+│   │   ├── Makefile.macos-universal
+│   │   └── rubberband-library.vcxproj
+│   ├── README.md
+│   ├── rubberband
+│   │   ├── rubberband-c.h
+│   │   ├── RubberBandLiveShifter.h
+│   │   └── RubberBandStretcher.h
+│   ├── rubberband.pc.in
+│   ├── single
+│   │   └── RubberBandSingle.cpp
+│   ├── src
+│   │   ├── common
+│   │   │   ├── Allocators.cpp
+│   │   │   ├── Allocators.h
+│   │   │   ├── BQResampler.cpp
+│   │   │   ├── BQResampler.h
+│   │   │   ├── FFT.cpp
+│   │   │   ├── FFT.h
+│   │   │   ├── FixedVector.h
+│   │   │   ├── HistogramFilter.h
+│   │   │   ├── Log.cpp
+│   │   │   ├── Log.h
+│   │   │   ├── mathmisc.cpp
+│   │   │   ├── mathmisc.h
+│   │   │   ├── MovingMedian.h
+│   │   │   ├── Profiler.cpp
+│   │   │   ├── Profiler.h
+│   │   │   ├── Resampler.cpp
+│   │   │   ├── Resampler.h
+│   │   │   ├── RingBuffer.h
+│   │   │   ├── SampleFilter.h
+│   │   │   ├── Scavenger.h
+│   │   │   ├── SingleThreadRingBuffer.h
+│   │   │   ├── StretchCalculator.cpp
+│   │   │   ├── StretchCalculator.h
+│   │   │   ├── sysutils.cpp
+│   │   │   ├── sysutils.h
+│   │   │   ├── Thread.cpp
+│   │   │   ├── Thread.h
+│   │   │   ├── VectorOpsComplex.cpp
+│   │   │   ├── VectorOpsComplex.h
+│   │   │   ├── VectorOps.h
+│   │   │   └── Window.h
+│   │   ├── ext
+│   │   │   ├── float_cast
+│   │   │   │   └── float_cast.h
+│   │   │   ├── getopt
+│   │   │   │   ├── getopt.c
+│   │   │   │   ├── getopt.h
+│   │   │   │   ├── getopt_long.c
+│   │   │   │   └── unistd.h
+│   │   │   ├── kissfft
+│   │   │   │   ├── COPYING
+│   │   │   │   ├── kiss_fft.c
+│   │   │   │   ├── _kiss_fft_guts.h
+│   │   │   │   ├── kiss_fft.h
+│   │   │   │   ├── kiss_fft_log.h
+│   │   │   │   ├── kiss_fftr.c
+│   │   │   │   └── kiss_fftr.h
+│   │   │   ├── pommier
+│   │   │   │   ├── neon_mathfun.h
+│   │   │   │   └── sse_mathfun.h
+│   │   │   └── speex
+│   │   │       ├── COPYING
+│   │   │       ├── resample.c
+│   │   │       └── speex_resampler.h
+│   │   ├── faster
+│   │   │   ├── AudioCurveCalculator.cpp
+│   │   │   ├── AudioCurveCalculator.h
+│   │   │   ├── CompoundAudioCurve.cpp
+│   │   │   ├── CompoundAudioCurve.h
+│   │   │   ├── HighFrequencyAudioCurve.cpp
+│   │   │   ├── HighFrequencyAudioCurve.h
+│   │   │   ├── PercussiveAudioCurve.cpp
+│   │   │   ├── PercussiveAudioCurve.h
+│   │   │   ├── R2Stretcher.cpp
+│   │   │   ├── R2Stretcher.h
+│   │   │   ├── SilentAudioCurve.cpp
+│   │   │   ├── SilentAudioCurve.h
+│   │   │   ├── SincWindow.h
+│   │   │   ├── StretcherChannelData.cpp
+│   │   │   ├── StretcherChannelData.h
+│   │   │   └── StretcherProcess.cpp
+│   │   ├── finer
+│   │   │   ├── BinClassifier.h
+│   │   │   ├── BinSegmenter.h
+│   │   │   ├── Guide.h
+│   │   │   ├── Peak.h
+│   │   │   ├── PhaseAdvance.h
+│   │   │   ├── R3LiveShifter.cpp
+│   │   │   ├── R3LiveShifter.h
+│   │   │   ├── R3Stretcher.cpp
+│   │   │   └── R3Stretcher.h
+│   │   ├── jni
+│   │   │   └── RubberBandStretcherJNI.cpp
+│   │   ├── rubberband-c.cpp
+│   │   ├── RubberBandLiveShifter.cpp
+│   │   ├── RubberBandStretcher.cpp
+│   │   └── test
+│   │       ├── TestAllocators.cpp
+│   │       ├── TestBinClassifier.cpp
+│   │       ├── test.cpp
+│   │       ├── TestFFT.cpp
+│   │       ├── TestLiveShifter.cpp
+│   │       ├── TestResampler.cpp
+│   │       ├── TestSignalBits.cpp
+│   │       ├── TestStretchCalculator.cpp
+│   │       ├── TestStretcher.cpp
+│   │       ├── TestVectorOpsComplex.cpp
+│   │       └── TestVectorOps.cpp
+│   └── vamp
+│       ├── libmain.cpp
+│       ├── RubberBandVampPlugin.cpp
+│       ├── RubberBandVampPlugin.h
+│       ├── vamp-plugin.list
+│       ├── vamp-plugin.map
+│       └── vamp-rubberband.cat
+└── rubberband-4.0.0.tar.gz -> /home/felix/packages/rubberband/rubberband-4.0.0.tar.gz
+
+31 directories, 165 files

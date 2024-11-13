@@ -1,0 +1,117 @@
+src
+├── pytest-skip-markers-1.5.2
+│   ├── changelog
+│   │   └── 36.improvement.rst
+│   ├── CHANGELOG.rst
+│   ├── CODE_OF_CONDUCT.md
+│   ├── CONTRIBUTING.md
+│   ├── docs
+│   │   ├── changelog.rst
+│   │   ├── conf.py
+│   │   ├── contents.rst
+│   │   ├── index.rst
+│   │   ├── make.bat
+│   │   ├── Makefile
+│   │   ├── ref
+│   │   │   └── pytestskipmarkers
+│   │   │       ├── index.rst
+│   │   │       ├── plugin.rst
+│   │   │       └── utils
+│   │   │           ├── index.rst
+│   │   │           ├── markers.rst
+│   │   │           ├── platform.rst
+│   │   │           └── ports.rst
+│   │   ├── sitevars.rst
+│   │   └── _static
+│   │       ├── css
+│   │       │   └── inline-include.css
+│   │       └── img
+│   │           ├── SaltProject_altlogo_teal.png
+│   │           └── SaltProject_Logomark_teal.png
+│   ├── LICENSE
+│   ├── NOTICE
+│   ├── noxfile.py
+│   ├── pyproject.toml
+│   ├── pytest.ini
+│   ├── README.rst
+│   ├── requirements
+│   │   ├── base.txt
+│   │   ├── build.txt
+│   │   ├── changelog.txt
+│   │   ├── docs.txt
+│   │   ├── lint.txt
+│   │   ├── tests.txt
+│   │   └── tools.txt
+│   ├── setup.cfg
+│   ├── setup.py
+│   ├── src
+│   │   └── pytestskipmarkers
+│   │       ├── __init__.py
+│   │       ├── plugin.py
+│   │       ├── py.typed
+│   │       └── utils
+│   │           ├── __init__.py
+│   │           ├── markers.py
+│   │           ├── platform.py
+│   │           ├── ports.py
+│   │           ├── socket.py
+│   │           ├── socket.pyi
+│   │           └── win_functions.py
+│   ├── tests
+│   │   ├── conftest.py
+│   │   ├── functional
+│   │   │   ├── markers
+│   │   │   │   └── __init__.py
+│   │   │   ├── test_destructive_test.py
+│   │   │   ├── test_expensive_test.py
+│   │   │   ├── test_requires_network.py
+│   │   │   ├── test_skip_if_binaries_missing.py
+│   │   │   ├── test_skip_if_not_root.py
+│   │   │   ├── test_skip_on_aarch64.py
+│   │   │   ├── test_skip_on_aix.py
+│   │   │   ├── test_skip_on_darwin.py
+│   │   │   ├── test_skip_on_env.py
+│   │   │   ├── test_skip_on_fips_enabled_platform.py
+│   │   │   ├── test_skip_on_freebsd.py
+│   │   │   ├── test_skip_on_linux.py
+│   │   │   ├── test_skip_on_netbsd.py
+│   │   │   ├── test_skip_on_openbsd.py
+│   │   │   ├── test_skip_on_photonos.py
+│   │   │   ├── test_skip_on_platforms.py
+│   │   │   ├── test_skip_on_smartos.py
+│   │   │   ├── test_skip_on_spawning_platform.py
+│   │   │   ├── test_skip_on_sunos.py
+│   │   │   ├── test_skip_on_windows.py
+│   │   │   ├── test_skip_unless_on_aarch64.py
+│   │   │   ├── test_skip_unless_on_aix.py
+│   │   │   ├── test_skip_unless_on_darwin.py
+│   │   │   ├── test_skip_unless_on_freebsd.py
+│   │   │   ├── test_skip_unless_on_linux.py
+│   │   │   ├── test_skip_unless_on_netbsd.py
+│   │   │   ├── test_skip_unless_on_openbsd.py
+│   │   │   ├── test_skip_unless_on_photonos.py
+│   │   │   ├── test_skip_unless_on_platforms.py
+│   │   │   ├── test_skip_unless_on_smartos.py
+│   │   │   ├── test_skip_unless_on_spawning_platform.py
+│   │   │   ├── test_skip_unless_on_sunos.py
+│   │   │   └── test_skip_unless_on_windows.py
+│   │   ├── __init__.py
+│   │   └── unit
+│   │       ├── __init__.py
+│   │       └── utils
+│   │           ├── __init__.py
+│   │           ├── markers
+│   │           │   ├── __init__.py
+│   │           │   ├── test_skip_if_binaries_missing.py
+│   │           │   ├── test_skip_if_no_local_network.py
+│   │           │   ├── test_skip_if_no_remote_network.py
+│   │           │   ├── test_skip_if_not_root.py
+│   │           │   └── test_skip_on_env.py
+│   │           ├── test_platform.py
+│   │           └── test_ports.py
+│   └── tools
+│       ├── __init__.py
+│       └── pre_commit.py
+└── pytest-skip-markers-1.5.2.tar.gz -> /home/felix/packages/python-pytest-skip-markers/pytest-skip-markers-1.5.2.tar.gz
+
+21 directories, 94 files

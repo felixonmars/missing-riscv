@@ -1,0 +1,995 @@
+src
+├── vmaf-3.0.0
+│   ├── CHANGELOG.md
+│   ├── CONTRIBUTING.md
+│   ├── Dockerfile
+│   ├── libvmaf
+│   │   ├── doc
+│   │   │   ├── Doxyfile.in
+│   │   │   └── meson.build
+│   │   ├── include
+│   │   │   ├── libvmaf
+│   │   │   │   ├── feature.h
+│   │   │   │   ├── libvmaf_cuda.h
+│   │   │   │   ├── libvmaf.h
+│   │   │   │   ├── meson.build
+│   │   │   │   ├── model.h
+│   │   │   │   ├── picture.h
+│   │   │   │   └── version.h.in
+│   │   │   ├── meson.build
+│   │   │   └── vcs_version.h.in
+│   │   ├── meson.build
+│   │   ├── meson_options.txt
+│   │   ├── README.md
+│   │   ├── src
+│   │   │   ├── arm
+│   │   │   │   ├── cpu.c
+│   │   │   │   └── cpu.h
+│   │   │   ├── compat
+│   │   │   │   ├── gcc
+│   │   │   │   │   └── stdatomic.h
+│   │   │   │   └── msvc
+│   │   │   │       └── stdatomic.h
+│   │   │   ├── cpu.c
+│   │   │   ├── cpu.h
+│   │   │   ├── cuda
+│   │   │   │   ├── common.c
+│   │   │   │   ├── common.h
+│   │   │   │   ├── cuda_helper.cuh
+│   │   │   │   ├── picture_cuda.c
+│   │   │   │   ├── picture_cuda.h
+│   │   │   │   ├── ring_buffer.c
+│   │   │   │   └── ring_buffer.h
+│   │   │   ├── dict.c
+│   │   │   ├── dict.h
+│   │   │   ├── ext
+│   │   │   │   └── x86
+│   │   │   │       └── x86inc.asm
+│   │   │   ├── feature
+│   │   │   │   ├── adm.c
+│   │   │   │   ├── adm.h
+│   │   │   │   ├── adm_options.h
+│   │   │   │   ├── adm_tools.c
+│   │   │   │   ├── adm_tools.h
+│   │   │   │   ├── alias.c
+│   │   │   │   ├── alias.h
+│   │   │   │   ├── all.c
+│   │   │   │   ├── ansnr.c
+│   │   │   │   ├── ansnr.h
+│   │   │   │   ├── ansnr_options.h
+│   │   │   │   ├── ansnr_tools.c
+│   │   │   │   ├── ansnr_tools.h
+│   │   │   │   ├── arm64
+│   │   │   │   │   ├── adm_neon.c
+│   │   │   │   │   ├── adm_neon.h
+│   │   │   │   │   ├── vif_neon.c
+│   │   │   │   │   └── vif_neon.h
+│   │   │   │   ├── cambi.c
+│   │   │   │   ├── ciede.c
+│   │   │   │   ├── common
+│   │   │   │   │   ├── alignment.c
+│   │   │   │   │   ├── alignment.h
+│   │   │   │   │   ├── blur_array.c
+│   │   │   │   │   ├── blur_array.h
+│   │   │   │   │   ├── convolution_avx.c
+│   │   │   │   │   ├── convolution.c
+│   │   │   │   │   ├── convolution.h
+│   │   │   │   │   ├── convolution_internal.h
+│   │   │   │   │   └── macros.h
+│   │   │   │   ├── cuda
+│   │   │   │   │   ├── integer_adm
+│   │   │   │   │   │   ├── adm_cm.cu
+│   │   │   │   │   │   ├── adm_csf.cu
+│   │   │   │   │   │   ├── adm_csf_den.cu
+│   │   │   │   │   │   ├── adm_decouple.cu
+│   │   │   │   │   │   └── adm_dwt2.cu
+│   │   │   │   │   ├── integer_adm_cuda.c
+│   │   │   │   │   ├── integer_adm_cuda.h
+│   │   │   │   │   ├── integer_motion
+│   │   │   │   │   │   └── motion_score.cu
+│   │   │   │   │   ├── integer_motion_cuda.c
+│   │   │   │   │   ├── integer_motion_cuda.h
+│   │   │   │   │   ├── integer_vif
+│   │   │   │   │   │   ├── filter1d.cu
+│   │   │   │   │   │   └── vif_statistics.cuh
+│   │   │   │   │   ├── integer_vif_cuda.c
+│   │   │   │   │   └── integer_vif_cuda.h
+│   │   │   │   ├── feature_collector.c
+│   │   │   │   ├── feature_collector.h
+│   │   │   │   ├── feature_extractor.c
+│   │   │   │   ├── feature_extractor.h
+│   │   │   │   ├── feature_name.c
+│   │   │   │   ├── feature_name.h
+│   │   │   │   ├── float_adm.c
+│   │   │   │   ├── float_ansnr.c
+│   │   │   │   ├── float_moment.c
+│   │   │   │   ├── float_motion.c
+│   │   │   │   ├── float_ms_ssim.c
+│   │   │   │   ├── float_psnr.c
+│   │   │   │   ├── float_ssim.c
+│   │   │   │   ├── float_vif.c
+│   │   │   │   ├── integer_adm.c
+│   │   │   │   ├── integer_adm.h
+│   │   │   │   ├── integer_motion.c
+│   │   │   │   ├── integer_motion.h
+│   │   │   │   ├── integer_psnr.c
+│   │   │   │   ├── integer_ssim.c
+│   │   │   │   ├── integer_vif.c
+│   │   │   │   ├── integer_vif.h
+│   │   │   │   ├── iqa
+│   │   │   │   │   ├── convolve.c
+│   │   │   │   │   ├── convolve.h
+│   │   │   │   │   ├── decimate.c
+│   │   │   │   │   ├── decimate.h
+│   │   │   │   │   ├── iqa.h
+│   │   │   │   │   ├── iqa_options.h
+│   │   │   │   │   ├── iqa_os.h
+│   │   │   │   │   ├── math_utils.c
+│   │   │   │   │   ├── math_utils.h
+│   │   │   │   │   ├── ssim_tools.c
+│   │   │   │   │   └── ssim_tools.h
+│   │   │   │   ├── luminance_tools.c
+│   │   │   │   ├── luminance_tools.h
+│   │   │   │   ├── mkdirp.c
+│   │   │   │   ├── mkdirp.h
+│   │   │   │   ├── moment.c
+│   │   │   │   ├── moment.h
+│   │   │   │   ├── moment_options.h
+│   │   │   │   ├── motion.c
+│   │   │   │   ├── motion.h
+│   │   │   │   ├── motion_options.h
+│   │   │   │   ├── motion_tools.h
+│   │   │   │   ├── ms_ssim.c
+│   │   │   │   ├── ms_ssim.h
+│   │   │   │   ├── null.c
+│   │   │   │   ├── offset.c
+│   │   │   │   ├── offset.h
+│   │   │   │   ├── picture_copy.c
+│   │   │   │   ├── picture_copy.h
+│   │   │   │   ├── psnr.c
+│   │   │   │   ├── psnr.h
+│   │   │   │   ├── psnr_options.h
+│   │   │   │   ├── psnr_tools.c
+│   │   │   │   ├── psnr_tools.h
+│   │   │   │   ├── ssim.c
+│   │   │   │   ├── ssim.h
+│   │   │   │   ├── third_party
+│   │   │   │   │   └── xiph
+│   │   │   │   │       └── psnr_hvs.c
+│   │   │   │   ├── vif.c
+│   │   │   │   ├── vif.h
+│   │   │   │   ├── vif_options.h
+│   │   │   │   ├── vif_tools.c
+│   │   │   │   ├── vif_tools.h
+│   │   │   │   └── x86
+│   │   │   │       ├── adm_avx2.c
+│   │   │   │       ├── adm_avx2.h
+│   │   │   │       ├── cambi_avx2.c
+│   │   │   │       ├── cambi_avx2.h
+│   │   │   │       ├── motion_avx2.c
+│   │   │   │       ├── motion_avx2.h
+│   │   │   │       ├── motion_avx512.c
+│   │   │   │       ├── motion_avx512.h
+│   │   │   │       ├── vif_avx2.c
+│   │   │   │       ├── vif_avx2.h
+│   │   │   │       ├── vif_avx512.c
+│   │   │   │       └── vif_avx512.h
+│   │   │   ├── fex_ctx_vector.c
+│   │   │   ├── fex_ctx_vector.h
+│   │   │   ├── libvmaf.c
+│   │   │   ├── log.c
+│   │   │   ├── log.h
+│   │   │   ├── mem.c
+│   │   │   ├── mem.h
+│   │   │   ├── meson.build
+│   │   │   ├── model.c
+│   │   │   ├── model.h
+│   │   │   ├── opt.c
+│   │   │   ├── opt.h
+│   │   │   ├── output.c
+│   │   │   ├── output.h
+│   │   │   ├── pdjson.c
+│   │   │   ├── pdjson.h
+│   │   │   ├── picture.c
+│   │   │   ├── picture.h
+│   │   │   ├── predict.c
+│   │   │   ├── predict.h
+│   │   │   ├── read_json_model.c
+│   │   │   ├── read_json_model.h
+│   │   │   ├── ref.c
+│   │   │   ├── ref.h
+│   │   │   ├── svm.cpp
+│   │   │   ├── svm.h
+│   │   │   ├── thread_pool.c
+│   │   │   ├── thread_pool.h
+│   │   │   └── x86
+│   │   │       ├── cpu.c
+│   │   │       ├── cpu.h
+│   │   │       └── cpuid.asm
+│   │   ├── test
+│   │   │   ├── meson.build
+│   │   │   ├── test.c
+│   │   │   ├── test_cambi.c
+│   │   │   ├── test_ciede.c
+│   │   │   ├── test_cli_parse.c
+│   │   │   ├── test_context.c
+│   │   │   ├── test_cpu.c
+│   │   │   ├── test_cuda_pic_preallocation.c
+│   │   │   ├── test_dict.c
+│   │   │   ├── test_feature.c
+│   │   │   ├── test_feature_collector.c
+│   │   │   ├── test_feature_extractor.c
+│   │   │   ├── test.h
+│   │   │   ├── test_log.c
+│   │   │   ├── test_luminance_tools.c
+│   │   │   ├── test_model.c
+│   │   │   ├── test_picture.c
+│   │   │   ├── test_predict.c
+│   │   │   ├── test_ref.c
+│   │   │   ├── test_ring_buffer.c
+│   │   │   └── test_thread_pool.c
+│   │   └── tools
+│   │       ├── cli_parse.c
+│   │       ├── cli_parse.h
+│   │       ├── meson.build
+│   │       ├── README.md
+│   │       ├── spinner.h
+│   │       ├── test
+│   │       │   ├── meson.build
+│   │       │   └── test_vmaf_cuda_gpumask.sh
+│   │       ├── vidinput.c
+│   │       ├── vidinput.h
+│   │       ├── vmaf.c
+│   │       ├── y4m_input.c
+│   │       └── yuv_input.c
+│   ├── LICENSE
+│   ├── Makefile
+│   ├── matlab
+│   │   ├── cid_icid
+│   │   │   ├── BT709_f.mat
+│   │   │   ├── BT709_l.mat
+│   │   │   ├── iCID
+│   │   │   │   └── iCID_Metric
+│   │   │   │       ├── ColorSpaceTransformations
+│   │   │   │       │   ├── colorspace.m
+│   │   │   │       │   ├── FilterImageCSF.m
+│   │   │   │       │   ├── ImageSRGB2XYZ.m
+│   │   │   │       │   ├── ImageXYZ2LAB2000HL.m
+│   │   │   │       │   ├── LAB2000HL.mat
+│   │   │   │       │   ├── LAB2LAB2000HL.m
+│   │   │   │       │   ├── SRGB2XYZ.m
+│   │   │   │       │   └── XYZ2LAB.m
+│   │   │   │       ├── iCID.m
+│   │   │   │       └── README.txt
+│   │   │   ├── run_icid.m
+│   │   │   ├── yuv2rgb.m
+│   │   │   └── yuvread.m
+│   │   ├── SpEED
+│   │   │   ├── run_speed.m
+│   │   │   └── SpEED
+│   │   │       ├── calcSpEEDScore.m
+│   │   │       ├── est_params.m
+│   │   │       ├── readframefromfid_all_fmts.m
+│   │   │       └── Single_Scale_Video_SPEED.m
+│   │   ├── STMAD_2011_MatlabCode
+│   │   │   ├── calcSMADScore.m
+│   │   │   ├── calcSTMADScore.m
+│   │   │   ├── calculateSMADScore.m
+│   │   │   ├── Example.m
+│   │   │   ├── hi_index.m
+│   │   │   ├── ical_stat.c
+│   │   │   ├── ical_stat.mexa64
+│   │   │   ├── ical_stat.mexmaci64
+│   │   │   ├── ical_stat.mexw64
+│   │   │   ├── ical_std.c
+│   │   │   ├── ical_std.mexa64
+│   │   │   ├── ical_std.mexmaci64
+│   │   │   ├── ical_std.mexw64
+│   │   │   ├── lo_index.m
+│   │   │   ├── MotionWeight.m
+│   │   │   ├── readframefromfid.m
+│   │   │   ├── run_smad.m
+│   │   │   ├── run_stmad.m
+│   │   │   ├── STMAD_index.m
+│   │   │   └── yuvread.m
+│   │   └── strred
+│   │       ├── matlabPyrTools
+│   │       │   ├── binomialFilter.m
+│   │       │   ├── blurDn.m
+│   │       │   ├── blur.m
+│   │       │   ├── buildGpyr.m
+│   │       │   ├── buildLpyr.m
+│   │       │   ├── buildSCFpyrLevs.m
+│   │       │   ├── buildSCFpyr.m
+│   │       │   ├── buildSFpyrLevs.m
+│   │       │   ├── buildSFpyr.m
+│   │       │   ├── buildSpyrLevs.m
+│   │       │   ├── buildSpyr.m
+│   │       │   ├── buildWpyr.m
+│   │       │   ├── cconv2.m
+│   │       │   ├── ChangeLog
+│   │       │   ├── clip.m
+│   │       │   ├── Contents.m
+│   │       │   ├── corrDn.m
+│   │       │   ├── einstein.pgm
+│   │       │   ├── entropy2.m
+│   │       │   ├── factorial.m
+│   │       │   ├── feynman.pgm
+│   │       │   ├── histo.m
+│   │       │   ├── histoMatch.m
+│   │       │   ├── ifftshift.m
+│   │       │   ├── imGradient.m
+│   │       │   ├── imStats.m
+│   │       │   ├── innerProd.m
+│   │       │   ├── kurt2.m
+│   │       │   ├── lplot.m
+│   │       │   ├── lpyrHt.m
+│   │       │   ├── maxPyrHt.m
+│   │       │   ├── mean2.m
+│   │       │   ├── MEX
+│   │       │   │   ├── convolve.c
+│   │       │   │   ├── convolve.h
+│   │       │   │   ├── Copy_of_corrDn.mexmac
+│   │       │   │   ├── corrDn.c
+│   │       │   │   ├── corrDn.dll
+│   │       │   │   ├── corrDn.exp
+│   │       │   │   ├── corrDn.lib
+│   │       │   │   ├── corrDn.mex
+│   │       │   │   ├── corrDn.mex4
+│   │       │   │   ├── corrDn.mexa64
+│   │       │   │   ├── corrDn.mexglx
+│   │       │   │   ├── corrDn.mexlx
+│   │       │   │   ├── corrDn.mexmac
+│   │       │   │   ├── corrDn.mexsol
+│   │       │   │   ├── corrDn.mexw32
+│   │       │   │   ├── edges.c
+│   │       │   │   ├── edges-orig.c
+│   │       │   │   ├── histo.c
+│   │       │   │   ├── histo.dll
+│   │       │   │   ├── histo.mex
+│   │       │   │   ├── histo.mex4
+│   │       │   │   ├── histo.mexglx
+│   │       │   │   ├── histo.mexlx
+│   │       │   │   ├── histo.mexmac
+│   │       │   │   ├── histo.mexsol
+│   │       │   │   ├── innerProd.c
+│   │       │   │   ├── innerProd.dll
+│   │       │   │   ├── innerProd.mexglx
+│   │       │   │   ├── innerProd.mexlx
+│   │       │   │   ├── innerProd.mexmac
+│   │       │   │   ├── innerProd.mexsol
+│   │       │   │   ├── -MacReadMe
+│   │       │   │   ├── Makefile-linux
+│   │       │   │   ├── Makefile-ml6-linux
+│   │       │   │   ├── Makefile-osx
+│   │       │   │   ├── Makefile-solaris
+│   │       │   │   ├── Makefile-sun4
+│   │       │   │   ├── pointOp.c
+│   │       │   │   ├── pointOp.dll
+│   │       │   │   ├── pointOp.mex
+│   │       │   │   ├── pointOp.mex4
+│   │       │   │   ├── pointOp.mexglx
+│   │       │   │   ├── pointOp.mexlx
+│   │       │   │   ├── pointOp.mexmac
+│   │       │   │   ├── pointOp.mexsol
+│   │       │   │   ├── pointOp.o
+│   │       │   │   ├── range2.c
+│   │       │   │   ├── range2.dll
+│   │       │   │   ├── range2.mex
+│   │       │   │   ├── range2.mex4
+│   │       │   │   ├── range2.mexglx
+│   │       │   │   ├── range2.mexlx
+│   │       │   │   ├── range2.mexmac
+│   │       │   │   ├── range2.mexsol
+│   │       │   │   ├── range2.o
+│   │       │   │   ├── upConv.c
+│   │       │   │   ├── upConv.dll
+│   │       │   │   ├── upConv.mex
+│   │       │   │   ├── upConv.mex4
+│   │       │   │   ├── upConv.mexglx
+│   │       │   │   ├── upConv.mexlx
+│   │       │   │   ├── upConv.mexmac
+│   │       │   │   ├── upConv.mexsol
+│   │       │   │   ├── upConv.o
+│   │       │   │   └── wrap.c
+│   │       │   ├── mkAngle.m
+│   │       │   ├── mkAngularSine.m
+│   │       │   ├── mkDisc.m
+│   │       │   ├── mkFract.m
+│   │       │   ├── mkGaussian.m
+│   │       │   ├── mkImpulse.m
+│   │       │   ├── mkRamp.m
+│   │       │   ├── mkR.m
+│   │       │   ├── mkSine.m
+│   │       │   ├── mkSquare.m
+│   │       │   ├── mkZonePlate.m
+│   │       │   ├── mod1.m
+│   │       │   ├── model_pyr.m
+│   │       │   ├── modulateFlip.m
+│   │       │   ├── namedFilter.m
+│   │       │   ├── nextFig.m
+│   │       │   ├── pgmRead.m
+│   │       │   ├── pgmWrite.m
+│   │       │   ├── pixelAxes.m
+│   │       │   ├── pointOp.m
+│   │       │   ├── pwd2path.m
+│   │       │   ├── pyrBandIndices.m
+│   │       │   ├── pyrBand.m
+│   │       │   ├── pyrLow.m
+│   │       │   ├── range2.m
+│   │       │   ├── rconv2.m
+│   │       │   ├── rcosFn.m
+│   │       │   ├── README
+│   │       │   ├── reconLpyr.m
+│   │       │   ├── reconSCFpyr.m
+│   │       │   ├── reconSFpyrLevs.m
+│   │       │   ├── reconSFpyr.m
+│   │       │   ├── reconSpyrLevs.m
+│   │       │   ├── reconSpyr.m
+│   │       │   ├── reconWpyr.m
+│   │       │   ├── setPyrBand.m
+│   │       │   ├── shift.m
+│   │       │   ├── showIm.m
+│   │       │   ├── showLpyr.m
+│   │       │   ├── showSpyr.m
+│   │       │   ├── showWpyr.m
+│   │       │   ├── simulate.m
+│   │       │   ├── skew2.m
+│   │       │   ├── sp0Filters.m
+│   │       │   ├── sp1Filters.m
+│   │       │   ├── sp3Filters.m
+│   │       │   ├── sp5Filters.m
+│   │       │   ├── spyrBand.m
+│   │       │   ├── spyrHigh.m
+│   │       │   ├── spyrHt.m
+│   │       │   ├── spyrLev.m
+│   │       │   ├── spyrNumBands.m
+│   │       │   ├── steer2HarmMtx.m
+│   │       │   ├── steer.m
+│   │       │   ├── subMtx.m
+│   │       │   ├── TUTORIALS
+│   │       │   │   ├── matlabPyrTools.m
+│   │       │   │   ├── pyramids.m
+│   │       │   │   └── README
+│   │       │   ├── upBlur.m
+│   │       │   ├── upConv.m
+│   │       │   ├── var2.m
+│   │       │   ├── vectify.m
+│   │       │   ├── wpyrBand.m
+│   │       │   ├── wpyrHt.m
+│   │       │   ├── wpyrLev.m
+│   │       │   └── zconv2.m
+│   │       ├── README
+│   │       ├── run_strred.m
+│   │       ├── run_strred_opt.m
+│   │       ├── SR_SIM.m
+│   │       ├── strred
+│   │       │   ├── buildSpyr_single.m
+│   │       │   ├── calcStrredScore.m
+│   │       │   ├── calcStrredScore_opt.m
+│   │       │   ├── est_params.m
+│   │       │   ├── extract_info.m
+│   │       │   ├── extract_info_opt.m
+│   │       │   ├── ind2wtree.m
+│   │       │   ├── readframefromfid.m
+│   │       │   └── rred2dmos.m
+│   │       └── workspace
+│   ├── model
+│   │   ├── other_models
+│   │   │   ├── model_V8a.model
+│   │   │   ├── nflxall_libsvmnusvr_currentbest.pkl
+│   │   │   ├── nflxall_libsvmnusvr_currentbest.pkl.model
+│   │   │   ├── nflxall_vmafv1.pkl
+│   │   │   ├── nflxall_vmafv1.pkl.model
+│   │   │   ├── nflxall_vmafv2.pkl
+│   │   │   ├── nflxall_vmafv2.pkl.model
+│   │   │   ├── nflxall_vmafv3a.pkl
+│   │   │   ├── nflxall_vmafv3a.pkl.model
+│   │   │   ├── nflxall_vmafv3.pkl
+│   │   │   ├── nflxall_vmafv3.pkl.model
+│   │   │   ├── nflxall_vmafv4.pkl
+│   │   │   ├── nflxall_vmafv4.pkl.model
+│   │   │   ├── nflxtrain_libsvmnusvr_currentbest.pkl
+│   │   │   ├── nflxtrain_libsvmnusvr_currentbest.pkl.model
+│   │   │   ├── nflxtrain_norm_type_none.json
+│   │   │   ├── nflxtrain_norm_type_none.pkl
+│   │   │   ├── nflxtrain_norm_type_none.pkl.model
+│   │   │   ├── nflxtrain_vmafv1.pkl
+│   │   │   ├── nflxtrain_vmafv1.pkl.model
+│   │   │   ├── nflxtrain_vmafv2.pkl
+│   │   │   ├── nflxtrain_vmafv2.pkl.model
+│   │   │   ├── nflxtrain_vmafv3a.pkl
+│   │   │   ├── nflxtrain_vmafv3a.pkl.model
+│   │   │   ├── nflxtrain_vmafv3.pkl
+│   │   │   ├── nflxtrain_vmafv3.pkl.model
+│   │   │   ├── nflx_v1.json
+│   │   │   ├── nflx_v1.pkl
+│   │   │   ├── nflx_v1.pkl.model
+│   │   │   ├── nflx_vmaff_rf_v1.pkl
+│   │   │   ├── nflx_vmaff_rf_v2.pkl
+│   │   │   ├── niqe_v0.1.pkl
+│   │   │   ├── vmaf_4k_v0.6.1rc.pkl
+│   │   │   ├── vmaf_4k_v0.6.1rc.pkl.model
+│   │   │   ├── vmaf_v0.6.0.json
+│   │   │   ├── vmaf_v0.6.0.pkl
+│   │   │   ├── vmaf_v0.6.0.pkl.model
+│   │   │   └── vmaf_v0.6.1mfz.json
+│   │   ├── vmaf_4k_rb_v0.6.2
+│   │   │   ├── vmaf_4k_rb_v0.6.2.json
+│   │   │   ├── vmaf_4k_rb_v0.6.2.pkl
+│   │   │   ├── vmaf_4k_rb_v0.6.2.pkl.0001
+│   │   │   ├── vmaf_4k_rb_v0.6.2.pkl.0001.model
+│   │   │   ├── vmaf_4k_rb_v0.6.2.pkl.0002
+│   │   │   ├── vmaf_4k_rb_v0.6.2.pkl.0002.model
+│   │   │   ├── vmaf_4k_rb_v0.6.2.pkl.0003
+│   │   │   ├── vmaf_4k_rb_v0.6.2.pkl.0003.model
+│   │   │   ├── vmaf_4k_rb_v0.6.2.pkl.0004
+│   │   │   ├── vmaf_4k_rb_v0.6.2.pkl.0004.model
+│   │   │   ├── vmaf_4k_rb_v0.6.2.pkl.0005
+│   │   │   ├── vmaf_4k_rb_v0.6.2.pkl.0005.model
+│   │   │   ├── vmaf_4k_rb_v0.6.2.pkl.0006
+│   │   │   ├── vmaf_4k_rb_v0.6.2.pkl.0006.model
+│   │   │   ├── vmaf_4k_rb_v0.6.2.pkl.0007
+│   │   │   ├── vmaf_4k_rb_v0.6.2.pkl.0007.model
+│   │   │   ├── vmaf_4k_rb_v0.6.2.pkl.0008
+│   │   │   ├── vmaf_4k_rb_v0.6.2.pkl.0008.model
+│   │   │   ├── vmaf_4k_rb_v0.6.2.pkl.0009
+│   │   │   ├── vmaf_4k_rb_v0.6.2.pkl.0009.model
+│   │   │   ├── vmaf_4k_rb_v0.6.2.pkl.0010
+│   │   │   ├── vmaf_4k_rb_v0.6.2.pkl.0010.model
+│   │   │   ├── vmaf_4k_rb_v0.6.2.pkl.0011
+│   │   │   ├── vmaf_4k_rb_v0.6.2.pkl.0011.model
+│   │   │   ├── vmaf_4k_rb_v0.6.2.pkl.0012
+│   │   │   ├── vmaf_4k_rb_v0.6.2.pkl.0012.model
+│   │   │   ├── vmaf_4k_rb_v0.6.2.pkl.0013
+│   │   │   ├── vmaf_4k_rb_v0.6.2.pkl.0013.model
+│   │   │   ├── vmaf_4k_rb_v0.6.2.pkl.0014
+│   │   │   ├── vmaf_4k_rb_v0.6.2.pkl.0014.model
+│   │   │   ├── vmaf_4k_rb_v0.6.2.pkl.0015
+│   │   │   ├── vmaf_4k_rb_v0.6.2.pkl.0015.model
+│   │   │   ├── vmaf_4k_rb_v0.6.2.pkl.0016
+│   │   │   ├── vmaf_4k_rb_v0.6.2.pkl.0016.model
+│   │   │   ├── vmaf_4k_rb_v0.6.2.pkl.0017
+│   │   │   ├── vmaf_4k_rb_v0.6.2.pkl.0017.model
+│   │   │   ├── vmaf_4k_rb_v0.6.2.pkl.0018
+│   │   │   ├── vmaf_4k_rb_v0.6.2.pkl.0018.model
+│   │   │   ├── vmaf_4k_rb_v0.6.2.pkl.0019
+│   │   │   ├── vmaf_4k_rb_v0.6.2.pkl.0019.model
+│   │   │   └── vmaf_4k_rb_v0.6.2.pkl.model
+│   │   ├── vmaf_4k_v0.6.1.json
+│   │   ├── vmaf_4k_v0.6.1neg.json
+│   │   ├── vmaf_b_v0.6.3.json
+│   │   ├── vmaf_float_4k_v0.6.1.json
+│   │   ├── vmaf_float_b_v0.6.3
+│   │   │   ├── vmaf_float_b_v0.6.3.json
+│   │   │   ├── vmaf_float_b_v0.6.3.pkl
+│   │   │   ├── vmaf_float_b_v0.6.3.pkl.0001
+│   │   │   ├── vmaf_float_b_v0.6.3.pkl.0001.model
+│   │   │   ├── vmaf_float_b_v0.6.3.pkl.0002
+│   │   │   ├── vmaf_float_b_v0.6.3.pkl.0002.model
+│   │   │   ├── vmaf_float_b_v0.6.3.pkl.0003
+│   │   │   ├── vmaf_float_b_v0.6.3.pkl.0003.model
+│   │   │   ├── vmaf_float_b_v0.6.3.pkl.0004
+│   │   │   ├── vmaf_float_b_v0.6.3.pkl.0004.model
+│   │   │   ├── vmaf_float_b_v0.6.3.pkl.0005
+│   │   │   ├── vmaf_float_b_v0.6.3.pkl.0005.model
+│   │   │   ├── vmaf_float_b_v0.6.3.pkl.0006
+│   │   │   ├── vmaf_float_b_v0.6.3.pkl.0006.model
+│   │   │   ├── vmaf_float_b_v0.6.3.pkl.0007
+│   │   │   ├── vmaf_float_b_v0.6.3.pkl.0007.model
+│   │   │   ├── vmaf_float_b_v0.6.3.pkl.0008
+│   │   │   ├── vmaf_float_b_v0.6.3.pkl.0008.model
+│   │   │   ├── vmaf_float_b_v0.6.3.pkl.0009
+│   │   │   ├── vmaf_float_b_v0.6.3.pkl.0009.model
+│   │   │   ├── vmaf_float_b_v0.6.3.pkl.0010
+│   │   │   ├── vmaf_float_b_v0.6.3.pkl.0010.model
+│   │   │   ├── vmaf_float_b_v0.6.3.pkl.0011
+│   │   │   ├── vmaf_float_b_v0.6.3.pkl.0011.model
+│   │   │   ├── vmaf_float_b_v0.6.3.pkl.0012
+│   │   │   ├── vmaf_float_b_v0.6.3.pkl.0012.model
+│   │   │   ├── vmaf_float_b_v0.6.3.pkl.0013
+│   │   │   ├── vmaf_float_b_v0.6.3.pkl.0013.model
+│   │   │   ├── vmaf_float_b_v0.6.3.pkl.0014
+│   │   │   ├── vmaf_float_b_v0.6.3.pkl.0014.model
+│   │   │   ├── vmaf_float_b_v0.6.3.pkl.0015
+│   │   │   ├── vmaf_float_b_v0.6.3.pkl.0015.model
+│   │   │   ├── vmaf_float_b_v0.6.3.pkl.0016
+│   │   │   ├── vmaf_float_b_v0.6.3.pkl.0016.model
+│   │   │   ├── vmaf_float_b_v0.6.3.pkl.0017
+│   │   │   ├── vmaf_float_b_v0.6.3.pkl.0017.model
+│   │   │   ├── vmaf_float_b_v0.6.3.pkl.0018
+│   │   │   ├── vmaf_float_b_v0.6.3.pkl.0018.model
+│   │   │   ├── vmaf_float_b_v0.6.3.pkl.0019
+│   │   │   ├── vmaf_float_b_v0.6.3.pkl.0019.model
+│   │   │   ├── vmaf_float_b_v0.6.3.pkl.0020
+│   │   │   ├── vmaf_float_b_v0.6.3.pkl.0020.model
+│   │   │   └── vmaf_float_b_v0.6.3.pkl.model
+│   │   ├── vmaf_float_b_v0.6.3.json
+│   │   ├── vmaf_float_v0.6.1.json
+│   │   ├── vmaf_float_v0.6.1neg.json
+│   │   ├── vmaf_float_v0.6.1neg.pkl
+│   │   ├── vmaf_float_v0.6.1neg.pkl.model
+│   │   ├── vmaf_float_v0.6.1.pkl
+│   │   ├── vmaf_float_v0.6.1.pkl.model
+│   │   ├── vmaf_rb_v0.6.2
+│   │   │   ├── vmaf_rb_v0.6.2.json
+│   │   │   ├── vmaf_rb_v0.6.2.pkl
+│   │   │   ├── vmaf_rb_v0.6.2.pkl.0001
+│   │   │   ├── vmaf_rb_v0.6.2.pkl.0001.model
+│   │   │   ├── vmaf_rb_v0.6.2.pkl.0002
+│   │   │   ├── vmaf_rb_v0.6.2.pkl.0002.model
+│   │   │   ├── vmaf_rb_v0.6.2.pkl.0003
+│   │   │   ├── vmaf_rb_v0.6.2.pkl.0003.model
+│   │   │   ├── vmaf_rb_v0.6.2.pkl.0004
+│   │   │   ├── vmaf_rb_v0.6.2.pkl.0004.model
+│   │   │   ├── vmaf_rb_v0.6.2.pkl.0005
+│   │   │   ├── vmaf_rb_v0.6.2.pkl.0005.model
+│   │   │   ├── vmaf_rb_v0.6.2.pkl.0006
+│   │   │   ├── vmaf_rb_v0.6.2.pkl.0006.model
+│   │   │   ├── vmaf_rb_v0.6.2.pkl.0007
+│   │   │   ├── vmaf_rb_v0.6.2.pkl.0007.model
+│   │   │   ├── vmaf_rb_v0.6.2.pkl.0008
+│   │   │   ├── vmaf_rb_v0.6.2.pkl.0008.model
+│   │   │   ├── vmaf_rb_v0.6.2.pkl.0009
+│   │   │   ├── vmaf_rb_v0.6.2.pkl.0009.model
+│   │   │   ├── vmaf_rb_v0.6.2.pkl.0010
+│   │   │   ├── vmaf_rb_v0.6.2.pkl.0010.model
+│   │   │   ├── vmaf_rb_v0.6.2.pkl.0011
+│   │   │   ├── vmaf_rb_v0.6.2.pkl.0011.model
+│   │   │   ├── vmaf_rb_v0.6.2.pkl.0012
+│   │   │   ├── vmaf_rb_v0.6.2.pkl.0012.model
+│   │   │   ├── vmaf_rb_v0.6.2.pkl.0013
+│   │   │   ├── vmaf_rb_v0.6.2.pkl.0013.model
+│   │   │   ├── vmaf_rb_v0.6.2.pkl.0014
+│   │   │   ├── vmaf_rb_v0.6.2.pkl.0014.model
+│   │   │   ├── vmaf_rb_v0.6.2.pkl.0015
+│   │   │   ├── vmaf_rb_v0.6.2.pkl.0015.model
+│   │   │   ├── vmaf_rb_v0.6.2.pkl.0016
+│   │   │   ├── vmaf_rb_v0.6.2.pkl.0016.model
+│   │   │   ├── vmaf_rb_v0.6.2.pkl.0017
+│   │   │   ├── vmaf_rb_v0.6.2.pkl.0017.model
+│   │   │   ├── vmaf_rb_v0.6.2.pkl.0018
+│   │   │   ├── vmaf_rb_v0.6.2.pkl.0018.model
+│   │   │   ├── vmaf_rb_v0.6.2.pkl.0019
+│   │   │   ├── vmaf_rb_v0.6.2.pkl.0019.model
+│   │   │   └── vmaf_rb_v0.6.2.pkl.model
+│   │   ├── vmaf_rb_v0.6.3
+│   │   │   ├── vmaf_rb_v0.6.3.json
+│   │   │   ├── vmaf_rb_v0.6.3.pkl
+│   │   │   ├── vmaf_rb_v0.6.3.pkl.0001
+│   │   │   ├── vmaf_rb_v0.6.3.pkl.0001.model
+│   │   │   ├── vmaf_rb_v0.6.3.pkl.0002
+│   │   │   ├── vmaf_rb_v0.6.3.pkl.0002.model
+│   │   │   ├── vmaf_rb_v0.6.3.pkl.0003
+│   │   │   ├── vmaf_rb_v0.6.3.pkl.0003.model
+│   │   │   ├── vmaf_rb_v0.6.3.pkl.0004
+│   │   │   ├── vmaf_rb_v0.6.3.pkl.0004.model
+│   │   │   ├── vmaf_rb_v0.6.3.pkl.0005
+│   │   │   ├── vmaf_rb_v0.6.3.pkl.0005.model
+│   │   │   ├── vmaf_rb_v0.6.3.pkl.0006
+│   │   │   ├── vmaf_rb_v0.6.3.pkl.0006.model
+│   │   │   ├── vmaf_rb_v0.6.3.pkl.0007
+│   │   │   ├── vmaf_rb_v0.6.3.pkl.0007.model
+│   │   │   ├── vmaf_rb_v0.6.3.pkl.0008
+│   │   │   ├── vmaf_rb_v0.6.3.pkl.0008.model
+│   │   │   ├── vmaf_rb_v0.6.3.pkl.0009
+│   │   │   ├── vmaf_rb_v0.6.3.pkl.0009.model
+│   │   │   ├── vmaf_rb_v0.6.3.pkl.0010
+│   │   │   ├── vmaf_rb_v0.6.3.pkl.0010.model
+│   │   │   ├── vmaf_rb_v0.6.3.pkl.0011
+│   │   │   ├── vmaf_rb_v0.6.3.pkl.0011.model
+│   │   │   ├── vmaf_rb_v0.6.3.pkl.0012
+│   │   │   ├── vmaf_rb_v0.6.3.pkl.0012.model
+│   │   │   ├── vmaf_rb_v0.6.3.pkl.0013
+│   │   │   ├── vmaf_rb_v0.6.3.pkl.0013.model
+│   │   │   ├── vmaf_rb_v0.6.3.pkl.0014
+│   │   │   ├── vmaf_rb_v0.6.3.pkl.0014.model
+│   │   │   ├── vmaf_rb_v0.6.3.pkl.0015
+│   │   │   ├── vmaf_rb_v0.6.3.pkl.0015.model
+│   │   │   ├── vmaf_rb_v0.6.3.pkl.0016
+│   │   │   ├── vmaf_rb_v0.6.3.pkl.0016.model
+│   │   │   ├── vmaf_rb_v0.6.3.pkl.0017
+│   │   │   ├── vmaf_rb_v0.6.3.pkl.0017.model
+│   │   │   ├── vmaf_rb_v0.6.3.pkl.0018
+│   │   │   ├── vmaf_rb_v0.6.3.pkl.0018.model
+│   │   │   ├── vmaf_rb_v0.6.3.pkl.0019
+│   │   │   ├── vmaf_rb_v0.6.3.pkl.0019.model
+│   │   │   ├── vmaf_rb_v0.6.3.pkl.0020
+│   │   │   ├── vmaf_rb_v0.6.3.pkl.0020.model
+│   │   │   └── vmaf_rb_v0.6.3.pkl.model
+│   │   ├── vmaf_v0.6.1.json
+│   │   └── vmaf_v0.6.1neg.json
+│   ├── OSSMETADATA
+│   ├── python
+│   │   ├── DEVELOP.md
+│   │   ├── README.rst
+│   │   ├── requirements.txt
+│   │   ├── setup.py
+│   │   ├── test
+│   │   │   ├── asset_test.py
+│   │   │   ├── bd_rate_calculator_test.py
+│   │   │   ├── bootstrap_train_test_model_test.py
+│   │   │   ├── cambi_test.py
+│   │   │   ├── command_line_test.py
+│   │   │   ├── conftest.py
+│   │   │   ├── cross_validation_test.py
+│   │   │   ├── cy_test.py
+│   │   │   ├── doctest_test.py
+│   │   │   ├── executor_test.py
+│   │   │   ├── feature_assembler_test.py
+│   │   │   ├── feature_extractor_test.py
+│   │   │   ├── __init__.py
+│   │   │   ├── local_explainer_test.py
+│   │   │   ├── niqe_train_test_model_test.py
+│   │   │   ├── noref_feature_extractor_test.py
+│   │   │   ├── perf_metric_test.py
+│   │   │   ├── quality_runner_test.py
+│   │   │   ├── raw_extractor_test.py
+│   │   │   ├── reader_test.py
+│   │   │   ├── requirements.txt
+│   │   │   ├── resource
+│   │   │   │   ├── dataset_sample.py
+│   │   │   │   ├── data_Toyama.mat
+│   │   │   │   ├── example_batch_input
+│   │   │   │   ├── example_dataset_crop_pad_duration_sec.py
+│   │   │   │   ├── example_dataset_crop_pad.py
+│   │   │   │   ├── example_dataset.py
+│   │   │   │   ├── example_raw_dataset2.py
+│   │   │   │   ├── example_raw_dataset3.py
+│   │   │   │   ├── example_raw_dataset4.py
+│   │   │   │   ├── example_raw_dataset.py
+│   │   │   │   ├── feature_param_sample.py
+│   │   │   │   ├── feature_param_sample_with_optional_dict_good.py
+│   │   │   │   ├── feature_param_sample_with_optional_dict.py
+│   │   │   │   ├── model
+│   │   │   │   │   ├── vmaf_float_v0.6.1_nvd6.json
+│   │   │   │   │   ├── vmaf_float_v0.6.1_rdh540.json
+│   │   │   │   │   ├── vmaf_float_v0.6.1_vifks1o2.json
+│   │   │   │   │   ├── vmaf_float_v0.6.1_vifks24o10.json
+│   │   │   │   │   ├── vmaf_float_v0.6.1_vifks2.json
+│   │   │   │   │   ├── vmaf_float_v0.6.1_vifks2o3.json
+│   │   │   │   │   ├── vmaf_float_v0.6.1_vifks360o97.json
+│   │   │   │   │   ├── vmaf_float_v0.6.1_vifks3o2.json
+│   │   │   │   │   ├── vmafplus_v0.5.2boot_test2.json
+│   │   │   │   │   ├── vmafplus_v0.5.2boot_test2.pkl
+│   │   │   │   │   ├── vmafplus_v0.5.2boot_test2.pkl.0001
+│   │   │   │   │   ├── vmafplus_v0.5.2boot_test2.pkl.0001.model
+│   │   │   │   │   ├── vmafplus_v0.5.2boot_test2.pkl.0002
+│   │   │   │   │   ├── vmafplus_v0.5.2boot_test2.pkl.0002.model
+│   │   │   │   │   ├── vmafplus_v0.5.2boot_test2.pkl.0003
+│   │   │   │   │   ├── vmafplus_v0.5.2boot_test2.pkl.0003.model
+│   │   │   │   │   ├── vmafplus_v0.5.2boot_test2.pkl.0004
+│   │   │   │   │   ├── vmafplus_v0.5.2boot_test2.pkl.0004.model
+│   │   │   │   │   ├── vmafplus_v0.5.2boot_test2.pkl.0005
+│   │   │   │   │   ├── vmafplus_v0.5.2boot_test2.pkl.0005.model
+│   │   │   │   │   ├── vmafplus_v0.5.2boot_test2.pkl.0006
+│   │   │   │   │   ├── vmafplus_v0.5.2boot_test2.pkl.0006.model
+│   │   │   │   │   ├── vmafplus_v0.5.2boot_test2.pkl.0007
+│   │   │   │   │   ├── vmafplus_v0.5.2boot_test2.pkl.0007.model
+│   │   │   │   │   ├── vmafplus_v0.5.2boot_test2.pkl.0008
+│   │   │   │   │   ├── vmafplus_v0.5.2boot_test2.pkl.0008.model
+│   │   │   │   │   ├── vmafplus_v0.5.2boot_test2.pkl.0009
+│   │   │   │   │   ├── vmafplus_v0.5.2boot_test2.pkl.0009.model
+│   │   │   │   │   ├── vmafplus_v0.5.2boot_test2.pkl.model
+│   │   │   │   │   ├── vmafplus_v0.5.2boot_test.json
+│   │   │   │   │   ├── vmafplus_v0.5.2boot_test.pkl
+│   │   │   │   │   ├── vmafplus_v0.5.2boot_test.pkl.0001
+│   │   │   │   │   ├── vmafplus_v0.5.2boot_test.pkl.0001.model
+│   │   │   │   │   ├── vmafplus_v0.5.2boot_test.pkl.0002
+│   │   │   │   │   ├── vmafplus_v0.5.2boot_test.pkl.0002.model
+│   │   │   │   │   ├── vmafplus_v0.5.2boot_test.pkl.0003
+│   │   │   │   │   ├── vmafplus_v0.5.2boot_test.pkl.0003.model
+│   │   │   │   │   ├── vmafplus_v0.5.2boot_test.pkl.0004
+│   │   │   │   │   ├── vmafplus_v0.5.2boot_test.pkl.0004.model
+│   │   │   │   │   ├── vmafplus_v0.5.2boot_test.pkl.model
+│   │   │   │   │   ├── vmafplus_v0.5.2_test.json
+│   │   │   │   │   ├── vmaf_v0.6.1_nvd6.json
+│   │   │   │   │   ├── vmaf_v0.6.1_rdh2160_nvd1d5.json
+│   │   │   │   │   └── vmaf_v0.6.1_rdh540.json
+│   │   │   │   ├── model_param_sample.py
+│   │   │   │   ├── NFLX_dataset_public_raw.py
+│   │   │   │   ├── raw_dataset_sample.py
+│   │   │   │   ├── result_with_none.txt
+│   │   │   │   ├── ssim_result_for_test.txt
+│   │   │   │   ├── test_dataset_bad_fps_rebufinds.py
+│   │   │   │   ├── test_dataset_diffyuv.py
+│   │   │   │   ├── test_dataset_fps_bad_rebufinds.py
+│   │   │   │   ├── test_dataset_fps_rebufinds.py
+│   │   │   │   ├── test_dataset_mixed.py
+│   │   │   │   ├── test_dataset.py
+│   │   │   │   ├── test_image_dataset_diffdim2.py
+│   │   │   │   ├── test_image_dataset_diffdim.py
+│   │   │   │   ├── test_image_dataset_diffdim_qualitywh2.py
+│   │   │   │   ├── test_image_dataset_diffdim_qualitywh.py
+│   │   │   │   ├── test_image_dataset_noisy.py
+│   │   │   │   ├── test_image_dataset_notyuv.py
+│   │   │   │   ├── test_image_dataset_notyuv_workfile_yuv_type.py
+│   │   │   │   ├── test_image_dataset.py
+│   │   │   │   ├── test_model_transform_add40.json
+│   │   │   │   ├── test_model_transform_add40_outltein.json
+│   │   │   │   ├── test_model_transform_add40_outltein.pkl
+│   │   │   │   ├── test_model_transform_add40_outltein.pkl.model
+│   │   │   │   ├── test_model_transform_add40_piecewiselinear_forced.json
+│   │   │   │   ├── test_model_transform_add40_piecewiselinear.json
+│   │   │   │   ├── test_model_transform_add40.pkl
+│   │   │   │   ├── test_model_transform_add40.pkl.model
+│   │   │   │   ├── test_motion2.json
+│   │   │   │   ├── test_motion2.pkl
+│   │   │   │   ├── test_motion2.pkl.model
+│   │   │   │   ├── test_read_dataset_dataset2.py
+│   │   │   │   ├── test_read_dataset_dataset3.py
+│   │   │   │   ├── test_read_dataset_dataset.py
+│   │   │   │   ├── vmaf_float_v0.6.1neg.inconsist.json
+│   │   │   │   ├── vmaf_float_v0.6.1neg.inconsist.pkl
+│   │   │   │   ├── vmaf_float_v0.6.1neg.inconsist.pkl.model
+│   │   │   │   ├── vmafplus_laptop_480source_vmafplusv2_sa.json
+│   │   │   │   ├── vmafplus_laptop_480source_vmafplusv2_sa.pkl
+│   │   │   │   ├── vmafplus_laptop_480source_vmafplusv2_sa.pkl.model
+│   │   │   │   ├── vmafplus_v6_bootstrap_test2.py
+│   │   │   │   ├── vmafplus_v6_bootstrap_test.py
+│   │   │   │   └── vmaf_v4.py
+│   │   │   ├── result_test.py
+│   │   │   ├── routine_test.py
+│   │   │   ├── testutil.py
+│   │   │   ├── third_party
+│   │   │   │   └── xiph
+│   │   │   │       └── vmafexec_feature_extractor_test.py
+│   │   │   ├── tools_test.py
+│   │   │   ├── train_test_model_test.py
+│   │   │   ├── vmafexec_feature_extractor_test.py
+│   │   │   └── vmafexec_test.py
+│   │   ├── tox.ini
+│   │   └── vmaf
+│   │       ├── config.py
+│   │       ├── core
+│   │       │   ├── adm_dwt2_cy.pyx
+│   │       │   ├── adm_dwt2_py.py
+│   │       │   ├── adm_dwt2_tools.py
+│   │       │   ├── asset.py
+│   │       │   ├── cambi_feature_extractor.py
+│   │       │   ├── cambi_quality_runner.py
+│   │       │   ├── cross_validation.py
+│   │       │   ├── executor.py
+│   │       │   ├── feature_assembler.py
+│   │       │   ├── feature_extractor.py
+│   │       │   ├── h5py_mixin.py
+│   │       │   ├── __init__.py
+│   │       │   ├── local_explainer.py
+│   │       │   ├── matlab_feature_extractor.py
+│   │       │   ├── matlab_quality_runner.py
+│   │       │   ├── mixin.py
+│   │       │   ├── niqe_train_test_model.py
+│   │       │   ├── nn_train_test_model.py
+│   │       │   ├── noref_feature_extractor.py
+│   │       │   ├── perf_metric.py
+│   │       │   ├── proc_func.py
+│   │       │   ├── quality_runner_extra.py
+│   │       │   ├── quality_runner.py
+│   │       │   ├── raw_extractor.py
+│   │       │   ├── result.py
+│   │       │   ├── result_store.py
+│   │       │   ├── train_test_model.py
+│   │       │   └── vmafexec_feature_extractor.py
+│   │       ├── __init__.py
+│   │       ├── model
+│   │       │   ├── vmaf_v0.6.1.json
+│   │       │   └── vmaf_v0.6.1neg.json
+│   │       ├── routine.py
+│   │       ├── script
+│   │       │   ├── convert_model_from_pkl_to_json.py
+│   │       │   ├── convert_vmaf_model_to_vmaf_no_enhn_gain_model.py
+│   │       │   ├── __init__.py
+│   │       │   ├── run_cleaning_cache.py
+│   │       │   ├── run_psnr.py
+│   │       │   ├── run_result_assembly.py
+│   │       │   ├── run_testing.py
+│   │       │   ├── run_toddnoiseclassifier.py
+│   │       │   ├── run_vmaf_cross_validation.py
+│   │       │   ├── run_vmaf.py
+│   │       │   └── run_vmaf_training.py
+│   │       ├── third_party
+│   │       │   ├── __init__.py
+│   │       │   └── xiph
+│   │       │       ├── __init__.py
+│   │       │       └── vmafexec_feature_extractor.py
+│   │       └── tools
+│   │           ├── bd_rate_calculator.py
+│   │           ├── decorator.py
+│   │           ├── __init__.py
+│   │           ├── interpolation_utils.py
+│   │           ├── kimchi.py
+│   │           ├── misc.py
+│   │           ├── plot.py
+│   │           ├── reader.py
+│   │           ├── resource
+│   │           │   └── Hanley_McNeil.mat
+│   │           ├── scanf.py
+│   │           ├── sigproc.py
+│   │           ├── stats.py
+│   │           ├── testutils.py
+│   │           └── writer.py
+│   ├── README.md
+│   ├── resource
+│   │   ├── dataset
+│   │   │   ├── BSDS500_noisy_dataset.py
+│   │   │   ├── NFLX_dataset_public.py
+│   │   │   ├── NFLX_dataset_public_raw_last4outliers.py
+│   │   │   ├── NFLX_dataset_public_raw.py
+│   │   │   ├── VQEGHD3_dataset.py
+│   │   │   └── VQEGHD3_dataset_raw.py
+│   │   ├── doc
+│   │   │   ├── aom_ctc.md
+│   │   │   ├── bad_cases.md
+│   │   │   ├── cambi.md
+│   │   │   ├── conf_interval.md
+│   │   │   ├── datasets.md
+│   │   │   ├── docker.md
+│   │   │   ├── external_resource.md
+│   │   │   ├── faq.md
+│   │   │   ├── features.md
+│   │   │   ├── ffmpeg.md
+│   │   │   ├── index.md
+│   │   │   ├── matlab_usage.md
+│   │   │   ├── models.md
+│   │   │   ├── nflx_ctc.md
+│   │   │   ├── papers
+│   │   │   │   └── CAMBI_PCS2021.pdf
+│   │   │   ├── presentations
+│   │   │   │   ├── VMAF_ICIP17.pdf
+│   │   │   │   ├── VQEG_SAM_2018_023_VMAF_Variability.pdf
+│   │   │   │   ├── VQEG_SAM_2018_025_VMAF_4K.pdf
+│   │   │   │   └── VQEG_SAM_2018_111_AnalysisToolsInVMAF.pdf
+│   │   │   ├── python.md
+│   │   │   ├── references.md
+│   │   │   ├── release.md
+│   │   │   └── windows.md
+│   │   ├── example
+│   │   │   ├── example_batch_input
+│   │   │   ├── example_dataset.py
+│   │   │   ├── example_raw_dataset.py
+│   │   │   └── externals.py
+│   │   ├── feature_param
+│   │   │   ├── ssim.py
+│   │   │   ├── vmaf_feature_v1.py
+│   │   │   ├── vmaf_feature_v2.py
+│   │   │   ├── vmaf_feature_v3.py
+│   │   │   └── vmaf_feature_v6.py
+│   │   ├── images
+│   │   │   ├── CI.png
+│   │   │   ├── phone_model.png
+│   │   │   ├── scatter_testing.png
+│   │   │   ├── scatter_training.png
+│   │   │   ├── subsample.png
+│   │   │   ├── uml.png
+│   │   │   └── vmaf_logo.jpg
+│   │   ├── model_param
+│   │   │   ├── 5PL_v1.py
+│   │   │   ├── libsvmnusvr_v1.py
+│   │   │   ├── libsvmnusvr_v2.py
+│   │   │   ├── libsvmnusvr_v3.py
+│   │   │   └── randomforest_v1.py
+│   │   └── param
+│   │       ├── vmaf_v1.py
+│   │       ├── vmaf_v2.py
+│   │       ├── vmaf_v3.py
+│   │       ├── vmaf_v4.py
+│   │       ├── vmaf_v6_bootstrap.py
+│   │       ├── vmaf_v6.py
+│   │       ├── vmaf_v6_residue_bootstrap.py
+│   │       ├── vmaf_v7.2_bootstrap.py
+│   │       ├── vmaf_v7_bootstrap.py
+│   │       ├── vmaf_v8_bootstrap.py
+│   │       └── vmaf_v8.py
+│   ├── unittest
+│   └── workspace
+│       ├── checkpoints_dir
+│       ├── dataset
+│       ├── encode
+│       ├── model
+│       ├── model_param
+│       ├── output
+│       ├── result_store_dir
+│       └── workdir
+└── vmaf-3.0.0.tar.gz -> /home/felix/packages/vmaf/vmaf-3.0.0.tar.gz
+
+82 directories, 911 files

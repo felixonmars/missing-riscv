@@ -1,0 +1,1510 @@
+src
+├── prometheus-2.55.1
+│   ├── CHANGELOG.md
+│   ├── cmd
+│   │   ├── prometheus
+│   │   │   ├── main.go
+│   │   │   ├── main_test.go
+│   │   │   ├── main_unix_test.go
+│   │   │   ├── query_log_test.go
+│   │   │   ├── scrape_failure_log_test.go
+│   │   │   └── testdata
+│   │   │       ├── consoles
+│   │   │       │   └── test.html
+│   │   │       └── rules
+│   │   │           └── test.yml
+│   │   └── promtool
+│   │       ├── analyze.go
+│   │       ├── analyze_test.go
+│   │       ├── archive.go
+│   │       ├── backfill.go
+│   │       ├── backfill_test.go
+│   │       ├── debug.go
+│   │       ├── main.go
+│   │       ├── main_test.go
+│   │       ├── metrics.go
+│   │       ├── query.go
+│   │       ├── rules.go
+│   │       ├── rules_test.go
+│   │       ├── sd.go
+│   │       ├── sd_test.go
+│   │       ├── testdata
+│   │       │   ├── at-modifier-test.yml
+│   │       │   ├── at-modifier.yml
+│   │       │   ├── authorization_credentials_file.bad.yml
+│   │       │   ├── authorization_credentials_file.good.yml
+│   │       │   ├── bad-input-series.yml
+│   │       │   ├── bad-promql.yml
+│   │       │   ├── bad-rules-error-test.yml
+│   │       │   ├── bad-rules-error.yml
+│   │       │   ├── bad-rules-syntax-test.yml
+│   │       │   ├── bad-rules-syntax.yml
+│   │       │   ├── bad-sd-file-extension.nonexistant
+│   │       │   ├── bad-sd-file-format.yml
+│   │       │   ├── config_with_rule_files.yml
+│   │       │   ├── config_with_service_discovery_files.yml
+│   │       │   ├── config_with_tls_files.yml
+│   │       │   ├── dump-openmetrics-roundtrip-test.prom
+│   │       │   ├── dump-openmetrics-test.prom
+│   │       │   ├── dump-test-1.prom
+│   │       │   ├── dump-test-2.prom
+│   │       │   ├── dump-test-3.prom
+│   │       │   ├── failing.yml
+│   │       │   ├── good-sd-file.json
+│   │       │   ├── good-sd-file.yaml
+│   │       │   ├── good-sd-file.yml
+│   │       │   ├── long-period.yml
+│   │       │   ├── metrics-test.prom
+│   │       │   ├── negative-offset-test.yml
+│   │       │   ├── negative-offset.yml
+│   │       │   ├── no-test-group-interval.yml
+│   │       │   ├── prometheus-config.bad.yml
+│   │       │   ├── prometheus-config.good.yml
+│   │       │   ├── prometheus-config.lint.yml
+│   │       │   ├── prometheus-rules.lint.yml
+│   │       │   ├── rules-bad.yml
+│   │       │   ├── rules_duplicates.yml
+│   │       │   ├── rules_large.yml
+│   │       │   ├── rules_run.yml
+│   │       │   ├── rules.yml
+│   │       │   ├── unittest.yml
+│   │       │   ├── url_in_alert_targetgroup_with_relabel_config.bad.yml
+│   │       │   ├── url_in_alert_targetgroup_with_relabel_config.good.yml
+│   │       │   ├── url_in_scrape_targetgroup_with_relabel_config.bad.yml
+│   │       │   └── url_in_scrape_targetgroup_with_relabel_config.good.yml
+│   │       ├── tsdb.go
+│   │       ├── tsdb_test.go
+│   │       ├── unittest.go
+│   │       └── unittest_test.go
+│   ├── CODE_OF_CONDUCT.md
+│   ├── config
+│   │   ├── config_default_test.go
+│   │   ├── config.go
+│   │   ├── config_test.go
+│   │   ├── config_windows_test.go
+│   │   └── testdata
+│   │       ├── agent_mode.good.yml
+│   │       ├── agent_mode.with_alert_manager.yml
+│   │       ├── agent_mode.with_alert_relabels.yml
+│   │       ├── agent_mode.without_remote_writes.yml
+│   │       ├── agent_mode.with_remote_reads.yml
+│   │       ├── agent_mode.with_rule_files.yml
+│   │       ├── azure_authentication_method.bad.yml
+│   │       ├── azure_bearertoken_basicauth.bad.yml
+│   │       ├── azure_client_id_missing.bad.yml
+│   │       ├── azure_client_secret_missing.bad.yml
+│   │       ├── azure_subscription_id_missing.bad.yml
+│   │       ├── azure_tenant_id_missing.bad.yml
+│   │       ├── bearertoken.bad.yml
+│   │       ├── bearertoken_basicauth.bad.yml
+│   │       ├── conf.good.yml
+│   │       ├── dropequal1.bad.yml
+│   │       ├── dropequal.bad.yml
+│   │       ├── ec2_filters_empty_values.bad.yml
+│   │       ├── ec2_token_file.bad.yml
+│   │       ├── empty_alertmanager_relabel_config.bad.yml
+│   │       ├── empty_alert_relabel_config.bad.yml
+│   │       ├── empty_metric_relabel_config.bad.yml
+│   │       ├── empty_rr_config.bad.yml
+│   │       ├── empty_rw_config.bad.yml
+│   │       ├── empty_rw_relabel_config.bad.yml
+│   │       ├── empty_scrape_config_action.bad.yml
+│   │       ├── empty_scrape_config.bad.yml
+│   │       ├── empty_static_config.bad.yml
+│   │       ├── empty_target_relabel_config.bad.yml
+│   │       ├── eureka_invalid_server.bad.yml
+│   │       ├── eureka_no_server.bad.yml
+│   │       ├── external_labels.good.yml
+│   │       ├── first.rules
+│   │       ├── global_timeout.good.yml
+│   │       ├── hetzner_role.bad.yml
+│   │       ├── http_token_file.bad.yml
+│   │       ├── http_url_bad_scheme.bad.yml
+│   │       ├── http_url_no_host.bad.yml
+│   │       ├── http_url_no_scheme.bad.yml
+│   │       ├── ionos_datacenter.bad.yml
+│   │       ├── jobname.bad.yml
+│   │       ├── jobname_dup.bad.yml
+│   │       ├── keepequal1.bad.yml
+│   │       ├── keepequal.bad.yml
+│   │       ├── kubernetes_api_server_with_own_namespace.bad.yml
+│   │       ├── kubernetes_authorization_basicauth.bad.yml
+│   │       ├── kubernetes_bearertoken.bad.yml
+│   │       ├── kubernetes_bearertoken_basicauth.bad.yml
+│   │       ├── kubernetes_empty_apiserver.good.yml
+│   │       ├── kubernetes_http_config_without_api_server.bad.yml
+│   │       ├── kubernetes_kubeconfig_with_apiserver.bad.yml
+│   │       ├── kubernetes_kubeconfig_with_http_config.bad.yml
+│   │       ├── kubernetes_kubeconfig_without_apiserver.good.yml
+│   │       ├── kubernetes_kubeconfig_with_own_namespace.bad.yml
+│   │       ├── kubernetes_namespace_discovery.bad.yml
+│   │       ├── kubernetes_role.bad.yml
+│   │       ├── kubernetes_selectors_duplicated_role.bad.yml
+│   │       ├── kubernetes_selectors_endpoints.bad.yml
+│   │       ├── kubernetes_selectors_endpoints.good.yml
+│   │       ├── kubernetes_selectors_incorrect_selector.bad.yml
+│   │       ├── kubernetes_selectors_ingress.bad.yml
+│   │       ├── kubernetes_selectors_ingress.good.yml
+│   │       ├── kubernetes_selectors_node.bad.yml
+│   │       ├── kubernetes_selectors_node.good.yml
+│   │       ├── kubernetes_selectors_pod.bad.yml
+│   │       ├── kubernetes_selectors_pod.good.yml
+│   │       ├── kubernetes_selectors_service.bad.yml
+│   │       ├── kubernetes_selectors_service.good.yml
+│   │       ├── labeldrop2.bad.yml
+│   │       ├── labeldrop3.bad.yml
+│   │       ├── labeldrop4.bad.yml
+│   │       ├── labeldrop5.bad.yml
+│   │       ├── labeldrop.bad.yml
+│   │       ├── labelkeep2.bad.yml
+│   │       ├── labelkeep3.bad.yml
+│   │       ├── labelkeep4.bad.yml
+│   │       ├── labelkeep5.bad.yml
+│   │       ├── labelkeep.bad.yml
+│   │       ├── labelmap.bad.yml
+│   │       ├── labelname2.bad.yml
+│   │       ├── labelname.bad.yml
+│   │       ├── labelvalue.bad.yml
+│   │       ├── lightsail_token_file.bad.yml
+│   │       ├── lowercase2.bad.yml
+│   │       ├── lowercase3.bad.yml
+│   │       ├── lowercase.bad.yml
+│   │       ├── marathon_authtoken_authorization.bad.yml
+│   │       ├── marathon_authtoken_authtokenfile.bad.yml
+│   │       ├── marathon_authtoken_basicauth.bad.yml
+│   │       ├── marathon_authtoken_bearertoken.bad.yml
+│   │       ├── marathon_no_servers.bad.yml
+│   │       ├── modulus_missing.bad.yml
+│   │       ├── openstack_availability.bad.yml
+│   │       ├── openstack_role.bad.yml
+│   │       ├── otlp_sanitize_resource_attributes.bad.yml
+│   │       ├── otlp_sanitize_resource_attributes.good.yml
+│   │       ├── ovhcloud_bad_service.bad.yml
+│   │       ├── ovhcloud_no_secret.bad.yml
+│   │       ├── puppetdb_bad_url.bad.yml
+│   │       ├── puppetdb_no_query.bad.yml
+│   │       ├── puppetdb_no_scheme.bad.yml
+│   │       ├── puppetdb_no_url.bad.yml
+│   │       ├── puppetdb_token_file.bad.yml
+│   │       ├── regex.bad.yml
+│   │       ├── remote_read_dup.bad.yml
+│   │       ├── remote_read_header.bad.yml
+│   │       ├── remote_read_url_missing.bad.yml
+│   │       ├── remote_write_authorization_header.bad.yml
+│   │       ├── remote_write_dup.bad.yml
+│   │       ├── remote_write_header.bad.yml
+│   │       ├── remote_write_retry_on_rate_limit.good.yml
+│   │       ├── remote_write_url_missing.bad.yml
+│   │       ├── remote_write_wrong_msg.bad.yml
+│   │       ├── roundtrip.good.yml
+│   │       ├── rules_abs_path.good.yml
+│   │       ├── rules_abs_path_windows.good.yml
+│   │       ├── rules.bad.yml
+│   │       ├── scaleway_no_secret.bad.yml
+│   │       ├── scaleway_role.bad.yml
+│   │       ├── scaleway_two_secrets.bad.yml
+│   │       ├── scrape_body_size_limit.bad.yml
+│   │       ├── scrape_config_default_validation_mode.yml
+│   │       ├── scrape_config_disable_compression.good.yml
+│   │       ├── scrape_config_files2.good.yml
+│   │       ├── scrape_config_files.bad.yml
+│   │       ├── scrape_config_files_combined.good.yml
+│   │       ├── scrape_config_files_double_import.bad.yml
+│   │       ├── scrape_config_files_duplicate.bad.yml
+│   │       ├── scrape_config_files_global.bad.yml
+│   │       ├── scrape_config_files_global_duplicate.bad.yml
+│   │       ├── scrape_config_files_glob.bad.yml
+│   │       ├── scrape_config_files_glob.good.yml
+│   │       ├── scrape_config_files.good.yml
+│   │       ├── scrape_config_files_only.good.yml
+│   │       ├── scrape_config_files_scrape_protocols2.bad.yml
+│   │       ├── scrape_config_files_scrape_protocols.bad.yml
+│   │       ├── scrape_config_global_validation_mode.yml
+│   │       ├── scrape_config_local_global_validation_mode.yml
+│   │       ├── scrape_config_local_validation_mode.yml
+│   │       ├── scrape_configs
+│   │       │   ├── scrape_config_files1.good.yml
+│   │       │   └── scrape_config_files2.good.yml
+│   │       ├── scrape_interval.bad.yml
+│   │       ├── scrape_interval_larger.good.yml
+│   │       ├── section_key_dup.bad.yml
+│   │       ├── static_config.bad.json
+│   │       ├── static_config.bad.yml
+│   │       ├── target_label_hashmod_missing.bad.yml
+│   │       ├── target_label_missing.bad.yml
+│   │       ├── tracing_invalid_authorization_header.bad.yml
+│   │       ├── tracing_invalid_compression.bad.yml
+│   │       ├── tracing_invalid_header.bad.yml
+│   │       ├── tracing_missing_endpoint.bad.yml
+│   │       ├── unknown_attr.bad.yml
+│   │       ├── unknown_global_attr.bad.yml
+│   │       ├── uppercase2.bad.yml
+│   │       ├── uppercase3.bad.yml
+│   │       ├── uppercase.bad.yml
+│   │       ├── url_in_targetgroup.bad.yml
+│   │       ├── uyuni_no_server.bad.yml
+│   │       └── uyuni_token_file.bad.yml
+│   ├── console_libraries
+│   │   ├── menu.lib
+│   │   └── prom.lib
+│   ├── consoles
+│   │   ├── index.html.example
+│   │   ├── node-cpu.html
+│   │   ├── node-disk.html
+│   │   ├── node.html
+│   │   ├── node-overview.html
+│   │   ├── prometheus.html
+│   │   └── prometheus-overview.html
+│   ├── CONTRIBUTING.md
+│   ├── discovery
+│   │   ├── aws
+│   │   │   ├── ec2.go
+│   │   │   ├── lightsail.go
+│   │   │   ├── metrics_ec2.go
+│   │   │   └── metrics_lightsail.go
+│   │   ├── azure
+│   │   │   ├── azure.go
+│   │   │   ├── azure_test.go
+│   │   │   └── metrics.go
+│   │   ├── consul
+│   │   │   ├── consul.go
+│   │   │   ├── consul_test.go
+│   │   │   └── metrics.go
+│   │   ├── digitalocean
+│   │   │   ├── digitalocean.go
+│   │   │   ├── digitalocean_test.go
+│   │   │   ├── metrics.go
+│   │   │   └── mock_test.go
+│   │   ├── discoverer_metrics_noop.go
+│   │   ├── discovery.go
+│   │   ├── dns
+│   │   │   ├── dns.go
+│   │   │   ├── dns_test.go
+│   │   │   └── metrics.go
+│   │   ├── eureka
+│   │   │   ├── client.go
+│   │   │   ├── client_test.go
+│   │   │   ├── eureka.go
+│   │   │   ├── eureka_test.go
+│   │   │   └── metrics.go
+│   │   ├── file
+│   │   │   ├── file.go
+│   │   │   ├── file_test.go
+│   │   │   ├── fixtures
+│   │   │   │   ├── invalid_nil.json
+│   │   │   │   ├── invalid_nil.yml
+│   │   │   │   ├── valid2.yml
+│   │   │   │   ├── valid3.yml
+│   │   │   │   ├── valid.json
+│   │   │   │   └── valid.yml
+│   │   │   └── metrics.go
+│   │   ├── gce
+│   │   │   ├── gce.go
+│   │   │   └── metrics.go
+│   │   ├── hetzner
+│   │   │   ├── hcloud.go
+│   │   │   ├── hcloud_test.go
+│   │   │   ├── hetzner.go
+│   │   │   ├── metrics.go
+│   │   │   ├── mock_test.go
+│   │   │   ├── robot.go
+│   │   │   └── robot_test.go
+│   │   ├── http
+│   │   │   ├── fixtures
+│   │   │   │   └── http_sd.good.json
+│   │   │   ├── http.go
+│   │   │   ├── http_test.go
+│   │   │   └── metrics.go
+│   │   ├── install
+│   │   │   └── install.go
+│   │   ├── ionos
+│   │   │   ├── ionos.go
+│   │   │   ├── metrics.go
+│   │   │   ├── server.go
+│   │   │   ├── server_test.go
+│   │   │   └── testdata
+│   │   │       └── servers.json
+│   │   ├── kubernetes
+│   │   │   ├── endpoints.go
+│   │   │   ├── endpointslice_adaptor.go
+│   │   │   ├── endpointslice_adaptor_test.go
+│   │   │   ├── endpointslice.go
+│   │   │   ├── endpointslice_test.go
+│   │   │   ├── endpoints_test.go
+│   │   │   ├── ingress_adaptor.go
+│   │   │   ├── ingress.go
+│   │   │   ├── ingress_test.go
+│   │   │   ├── kubernetes.go
+│   │   │   ├── kubernetes_test.go
+│   │   │   ├── metrics.go
+│   │   │   ├── node.go
+│   │   │   ├── node_test.go
+│   │   │   ├── pod.go
+│   │   │   ├── pod_test.go
+│   │   │   ├── service.go
+│   │   │   └── service_test.go
+│   │   ├── legacymanager
+│   │   │   ├── manager.go
+│   │   │   ├── manager_test.go
+│   │   │   └── registry.go
+│   │   ├── linode
+│   │   │   ├── linode.go
+│   │   │   ├── linode_test.go
+│   │   │   ├── metrics.go
+│   │   │   ├── mock_test.go
+│   │   │   └── testdata
+│   │   │       ├── ca-central
+│   │   │       │   └── v4
+│   │   │       │       ├── account
+│   │   │       │       │   └── events.json
+│   │   │       │       ├── linode
+│   │   │       │       │   └── instances.json
+│   │   │       │       └── networking
+│   │   │       │           ├── ips.json
+│   │   │       │           └── ipv6
+│   │   │       │               └── ranges.json
+│   │   │       ├── no_region_filter
+│   │   │       │   └── v4
+│   │   │       │       ├── account
+│   │   │       │       │   └── events.json
+│   │   │       │       ├── linode
+│   │   │       │       │   └── instances.json
+│   │   │       │       └── networking
+│   │   │       │           ├── ips.json
+│   │   │       │           └── ipv6
+│   │   │       │               └── ranges.json
+│   │   │       └── us-east
+│   │   │           └── v4
+│   │   │               ├── account
+│   │   │               │   └── events.json
+│   │   │               ├── linode
+│   │   │               │   └── instances.json
+│   │   │               └── networking
+│   │   │                   ├── ips.json
+│   │   │                   └── ipv6
+│   │   │                       └── ranges.json
+│   │   ├── manager.go
+│   │   ├── manager_test.go
+│   │   ├── marathon
+│   │   │   ├── marathon.go
+│   │   │   ├── marathon_test.go
+│   │   │   └── metrics.go
+│   │   ├── metrics.go
+│   │   ├── metrics_k8s_client.go
+│   │   ├── metrics_refresh.go
+│   │   ├── moby
+│   │   │   ├── docker.go
+│   │   │   ├── dockerswarm.go
+│   │   │   ├── docker_test.go
+│   │   │   ├── metrics_docker.go
+│   │   │   ├── metrics_dockerswarm.go
+│   │   │   ├── mock_test.go
+│   │   │   ├── network.go
+│   │   │   ├── nodes.go
+│   │   │   ├── nodes_test.go
+│   │   │   ├── services.go
+│   │   │   ├── services_test.go
+│   │   │   ├── tasks.go
+│   │   │   ├── tasks_test.go
+│   │   │   └── testdata
+│   │   │       ├── dockerprom
+│   │   │       │   ├── containers
+│   │   │       │   │   └── json.json
+│   │   │       │   ├── headers.yml
+│   │   │       │   ├── networks.json
+│   │   │       │   └── _ping.json
+│   │   │       └── swarmprom
+│   │   │           ├── headers.yml
+│   │   │           ├── networks.json
+│   │   │           ├── nodes.json
+│   │   │           ├── _ping.json
+│   │   │           ├── services.json
+│   │   │           ├── services.json__wvKVCQ4HhD
+│   │   │           └── tasks.json
+│   │   ├── nomad
+│   │   │   ├── metrics.go
+│   │   │   ├── nomad.go
+│   │   │   └── nomad_test.go
+│   │   ├── openstack
+│   │   │   ├── hypervisor.go
+│   │   │   ├── hypervisor_test.go
+│   │   │   ├── instance.go
+│   │   │   ├── instance_test.go
+│   │   │   ├── metrics.go
+│   │   │   ├── mock_test.go
+│   │   │   └── openstack.go
+│   │   ├── ovhcloud
+│   │   │   ├── dedicated_server.go
+│   │   │   ├── dedicated_server_test.go
+│   │   │   ├── metrics.go
+│   │   │   ├── ovhcloud.go
+│   │   │   ├── ovhcloud_test.go
+│   │   │   ├── testdata
+│   │   │   │   ├── dedicated_server
+│   │   │   │   │   ├── dedicated_servers_abcde_ips.json
+│   │   │   │   │   ├── dedicated_servers_details.json
+│   │   │   │   │   └── dedicated_servers.json
+│   │   │   │   └── vps
+│   │   │   │       ├── vps_abc_ips.json
+│   │   │   │       ├── vps_details.json
+│   │   │   │       └── vps.json
+│   │   │   ├── vps.go
+│   │   │   └── vps_test.go
+│   │   ├── puppetdb
+│   │   │   ├── fixtures
+│   │   │   │   └── vhosts.json
+│   │   │   ├── metrics.go
+│   │   │   ├── puppetdb.go
+│   │   │   ├── puppetdb_test.go
+│   │   │   └── resources.go
+│   │   ├── README.md
+│   │   ├── refresh
+│   │   │   ├── refresh.go
+│   │   │   └── refresh_test.go
+│   │   ├── registry.go
+│   │   ├── scaleway
+│   │   │   ├── baremetal.go
+│   │   │   ├── instance.go
+│   │   │   ├── instance_test.go
+│   │   │   ├── metrics.go
+│   │   │   ├── scaleway.go
+│   │   │   └── testdata
+│   │   │       ├── instance.json
+│   │   │       └── secret_key
+│   │   ├── targetgroup
+│   │   │   ├── targetgroup.go
+│   │   │   └── targetgroup_test.go
+│   │   ├── triton
+│   │   │   ├── metrics.go
+│   │   │   ├── triton.go
+│   │   │   └── triton_test.go
+│   │   ├── util.go
+│   │   ├── uyuni
+│   │   │   ├── metrics.go
+│   │   │   ├── uyuni.go
+│   │   │   └── uyuni_test.go
+│   │   ├── vultr
+│   │   │   ├── metrics.go
+│   │   │   ├── mock_test.go
+│   │   │   ├── vultr.go
+│   │   │   └── vultr_test.go
+│   │   ├── xds
+│   │   │   ├── client.go
+│   │   │   ├── client_test.go
+│   │   │   ├── kuma.go
+│   │   │   ├── kuma_mads.pb.go
+│   │   │   ├── kuma_test.go
+│   │   │   ├── metrics.go
+│   │   │   ├── xds.go
+│   │   │   └── xds_test.go
+│   │   └── zookeeper
+│   │       ├── zookeeper.go
+│   │       └── zookeeper_test.go
+│   ├── Dockerfile
+│   ├── docs
+│   │   ├── command-line
+│   │   │   ├── index.md
+│   │   │   ├── prometheus.md
+│   │   │   └── promtool.md
+│   │   ├── configuration
+│   │   │   ├── alerting_rules.md
+│   │   │   ├── configuration.md
+│   │   │   ├── https.md
+│   │   │   ├── index.md
+│   │   │   ├── recording_rules.md
+│   │   │   ├── template_examples.md
+│   │   │   ├── template_reference.md
+│   │   │   └── unit_testing_rules.md
+│   │   ├── feature_flags.md
+│   │   ├── federation.md
+│   │   ├── getting_started.md
+│   │   ├── http_sd.md
+│   │   ├── images
+│   │   │   └── remote_integrations.png
+│   │   ├── index.md
+│   │   ├── installation.md
+│   │   ├── management_api.md
+│   │   ├── migration.md
+│   │   ├── querying
+│   │   │   ├── api.md
+│   │   │   ├── basics.md
+│   │   │   ├── examples.md
+│   │   │   ├── functions.md
+│   │   │   ├── index.md
+│   │   │   ├── operators.md
+│   │   │   └── remote_read_api.md
+│   │   ├── stability.md
+│   │   └── storage.md
+│   ├── documentation
+│   │   ├── examples
+│   │   │   ├── custom-sd
+│   │   │   │   ├── adapter
+│   │   │   │   │   ├── adapter.go
+│   │   │   │   │   └── adapter_test.go
+│   │   │   │   ├── adapter-usage
+│   │   │   │   │   └── main.go
+│   │   │   │   └── README.md
+│   │   │   ├── kubernetes-rabbitmq
+│   │   │   │   ├── rc.yml
+│   │   │   │   ├── README.md
+│   │   │   │   └── svc.yml
+│   │   │   ├── Makefile
+│   │   │   ├── prometheus-agent.yml
+│   │   │   ├── prometheus-digitalocean.yml
+│   │   │   ├── prometheus-dockerswarm.yml
+│   │   │   ├── prometheus-docker.yml
+│   │   │   ├── prometheus-eureka.yml
+│   │   │   ├── prometheus-hetzner.yml
+│   │   │   ├── prometheus-ionos.yml
+│   │   │   ├── prometheus-kubernetes.yml
+│   │   │   ├── prometheus-linode.yml
+│   │   │   ├── prometheus-marathon.yml
+│   │   │   ├── prometheus-nomad.yml
+│   │   │   ├── prometheus-ovhcloud.yml
+│   │   │   ├── prometheus-puppetdb.yml
+│   │   │   ├── prometheus-scaleway.yml
+│   │   │   ├── prometheus-uyuni.yml
+│   │   │   ├── prometheus-vultr.yml
+│   │   │   ├── prometheus.yml
+│   │   │   ├── rbac-setup.yml
+│   │   │   ├── remote_storage
+│   │   │   │   ├── example_write_adapter
+│   │   │   │   │   ├── README.md
+│   │   │   │   │   └── server.go
+│   │   │   │   ├── go.mod
+│   │   │   │   ├── go.sum
+│   │   │   │   ├── Makefile
+│   │   │   │   └── remote_storage_adapter
+│   │   │   │       ├── graphite
+│   │   │   │       │   ├── client.go
+│   │   │   │       │   ├── client_test.go
+│   │   │   │       │   └── escape.go
+│   │   │   │       ├── influxdb
+│   │   │   │       │   ├── client.go
+│   │   │   │       │   └── client_test.go
+│   │   │   │       ├── main.go
+│   │   │   │       ├── opentsdb
+│   │   │   │       │   ├── client.go
+│   │   │   │       │   ├── client_test.go
+│   │   │   │       │   ├── tagvalue.go
+│   │   │   │       │   └── tagvalue_test.go
+│   │   │   │       └── README.md
+│   │   │   └── web-config.yml
+│   │   ├── images
+│   │   │   ├── architecture.svg
+│   │   │   ├── architecture.xml
+│   │   │   ├── diagram_note.md
+│   │   │   ├── internal_architecture.svg
+│   │   │   ├── internal_architecture.xml
+│   │   │   └── prometheus-logo.svg
+│   │   ├── internal_architecture.md
+│   │   └── prometheus-mixin
+│   │       ├── alerts.jsonnet
+│   │       ├── alerts.libsonnet
+│   │       ├── config.libsonnet
+│   │       ├── dashboards.jsonnet
+│   │       ├── dashboards.libsonnet
+│   │       ├── jsonnetfile.json
+│   │       ├── Makefile
+│   │       ├── mixin.libsonnet
+│   │       └── README.md
+│   ├── go.mod
+│   ├── go.sum
+│   ├── LICENSE
+│   ├── MAINTAINERS.md
+│   ├── Makefile
+│   ├── Makefile.common
+│   ├── model
+│   │   ├── exemplar
+│   │   │   └── exemplar.go
+│   │   ├── histogram
+│   │   │   ├── float_histogram.go
+│   │   │   ├── float_histogram_test.go
+│   │   │   ├── generic.go
+│   │   │   ├── generic_test.go
+│   │   │   ├── histogram.go
+│   │   │   ├── histogram_test.go
+│   │   │   └── test_utils.go
+│   │   ├── labels
+│   │   │   ├── labels_common.go
+│   │   │   ├── labels_dedupelabels.go
+│   │   │   ├── labels_dedupelabels_test.go
+│   │   │   ├── labels.go
+│   │   │   ├── labels_stringlabels.go
+│   │   │   ├── labels_test.go
+│   │   │   ├── matcher.go
+│   │   │   ├── matcher_test.go
+│   │   │   ├── regexp.go
+│   │   │   ├── regexp_test.go
+│   │   │   ├── sharding_dedupelabels.go
+│   │   │   ├── sharding.go
+│   │   │   ├── sharding_stringlabels.go
+│   │   │   ├── sharding_test.go
+│   │   │   └── test_utils.go
+│   │   ├── metadata
+│   │   │   └── metadata.go
+│   │   ├── relabel
+│   │   │   ├── relabel.go
+│   │   │   └── relabel_test.go
+│   │   ├── rulefmt
+│   │   │   ├── rulefmt.go
+│   │   │   ├── rulefmt_test.go
+│   │   │   └── testdata
+│   │   │       ├── bad_annotation.bad.yaml
+│   │   │       ├── bad_expr.bad.yaml
+│   │   │       ├── bad_field.bad.yaml
+│   │   │       ├── bad_lname.bad.yaml
+│   │   │       ├── duplicate_grp.bad.yaml
+│   │   │       ├── invalid_label_name.bad.yaml
+│   │   │       ├── invalid_record_name.bad.yaml
+│   │   │       ├── noexpr.bad.yaml
+│   │   │       ├── no_rec_alert.bad.yaml
+│   │   │       ├── record_and_alert.bad.yaml
+│   │   │       ├── record_and_for.bad.yaml
+│   │   │       ├── record_and_keep_firing_for.bad.yaml
+│   │   │       └── test.yaml
+│   │   ├── textparse
+│   │   │   ├── interface.go
+│   │   │   ├── interface_test.go
+│   │   │   ├── openmetricslex.l
+│   │   │   ├── openmetricslex.l.go
+│   │   │   ├── openmetricsparse.go
+│   │   │   ├── openmetricsparse_test.go
+│   │   │   ├── promlex.l
+│   │   │   ├── promlex.l.go
+│   │   │   ├── promparse.go
+│   │   │   ├── promparse_test.go
+│   │   │   ├── promtestdata.nometa.txt
+│   │   │   ├── promtestdata.txt
+│   │   │   ├── protobufparse.go
+│   │   │   ├── protobufparse_test.go
+│   │   │   └── README.md
+│   │   ├── timestamp
+│   │   │   └── timestamp.go
+│   │   └── value
+│   │       └── value.go
+│   ├── NOTICE
+│   ├── notifier
+│   │   ├── notifier.go
+│   │   └── notifier_test.go
+│   ├── plugins
+│   │   ├── generate.go
+│   │   ├── minimum.go
+│   │   └── plugins.go
+│   ├── plugins.yml
+│   ├── prompb
+│   │   ├── buf.lock
+│   │   ├── buf.yaml
+│   │   ├── codec.go
+│   │   ├── custom.go
+│   │   ├── io
+│   │   │   └── prometheus
+│   │   │       ├── client
+│   │   │       │   ├── metrics.pb.go
+│   │   │       │   └── metrics.proto
+│   │   │       └── write
+│   │   │           └── v2
+│   │   │               ├── codec.go
+│   │   │               ├── custom.go
+│   │   │               ├── custom_test.go
+│   │   │               ├── symbols.go
+│   │   │               ├── symbols_test.go
+│   │   │               ├── types.pb.go
+│   │   │               ├── types.proto
+│   │   │               └── types_test.go
+│   │   ├── README.md
+│   │   ├── remote.pb.go
+│   │   ├── remote.proto
+│   │   ├── rwcommon
+│   │   │   └── codec_test.go
+│   │   ├── types.pb.go
+│   │   └── types.proto
+│   ├── promql
+│   │   ├── bench_test.go
+│   │   ├── engine.go
+│   │   ├── engine_internal_test.go
+│   │   ├── engine_test.go
+│   │   ├── functions.go
+│   │   ├── functions_internal_test.go
+│   │   ├── functions_test.go
+│   │   ├── fuzz-data
+│   │   │   ├── ParseExpr
+│   │   │   │   └── corpus
+│   │   │   │       ├── from_tests_1
+│   │   │   │       ├── from_tests_10
+│   │   │   │       ├── from_tests_11
+│   │   │   │       ├── from_tests_12
+│   │   │   │       ├── from_tests_13
+│   │   │   │       ├── from_tests_14
+│   │   │   │       ├── from_tests_15
+│   │   │   │       ├── from_tests_16
+│   │   │   │       ├── from_tests_17
+│   │   │   │       ├── from_tests_18
+│   │   │   │       ├── from_tests_19
+│   │   │   │       ├── from_tests_2
+│   │   │   │       ├── from_tests_20
+│   │   │   │       ├── from_tests_21
+│   │   │   │       ├── from_tests_22
+│   │   │   │       ├── from_tests_23
+│   │   │   │       ├── from_tests_24
+│   │   │   │       ├── from_tests_25
+│   │   │   │       ├── from_tests_26
+│   │   │   │       ├── from_tests_27
+│   │   │   │       ├── from_tests_28
+│   │   │   │       ├── from_tests_29
+│   │   │   │       ├── from_tests_3
+│   │   │   │       ├── from_tests_30
+│   │   │   │       ├── from_tests_31
+│   │   │   │       ├── from_tests_32
+│   │   │   │       ├── from_tests_33
+│   │   │   │       ├── from_tests_34
+│   │   │   │       ├── from_tests_4
+│   │   │   │       ├── from_tests_5
+│   │   │   │       ├── from_tests_6
+│   │   │   │       ├── from_tests_7
+│   │   │   │       ├── from_tests_8
+│   │   │   │       └── from_tests_9
+│   │   │   └── ParseMetric
+│   │   │       └── corpus
+│   │   │           ├── 982cbe5ad899f03c630b1a21876a206707ea3dc9
+│   │   │           ├── exposition_formats_0
+│   │   │           ├── exposition_formats_1
+│   │   │           ├── exposition_formats_2
+│   │   │           ├── exposition_formats_3
+│   │   │           ├── exposition_formats_4
+│   │   │           ├── exposition_formats_5
+│   │   │           ├── exposition_formats_6
+│   │   │           └── exposition_formats_7
+│   │   ├── fuzz.go
+│   │   ├── fuzz_test.go
+│   │   ├── histogram_stats_iterator.go
+│   │   ├── histogram_stats_iterator_test.go
+│   │   ├── info.go
+│   │   ├── info_test.go
+│   │   ├── parser
+│   │   │   ├── ast.go
+│   │   │   ├── functions.go
+│   │   │   ├── generated_parser.y
+│   │   │   ├── generated_parser.y.go
+│   │   │   ├── lex.go
+│   │   │   ├── lex_test.go
+│   │   │   ├── parse.go
+│   │   │   ├── parse_test.go
+│   │   │   ├── posrange
+│   │   │   │   └── posrange.go
+│   │   │   ├── prettier.go
+│   │   │   ├── prettier_rules.md
+│   │   │   ├── prettier_test.go
+│   │   │   ├── printer.go
+│   │   │   ├── printer_test.go
+│   │   │   └── value.go
+│   │   ├── promqltest
+│   │   │   ├── README.md
+│   │   │   ├── testdata
+│   │   │   │   ├── aggregators.test
+│   │   │   │   ├── at_modifier.test
+│   │   │   │   ├── collision.test
+│   │   │   │   ├── functions.test
+│   │   │   │   ├── histograms.test
+│   │   │   │   ├── limit.test
+│   │   │   │   ├── literals.test
+│   │   │   │   ├── name_label_dropping.test
+│   │   │   │   ├── native_histograms.test
+│   │   │   │   ├── operators.test
+│   │   │   │   ├── range_queries.test
+│   │   │   │   ├── selectors.test
+│   │   │   │   ├── staleness.test
+│   │   │   │   ├── subquery.test
+│   │   │   │   └── trig_functions.test
+│   │   │   ├── test.go
+│   │   │   └── test_test.go
+│   │   ├── promql_test.go
+│   │   ├── quantile.go
+│   │   ├── quantile_test.go
+│   │   ├── query_logger.go
+│   │   ├── query_logger_test.go
+│   │   ├── value.go
+│   │   └── value_test.go
+│   ├── README.md
+│   ├── RELEASE.md
+│   ├── rules
+│   │   ├── alerting.go
+│   │   ├── alerting_test.go
+│   │   ├── fixtures
+│   │   │   ├── rules2_copy.yaml
+│   │   │   ├── rules2.yaml
+│   │   │   ├── rules_dependencies.yaml
+│   │   │   ├── rules_multiple_groups.yaml
+│   │   │   ├── rules_multiple_independent.yaml
+│   │   │   ├── rules_multiple.yaml
+│   │   │   └── rules.yaml
+│   │   ├── group.go
+│   │   ├── group_test.go
+│   │   ├── manager.go
+│   │   ├── manager_test.go
+│   │   ├── origin.go
+│   │   ├── origin_test.go
+│   │   ├── recording.go
+│   │   ├── recording_test.go
+│   │   └── rule.go
+│   ├── scrape
+│   │   ├── clientprotobuf.go
+│   │   ├── helpers_test.go
+│   │   ├── manager.go
+│   │   ├── manager_test.go
+│   │   ├── metrics.go
+│   │   ├── scrape.go
+│   │   ├── scrape_test.go
+│   │   ├── target.go
+│   │   ├── target_test.go
+│   │   └── testdata
+│   │       ├── bearertoken.txt
+│   │       ├── ca.cer
+│   │       ├── ca.key
+│   │       ├── client.cer
+│   │       ├── client.key
+│   │       ├── server.cer
+│   │       ├── server.key
+│   │       ├── servername.cer
+│   │       └── servername.key
+│   ├── scripts
+│   │   ├── check-go-mod-version.sh
+│   │   ├── compress_assets.sh
+│   │   ├── genproto.sh
+│   │   ├── golangci-lint.yml
+│   │   ├── npm-deps.sh
+│   │   ├── package_assets.sh
+│   │   ├── sync_repo_files.sh
+│   │   ├── tools.go
+│   │   └── ui_release.sh
+│   ├── SECURITY-INSIGHTS.yml
+│   ├── SECURITY.md
+│   ├── storage
+│   │   ├── buffer.go
+│   │   ├── buffer_test.go
+│   │   ├── errors.go
+│   │   ├── errors_test.go
+│   │   ├── fanout.go
+│   │   ├── fanout_test.go
+│   │   ├── generic.go
+│   │   ├── interface.go
+│   │   ├── interface_test.go
+│   │   ├── lazy.go
+│   │   ├── memoized_iterator.go
+│   │   ├── memoized_iterator_test.go
+│   │   ├── merge.go
+│   │   ├── merge_test.go
+│   │   ├── noop.go
+│   │   ├── remote
+│   │   │   ├── azuread
+│   │   │   │   ├── azuread.go
+│   │   │   │   ├── azuread_test.go
+│   │   │   │   ├── README.md
+│   │   │   │   └── testdata
+│   │   │   │       ├── azuread_bad_configmissing.yaml
+│   │   │   │       ├── azuread_bad_invalidclientid.yaml
+│   │   │   │       ├── azuread_bad_invalidoauthconfig.yaml
+│   │   │   │       ├── azuread_bad_oauthsdkconfig.yaml
+│   │   │   │       ├── azuread_bad_twoconfig.yaml
+│   │   │   │       ├── azuread_good_cloudmissing.yaml
+│   │   │   │       ├── azuread_good_managedidentity.yaml
+│   │   │   │       ├── azuread_good_oauth.yaml
+│   │   │   │       └── azuread_good_sdk.yaml
+│   │   │   ├── chunked.go
+│   │   │   ├── chunked_test.go
+│   │   │   ├── client.go
+│   │   │   ├── client_test.go
+│   │   │   ├── codec.go
+│   │   │   ├── codec_test.go
+│   │   │   ├── ewma.go
+│   │   │   ├── googleiam
+│   │   │   │   └── googleiam.go
+│   │   │   ├── intern.go
+│   │   │   ├── intern_test.go
+│   │   │   ├── max_timestamp.go
+│   │   │   ├── metadata_watcher.go
+│   │   │   ├── metadata_watcher_test.go
+│   │   │   ├── otlptranslator
+│   │   │   │   ├── prometheus
+│   │   │   │   │   ├── normalize_label.go
+│   │   │   │   │   ├── normalize_name.go
+│   │   │   │   │   ├── normalize_name_test.go
+│   │   │   │   │   ├── testutils_test.go
+│   │   │   │   │   └── unit_to_ucum.go
+│   │   │   │   └── prometheusremotewrite
+│   │   │   │       ├── context.go
+│   │   │   │       ├── context_test.go
+│   │   │   │       ├── helper.go
+│   │   │   │       ├── helper_test.go
+│   │   │   │       ├── histograms.go
+│   │   │   │       ├── histograms_test.go
+│   │   │   │       ├── metrics_to_prw.go
+│   │   │   │       ├── metrics_to_prw_test.go
+│   │   │   │       ├── number_data_points.go
+│   │   │   │       ├── number_data_points_test.go
+│   │   │   │       ├── otlp_to_openmetrics_metadata.go
+│   │   │   │       ├── testutil_test.go
+│   │   │   │       └── timeseries.go
+│   │   │   ├── queue_manager.go
+│   │   │   ├── queue_manager_test.go
+│   │   │   ├── read.go
+│   │   │   ├── read_handler.go
+│   │   │   ├── read_handler_test.go
+│   │   │   ├── read_test.go
+│   │   │   ├── stats.go
+│   │   │   ├── storage.go
+│   │   │   ├── storage_test.go
+│   │   │   ├── write.go
+│   │   │   ├── write_handler.go
+│   │   │   ├── write_handler_test.go
+│   │   │   └── write_test.go
+│   │   ├── secondary.go
+│   │   ├── series.go
+│   │   └── series_test.go
+│   ├── template
+│   │   ├── template_amd64_test.go
+│   │   ├── template.go
+│   │   └── template_test.go
+│   ├── tracing
+│   │   ├── testdata
+│   │   │   └── ca.cer
+│   │   ├── tracing.go
+│   │   └── tracing_test.go
+│   ├── tsdb
+│   │   ├── agent
+│   │   │   ├── db.go
+│   │   │   ├── db_test.go
+│   │   │   ├── series.go
+│   │   │   └── series_test.go
+│   │   ├── block.go
+│   │   ├── block_test.go
+│   │   ├── blockwriter.go
+│   │   ├── blockwriter_test.go
+│   │   ├── CHANGELOG.md
+│   │   ├── chunkenc
+│   │   │   ├── bstream.go
+│   │   │   ├── bstream_test.go
+│   │   │   ├── chunk.go
+│   │   │   ├── chunk_test.go
+│   │   │   ├── float_histogram.go
+│   │   │   ├── float_histogram_test.go
+│   │   │   ├── histogram.go
+│   │   │   ├── histogram_meta.go
+│   │   │   ├── histogram_meta_test.go
+│   │   │   ├── histogram_test.go
+│   │   │   ├── varbit.go
+│   │   │   ├── varbit_test.go
+│   │   │   ├── xor.go
+│   │   │   └── xor_test.go
+│   │   ├── chunks
+│   │   │   ├── chunks.go
+│   │   │   ├── chunks_test.go
+│   │   │   ├── chunk_write_queue.go
+│   │   │   ├── chunk_write_queue_test.go
+│   │   │   ├── head_chunks.go
+│   │   │   ├── head_chunks_other.go
+│   │   │   ├── head_chunks_test.go
+│   │   │   ├── head_chunks_windows.go
+│   │   │   ├── queue.go
+│   │   │   ├── queue_test.go
+│   │   │   └── samples.go
+│   │   ├── compact.go
+│   │   ├── compact_test.go
+│   │   ├── db.go
+│   │   ├── db_test.go
+│   │   ├── docs
+│   │   │   ├── bstream.md
+│   │   │   ├── format
+│   │   │   │   ├── chunks.md
+│   │   │   │   ├── head_chunks.md
+│   │   │   │   ├── index.md
+│   │   │   │   ├── memory_snapshot.md
+│   │   │   │   ├── README.md
+│   │   │   │   ├── tombstones.md
+│   │   │   │   └── wal.md
+│   │   │   ├── refs.md
+│   │   │   └── usage.md
+│   │   ├── encoding
+│   │   │   └── encoding.go
+│   │   ├── errors
+│   │   │   └── errors.go
+│   │   ├── example_test.go
+│   │   ├── exemplar.go
+│   │   ├── exemplar_test.go
+│   │   ├── fileutil
+│   │   │   ├── dir.go
+│   │   │   ├── dir_unix.go
+│   │   │   ├── dir_windows.go
+│   │   │   ├── fileutil.go
+│   │   │   ├── flock.go
+│   │   │   ├── flock_js.go
+│   │   │   ├── flock_plan9.go
+│   │   │   ├── flock_solaris.go
+│   │   │   ├── flock_test.go
+│   │   │   ├── flock_unix.go
+│   │   │   ├── flock_windows.go
+│   │   │   ├── mmap_386.go
+│   │   │   ├── mmap_amd64.go
+│   │   │   ├── mmap_arm64.go
+│   │   │   ├── mmap.go
+│   │   │   ├── mmap_js.go
+│   │   │   ├── mmap_unix.go
+│   │   │   ├── mmap_windows.go
+│   │   │   ├── preallocate_darwin.go
+│   │   │   ├── preallocate.go
+│   │   │   ├── preallocate_linux.go
+│   │   │   ├── preallocate_other.go
+│   │   │   ├── sync_darwin.go
+│   │   │   ├── sync.go
+│   │   │   └── sync_linux.go
+│   │   ├── goversion
+│   │   │   ├── goversion.go
+│   │   │   ├── goversion_test.go
+│   │   │   └── init.go
+│   │   ├── head_append.go
+│   │   ├── head_bench_test.go
+│   │   ├── head_dedupelabels.go
+│   │   ├── head.go
+│   │   ├── head_other.go
+│   │   ├── head_read.go
+│   │   ├── head_read_test.go
+│   │   ├── head_test.go
+│   │   ├── head_wal.go
+│   │   ├── index
+│   │   │   ├── index.go
+│   │   │   ├── index_test.go
+│   │   │   ├── postings.go
+│   │   │   ├── postingsstats.go
+│   │   │   ├── postingsstats_test.go
+│   │   │   └── postings_test.go
+│   │   ├── isolation.go
+│   │   ├── isolation_test.go
+│   │   ├── mocks_test.go
+│   │   ├── ooo_head.go
+│   │   ├── ooo_head_read.go
+│   │   ├── ooo_head_read_test.go
+│   │   ├── ooo_head_test.go
+│   │   ├── ooo_isolation.go
+│   │   ├── ooo_isolation_test.go
+│   │   ├── querier_bench_test.go
+│   │   ├── querier.go
+│   │   ├── querier_test.go
+│   │   ├── README.md
+│   │   ├── record
+│   │   │   ├── record.go
+│   │   │   └── record_test.go
+│   │   ├── repair.go
+│   │   ├── repair_test.go
+│   │   ├── testdata
+│   │   │   ├── 20kseries.json
+│   │   │   ├── index_format_v1
+│   │   │   │   ├── chunks
+│   │   │   │   │   └── 000001
+│   │   │   │   ├── index
+│   │   │   │   ├── meta.json
+│   │   │   │   └── tombstones
+│   │   │   └── repair_index_version
+│   │   │       └── 01BZJ9WJQPWHGNC2W4J9TA62KC
+│   │   │           ├── index
+│   │   │           └── meta.json
+│   │   ├── testutil.go
+│   │   ├── tombstones
+│   │   │   ├── tombstones.go
+│   │   │   └── tombstones_test.go
+│   │   ├── tsdbblockutil.go
+│   │   ├── tsdbutil
+│   │   │   ├── dir_locker.go
+│   │   │   ├── dir_locker_test.go
+│   │   │   ├── dir_locker_testutil.go
+│   │   │   └── histogram.go
+│   │   └── wlog
+│   │       ├── checkpoint.go
+│   │       ├── checkpoint_test.go
+│   │       ├── live_reader.go
+│   │       ├── reader.go
+│   │       ├── reader_test.go
+│   │       ├── watcher.go
+│   │       ├── watcher_test.go
+│   │       ├── wlog.go
+│   │       └── wlog_test.go
+│   ├── util
+│   │   ├── almost
+│   │   │   ├── almost.go
+│   │   │   └── almost_test.go
+│   │   ├── annotations
+│   │   │   └── annotations.go
+│   │   ├── documentcli
+│   │   │   └── documentcli.go
+│   │   ├── fmtutil
+│   │   │   ├── format.go
+│   │   │   └── format_test.go
+│   │   ├── gate
+│   │   │   └── gate.go
+│   │   ├── httputil
+│   │   │   ├── compression.go
+│   │   │   ├── compression_test.go
+│   │   │   ├── context.go
+│   │   │   ├── cors.go
+│   │   │   └── cors_test.go
+│   │   ├── jsonutil
+│   │   │   └── marshal.go
+│   │   ├── junitxml
+│   │   │   ├── junitxml.go
+│   │   │   └── junitxml_test.go
+│   │   ├── logging
+│   │   │   ├── dedupe.go
+│   │   │   ├── dedupe_test.go
+│   │   │   ├── file.go
+│   │   │   ├── file_test.go
+│   │   │   └── ratelimit.go
+│   │   ├── netconnlimit
+│   │   │   ├── netconnlimit.go
+│   │   │   └── netconnlimit_test.go
+│   │   ├── osutil
+│   │   │   └── hostname.go
+│   │   ├── pool
+│   │   │   ├── pool.go
+│   │   │   └── pool_test.go
+│   │   ├── runtime
+│   │   │   ├── limits_default.go
+│   │   │   ├── limits_windows.go
+│   │   │   ├── statfs_default.go
+│   │   │   ├── statfs.go
+│   │   │   ├── statfs_linux_386.go
+│   │   │   ├── statfs_uint32.go
+│   │   │   ├── uname_default.go
+│   │   │   ├── uname_linux.go
+│   │   │   ├── vmlimits_default.go
+│   │   │   └── vmlimits_openbsd.go
+│   │   ├── runutil
+│   │   │   └── runutil.go
+│   │   ├── stats
+│   │   │   ├── query_stats.go
+│   │   │   ├── stats_test.go
+│   │   │   └── timer.go
+│   │   ├── strutil
+│   │   │   ├── quote.go
+│   │   │   ├── quote_test.go
+│   │   │   ├── strconv.go
+│   │   │   └── strconv_test.go
+│   │   ├── teststorage
+│   │   │   └── storage.go
+│   │   ├── testutil
+│   │   │   ├── cmp.go
+│   │   │   ├── context.go
+│   │   │   ├── directory.go
+│   │   │   ├── logging.go
+│   │   │   ├── port.go
+│   │   │   ├── roundtrip.go
+│   │   │   └── testing.go
+│   │   ├── treecache
+│   │   │   └── treecache.go
+│   │   └── zeropool
+│   │       ├── pool.go
+│   │       └── pool_test.go
+│   ├── VERSION
+│   └── web
+│       ├── api
+│       │   └── v1
+│       │       ├── api.go
+│       │       ├── api_test.go
+│       │       ├── codec.go
+│       │       ├── codec_test.go
+│       │       ├── errors_test.go
+│       │       ├── json_codec.go
+│       │       └── json_codec_test.go
+│       ├── federate.go
+│       ├── federate_test.go
+│       ├── ui
+│       │   ├── assets_embed.go
+│       │   ├── build_ui.sh
+│       │   ├── embed.go.tmpl
+│       │   ├── module
+│       │   │   ├── codemirror-promql
+│       │   │   │   ├── build.sh
+│       │   │   │   ├── jest.config.cjs
+│       │   │   │   ├── package.json
+│       │   │   │   ├── README.md
+│       │   │   │   ├── setupJest.cjs
+│       │   │   │   ├── src
+│       │   │   │   │   ├── client
+│       │   │   │   │   │   ├── index.ts
+│       │   │   │   │   │   └── prometheus.ts
+│       │   │   │   │   ├── complete
+│       │   │   │   │   │   ├── hybrid.test.ts
+│       │   │   │   │   │   ├── hybrid.ts
+│       │   │   │   │   │   ├── index.test.ts
+│       │   │   │   │   │   ├── index.ts
+│       │   │   │   │   │   └── promql.terms.ts
+│       │   │   │   │   ├── index.ts
+│       │   │   │   │   ├── lint
+│       │   │   │   │   │   ├── hybrid.ts
+│       │   │   │   │   │   └── index.ts
+│       │   │   │   │   ├── parser
+│       │   │   │   │   │   ├── index.ts
+│       │   │   │   │   │   ├── matcher.test.ts
+│       │   │   │   │   │   ├── matcher.ts
+│       │   │   │   │   │   ├── parser.test.ts
+│       │   │   │   │   │   ├── parser.ts
+│       │   │   │   │   │   ├── path-finder.test.ts
+│       │   │   │   │   │   ├── path-finder.ts
+│       │   │   │   │   │   ├── type.ts
+│       │   │   │   │   │   ├── vector.test.ts
+│       │   │   │   │   │   └── vector.ts
+│       │   │   │   │   ├── promql.ts
+│       │   │   │   │   ├── test
+│       │   │   │   │   │   ├── alertmanager_alerts_series.json
+│       │   │   │   │   │   ├── metadata.json
+│       │   │   │   │   │   ├── metric_name.json
+│       │   │   │   │   │   └── utils-test.ts
+│       │   │   │   │   └── types
+│       │   │   │   │       ├── function.ts
+│       │   │   │   │       ├── index.ts
+│       │   │   │   │       ├── matcher.ts
+│       │   │   │   │       └── vector.ts
+│       │   │   │   └── tsconfig.json
+│       │   │   └── lezer-promql
+│       │   │       ├── build.sh
+│       │   │       ├── generate-types.sh
+│       │   │       ├── jest.config.cjs
+│       │   │       ├── package.json
+│       │   │       ├── README.md
+│       │   │       ├── rollup.config.js
+│       │   │       ├── src
+│       │   │       │   ├── highlight.js
+│       │   │       │   ├── promql.grammar
+│       │   │       │   └── tokens.js
+│       │   │       └── test
+│       │   │           ├── expression.txt
+│       │   │           └── promql.test.js
+│       │   ├── package.json
+│       │   ├── package-lock.json
+│       │   ├── react-app
+│       │   │   ├── package.json
+│       │   │   ├── public
+│       │   │   │   ├── favicon.ico
+│       │   │   │   ├── index.html
+│       │   │   │   └── manifest.json
+│       │   │   ├── src
+│       │   │   │   ├── App.test.tsx
+│       │   │   │   ├── App.tsx
+│       │   │   │   ├── components
+│       │   │   │   │   ├── Checkbox.test.tsx
+│       │   │   │   │   ├── Checkbox.tsx
+│       │   │   │   │   ├── CustomInfiniteScroll.tsx
+│       │   │   │   │   ├── SearchBar.tsx
+│       │   │   │   │   ├── ToggleMoreLess.test.tsx
+│       │   │   │   │   ├── ToggleMoreLess.tsx
+│       │   │   │   │   ├── withStartingIndicator.test.tsx
+│       │   │   │   │   ├── withStartingIndicator.tsx
+│       │   │   │   │   └── withStatusIndicator.tsx
+│       │   │   │   ├── constants
+│       │   │   │   │   └── constants.tsx
+│       │   │   │   ├── contexts
+│       │   │   │   │   ├── AnimateLogoContext.tsx
+│       │   │   │   │   ├── PathPrefixContext.tsx
+│       │   │   │   │   ├── ReadyContext.tsx
+│       │   │   │   │   ├── ThemeContext.tsx
+│       │   │   │   │   └── ToastContext.tsx
+│       │   │   │   ├── fonts
+│       │   │   │   │   └── codicon.ttf
+│       │   │   │   ├── globals.ts
+│       │   │   │   ├── hooks
+│       │   │   │   │   ├── useFetch.ts
+│       │   │   │   │   ├── useLocalStorage.test.tsx
+│       │   │   │   │   ├── useLocalStorage.tsx
+│       │   │   │   │   └── useMedia.ts
+│       │   │   │   ├── images
+│       │   │   │   │   └── prometheus_logo_grey.svg
+│       │   │   │   ├── index.tsx
+│       │   │   │   ├── Navbar.test.tsx
+│       │   │   │   ├── Navbar.tsx
+│       │   │   │   ├── pages
+│       │   │   │   │   ├── agent
+│       │   │   │   │   │   └── Agent.tsx
+│       │   │   │   │   ├── alerts
+│       │   │   │   │   │   ├── AlertContents.test.tsx
+│       │   │   │   │   │   ├── AlertContents.tsx
+│       │   │   │   │   │   ├── Alerts.tsx
+│       │   │   │   │   │   ├── CollapsibleAlertPanel.tsx
+│       │   │   │   │   │   └── __snapshots__
+│       │   │   │   │   │       └── AlertContents.test.tsx.snap
+│       │   │   │   │   ├── config
+│       │   │   │   │   │   └── Config.tsx
+│       │   │   │   │   ├── flags
+│       │   │   │   │   │   ├── Flags.test.tsx
+│       │   │   │   │   │   ├── Flags.tsx
+│       │   │   │   │   │   └── __snapshots__
+│       │   │   │   │   │       └── Flags.test.tsx.snap
+│       │   │   │   │   ├── graph
+│       │   │   │   │   │   ├── CMTheme.tsx
+│       │   │   │   │   │   ├── ColorPool.ts
+│       │   │   │   │   │   ├── DataTable.test.tsx
+│       │   │   │   │   │   ├── DataTable.tsx
+│       │   │   │   │   │   ├── ExpressionInput.test.tsx
+│       │   │   │   │   │   ├── ExpressionInput.tsx
+│       │   │   │   │   │   ├── GraphControls.test.tsx
+│       │   │   │   │   │   ├── GraphControls.tsx
+│       │   │   │   │   │   ├── GraphHeatmapHelpers.test.ts
+│       │   │   │   │   │   ├── GraphHeatmapHelpers.ts
+│       │   │   │   │   │   ├── GraphHelpers.test.ts
+│       │   │   │   │   │   ├── GraphHelpers.ts
+│       │   │   │   │   │   ├── GraphTabContent.test.tsx
+│       │   │   │   │   │   ├── GraphTabContent.tsx
+│       │   │   │   │   │   ├── Graph.test.tsx
+│       │   │   │   │   │   ├── Graph.tsx
+│       │   │   │   │   │   ├── HistogramChart.tsx
+│       │   │   │   │   │   ├── HistogramHelpers.ts
+│       │   │   │   │   │   ├── Legend.tsx
+│       │   │   │   │   │   ├── MetricsExplorer.test.tsx
+│       │   │   │   │   │   ├── MetricsExplorer.tsx
+│       │   │   │   │   │   ├── PanelList.test.tsx
+│       │   │   │   │   │   ├── PanelList.tsx
+│       │   │   │   │   │   ├── Panel.test.tsx
+│       │   │   │   │   │   ├── Panel.tsx
+│       │   │   │   │   │   ├── QueryStatsView.test.tsx
+│       │   │   │   │   │   ├── QueryStatsView.tsx
+│       │   │   │   │   │   ├── SeriesName.test.tsx
+│       │   │   │   │   │   ├── SeriesName.tsx
+│       │   │   │   │   │   ├── TimeInput.test.tsx
+│       │   │   │   │   │   └── TimeInput.tsx
+│       │   │   │   │   ├── index.ts
+│       │   │   │   │   ├── rules
+│       │   │   │   │   │   ├── RulesContent.tsx
+│       │   │   │   │   │   └── Rules.tsx
+│       │   │   │   │   ├── serviceDiscovery
+│       │   │   │   │   │   ├── LabelsTable.tsx
+│       │   │   │   │   │   └── Services.tsx
+│       │   │   │   │   ├── status
+│       │   │   │   │   │   ├── __snapshots__
+│       │   │   │   │   │   │   └── Status.test.tsx.snap
+│       │   │   │   │   │   ├── Status.test.tsx
+│       │   │   │   │   │   └── Status.tsx
+│       │   │   │   │   ├── targets
+│       │   │   │   │   │   ├── EndpointLink.test.tsx
+│       │   │   │   │   │   ├── EndpointLink.tsx
+│       │   │   │   │   │   ├── Filter.test.tsx
+│       │   │   │   │   │   ├── Filter.tsx
+│       │   │   │   │   │   ├── ScrapePoolContent.tsx
+│       │   │   │   │   │   ├── ScrapePoolList.test.tsx
+│       │   │   │   │   │   ├── ScrapePoolList.tsx
+│       │   │   │   │   │   ├── ScrapePoolPanel.module.css
+│       │   │   │   │   │   ├── TargetLabels.test.tsx
+│       │   │   │   │   │   ├── TargetLabels.tsx
+│       │   │   │   │   │   ├── TargetScrapeDuration.tsx
+│       │   │   │   │   │   ├── Targets.test.tsx
+│       │   │   │   │   │   ├── Targets.tsx
+│       │   │   │   │   │   ├── target.test.ts
+│       │   │   │   │   │   ├── target.ts
+│       │   │   │   │   │   └── __testdata__
+│       │   │   │   │   │       └── testdata.ts
+│       │   │   │   │   └── tsdbStatus
+│       │   │   │   │       ├── TSDBStatus.test.tsx
+│       │   │   │   │       └── TSDBStatus.tsx
+│       │   │   │   ├── react-app-env.d.ts
+│       │   │   │   ├── setupProxy.js
+│       │   │   │   ├── setupTests.ts
+│       │   │   │   ├── themes
+│       │   │   │   │   ├── app.scss
+│       │   │   │   │   ├── _bootstrap_dark.scss
+│       │   │   │   │   ├── _bootstrap_light.scss
+│       │   │   │   │   ├── dark.scss
+│       │   │   │   │   ├── light.scss
+│       │   │   │   │   └── _shared.scss
+│       │   │   │   ├── Theme.tsx
+│       │   │   │   ├── types
+│       │   │   │   │   ├── index.d.ts
+│       │   │   │   │   └── types.ts
+│       │   │   │   ├── utils
+│       │   │   │   │   ├── index.ts
+│       │   │   │   │   └── utils.test.ts
+│       │   │   │   └── vendor
+│       │   │   │       └── flot
+│       │   │   │           ├── jquery.flot.crosshair.js
+│       │   │   │           ├── jquery.flot.heatmap.js
+│       │   │   │           ├── jquery.flot.js
+│       │   │   │           ├── jquery.flot.selection.js
+│       │   │   │           ├── jquery.flot.stack.js
+│       │   │   │           └── jquery.flot.time.js
+│       │   │   └── tsconfig.json
+│       │   ├── README.md
+│       │   ├── static
+│       │   │   ├── css
+│       │   │   │   └── prom_console.css
+│       │   │   ├── js
+│       │   │   │   └── prom_console.js
+│       │   │   └── vendor
+│       │   │       ├── bootstrap-4.5.2
+│       │   │       │   ├── css
+│       │   │       │   │   ├── bootstrap.css
+│       │   │       │   │   ├── bootstrap.css.map
+│       │   │       │   │   ├── bootstrap-grid.css
+│       │   │       │   │   ├── bootstrap-grid.css.map
+│       │   │       │   │   ├── bootstrap-grid.min.css
+│       │   │       │   │   ├── bootstrap-grid.min.css.map
+│       │   │       │   │   ├── bootstrap.min.css
+│       │   │       │   │   ├── bootstrap.min.css.map
+│       │   │       │   │   ├── bootstrap-reboot.css
+│       │   │       │   │   ├── bootstrap-reboot.css.map
+│       │   │       │   │   ├── bootstrap-reboot.min.css
+│       │   │       │   │   └── bootstrap-reboot.min.css.map
+│       │   │       │   └── js
+│       │   │       │       ├── bootstrap.bundle.js
+│       │   │       │       ├── bootstrap.bundle.js.map
+│       │   │       │       ├── bootstrap.bundle.min.js
+│       │   │       │       ├── bootstrap.bundle.min.js.map
+│       │   │       │       ├── bootstrap.js
+│       │   │       │       ├── bootstrap.js.map
+│       │   │       │       ├── bootstrap.min.js
+│       │   │       │       └── bootstrap.min.js.map
+│       │   │       ├── bootstrap4-glyphicons
+│       │   │       │   ├── css
+│       │   │       │   │   ├── bootstrap-glyphicons.css
+│       │   │       │   │   └── bootstrap-glyphicons.min.css
+│       │   │       │   ├── fonts
+│       │   │       │   │   ├── fontawesome
+│       │   │       │   │   │   ├── fa-brands-400.eot
+│       │   │       │   │   │   ├── fa-brands-400.svg
+│       │   │       │   │   │   ├── fa-brands-400.ttf
+│       │   │       │   │   │   ├── fa-brands-400.woff
+│       │   │       │   │   │   ├── fa-brands-400.woff2
+│       │   │       │   │   │   ├── fa-regular-400.eot
+│       │   │       │   │   │   ├── fa-regular-400.svg
+│       │   │       │   │   │   ├── fa-regular-400.ttf
+│       │   │       │   │   │   ├── fa-regular-400.woff
+│       │   │       │   │   │   ├── fa-regular-400.woff2
+│       │   │       │   │   │   ├── fa-solid-900.eot
+│       │   │       │   │   │   ├── fa-solid-900.svg
+│       │   │       │   │   │   ├── fa-solid-900.ttf
+│       │   │       │   │   │   ├── fa-solid-900.woff
+│       │   │       │   │   │   └── fa-solid-900.woff2
+│       │   │       │   │   └── glyphicons
+│       │   │       │   │       ├── glyphicons-halflings-regular.eot
+│       │   │       │   │       ├── glyphicons-halflings-regular.svg
+│       │   │       │   │       ├── glyphicons-halflings-regular.ttf
+│       │   │       │   │       ├── glyphicons-halflings-regular.woff
+│       │   │       │   │       └── glyphicons-halflings-regular.woff2
+│       │   │       │   └── maps
+│       │   │       │       ├── glyphicons-fontawesome.css
+│       │   │       │       ├── glyphicons-fontawesome.less
+│       │   │       │       └── glyphicons-fontawesome.min.css
+│       │   │       ├── js
+│       │   │       │   ├── jquery-3.5.1.min.js
+│       │   │       │   ├── jquery.hotkeys.js
+│       │   │       │   ├── jquery.selection.js
+│       │   │       │   └── popper.min.js
+│       │   │       └── rickshaw
+│       │   │           ├── rickshaw.min.css
+│       │   │           ├── rickshaw.min.js
+│       │   │           └── vendor
+│       │   │               ├── d3.layout.min.js
+│       │   │               └── d3.v3.js
+│       │   └── ui.go
+│       ├── web.go
+│       └── web_test.go
+├── prometheus.conf -> /home/felix/packages/prometheus/prometheus.conf
+├── prometheus.service -> /home/felix/packages/prometheus/prometheus.service
+├── prometheus.sysusers -> /home/felix/packages/prometheus/prometheus.sysusers
+└── prometheus-v2.55.1.tar.gz -> /home/felix/packages/prometheus/prometheus-v2.55.1.tar.gz
+
+242 directories, 1266 files

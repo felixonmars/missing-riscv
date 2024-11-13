@@ -1,0 +1,195 @@
+src
+├── 2.9.9.tar.gz -> /home/felix/packages/python-psycopg2/2.9.9.tar.gz
+└── psycopg2-2.9.9
+    ├── AUTHORS
+    ├── doc
+    │   ├── COPYING.LESSER
+    │   ├── Makefile
+    │   ├── pep-0249.txt
+    │   ├── README.rst
+    │   ├── release.rst
+    │   ├── requirements.in
+    │   ├── requirements.txt
+    │   ├── src
+    │   │   ├── advanced.rst
+    │   │   ├── conf.py
+    │   │   ├── connection.rst
+    │   │   ├── cursor.rst
+    │   │   ├── errorcodes.rst
+    │   │   ├── errors.rst
+    │   │   ├── extensions.rst
+    │   │   ├── extras.rst
+    │   │   ├── faq.rst
+    │   │   ├── index.rst
+    │   │   ├── install.rst
+    │   │   ├── license.rst
+    │   │   ├── Makefile
+    │   │   ├── module.rst
+    │   │   ├── news.rst
+    │   │   ├── pool.rst
+    │   │   ├── sql.rst
+    │   │   ├── _static
+    │   │   │   └── psycopg.css
+    │   │   ├── _templates
+    │   │   │   └── searchbox.html
+    │   │   ├── tools
+    │   │   │   ├── lib
+    │   │   │   │   ├── dbapi_extension.py
+    │   │   │   │   ├── sql_role.py
+    │   │   │   │   └── ticket_role.py
+    │   │   │   └── make_sqlstate_docs.py
+    │   │   ├── tz.rst
+    │   │   └── usage.rst
+    │   └── SUCCESS
+    ├── INSTALL
+    ├── lib
+    │   ├── errorcodes.py
+    │   ├── errors.py
+    │   ├── extensions.py
+    │   ├── extras.py
+    │   ├── __init__.py
+    │   ├── _ipaddress.py
+    │   ├── _json.py
+    │   ├── pool.py
+    │   ├── _range.py
+    │   ├── sql.py
+    │   └── tz.py
+    ├── LICENSE
+    ├── Makefile
+    ├── MANIFEST.in
+    ├── NEWS
+    ├── psycopg
+    │   ├── adapter_asis.c
+    │   ├── adapter_asis.h
+    │   ├── adapter_binary.c
+    │   ├── adapter_binary.h
+    │   ├── adapter_datetime.c
+    │   ├── adapter_datetime.h
+    │   ├── adapter_list.c
+    │   ├── adapter_list.h
+    │   ├── adapter_pboolean.c
+    │   ├── adapter_pboolean.h
+    │   ├── adapter_pdecimal.c
+    │   ├── adapter_pdecimal.h
+    │   ├── adapter_pfloat.c
+    │   ├── adapter_pfloat.h
+    │   ├── adapter_pint.c
+    │   ├── adapter_pint.h
+    │   ├── adapter_qstring.c
+    │   ├── adapter_qstring.h
+    │   ├── aix_support.c
+    │   ├── aix_support.h
+    │   ├── bytes_format.c
+    │   ├── column.h
+    │   ├── column_type.c
+    │   ├── config.h
+    │   ├── connection.h
+    │   ├── connection_int.c
+    │   ├── connection_type.c
+    │   ├── conninfo.h
+    │   ├── conninfo_type.c
+    │   ├── cursor.h
+    │   ├── cursor_int.c
+    │   ├── cursor_type.c
+    │   ├── diagnostics.h
+    │   ├── diagnostics_type.c
+    │   ├── error.h
+    │   ├── error_type.c
+    │   ├── green.c
+    │   ├── green.h
+    │   ├── libpq_support.c
+    │   ├── libpq_support.h
+    │   ├── lobject.h
+    │   ├── lobject_int.c
+    │   ├── lobject_type.c
+    │   ├── microprotocols.c
+    │   ├── microprotocols.h
+    │   ├── microprotocols_proto.c
+    │   ├── microprotocols_proto.h
+    │   ├── notify.h
+    │   ├── notify_type.c
+    │   ├── pgtypes.h
+    │   ├── pqpath.c
+    │   ├── pqpath.h
+    │   ├── psycopg.h
+    │   ├── psycopgmodule.c
+    │   ├── _psycopg.vc9.amd64.manifest
+    │   ├── _psycopg.vc9.x86.manifest
+    │   ├── python.h
+    │   ├── replication_connection.h
+    │   ├── replication_connection_type.c
+    │   ├── replication_cursor.h
+    │   ├── replication_cursor_type.c
+    │   ├── replication_message.h
+    │   ├── replication_message_type.c
+    │   ├── solaris_support.c
+    │   ├── solaris_support.h
+    │   ├── sqlstate_errors.h
+    │   ├── typecast_array.c
+    │   ├── typecast_basic.c
+    │   ├── typecast_binary.c
+    │   ├── typecast_binary.h
+    │   ├── typecast_builtins.c
+    │   ├── typecast.c
+    │   ├── typecast_datetime.c
+    │   ├── typecast.h
+    │   ├── utils.c
+    │   ├── utils.h
+    │   ├── win32_support.c
+    │   ├── win32_support.h
+    │   ├── xid.h
+    │   └── xid_type.c
+    ├── psycopg2.cproj
+    ├── README.rst
+    ├── scripts
+    │   ├── build
+    │   │   ├── appveyor.py
+    │   │   ├── build_libpq.sh
+    │   │   ├── build_macos_arm64.sh
+    │   │   ├── build_sdist.sh
+    │   │   ├── download_packages_appveyor.py
+    │   │   ├── print_so_versions.sh
+    │   │   ├── run_build_macos_arm64.sh
+    │   │   ├── scaleway_m1.sh
+    │   │   ├── strip_wheel.sh
+    │   │   ├── wheel_linux_before_all.sh
+    │   │   └── wheel_macos_before_all.sh
+    │   ├── make_errorcodes.py
+    │   ├── make_errors.py
+    │   └── refcounter.py
+    ├── setup.cfg
+    ├── setup.py
+    ├── tests
+    │   ├── dbapi20.py
+    │   ├── dbapi20_tpc.py
+    │   ├── __init__.py
+    │   ├── test_async.py
+    │   ├── test_bug_gc.py
+    │   ├── test_bugX000.py
+    │   ├── test_cancel.py
+    │   ├── testconfig.py
+    │   ├── test_connection.py
+    │   ├── test_copy.py
+    │   ├── test_cursor.py
+    │   ├── test_dates.py
+    │   ├── test_errcodes.py
+    │   ├── test_errors.py
+    │   ├── test_extras_dictcursor.py
+    │   ├── test_fast_executemany.py
+    │   ├── test_green.py
+    │   ├── test_ipaddress.py
+    │   ├── test_lobject.py
+    │   ├── test_module.py
+    │   ├── test_notify.py
+    │   ├── test_psycopg2_dbapi20.py
+    │   ├── test_quote.py
+    │   ├── test_replication.py
+    │   ├── test_sql.py
+    │   ├── test_transaction.py
+    │   ├── test_types_basic.py
+    │   ├── test_types_extras.py
+    │   ├── testutils.py
+    │   └── test_with.py
+    └── tox.ini
+
+13 directories, 180 files

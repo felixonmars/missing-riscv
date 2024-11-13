@@ -1,0 +1,243 @@
+src
+└── python-blosc2
+    ├── ANNOUNCE.rst
+    ├── bench
+    │   ├── compress_numpy.py
+    │   ├── encode-itrunc-Linux-i13900K.ipynb
+    │   ├── encode-itrunc-MacOS-M1.ipynb
+    │   ├── encode-sparse-MacOS-Intel.ipynb
+    │   ├── get_slice.py
+    │   ├── ndarray
+    │   │   ├── compare_getslice.py
+    │   │   ├── copy_postfilter.py
+    │   │   ├── download_data.py
+    │   │   ├── era5-pds
+    │   │   │   ├── measurements-i10k.parquet
+    │   │   │   ├── measurements-i13k-always-split.parquet
+    │   │   │   ├── measurements-i13k-never-split.parquet
+    │   │   │   ├── measurements-i13k.parquet
+    │   │   │   ├── measurements-m1.parquet
+    │   │   │   └── measurements-ryzen3.parquet
+    │   │   ├── plot_transcode_data.ipynb
+    │   │   └── transcode_data.py
+    │   ├── pack_compress.py
+    │   ├── pack_large.py
+    │   ├── pack_tensor.py
+    │   ├── set_slice.py
+    │   └── sum_postfilter.py
+    ├── blosc2
+    │   ├── blosc2_ext.pyx
+    │   ├── c-blosc2
+    │   ├── CMakeLists.txt
+    │   ├── core.py
+    │   ├── info.py
+    │   ├── __init__.py
+    │   ├── lazyexpr.py
+    │   ├── ndarray.py
+    │   └── schunk.py
+    ├── CMakeLists.txt
+    ├── code_of_conduct.md
+    ├── CONTRIBUTING.rst
+    ├── doc
+    │   ├── conf.py
+    │   ├── development
+    │   │   ├── code-of-conduct.rst
+    │   │   ├── contributing.rst
+    │   │   └── index.rst
+    │   ├── getting_started
+    │   │   ├── index.rst
+    │   │   ├── installation.rst
+    │   │   ├── overview.rst
+    │   │   ├── tutorials
+    │   │   │   ├── 00.schunk-basics.ipynb
+    │   │   │   ├── 01.schunk-slicing_and_beyond.ipynb
+    │   │   │   ├── 02.ndarray-basics.ipynb
+    │   │   │   ├── 10.ucodecs-ufilters.ipynb
+    │   │   │   ├── 11.prefilters.ipynb
+    │   │   │   ├── 12.postfilters.ipynb
+    │   │   │   └── images
+    │   │   │       ├── blosc2-pipeline.png
+    │   │   │       ├── blosc2-pipeline.svg
+    │   │   │       └── ucodecs-filters
+    │   │   │           ├── backward.png
+    │   │   │           ├── backward.svg
+    │   │   │           ├── decoder2.png
+    │   │   │           ├── decoder2.svg
+    │   │   │           ├── decoder.png
+    │   │   │           ├── decoder.svg
+    │   │   │           ├── encoder2.png
+    │   │   │           ├── encoder2.svg
+    │   │   │           ├── encoder.png
+    │   │   │           ├── encoder.svg
+    │   │   │           ├── forward.png
+    │   │   │           └── forward.svg
+    │   │   └── tutorials.rst
+    │   ├── index.rst
+    │   ├── python-blosc2.rst
+    │   ├── reference
+    │   │   ├── autofiles
+    │   │   │   ├── schunk
+    │   │   │   │   ├── attributes
+    │   │   │   │   │   ├── blosc2.schunk.SChunk.blocksize.rst
+    │   │   │   │   │   ├── blosc2.schunk.SChunk.cbytes.rst
+    │   │   │   │   │   ├── blosc2.schunk.SChunk.chunkshape.rst
+    │   │   │   │   │   ├── blosc2.schunk.SChunk.chunksize.rst
+    │   │   │   │   │   ├── blosc2.schunk.SChunk.contiguous.rst
+    │   │   │   │   │   ├── blosc2.schunk.SChunk.cparams.rst
+    │   │   │   │   │   ├── blosc2.schunk.SChunk.cratio.rst
+    │   │   │   │   │   ├── blosc2.schunk.SChunk.dparams.rst
+    │   │   │   │   │   ├── blosc2.schunk.SChunk.nbytes.rst
+    │   │   │   │   │   ├── blosc2.schunk.SChunk.typesize.rst
+    │   │   │   │   │   ├── blosc2.schunk.SChunk.urlpath.rst
+    │   │   │   │   │   ├── meta.rst
+    │   │   │   │   │   └── vlmeta.rst
+    │   │   │   │   ├── blosc2.schunk.SChunk.append_data.rst
+    │   │   │   │   ├── blosc2.schunk.SChunk.decompress_chunk.rst
+    │   │   │   │   ├── blosc2.schunk.SChunk.delete_chunk.rst
+    │   │   │   │   ├── blosc2.schunk.SChunk.filler.rst
+    │   │   │   │   ├── blosc2.schunk.SChunk.fill_special.rst
+    │   │   │   │   ├── blosc2.schunk.SChunk.get_chunk.rst
+    │   │   │   │   ├── blosc2.schunk.SChunk.__getitem__.rst
+    │   │   │   │   ├── blosc2.schunk.SChunk.get_slice.rst
+    │   │   │   │   ├── blosc2.schunk.SChunk.__init__.rst
+    │   │   │   │   ├── blosc2.schunk.SChunk.insert_chunk.rst
+    │   │   │   │   ├── blosc2.schunk.SChunk.insert_data.rst
+    │   │   │   │   ├── blosc2.schunk.SChunk.iterchunks_info.rst
+    │   │   │   │   ├── blosc2.schunk.SChunk.iterchunks.rst
+    │   │   │   │   ├── blosc2.schunk.SChunk.__len__.rst
+    │   │   │   │   ├── blosc2.schunk.SChunk.postfilter.rst
+    │   │   │   │   ├── blosc2.schunk.SChunk.prefilter.rst
+    │   │   │   │   ├── blosc2.schunk.SChunk.remove_postfilter.rst
+    │   │   │   │   ├── blosc2.schunk.SChunk.remove_prefilter.rst
+    │   │   │   │   ├── blosc2.schunk.SChunk.__setitem__.rst
+    │   │   │   │   ├── blosc2.schunk.SChunk.to_cframe.rst
+    │   │   │   │   ├── blosc2.schunk.SChunk.update_chunk.rst
+    │   │   │   │   └── blosc2.schunk.SChunk.update_data.rst
+    │   │   │   └── top_level
+    │   │   │       ├── blosc2.Codec.rst
+    │   │   │       ├── blosc2.Filter.rst
+    │   │   │       ├── blosc2.nthreads.rst
+    │   │   │       ├── blosc2.SpecialValue.rst
+    │   │   │       ├── blosc2.SplitMode.rst
+    │   │   │       └── blosc2.Tuner.rst
+    │   │   ├── index.rst
+    │   │   ├── ndarray_api.rst
+    │   │   ├── schunk_api.rst
+    │   │   └── top_level.rst
+    │   ├── release_notes
+    │   │   └── index.md
+    │   └── _static
+    │       ├── blosc-logo_128.png
+    │       ├── blosc-logo_256.png
+    │       └── css
+    │           └── custom.css
+    ├── examples
+    │   ├── btune.py
+    │   ├── compress2_decompress2.py
+    │   ├── compress_decompress.py
+    │   ├── filler.py
+    │   ├── gil.py
+    │   ├── ndarray
+    │   │   ├── asarray_.py
+    │   │   ├── buffer.py
+    │   │   ├── bytedelta_filter.py
+    │   │   ├── copy_.py
+    │   │   ├── empty_.py
+    │   │   ├── eval_expr.py
+    │   │   ├── formats.py
+    │   │   ├── getitem.py
+    │   │   ├── iterchunks_info.py
+    │   │   ├── meta.py
+    │   │   ├── ndarray_copy.py
+    │   │   ├── ndmean.py
+    │   │   ├── persistency.py
+    │   │   ├── resize_.py
+    │   │   ├── work_with_numpy.py
+    │   │   └── zfp_codec.py
+    │   ├── pack_array.py
+    │   ├── pack_tensor.py
+    │   ├── postfilter1.py
+    │   ├── postfilter2.py
+    │   ├── postfilter3.py
+    │   ├── prefilter.py
+    │   ├── save_tensor.py
+    │   ├── schunk.py
+    │   ├── schunk_roundtrip.py
+    │   ├── ucodecs.py
+    │   ├── ufilters.py
+    │   └── vlmeta.py
+    ├── guix.scm -> .guix/modules/python-blosc2-package.scm
+    ├── images
+    │   ├── b2nd-2level-parts.png
+    │   ├── Complete-Write-Read-B2ND.png
+    │   ├── linspace-compress.png
+    │   ├── linspace-decompress.png
+    │   ├── M1-i386-vs-arm64-pack.png
+    │   ├── M1-i386-vs-arm64-unpack.png
+    │   ├── pack-array-cratios.png
+    │   └── Read-Partial-Slices-B2ND.png
+    ├── LICENSE.txt
+    ├── pyproject.toml
+    ├── pytest.ini
+    ├── README_DEVELOPERS.md
+    ├── README.rst
+    ├── RELEASE_NOTES.md
+    ├── RELEASING.rst
+    ├── requirements-build.txt
+    ├── requirements-dev.txt
+    ├── requirements-doc.txt
+    ├── requirements-runtime.txt
+    ├── requirements-tests.txt
+    ├── requirements-test-wheels.txt
+    ├── setup.py
+    ├── tests
+    │   ├── ndarray
+    │   │   ├── persistency.cat
+    │   │   ├── test_auto_parts.py
+    │   │   ├── test_buffer.py
+    │   │   ├── test_copy.py
+    │   │   ├── test_empty.py
+    │   │   ├── test_full.py
+    │   │   ├── test_getitem.py
+    │   │   ├── test_get_slice_nchunks.py
+    │   │   ├── test_iterchunks_info.py
+    │   │   ├── test_lazyexpr.py
+    │   │   ├── test_lossy.py
+    │   │   ├── test_metalayers.py
+    │   │   ├── test_mode.py
+    │   │   ├── test_ndarray.py
+    │   │   ├── test_numpy.py
+    │   │   ├── test_persistency.py
+    │   │   ├── test_resize.py
+    │   │   ├── test_setitem.py
+    │   │   ├── test_slice.py
+    │   │   ├── test_squeeze.py
+    │   │   ├── test_struct_dtype.py
+    │   │   └── test_zeros.py
+    │   ├── test_bytes_array.py
+    │   ├── test_comp_info.py
+    │   ├── test_compress2.py
+    │   ├── test_compression_parameters.py
+    │   ├── test_compressors.py
+    │   ├── test_decompress.py
+    │   ├── test_iterchunks.py
+    │   ├── test_open.py
+    │   ├── test_pathlib.py
+    │   ├── test_postfilters.py
+    │   ├── test_prefilters.py
+    │   ├── test_python_blosc.py
+    │   ├── test_schunk_constructor.py
+    │   ├── test_schunk_delete.py
+    │   ├── test_schunk_get_slice_nchunks.py
+    │   ├── test_schunk_get_slice.py
+    │   ├── test_schunk_insert.py
+    │   ├── test_schunk.py
+    │   ├── test_schunk_set_slice.py
+    │   ├── test_schunk_update.py
+    │   ├── test_tensor.py
+    │   ├── test_ucodecs.py
+    │   ├── test_ufilters.py
+    │   └── test_vlmeta.py
+    └── VERSION
+
+26 directories, 215 files

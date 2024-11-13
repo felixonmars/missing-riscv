@@ -1,0 +1,7 @@
+File-and-directory based analysis of Arch Linux packages.
+
+This repository contains `tree` output of generated src directories of Arch Linux packages, which contains `arm64` or `aarch64`, but not `riscv`.
+
+This provides an overview of Linux packages that are available for ARM but **maybe** not for RISC-V.
+
+False-positives and not-applicable packages are expected.

@@ -1,0 +1,161 @@
+src
+├── py7zr-0.22.0
+│   ├── docs
+│   │   ├── api.rst
+│   │   ├── archive_format.rst
+│   │   ├── authors.rst
+│   │   ├── Changelog.rst
+│   │   ├── CODE_OF_CONDUCT.rst
+│   │   ├── _config.yml
+│   │   ├── conf.py
+│   │   ├── contribution.rst
+│   │   ├── diagrams
+│   │   │   ├── abstractio.dot
+│   │   │   ├── callbacks.dot
+│   │   │   ├── classes.dot
+│   │   │   ├── compressor_classes.dot
+│   │   │   ├── header_classes.dot
+│   │   │   └── packages.dot
+│   │   ├── glossary.rst
+│   │   ├── index.rst
+│   │   ├── make.bat
+│   │   ├── Makefile
+│   │   ├── presentations
+│   │   │   ├── Introduction_of_py7zr.odp
+│   │   │   └── Introduction_of_py7zr.pdf
+│   │   ├── previous_changes.rst
+│   │   ├── SECURITY.rst
+│   │   ├── social_preview.png
+│   │   ├── social_preview.svg
+│   │   ├── _static
+│   │   │   └── logo.png
+│   │   └── user_guide.rst
+│   ├── LICENSE
+│   ├── logo.svg
+│   ├── MANIFEST.in
+│   ├── PKG-INFO
+│   ├── py7zr
+│   │   ├── archiveinfo.py
+│   │   ├── callbacks.py
+│   │   ├── cli.py
+│   │   ├── compressor.py
+│   │   ├── exceptions.py
+│   │   ├── helpers.py
+│   │   ├── __init__.py
+│   │   ├── __main__.py
+│   │   ├── properties.py
+│   │   ├── py7zr.py
+│   │   ├── py.typed
+│   │   ├── version.py
+│   │   └── win32compat.py
+│   ├── py7zr.egg-info
+│   │   ├── dependency_links.txt
+│   │   ├── entry_points.txt
+│   │   ├── PKG-INFO
+│   │   ├── requires.txt
+│   │   ├── SOURCES.txt
+│   │   └── top_level.txt
+│   ├── pyproject.toml
+│   ├── README.rst
+│   ├── setup.cfg
+│   ├── tests
+│   │   ├── conftest.py
+│   │   ├── data
+│   │   │   ├── archive.7z.001
+│   │   │   ├── archive.7z.002
+│   │   │   ├── bcj.bin
+│   │   │   ├── bcj_test.c
+│   │   │   ├── bugzilla_4.7z
+│   │   │   ├── bzip2_2.7z
+│   │   │   ├── copy_2.7z
+│   │   │   ├── copy.7z
+│   │   │   ├── copy_bcj_1.7z
+│   │   │   ├── crc_corrupted.7z
+│   │   │   ├── deflate64.7z
+│   │   │   ├── deflate.7z
+│   │   │   ├── empty.7z
+│   │   │   ├── encrypted_1.7z
+│   │   │   ├── encrypted_2.7z
+│   │   │   ├── encrypted_3.7z
+│   │   │   ├── encrypted_4.7z
+│   │   │   ├── encrypted_5.7z
+│   │   │   ├── encrypted_6.7z
+│   │   │   ├── extra_payload_data.7z
+│   │   │   ├── filename_encryption.7z
+│   │   │   ├── github_14.7z
+│   │   │   ├── github_14_multi.7z
+│   │   │   ├── hidden_linux_file.7z
+│   │   │   ├── hidden_linux_folder.7z
+│   │   │   ├── lib
+│   │   │   │   ├── aarch64-linux-gnu
+│   │   │   │   │   └── liblzma.so.0
+│   │   │   │   └── powerpc64le-linux-gnu
+│   │   │   │       └── liblzma.so.0
+│   │   │   ├── longpath.7z
+│   │   │   ├── lz4.7z
+│   │   │   ├── lzma_1.7z
+│   │   │   ├── lzma2_1.7z
+│   │   │   ├── lzma2bcj2_2.7z
+│   │   │   ├── lzma2bcj2.7z
+│   │   │   ├── lzma2bcj.7z
+│   │   │   ├── lzma2_bcj_arm.7z
+│   │   │   ├── lzma2_bcj_armt.7z
+│   │   │   ├── lzma2_bcj_ia64.7z
+│   │   │   ├── lzma2_bcj_ppc.7z
+│   │   │   ├── lzma2_bcj_sparc.7z
+│   │   │   ├── lzma2delta_1.7z
+│   │   │   ├── lzma_bcj2_1.7z
+│   │   │   ├── lzma_bcj_2.7z
+│   │   │   ├── lzma_bcj_arm.7z
+│   │   │   ├── lzma_bcj_armt.7z
+│   │   │   ├── lzma_bcj_ppc.7z
+│   │   │   ├── lzma_bcj_sparc.7z
+│   │   │   ├── lzma_bcj_x86.7z
+│   │   │   ├── mblock_1.7z
+│   │   │   ├── p7zip-zstd.7z
+│   │   │   ├── ppmd.7z
+│   │   │   ├── read_reset.7z
+│   │   │   ├── root_path_arcname.7z
+│   │   │   ├── solid.7z
+│   │   │   ├── src
+│   │   │   │   └── bra.txt
+│   │   │   ├── src.zip
+│   │   │   ├── symlink_2.7z
+│   │   │   ├── symlink.7z
+│   │   │   ├── test_1.7z
+│   │   │   ├── test1.txt
+│   │   │   ├── test_2.7z
+│   │   │   ├── test_3.7z
+│   │   │   ├── test_5.7z
+│   │   │   ├── test_6.7z
+│   │   │   ├── testdata-x5-ppmd.7z
+│   │   │   ├── test_folder.7z
+│   │   │   ├── test_lzma2bcj2.7z
+│   │   │   ├── umlaut-non_solid.7z
+│   │   │   ├── umlaut-solid.7z
+│   │   │   ├── x86.bin
+│   │   │   ├── zerosize.7z
+│   │   │   ├── zstd.7z
+│   │   │   └── zstdmt-brotli.7z
+│   │   ├── __init__.py
+│   │   ├── test_archive.py
+│   │   ├── test_badfiles.py
+│   │   ├── test_basic.py
+│   │   ├── test_benchmark.py
+│   │   ├── test_cli.py
+│   │   ├── test_concurrent.py
+│   │   ├── test_encryption.py
+│   │   ├── test_extra_codecs.py
+│   │   ├── test_extract.py
+│   │   ├── test_info.py
+│   │   ├── test_misc.py
+│   │   ├── test_unit.py
+│   │   └── test_win32compat.py
+│   └── utils
+│       ├── bench_result.py
+│       ├── github_comment_bench.py
+│       ├── prof_result.py
+│       └── requirements.txt
+└── py7zr-0.22.0.tar.gz -> /home/felix/packages/python-py7zr/py7zr-0.22.0.tar.gz
+
+15 directories, 144 files

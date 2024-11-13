@@ -1,0 +1,918 @@
+src
+├── pixi-0.34.0
+│   ├── assets
+│   │   └── badge
+│   │       └── v0.json
+│   ├── Cargo.lock
+│   ├── Cargo.toml
+│   ├── CHANGELOG.md
+│   ├── CITATION.cff
+│   ├── cliff.toml
+│   ├── clippy.toml
+│   ├── CODE_OF_CONDUCT.md
+│   ├── CONTRIBUTING.md
+│   ├── crates
+│   │   ├── barrier_cell
+│   │   │   ├── Cargo.toml
+│   │   │   └── src
+│   │   │       └── lib.rs
+│   │   ├── fancy_display
+│   │   │   ├── Cargo.toml
+│   │   │   └── src
+│   │   │       └── lib.rs
+│   │   ├── pixi_config
+│   │   │   ├── Cargo.toml
+│   │   │   ├── src
+│   │   │   │   ├── lib.rs
+│   │   │   │   └── snapshots
+│   │   │   │       ├── pixi_config__tests__config_merge.snap
+│   │   │   │       └── pixi_config__tests__version_constraints.snap
+│   │   │   └── tests
+│   │   │       └── config
+│   │   │           ├── config_1.toml
+│   │   │           └── config_2.toml
+│   │   ├── pixi_consts
+│   │   │   ├── Cargo.toml
+│   │   │   └── src
+│   │   │       ├── consts.rs
+│   │   │       └── lib.rs
+│   │   ├── pixi_default_versions
+│   │   │   ├── Cargo.toml
+│   │   │   └── src
+│   │   │       └── lib.rs
+│   │   ├── pixi_manifest
+│   │   │   ├── Cargo.toml
+│   │   │   └── src
+│   │   │       ├── activation.rs
+│   │   │       ├── channel.rs
+│   │   │       ├── consts.rs
+│   │   │       ├── dependencies.rs
+│   │   │       ├── environment.rs
+│   │   │       ├── environments.rs
+│   │   │       ├── error.rs
+│   │   │       ├── feature.rs
+│   │   │       ├── features_ext.rs
+│   │   │       ├── has_features_iter.rs
+│   │   │       ├── has_manifest_ref.rs
+│   │   │       ├── lib.rs
+│   │   │       ├── manifests
+│   │   │       │   ├── manifest.rs
+│   │   │       │   ├── mod.rs
+│   │   │       │   ├── project.rs
+│   │   │       │   └── snapshots
+│   │   │       │       ├── pixi_manifest__manifests__manifest__tests__add_channels.snap
+│   │   │       │       ├── pixi_manifest__manifests__manifest__tests__add_dependency.snap
+│   │   │       │       ├── pixi_manifest__manifests__manifest__tests__add_task.snap
+│   │   │       │       ├── pixi_manifest__manifests__manifest__tests__test_remove_bar.snap
+│   │   │       │       ├── pixi_manifest__manifests__manifest__tests__test_remove_baz.snap
+│   │   │       │       ├── pixi_manifest__manifests__manifest__tests__test_remove_fooz.snap
+│   │   │       │       ├── pixi_manifest__manifests__manifest__tests__test_remove_pypi_feature_dep.snap
+│   │   │       │       ├── pixi_manifest__manifests__manifest__tests__test_remove_pypi_feature_target_dep.snap
+│   │   │       │       ├── pixi_manifest__manifests__manifest__tests__test_remove_pypi_jax.snap
+│   │   │       │       ├── pixi_manifest__manifests__manifest__tests__test_remove_pypi_requests.snap
+│   │   │       │       ├── pixi_manifest__manifests__manifest__tests__test_remove_pypi_xpackage.snap
+│   │   │       │       ├── pixi_manifest__manifests__project__tests__nameless_to_toml.snap
+│   │   │       │       ├── pixi_manifest__manifests__project__tests__test_add_environment_pixi.toml.snap
+│   │   │       │       ├── pixi_manifest__manifests__project__tests__test_add_environment_pyproject.toml.snap
+│   │   │       │       ├── pixi_manifest__manifests__project__tests__test_remove_environment_pixi.toml.snap
+│   │   │       │       └── pixi_manifest__manifests__project__tests__test_remove_environment_pyproject.toml.snap
+│   │   │       ├── metadata.rs
+│   │   │       ├── parsed_manifest.rs
+│   │   │       ├── pypi
+│   │   │       │   ├── mod.rs
+│   │   │       │   ├── pypi_options.rs
+│   │   │       │   ├── pypi_requirement.rs
+│   │   │       │   ├── pypi_requirement_types.rs
+│   │   │       │   └── snapshots
+│   │   │       │       ├── pixi_manifest__pypi__pypi_options__tests__error_on_multiple_index_strategies.snap
+│   │   │       │       ├── pixi_manifest__pypi__pypi_options__tests__error_on_multiple_primary_indexes.snap
+│   │   │       │       ├── pixi_manifest__pypi__pypi_options__tests__merge_pypi_options.snap
+│   │   │       │       ├── pixi_manifest__pypi__pypi_requirement__tests__deserialize_failing.snap
+│   │   │       │       ├── pixi_manifest__pypi__pypi_requirement__tests__deserialize_succeeding.snap
+│   │   │       │       ├── pixi_manifest__pypi__pypi_requirement__tests__from_args-2.snap
+│   │   │       │       └── pixi_manifest__pypi__pypi_requirement__tests__from_args.snap
+│   │   │       ├── pyproject.rs
+│   │   │       ├── snapshots
+│   │   │       │   ├── pixi_manifest__parsed_manifest__tests__invalid_key.snap
+│   │   │       │   ├── pixi_manifest__parsed_manifest__tests__invalid_target_specific.snap
+│   │   │       │   ├── pixi_manifest__parsed_manifest__tests__pypi_options_default_feature.snap
+│   │   │       │   ├── pixi_manifest__parsed_manifest__tests__pypy_options_project_and_default_feature.snap
+│   │   │       │   ├── pixi_manifest__parsed_manifest__tests__python_dependencies.snap
+│   │   │       │   ├── pixi_manifest__parsed_manifest__tests__target_specific_tasks.snap
+│   │   │       │   ├── pixi_manifest__pyproject__tests__add_pypi_dependency.snap
+│   │   │       │   ├── pixi_manifest__pyproject__tests__remove_pypi_dependency.snap
+│   │   │       │   ├── pixi_manifest__system_requirements__tests__fam_misspelled.snap
+│   │   │       │   ├── pixi_manifest__system_requirements__tests__lic_misspelled.snap
+│   │   │       │   ├── pixi_manifest__system_requirements__tests__unknown_key.snap
+│   │   │       │   └── pixi_manifest__system_requirements__tests__version_misspelled.snap
+│   │   │       ├── solve_group.rs
+│   │   │       ├── spec_type.rs
+│   │   │       ├── system_requirements.rs
+│   │   │       ├── target.rs
+│   │   │       ├── task.rs
+│   │   │       ├── utils
+│   │   │       │   ├── mod.rs
+│   │   │       │   └── spanned.rs
+│   │   │       └── validation.rs
+│   │   ├── pixi_progress
+│   │   │   ├── Cargo.toml
+│   │   │   └── src
+│   │   │       └── lib.rs
+│   │   ├── pixi_pty
+│   │   │   ├── Cargo.toml
+│   │   │   └── src
+│   │   │       ├── lib.rs
+│   │   │       └── unix
+│   │   │           ├── mod.rs
+│   │   │           ├── pty_process.rs
+│   │   │           └── pty_session.rs
+│   │   ├── pixi_spec
+│   │   │   ├── Cargo.toml
+│   │   │   └── src
+│   │   │       ├── detailed.rs
+│   │   │       ├── git.rs
+│   │   │       ├── lib.rs
+│   │   │       ├── path.rs
+│   │   │       ├── serde.rs
+│   │   │       ├── snapshots
+│   │   │       │   ├── pixi_spec__serde__test__round_trip.snap
+│   │   │       │   └── pixi_spec__test__into_nameless_match_spec.snap
+│   │   │       └── url.rs
+│   │   ├── pixi_utils
+│   │   │   ├── Cargo.toml
+│   │   │   ├── src
+│   │   │   │   ├── conda_environment_file.rs
+│   │   │   │   ├── executable_utils.rs
+│   │   │   │   ├── indicatif.rs
+│   │   │   │   ├── lib.rs
+│   │   │   │   ├── prefix_guard.rs
+│   │   │   │   ├── reqwest.rs
+│   │   │   │   └── snapshots
+│   │   │   │       ├── pixi_utils__conda_environment_file__tests__test_import_from_env_yaml.cockpit.yml.snap
+│   │   │   │       ├── pixi_utils__conda_environment_file__tests__test_import_from_env_yaml.conda.yml.snap
+│   │   │   │       ├── pixi_utils__conda_environment_file__tests__test_import_from_env_yaml.crnnft.yml.snap
+│   │   │   │       ├── pixi_utils__conda_environment_file__tests__test_import_from_env_yaml.let-plot.yml.snap
+│   │   │   │       └── pixi_utils__conda_environment_file__tests__test_import_from_env_yaml.test_env.yml.snap
+│   │   │   └── tests
+│   │   │       └── environment_yamls
+│   │   │           ├── cockpit.yml
+│   │   │           ├── conda.yml
+│   │   │           ├── crnnft.yml
+│   │   │           ├── let-plot.yml
+│   │   │           └── test_env.yml
+│   │   ├── pixi_uv_conversions
+│   │   │   ├── Cargo.toml
+│   │   │   └── src
+│   │   │       ├── conversions.rs
+│   │   │       ├── lib.rs
+│   │   │       └── requirements.rs
+│   │   ├── pypi_mapping
+│   │   │   ├── Cargo.toml
+│   │   │   └── src
+│   │   │       ├── custom_pypi_mapping.rs
+│   │   │       ├── lib.rs
+│   │   │       └── prefix_pypi_name_mapping.rs
+│   │   └── pypi_modifiers
+│   │       ├── Cargo.toml
+│   │       └── src
+│   │           ├── lib.rs
+│   │           ├── pypi_marker_env.rs
+│   │           └── pypi_tags.rs
+│   ├── Cross.toml
+│   ├── docs
+│   │   ├── advanced
+│   │   │   ├── authentication.md
+│   │   │   ├── channel_priority.md
+│   │   │   ├── explain_info_command.md
+│   │   │   ├── github_actions.md
+│   │   │   ├── production_deployment.md
+│   │   │   ├── pyproject_toml.md
+│   │   │   └── updates_github_actions.md
+│   │   ├── assets
+│   │   │   ├── allow-github-actions-prs-dark.png
+│   │   │   ├── allow-github-actions-prs-light.png
+│   │   │   ├── logo_dark.svg
+│   │   │   ├── pixi.png
+│   │   │   ├── pixi.webp
+│   │   │   ├── update-lockfile-dark.png
+│   │   │   └── update-lockfile-light.png
+│   │   ├── basic_usage.md
+│   │   ├── Community.md
+│   │   ├── design_proposals
+│   │   │   └── pixi_global_manifest.md
+│   │   ├── docs_hooks.py
+│   │   ├── examples
+│   │   │   ├── cpp-sdl.md
+│   │   │   ├── opencv.md
+│   │   │   └── ros2-nav2.md
+│   │   ├── FAQ.md
+│   │   ├── features
+│   │   │   ├── advanced_tasks.md
+│   │   │   ├── environment.md
+│   │   │   ├── global_tools.md
+│   │   │   ├── lockfile.md
+│   │   │   ├── multi_environment.md
+│   │   │   ├── multi_platform_configuration.md
+│   │   │   └── system_requirements.md
+│   │   ├── ide_integration
+│   │   │   ├── devcontainer.md
+│   │   │   ├── jupyterlab.md
+│   │   │   ├── pycharm.md
+│   │   │   └── r_studio.md
+│   │   ├── index.md
+│   │   ├── overrides
+│   │   │   └── partials
+│   │   │       └── footer.html
+│   │   ├── packaging.md
+│   │   ├── reference
+│   │   │   ├── cli.md
+│   │   │   ├── pixi_configuration.md
+│   │   │   └── project_configuration.md
+│   │   ├── source_files
+│   │   │   └── pixi_tomls
+│   │   │       ├── lots_of_channels.toml
+│   │   │       ├── main_pixi.toml
+│   │   │       └── simple_pixi.toml
+│   │   ├── stylesheets
+│   │   │   └── extra.css
+│   │   ├── switching_from
+│   │   │   ├── conda.md
+│   │   │   └── poetry.md
+│   │   ├── tutorials
+│   │   │   ├── python.md
+│   │   │   ├── ros2.md
+│   │   │   └── rust.md
+│   │   └── vision.md
+│   ├── examples
+│   │   ├── conda_mapping
+│   │   │   ├── pixi.lock
+│   │   │   ├── pixi.toml
+│   │   │   ├── robostack_mapping.json
+│   │   │   └── test_conda_mapping.py
+│   │   ├── constructor-minimal
+│   │   │   ├── installer
+│   │   │   │   └── construct.yaml.in
+│   │   │   ├── LICENSE
+│   │   │   ├── pixi.lock
+│   │   │   ├── pixi.toml
+│   │   │   └── README.md
+│   │   ├── cpp-sdl
+│   │   │   ├── CMakeLists.txt
+│   │   │   ├── pixi.lock
+│   │   │   ├── pixi.toml
+│   │   │   ├── README.md
+│   │   │   └── src
+│   │   │       └── main.cc
+│   │   ├── ctypes-factorial
+│   │   │   ├── pixi.lock
+│   │   │   ├── pixi.toml
+│   │   │   ├── README.md
+│   │   │   └── src
+│   │   │       ├── factorial.c
+│   │   │       ├── factorial.h
+│   │   │       └── factorial.py
+│   │   ├── detectron2-from-source
+│   │   │   ├── pixi.lock
+│   │   │   └── pyproject.toml
+│   │   ├── docker
+│   │   │   ├── docker-compose.yml
+│   │   │   ├── Dockerfile
+│   │   │   ├── docker_project
+│   │   │   │   └── __init__.py
+│   │   │   ├── pixi.lock
+│   │   │   ├── pyproject.toml
+│   │   │   ├── README.md
+│   │   │   └── tests
+│   │   │       └── test_core.py
+│   │   ├── editable-with-extras
+│   │   │   ├── package_with_extras
+│   │   │   │   ├── package_with_extras
+│   │   │   │   │   ├── hello.py
+│   │   │   │   │   └── __init__.py
+│   │   │   │   ├── pyproject.toml
+│   │   │   │   └── README.md
+│   │   │   ├── pixi.lock
+│   │   │   └── pixi.toml
+│   │   ├── flask-hello-world
+│   │   │   ├── app.py
+│   │   │   ├── pixi.lock
+│   │   │   ├── pixi.toml
+│   │   │   └── README.md
+│   │   ├── flask-hello-world-pyproject
+│   │   │   ├── flask_hello_world_pyproject
+│   │   │   │   ├── app.py
+│   │   │   │   └── __init__.py
+│   │   │   ├── pixi.lock
+│   │   │   ├── pyproject.toml
+│   │   │   ├── README.md
+│   │   │   └── tests
+│   │   │       └── test.py
+│   │   ├── geos-rs
+│   │   │   ├── Cargo.lock
+│   │   │   ├── Cargo.toml
+│   │   │   ├── pixi.lock
+│   │   │   ├── pixi.toml
+│   │   │   ├── README.md
+│   │   │   └── src
+│   │   │       └── main.rs
+│   │   ├── jupyterlab
+│   │   │   ├── Factoring.ipynb
+│   │   │   ├── Image_Browsing.ipynb
+│   │   │   ├── LorenzDifferentialEquations.ipynb
+│   │   │   ├── pixi.lock
+│   │   │   ├── pixi.toml
+│   │   │   └── README.md
+│   │   ├── lightgbm
+│   │   │   ├── Breast_cancer_data.csv
+│   │   │   ├── main.py
+│   │   │   ├── pixi.lock
+│   │   │   ├── pixi.toml
+│   │   │   └── README.md
+│   │   ├── llama-index-inference
+│   │   │   ├── inference.py
+│   │   │   ├── pixi.lock
+│   │   │   ├── pixi.toml
+│   │   │   └── README.md
+│   │   ├── multi-machine
+│   │   │   ├── pixi.lock
+│   │   │   ├── pixi.toml
+│   │   │   ├── test.py
+│   │   │   └── train.py
+│   │   ├── opencv
+│   │   │   ├── calibrate.py
+│   │   │   ├── pixi.lock
+│   │   │   ├── pixi.toml
+│   │   │   ├── README.md
+│   │   │   └── webcam_capture.py
+│   │   ├── polarify
+│   │   │   ├── pixi.lock
+│   │   │   ├── pixi.toml
+│   │   │   └── tests
+│   │   │       └── test_versions.py
+│   │   ├── pypi
+│   │   │   ├── activate.sh
+│   │   │   ├── env_setup.bat
+│   │   │   ├── pixi.lock
+│   │   │   ├── pixi.toml
+│   │   │   ├── pycosat_example.py
+│   │   │   └── README.md
+│   │   ├── pypi-custom-registry
+│   │   │   ├── pixi.lock
+│   │   │   └── pixi.toml
+│   │   ├── pypi-find-links
+│   │   │   ├── links
+│   │   │   │   └── requests-2.31.0-py3-none-any.whl
+│   │   │   ├── pixi.lock
+│   │   │   └── pixi.toml
+│   │   ├── pypi-source-deps
+│   │   │   ├── minimal-project
+│   │   │   │   ├── minimal_project
+│   │   │   │   │   ├── __init__.py
+│   │   │   │   │   └── module.py
+│   │   │   │   └── pyproject.toml
+│   │   │   ├── pixi.lock
+│   │   │   ├── pixi.toml
+│   │   │   └── test
+│   │   │       └── test_imports.py
+│   │   ├── python-library-gcp-keyring
+│   │   │   ├── pixi.lock
+│   │   │   ├── pyproject.toml
+│   │   │   ├── python_library_gcp_keyring
+│   │   │   │   └── __init__.py
+│   │   │   └── tests
+│   │   │       └── test_hi.py
+│   │   ├── qgis
+│   │   │   ├── earthquakes_example.qgz
+│   │   │   ├── get_data.py
+│   │   │   ├── pixi.lock
+│   │   │   └── pixi.toml
+│   │   ├── r
+│   │   │   ├── example-plot.R
+│   │   │   ├── pixi.lock
+│   │   │   └── pixi.toml
+│   │   ├── README.md
+│   │   ├── readthedocs-extend
+│   │   │   ├── docs
+│   │   │   │   ├── conf.py
+│   │   │   │   ├── environment.yml
+│   │   │   │   ├── index.md
+│   │   │   │   └── rtd.rst
+│   │   │   ├── pixi.lock
+│   │   │   ├── pixi.toml
+│   │   │   └── README.md
+│   │   ├── readthedocs-override
+│   │   │   ├── docs
+│   │   │   │   └── index.md
+│   │   │   ├── mkdocs.yml
+│   │   │   ├── pixi.lock
+│   │   │   ├── pyproject.toml
+│   │   │   └── README.md
+│   │   ├── rerun_example
+│   │   │   ├── dna_example.py
+│   │   │   ├── force_driven_lockfile_graph.py
+│   │   │   ├── pixi.lock
+│   │   │   └── pixi.toml
+│   │   ├── ros2-nav2
+│   │   │   ├── pixi.lock
+│   │   │   ├── pixi.toml
+│   │   │   └── README.md
+│   │   ├── solve-groups
+│   │   │   ├── pixi.lock
+│   │   │   ├── pixi.toml
+│   │   │   └── test_imports.py
+│   │   ├── turtlesim
+│   │   │   ├── pixi.lock
+│   │   │   ├── pixi.toml
+│   │   │   ├── README.md
+│   │   │   ├── turtle_marker_viz_ROS1.py
+│   │   │   └── turtle_marker_viz_ROS2.py
+│   │   └── wasm-jupyterlite
+│   │       ├── files
+│   │       │   └── Matplotlib.ipynb
+│   │       ├── pixi.lock
+│   │       ├── pixi.toml
+│   │       └── README.md
+│   ├── install
+│   │   ├── docs_hooks.py
+│   │   ├── install.ps1
+│   │   ├── install.sh
+│   │   └── windows
+│   │       ├── main.wxs
+│   │       └── resources
+│   │           ├── Banner.bmp
+│   │           ├── Dialog.bmp
+│   │           └── LICENSE.rtf
+│   ├── LICENSE
+│   ├── mkdocs.yml
+│   ├── pixi.lock
+│   ├── pixi.toml
+│   ├── pytest.ini
+│   ├── README.md
+│   ├── rust-toolchain
+│   ├── schema
+│   │   ├── docs_hooks.py
+│   │   ├── examples
+│   │   │   ├── invalid
+│   │   │   │   ├── bad_env_variable.toml
+│   │   │   │   ├── bad_feature_platform.toml
+│   │   │   │   ├── empty.toml
+│   │   │   │   └── no_channel.toml
+│   │   │   └── valid
+│   │   │       ├── full.toml
+│   │   │       └── minimal.toml
+│   │   ├── model.py
+│   │   ├── schema.json
+│   │   └── test_manifest.py
+│   ├── scripts
+│   │   ├── activate.bat
+│   │   ├── activate.sh
+│   │   ├── install.py
+│   │   └── release.py
+│   ├── src
+│   │   ├── activation.rs
+│   │   ├── cli
+│   │   │   ├── add.rs
+│   │   │   ├── clean.rs
+│   │   │   ├── cli_config.rs
+│   │   │   ├── completion.rs
+│   │   │   ├── config.rs
+│   │   │   ├── exec.rs
+│   │   │   ├── global
+│   │   │   │   ├── add.rs
+│   │   │   │   ├── edit.rs
+│   │   │   │   ├── expose.rs
+│   │   │   │   ├── install.rs
+│   │   │   │   ├── list.rs
+│   │   │   │   ├── mod.rs
+│   │   │   │   ├── remove.rs
+│   │   │   │   ├── sync.rs
+│   │   │   │   ├── uninstall.rs
+│   │   │   │   ├── update.rs
+│   │   │   │   ├── upgrade_all.rs
+│   │   │   │   └── upgrade.rs
+│   │   │   ├── has_specs.rs
+│   │   │   ├── info.rs
+│   │   │   ├── init.rs
+│   │   │   ├── install.rs
+│   │   │   ├── list.rs
+│   │   │   ├── mod.rs
+│   │   │   ├── project
+│   │   │   │   ├── channel
+│   │   │   │   │   ├── add.rs
+│   │   │   │   │   ├── list.rs
+│   │   │   │   │   ├── mod.rs
+│   │   │   │   │   └── remove.rs
+│   │   │   │   ├── description
+│   │   │   │   │   ├── get.rs
+│   │   │   │   │   ├── mod.rs
+│   │   │   │   │   └── set.rs
+│   │   │   │   ├── environment
+│   │   │   │   │   ├── add.rs
+│   │   │   │   │   ├── list.rs
+│   │   │   │   │   ├── mod.rs
+│   │   │   │   │   └── remove.rs
+│   │   │   │   ├── export
+│   │   │   │   │   ├── conda_environment.rs
+│   │   │   │   │   ├── conda_explicit_spec.rs
+│   │   │   │   │   ├── mod.rs
+│   │   │   │   │   ├── snapshots
+│   │   │   │   │   │   ├── pixi__cli__project__export__conda_environment__tests__test_export_conda_env_yaml_pyproject_panic.snap
+│   │   │   │   │   │   ├── pixi__cli__project__export__conda_environment__tests__test_export_conda_env_yaml.snap
+│   │   │   │   │   │   ├── pixi__cli__project__export__conda_environment__tests__test_export_conda_env_yaml_with_defaults.snap
+│   │   │   │   │   │   ├── pixi__cli__project__export__conda_environment__tests__test_export_conda_env_yaml_with_pip_custom_registry.snap
+│   │   │   │   │   │   ├── pixi__cli__project__export__conda_environment__tests__test_export_conda_env_yaml_with_pip_extras.snap
+│   │   │   │   │   │   ├── pixi__cli__project__export__conda_environment__tests__test_export_conda_env_yaml_with_pip_find_links.snap
+│   │   │   │   │   │   ├── pixi__cli__project__export__conda_environment__tests__test_export_conda_env_yaml_with_source_editable.snap
+│   │   │   │   │   │   ├── pixi__cli__project__export__conda_explicit_spec__tests__test_render_conda_explicit_spec_default_linux-64.snap
+│   │   │   │   │   │   ├── pixi__cli__project__export__conda_explicit_spec__tests__test_render_conda_explicit_spec_default_osx-64.snap
+│   │   │   │   │   │   ├── pixi__cli__project__export__conda_explicit_spec__tests__test_render_conda_explicit_spec_default_osx-arm64.snap
+│   │   │   │   │   │   ├── pixi__cli__project__export__conda_explicit_spec__tests__test_render_conda_explicit_spec_test_linux-64.snap
+│   │   │   │   │   │   ├── pixi__cli__project__export__conda_explicit_spec__tests__test_render_conda_explicit_spec_test_osx-64.snap
+│   │   │   │   │   │   └── pixi__cli__project__export__conda_explicit_spec__tests__test_render_conda_explicit_spec_test_osx-arm64.snap
+│   │   │   │   │   └── test-data
+│   │   │   │   │       └── testenv
+│   │   │   │   │           ├── pixi.lock
+│   │   │   │   │           └── pixi.toml
+│   │   │   │   ├── mod.rs
+│   │   │   │   ├── platform
+│   │   │   │   │   ├── add.rs
+│   │   │   │   │   ├── list.rs
+│   │   │   │   │   ├── mod.rs
+│   │   │   │   │   └── remove.rs
+│   │   │   │   └── version
+│   │   │   │       ├── bump.rs
+│   │   │   │       ├── get.rs
+│   │   │   │       ├── mod.rs
+│   │   │   │       └── set.rs
+│   │   │   ├── remove.rs
+│   │   │   ├── run.rs
+│   │   │   ├── search.rs
+│   │   │   ├── self_update.rs
+│   │   │   ├── shell_hook.rs
+│   │   │   ├── shell.rs
+│   │   │   ├── snapshots
+│   │   │   │   ├── pixi__cli__completion__tests__bash_completion.snap
+│   │   │   │   ├── pixi__cli__completion__tests__nushell_completion.snap
+│   │   │   │   └── pixi__cli__completion__tests__zsh_completion.snap
+│   │   │   ├── task.rs
+│   │   │   ├── tree.rs
+│   │   │   ├── update.rs
+│   │   │   └── upload.rs
+│   │   ├── conda_pypi_clobber.rs
+│   │   ├── environment.rs
+│   │   ├── global
+│   │   │   ├── common.rs
+│   │   │   ├── install.rs
+│   │   │   ├── list.rs
+│   │   │   ├── mod.rs
+│   │   │   ├── project
+│   │   │   │   ├── environment.rs
+│   │   │   │   ├── manifest.rs
+│   │   │   │   ├── mod.rs
+│   │   │   │   ├── parsed_manifest.rs
+│   │   │   │   └── snapshots
+│   │   │   │       ├── pixi__global__project__manifest__tests__add_dependency.snap
+│   │   │   │       ├── pixi__global__project__manifest__tests__remove_dependency.snap
+│   │   │   │       ├── pixi__global__project__parsed_manifest__tests__duplicate_dependency.snap
+│   │   │   │       ├── pixi__global__project__parsed_manifest__tests__duplicate_exposed.snap
+│   │   │   │       ├── pixi__global__project__parsed_manifest__tests__expose_pixi.snap
+│   │   │   │       └── pixi__global__project__parsed_manifest__tests__invalid_key.snap
+│   │   │   ├── snapshots
+│   │   │   │   └── pixi__global__expose__tests__expose_add_when_binary_exist.snap
+│   │   │   └── test_data
+│   │   │       ├── conda-meta
+│   │   │       │   ├── non_conda_meta_data_file
+│   │   │       │   ├── python-3.12.3-hab00c5b_0_cpython.json
+│   │   │       │   └── _r-mutex-1.0.1-anacondar_1.json
+│   │   │       └── lockfiles
+│   │   │           ├── ripgrep_bat.lock
+│   │   │           └── ripgrep.lock
+│   │   ├── install_pypi.rs
+│   │   ├── install_wheel.rs
+│   │   ├── lib.rs
+│   │   ├── lock_file
+│   │   │   ├── mod.rs
+│   │   │   ├── outdated.rs
+│   │   │   ├── package_identifier.rs
+│   │   │   ├── records_by_name.rs
+│   │   │   ├── resolve
+│   │   │   │   ├── conda.rs
+│   │   │   │   ├── mod.rs
+│   │   │   │   ├── pypi.rs
+│   │   │   │   ├── resolver_provider.rs
+│   │   │   │   └── uv_resolution_context.rs
+│   │   │   ├── satisfiability.rs
+│   │   │   ├── snapshots
+│   │   │   │   ├── pixi__lock_file__satisfiability__tests__failing_satisiability@expected-editable-multiple__pixi.toml.snap
+│   │   │   │   ├── pixi__lock_file__satisfiability__tests__failing_satisiability@expected-editable__pixi.toml.snap
+│   │   │   │   ├── pixi__lock_file__satisfiability__tests__failing_satisiability@mismatched-spec__pixi.toml.snap
+│   │   │   │   ├── pixi__lock_file__satisfiability__tests__failing_satisiability@missing-dependency__pixi.toml.snap
+│   │   │   │   ├── pixi__lock_file__satisfiability__tests__failing_satisiability@missing-pypi-extra__pixi.toml.snap
+│   │   │   │   └── pixi__lock_file__satisfiability__tests__failing_satisiability@solve-groups-pypi__pixi.toml.snap
+│   │   │   ├── update.rs
+│   │   │   └── utils.rs
+│   │   ├── main.rs
+│   │   ├── prefix.rs
+│   │   ├── project
+│   │   │   ├── environment.rs
+│   │   │   ├── errors.rs
+│   │   │   ├── grouped_environment.rs
+│   │   │   ├── has_project_ref.rs
+│   │   │   ├── mod.rs
+│   │   │   ├── repodata.rs
+│   │   │   ├── snapshots
+│   │   │   │   ├── pixi__project__environment__tests__dependencies.snap
+│   │   │   │   ├── pixi__project__tests__activation_scripts.snap
+│   │   │   │   ├── pixi__project__tests__dependency_sets.snap
+│   │   │   │   ├── pixi__project__tests__dependency_target_sets.snap
+│   │   │   │   ├── pixi__project__tests__mapping_ensure_feature_channels_also_checked.snap
+│   │   │   │   ├── pixi__project__tests__target_specific_tasks-2.snap
+│   │   │   │   ├── pixi__project__tests__target_specific_tasks-3.snap
+│   │   │   │   ├── pixi__project__tests__target_specific_tasks.snap
+│   │   │   │   ├── pixi__project__virtual_packages__tests__test_get_minimal_virtual_packages.linux-64.snap
+│   │   │   │   ├── pixi__project__virtual_packages__tests__test_get_minimal_virtual_packages.linux-aarch64.snap
+│   │   │   │   ├── pixi__project__virtual_packages__tests__test_get_minimal_virtual_packages.linux-ppc64le.snap
+│   │   │   │   ├── pixi__project__virtual_packages__tests__test_get_minimal_virtual_packages.noarch.snap
+│   │   │   │   ├── pixi__project__virtual_packages__tests__test_get_minimal_virtual_packages.osx-64.snap
+│   │   │   │   ├── pixi__project__virtual_packages__tests__test_get_minimal_virtual_packages.osx-arm64.snap
+│   │   │   │   └── pixi__project__virtual_packages__tests__test_get_minimal_virtual_packages.win-64.snap
+│   │   │   ├── solve_group.rs
+│   │   │   └── virtual_packages.rs
+│   │   ├── prompt.rs
+│   │   ├── repodata.rs
+│   │   ├── rlimit.rs
+│   │   ├── shell_snippets
+│   │   │   ├── pixi-bash.sh
+│   │   │   └── pixi-zsh.sh
+│   │   ├── task
+│   │   │   ├── error.rs
+│   │   │   ├── executable_task.rs
+│   │   │   ├── file_hashes.rs
+│   │   │   ├── mod.rs
+│   │   │   ├── task_environment.rs
+│   │   │   ├── task_graph.rs
+│   │   │   └── task_hash.rs
+│   │   └── uv_reporter.rs
+│   ├── tbump.toml
+│   ├── tests
+│   │   ├── add_tests.rs
+│   │   ├── common
+│   │   │   ├── builders.rs
+│   │   │   ├── client.rs
+│   │   │   ├── mod.rs
+│   │   │   └── package_database.rs
+│   │   ├── init_tests.rs
+│   │   ├── install_tests.rs
+│   │   ├── integration
+│   │   │   ├── common.py
+│   │   │   ├── conftest.py
+│   │   │   ├── __init__.py
+│   │   │   ├── test_data
+│   │   │   │   ├── channels
+│   │   │   │   │   ├── dummy_channel_1
+│   │   │   │   │   │   ├── linux-64
+│   │   │   │   │   │   │   ├── dummy-a-0.1.0-hb0f4dca_0.conda
+│   │   │   │   │   │   │   ├── dummy-b-0.1.0-hb0f4dca_0.conda
+│   │   │   │   │   │   │   ├── dummy-c-0.1.0-hb0f4dca_0.conda
+│   │   │   │   │   │   │   ├── dummy-d-0.1.0-hb0f4dca_0.conda
+│   │   │   │   │   │   │   ├── dummy_e-0.1.0-hb0f4dca_0.conda
+│   │   │   │   │   │   │   └── repodata.json
+│   │   │   │   │   │   ├── noarch
+│   │   │   │   │   │   │   └── repodata.json
+│   │   │   │   │   │   ├── osx-64
+│   │   │   │   │   │   │   ├── dummy-a-0.1.0-h0dc7051_0.conda
+│   │   │   │   │   │   │   ├── dummy-b-0.1.0-h0dc7051_0.conda
+│   │   │   │   │   │   │   ├── dummy-c-0.1.0-h0dc7051_0.conda
+│   │   │   │   │   │   │   ├── dummy-d-0.1.0-h0dc7051_0.conda
+│   │   │   │   │   │   │   ├── dummy_e-0.1.0-h0dc7051_0.conda
+│   │   │   │   │   │   │   └── repodata.json
+│   │   │   │   │   │   ├── osx-arm64
+│   │   │   │   │   │   │   ├── dummy-a-0.1.0-h60d57d3_0.conda
+│   │   │   │   │   │   │   ├── dummy-b-0.1.0-h60d57d3_0.conda
+│   │   │   │   │   │   │   ├── dummy-c-0.1.0-h60d57d3_0.conda
+│   │   │   │   │   │   │   ├── dummy-d-0.1.0-h60d57d3_0.conda
+│   │   │   │   │   │   │   ├── dummy_e-0.1.0-h60d57d3_0.conda
+│   │   │   │   │   │   │   └── repodata.json
+│   │   │   │   │   │   └── win-64
+│   │   │   │   │   │       ├── dummy-a-0.1.0-h9490d1a_0.conda
+│   │   │   │   │   │       ├── dummy-b-0.1.0-h9490d1a_0.conda
+│   │   │   │   │   │       ├── dummy-c-0.1.0-h9490d1a_0.conda
+│   │   │   │   │   │       ├── dummy-d-0.1.0-h9490d1a_0.conda
+│   │   │   │   │   │       ├── dummy_e-0.1.0-h9490d1a_0.conda
+│   │   │   │   │   │       └── repodata.json
+│   │   │   │   │   ├── dummy_channel_2
+│   │   │   │   │   │   ├── linux-64
+│   │   │   │   │   │   │   ├── dummy-b-0.1.0-hb0f4dca_0.conda
+│   │   │   │   │   │   │   ├── dummy-x-0.1.0-hb0f4dca_0.conda
+│   │   │   │   │   │   │   └── repodata.json
+│   │   │   │   │   │   ├── noarch
+│   │   │   │   │   │   │   └── repodata.json
+│   │   │   │   │   │   ├── osx-64
+│   │   │   │   │   │   │   ├── dummy-b-0.1.0-h0dc7051_0.conda
+│   │   │   │   │   │   │   ├── dummy-x-0.1.0-h0dc7051_0.conda
+│   │   │   │   │   │   │   └── repodata.json
+│   │   │   │   │   │   ├── osx-arm64
+│   │   │   │   │   │   │   ├── dummy-b-0.1.0-h60d57d3_0.conda
+│   │   │   │   │   │   │   ├── dummy-x-0.1.0-h60d57d3_0.conda
+│   │   │   │   │   │   │   └── repodata.json
+│   │   │   │   │   │   └── win-64
+│   │   │   │   │   │       ├── dummy-b-0.1.0-h9490d1a_0.conda
+│   │   │   │   │   │       ├── dummy-x-0.1.0-h9490d1a_0.conda
+│   │   │   │   │   │       └── repodata.json
+│   │   │   │   │   ├── global_update_channel_1
+│   │   │   │   │   │   ├── linux-64
+│   │   │   │   │   │   │   ├── package-0.1.0-hb0f4dca_0.conda
+│   │   │   │   │   │   │   ├── package-0.2.0-hb0f4dca_0.conda
+│   │   │   │   │   │   │   ├── package2-0.1.0-hb0f4dca_0.conda
+│   │   │   │   │   │   │   ├── package2-0.2.0-hb0f4dca_0.conda
+│   │   │   │   │   │   │   └── repodata.json
+│   │   │   │   │   │   ├── noarch
+│   │   │   │   │   │   │   └── repodata.json
+│   │   │   │   │   │   ├── osx-64
+│   │   │   │   │   │   │   ├── package-0.1.0-h0dc7051_0.conda
+│   │   │   │   │   │   │   ├── package-0.2.0-h0dc7051_0.conda
+│   │   │   │   │   │   │   ├── package2-0.1.0-h0dc7051_0.conda
+│   │   │   │   │   │   │   ├── package2-0.2.0-h0dc7051_0.conda
+│   │   │   │   │   │   │   └── repodata.json
+│   │   │   │   │   │   ├── osx-arm64
+│   │   │   │   │   │   │   ├── package-0.1.0-h60d57d3_0.conda
+│   │   │   │   │   │   │   ├── package-0.2.0-h60d57d3_0.conda
+│   │   │   │   │   │   │   ├── package2-0.1.0-h60d57d3_0.conda
+│   │   │   │   │   │   │   ├── package2-0.2.0-h60d57d3_0.conda
+│   │   │   │   │   │   │   └── repodata.json
+│   │   │   │   │   │   └── win-64
+│   │   │   │   │   │       ├── package-0.1.0-h9490d1a_0.conda
+│   │   │   │   │   │       ├── package-0.2.0-h9490d1a_0.conda
+│   │   │   │   │   │       ├── package2-0.1.0-h9490d1a_0.conda
+│   │   │   │   │   │       ├── package2-0.2.0-h9490d1a_0.conda
+│   │   │   │   │   │       └── repodata.json
+│   │   │   │   │   └── non_self_expose_channel
+│   │   │   │   │       ├── linux-64
+│   │   │   │   │       │   ├── jupyter-0.1.0-hb0f4dca_0.conda
+│   │   │   │   │       │   ├── jupyter-core-0.1.0-hb0f4dca_0.conda
+│   │   │   │   │       │   └── repodata.json
+│   │   │   │   │       ├── noarch
+│   │   │   │   │       │   └── repodata.json
+│   │   │   │   │       ├── osx-64
+│   │   │   │   │       │   ├── jupyter-0.1.0-h0dc7051_0.conda
+│   │   │   │   │       │   ├── jupyter-core-0.1.0-h0dc7051_0.conda
+│   │   │   │   │       │   └── repodata.json
+│   │   │   │   │       ├── osx-arm64
+│   │   │   │   │       │   ├── jupyter-0.1.0-h60d57d3_0.conda
+│   │   │   │   │       │   ├── jupyter-core-0.1.0-h60d57d3_0.conda
+│   │   │   │   │       │   └── repodata.json
+│   │   │   │   │       └── win-64
+│   │   │   │   │           ├── jupyter-0.1.0-h9490d1a_0.conda
+│   │   │   │   │           ├── jupyter-core-0.1.0-h9490d1a_0.conda
+│   │   │   │   │           └── repodata.json
+│   │   │   │   ├── mappings.toml
+│   │   │   │   ├── recipes
+│   │   │   │   │   ├── dummy_channel_1.yaml
+│   │   │   │   │   ├── dummy_channel_2.yaml
+│   │   │   │   │   ├── global_update_channel_1_010.yaml
+│   │   │   │   │   ├── global_update_channel_1_020.yaml
+│   │   │   │   │   └── non_self_expose_channel.yaml
+│   │   │   │   └── update-channels.py
+│   │   │   ├── test_global.py
+│   │   │   ├── test_main_cli.py
+│   │   │   └── test_run_cli.py
+│   │   ├── mapping_files
+│   │   │   ├── compressed_mapping.json
+│   │   │   └── custom_mapping.json
+│   │   ├── non-satisfiability
+│   │   │   ├── expected-editable
+│   │   │   │   ├── foo
+│   │   │   │   │   └── pyproject.toml
+│   │   │   │   ├── pixi.lock
+│   │   │   │   └── pixi.toml
+│   │   │   ├── expected-editable-multiple
+│   │   │   │   ├── bar
+│   │   │   │   │   └── pyproject.toml
+│   │   │   │   ├── baz
+│   │   │   │   │   └── pyproject.toml
+│   │   │   │   ├── foo
+│   │   │   │   │   └── pyproject.toml
+│   │   │   │   ├── pixi.lock
+│   │   │   │   └── pixi.toml
+│   │   │   ├── mismatched-spec
+│   │   │   │   ├── pixi.lock
+│   │   │   │   └── pixi.toml
+│   │   │   ├── missing-dependency
+│   │   │   │   ├── pixi.lock
+│   │   │   │   └── pixi.toml
+│   │   │   ├── missing-pypi-extra
+│   │   │   │   ├── pixi.lock
+│   │   │   │   └── pixi.toml
+│   │   │   └── solve-groups-pypi
+│   │   │       ├── pixi.lock
+│   │   │       └── pixi.toml
+│   │   ├── pixi_tomls
+│   │   │   ├── many_targets.toml
+│   │   │   └── pyproject_no_pixi.toml
+│   │   ├── project_tests.rs
+│   │   ├── pypi-indexes
+│   │   │   ├── generate-indexes.py
+│   │   │   ├── multiple-indexes-a
+│   │   │   │   ├── flat
+│   │   │   │   │   ├── foo-1.0.0-py2.py3-none-any.whl
+│   │   │   │   │   └── foo-1.0.0.tar.gz
+│   │   │   │   ├── index
+│   │   │   │   │   ├── foo
+│   │   │   │   │   │   ├── foo-1.0.0-py2.py3-none-any.whl
+│   │   │   │   │   │   ├── foo-1.0.0.tar.gz
+│   │   │   │   │   │   └── index.html
+│   │   │   │   │   └── index.html
+│   │   │   │   └── src
+│   │   │   │       └── foo-1.0.0
+│   │   │   │           ├── pyproject.toml
+│   │   │   │           └── src
+│   │   │   │               └── foo
+│   │   │   │                   └── __init__.py
+│   │   │   ├── multiple-indexes-b
+│   │   │   │   ├── flat
+│   │   │   │   │   ├── foo-2.0.0-py2.py3-none-any.whl
+│   │   │   │   │   └── foo-2.0.0.tar.gz
+│   │   │   │   ├── index
+│   │   │   │   │   ├── foo
+│   │   │   │   │   │   ├── foo-2.0.0-py2.py3-none-any.whl
+│   │   │   │   │   │   ├── foo-2.0.0.tar.gz
+│   │   │   │   │   │   └── index.html
+│   │   │   │   │   └── index.html
+│   │   │   │   └── src
+│   │   │   │       └── foo-2.0.0
+│   │   │   │           ├── pyproject.toml
+│   │   │   │           └── src
+│   │   │   │               └── foo
+│   │   │   │                   └── __init__.py
+│   │   │   └── multiple-indexes-c
+│   │   │       ├── flat
+│   │   │       │   ├── foo-3.0.0-py2.py3-none-any.whl
+│   │   │       │   └── foo-3.0.0.tar.gz
+│   │   │       ├── index
+│   │   │       │   ├── foo
+│   │   │       │   │   ├── foo-3.0.0-py2.py3-none-any.whl
+│   │   │       │   │   ├── foo-3.0.0.tar.gz
+│   │   │       │   │   └── index.html
+│   │   │       │   └── index.html
+│   │   │       └── src
+│   │   │           └── foo-3.0.0
+│   │   │               ├── pyproject.toml
+│   │   │               └── src
+│   │   │                   └── foo
+│   │   │                       └── __init__.py
+│   │   ├── pypi_proxy.py
+│   │   ├── pypi-tests.rs
+│   │   ├── run_all_examples.py
+│   │   ├── satisfiability
+│   │   │   ├── absolute-paths
+│   │   │   │   ├── pixi.lock
+│   │   │   │   ├── pixi.toml
+│   │   │   │   └── projects
+│   │   │   │       └── foo
+│   │   │   │           └── pyproject.toml
+│   │   │   ├── editable-non-editable
+│   │   │   │   ├── bar
+│   │   │   │   │   └── pyproject.toml
+│   │   │   │   ├── foo
+│   │   │   │   │   └── pyproject.toml
+│   │   │   │   ├── pixi.lock
+│   │   │   │   └── pixi.toml
+│   │   │   ├── old_lock_file
+│   │   │   │   ├── pixi.lock
+│   │   │   │   └── pyproject.toml
+│   │   │   ├── pypi-deps-not-in-lock
+│   │   │   │   ├── pixi.lock
+│   │   │   │   └── pixi.toml
+│   │   │   ├── pypi-extras
+│   │   │   │   ├── has-extras
+│   │   │   │   │   └── pyproject.toml
+│   │   │   │   ├── pixi.lock
+│   │   │   │   ├── pixi.toml
+│   │   │   │   └── use-with-extras
+│   │   │   │       └── pyproject.toml
+│   │   │   └── solve-groups-pypi
+│   │   │       ├── pixi.lock
+│   │   │       └── pixi.toml
+│   │   ├── snapshots
+│   │   │   ├── project_tests__parse_project-2.snap
+│   │   │   ├── project_tests__parse_project-3.snap
+│   │   │   └── project_tests__parse_project.snap
+│   │   ├── solve_group_tests.rs
+│   │   ├── task_tests.rs
+│   │   ├── test_activation.rs
+│   │   ├── test_examples.sh
+│   │   ├── test_export.sh
+│   │   ├── update_tests.rs
+│   │   └── wheel_tests
+│   │       ├── conftest.py
+│   │       ├── generate_summaries.py
+│   │       ├── helpers.py
+│   │       ├── read_wheels.py
+│   │       ├── record_results.py
+│   │       ├── test_common_wheels.py
+│   │       ├── test_read_wheels.py
+│   │       └── wheels.toml
+│   └── typos.toml
+└── pixi-0.34.0.tar.gz -> /home/felix/packages/pixi/pixi-0.34.0.tar.gz
+
+230 directories, 686 files

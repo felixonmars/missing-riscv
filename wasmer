@@ -1,0 +1,2612 @@
+src
+├── reproducible-builds.patch -> /home/felix/packages/wasmer/reproducible-builds.patch
+├── wasmer-5.0.1
+│   ├── assets
+│   │   ├── diagrams
+│   │   │   ├── Diagram_module_compilation.png
+│   │   │   ├── Diagram_module_compilation.svg
+│   │   │   ├── Diagram_module_instantiation.png
+│   │   │   ├── Diagram_module_instantiation.svg
+│   │   │   ├── Diagram_module_serialization.png
+│   │   │   └── Diagram_module_serialization.svg
+│   │   ├── languages
+│   │   │   ├── cpp.svg
+│   │   │   ├── crystal.svg
+│   │   │   ├── csharp.svg
+│   │   │   ├── c.svg
+│   │   │   ├── dart.svg
+│   │   │   ├── d.svg
+│   │   │   ├── elixir.svg
+│   │   │   ├── go.svg
+│   │   │   ├── java.svg
+│   │   │   ├── js.svg
+│   │   │   ├── julia.svg
+│   │   │   ├── lisp.svg
+│   │   │   ├── ocaml.svg
+│   │   │   ├── php.svg
+│   │   │   ├── postgres.svg
+│   │   │   ├── python.svg
+│   │   │   ├── r.svg
+│   │   │   ├── ruby.svg
+│   │   │   ├── rust.svg
+│   │   │   ├── swift.svg
+│   │   │   └── vlang.svg
+│   │   ├── logo.png
+│   │   ├── logo-white.png
+│   │   └── README.md
+│   ├── benches
+│   │   ├── compiler_run.rs
+│   │   ├── deserialize_modules.rs
+│   │   ├── import_functions.rs
+│   │   ├── mods
+│   │   │   ├── argon2.wasm
+│   │   │   ├── bulk_ops.wasm
+│   │   │   ├── counter.wasm
+│   │   │   ├── fib_iter.wasm
+│   │   │   ├── fib_rec.wasm
+│   │   │   ├── matmul.wasm
+│   │   │   └── primes.wasm
+│   │   ├── README.md
+│   │   └── static_and_dynamic_functions.rs
+│   ├── build.rs
+│   ├── Cargo.lock
+│   ├── Cargo.toml
+│   ├── CHANGELOG.md
+│   ├── deny.toml
+│   ├── docs
+│   │   ├── ATTRIBUTIONS.md
+│   │   ├── BUILD.md
+│   │   ├── cn
+│   │   │   └── README.md
+│   │   ├── CONTRIBUTING.md
+│   │   ├── de
+│   │   │   └── README.md
+│   │   ├── deps_dedup.dot
+│   │   ├── deps_dedup.svg
+│   │   ├── dev
+│   │   │   ├── create-exe.md
+│   │   │   └── release.md
+│   │   ├── en
+│   │   │   ├── examples-coredump.md
+│   │   │   └── wamr.md
+│   │   ├── es
+│   │   │   └── README.md
+│   │   ├── fr
+│   │   │   └── README.md
+│   │   ├── ja
+│   │   │   └── README.md
+│   │   ├── journal.md
+│   │   ├── ko
+│   │   │   └── README.md
+│   │   ├── migration_to_1.0.0.md
+│   │   ├── migration_to_3.0.0.md
+│   │   ├── PACKAGING.md
+│   │   ├── README.md
+│   │   ├── RISCV.md
+│   │   ├── schema
+│   │   │   └── generated
+│   │   │       └── jsonschema
+│   │   │           └── types
+│   │   │               └── AppConfigV1.schema.json
+│   │   ├── SECURITY.md
+│   │   └── TEST.md
+│   ├── examples
+│   │   ├── compiler_cranelift.rs
+│   │   ├── compiler_llvm.rs
+│   │   ├── compiler_singlepass.rs
+│   │   ├── early_exit.rs
+│   │   ├── engine_cross_compilation.rs
+│   │   ├── engine_dylib.rs
+│   │   ├── engine_headless.rs
+│   │   ├── engine.rs
+│   │   ├── errors.rs
+│   │   ├── exports_function.rs
+│   │   ├── exports_global.rs
+│   │   ├── exports_memory.rs
+│   │   ├── features.rs
+│   │   ├── hello_world.rs
+│   │   ├── http_dynamic_size.rs
+│   │   ├── imports_exports.rs
+│   │   ├── imports_function_env_global.rs
+│   │   ├── imports_function_env.rs
+│   │   ├── imports_function.rs
+│   │   ├── imports_global.rs
+│   │   ├── instance.rs
+│   │   ├── memory.rs
+│   │   ├── metering.rs
+│   │   ├── platform_ios_headless.rs
+│   │   ├── README.md
+│   │   ├── table.rs
+│   │   ├── tunables_limit_memory.rs
+│   │   ├── wasi_manual_setup.rs
+│   │   ├── wasi_pipes.rs
+│   │   └── wasi.rs
+│   ├── flake.lock
+│   ├── flake.nix
+│   ├── fuzz
+│   │   ├── Cargo.toml
+│   │   ├── fuzz_targets
+│   │   │   ├── deterministic.rs
+│   │   │   ├── equivalence_universal.rs
+│   │   │   ├── metering.rs
+│   │   │   ├── universal_cranelift.rs
+│   │   │   ├── universal_llvm.rs
+│   │   │   └── universal_singlepass.rs
+│   │   └── README.md
+│   ├── lib
+│   │   ├── api
+│   │   │   ├── build.rs
+│   │   │   ├── Cargo.toml
+│   │   │   ├── macro-wasmer-universal-test
+│   │   │   │   ├── Cargo.toml
+│   │   │   │   └── src
+│   │   │   │       └── lib.rs
+│   │   │   ├── README.md
+│   │   │   ├── src
+│   │   │   │   ├── access.rs
+│   │   │   │   ├── c_api
+│   │   │   │   │   ├── as_c.rs
+│   │   │   │   │   ├── bindings.rs
+│   │   │   │   │   ├── engine.rs
+│   │   │   │   │   ├── errors.rs
+│   │   │   │   │   ├── externals
+│   │   │   │   │   │   ├── function.rs
+│   │   │   │   │   │   ├── global.rs
+│   │   │   │   │   │   ├── memory.rs
+│   │   │   │   │   │   ├── memory_view.rs
+│   │   │   │   │   │   ├── mod.rs
+│   │   │   │   │   │   └── table.rs
+│   │   │   │   │   ├── extern_ref.rs
+│   │   │   │   │   ├── instance.rs
+│   │   │   │   │   ├── mem_access.rs
+│   │   │   │   │   ├── mod.rs
+│   │   │   │   │   ├── module.rs
+│   │   │   │   │   ├── store.rs
+│   │   │   │   │   ├── trap.rs
+│   │   │   │   │   ├── typed_function.rs
+│   │   │   │   │   └── vm.rs
+│   │   │   │   ├── engine.rs
+│   │   │   │   ├── errors.rs
+│   │   │   │   ├── exports.rs
+│   │   │   │   ├── externals
+│   │   │   │   │   ├── function.rs
+│   │   │   │   │   ├── global.rs
+│   │   │   │   │   ├── memory.rs
+│   │   │   │   │   ├── memory_view.rs
+│   │   │   │   │   ├── mod.rs
+│   │   │   │   │   └── table.rs
+│   │   │   │   ├── extern_ref.rs
+│   │   │   │   ├── function_env.rs
+│   │   │   │   ├── imports.rs
+│   │   │   │   ├── instance.rs
+│   │   │   │   ├── into_bytes.rs
+│   │   │   │   ├── js
+│   │   │   │   │   ├── as_js.rs
+│   │   │   │   │   ├── engine.rs
+│   │   │   │   │   ├── errors.rs
+│   │   │   │   │   ├── externals
+│   │   │   │   │   │   ├── function.rs
+│   │   │   │   │   │   ├── global.rs
+│   │   │   │   │   │   ├── memory.rs
+│   │   │   │   │   │   ├── memory_view.rs
+│   │   │   │   │   │   ├── mod.rs
+│   │   │   │   │   │   └── table.rs
+│   │   │   │   │   ├── extern_ref.rs
+│   │   │   │   │   ├── instance.rs
+│   │   │   │   │   ├── js_handle.rs
+│   │   │   │   │   ├── mem_access.rs
+│   │   │   │   │   ├── mod.rs
+│   │   │   │   │   ├── module.rs
+│   │   │   │   │   ├── store.rs
+│   │   │   │   │   ├── trap.rs
+│   │   │   │   │   ├── typed_function.rs
+│   │   │   │   │   ├── vm.rs
+│   │   │   │   │   └── wasm_bindgen_polyfill.rs
+│   │   │   │   ├── jsc
+│   │   │   │   │   ├── as_js.rs
+│   │   │   │   │   ├── engine.rs
+│   │   │   │   │   ├── errors.rs
+│   │   │   │   │   ├── externals
+│   │   │   │   │   │   ├── function.rs
+│   │   │   │   │   │   ├── global.rs
+│   │   │   │   │   │   ├── memory.rs
+│   │   │   │   │   │   ├── memory_view.rs
+│   │   │   │   │   │   ├── mod.rs
+│   │   │   │   │   │   └── table.rs
+│   │   │   │   │   ├── extern_ref.rs
+│   │   │   │   │   ├── instance.rs
+│   │   │   │   │   ├── mem_access.rs
+│   │   │   │   │   ├── mod.rs
+│   │   │   │   │   ├── module.rs
+│   │   │   │   │   ├── store.rs
+│   │   │   │   │   ├── trap.rs
+│   │   │   │   │   ├── typed_function.rs
+│   │   │   │   │   └── vm.rs
+│   │   │   │   ├── lib.rs
+│   │   │   │   ├── mem_access.rs
+│   │   │   │   ├── module_info_polyfill.rs
+│   │   │   │   ├── module.rs
+│   │   │   │   ├── native_type.rs
+│   │   │   │   ├── ptr.rs
+│   │   │   │   ├── store.rs
+│   │   │   │   ├── sys
+│   │   │   │   │   ├── engine.rs
+│   │   │   │   │   ├── errors.rs
+│   │   │   │   │   ├── externals
+│   │   │   │   │   │   ├── function.rs
+│   │   │   │   │   │   ├── global.rs
+│   │   │   │   │   │   ├── memory.rs
+│   │   │   │   │   │   ├── memory_view.rs
+│   │   │   │   │   │   ├── mod.rs
+│   │   │   │   │   │   └── table.rs
+│   │   │   │   │   ├── extern_ref.rs
+│   │   │   │   │   ├── instance.rs
+│   │   │   │   │   ├── mem_access.rs
+│   │   │   │   │   ├── mod.rs
+│   │   │   │   │   ├── module.rs
+│   │   │   │   │   ├── store.rs
+│   │   │   │   │   ├── tunables.rs
+│   │   │   │   │   ├── typed_function.rs
+│   │   │   │   │   └── vm.rs
+│   │   │   │   ├── typed_function.rs
+│   │   │   │   ├── value.rs
+│   │   │   │   └── vm.rs
+│   │   │   ├── tests
+│   │   │   │   ├── externals.rs
+│   │   │   │   ├── function_env.rs
+│   │   │   │   ├── import_function.rs
+│   │   │   │   ├── instance.rs
+│   │   │   │   ├── memory.rs
+│   │   │   │   ├── module.rs
+│   │   │   │   ├── reference_types.rs
+│   │   │   │   ├── simple-name-section.wasm
+│   │   │   │   └── typed_functions.rs
+│   │   │   └── third_party
+│   │   │       └── v8
+│   │   │           └── wasm.h
+│   │   ├── backend-api
+│   │   │   ├── Cargo.toml
+│   │   │   ├── CHANGELOG.md
+│   │   │   ├── README.md
+│   │   │   ├── schema.graphql
+│   │   │   └── src
+│   │   │       ├── client.rs
+│   │   │       ├── error.rs
+│   │   │       ├── global_id.rs
+│   │   │       ├── gql.rs
+│   │   │       ├── lib.rs
+│   │   │       ├── query.rs
+│   │   │       ├── stream.rs
+│   │   │       ├── subscription.rs
+│   │   │       └── types.rs
+│   │   ├── cache
+│   │   │   ├── benches
+│   │   │   │   └── bench_filesystem_cache.rs
+│   │   │   ├── Cargo.toml
+│   │   │   ├── README.md
+│   │   │   └── src
+│   │   │       ├── cache.rs
+│   │   │       ├── filesystem.rs
+│   │   │       ├── hash.rs
+│   │   │       └── lib.rs
+│   │   ├── c-api
+│   │   │   ├── build.rs
+│   │   │   ├── Cargo.toml
+│   │   │   ├── CHANGELOG.md
+│   │   │   ├── doc
+│   │   │   ├── examples
+│   │   │   │   ├── assets
+│   │   │   │   │   ├── call_trap.wasm
+│   │   │   │   │   ├── call_trap.wat
+│   │   │   │   │   ├── python-0.1.0.wasmer
+│   │   │   │   │   ├── qjs.wasm
+│   │   │   │   │   ├── qjs-wasmer.toml
+│   │   │   │   │   ├── staticserver.webc
+│   │   │   │   │   └── wabt-1.0.37.wasmer
+│   │   │   │   ├── deprecated-header.c
+│   │   │   │   ├── early-exit.c
+│   │   │   │   ├── exports-function.c
+│   │   │   │   ├── exports-global.c
+│   │   │   │   ├── features.c
+│   │   │   │   ├── imports-exports.c
+│   │   │   │   ├── instance.c
+│   │   │   │   ├── Makefile
+│   │   │   │   ├── memory2.c
+│   │   │   │   ├── memory.c
+│   │   │   │   ├── wasi.c
+│   │   │   │   └── wasmer-capi-examples-runner
+│   │   │   │       ├── Cargo.toml
+│   │   │   │       └── src
+│   │   │   │           └── lib.rs
+│   │   │   ├── README.md
+│   │   │   ├── src
+│   │   │   │   ├── error.rs
+│   │   │   │   ├── lib.rs
+│   │   │   │   ├── tracing.rs
+│   │   │   │   └── wasm_c_api
+│   │   │   │       ├── DEVELOPMENT.md
+│   │   │   │       ├── engine.rs
+│   │   │   │       ├── externals
+│   │   │   │       │   ├── function.rs
+│   │   │   │       │   ├── global.rs
+│   │   │   │       │   ├── memory.rs
+│   │   │   │       │   ├── mod.rs
+│   │   │   │       │   └── table.rs
+│   │   │   │       ├── function_env.rs
+│   │   │   │       ├── instance.rs
+│   │   │   │       ├── macros.rs
+│   │   │   │       ├── mod.rs
+│   │   │   │       ├── module.rs
+│   │   │   │       ├── store.rs
+│   │   │   │       ├── trap.rs
+│   │   │   │       ├── types
+│   │   │   │       │   ├── export.rs
+│   │   │   │       │   ├── extern_.rs
+│   │   │   │       │   ├── frame.rs
+│   │   │   │       │   ├── function.rs
+│   │   │   │       │   ├── global.rs
+│   │   │   │       │   ├── import.rs
+│   │   │   │       │   ├── memory.rs
+│   │   │   │       │   ├── mod.rs
+│   │   │   │       │   ├── mutability.rs
+│   │   │   │       │   ├── table.rs
+│   │   │   │       │   └── value.rs
+│   │   │   │       ├── unstable
+│   │   │   │       │   ├── engine.rs
+│   │   │   │       │   ├── features.rs
+│   │   │   │       │   ├── middlewares
+│   │   │   │       │   │   ├── metering.rs
+│   │   │   │       │   │   └── mod.rs
+│   │   │   │       │   ├── mod.rs
+│   │   │   │       │   ├── module.rs
+│   │   │   │       │   ├── parser
+│   │   │   │       │   │   ├── mod.rs
+│   │   │   │       │   │   └── operator.rs
+│   │   │   │       │   ├── target_lexicon.rs
+│   │   │   │       │   └── wasi.rs
+│   │   │   │       ├── value.rs
+│   │   │   │       ├── version.rs
+│   │   │   │       ├── wasi
+│   │   │   │       │   └── mod.rs
+│   │   │   │       └── wat.rs
+│   │   │   ├── tests
+│   │   │   │   ├── Makefile
+│   │   │   │   ├── wasm-c-api
+│   │   │   │   │   ├── Dockerfile
+│   │   │   │   │   ├── example
+│   │   │   │   │   │   ├── callback.c
+│   │   │   │   │   │   ├── callback.cc
+│   │   │   │   │   │   ├── callback.wasm
+│   │   │   │   │   │   ├── callback.wat
+│   │   │   │   │   │   ├── finalize.c
+│   │   │   │   │   │   ├── finalize.cc
+│   │   │   │   │   │   ├── finalize.wasm
+│   │   │   │   │   │   ├── finalize.wat
+│   │   │   │   │   │   ├── global.c
+│   │   │   │   │   │   ├── global.cc
+│   │   │   │   │   │   ├── global.wasm
+│   │   │   │   │   │   ├── global.wat
+│   │   │   │   │   │   ├── hello.c
+│   │   │   │   │   │   ├── hello.cc
+│   │   │   │   │   │   ├── hello.wasm
+│   │   │   │   │   │   ├── hello.wat
+│   │   │   │   │   │   ├── hostref.c
+│   │   │   │   │   │   ├── hostref.cc
+│   │   │   │   │   │   ├── hostref.wasm
+│   │   │   │   │   │   ├── hostref.wat
+│   │   │   │   │   │   ├── memory.c
+│   │   │   │   │   │   ├── memory.cc
+│   │   │   │   │   │   ├── memory.wasm
+│   │   │   │   │   │   ├── memory.wat
+│   │   │   │   │   │   ├── multi.c
+│   │   │   │   │   │   ├── multi.cc
+│   │   │   │   │   │   ├── multi.wasm
+│   │   │   │   │   │   ├── multi.wat
+│   │   │   │   │   │   ├── reflect.c
+│   │   │   │   │   │   ├── reflect.cc
+│   │   │   │   │   │   ├── reflect.wasm
+│   │   │   │   │   │   ├── reflect.wat
+│   │   │   │   │   │   ├── serialize.c
+│   │   │   │   │   │   ├── serialize.cc
+│   │   │   │   │   │   ├── serialize.wasm
+│   │   │   │   │   │   ├── serialize.wat
+│   │   │   │   │   │   ├── start.c
+│   │   │   │   │   │   ├── start.cc
+│   │   │   │   │   │   ├── start.wasm
+│   │   │   │   │   │   ├── start.wat
+│   │   │   │   │   │   ├── table.c
+│   │   │   │   │   │   ├── table.cc
+│   │   │   │   │   │   ├── table.wasm
+│   │   │   │   │   │   ├── table.wat
+│   │   │   │   │   │   ├── threads.c
+│   │   │   │   │   │   ├── threads.cc
+│   │   │   │   │   │   ├── threads.wasm
+│   │   │   │   │   │   ├── threads.wat
+│   │   │   │   │   │   ├── trap.c
+│   │   │   │   │   │   ├── trap.cc
+│   │   │   │   │   │   ├── trap.wasm
+│   │   │   │   │   │   └── trap.wat
+│   │   │   │   │   ├── include
+│   │   │   │   │   │   ├── wasm.h
+│   │   │   │   │   │   └── wasm.hh
+│   │   │   │   │   ├── LICENSE
+│   │   │   │   │   ├── patch
+│   │   │   │   │   │   └── 0001-BUILD.gn-add-wasm-v8-lowlevel.patch
+│   │   │   │   │   ├── README.md
+│   │   │   │   │   └── src
+│   │   │   │   │       ├── wasm-bin.cc
+│   │   │   │   │       ├── wasm-bin.hh
+│   │   │   │   │       ├── wasm-c.cc
+│   │   │   │   │       ├── wasm-v8.cc
+│   │   │   │   │       ├── wasm-v8-lowlevel.cc
+│   │   │   │   │       └── wasm-v8-lowlevel.hh
+│   │   │   │   ├── wasmer-c-api-test-runner
+│   │   │   │   │   ├── Cargo.toml
+│   │   │   │   │   └── src
+│   │   │   │   │       └── lib.rs
+│   │   │   │   ├── wasmer.h
+│   │   │   │   └── wasm.h
+│   │   │   ├── wasmer_wasm.h
+│   │   │   └── wasm.h -> tests/wasm-c-api/include/wasm.h
+│   │   ├── cli
+│   │   │   ├── build.rs
+│   │   │   ├── Cargo.toml
+│   │   │   ├── README.md
+│   │   │   ├── src
+│   │   │   │   ├── bin
+│   │   │   │   │   ├── wasmer_headless.rs
+│   │   │   │   │   └── wasmer.rs
+│   │   │   │   ├── c_gen
+│   │   │   │   │   ├── mod.rs
+│   │   │   │   │   └── staticlib_header.rs
+│   │   │   │   ├── commands
+│   │   │   │   │   ├── add.rs
+│   │   │   │   │   ├── app
+│   │   │   │   │   │   ├── create.rs
+│   │   │   │   │   │   ├── delete.rs
+│   │   │   │   │   │   ├── deployments
+│   │   │   │   │   │   │   ├── get.rs
+│   │   │   │   │   │   │   ├── list.rs
+│   │   │   │   │   │   │   ├── logs.rs
+│   │   │   │   │   │   │   └── mod.rs
+│   │   │   │   │   │   ├── deploy.rs
+│   │   │   │   │   │   ├── get.rs
+│   │   │   │   │   │   ├── info.rs
+│   │   │   │   │   │   ├── list.rs
+│   │   │   │   │   │   ├── logs.rs
+│   │   │   │   │   │   ├── mod.rs
+│   │   │   │   │   │   ├── purge_cache.rs
+│   │   │   │   │   │   ├── regions
+│   │   │   │   │   │   │   ├── list.rs
+│   │   │   │   │   │   │   ├── mod.rs
+│   │   │   │   │   │   │   └── utils
+│   │   │   │   │   │   │       ├── mod.rs
+│   │   │   │   │   │   │       └── render.rs
+│   │   │   │   │   │   ├── secrets
+│   │   │   │   │   │   │   ├── create.rs
+│   │   │   │   │   │   │   ├── delete.rs
+│   │   │   │   │   │   │   ├── list.rs
+│   │   │   │   │   │   │   ├── mod.rs
+│   │   │   │   │   │   │   ├── reveal.rs
+│   │   │   │   │   │   │   ├── update.rs
+│   │   │   │   │   │   │   └── utils
+│   │   │   │   │   │   │       ├── mod.rs
+│   │   │   │   │   │   │       └── render.rs
+│   │   │   │   │   │   ├── util.rs
+│   │   │   │   │   │   ├── version
+│   │   │   │   │   │   │   ├── activate.rs
+│   │   │   │   │   │   │   ├── get.rs
+│   │   │   │   │   │   │   ├── list.rs
+│   │   │   │   │   │   │   └── mod.rs
+│   │   │   │   │   │   └── volumes
+│   │   │   │   │   │       ├── credentials
+│   │   │   │   │   │       │   ├── mod.rs
+│   │   │   │   │   │       │   └── rotate_secrets.rs
+│   │   │   │   │   │       ├── list.rs
+│   │   │   │   │   │       └── mod.rs
+│   │   │   │   │   ├── auth
+│   │   │   │   │   │   ├── login
+│   │   │   │   │   │   │   ├── auth_server.rs
+│   │   │   │   │   │   │   └── mod.rs
+│   │   │   │   │   │   ├── logout.rs
+│   │   │   │   │   │   ├── mod.rs
+│   │   │   │   │   │   └── whoami.rs
+│   │   │   │   │   ├── binfmt.rs
+│   │   │   │   │   ├── cache.rs
+│   │   │   │   │   ├── compile.rs
+│   │   │   │   │   ├── config.rs
+│   │   │   │   │   ├── connect.rs
+│   │   │   │   │   ├── container
+│   │   │   │   │   │   ├── mod.rs
+│   │   │   │   │   │   └── unpack.rs
+│   │   │   │   │   ├── create_exe.rs
+│   │   │   │   │   ├── create_obj.rs
+│   │   │   │   │   ├── domain
+│   │   │   │   │   │   ├── get.rs
+│   │   │   │   │   │   ├── list.rs
+│   │   │   │   │   │   ├── mod.rs
+│   │   │   │   │   │   ├── register.rs
+│   │   │   │   │   │   └── zonefile.rs
+│   │   │   │   │   ├── gen_c_header.rs
+│   │   │   │   │   ├── gen_completions.rs
+│   │   │   │   │   ├── gen_manpage.rs
+│   │   │   │   │   ├── init.rs
+│   │   │   │   │   ├── inspect.rs
+│   │   │   │   │   ├── journal
+│   │   │   │   │   │   ├── compact.rs
+│   │   │   │   │   │   ├── export.rs
+│   │   │   │   │   │   ├── extract.rs
+│   │   │   │   │   │   ├── filter.rs
+│   │   │   │   │   │   ├── import.rs
+│   │   │   │   │   │   ├── inspect.rs
+│   │   │   │   │   │   ├── mod.rs
+│   │   │   │   │   │   └── mount
+│   │   │   │   │   │       ├── cmd.rs
+│   │   │   │   │   │       ├── fs.rs
+│   │   │   │   │   │       └── mod.rs
+│   │   │   │   │   ├── mod.rs
+│   │   │   │   │   ├── namespace
+│   │   │   │   │   │   ├── create.rs
+│   │   │   │   │   │   ├── get.rs
+│   │   │   │   │   │   ├── list.rs
+│   │   │   │   │   │   └── mod.rs
+│   │   │   │   │   ├── package
+│   │   │   │   │   │   ├── build.rs
+│   │   │   │   │   │   ├── common
+│   │   │   │   │   │   │   ├── macros.rs
+│   │   │   │   │   │   │   ├── mod.rs
+│   │   │   │   │   │   │   └── wait.rs
+│   │   │   │   │   │   ├── download.rs
+│   │   │   │   │   │   ├── mod.rs
+│   │   │   │   │   │   ├── publish.rs
+│   │   │   │   │   │   ├── push.rs
+│   │   │   │   │   │   ├── tag.rs
+│   │   │   │   │   │   └── unpack.rs
+│   │   │   │   │   ├── run
+│   │   │   │   │   │   ├── capabilities
+│   │   │   │   │   │   │   ├── mod.rs
+│   │   │   │   │   │   │   └── net.rs
+│   │   │   │   │   │   ├── mod.rs
+│   │   │   │   │   │   └── wasi.rs
+│   │   │   │   │   ├── security_framework.tgz
+│   │   │   │   │   ├── self_update.rs
+│   │   │   │   │   ├── ssh.rs
+│   │   │   │   │   ├── validate.rs
+│   │   │   │   │   ├── wasmer_create_exe_main.c
+│   │   │   │   │   └── wast.rs
+│   │   │   │   ├── common.rs
+│   │   │   │   ├── config
+│   │   │   │   │   ├── env.rs
+│   │   │   │   │   └── mod.rs
+│   │   │   │   ├── edge_config.rs
+│   │   │   │   ├── error.rs
+│   │   │   │   ├── lib.rs
+│   │   │   │   ├── logging.rs
+│   │   │   │   ├── net
+│   │   │   │   │   ├── mod.rs
+│   │   │   │   │   └── tun.rs
+│   │   │   │   ├── opts.rs
+│   │   │   │   ├── package_source.rs
+│   │   │   │   ├── store.rs
+│   │   │   │   ├── types.rs
+│   │   │   │   └── utils
+│   │   │   │       ├── mod.rs
+│   │   │   │       ├── package_wizard
+│   │   │   │       │   ├── mod.rs
+│   │   │   │       │   └── templates
+│   │   │   │       │       ├── js-worker
+│   │   │   │       │       │   └── index.js
+│   │   │   │       │       ├── py-application
+│   │   │   │       │       │   └── main.py
+│   │   │   │       │       └── static-site
+│   │   │   │       │           └── index.html
+│   │   │   │       ├── prompts.rs
+│   │   │   │       ├── render.rs
+│   │   │   │       ├── timestamp.rs
+│   │   │   │       └── unpack.rs
+│   │   │   └── tests
+│   │   │       └── version.rs
+│   │   ├── cli-compiler
+│   │   │   ├── build.rs
+│   │   │   ├── Cargo.toml
+│   │   │   ├── README.md
+│   │   │   └── src
+│   │   │       ├── bin
+│   │   │       │   └── wasmer_compiler.rs
+│   │   │       ├── cli.rs
+│   │   │       ├── commands
+│   │   │       │   ├── compile.rs
+│   │   │       │   ├── config.rs
+│   │   │       │   └── validate.rs
+│   │   │       ├── commands.rs
+│   │   │       ├── common.rs
+│   │   │       ├── error.rs
+│   │   │       ├── lib.rs
+│   │   │       ├── logging.rs
+│   │   │       ├── store.rs
+│   │   │       └── utils.rs
+│   │   ├── compiler
+│   │   │   ├── Cargo.toml
+│   │   │   ├── README.md
+│   │   │   └── src
+│   │   │       ├── artifact_builders
+│   │   │       │   ├── artifact_builder.rs
+│   │   │       │   ├── mod.rs
+│   │   │       │   └── trampoline.rs
+│   │   │       ├── compiler.rs
+│   │   │       ├── engine
+│   │   │       │   ├── artifact.rs
+│   │   │       │   ├── builder.rs
+│   │   │       │   ├── code_memory.rs
+│   │   │       │   ├── error.rs
+│   │   │       │   ├── inner.rs
+│   │   │       │   ├── link.rs
+│   │   │       │   ├── mod.rs
+│   │   │       │   ├── resolver.rs
+│   │   │       │   ├── trap
+│   │   │       │   │   ├── frame_info.rs
+│   │   │       │   │   ├── mod.rs
+│   │   │       │   │   └── stack.rs
+│   │   │       │   ├── tunables.rs
+│   │   │       │   └── unwind
+│   │   │       │       ├── dummy.rs
+│   │   │       │       ├── mod.rs
+│   │   │       │       ├── systemv.rs
+│   │   │       │       └── windows_x64.rs
+│   │   │       ├── lib.rs
+│   │   │       ├── traits.rs
+│   │   │       └── translator
+│   │   │           ├── environ.rs
+│   │   │           ├── error.rs
+│   │   │           ├── middleware.rs
+│   │   │           ├── mod.rs
+│   │   │           ├── module.rs
+│   │   │           ├── sections.rs
+│   │   │           └── state.rs
+│   │   ├── compiler-cranelift
+│   │   │   ├── build.rs
+│   │   │   ├── Cargo.toml
+│   │   │   ├── README.md
+│   │   │   └── src
+│   │   │       ├── address_map.rs
+│   │   │       ├── compiler.rs
+│   │   │       ├── config.rs
+│   │   │       ├── debug
+│   │   │       │   ├── address_map.rs
+│   │   │       │   └── mod.rs
+│   │   │       ├── dwarf.rs
+│   │   │       ├── func_environ.rs
+│   │   │       ├── heap.rs
+│   │   │       ├── lib.rs
+│   │   │       ├── table.rs
+│   │   │       ├── trampoline
+│   │   │       │   ├── dynamic_function.rs
+│   │   │       │   ├── function_call.rs
+│   │   │       │   └── mod.rs
+│   │   │       └── translator
+│   │   │           ├── code_translator
+│   │   │           │   └── bounds_checks.rs
+│   │   │           ├── code_translator.rs
+│   │   │           ├── func_environ.rs
+│   │   │           ├── func_state.rs
+│   │   │           ├── func_translator.rs
+│   │   │           ├── mod.rs
+│   │   │           ├── translation_utils.rs
+│   │   │           └── unwind.rs
+│   │   ├── compiler-llvm
+│   │   │   ├── Cargo.toml
+│   │   │   ├── README.md
+│   │   │   └── src
+│   │   │       ├── abi
+│   │   │       │   ├── aarch64_systemv.rs
+│   │   │       │   ├── mod.rs
+│   │   │       │   └── x86_64_systemv.rs
+│   │   │       ├── compiler.rs
+│   │   │       ├── config.rs
+│   │   │       ├── error.rs
+│   │   │       ├── lib.rs
+│   │   │       ├── object_file.rs
+│   │   │       ├── trampoline
+│   │   │       │   ├── mod.rs
+│   │   │       │   └── wasm.rs
+│   │   │       └── translator
+│   │   │           ├── code.rs
+│   │   │           ├── intrinsics.rs
+│   │   │           ├── mod.rs
+│   │   │           ├── stackmap.rs
+│   │   │           └── state.rs
+│   │   ├── compiler-singlepass
+│   │   │   ├── Cargo.toml
+│   │   │   ├── README.md
+│   │   │   └── src
+│   │   │       ├── address_map.rs
+│   │   │       ├── arm64_decl.rs
+│   │   │       ├── codegen.rs
+│   │   │       ├── common_decl.rs
+│   │   │       ├── compiler.rs
+│   │   │       ├── config.rs
+│   │   │       ├── dwarf.rs
+│   │   │       ├── emitter_arm64.rs
+│   │   │       ├── emitter_x64.rs
+│   │   │       ├── lib.rs
+│   │   │       ├── location.rs
+│   │   │       ├── machine_arm64.rs
+│   │   │       ├── machine.rs
+│   │   │       ├── machine_x64.rs
+│   │   │       ├── unwind.rs
+│   │   │       ├── unwind_winx64.rs
+│   │   │       └── x64_decl.rs
+│   │   ├── config
+│   │   │   ├── Cargo.lock
+│   │   │   ├── Cargo.toml
+│   │   │   ├── CHANGELOG.md
+│   │   │   ├── LICENSE
+│   │   │   ├── README.md
+│   │   │   ├── rust-toolchain.toml
+│   │   │   └── src
+│   │   │       ├── app
+│   │   │       │   ├── healthcheck.rs
+│   │   │       │   ├── http.rs
+│   │   │       │   └── mod.rs
+│   │   │       ├── bin
+│   │   │       │   └── generate-core-schemas.rs
+│   │   │       ├── cargo_annotations.rs
+│   │   │       ├── hash.rs
+│   │   │       ├── lib.rs
+│   │   │       └── package
+│   │   │           ├── error.rs
+│   │   │           ├── mod.rs
+│   │   │           ├── named_package_ident.rs
+│   │   │           ├── package_hash.rs
+│   │   │           ├── package_ident.rs
+│   │   │           ├── package_id.rs
+│   │   │           └── package_source.rs
+│   │   ├── derive
+│   │   │   ├── Cargo.toml
+│   │   │   ├── src
+│   │   │   │   ├── lib.rs
+│   │   │   │   └── value_type.rs
+│   │   │   └── tests
+│   │   │       ├── compile-fail
+│   │   │       │   ├── bad-attribute.rs
+│   │   │       │   ├── bad-export-arg.rs
+│   │   │       │   └── no-lazy-init.rs
+│   │   │       └── compiletest.rs
+│   │   ├── journal
+│   │   │   ├── Cargo.toml
+│   │   │   └── src
+│   │   │       ├── base64.rs
+│   │   │       ├── concrete
+│   │   │       │   ├── aligned_cow_str.rs
+│   │   │       │   ├── aligned_cow_vec.rs
+│   │   │       │   ├── archived_from.rs
+│   │   │       │   ├── archived.rs
+│   │   │       │   ├── arc.rs
+│   │   │       │   ├── auto_consistent.rs
+│   │   │       │   ├── boxed.rs
+│   │   │       │   ├── buffered.rs
+│   │   │       │   ├── compacting_log_file.rs
+│   │   │       │   ├── compacting.rs
+│   │   │       │   ├── compacting_transaction.rs
+│   │   │       │   ├── counting.rs
+│   │   │       │   ├── filter.rs
+│   │   │       │   ├── log_file.rs
+│   │   │       │   ├── mem_file.rs
+│   │   │       │   ├── mod.rs
+│   │   │       │   ├── null.rs
+│   │   │       │   ├── pipe.rs
+│   │   │       │   ├── printing.rs
+│   │   │       │   ├── recombined.rs
+│   │   │       │   ├── tests.rs
+│   │   │       │   ├── transaction.rs
+│   │   │       │   └── unsupported.rs
+│   │   │       ├── entry.rs
+│   │   │       ├── lib.rs
+│   │   │       ├── snapshot.rs
+│   │   │       └── util.rs
+│   │   ├── middlewares
+│   │   │   ├── Cargo.toml
+│   │   │   ├── README.md
+│   │   │   └── src
+│   │   │       ├── lib.rs
+│   │   │       └── metering.rs
+│   │   ├── object
+│   │   │   ├── Cargo.toml
+│   │   │   ├── README.md
+│   │   │   └── src
+│   │   │       ├── error.rs
+│   │   │       ├── lib.rs
+│   │   │       └── module.rs
+│   │   ├── package
+│   │   │   ├── Cargo.toml
+│   │   │   └── src
+│   │   │       ├── convert
+│   │   │       │   ├── error.rs
+│   │   │       │   ├── mod.rs
+│   │   │       │   └── webc_to_package.rs
+│   │   │       ├── lib.rs
+│   │   │       ├── macros.rs
+│   │   │       ├── package
+│   │   │       │   ├── manifest.rs
+│   │   │       │   ├── mod.rs
+│   │   │       │   ├── package.rs
+│   │   │       │   ├── snapshots
+│   │   │       │   │   ├── wasmer_package__package__manifest__tests__custom_annotations_are_copied_across_verbatim.snap
+│   │   │       │   │   ├── wasmer_package__package__manifest__tests__issue_124_command_runner_is_swallowed.snap
+│   │   │       │   │   ├── wasmer_package__package__manifest__tests__merge_custom_attributes_with_builtin_ones.snap
+│   │   │       │   │   ├── wasmer_package__package__manifest__tests__transform_bash_manifest.snap
+│   │   │       │   │   ├── wasmer_package__package__manifest__tests__transform_empty_manifest.snap
+│   │   │       │   │   ├── wasmer_package__package__manifest__tests__transform_manifest_with_atom_and_command.snap
+│   │   │       │   │   ├── wasmer_package__package__manifest__tests__transform_manifest_with_fs_table.snap
+│   │   │       │   │   ├── wasmer_package__package__manifest__tests__transform_manifest_with_multiple_commands.snap
+│   │   │       │   │   ├── wasmer_package__package__manifest__tests__transform_manifest_with_single_atom.snap
+│   │   │       │   │   ├── wasmer_package__package__manifest__tests__transform_python_manifest.snap
+│   │   │       │   │   ├── wasmer_package__package__manifest__tests__transform_wasmer_pack_manifest.snap
+│   │   │       │   │   ├── wasmer_package__package__package__tests__absolute_paths_in_wasmer_toml_issue_105.snap
+│   │   │       │   │   ├── wasmer_package__package__package__tests__load_old_cowsay.snap
+│   │   │       │   │   ├── wasmer_package__package__package__tests__load_package_with_wai_bindings.snap
+│   │   │       │   │   └── wasmer_package__package__package__tests__load_package_with_wit_bindings.snap
+│   │   │       │   ├── strictness.rs
+│   │   │       │   └── volume
+│   │   │       │       ├── fs.rs
+│   │   │       │       ├── in_memory.rs
+│   │   │       │       └── mod.rs
+│   │   │       └── utils.rs
+│   │   ├── README.md
+│   │   ├── swift
+│   │   │   ├── build.rs
+│   │   │   ├── Cargo.toml
+│   │   │   └── src
+│   │   │       ├── lib.rs
+│   │   │       └── lib.udl
+│   │   ├── sys-utils
+│   │   │   ├── Cargo.toml
+│   │   │   ├── src
+│   │   │   │   ├── lib.rs
+│   │   │   │   └── memory
+│   │   │   │       ├── fd_memory
+│   │   │   │       │   ├── fd_mmap.rs
+│   │   │   │       │   ├── memories.rs
+│   │   │   │       │   └── mod.rs
+│   │   │   │       └── mod.rs
+│   │   │   └── tests
+│   │   │       └── fd_mmap_memory.rs
+│   │   ├── types
+│   │   │   ├── Cargo.toml
+│   │   │   ├── README.md
+│   │   │   └── src
+│   │   │       ├── compilation
+│   │   │       │   ├── address_map.rs
+│   │   │       │   ├── function.rs
+│   │   │       │   ├── mod.rs
+│   │   │       │   ├── module.rs
+│   │   │       │   ├── relocation.rs
+│   │   │       │   ├── section.rs
+│   │   │       │   ├── symbols.rs
+│   │   │       │   ├── target.rs
+│   │   │       │   └── unwind.rs
+│   │   │       ├── entity
+│   │   │       │   ├── boxed_slice.rs
+│   │   │       │   ├── iter.rs
+│   │   │       │   ├── keys.rs
+│   │   │       │   ├── mod.rs
+│   │   │       │   ├── packed_option.rs
+│   │   │       │   ├── primary_map.rs
+│   │   │       │   └── secondary_map.rs
+│   │   │       ├── error.rs
+│   │   │       ├── features.rs
+│   │   │       ├── indexes.rs
+│   │   │       ├── initializers.rs
+│   │   │       ├── libcalls.rs
+│   │   │       ├── lib.rs
+│   │   │       ├── memory.rs
+│   │   │       ├── module_hash.rs
+│   │   │       ├── module.rs
+│   │   │       ├── serialize.rs
+│   │   │       ├── stack
+│   │   │       │   ├── frame.rs
+│   │   │       │   ├── mod.rs
+│   │   │       │   ├── sourceloc.rs
+│   │   │       │   └── trap.rs
+│   │   │       ├── store_id.rs
+│   │   │       ├── table.rs
+│   │   │       ├── trapcode.rs
+│   │   │       ├── types.rs
+│   │   │       ├── units.rs
+│   │   │       ├── utils.rs
+│   │   │       ├── value.rs
+│   │   │       └── vmoffsets.rs
+│   │   ├── virtual-fs
+│   │   │   ├── Cargo.toml
+│   │   │   └── src
+│   │   │       ├── arc_box_file.rs
+│   │   │       ├── arc_file.rs
+│   │   │       ├── arc_fs.rs
+│   │   │       ├── buffer_file.rs
+│   │   │       ├── builder.rs
+│   │   │       ├── combine_file.rs
+│   │   │       ├── cow_file.rs
+│   │   │       ├── dual_write_file.rs
+│   │   │       ├── empty_fs.rs
+│   │   │       ├── filesystems.rs
+│   │   │       ├── host_fs.rs
+│   │   │       ├── lib.rs
+│   │   │       ├── limiter.rs
+│   │   │       ├── mem_fs
+│   │   │       │   ├── file_opener.rs
+│   │   │       │   ├── file.rs
+│   │   │       │   ├── filesystem.rs
+│   │   │       │   ├── mod.rs
+│   │   │       │   ├── offloaded_file.rs
+│   │   │       │   └── stdio.rs
+│   │   │       ├── null_file.rs
+│   │   │       ├── ops.rs
+│   │   │       ├── overlay_fs.rs
+│   │   │       ├── passthru_fs.rs
+│   │   │       ├── pipe.rs
+│   │   │       ├── random_file.rs
+│   │   │       ├── special_file.rs
+│   │   │       ├── static_file.rs
+│   │   │       ├── static_fs.rs
+│   │   │       ├── tmp_fs.rs
+│   │   │       ├── trace_fs.rs
+│   │   │       ├── union_fs.rs
+│   │   │       ├── webc_volume_fs.rs
+│   │   │       └── zero_file.rs
+│   │   ├── virtual-io
+│   │   │   ├── Cargo.toml
+│   │   │   └── src
+│   │   │       ├── arc.rs
+│   │   │       ├── guard.rs
+│   │   │       ├── interest.rs
+│   │   │       ├── lib.rs
+│   │   │       ├── selector.rs
+│   │   │       └── waker.rs
+│   │   ├── virtual-net
+│   │   │   ├── Cargo.toml
+│   │   │   └── src
+│   │   │       ├── client.rs
+│   │   │       ├── composite.rs
+│   │   │       ├── host.rs
+│   │   │       ├── lib.rs
+│   │   │       ├── loopback.rs
+│   │   │       ├── meta.rs
+│   │   │       ├── rx_tx.rs
+│   │   │       ├── server.rs
+│   │   │       ├── tcp_pair.rs
+│   │   │       └── tests.rs
+│   │   ├── vm
+│   │   │   ├── Cargo.toml
+│   │   │   ├── README.md
+│   │   │   └── src
+│   │   │       ├── export.rs
+│   │   │       ├── extern_ref.rs
+│   │   │       ├── function_env.rs
+│   │   │       ├── global.rs
+│   │   │       ├── imports.rs
+│   │   │       ├── instance
+│   │   │       │   ├── allocator.rs
+│   │   │       │   ├── mod.rs
+│   │   │       │   └── ref.rs
+│   │   │       ├── libcalls.rs
+│   │   │       ├── lib.rs
+│   │   │       ├── memory.rs
+│   │   │       ├── mmap.rs
+│   │   │       ├── probestack.rs
+│   │   │       ├── sig_registry.rs
+│   │   │       ├── store.rs
+│   │   │       ├── table.rs
+│   │   │       ├── threadconditions.rs
+│   │   │       ├── trap
+│   │   │       │   ├── mod.rs
+│   │   │       │   ├── traphandlers.rs
+│   │   │       │   └── trap.rs
+│   │   │       └── vmcontext.rs
+│   │   ├── wai-bindgen-wasmer
+│   │   │   ├── Cargo.toml
+│   │   │   ├── README.md
+│   │   │   └── src
+│   │   │       ├── error.rs
+│   │   │       ├── le.rs
+│   │   │       ├── lib.rs
+│   │   │       ├── region.rs
+│   │   │       ├── slab.rs
+│   │   │       └── table.rs
+│   │   ├── wasi-types
+│   │   │   ├── Cargo.toml
+│   │   │   ├── README.md
+│   │   │   └── src
+│   │   │       ├── asyncify.rs
+│   │   │       ├── lib.rs
+│   │   │       ├── types.rs
+│   │   │       ├── wasi
+│   │   │       │   ├── bindings_manual.rs
+│   │   │       │   ├── bindings.rs
+│   │   │       │   ├── mod.rs
+│   │   │       │   └── wasix_manual.rs
+│   │   │       └── wasix
+│   │   │           └── mod.rs
+│   │   └── wasix
+│   │       ├── Cargo.toml
+│   │       ├── README.md
+│   │       ├── src
+│   │       │   ├── bin_factory
+│   │       │   │   ├── binary_package.rs
+│   │       │   │   ├── exec.rs
+│   │       │   │   └── mod.rs
+│   │       │   ├── capabilities.rs
+│   │       │   ├── fs
+│   │       │   │   ├── fd.rs
+│   │       │   │   ├── inode_guard.rs
+│   │       │   │   ├── mod.rs
+│   │       │   │   └── notification.rs
+│   │       │   ├── http
+│   │       │   │   ├── client.rs
+│   │       │   │   ├── mod.rs
+│   │       │   │   ├── reqwest.rs
+│   │       │   │   └── web_http_client.rs
+│   │       │   ├── journal
+│   │       │   │   ├── effector
+│   │       │   │   │   ├── memory_and_snapshot.rs
+│   │       │   │   │   ├── mod.rs
+│   │       │   │   │   ├── process_exit.rs
+│   │       │   │   │   ├── save_event.rs
+│   │       │   │   │   ├── syscalls
+│   │       │   │   │   │   ├── chdir.rs
+│   │       │   │   │   │   ├── clock_time.rs
+│   │       │   │   │   │   ├── epoll_create.rs
+│   │       │   │   │   │   ├── epoll_ctl.rs
+│   │       │   │   │   │   ├── fd_advise.rs
+│   │       │   │   │   │   ├── fd_allocate.rs
+│   │       │   │   │   │   ├── fd_close.rs
+│   │       │   │   │   │   ├── fd_duplicate.rs
+│   │       │   │   │   │   ├── fd_event.rs
+│   │       │   │   │   │   ├── fd_pipe.rs
+│   │       │   │   │   │   ├── fd_renumber.rs
+│   │       │   │   │   │   ├── fd_seek.rs
+│   │       │   │   │   │   ├── fd_set_flags.rs
+│   │       │   │   │   │   ├── fd_set_rights.rs
+│   │       │   │   │   │   ├── fd_set_size.rs
+│   │       │   │   │   │   ├── fd_set_times.rs
+│   │       │   │   │   │   ├── fd_write.rs
+│   │       │   │   │   │   ├── path_create_directory.rs
+│   │       │   │   │   │   ├── path_link.rs
+│   │       │   │   │   │   ├── path_open.rs
+│   │       │   │   │   │   ├── path_remove_directory.rs
+│   │       │   │   │   │   ├── path_rename.rs
+│   │       │   │   │   │   ├── path_set_times.rs
+│   │       │   │   │   │   ├── path_symlink.rs
+│   │       │   │   │   │   ├── path_unlink.rs
+│   │       │   │   │   │   ├── port_addr_add.rs
+│   │       │   │   │   │   ├── port_addr_clear.rs
+│   │       │   │   │   │   ├── port_addr_remove.rs
+│   │       │   │   │   │   ├── port_bridge.rs
+│   │       │   │   │   │   ├── port_dhcp_acquire.rs
+│   │       │   │   │   │   ├── port_gateway_set.rs
+│   │       │   │   │   │   ├── port_route_add.rs
+│   │       │   │   │   │   ├── port_route_clear.rs
+│   │       │   │   │   │   ├── port_route_remove.rs
+│   │       │   │   │   │   ├── port_unbridge.rs
+│   │       │   │   │   │   ├── sock_accept.rs
+│   │       │   │   │   │   ├── sock_bind.rs
+│   │       │   │   │   │   ├── sock_connect.rs
+│   │       │   │   │   │   ├── sock_join_ipv4_multicast.rs
+│   │       │   │   │   │   ├── sock_join_ipv6_multicast.rs
+│   │       │   │   │   │   ├── sock_leave_ipv4_multicast.rs
+│   │       │   │   │   │   ├── sock_leave_ipv6_multicast.rs
+│   │       │   │   │   │   ├── sock_listen.rs
+│   │       │   │   │   │   ├── sock_open.rs
+│   │       │   │   │   │   ├── sock_send_file.rs
+│   │       │   │   │   │   ├── sock_send.rs
+│   │       │   │   │   │   ├── sock_send_to.rs
+│   │       │   │   │   │   ├── sock_set_opt_flag.rs
+│   │       │   │   │   │   ├── sock_set_opt_size.rs
+│   │       │   │   │   │   ├── sock_set_opt_time.rs
+│   │       │   │   │   │   ├── sock_shutdown.rs
+│   │       │   │   │   │   └── tty_set.rs
+│   │       │   │   │   ├── thread_exit.rs
+│   │       │   │   │   ├── thread_state.rs
+│   │       │   │   │   └── unimplemented.rs
+│   │       │   │   └── mod.rs
+│   │       │   ├── lib.rs
+│   │       │   ├── macros.rs
+│   │       │   ├── net
+│   │       │   │   ├── mod.rs
+│   │       │   │   └── socket.rs
+│   │       │   ├── os
+│   │       │   │   ├── command
+│   │       │   │   │   ├── builtins
+│   │       │   │   │   │   ├── cmd_wasmer.rs
+│   │       │   │   │   │   └── mod.rs
+│   │       │   │   │   └── mod.rs
+│   │       │   │   ├── common.rs
+│   │       │   │   ├── console
+│   │       │   │   │   ├── cconst.rs
+│   │       │   │   │   ├── mod.rs
+│   │       │   │   │   └── txt
+│   │       │   │   │       ├── about.md
+│   │       │   │   │       ├── about_wasmer.md
+│   │       │   │   │       ├── bad_worker.md
+│   │       │   │   │       ├── help.md
+│   │       │   │   │       ├── welcome_large.txt
+│   │       │   │   │       ├── welcome_medium.txt
+│   │       │   │   │       └── welcome_small.txt
+│   │       │   │   ├── mod.rs
+│   │       │   │   ├── posix_err.rs
+│   │       │   │   ├── task
+│   │       │   │   │   ├── backoff.rs
+│   │       │   │   │   ├── control_plane.rs
+│   │       │   │   │   ├── mod.rs
+│   │       │   │   │   ├── process.rs
+│   │       │   │   │   ├── signal.rs
+│   │       │   │   │   ├── task_join_handle.rs
+│   │       │   │   │   └── thread.rs
+│   │       │   │   └── tty
+│   │       │   │       ├── mod.rs
+│   │       │   │       └── tty_sys.rs
+│   │       │   ├── rewind.rs
+│   │       │   ├── runners
+│   │       │   │   ├── dcgi
+│   │       │   │   │   ├── callbacks.rs
+│   │       │   │   │   ├── factory.rs
+│   │       │   │   │   ├── handler.rs
+│   │       │   │   │   ├── instance.rs
+│   │       │   │   │   ├── mod.rs
+│   │       │   │   │   └── runner.rs
+│   │       │   │   ├── dproxy
+│   │       │   │   │   ├── factory.rs
+│   │       │   │   │   ├── handler.rs
+│   │       │   │   │   ├── hyper_proxy
+│   │       │   │   │   │   ├── builder.rs
+│   │       │   │   │   │   ├── connector.rs
+│   │       │   │   │   │   ├── mod.rs
+│   │       │   │   │   │   └── stream.rs
+│   │       │   │   │   ├── instance.rs
+│   │       │   │   │   ├── mod.rs
+│   │       │   │   │   ├── networking.rs
+│   │       │   │   │   ├── runner.rs
+│   │       │   │   │   ├── shard.rs
+│   │       │   │   │   └── socket_manager.rs
+│   │       │   │   ├── mod.rs
+│   │       │   │   ├── runner.rs
+│   │       │   │   ├── wasi_common.rs
+│   │       │   │   ├── wasi.rs
+│   │       │   │   └── wcgi
+│   │       │   │       ├── callbacks.rs
+│   │       │   │       ├── create_env.rs
+│   │       │   │       ├── handler.rs
+│   │       │   │       ├── mod.rs
+│   │       │   │       └── runner.rs
+│   │       │   ├── runtime
+│   │       │   │   ├── mod.rs
+│   │       │   │   ├── module_cache
+│   │       │   │   │   ├── fallback.rs
+│   │       │   │   │   ├── filesystem.rs
+│   │       │   │   │   ├── mod.rs
+│   │       │   │   │   ├── shared.rs
+│   │       │   │   │   ├── thread_local.rs
+│   │       │   │   │   └── types.rs
+│   │       │   │   ├── package_loader
+│   │       │   │   │   ├── builtin_loader.rs
+│   │       │   │   │   ├── load_package_tree.rs
+│   │       │   │   │   ├── mod.rs
+│   │       │   │   │   ├── types.rs
+│   │       │   │   │   └── unsupported.rs
+│   │       │   │   ├── resolver
+│   │       │   │   │   ├── backend_source.rs
+│   │       │   │   │   ├── filesystem_source.rs
+│   │       │   │   │   ├── in_memory_source.rs
+│   │       │   │   │   ├── inputs.rs
+│   │       │   │   │   ├── mod.rs
+│   │       │   │   │   ├── multi_source.rs
+│   │       │   │   │   ├── outputs.rs
+│   │       │   │   │   ├── resolve.rs
+│   │       │   │   │   ├── source.rs
+│   │       │   │   │   ├── utils.rs
+│   │       │   │   │   └── web_source.rs
+│   │       │   │   └── task_manager
+│   │       │   │       ├── mod.rs
+│   │       │   │       └── tokio.rs
+│   │       │   ├── state
+│   │       │   │   ├── builder.rs
+│   │       │   │   ├── env.rs
+│   │       │   │   ├── func_env.rs
+│   │       │   │   ├── handles
+│   │       │   │   │   ├── global.rs
+│   │       │   │   │   ├── mod.rs
+│   │       │   │   │   └── thread_local.rs
+│   │       │   │   ├── mod.rs
+│   │       │   │   ├── pipe.rs
+│   │       │   │   ├── run.rs
+│   │       │   │   └── types.rs
+│   │       │   ├── syscalls
+│   │       │   │   ├── journal
+│   │       │   │   │   ├── actions
+│   │       │   │   │   │   ├── close_thread.rs
+│   │       │   │   │   │   ├── fd_advise.rs
+│   │       │   │   │   │   ├── fd_allocate.rs
+│   │       │   │   │   │   ├── fd_close.rs
+│   │       │   │   │   │   ├── fd_dup.rs
+│   │       │   │   │   │   ├── fd_open.rs
+│   │       │   │   │   │   ├── fd_renumber.rs
+│   │       │   │   │   │   ├── fd_seek.rs
+│   │       │   │   │   │   ├── fd_set_flags.rs
+│   │       │   │   │   │   ├── fd_set_rights.rs
+│   │       │   │   │   │   ├── fd_set_size.rs
+│   │       │   │   │   │   ├── fd_set_times.rs
+│   │       │   │   │   │   ├── fd_write.rs
+│   │       │   │   │   │   ├── init_module.rs
+│   │       │   │   │   │   ├── mod.rs
+│   │       │   │   │   │   ├── path_set_times.rs
+│   │       │   │   │   │   ├── process_exit.rs
+│   │       │   │   │   │   ├── set_thread.rs
+│   │       │   │   │   │   ├── snapshot.rs
+│   │       │   │   │   │   ├── tty_set.rs
+│   │       │   │   │   │   └── update_memory.rs
+│   │       │   │   │   ├── clear_ethereal.rs
+│   │       │   │   │   ├── do_checkpoint_from_outside.rs
+│   │       │   │   │   ├── maybe_snapshot_many.rs
+│   │       │   │   │   ├── maybe_snapshot_once.rs
+│   │       │   │   │   ├── maybe_snapshot.rs
+│   │       │   │   │   ├── mod.rs
+│   │       │   │   │   ├── play_event.rs
+│   │       │   │   │   ├── restore_snapshot.rs
+│   │       │   │   │   └── wait_for_snapshot.rs
+│   │       │   │   ├── legacy
+│   │       │   │   │   ├── mod.rs
+│   │       │   │   │   └── snapshot0.rs
+│   │       │   │   ├── mod.rs
+│   │       │   │   ├── unix
+│   │       │   │   │   └── mod.rs
+│   │       │   │   ├── wasi
+│   │       │   │   │   ├── args_get.rs
+│   │       │   │   │   ├── args_sizes_get.rs
+│   │       │   │   │   ├── clock_res_get.rs
+│   │       │   │   │   ├── clock_time_get.rs
+│   │       │   │   │   ├── clock_time_set.rs
+│   │       │   │   │   ├── environ_get.rs
+│   │       │   │   │   ├── environ_sizes_get.rs
+│   │       │   │   │   ├── fd_advise.rs
+│   │       │   │   │   ├── fd_allocate.rs
+│   │       │   │   │   ├── fd_close.rs
+│   │       │   │   │   ├── fd_datasync.rs
+│   │       │   │   │   ├── fd_dup.rs
+│   │       │   │   │   ├── fd_event.rs
+│   │       │   │   │   ├── fd_fdstat_get.rs
+│   │       │   │   │   ├── fd_fdstat_set_flags.rs
+│   │       │   │   │   ├── fd_fdstat_set_rights.rs
+│   │       │   │   │   ├── fd_filestat_get.rs
+│   │       │   │   │   ├── fd_filestat_set_size.rs
+│   │       │   │   │   ├── fd_filestat_set_times.rs
+│   │       │   │   │   ├── fd_prestat_dir_name.rs
+│   │       │   │   │   ├── fd_prestat_get.rs
+│   │       │   │   │   ├── fd_readdir.rs
+│   │       │   │   │   ├── fd_read.rs
+│   │       │   │   │   ├── fd_renumber.rs
+│   │       │   │   │   ├── fd_seek.rs
+│   │       │   │   │   ├── fd_sync.rs
+│   │       │   │   │   ├── fd_tell.rs
+│   │       │   │   │   ├── fd_write.rs
+│   │       │   │   │   ├── mod.rs
+│   │       │   │   │   ├── path_create_directory.rs
+│   │       │   │   │   ├── path_filestat_get.rs
+│   │       │   │   │   ├── path_filestat_set_times.rs
+│   │       │   │   │   ├── path_link.rs
+│   │       │   │   │   ├── path_open.rs
+│   │       │   │   │   ├── path_readlink.rs
+│   │       │   │   │   ├── path_remove_directory.rs
+│   │       │   │   │   ├── path_rename.rs
+│   │       │   │   │   ├── path_symlink.rs
+│   │       │   │   │   ├── path_unlink_file.rs
+│   │       │   │   │   ├── poll_oneoff.rs
+│   │       │   │   │   ├── proc_exit.rs
+│   │       │   │   │   ├── proc_raise.rs
+│   │       │   │   │   ├── random_get.rs
+│   │       │   │   │   └── thread_spawn.rs
+│   │       │   │   ├── wasix
+│   │       │   │   │   ├── callback_signal.rs
+│   │       │   │   │   ├── chdir.rs
+│   │       │   │   │   ├── epoll_create.rs
+│   │       │   │   │   ├── epoll_ctl.rs
+│   │       │   │   │   ├── epoll_wait.rs
+│   │       │   │   │   ├── fd_pipe.rs
+│   │       │   │   │   ├── futex_wait.rs
+│   │       │   │   │   ├── futex_wake_all.rs
+│   │       │   │   │   ├── futex_wake.rs
+│   │       │   │   │   ├── getcwd.rs
+│   │       │   │   │   ├── mod.rs
+│   │       │   │   │   ├── port_addr_add.rs
+│   │       │   │   │   ├── port_addr_clear.rs
+│   │       │   │   │   ├── port_addr_list.rs
+│   │       │   │   │   ├── port_addr_remove.rs
+│   │       │   │   │   ├── port_bridge.rs
+│   │       │   │   │   ├── port_dhcp_acquire.rs
+│   │       │   │   │   ├── port_gateway_set.rs
+│   │       │   │   │   ├── port_mac.rs
+│   │       │   │   │   ├── port_route_add.rs
+│   │       │   │   │   ├── port_route_clear.rs
+│   │       │   │   │   ├── port_route_list.rs
+│   │       │   │   │   ├── port_route_remove.rs
+│   │       │   │   │   ├── port_unbridge.rs
+│   │       │   │   │   ├── proc_exec2.rs
+│   │       │   │   │   ├── proc_exec.rs
+│   │       │   │   │   ├── proc_fork.rs
+│   │       │   │   │   ├── proc_id.rs
+│   │       │   │   │   ├── proc_join.rs
+│   │       │   │   │   ├── proc_parent.rs
+│   │       │   │   │   ├── proc_signal.rs
+│   │       │   │   │   ├── proc_spawn.rs
+│   │       │   │   │   ├── resolve.rs
+│   │       │   │   │   ├── sched_yield.rs
+│   │       │   │   │   ├── sock_accept.rs
+│   │       │   │   │   ├── sock_addr_local.rs
+│   │       │   │   │   ├── sock_addr_peer.rs
+│   │       │   │   │   ├── sock_bind.rs
+│   │       │   │   │   ├── sock_connect.rs
+│   │       │   │   │   ├── sock_get_opt_flag.rs
+│   │       │   │   │   ├── sock_get_opt_size.rs
+│   │       │   │   │   ├── sock_get_opt_time.rs
+│   │       │   │   │   ├── sock_join_multicast_v4.rs
+│   │       │   │   │   ├── sock_join_multicast_v6.rs
+│   │       │   │   │   ├── sock_leave_multicast_v4.rs
+│   │       │   │   │   ├── sock_leave_multicast_v6.rs
+│   │       │   │   │   ├── sock_listen.rs
+│   │       │   │   │   ├── sock_open.rs
+│   │       │   │   │   ├── sock_recv_from.rs
+│   │       │   │   │   ├── sock_recv.rs
+│   │       │   │   │   ├── sock_send_file.rs
+│   │       │   │   │   ├── sock_send.rs
+│   │       │   │   │   ├── sock_send_to.rs
+│   │       │   │   │   ├── sock_set_opt_flag.rs
+│   │       │   │   │   ├── sock_set_opt_size.rs
+│   │       │   │   │   ├── sock_set_opt_time.rs
+│   │       │   │   │   ├── sock_shutdown.rs
+│   │       │   │   │   ├── sock_status.rs
+│   │       │   │   │   ├── stack_checkpoint.rs
+│   │       │   │   │   ├── stack_restore.rs
+│   │       │   │   │   ├── thread_exit.rs
+│   │       │   │   │   ├── thread_id.rs
+│   │       │   │   │   ├── thread_join.rs
+│   │       │   │   │   ├── thread_parallelism.rs
+│   │       │   │   │   ├── thread_signal.rs
+│   │       │   │   │   ├── thread_sleep.rs
+│   │       │   │   │   ├── thread_spawn.rs
+│   │       │   │   │   ├── tty_get.rs
+│   │       │   │   │   └── tty_set.rs
+│   │       │   │   ├── wasm.rs
+│   │       │   │   └── windows.rs
+│   │       │   └── utils
+│   │       │       ├── dummy_waker.rs
+│   │       │       ├── mod.rs
+│   │       │       ├── owned_mutex_guard.rs
+│   │       │       ├── store.rs
+│   │       │       ├── thread_parker.rs
+│   │       │       └── web.rs
+│   │       ├── tests
+│   │       │   ├── envvar.rs
+│   │       │   ├── envvar.wasm
+│   │       │   ├── envvar.wat
+│   │       │   ├── example-condvar.wasm
+│   │       │   ├── example-epoll.wasm
+│   │       │   ├── example-execve.wasm
+│   │       │   ├── example-fork-longjmp.wasm
+│   │       │   ├── example-fork.wasm
+│   │       │   ├── example-longjmp.wasm
+│   │       │   ├── example-pipe.wasm
+│   │       │   ├── example-signal.wasm
+│   │       │   ├── example-sleep.wasm
+│   │       │   ├── example-spawn.wasm
+│   │       │   ├── example-stack.wasm
+│   │       │   ├── example-tcp-client.wasm
+│   │       │   ├── example-tcp-listener.wasm
+│   │       │   ├── example-thread-local.wasm
+│   │       │   ├── example-vfork.wasm
+│   │       │   ├── README.md
+│   │       │   ├── runners.rs
+│   │       │   ├── stack.wasm
+│   │       │   ├── stdin-hello.wasm
+│   │       │   ├── stdio.rs
+│   │       │   └── web-server.wasm
+│   │       └── wia
+│   │           ├── wasixx_32v1.txt
+│   │           ├── wasixx_64v1.txt
+│   │           └── wasm_bus.txt
+│   ├── LICENSE
+│   ├── Makefile
+│   ├── README.md
+│   ├── rust-toolchain
+│   ├── scripts
+│   │   ├── alpine-linux-install-deps.sh
+│   │   ├── make-release.py
+│   │   ├── nix
+│   │   │   └── pkg.nix
+│   │   ├── publish.py
+│   │   ├── update-version.py
+│   │   ├── wasmer-binfmt.service.example
+│   │   └── windows-installer
+│   │       ├── media
+│   │       │   ├── wizard_logo_2.bmp
+│   │       │   ├── wizard_logo.ico
+│   │       │   └── wizard_logo_small.bmp
+│   │       ├── wasmer.iss
+│   │       └── wax.cmd
+│   ├── tests
+│   │   ├── compilers
+│   │   │   ├── artifact.rs
+│   │   │   ├── config.rs
+│   │   │   ├── data
+│   │   │   │   └── 4519_singlepass_panic.wasm
+│   │   │   ├── deterministic.rs
+│   │   │   ├── imports.rs
+│   │   │   ├── issues.rs
+│   │   │   ├── main.rs
+│   │   │   ├── metering.rs
+│   │   │   ├── middlewares.rs
+│   │   │   ├── multi_value_imports.rs
+│   │   │   ├── serialize.rs
+│   │   │   ├── traps.rs
+│   │   │   ├── typed_functions.rs
+│   │   │   ├── wasi.rs
+│   │   │   ├── wasmu
+│   │   │   │   ├── linux
+│   │   │   │   │   ├── bash.wasmu
+│   │   │   │   │   ├── cowsay.wasmu
+│   │   │   │   │   └── python-3.11.3.wasmu
+│   │   │   │   └── windows
+│   │   │   │       ├── bash.wasmu
+│   │   │   │       ├── cowsay.wasmu
+│   │   │   │       └── python-3.11.3.wasmu
+│   │   │   └── wast.rs
+│   │   ├── deprecated
+│   │   │   └── README.md
+│   │   ├── deprecated.rs
+│   │   ├── examples
+│   │   │   ├── add.wat
+│   │   │   ├── call_indirect.wat
+│   │   │   ├── fac.wat
+│   │   │   ├── fib.wat
+│   │   │   ├── global.wat
+│   │   │   ├── invalid.wat
+│   │   │   ├── memory.wat
+│   │   │   ├── no_start.wat
+│   │   │   ├── test.py
+│   │   │   └── trap.wat
+│   │   ├── ignores.txt
+│   │   ├── integration
+│   │   │   ├── cli
+│   │   │   │   ├── build.rs
+│   │   │   │   ├── Cargo.toml
+│   │   │   │   ├── resources
+│   │   │   │   │   ├── php
+│   │   │   │   │   │   ├── db
+│   │   │   │   │   │   └── test.php
+│   │   │   │   │   └── python
+│   │   │   │   │       └── temp-dir-in-child
+│   │   │   │   │           ├── child.py
+│   │   │   │   │           └── main.py
+│   │   │   │   ├── src
+│   │   │   │   │   ├── assets.rs
+│   │   │   │   │   ├── fixtures.rs
+│   │   │   │   │   ├── lib.rs
+│   │   │   │   │   ├── link_code.rs
+│   │   │   │   │   └── util.rs
+│   │   │   │   └── tests
+│   │   │   │       ├── config.rs
+│   │   │   │       ├── create_exe.rs
+│   │   │   │       ├── create.rs
+│   │   │   │       ├── deploy.rs
+│   │   │   │       ├── fixtures
+│   │   │   │       │   ├── init1.toml
+│   │   │   │       │   ├── init2.toml
+│   │   │   │       │   ├── init4.toml
+│   │   │   │       │   └── init6.toml
+│   │   │   │       ├── gen_c_header.rs
+│   │   │   │       ├── init.rs
+│   │   │   │       ├── login.rs
+│   │   │   │       ├── msrv.rs
+│   │   │   │       ├── packages
+│   │   │   │       │   ├── axum
+│   │   │   │       │   │   ├── app.yaml
+│   │   │   │       │   │   ├── Cargo.toml
+│   │   │   │       │   │   ├── src
+│   │   │   │       │   │   │   └── main.rs
+│   │   │   │       │   │   └── wasmer.toml
+│   │   │   │       │   ├── js
+│   │   │   │       │   │   ├── app.yaml
+│   │   │   │       │   │   ├── README.md
+│   │   │   │       │   │   ├── src
+│   │   │   │       │   │   │   └── index.js
+│   │   │   │       │   │   └── wasmer.toml
+│   │   │   │       │   ├── js-script
+│   │   │   │       │   │   ├── src
+│   │   │   │       │   │   │   └── index.js
+│   │   │   │       │   │   └── wasmer.toml
+│   │   │   │       │   ├── list-cwd
+│   │   │   │       │   │   ├── main.c
+│   │   │   │       │   │   ├── main.wasm
+│   │   │   │       │   │   └── wasmer.toml
+│   │   │   │       │   ├── nested-mounted-paths
+│   │   │   │       │   │   ├── a
+│   │   │   │       │   │   │   └── data-a.txt
+│   │   │   │       │   │   ├── b
+│   │   │   │       │   │   │   └── data-b.txt
+│   │   │   │       │   │   ├── main.c
+│   │   │   │       │   │   ├── main.o
+│   │   │   │       │   │   ├── out.webc
+│   │   │   │       │   │   └── wasmer.toml
+│   │   │   │       │   ├── php
+│   │   │   │       │   │   ├── app
+│   │   │   │       │   │   │   └── index.php
+│   │   │   │       │   │   ├── app.yaml
+│   │   │   │       │   │   └── wasmer.toml
+│   │   │   │       │   └── static_website
+│   │   │   │       │       ├── app.yaml
+│   │   │   │       │       ├── public
+│   │   │   │       │       │   └── index.html
+│   │   │   │       │       └── wasmer.toml
+│   │   │   │       ├── publish.rs
+│   │   │   │       ├── run.rs
+│   │   │   │       ├── snapshot.rs
+│   │   │   │       ├── snapshots
+│   │   │   │       │   ├── snapshot__snapshot_bash_bash.snap
+│   │   │   │       │   ├── snapshot__snapshot_bash_cd_ls.snap
+│   │   │   │       │   ├── snapshot__snapshot_bash_dash.snap
+│   │   │   │       │   ├── snapshot__snapshot_bash_echo.snap
+│   │   │   │       │   ├── snapshot__snapshot_bash_ls.snap
+│   │   │   │       │   ├── snapshot__snapshot_bash_pipe.snap
+│   │   │   │       │   ├── snapshot__snapshot_bash_python.snap
+│   │   │   │       │   ├── snapshot__snapshot_catsay.snap
+│   │   │   │       │   ├── snapshot__snapshot_condvar_async.snap
+│   │   │   │       │   ├── snapshot__snapshot_condvar.snap
+│   │   │   │       │   ├── snapshot__snapshot_cowsay.snap
+│   │   │   │       │   ├── snapshot__snapshot_dash_bash.snap
+│   │   │   │       │   ├── snapshot__snapshot_dash_dash.snap
+│   │   │   │       │   ├── snapshot__snapshot_dash_dev_urandom.snap
+│   │   │   │       │   ├── snapshot__snapshot_dash_dev_zero.snap
+│   │   │   │       │   ├── snapshot__snapshot_dash_echo.snap
+│   │   │   │       │   ├── snapshot__snapshot_dash_echo_to_cat.snap
+│   │   │   │       │   ├── snapshot__snapshot_dash_python.snap
+│   │   │   │       │   ├── snapshot__snapshot_default_file_system_tree.snap
+│   │   │   │       │   ├── snapshot__snapshot_epoll_async.snap
+│   │   │   │       │   ├── snapshot__snapshot_epoll.snap
+│   │   │   │       │   ├── snapshot__snapshot_execve_async.snap
+│   │   │   │       │   ├── snapshot__snapshot_execve.snap
+│   │   │   │       │   ├── snapshot__snapshot_exit_0_from_main.snap
+│   │   │   │       │   ├── snapshot__snapshot_exit_0_from_worker.snap
+│   │   │   │       │   ├── snapshot__snapshot_exit_1_from_main.snap
+│   │   │   │       │   ├── snapshot__snapshot_exit_1_from_worker.snap
+│   │   │   │       │   ├── snapshot__snapshot_file_copy.snap
+│   │   │   │       │   ├── snapshot__snapshot_fork_and_exec_async.snap
+│   │   │   │       │   ├── snapshot__snapshot_fork_and_exec.snap
+│   │   │   │       │   ├── snapshot__snapshot_fork_async.snap
+│   │   │   │       │   ├── snapshot__snapshot_fork.snap
+│   │   │   │       │   ├── snapshot__snapshot_fs_rename.snap
+│   │   │   │       │   ├── snapshot__snapshot_longjump_fork_async.snap
+│   │   │   │       │   ├── snapshot__snapshot_longjump_fork.snap
+│   │   │   │       │   ├── snapshot__snapshot_longjump.snap
+│   │   │   │       │   ├── snapshot__snapshot_minimodem_rx.snap
+│   │   │   │       │   ├── snapshot__snapshot_minimodem_tx.snap
+│   │   │   │       │   ├── snapshot__snapshot_multithreading_async.snap
+│   │   │   │       │   ├── snapshot__snapshot_multithreading.snap
+│   │   │   │       │   ├── snapshot__snapshot_pipes.snap
+│   │   │   │       │   ├── snapshot__snapshot_process_spawn_async.snap
+│   │   │   │       │   ├── snapshot__snapshot_process_spawn.snap
+│   │   │   │       │   ├── snapshot__snapshot_python_3_11_3.snap
+│   │   │   │       │   ├── snapshot__snapshot_quickjs.snap
+│   │   │   │       │   ├── snapshot__snapshot_readdir_tree.snap
+│   │   │   │       │   ├── snapshot__snapshot_signals_async.snap
+│   │   │   │       │   ├── snapshot__snapshot_signals.snap
+│   │   │   │       │   ├── snapshot__snapshot_sleep_async.snap
+│   │   │   │       │   ├── snapshot__snapshot_sleep.snap
+│   │   │   │       │   ├── snapshot__snapshot_stdin_stdout_stderr.snap
+│   │   │   │       │   ├── snapshot__snapshot_tcp_client.snap
+│   │   │   │       │   ├── snapshot__snapshot_threaded_memory.snap
+│   │   │   │       │   ├── snapshot__snapshot_thread_locals.snap
+│   │   │   │       │   ├── snapshot__snapshot_tokio.snap
+│   │   │   │       │   ├── snapshot__snapshot_unix_pipe.snap
+│   │   │   │       │   ├── snapshot__snapshot_vfork_async.snap
+│   │   │   │       │   ├── snapshot__snapshot_vfork.snap
+│   │   │   │       │   ├── snapshot__snapshot_wasi_threads.snap
+│   │   │   │       │   ├── snapshot__snapshot_web_server_epoll.snap
+│   │   │   │       │   ├── snapshot__snapshot_web_server_poll.snap
+│   │   │   │       │   ├── snapshot__snapshot_web_server.snap
+│   │   │   │       │   ├── snapshot__snapshot_worker_panicking.snap
+│   │   │   │       │   └── snapshot__snapshot_worker_terminating_normally.snap
+│   │   │   │       ├── wasm
+│   │   │   │       │   ├── bash.wasm
+│   │   │   │       │   ├── catsay.wasm
+│   │   │   │       │   ├── coreutils.wasm
+│   │   │   │       │   ├── cowsay.wasm
+│   │   │   │       │   ├── dash.wasm
+│   │   │   │       │   ├── example-condvar.wasm
+│   │   │   │       │   ├── example-epoll.wasm
+│   │   │   │       │   ├── example-execve.wasm
+│   │   │   │       │   ├── example-file-copy.wasm
+│   │   │   │       │   ├── example-fork-longjmp.wasm
+│   │   │   │       │   ├── example-fork.wasm
+│   │   │   │       │   ├── example-http-ok.wasm
+│   │   │   │       │   ├── example-longjmp.wasm
+│   │   │   │       │   ├── example-multi-threading.wasm
+│   │   │   │       │   ├── example-pipe.wasm
+│   │   │   │       │   ├── example-readdir_tree.wasm
+│   │   │   │       │   ├── example-signal.wasm
+│   │   │   │       │   ├── example-sleep.wasm
+│   │   │   │       │   ├── example-spawn.wasm
+│   │   │   │       │   ├── example-stack.wasm
+│   │   │   │       │   ├── example-tcp-client.wasm
+│   │   │   │       │   ├── example-tcp-listener.wasm
+│   │   │   │       │   ├── example-thread-local.wasm
+│   │   │   │       │   ├── example-tokio.wasm
+│   │   │   │       │   ├── example-unix-pipe.wasm
+│   │   │   │       │   ├── example-vfork.wasm
+│   │   │   │       │   ├── exit-0-from-main.wasm
+│   │   │   │       │   ├── exit-0-from-worker.wasm
+│   │   │   │       │   ├── exit-1-from-main.wasm
+│   │   │   │       │   ├── exit-1-from-worker.wasm
+│   │   │   │       │   ├── fs-rename.wasm
+│   │   │   │       │   ├── kibi.wasm
+│   │   │   │       │   ├── minimodem.data
+│   │   │   │       │   ├── minimodem.wasm
+│   │   │   │       │   ├── mother.wasm
+│   │   │   │       │   ├── multi-threading.wasm
+│   │   │   │       │   ├── php.wasm
+│   │   │   │       │   ├── python-3.11.3.wasm
+│   │   │   │       │   ├── qjs.wasm
+│   │   │   │       │   ├── stdin-hello.wasm
+│   │   │   │       │   ├── threaded-memory.wasm
+│   │   │   │       │   ├── wasi-threads.wasm
+│   │   │   │       │   ├── web-server-epoll.wasm
+│   │   │   │       │   ├── web-server-poll.wasm
+│   │   │   │       │   ├── worker-panicking.wasm
+│   │   │   │       │   └── worker-terminating-normally.wasm
+│   │   │   │       └── webc
+│   │   │   │           ├── bash-1.0.16-f097441a-a80b-4e0d-87d7-684918ef4bb6.webc
+│   │   │   │           ├── coreutils-1.0.11-9d7746ca-694f-11ed-b932-dead3543c068.webc
+│   │   │   │           ├── coreutils-1.0.16-e27dbb4f-2ef2-4b44-b46a-ddd86497c6d7.webc
+│   │   │   │           ├── dash-1.0.18-f0d13233-bcda-4cf1-9a23-3460bffaae2a.webc
+│   │   │   │           ├── hello-0.1.0-665d2ddc-80e6-4845-85d3-4587b1693bb7.webc
+│   │   │   │           ├── python-0.1.0.webc
+│   │   │   │           ├── static-web-server-1.0.96-e2b80276-c194-473d-bbd0-27c8a2c96a59.webc
+│   │   │   │           ├── static-web-server-async-1.0.3-5d739d1a-20b7-4edf-8cf4-44e813f96b25.webc
+│   │   │   │           ├── wasmer-sh-1.0.63-dd3d67d1-de94-458c-a9ee-caea3b230ccf.webc
+│   │   │   │           └── wasmer-tests--volume-static-webserver@0.1.0.webc
+│   │   │   ├── ios
+│   │   │   │   ├── Cargo.toml
+│   │   │   │   ├── DylibExample
+│   │   │   │   │   ├── DylibExample
+│   │   │   │   │   │   ├── AppDelegate.swift
+│   │   │   │   │   │   ├── Assets.xcassets
+│   │   │   │   │   │   │   ├── AccentColor.colorset
+│   │   │   │   │   │   │   │   └── Contents.json
+│   │   │   │   │   │   │   ├── AppIcon.appiconset
+│   │   │   │   │   │   │   │   └── Contents.json
+│   │   │   │   │   │   │   └── Contents.json
+│   │   │   │   │   │   ├── Base.lproj
+│   │   │   │   │   │   │   ├── LaunchScreen.storyboard
+│   │   │   │   │   │   │   └── Main.storyboard
+│   │   │   │   │   │   ├── calc.cpp
+│   │   │   │   │   │   ├── calc.h
+│   │   │   │   │   │   ├── DylibExample-Bridging-Header.h
+│   │   │   │   │   │   ├── Info.plist
+│   │   │   │   │   │   ├── SceneDelegate.swift
+│   │   │   │   │   │   ├── sum.wasm
+│   │   │   │   │   │   └── ViewController.swift
+│   │   │   │   │   ├── DylibExampleTests
+│   │   │   │   │   │   ├── DylibExampleTests.swift
+│   │   │   │   │   │   └── Info.plist
+│   │   │   │   │   └── DylibExample.xcodeproj
+│   │   │   │   │       ├── project.pbxproj
+│   │   │   │   │       ├── project.xcworkspace
+│   │   │   │   │       │   ├── contents.xcworkspacedata
+│   │   │   │   │       │   └── xcshareddata
+│   │   │   │   │       │       └── IDEWorkspaceChecks.plist
+│   │   │   │   │       └── xcshareddata
+│   │   │   │   │           └── xcschemes
+│   │   │   │   │               └── DylibExample.xcscheme
+│   │   │   │   └── tests
+│   │   │   │       └── dylib.rs
+│   │   │   └── README.md
+│   │   ├── lib
+│   │   │   ├── compiler-test-derive
+│   │   │   │   ├── build.rs
+│   │   │   │   ├── Cargo.toml
+│   │   │   │   └── src
+│   │   │   │       ├── ignores.rs
+│   │   │   │       ├── lib.rs
+│   │   │   │       └── tests.rs
+│   │   │   ├── README.md
+│   │   │   ├── test-generator
+│   │   │   │   ├── Cargo.toml
+│   │   │   │   └── src
+│   │   │   │       ├── lib.rs
+│   │   │   │       └── processors.rs
+│   │   │   └── wast
+│   │   │       ├── Cargo.toml
+│   │   │       ├── README.md
+│   │   │       └── src
+│   │   │           ├── error.rs
+│   │   │           ├── lib.rs
+│   │   │           ├── spectest.rs
+│   │   │           ├── wasi_wast.rs
+│   │   │           └── wast.rs
+│   │   ├── old-tar-gz
+│   │   │   ├── coreutils-1.0.11.tar.gz
+│   │   │   └── cowsay-0.3.0.tar.gz
+│   │   ├── rust-wasi-tests
+│   │   │   ├── Cargo.lock
+│   │   │   ├── Cargo.toml
+│   │   │   └── src
+│   │   │       ├── bin
+│   │   │       │   ├── exit-0-from-main.rs
+│   │   │       │   ├── exit-0-from-worker.rs
+│   │   │       │   ├── exit-1-from-main.rs
+│   │   │       │   ├── exit-1-from-worker.rs
+│   │   │       │   ├── fs-rename.rs
+│   │   │       │   ├── worker-panicking.rs
+│   │   │       │   └── worker-terminating-normally.rs
+│   │   │       └── lib.rs
+│   │   ├── wasi-fyi
+│   │   │   ├── build.sh
+│   │   │   ├── env_args-many.arg
+│   │   │   ├── env_args-many.rs
+│   │   │   ├── env_args-none.arg
+│   │   │   ├── env_args-none.rs
+│   │   │   ├── env_args-some.arg
+│   │   │   ├── env_args-some.rs
+│   │   │   ├── env_vars-many.env
+│   │   │   ├── env_vars-many.rs
+│   │   │   ├── env_vars-none.env
+│   │   │   ├── env_vars-none.rs
+│   │   │   ├── env_vars-some.env
+│   │   │   ├── env_vars-some.rs
+│   │   │   ├── fd_advise_validity.rs
+│   │   │   ├── fd_seek_append.rs
+│   │   │   ├── fd_seek_cur_negative_underflow.rs
+│   │   │   ├── fs_create_dir_all-existing.rs
+│   │   │   ├── fs_create_dir_all-new-directories.rs
+│   │   │   ├── fs_create_dir-existing-directory.rs
+│   │   │   ├── fs_create_dir-new-directory.rs
+│   │   │   ├── fs_create_dir-non_existent.rs
+│   │   │   ├── fs_empty_path.rs
+│   │   │   ├── fs_file_create.rs
+│   │   │   ├── fs_metadata-directory.rs
+│   │   │   ├── fs_metadata-file.rs
+│   │   │   ├── fs_open_append_offset.rs
+│   │   │   ├── fs_open_dir_excl.rs
+│   │   │   ├── fs_open_dir_write.rs
+│   │   │   ├── fs_open_trailing_slash.rs
+│   │   │   ├── fs_remove_dir_all.rs
+│   │   │   ├── fs_rename-directory.rs
+│   │   │   ├── fs_rename-file.rs
+│   │   │   ├── fs_sandbox_symlink.rs
+│   │   │   ├── fs_seek_append_mode.rs
+│   │   │   ├── fs_write-and-seek.rs
+│   │   │   ├── io_stderr-beowulf.rs
+│   │   │   ├── io_stderr-beowulf.stderr
+│   │   │   ├── io_stderr-hello.rs
+│   │   │   ├── io_stderr-hello.stderr
+│   │   │   ├── io_stdin-beowulf.rs
+│   │   │   ├── io_stdin-beowulf.stdin
+│   │   │   ├── io_stdin-hello.rs
+│   │   │   ├── io_stdin-hello.stdin
+│   │   │   ├── io_stdout-beowulf.rs
+│   │   │   ├── io_stdout-beowulf.stdout
+│   │   │   ├── io_stdout-hello.rs
+│   │   │   ├── io_stdout-hello.stdout
+│   │   │   ├── LICENSE
+│   │   │   ├── main.rs
+│   │   │   ├── ported_close_preopen_fd.rs
+│   │   │   ├── ported_close_preopen_fd.stdout
+│   │   │   ├── ported_create_dir.rs
+│   │   │   ├── ported_create_dir.stdout
+│   │   │   ├── ported_envvar.env
+│   │   │   ├── ported_envvar.rs
+│   │   │   ├── ported_envvar.stdout
+│   │   │   ├── ported_fd_allocate.rs
+│   │   │   ├── ported_fd_allocate.stdout
+│   │   │   ├── ported_fd_append.rs
+│   │   │   ├── ported_fd_append.stdout
+│   │   │   ├── ported_fd_close.rs
+│   │   │   ├── ported_fd_close.stdout
+│   │   │   ├── ported_fd_pread.rs
+│   │   │   ├── ported_fd_pread.stdout
+│   │   │   ├── ported_fd_read.rs
+│   │   │   ├── ported_fd_read.stdout
+│   │   │   ├── ported_fd_rename_path.rs
+│   │   │   ├── ported_fd_rename_path.stdout
+│   │   │   ├── ported_fd_rights.rs
+│   │   │   ├── ported_fd_rights.stdout
+│   │   │   ├── ported_fd_sync.rs
+│   │   │   ├── ported_fd_sync.stdout
+│   │   │   ├── ported_file_metadata.rs
+│   │   │   ├── ported_file_metadata.stdout
+│   │   │   ├── ported_fseek.rs
+│   │   │   ├── ported_fseek.stdout
+│   │   │   ├── ported_fs_sandbox.rs
+│   │   │   ├── ported_fs_sandbox.stdout
+│   │   │   ├── ported_hello.rs
+│   │   │   ├── ported_hello.stdout
+│   │   │   ├── ported_inode.rs
+│   │   │   ├── ported_inode.stdout
+│   │   │   ├── ported_isatty.rs
+│   │   │   ├── ported_isatty.stdout
+│   │   │   ├── ported_mapdir.rs
+│   │   │   ├── ported_mapdir.stdout
+│   │   │   ├── ported_mapdir_with_leading_slash.rs
+│   │   │   ├── ported_mapdir_with_leading_slash.stdout
+│   │   │   ├── ported_path_link.rs
+│   │   │   ├── ported_path_link.stdout
+│   │   │   ├── ported_path_rename.rs
+│   │   │   ├── ported_path_rename.stdout
+│   │   │   ├── ported_path_symlink.rs
+│   │   │   ├── ported_path_symlink.stdout
+│   │   │   ├── ported_pipe_reverse.rs
+│   │   │   ├── ported_pipe_reverse.stdin
+│   │   │   ├── ported_pipe_reverse.stdout
+│   │   │   ├── ported_poll_oneoff.rs
+│   │   │   ├── ported_poll_oneoff.stdout
+│   │   │   ├── ported_quine.rs
+│   │   │   ├── ported_quine.stdout
+│   │   │   ├── ported_readlink.rs
+│   │   │   ├── ported_readlink.stdout
+│   │   │   ├── ported_wasi_sees_virtual_root.rs
+│   │   │   ├── ported_wasi_sees_virtual_root.stdout
+│   │   │   ├── ported_writing.rs
+│   │   │   ├── ported_writing.stdout
+│   │   │   ├── port_unix_open_special_files.rs
+│   │   │   ├── port_unix_open_special_files.stdout
+│   │   │   ├── process_exit-0.rs
+│   │   │   ├── process_exit-0.status
+│   │   │   ├── process_exit-120.rs
+│   │   │   ├── process_exit-120.status
+│   │   │   ├── process_exit-1.rs
+│   │   │   ├── process_exit-1.status
+│   │   │   ├── README.md
+│   │   │   ├── test_fs
+│   │   │   │   ├── fyi
+│   │   │   │   │   ├── fs_create_dir-existing-directory.dir
+│   │   │   │   │   │   └── existing_directory
+│   │   │   │   │   ├── fs_create_dir-new-directory.dir
+│   │   │   │   │   ├── fs_create_dir-non_existent.rs
+│   │   │   │   │   ├── fs_file_create.dir
+│   │   │   │   │   ├── fs_metadata-directory.dir
+│   │   │   │   │   │   └── directory
+│   │   │   │   │   ├── fs_metadata-file.dir
+│   │   │   │   │   │   └── file
+│   │   │   │   │   ├── fs_open_append_offset.dir
+│   │   │   │   │   ├── fs_open_dir_excl.dir
+│   │   │   │   │   │   └── file
+│   │   │   │   │   ├── fs_open_dir_write.dir
+│   │   │   │   │   ├── fs_open_trailing_slash.dir
+│   │   │   │   │   │   └── file
+│   │   │   │   │   ├── fs_rename-directory.dir
+│   │   │   │   │   │   └── old_directory
+│   │   │   │   │   ├── fs_rename-file.dir
+│   │   │   │   │   │   └── old_file
+│   │   │   │   │   ├── fs_sandbox_symlink.dir
+│   │   │   │   │   │   ├── link -> ../../README.md
+│   │   │   │   │   │   └── link-non-existant -> ../../non-existant
+│   │   │   │   │   └── fs_seek_append.dir
+│   │   │   │   │       └── file
+│   │   │   │   ├── hamlet
+│   │   │   │   │   ├── act1
+│   │   │   │   │   │   ├── scene1.txt
+│   │   │   │   │   │   ├── scene2.txt
+│   │   │   │   │   │   ├── scene3.txt
+│   │   │   │   │   │   ├── scene4.txt
+│   │   │   │   │   │   └── scene5.txt
+│   │   │   │   │   ├── act2
+│   │   │   │   │   │   ├── scene1.txt
+│   │   │   │   │   │   └── scene2.txt
+│   │   │   │   │   ├── act3
+│   │   │   │   │   │   ├── scene1.txt
+│   │   │   │   │   │   ├── scene2.txt
+│   │   │   │   │   │   ├── scene3.txt
+│   │   │   │   │   │   └── scene4.txt
+│   │   │   │   │   ├── act4
+│   │   │   │   │   │   ├── scene1.txt
+│   │   │   │   │   │   ├── scene2.txt
+│   │   │   │   │   │   ├── scene3.txt
+│   │   │   │   │   │   ├── scene4.txt
+│   │   │   │   │   │   ├── scene5.txt
+│   │   │   │   │   │   ├── scene6.txt
+│   │   │   │   │   │   └── scene7.txt
+│   │   │   │   │   ├── act5
+│   │   │   │   │   │   ├── scene1.txt
+│   │   │   │   │   │   └── scene2.txt
+│   │   │   │   │   ├── bookmarks
+│   │   │   │   │   │   └── 2019-07-16 -> ../act1/scene2.txt
+│   │   │   │   │   └── README.md
+│   │   │   │   └── README.md
+│   │   │   ├── test.sh
+│   │   │   └── wasm-test.sh
+│   │   ├── wasi-wast
+│   │   │   ├── Cargo.lock
+│   │   │   ├── Cargo.toml
+│   │   │   ├── README.md
+│   │   │   ├── src
+│   │   │   │   ├── main.rs
+│   │   │   │   ├── set_up_toolchain.rs
+│   │   │   │   ├── util.rs
+│   │   │   │   ├── wasitests.rs
+│   │   │   │   └── wasi_version.rs
+│   │   │   └── wasi
+│   │   │       ├── nightly_2022_10_18
+│   │   │       │   ├── close_preopen_fd.wasm
+│   │   │       │   ├── close_preopen_fd.wast
+│   │   │       │   ├── create_dir.wasm
+│   │   │       │   ├── create_dir.wast
+│   │   │       │   ├── envvar.wasm
+│   │   │       │   ├── envvar.wast
+│   │   │       │   ├── fd_allocate.wast
+│   │   │       │   ├── fd_append.wasm
+│   │   │       │   ├── fd_append.wast
+│   │   │       │   ├── fd_close.wast
+│   │   │       │   ├── fd_pread.wast
+│   │   │       │   ├── fd_read.wast
+│   │   │       │   ├── fd_rename_path.wasm
+│   │   │       │   ├── fd_rename_path.wast
+│   │   │       │   ├── fd_rights.wasm
+│   │   │       │   ├── fd_rights.wast
+│   │   │       │   ├── fd_sync.wasm
+│   │   │       │   ├── fd_sync.wast
+│   │   │       │   ├── file_metadata.wasm
+│   │   │       │   ├── file_metadata.wast
+│   │   │       │   ├── fseek.wasm
+│   │   │       │   ├── fseek.wast
+│   │   │       │   ├── fs_sandbox_test.wasm
+│   │   │       │   ├── fs_sandbox_test.wast
+│   │   │       │   ├── hello.wasm
+│   │   │       │   ├── hello.wast
+│   │   │       │   ├── isatty.wasm
+│   │   │       │   ├── isatty.wast
+│   │   │       │   ├── mapdir.wasm
+│   │   │       │   ├── mapdir.wast
+│   │   │       │   ├── mapdir_with_leading_slash.wasm
+│   │   │       │   ├── mapdir_with_leading_slash.wast
+│   │   │       │   ├── path_link.wasm
+│   │   │       │   ├── path_link.wast
+│   │   │       │   ├── path_rename.wasm
+│   │   │       │   ├── path_rename.wast
+│   │   │       │   ├── path_symlink.wasm
+│   │   │       │   ├── path_symlink.wast
+│   │   │       │   ├── pipe_reverse.wasm
+│   │   │       │   ├── pipe_reverse.wast
+│   │   │       │   ├── poll_oneoff.wast
+│   │   │       │   ├── quine.wasm
+│   │   │       │   ├── quine.wast
+│   │   │       │   ├── readlink.wasm
+│   │   │       │   ├── readlink.wast
+│   │   │       │   ├── unix_open_special_files.wasm
+│   │   │       │   ├── unix_open_special_files.wast
+│   │   │       │   ├── wasi_sees_virtual_root.wasm
+│   │   │       │   ├── wasi_sees_virtual_root.wast
+│   │   │       │   ├── writing.wasm
+│   │   │       │   └── writing.wast
+│   │   │       ├── snapshot1
+│   │   │       │   ├── close_preopen_fd.wasm
+│   │   │       │   ├── close_preopen_fd.wast
+│   │   │       │   ├── create_dir.wasm
+│   │   │       │   ├── create_dir.wast
+│   │   │       │   ├── envvar.wasm
+│   │   │       │   ├── envvar.wast
+│   │   │       │   ├── fd_allocate.wasm
+│   │   │       │   ├── fd_allocate.wast
+│   │   │       │   ├── fd_append.wasm
+│   │   │       │   ├── fd_append.wast
+│   │   │       │   ├── fd_close.wasm
+│   │   │       │   ├── fd_close.wast
+│   │   │       │   ├── fd_pread.wasm
+│   │   │       │   ├── fd_pread.wast
+│   │   │       │   ├── fd_read.wasm
+│   │   │       │   ├── fd_read.wast
+│   │   │       │   ├── fd_rename_path.wasm
+│   │   │       │   ├── fd_rename_path.wast
+│   │   │       │   ├── fd_sync.wasm
+│   │   │       │   ├── fd_sync.wast
+│   │   │       │   ├── file_metadata.wasm
+│   │   │       │   ├── file_metadata.wast
+│   │   │       │   ├── fseek.wasm
+│   │   │       │   ├── fseek.wast
+│   │   │       │   ├── fs_sandbox_test.wasm
+│   │   │       │   ├── fs_sandbox_test.wast
+│   │   │       │   ├── hello.wasm
+│   │   │       │   ├── hello.wast
+│   │   │       │   ├── inode.wasm
+│   │   │       │   ├── inode.wast
+│   │   │       │   ├── isatty.wasm
+│   │   │       │   ├── isatty.wast
+│   │   │       │   ├── mapdir.wasm
+│   │   │       │   ├── mapdir.wast
+│   │   │       │   ├── mapdir_with_leading_slash.wasm
+│   │   │       │   ├── mapdir_with_leading_slash.wast
+│   │   │       │   ├── path_link.wasm
+│   │   │       │   ├── path_link.wast
+│   │   │       │   ├── path_rename.wasm
+│   │   │       │   ├── path_rename.wast
+│   │   │       │   ├── path_symlink.wasm
+│   │   │       │   ├── path_symlink.wast
+│   │   │       │   ├── pipe_reverse.wasm
+│   │   │       │   ├── pipe_reverse.wast
+│   │   │       │   ├── poll_oneoff.wasm
+│   │   │       │   ├── poll_oneoff.wast
+│   │   │       │   ├── quine.wasm
+│   │   │       │   ├── quine.wast
+│   │   │       │   ├── readlink.wasm
+│   │   │       │   ├── readlink.wast
+│   │   │       │   ├── unix_open_special_files.wasm
+│   │   │       │   ├── unix_open_special_files.wast
+│   │   │       │   ├── wasi_sees_virtual_root.wasm
+│   │   │       │   ├── wasi_sees_virtual_root.wast
+│   │   │       │   ├── writing.wasm
+│   │   │       │   └── writing.wast
+│   │   │       ├── test_fs
+│   │   │       │   ├── hamlet
+│   │   │       │   │   ├── act1
+│   │   │       │   │   │   ├── scene1.txt
+│   │   │       │   │   │   ├── scene2.txt
+│   │   │       │   │   │   ├── scene3.txt
+│   │   │       │   │   │   ├── scene4.txt
+│   │   │       │   │   │   └── scene5.txt
+│   │   │       │   │   ├── act2
+│   │   │       │   │   │   ├── scene1.txt
+│   │   │       │   │   │   └── scene2.txt
+│   │   │       │   │   ├── act3
+│   │   │       │   │   │   ├── scene1.txt
+│   │   │       │   │   │   ├── scene2.txt
+│   │   │       │   │   │   ├── scene3.txt
+│   │   │       │   │   │   └── scene4.txt
+│   │   │       │   │   ├── act4
+│   │   │       │   │   │   ├── scene1.txt
+│   │   │       │   │   │   ├── scene2.txt
+│   │   │       │   │   │   ├── scene3.txt
+│   │   │       │   │   │   ├── scene4.txt
+│   │   │       │   │   │   ├── scene5.txt
+│   │   │       │   │   │   ├── scene6.txt
+│   │   │       │   │   │   └── scene7.txt
+│   │   │       │   │   ├── act5
+│   │   │       │   │   │   ├── scene1.txt
+│   │   │       │   │   │   └── scene2.txt
+│   │   │       │   │   ├── bookmarks
+│   │   │       │   │   │   └── 2019-07-16 -> ../act1/scene2.txt
+│   │   │       │   │   └── README.md
+│   │   │       │   └── README.md
+│   │   │       ├── tests
+│   │   │       │   ├── close_preopen_fd.rs
+│   │   │       │   ├── create_dir.rs
+│   │   │       │   ├── envvar.rs
+│   │   │       │   ├── fd_allocate.rs
+│   │   │       │   ├── fd_append.rs
+│   │   │       │   ├── fd_close.rs
+│   │   │       │   ├── fd_pread.rs
+│   │   │       │   ├── fd_read.rs
+│   │   │       │   ├── fd_rename_path.rs
+│   │   │       │   ├── fd_rights.rs
+│   │   │       │   ├── fd_sync.rs
+│   │   │       │   ├── file_metadata.rs
+│   │   │       │   ├── fseek.rs
+│   │   │       │   ├── fs_sandbox_test.rs
+│   │   │       │   ├── hello.rs
+│   │   │       │   ├── inode.rs
+│   │   │       │   ├── isatty.rs
+│   │   │       │   ├── mapdir.rs
+│   │   │       │   ├── mapdir_with_leading_slash.rs
+│   │   │       │   ├── path_link.rs
+│   │   │       │   ├── path_rename.rs
+│   │   │       │   ├── path_symlink.rs
+│   │   │       │   ├── pipe_reverse.rs
+│   │   │       │   ├── poll_oneoff.rs
+│   │   │       │   ├── quine.rs
+│   │   │       │   ├── readlink.rs
+│   │   │       │   ├── unix_open_special_files.rs
+│   │   │       │   ├── wasi_sees_virtual_root.rs
+│   │   │       │   └── writing.rs
+│   │   │       └── unstable
+│   │   │           ├── close_preopen_fd.wasm
+│   │   │           ├── close_preopen_fd.wast
+│   │   │           ├── create_dir.wasm
+│   │   │           ├── create_dir.wast
+│   │   │           ├── envvar.wasm
+│   │   │           ├── envvar.wast
+│   │   │           ├── fd_allocate.wasm
+│   │   │           ├── fd_allocate.wast
+│   │   │           ├── fd_append.wasm
+│   │   │           ├── fd_append.wast
+│   │   │           ├── fd_close.wasm
+│   │   │           ├── fd_close.wast
+│   │   │           ├── fd_pread.wasm
+│   │   │           ├── fd_pread.wast
+│   │   │           ├── fd_read.wasm
+│   │   │           ├── fd_read.wast
+│   │   │           ├── fd_sync.wasm
+│   │   │           ├── fd_sync.wast
+│   │   │           ├── file_metadata.wasm
+│   │   │           ├── file_metadata.wast
+│   │   │           ├── fseek.wasm
+│   │   │           ├── fseek.wast
+│   │   │           ├── fs_sandbox_test.wasm
+│   │   │           ├── fs_sandbox_test.wast
+│   │   │           ├── hello.wasm
+│   │   │           ├── hello.wast
+│   │   │           ├── isatty.wasm
+│   │   │           ├── isatty.wast
+│   │   │           ├── mapdir.wasm
+│   │   │           ├── mapdir.wast
+│   │   │           ├── mapdir_with_leading_slash.wasm
+│   │   │           ├── mapdir_with_leading_slash.wast
+│   │   │           ├── path_link.wasm
+│   │   │           ├── path_link.wast
+│   │   │           ├── path_rename.wasm
+│   │   │           ├── path_rename.wast
+│   │   │           ├── path_symlink.wasm
+│   │   │           ├── path_symlink.wast
+│   │   │           ├── pipe_reverse.wasm
+│   │   │           ├── pipe_reverse.wast
+│   │   │           ├── poll_oneoff.wasm
+│   │   │           ├── poll_oneoff.wast
+│   │   │           ├── quine.wasm
+│   │   │           ├── quine.wast
+│   │   │           ├── readlink.wasm
+│   │   │           ├── readlink.wast
+│   │   │           ├── unix_open_special_files.wasm
+│   │   │           ├── unix_open_special_files.wast
+│   │   │           ├── wasi_sees_virtual_root.wasm
+│   │   │           ├── wasi_sees_virtual_root.wast
+│   │   │           ├── writing.wasm
+│   │   │           └── writing.wast
+│   │   ├── wasix
+│   │   │   ├── chdir-getcwd
+│   │   │   │   ├── main.c
+│   │   │   │   └── run.sh
+│   │   │   ├── cwd-to-home
+│   │   │   │   ├── hello.txt
+│   │   │   │   ├── main.c
+│   │   │   │   └── run.sh
+│   │   │   ├── epoll-create-ctl-wait
+│   │   │   │   ├── main.c
+│   │   │   │   └── run.sh
+│   │   │   ├── fd_pipe
+│   │   │   │   ├── main.c
+│   │   │   │   └── run.sh
+│   │   │   ├── mount-tmp-locally
+│   │   │   │   ├── main.c
+│   │   │   │   └── run.sh
+│   │   │   ├── msync-end-of-file
+│   │   │   │   ├── main.c
+│   │   │   │   └── run.sh
+│   │   │   ├── msync-middle-of-file
+│   │   │   │   ├── main.c
+│   │   │   │   └── run.sh
+│   │   │   ├── msync-start-of-file
+│   │   │   │   ├── main.c
+│   │   │   │   └── run.sh
+│   │   │   ├── munmap-sync-end-of-file
+│   │   │   │   ├── main.c
+│   │   │   │   └── run.sh
+│   │   │   ├── munmap-sync-middle-of-file
+│   │   │   │   ├── main.c
+│   │   │   │   └── run.sh
+│   │   │   ├── munmap-sync-start-of-file
+│   │   │   │   ├── main.c
+│   │   │   │   └── run.sh
+│   │   │   ├── proc-exec
+│   │   │   │   ├── main.c
+│   │   │   │   └── run.sh
+│   │   │   ├── proc-exec2
+│   │   │   │   ├── main.c
+│   │   │   │   └── run.sh
+│   │   │   ├── pwrite-and-size
+│   │   │   │   ├── main.c
+│   │   │   │   └── run.sh
+│   │   │   ├── read-after-munmap
+│   │   │   │   ├── main.c
+│   │   │   │   └── run.sh
+│   │   │   ├── share-tmp-after-fork
+│   │   │   │   ├── main.c
+│   │   │   │   └── run.sh
+│   │   │   ├── share-tmp-after-proc-exec
+│   │   │   │   ├── main.c
+│   │   │   │   └── run.sh
+│   │   │   ├── share-tmp-after-proc-exec2
+│   │   │   │   ├── main.c
+│   │   │   │   └── run.sh
+│   │   │   ├── signal
+│   │   │   │   ├── main.c
+│   │   │   │   └── run.sh
+│   │   │   └── test.sh
+│   │   ├── wasmer-argus
+│   │   │   ├── Cargo.toml
+│   │   │   ├── README.md
+│   │   │   └── src
+│   │   │       ├── argus
+│   │   │       │   ├── config.rs
+│   │   │       │   ├── mod.rs
+│   │   │       │   ├── packages.rs
+│   │   │       │   └── tester
+│   │   │       │       ├── cli_tester.rs
+│   │   │       │       ├── lib_tester.rs
+│   │   │       │       └── mod.rs
+│   │   │       └── main.rs
+│   │   └── wast
+│   │       ├── README.md
+│   │       ├── spec
+│   │       │   ├── address.wast
+│   │       │   ├── align.wast
+│   │       │   ├── binary-leb128.wast
+│   │       │   ├── binary.wast
+│   │       │   ├── block.wast
+│   │       │   ├── br_if.wast
+│   │       │   ├── br_table.wast
+│   │       │   ├── br.wast
+│   │       │   ├── bulk.wast
+│   │       │   ├── call_indirect.wast
+│   │       │   ├── call.wast
+│   │       │   ├── comments.wast
+│   │       │   ├── const.wast
+│   │       │   ├── Contributing.md
+│   │       │   ├── conversions.wast
+│   │       │   ├── custom.wast
+│   │       │   ├── data.wast
+│   │       │   ├── elem.wast
+│   │       │   ├── endianness.wast
+│   │       │   ├── exports.wast
+│   │       │   ├── extract-parts.sh
+│   │       │   ├── f32_bitwise.wast
+│   │       │   ├── f32_cmp.wast
+│   │       │   ├── f32.wast
+│   │       │   ├── f64_bitwise.wast
+│   │       │   ├── f64_cmp.wast
+│   │       │   ├── f64.wast
+│   │       │   ├── fac.wast
+│   │       │   ├── float_exprs.wast
+│   │       │   ├── float_literals.wast
+│   │       │   ├── float_memory.wast
+│   │       │   ├── float_misc.wast
+│   │       │   ├── forward.wast
+│   │       │   ├── func_ptrs.wast
+│   │       │   ├── func.wast
+│   │       │   ├── global.wast
+│   │       │   ├── i32.wast
+│   │       │   ├── i64.wast
+│   │       │   ├── if.wast
+│   │       │   ├── imports.wast
+│   │       │   ├── inline-module.wast
+│   │       │   ├── int_exprs.wast
+│   │       │   ├── int_literals.wast
+│   │       │   ├── labels.wast
+│   │       │   ├── left-to-right.wast
+│   │       │   ├── LICENSE
+│   │       │   ├── linking.wast
+│   │       │   ├── load.wast
+│   │       │   ├── local_get.wast
+│   │       │   ├── local_set.wast
+│   │       │   ├── local_tee.wast
+│   │       │   ├── loop.wast
+│   │       │   ├── memory_copy.wast
+│   │       │   ├── memory_fill.wast
+│   │       │   ├── memory_grow.wast
+│   │       │   ├── memory_init.wast
+│   │       │   ├── memory_redundancy.wast
+│   │       │   ├── memory_size.wast
+│   │       │   ├── memory_trap.wast
+│   │       │   ├── memory.wast
+│   │       │   ├── names.wast
+│   │       │   ├── nop.wast
+│   │       │   ├── obsolete-keywords.wast
+│   │       │   ├── proposals
+│   │       │   │   ├── annotations
+│   │       │   │   │   └── annotations.wast
+│   │       │   │   ├── bulk-memory-operations
+│   │       │   │   │   ├── binary.wast
+│   │       │   │   │   ├── bulk.wast
+│   │       │   │   │   ├── custom.wast
+│   │       │   │   │   ├── data.wast
+│   │       │   │   │   ├── elem.wast
+│   │       │   │   │   ├── imports.wast
+│   │       │   │   │   ├── linking.wast
+│   │       │   │   │   ├── memory_copy.wast
+│   │       │   │   │   ├── memory_fill.wast
+│   │       │   │   │   ├── memory_init.wast
+│   │       │   │   │   ├── table_copy.wast
+│   │       │   │   │   └── table_init.wast
+│   │       │   │   ├── exception-handling
+│   │       │   │   │   ├── binary.wast
+│   │       │   │   │   ├── exports.wast
+│   │       │   │   │   ├── float_exprs.wast
+│   │       │   │   │   ├── float_misc.wast
+│   │       │   │   │   ├── imports.wast
+│   │       │   │   │   ├── memory_grow.wast
+│   │       │   │   │   ├── ref_null.wast
+│   │       │   │   │   ├── simd_load.wast
+│   │       │   │   │   ├── simd_store.wast
+│   │       │   │   │   ├── table_grow.wast
+│   │       │   │   │   ├── tag.wast
+│   │       │   │   │   ├── throw_ref.wast
+│   │       │   │   │   ├── throw.wast
+│   │       │   │   │   ├── try_table.wast
+│   │       │   │   │   ├── utf8-custom-section-id.wast
+│   │       │   │   │   ├── utf8-import-field.wast
+│   │       │   │   │   └── utf8-import-module.wast
+│   │       │   │   ├── gc
+│   │       │   │   │   ├── array_copy.wast
+│   │       │   │   │   ├── array_fill.wast
+│   │       │   │   │   ├── array_init_data.wast
+│   │       │   │   │   ├── array_init_elem.wast
+│   │       │   │   │   ├── array.wast
+│   │       │   │   │   ├── binary-gc.wast
+│   │       │   │   │   ├── binary.wast
+│   │       │   │   │   ├── br_if.wast
+│   │       │   │   │   ├── br_on_cast_fail.wast
+│   │       │   │   │   ├── br_on_cast.wast
+│   │       │   │   │   ├── br_on_non_null.wast
+│   │       │   │   │   ├── br_on_null.wast
+│   │       │   │   │   ├── br_on.wast
+│   │       │   │   │   ├── br_table.wast
+│   │       │   │   │   ├── call_ref.wast
+│   │       │   │   │   ├── data.wast
+│   │       │   │   │   ├── elem.wast
+│   │       │   │   │   ├── extern.wast
+│   │       │   │   │   ├── float_exprs.wast
+│   │       │   │   │   ├── float_misc.wast
+│   │       │   │   │   ├── func_bind.wast
+│   │       │   │   │   ├── func.wast
+│   │       │   │   │   ├── global.wast
+│   │       │   │   │   ├── i31.wast
+│   │       │   │   │   ├── if.wast
+│   │       │   │   │   ├── imports.wast
+│   │       │   │   │   ├── let.wast
+│   │       │   │   │   ├── linking.wast
+│   │       │   │   │   ├── local_get.wast
+│   │       │   │   │   ├── local_init.wast
+│   │       │   │   │   ├── local_tee.wast
+│   │       │   │   │   ├── memory_grow.wast
+│   │       │   │   │   ├── ref_as_non_null.wast
+│   │       │   │   │   ├── ref_as.wast
+│   │       │   │   │   ├── ref_cast.wast
+│   │       │   │   │   ├── ref_eq.wast
+│   │       │   │   │   ├── ref_is_null.wast
+│   │       │   │   │   ├── ref_is.wast
+│   │       │   │   │   ├── ref_null.wast
+│   │       │   │   │   ├── ref_test.wast
+│   │       │   │   │   ├── ref.wast
+│   │       │   │   │   ├── return_call_indirect.wast
+│   │       │   │   │   ├── return_call_ref.wast
+│   │       │   │   │   ├── return_call.wast
+│   │       │   │   │   ├── select.wast
+│   │       │   │   │   ├── simd_load.wast
+│   │       │   │   │   ├── simd_store.wast
+│   │       │   │   │   ├── struct.wast
+│   │       │   │   │   ├── table_grow.wast
+│   │       │   │   │   ├── table-sub.wast
+│   │       │   │   │   ├── table.wast
+│   │       │   │   │   ├── type-canon.wast
+│   │       │   │   │   ├── type-equivalence.wast
+│   │       │   │   │   ├── type-rec.wast
+│   │       │   │   │   ├── type-subtyping.wast
+│   │       │   │   │   ├── unreached-invalid.wast
+│   │       │   │   │   ├── unreached-valid.wast
+│   │       │   │   │   ├── utf8-custom-section-id.wast
+│   │       │   │   │   ├── utf8-import-field.wast
+│   │       │   │   │   └── utf8-import-module.wast
+│   │       │   │   ├── multi-value
+│   │       │   │   │   ├── binary.wast
+│   │       │   │   │   ├── block.wast
+│   │       │   │   │   ├── br.wast
+│   │       │   │   │   ├── call_indirect.wast
+│   │       │   │   │   ├── call.wast
+│   │       │   │   │   ├── fac.wast
+│   │       │   │   │   ├── func.wast
+│   │       │   │   │   ├── if.wast
+│   │       │   │   │   ├── loop.wast
+│   │       │   │   │   └── type.wast
+│   │       │   │   ├── mutable-global
+│   │       │   │   │   ├── globals.wast
+│   │       │   │   │   └── linking.wast
+│   │       │   │   ├── nontrapping-float-to-int-conversions
+│   │       │   │   │   └── conversions.wast
+│   │       │   │   ├── reference-types
+│   │       │   │   │   ├── binary.wast
+│   │       │   │   │   ├── br_table.wast
+│   │       │   │   │   ├── bulk.wast
+│   │       │   │   │   ├── custom.wast
+│   │       │   │   │   ├── data.wast
+│   │       │   │   │   ├── elem.wast
+│   │       │   │   │   ├── exports.wast
+│   │       │   │   │   ├── globals.wast
+│   │       │   │   │   ├── imports.wast
+│   │       │   │   │   ├── linking.wast
+│   │       │   │   │   ├── memory_copy.wast
+│   │       │   │   │   ├── memory_fill.wast
+│   │       │   │   │   ├── memory_grow.wast
+│   │       │   │   │   ├── memory_init.wast
+│   │       │   │   │   ├── ref_func.wast
+│   │       │   │   │   ├── ref_is_null.wast
+│   │       │   │   │   ├── ref_null.wast
+│   │       │   │   │   ├── select.wast
+│   │       │   │   │   ├── table_copy.wast
+│   │       │   │   │   ├── table_fill.wast
+│   │       │   │   │   ├── table_get.wast
+│   │       │   │   │   ├── table_grow.wast
+│   │       │   │   │   ├── table_init.wast
+│   │       │   │   │   ├── table_set.wast
+│   │       │   │   │   ├── table_size.wast
+│   │       │   │   │   ├── table-sub.wast
+│   │       │   │   │   └── unreached-invalid.wast
+│   │       │   │   ├── sign-extension-ops
+│   │       │   │   │   ├── i32.wast
+│   │       │   │   │   └── i64.wast
+│   │       │   │   ├── simd
+│   │       │   │   │   ├── simd_address.wast
+│   │       │   │   │   ├── simd_align.wast
+│   │       │   │   │   ├── simd_bit_shift.wast
+│   │       │   │   │   ├── simd_bitwise.wast
+│   │       │   │   │   ├── simd_boolean.wast
+│   │       │   │   │   ├── simd_const.wast
+│   │       │   │   │   ├── simd_conversions.wast
+│   │       │   │   │   ├── simd_f32x4_arith.wast
+│   │       │   │   │   ├── simd_f32x4_cmp.wast
+│   │       │   │   │   ├── simd_f32x4_pmin_pmax.wast
+│   │       │   │   │   ├── simd_f32x4_rounding.wast
+│   │       │   │   │   ├── simd_f32x4.wast
+│   │       │   │   │   ├── simd_f64x2_arith.wast
+│   │       │   │   │   ├── simd_f64x2_cmp.wast
+│   │       │   │   │   ├── simd_f64x2_pmin_pmax.wast
+│   │       │   │   │   ├── simd_f64x2_rounding.wast
+│   │       │   │   │   ├── simd_f64x2.wast
+│   │       │   │   │   ├── simd_i16x8_arith2.wast
+│   │       │   │   │   ├── simd_i16x8_arith.wast
+│   │       │   │   │   ├── simd_i16x8_cmp.wast
+│   │       │   │   │   ├── simd_i16x8_extadd_pairwise_i8x16.wast
+│   │       │   │   │   ├── simd_i16x8_extmul_i8x16.wast
+│   │       │   │   │   ├── simd_i16x8_q15mulr_sat_s.wast
+│   │       │   │   │   ├── simd_i16x8_sat_arith.wast
+│   │       │   │   │   ├── simd_i32x4_arith2.wast
+│   │       │   │   │   ├── simd_i32x4_arith.wast
+│   │       │   │   │   ├── simd_i32x4_cmp.wast
+│   │       │   │   │   ├── simd_i32x4_dot_i16x8.wast
+│   │       │   │   │   ├── simd_i32x4_extadd_pairwise_i16x8.wast
+│   │       │   │   │   ├── simd_i32x4_extmul_i16x8.wast
+│   │       │   │   │   ├── simd_i32x4_trunc_sat_f32x4.wast
+│   │       │   │   │   ├── simd_i32x4_trunc_sat_f64x2.wast
+│   │       │   │   │   ├── simd_i64x2_arith2.wast
+│   │       │   │   │   ├── simd_i64x2_arith.wast
+│   │       │   │   │   ├── simd_i64x2_cmp.wast
+│   │       │   │   │   ├── simd_i64x2_extmul_i32x4.wast
+│   │       │   │   │   ├── simd_i8x16_arith2.wast
+│   │       │   │   │   ├── simd_i8x16_arith.wast
+│   │       │   │   │   ├── simd_i8x16_cmp.wast
+│   │       │   │   │   ├── simd_i8x16_sat_arith.wast
+│   │       │   │   │   ├── simd_int_to_int_extend.wast
+│   │       │   │   │   ├── simd_lane.wast
+│   │       │   │   │   ├── simd_load16_lane.wast
+│   │       │   │   │   ├── simd_load32_lane.wast
+│   │       │   │   │   ├── simd_load64_lane.wast
+│   │       │   │   │   ├── simd_load8_lane.wast
+│   │       │   │   │   ├── simd_load_extend.wast
+│   │       │   │   │   ├── simd_load_splat.wast
+│   │       │   │   │   ├── simd_load.wast
+│   │       │   │   │   ├── simd_load_zero.wast
+│   │       │   │   │   ├── simd_splat.wast
+│   │       │   │   │   ├── simd_store16_lane.wast
+│   │       │   │   │   ├── simd_store32_lane.wast
+│   │       │   │   │   ├── simd_store64_lane.wast
+│   │       │   │   │   ├── simd_store8_lane.wast
+│   │       │   │   │   └── simd_store.wast
+│   │       │   │   ├── tail-call
+│   │       │   │   │   ├── return_call_indirect.wast
+│   │       │   │   │   └── return_call.wast
+│   │       │   │   └── threads
+│   │       │   │       ├── atomic.wast
+│   │       │   │       ├── exports.wast
+│   │       │   │       ├── imports.wast
+│   │       │   │       └── memory.wast
+│   │       │   ├── README.md
+│   │       │   ├── ref_func.wast
+│   │       │   ├── ref_is_null.wast
+│   │       │   ├── ref_null.wast
+│   │       │   ├── repos
+│   │       │   │   └── README.md
+│   │       │   ├── return.wast
+│   │       │   ├── select.wast
+│   │       │   ├── simd_address.wast
+│   │       │   ├── simd_align.wast
+│   │       │   ├── simd_bit_shift.wast
+│   │       │   ├── simd_bitwise.wast
+│   │       │   ├── simd_boolean.wast
+│   │       │   ├── simd_const.wast
+│   │       │   ├── simd_conversions.wast
+│   │       │   ├── simd_f32x4_arith.wast
+│   │       │   ├── simd_f32x4_cmp.wast
+│   │       │   ├── simd_f32x4_pmin_pmax.wast
+│   │       │   ├── simd_f32x4_rounding.wast
+│   │       │   ├── simd_f32x4.wast
+│   │       │   ├── simd_f64x2_arith.wast
+│   │       │   ├── simd_f64x2_cmp.wast
+│   │       │   ├── simd_f64x2_pmin_pmax.wast
+│   │       │   ├── simd_f64x2_rounding.wast
+│   │       │   ├── simd_f64x2.wast
+│   │       │   ├── simd_i16x8_arith2.wast
+│   │       │   ├── simd_i16x8_arith.wast
+│   │       │   ├── simd_i16x8_cmp.wast
+│   │       │   ├── simd_i16x8_extadd_pairwise_i8x16.wast
+│   │       │   ├── simd_i16x8_extmul_i8x16.wast
+│   │       │   ├── simd_i16x8_q15mulr_sat_s.wast
+│   │       │   ├── simd_i16x8_sat_arith.wast
+│   │       │   ├── simd_i32x4_arith2.wast
+│   │       │   ├── simd_i32x4_arith.wast
+│   │       │   ├── simd_i32x4_cmp.wast
+│   │       │   ├── simd_i32x4_dot_i16x8.wast
+│   │       │   ├── simd_i32x4_extadd_pairwise_i16x8.wast
+│   │       │   ├── simd_i32x4_extmul_i16x8.wast
+│   │       │   ├── simd_i32x4_trunc_sat_f32x4.wast
+│   │       │   ├── simd_i32x4_trunc_sat_f64x2.wast
+│   │       │   ├── simd_i64x2_arith2.wast
+│   │       │   ├── simd_i64x2_arith.wast
+│   │       │   ├── simd_i64x2_cmp.wast
+│   │       │   ├── simd_i64x2_extmul_i32x4.wast
+│   │       │   ├── simd_i8x16_arith2.wast
+│   │       │   ├── simd_i8x16_arith.wast
+│   │       │   ├── simd_i8x16_cmp.wast
+│   │       │   ├── simd_i8x16_sat_arith.wast
+│   │       │   ├── simd_int_to_int_extend.wast
+│   │       │   ├── simd_lane.wast
+│   │       │   ├── simd_linking.wast
+│   │       │   ├── simd_load16_lane.wast
+│   │       │   ├── simd_load32_lane.wast
+│   │       │   ├── simd_load64_lane.wast
+│   │       │   ├── simd_load8_lane.wast
+│   │       │   ├── simd_load_extend.wast
+│   │       │   ├── simd_load_splat.wast
+│   │       │   ├── simd_load.wast
+│   │       │   ├── simd_load_zero.wast
+│   │       │   ├── simd_splat.wast
+│   │       │   ├── simd_store16_lane.wast
+│   │       │   ├── simd_store32_lane.wast
+│   │       │   ├── simd_store64_lane.wast
+│   │       │   ├── simd_store8_lane.wast
+│   │       │   ├── simd_store.wast
+│   │       │   ├── skip-stack-guard-page.wast
+│   │       │   ├── stack.wast
+│   │       │   ├── start.wast
+│   │       │   ├── store.wast
+│   │       │   ├── switch.wast
+│   │       │   ├── table_copy.wast
+│   │       │   ├── table_fill.wast
+│   │       │   ├── table_get.wast
+│   │       │   ├── table_grow.wast
+│   │       │   ├── table_init.wast
+│   │       │   ├── table_set.wast
+│   │       │   ├── table_size.wast
+│   │       │   ├── table-sub.wast
+│   │       │   ├── table.wast
+│   │       │   ├── token.wast
+│   │       │   ├── traps.wast
+│   │       │   ├── type.wast
+│   │       │   ├── unreachable.wast
+│   │       │   ├── unreached-invalid.wast
+│   │       │   ├── unreached-valid.wast
+│   │       │   ├── unwind.wast
+│   │       │   ├── update-testsuite.sh
+│   │       │   ├── utf8-custom-section-id.wast
+│   │       │   ├── utf8-import-field.wast
+│   │       │   ├── utf8-import-module.wast
+│   │       │   └── utf8-invalid-encoding.wast
+│   │       └── wasmer
+│   │           ├── atomic_load.wast
+│   │           ├── call-indirect-spilled-stack.wast
+│   │           ├── divide.wast
+│   │           ├── fac.wast
+│   │           ├── int-extend-garbage.wast
+│   │           ├── max_size_of_memory.wast
+│   │           ├── multiple-traps.wast
+│   │           ├── nan-canonicalization-issue-2159.wast
+│   │           ├── nan-canonicalization-issue-2347.wast
+│   │           ├── nan-canonicalization.wast
+│   │           ├── README.md
+│   │           ├── rotate-shift-overflow.wast
+│   │           ├── stack-overflow-sret.wast
+│   │           └── stack-overflow.wast
+│   └── Xargo.toml
+└── wasmer-5.0.1.tar.gz -> /home/felix/packages/wasmer/wasmer-5.0.1.tar.gz
+
+362 directories, 2248 files

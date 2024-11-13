@@ -1,0 +1,788 @@
+src
+└── firecracker
+    ├── Cargo.lock
+    ├── Cargo.toml
+    ├── CHANGELOG.md
+    ├── CHARTER.md
+    ├── CODE_OF_CONDUCT.md
+    ├── CONTRIBUTING.md
+    ├── CREDITS.md
+    ├── deny.toml
+    ├── DEPRECATED.md
+    ├── docs
+    │   ├── api-change-runbook.md
+    │   ├── api_requests
+    │   │   ├── actions.md
+    │   │   ├── block-caching.md
+    │   │   ├── block-io-engine.md
+    │   │   ├── block-vhost-user.md
+    │   │   ├── patch-block.md
+    │   │   └── patch-network-interface.md
+    │   ├── ballooning.md
+    │   ├── cpu_templates
+    │   │   ├── boot-protocol.md
+    │   │   ├── cpuid-normalization.md
+    │   │   ├── cpu-template-helper.md
+    │   │   ├── cpu-templates.md
+    │   │   └── schema.json
+    │   ├── design.md
+    │   ├── devctr-image.md
+    │   ├── device-api.md
+    │   ├── dev-machine-setup.md
+    │   ├── entropy.md
+    │   ├── formal-verification.md
+    │   ├── getting-started.md
+    │   ├── hugepages.md
+    │   ├── images
+    │   │   ├── api_change_flowchart.png
+    │   │   ├── fc_decal_icon-dark_dark-bg.png
+    │   │   ├── fc_decal_icon-dark_dark-bg.svg
+    │   │   ├── fc_logo_full.svg
+    │   │   ├── fc_logo_full_transparent-bg.png
+    │   │   ├── fc_logo_full_transparent-bg_white-fg.png
+    │   │   ├── fc_logo_full_white-bg.png
+    │   │   ├── fc_logo_full_white-bg_tiny.png
+    │   │   ├── fc_logo_icon-dark.svg
+    │   │   ├── fc_logo_icon.svg
+    │   │   ├── fc_logo_icon_transparent-bg.png
+    │   │   ├── fc_logo_icon_transparent-bg_square.png
+    │   │   ├── fc_logo_icon_white-bg.png
+    │   │   ├── fc_logo_icon_white-bg_square.png
+    │   │   ├── fc_sticker_full_white-bg.png
+    │   │   ├── fc_sticker_full_white-bg.svg
+    │   │   ├── fc_sticker_icon_white-bg.png
+    │   │   ├── fc_sticker_icon_white-bg.svg
+    │   │   ├── firecracker_host_integration.png
+    │   │   ├── firecracker_threat_containment.png
+    │   │   ├── uffd_flow1.png
+    │   │   ├── uffd_flow2.png
+    │   │   ├── uffd_flow3.png
+    │   │   ├── uffd_flow4.png
+    │   │   ├── vsock-connections.drawio
+    │   │   └── vsock-connections.png
+    │   ├── initrd.md
+    │   ├── jailer.md
+    │   ├── kernel-policy.md
+    │   ├── logger.md
+    │   ├── metrics.md
+    │   ├── mmds
+    │   │   ├── mmds-design.md
+    │   │   └── mmds-user-guide.md
+    │   ├── network-performance.md
+    │   ├── network-setup.md
+    │   ├── prod-host-setup.md
+    │   ├── RELEASE_POLICY.md
+    │   ├── rootfs-and-kernel-setup.md
+    │   ├── seccompiler.md
+    │   ├── seccomp.md
+    │   ├── snapshotting
+    │   │   ├── handling-page-faults-on-snapshot-resume.md
+    │   │   ├── network-for-clones.md
+    │   │   ├── random-for-clones.md
+    │   │   ├── snapshot-editor.md
+    │   │   ├── snapshot-support.md
+    │   │   └── versioning.md
+    │   ├── tracing.md
+    │   └── vsock.md
+    ├── FAQ.md
+    ├── LICENSE
+    ├── MAINTAINERS.md
+    ├── NOTICE
+    ├── PGP-KEY.asc
+    ├── pre-commit
+    ├── README.md
+    ├── resources
+    │   ├── chroot.sh
+    │   ├── guest_configs
+    │   │   ├── DISCLAIMER.md
+    │   │   ├── microvm-kernel-ci-aarch64-4.14.config
+    │   │   ├── microvm-kernel-ci-aarch64-5.10.config
+    │   │   ├── microvm-kernel-ci-aarch64-6.1.config
+    │   │   ├── microvm-kernel-ci-x86_64-4.14.config
+    │   │   ├── microvm-kernel-ci-x86_64-5.10.config
+    │   │   ├── microvm-kernel-ci-x86_64-5.10-no-acpi.config
+    │   │   ├── microvm-kernel-ci-x86_64-6.1.config
+    │   │   └── patches
+    │   │       ├── 0001-fix-Adjust-config-options-for-what-is-needed-by-our-.patch
+    │   │       ├── 0002-ci-adjust-6.1-guest-kernel-configs-for-our-CI.patch
+    │   │       └── 0004-disable-CONFIG_ARM64_ERRATUM_3194386-for-aarch64.patch
+    │   ├── overlay
+    │   │   ├── etc
+    │   │   │   └── systemd
+    │   │   │       └── system
+    │   │   │           ├── fcnet.service
+    │   │   │           └── var-lib-systemd.mount
+    │   │   └── usr
+    │   │       └── local
+    │   │           └── bin
+    │   │               ├── devmemread.c
+    │   │               ├── fast_page_fault_helper.c
+    │   │               ├── fcnet-setup.sh
+    │   │               ├── fillmem.c
+    │   │               ├── init.c
+    │   │               └── readmem.c
+    │   ├── rebuild.sh
+    │   └── seccomp
+    │       ├── aarch64-unknown-linux-musl.json
+    │       ├── unimplemented.json
+    │       └── x86_64-unknown-linux-musl.json
+    ├── rust-toolchain.toml
+    ├── rusty-hook.toml
+    ├── SECURITY.md
+    ├── SPECIFICATION.md
+    ├── src
+    │   ├── acpi-tables
+    │   │   ├── Cargo.toml
+    │   │   └── src
+    │   │       ├── aml.rs
+    │   │       ├── dsdt.rs
+    │   │       ├── fadt.rs
+    │   │       ├── lib.rs
+    │   │       ├── madt.rs
+    │   │       ├── rsdp.rs
+    │   │       └── xsdt.rs
+    │   ├── clippy-tracing
+    │   │   ├── Cargo.toml
+    │   │   ├── README.md
+    │   │   ├── src
+    │   │   │   └── main.rs
+    │   │   └── tests
+    │   │       └── integration_tests.rs
+    │   ├── cpu-template-helper
+    │   │   ├── build.rs
+    │   │   ├── Cargo.toml
+    │   │   └── src
+    │   │       ├── fingerprint
+    │   │       │   ├── compare.rs
+    │   │       │   ├── dump.rs
+    │   │       │   └── mod.rs
+    │   │       ├── main.rs
+    │   │       ├── template
+    │   │       │   ├── dump
+    │   │       │   │   ├── aarch64.rs
+    │   │       │   │   ├── mod.rs
+    │   │       │   │   └── x86_64.rs
+    │   │       │   ├── mod.rs
+    │   │       │   ├── strip
+    │   │       │   │   ├── aarch64.rs
+    │   │       │   │   ├── mod.rs
+    │   │       │   │   └── x86_64.rs
+    │   │       │   └── verify
+    │   │       │       ├── aarch64.rs
+    │   │       │       ├── mod.rs
+    │   │       │       └── x86_64.rs
+    │   │       └── utils
+    │   │           ├── aarch64.rs
+    │   │           ├── mock_kernel
+    │   │           │   └── main.c
+    │   │           ├── mod.rs
+    │   │           └── x86_64.rs
+    │   ├── firecracker
+    │   │   ├── build.rs
+    │   │   ├── Cargo.toml
+    │   │   ├── examples
+    │   │   │   ├── README.md
+    │   │   │   ├── seccomp
+    │   │   │   │   ├── harmless.rs
+    │   │   │   │   ├── jailer.rs
+    │   │   │   │   ├── malicious.rs
+    │   │   │   │   └── panic.rs
+    │   │   │   └── uffd
+    │   │   │       ├── fault_all_handler.rs
+    │   │   │       ├── malicious_handler.rs
+    │   │   │       ├── uffd_utils.rs
+    │   │   │       └── valid_handler.rs
+    │   │   ├── src
+    │   │   │   ├── api_server
+    │   │   │   │   ├── mod.rs
+    │   │   │   │   ├── parsed_request.rs
+    │   │   │   │   └── request
+    │   │   │   │       ├── actions.rs
+    │   │   │   │       ├── balloon.rs
+    │   │   │   │       ├── boot_source.rs
+    │   │   │   │       ├── cpu_configuration.rs
+    │   │   │   │       ├── drive.rs
+    │   │   │   │       ├── entropy.rs
+    │   │   │   │       ├── instance_info.rs
+    │   │   │   │       ├── logger.rs
+    │   │   │   │       ├── machine_configuration.rs
+    │   │   │   │       ├── metrics.rs
+    │   │   │   │       ├── mmds.rs
+    │   │   │   │       ├── mod.rs
+    │   │   │   │       ├── net.rs
+    │   │   │   │       ├── snapshot.rs
+    │   │   │   │       ├── version.rs
+    │   │   │   │       └── vsock.rs
+    │   │   │   ├── api_server_adapter.rs
+    │   │   │   ├── gen
+    │   │   │   │   ├── mod.rs
+    │   │   │   │   └── prctl.rs
+    │   │   │   ├── lib.rs
+    │   │   │   ├── main.rs
+    │   │   │   ├── metrics.rs
+    │   │   │   └── seccomp.rs
+    │   │   ├── swagger
+    │   │   │   └── firecracker.yaml
+    │   │   └── tests
+    │   │       └── verify_dependencies.rs
+    │   ├── jailer
+    │   │   ├── Cargo.toml
+    │   │   └── src
+    │   │       ├── cgroup.rs
+    │   │       ├── chroot.rs
+    │   │       ├── env.rs
+    │   │       ├── main.rs
+    │   │       └── resource_limits.rs
+    │   ├── log-instrument
+    │   │   ├── Cargo.toml
+    │   │   ├── examples
+    │   │   │   ├── five.rs
+    │   │   │   ├── four.rs
+    │   │   │   ├── one.rs
+    │   │   │   ├── six.rs
+    │   │   │   ├── three.rs
+    │   │   │   └── two.rs
+    │   │   ├── README.md
+    │   │   └── src
+    │   │       └── lib.rs
+    │   ├── log-instrument-macros
+    │   │   ├── Cargo.toml
+    │   │   └── src
+    │   │       └── lib.rs
+    │   ├── rebase-snap
+    │   │   ├── Cargo.toml
+    │   │   └── src
+    │   │       └── main.rs
+    │   ├── seccompiler
+    │   │   ├── Cargo.toml
+    │   │   └── src
+    │   │       ├── backend.rs
+    │   │       ├── common.rs
+    │   │       ├── compiler.rs
+    │   │       ├── lib.rs
+    │   │       ├── seccompiler_bin.rs
+    │   │       └── syscall_table
+    │   │           ├── aarch64.rs
+    │   │           ├── mod.rs
+    │   │           └── x86_64.rs
+    │   ├── snapshot-editor
+    │   │   ├── Cargo.toml
+    │   │   └── src
+    │   │       ├── edit_memory.rs
+    │   │       ├── edit_vmstate.rs
+    │   │       ├── info.rs
+    │   │       ├── main.rs
+    │   │       └── utils.rs
+    │   ├── utils
+    │   │   ├── Cargo.toml
+    │   │   └── src
+    │   │       ├── arg_parser.rs
+    │   │       ├── byte_order.rs
+    │   │       ├── lib.rs
+    │   │       ├── net
+    │   │       │   ├── ipv4addr.rs
+    │   │       │   ├── mac.rs
+    │   │       │   └── mod.rs
+    │   │       ├── signal.rs
+    │   │       ├── sm.rs
+    │   │       ├── time.rs
+    │   │       └── validators.rs
+    │   └── vmm
+    │       ├── benches
+    │       │   └── cpu_templates.rs
+    │       ├── Cargo.toml
+    │       ├── src
+    │       │   ├── acpi
+    │       │   │   ├── mod.rs
+    │       │   │   └── x86_64.rs
+    │       │   ├── arch
+    │       │   │   ├── aarch64
+    │       │   │   │   ├── cache_info.rs
+    │       │   │   │   ├── fdt.rs
+    │       │   │   │   ├── gic
+    │       │   │   │   │   ├── gicv2
+    │       │   │   │   │   │   ├── mod.rs
+    │       │   │   │   │   │   └── regs
+    │       │   │   │   │   │       ├── dist_regs.rs
+    │       │   │   │   │   │       ├── icc_regs.rs
+    │       │   │   │   │   │       └── mod.rs
+    │       │   │   │   │   ├── gicv3
+    │       │   │   │   │   │   ├── mod.rs
+    │       │   │   │   │   │   └── regs
+    │       │   │   │   │   │       ├── dist_regs.rs
+    │       │   │   │   │   │       ├── icc_regs.rs
+    │       │   │   │   │   │       ├── mod.rs
+    │       │   │   │   │   │       └── redist_regs.rs
+    │       │   │   │   │   ├── mod.rs
+    │       │   │   │   │   └── regs.rs
+    │       │   │   │   ├── layout.rs
+    │       │   │   │   ├── mod.rs
+    │       │   │   │   ├── output_GICv2.dtb
+    │       │   │   │   ├── output_GICv3.dtb
+    │       │   │   │   ├── output_initrd_GICv2.dtb
+    │       │   │   │   ├── output_initrd_GICv3.dtb
+    │       │   │   │   ├── regs.rs
+    │       │   │   │   └── vcpu.rs
+    │       │   │   ├── mod.rs
+    │       │   │   └── x86_64
+    │       │   │       ├── cpu_model.rs
+    │       │   │       ├── gdt.rs
+    │       │   │       ├── gen
+    │       │   │       │   ├── hyperv.rs
+    │       │   │       │   ├── hyperv_tlfs.rs
+    │       │   │       │   ├── mod.rs
+    │       │   │       │   ├── mpspec.rs
+    │       │   │       │   ├── msr_index.rs
+    │       │   │       │   └── perf_event.rs
+    │       │   │       ├── interrupts.rs
+    │       │   │       ├── layout.rs
+    │       │   │       ├── mod.rs
+    │       │   │       ├── mptable.rs
+    │       │   │       ├── msr.rs
+    │       │   │       └── regs.rs
+    │       │   ├── builder.rs
+    │       │   ├── cpu_config
+    │       │   │   ├── aarch64
+    │       │   │   │   ├── custom_cpu_template.rs
+    │       │   │   │   ├── mod.rs
+    │       │   │   │   ├── static_cpu_templates
+    │       │   │   │   │   ├── mod.rs
+    │       │   │   │   │   └── v1n1.rs
+    │       │   │   │   └── test_utils.rs
+    │       │   │   ├── mod.rs
+    │       │   │   ├── templates.rs
+    │       │   │   ├── templates_serde.rs
+    │       │   │   ├── test_utils.rs
+    │       │   │   └── x86_64
+    │       │   │       ├── cpuid
+    │       │   │       │   ├── amd
+    │       │   │       │   │   ├── mod.rs
+    │       │   │       │   │   └── normalize.rs
+    │       │   │       │   ├── common.rs
+    │       │   │       │   ├── intel
+    │       │   │       │   │   ├── mod.rs
+    │       │   │       │   │   └── normalize.rs
+    │       │   │       │   ├── mod.rs
+    │       │   │       │   └── normalize.rs
+    │       │   │       ├── custom_cpu_template.rs
+    │       │   │       ├── mod.rs
+    │       │   │       ├── static_cpu_templates
+    │       │   │       │   ├── c3.rs
+    │       │   │       │   ├── mod.rs
+    │       │   │       │   ├── t2a.rs
+    │       │   │       │   ├── t2cl.rs
+    │       │   │       │   ├── t2.rs
+    │       │   │       │   └── t2s.rs
+    │       │   │       └── test_utils.rs
+    │       │   ├── device_manager
+    │       │   │   ├── acpi.rs
+    │       │   │   ├── legacy.rs
+    │       │   │   ├── mmio.rs
+    │       │   │   ├── mod.rs
+    │       │   │   ├── persist.rs
+    │       │   │   └── resources.rs
+    │       │   ├── devices
+    │       │   │   ├── acpi
+    │       │   │   │   ├── mod.rs
+    │       │   │   │   └── vmgenid.rs
+    │       │   │   ├── bus.rs
+    │       │   │   ├── legacy
+    │       │   │   │   ├── i8042.rs
+    │       │   │   │   ├── mod.rs
+    │       │   │   │   ├── rtc_pl031.rs
+    │       │   │   │   └── serial.rs
+    │       │   │   ├── mod.rs
+    │       │   │   ├── pseudo
+    │       │   │   │   ├── boot_timer.rs
+    │       │   │   │   └── mod.rs
+    │       │   │   └── virtio
+    │       │   │       ├── balloon
+    │       │   │       │   ├── device.rs
+    │       │   │       │   ├── event_handler.rs
+    │       │   │       │   ├── metrics.rs
+    │       │   │       │   ├── mod.rs
+    │       │   │       │   ├── persist.rs
+    │       │   │       │   ├── test_utils.rs
+    │       │   │       │   └── util.rs
+    │       │   │       ├── block
+    │       │   │       │   ├── device.rs
+    │       │   │       │   ├── mod.rs
+    │       │   │       │   ├── persist.rs
+    │       │   │       │   ├── vhost_user
+    │       │   │       │   │   ├── device.rs
+    │       │   │       │   │   ├── event_handler.rs
+    │       │   │       │   │   ├── mod.rs
+    │       │   │       │   │   └── persist.rs
+    │       │   │       │   └── virtio
+    │       │   │       │       ├── device.rs
+    │       │   │       │       ├── event_handler.rs
+    │       │   │       │       ├── io
+    │       │   │       │       │   ├── async_io.rs
+    │       │   │       │       │   ├── mod.rs
+    │       │   │       │       │   └── sync_io.rs
+    │       │   │       │       ├── metrics.rs
+    │       │   │       │       ├── mod.rs
+    │       │   │       │       ├── persist.rs
+    │       │   │       │       ├── request.rs
+    │       │   │       │       └── test_utils.rs
+    │       │   │       ├── device.rs
+    │       │   │       ├── gen
+    │       │   │       │   ├── mod.rs
+    │       │   │       │   ├── virtio_blk.rs
+    │       │   │       │   ├── virtio_net.rs
+    │       │   │       │   ├── virtio_ring.rs
+    │       │   │       │   └── virtio_rng.rs
+    │       │   │       ├── iovec.rs
+    │       │   │       ├── mmio.rs
+    │       │   │       ├── mod.rs
+    │       │   │       ├── net
+    │       │   │       │   ├── device.rs
+    │       │   │       │   ├── event_handler.rs
+    │       │   │       │   ├── gen
+    │       │   │       │   │   ├── iff.rs
+    │       │   │       │   │   ├── if_tun.rs
+    │       │   │       │   │   ├── mod.rs
+    │       │   │       │   │   └── sockios.rs
+    │       │   │       │   ├── metrics.rs
+    │       │   │       │   ├── mod.rs
+    │       │   │       │   ├── persist.rs
+    │       │   │       │   ├── tap.rs
+    │       │   │       │   └── test_utils.rs
+    │       │   │       ├── persist.rs
+    │       │   │       ├── queue.rs
+    │       │   │       ├── rng
+    │       │   │       │   ├── device.rs
+    │       │   │       │   ├── event_handler.rs
+    │       │   │       │   ├── metrics.rs
+    │       │   │       │   ├── mod.rs
+    │       │   │       │   └── persist.rs
+    │       │   │       ├── test_utils.rs
+    │       │   │       ├── vhost_user_metrics.rs
+    │       │   │       ├── vhost_user.rs
+    │       │   │       └── vsock
+    │       │   │           ├── csm
+    │       │   │           │   ├── connection.rs
+    │       │   │           │   ├── mod.rs
+    │       │   │           │   └── txbuf.rs
+    │       │   │           ├── device.rs
+    │       │   │           ├── event_handler.rs
+    │       │   │           ├── metrics.rs
+    │       │   │           ├── mod.rs
+    │       │   │           ├── packet.rs
+    │       │   │           ├── persist.rs
+    │       │   │           ├── test_utils.rs
+    │       │   │           └── unix
+    │       │   │               ├── mod.rs
+    │       │   │               ├── muxer_killq.rs
+    │       │   │               ├── muxer.rs
+    │       │   │               └── muxer_rxq.rs
+    │       │   ├── dumbo
+    │       │   │   ├── mod.rs
+    │       │   │   ├── pdu
+    │       │   │   │   ├── arp.rs
+    │       │   │   │   ├── bytes.rs
+    │       │   │   │   ├── ethernet.rs
+    │       │   │   │   ├── ipv4.rs
+    │       │   │   │   ├── mod.rs
+    │       │   │   │   ├── tcp.rs
+    │       │   │   │   └── udp.rs
+    │       │   │   └── tcp
+    │       │   │       ├── connection.rs
+    │       │   │       ├── endpoint.rs
+    │       │   │       ├── handler.rs
+    │       │   │       └── mod.rs
+    │       │   ├── io_uring
+    │       │   │   ├── gen.rs
+    │       │   │   ├── mod.rs
+    │       │   │   ├── operation
+    │       │   │   │   ├── cqe.rs
+    │       │   │   │   ├── mod.rs
+    │       │   │   │   └── sqe.rs
+    │       │   │   ├── probe.rs
+    │       │   │   ├── queue
+    │       │   │   │   ├── completion.rs
+    │       │   │   │   ├── mmap.rs
+    │       │   │   │   ├── mod.rs
+    │       │   │   │   └── submission.rs
+    │       │   │   └── restriction.rs
+    │       │   ├── lib.rs
+    │       │   ├── logger
+    │       │   │   ├── logging.rs
+    │       │   │   ├── metrics.rs
+    │       │   │   └── mod.rs
+    │       │   ├── mmds
+    │       │   │   ├── data_store.rs
+    │       │   │   ├── mod.rs
+    │       │   │   ├── ns.rs
+    │       │   │   ├── persist.rs
+    │       │   │   ├── token_headers.rs
+    │       │   │   └── token.rs
+    │       │   ├── persist.rs
+    │       │   ├── rate_limiter
+    │       │   │   ├── mod.rs
+    │       │   │   └── persist.rs
+    │       │   ├── resources.rs
+    │       │   ├── rpc_interface.rs
+    │       │   ├── seccomp_filters.rs
+    │       │   ├── signal_handler.rs
+    │       │   ├── snapshot
+    │       │   │   ├── crc.rs
+    │       │   │   ├── mod.rs
+    │       │   │   └── persist.rs
+    │       │   ├── utilities
+    │       │   │   ├── mock_resources
+    │       │   │   │   ├── dirtying_init.tgz
+    │       │   │   │   ├── make_noisy_kernel.sh
+    │       │   │   │   ├── mod.rs
+    │       │   │   │   ├── test_elf.bin
+    │       │   │   │   ├── test_noisy_elf.bin
+    │       │   │   │   └── test_pe.bin
+    │       │   │   ├── mod.rs
+    │       │   │   └── test_utils
+    │       │   │       └── mod.rs
+    │       │   ├── vmm_config
+    │       │   │   ├── balloon.rs
+    │       │   │   ├── boot_source.rs
+    │       │   │   ├── drive.rs
+    │       │   │   ├── entropy.rs
+    │       │   │   ├── instance_info.rs
+    │       │   │   ├── machine_config.rs
+    │       │   │   ├── metrics.rs
+    │       │   │   ├── mmds.rs
+    │       │   │   ├── mod.rs
+    │       │   │   ├── net.rs
+    │       │   │   ├── snapshot.rs
+    │       │   │   └── vsock.rs
+    │       │   └── vstate
+    │       │       ├── memory.rs
+    │       │       ├── mod.rs
+    │       │       ├── vcpu
+    │       │       │   ├── aarch64.rs
+    │       │       │   ├── mod.rs
+    │       │       │   └── x86_64.rs
+    │       │       └── vm.rs
+    │       └── tests
+    │           ├── devices.rs
+    │           ├── integration_tests.rs
+    │           └── io_uring.rs
+    ├── tests
+    │   ├── conftest.py
+    │   ├── data
+    │   │   ├── cpu_template_helper
+    │   │   │   ├── fingerprint_AMD_MILAN_5.10host.json
+    │   │   │   ├── fingerprint_AMD_MILAN_6.1host.json
+    │   │   │   ├── fingerprint_ARM_NEOVERSE_N1_5.10host.json
+    │   │   │   ├── fingerprint_ARM_NEOVERSE_N1_6.1host.json
+    │   │   │   ├── fingerprint_ARM_NEOVERSE_V1_5.10host.json
+    │   │   │   ├── fingerprint_ARM_NEOVERSE_V1_6.1host.json
+    │   │   │   ├── fingerprint_INTEL_CASCADELAKE_5.10host.json
+    │   │   │   ├── fingerprint_INTEL_CASCADELAKE_6.1host.json
+    │   │   │   ├── fingerprint_INTEL_ICELAKE_5.10host.json
+    │   │   │   ├── fingerprint_INTEL_ICELAKE_6.1host.json
+    │   │   │   ├── fingerprint_INTEL_SKYLAKE_5.10host.json
+    │   │   │   └── fingerprint_INTEL_SKYLAKE_6.1host.json
+    │   │   ├── metadata_invalid.json
+    │   │   ├── metadata.json
+    │   │   ├── msr
+    │   │   │   ├── msr_list_T2A_AMD_MILAN_5.10host_4.14guest.csv
+    │   │   │   ├── msr_list_T2A_AMD_MILAN_5.10host_5.10guest.csv
+    │   │   │   ├── msr_list_T2A_AMD_MILAN_5.10host_6.1guest.csv
+    │   │   │   ├── msr_list_T2A_AMD_MILAN_6.1host_4.14guest.csv
+    │   │   │   ├── msr_list_T2A_AMD_MILAN_6.1host_5.10guest.csv
+    │   │   │   ├── msr_list_T2A_AMD_MILAN_6.1host_6.1guest.csv
+    │   │   │   ├── msr_list_T2CL_INTEL_CASCADELAKE_5.10host_4.14guest.csv
+    │   │   │   ├── msr_list_T2CL_INTEL_CASCADELAKE_5.10host_5.10guest.csv
+    │   │   │   ├── msr_list_T2CL_INTEL_CASCADELAKE_5.10host_6.1guest.csv
+    │   │   │   ├── msr_list_T2CL_INTEL_CASCADELAKE_6.1host_4.14guest.csv
+    │   │   │   ├── msr_list_T2CL_INTEL_CASCADELAKE_6.1host_5.10guest.csv
+    │   │   │   ├── msr_list_T2CL_INTEL_CASCADELAKE_6.1host_6.1guest.csv
+    │   │   │   ├── msr_list_T2CL_INTEL_ICELAKE_5.10host_4.14guest.csv
+    │   │   │   ├── msr_list_T2CL_INTEL_ICELAKE_5.10host_5.10guest.csv
+    │   │   │   ├── msr_list_T2CL_INTEL_ICELAKE_5.10host_6.1guest.csv
+    │   │   │   ├── msr_list_T2CL_INTEL_ICELAKE_6.1host_4.14guest.csv
+    │   │   │   ├── msr_list_T2CL_INTEL_ICELAKE_6.1host_5.10guest.csv
+    │   │   │   ├── msr_list_T2CL_INTEL_ICELAKE_6.1host_6.1guest.csv
+    │   │   │   ├── msr_list_T2S_INTEL_CASCADELAKE_5.10host_4.14guest.csv
+    │   │   │   ├── msr_list_T2S_INTEL_CASCADELAKE_5.10host_5.10guest.csv
+    │   │   │   ├── msr_list_T2S_INTEL_CASCADELAKE_5.10host_6.1guest.csv
+    │   │   │   ├── msr_list_T2S_INTEL_CASCADELAKE_6.1host_4.14guest.csv
+    │   │   │   ├── msr_list_T2S_INTEL_CASCADELAKE_6.1host_5.10guest.csv
+    │   │   │   ├── msr_list_T2S_INTEL_CASCADELAKE_6.1host_6.1guest.csv
+    │   │   │   ├── msr_list_T2S_INTEL_ICELAKE_5.10host_4.14guest.csv
+    │   │   │   ├── msr_list_T2S_INTEL_ICELAKE_5.10host_5.10guest.csv
+    │   │   │   ├── msr_list_T2S_INTEL_ICELAKE_5.10host_6.1guest.csv
+    │   │   │   ├── msr_list_T2S_INTEL_ICELAKE_6.1host_4.14guest.csv
+    │   │   │   ├── msr_list_T2S_INTEL_ICELAKE_6.1host_5.10guest.csv
+    │   │   │   ├── msr_list_T2S_INTEL_ICELAKE_6.1host_6.1guest.csv
+    │   │   │   ├── msr_list_T2S_INTEL_SKYLAKE_5.10host_4.14guest.csv
+    │   │   │   ├── msr_list_T2S_INTEL_SKYLAKE_5.10host_5.10guest.csv
+    │   │   │   ├── msr_list_T2S_INTEL_SKYLAKE_5.10host_6.1guest.csv
+    │   │   │   ├── msr_list_T2S_INTEL_SKYLAKE_6.1host_4.14guest.csv
+    │   │   │   ├── msr_list_T2S_INTEL_SKYLAKE_6.1host_5.10guest.csv
+    │   │   │   ├── msr_list_T2S_INTEL_SKYLAKE_6.1host_6.1guest.csv
+    │   │   │   ├── msr_reader.sh
+    │   │   │   ├── msr_writer.sh
+    │   │   │   └── wrmsr_list.txt
+    │   │   └── static_cpu_templates
+    │   │       ├── aarch64_with_sve_and_pac.json
+    │   │       ├── c3.json
+    │   │       ├── t2a.json
+    │   │       ├── t2cl.json
+    │   │       ├── t2.json
+    │   │       ├── t2s.json
+    │   │       └── v1n1.json
+    │   ├── fmt.toml
+    │   ├── framework
+    │   │   ├── ab_test.py
+    │   │   ├── artifacts.py
+    │   │   ├── defs.py
+    │   │   ├── gitlint_rules.py
+    │   │   ├── http_api.py
+    │   │   ├── __init__.py
+    │   │   ├── jailer.py
+    │   │   ├── microvm_helpers.py
+    │   │   ├── microvm.py
+    │   │   ├── properties.py
+    │   │   ├── state_machine.py
+    │   │   ├── utils_cpuid.py
+    │   │   ├── utils_cpu_templates.py
+    │   │   ├── utils_drive.py
+    │   │   ├── utils_ftrace.py
+    │   │   ├── utils_imdsv2.py
+    │   │   ├── utils_iperf.py
+    │   │   ├── utils.py
+    │   │   ├── utils_repo.py
+    │   │   ├── utils_vsock.py
+    │   │   ├── vm_config_cpu_template_C3.json
+    │   │   ├── vm_config.json
+    │   │   ├── vm_config_missing_mem_size_mib.json
+    │   │   ├── vm_config_missing_vcpu_count.json
+    │   │   ├── vm_config_network.json
+    │   │   ├── vm_config_smt_true.json
+    │   │   ├── vm_config_with_mmdsv1.json
+    │   │   ├── vm_config_with_mmdsv2.json
+    │   │   └── with_filelock.py
+    │   ├── host_tools
+    │   │   ├── cargo_build.py
+    │   │   ├── change_net_config_space.c
+    │   │   ├── cpu_load.py
+    │   │   ├── drive.py
+    │   │   ├── fcmetrics.py
+    │   │   ├── __init__.py
+    │   │   ├── memory.py
+    │   │   ├── metrics.py
+    │   │   ├── network.py
+    │   │   ├── proc.py
+    │   │   └── vsock_helper.c
+    │   ├── integration_tests
+    │   │   ├── build
+    │   │   │   ├── test_clippy.py
+    │   │   │   ├── test_coverage.py
+    │   │   │   ├── test_dependencies.py
+    │   │   │   └── test_unittests.py
+    │   │   ├── functional
+    │   │   │   ├── conftest.py
+    │   │   │   ├── test_api.py
+    │   │   │   ├── test_api_server.py
+    │   │   │   ├── test_balloon.py
+    │   │   │   ├── test_binary.py
+    │   │   │   ├── test_binary_size.py
+    │   │   │   ├── test_cmd_line_parameters.py
+    │   │   │   ├── test_cmd_line_start.py
+    │   │   │   ├── test_concurrency.py
+    │   │   │   ├── test_cpu_features_aarch64.py
+    │   │   │   ├── test_cpu_features.py
+    │   │   │   ├── test_cpu_template_helper.py
+    │   │   │   ├── test_dirty_pages_in_full_snapshot.py
+    │   │   │   ├── test_drive_vhost_user.py
+    │   │   │   ├── test_drive_virtio.py
+    │   │   │   ├── test_error_code.py
+    │   │   │   ├── test_feat_parity.py
+    │   │   │   ├── test_initrd.py
+    │   │   │   ├── test_kernel_cmdline.py
+    │   │   │   ├── test_kvm_ptp.py
+    │   │   │   ├── test_logging.py
+    │   │   │   ├── test_log_instrument.py
+    │   │   │   ├── test_max_devices.py
+    │   │   │   ├── test_max_vcpus.py
+    │   │   │   ├── test_metrics.py
+    │   │   │   ├── test_mmds.py
+    │   │   │   ├── test_net_config_space.py
+    │   │   │   ├── test_net.py
+    │   │   │   ├── test_pause_resume.py
+    │   │   │   ├── test_rng.py
+    │   │   │   ├── test_rtc.py
+    │   │   │   ├── test_serial_io.py
+    │   │   │   ├── test_shut_down.py
+    │   │   │   ├── test_signals.py
+    │   │   │   ├── test_snapshot_basic.py
+    │   │   │   ├── test_snapshot_editor.py
+    │   │   │   ├── test_snapshot_not_losing_dirty_pages.py
+    │   │   │   ├── test_snapshot_restore_cross_kernel.py
+    │   │   │   ├── test_topology.py
+    │   │   │   ├── test_uffd.py
+    │   │   │   └── test_vsock.py
+    │   │   ├── performance
+    │   │   │   ├── test_benchmarks.py
+    │   │   │   ├── test_block_ab.py
+    │   │   │   ├── test_boottime.py
+    │   │   │   ├── test_drive_rate_limiter.py
+    │   │   │   ├── test_huge_pages.py
+    │   │   │   ├── test_memory_overhead.py
+    │   │   │   ├── test_network_ab.py
+    │   │   │   ├── test_process_startup_time.py
+    │   │   │   ├── test_rate_limiter.py
+    │   │   │   ├── test_snapshot_ab.py
+    │   │   │   ├── test_snapshot_perf.py
+    │   │   │   ├── test_vhost_user_metrics.py
+    │   │   │   └── test_vsock_ab.py
+    │   │   ├── security
+    │   │   │   ├── test_custom_seccomp.py
+    │   │   │   ├── test_jail.py
+    │   │   │   ├── test_nv.py
+    │   │   │   ├── test_sec_audit.py
+    │   │   │   ├── test_seccomp.py
+    │   │   │   └── test_vulnerabilities.py
+    │   │   ├── style
+    │   │   │   ├── test_gitlint.py
+    │   │   │   ├── test_licenses.py
+    │   │   │   ├── test_markdown.py
+    │   │   │   ├── test_python.py
+    │   │   │   ├── test_repo.py
+    │   │   │   ├── test_rust.py
+    │   │   │   └── test_swagger.py
+    │   │   └── test_kani.py
+    │   ├── pyproject.toml
+    │   ├── pytest.ini
+    │   └── README.md
+    ├── THIRD-PARTY
+    └── tools
+        ├── ab_test.py
+        ├── bindgen-patches
+        │   └── 0001-change-c_char-to-c_uchar-in-ifrn_name.patch
+        ├── bindgen.sh
+        ├── bump-version.sh
+        ├── create_snapshot_artifact
+        │   └── main.py
+        ├── devctr
+        │   ├── ctr_gitconfig
+        │   ├── Dockerfile
+        │   ├── poetry.lock
+        │   └── pyproject.toml
+        ├── devtool
+        ├── functions
+        ├── gh_release.py
+        ├── release-notes.py
+        ├── release-prepare.sh
+        ├── release.sh
+        ├── release-tag.sh
+        ├── sandbox.py
+        ├── test_bindings.py
+        ├── test-popular-containers
+        │   ├── build_rootfs.sh
+        │   ├── fcnet.start
+        │   └── test-docker-rootfs.py
+        ├── test.sh
+        └── update-credits.sh
+
+135 directories, 651 files

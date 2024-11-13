@@ -1,0 +1,2265 @@
+src
+└── criu
+    ├── compel
+    │   ├── arch
+    │   │   ├── aarch64
+    │   │   │   ├── plugins
+    │   │   │   │   ├── include
+    │   │   │   │   │   ├── asm
+    │   │   │   │   │   │   ├── prologue.h -> ../../../../../arch/x86/plugins/include/asm/prologue.h
+    │   │   │   │   │   │   └── syscall-types.h
+    │   │   │   │   │   └── features.h
+    │   │   │   │   └── std
+    │   │   │   │       ├── parasite-head.S
+    │   │   │   │       └── syscalls
+    │   │   │   │           ├── gen-syscalls.pl -> ../../../../arm/plugins/std/syscalls/gen-syscalls.pl
+    │   │   │   │           ├── gen-sys-exec-tbl.pl -> ../../../../arm/plugins/std/syscalls/gen-sys-exec-tbl.pl
+    │   │   │   │           ├── Makefile.syscalls -> ../../../../arm/plugins/std/syscalls/Makefile.syscalls
+    │   │   │   │           ├── syscall-aux.h
+    │   │   │   │           ├── syscall-aux.S
+    │   │   │   │           ├── syscall-common.S
+    │   │   │   │           └── syscall.def -> ../../../../arm/plugins/std/syscalls/syscall.def
+    │   │   │   ├── scripts
+    │   │   │   │   └── compel-pack.lds.S
+    │   │   │   └── src
+    │   │   │       └── lib
+    │   │   │           ├── cpu.c
+    │   │   │           ├── handle-elf.c
+    │   │   │           ├── handle-elf-host.c -> handle-elf.c
+    │   │   │           ├── include
+    │   │   │           │   ├── cpu.h
+    │   │   │           │   ├── handle-elf.h
+    │   │   │           │   ├── syscall.h
+    │   │   │           │   └── uapi
+    │   │   │           │       └── asm
+    │   │   │           │           ├── breakpoints.h
+    │   │   │           │           ├── cpu.h
+    │   │   │           │           ├── fpu.h
+    │   │   │           │           ├── infect-types.h
+    │   │   │           │           ├── processor-flags.h
+    │   │   │           │           └── sigframe.h
+    │   │   │           └── infect.c
+    │   │   ├── arm
+    │   │   │   ├── plugins
+    │   │   │   │   ├── include
+    │   │   │   │   │   ├── asm
+    │   │   │   │   │   │   ├── prologue.h -> ../../../../../arch/x86/plugins/include/asm/prologue.h
+    │   │   │   │   │   │   └── syscall-types.h
+    │   │   │   │   │   └── features.h
+    │   │   │   │   └── std
+    │   │   │   │       ├── parasite-head.S
+    │   │   │   │       └── syscalls
+    │   │   │   │           ├── gen-syscalls.pl
+    │   │   │   │           ├── gen-sys-exec-tbl.pl
+    │   │   │   │           ├── Makefile.syscalls
+    │   │   │   │           ├── syscall-aux.h
+    │   │   │   │           ├── syscall-aux.S
+    │   │   │   │           ├── syscall-common.S
+    │   │   │   │           └── syscall.def
+    │   │   │   ├── scripts
+    │   │   │   │   └── compel-pack.lds.S
+    │   │   │   └── src
+    │   │   │       └── lib
+    │   │   │           ├── cpu.c -> ../../../aarch64/src/lib/cpu.c
+    │   │   │           ├── handle-elf.c
+    │   │   │           ├── handle-elf-host.c -> handle-elf.c
+    │   │   │           ├── include
+    │   │   │           │   ├── cpu.h
+    │   │   │           │   ├── handle-elf.h
+    │   │   │           │   ├── syscall.h
+    │   │   │           │   └── uapi
+    │   │   │           │       └── asm
+    │   │   │           │           ├── breakpoints.h
+    │   │   │           │           ├── cpu.h
+    │   │   │           │           ├── fpu.h
+    │   │   │           │           ├── infect-types.h
+    │   │   │           │           ├── processor-flags.h
+    │   │   │           │           └── sigframe.h
+    │   │   │           └── infect.c
+    │   │   ├── loongarch64
+    │   │   │   ├── plugins
+    │   │   │   │   ├── include
+    │   │   │   │   │   ├── asm
+    │   │   │   │   │   │   ├── prologue.h
+    │   │   │   │   │   │   └── syscall-types.h
+    │   │   │   │   │   └── features.h
+    │   │   │   │   └── std
+    │   │   │   │       ├── parasite-head.S
+    │   │   │   │       └── syscalls
+    │   │   │   │           ├── Makefile.syscalls
+    │   │   │   │           ├── syscall_64.tbl
+    │   │   │   │           └── syscall-common-loongarch-64.S
+    │   │   │   ├── scripts
+    │   │   │   │   └── compel-pack.lds.S
+    │   │   │   └── src
+    │   │   │       └── lib
+    │   │   │           ├── cpu.c
+    │   │   │           ├── handle-elf.c
+    │   │   │           ├── handle-elf-host.c
+    │   │   │           ├── include
+    │   │   │           │   ├── handle-elf.h
+    │   │   │           │   ├── syscall.h
+    │   │   │           │   └── uapi
+    │   │   │           │       └── asm
+    │   │   │           │           ├── breakpoints.h
+    │   │   │           │           ├── cpu.h
+    │   │   │           │           ├── fpu.h
+    │   │   │           │           ├── infect-types.h
+    │   │   │           │           └── sigframe.h
+    │   │   │           └── infect.c
+    │   │   ├── mips
+    │   │   │   ├── plugins
+    │   │   │   │   ├── include
+    │   │   │   │   │   ├── asm
+    │   │   │   │   │   │   ├── prologue.h
+    │   │   │   │   │   │   └── syscall-types.h
+    │   │   │   │   │   └── features.h
+    │   │   │   │   └── std
+    │   │   │   │       ├── memcpy.S
+    │   │   │   │       ├── parasite-head.S
+    │   │   │   │       └── syscalls
+    │   │   │   │           ├── Makefile.syscalls
+    │   │   │   │           ├── syscall_64.tbl
+    │   │   │   │           └── syscall-common-mips-64.S
+    │   │   │   ├── scripts
+    │   │   │   │   ├── compel-pack-compat.lds.S
+    │   │   │   │   └── compel-pack.lds.S
+    │   │   │   └── src
+    │   │   │       └── lib
+    │   │   │           ├── cpu.c
+    │   │   │           ├── handle-elf.c
+    │   │   │           ├── handle-elf-host.c -> handle-elf.c
+    │   │   │           ├── include
+    │   │   │           │   ├── handle-elf.h
+    │   │   │           │   ├── ldsodefs.h
+    │   │   │           │   ├── syscall.h
+    │   │   │           │   └── uapi
+    │   │   │           │       └── asm
+    │   │   │           │           ├── breakpoints.h
+    │   │   │           │           ├── cpu.h
+    │   │   │           │           ├── fpu.h
+    │   │   │           │           ├── infect-types.h
+    │   │   │           │           ├── sigframe.h
+    │   │   │           │           └── siginfo.h
+    │   │   │           └── infect.c
+    │   │   ├── ppc64
+    │   │   │   ├── plugins
+    │   │   │   │   ├── include
+    │   │   │   │   │   ├── asm
+    │   │   │   │   │   │   ├── prologue.h -> ../../../../../arch/x86/plugins/include/asm/prologue.h
+    │   │   │   │   │   │   └── syscall-types.h
+    │   │   │   │   │   └── features.h
+    │   │   │   │   └── std
+    │   │   │   │       ├── memcmp.S
+    │   │   │   │       ├── memcpy.S
+    │   │   │   │       ├── parasite-head.S
+    │   │   │   │       └── syscalls
+    │   │   │   │           ├── Makefile.syscalls
+    │   │   │   │           ├── syscall-common-ppc64.S
+    │   │   │   │           └── syscall-ppc64.tbl
+    │   │   │   ├── scripts
+    │   │   │   │   └── compel-pack.lds.S
+    │   │   │   └── src
+    │   │   │       └── lib
+    │   │   │           ├── cpu.c
+    │   │   │           ├── handle-elf.c
+    │   │   │           ├── handle-elf-host.c -> handle-elf.c
+    │   │   │           ├── include
+    │   │   │           │   ├── cpu.h
+    │   │   │           │   ├── handle-elf.h
+    │   │   │           │   ├── syscall.h
+    │   │   │           │   └── uapi
+    │   │   │           │       └── asm
+    │   │   │           │           ├── breakpoints.h
+    │   │   │           │           ├── cpu.h
+    │   │   │           │           ├── fpu.h
+    │   │   │           │           ├── infect-types.h
+    │   │   │           │           ├── processor-flags.h
+    │   │   │           │           ├── processor.h
+    │   │   │           │           └── sigframe.h
+    │   │   │           └── infect.c
+    │   │   ├── s390
+    │   │   │   ├── plugins
+    │   │   │   │   ├── include
+    │   │   │   │   │   └── asm
+    │   │   │   │   │       ├── prologue.h -> ../../../../../arch/x86/plugins/include/asm/prologue.h
+    │   │   │   │   │       └── syscall-types.h
+    │   │   │   │   └── std
+    │   │   │   │       ├── parasite-head.S
+    │   │   │   │       └── syscalls
+    │   │   │   │           ├── Makefile.syscalls
+    │   │   │   │           ├── syscall-common-s390.S
+    │   │   │   │           ├── syscall-s390.tbl
+    │   │   │   │           └── syscalls-s390.c
+    │   │   │   ├── scripts
+    │   │   │   │   └── compel-pack.lds.S
+    │   │   │   └── src
+    │   │   │       └── lib
+    │   │   │           ├── cpu.c
+    │   │   │           ├── handle-elf.c
+    │   │   │           ├── handle-elf-host.c -> handle-elf.c
+    │   │   │           ├── include
+    │   │   │           │   ├── handle-elf.h
+    │   │   │           │   ├── syscall.h
+    │   │   │           │   └── uapi
+    │   │   │           │       └── asm
+    │   │   │           │           ├── breakpoints.h
+    │   │   │           │           ├── cpu.h
+    │   │   │           │           ├── fpu.h
+    │   │   │           │           ├── infect-types.h
+    │   │   │           │           └── sigframe.h
+    │   │   │           └── infect.c
+    │   │   └── x86
+    │   │       ├── plugins
+    │   │       │   ├── include
+    │   │       │   │   ├── asm
+    │   │       │   │   │   ├── prologue.h
+    │   │       │   │   │   └── syscall-types.h
+    │   │       │   │   └── features.h
+    │   │       │   └── std
+    │   │       │       ├── memcpy.S
+    │   │       │       ├── parasite-head.S
+    │   │       │       └── syscalls
+    │   │       │           ├── Makefile.syscalls
+    │   │       │           ├── syscall32.c
+    │   │       │           ├── syscall_32.tbl
+    │   │       │           ├── syscall_64.tbl
+    │   │       │           ├── syscall-common-x86-32.S
+    │   │       │           └── syscall-common-x86-64.S
+    │   │       ├── scripts
+    │   │       │   ├── compel-pack-compat.lds.S
+    │   │       │   └── compel-pack.lds.S
+    │   │       └── src
+    │   │           └── lib
+    │   │               ├── cpu.c
+    │   │               ├── handle-elf.c
+    │   │               ├── handle-elf-host.c -> handle-elf.c
+    │   │               ├── include
+    │   │               │   ├── cpu.h
+    │   │               │   ├── handle-elf.h
+    │   │               │   ├── syscall.h
+    │   │               │   └── uapi
+    │   │               │       └── asm
+    │   │               │           ├── breakpoints.h
+    │   │               │           ├── cpu.h
+    │   │               │           ├── fpu.h
+    │   │               │           ├── infect-types.h
+    │   │               │           ├── processor-flags.h
+    │   │               │           └── sigframe.h
+    │   │               ├── infect.c
+    │   │               └── thread_area.c
+    │   ├── compel-host
+    │   ├── include
+    │   │   ├── compel-cpu.h
+    │   │   ├── elf32-types.h
+    │   │   ├── elf64-types.h
+    │   │   ├── errno.h
+    │   │   ├── infect-priv.h
+    │   │   ├── log.h
+    │   │   ├── piegen.h
+    │   │   ├── ptrace.h
+    │   │   ├── rpc-pie-priv.h
+    │   │   ├── shmem.h
+    │   │   └── uapi
+    │   │       ├── asm -> ../asm/uapi/asm
+    │   │       ├── common -> ../../../include/common
+    │   │       ├── compel -> .
+    │   │       ├── cpu.h
+    │   │       ├── handle-elf.h
+    │   │       ├── infect.h
+    │   │       ├── infect-rpc.h
+    │   │       ├── infect-util.h
+    │   │       ├── ksigset.h
+    │   │       ├── log.h
+    │   │       ├── loglevels.h
+    │   │       ├── plugins -> ../../plugins/include/uapi
+    │   │       ├── plugins.h
+    │   │       ├── ptrace.h
+    │   │       ├── sigframe-common.h
+    │   │       └── task-state.h
+    │   ├── Makefile
+    │   ├── plugins
+    │   │   ├── fds
+    │   │   │   └── fds.c
+    │   │   ├── include
+    │   │   │   ├── std-priv.h
+    │   │   │   └── uapi
+    │   │   │       ├── plugin-fds.h
+    │   │   │       ├── shmem.h
+    │   │   │       ├── std
+    │   │   │       │   ├── asm
+    │   │   │       │   ├── fds.h
+    │   │   │       │   ├── infect.h
+    │   │   │       │   ├── log.h
+    │   │   │       │   ├── string.h
+    │   │   │       │   └── syscall-types.h
+    │   │   │       └── std.h
+    │   │   ├── Makefile
+    │   │   ├── shmem
+    │   │   │   └── shmem.c
+    │   │   └── std
+    │   │       ├── fds.c
+    │   │       ├── infect.c
+    │   │       ├── log.c
+    │   │       ├── std.c
+    │   │       └── string.c
+    │   ├── src
+    │   │   ├── lib
+    │   │   │   ├── handle-elf.c
+    │   │   │   ├── handle-elf-host.c -> handle-elf.c
+    │   │   │   ├── infect.c
+    │   │   │   ├── infect-rpc.c
+    │   │   │   ├── infect-util.c
+    │   │   │   ├── log.c
+    │   │   │   ├── log-host.c -> log.c
+    │   │   │   └── ptrace.c
+    │   │   ├── main.c
+    │   │   └── main-host.c -> main.c
+    │   └── test
+    │       ├── fdspy
+    │       │   ├── Makefile
+    │       │   ├── parasite.c
+    │       │   ├── spy.c
+    │       │   └── victim.c
+    │       ├── infect
+    │       │   ├── Makefile
+    │       │   ├── parasite.c
+    │       │   ├── spy.c
+    │       │   └── victim.c
+    │       ├── Makefile
+    │       ├── rsys
+    │       │   ├── Makefile
+    │       │   ├── spy.c
+    │       │   └── victim.c
+    │       └── stack
+    │           ├── Makefile
+    │           ├── parasite.c
+    │           ├── spy.c
+    │           └── victim.c
+    ├── contrib
+    │   ├── debian
+    │   │   └── dev-packages.lst
+    │   └── docker_cr.sh
+    ├── CONTRIBUTING.md
+    ├── COPYING
+    ├── coredump
+    │   ├── coredump
+    │   ├── criu_coredump
+    │   │   ├── coredump.py
+    │   │   ├── elf.py
+    │   │   └── __init__.py
+    │   └── pycriu -> ../lib/pycriu
+    ├── CREDITS
+    ├── crit
+    │   ├── crit
+    │   │   ├── __init__.py
+    │   │   └── __main__.py
+    │   ├── Makefile
+    │   ├── pyproject.toml
+    │   ├── setup.cfg
+    │   └── setup.py
+    ├── criu
+    │   ├── action-scripts.c
+    │   ├── aio.c
+    │   ├── apparmor.c
+    │   ├── arch
+    │   │   ├── aarch64
+    │   │   │   ├── bitops.S
+    │   │   │   ├── cpu.c
+    │   │   │   ├── crtools.c
+    │   │   │   ├── include
+    │   │   │   │   └── asm
+    │   │   │   │       ├── dump.h
+    │   │   │   │       ├── int.h
+    │   │   │   │       ├── kerndat.h
+    │   │   │   │       ├── parasite.h
+    │   │   │   │       ├── parasite-syscall.h
+    │   │   │   │       ├── restore.h
+    │   │   │   │       ├── restorer.h
+    │   │   │   │       ├── thread_pointer.h
+    │   │   │   │       ├── types.h
+    │   │   │   │       └── vdso.h
+    │   │   │   ├── intraprocedure.S
+    │   │   │   ├── Makefile
+    │   │   │   ├── restorer.c
+    │   │   │   ├── sigframe.c
+    │   │   │   └── vdso-pie.c
+    │   │   ├── arm
+    │   │   │   ├── aeabi-helpers.S
+    │   │   │   ├── bitops.S
+    │   │   │   ├── cpu.c
+    │   │   │   ├── crtools.c
+    │   │   │   ├── include
+    │   │   │   │   └── asm
+    │   │   │   │       ├── dump.h
+    │   │   │   │       ├── int.h
+    │   │   │   │       ├── kerndat.h
+    │   │   │   │       ├── parasite.h
+    │   │   │   │       ├── parasite-syscall.h
+    │   │   │   │       ├── restore.h
+    │   │   │   │       ├── restorer.h
+    │   │   │   │       ├── thread_pointer.h
+    │   │   │   │       ├── types.h
+    │   │   │   │       └── vdso.h
+    │   │   │   ├── Makefile
+    │   │   │   ├── pie-cacheflush.c
+    │   │   │   ├── restorer.c
+    │   │   │   ├── sigframe.c
+    │   │   │   └── vdso-pie.c
+    │   │   ├── loongarch64
+    │   │   │   ├── cpu.c
+    │   │   │   ├── crtools.c
+    │   │   │   ├── include
+    │   │   │   │   └── asm
+    │   │   │   │       ├── dump.h
+    │   │   │   │       ├── int.h
+    │   │   │   │       ├── kerndat.h
+    │   │   │   │       ├── parasite.h
+    │   │   │   │       ├── parasite-syscall.h
+    │   │   │   │       ├── restore.h
+    │   │   │   │       ├── restorer.h
+    │   │   │   │       ├── thread_pointer.h
+    │   │   │   │       ├── types.h
+    │   │   │   │       └── vdso.h
+    │   │   │   ├── Makefile
+    │   │   │   ├── restorer.c
+    │   │   │   ├── sigframe.c
+    │   │   │   └── vdso-pie.c
+    │   │   ├── mips
+    │   │   │   ├── cpu.c
+    │   │   │   ├── crtools.c
+    │   │   │   ├── include
+    │   │   │   │   └── asm
+    │   │   │   │       ├── dump.h
+    │   │   │   │       ├── int.h
+    │   │   │   │       ├── kerndat.h
+    │   │   │   │       ├── parasite.h
+    │   │   │   │       ├── parasite-syscall.h
+    │   │   │   │       ├── restore.h
+    │   │   │   │       ├── restorer.h
+    │   │   │   │       ├── syscall32.h
+    │   │   │   │       ├── thread_pointer.h
+    │   │   │   │       ├── types.h
+    │   │   │   │       └── vdso.h
+    │   │   │   ├── Makefile
+    │   │   │   ├── restorer.c
+    │   │   │   ├── sigaction_compat.c
+    │   │   │   ├── sigframe.c
+    │   │   │   └── vdso-pie.c
+    │   │   ├── ppc64
+    │   │   │   ├── cpu.c
+    │   │   │   ├── crtools.c
+    │   │   │   ├── include
+    │   │   │   │   └── asm
+    │   │   │   │       ├── dump.h
+    │   │   │   │       ├── int.h
+    │   │   │   │       ├── kerndat.h
+    │   │   │   │       ├── parasite.h
+    │   │   │   │       ├── parasite-syscall.h
+    │   │   │   │       ├── restore.h
+    │   │   │   │       ├── restorer.h
+    │   │   │   │       ├── thread_pointer.h
+    │   │   │   │       ├── types.h
+    │   │   │   │       └── vdso.h
+    │   │   │   ├── Makefile
+    │   │   │   ├── misc.S
+    │   │   │   ├── restorer.c
+    │   │   │   ├── sigframe.c
+    │   │   │   ├── vdso-pie.c
+    │   │   │   └── vdso-trampoline.S
+    │   │   ├── s390
+    │   │   │   ├── cpu.c
+    │   │   │   ├── crtools.c
+    │   │   │   ├── include
+    │   │   │   │   └── asm
+    │   │   │   │       ├── dump.h
+    │   │   │   │       ├── int.h
+    │   │   │   │       ├── kerndat.h
+    │   │   │   │       ├── parasite.h
+    │   │   │   │       ├── parasite-syscall.h
+    │   │   │   │       ├── restore.h
+    │   │   │   │       ├── restorer.h
+    │   │   │   │       ├── thread_pointer.h
+    │   │   │   │       ├── types.h
+    │   │   │   │       └── vdso.h
+    │   │   │   ├── Makefile
+    │   │   │   ├── restorer.c
+    │   │   │   ├── sigframe.c
+    │   │   │   └── vdso-pie.c
+    │   │   └── x86
+    │   │       ├── cpu.c
+    │   │       ├── crtools.c
+    │   │       ├── include
+    │   │       │   └── asm
+    │   │       │       ├── compat.h
+    │   │       │       ├── dump.h
+    │   │       │       ├── int.h
+    │   │       │       ├── kerndat.h
+    │   │       │       ├── parasite.h
+    │   │       │       ├── parasite-syscall.h
+    │   │       │       ├── restore.h
+    │   │       │       ├── restorer.h
+    │   │       │       ├── shstk.h
+    │   │       │       ├── syscall32.h
+    │   │       │       ├── thread_pointer.h
+    │   │       │       ├── types.h
+    │   │       │       └── vdso.h
+    │   │       ├── kerndat.c
+    │   │       ├── Makefile
+    │   │       ├── restorer.c
+    │   │       ├── restorer_unmap.S
+    │   │       ├── shstk.c
+    │   │       ├── sigaction_compat.c
+    │   │       ├── sigaction_compat_pie.c -> sigaction_compat.c
+    │   │       ├── sigframe.c
+    │   │       ├── sys-exec-tbl.c
+    │   │       └── vdso-pie.c
+    │   ├── autofs.c
+    │   ├── bfd.c
+    │   ├── bitmap.c
+    │   ├── bpfmap.c
+    │   ├── cgroup.c
+    │   ├── cgroup-props.c
+    │   ├── clone-noasan.c
+    │   ├── config.c
+    │   ├── cr-check.c
+    │   ├── cr-dedup.c
+    │   ├── cr-dump.c
+    │   ├── cr-errno.c
+    │   ├── cr-restore.c
+    │   ├── cr-service.c
+    │   ├── crtools.c
+    │   ├── eventfd.c
+    │   ├── eventpoll.c
+    │   ├── external.c
+    │   ├── fault-injection.c
+    │   ├── fdstore.c
+    │   ├── fifo.c
+    │   ├── file-ids.c
+    │   ├── file-lock.c
+    │   ├── files.c
+    │   ├── files-ext.c
+    │   ├── files-reg.c
+    │   ├── filesystems.c
+    │   ├── fsnotify.c
+    │   ├── hugetlb.c
+    │   ├── image.c
+    │   ├── image-desc.c
+    │   ├── img-streamer.c
+    │   ├── include
+    │   │   ├── action-scripts.h
+    │   │   ├── aio.h
+    │   │   ├── asm-generic
+    │   │   │   ├── int.h
+    │   │   │   └── vdso.h
+    │   │   ├── atomic.h
+    │   │   ├── autofs.h
+    │   │   ├── bfd.h
+    │   │   ├── bitmap.h
+    │   │   ├── bitops.h
+    │   │   ├── bitsperlong.h
+    │   │   ├── bpfmap.h
+    │   │   ├── cgroup.h
+    │   │   ├── cgroup-props.h
+    │   │   ├── clone-noasan.h
+    │   │   ├── cpu.h
+    │   │   ├── cr-errno.h
+    │   │   ├── criu-log.h
+    │   │   ├── criu-plugin.h
+    │   │   ├── cr_options.h
+    │   │   ├── cr-service-const.h
+    │   │   ├── cr-service.h
+    │   │   ├── crtools.h
+    │   │   ├── dump.h
+    │   │   ├── eventfd.h
+    │   │   ├── eventpoll.h
+    │   │   ├── external.h
+    │   │   ├── fault-injection.h
+    │   │   ├── fcntl.h
+    │   │   ├── fdinfo.h
+    │   │   ├── fdstore.h
+    │   │   ├── fifo.h
+    │   │   ├── file-ids.h
+    │   │   ├── file-lock.h
+    │   │   ├── files.h
+    │   │   ├── files-reg.h
+    │   │   ├── filesystems.h
+    │   │   ├── fs-magic.h
+    │   │   ├── fsnotify.h
+    │   │   ├── hugetlb.h
+    │   │   ├── image-desc.h
+    │   │   ├── image.h
+    │   │   ├── imgset.h
+    │   │   ├── img-streamer.h
+    │   │   ├── inet_diag.h
+    │   │   ├── infect-pie.h
+    │   │   ├── int.h
+    │   │   ├── ipc_ns.h
+    │   │   ├── irmap.h
+    │   │   ├── kcmp.h
+    │   │   ├── kcmp-ids.h
+    │   │   ├── kerndat.h
+    │   │   ├── libnetlink.h
+    │   │   ├── linux
+    │   │   │   ├── aio_abi.h
+    │   │   │   ├── mount.h
+    │   │   │   ├── openat2.h
+    │   │   │   ├── rseq.h
+    │   │   │   └── userfaultfd.h
+    │   │   ├── log.h
+    │   │   ├── lsm.h
+    │   │   ├── magic.h
+    │   │   ├── memfd.h
+    │   │   ├── mem.h
+    │   │   ├── mman.h
+    │   │   ├── mount.h
+    │   │   ├── mount-v2.h
+    │   │   ├── namespaces.h
+    │   │   ├── netfilter.h
+    │   │   ├── net.h
+    │   │   ├── netlink_diag.h
+    │   │   ├── packet_diag.h
+    │   │   ├── page.h
+    │   │   ├── pagemap-cache.h
+    │   │   ├── pagemap.h
+    │   │   ├── pagemap_scan.h
+    │   │   ├── page-pipe.h
+    │   │   ├── page-xfer.h
+    │   │   ├── parasite.h
+    │   │   ├── parasite-syscall.h
+    │   │   ├── parasite-vdso.h
+    │   │   ├── path.h
+    │   │   ├── pidfd-store.h
+    │   │   ├── pid.h
+    │   │   ├── pipes.h
+    │   │   ├── plugin.h
+    │   │   ├── posix-timer.h
+    │   │   ├── prctl.h
+    │   │   ├── proc_parse.h
+    │   │   ├── protobuf-desc.h
+    │   │   ├── protobuf.h
+    │   │   ├── pstree.h
+    │   │   ├── ptrace-compat.h
+    │   │   ├── rbtree.h
+    │   │   ├── restore.h
+    │   │   ├── restorer.h
+    │   │   ├── rst_info.h
+    │   │   ├── rst-malloc.h
+    │   │   ├── sched.h
+    │   │   ├── seccomp.h
+    │   │   ├── seize.h
+    │   │   ├── servicefd.h
+    │   │   ├── setproctitle.h
+    │   │   ├── shmem.h
+    │   │   ├── sigact.h
+    │   │   ├── sigframe.h
+    │   │   ├── signalfd.h
+    │   │   ├── sizes.h
+    │   │   ├── sk-inet.h
+    │   │   ├── sk-packet.h
+    │   │   ├── sk-queue.h
+    │   │   ├── sockets.h
+    │   │   ├── stats.h
+    │   │   ├── string.h
+    │   │   ├── sysctl.h
+    │   │   ├── sysfs_parse.h
+    │   │   ├── timens.h
+    │   │   ├── timerfd.h
+    │   │   ├── timer.h
+    │   │   ├── tls.h
+    │   │   ├── tty.h
+    │   │   ├── tun.h
+    │   │   ├── types.h
+    │   │   ├── uffd.h
+    │   │   ├── unix_diag.h
+    │   │   ├── util-caps.h
+    │   │   ├── util.h
+    │   │   ├── util-pie.h
+    │   │   ├── util-vdso.h
+    │   │   ├── uts_ns.h
+    │   │   ├── vdso.h
+    │   │   ├── vma.h
+    │   │   └── xmalloc.h
+    │   ├── ipc_ns.c
+    │   ├── irmap.c
+    │   ├── kcmp-ids.c
+    │   ├── kerndat.c
+    │   ├── libnetlink.c
+    │   ├── log.c
+    │   ├── lsm.c
+    │   ├── Makefile
+    │   ├── Makefile.crtools
+    │   ├── Makefile.packages
+    │   ├── mem.c
+    │   ├── memfd.c
+    │   ├── mount.c
+    │   ├── mount-v2.c
+    │   ├── namespaces.c
+    │   ├── net.c
+    │   ├── netfilter.c
+    │   ├── pagemap.c
+    │   ├── pagemap-cache.c
+    │   ├── page-pipe.c
+    │   ├── page-xfer.c
+    │   ├── parasite-syscall.c
+    │   ├── path.c
+    │   ├── pidfd-store.c
+    │   ├── pie
+    │   │   ├── Makefile
+    │   │   ├── Makefile.library
+    │   │   ├── parasite.c
+    │   │   ├── parasite-vdso.c
+    │   │   ├── restorer.c
+    │   │   ├── util.c
+    │   │   ├── util-vdso.c
+    │   │   └── util-vdso-elf32.c -> util-vdso.c
+    │   ├── pie-util.c -> pie/util.c
+    │   ├── pie-util-vdso.c -> pie/util-vdso.c
+    │   ├── pie-util-vdso-elf32.c -> pie/util-vdso-elf32.c
+    │   ├── pipes.c
+    │   ├── plugin.c
+    │   ├── proc_parse.c
+    │   ├── protobuf.c
+    │   ├── protobuf-desc.c
+    │   ├── pstree.c
+    │   ├── rbtree.c
+    │   ├── rst-malloc.c
+    │   ├── seccomp.c
+    │   ├── seize.c
+    │   ├── servicefd.c
+    │   ├── setproctitle.c
+    │   ├── shmem.c
+    │   ├── sigact.c
+    │   ├── sigframe.c
+    │   ├── signalfd.c
+    │   ├── sk-inet.c
+    │   ├── sk-netlink.c
+    │   ├── sk-packet.c
+    │   ├── sk-queue.c
+    │   ├── sk-tcp.c
+    │   ├── sk-unix.c
+    │   ├── sockets.c
+    │   ├── stats.c
+    │   ├── string.c
+    │   ├── sysctl.c
+    │   ├── sysfs_parse.c
+    │   ├── timens.c
+    │   ├── timer.c
+    │   ├── timerfd.c
+    │   ├── tls.c
+    │   ├── tty.c
+    │   ├── tun.c
+    │   ├── uffd.c
+    │   ├── unittest
+    │   │   ├── Makefile
+    │   │   ├── mock.c
+    │   │   └── unit.c
+    │   ├── util.c
+    │   ├── uts_ns.c
+    │   ├── vdso.c
+    │   └── vdso-compat.c
+    ├── Documentation
+    │   ├── asciidoc.conf
+    │   ├── compel.txt
+    │   ├── crit.txt
+    │   ├── criu-amdgpu-plugin.txt
+    │   ├── criu-ns.txt
+    │   ├── criu.txt
+    │   ├── custom.xsl
+    │   ├── HOWTO.cross-compile
+    │   └── Makefile
+    ├── images
+    │   ├── apparmor.proto
+    │   ├── autofs.proto
+    │   ├── binfmt-misc.proto
+    │   ├── bpfmap-data.proto
+    │   ├── bpfmap-file.proto
+    │   ├── cgroup.proto
+    │   ├── core-aarch64.proto
+    │   ├── core-arm.proto
+    │   ├── core-loongarch64.proto
+    │   ├── core-mips.proto
+    │   ├── core-ppc64.proto
+    │   ├── core.proto
+    │   ├── core-s390.proto
+    │   ├── core-x86.proto
+    │   ├── cpuinfo.proto
+    │   ├── creds.proto
+    │   ├── eventfd.proto
+    │   ├── eventpoll.proto
+    │   ├── ext-file.proto
+    │   ├── fdinfo.proto
+    │   ├── fh.proto
+    │   ├── fifo.proto
+    │   ├── file-lock.proto
+    │   ├── fown.proto
+    │   ├── fsnotify.proto
+    │   ├── fs.proto
+    │   ├── ghost-file.proto
+    │   ├── google
+    │   │   └── protobuf
+    │   │       └── descriptor.proto -> /usr/include/google/protobuf/descriptor.proto
+    │   ├── img-streamer.proto
+    │   ├── inventory.proto
+    │   ├── ipc-desc.proto
+    │   ├── ipc-msg.proto
+    │   ├── ipc-sem.proto
+    │   ├── ipc-shm.proto
+    │   ├── ipc-var.proto
+    │   ├── LICENSE
+    │   ├── macvlan.proto
+    │   ├── Makefile
+    │   ├── memfd.proto
+    │   ├── mm.proto
+    │   ├── mnt.proto
+    │   ├── netdev.proto
+    │   ├── ns.proto
+    │   ├── opts.proto
+    │   ├── packet-sock.proto
+    │   ├── pagemap.proto
+    │   ├── pidns.proto
+    │   ├── pipe-data.proto
+    │   ├── pipe.proto
+    │   ├── pstree.proto
+    │   ├── regfile.proto
+    │   ├── remap-file-path.proto
+    │   ├── rlimit.proto
+    │   ├── rpc.proto
+    │   ├── rseq.proto
+    │   ├── sa.proto
+    │   ├── seccomp.proto
+    │   ├── siginfo.proto
+    │   ├── signalfd.proto
+    │   ├── sit.proto
+    │   ├── sk-inet.proto
+    │   ├── sk-netlink.proto
+    │   ├── sk-opts.proto
+    │   ├── sk-packet.proto
+    │   ├── sk-unix.proto
+    │   ├── stats.proto
+    │   ├── sysctl.proto
+    │   ├── tcp-stream.proto
+    │   ├── timens.proto
+    │   ├── time.proto
+    │   ├── timerfd.proto
+    │   ├── timer.proto
+    │   ├── tty.proto
+    │   ├── tun.proto
+    │   ├── userns.proto
+    │   ├── utsns.proto
+    │   └── vma.proto
+    ├── include
+    │   ├── apparmor.h
+    │   └── common
+    │       ├── arch
+    │       │   ├── aarch64
+    │       │   │   └── asm
+    │       │   │       ├── atomic.h
+    │       │   │       ├── bitops.h
+    │       │   │       ├── bitsperlong.h
+    │       │   │       ├── linkage.h
+    │       │   │       └── page.h
+    │       │   ├── arm
+    │       │   │   └── asm
+    │       │   │       ├── atomic.h
+    │       │   │       ├── bitops.h
+    │       │   │       ├── bitsperlong.h
+    │       │   │       ├── linkage.h
+    │       │   │       ├── page.h
+    │       │   │       └── processor.h
+    │       │   ├── loongarch64
+    │       │   │   └── asm
+    │       │   │       ├── atomic.h
+    │       │   │       ├── bitops.h
+    │       │   │       ├── bitsperlong.h
+    │       │   │       ├── linkage.h
+    │       │   │       └── page.h
+    │       │   ├── mips
+    │       │   │   └── asm
+    │       │   │       ├── atomic.h
+    │       │   │       ├── bitops.h
+    │       │   │       ├── bitsperlong.h
+    │       │   │       ├── cmpxchg.h
+    │       │   │       ├── fls64.h
+    │       │   │       ├── linkage.h
+    │       │   │       ├── page.h
+    │       │   │       └── utils.h
+    │       │   ├── ppc64
+    │       │   │   └── asm
+    │       │   │       ├── atomic.h
+    │       │   │       ├── bitops.h
+    │       │   │       ├── bitsperlong.h
+    │       │   │       ├── cmpxchg.h
+    │       │   │       ├── linkage.h
+    │       │   │       └── page.h
+    │       │   ├── s390
+    │       │   │   └── asm
+    │       │   │       ├── atomic.h
+    │       │   │       ├── atomic_ops.h
+    │       │   │       ├── bitops.h
+    │       │   │       ├── bitsperlong.h
+    │       │   │       ├── linkage.h
+    │       │   │       └── page.h
+    │       │   └── x86
+    │       │       └── asm
+    │       │           ├── asm.h
+    │       │           ├── atomic.h
+    │       │           ├── bitops.h
+    │       │           ├── bitsperlong.h
+    │       │           ├── cmpxchg.h
+    │       │           ├── linkage.h
+    │       │           └── page.h
+    │       ├── asm-generic
+    │       │   └── bitops.h
+    │       ├── bitops.h
+    │       ├── bitsperlong.h
+    │       ├── bug.h
+    │       ├── compiler.h
+    │       ├── err.h
+    │       ├── list.h
+    │       ├── lock.h
+    │       ├── page.h
+    │       ├── scm-code.c
+    │       ├── scm.h
+    │       └── xmalloc.h
+    ├── INSTALL.md
+    ├── lib
+    │   ├── c
+    │   │   ├── criu.c
+    │   │   ├── criu.h
+    │   │   ├── criu.pc.in
+    │   │   └── Makefile
+    │   ├── Makefile
+    │   ├── pycriu
+    │   │   ├── criu.py
+    │   │   ├── images
+    │   │   │   ├── images.py
+    │   │   │   ├── __init__.py
+    │   │   │   ├── Makefile
+    │   │   │   └── pb2dict.py
+    │   │   ├── __init__.py
+    │   │   └── Makefile
+    │   ├── pyproject.toml
+    │   ├── setup.cfg
+    │   └── setup.py
+    ├── MAINTAINERS
+    ├── MAINTAINERS_GUIDE.md
+    ├── Makefile
+    ├── Makefile.compel
+    ├── Makefile.config
+    ├── Makefile.install
+    ├── Makefile.versions
+    ├── plugins
+    │   ├── amdgpu
+    │   │   ├── amdgpu_plugin.c
+    │   │   ├── amdgpu_plugin_drm.c
+    │   │   ├── amdgpu_plugin_drm.h
+    │   │   ├── amdgpu_plugin_topology.c
+    │   │   ├── amdgpu_plugin_topology.h
+    │   │   ├── amdgpu_plugin_util.c
+    │   │   ├── amdgpu_plugin_util.h
+    │   │   ├── criu-amdgpu.proto
+    │   │   ├── kfd_ioctl.h
+    │   │   ├── Makefile
+    │   │   ├── README.md
+    │   │   └── tests
+    │   │       └── test_topology_remap.c
+    │   └── cuda
+    │       ├── cuda_plugin.c
+    │       ├── Makefile
+    │       └── README.md
+    ├── README.md
+    ├── scripts
+    │   ├── build
+    │   │   ├── Dockerfile.aarch64-stable-cross.hdr
+    │   │   ├── Dockerfile.aarch64-stable-cross.tmpl -> Dockerfile.stable-cross.tmpl
+    │   │   ├── Dockerfile.aarch64-unstable-cross.hdr
+    │   │   ├── Dockerfile.aarch64-unstable-cross.tmpl -> Dockerfile.unstable-cross.tmpl
+    │   │   ├── Dockerfile.alpine
+    │   │   ├── Dockerfile.amd-rocm
+    │   │   ├── Dockerfile.archlinux
+    │   │   ├── Dockerfile.armv7hf.hdr
+    │   │   ├── Dockerfile.armv7hf.tmpl -> Dockerfile.linux32.tmpl
+    │   │   ├── Dockerfile.armv7-stable-cross.hdr
+    │   │   ├── Dockerfile.armv7-stable-cross.tmpl -> Dockerfile.stable-cross.tmpl
+    │   │   ├── Dockerfile.armv7-unstable-cross.hdr
+    │   │   ├── Dockerfile.armv7-unstable-cross.tmpl -> Dockerfile.unstable-cross.tmpl
+    │   │   ├── Dockerfile.centos8
+    │   │   ├── Dockerfile.fedora-asan.hdr
+    │   │   ├── Dockerfile.fedora-asan.tmpl -> Dockerfile.fedora.tmpl
+    │   │   ├── Dockerfile.fedora-rawhide.hdr
+    │   │   ├── Dockerfile.fedora-rawhide.tmpl -> Dockerfile.fedora.tmpl
+    │   │   ├── Dockerfile.fedora.tmpl
+    │   │   ├── Dockerfile.hotspot-alpine
+    │   │   ├── Dockerfile.hotspot-ubuntu
+    │   │   ├── Dockerfile.linux32.tmpl
+    │   │   ├── Dockerfile.mips64el-stable-cross.hdr
+    │   │   ├── Dockerfile.mips64el-stable-cross.tmpl -> Dockerfile.stable-cross.tmpl
+    │   │   ├── Dockerfile.mips64el-unstable-cross.hdr
+    │   │   ├── Dockerfile.mips64el-unstable-cross.tmpl -> Dockerfile.unstable-cross.tmpl
+    │   │   ├── Dockerfile.openj9-ubuntu
+    │   │   ├── Dockerfile.ppc64-stable-cross.hdr
+    │   │   ├── Dockerfile.ppc64-stable-cross.tmpl -> Dockerfile.stable-cross.tmpl
+    │   │   ├── Dockerfile.ppc64-unstable-cross.hdr
+    │   │   ├── Dockerfile.ppc64-unstable-cross.tmpl -> Dockerfile.unstable-cross.tmpl
+    │   │   ├── Dockerfile.stable-cross.tmpl
+    │   │   ├── Dockerfile.tmpl
+    │   │   ├── Dockerfile.unstable-cross.tmpl
+    │   │   ├── Dockerfile.x86_64.hdr
+    │   │   ├── Dockerfile.x86_64.tmpl -> Dockerfile.tmpl
+    │   │   └── Makefile
+    │   ├── ci
+    │   │   ├── apt-install
+    │   │   ├── asan.sh
+    │   │   ├── ci-after-success.sh
+    │   │   ├── docker.env
+    │   │   ├── docker-test.sh
+    │   │   ├── java-test.sh
+    │   │   ├── loongarch64-qemu-test.sh
+    │   │   ├── Makefile
+    │   │   ├── podman-test.sh
+    │   │   ├── prepare-for-fedora-rawhide.sh
+    │   │   ├── run-ci-tests.sh
+    │   │   └── vagrant.sh
+    │   ├── criu-ns
+    │   ├── fake-restore.sh
+    │   ├── feature-tests.mak
+    │   ├── fetch-clang-format.sh
+    │   ├── flake8.cfg
+    │   ├── github-indent-warnings.py
+    │   ├── install-criu-image-streamer.sh
+    │   ├── install-debian-pkgs.sh
+    │   ├── magic-gen.py
+    │   ├── nmk
+    │   │   ├── Documentation
+    │   │   │   ├── Makefile
+    │   │   │   └── nmk.txt
+    │   │   ├── Makefile
+    │   │   ├── README.md
+    │   │   └── scripts
+    │   │       ├── build.mk
+    │   │       ├── include.mk
+    │   │       ├── macro.mk
+    │   │       ├── main.mk
+    │   │       ├── msg.mk
+    │   │       ├── tools.mk
+    │   │       └── utils.mk
+    │   ├── protobuf-gen.sh
+    │   ├── ruff.toml
+    │   ├── systemd-autofs-restart.sh
+    │   ├── tmp-files.sh
+    │   └── uninstall_module.py
+    ├── soccr
+    │   ├── Makefile
+    │   ├── soccr.c
+    │   ├── soccr.h
+    │   └── test
+    │       ├── local.sh
+    │       ├── Makefile
+    │       ├── run.py
+    │       ├── tcp-conn.c
+    │       ├── tcp-conn-v6.c -> tcp-conn.c
+    │       ├── tcp-constructor.c
+    │       └── tcp-test.py
+    └── test
+        ├── abrt.sh
+        ├── check_actions.py
+        ├── compel
+        │   ├── arch
+        │   │   ├── aarch64
+        │   │   │   └── include
+        │   │   │       └── arch_test_handle_binary.h
+        │   │   ├── arm
+        │   │   │   └── include
+        │   │   │       └── arch_test_handle_binary.h
+        │   │   ├── ppc64
+        │   │   │   └── include
+        │   │   │       └── arch_test_handle_binary.h
+        │   │   └── x86
+        │   │       └── include
+        │   │           └── arch_test_handle_binary.h
+        │   ├── handle_binary_32.c -> handle_binary.c
+        │   ├── handle_binary.c
+        │   ├── main.c
+        │   └── Makefile
+        ├── crit-recode.py
+        ├── cuda-checkpoint
+        │   ├── cuda-checkpoint.c
+        │   └── Makefile
+        ├── empty-netns-prep.sh
+        ├── exhaustive
+        │   ├── pipe.py
+        │   └── unix.py
+        ├── groups.desc
+        ├── inhfd
+        │   ├── fifo.py
+        │   ├── fifo.py.desc
+        │   ├── memfd.py
+        │   ├── memfd.py.checkskip
+        │   ├── memfd.py.desc
+        │   ├── pipe.py
+        │   ├── pipe.py.desc
+        │   ├── socket.py
+        │   ├── socket.py.desc
+        │   ├── tty.py
+        │   └── tty.py.desc
+        ├── inhfd.desc
+        ├── javaTests
+        │   ├── pom.xml
+        │   ├── README.md
+        │   ├── src
+        │   │   └── org
+        │   │       └── criu
+        │   │           └── java
+        │   │               └── tests
+        │   │                   ├── CheckpointRestore.java
+        │   │                   ├── FileRead.java
+        │   │                   ├── Helper.java
+        │   │                   ├── ImgFilter.java
+        │   │                   ├── MemoryMappings.java
+        │   │                   ├── MultipleFileRead.java
+        │   │                   ├── MultipleFileWrite.java
+        │   │                   ├── ReadWrite.java
+        │   │                   ├── SocketHelper.java
+        │   │                   ├── SocketsClient.java
+        │   │                   ├── SocketsConnectClient.java
+        │   │                   ├── SocketsConnect.java
+        │   │                   ├── SocketsConnectServer.java
+        │   │                   ├── SocketsDataClient.java
+        │   │                   ├── SocketsData.java
+        │   │                   ├── SocketsDataServer.java
+        │   │                   ├── Sockets.java
+        │   │                   ├── SocketsListenClient.java
+        │   │                   ├── SocketsListen.java
+        │   │                   ├── SocketsListenServer.java
+        │   │                   ├── SocketsMultipleClient.java
+        │   │                   ├── SocketsMultiple.java
+        │   │                   ├── SocketsMultipleServer.java
+        │   │                   └── SocketsServer.java
+        │   └── test.xml
+        ├── jenkins
+        │   ├── actions.sh
+        │   ├── crit.sh
+        │   ├── criu-btrfs.sh
+        │   ├── criu-by-id.sh
+        │   ├── criu-compat-mounts.sh
+        │   ├── criu-dedup.sh
+        │   ├── criu-dump.sh
+        │   ├── criu-fault.sh
+        │   ├── criu-fcg.sh
+        │   ├── criu-groups.sh
+        │   ├── criu-inhfd.sh
+        │   ├── criu-iter.sh
+        │   ├── criu-join-ns.sh
+        │   ├── criu-lazy-common.sh
+        │   ├── criu-lazy-migration.pipeline
+        │   ├── criu-lazy-migration.sh
+        │   ├── criu-lazy-pages.sh
+        │   ├── criu-lib.sh
+        │   ├── criu-other.sh
+        │   ├── criu-overlay.sh
+        │   ├── criu-pre-dump.sh
+        │   ├── criu-remote-lazy-pages.sh
+        │   ├── criu.sh
+        │   ├── criu-sibling.sh
+        │   ├── criu-snap.sh
+        │   ├── criu-stop.sh
+        │   ├── criu-user.sh
+        │   ├── _run_ct
+        │   └── run_ct
+        ├── libfault
+        │   ├── libfault.c
+        │   └── Makefile
+        ├── Makefile
+        ├── others
+        │   ├── action-script
+        │   │   ├── action-script.sh
+        │   │   ├── Makefile
+        │   │   └── run.sh
+        │   ├── app-emu
+        │   │   ├── java
+        │   │   │   └── HelloWorld
+        │   │   │       ├── HelloWorld.java
+        │   │   │       └── run.sh
+        │   │   ├── job
+        │   │   │   ├── job.c
+        │   │   │   ├── job.exp
+        │   │   │   ├── Makefile
+        │   │   │   └── run.sh
+        │   │   ├── lxc
+        │   │   │   ├── network-script.sh
+        │   │   │   └── run.sh
+        │   │   ├── make
+        │   │   │   ├── Makefile
+        │   │   │   ├── run.sh
+        │   │   │   └── tmpl.c
+        │   │   ├── screen
+        │   │   │   └── run.sh
+        │   │   ├── tarbz
+        │   │   │   └── run.sh
+        │   │   └── vnc
+        │   │       ├── run.sh
+        │   │       └── vnc-server.sh
+        │   ├── app-emu.sh
+        │   ├── bers
+        │   │   ├── bers.c
+        │   │   ├── bers.txt
+        │   │   └── Makefile
+        │   ├── config-file
+        │   │   ├── conf1.test
+        │   │   ├── conf2.test
+        │   │   ├── conf3.test
+        │   │   ├── Makefile
+        │   │   └── run.sh
+        │   ├── crit
+        │   │   ├── Makefile
+        │   │   └── test.sh
+        │   ├── criu-coredump
+        │   │   ├── Makefile
+        │   │   └── test.sh
+        │   ├── criu-ns
+        │   │   ├── Makefile
+        │   │   └── run.py
+        │   ├── env.sh
+        │   ├── ext-links
+        │   │   ├── addmv_raw.sh
+        │   │   ├── addmv.sh
+        │   │   ├── Makefile
+        │   │   ├── mvlink.c
+        │   │   ├── run_ns.sh
+        │   │   ├── run.sh
+        │   │   └── run_wait.sh
+        │   ├── ext-tty
+        │   │   └── run.py
+        │   ├── functions.sh
+        │   ├── libcriu
+        │   │   ├── lib.c
+        │   │   ├── lib.h
+        │   │   ├── Makefile
+        │   │   ├── run.sh
+        │   │   ├── test_errno.c
+        │   │   ├── test_feature_check.c
+        │   │   ├── test_iters.c
+        │   │   ├── test_join_ns.c
+        │   │   ├── test_notify.c
+        │   │   ├── test_pre_dump.c
+        │   │   ├── test_self.c
+        │   │   └── test_sub.c
+        │   ├── loop.c
+        │   ├── make
+        │   │   ├── Makefile
+        │   │   └── uninstall.sh
+        │   ├── Makefile
+        │   ├── mem-snap
+        │   │   ├── Makefile
+        │   │   ├── run-predump-2.sh
+        │   │   ├── run-predump.sh
+        │   │   ├── run.sh
+        │   │   ├── run-snap-auto-dedup.sh
+        │   │   ├── run-snap-dedup-on-restore.sh
+        │   │   ├── run-snap-dedup.sh
+        │   │   ├── run-snap-maps04.sh
+        │   │   └── run-snap.sh
+        │   ├── mnt-ext-dev
+        │   │   ├── Makefile
+        │   │   └── run.sh
+        │   ├── mounts
+        │   │   ├── ext
+        │   │   │   ├── ext-mount.c
+        │   │   │   ├── Makefile
+        │   │   │   ├── ns_init.c
+        │   │   │   └── run.sh
+        │   │   ├── mounts.py
+        │   │   ├── mounts.sh
+        │   │   └── run.sh
+        │   ├── ns_ext
+        │   │   ├── Makefile
+        │   │   ├── __run_pidns.sh
+        │   │   ├── _run_pidns.sh
+        │   │   ├── run_pidns.sh
+        │   │   ├── _run.sh
+        │   │   └── run.sh
+        │   ├── overlayfs
+        │   │   ├── Makefile
+        │   │   └── run.sh
+        │   ├── pipes
+        │   │   ├── Makefile
+        │   │   └── pipe.c
+        │   ├── rpc
+        │   │   ├── config_file.py
+        │   │   ├── errno.py
+        │   │   ├── Makefile
+        │   │   ├── ps_test.py
+        │   │   ├── read.py
+        │   │   ├── restore-loop.py
+        │   │   ├── rpc.proto -> ../../../images/rpc.proto
+        │   │   ├── run.sh
+        │   │   ├── setup_swrk.py
+        │   │   ├── test-c.c
+        │   │   ├── test.py
+        │   │   └── version.py
+        │   ├── security
+        │   │   ├── loop.sh
+        │   │   ├── Makefile
+        │   │   └── run.sh
+        │   ├── shell-job
+        │   │   ├── Makefile
+        │   │   └── run.py
+        │   ├── skip-file-rwx-check
+        │   │   ├── Makefile
+        │   │   └── run.sh
+        │   ├── socketpairs
+        │   │   ├── Makefile
+        │   │   └── socketpair.c
+        │   ├── tcp
+        │   │   ├── cln.c
+        │   │   ├── Makefile
+        │   │   ├── run.sh
+        │   │   └── srv.c
+        │   └── unix-callback
+        │       ├── lib
+        │       │   ├── syslog-lib.so -> ../syslog-lib.so
+        │       │   └── unix-lib.so -> ../unix-lib.so
+        │       ├── Makefile
+        │       ├── run.sh
+        │       ├── syslog-lib.c
+        │       ├── unix-client.c
+        │       ├── unix-lib.c
+        │       ├── unix.proto
+        │       └── unix-server.c
+        ├── pki
+        │   ├── cacert.pem
+        │   ├── cert.pem
+        │   └── key.pem
+        ├── plugins
+        │   └── Makefile
+        ├── pycriu -> ../lib/pycriu
+        ├── show_action.sh
+        ├── umount2.c
+        ├── zdtm
+        │   ├── criu_config.py
+        │   ├── __init__.py
+        │   ├── lib
+        │   │   ├── arch
+        │   │   │   ├── aarch64
+        │   │   │   │   └── include
+        │   │   │   │       └── asm
+        │   │   │   │           └── atomic.h
+        │   │   │   ├── arm
+        │   │   │   │   └── include
+        │   │   │   │       └── asm
+        │   │   │   │           └── atomic.h
+        │   │   │   ├── loongarch64
+        │   │   │   │   └── include
+        │   │   │   │       └── asm
+        │   │   │   │           └── atomic.h
+        │   │   │   ├── mips
+        │   │   │   │   └── include
+        │   │   │   │       └── asm
+        │   │   │   │           └── atomic.h
+        │   │   │   ├── ppc64
+        │   │   │   │   └── include
+        │   │   │   │       └── asm
+        │   │   │   │           └── atomic.h
+        │   │   │   ├── s390
+        │   │   │   │   └── include
+        │   │   │   │       └── asm
+        │   │   │   │           └── atomic.h
+        │   │   │   └── x86
+        │   │   │       └── include
+        │   │   │           └── asm
+        │   │   │               └── atomic.h
+        │   │   ├── bpfmap_zdtm.c
+        │   │   ├── bpfmap_zdtm.h
+        │   │   ├── cpuid.h
+        │   │   ├── datagen.c
+        │   │   ├── file.c
+        │   │   ├── fs.c
+        │   │   ├── fs.h
+        │   │   ├── groups.c
+        │   │   ├── groups.desc
+        │   │   ├── list.h
+        │   │   ├── lock.c
+        │   │   ├── lock.h
+        │   │   ├── Makefile
+        │   │   ├── mem.c
+        │   │   ├── mountinfo.c
+        │   │   ├── mountinfo.h
+        │   │   ├── msg.c
+        │   │   ├── ns.c
+        │   │   ├── ns.h
+        │   │   ├── parseargs.c
+        │   │   ├── parseargs.sh
+        │   │   ├── stop_and_chk.sh
+        │   │   ├── streamutil.c
+        │   │   ├── sysctl.c
+        │   │   ├── sysctl.h
+        │   │   ├── tcp.c
+        │   │   ├── test.c
+        │   │   ├── unix.c
+        │   │   ├── xmalloc.h
+        │   │   └── zdtmtst.h
+        │   ├── Makefile
+        │   ├── Makefile.inc
+        │   ├── static
+        │   │   ├── aio00.c
+        │   │   ├── aio00.desc
+        │   │   ├── aio01.c
+        │   │   ├── aio01.desc
+        │   │   ├── apparmor.c
+        │   │   ├── apparmor.checkskip
+        │   │   ├── apparmor.desc
+        │   │   ├── apparmor.profile
+        │   │   ├── apparmor_stacking.c
+        │   │   ├── apparmor_stacking.desc
+        │   │   ├── apparmor_stacking.hook
+        │   │   ├── apparmor_stacking.profile
+        │   │   ├── arm-neon00.c
+        │   │   ├── arm-neon00.desc
+        │   │   ├── auto_dev-ioctl.h
+        │   │   ├── autofs.c
+        │   │   ├── autofs.desc
+        │   │   ├── bind-mount.c
+        │   │   ├── bind-mount.desc
+        │   │   ├── binfmt_misc.c
+        │   │   ├── binfmt_misc.desc
+        │   │   ├── binfmt_misc.hook
+        │   │   ├── bpf_array.c
+        │   │   ├── bpf_array.desc
+        │   │   ├── bpf_hash.c
+        │   │   ├── bpf_hash.desc
+        │   │   ├── bridge.c
+        │   │   ├── bridge.desc
+        │   │   ├── busyloop00.c
+        │   │   ├── caps00.c
+        │   │   ├── caps00.desc
+        │   │   ├── cgroup00.c
+        │   │   ├── cgroup00.desc
+        │   │   ├── cgroup00.hook
+        │   │   ├── cgroup01.c
+        │   │   ├── cgroup01.desc
+        │   │   ├── cgroup01.hook
+        │   │   ├── cgroup02.c
+        │   │   ├── cgroup02.desc
+        │   │   ├── cgroup02.hook
+        │   │   ├── cgroup03.c
+        │   │   ├── cgroup03.desc
+        │   │   ├── cgroup03.hook
+        │   │   ├── cgroup04.c
+        │   │   ├── cgroup04.checkskip
+        │   │   ├── cgroup04.desc
+        │   │   ├── cgroup04.hook
+        │   │   ├── cgroup_ifpriomap.c
+        │   │   ├── cgroup_ifpriomap.checkskip
+        │   │   ├── cgroup_ifpriomap.desc
+        │   │   ├── cgroup_ifpriomap.hook
+        │   │   ├── cgroup_ignore.c
+        │   │   ├── cgroup_ignore.checkskip
+        │   │   ├── cgroup_ignore.desc
+        │   │   ├── cgroupns.c
+        │   │   ├── cgroupns.desc
+        │   │   ├── cgroup_stray.c
+        │   │   ├── cgroup_stray.desc
+        │   │   ├── cgroup_threads.c
+        │   │   ├── cgroup_threads.desc
+        │   │   ├── cgroup_threads.hook
+        │   │   ├── cgroupv2_00.c
+        │   │   ├── cgroupv2_00.checkskip
+        │   │   ├── cgroupv2_00.desc
+        │   │   ├── cgroupv2_00.hook
+        │   │   ├── cgroupv2_01.c
+        │   │   ├── cgroupv2_01.checkskip
+        │   │   ├── cgroupv2_01.desc
+        │   │   ├── cgroupv2_01.hook
+        │   │   ├── cgroup_yard.c -> cgroup00.c
+        │   │   ├── cgroup_yard.desc
+        │   │   ├── cgroup_yard.hook
+        │   │   ├── change_mnt_context.c
+        │   │   ├── change_mnt_context.checkskip
+        │   │   ├── change_mnt_context.desc
+        │   │   ├── child_opened_proc.c
+        │   │   ├── child_subreaper_and_reparent.c
+        │   │   ├── child_subreaper_and_reparent.desc
+        │   │   ├── child_subreaper.c
+        │   │   ├── child_subreaper_existing_child.c
+        │   │   ├── chroot.c
+        │   │   ├── chroot.desc
+        │   │   ├── chroot-file.c
+        │   │   ├── chroot-file.desc
+        │   │   ├── clean_mntns.c
+        │   │   ├── clean_mntns.desc
+        │   │   ├── clone_fs.c
+        │   │   ├── cmdlinenv00.c
+        │   │   ├── cmdlinenv00.desc
+        │   │   ├── conntracks
+        │   │   ├── conntracks.desc
+        │   │   ├── console.c
+        │   │   ├── console.desc
+        │   │   ├── cow00.c
+        │   │   ├── cow00.desc
+        │   │   ├── cow01.c
+        │   │   ├── cow01.desc
+        │   │   ├── criu-rtc.c
+        │   │   ├── criu-rtc.proto
+        │   │   ├── cr_veth02.c
+        │   │   ├── cr_veth02.checkskip
+        │   │   ├── cr_veth02.desc
+        │   │   ├── cr_veth02.hook
+        │   │   ├── cr_veth.c
+        │   │   ├── cr_veth.checkskip
+        │   │   ├── cr_veth.desc
+        │   │   ├── cr_veth.hook
+        │   │   ├── cwd00.c
+        │   │   ├── cwd01.c
+        │   │   ├── cwd02.c
+        │   │   ├── deleted_dev.c
+        │   │   ├── deleted_dev.desc
+        │   │   ├── deleted_unix_sock.c
+        │   │   ├── del_standalone_un.c
+        │   │   ├── del_standalone_un.desc
+        │   │   ├── del_standalone_un_seqpacket.c -> del_standalone_un.c
+        │   │   ├── different_creds.c
+        │   │   ├── different_creds.desc
+        │   │   ├── dumpable01.c
+        │   │   ├── dumpable02.c
+        │   │   ├── dumpable02.desc
+        │   │   ├── env00.c
+        │   │   ├── epoll01.c
+        │   │   ├── epoll01.desc
+        │   │   ├── epoll.c
+        │   │   ├── epoll.desc
+        │   │   ├── eventfs00.c
+        │   │   ├── fanotify00.c
+        │   │   ├── fanotify00.desc
+        │   │   ├── fd01.c
+        │   │   ├── fd01.desc
+        │   │   ├── fd.c
+        │   │   ├── fd_offset.c
+        │   │   ├── fdt_shared.c
+        │   │   ├── fifo.c
+        │   │   ├── fifo-ghost.c
+        │   │   ├── fifo_ro.c
+        │   │   ├── fifo-rowo-pair.c
+        │   │   ├── fifo_upon_unix_socket00.c
+        │   │   ├── fifo_upon_unix_socket00.desc
+        │   │   ├── fifo_upon_unix_socket01.c -> fifo_upon_unix_socket00.c
+        │   │   ├── fifo_upon_unix_socket01.desc -> fifo_upon_unix_socket00.desc
+        │   │   ├── fifo_wronly.c
+        │   │   ├── file_append.c
+        │   │   ├── file_attr.c
+        │   │   ├── file_cloexec.c
+        │   │   ├── file_fown.c
+        │   │   ├── file_fown.desc
+        │   │   ├── file_lease00.c
+        │   │   ├── file_lease00.desc
+        │   │   ├── file_lease01.c
+        │   │   ├── file_lease01.desc -> file_lease00.desc
+        │   │   ├── file_lease02.c
+        │   │   ├── file_lease02.desc -> file_lease00.desc
+        │   │   ├── file_lease03.c
+        │   │   ├── file_lease03.desc -> file_lease00.desc
+        │   │   ├── file_lease04.c
+        │   │   ├── file_lease04.desc -> file_lease00.desc
+        │   │   ├── file_locks00.c
+        │   │   ├── file_locks00.desc
+        │   │   ├── file_locks00_fail.c -> file_locks00.c
+        │   │   ├── file_locks00_fail.desc
+        │   │   ├── file_locks01.c
+        │   │   ├── file_locks01.desc
+        │   │   ├── file_locks02.c
+        │   │   ├── file_locks02.desc
+        │   │   ├── file_locks03.c
+        │   │   ├── file_locks03.desc
+        │   │   ├── file_locks04.c
+        │   │   ├── file_locks04.desc
+        │   │   ├── file_locks05.c
+        │   │   ├── file_locks05.desc
+        │   │   ├── file_locks06.c
+        │   │   ├── file_locks06.checkskip
+        │   │   ├── file_locks06.desc
+        │   │   ├── file_locks07.c
+        │   │   ├── file_locks07.checkskip -> file_locks06.checkskip
+        │   │   ├── file_locks07.desc
+        │   │   ├── file_locks08.c
+        │   │   ├── file_locks08.checkskip -> file_locks06.checkskip
+        │   │   ├── file_locks08.desc
+        │   │   ├── file_shared.c
+        │   │   ├── fpu00.c
+        │   │   ├── fpu00.desc
+        │   │   ├── fpu01.c
+        │   │   ├── fpu01.desc
+        │   │   ├── fpu02.c
+        │   │   ├── fpu02.desc
+        │   │   ├── fpu03.c -> fpu00.c
+        │   │   ├── fpu03.desc
+        │   │   ├── futex.c
+        │   │   ├── futex-rl.c
+        │   │   ├── get_smaps_bits.c
+        │   │   ├── get_smaps_bits.h
+        │   │   ├── ghost_holes00.c
+        │   │   ├── ghost_holes01.c -> ghost_holes00.c
+        │   │   ├── ghost_holes02.c -> ghost_holes00.c
+        │   │   ├── ghost_holes_large00.c
+        │   │   ├── ghost_holes_large01.c -> ghost_holes_large00.c
+        │   │   ├── ghost_holes_large01.desc
+        │   │   ├── ghost_multi_hole00.c
+        │   │   ├── ghost_multi_hole00.desc
+        │   │   ├── ghost_multi_hole01.c -> ghost_multi_hole00.c
+        │   │   ├── ghost_multi_hole01.desc
+        │   │   ├── ghost_on_rofs.c
+        │   │   ├── ghost_on_rofs.desc
+        │   │   ├── groups.c
+        │   │   ├── groups.desc
+        │   │   ├── grow_map02.c
+        │   │   ├── grow_map02.desc
+        │   │   ├── grow_map03.c
+        │   │   ├── grow_map03.desc
+        │   │   ├── grow_map.c
+        │   │   ├── grow_map.desc
+        │   │   ├── helper_zombie_child.c
+        │   │   ├── helper_zombie_child.desc
+        │   │   ├── inotify00.c
+        │   │   ├── inotify00.desc
+        │   │   ├── inotify01.c -> inotify00.c
+        │   │   ├── inotify01.desc
+        │   │   ├── inotify02.c
+        │   │   ├── inotify02.desc
+        │   │   ├── inotify04.c
+        │   │   ├── inotify04.desc
+        │   │   ├── inotify_irmap.c
+        │   │   ├── inotify_irmap.desc
+        │   │   ├── inotify_irmap.hook
+        │   │   ├── inotify_system.c
+        │   │   ├── inotify_system.desc
+        │   │   ├── inotify_system_nodel.c -> inotify_system.c
+        │   │   ├── inotify_system_nodel.desc
+        │   │   ├── ipc_namespace.c
+        │   │   ├── ipc_namespace.desc
+        │   │   ├── jobctl00.c
+        │   │   ├── lib
+        │   │   │   └── criu-rtc.so -> ../criu-rtc.so
+        │   │   ├── link10.c
+        │   │   ├── loginuid.c
+        │   │   ├── loginuid.desc
+        │   │   ├── macvlan.c
+        │   │   ├── macvlan.checkskip
+        │   │   ├── macvlan.desc
+        │   │   ├── macvlan.hook
+        │   │   ├── Makefile
+        │   │   ├── maps00.c
+        │   │   ├── maps01.c
+        │   │   ├── maps01.desc
+        │   │   ├── maps02.c
+        │   │   ├── maps03.c
+        │   │   ├── maps03.desc
+        │   │   ├── maps04.c
+        │   │   ├── maps04.desc
+        │   │   ├── maps05.c
+        │   │   ├── maps06.c
+        │   │   ├── maps09.c
+        │   │   ├── maps09.checkskip
+        │   │   ├── maps10.c
+        │   │   ├── maps10.checkskip -> maps09.checkskip
+        │   │   ├── maps_file_prot.c
+        │   │   ├── membarrier.c
+        │   │   ├── memfd00.c
+        │   │   ├── memfd01.c
+        │   │   ├── memfd02.c
+        │   │   ├── memfd02-hugetlb.c -> memfd02.c
+        │   │   ├── memfd02-hugetlb.desc
+        │   │   ├── memfd03.c
+        │   │   ├── memfd04.c
+        │   │   ├── memfd04.desc
+        │   │   ├── memfd05.c -> memfd04.c
+        │   │   ├── memfd05.desc -> memfd04.desc
+        │   │   ├── mem-touch.c
+        │   │   ├── mem-touch.desc
+        │   │   ├── mlock_setuid.c
+        │   │   ├── mlock_setuid.desc
+        │   │   ├── mmx00.c
+        │   │   ├── mmx00.desc
+        │   │   ├── mnt_enablefs.c
+        │   │   ├── mnt_enablefs.checkskip
+        │   │   ├── mnt_enablefs.desc
+        │   │   ├── mnt_ext_auto.c
+        │   │   ├── mnt_ext_auto.desc
+        │   │   ├── mnt_ext_collision.c
+        │   │   ├── mnt_ext_collision.desc
+        │   │   ├── mnt_ext_collision.hook
+        │   │   ├── mnt_ext_dev.c
+        │   │   ├── mnt_ext_dev.desc
+        │   │   ├── mnt_ext_manual.c -> mnt_ext_auto.c
+        │   │   ├── mnt_ext_manual.desc
+        │   │   ├── mnt_ext_master.c
+        │   │   ├── mnt_ext_master.desc
+        │   │   ├── mnt_ext_multiple.c
+        │   │   ├── mnt_ext_multiple.desc
+        │   │   ├── mnt_ext_root.c
+        │   │   ├── mnt_ext_root.desc
+        │   │   ├── mnt_ext_root.hook
+        │   │   ├── mnt_ext_sharing.c
+        │   │   ├── mnt_ext_sharing.desc
+        │   │   ├── mnt_ext_sharing.hook
+        │   │   ├── mntns_deleted.c
+        │   │   ├── mntns_deleted.desc
+        │   │   ├── mntns_ghost01.c
+        │   │   ├── mntns_ghost01.desc
+        │   │   ├── mntns_ghost.c
+        │   │   ├── mntns_ghost.desc
+        │   │   ├── mntns_link_ghost.c -> mntns_link_remap.c
+        │   │   ├── mntns_link_ghost.desc
+        │   │   ├── mntns_link_remap.c
+        │   │   ├── mntns_link_remap.desc
+        │   │   ├── mntns_open.c
+        │   │   ├── mntns_open.desc
+        │   │   ├── mntns_overmount.c
+        │   │   ├── mntns_overmount.desc
+        │   │   ├── mntns_pivot_root.c
+        │   │   ├── mntns_pivot_root.desc
+        │   │   ├── mntns_pivot_root_ro.c -> mntns_pivot_root.c
+        │   │   ├── mntns_pivot_root_ro.desc -> mntns_pivot_root.desc
+        │   │   ├── mntns_remap.c
+        │   │   ├── mntns_remap.desc
+        │   │   ├── mntns_root_bind02.c -> mntns_root_bind.c
+        │   │   ├── mntns_root_bind02.desc -> mntns_root_bind.desc
+        │   │   ├── mntns_root_bind.c
+        │   │   ├── mntns_root_bind.desc
+        │   │   ├── mntns_ro_root.c
+        │   │   ├── mntns_ro_root.desc
+        │   │   ├── mntns_rw_ro_rw.c
+        │   │   ├── mntns_rw_ro_rw.desc
+        │   │   ├── mntns_shared_bind02.c -> mntns_shared_bind.c
+        │   │   ├── mntns_shared_bind02.desc
+        │   │   ├── mntns_shared_bind03.c
+        │   │   ├── mntns_shared_bind03.desc
+        │   │   ├── mntns_shared_bind.c
+        │   │   ├── mntns_shared_bind.desc
+        │   │   ├── mntns_shared_vs_private.c
+        │   │   ├── mntns_shared_vs_private.desc
+        │   │   ├── mnt_ro_bind.c
+        │   │   ├── mnt_ro_bind.desc
+        │   │   ├── mnt_root_ext.c
+        │   │   ├── mnt_root_ext.desc
+        │   │   ├── mnt_root_ext.hook
+        │   │   ├── mnt_tracefs.c
+        │   │   ├── mnt_tracefs.checkskip
+        │   │   ├── mnt_tracefs.desc
+        │   │   ├── mnt_tracefs.hook
+        │   │   ├── mount_complex_sharing.c
+        │   │   ├── mount_complex_sharing.desc
+        │   │   ├── mount_paths.c
+        │   │   ├── mount_paths.desc
+        │   │   ├── mountpoints.c
+        │   │   ├── mountpoints.desc
+        │   │   ├── mprotect00.c
+        │   │   ├── msgque.c
+        │   │   ├── msgque.desc
+        │   │   ├── mtime_mmap.c
+        │   │   ├── net_lock_socket_iptables6.c -> net_lock_socket_iptables.c
+        │   │   ├── net_lock_socket_iptables6.desc
+        │   │   ├── net_lock_socket_iptables6.hook -> net_lock_socket_iptables.hook
+        │   │   ├── net_lock_socket_iptables.c
+        │   │   ├── net_lock_socket_iptables.desc
+        │   │   ├── net_lock_socket_iptables.hook
+        │   │   ├── net_lock_socket_nftables6.c -> net_lock_socket_iptables.c
+        │   │   ├── net_lock_socket_nftables6.desc
+        │   │   ├── net_lock_socket_nftables6.hook -> net_lock_socket_iptables.hook
+        │   │   ├── net_lock_socket_nftables.c -> net_lock_socket_iptables.c
+        │   │   ├── net_lock_socket_nftables.desc
+        │   │   ├── net_lock_socket_nftables.hook -> net_lock_socket_iptables.hook
+        │   │   ├── netns.c
+        │   │   ├── netns.desc
+        │   │   ├── netns-dev.c
+        │   │   ├── netns-dev.desc
+        │   │   ├── netns_lock_iptables.c
+        │   │   ├── netns_lock_iptables.desc
+        │   │   ├── netns_lock_iptables.hook
+        │   │   ├── netns_lock_nftables.c -> netns_lock_iptables.c
+        │   │   ├── netns_lock_nftables.desc
+        │   │   ├── netns_lock_nftables.hook -> netns_lock_iptables.hook
+        │   │   ├── netns-nf.c
+        │   │   ├── netns-nf.desc
+        │   │   ├── netns-nft.c
+        │   │   ├── netns-nft.desc
+        │   │   ├── netns-nft-ipt.c
+        │   │   ├── netns-nft-ipt.desc
+        │   │   ├── netns_sub.c
+        │   │   ├── netns_sub.desc
+        │   │   ├── netns_sub_sysctl.c
+        │   │   ├── netns_sub_sysctl.desc
+        │   │   ├── netns_sub_veth.c
+        │   │   ├── netns_sub_veth.desc
+        │   │   ├── non_uniform_share_propagation.c
+        │   │   ├── non_uniform_share_propagation.desc
+        │   │   ├── ofd_file_locks.c
+        │   │   ├── ofd_file_locks.h
+        │   │   ├── oom_score_adj.c
+        │   │   ├── opath_file.c
+        │   │   ├── overmount_dev.c
+        │   │   ├── overmount_dev.desc
+        │   │   ├── overmounted_file.c
+        │   │   ├── overmounted_file.desc
+        │   │   ├── overmount_fifo.c
+        │   │   ├── overmount_fifo.desc
+        │   │   ├── overmount_file.c
+        │   │   ├── overmount_file.desc
+        │   │   ├── overmount_sock.c
+        │   │   ├── overmount_sock.desc
+        │   │   ├── overmount_with_shared_parent.c
+        │   │   ├── overmount_with_shared_parent.desc
+        │   │   ├── packet_sock.c
+        │   │   ├── packet_sock.desc
+        │   │   ├── packet_sock_mmap.c
+        │   │   ├── packet_sock_mmap.desc
+        │   │   ├── packet_sock_spkt.c
+        │   │   ├── packet_sock_spkt.desc
+        │   │   ├── pdeath_sig.c
+        │   │   ├── pid00.c
+        │   │   ├── pid00.desc
+        │   │   ├── pid_file.c
+        │   │   ├── pipe00.c
+        │   │   ├── pipe01.c
+        │   │   ├── pipe02.c
+        │   │   ├── pipe03.c
+        │   │   ├── poll.c
+        │   │   ├── poll.desc
+        │   │   ├── posix_timers.c
+        │   │   ├── private_bind_propagation.c
+        │   │   ├── private_bind_propagation.desc
+        │   │   ├── proc-self.c
+        │   │   ├── pstree.c
+        │   │   ├── pthread00.c
+        │   │   ├── pthread01.c
+        │   │   ├── pthread02.c
+        │   │   ├── pthread02.desc
+        │   │   ├── pthread_timers.c
+        │   │   ├── pthread_timers.desc
+        │   │   ├── pthread_timers_h.c -> pthread_timers.c
+        │   │   ├── pthread_timers_h.desc
+        │   │   ├── ptrace_sig.c
+        │   │   ├── ptrace_sig.desc
+        │   │   ├── pty00.c
+        │   │   ├── pty01.c
+        │   │   ├── pty01.desc
+        │   │   ├── pty02.c
+        │   │   ├── pty03.c
+        │   │   ├── pty03.desc
+        │   │   ├── pty04.c
+        │   │   ├── pty-console.c -> pty01.c
+        │   │   ├── pty-console.desc
+        │   │   ├── remap_dead_pid.c
+        │   │   ├── remap_dead_pid.desc
+        │   │   ├── remap_dead_pid_root.c -> remap_dead_pid.c
+        │   │   ├── remap_dead_pid_root.desc
+        │   │   ├── rlimits00.c
+        │   │   ├── rmdir_open.c
+        │   │   ├── route_rules
+        │   │   ├── rseq00.c
+        │   │   ├── rseq00.desc
+        │   │   ├── rtc.c
+        │   │   ├── rtc.desc
+        │   │   ├── s390x_gs_threads.c
+        │   │   ├── s390x_mmap_high.c
+        │   │   ├── s390x_mmap_high.desc
+        │   │   ├── s390x_regs_check.c
+        │   │   ├── s390x_regs_check.desc
+        │   │   ├── s390x_runtime_instr.c
+        │   │   ├── sched_policy00.c
+        │   │   ├── sched_policy00.desc
+        │   │   ├── sched_prio00.c
+        │   │   ├── sched_prio00.desc
+        │   │   ├── scm00.c
+        │   │   ├── scm01.c -> scm00.c
+        │   │   ├── scm02.c -> scm00.c
+        │   │   ├── scm03.c
+        │   │   ├── scm03-seqpacket.c -> scm03.c
+        │   │   ├── scm04.c -> scm03.c
+        │   │   ├── scm05.c
+        │   │   ├── scm06.c
+        │   │   ├── scm06.desc
+        │   │   ├── scm09.c -> scm00.c
+        │   │   ├── seccomp_filter.c
+        │   │   ├── seccomp_filter.desc
+        │   │   ├── seccomp_filter_inheritance.c
+        │   │   ├── seccomp_filter_inheritance.desc
+        │   │   ├── seccomp_filter_threads.c
+        │   │   ├── seccomp_filter_threads.desc
+        │   │   ├── seccomp_filter_tsync.c
+        │   │   ├── seccomp_filter_tsync.desc
+        │   │   ├── seccomp_no_new_privs.c
+        │   │   ├── seccomp_strict.c
+        │   │   ├── seccomp_strict.desc
+        │   │   ├── selfexe00.c
+        │   │   ├── selinux00.c
+        │   │   ├── selinux00.checkskip
+        │   │   ├── selinux00.desc
+        │   │   ├── selinux00.hook
+        │   │   ├── selinux01.c
+        │   │   ├── selinux01.checkskip -> selinux00.checkskip
+        │   │   ├── selinux01.desc -> selinux00.desc
+        │   │   ├── selinux01.hook -> selinux00.hook
+        │   │   ├── selinux02.c -> selinux01.c
+        │   │   ├── selinux02.checkskip -> selinux01.checkskip
+        │   │   ├── selinux02.desc -> selinux01.desc
+        │   │   ├── selinux02.hook -> selinux01.hook
+        │   │   ├── sem.c
+        │   │   ├── sem.desc
+        │   │   ├── session00.c
+        │   │   ├── session00.desc
+        │   │   ├── session01.c
+        │   │   ├── session01.desc
+        │   │   ├── session02.c
+        │   │   ├── session02.desc
+        │   │   ├── session03.c
+        │   │   ├── session03.desc
+        │   │   ├── shared_mount_propagation.c
+        │   │   ├── shared_mount_propagation.desc
+        │   │   ├── shared_slave_mount_children.c
+        │   │   ├── shared_slave_mount_children.desc
+        │   │   ├── shm.c
+        │   │   ├── shm.desc
+        │   │   ├── shmemfd.c
+        │   │   ├── shmemfd.desc
+        │   │   ├── shmemfd-priv.c
+        │   │   ├── shmemfd-priv.desc
+        │   │   ├── shm-hugetlb.c -> shm.c
+        │   │   ├── shm-hugetlb.checkskip
+        │   │   ├── shm-hugetlb.desc
+        │   │   ├── shm-mp.c
+        │   │   ├── shm-mp.desc
+        │   │   ├── shm-unaligned.c -> shm.c
+        │   │   ├── shm-unaligned.desc -> shm.desc
+        │   │   ├── sigaltstack.c
+        │   │   ├── signalfd00.c
+        │   │   ├── sigpending.c
+        │   │   ├── sigtrap01.c
+        │   │   ├── sigtrap.c
+        │   │   ├── sigtrap.desc
+        │   │   ├── sit.c
+        │   │   ├── sit.desc
+        │   │   ├── sk-freebind.c
+        │   │   ├── sk-freebind-false.c -> sk-freebind.c
+        │   │   ├── skip-me.c
+        │   │   ├── sk-netlink.c
+        │   │   ├── sk-netlink.desc
+        │   │   ├── sk-unix01.c
+        │   │   ├── sk-unix01.desc
+        │   │   ├── sk-unix01-seqpacket.c -> sk-unix01.c
+        │   │   ├── sk-unix01-seqpacket.desc -> sk-unix01.desc
+        │   │   ├── sk-unix-dgram-ghost.c
+        │   │   ├── sk-unix-dgram-ghost.desc
+        │   │   ├── sk-unix-listen01.c
+        │   │   ├── sk-unix-listen02.c -> sk-unix-listen01.c
+        │   │   ├── sk-unix-listen02.desc
+        │   │   ├── sk-unix-listen03.c -> sk-unix-listen01.c
+        │   │   ├── sk-unix-listen03.desc
+        │   │   ├── sk-unix-listen04.c -> sk-unix-listen01.c
+        │   │   ├── sk-unix-listen04.desc
+        │   │   ├── sk-unix-mntns.c
+        │   │   ├── sk-unix-mntns.desc
+        │   │   ├── sk-unix-rel.c
+        │   │   ├── sk-unix-rel-seqpacket.c -> sk-unix-rel.c
+        │   │   ├── sk-unix-unconn.c
+        │   │   ├── sk-unix-unconn-seqpacket.c -> sk-unix-unconn.c
+        │   │   ├── sleeping00.c
+        │   │   ├── socket6_udp.c
+        │   │   ├── socket_aio.c
+        │   │   ├── socket_aio.desc
+        │   │   ├── socket_close_data01.c
+        │   │   ├── socket_close_data.c
+        │   │   ├── socket_dgram_data.c
+        │   │   ├── socket-dump-tcp-close.c -> socket-tcp-close0.c
+        │   │   ├── socket-dump-tcp-close.desc
+        │   │   ├── socket-ext.c
+        │   │   ├── socket-ext.desc
+        │   │   ├── socket-linger.c
+        │   │   ├── socket_listen4v6.c -> socket_listen.c
+        │   │   ├── socket_listen6.c -> socket_listen.c
+        │   │   ├── socket_listen.c
+        │   │   ├── socket_queues.c
+        │   │   ├── socket_queues_seqpacket.c -> socket_queues.c
+        │   │   ├── socket-raw.c
+        │   │   ├── socket-raw.desc
+        │   │   ├── sockets00.c
+        │   │   ├── sockets00.desc
+        │   │   ├── sockets00-seqpacket.c -> sockets00.c
+        │   │   ├── sockets00-seqpacket.desc -> sockets00.desc
+        │   │   ├── sockets01.c
+        │   │   ├── sockets01-seqpacket.c -> sockets01.c
+        │   │   ├── sockets02.c
+        │   │   ├── sockets02-seqpacket.c -> sockets02.c
+        │   │   ├── sockets03.c
+        │   │   ├── sockets03.desc
+        │   │   ├── sockets03-seqpacket.c -> sockets03.c
+        │   │   ├── sockets03-seqpacket.desc -> sockets03.desc
+        │   │   ├── sockets_dgram.c
+        │   │   ├── socket_snd_addr.c
+        │   │   ├── socket_snd_addr.desc
+        │   │   ├── sockets_spair.c
+        │   │   ├── sockets_spair_seqpacket.c -> sockets_spair.c
+        │   │   ├── socket-tcp4v6.c -> socket-tcp.c
+        │   │   ├── socket-tcp4v6-closed.c -> socket-tcp-closed.c
+        │   │   ├── socket-tcp4v6-closed.desc -> socket-tcp6-closed.desc
+        │   │   ├── socket-tcp4v6-close-wait.c -> socket-tcp-close-wait.c
+        │   │   ├── socket-tcp4v6-close-wait.desc -> socket-tcp6-close-wait.desc
+        │   │   ├── socket-tcp4v6-closing.c -> socket-tcp-closing.c
+        │   │   ├── socket-tcp4v6-closing.desc -> socket-tcp6-closing.desc
+        │   │   ├── socket-tcp4v6.desc -> socket-tcp6.desc
+        │   │   ├── socket-tcp4v6-fin-wait1.c -> socket-tcp-fin-wait1.c
+        │   │   ├── socket-tcp4v6-fin-wait1.desc -> socket-tcp6-fin-wait1.desc
+        │   │   ├── socket-tcp4v6-fin-wait2.c -> socket-tcp-fin-wait2.c
+        │   │   ├── socket-tcp4v6-fin-wait2.desc -> socket-tcp6-fin-wait2.desc
+        │   │   ├── socket-tcp4v6-last-ack.c -> socket-tcp-last-ack.c
+        │   │   ├── socket-tcp4v6-last-ack.desc -> socket-tcp6-last-ack.desc
+        │   │   ├── socket-tcp4v6-local.c -> socket-tcp.c
+        │   │   ├── socket-tcp4v6-local.desc -> socket-tcp6-local.desc
+        │   │   ├── socket-tcp6.c -> socket-tcp.c
+        │   │   ├── socket-tcp6-closed.c -> socket-tcp-closed.c
+        │   │   ├── socket-tcp6-closed.desc -> socket-tcp-closed.desc
+        │   │   ├── socket-tcp6-close-wait.c -> socket-tcp-close-wait.c
+        │   │   ├── socket-tcp6-close-wait.desc -> socket-tcp-close-wait.desc
+        │   │   ├── socket-tcp6-closing.c -> socket-tcp-closing.c
+        │   │   ├── socket-tcp6-closing.desc -> socket-tcp-closing.desc
+        │   │   ├── socket-tcp6-closing.hook -> socket-tcp-closing.hook
+        │   │   ├── socket-tcp6.desc
+        │   │   ├── socket-tcp6-fin-wait1.c -> socket-tcp-fin-wait1.c
+        │   │   ├── socket-tcp6-fin-wait1.desc -> socket-tcp-fin-wait1.desc
+        │   │   ├── socket-tcp6-fin-wait2.c -> socket-tcp-fin-wait2.c
+        │   │   ├── socket-tcp6-fin-wait2.desc -> socket-tcp-fin-wait1.desc
+        │   │   ├── socket-tcp6-last-ack.c -> socket-tcp-last-ack.c
+        │   │   ├── socket-tcp6-last-ack.desc -> socket-tcp-last-ack.desc
+        │   │   ├── socket-tcp6-local.c -> socket-tcp.c
+        │   │   ├── socket-tcp6-local.desc -> socket-tcp-local.desc
+        │   │   ├── socket-tcp6-unconn.c -> socket-tcp-unconn.c
+        │   │   ├── socket-tcp6-unconn.desc -> socket-tcp-unconn.desc
+        │   │   ├── socket-tcpbuf6.c -> socket-tcpbuf.c
+        │   │   ├── socket-tcpbuf6.desc
+        │   │   ├── socket-tcpbuf6-local.c -> socket-tcpbuf.c
+        │   │   ├── socket-tcpbuf6-local.desc -> socket-tcpbuf-local.desc
+        │   │   ├── socket-tcpbuf.c
+        │   │   ├── socket-tcpbuf.desc
+        │   │   ├── socket-tcpbuf-local.c -> socket-tcpbuf.c
+        │   │   ├── socket-tcpbuf-local.desc
+        │   │   ├── socket-tcp.c
+        │   │   ├── socket-tcp-close0.c
+        │   │   ├── socket-tcp-close0.desc
+        │   │   ├── socket-tcp-close1.c
+        │   │   ├── socket-tcp-close1.desc -> socket-tcp-close0.desc
+        │   │   ├── socket-tcp-close2.c
+        │   │   ├── socket-tcp-close2.desc
+        │   │   ├── socket-tcp-closed.c
+        │   │   ├── socket-tcp-closed.desc
+        │   │   ├── socket-tcp-closed.hook -> socket-tcp-fin-wait1.hook
+        │   │   ├── socket-tcp-closed-last-ack.c -> socket-tcp-closed.c
+        │   │   ├── socket-tcp-closed-last-ack.desc
+        │   │   ├── socket-tcp-closed-last-ack.hook -> socket-tcp-fin-wait1.hook
+        │   │   ├── socket-tcp-close-wait.c
+        │   │   ├── socket-tcp-close-wait.desc
+        │   │   ├── socket-tcp-close-wait.hook -> socket-tcp-fin-wait1.hook
+        │   │   ├── socket-tcp-closing.c
+        │   │   ├── socket-tcp-closing.desc
+        │   │   ├── socket-tcp-closing.hook -> socket-tcp-fin-wait1.hook
+        │   │   ├── socket-tcp.desc
+        │   │   ├── socket-tcp-fin-wait1.c
+        │   │   ├── socket-tcp-fin-wait1.desc
+        │   │   ├── socket-tcp-fin-wait1.hook
+        │   │   ├── socket-tcp-fin-wait2.c -> socket-tcp-fin-wait1.c
+        │   │   ├── socket-tcp-fin-wait2.desc -> socket-tcp-fin-wait1.desc
+        │   │   ├── socket-tcp-fin-wait2.hook -> socket-tcp-fin-wait1.hook
+        │   │   ├── socket-tcp-ipt-nfconntrack.c -> socket-tcp.c
+        │   │   ├── socket-tcp-ipt-nfconntrack.desc
+        │   │   ├── socket-tcp-keepalive.c
+        │   │   ├── socket-tcp-last-ack.c -> socket-tcp-close-wait.c
+        │   │   ├── socket-tcp-last-ack.desc
+        │   │   ├── socket-tcp-last-ack.hook -> socket-tcp-fin-wait1.hook
+        │   │   ├── socket-tcp-listen.c
+        │   │   ├── socket-tcp-local.c -> socket-tcp.c
+        │   │   ├── socket-tcp-local.desc
+        │   │   ├── socket-tcp-local.hook -> socket-tcp-fin-wait2.hook
+        │   │   ├── socket-tcp-nft-nfconntrack.c -> socket-tcp.c
+        │   │   ├── socket-tcp-nft-nfconntrack.desc
+        │   │   ├── socket-tcp-reseted.c
+        │   │   ├── socket-tcp-reseted.desc
+        │   │   ├── socket-tcp-reseted.hook -> socket-tcp-fin-wait1.hook
+        │   │   ├── socket-tcp-reuseport.c
+        │   │   ├── socket-tcp-reuseport.desc
+        │   │   ├── socket-tcp-skip-in-flight.c
+        │   │   ├── socket-tcp-skip-in-flight.desc
+        │   │   ├── socket-tcp-syn-sent.c
+        │   │   ├── socket-tcp-syn-sent.desc
+        │   │   ├── socket-tcp-syn-sent.hook -> socket-tcp-fin-wait1.hook
+        │   │   ├── socket-tcp-unconn.c
+        │   │   ├── socket-tcp-unconn.desc
+        │   │   ├── socket_udp-broadcast.c
+        │   │   ├── socket_udp.c
+        │   │   ├── socket_udp-corked.c
+        │   │   ├── socket_udp-corked.desc
+        │   │   ├── socket_udplite.c
+        │   │   ├── socket_udp_shutdown.c
+        │   │   ├── sock_filter00.c
+        │   │   ├── sock_filter01.c -> sock_filter00.c
+        │   │   ├── sock_ip_opts00.c
+        │   │   ├── sock_ip_opts00.desc
+        │   │   ├── sock_ip_opts01.c -> sock_ip_opts00.c
+        │   │   ├── sock_ip_opts01.desc -> sock_ip_opts00.desc
+        │   │   ├── sock_opts00.c
+        │   │   ├── sock_opts00.desc
+        │   │   ├── sock_opts01.c
+        │   │   ├── sock_opts01.desc
+        │   │   ├── sock_opts02.c
+        │   │   ├── sock_opts02.desc
+        │   │   ├── sock_peercred.c
+        │   │   ├── sock_peercred.desc
+        │   │   ├── sock_tcp_opts00.c
+        │   │   ├── sock_tcp_opts00.desc
+        │   │   ├── sock_tcp_opts01.c -> ./sock_tcp_opts00.c
+        │   │   ├── sock_tcp_opts01.desc -> ./sock_tcp_opts00.desc
+        │   │   ├── sse00.c
+        │   │   ├── sse00.desc
+        │   │   ├── sse20.c
+        │   │   ├── sse20.desc
+        │   │   ├── stopped01.c -> stopped.c
+        │   │   ├── stopped02.c -> stopped.c
+        │   │   ├── stopped03.c
+        │   │   ├── stopped04.c
+        │   │   ├── stopped12.c -> stopped.c
+        │   │   ├── stopped.c
+        │   │   ├── symlink01.c -> symlink.c
+        │   │   ├── symlink.c
+        │   │   ├── tempfs.c
+        │   │   ├── tempfs.desc
+        │   │   ├── tempfs_overmounted01.c
+        │   │   ├── tempfs_overmounted01.desc
+        │   │   ├── tempfs_overmounted.c
+        │   │   ├── tempfs_overmounted.desc
+        │   │   ├── tempfs_ro02.c
+        │   │   ├── tempfs_ro02.desc
+        │   │   ├── tempfs_ro.c
+        │   │   ├── tempfs_ro.desc
+        │   │   ├── tempfs_subns.c
+        │   │   ├── tempfs_subns.desc
+        │   │   ├── thp_disable.c
+        │   │   ├── thread_different_uid_gid.c
+        │   │   ├── thread_different_uid_gid.desc
+        │   │   ├── time.c
+        │   │   ├── timens_for_kids.c
+        │   │   ├── timens_for_kids.desc
+        │   │   ├── timens_nested.c
+        │   │   ├── timens_nested.desc
+        │   │   ├── timerfd.c
+        │   │   ├── timerfd.desc
+        │   │   ├── timers.c
+        │   │   ├── tty00.c
+        │   │   ├── tty02.c
+        │   │   ├── tty03.c
+        │   │   ├── tun.c
+        │   │   ├── tun.desc
+        │   │   ├── tun_ns.c -> tun.c
+        │   │   ├── tun_ns.desc
+        │   │   ├── uffd-events.c
+        │   │   ├── umask00.c
+        │   │   ├── unbindable.c
+        │   │   ├── unbindable.desc
+        │   │   ├── unbound_sock.c
+        │   │   ├── unhashed_proc.c
+        │   │   ├── unhashed_proc.desc
+        │   │   ├── unlink_fifo.c
+        │   │   ├── unlink_fifo_wronly.c
+        │   │   ├── unlink_fstat00.c
+        │   │   ├── unlink_fstat00.hook
+        │   │   ├── unlink_fstat01.c
+        │   │   ├── unlink_fstat01+.c -> unlink_fstat01.c
+        │   │   ├── unlink_fstat02.c
+        │   │   ├── unlink_fstat03.c
+        │   │   ├── unlink_fstat03.desc
+        │   │   ├── unlink_fstat041.c -> unlink_fstat00.c
+        │   │   ├── unlink_fstat04.c -> unlink_fstat00.c
+        │   │   ├── unlink_fstat04.desc
+        │   │   ├── unlink_largefile.c
+        │   │   ├── unlink_mmap00.c
+        │   │   ├── unlink_mmap00.desc
+        │   │   ├── unlink_mmap01.c
+        │   │   ├── unlink_mmap01.desc
+        │   │   ├── unlink_mmap02.c
+        │   │   ├── unlink_mmap02.desc
+        │   │   ├── unlink_multiple_largefiles.c
+        │   │   ├── unlink_multiple_largefiles.desc
+        │   │   ├── unlink_regular00.c
+        │   │   ├── unlink_regular00.desc
+        │   │   ├── unsupported_children_collision.c
+        │   │   ├── unsupported_children_collision.desc
+        │   │   ├── uptime_grow.c
+        │   │   ├── uptime_grow.desc
+        │   │   ├── utsname.c
+        │   │   ├── utsname.desc
+        │   │   ├── vdso00.c
+        │   │   ├── vdso01.c
+        │   │   ├── vdso01.checkskip
+        │   │   ├── vdso01.desc
+        │   │   ├── vdso02.c
+        │   │   ├── vdso-proxy.c
+        │   │   ├── vfork00.c
+        │   │   ├── vfork00.desc
+        │   │   ├── vsx.c
+        │   │   ├── vsx.desc
+        │   │   ├── vt.c
+        │   │   ├── vt.desc
+        │   │   ├── wait00.c
+        │   │   ├── write_read00.c
+        │   │   ├── write_read01.c
+        │   │   ├── write_read02.c
+        │   │   ├── write_read10.c
+        │   │   ├── xids00.c
+        │   │   ├── zombie00.c
+        │   │   ├── zombie01.c
+        │   │   ├── zombie01.desc
+        │   │   ├── zombie_leader.c
+        │   │   └── zombie_leader.desc
+        │   └── transition
+        │       ├── epoll.c
+        │       ├── fifo_dyn.c
+        │       ├── fifo_dyn.desc
+        │       ├── fifo_loop.c
+        │       ├── file_aio.c
+        │       ├── file_read.c
+        │       ├── fork2.c -> fork.c
+        │       ├── fork.c
+        │       ├── ipc.c
+        │       ├── ipc.desc
+        │       ├── lazy-thp.c
+        │       ├── Makefile
+        │       ├── maps007.c
+        │       ├── maps007.desc
+        │       ├── maps008.c
+        │       ├── maps008.desc
+        │       ├── netlink00.c
+        │       ├── netlink00.desc
+        │       ├── pidfd_store_sk.c -> pid_reuse.c
+        │       ├── pidfd_store_sk.desc
+        │       ├── pid_reuse.c
+        │       ├── pid_reuse.desc
+        │       ├── pipe_loop00.c
+        │       ├── pipe_shared00.c
+        │       ├── ptrace.c
+        │       ├── ptrace.desc
+        │       ├── rseq01.c
+        │       ├── rseq01.desc
+        │       ├── rseq02.c -> rseq01.c
+        │       ├── rseq02.desc
+        │       ├── shmem.c
+        │       ├── socket_loop00.c
+        │       ├── socket-tcp6.c -> ../static/socket-tcp.c
+        │       ├── socket-tcp6.desc
+        │       ├── socket-tcp.c -> ../static/socket-tcp.c
+        │       ├── socket-tcp.desc
+        │       ├── stack.c
+        │       ├── thread-bomb.c
+        │       ├── thread-bomb.desc
+        │       └── unix_sock.c
+        ├── zdtm_ct.c
+        ├── zdtm.desc
+        ├── zdtm_mount_cgroups
+        ├── zdtm.py
+        └── zdtm_umount_cgroups
+
+268 directories, 1995 files

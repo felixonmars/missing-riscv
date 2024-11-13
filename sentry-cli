@@ -1,0 +1,852 @@
+src
+├── sentry-cli-2.36.1
+│   ├── bin
+│   │   ├── sentry-cli
+│   │   └── sentry-cli-dev
+│   ├── build.rs
+│   ├── Cargo.lock
+│   ├── Cargo.toml
+│   ├── CHANGELOG.md
+│   ├── CONTRIBUTING.md
+│   ├── docker-entrypoint.sh
+│   ├── Dockerfile
+│   ├── jest.config.js
+│   ├── js
+│   │   ├── helper.js
+│   │   ├── index.d.ts
+│   │   ├── index.js
+│   │   ├── logger.js
+│   │   ├── __mocks__
+│   │   │   └── sentry-cli
+│   │   ├── releases
+│   │   │   ├── index.js
+│   │   │   ├── options
+│   │   │   │   ├── deploys.js
+│   │   │   │   └── uploadSourcemaps.js
+│   │   │   └── __tests__
+│   │   │       └── index.test.js
+│   │   └── __tests__
+│   │       └── helper.test.js
+│   ├── LICENSE
+│   ├── Makefile
+│   ├── MANIFEST.in
+│   ├── npm-binary-distributions
+│   │   ├── darwin
+│   │   │   ├── bin
+│   │   │   ├── package.json
+│   │   │   └── README.md
+│   │   ├── linux-arm
+│   │   │   ├── bin
+│   │   │   ├── package.json
+│   │   │   └── README.md
+│   │   ├── linux-arm64
+│   │   │   ├── bin
+│   │   │   ├── package.json
+│   │   │   └── README.md
+│   │   ├── linux-i686
+│   │   │   ├── bin
+│   │   │   ├── package.json
+│   │   │   └── README.md
+│   │   ├── linux-x64
+│   │   │   ├── bin
+│   │   │   ├── package.json
+│   │   │   └── README.md
+│   │   ├── win32-i686
+│   │   │   ├── bin
+│   │   │   ├── package.json
+│   │   │   └── README.md
+│   │   └── win32-x64
+│   │       ├── bin
+│   │       ├── package.json
+│   │       └── README.md
+│   ├── package.json
+│   ├── pyproject.toml
+│   ├── README.md
+│   ├── scripts
+│   │   ├── build-in-docker.sh
+│   │   ├── bump-version.sh
+│   │   ├── install.js
+│   │   ├── test-vercel-nft.js
+│   │   └── wheels
+│   ├── setup.cfg
+│   ├── setup.py
+│   ├── setupTests.js
+│   ├── src
+│   │   ├── api
+│   │   │   ├── connection_manager.rs
+│   │   │   ├── data_types
+│   │   │   │   ├── chunking
+│   │   │   │   │   ├── artifact.rs
+│   │   │   │   │   ├── compression.rs
+│   │   │   │   │   ├── dif.rs
+│   │   │   │   │   ├── file_state.rs
+│   │   │   │   │   ├── hash_algorithm.rs
+│   │   │   │   │   ├── mod.rs
+│   │   │   │   │   └── upload
+│   │   │   │   │       ├── capability.rs
+│   │   │   │   │       ├── mod.rs
+│   │   │   │   │       └── options.rs
+│   │   │   │   └── mod.rs
+│   │   │   ├── encoding.rs
+│   │   │   ├── envelopes_api.rs
+│   │   │   ├── errors
+│   │   │   │   ├── api_error.rs
+│   │   │   │   ├── mod.rs
+│   │   │   │   └── sentry_error.rs
+│   │   │   ├── mod.rs
+│   │   │   └── pagination.rs
+│   │   ├── bashsupport.sh
+│   │   ├── commands
+│   │   │   ├── bash_hook.rs
+│   │   │   ├── debug_files
+│   │   │   │   ├── bundle_jvm.rs
+│   │   │   │   ├── bundle_sources.rs
+│   │   │   │   ├── check.rs
+│   │   │   │   ├── find.rs
+│   │   │   │   ├── mod.rs
+│   │   │   │   ├── print_sources.rs
+│   │   │   │   └── upload.rs
+│   │   │   ├── deploys
+│   │   │   │   ├── list.rs
+│   │   │   │   ├── mod.rs
+│   │   │   │   └── new.rs
+│   │   │   ├── derive_parser.rs
+│   │   │   ├── events
+│   │   │   │   ├── list.rs
+│   │   │   │   └── mod.rs
+│   │   │   ├── files
+│   │   │   │   ├── delete.rs
+│   │   │   │   ├── list.rs
+│   │   │   │   ├── mod.rs
+│   │   │   │   └── upload.rs
+│   │   │   ├── info.rs
+│   │   │   ├── issues
+│   │   │   │   ├── list.rs
+│   │   │   │   ├── mod.rs
+│   │   │   │   ├── mute.rs
+│   │   │   │   ├── resolve.rs
+│   │   │   │   └── unresolve.rs
+│   │   │   ├── login.rs
+│   │   │   ├── mod.rs
+│   │   │   ├── monitors
+│   │   │   │   ├── list.rs
+│   │   │   │   ├── mod.rs
+│   │   │   │   └── run.rs
+│   │   │   ├── organizations
+│   │   │   │   ├── list.rs
+│   │   │   │   └── mod.rs
+│   │   │   ├── projects
+│   │   │   │   ├── list.rs
+│   │   │   │   └── mod.rs
+│   │   │   ├── react_native
+│   │   │   │   ├── appcenter.rs
+│   │   │   │   ├── gradle.rs
+│   │   │   │   ├── mod.rs
+│   │   │   │   └── xcode.rs
+│   │   │   ├── releases
+│   │   │   │   ├── archive.rs
+│   │   │   │   ├── delete.rs
+│   │   │   │   ├── finalize.rs
+│   │   │   │   ├── info.rs
+│   │   │   │   ├── list.rs
+│   │   │   │   ├── mod.rs
+│   │   │   │   ├── new.rs
+│   │   │   │   ├── propose_version.rs
+│   │   │   │   ├── restore.rs
+│   │   │   │   └── set_commits.rs
+│   │   │   ├── repos
+│   │   │   │   ├── list.rs
+│   │   │   │   └── mod.rs
+│   │   │   ├── send_envelope.rs
+│   │   │   ├── send_event.rs
+│   │   │   ├── send_metric
+│   │   │   │   ├── common_args.rs
+│   │   │   │   ├── distribution.rs
+│   │   │   │   ├── gauge.rs
+│   │   │   │   ├── increment.rs
+│   │   │   │   ├── mod.rs
+│   │   │   │   └── set.rs
+│   │   │   ├── sourcemaps
+│   │   │   │   ├── explain.rs
+│   │   │   │   ├── inject.rs
+│   │   │   │   ├── mod.rs
+│   │   │   │   ├── resolve.rs
+│   │   │   │   └── upload.rs
+│   │   │   ├── uninstall.rs
+│   │   │   ├── update.rs
+│   │   │   ├── upload_dif.rs
+│   │   │   ├── upload_dsym.rs
+│   │   │   └── upload_proguard.rs
+│   │   ├── config.rs
+│   │   ├── constants.rs
+│   │   ├── main.rs
+│   │   └── utils
+│   │       ├── android.rs
+│   │       ├── appcenter.rs
+│   │       ├── args.rs
+│   │       ├── auth_token
+│   │       │   ├── auth_token_impl.rs
+│   │       │   ├── error.rs
+│   │       │   ├── mod.rs
+│   │       │   ├── org_auth_token.rs
+│   │       │   ├── redacting.rs
+│   │       │   ├── test.rs
+│   │       │   └── user_auth_token.rs
+│   │       ├── chunks.rs
+│   │       ├── cordova.rs
+│   │       ├── dif.rs
+│   │       ├── dif_upload.rs
+│   │       ├── event.rs
+│   │       ├── file_search.rs
+│   │       ├── file_upload.rs
+│   │       ├── formatting.rs
+│   │       ├── fs.rs
+│   │       ├── http.rs
+│   │       ├── logging.rs
+│   │       ├── metrics.rs
+│   │       ├── mod.rs
+│   │       ├── progress.rs
+│   │       ├── releases.rs
+│   │       ├── retry.rs
+│   │       ├── snapshots
+│   │       │   ├── sentry_cli__utils__vcs__generate_patch_default_twenty.snap
+│   │       │   ├── sentry_cli__utils__vcs__generate_patch_ignore_missing.snap
+│   │       │   ├── sentry_cli__utils__vcs__generate_patch_set_base.snap
+│   │       │   ├── sentry_cli__utils__vcs__generate_patch_set_previous_commit.snap
+│   │       │   └── sentry_cli__utils__vcs__get_commits_from_git.snap
+│   │       ├── sourcemaps
+│   │       │   └── inject.rs
+│   │       ├── sourcemaps.rs
+│   │       ├── system.rs
+│   │       ├── ui.rs
+│   │       ├── update.rs
+│   │       ├── value_parsers.rs
+│   │       ├── vcs.rs
+│   │       └── xcode.rs
+│   ├── tests
+│   │   ├── integration
+│   │   │   ├── bash_hook.rs
+│   │   │   ├── _cases
+│   │   │   │   ├── bash_hook
+│   │   │   │   │   ├── bash_hook-help.trycmd
+│   │   │   │   │   ├── bash_hook-release-env.trycmd
+│   │   │   │   │   ├── bash_hook-release.trycmd
+│   │   │   │   │   ├── bash_hook-tags.trycmd
+│   │   │   │   │   └── bash_hook.trycmd
+│   │   │   │   ├── debug_files
+│   │   │   │   │   ├── debug_files-bundle-jvm-help.trycmd
+│   │   │   │   │   ├── debug_files-bundle-jvm-input-dir-empty.trycmd
+│   │   │   │   │   ├── debug_files-bundle-jvm-input-is-file.trycmd
+│   │   │   │   │   ├── debug_files-bundle-jvm-input-not-found.trycmd
+│   │   │   │   │   ├── debug_files-bundle-jvm-invalid-uuid.trycmd
+│   │   │   │   │   ├── debug_files-bundle-jvm-output-is-file.trycmd
+│   │   │   │   │   ├── debug_files-bundle-jvm-output-not-found.trycmd
+│   │   │   │   │   ├── debug_files-bundle-jvm.trycmd
+│   │   │   │   │   ├── debug_files-bundle_sources-mixed-embedded-sources.trycmd
+│   │   │   │   │   ├── debug_files-check-directory.trycmd
+│   │   │   │   │   ├── debug_files-check-dll-embedded-ppdb-with-sources.trycmd
+│   │   │   │   │   ├── debug_files-check-no-file-allow-failure-env.trycmd
+│   │   │   │   │   ├── debug_files-check-no-file-allow-failure-env-windows.trycmd
+│   │   │   │   │   ├── debug_files-check-no-file-allow-failure.trycmd
+│   │   │   │   │   ├── debug_files-check-no-file-allow-failure-windows.trycmd
+│   │   │   │   │   ├── debug_files-check-no-file.trycmd
+│   │   │   │   │   ├── debug_files-check-no-file-windows.trycmd
+│   │   │   │   │   ├── debug_files-check.trycmd
+│   │   │   │   │   ├── debug_files-help.trycmd
+│   │   │   │   │   ├── debug_files-no-subcommand.trycmd
+│   │   │   │   │   ├── debug_files-print_sources-dll-embedded-ppdb-with-sources.trycmd
+│   │   │   │   │   ├── debug_files-print_sources-mixed-embedded-sources.trycmd
+│   │   │   │   │   ├── debug_files-print_sources-ppdb.trycmd
+│   │   │   │   │   ├── debug_files-upload-dll-embedded-ppdb-with-sources.trycmd
+│   │   │   │   │   ├── debug_files-upload-help.trycmd
+│   │   │   │   │   ├── debug_files-upload-mixed-embedded-sources.trycmd
+│   │   │   │   │   ├── debug_files-upload-no-upload.trycmd
+│   │   │   │   │   ├── debug_files-upload-pdb-embedded-sources.trycmd
+│   │   │   │   │   ├── debug_files-upload-pdb-include-sources.trycmd
+│   │   │   │   │   ├── debug_files-upload-pdb.trycmd
+│   │   │   │   │   └── debug_files-upload.trycmd
+│   │   │   │   ├── deploys
+│   │   │   │   │   ├── deploys-help.trycmd
+│   │   │   │   │   ├── deploys-list.trycmd
+│   │   │   │   │   ├── deploys-new.trycmd
+│   │   │   │   │   └── deploys-no-subcommand.trycmd
+│   │   │   │   ├── events
+│   │   │   │   │   ├── events-help.trycmd
+│   │   │   │   │   ├── events-list-empty.trycmd
+│   │   │   │   │   ├── events-list-help.trycmd
+│   │   │   │   │   └── events-no-subcommand.trycmd
+│   │   │   │   ├── help
+│   │   │   │   │   ├── help.trycmd
+│   │   │   │   │   └── help-windows.trycmd
+│   │   │   │   ├── info
+│   │   │   │   │   ├── info-basic.trycmd
+│   │   │   │   │   ├── info-help.trycmd
+│   │   │   │   │   ├── info-json-no-defaults.trycmd
+│   │   │   │   │   ├── info-json.trycmd
+│   │   │   │   │   ├── info-no-defaults.trycmd
+│   │   │   │   │   └── info-no-token.trycmd
+│   │   │   │   ├── invalid_env
+│   │   │   │   │   ├── invalid-env.in
+│   │   │   │   │   └── invalid-env.trycmd
+│   │   │   │   ├── issues
+│   │   │   │   │   ├── issues-display.trycmd
+│   │   │   │   │   ├── issues-display-with-query.trycmd
+│   │   │   │   │   ├── issues-help.trycmd
+│   │   │   │   │   ├── issues-list-empty.trycmd
+│   │   │   │   │   └── issues-list-help.trycmd
+│   │   │   │   ├── login
+│   │   │   │   │   ├── login-help.trycmd
+│   │   │   │   │   ├── login.trycmd
+│   │   │   │   │   └── login-with-token.trycmd
+│   │   │   │   ├── monitors
+│   │   │   │   │   ├── monitors-help.trycmd
+│   │   │   │   │   ├── monitors-list-help.trycmd
+│   │   │   │   │   ├── monitors-list.trycmd
+│   │   │   │   │   ├── monitors-no-subcommand.trycmd
+│   │   │   │   │   ├── monitors-run-environment-long.trycmd
+│   │   │   │   │   ├── monitors-run-environment.trycmd
+│   │   │   │   │   ├── monitors-run-help.trycmd
+│   │   │   │   │   ├── monitors-run-osenv.trycmd
+│   │   │   │   │   ├── monitors-run-token-auth.trycmd
+│   │   │   │   │   ├── monitors-run-token-auth-win.trycmd
+│   │   │   │   │   ├── monitors-run.trycmd
+│   │   │   │   │   └── monitors-run-win.trycmd
+│   │   │   │   ├── organizations
+│   │   │   │   │   ├── organizations-help.trycmd
+│   │   │   │   │   ├── organizations-list-help.trycmd
+│   │   │   │   │   ├── organizations-list.trycmd
+│   │   │   │   │   └── organizations-no-subcommand.trycmd
+│   │   │   │   ├── org_tokens
+│   │   │   │   │   ├── org-match.trycmd
+│   │   │   │   │   ├── org-mismatch.trycmd
+│   │   │   │   │   ├── url-match.trycmd
+│   │   │   │   │   ├── url-mismatch-empty-token.trycmd
+│   │   │   │   │   ├── url-mismatch.trycmd
+│   │   │   │   │   └── url-works.trycmd
+│   │   │   │   ├── projects
+│   │   │   │   │   ├── projects-help.trycmd
+│   │   │   │   │   ├── projects-list-help.trycmd
+│   │   │   │   │   ├── projects-list.trycmd
+│   │   │   │   │   └── projects-no-subcommand.trycmd
+│   │   │   │   ├── react_native
+│   │   │   │   │   ├── xcode-upload-source-maps-invalid-plist.trycmd
+│   │   │   │   │   ├── xcode-upload-source-maps-release_and_dist_from_env.trycmd
+│   │   │   │   │   ├── xcode-wrap-call-bundle.trycmd
+│   │   │   │   │   ├── xcode-wrap-call-compose-source-maps-custom.trycmd
+│   │   │   │   │   ├── xcode-wrap-call-compose-source-maps-no-debug-id-copy.trycmd
+│   │   │   │   │   ├── xcode-wrap-call-compose-source-maps.trycmd
+│   │   │   │   │   ├── xcode-wrap-call-custom-bundle.trycmd
+│   │   │   │   │   ├── xcode-wrap-call-expo-export.trycmd
+│   │   │   │   │   ├── xcode-wrap-call-hermesc.trycmd
+│   │   │   │   │   └── xcode-wrap-call-minimum.trycmd
+│   │   │   │   ├── releases
+│   │   │   │   │   ├── releases-delete-active.trycmd
+│   │   │   │   │   ├── releases-delete-hyphen.trycmd
+│   │   │   │   │   ├── releases-delete-nonexisting.trycmd
+│   │   │   │   │   ├── releases-delete.trycmd
+│   │   │   │   │   ├── releases-deploys-new.trycmd
+│   │   │   │   │   ├── releases-files-upload-sourcemaps.trycmd
+│   │   │   │   │   ├── releases-finalize-dates.trycmd
+│   │   │   │   │   ├── releases-finalize-hyphen.trycmd
+│   │   │   │   │   ├── releases-finalize.trycmd
+│   │   │   │   │   ├── releases-help.trycmd
+│   │   │   │   │   ├── releases-info-not-found.trycmd
+│   │   │   │   │   ├── releases-info-quiet-failed.trycmd
+│   │   │   │   │   ├── releases-info-quiet.trycmd
+│   │   │   │   │   ├── releases-info-silent.trycmd
+│   │   │   │   │   ├── releases-info.trycmd
+│   │   │   │   │   ├── releases-info-with-commits-projects.trycmd
+│   │   │   │   │   ├── releases-list-empty.trycmd
+│   │   │   │   │   ├── releases-list-override-org.trycmd
+│   │   │   │   │   ├── releases-list-raw-delimiter.trycmd
+│   │   │   │   │   ├── releases-list-raw.trycmd
+│   │   │   │   │   ├── releases-list.trycmd
+│   │   │   │   │   ├── releases-list-with-projects.trycmd
+│   │   │   │   │   ├── releases-new-existing.trycmd
+│   │   │   │   │   ├── releases-new-finalize.trycmd
+│   │   │   │   │   ├── releases-new-help.trycmd
+│   │   │   │   │   ├── releases-new-hyphen.trycmd
+│   │   │   │   │   ├── releases-new.trycmd
+│   │   │   │   │   ├── releases-new-url.trycmd
+│   │   │   │   │   ├── releases-new-with-project-hyphen.trycmd
+│   │   │   │   │   ├── releases-new-with-project.trycmd
+│   │   │   │   │   └── releases-no-subcommand.trycmd
+│   │   │   │   ├── send_envelope
+│   │   │   │   │   ├── send_envelope-file-log.trycmd
+│   │   │   │   │   ├── send_envelope-file.trycmd
+│   │   │   │   │   ├── send_envelope-help.trycmd
+│   │   │   │   │   └── send_envelope-no-file.trycmd
+│   │   │   │   ├── send_event
+│   │   │   │   │   ├── send_event-file.trycmd
+│   │   │   │   │   ├── send_event-help.trycmd
+│   │   │   │   │   ├── send_event-raw-fail.trycmd
+│   │   │   │   │   └── send_event-raw.trycmd
+│   │   │   │   ├── send_metric
+│   │   │   │   │   ├── send_metric-distribution-all-options-long-with-float-value.trycmd
+│   │   │   │   │   ├── send_metric-distribution-all-options-short-with-int-value.trycmd
+│   │   │   │   │   ├── send_metric-distribution-default-tags.trycmd
+│   │   │   │   │   ├── send_metric-distribution-help.trycmd
+│   │   │   │   │   ├── send_metric-distribution-no-options.trycmd
+│   │   │   │   │   ├── send_metric-distribution-normalization.trycmd
+│   │   │   │   │   ├── send_metric-distribution-numerical-key-prefix.trycmd
+│   │   │   │   │   ├── send_metric-distribution-required-options-with-negative-value.trycmd
+│   │   │   │   │   ├── send_metric-gauge-all-options-long-with-float-value.trycmd
+│   │   │   │   │   ├── send_metric-gauge-all-options-short-with-int-value.trycmd
+│   │   │   │   │   ├── send_metric-gauge-default-tags.trycmd
+│   │   │   │   │   ├── send_metric-gauge-help.trycmd
+│   │   │   │   │   ├── send_metric-gauge-no-options.trycmd
+│   │   │   │   │   ├── send_metric-gauge-normalization.trycmd
+│   │   │   │   │   ├── send_metric-gauge-numerical-key-prefix.trycmd
+│   │   │   │   │   ├── send_metric-gauge-required-options-with-negative-value.trycmd
+│   │   │   │   │   ├── send_metric-help.trycmd
+│   │   │   │   │   ├── send_metric-increment-all-options-long-with-float-value.trycmd
+│   │   │   │   │   ├── send_metric-increment-all-options-short-with-int-value.trycmd
+│   │   │   │   │   ├── send_metric-increment-default-tags.trycmd
+│   │   │   │   │   ├── send_metric-increment-help.trycmd
+│   │   │   │   │   ├── send_metric-increment-no-dsn.trycmd
+│   │   │   │   │   ├── send_metric-increment-no-options.trycmd
+│   │   │   │   │   ├── send_metric-increment-normalization-with-negative-value.trycmd
+│   │   │   │   │   ├── send_metric-increment-numerical-key-prefix.trycmd
+│   │   │   │   │   ├── send_metric-increment-required-options.trycmd
+│   │   │   │   │   ├── send_metric-increment-tag-no-colon.trycmd
+│   │   │   │   │   ├── send_metric-increment-unsuccessful-api-call.trycmd
+│   │   │   │   │   ├── send_metric-no-subcommand.trycmd
+│   │   │   │   │   ├── send_metric-set-all-options-long-with-alphabetic-value.trycmd
+│   │   │   │   │   ├── send_metric-set-all-options-short-with-int-value.trycmd
+│   │   │   │   │   ├── send_metric-set-default-tags.trycmd
+│   │   │   │   │   ├── send_metric-set-float-value.trycmd
+│   │   │   │   │   ├── send_metric-set-help.trycmd
+│   │   │   │   │   ├── send_metric-set-no-options.trycmd
+│   │   │   │   │   ├── send_metric-set-normalization.trycmd
+│   │   │   │   │   ├── send_metric-set-numerical-key-prefix.trycmd
+│   │   │   │   │   └── send_metric-set-required-options-with-negative-value.trycmd
+│   │   │   │   ├── sourcemaps
+│   │   │   │   │   ├── sourcemaps-explain-already-mapped.trycmd
+│   │   │   │   │   ├── sourcemaps-explain-artifact-dist-mismatch.trycmd
+│   │   │   │   │   ├── sourcemaps-explain-artifact-no-dist.trycmd
+│   │   │   │   │   ├── sourcemaps-explain-detect-from-file-content.trycmd
+│   │   │   │   │   ├── sourcemaps-explain-detect-from-sourcemap-header.trycmd
+│   │   │   │   │   ├── sourcemaps-explain-detect-from-xsourcemap-header.trycmd
+│   │   │   │   │   ├── sourcemaps-explain-event-no-dist.trycmd
+│   │   │   │   │   ├── sourcemaps-explain-frame-malformed-abspath.trycmd
+│   │   │   │   │   ├── sourcemaps-explain-frame-no-abspath.trycmd
+│   │   │   │   │   ├── sourcemaps-explain-frame-no-extension.trycmd
+│   │   │   │   │   ├── sourcemaps-explain-frame-no-inapp.trycmd
+│   │   │   │   │   ├── sourcemaps-explain-help.trycmd
+│   │   │   │   │   ├── sourcemaps-explain-missing-event.trycmd
+│   │   │   │   │   ├── sourcemaps-explain-missing-exception.trycmd
+│   │   │   │   │   ├── sourcemaps-explain-missing-release.trycmd
+│   │   │   │   │   ├── sourcemaps-explain-missing-stacktrace.trycmd
+│   │   │   │   │   ├── sourcemaps-explain-no-artifacts.trycmd
+│   │   │   │   │   ├── sourcemaps-explain-no-matching-artifact.trycmd
+│   │   │   │   │   ├── sourcemaps-explain-partial-matching-artifact.trycmd
+│   │   │   │   │   ├── sourcemaps-explain-print-sourcemap.trycmd
+│   │   │   │   │   ├── sourcemaps-explain-select-frame-out-of-range.trycmd
+│   │   │   │   │   ├── sourcemaps-explain-select-frame.trycmd
+│   │   │   │   │   ├── sourcemaps-explain.trycmd
+│   │   │   │   │   ├── sourcemaps-help.trycmd
+│   │   │   │   │   ├── sourcemaps-inject-bundlers.trycmd
+│   │   │   │   │   ├── sourcemaps-inject-complex-extension.trycmd
+│   │   │   │   │   ├── sourcemaps-inject-embedded.trycmd
+│   │   │   │   │   ├── sourcemaps-inject-help.trycmd
+│   │   │   │   │   ├── sourcemaps-inject-nofiles.trycmd
+│   │   │   │   │   ├── sourcemaps-inject-nomappings.trycmd
+│   │   │   │   │   ├── sourcemaps-inject-not-compiled.trycmd
+│   │   │   │   │   ├── sourcemaps-inject-split-ambiguous.trycmd
+│   │   │   │   │   ├── sourcemaps-inject-split.trycmd
+│   │   │   │   │   ├── sourcemaps-inject.trycmd
+│   │   │   │   │   ├── sourcemaps-no-subcommand.trycmd
+│   │   │   │   │   ├── sourcemaps-resolve-help.trycmd
+│   │   │   │   │   ├── sourcemaps-resolve.trycmd
+│   │   │   │   │   ├── sourcemaps-upload-cjs-mjs.trycmd
+│   │   │   │   │   ├── sourcemaps-upload-complex-extension.trycmd
+│   │   │   │   │   ├── sourcemaps-upload-file-hermes-bundle-reference-debug-id.trycmd
+│   │   │   │   │   ├── sourcemaps-upload-file-ram-bundle.trycmd
+│   │   │   │   │   ├── sourcemaps-upload-help.trycmd
+│   │   │   │   │   ├── sourcemaps-upload-indexed-ram-bundle.trycmd
+│   │   │   │   │   ├── sourcemaps-upload-modern.trycmd
+│   │   │   │   │   ├── sourcemaps-upload-no-debugids.trycmd
+│   │   │   │   │   ├── sourcemaps-upload-no-dedupe.trycmd
+│   │   │   │   │   ├── sourcemaps-upload-skip-already-uploaded.trycmd
+│   │   │   │   │   ├── sourcemaps-upload-some-debugids.trycmd
+│   │   │   │   │   ├── sourcemaps-upload-successfully-upload-file.trycmd
+│   │   │   │   │   └── sourcemaps-upload.trycmd
+│   │   │   │   ├── token-redacted-2.trycmd
+│   │   │   │   ├── token-redacted.trycmd
+│   │   │   │   ├── token_validation
+│   │   │   │   │   ├── valid-auth-token.trycmd
+│   │   │   │   │   └── warn-invalid-auth-token.trycmd
+│   │   │   │   ├── uninstall
+│   │   │   │   │   ├── uninstall-help.trycmd
+│   │   │   │   │   ├── uninstall.trycmd
+│   │   │   │   │   └── uninstall-windows.trycmd
+│   │   │   │   ├── update
+│   │   │   │   │   ├── update-help.trycmd
+│   │   │   │   │   └── update.trycmd
+│   │   │   │   ├── upload_dif
+│   │   │   │   │   └── upload_dif-help.trycmd
+│   │   │   │   ├── upload_dsym
+│   │   │   │   │   └── upload_dsym-help.trycmd
+│   │   │   │   └── upload_proguard
+│   │   │   │       ├── upload_proguard-help.trycmd
+│   │   │   │       ├── upload_proguard-no-upload.trycmd
+│   │   │   │       └── upload_proguard.trycmd
+│   │   │   ├── debug_files
+│   │   │   │   ├── bundle_jvm.rs
+│   │   │   │   ├── bundle_sources.rs
+│   │   │   │   ├── check.rs
+│   │   │   │   ├── mod.rs
+│   │   │   │   ├── print_sources.rs
+│   │   │   │   └── upload.rs
+│   │   │   ├── deploys
+│   │   │   │   ├── list.rs
+│   │   │   │   ├── mod.rs
+│   │   │   │   └── new.rs
+│   │   │   ├── events
+│   │   │   │   ├── list.rs
+│   │   │   │   └── mod.rs
+│   │   │   ├── _fixtures
+│   │   │   │   ├── binary.sh
+│   │   │   │   ├── bundle.min.js.map
+│   │   │   │   ├── elf-Linux-ARMv7-ls
+│   │   │   │   ├── envelope.dat
+│   │   │   │   ├── event.json
+│   │   │   │   ├── file-hermes-bundle
+│   │   │   │   │   ├── main.jsbundle
+│   │   │   │   │   └── main.jsbundle.map
+│   │   │   │   ├── file-ram-bundle
+│   │   │   │   │   ├── index.android.bundle
+│   │   │   │   │   ├── index.android.bundle.packager.map
+│   │   │   │   │   └── js-modules
+│   │   │   │   │       ├── 0.js
+│   │   │   │   │       ├── 10.js
+│   │   │   │   │       ├── 1.js
+│   │   │   │   │       ├── 7.js
+│   │   │   │   │       ├── 8.js
+│   │   │   │   │       ├── 9.js
+│   │   │   │   │       └── UNBUNDLE
+│   │   │   │   ├── indexed-ram-bundle
+│   │   │   │   │   ├── main.jsbundle
+│   │   │   │   │   └── main.jsbundle.packager.map
+│   │   │   │   ├── inject
+│   │   │   │   │   ├── server
+│   │   │   │   │   │   ├── app
+│   │   │   │   │   │   │   └── page.js
+│   │   │   │   │   │   ├── chunks
+│   │   │   │   │   │   │   ├── 1.js
+│   │   │   │   │   │   │   ├── 1.js.map
+│   │   │   │   │   │   │   └── flight-server-css-manifest.js
+│   │   │   │   │   │   ├── dummy_embedded.js
+│   │   │   │   │   │   ├── dummy_hosted_full.js
+│   │   │   │   │   │   ├── dummy_hosted_full.js.map
+│   │   │   │   │   │   ├── dummy_hosted.js
+│   │   │   │   │   │   ├── dummy_hosted.js.map
+│   │   │   │   │   │   ├── edge-runtime-webpack.js
+│   │   │   │   │   │   ├── edge-runtime-webpack.js.map
+│   │   │   │   │   │   ├── flight-manifest.js
+│   │   │   │   │   │   └── pages
+│   │   │   │   │   │       ├── api
+│   │   │   │   │   │       │   └── hello.js
+│   │   │   │   │   │       ├── asdf.js.map
+│   │   │   │   │   │       ├── _document.js
+│   │   │   │   │   │       └── _document.js.map
+│   │   │   │   │   └── static
+│   │   │   │   │       └── chunks
+│   │   │   │   │           ├── 575-bb7d7e0e6de8d623.js
+│   │   │   │   │           ├── 575-bb7d7e0e6de8d623.js.map
+│   │   │   │   │           ├── app
+│   │   │   │   │           │   ├── client
+│   │   │   │   │           │   │   ├── layout-ba9c3036fc0dba78.js
+│   │   │   │   │           │   │   ├── page-d5742c254d9533f8.js
+│   │   │   │   │           │   │   └── page-d5742c254d9533f8.js.map
+│   │   │   │   │           │   └── head-172ad45600676c06.js
+│   │   │   │   │           ├── pages
+│   │   │   │   │           │   ├── asdf-05b39167abbe433b.js
+│   │   │   │   │           │   └── asdf-05b39167abbe433b.js.map
+│   │   │   │   │           └── whatever.svg
+│   │   │   │   ├── inject_bundlers
+│   │   │   │   │   ├── esbuild
+│   │   │   │   │   │   ├── cjs.js
+│   │   │   │   │   │   ├── cjs.js.expected
+│   │   │   │   │   │   ├── cjs.js.map
+│   │   │   │   │   │   ├── cjs.js.map.expected
+│   │   │   │   │   │   ├── iife.js
+│   │   │   │   │   │   ├── iife.js.expected
+│   │   │   │   │   │   ├── iife.js.map
+│   │   │   │   │   │   └── iife.js.map.expected
+│   │   │   │   │   ├── rollup
+│   │   │   │   │   │   ├── cjs.js
+│   │   │   │   │   │   ├── cjs.js.expected
+│   │   │   │   │   │   ├── cjs.js.map
+│   │   │   │   │   │   ├── cjs.js.map.expected
+│   │   │   │   │   │   ├── iife.js
+│   │   │   │   │   │   ├── iife.js.expected
+│   │   │   │   │   │   ├── iife.js.map
+│   │   │   │   │   │   └── iife.js.map.expected
+│   │   │   │   │   ├── rspack
+│   │   │   │   │   │   ├── iife.js
+│   │   │   │   │   │   ├── iife.js.expected
+│   │   │   │   │   │   ├── iife.js.map
+│   │   │   │   │   │   └── iife.js.map.expected
+│   │   │   │   │   ├── vite
+│   │   │   │   │   │   ├── cjs.js
+│   │   │   │   │   │   ├── cjs.js.expected
+│   │   │   │   │   │   ├── cjs.js.map
+│   │   │   │   │   │   ├── cjs.js.map.expected
+│   │   │   │   │   │   ├── iife.js
+│   │   │   │   │   │   ├── iife.js.expected
+│   │   │   │   │   │   ├── iife.js.map
+│   │   │   │   │   │   └── iife.js.map.expected
+│   │   │   │   │   └── webpack
+│   │   │   │   │       ├── cjs.js
+│   │   │   │   │       ├── cjs.js.expected
+│   │   │   │   │       ├── cjs.js.map
+│   │   │   │   │       ├── cjs.js.map.expected
+│   │   │   │   │       ├── iife.js
+│   │   │   │   │       ├── iife.js.expected
+│   │   │   │   │       ├── iife.js.map
+│   │   │   │   │       └── iife.js.map.expected
+│   │   │   │   ├── inject_complex_extension
+│   │   │   │   │   ├── hello.complex.js
+│   │   │   │   │   └── hello.js
+│   │   │   │   ├── inject_nomappings
+│   │   │   │   │   ├── server
+│   │   │   │   │   │   ├── app
+│   │   │   │   │   │   │   └── page.min.js
+│   │   │   │   │   │   ├── chunks
+│   │   │   │   │   │   │   ├── 1.js.map
+│   │   │   │   │   │   │   ├── 1.min.js
+│   │   │   │   │   │   │   └── flight-server-css-manifest.js
+│   │   │   │   │   │   ├── edge-runtime-webpack.js.map
+│   │   │   │   │   │   ├── edge-runtime-webpack.min.js
+│   │   │   │   │   │   ├── flight-manifest.js
+│   │   │   │   │   │   └── pages
+│   │   │   │   │   │       ├── api
+│   │   │   │   │   │       │   └── hello.min.js
+│   │   │   │   │   │       ├── asdf.js.map
+│   │   │   │   │   │       ├── _document.js.map
+│   │   │   │   │   │       └── _document.min.js
+│   │   │   │   │   └── static
+│   │   │   │   │       └── chunks
+│   │   │   │   │           ├── 575-bb7d7e0e6de8d623.js.map
+│   │   │   │   │           ├── 575-bb7d7e0e6de8d623.min.js
+│   │   │   │   │           ├── app
+│   │   │   │   │           │   ├── client
+│   │   │   │   │           │   │   ├── layout-ba9c3036fc0dba78.js
+│   │   │   │   │           │   │   ├── page-d5742c254d9533f8.js.map
+│   │   │   │   │           │   │   └── page-d5742c254d9533f8.min.js
+│   │   │   │   │           │   └── head-172ad45600676c06.js
+│   │   │   │   │           └── pages
+│   │   │   │   │               ├── asdf-05b39167abbe433b.js.map
+│   │   │   │   │               └── asdf-05b39167abbe433b.min.js
+│   │   │   │   ├── inject-not-compiled
+│   │   │   │   │   └── not-compiled.js
+│   │   │   │   ├── inject_split
+│   │   │   │   │   ├── code
+│   │   │   │   │   │   ├── foo
+│   │   │   │   │   │   │   └── index.js
+│   │   │   │   │   │   └── index.js
+│   │   │   │   │   └── maps
+│   │   │   │   │       ├── foo
+│   │   │   │   │       │   └── index.js.map
+│   │   │   │   │       └── index.js.map
+│   │   │   │   ├── inject_split_ambiguous
+│   │   │   │   │   ├── code
+│   │   │   │   │   │   ├── foo
+│   │   │   │   │   │   │   └── index.js
+│   │   │   │   │   │   └── index.js
+│   │   │   │   │   ├── maps
+│   │   │   │   │   │   ├── foo
+│   │   │   │   │   │   │   └── index.js.map
+│   │   │   │   │   │   └── index.js.map
+│   │   │   │   │   └── maps2
+│   │   │   │   │       └── foo
+│   │   │   │   │           └── index.js.map
+│   │   │   │   ├── jvm
+│   │   │   │   │   └── io
+│   │   │   │   │       └── sentry
+│   │   │   │   │           └── sample
+│   │   │   │   │               ├── MainActivity.java
+│   │   │   │   │               └── SampleActivity.kt
+│   │   │   │   ├── proguard.txt
+│   │   │   │   ├── react_native
+│   │   │   │   │   ├── compose-source-maps-custom-sourcemap-report.json.expected
+│   │   │   │   │   ├── compose-source-maps-sourcemap-report.json.before.test
+│   │   │   │   │   ├── compose-source-maps-sourcemap-report.json.expected
+│   │   │   │   │   ├── empty-sourcemap-report.json.expected
+│   │   │   │   │   ├── hermesc-sourcemap-report.json.expected
+│   │   │   │   │   ├── packager-sourcemap-report.json.expected
+│   │   │   │   │   ├── react-native-xcode-bundle.js
+│   │   │   │   │   ├── react-native-xcode-bundle.js.map
+│   │   │   │   │   └── react-native-xcode.sh
+│   │   │   │   ├── Sentry.Samples.Console.Basic-embedded-ppdb-with-sources.dll
+│   │   │   │   ├── Sentry.Samples.Console.Basic-embedded-sources.pdb
+│   │   │   │   ├── Sentry.Samples.Console.Basic.pdb
+│   │   │   │   ├── SrcGenSampleApp.pdb
+│   │   │   │   ├── upload_cjs_mjs
+│   │   │   │   │   ├── test.cjs
+│   │   │   │   │   └── test.mjs
+│   │   │   │   ├── upload_no_debugids
+│   │   │   │   │   ├── server
+│   │   │   │   │   │   ├── app
+│   │   │   │   │   │   │   └── page.js
+│   │   │   │   │   │   ├── chunks
+│   │   │   │   │   │   │   ├── 1.js
+│   │   │   │   │   │   │   ├── 1.js.map
+│   │   │   │   │   │   │   └── flight-server-css-manifest.js
+│   │   │   │   │   │   ├── dummy_embedded.js
+│   │   │   │   │   │   ├── edge-runtime-webpack.js
+│   │   │   │   │   │   ├── edge-runtime-webpack.js.map
+│   │   │   │   │   │   ├── flight-manifest.js
+│   │   │   │   │   │   └── pages
+│   │   │   │   │   │       ├── api
+│   │   │   │   │   │       │   └── hello.js
+│   │   │   │   │   │       ├── asdf.js.map
+│   │   │   │   │   │       ├── _document.js
+│   │   │   │   │   │       └── _document.js.map
+│   │   │   │   │   └── static
+│   │   │   │   │       └── chunks
+│   │   │   │   │           ├── 575-bb7d7e0e6de8d623.js
+│   │   │   │   │           ├── 575-bb7d7e0e6de8d623.js.map
+│   │   │   │   │           ├── app
+│   │   │   │   │           │   ├── client
+│   │   │   │   │           │   │   ├── layout-ba9c3036fc0dba78.js
+│   │   │   │   │           │   │   ├── page-d5742c254d9533f8.js
+│   │   │   │   │           │   │   └── page-d5742c254d9533f8.js.map
+│   │   │   │   │           │   └── head-172ad45600676c06.js
+│   │   │   │   │           └── pages
+│   │   │   │   │               ├── asdf-05b39167abbe433b.js
+│   │   │   │   │               └── asdf-05b39167abbe433b.js.map
+│   │   │   │   ├── upload_some_debugids
+│   │   │   │   │   ├── server
+│   │   │   │   │   │   ├── app
+│   │   │   │   │   │   │   └── page.js
+│   │   │   │   │   │   ├── chunks
+│   │   │   │   │   │   │   ├── 1.js
+│   │   │   │   │   │   │   ├── 1.js.map
+│   │   │   │   │   │   │   └── flight-server-css-manifest.js
+│   │   │   │   │   │   ├── dummy_embedded.js
+│   │   │   │   │   │   ├── edge-runtime-webpack.js
+│   │   │   │   │   │   ├── edge-runtime-webpack.js.map
+│   │   │   │   │   │   ├── flight-manifest.js
+│   │   │   │   │   │   └── pages
+│   │   │   │   │   │       ├── api
+│   │   │   │   │   │       │   └── hello.js
+│   │   │   │   │   │       ├── asdf.js.map
+│   │   │   │   │   │       ├── _document.js
+│   │   │   │   │   │       └── _document.js.map
+│   │   │   │   │   └── static
+│   │   │   │   │       └── chunks
+│   │   │   │   │           ├── 575-bb7d7e0e6de8d623.js
+│   │   │   │   │           ├── 575-bb7d7e0e6de8d623.js.map
+│   │   │   │   │           ├── app
+│   │   │   │   │           │   ├── client
+│   │   │   │   │           │   │   ├── layout-ba9c3036fc0dba78.js
+│   │   │   │   │           │   │   ├── page-d5742c254d9533f8.js
+│   │   │   │   │           │   │   └── page-d5742c254d9533f8.js.map
+│   │   │   │   │           │   └── head-172ad45600676c06.js
+│   │   │   │   │           └── pages
+│   │   │   │   │               ├── asdf-05b39167abbe433b.js
+│   │   │   │   │               └── asdf-05b39167abbe433b.js.map
+│   │   │   │   └── vendor.min.js.map
+│   │   │   ├── help.rs
+│   │   │   ├── info.rs
+│   │   │   ├── invalid_env.rs
+│   │   │   ├── issues
+│   │   │   │   ├── list.rs
+│   │   │   │   └── mod.rs
+│   │   │   ├── login.rs
+│   │   │   ├── mod.rs
+│   │   │   ├── monitors
+│   │   │   │   ├── list.rs
+│   │   │   │   ├── mod.rs
+│   │   │   │   └── run.rs
+│   │   │   ├── organizations
+│   │   │   │   ├── list.rs
+│   │   │   │   └── mod.rs
+│   │   │   ├── org_tokens.rs
+│   │   │   ├── projects
+│   │   │   │   ├── list.rs
+│   │   │   │   └── mod.rs
+│   │   │   ├── react_native
+│   │   │   │   ├── mod.rs
+│   │   │   │   └── xcode.rs
+│   │   │   ├── releases
+│   │   │   │   ├── delete.rs
+│   │   │   │   ├── finalize.rs
+│   │   │   │   ├── info.rs
+│   │   │   │   ├── list.rs
+│   │   │   │   ├── mod.rs
+│   │   │   │   └── new.rs
+│   │   │   ├── _responses
+│   │   │   │   ├── debug_files
+│   │   │   │   │   ├── get-chunk-upload.json
+│   │   │   │   │   └── post-difs-assemble.json
+│   │   │   │   ├── deploys
+│   │   │   │   │   ├── get-deploys.json
+│   │   │   │   │   └── post-deploys.json
+│   │   │   │   ├── info
+│   │   │   │   │   └── get-info.json
+│   │   │   │   ├── issues
+│   │   │   │   │   ├── get-issues.json
+│   │   │   │   │   └── get-resolved-issues.json
+│   │   │   │   ├── monitors
+│   │   │   │   │   ├── get-monitors.json
+│   │   │   │   │   └── post-monitors.json
+│   │   │   │   ├── organizations
+│   │   │   │   │   └── get-organizations.json
+│   │   │   │   ├── projects
+│   │   │   │   │   └── get-projects.json
+│   │   │   │   ├── releases
+│   │   │   │   │   ├── delete-active-release.json
+│   │   │   │   │   ├── get-release-commits.json
+│   │   │   │   │   ├── get-release.json
+│   │   │   │   │   └── get-releases.json
+│   │   │   │   └── sourcemaps
+│   │   │   │       ├── get-artifacts-empty.json
+│   │   │   │       ├── get-artifacts.json
+│   │   │   │       ├── get-artifacts-no-dist.json
+│   │   │   │       ├── get-artifacts-no-match.json
+│   │   │   │       ├── get-artifacts-no-sourcemap.json
+│   │   │   │       ├── get-artifacts-partial-match.json
+│   │   │   │       ├── get-event-already-mapped.json
+│   │   │   │       ├── get-event-frame-malformed-abspath.json
+│   │   │   │       ├── get-event-frame-no-abspath.json
+│   │   │   │       ├── get-event-frame-no-extension.json
+│   │   │   │       ├── get-event-frame-no-inapp.json
+│   │   │   │       ├── get-event.json
+│   │   │   │       ├── get-event-missing-dist.json
+│   │   │   │       ├── get-event-missing-exception.json
+│   │   │   │       ├── get-event-missing-release.json
+│   │   │   │       ├── get-event-missing-stacktrace.json
+│   │   │   │       ├── get-event-select-frame.json
+│   │   │   │       ├── get-file.js
+│   │   │   │       ├── get-file-metadata-no-headers.json
+│   │   │   │       ├── get-file-metadata-sourcemap-header.json
+│   │   │   │       ├── get-file-metadata-xsourcemap-header.json
+│   │   │   │       └── get-file-sourcemap.js.map
+│   │   │   ├── send_envelope.rs
+│   │   │   ├── send_event.rs
+│   │   │   ├── send_metric
+│   │   │   │   ├── distribution.rs
+│   │   │   │   ├── gauge.rs
+│   │   │   │   ├── increment.rs
+│   │   │   │   ├── mod.rs
+│   │   │   │   └── set.rs
+│   │   │   ├── sourcemaps
+│   │   │   │   ├── explain.rs
+│   │   │   │   ├── inject.rs
+│   │   │   │   ├── mod.rs
+│   │   │   │   ├── resolve.rs
+│   │   │   │   └── upload.rs
+│   │   │   ├── token_validation.rs
+│   │   │   ├── uninstall.rs
+│   │   │   ├── update.rs
+│   │   │   ├── upload_dif.rs
+│   │   │   ├── upload_dsym.rs
+│   │   │   └── upload_proguard.rs
+│   │   └── mod.rs
+│   └── yarn.lock
+└── sentry-cli-2.36.1.tar.gz -> /home/felix/packages/sentry-cli/sentry-cli-2.36.1.tar.gz
+
+174 directories, 676 files
