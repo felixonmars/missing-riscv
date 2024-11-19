@@ -1,0 +1,1475 @@
+src
+├── galera
+│   ├── asio
+│   │   ├── asio
+│   │   │   ├── associated_allocator.hpp
+│   │   │   ├── associated_executor.hpp
+│   │   │   ├── async_result.hpp
+│   │   │   ├── awaitable.hpp
+│   │   │   ├── basic_datagram_socket.hpp
+│   │   │   ├── basic_deadline_timer.hpp
+│   │   │   ├── basic_io_object.hpp
+│   │   │   ├── basic_raw_socket.hpp
+│   │   │   ├── basic_seq_packet_socket.hpp
+│   │   │   ├── basic_serial_port.hpp
+│   │   │   ├── basic_signal_set.hpp
+│   │   │   ├── basic_socket_acceptor.hpp
+│   │   │   ├── basic_socket.hpp
+│   │   │   ├── basic_socket_iostream.hpp
+│   │   │   ├── basic_socket_streambuf.hpp
+│   │   │   ├── basic_streambuf_fwd.hpp
+│   │   │   ├── basic_streambuf.hpp
+│   │   │   ├── basic_stream_socket.hpp
+│   │   │   ├── basic_waitable_timer.hpp
+│   │   │   ├── bind_executor.hpp
+│   │   │   ├── buffered_read_stream_fwd.hpp
+│   │   │   ├── buffered_read_stream.hpp
+│   │   │   ├── buffered_stream_fwd.hpp
+│   │   │   ├── buffered_stream.hpp
+│   │   │   ├── buffered_write_stream_fwd.hpp
+│   │   │   ├── buffered_write_stream.hpp
+│   │   │   ├── buffer.hpp
+│   │   │   ├── buffers_iterator.hpp
+│   │   │   ├── completion_condition.hpp
+│   │   │   ├── compose.hpp
+│   │   │   ├── connect.hpp
+│   │   │   ├── coroutine.hpp
+│   │   │   ├── co_spawn.hpp
+│   │   │   ├── deadline_timer.hpp
+│   │   │   ├── defer.hpp
+│   │   │   ├── detached.hpp
+│   │   │   ├── detail
+│   │   │   │   ├── array_fwd.hpp
+│   │   │   │   ├── array.hpp
+│   │   │   │   ├── assert.hpp
+│   │   │   │   ├── atomic_count.hpp
+│   │   │   │   ├── base_from_completion_cond.hpp
+│   │   │   │   ├── bind_handler.hpp
+│   │   │   │   ├── buffered_stream_storage.hpp
+│   │   │   │   ├── buffer_resize_guard.hpp
+│   │   │   │   ├── buffer_sequence_adapter.hpp
+│   │   │   │   ├── call_stack.hpp
+│   │   │   │   ├── chrono.hpp
+│   │   │   │   ├── chrono_time_traits.hpp
+│   │   │   │   ├── completion_handler.hpp
+│   │   │   │   ├── concurrency_hint.hpp
+│   │   │   │   ├── conditionally_enabled_event.hpp
+│   │   │   │   ├── conditionally_enabled_mutex.hpp
+│   │   │   │   ├── config.hpp
+│   │   │   │   ├── consuming_buffers.hpp
+│   │   │   │   ├── cstddef.hpp
+│   │   │   │   ├── cstdint.hpp
+│   │   │   │   ├── date_time_fwd.hpp
+│   │   │   │   ├── deadline_timer_service.hpp
+│   │   │   │   ├── dependent_type.hpp
+│   │   │   │   ├── descriptor_ops.hpp
+│   │   │   │   ├── descriptor_read_op.hpp
+│   │   │   │   ├── descriptor_write_op.hpp
+│   │   │   │   ├── dev_poll_reactor.hpp
+│   │   │   │   ├── epoll_reactor.hpp
+│   │   │   │   ├── eventfd_select_interrupter.hpp
+│   │   │   │   ├── event.hpp
+│   │   │   │   ├── executor_function.hpp
+│   │   │   │   ├── executor_op.hpp
+│   │   │   │   ├── fd_set_adapter.hpp
+│   │   │   │   ├── fenced_block.hpp
+│   │   │   │   ├── functional.hpp
+│   │   │   │   ├── future.hpp
+│   │   │   │   ├── gcc_arm_fenced_block.hpp
+│   │   │   │   ├── gcc_hppa_fenced_block.hpp
+│   │   │   │   ├── gcc_sync_fenced_block.hpp
+│   │   │   │   ├── gcc_x86_fenced_block.hpp
+│   │   │   │   ├── global.hpp
+│   │   │   │   ├── handler_alloc_helpers.hpp
+│   │   │   │   ├── handler_cont_helpers.hpp
+│   │   │   │   ├── handler_invoke_helpers.hpp
+│   │   │   │   ├── handler_tracking.hpp
+│   │   │   │   ├── handler_type_requirements.hpp
+│   │   │   │   ├── handler_work.hpp
+│   │   │   │   ├── hash_map.hpp
+│   │   │   │   ├── impl
+│   │   │   │   │   ├── buffer_sequence_adapter.ipp
+│   │   │   │   │   ├── descriptor_ops.ipp
+│   │   │   │   │   ├── dev_poll_reactor.hpp
+│   │   │   │   │   ├── dev_poll_reactor.ipp
+│   │   │   │   │   ├── epoll_reactor.hpp
+│   │   │   │   │   ├── epoll_reactor.ipp
+│   │   │   │   │   ├── eventfd_select_interrupter.ipp
+│   │   │   │   │   ├── handler_tracking.ipp
+│   │   │   │   │   ├── kqueue_reactor.hpp
+│   │   │   │   │   ├── kqueue_reactor.ipp
+│   │   │   │   │   ├── null_event.ipp
+│   │   │   │   │   ├── pipe_select_interrupter.ipp
+│   │   │   │   │   ├── posix_event.ipp
+│   │   │   │   │   ├── posix_mutex.ipp
+│   │   │   │   │   ├── posix_thread.ipp
+│   │   │   │   │   ├── posix_tss_ptr.ipp
+│   │   │   │   │   ├── reactive_descriptor_service.ipp
+│   │   │   │   │   ├── reactive_serial_port_service.ipp
+│   │   │   │   │   ├── reactive_socket_service_base.ipp
+│   │   │   │   │   ├── resolver_service_base.ipp
+│   │   │   │   │   ├── scheduler.ipp
+│   │   │   │   │   ├── select_reactor.hpp
+│   │   │   │   │   ├── select_reactor.ipp
+│   │   │   │   │   ├── service_registry.hpp
+│   │   │   │   │   ├── service_registry.ipp
+│   │   │   │   │   ├── signal_set_service.ipp
+│   │   │   │   │   ├── socket_ops.ipp
+│   │   │   │   │   ├── socket_select_interrupter.ipp
+│   │   │   │   │   ├── strand_executor_service.hpp
+│   │   │   │   │   ├── strand_executor_service.ipp
+│   │   │   │   │   ├── strand_service.hpp
+│   │   │   │   │   ├── strand_service.ipp
+│   │   │   │   │   ├── throw_error.ipp
+│   │   │   │   │   ├── timer_queue_ptime.ipp
+│   │   │   │   │   ├── timer_queue_set.ipp
+│   │   │   │   │   ├── win_event.ipp
+│   │   │   │   │   ├── win_iocp_handle_service.ipp
+│   │   │   │   │   ├── win_iocp_io_context.hpp
+│   │   │   │   │   ├── win_iocp_io_context.ipp
+│   │   │   │   │   ├── win_iocp_serial_port_service.ipp
+│   │   │   │   │   ├── win_iocp_socket_service_base.ipp
+│   │   │   │   │   ├── win_mutex.ipp
+│   │   │   │   │   ├── win_object_handle_service.ipp
+│   │   │   │   │   ├── winrt_ssocket_service_base.ipp
+│   │   │   │   │   ├── winrt_timer_scheduler.hpp
+│   │   │   │   │   ├── winrt_timer_scheduler.ipp
+│   │   │   │   │   ├── winsock_init.ipp
+│   │   │   │   │   ├── win_static_mutex.ipp
+│   │   │   │   │   ├── win_thread.ipp
+│   │   │   │   │   └── win_tss_ptr.ipp
+│   │   │   │   ├── io_control.hpp
+│   │   │   │   ├── io_object_executor.hpp
+│   │   │   │   ├── io_object_impl.hpp
+│   │   │   │   ├── is_buffer_sequence.hpp
+│   │   │   │   ├── is_executor.hpp
+│   │   │   │   ├── keyword_tss_ptr.hpp
+│   │   │   │   ├── kqueue_reactor.hpp
+│   │   │   │   ├── limits.hpp
+│   │   │   │   ├── local_free_on_block_exit.hpp
+│   │   │   │   ├── macos_fenced_block.hpp
+│   │   │   │   ├── memory.hpp
+│   │   │   │   ├── mutex.hpp
+│   │   │   │   ├── non_const_lvalue.hpp
+│   │   │   │   ├── noncopyable.hpp
+│   │   │   │   ├── null_event.hpp
+│   │   │   │   ├── null_fenced_block.hpp
+│   │   │   │   ├── null_global.hpp
+│   │   │   │   ├── null_mutex.hpp
+│   │   │   │   ├── null_reactor.hpp
+│   │   │   │   ├── null_signal_blocker.hpp
+│   │   │   │   ├── null_socket_service.hpp
+│   │   │   │   ├── null_static_mutex.hpp
+│   │   │   │   ├── null_thread.hpp
+│   │   │   │   ├── null_tss_ptr.hpp
+│   │   │   │   ├── object_pool.hpp
+│   │   │   │   ├── old_win_sdk_compat.hpp
+│   │   │   │   ├── operation.hpp
+│   │   │   │   ├── op_queue.hpp
+│   │   │   │   ├── pipe_select_interrupter.hpp
+│   │   │   │   ├── pop_options.hpp
+│   │   │   │   ├── posix_event.hpp
+│   │   │   │   ├── posix_fd_set_adapter.hpp
+│   │   │   │   ├── posix_global.hpp
+│   │   │   │   ├── posix_mutex.hpp
+│   │   │   │   ├── posix_signal_blocker.hpp
+│   │   │   │   ├── posix_static_mutex.hpp
+│   │   │   │   ├── posix_thread.hpp
+│   │   │   │   ├── posix_tss_ptr.hpp
+│   │   │   │   ├── push_options.hpp
+│   │   │   │   ├── reactive_descriptor_service.hpp
+│   │   │   │   ├── reactive_null_buffers_op.hpp
+│   │   │   │   ├── reactive_serial_port_service.hpp
+│   │   │   │   ├── reactive_socket_accept_op.hpp
+│   │   │   │   ├── reactive_socket_connect_op.hpp
+│   │   │   │   ├── reactive_socket_recvfrom_op.hpp
+│   │   │   │   ├── reactive_socket_recvmsg_op.hpp
+│   │   │   │   ├── reactive_socket_recv_op.hpp
+│   │   │   │   ├── reactive_socket_send_op.hpp
+│   │   │   │   ├── reactive_socket_sendto_op.hpp
+│   │   │   │   ├── reactive_socket_service_base.hpp
+│   │   │   │   ├── reactive_socket_service.hpp
+│   │   │   │   ├── reactive_wait_op.hpp
+│   │   │   │   ├── reactor_fwd.hpp
+│   │   │   │   ├── reactor.hpp
+│   │   │   │   ├── reactor_op.hpp
+│   │   │   │   ├── reactor_op_queue.hpp
+│   │   │   │   ├── recycling_allocator.hpp
+│   │   │   │   ├── regex_fwd.hpp
+│   │   │   │   ├── resolve_endpoint_op.hpp
+│   │   │   │   ├── resolve_op.hpp
+│   │   │   │   ├── resolve_query_op.hpp
+│   │   │   │   ├── resolver_service_base.hpp
+│   │   │   │   ├── resolver_service.hpp
+│   │   │   │   ├── scheduler.hpp
+│   │   │   │   ├── scheduler_operation.hpp
+│   │   │   │   ├── scheduler_thread_info.hpp
+│   │   │   │   ├── scoped_lock.hpp
+│   │   │   │   ├── scoped_ptr.hpp
+│   │   │   │   ├── select_interrupter.hpp
+│   │   │   │   ├── select_reactor.hpp
+│   │   │   │   ├── service_registry.hpp
+│   │   │   │   ├── signal_blocker.hpp
+│   │   │   │   ├── signal_handler.hpp
+│   │   │   │   ├── signal_init.hpp
+│   │   │   │   ├── signal_op.hpp
+│   │   │   │   ├── signal_set_service.hpp
+│   │   │   │   ├── socket_holder.hpp
+│   │   │   │   ├── socket_ops.hpp
+│   │   │   │   ├── socket_option.hpp
+│   │   │   │   ├── socket_select_interrupter.hpp
+│   │   │   │   ├── socket_types.hpp
+│   │   │   │   ├── solaris_fenced_block.hpp
+│   │   │   │   ├── static_mutex.hpp
+│   │   │   │   ├── std_event.hpp
+│   │   │   │   ├── std_fenced_block.hpp
+│   │   │   │   ├── std_global.hpp
+│   │   │   │   ├── std_mutex.hpp
+│   │   │   │   ├── std_static_mutex.hpp
+│   │   │   │   ├── std_thread.hpp
+│   │   │   │   ├── strand_executor_service.hpp
+│   │   │   │   ├── strand_service.hpp
+│   │   │   │   ├── string_view.hpp
+│   │   │   │   ├── thread_context.hpp
+│   │   │   │   ├── thread_group.hpp
+│   │   │   │   ├── thread.hpp
+│   │   │   │   ├── thread_info_base.hpp
+│   │   │   │   ├── throw_error.hpp
+│   │   │   │   ├── throw_exception.hpp
+│   │   │   │   ├── timer_queue_base.hpp
+│   │   │   │   ├── timer_queue.hpp
+│   │   │   │   ├── timer_queue_ptime.hpp
+│   │   │   │   ├── timer_queue_set.hpp
+│   │   │   │   ├── timer_scheduler_fwd.hpp
+│   │   │   │   ├── timer_scheduler.hpp
+│   │   │   │   ├── tss_ptr.hpp
+│   │   │   │   ├── type_traits.hpp
+│   │   │   │   ├── variadic_templates.hpp
+│   │   │   │   ├── wait_handler.hpp
+│   │   │   │   ├── wait_op.hpp
+│   │   │   │   ├── winapp_thread.hpp
+│   │   │   │   ├── wince_thread.hpp
+│   │   │   │   ├── win_event.hpp
+│   │   │   │   ├── win_fd_set_adapter.hpp
+│   │   │   │   ├── win_fenced_block.hpp
+│   │   │   │   ├── win_global.hpp
+│   │   │   │   ├── win_iocp_handle_read_op.hpp
+│   │   │   │   ├── win_iocp_handle_service.hpp
+│   │   │   │   ├── win_iocp_handle_write_op.hpp
+│   │   │   │   ├── win_iocp_io_context.hpp
+│   │   │   │   ├── win_iocp_null_buffers_op.hpp
+│   │   │   │   ├── win_iocp_operation.hpp
+│   │   │   │   ├── win_iocp_overlapped_op.hpp
+│   │   │   │   ├── win_iocp_overlapped_ptr.hpp
+│   │   │   │   ├── win_iocp_serial_port_service.hpp
+│   │   │   │   ├── win_iocp_socket_accept_op.hpp
+│   │   │   │   ├── win_iocp_socket_connect_op.hpp
+│   │   │   │   ├── win_iocp_socket_recvfrom_op.hpp
+│   │   │   │   ├── win_iocp_socket_recvmsg_op.hpp
+│   │   │   │   ├── win_iocp_socket_recv_op.hpp
+│   │   │   │   ├── win_iocp_socket_send_op.hpp
+│   │   │   │   ├── win_iocp_socket_service_base.hpp
+│   │   │   │   ├── win_iocp_socket_service.hpp
+│   │   │   │   ├── win_iocp_thread_info.hpp
+│   │   │   │   ├── win_iocp_wait_op.hpp
+│   │   │   │   ├── win_mutex.hpp
+│   │   │   │   ├── win_object_handle_service.hpp
+│   │   │   │   ├── winrt_async_manager.hpp
+│   │   │   │   ├── winrt_async_op.hpp
+│   │   │   │   ├── winrt_resolve_op.hpp
+│   │   │   │   ├── winrt_resolver_service.hpp
+│   │   │   │   ├── winrt_socket_connect_op.hpp
+│   │   │   │   ├── winrt_socket_recv_op.hpp
+│   │   │   │   ├── winrt_socket_send_op.hpp
+│   │   │   │   ├── winrt_ssocket_service_base.hpp
+│   │   │   │   ├── winrt_ssocket_service.hpp
+│   │   │   │   ├── winrt_timer_scheduler.hpp
+│   │   │   │   ├── winrt_utils.hpp
+│   │   │   │   ├── winsock_init.hpp
+│   │   │   │   ├── win_static_mutex.hpp
+│   │   │   │   ├── win_thread.hpp
+│   │   │   │   ├── win_tss_ptr.hpp
+│   │   │   │   ├── work_dispatcher.hpp
+│   │   │   │   └── wrapped_handler.hpp
+│   │   │   ├── dispatch.hpp
+│   │   │   ├── error_code.hpp
+│   │   │   ├── error.hpp
+│   │   │   ├── execution_context.hpp
+│   │   │   ├── executor.hpp
+│   │   │   ├── executor_work_guard.hpp
+│   │   │   ├── generic
+│   │   │   │   ├── basic_endpoint.hpp
+│   │   │   │   ├── datagram_protocol.hpp
+│   │   │   │   ├── detail
+│   │   │   │   │   ├── endpoint.hpp
+│   │   │   │   │   └── impl
+│   │   │   │   │       └── endpoint.ipp
+│   │   │   │   ├── raw_protocol.hpp
+│   │   │   │   ├── seq_packet_protocol.hpp
+│   │   │   │   └── stream_protocol.hpp
+│   │   │   ├── handler_alloc_hook.hpp
+│   │   │   ├── handler_continuation_hook.hpp
+│   │   │   ├── handler_invoke_hook.hpp
+│   │   │   ├── high_resolution_timer.hpp
+│   │   │   ├── impl
+│   │   │   │   ├── awaitable.hpp
+│   │   │   │   ├── buffered_read_stream.hpp
+│   │   │   │   ├── buffered_write_stream.hpp
+│   │   │   │   ├── compose.hpp
+│   │   │   │   ├── connect.hpp
+│   │   │   │   ├── co_spawn.hpp
+│   │   │   │   ├── defer.hpp
+│   │   │   │   ├── detached.hpp
+│   │   │   │   ├── dispatch.hpp
+│   │   │   │   ├── error_code.ipp
+│   │   │   │   ├── error.ipp
+│   │   │   │   ├── execution_context.hpp
+│   │   │   │   ├── execution_context.ipp
+│   │   │   │   ├── executor.hpp
+│   │   │   │   ├── executor.ipp
+│   │   │   │   ├── handler_alloc_hook.ipp
+│   │   │   │   ├── io_context.hpp
+│   │   │   │   ├── io_context.ipp
+│   │   │   │   ├── post.hpp
+│   │   │   │   ├── read_at.hpp
+│   │   │   │   ├── read.hpp
+│   │   │   │   ├── read_until.hpp
+│   │   │   │   ├── redirect_error.hpp
+│   │   │   │   ├── serial_port_base.hpp
+│   │   │   │   ├── serial_port_base.ipp
+│   │   │   │   ├── spawn.hpp
+│   │   │   │   ├── src.cpp
+│   │   │   │   ├── src.hpp
+│   │   │   │   ├── system_context.hpp
+│   │   │   │   ├── system_context.ipp
+│   │   │   │   ├── system_executor.hpp
+│   │   │   │   ├── thread_pool.hpp
+│   │   │   │   ├── thread_pool.ipp
+│   │   │   │   ├── use_awaitable.hpp
+│   │   │   │   ├── use_future.hpp
+│   │   │   │   ├── write_at.hpp
+│   │   │   │   └── write.hpp
+│   │   │   ├── io_context.hpp
+│   │   │   ├── io_context_strand.hpp
+│   │   │   ├── io_service.hpp
+│   │   │   ├── io_service_strand.hpp
+│   │   │   ├── ip
+│   │   │   │   ├── address.hpp
+│   │   │   │   ├── address_v4.hpp
+│   │   │   │   ├── address_v4_iterator.hpp
+│   │   │   │   ├── address_v4_range.hpp
+│   │   │   │   ├── address_v6.hpp
+│   │   │   │   ├── address_v6_iterator.hpp
+│   │   │   │   ├── address_v6_range.hpp
+│   │   │   │   ├── bad_address_cast.hpp
+│   │   │   │   ├── basic_endpoint.hpp
+│   │   │   │   ├── basic_resolver_entry.hpp
+│   │   │   │   ├── basic_resolver.hpp
+│   │   │   │   ├── basic_resolver_iterator.hpp
+│   │   │   │   ├── basic_resolver_query.hpp
+│   │   │   │   ├── basic_resolver_results.hpp
+│   │   │   │   ├── detail
+│   │   │   │   │   ├── endpoint.hpp
+│   │   │   │   │   ├── impl
+│   │   │   │   │   │   └── endpoint.ipp
+│   │   │   │   │   └── socket_option.hpp
+│   │   │   │   ├── host_name.hpp
+│   │   │   │   ├── icmp.hpp
+│   │   │   │   ├── impl
+│   │   │   │   │   ├── address.hpp
+│   │   │   │   │   ├── address.ipp
+│   │   │   │   │   ├── address_v4.hpp
+│   │   │   │   │   ├── address_v4.ipp
+│   │   │   │   │   ├── address_v6.hpp
+│   │   │   │   │   ├── address_v6.ipp
+│   │   │   │   │   ├── basic_endpoint.hpp
+│   │   │   │   │   ├── host_name.ipp
+│   │   │   │   │   ├── network_v4.hpp
+│   │   │   │   │   ├── network_v4.ipp
+│   │   │   │   │   ├── network_v6.hpp
+│   │   │   │   │   └── network_v6.ipp
+│   │   │   │   ├── multicast.hpp
+│   │   │   │   ├── network_v4.hpp
+│   │   │   │   ├── network_v6.hpp
+│   │   │   │   ├── resolver_base.hpp
+│   │   │   │   ├── resolver_query_base.hpp
+│   │   │   │   ├── tcp.hpp
+│   │   │   │   ├── udp.hpp
+│   │   │   │   ├── unicast.hpp
+│   │   │   │   └── v6_only.hpp
+│   │   │   ├── is_executor.hpp
+│   │   │   ├── is_read_buffered.hpp
+│   │   │   ├── is_write_buffered.hpp
+│   │   │   ├── local
+│   │   │   │   ├── basic_endpoint.hpp
+│   │   │   │   ├── connect_pair.hpp
+│   │   │   │   ├── datagram_protocol.hpp
+│   │   │   │   ├── detail
+│   │   │   │   │   ├── endpoint.hpp
+│   │   │   │   │   └── impl
+│   │   │   │   │       └── endpoint.ipp
+│   │   │   │   └── stream_protocol.hpp
+│   │   │   ├── packaged_task.hpp
+│   │   │   ├── placeholders.hpp
+│   │   │   ├── posix
+│   │   │   │   ├── basic_descriptor.hpp
+│   │   │   │   ├── basic_stream_descriptor.hpp
+│   │   │   │   ├── descriptor_base.hpp
+│   │   │   │   ├── descriptor.hpp
+│   │   │   │   └── stream_descriptor.hpp
+│   │   │   ├── post.hpp
+│   │   │   ├── read_at.hpp
+│   │   │   ├── read.hpp
+│   │   │   ├── read_until.hpp
+│   │   │   ├── redirect_error.hpp
+│   │   │   ├── serial_port_base.hpp
+│   │   │   ├── serial_port.hpp
+│   │   │   ├── signal_set.hpp
+│   │   │   ├── socket_base.hpp
+│   │   │   ├── spawn.hpp
+│   │   │   ├── ssl
+│   │   │   │   ├── context_base.hpp
+│   │   │   │   ├── context.hpp
+│   │   │   │   ├── detail
+│   │   │   │   │   ├── buffered_handshake_op.hpp
+│   │   │   │   │   ├── engine.hpp
+│   │   │   │   │   ├── handshake_op.hpp
+│   │   │   │   │   ├── impl
+│   │   │   │   │   │   ├── engine.ipp
+│   │   │   │   │   │   └── openssl_init.ipp
+│   │   │   │   │   ├── io.hpp
+│   │   │   │   │   ├── openssl_init.hpp
+│   │   │   │   │   ├── openssl_types.hpp
+│   │   │   │   │   ├── password_callback.hpp
+│   │   │   │   │   ├── read_op.hpp
+│   │   │   │   │   ├── shutdown_op.hpp
+│   │   │   │   │   ├── stream_core.hpp
+│   │   │   │   │   ├── verify_callback.hpp
+│   │   │   │   │   └── write_op.hpp
+│   │   │   │   ├── error.hpp
+│   │   │   │   ├── impl
+│   │   │   │   │   ├── context.hpp
+│   │   │   │   │   ├── context.ipp
+│   │   │   │   │   ├── error.ipp
+│   │   │   │   │   ├── rfc2818_verification.ipp
+│   │   │   │   │   └── src.hpp
+│   │   │   │   ├── rfc2818_verification.hpp
+│   │   │   │   ├── stream_base.hpp
+│   │   │   │   ├── stream.hpp
+│   │   │   │   ├── verify_context.hpp
+│   │   │   │   └── verify_mode.hpp
+│   │   │   ├── ssl.hpp
+│   │   │   ├── steady_timer.hpp
+│   │   │   ├── strand.hpp
+│   │   │   ├── streambuf.hpp
+│   │   │   ├── system_context.hpp
+│   │   │   ├── system_error.hpp
+│   │   │   ├── system_executor.hpp
+│   │   │   ├── system_timer.hpp
+│   │   │   ├── this_coro.hpp
+│   │   │   ├── thread.hpp
+│   │   │   ├── thread_pool.hpp
+│   │   │   ├── time_traits.hpp
+│   │   │   ├── ts
+│   │   │   │   ├── buffer.hpp
+│   │   │   │   ├── executor.hpp
+│   │   │   │   ├── internet.hpp
+│   │   │   │   ├── io_context.hpp
+│   │   │   │   ├── netfwd.hpp
+│   │   │   │   ├── net.hpp
+│   │   │   │   ├── socket.hpp
+│   │   │   │   └── timer.hpp
+│   │   │   ├── unyield.hpp
+│   │   │   ├── use_awaitable.hpp
+│   │   │   ├── use_future.hpp
+│   │   │   ├── uses_executor.hpp
+│   │   │   ├── version.hpp
+│   │   │   ├── wait_traits.hpp
+│   │   │   ├── windows
+│   │   │   │   ├── basic_object_handle.hpp
+│   │   │   │   ├── basic_overlapped_handle.hpp
+│   │   │   │   ├── basic_random_access_handle.hpp
+│   │   │   │   ├── basic_stream_handle.hpp
+│   │   │   │   ├── object_handle.hpp
+│   │   │   │   ├── overlapped_handle.hpp
+│   │   │   │   ├── overlapped_ptr.hpp
+│   │   │   │   ├── random_access_handle.hpp
+│   │   │   │   └── stream_handle.hpp
+│   │   │   ├── write_at.hpp
+│   │   │   ├── write.hpp
+│   │   │   └── yield.hpp
+│   │   ├── asio.hpp
+│   │   └── LICENSE_1_0.txt
+│   ├── AUTHORS
+│   ├── cmake
+│   │   ├── alignment.cmake
+│   │   ├── array.cmake
+│   │   ├── asan.cmake
+│   │   ├── asio.cmake
+│   │   ├── boost.cmake
+│   │   ├── check.cmake
+│   │   ├── common.cmake
+│   │   ├── compiler.cmake
+│   │   ├── coverage.cmake
+│   │   ├── crc32c.cmake
+│   │   ├── custom_boost.cmake
+│   │   ├── endian.cmake
+│   │   ├── maintainer_mode.cmake
+│   │   ├── memorycheck.cmake
+│   │   ├── os.cmake
+│   │   ├── package.cmake
+│   │   ├── shared_ptr.cmake
+│   │   ├── ssl.cmake
+│   │   ├── unordered.cmake
+│   │   └── version.cmake
+│   ├── CMakeLists.txt
+│   ├── common
+│   │   └── common.h
+│   ├── CONTRIBUTING.md
+│   ├── CONTRIBUTOR_AGREEMENT.txt
+│   ├── CONTRIBUTORS.txt
+│   ├── COPYING
+│   ├── debian
+│   │   ├── changelog
+│   │   ├── compat
+│   │   ├── control
+│   │   ├── copyright
+│   │   ├── galera-4.docs
+│   │   ├── galera-4.install
+│   │   ├── galera-4.links
+│   │   ├── galera-arbitrator-4.garb.default -> ../garb/files/garb.cnf
+│   │   ├── galera-arbitrator-4.garb.init -> ../garb/files/garb.sh
+│   │   ├── galera-arbitrator-4.garb.service -> ../garb/files/garb.service
+│   │   ├── galera-arbitrator-4.install
+│   │   ├── galera-arbitrator-4.lintian-overrides
+│   │   ├── galera-arbitrator-4.manpages
+│   │   ├── gbp.conf
+│   │   ├── README.Maintainer
+│   │   ├── rules
+│   │   ├── source
+│   │   │   └── format
+│   │   └── upstream
+│   │       ├── metadata
+│   │       └── signing-key.asc
+│   ├── docs
+│   │   ├── LICENSE.OpenSSL
+│   │   └── README
+│   ├── galera
+│   │   ├── CMakeLists.txt
+│   │   ├── SConscript
+│   │   ├── src
+│   │   │   ├── action_source.hpp
+│   │   │   ├── certification.cpp
+│   │   │   ├── certification.hpp
+│   │   │   ├── CMakeLists.txt
+│   │   │   ├── data_set.cpp
+│   │   │   ├── data_set.hpp
+│   │   │   ├── fsm.hpp
+│   │   │   ├── galera_common.hpp
+│   │   │   ├── galera_exception.hpp
+│   │   │   ├── galera_gcs.hpp
+│   │   │   ├── galera_info.cpp
+│   │   │   ├── galera_info.hpp
+│   │   │   ├── galera_service_thd.cpp
+│   │   │   ├── galera_service_thd.hpp
+│   │   │   ├── galera-sym.map
+│   │   │   ├── galera_view.cpp
+│   │   │   ├── galera_view.hpp
+│   │   │   ├── gcs_action_source.cpp
+│   │   │   ├── gcs_action_source.hpp
+│   │   │   ├── gcs_dummy.cpp
+│   │   │   ├── ist.cpp
+│   │   │   ├── ist.hpp
+│   │   │   ├── ist_proto.cpp
+│   │   │   ├── ist_proto.hpp
+│   │   │   ├── key_data.cpp
+│   │   │   ├── key_data.hpp
+│   │   │   ├── key_entry_ng.hpp
+│   │   │   ├── key_entry_os.cpp
+│   │   │   ├── key_entry_os.hpp
+│   │   │   ├── key_os.hpp
+│   │   │   ├── key_set.cpp
+│   │   │   ├── key_set.hpp
+│   │   │   ├── mapped_buffer.cpp
+│   │   │   ├── mapped_buffer.hpp
+│   │   │   ├── monitor.hpp
+│   │   │   ├── nbo.hpp
+│   │   │   ├── progress_callback.hpp
+│   │   │   ├── replicator.cpp
+│   │   │   ├── replicator.hpp
+│   │   │   ├── replicator_smm.cpp
+│   │   │   ├── replicator_smm.hpp
+│   │   │   ├── replicator_smm_params.cpp
+│   │   │   ├── replicator_smm_stats.cpp
+│   │   │   ├── replicator_str.cpp
+│   │   │   ├── saved_state.cpp
+│   │   │   ├── saved_state.hpp
+│   │   │   ├── SConscript
+│   │   │   ├── trx_handle.cpp
+│   │   │   ├── trx_handle.hpp
+│   │   │   ├── write_set.cpp
+│   │   │   ├── write_set.hpp
+│   │   │   ├── write_set_ng.cpp
+│   │   │   ├── write_set_ng.hpp
+│   │   │   ├── wsdb.cpp
+│   │   │   ├── wsdb.hpp
+│   │   │   ├── wsrep_params.cpp
+│   │   │   ├── wsrep_params.hpp
+│   │   │   └── wsrep_provider.cpp
+│   │   └── tests
+│   │       ├── certification_check.cpp
+│   │       ├── CMakeLists.txt
+│   │       ├── data_set_check.cpp
+│   │       ├── defaults_check.cpp
+│   │       ├── galera_check.cpp
+│   │       ├── ist_check.cpp
+│   │       ├── key_set_check.cpp
+│   │       ├── progress_check.cpp
+│   │       ├── saved_state_check.cpp
+│   │       ├── SConscript
+│   │       ├── service_thd_check.cpp
+│   │       ├── test_key.hpp
+│   │       ├── trx_handle_check.cpp
+│   │       ├── write_set_check.cpp
+│   │       └── write_set_ng_check.cpp
+│   ├── galerautils
+│   │   ├── ChangeLog
+│   │   ├── CMakeLists.txt
+│   │   ├── doc
+│   │   │   └── Doxyfile
+│   │   ├── README
+│   │   ├── SConscript
+│   │   ├── src
+│   │   │   ├── CMakeLists.txt
+│   │   │   ├── galerautils.h
+│   │   │   ├── gu_abort.c
+│   │   │   ├── gu_abort.h
+│   │   │   ├── gu_alloc.cpp
+│   │   │   ├── gu_alloc.hpp
+│   │   │   ├── gu_arch.h
+│   │   │   ├── gu_array.hpp
+│   │   │   ├── gu_asio.cpp
+│   │   │   ├── gu_asio_datagram.cpp
+│   │   │   ├── gu_asio_datagram.hpp
+│   │   │   ├── gu_asio_debug.hpp
+│   │   │   ├── gu_asio_error_category.hpp
+│   │   │   ├── gu_asio.hpp
+│   │   │   ├── gu_asio_io_service_impl.hpp
+│   │   │   ├── gu_asio_ip_address_impl.hpp
+│   │   │   ├── gu_asio_socket_util.hpp
+│   │   │   ├── gu_asio_ssl.hpp
+│   │   │   ├── gu_asio_stream_engine.cpp
+│   │   │   ├── gu_asio_stream_engine.hpp
+│   │   │   ├── gu_asio_stream_react.cpp
+│   │   │   ├── gu_asio_stream_react.hpp
+│   │   │   ├── gu_asio_utils.hpp
+│   │   │   ├── gu_assert.h
+│   │   │   ├── gu_assert.hpp
+│   │   │   ├── gu_atomic.h
+│   │   │   ├── gu_atomic.hpp
+│   │   │   ├── gu_backtrace.c
+│   │   │   ├── gu_backtrace.h
+│   │   │   ├── gu_backtrace.hpp
+│   │   │   ├── gu_buffer.cpp
+│   │   │   ├── gu_buffer.hpp
+│   │   │   ├── gu_buf.h
+│   │   │   ├── gu_buf.hpp
+│   │   │   ├── gu_byteswap.h
+│   │   │   ├── gu_byteswap.hpp
+│   │   │   ├── gu_compiler.hpp
+│   │   │   ├── gu_cond.hpp
+│   │   │   ├── gu_conf.h
+│   │   │   ├── gu_config.cpp
+│   │   │   ├── gu_config.h
+│   │   │   ├── gu_config.hpp
+│   │   │   ├── gu_convert.hpp
+│   │   │   ├── gu_crc32c_arm64.c
+│   │   │   ├── gu_crc32c.c
+│   │   │   ├── gu_crc32c.h
+│   │   │   ├── gu_crc32c_x86.c
+│   │   │   ├── gu_crc.hpp
+│   │   │   ├── gu_datetime.cpp
+│   │   │   ├── gu_datetime.hpp
+│   │   │   ├── gu_dbug.c
+│   │   │   ├── gu_dbug.h
+│   │   │   ├── gu_debug_sync.cpp
+│   │   │   ├── gu_debug_sync.hpp
+│   │   │   ├── gu_deqmap.hpp
+│   │   │   ├── gu_digest.hpp
+│   │   │   ├── gu_disable_non_virtual_dtor.hpp
+│   │   │   ├── gu_enable_non_virtual_dtor.hpp
+│   │   │   ├── gu_errno.h
+│   │   │   ├── gu_event_service.cpp
+│   │   │   ├── gu_event_service.hpp
+│   │   │   ├── gu_exception.cpp
+│   │   │   ├── gu_exception.hpp
+│   │   │   ├── gu_fdesc.cpp
+│   │   │   ├── gu_fdesc.hpp
+│   │   │   ├── gu_fifo.c
+│   │   │   ├── gu_fifo.h
+│   │   │   ├── gu_fnv_bench.c
+│   │   │   ├── gu_fnv.h
+│   │   │   ├── gu_gtid.cpp
+│   │   │   ├── gu_gtid.hpp
+│   │   │   ├── gu_hash.h
+│   │   │   ├── gu_hexdump.c
+│   │   │   ├── gu_hexdump.cpp
+│   │   │   ├── gu_hexdump.h
+│   │   │   ├── gu_hexdump.hpp
+│   │   │   ├── gu_histogram.cpp
+│   │   │   ├── gu_histogram.hpp
+│   │   │   ├── gu_init.c
+│   │   │   ├── gu_init.h
+│   │   │   ├── gu_int128.h
+│   │   │   ├── gu_inttypes.hpp
+│   │   │   ├── gu_limits.c
+│   │   │   ├── gu_limits.h
+│   │   │   ├── gu_lock.hpp
+│   │   │   ├── gu_lock_step.c
+│   │   │   ├── gu_lock_step.h
+│   │   │   ├── gu_log.c
+│   │   │   ├── gu_logger.cpp
+│   │   │   ├── gu_logger.hpp
+│   │   │   ├── gu_log.h
+│   │   │   ├── gu_macros.h
+│   │   │   ├── gu_macros.hpp
+│   │   │   ├── gu_mem.c
+│   │   │   ├── gu_mem.h
+│   │   │   ├── gu_mem_pool.hpp
+│   │   │   ├── gu_mmap.cpp
+│   │   │   ├── gu_mmap.hpp
+│   │   │   ├── gu_mmh3.c
+│   │   │   ├── gu_mmh3.h
+│   │   │   ├── gu_monitor.hpp
+│   │   │   ├── gu_mutex.hpp
+│   │   │   ├── gu_progress.hpp
+│   │   │   ├── gu_rand.c
+│   │   │   ├── gu_rand.h
+│   │   │   ├── gu_regex.cpp
+│   │   │   ├── gu_regex.hpp
+│   │   │   ├── gu_reserved_container.hpp
+│   │   │   ├── gu_resolver.cpp
+│   │   │   ├── gu_resolver.hpp
+│   │   │   ├── gu_rset.cpp
+│   │   │   ├── gu_rset.hpp
+│   │   │   ├── gu_serializable.hpp
+│   │   │   ├── gu_serialize.cpp
+│   │   │   ├── gu_serialize.hpp
+│   │   │   ├── gu_shared_ptr.hpp
+│   │   │   ├── gu_signals.cpp
+│   │   │   ├── gu_signals.hpp
+│   │   │   ├── gu_spooky.c
+│   │   │   ├── gu_spooky.h
+│   │   │   ├── gu_stats.cpp
+│   │   │   ├── gu_stats.hpp
+│   │   │   ├── gu_status.hpp
+│   │   │   ├── gu_str.h
+│   │   │   ├── gu_string.hpp
+│   │   │   ├── gu_string_utils.cpp
+│   │   │   ├── gu_string_utils.hpp
+│   │   │   ├── gu_system.h
+│   │   │   ├── gu_thread.cpp
+│   │   │   ├── gu_thread.hpp
+│   │   │   ├── gu_threads.c
+│   │   │   ├── gu_threads.h
+│   │   │   ├── gu_throw.hpp
+│   │   │   ├── gu_time.c
+│   │   │   ├── gu_time.h
+│   │   │   ├── gu_to.c
+│   │   │   ├── gu_to.h
+│   │   │   ├── gu_types.h
+│   │   │   ├── gu_types.hpp
+│   │   │   ├── gu_unordered.hpp
+│   │   │   ├── gu_uri.cpp
+│   │   │   ├── gu_uri.hpp
+│   │   │   ├── gu_utils.c
+│   │   │   ├── gu_utils++.cpp
+│   │   │   ├── gu_utils.h
+│   │   │   ├── gu_utils.hpp
+│   │   │   ├── gu_uuid.c
+│   │   │   ├── gu_uuid.cpp
+│   │   │   ├── gu_uuid.h
+│   │   │   ├── gu_uuid.hpp
+│   │   │   ├── gu_vector.hpp
+│   │   │   ├── gu_vlq.cpp
+│   │   │   ├── gu_vlq.hpp
+│   │   │   └── SConscript
+│   │   └── tests
+│   │       ├── avalanche.c
+│   │       ├── CMakeLists.txt
+│   │       ├── copy_vs_assignment.cpp
+│   │       ├── crc32c_bench.cpp
+│   │       ├── deqmap_bench.cpp
+│   │       ├── gu_alloc_test.cpp
+│   │       ├── gu_alloc_test.hpp
+│   │       ├── gu_asio_test.cpp
+│   │       ├── gu_asio_test.hpp
+│   │       ├── gu_atomic_test.cpp
+│   │       ├── gu_atomic_test.hpp
+│   │       ├── gu_bswap_test.c
+│   │       ├── gu_bswap_test.h
+│   │       ├── gu_config_test.cpp
+│   │       ├── gu_config_test.hpp
+│   │       ├── gu_crc32c_test.c
+│   │       ├── gu_crc32c_test.h
+│   │       ├── gu_datetime_test.cpp
+│   │       ├── gu_datetime_test.hpp
+│   │       ├── gu_dbug_test.c
+│   │       ├── gu_dbug_test.h
+│   │       ├── gu_deqmap_test.cpp
+│   │       ├── gu_deqmap_test.hpp
+│   │       ├── gu_digest_test.cpp
+│   │       ├── gu_digest_test.hpp
+│   │       ├── gu_fifo_test.c
+│   │       ├── gu_fifo_test.h
+│   │       ├── gu_fnv_test.c
+│   │       ├── gu_fnv_test.h
+│   │       ├── gu_gtid_test.cpp
+│   │       ├── gu_gtid_test.hpp
+│   │       ├── gu_hash_test.c
+│   │       ├── gu_hash_test.h
+│   │       ├── gu_histogram_test.cpp
+│   │       ├── gu_histogram_test.hpp
+│   │       ├── gu_lock_step_test.c
+│   │       ├── gu_lock_step_test.h
+│   │       ├── gu_mem_pool_test.cpp
+│   │       ├── gu_mem_pool_test.hpp
+│   │       ├── gu_mem_test.c
+│   │       ├── gu_mem_test.h
+│   │       ├── gu_mmh3_test.c
+│   │       ├── gu_mmh3_test.h
+│   │       ├── gu_net_test.cpp
+│   │       ├── gu_net_test.hpp
+│   │       ├── gu_progress_test.cpp
+│   │       ├── gu_rset_test.cpp
+│   │       ├── gu_rset_test.hpp
+│   │       ├── gu_shared_ptr_test.cpp
+│   │       ├── gu_shared_ptr_test.hpp
+│   │       ├── gu_spooky_test.c
+│   │       ├── gu_spooky_test.h
+│   │       ├── gu_stats_test.cpp
+│   │       ├── gu_stats_test.hpp
+│   │       ├── gu_string_test.cpp
+│   │       ├── gu_string_test.hpp
+│   │       ├── gu_string_utils_test.cpp
+│   │       ├── gu_string_utils_test.hpp
+│   │       ├── gu_str_test.c
+│   │       ├── gu_str_test.h
+│   │       ├── gu_tests.c
+│   │       ├── gu_tests++.cpp
+│   │       ├── gu_tests++.hpp
+│   │       ├── gu_thread_test.cpp
+│   │       ├── gu_thread_test.hpp
+│   │       ├── gu_time_test.c
+│   │       ├── gu_time_test.h
+│   │       ├── gu_to_test.c
+│   │       ├── gu_uri_test.cpp
+│   │       ├── gu_uri_test.hpp
+│   │       ├── gu_utils_test.c
+│   │       ├── gu_utils_test++.cpp
+│   │       ├── gu_utils_test.h
+│   │       ├── gu_utils_test++.hpp
+│   │       ├── gu_uuid_test.c
+│   │       ├── gu_uuid_test.h
+│   │       ├── gu_vector_test.cpp
+│   │       ├── gu_vector_test.hpp
+│   │       ├── gu_vlq_test.cpp
+│   │       ├── gu_vlq_test.hpp
+│   │       └── SConscript
+│   ├── GALERA_VERSION
+│   ├── garb
+│   │   ├── CMakeLists.txt
+│   │   ├── files
+│   │   │   ├── freebsd
+│   │   │   │   └── garb.sh
+│   │   │   ├── garb.cnf
+│   │   │   ├── garb.service
+│   │   │   ├── garb.sh
+│   │   │   └── garb-systemd
+│   │   ├── garb_config.cpp
+│   │   ├── garb_config.hpp
+│   │   ├── garb_gcs.cpp
+│   │   ├── garb_gcs.hpp
+│   │   ├── garb_logger.cpp
+│   │   ├── garb_logger.hpp
+│   │   ├── garb_main.cpp
+│   │   ├── garb_recv_loop.cpp
+│   │   ├── garb_recv_loop.hpp
+│   │   └── SConscript
+│   ├── gcache
+│   │   ├── AUTHORS
+│   │   ├── bootstrap.sh
+│   │   ├── ChangeLog
+│   │   ├── CMakeLists.txt
+│   │   ├── configure.ac
+│   │   ├── Makefile.am
+│   │   ├── NEWS
+│   │   ├── README
+│   │   ├── SConscript
+│   │   ├── src
+│   │   │   ├── CMakeLists.txt
+│   │   │   ├── gcache_bh.hpp
+│   │   │   ├── GCache.cpp
+│   │   │   ├── gcache.h
+│   │   │   ├── GCache.hpp
+│   │   │   ├── gcache_limits.hpp
+│   │   │   ├── GCache_memops.cpp
+│   │   │   ├── gcache_memops.hpp
+│   │   │   ├── gcache_mem_store.cpp
+│   │   │   ├── gcache_mem_store.hpp
+│   │   │   ├── gcache_page.cpp
+│   │   │   ├── gcache_page.hpp
+│   │   │   ├── gcache_page_store.cpp
+│   │   │   ├── gcache_page_store.hpp
+│   │   │   ├── gcache_params.cpp
+│   │   │   ├── gcache_rb_store.cpp
+│   │   │   ├── gcache_rb_store.hpp
+│   │   │   ├── GCache_seqno.cpp
+│   │   │   ├── gcache_seqno.hpp
+│   │   │   ├── gcache_types.hpp
+│   │   │   ├── Makefile.am
+│   │   │   ├── SConscript
+│   │   │   └── test.cpp
+│   │   └── tests
+│   │       ├── CMakeLists.txt
+│   │       ├── gcache_mem_test.cpp
+│   │       ├── gcache_mem_test.hpp
+│   │       ├── gcache_page_test.cpp
+│   │       ├── gcache_page_test.hpp
+│   │       ├── gcache_rb_test.cpp
+│   │       ├── gcache_rb_test.hpp
+│   │       ├── gcache_tests.cpp
+│   │       ├── gcache_tests.hpp
+│   │       └── SConscript
+│   ├── gcomm
+│   │   ├── CMakeLists.txt
+│   │   ├── doc
+│   │   │   └── Doxyfile
+│   │   ├── SConscript
+│   │   ├── src
+│   │   │   ├── asio_protonet.cpp
+│   │   │   ├── asio_protonet.hpp
+│   │   │   ├── asio_tcp.cpp
+│   │   │   ├── asio_tcp.hpp
+│   │   │   ├── asio_udp.cpp
+│   │   │   ├── asio_udp.hpp
+│   │   │   ├── CMakeLists.txt
+│   │   │   ├── conf.cpp
+│   │   │   ├── datagram.cpp
+│   │   │   ├── defaults.cpp
+│   │   │   ├── defaults.hpp
+│   │   │   ├── evs_consensus.cpp
+│   │   │   ├── evs_consensus.hpp
+│   │   │   ├── evs_input_map2.cpp
+│   │   │   ├── evs_input_map2.hpp
+│   │   │   ├── evs_message2.cpp
+│   │   │   ├── evs_message2.hpp
+│   │   │   ├── evs_node.cpp
+│   │   │   ├── evs_node.hpp
+│   │   │   ├── evs_proto.cpp
+│   │   │   ├── evs_proto.hpp
+│   │   │   ├── evs_seqno.hpp
+│   │   │   ├── fair_send_queue.hpp
+│   │   │   ├── gcomm
+│   │   │   │   ├── common.hpp
+│   │   │   │   ├── conf.hpp
+│   │   │   │   ├── datagram.hpp
+│   │   │   │   ├── exception.hpp
+│   │   │   │   ├── map.hpp
+│   │   │   │   ├── order.hpp
+│   │   │   │   ├── protolay.hpp
+│   │   │   │   ├── protonet.hpp
+│   │   │   │   ├── protostack.hpp
+│   │   │   │   ├── transport.hpp
+│   │   │   │   ├── types.hpp
+│   │   │   │   ├── util.hpp
+│   │   │   │   ├── uuid.hpp
+│   │   │   │   └── view.hpp
+│   │   │   ├── gmcast.cpp
+│   │   │   ├── gmcast.hpp
+│   │   │   ├── gmcast_link.hpp
+│   │   │   ├── gmcast_message.hpp
+│   │   │   ├── gmcast_node.hpp
+│   │   │   ├── gmcast_proto.cpp
+│   │   │   ├── gmcast_proto.hpp
+│   │   │   ├── pc.cpp
+│   │   │   ├── pc.hpp
+│   │   │   ├── pc_message.hpp
+│   │   │   ├── pc_proto.cpp
+│   │   │   ├── pc_proto.hpp
+│   │   │   ├── protocol_version.hpp
+│   │   │   ├── protonet.cpp
+│   │   │   ├── protostack.cpp
+│   │   │   ├── SConscript
+│   │   │   ├── socket.cpp
+│   │   │   ├── socket.hpp
+│   │   │   ├── transport.cpp
+│   │   │   ├── uuid.cpp
+│   │   │   └── view.cpp
+│   │   └── test
+│   │       ├── check_evs2.cpp
+│   │       ├── check_fair_send_queue.cpp
+│   │       ├── check_gcomm.cpp
+│   │       ├── check_gcomm.hpp
+│   │       ├── check_gcomm_nondet.cpp
+│   │       ├── check_gmcast.cpp
+│   │       ├── check_pc.cpp
+│   │       ├── check_pc_nondet.cpp
+│   │       ├── check_templ.hpp
+│   │       ├── check_trace.cpp
+│   │       ├── check_trace.hpp
+│   │       ├── check_types.cpp
+│   │       ├── check_util.cpp
+│   │       ├── check_util_nondet.cpp
+│   │       ├── CMakeLists.txt
+│   │       ├── SConscript
+│   │       └── ssl_test.cpp
+│   ├── gcs
+│   │   ├── ChangeLog
+│   │   ├── CMakeLists.txt
+│   │   ├── doc
+│   │   │   ├── Coding_conventions.txt
+│   │   │   ├── Doxyfile
+│   │   │   ├── GCS_Architecture.odt
+│   │   │   ├── GCS_Architecture.png
+│   │   │   └── GCS_connection_states.txt
+│   │   ├── README
+│   │   ├── SConscript
+│   │   └── src
+│   │       ├── CMakeLists.txt
+│   │       ├── gcs_act_cchange.cpp
+│   │       ├── gcs_act.hpp
+│   │       ├── gcs_act_proto.cpp
+│   │       ├── gcs_act_proto.hpp
+│   │       ├── gcs_backend.cpp
+│   │       ├── gcs_backend.hpp
+│   │       ├── gcs_code_msg.cpp
+│   │       ├── gcs_code_msg.hpp
+│   │       ├── gcs_comp_msg.cpp
+│   │       ├── gcs_comp_msg.hpp
+│   │       ├── gcs_conf.cpp
+│   │       ├── gcs_core.cpp
+│   │       ├── gcs_core.hpp
+│   │       ├── gcs.cpp
+│   │       ├── gcs_defrag.cpp
+│   │       ├── gcs_defrag.hpp
+│   │       ├── gcs_dummy.cpp
+│   │       ├── gcs_dummy.hpp
+│   │       ├── gcs_error.cpp
+│   │       ├── gcs_error.hpp
+│   │       ├── gcs_fc.cpp
+│   │       ├── gcs_fc.hpp
+│   │       ├── gcs_fifo_lite.cpp
+│   │       ├── gcs_fifo_lite.hpp
+│   │       ├── gcs_gcache.hpp
+│   │       ├── gcs_gcomm.cpp
+│   │       ├── gcs_gcomm.hpp
+│   │       ├── gcs_group.cpp
+│   │       ├── gcs_group.hpp
+│   │       ├── gcs.hpp
+│   │       ├── gcs_msg_type.cpp
+│   │       ├── gcs_msg_type.hpp
+│   │       ├── gcs_node.cpp
+│   │       ├── gcs_node.hpp
+│   │       ├── gcs_params.cpp
+│   │       ├── gcs_params.hpp
+│   │       ├── gcs_priv.hpp
+│   │       ├── gcs_recv_msg.hpp
+│   │       ├── gcs_seqno.hpp
+│   │       ├── gcs_sm.cpp
+│   │       ├── gcs_sm.hpp
+│   │       ├── gcs_spread.cpp
+│   │       ├── gcs_spread.hpp
+│   │       ├── gcs_state_msg.cpp
+│   │       ├── gcs_state_msg.hpp
+│   │       ├── gcs_test.cpp
+│   │       ├── gcs_test.hpp
+│   │       ├── gcs_test.sh
+│   │       ├── SConscript
+│   │       └── unit_tests
+│   │           ├── CMakeLists.txt
+│   │           ├── gcs_act_cchange_test.cpp
+│   │           ├── gcs_act_cchange_test.hpp
+│   │           ├── gcs_backend_test.cpp
+│   │           ├── gcs_backend_test.hpp
+│   │           ├── gcs_comp_test.cpp
+│   │           ├── gcs_comp_test.hpp
+│   │           ├── gcs_core_test.cpp
+│   │           ├── gcs_core_test.hpp
+│   │           ├── gcs_defrag_test.cpp
+│   │           ├── gcs_defrag_test.hpp
+│   │           ├── gcs_fc_test.cpp
+│   │           ├── gcs_fc_test.hpp
+│   │           ├── gcs_fifo_test.cpp
+│   │           ├── gcs_fifo_test.hpp
+│   │           ├── gcs_group_test.cpp
+│   │           ├── gcs_group_test.hpp
+│   │           ├── gcs_memb_test.cpp
+│   │           ├── gcs_memb_test.hpp
+│   │           ├── gcs_node_test.cpp
+│   │           ├── gcs_node_test.hpp
+│   │           ├── gcs_proto_test.cpp
+│   │           ├── gcs_proto_test.hpp
+│   │           ├── gcs_sm_test.cpp
+│   │           ├── gcs_sm_test.hpp
+│   │           ├── gcs_state_msg_test.cpp
+│   │           ├── gcs_state_msg_test.hpp
+│   │           ├── gcs_tests.cpp
+│   │           ├── gcs_test_utils.cpp
+│   │           ├── gcs_test_utils.hpp
+│   │           └── SConscript
+│   ├── LICENSE
+│   ├── man
+│   │   ├── garbd.8
+│   │   └── garb-systemd.8
+│   ├── README
+│   ├── SConscript
+│   ├── SConstruct
+│   ├── scripts
+│   │   ├── build.sh
+│   │   ├── docker
+│   │   │   ├── build.sh
+│   │   │   ├── Dockerfile
+│   │   │   └── entrypoint.sh
+│   │   ├── mysql
+│   │   │   ├── build.sh
+│   │   │   ├── centos
+│   │   │   │   ├── init.centos
+│   │   │   │   ├── init.oracle
+│   │   │   │   ├── my.cnf
+│   │   │   │   ├── mysqld_safe
+│   │   │   │   └── mysql-wsrep.list
+│   │   │   ├── debian
+│   │   │   │   ├── 5.1.list
+│   │   │   │   ├── 5.5.list
+│   │   │   │   ├── 5.6.list
+│   │   │   │   ├── common.list
+│   │   │   │   ├── debian-start.inc.sh
+│   │   │   │   ├── echo_stderr
+│   │   │   │   ├── etc
+│   │   │   │   │   ├── init.d
+│   │   │   │   │   │   └── mysql
+│   │   │   │   │   ├── logcheck
+│   │   │   │   │   │   ├── ignore.d.paranoid
+│   │   │   │   │   │   │   └── mysql-server-5_1
+│   │   │   │   │   │   ├── ignore.d.server
+│   │   │   │   │   │   │   └── mysql-server-5_1
+│   │   │   │   │   │   └── ignore.d.workstation
+│   │   │   │   │   │       └── mysql-server-5_1
+│   │   │   │   │   ├── logrotate.d
+│   │   │   │   │   │   └── mysql-server
+│   │   │   │   │   └── mysql
+│   │   │   │   │       ├── conf.d
+│   │   │   │   │       │   └── mysqld_safe_syslog.cnf
+│   │   │   │   │       └── debian-start
+│   │   │   │   ├── my.cnf
+│   │   │   │   ├── mysql
+│   │   │   │   ├── mysqld_safe-5.1
+│   │   │   │   ├── mysqld_safe-5.5
+│   │   │   │   └── mysql-server-wsrep.list
+│   │   │   ├── freebsd
+│   │   │   │   ├── catalog.mk
+│   │   │   │   ├── client-comment
+│   │   │   │   ├── client-descr
+│   │   │   │   ├── client-ldconfig
+│   │   │   │   ├── client-message
+│   │   │   │   ├── client-mtree
+│   │   │   │   ├── client-plist
+│   │   │   │   ├── LICENSE
+│   │   │   │   ├── mysql-server.sh
+│   │   │   │   ├── server-comment
+│   │   │   │   ├── server-descr
+│   │   │   │   ├── server-message
+│   │   │   │   ├── server-mtree
+│   │   │   │   └── server-plist
+│   │   │   ├── freebsd.sh
+│   │   │   ├── get_patch.sh
+│   │   │   ├── init_db.sh
+│   │   │   ├── LICENSE
+│   │   │   ├── LICENSE.mysql
+│   │   │   ├── mariadb_var_10.4.tgz
+│   │   │   ├── my-5.1.cnf
+│   │   │   ├── my-5.5.cnf
+│   │   │   ├── mysql-galera
+│   │   │   ├── mysql-plain
+│   │   │   ├── mysql_var_5.5.tgz
+│   │   │   ├── mysql_var_5.6.tgz
+│   │   │   ├── mysql_var_5.7.tgz
+│   │   │   ├── QUICK_START
+│   │   │   ├── README
+│   │   │   ├── rpm.sh
+│   │   │   └── rpm_wc.sh
+│   │   ├── openrep
+│   │   │   ├── common
+│   │   │   ├── configure -> redundant
+│   │   │   ├── demote -> redundant
+│   │   │   ├── flush -> not_supported
+│   │   │   ├── halt -> service
+│   │   │   ├── kill -> service
+│   │   │   ├── not_supported
+│   │   │   ├── offline -> service
+│   │   │   ├── online -> service
+│   │   │   ├── plugin.cnf
+│   │   │   ├── prepare -> redundant
+│   │   │   ├── promote -> redundant
+│   │   │   ├── provision -> not_supported
+│   │   │   ├── redundant
+│   │   │   ├── release -> not_supported
+│   │   │   ├── service
+│   │   │   ├── status -> not_supported
+│   │   │   ├── stop -> service
+│   │   │   └── waitevent -> not_supported
+│   │   └── packages
+│   │       ├── CMakeLists.txt
+│   │       ├── codership-galera.spec.in
+│   │       ├── debian -> ../../debian
+│   │       ├── empty
+│   │       ├── freebsd
+│   │       │   ├── catalog.mk
+│   │       │   ├── galera-comment
+│   │       │   ├── galera-descr
+│   │       │   ├── galera-ldconfig
+│   │       │   ├── galera-message
+│   │       │   ├── galera-mtree
+│   │       │   ├── galera-plist
+│   │       │   └── LICENSE
+│   │       ├── freebsd.sh
+│   │       ├── galera-common.inc
+│   │       ├── galera-dev.list
+│   │       ├── galera.list
+│   │       ├── galera-obs.spec
+│   │       ├── README
+│   │       ├── README-MySQL
+│   │       └── rpm.sh
+│   ├── tests
+│   │   ├── conf
+│   │   │   ├── bundle-galera-server-1.pem
+│   │   │   ├── bundle-galera-server-2.pem
+│   │   │   ├── bundle-galera-server-3.pem
+│   │   │   ├── cluster.conf.tmpl
+│   │   │   ├── common_my.cnf.tmpl
+│   │   │   ├── dummy.conf
+│   │   │   ├── galera-ca.pem
+│   │   │   ├── galera_ca.pem
+│   │   │   ├── galera_cert.pem
+│   │   │   ├── galera-int.pem
+│   │   │   ├── galera_key.pem
+│   │   │   ├── galera-server-1.key
+│   │   │   ├── galera-server-1.pem
+│   │   │   ├── galera-server-2.key
+│   │   │   ├── galera-server-2.pem
+│   │   │   ├── galera-server-3.key
+│   │   │   ├── galera-server-3.pem
+│   │   │   ├── gen-cert-chain.sh
+│   │   │   ├── main.conf
+│   │   │   ├── my.cnf.1.tmpl
+│   │   │   ├── my.cnf.2.tmpl
+│   │   │   ├── my.cnf.3.tmpl
+│   │   │   ├── nodes.conf.tmpl
+│   │   │   ├── README.md
+│   │   │   └── sqlgen.conf
+│   │   ├── regressions
+│   │   │   ├── lp1003929
+│   │   │   │   └── run.sh
+│   │   │   ├── lp1013978
+│   │   │   │   └── run.sh
+│   │   │   ├── lp1019473
+│   │   │   │   └── run.sh
+│   │   │   ├── lp1026181
+│   │   │   │   └── run.sh
+│   │   │   ├── lp1055961
+│   │   │   │   └── run.sh
+│   │   │   ├── lp1073220
+│   │   │   │   └── run.sh
+│   │   │   ├── lp1089490
+│   │   │   │   └── run.sh
+│   │   │   ├── lp1100496
+│   │   │   │   └── run.sh
+│   │   │   ├── lp1130888
+│   │   │   │   └── run.sh
+│   │   │   ├── lp1179361
+│   │   │   │   └── run.sh
+│   │   │   ├── lp1184034
+│   │   │   │   └── run.sh
+│   │   │   ├── lp1206129
+│   │   │   │   └── run.sh
+│   │   │   ├── lp1208493
+│   │   │   │   └── run.sh
+│   │   │   ├── lp1255964
+│   │   │   │   └── run.sh
+│   │   │   ├── lp1274199
+│   │   │   │   └── run.sh
+│   │   │   ├── lp1284803
+│   │   │   │   └── run.sh
+│   │   │   ├── lp1299116
+│   │   │   │   └── run.sh
+│   │   │   ├── lp1314854
+│   │   │   │   └── run.sh
+│   │   │   ├── lp518749
+│   │   │   │   ├── mysqlfs.sql
+│   │   │   │   └── run.sh
+│   │   │   ├── lp587170
+│   │   │   │   └── run.sh
+│   │   │   ├── lp847353
+│   │   │   │   └── run.sh
+│   │   │   ├── lp861212
+│   │   │   │   └── run.sh
+│   │   │   ├── lp900816
+│   │   │   │   └── run.sh
+│   │   │   ├── lp909155
+│   │   │   │   └── run.sh
+│   │   │   ├── lp917416
+│   │   │   │   └── run.sh
+│   │   │   ├── lp922757
+│   │   │   │   └── run.sh
+│   │   │   ├── lp928150
+│   │   │   │   └── run.sh
+│   │   │   ├── lp930221
+│   │   │   │   └── run.sh
+│   │   │   ├── lp959512
+│   │   │   │   └── run.sh
+│   │   │   ├── lp963734
+│   │   │   │   └── run.sh
+│   │   │   ├── lp966950
+│   │   │   │   └── run.sh
+│   │   │   ├── lp967134
+│   │   │   │   └── run.sh
+│   │   │   ├── lp970714
+│   │   │   │   ├── lp.sql
+│   │   │   │   └── run.sh
+│   │   │   ├── lp994579
+│   │   │   │   └── run.sh
+│   │   │   ├── run-all.sh
+│   │   │   ├── t281
+│   │   │   │   └── run.sh
+│   │   │   └── t285
+│   │   │       └── run.sh
+│   │   ├── run.sh
+│   │   ├── run_sqlgen.sh
+│   │   ├── run_test_set.sh
+│   │   ├── scripts
+│   │   │   ├── action.sh
+│   │   │   ├── command.sh
+│   │   │   ├── install.sh
+│   │   │   ├── jobs.sh
+│   │   │   ├── kill.sh
+│   │   │   ├── misc.sh
+│   │   │   ├── README
+│   │   │   ├── remove.sh
+│   │   │   └── signal.sh
+│   │   ├── t
+│   │   │   └── dummy.sh
+│   │   ├── tap
+│   │   │   ├── README
+│   │   │   ├── run_test_set.pl
+│   │   │   └── tap-functions
+│   │   ├── test_causal
+│   │   │   ├── causal.cpp
+│   │   │   ├── causal.sh
+│   │   │   ├── hard_causal.sh
+│   │   │   └── SConstruct
+│   │   ├── test_cppcheck
+│   │   │   └── run.sh
+│   │   ├── test_dbt2
+│   │   │   └── run.sh
+│   │   ├── test_dots
+│   │   │   └── run.sh
+│   │   ├── test_drupal
+│   │   │   ├── drupal5.diff
+│   │   │   ├── drupal6.10.tgz
+│   │   │   ├── drupal6_8080.jmx
+│   │   │   ├── drupal6.jmx
+│   │   │   ├── drupal6.sql.gz
+│   │   │   ├── drupaldb.sql.gz
+│   │   │   ├── drupal.jmx
+│   │   │   ├── loaddb.sh
+│   │   │   ├── README
+│   │   │   └── run.sh
+│   │   ├── test_insert
+│   │   │   ├── create_big.sql
+│   │   │   ├── create_small.sql
+│   │   │   ├── insert_big.sql
+│   │   │   ├── insert_small.sql
+│   │   │   └── run.sh
+│   │   ├── test_memory
+│   │   │   └── run.sh
+│   │   ├── test_mtr
+│   │   │   ├── innodb.suite
+│   │   │   └── run.sh
+│   │   ├── test_overhead
+│   │   │   └── run.sh
+│   │   ├── test_pc_recovery
+│   │   │   ├── README
+│   │   │   └── run.sh
+│   │   ├── test_seesaw
+│   │   │   ├── README
+│   │   │   ├── run.sh
+│   │   │   └── sysbench.sh
+│   │   ├── test_segmentation
+│   │   │   └── run.sh
+│   │   ├── test_sqlgen
+│   │   │   └── run.sh
+│   │   ├── test_startstop
+│   │   │   └── run.sh
+│   │   ├── test_stopcont
+│   │   │   ├── README
+│   │   │   └── run.sh
+│   │   └── test_upgrade
+│   │       ├── README
+│   │       └── run.sh
+│   └── wsrep
+│       ├── src
+│       └── tests
+│           ├── CMakeLists.txt
+│           ├── SConscript
+│           └── wsrep_loader_test.c
+└── wsrep-API
+    ├── CMakeLists.txt
+    ├── CONTRIBUTOR_AGREEMENT.txt
+    ├── CONTRIBUTORS.txt
+    ├── COPYING
+    ├── examples
+    │   ├── CMakeLists.txt
+    │   ├── listener.c
+    │   ├── node
+    │   │   ├── CMakeLists.txt
+    │   │   ├── ctx.h
+    │   │   ├── log.c
+    │   │   ├── log.h
+    │   │   ├── main.c
+    │   │   ├── node.sh
+    │   │   ├── options.c
+    │   │   ├── options.h
+    │   │   ├── README.md
+    │   │   ├── socket.c
+    │   │   ├── socket.h
+    │   │   ├── sst.c
+    │   │   ├── sst.h
+    │   │   ├── stats.c
+    │   │   ├── stats.h
+    │   │   ├── store.c
+    │   │   ├── store.h
+    │   │   ├── trx.c
+    │   │   ├── trx.h
+    │   │   ├── worker.c
+    │   │   ├── worker.h
+    │   │   ├── wsrep.c
+    │   │   └── wsrep.h
+    │   └── README.md
+    ├── README.md
+    ├── wsrep_allowlist_service.h
+    ├── wsrep_api.h
+    ├── wsrep_config_service.h
+    ├── wsrep_connection_monitor_service.h
+    ├── wsrep_dummy.c
+    ├── wsrep_event_service.h
+    ├── wsrep_gtid.c
+    ├── wsrep_loader.c
+    ├── wsrep_membership_service.h
+    ├── wsrep_node_isolation.h
+    ├── wsrep_thread_service.h
+    ├── wsrep_tls_service.h
+    ├── wsrep_uuid.c
+    └── wsrep.xcf
+
+136 directories, 1337 files

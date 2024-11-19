@@ -1,0 +1,582 @@
+src
+└── lttng-ust
+    ├── bootstrap
+    ├── ChangeLog
+    ├── CodingStyle
+    ├── config
+    │   └── tap-driver.sh
+    ├── configure.ac
+    ├── CONTRIBUTING.md
+    ├── COPYING
+    ├── doc
+    │   ├── examples
+    │   │   ├── clock-override
+    │   │   │   ├── lttng-ust-clock-override-example.c
+    │   │   │   ├── Makefile
+    │   │   │   ├── README
+    │   │   │   └── run-clock-override
+    │   │   ├── cmake-multiple-shared-libraries
+    │   │   │   ├── aligner.cpp
+    │   │   │   ├── aligner-lib.cpp
+    │   │   │   ├── aligner-lib.h
+    │   │   │   ├── cmake
+    │   │   │   │   └── FindLTTngUST.cmake
+    │   │   │   ├── CMakeLists.txt
+    │   │   │   ├── README.md
+    │   │   │   ├── tester.cpp
+    │   │   │   ├── tester-lib.cpp
+    │   │   │   ├── tester-lib.h
+    │   │   │   ├── tracepoint-provider.cpp
+    │   │   │   ├── tracepoint-provider.h
+    │   │   │   └── trace.sh
+    │   │   ├── demo
+    │   │   │   ├── demo.c
+    │   │   │   ├── demo-trace
+    │   │   │   ├── Makefile
+    │   │   │   ├── README
+    │   │   │   ├── tp2.c
+    │   │   │   ├── tp3.c
+    │   │   │   ├── tp.c
+    │   │   │   ├── ust_tests_demo2.h
+    │   │   │   ├── ust_tests_demo3.h
+    │   │   │   └── ust_tests_demo.h
+    │   │   ├── demo-tracef
+    │   │   │   ├── demo-tracef.c
+    │   │   │   ├── Makefile
+    │   │   │   └── README
+    │   │   ├── demo-tracelog
+    │   │   │   ├── demo-tracelog.c
+    │   │   │   ├── Makefile
+    │   │   │   └── README
+    │   │   ├── easy-ust
+    │   │   │   ├── Makefile
+    │   │   │   ├── sample.c
+    │   │   │   ├── sample_component_provider.h
+    │   │   │   └── tp.c
+    │   │   ├── gen-tp
+    │   │   │   ├── Makefile
+    │   │   │   ├── sample.c
+    │   │   │   └── sample_tracepoint.tp
+    │   │   ├── getcpu-override
+    │   │   │   ├── lttng-ust-getcpu-override-example.c
+    │   │   │   ├── Makefile
+    │   │   │   ├── README
+    │   │   │   └── run-getcpu-override
+    │   │   ├── hello-static-lib
+    │   │   │   ├── hello.c
+    │   │   │   ├── Makefile
+    │   │   │   ├── README
+    │   │   │   ├── tp.c
+    │   │   │   └── ust_tests_hello.h
+    │   │   ├── java-jul
+    │   │   │   ├── ApplicationContextExample.java
+    │   │   │   ├── FilterChangeListenerExample.java
+    │   │   │   ├── Hello.java
+    │   │   │   ├── Makefile
+    │   │   │   ├── README
+    │   │   │   └── run
+    │   │   ├── java-log4j
+    │   │   │   ├── HelloLog4j.java
+    │   │   │   ├── Makefile
+    │   │   │   └── run
+    │   │   ├── java-log4j2-basic
+    │   │   │   ├── HelloLog4j2.java
+    │   │   │   ├── log4j2.xml
+    │   │   │   ├── Makefile
+    │   │   │   └── run
+    │   │   ├── java-log4j2-ctx
+    │   │   │   ├── HelloLog4j2Ctx.java
+    │   │   │   ├── log4j2.ctx1.xml
+    │   │   │   ├── log4j2.ctx2.xml
+    │   │   │   ├── Makefile
+    │   │   │   └── run
+    │   │   ├── java-log4j2-prog
+    │   │   │   ├── HelloLog4j2Prog.java
+    │   │   │   ├── Makefile
+    │   │   │   └── run
+    │   │   ├── Makefile.am
+    │   │   ├── python
+    │   │   │   └── hello.py
+    │   │   └── README
+    │   ├── java-agent.txt
+    │   ├── Makefile.am
+    │   ├── man
+    │   │   ├── asciidoc.conf
+    │   │   ├── common-authors.txt
+    │   │   ├── common-copyrights.txt
+    │   │   ├── common-footer-author.txt
+    │   │   ├── common-footer.txt
+    │   │   ├── do_tracepoint.3
+    │   │   ├── log-levels.txt
+    │   │   ├── lttng-gen-tp.1.txt
+    │   │   ├── lttng-ust.3.txt
+    │   │   ├── lttng-ust-cyg-profile.3.txt
+    │   │   ├── lttng-ust-dl.3.txt
+    │   │   ├── Makefile.am
+    │   │   ├── manpage.xsl
+    │   │   ├── README.md
+    │   │   ├── tracef.3.txt
+    │   │   ├── tracef-tracelog-limitations.txt
+    │   │   ├── tracelog.3.txt
+    │   │   ├── tracepoint.3
+    │   │   └── tracepoint_enabled.3
+    │   └── python-agent.txt
+    ├── gpl-2.0.txt
+    ├── include
+    │   ├── helper.h
+    │   ├── lttng
+    │   │   ├── align.h
+    │   │   ├── bitfield.h
+    │   │   ├── bug.h
+    │   │   ├── lttng-ust-tracef.h
+    │   │   ├── lttng-ust-tracelog.h
+    │   │   ├── ringbuffer-abi.h
+    │   │   ├── ringbuffer-config.h
+    │   │   ├── tracef.h
+    │   │   ├── tracelog.h
+    │   │   ├── tracepoint-event.h
+    │   │   ├── tracepoint.h
+    │   │   ├── tracepoint-rcu.h
+    │   │   ├── tracepoint-types.h
+    │   │   ├── ust-abi.h
+    │   │   ├── ust-cancelstate.h
+    │   │   ├── ust-clock.h
+    │   │   ├── ust-compiler.h
+    │   │   ├── ust-config.h.in
+    │   │   ├── ust-context-provider.h
+    │   │   ├── ust-ctl.h
+    │   │   ├── ust-dlfcn.h
+    │   │   ├── ust-dynamic-type.h
+    │   │   ├── ust-elf.h
+    │   │   ├── ust-endian.h
+    │   │   ├── ust-error.h
+    │   │   ├── ust-events.h
+    │   │   ├── ust-getcpu.h
+    │   │   ├── ust.h
+    │   │   ├── ust-tid.h
+    │   │   ├── ust-tracepoint-event.h
+    │   │   ├── ust-tracepoint-event-nowrite.h
+    │   │   ├── ust-tracepoint-event-reset.h
+    │   │   ├── ust-tracepoint-event-write.h
+    │   │   ├── ust-tracer.h
+    │   │   └── ust-version.h.in
+    │   ├── Makefile.am
+    │   ├── share.h
+    │   ├── ust-comm.h
+    │   ├── usterr-signal-safe.h
+    │   ├── ust-fd.h
+    │   └── ust_snprintf.h
+    ├── lgpl-2.1.txt
+    ├── liblttng-ust
+    │   ├── clock.h
+    │   ├── compat.h
+    │   ├── creds.h
+    │   ├── error.h
+    │   ├── filter-bytecode.h
+    │   ├── getenv.c
+    │   ├── getenv.h
+    │   ├── jhash.h
+    │   ├── lttng-clock.c
+    │   ├── lttng-context.c
+    │   ├── lttng-context-cgroup-ns.c
+    │   ├── lttng-context-cpu-id.c
+    │   ├── lttng-context-ip.c
+    │   ├── lttng-context-ipc-ns.c
+    │   ├── lttng-context-mnt-ns.c
+    │   ├── lttng-context-net-ns.c
+    │   ├── lttng-context-perf-counters.c
+    │   ├── lttng-context-pid-ns.c
+    │   ├── lttng-context-procname.c
+    │   ├── lttng-context-provider.c
+    │   ├── lttng-context-pthread-id.c
+    │   ├── lttng-context-user-ns.c
+    │   ├── lttng-context-uts-ns.c
+    │   ├── lttng-context-vegid.c
+    │   ├── lttng-context-veuid.c
+    │   ├── lttng-context-vgid.c
+    │   ├── lttng-context-vpid.c
+    │   ├── lttng-context-vsgid.c
+    │   ├── lttng-context-vsuid.c
+    │   ├── lttng-context-vtid.c
+    │   ├── lttng-context-vuid.c
+    │   ├── lttng-events.c
+    │   ├── lttng-filter.c
+    │   ├── lttng-filter.h
+    │   ├── lttng-filter-interpreter.c
+    │   ├── lttng-filter-specialize.c
+    │   ├── lttng-filter-validator.c
+    │   ├── lttng-getcpu.c
+    │   ├── lttng-hash-helper.h
+    │   ├── lttng-probes.c
+    │   ├── lttng-rb-clients.h
+    │   ├── lttng-ring-buffer-client-discard.c
+    │   ├── lttng-ring-buffer-client-discard-rt.c
+    │   ├── lttng-ring-buffer-client.h
+    │   ├── lttng-ring-buffer-client-overwrite.c
+    │   ├── lttng-ring-buffer-client-overwrite-rt.c
+    │   ├── lttng-ring-buffer-metadata-client.c
+    │   ├── lttng-ring-buffer-metadata-client.h
+    │   ├── lttng-tracer-core.h
+    │   ├── lttng-tracer.h
+    │   ├── lttng-ust-abi.c
+    │   ├── lttng-ust-comm.c
+    │   ├── lttng-ust-dynamic-type.c
+    │   ├── lttng-ust-elf.c
+    │   ├── lttng-ust-statedump.c
+    │   ├── lttng-ust-statedump.h
+    │   ├── lttng-ust-statedump-provider.h
+    │   ├── lttng-ust-tracef-provider.h
+    │   ├── lttng-ust-tracelog-provider.h
+    │   ├── lttng-ust-uuid.h
+    │   ├── Makefile.am
+    │   ├── ns.h
+    │   ├── perf_event.h
+    │   ├── string-utils.c
+    │   ├── string-utils.h
+    │   ├── tracef.c
+    │   ├── tracelog.c
+    │   ├── tracepoint.c
+    │   ├── tracepoint-internal.h
+    │   ├── tracepoint-weak-test.c
+    │   ├── ust-core.c
+    │   ├── ust_lib.c
+    │   ├── ust_lib.h
+    │   └── wait.h
+    ├── liblttng-ust-comm
+    │   ├── lttng-ust-comm.c
+    │   ├── lttng-ust-fd-tracker.c
+    │   ├── Makefile.am
+    │   └── ust-cancelstate.c
+    ├── liblttng-ust-ctl
+    │   ├── Makefile.am
+    │   ├── ustctl.c
+    │   └── ust-ctl-private.h
+    ├── liblttng-ust-cyg-profile
+    │   ├── lttng-ust-cyg-profile.c
+    │   ├── lttng-ust-cyg-profile-fast.c
+    │   ├── lttng-ust-cyg-profile-fast.h
+    │   ├── lttng-ust-cyg-profile.h
+    │   ├── Makefile.am
+    │   ├── run
+    │   └── run-fast
+    ├── liblttng-ust-dl
+    │   ├── lttng-ust-dl.c
+    │   ├── Makefile.am
+    │   ├── ust_dl.c
+    │   └── ust_dl.h
+    ├── liblttng-ust-fd
+    │   ├── lttng-ust-fd.c
+    │   └── Makefile.am
+    ├── liblttng-ust-fork
+    │   ├── Makefile.am
+    │   └── ustfork.c
+    ├── liblttng-ust-java
+    │   ├── LTTngUst.c
+    │   ├── lttng_ust_java.h
+    │   ├── Makefile.am
+    │   ├── org
+    │   │   └── lttng
+    │   │       └── ust
+    │   │           └── LTTngUst.java
+    │   └── README
+    ├── liblttng-ust-java-agent
+    │   ├── java
+    │   │   ├── lttng-ust-agent-all
+    │   │   │   ├── Makefile.am
+    │   │   │   └── Manifest.txt
+    │   │   ├── lttng-ust-agent-common
+    │   │   │   ├── Makefile.am
+    │   │   │   ├── Manifest.txt
+    │   │   │   └── org
+    │   │   │       └── lttng
+    │   │   │           └── ust
+    │   │   │               └── agent
+    │   │   │                   ├── AbstractLttngAgent.java
+    │   │   │                   ├── client
+    │   │   │                   │   ├── ILttngTcpClientListener.java
+    │   │   │                   │   ├── LttngAgentResponse.java
+    │   │   │                   │   ├── LttngTcpSessiondClient.java
+    │   │   │                   │   ├── SessiondCommandHeader.java
+    │   │   │                   │   ├── SessiondCommand.java
+    │   │   │                   │   ├── SessiondDisableAppContextCommand.java
+    │   │   │                   │   ├── SessiondDisableEventCommand.java
+    │   │   │                   │   ├── SessiondEnableAppContextCommand.java
+    │   │   │                   │   ├── SessiondEnableEventCommand.java
+    │   │   │                   │   └── SessiondListLoggersCommand.java
+    │   │   │                   ├── context
+    │   │   │                   │   ├── ContextInfoManager.java
+    │   │   │                   │   ├── ContextInfoSerializer.java
+    │   │   │                   │   ├── IContextInfoRetriever.java
+    │   │   │                   │   └── LttngContextApi.java
+    │   │   │                   ├── EventNamePattern.java
+    │   │   │                   ├── filter
+    │   │   │                   │   ├── FilterChangeNotifier.java
+    │   │   │                   │   └── IFilterChangeListener.java
+    │   │   │                   ├── ILttngAgent.java
+    │   │   │                   ├── ILttngHandler.java
+    │   │   │                   ├── LTTngAgent.java
+    │   │   │                   ├── session
+    │   │   │                   │   ├── EventRule.java
+    │   │   │                   │   └── LogLevelSelector.java
+    │   │   │                   └── utils
+    │   │   │                       └── LttngUstAgentLogger.java
+    │   │   ├── lttng-ust-agent-jul
+    │   │   │   ├── Makefile.am
+    │   │   │   ├── Manifest.txt
+    │   │   │   └── org
+    │   │   │       └── lttng
+    │   │   │           └── ust
+    │   │   │               └── agent
+    │   │   │                   └── jul
+    │   │   │                       ├── LttngJulAgent.java
+    │   │   │                       ├── LttngJulApi.java
+    │   │   │                       └── LttngLogHandler.java
+    │   │   ├── lttng-ust-agent-log4j
+    │   │   │   ├── Makefile.am
+    │   │   │   ├── Manifest.txt
+    │   │   │   └── org
+    │   │   │       └── lttng
+    │   │   │           └── ust
+    │   │   │               └── agent
+    │   │   │                   └── log4j
+    │   │   │                       ├── LttngLog4jAgent.java
+    │   │   │                       ├── LttngLog4jApi.java
+    │   │   │                       └── LttngLogAppender.java
+    │   │   ├── lttng-ust-agent-log4j2
+    │   │   │   ├── Makefile.am
+    │   │   │   ├── Manifest.txt
+    │   │   │   └── org
+    │   │   │       └── lttng
+    │   │   │           └── ust
+    │   │   │               └── agent
+    │   │   │                   └── log4j2
+    │   │   │                       ├── LttngLog4j2Agent.java
+    │   │   │                       ├── LttngLog4j2Api.java
+    │   │   │                       └── LttngLogAppender.java
+    │   │   └── Makefile.am
+    │   ├── jni
+    │   │   ├── common
+    │   │   │   ├── lttng_ust_context.c
+    │   │   │   ├── lttng_ust_context.h
+    │   │   │   └── Makefile.am
+    │   │   ├── jul
+    │   │   │   ├── lttng_ust_jul.c
+    │   │   │   ├── lttng_ust_jul.h
+    │   │   │   └── Makefile.am
+    │   │   ├── log4j
+    │   │   │   ├── lttng_ust_log4j2.c
+    │   │   │   ├── lttng_ust_log4j.c
+    │   │   │   ├── lttng_ust_log4j.h
+    │   │   │   ├── lttng_ust_log4j_tp.c
+    │   │   │   ├── lttng_ust_log4j_tp.h
+    │   │   │   └── Makefile.am
+    │   │   └── Makefile.am
+    │   └── Makefile.am
+    ├── liblttng-ust-libc-wrapper
+    │   ├── lttng-ust-malloc.c
+    │   ├── lttng-ust-pthread.c
+    │   ├── Makefile.am
+    │   ├── README
+    │   ├── run
+    │   ├── ust_libc.h
+    │   └── ust_pthread.h
+    ├── liblttng-ust-python-agent
+    │   ├── lttng_ust_python.c
+    │   ├── lttng_ust_python.h
+    │   └── Makefile.am
+    ├── libringbuffer
+    │   ├── api.h
+    │   ├── backend.h
+    │   ├── backend_internal.h
+    │   ├── backend_types.h
+    │   ├── frontend_api.h
+    │   ├── frontend.h
+    │   ├── frontend_internal.h
+    │   ├── frontend_types.h
+    │   ├── getcpu.h
+    │   ├── Makefile.am
+    │   ├── mmap.h
+    │   ├── nohz.h
+    │   ├── rb-init.h
+    │   ├── ring_buffer_backend.c
+    │   ├── ring_buffer_frontend.c
+    │   ├── shm.c
+    │   ├── shm.h
+    │   ├── shm_internal.h
+    │   ├── shm_types.h
+    │   ├── smp.c
+    │   ├── smp.h
+    │   └── vatomic.h
+    ├── LICENSE
+    ├── lttng-ust-ctl.pc.in
+    ├── lttng-ust.pc.in
+    ├── m4
+    │   ├── ax_c___attribute__.m4
+    │   ├── ax_check_class.m4
+    │   ├── ax_check_classpath.m4
+    │   ├── ax_check_rqrd_class.m4
+    │   ├── ax_compare_version.m4
+    │   ├── ax_java_options.m4
+    │   ├── ax_jni_include_dir.m4
+    │   ├── ax_prog_jar.m4
+    │   ├── ax_prog_javac.m4
+    │   ├── ax_prog_javac_works.m4
+    │   ├── ax_prog_javah.m4
+    │   ├── ax_prog_java.m4
+    │   ├── ax_prog_java_works.m4
+    │   ├── ax_sys_weak_alias.m4
+    │   ├── ax_try_compile_java.m4
+    │   ├── ax_try_run_java.m4
+    │   ├── pprint.m4
+    │   └── rw_prog_cxx_works.m4
+    ├── Makefile.am
+    ├── mit-license.txt
+    ├── python-lttngust
+    │   ├── lttngust
+    │   │   ├── agent.py
+    │   │   ├── cmd.py
+    │   │   ├── compat.py
+    │   │   ├── debug.py
+    │   │   ├── __init__.py.in
+    │   │   └── loghandler.py
+    │   ├── Makefile.am
+    │   └── setup.py.in
+    ├── README.md
+    ├── snprintf
+    │   ├── core.c
+    │   ├── fflush.c
+    │   ├── fileext.h
+    │   ├── floatio.h
+    │   ├── fvwrite.c
+    │   ├── fvwrite.h
+    │   ├── local.h
+    │   ├── Makefile.am
+    │   ├── mbrtowc_sb.c
+    │   ├── patient_write.c
+    │   ├── README
+    │   ├── snprintf.c
+    │   ├── various.h
+    │   ├── vfprintf.c
+    │   ├── wcio.h
+    │   └── wsetup.c
+    ├── tests
+    │   ├── benchmark
+    │   │   ├── bench.c
+    │   │   ├── Makefile.am
+    │   │   ├── ptime
+    │   │   ├── README
+    │   │   ├── test_benchmark
+    │   │   ├── tp.c
+    │   │   └── ust_tests_benchmark.h
+    │   ├── ctf-types
+    │   │   ├── ctf-types.c
+    │   │   ├── Makefile.am
+    │   │   ├── README
+    │   │   ├── tp.c
+    │   │   └── ust_tests_ctf_types.h
+    │   ├── gcc-weak-hidden
+    │   │   ├── b.c
+    │   │   ├── c.c
+    │   │   ├── d.c
+    │   │   ├── main.c
+    │   │   └── Makefile.am
+    │   ├── hello
+    │   │   ├── hello.c
+    │   │   ├── Makefile.am
+    │   │   ├── Makefile.example.bsd
+    │   │   ├── Makefile.example.linux
+    │   │   ├── README
+    │   │   ├── tp.c
+    │   │   └── ust_tests_hello.h
+    │   ├── hello.cxx
+    │   │   ├── hello.cpp
+    │   │   ├── Makefile.am
+    │   │   ├── README
+    │   │   ├── tp-cpp.cpp
+    │   │   └── ust_tests_hello.h
+    │   ├── hello-many
+    │   │   ├── hello-many.c
+    │   │   ├── Makefile.am
+    │   │   ├── README
+    │   │   ├── tp.c
+    │   │   └── ust_tests_hello_many.h
+    │   ├── libringbuffer
+    │   │   ├── Makefile.am
+    │   │   └── test_smp.c
+    │   ├── Makefile.am
+    │   ├── README
+    │   ├── same_line_tracepoint
+    │   │   ├── Makefile.am
+    │   │   ├── README
+    │   │   ├── same_line_tracepoint.c
+    │   │   └── ust_tests_sameline.h
+    │   ├── snprintf
+    │   │   ├── Makefile.am
+    │   │   ├── README
+    │   │   └── snprintf.c
+    │   ├── test-app-ctx
+    │   │   ├── hello.c
+    │   │   ├── Makefile.am
+    │   │   ├── tp.c
+    │   │   └── ust_tests_hello.h
+    │   ├── trace_event
+    │   │   ├── Makefile.am
+    │   │   ├── run
+    │   │   ├── trace_event_test.c
+    │   │   └── trace_event_test.h
+    │   ├── tracepoint
+    │   │   ├── benchmark
+    │   │   │   ├── Makefile.am
+    │   │   │   ├── runstap.sh
+    │   │   │   ├── runtest.sh
+    │   │   │   ├── testutrace.stp
+    │   │   │   ├── tracepoint_benchmark.c
+    │   │   │   └── tracepoint_benchmark.h
+    │   │   ├── Makefile.am
+    │   │   ├── run
+    │   │   ├── tracepoint_test.c
+    │   │   └── tracepoint_test.h
+    │   ├── ust-basic-tracing
+    │   │   ├── Makefile.am
+    │   │   └── ust-basic-tracing.c
+    │   ├── ust-elf
+    │   │   ├── data
+    │   │   │   ├── aarch64_be
+    │   │   │   │   ├── main.elf
+    │   │   │   │   └── main.elf.debug
+    │   │   │   ├── armeb
+    │   │   │   │   ├── main.elf
+    │   │   │   │   └── main.elf.debug
+    │   │   │   ├── main.c
+    │   │   │   ├── pic
+    │   │   │   │   ├── hello.c
+    │   │   │   │   ├── hello.exec
+    │   │   │   │   ├── hello.pic
+    │   │   │   │   ├── hello.pie
+    │   │   │   │   └── libhello.c
+    │   │   │   ├── x86
+    │   │   │   │   ├── main.elf
+    │   │   │   │   └── main.elf.debug
+    │   │   │   └── x86_64
+    │   │   │       ├── main.elf
+    │   │   │       └── main.elf.debug
+    │   │   ├── Makefile.am
+    │   │   ├── README.md
+    │   │   ├── test_ust_elf.in
+    │   │   └── ust-elf.c
+    │   ├── ust-multi-test
+    │   │   ├── Makefile.am
+    │   │   └── ust-multi-test.c
+    │   ├── ust-variant
+    │   │   ├── Makefile.am
+    │   │   └── ust-variant.c
+    │   └── utils
+    │       ├── Makefile.am
+    │       ├── tap.c
+    │       ├── tap.h
+    │       └── tap.sh
+    └── tools
+        ├── lttng-gen-tp
+        └── Makefile.am
+
+103 directories, 477 files

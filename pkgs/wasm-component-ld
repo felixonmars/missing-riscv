@@ -1,0 +1,24 @@
+src
+└── wasm-component-ld
+    ├── Cargo.lock
+    ├── Cargo.toml
+    ├── ci
+    │   ├── build-tarballs.sh
+    │   ├── docker
+    │   │   ├── aarch64-linux
+    │   │   │   └── Dockerfile
+    │   │   └── x86_64-linux
+    │   │       └── Dockerfile
+    │   ├── print-current-version.sh
+    │   └── publish.rs
+    ├── LICENSE-APACHE
+    ├── LICENSE-Apache-2.0_WITH_LLVM-exception
+    ├── LICENSE-MIT
+    ├── README.md
+    ├── src
+    │   ├── lib.rs
+    │   └── main.rs
+    └── tests
+        └── all.rs
+
+8 directories, 14 files

@@ -1,0 +1,1286 @@
+src
+├── openucx-1.15.0.tar.gz -> /home/felix/packages/openucx/openucx-1.15.0.tar.gz
+└── ucx-1.15.0
+    ├── AUTHORS
+    ├── autogen.sh
+    ├── bindings
+    │   ├── go
+    │   │   ├── Makefile.am
+    │   │   ├── src
+    │   │   │   ├── examples
+    │   │   │   │   └── perftest
+    │   │   │   │       └── perftest.go
+    │   │   │   └── ucx
+    │   │   │       ├── am_data.go
+    │   │   │       ├── callbacks.go
+    │   │   │       ├── connection_request.go
+    │   │   │       ├── context.go
+    │   │   │       ├── context_params.go
+    │   │   │       ├── endpoint.go
+    │   │   │       ├── endpoint_params.go
+    │   │   │       ├── go.mod
+    │   │   │       ├── goucx.h
+    │   │   │       ├── listener.go
+    │   │   │       ├── listener_params.go
+    │   │   │       ├── memory.go
+    │   │   │       ├── mmap_params.go
+    │   │   │       ├── request.go
+    │   │   │       ├── ucp_contsants.go
+    │   │   │       ├── ucs_constants.go
+    │   │   │       ├── ucx_error.go
+    │   │   │       ├── utils.go
+    │   │   │       ├── worker.go
+    │   │   │       └── worker_params.go
+    │   │   └── tests
+    │   │       ├── context_test.go
+    │   │       ├── endpoint_test.go
+    │   │       ├── go.mod
+    │   │       ├── listener_test.go
+    │   │       ├── memory_test.go
+    │   │       ├── utils.go
+    │   │       └── worker_test.go
+    │   └── java
+    │       ├── checkstyle.xml
+    │       ├── Makefile.am
+    │       ├── pom.xml.in
+    │       ├── README.md
+    │       └── src
+    │           ├── main
+    │           │   ├── java
+    │           │   │   └── org
+    │           │   │       └── openucx
+    │           │   │           └── jucx
+    │           │   │               ├── examples
+    │           │   │               │   ├── UcxBenchmark.java
+    │           │   │               │   ├── UcxReadBWBenchmarkReceiver.java
+    │           │   │               │   └── UcxReadBWBenchmarkSender.java
+    │           │   │               ├── NativeLibs.java
+    │           │   │               ├── ucp
+    │           │   │               │   ├── UcpAmData.java
+    │           │   │               │   ├── UcpAmRecvCallback.java
+    │           │   │               │   ├── UcpConnectionRequest.java
+    │           │   │               │   ├── UcpConstants.java
+    │           │   │               │   ├── UcpContext.java
+    │           │   │               │   ├── UcpEndpointErrorHandler.java
+    │           │   │               │   ├── UcpEndpoint.java
+    │           │   │               │   ├── UcpEndpointParams.java
+    │           │   │               │   ├── UcpListenerConnectionHandler.java
+    │           │   │               │   ├── UcpListener.java
+    │           │   │               │   ├── UcpListenerParams.java
+    │           │   │               │   ├── UcpMemMapParams.java
+    │           │   │               │   ├── UcpMemory.java
+    │           │   │               │   ├── UcpMemPackParams.java
+    │           │   │               │   ├── UcpParams.java
+    │           │   │               │   ├── UcpRemoteKey.java
+    │           │   │               │   ├── UcpRequest.java
+    │           │   │               │   ├── UcpRequestParams.java
+    │           │   │               │   ├── UcpTagMessage.java
+    │           │   │               │   ├── UcpWorker.java
+    │           │   │               │   └── UcpWorkerParams.java
+    │           │   │               ├── ucs
+    │           │   │               │   └── UcsConstants.java
+    │           │   │               ├── UcxCallback.java
+    │           │   │               ├── UcxException.java
+    │           │   │               ├── UcxNativeStruct.java
+    │           │   │               ├── UcxParams.java
+    │           │   │               └── UcxUtils.java
+    │           │   └── native
+    │           │       ├── context.cc
+    │           │       ├── endpoint.cc
+    │           │       ├── jucx_common_def.cc
+    │           │       ├── jucx_common_def.h
+    │           │       ├── listener.cc
+    │           │       ├── Makefile.am
+    │           │       ├── memory.cc
+    │           │       ├── ucp_constants.cc
+    │           │       ├── ucs_constants.cc
+    │           │       └── worker.cc
+    │           └── test
+    │               └── java
+    │                   └── org
+    │                       └── openucx
+    │                           └── jucx
+    │                               ├── UcpContextTest.java
+    │                               ├── UcpEndpointTest.java
+    │                               ├── UcpListenerTest.java
+    │                               ├── UcpMemoryTest.java
+    │                               ├── UcpRequestTest.java
+    │                               ├── UcpWorkerTest.java
+    │                               └── UcxTest.java
+    ├── buildlib
+    │   ├── az-distro-release.yml
+    │   ├── az-github-draft.yml
+    │   ├── az-helpers.sh
+    │   ├── az-network-corrupter.sh
+    │   ├── azure-pipelines.md
+    │   ├── azure-pipelines-pr.yml
+    │   ├── azure-pipelines-release.yml
+    │   ├── azure-pipelines.yml
+    │   ├── dockers
+    │   │   ├── centos7.Dockerfile
+    │   │   ├── centos-release.Dockerfile
+    │   │   ├── docker-compose-aarch64.yml
+    │   │   ├── docker-compose-x86_64.yml
+    │   │   ├── fedora.Dockerfile
+    │   │   ├── fedora-release.Dockerfile
+    │   │   ├── push-release-images.sh
+    │   │   ├── sles-release.Dockerfile
+    │   │   └── ubuntu-release.Dockerfile
+    │   ├── jucx
+    │   │   ├── jucx-build.yml
+    │   │   ├── jucx-publish.yml
+    │   │   └── jucx-test.yml
+    │   ├── pr
+    │   │   ├── codestyle.yml
+    │   │   ├── coverity.yml
+    │   │   ├── cuda
+    │   │   │   ├── cuda_compatible.yml
+    │   │   │   ├── cuda.yml
+    │   │   │   ├── perftest_msg_pow2
+    │   │   │   └── test_malloc_hook.sh
+    │   │   ├── distro.yml
+    │   │   ├── go
+    │   │   │   └── go-test.yml
+    │   │   ├── io_demo
+    │   │   │   ├── az-stage-io-demo.yaml
+    │   │   │   ├── io-demo.yml
+    │   │   │   └── jobs-io-demo.yaml
+    │   │   ├── main.yml
+    │   │   ├── static_checks.yml
+    │   │   └── tests.yml
+    │   └── tools
+    │       ├── builds.sh
+    │       ├── build_static.sh
+    │       ├── check_tls.sh
+    │       ├── common.sh
+    │       └── coverity.sh
+    ├── cmake
+    │   ├── Makefile.am
+    │   ├── ucx-config.cmake.in
+    │   ├── ucx-config-version.cmake.in
+    │   └── ucx-targets.cmake.in
+    ├── config
+    │   ├── m4
+    │   │   ├── ax_prog_doxygen.m4
+    │   │   ├── compiler.m4
+    │   │   ├── cuda.m4
+    │   │   ├── fuse3.m4
+    │   │   ├── gdrcopy.m4
+    │   │   ├── go.m4
+    │   │   ├── graphviz.m4
+    │   │   ├── gtest.m4
+    │   │   ├── java.m4
+    │   │   ├── mpi.m4
+    │   │   ├── rocm.m4
+    │   │   ├── sysdep.m4
+    │   │   ├── ucg.m4
+    │   │   └── ucm.m4
+    │   ├── module.am
+    │   └── module-pkg-config.am
+    ├── configure.ac
+    ├── contrib
+    │   ├── buildrpm.sh
+    │   ├── check_inst_headers.sh
+    │   ├── check_qps.sh
+    │   ├── configure-devel
+    │   ├── configure-opt
+    │   ├── configure-prof
+    │   ├── configure-release
+    │   ├── configure-release-mt
+    │   ├── cray-ugni-mock
+    │   │   ├── cray-pmi.pc
+    │   │   ├── cray-ugni.pc
+    │   │   └── include
+    │   │       ├── gni_pub.h
+    │   │       ├── pmi2.h
+    │   │       └── pmi.h
+    │   ├── gnu-indent-options
+    │   ├── mtt
+    │   │   ├── mtt_ucx_oshmem.ini
+    │   │   ├── README_MTT
+    │   │   └── run-ucx.slurm
+    │   ├── pr_merge_check.py
+    │   ├── rpmdef.sh.in
+    │   ├── test_jenkins.sh
+    │   ├── ucx_perftest_config
+    │   │   ├── msg_pow2
+    │   │   ├── msg_pow2_iov
+    │   │   ├── msg_pow2_large
+    │   │   ├── README
+    │   │   ├── test_types_ucp
+    │   │   ├── test_types_ucp_amo
+    │   │   ├── test_types_ucp_rma
+    │   │   ├── test_types_uct
+    │   │   └── transports
+    │   ├── ucx-style.el
+    │   ├── ucx.vim
+    │   ├── upload_docs.sh
+    │   ├── valgrind.supp
+    │   └── wireshark
+    │       ├── rmpp.lua
+    │       └── ucx_le64.lua
+    ├── debian
+    │   ├── changelog.in
+    │   ├── compat
+    │   ├── control.in
+    │   ├── copyright
+    │   ├── rules.in
+    │   ├── source
+    │   │   └── format
+    │   ├── ucx-cuda.install
+    │   ├── ucx-gdrcopy.install
+    │   ├── ucx.install
+    │   ├── ucx.prerm
+    │   └── ucx-xpmem.install
+    ├── docs
+    │   ├── CodeStyle.md
+    │   ├── doxygen
+    │   │   ├── api.svg
+    │   │   ├── Architecture.graffle
+    │   │   ├── Architecture.pdf
+    │   │   ├── Architecture.png
+    │   │   ├── conventions.md
+    │   │   ├── design.md
+    │   │   ├── doxygen.am
+    │   │   ├── header.tex.in
+    │   │   ├── intro.md
+    │   │   ├── preface.md
+    │   │   ├── release.svg
+    │   │   ├── twitter.svg
+    │   │   ├── ucx.bib
+    │   │   ├── ucxdox
+    │   │   ├── ucxlayout.xml
+    │   │   ├── UCX_Logo_80x80.png
+    │   │   └── UCX_Logo_930x933.png
+    │   ├── LoggingStyle.md
+    │   ├── Makefile
+    │   ├── OptimizationStyle.md
+    │   ├── source
+    │   │   ├── api.rst
+    │   │   ├── conf.py
+    │   │   ├── download.md
+    │   │   ├── faq.md
+    │   │   ├── glossaries.rst
+    │   │   ├── index.rst
+    │   │   ├── running.md
+    │   │   ├── _static
+    │   │   │   ├── UCX_Layers.png
+    │   │   │   └── ucxlogo.png
+    │   │   └── ucx_features.rst
+    │   └── uml
+    │       ├── ucp.dot
+    │       └── uct.dot
+    ├── examples
+    │   ├── cmake
+    │   │   ├── CMakeLists.txt
+    │   │   ├── test_ucp.c
+    │   │   └── test_uct.c
+    │   ├── hello_world_util.h
+    │   ├── Makefile.am
+    │   ├── ucp_client_server.c
+    │   ├── ucp_hello_world.c
+    │   ├── ucp_util.h
+    │   └── uct_hello_world.c
+    ├── LICENSE
+    ├── Makefile.am
+    ├── NEWS
+    ├── README -> README.md
+    ├── README.md
+    ├── src
+    │   ├── tools
+    │   │   ├── info
+    │   │   │   ├── build_info.c
+    │   │   │   ├── Makefile.am
+    │   │   │   ├── proto_info.c
+    │   │   │   ├── sys_info.c
+    │   │   │   ├── tl_info.c
+    │   │   │   ├── type_info.c
+    │   │   │   ├── ucx_info.c
+    │   │   │   ├── ucx_info.h
+    │   │   │   └── version_info.c
+    │   │   ├── perf
+    │   │   │   ├── api
+    │   │   │   │   └── libperf.h
+    │   │   │   ├── configure.m4
+    │   │   │   ├── cuda
+    │   │   │   │   ├── configure.m4
+    │   │   │   │   ├── cuda_alloc.c
+    │   │   │   │   └── Makefile.am
+    │   │   │   ├── lib
+    │   │   │   │   ├── configure.m4
+    │   │   │   │   ├── libperf.c
+    │   │   │   │   ├── libperf_int.h
+    │   │   │   │   ├── libperf_memory.c
+    │   │   │   │   ├── libperf_thread.c
+    │   │   │   │   ├── Makefile.am
+    │   │   │   │   ├── ucp_tests.cc
+    │   │   │   │   └── uct_tests.cc
+    │   │   │   ├── Makefile.am
+    │   │   │   ├── perftest.c
+    │   │   │   ├── perftest.h
+    │   │   │   ├── perftest_params.c
+    │   │   │   ├── perftest_run.c
+    │   │   │   └── rocm
+    │   │   │       ├── configure.m4
+    │   │   │       ├── Makefile.am
+    │   │   │       └── rocm_alloc.c
+    │   │   ├── profile
+    │   │   │   ├── Makefile.am
+    │   │   │   └── read_profile.c
+    │   │   └── vfs
+    │   │       ├── Makefile.am
+    │   │       ├── vfs_daemon.h
+    │   │       ├── vfs_main.c
+    │   │       └── vfs_server.c
+    │   ├── ucg
+    │   ├── ucm
+    │   │   ├── api
+    │   │   │   └── ucm.h
+    │   │   ├── bistro
+    │   │   │   ├── bistro_aarch64.c
+    │   │   │   ├── bistro_aarch64.h
+    │   │   │   ├── bistro.c
+    │   │   │   ├── bistro.h
+    │   │   │   ├── bistro_int.h
+    │   │   │   ├── bistro_ppc64.c
+    │   │   │   ├── bistro_ppc64.h
+    │   │   │   ├── bistro_x86_64.c
+    │   │   │   └── bistro_x86_64.h
+    │   │   ├── configure.m4
+    │   │   ├── cuda
+    │   │   │   ├── configure.m4
+    │   │   │   ├── cudamem.c
+    │   │   │   ├── cudamem.h
+    │   │   │   └── Makefile.am
+    │   │   ├── event
+    │   │   │   ├── event.c
+    │   │   │   └── event.h
+    │   │   ├── Makefile.am
+    │   │   ├── malloc
+    │   │   │   ├── allocator.h
+    │   │   │   ├── malloc_hook.c
+    │   │   │   └── malloc_hook.h
+    │   │   ├── mmap
+    │   │   │   ├── install.c
+    │   │   │   └── mmap.h
+    │   │   ├── ptmalloc286
+    │   │   │   ├── malloc-2.8.6.h
+    │   │   │   └── malloc.c
+    │   │   ├── rocm
+    │   │   │   ├── configure.m4
+    │   │   │   ├── Makefile.am
+    │   │   │   ├── rocmmem.c
+    │   │   │   └── rocmmem.h
+    │   │   └── util
+    │   │       ├── khash_safe.h
+    │   │       ├── log.c
+    │   │       ├── log.h
+    │   │       ├── reloc.c
+    │   │       ├── reloc.h
+    │   │       ├── replace.c
+    │   │       ├── replace.h
+    │   │       ├── sys.c
+    │   │       └── sys.h
+    │   ├── ucp
+    │   │   ├── am
+    │   │   │   ├── eager.inl
+    │   │   │   ├── eager_multi.c
+    │   │   │   ├── eager_single.c
+    │   │   │   ├── rndv.c
+    │   │   │   └── ucp_am.inl
+    │   │   ├── api
+    │   │   │   ├── ucp_compat.h
+    │   │   │   ├── ucp_def.h
+    │   │   │   ├── ucp.h
+    │   │   │   ├── ucp_version.h.in
+    │   │   │   └── ucpx.h
+    │   │   ├── core
+    │   │   │   ├── ucp_am.c
+    │   │   │   ├── ucp_am.h
+    │   │   │   ├── ucp_context.c
+    │   │   │   ├── ucp_context.h
+    │   │   │   ├── ucp_ep.c
+    │   │   │   ├── ucp_ep.h
+    │   │   │   ├── ucp_ep.inl
+    │   │   │   ├── ucp_ep_vfs.c
+    │   │   │   ├── ucp_ep_vfs.h
+    │   │   │   ├── ucp_listener.c
+    │   │   │   ├── ucp_listener.h
+    │   │   │   ├── ucp_mm.c
+    │   │   │   ├── ucp_mm.h
+    │   │   │   ├── ucp_mm.inl
+    │   │   │   ├── ucp_proxy_ep.c
+    │   │   │   ├── ucp_proxy_ep.h
+    │   │   │   ├── ucp_request.c
+    │   │   │   ├── ucp_request.h
+    │   │   │   ├── ucp_request.inl
+    │   │   │   ├── ucp_resource.h
+    │   │   │   ├── ucp_rkey.c
+    │   │   │   ├── ucp_rkey.h
+    │   │   │   ├── ucp_rkey.inl
+    │   │   │   ├── ucp_thread.h
+    │   │   │   ├── ucp_types.h
+    │   │   │   ├── ucp_version.c.in
+    │   │   │   ├── ucp_vfs.c
+    │   │   │   ├── ucp_vfs.h
+    │   │   │   ├── ucp_worker.c
+    │   │   │   ├── ucp_worker.h
+    │   │   │   └── ucp_worker.inl
+    │   │   ├── dt
+    │   │   │   ├── datatype_iter.c
+    │   │   │   ├── datatype_iter.h
+    │   │   │   ├── datatype_iter.inl
+    │   │   │   ├── dt.c
+    │   │   │   ├── dt_contig.c
+    │   │   │   ├── dt_contig.h
+    │   │   │   ├── dt_generic.c
+    │   │   │   ├── dt_generic.h
+    │   │   │   ├── dt.h
+    │   │   │   ├── dt.inl
+    │   │   │   ├── dt_iov.c
+    │   │   │   └── dt_iov.h
+    │   │   ├── Makefile.am
+    │   │   ├── proto
+    │   │   │   ├── lane_type.c
+    │   │   │   ├── lane_type.h
+    │   │   │   ├── proto_am.c
+    │   │   │   ├── proto_am.h
+    │   │   │   ├── proto_am.inl
+    │   │   │   ├── proto.c
+    │   │   │   ├── proto_common.c
+    │   │   │   ├── proto_common.h
+    │   │   │   ├── proto_common.inl
+    │   │   │   ├── proto_debug.c
+    │   │   │   ├── proto_debug.h
+    │   │   │   ├── proto.h
+    │   │   │   ├── proto_init.c
+    │   │   │   ├── proto_init.h
+    │   │   │   ├── proto_multi.c
+    │   │   │   ├── proto_multi.h
+    │   │   │   ├── proto_multi.inl
+    │   │   │   ├── proto_reconfig.c
+    │   │   │   ├── proto_select.c
+    │   │   │   ├── proto_select.h
+    │   │   │   ├── proto_select.inl
+    │   │   │   ├── proto_single.c
+    │   │   │   ├── proto_single.h
+    │   │   │   └── proto_single.inl
+    │   │   ├── rma
+    │   │   │   ├── amo_basic.c
+    │   │   │   ├── amo_offload.c
+    │   │   │   ├── amo_send.c
+    │   │   │   ├── amo_sw.c
+    │   │   │   ├── flush.c
+    │   │   │   ├── get_am.c
+    │   │   │   ├── get_offload.c
+    │   │   │   ├── put_am.c
+    │   │   │   ├── put_offload.c
+    │   │   │   ├── rma_basic.c
+    │   │   │   ├── rma.h
+    │   │   │   ├── rma.inl
+    │   │   │   ├── rma_send.c
+    │   │   │   └── rma_sw.c
+    │   │   ├── rndv
+    │   │   │   ├── proto_rndv.c
+    │   │   │   ├── proto_rndv.h
+    │   │   │   ├── proto_rndv.inl
+    │   │   │   ├── rndv_am.c
+    │   │   │   ├── rndv_ats.c
+    │   │   │   ├── rndv.c
+    │   │   │   ├── rndv_get.c
+    │   │   │   ├── rndv.h
+    │   │   │   ├── rndv.inl
+    │   │   │   ├── rndv_mtype.inl
+    │   │   │   ├── rndv_ppln.c
+    │   │   │   ├── rndv_put.c
+    │   │   │   ├── rndv_rkey_ptr.c
+    │   │   │   └── rndv_rtr.c
+    │   │   ├── stream
+    │   │   │   ├── stream.h
+    │   │   │   ├── stream_recv.c
+    │   │   │   └── stream_send.c
+    │   │   ├── tag
+    │   │   │   ├── eager.h
+    │   │   │   ├── eager_multi.c
+    │   │   │   ├── eager_rcv.c
+    │   │   │   ├── eager_single.c
+    │   │   │   ├── eager_snd.c
+    │   │   │   ├── offload
+    │   │   │   │   └── eager.c
+    │   │   │   ├── offload.c
+    │   │   │   ├── offload.h
+    │   │   │   ├── probe.c
+    │   │   │   ├── proto_eager.inl
+    │   │   │   ├── tag_match.c
+    │   │   │   ├── tag_match.h
+    │   │   │   ├── tag_match.inl
+    │   │   │   ├── tag_recv.c
+    │   │   │   ├── tag_rndv.c
+    │   │   │   ├── tag_rndv.h
+    │   │   │   └── tag_send.c
+    │   │   └── wireup
+    │   │       ├── address.c
+    │   │       ├── address.h
+    │   │       ├── ep_match.c
+    │   │       ├── ep_match.h
+    │   │       ├── select.c
+    │   │       ├── wireup.c
+    │   │       ├── wireup_cm.c
+    │   │       ├── wireup_cm.h
+    │   │       ├── wireup_ep.c
+    │   │       ├── wireup_ep.h
+    │   │       └── wireup.h
+    │   ├── ucs
+    │   │   ├── algorithm
+    │   │   │   ├── crc.c
+    │   │   │   ├── crc.h
+    │   │   │   ├── qsort_r.c
+    │   │   │   ├── qsort_r.h
+    │   │   │   ├── string_distance.c
+    │   │   │   └── string_distance.h
+    │   │   ├── arch
+    │   │   │   ├── aarch64
+    │   │   │   │   ├── bitops.h
+    │   │   │   │   ├── cpu.c
+    │   │   │   │   ├── cpu.h
+    │   │   │   │   ├── global_opts.c
+    │   │   │   │   ├── global_opts.h
+    │   │   │   │   └── memcpy_thunderx2.S
+    │   │   │   ├── atomic.h
+    │   │   │   ├── bitops.h
+    │   │   │   ├── cpu.c
+    │   │   │   ├── cpu.h
+    │   │   │   ├── generic
+    │   │   │   │   ├── atomic.h
+    │   │   │   │   └── cpu.h
+    │   │   │   ├── global_opts.h
+    │   │   │   ├── ppc64
+    │   │   │   │   ├── bitops.h
+    │   │   │   │   ├── cpu.h
+    │   │   │   │   ├── global_opts.c
+    │   │   │   │   ├── global_opts.h
+    │   │   │   │   └── timebase.c
+    │   │   │   └── x86_64
+    │   │   │       ├── atomic.h
+    │   │   │       ├── bitops.h
+    │   │   │       ├── cpu.c
+    │   │   │       ├── cpu.h
+    │   │   │       ├── global_opts.c
+    │   │   │       └── global_opts.h
+    │   │   ├── async
+    │   │   │   ├── async.c
+    │   │   │   ├── async_fwd.h
+    │   │   │   ├── async.h
+    │   │   │   ├── async_int.h
+    │   │   │   ├── eventfd.c
+    │   │   │   ├── eventfd.h
+    │   │   │   ├── pipe.c
+    │   │   │   ├── pipe.h
+    │   │   │   ├── signal.c
+    │   │   │   ├── signal.h
+    │   │   │   ├── thread.c
+    │   │   │   └── thread.h
+    │   │   ├── config
+    │   │   │   ├── global_opts.c
+    │   │   │   ├── global_opts.h
+    │   │   │   ├── ini.c
+    │   │   │   ├── ini.h
+    │   │   │   ├── parser.c
+    │   │   │   ├── parser.h
+    │   │   │   ├── types.h
+    │   │   │   ├── ucm_opts.c
+    │   │   │   └── ucm_opts.h
+    │   │   ├── configure.m4
+    │   │   ├── datastruct
+    │   │   │   ├── arbiter.c
+    │   │   │   ├── arbiter.h
+    │   │   │   ├── array.c
+    │   │   │   ├── array.h
+    │   │   │   ├── array.inl
+    │   │   │   ├── bitmap.h
+    │   │   │   ├── callbackq.c
+    │   │   │   ├── callbackq.h
+    │   │   │   ├── conn_match.c
+    │   │   │   ├── conn_match.h
+    │   │   │   ├── frag_list.c
+    │   │   │   ├── frag_list.h
+    │   │   │   ├── hlist.h
+    │   │   │   ├── khash.h
+    │   │   │   ├── linear_func.h
+    │   │   │   ├── list.h
+    │   │   │   ├── mpmc.c
+    │   │   │   ├── mpmc.h
+    │   │   │   ├── mpool.c
+    │   │   │   ├── mpool.h
+    │   │   │   ├── mpool.inl
+    │   │   │   ├── mpool_set.c
+    │   │   │   ├── mpool_set.h
+    │   │   │   ├── mpool_set.inl
+    │   │   │   ├── pgtable.c
+    │   │   │   ├── pgtable.h
+    │   │   │   ├── ptr_array.c
+    │   │   │   ├── ptr_array.h
+    │   │   │   ├── ptr_map.c
+    │   │   │   ├── ptr_map.h
+    │   │   │   ├── ptr_map.inl
+    │   │   │   ├── queue.h
+    │   │   │   ├── queue_types.h
+    │   │   │   ├── sglib.h
+    │   │   │   ├── sglib_wrapper.h
+    │   │   │   ├── strided_alloc.c
+    │   │   │   ├── strided_alloc.h
+    │   │   │   ├── string_buffer.c
+    │   │   │   ├── string_buffer.h
+    │   │   │   ├── string_set.c
+    │   │   │   └── string_set.h
+    │   │   ├── debug
+    │   │   │   ├── assert.c
+    │   │   │   ├── assert.h
+    │   │   │   ├── debug.c
+    │   │   │   ├── debug.h
+    │   │   │   ├── debug_int.h
+    │   │   │   ├── log.c
+    │   │   │   ├── log_def.h
+    │   │   │   ├── log.h
+    │   │   │   ├── memtrack.c
+    │   │   │   ├── memtrack.h
+    │   │   │   └── memtrack_int.h
+    │   │   ├── Makefile.am
+    │   │   ├── memory
+    │   │   │   ├── memory_type.c
+    │   │   │   ├── memory_type.h
+    │   │   │   ├── memtype_cache.c
+    │   │   │   ├── memtype_cache.h
+    │   │   │   ├── numa.c
+    │   │   │   ├── numa.h
+    │   │   │   ├── rcache.c
+    │   │   │   ├── rcache.h
+    │   │   │   ├── rcache.inl
+    │   │   │   ├── rcache_int.h
+    │   │   │   └── rcache_vfs.c
+    │   │   ├── profile
+    │   │   │   ├── profile.c
+    │   │   │   ├── profile_defs.h
+    │   │   │   ├── profile.h
+    │   │   │   ├── profile_off.h
+    │   │   │   └── profile_on.h
+    │   │   ├── signal
+    │   │   │   ├── Makefile.am
+    │   │   │   └── signal.c
+    │   │   ├── stats
+    │   │   │   ├── client_server.c
+    │   │   │   ├── libstats.c
+    │   │   │   ├── libstats.h
+    │   │   │   ├── serialization.c
+    │   │   │   ├── stats.c
+    │   │   │   ├── stats_fwd.h
+    │   │   │   ├── stats.h
+    │   │   │   ├── stats_parser.c
+    │   │   │   └── stats_reader.c
+    │   │   ├── sys
+    │   │   │   ├── checker.h
+    │   │   │   ├── compiler_def.h
+    │   │   │   ├── compiler.h
+    │   │   │   ├── event_set.c
+    │   │   │   ├── event_set.h
+    │   │   │   ├── init.c
+    │   │   │   ├── iovec.c
+    │   │   │   ├── iovec.h
+    │   │   │   ├── iovec.inl
+    │   │   │   ├── lib.c
+    │   │   │   ├── lib.h
+    │   │   │   ├── math.c
+    │   │   │   ├── math.h
+    │   │   │   ├── module.c
+    │   │   │   ├── module.h
+    │   │   │   ├── preprocessor.h
+    │   │   │   ├── sock.c
+    │   │   │   ├── sock.h
+    │   │   │   ├── string.c
+    │   │   │   ├── string.h
+    │   │   │   ├── stubs.c
+    │   │   │   ├── stubs.h
+    │   │   │   ├── sys.c
+    │   │   │   ├── sys.h
+    │   │   │   ├── topo
+    │   │   │   │   └── base
+    │   │   │   │       ├── topo.c
+    │   │   │   │       └── topo.h
+    │   │   │   ├── uid.c
+    │   │   │   └── uid.h
+    │   │   ├── time
+    │   │   │   ├── time.c
+    │   │   │   ├── time_def.h
+    │   │   │   ├── time.h
+    │   │   │   ├── timerq.c
+    │   │   │   ├── timerq.h
+    │   │   │   ├── timer_wheel.c
+    │   │   │   └── timer_wheel.h
+    │   │   ├── type
+    │   │   │   ├── class.c
+    │   │   │   ├── class.h
+    │   │   │   ├── cpu_set.h
+    │   │   │   ├── float8.h
+    │   │   │   ├── init_once.h
+    │   │   │   ├── param.h
+    │   │   │   ├── serialize.h
+    │   │   │   ├── spinlock.c
+    │   │   │   ├── spinlock.h
+    │   │   │   ├── status.c
+    │   │   │   ├── status.h
+    │   │   │   ├── thread_mode.c
+    │   │   │   └── thread_mode.h
+    │   │   ├── ucx-ucs.pc.in
+    │   │   └── vfs
+    │   │       ├── base
+    │   │       │   ├── vfs_cb.c
+    │   │       │   ├── vfs_cb.h
+    │   │       │   ├── vfs_obj.c
+    │   │       │   └── vfs_obj.h
+    │   │       ├── fuse
+    │   │       │   ├── configure.m4
+    │   │       │   ├── Makefile.am
+    │   │       │   ├── ucx-fuse.pc.in
+    │   │       │   └── vfs_fuse.c
+    │   │       └── sock
+    │   │           ├── configure.m4
+    │   │           ├── Makefile.am
+    │   │           ├── vfs_sock.c
+    │   │           └── vfs_sock.h
+    │   └── uct
+    │       ├── api
+    │       │   ├── tl.h
+    │       │   ├── uct_def.h
+    │       │   ├── uct.h
+    │       │   ├── v2
+    │       │   │   └── uct_v2.h
+    │       │   └── version.h.in
+    │       ├── base
+    │       │   ├── uct_cm.c
+    │       │   ├── uct_cm.h
+    │       │   ├── uct_component.c
+    │       │   ├── uct_component.h
+    │       │   ├── uct_iface.c
+    │       │   ├── uct_iface.h
+    │       │   ├── uct_iface_vfs.c
+    │       │   ├── uct_iov.inl
+    │       │   ├── uct_log.h
+    │       │   ├── uct_md.c
+    │       │   ├── uct_md.h
+    │       │   ├── uct_md_vfs.c
+    │       │   ├── uct_mem.c
+    │       │   ├── uct_vfs_attr.c
+    │       │   ├── uct_vfs_attr.h
+    │       │   ├── uct_worker.c
+    │       │   └── uct_worker.h
+    │       ├── configure.m4
+    │       ├── cuda
+    │       │   ├── base
+    │       │   │   ├── cuda_iface.c
+    │       │   │   ├── cuda_iface.h
+    │       │   │   ├── cuda_md.c
+    │       │   │   └── cuda_md.h
+    │       │   ├── configure.m4
+    │       │   ├── cuda_copy
+    │       │   │   ├── cuda_copy_ep.c
+    │       │   │   ├── cuda_copy_ep.h
+    │       │   │   ├── cuda_copy_iface.c
+    │       │   │   ├── cuda_copy_iface.h
+    │       │   │   ├── cuda_copy_md.c
+    │       │   │   └── cuda_copy_md.h
+    │       │   ├── cuda_ipc
+    │       │   │   ├── cuda_ipc_cache.c
+    │       │   │   ├── cuda_ipc_cache.h
+    │       │   │   ├── cuda_ipc_ep.c
+    │       │   │   ├── cuda_ipc_ep.h
+    │       │   │   ├── cuda_ipc_iface.c
+    │       │   │   ├── cuda_ipc_iface.h
+    │       │   │   ├── cuda_ipc_md.c
+    │       │   │   └── cuda_ipc_md.h
+    │       │   ├── gdr_copy
+    │       │   │   ├── configure.m4
+    │       │   │   ├── gdr_copy_ep.c
+    │       │   │   ├── gdr_copy_ep.h
+    │       │   │   ├── gdr_copy_iface.c
+    │       │   │   ├── gdr_copy_iface.h
+    │       │   │   ├── gdr_copy_md.c
+    │       │   │   ├── gdr_copy_md.h
+    │       │   │   ├── Makefile.am
+    │       │   │   └── ucx-gdrcopy.pc.in
+    │       │   ├── Makefile.am
+    │       │   └── ucx-cuda.pc.in
+    │       ├── ib
+    │       │   ├── base
+    │       │   │   ├── ib_device.c
+    │       │   │   ├── ib_device.h
+    │       │   │   ├── ib_iface.c
+    │       │   │   ├── ib_iface.h
+    │       │   │   ├── ib_log.c
+    │       │   │   ├── ib_log.h
+    │       │   │   ├── ib_md.c
+    │       │   │   ├── ib_md.h
+    │       │   │   └── ib_verbs.h
+    │       │   ├── configure.m4
+    │       │   ├── dc
+    │       │   │   ├── dc_mlx5.c
+    │       │   │   ├── dc_mlx5_devx.c
+    │       │   │   ├── dc_mlx5_ep.c
+    │       │   │   ├── dc_mlx5_ep.h
+    │       │   │   ├── dc_mlx5.h
+    │       │   │   └── dc_mlx5.inl
+    │       │   ├── Makefile.am
+    │       │   ├── mlx5
+    │       │   │   ├── dv
+    │       │   │   │   ├── ib_mlx5_dv.c
+    │       │   │   │   ├── ib_mlx5_dv.h
+    │       │   │   │   ├── ib_mlx5dv_md.c
+    │       │   │   │   └── ib_mlx5_ifc.h
+    │       │   │   ├── ib_mlx5.c
+    │       │   │   ├── ib_mlx5.h
+    │       │   │   ├── ib_mlx5.inl
+    │       │   │   ├── ib_mlx5_log.c
+    │       │   │   └── ib_mlx5_log.h
+    │       │   ├── rc
+    │       │   │   ├── accel
+    │       │   │   │   ├── rc_mlx5_common.c
+    │       │   │   │   ├── rc_mlx5_common.h
+    │       │   │   │   ├── rc_mlx5_devx.c
+    │       │   │   │   ├── rc_mlx5_ep.c
+    │       │   │   │   ├── rc_mlx5.h
+    │       │   │   │   ├── rc_mlx5_iface.c
+    │       │   │   │   └── rc_mlx5.inl
+    │       │   │   ├── base
+    │       │   │   │   ├── rc_def.h
+    │       │   │   │   ├── rc_ep.c
+    │       │   │   │   ├── rc_ep.h
+    │       │   │   │   ├── rc_iface.c
+    │       │   │   │   └── rc_iface.h
+    │       │   │   └── verbs
+    │       │   │       ├── rc_verbs_ep.c
+    │       │   │       ├── rc_verbs.h
+    │       │   │       ├── rc_verbs_iface.c
+    │       │   │       └── rc_verbs_impl.h
+    │       │   ├── rdmacm
+    │       │   │   ├── configure.m4
+    │       │   │   ├── Makefile.am
+    │       │   │   ├── rdmacm_cm.c
+    │       │   │   ├── rdmacm_cm_ep.c
+    │       │   │   ├── rdmacm_cm_ep.h
+    │       │   │   ├── rdmacm_cm.h
+    │       │   │   ├── rdmacm_component.c
+    │       │   │   ├── rdmacm_listener.c
+    │       │   │   ├── rdmacm_listener.h
+    │       │   │   └── ucx-rdmacm.pc.in
+    │       │   ├── ucx-ib.pc.in
+    │       │   └── ud
+    │       │       ├── accel
+    │       │       │   ├── ud_mlx5.c
+    │       │       │   ├── ud_mlx5_common.c
+    │       │       │   ├── ud_mlx5_common.h
+    │       │       │   └── ud_mlx5.h
+    │       │       ├── base
+    │       │       │   ├── ud_def.h
+    │       │       │   ├── ud_ep.c
+    │       │       │   ├── ud_ep.h
+    │       │       │   ├── ud_iface.c
+    │       │       │   ├── ud_iface_common.c
+    │       │       │   ├── ud_iface_common.h
+    │       │       │   ├── ud_iface.h
+    │       │       │   ├── ud_inl.h
+    │       │       │   └── ud_log.c
+    │       │       └── verbs
+    │       │           ├── ud_verbs.c
+    │       │           └── ud_verbs.h
+    │       ├── Makefile.am
+    │       ├── rocm
+    │       │   ├── base
+    │       │   │   ├── rocm_base.c
+    │       │   │   ├── rocm_base.h
+    │       │   │   ├── rocm_signal.c
+    │       │   │   └── rocm_signal.h
+    │       │   ├── configure.m4
+    │       │   ├── copy
+    │       │   │   ├── rocm_copy_cache.c
+    │       │   │   ├── rocm_copy_cache.h
+    │       │   │   ├── rocm_copy_ep.c
+    │       │   │   ├── rocm_copy_ep.h
+    │       │   │   ├── rocm_copy_iface.c
+    │       │   │   ├── rocm_copy_iface.h
+    │       │   │   ├── rocm_copy_md.c
+    │       │   │   └── rocm_copy_md.h
+    │       │   ├── ipc
+    │       │   │   ├── rocm_ipc_cache.c
+    │       │   │   ├── rocm_ipc_cache.h
+    │       │   │   ├── rocm_ipc_ep.c
+    │       │   │   ├── rocm_ipc_ep.h
+    │       │   │   ├── rocm_ipc_iface.c
+    │       │   │   ├── rocm_ipc_iface.h
+    │       │   │   ├── rocm_ipc_md.c
+    │       │   │   └── rocm_ipc_md.h
+    │       │   ├── Makefile.am
+    │       │   └── ucx-rocm.pc.in
+    │       ├── sm
+    │       │   ├── base
+    │       │   │   ├── sm_ep.c
+    │       │   │   ├── sm_ep.h
+    │       │   │   ├── sm_iface.c
+    │       │   │   ├── sm_iface.h
+    │       │   │   ├── sm_md.c
+    │       │   │   └── sm_md.h
+    │       │   ├── configure.m4
+    │       │   ├── Makefile.am
+    │       │   ├── mm
+    │       │   │   ├── base
+    │       │   │   │   ├── mm_ep.c
+    │       │   │   │   ├── mm_ep.h
+    │       │   │   │   ├── mm_iface.c
+    │       │   │   │   ├── mm_iface.h
+    │       │   │   │   ├── mm_md.c
+    │       │   │   │   └── mm_md.h
+    │       │   │   ├── configure.m4
+    │       │   │   ├── Makefile.am
+    │       │   │   ├── posix
+    │       │   │   │   └── mm_posix.c
+    │       │   │   ├── sysv
+    │       │   │   │   └── mm_sysv.c
+    │       │   │   └── xpmem
+    │       │   │       ├── configure.m4
+    │       │   │       ├── Makefile.am
+    │       │   │       ├── mm_xpmem.c
+    │       │   │       └── ucx-xpmem.pc.in
+    │       │   ├── scopy
+    │       │   │   ├── base
+    │       │   │   │   ├── scopy_ep.c
+    │       │   │   │   ├── scopy_ep.h
+    │       │   │   │   ├── scopy_iface.c
+    │       │   │   │   └── scopy_iface.h
+    │       │   │   ├── cma
+    │       │   │   │   ├── cma_ep.c
+    │       │   │   │   ├── cma_ep.h
+    │       │   │   │   ├── cma_iface.c
+    │       │   │   │   ├── cma_iface.h
+    │       │   │   │   ├── cma_md.c
+    │       │   │   │   ├── cma_md.h
+    │       │   │   │   ├── configure.m4
+    │       │   │   │   ├── Makefile.am
+    │       │   │   │   └── ucx-cma.pc.in
+    │       │   │   ├── configure.m4
+    │       │   │   ├── knem
+    │       │   │   │   ├── configure.m4
+    │       │   │   │   ├── knem_ep.c
+    │       │   │   │   ├── knem_ep.h
+    │       │   │   │   ├── knem_iface.c
+    │       │   │   │   ├── knem_iface.h
+    │       │   │   │   ├── knem_md.c
+    │       │   │   │   ├── knem_md.h
+    │       │   │   │   ├── Makefile.am
+    │       │   │   │   └── ucx-knem.pc.in
+    │       │   │   └── Makefile.am
+    │       │   └── self
+    │       │       ├── self.c
+    │       │       └── self.h
+    │       ├── tcp
+    │       │   ├── tcp_base.c
+    │       │   ├── tcp_base.h
+    │       │   ├── tcp_cm.c
+    │       │   ├── tcp_ep.c
+    │       │   ├── tcp.h
+    │       │   ├── tcp_iface.c
+    │       │   ├── tcp_listener.c
+    │       │   ├── tcp_listener.h
+    │       │   ├── tcp_md.c
+    │       │   ├── tcp_net.c
+    │       │   ├── tcp_sockcm.c
+    │       │   ├── tcp_sockcm_ep.c
+    │       │   ├── tcp_sockcm_ep.h
+    │       │   └── tcp_sockcm.h
+    │       ├── ucx-uct.pc.in
+    │       └── ugni
+    │           ├── base
+    │           │   ├── ugni_def.h
+    │           │   ├── ugni_device.c
+    │           │   ├── ugni_device.h
+    │           │   ├── ugni_ep.c
+    │           │   ├── ugni_ep.h
+    │           │   ├── ugni_iface.c
+    │           │   ├── ugni_iface.h
+    │           │   ├── ugni_md.c
+    │           │   ├── ugni_md.h
+    │           │   └── ugni_types.h
+    │           ├── configure.m4
+    │           ├── Makefile.am
+    │           ├── rdma
+    │           │   ├── ugni_rdma_ep.c
+    │           │   ├── ugni_rdma_ep.h
+    │           │   ├── ugni_rdma_iface.c
+    │           │   └── ugni_rdma_iface.h
+    │           ├── smsg
+    │           │   ├── ugni_smsg_ep.c
+    │           │   ├── ugni_smsg_ep.h
+    │           │   ├── ugni_smsg_iface.c
+    │           │   └── ugni_smsg_iface.h
+    │           ├── ucx-ugni.pc.in
+    │           └── udt
+    │               ├── ugni_udt_ep.c
+    │               ├── ugni_udt_ep.h
+    │               ├── ugni_udt_iface.c
+    │               └── ugni_udt_iface.h
+    ├── test
+    │   ├── apps
+    │   │   ├── iodemo
+    │   │   │   ├── configure.m4
+    │   │   │   ├── io_demo.cc
+    │   │   │   ├── Makefile.am
+    │   │   │   ├── README.md
+    │   │   │   ├── run_io_demo.sh
+    │   │   │   ├── ucx_wrapper.cc
+    │   │   │   └── ucx_wrapper.h
+    │   │   ├── Makefile.am
+    │   │   ├── profiling
+    │   │   │   ├── Makefile.am
+    │   │   │   └── ucx_profiling.c
+    │   │   ├── sockaddr
+    │   │   │   ├── Makefile.am
+    │   │   │   ├── sa_base.cc
+    │   │   │   ├── sa_base.h
+    │   │   │   ├── sa_main.cc
+    │   │   │   ├── sa_tcp.cc
+    │   │   │   ├── sa_tcp.h
+    │   │   │   ├── sa_util.cc
+    │   │   │   └── sa_util.h
+    │   │   ├── test_cuda_hook.c
+    │   │   ├── test_dlopen_cfg_print.c
+    │   │   ├── test_fuzzy_match.py
+    │   │   ├── test_init_mt.c
+    │   │   ├── test_link_map.c
+    │   │   ├── test_memtrack_limit.c
+    │   │   ├── test_no_cuda_ctx.c
+    │   │   ├── test_tcmalloc.c
+    │   │   ├── test_ucp_config.c
+    │   │   ├── test_ucp_dlopen.c
+    │   │   ├── test_ucs_dlopen.c
+    │   │   ├── test_ucx_tls.py
+    │   │   └── uct_info
+    │   │       ├── configure.m4
+    │   │       ├── Makefile.in
+    │   │       └── uct_info.c
+    │   ├── gtest
+    │   │   ├── common
+    │   │   │   ├── googletest
+    │   │   │   │   ├── configure.m4
+    │   │   │   │   ├── gtest.cc
+    │   │   │   │   ├── gtest-death-test.cc
+    │   │   │   │   ├── gtest-death-test.h
+    │   │   │   │   ├── gtest-filepath.cc
+    │   │   │   │   ├── gtest.h
+    │   │   │   │   ├── gtest-internal-inl.h
+    │   │   │   │   ├── gtest_main.cc
+    │   │   │   │   ├── gtest-matchers.cc
+    │   │   │   │   ├── gtest-matchers.h
+    │   │   │   │   ├── gtest-message.h
+    │   │   │   │   ├── gtest-param-test.h
+    │   │   │   │   ├── gtest-port.cc
+    │   │   │   │   ├── gtest_pred_impl.h
+    │   │   │   │   ├── gtest-printers.cc
+    │   │   │   │   ├── gtest-printers.h
+    │   │   │   │   ├── gtest_prod.h
+    │   │   │   │   ├── gtest-spi.h
+    │   │   │   │   ├── gtest-test-part.cc
+    │   │   │   │   ├── gtest-test-part.h
+    │   │   │   │   ├── gtest-typed-test.cc
+    │   │   │   │   ├── gtest-typed-test.h
+    │   │   │   │   ├── internal
+    │   │   │   │   │   ├── custom
+    │   │   │   │   │   │   ├── gtest.h
+    │   │   │   │   │   │   ├── gtest-port.h
+    │   │   │   │   │   │   ├── gtest-printers.h
+    │   │   │   │   │   │   └── README.md
+    │   │   │   │   │   ├── gtest-death-test-internal.h
+    │   │   │   │   │   ├── gtest-filepath.h
+    │   │   │   │   │   ├── gtest-internal.h
+    │   │   │   │   │   ├── gtest-param-util.h
+    │   │   │   │   │   ├── gtest-port-arch.h
+    │   │   │   │   │   ├── gtest-port.h
+    │   │   │   │   │   ├── gtest-string.h
+    │   │   │   │   │   └── gtest-type-util.h
+    │   │   │   │   └── Makefile.am
+    │   │   │   ├── main.cc
+    │   │   │   ├── mem_buffer.cc
+    │   │   │   ├── mem_buffer.h
+    │   │   │   ├── test.cc
+    │   │   │   ├── test_gtest_cmn.cc
+    │   │   │   ├── test.h
+    │   │   │   ├── test_helpers.cc
+    │   │   │   ├── test_helpers.h
+    │   │   │   ├── test_obj_size.cc
+    │   │   │   ├── test_perf.cc
+    │   │   │   ├── test_perf.h
+    │   │   │   └── test_watchdog.cc
+    │   │   ├── configure.m4
+    │   │   ├── Makefile.am
+    │   │   ├── ucm
+    │   │   │   ├── cuda_hooks.cc
+    │   │   │   ├── malloc_hook.cc
+    │   │   │   ├── rocm_hooks.cc
+    │   │   │   └── test_dlopen
+    │   │   │       ├── configure.m4
+    │   │   │       ├── dlopen_test_do_load.c
+    │   │   │       ├── dlopen_test_do_mmap.c
+    │   │   │       ├── Makefile.am
+    │   │   │       └── rpath-subdir
+    │   │   │           ├── configure.m4
+    │   │   │           ├── dlopen_test_rpath.c
+    │   │   │           └── Makefile.am
+    │   │   ├── ucp
+    │   │   │   ├── test_ucp_am.cc
+    │   │   │   ├── test_ucp_atomic.cc
+    │   │   │   ├── test_ucp_context.cc
+    │   │   │   ├── test_ucp_dt.cc
+    │   │   │   ├── test_ucp_ep.cc
+    │   │   │   ├── test_ucp_fence.cc
+    │   │   │   ├── test_ucp_memheap.cc
+    │   │   │   ├── test_ucp_memheap.h
+    │   │   │   ├── test_ucp_mem_type.cc
+    │   │   │   ├── test_ucp_mmap.cc
+    │   │   │   ├── test_ucp_peer_failure.cc
+    │   │   │   ├── test_ucp_perf.cc
+    │   │   │   ├── test_ucp_proto.cc
+    │   │   │   ├── test_ucp_request.cc
+    │   │   │   ├── test_ucp_rma.cc
+    │   │   │   ├── test_ucp_rma_mt.cc
+    │   │   │   ├── test_ucp_sockaddr.cc
+    │   │   │   ├── test_ucp_stream.cc
+    │   │   │   ├── test_ucp_tag_cancel.cc
+    │   │   │   ├── test_ucp_tag.cc
+    │   │   │   ├── test_ucp_tag.h
+    │   │   │   ├── test_ucp_tag_match.cc
+    │   │   │   ├── test_ucp_tag_mem_type.cc
+    │   │   │   ├── test_ucp_tag_mt.cc
+    │   │   │   ├── test_ucp_tag_offload.cc
+    │   │   │   ├── test_ucp_tag_perf.cc
+    │   │   │   ├── test_ucp_tag_probe.cc
+    │   │   │   ├── test_ucp_tag_xfer.cc
+    │   │   │   ├── test_ucp_tls.cc
+    │   │   │   ├── test_ucp_wakeup.cc
+    │   │   │   ├── test_ucp_wireup.cc
+    │   │   │   ├── test_ucp_worker.cc
+    │   │   │   ├── ucp_datatype.cc
+    │   │   │   ├── ucp_datatype.h
+    │   │   │   ├── ucp_test.cc
+    │   │   │   └── ucp_test.h
+    │   │   ├── ucs
+    │   │   │   ├── arch
+    │   │   │   │   └── test_x86_64.cc
+    │   │   │   ├── test_algorithm.cc
+    │   │   │   ├── test_arbiter.cc
+    │   │   │   ├── test_async.cc
+    │   │   │   ├── test_bitmap.cc
+    │   │   │   ├── test_bitops.cc
+    │   │   │   ├── test_callbackq.cc
+    │   │   │   ├── test_class.cc
+    │   │   │   ├── test_config.cc
+    │   │   │   ├── test_conn_match.cc
+    │   │   │   ├── test_datatype.cc
+    │   │   │   ├── test_debug.cc
+    │   │   │   ├── test_event_set.cc
+    │   │   │   ├── test_frag_list.cc
+    │   │   │   ├── test_iov.cc
+    │   │   │   ├── test_khash.cc
+    │   │   │   ├── test_log.cc
+    │   │   │   ├── test_math.cc
+    │   │   │   ├── test_memtrack.cc
+    │   │   │   ├── test_memtype_cache.cc
+    │   │   │   ├── test_module
+    │   │   │   │   ├── configure.m4
+    │   │   │   │   ├── Makefile.am
+    │   │   │   │   └── test_module.c
+    │   │   │   ├── test_mpmc.cc
+    │   │   │   ├── test_mpool.cc
+    │   │   │   ├── test_mpool_set.cc
+    │   │   │   ├── test_pgtable.cc
+    │   │   │   ├── test_profile.cc
+    │   │   │   ├── test_rcache.cc
+    │   │   │   ├── test_sock.cc
+    │   │   │   ├── test_stats.cc
+    │   │   │   ├── test_stats_filter.cc
+    │   │   │   ├── test_strided_alloc.cc
+    │   │   │   ├── test_string.cc
+    │   │   │   ├── test_sys.cc
+    │   │   │   ├── test_time.cc
+    │   │   │   ├── test_topo.cc
+    │   │   │   ├── test_twheel.cc
+    │   │   │   ├── test_type.cc
+    │   │   │   ├── test_vfs.cc
+    │   │   │   ├── ucx.conf
+    │   │   │   └── ucx_test.conf
+    │   │   └── uct
+    │   │       ├── ib
+    │   │       │   ├── test_cqe_zipping.cc
+    │   │       │   ├── test_cq_moderation.cc
+    │   │       │   ├── test_dc.cc
+    │   │       │   ├── test_devx.cc
+    │   │       │   ├── test_ib.cc
+    │   │       │   ├── test_ib_event.cc
+    │   │       │   ├── test_ib.h
+    │   │       │   ├── test_ib_md.cc
+    │   │       │   ├── test_ib_pkey.cc
+    │   │       │   ├── test_ib_xfer.cc
+    │   │       │   ├── test_rc.cc
+    │   │       │   ├── test_rc.h
+    │   │       │   ├── test_ud.cc
+    │   │       │   ├── test_ud_ds.cc
+    │   │       │   ├── test_ud_pending.cc
+    │   │       │   ├── test_ud_timer.cc
+    │   │       │   ├── ud_base.cc
+    │   │       │   └── ud_base.h
+    │   │       ├── tcp
+    │   │       │   └── test_tcp.cc
+    │   │       ├── test_amo_add_xor.cc
+    │   │       ├── test_amo_and_or.cc
+    │   │       ├── test_amo.cc
+    │   │       ├── test_amo_cswap.cc
+    │   │       ├── test_amo_fadd_fxor.cc
+    │   │       ├── test_amo_fand_for.cc
+    │   │       ├── test_amo.h
+    │   │       ├── test_amo_swap.cc
+    │   │       ├── test_event.cc
+    │   │       ├── test_fence.cc
+    │   │       ├── test_flush.cc
+    │   │       ├── test_many2one_am.cc
+    │   │       ├── test_md.cc
+    │   │       ├── test_md.h
+    │   │       ├── test_mem.cc
+    │   │       ├── test_mm.cc
+    │   │       ├── test_p2p_am.cc
+    │   │       ├── test_p2p_err.cc
+    │   │       ├── test_p2p_mix.cc
+    │   │       ├── test_p2p_mix.h
+    │   │       ├── test_p2p_rma.cc
+    │   │       ├── test_p2p_rma.h
+    │   │       ├── test_peer_failure.cc
+    │   │       ├── test_peer_failure.h
+    │   │       ├── test_pending.cc
+    │   │       ├── test_progress.cc
+    │   │       ├── test_sockaddr.cc
+    │   │       ├── test_stats.cc
+    │   │       ├── test_tag.cc
+    │   │       ├── test_uct_ep.cc
+    │   │       ├── test_uct_perf.cc
+    │   │       ├── test_zcopy_comp.cc
+    │   │       ├── uct_p2p_test.cc
+    │   │       ├── uct_p2p_test.h
+    │   │       ├── uct_test.cc
+    │   │       ├── uct_test.h
+    │   │       └── v2
+    │   │           └── test_uct_query.cc
+    │   └── mpi
+    │       ├── Makefile.am
+    │       ├── ompi.supp
+    │       ├── run_mpi.sh.in
+    │       ├── shmem_pingpong.c
+    │       ├── test_memhooks.c
+    │       └── test_memhooks_lib.c
+    ├── ucx.pc.in
+    └── ucx.spec.in
+
+176 directories, 1108 files

@@ -1,0 +1,469 @@
+src
+└── pint
+    ├── cmd
+    │   └── pint
+    │       ├── bench
+    │       │   ├── Makefile
+    │       │   └── README.md
+    │       ├── bench_test.go
+    │       ├── ci.go
+    │       ├── config.go
+    │       ├── lint.go
+    │       ├── logger.go
+    │       ├── main.go
+    │       ├── main_test.go
+    │       ├── metrics.go
+    │       ├── parse.go
+    │       ├── scan.go
+    │       ├── tests
+    │       │   ├── 0001_match_path.txt
+    │       │   ├── 0002_nothing_to_lint.txt
+    │       │   ├── 0003_lint_workdir.txt
+    │       │   ├── 0004_fail_invalid_yaml.txt
+    │       │   ├── 0005_false_positive.txt
+    │       │   ├── 0006_rr_labels.txt
+    │       │   ├── 0007_alerts.txt
+    │       │   ├── 0008_recording_rule_prometheus.txt
+    │       │   ├── 0009_alerting_rule_prometheus.txt
+    │       │   ├── 0010_syntax_check.txt
+    │       │   ├── 0011_ignore_rules.txt
+    │       │   ├── 0012_issue_20.txt
+    │       │   ├── 0013_issue49_1.txt
+    │       │   ├── 0014_issue49_2.txt
+    │       │   ├── 0015_parse_1.txt
+    │       │   ├── 0016_parse_2.txt
+    │       │   ├── 0017_issue69.txt
+    │       │   ├── 0018_match_alerting.txt
+    │       │   ├── 0019_match_recording.txt
+    │       │   ├── 0020_ignore_kind.txt
+    │       │   ├── 0021_ignore_all.txt
+    │       │   ├── 0022_ignore_multi.txt
+    │       │   ├── 0023_enabled_checks.txt
+    │       │   ├── 0024_color_output.txt
+    │       │   ├── 0025_config.txt
+    │       │   ├── 0026_aggregate_empty_name.txt
+    │       │   ├── 0027_ci_branch.txt
+    │       │   ├── 0028_ci_git_error.txt
+    │       │   ├── 0029_ci_too_many_commits.txt
+    │       │   ├── 0030_parse_string.txt
+    │       │   ├── 0031_ci_bitbucket.txt
+    │       │   ├── 0032_ci_github.txt
+    │       │   ├── 0033_ci_github_multi.txt
+    │       │   ├── 0034_version.txt
+    │       │   ├── 0035_bad_loglevel.txt
+    │       │   ├── 0036_ci_basebranch.txt
+    │       │   ├── 0037_disable_checks.txt
+    │       │   ├── 0038_disable_checks_regex.txt
+    │       │   ├── 0039_prom_selected_path.txt
+    │       │   ├── 0040_rule_match_label.txt
+    │       │   ├── 0041_watch.txt
+    │       │   ├── 0042_watch_metrics.txt
+    │       │   ├── 0043_watch_cancel.txt
+    │       │   ├── 0044_parse_error.txt
+    │       │   ├── 0045_parse_no_query.txt
+    │       │   ├── 0046_parse_3.txt
+    │       │   ├── 0047_parse_4.txt
+    │       │   ├── 0048_watch_limit.txt
+    │       │   ├── 0049_watch_severity_warning.txt
+    │       │   ├── 0050_watch_severity_fatal.txt
+    │       │   ├── 0051_watch_severity_invalid.txt
+    │       │   ├── 0052_match_multiple.txt
+    │       │   ├── 0053_ignore_multiple.txt
+    │       │   ├── 0054_watch_metrics_prometheus.txt
+    │       │   ├── 0055_prometheus_failover.txt
+    │       │   ├── 0056_prometheus_required.txt
+    │       │   ├── 0057_watch_metrics_prometheus_ignore.txt
+    │       │   ├── 0058_templated_check.txt
+    │       │   ├── 0059_templated_check_bad_template.txt
+    │       │   ├── 0060_ci_noop.txt
+    │       │   ├── 0061_lint_workers_zero.txt
+    │       │   ├── 0062_lint_no_args.txt
+    │       │   ├── 0063_lint_offline.txt
+    │       │   ├── 0064_watch_no_path.txt
+    │       │   ├── 0065_ci_include.txt
+    │       │   ├── 0066_lint_owner.txt
+    │       │   ├── 0067_relaxed.txt
+    │       │   ├── 0068_skip_ci.txt
+    │       │   ├── 0069_bitbucket_unmodified.txt
+    │       │   ├── 0070_bitbucket_strict.txt
+    │       │   ├── 0071_ci_owner.txt
+    │       │   ├── 0072_bitbucket_move_bug_to_modified.txt
+    │       │   ├── 0073_lint_k8s.txt
+    │       │   ├── 0074_strict_error.txt
+    │       │   ├── 0075_ci_strict.txt
+    │       │   ├── 0076_ci_group_errors.txt
+    │       │   ├── 0077_strict_error_owner.txt
+    │       │   ├── 0078_repeated_group.txt
+    │       │   ├── 0079_check_promql_series_invalid.txt
+    │       │   ├── 0080_lint_online.txt
+    │       │   ├── 0081_rulefmt.txt
+    │       │   ├── 0082_ci_base_branch_flag.txt
+    │       │   ├── 0083_github_action.txt
+    │       │   ├── 0084_github_action_override.txt
+    │       │   ├── 0085_github_no_envs.txt
+    │       │   ├── 0086_rulefmt_ignored_errors.txt
+    │       │   ├── 0087_dedup.txt
+    │       │   ├── 0088_rule_link.txt
+    │       │   ├── 0089_lint_min_severity_bug.txt
+    │       │   ├── 0090_lint_min_severity_info.txt
+    │       │   ├── 0091_lint_min_severity_invalid.txt
+    │       │   ├── 0092_dir_symlink.txt
+    │       │   ├── 0093_ci_bitbucket_ignore_file.txt
+    │       │   ├── 0094_rule_file_symlink_bb.txt
+    │       │   ├── 0095_rulefmt_symlink.txt
+    │       │   ├── 0096_bad_symlink.txt
+    │       │   ├── 0097_rule_file_symlink_error.txt
+    │       │   ├── 0098_rule_file_symlink_gh.txt
+    │       │   ├── 0099_symlink_outside_glob.txt
+    │       │   ├── 0100_ci_alerts_count.txt
+    │       │   ├── 0101_prometheus_basic_auth.txt
+    │       │   ├── 0102_prometheus_basic_auth_empty.txt
+    │       │   ├── 0103_file_disable.txt
+    │       │   ├── 0104_file_ignore_prom.txt
+    │       │   ├── 0105_too_many_samples.txt
+    │       │   ├── 0106_ci_git_branch_error.txt
+    │       │   ├── 0107_ci_git_invalid_log_level.txt
+    │       │   ├── 0108_rule_duplicate.txt
+    │       │   ├── 0109_rule_duplicate_multiple_proms_include.txt
+    │       │   ├── 0110_rule_duplicate_multiple_proms_exclude.txt
+    │       │   ├── 0111_snooze.txt
+    │       │   ├── 0112_expired_snooze.txt
+    │       │   ├── 0113_config_env_expand.txt
+    │       │   ├── 0114_config_env_expand_error.txt
+    │       │   ├── 0115_file_disable_tag.txt
+    │       │   ├── 0116_file_snooze.txt
+    │       │   ├── 0118_ci_dir_move.txt
+    │       │   ├── 0119_ci_fail_on_warning.txt
+    │       │   ├── 0120_ci_fail_on_invalid.txt
+    │       │   ├── 0121_rule_for.txt
+    │       │   ├── 0122_lint_owner_allowed.txt
+    │       │   ├── 0123_ci_owner_allowed.txt
+    │       │   ├── 0124_ci_base_branch_flag.txt
+    │       │   ├── 0125_lint_fail_on_warning.txt
+    │       │   ├── 0126_lint_fail_on_invalid.txt
+    │       │   ├── 0127_lint_fail_on_fatal_but_got_warning.txt
+    │       │   ├── 0128_lint_fail_on_warning_only.txt
+    │       │   ├── 0129_tls_cacert_bad.txt
+    │       │   ├── 0130_tls_ca_good.txt
+    │       │   ├── 0131_tls_cacert_bad_skipVerify.txt
+    │       │   ├── 0132_tls_certs.txt
+    │       │   ├── 0133_tls_certs_bad.txt
+    │       │   ├── 0134_ci_base_branch_flag_path.txt
+    │       │   ├── 0135_ci_base_branch_config_path.txt
+    │       │   ├── 0136_annotation_regex_key.txt
+    │       │   ├── 0137_annotation_regex_key_fail.txt
+    │       │   ├── 0138_annoation_regex_key_required.txt
+    │       │   ├── 0139_ci_exclude.txt
+    │       │   ├── 0140_ci_include_exclude.txt
+    │       │   ├── 0141_empty_keys.txt
+    │       │   ├── 0142_keep_firing_for.txt
+    │       │   ├── 0143_keep_firing_for.txt
+    │       │   ├── 0144_discovery_filepath.txt
+    │       │   ├── 0145_discovery_filepath_dup.txt
+    │       │   ├── 0146_discovery_filepath_bad_template.txt
+    │       │   ├── 0147_discovery_filepath_error.txt
+    │       │   ├── 0148_discovery_prom_zero.txt
+    │       │   ├── 0149_discovery_prom.txt
+    │       │   ├── 0150_discovery_prom_dup_tags.txt
+    │       │   ├── 0151_discovery_prom_error.txt
+    │       │   ├── 0152_discovery_prom_dup_uptime.txt
+    │       │   ├── 0153_ci_bitbucket_missing_token.txt
+    │       │   ├── 0154_ci_discovery_error.txt
+    │       │   ├── 0155_discovery_prom_dup_include.txt
+    │       │   ├── 0156_discovery_prom_dup_exclude.txt
+    │       │   ├── 0157_series_other_servers.txt
+    │       │   ├── 0158_lint_teamcity.txt
+    │       │   ├── 0159_ci_teamcity.txt
+    │       │   ├── 0160_ci_comment_edit.txt
+    │       │   ├── 0161_ci_move_files.txt
+    │       │   ├── 0162_ci_deleted_dependency.txt
+    │       │   ├── 0163_ci_comment_resolve.txt
+    │       │   ├── 0164_ci_comment_resolve_delete.txt
+    │       │   ├── 0165_pint_comment_error.txt
+    │       │   ├── 0166_invalid_label.txt
+    │       │   ├── 0167_rule_duplicate_symlink.txt
+    │       │   ├── 0168_watch_rule_files.txt
+    │       │   ├── 0169_watch_rule_files_noprom.txt
+    │       │   ├── 0170_watch_rule_files_error.txt
+    │       │   ├── 0171_rule_duplicate_rename.txt
+    │       │   ├── 0172_rule_dependency_symlink_delete.txt
+    │       │   ├── 0173_rule_duplicate_move.txt
+    │       │   ├── 0174_auth_publicURI.txt
+    │       │   ├── 0175_strict_multi_doc.txt
+    │       │   ├── 0176_comments.txt
+    │       │   ├── 0177_rule_name.txt
+    │       │   ├── 0178_parser_include.txt
+    │       │   ├── 0179_parser_exclude.txt
+    │       │   └── 0180_parser_exclude_md.txt
+    │       ├── version.go
+    │       └── watch.go
+    ├── codecov.yml
+    ├── Dockerfile
+    ├── Dockerfile.amd64
+    ├── Dockerfile.arm64
+    ├── docs
+    │   ├── changelog.md
+    │   ├── checks
+    │   │   ├── alerts
+    │   │   │   ├── absent.md
+    │   │   │   ├── annotation.md
+    │   │   │   ├── comparison.md
+    │   │   │   ├── count.md
+    │   │   │   ├── external_labels.md
+    │   │   │   ├── for.md
+    │   │   │   └── template.md
+    │   │   ├── ignore
+    │   │   │   └── file.md
+    │   │   ├── index.md
+    │   │   ├── labels
+    │   │   │   └── conflict.md
+    │   │   ├── pint
+    │   │   │   └── comment.md
+    │   │   ├── promql
+    │   │   │   ├── aggregate.md
+    │   │   │   ├── counter.md
+    │   │   │   ├── fragile.md
+    │   │   │   ├── range_query.md
+    │   │   │   ├── rate.md
+    │   │   │   ├── regexp.md
+    │   │   │   ├── series.md
+    │   │   │   ├── syntax.md
+    │   │   │   └── vector_matching.md
+    │   │   ├── query
+    │   │   │   └── cost.md
+    │   │   ├── rule
+    │   │   │   ├── dependency.md
+    │   │   │   ├── duplicate.md
+    │   │   │   ├── for.md
+    │   │   │   ├── label.md
+    │   │   │   ├── link.md
+    │   │   │   ├── name.md
+    │   │   │   ├── owner.md
+    │   │   │   └── reject.md
+    │   │   └── yaml
+    │   │       └── parse.md
+    │   ├── configuration.md
+    │   ├── _config.yml
+    │   ├── examples
+    │   │   ├── ci.hcl
+    │   │   ├── config.hcl
+    │   │   ├── discovery.hcl
+    │   │   ├── ignore_error_metrics.hcl
+    │   │   ├── labels.hcl
+    │   │   ├── simple.hcl
+    │   │   └── templates.hcl
+    │   ├── ignoring.md
+    │   ├── _includes
+    │   │   └── js
+    │   │       └── custom.js
+    │   └── index.md
+    ├── go.mod
+    ├── go.sum
+    ├── go.ver
+    ├── internal
+    │   ├── checks
+    │   │   ├── alerts_absent.go
+    │   │   ├── alerts_absent_test.go
+    │   │   ├── alerts_annotation.go
+    │   │   ├── alerts_annotation_test.go
+    │   │   ├── alerts_comparison.go
+    │   │   ├── alerts_comparison_test.go
+    │   │   ├── alerts_count.go
+    │   │   ├── alerts_count_test.go
+    │   │   ├── alerts_external_labels.go
+    │   │   ├── alerts_external_labels_test.go
+    │   │   ├── alerts_for.go
+    │   │   ├── alerts_for_test.go
+    │   │   ├── alerts_template.go
+    │   │   ├── alerts_template_test.go
+    │   │   ├── base.go
+    │   │   ├── base_test.go
+    │   │   ├── labels_conflict.go
+    │   │   ├── labels_conflict_test.go
+    │   │   ├── promql_aggregation.go
+    │   │   ├── promql_aggregation_test.go
+    │   │   ├── promql_counter.go
+    │   │   ├── promql_counter_test.go
+    │   │   ├── promql_fragile.go
+    │   │   ├── promql_fragile_test.go
+    │   │   ├── promql_range_query.go
+    │   │   ├── promql_range_query_test.go
+    │   │   ├── promql_rate.go
+    │   │   ├── promql_rate_test.go
+    │   │   ├── promql_regexp.go
+    │   │   ├── promql_regexp_test.go
+    │   │   ├── promql_series.go
+    │   │   ├── promql_series_test.go
+    │   │   ├── promql_syntax.go
+    │   │   ├── promql_syntax_test.go
+    │   │   ├── promql_vector_matching.go
+    │   │   ├── promql_vector_matching_test.go
+    │   │   ├── query_cost.go
+    │   │   ├── query_cost_test.go
+    │   │   ├── rule_dependency.go
+    │   │   ├── rule_dependency_test.go
+    │   │   ├── rule_duplicate.go
+    │   │   ├── rule_duplicate_test.go
+    │   │   ├── rule_for.go
+    │   │   ├── rule_for_test.go
+    │   │   ├── rule_label.go
+    │   │   ├── rule_label_test.go
+    │   │   ├── rule_link.go
+    │   │   ├── rule_link_test.go
+    │   │   ├── rule_name.go
+    │   │   ├── rule_name_test.go
+    │   │   ├── rule_reject.go
+    │   │   ├── rule_reject_test.go
+    │   │   ├── template.go
+    │   │   └── template_test.go
+    │   ├── comments
+    │   │   ├── comments.go
+    │   │   └── comments_test.go
+    │   ├── config
+    │   │   ├── aggregate.go
+    │   │   ├── aggregate_test.go
+    │   │   ├── alerts.go
+    │   │   ├── alerts_test.go
+    │   │   ├── annotation.go
+    │   │   ├── annotation_test.go
+    │   │   ├── check.go
+    │   │   ├── checks.go
+    │   │   ├── checks_test.go
+    │   │   ├── ci.go
+    │   │   ├── ci_test.go
+    │   │   ├── config.go
+    │   │   ├── config_test.go
+    │   │   ├── cost.go
+    │   │   ├── cost_test.go
+    │   │   ├── discovery.go
+    │   │   ├── discovery_test.go
+    │   │   ├── for.go
+    │   │   ├── match.go
+    │   │   ├── match_test.go
+    │   │   ├── owners.go
+    │   │   ├── parser.go
+    │   │   ├── parser_test.go
+    │   │   ├── prometheus.go
+    │   │   ├── prometheus_test.go
+    │   │   ├── reject.go
+    │   │   ├── reject_test.go
+    │   │   ├── repository.go
+    │   │   ├── repository_test.go
+    │   │   ├── rule.go
+    │   │   ├── rule_link.go
+    │   │   ├── rule_link_test.go
+    │   │   ├── rule_name.go
+    │   │   ├── rule_test.go
+    │   │   └── __snapshots__
+    │   │       └── config_test.snap
+    │   ├── discovery
+    │   │   ├── discovery.go
+    │   │   ├── discovery_test.go
+    │   │   ├── git_branch.go
+    │   │   ├── git_branch_test.go
+    │   │   ├── glob.go
+    │   │   ├── glob_test.go
+    │   │   └── symlinks.go
+    │   ├── git
+    │   │   ├── changes.go
+    │   │   ├── changes_test.go
+    │   │   ├── filter.go
+    │   │   ├── git.go
+    │   │   └── git_test.go
+    │   ├── log
+    │   │   ├── handler.go
+    │   │   ├── log.go
+    │   │   └── log_test.go
+    │   ├── output
+    │   │   ├── humanize.go
+    │   │   ├── humanize_test.go
+    │   │   ├── ranges.go
+    │   │   └── ranges_test.go
+    │   ├── parser
+    │   │   ├── decode.go
+    │   │   ├── fuzz_test.go
+    │   │   ├── models.go
+    │   │   ├── models_test.go
+    │   │   ├── parser.go
+    │   │   ├── parser_test.go
+    │   │   ├── read.go
+    │   │   ├── read_test.go
+    │   │   ├── strict.go
+    │   │   └── utils
+    │   │       ├── absent.go
+    │   │       ├── absent_test.go
+    │   │       ├── aggregation.go
+    │   │       ├── aggregation_test.go
+    │   │       ├── binary_expr.go
+    │   │       ├── binary_expr_test.go
+    │   │       ├── conditions.go
+    │   │       ├── conditions_test.go
+    │   │       ├── rate.go
+    │   │       ├── rate_test.go
+    │   │       ├── sum.go
+    │   │       ├── sum_test.go
+    │   │       ├── vectorselector.go
+    │   │       └── vectorselector_test.go
+    │   ├── promapi
+    │   │   ├── cache.go
+    │   │   ├── cache_test.go
+    │   │   ├── config.go
+    │   │   ├── config_test.go
+    │   │   ├── errors.go
+    │   │   ├── failover.go
+    │   │   ├── flags.go
+    │   │   ├── flags_test.go
+    │   │   ├── keylock.go
+    │   │   ├── metadata.go
+    │   │   ├── metadata_test.go
+    │   │   ├── metrics.go
+    │   │   ├── prometheus.go
+    │   │   ├── query.go
+    │   │   ├── query_test.go
+    │   │   ├── range.go
+    │   │   ├── range_normalize.go
+    │   │   ├── range_normalize_test.go
+    │   │   ├── range_slice_test.go
+    │   │   └── range_test.go
+    │   └── reporter
+    │       ├── bitbucket_api.go
+    │       ├── bitbucket_api_test.go
+    │       ├── bitbucket_comments_test.go
+    │       ├── bitbucket.go
+    │       ├── bitbucket_test.go
+    │       ├── comments.go
+    │       ├── comments_test.go
+    │       ├── console.go
+    │       ├── github.go
+    │       ├── github_test.go
+    │       ├── gitlab.go
+    │       ├── gitlab_test.go
+    │       ├── reporter.go
+    │       ├── teamcity.go
+    │       └── teamcity_test.go
+    ├── LICENSE
+    ├── Makefile
+    ├── README.md
+    └── tools
+        ├── benchstat
+        │   ├── go.mod
+        │   ├── go.sum
+        │   └── main.go
+        ├── betteralign
+        │   ├── go.mod
+        │   ├── go.sum
+        │   └── main.go
+        ├── gofumpt
+        │   ├── go.mod
+        │   ├── go.sum
+        │   └── main.go
+        ├── goimports
+        │   ├── go.mod
+        │   ├── go.sum
+        │   └── main.go
+        └── golangci-lint
+            ├── go.mod
+            ├── go.sum
+            └── main.go
+
+38 directories, 429 files

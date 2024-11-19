@@ -1,0 +1,39 @@
+src
+├── crc32c-2.7.1
+│   ├── AUTHORS.google-crc32c
+│   ├── CHANGELOG.md
+│   ├── LICENSE
+│   ├── LICENSE.google-crc32c
+│   ├── LICENSE.slice-by-8
+│   ├── MANIFEST.in
+│   ├── pytest.ini
+│   ├── README.rst
+│   ├── requirements-dev.txt
+│   ├── run-tests.py
+│   ├── setup.py
+│   ├── src
+│   │   └── crc32c
+│   │       ├── benchmark.py
+│   │       ├── _crc32c.pyi
+│   │       ├── _crc32hash.py
+│   │       ├── ext
+│   │       │   ├── checkarm.c
+│   │       │   ├── checkarm.h
+│   │       │   ├── checksse42.c
+│   │       │   ├── checksse42.h
+│   │       │   ├── common.h
+│   │       │   ├── crc32c_adler.c
+│   │       │   ├── crc32c_arm64.c
+│   │       │   ├── _crc32c.c
+│   │       │   ├── crc32c.h
+│   │       │   └── crc32c_sw.c
+│   │       ├── __init__.py
+│   │       └── py.typed
+│   └── test
+│       ├── conftest.py
+│       ├── test_benchmark.py
+│       ├── test_crc32c.py
+│       └── test_subinterpreter.py
+└── crc32c-2.7.1.tar.gz -> /home/felix/packages/python-crc32c/crc32c-2.7.1.tar.gz
+
+6 directories, 31 files

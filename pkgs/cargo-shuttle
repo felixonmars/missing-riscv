@@ -1,0 +1,983 @@
+src
+├── cargo-shuttle
+│   ├── admin
+│   │   ├── Cargo.toml
+│   │   ├── README.md
+│   │   └── src
+│   │       ├── args.rs
+│   │       ├── client.rs
+│   │       ├── config.rs
+│   │       ├── lib.rs
+│   │       └── main.rs
+│   ├── api-client
+│   │   ├── Cargo.toml
+│   │   └── src
+│   │       ├── lib.rs
+│   │       ├── middleware.rs
+│   │       └── util.rs
+│   ├── assets
+│   │   ├── favicon.ico
+│   │   ├── logo-rectangle-transparent.png
+│   │   ├── logo-square.png
+│   │   ├── logo-square-transparent.png
+│   │   └── v0.8.0-interactive-init.gif
+│   ├── auth
+│   │   ├── Cargo.toml
+│   │   ├── migrations
+│   │   │   ├── 0000_init.sql
+│   │   │   ├── 0001_sync_updated_at.sql
+│   │   │   ├── 0002_subscriptions.sql
+│   │   │   ├── 0003_user_ids.sql
+│   │   │   ├── 0004_user_ids_part2.sql
+│   │   │   └── 0005_add_beta_access.sql
+│   │   ├── README
+│   │   ├── src
+│   │   │   ├── api
+│   │   │   │   ├── builder.rs
+│   │   │   │   ├── handlers.rs
+│   │   │   │   └── mod.rs
+│   │   │   ├── args.rs
+│   │   │   ├── error.rs
+│   │   │   ├── lib.rs
+│   │   │   ├── main.rs
+│   │   │   ├── secrets.rs
+│   │   │   └── user.rs
+│   │   └── tests
+│   │       └── api
+│   │           ├── auth.rs
+│   │           ├── helpers.rs
+│   │           ├── main.rs
+│   │           ├── stripe
+│   │           │   ├── active_subscription.rs
+│   │           │   ├── cancelledpro_checkout_session.rs
+│   │           │   ├── cancelledpro_subscription_active.rs
+│   │           │   ├── cancelledpro_subscription_cancelled.rs
+│   │           │   ├── completed_checkout_session.rs
+│   │           │   ├── mod.rs
+│   │           │   ├── overdue_payment_checkout_session.rs
+│   │           │   └── past_due_subscription.rs
+│   │           └── users.rs
+│   ├── backends
+│   │   ├── Cargo.toml
+│   │   ├── src
+│   │   │   ├── auth.rs
+│   │   │   ├── axum.rs
+│   │   │   ├── cache.rs
+│   │   │   ├── client
+│   │   │   │   ├── gateway.rs
+│   │   │   │   ├── mod.rs
+│   │   │   │   ├── permit.rs
+│   │   │   │   └── resource_recorder.rs
+│   │   │   ├── future.rs
+│   │   │   ├── headers.rs
+│   │   │   ├── lib.rs
+│   │   │   ├── metrics.rs
+│   │   │   ├── otlp_tracing_bridge.rs
+│   │   │   ├── project_name.rs
+│   │   │   ├── test_utils
+│   │   │   │   ├── gateway.rs
+│   │   │   │   ├── mod.rs
+│   │   │   │   ├── provisioner.rs
+│   │   │   │   └── resource_recorder.rs
+│   │   │   └── trace.rs
+│   │   └── tests
+│   │       └── integration
+│   │           ├── main.rs
+│   │           └── permit_tests.rs
+│   ├── Cargo.lock
+│   ├── cargo-shuttle
+│   │   ├── Cargo.toml
+│   │   ├── README.md
+│   │   ├── src
+│   │   │   ├── args.rs
+│   │   │   ├── bin
+│   │   │   │   ├── cargo-shuttle.rs
+│   │   │   │   └── shuttle.rs
+│   │   │   ├── config.rs
+│   │   │   ├── init.rs
+│   │   │   ├── lib.rs
+│   │   │   ├── provisioner_server.rs
+│   │   │   └── suggestions
+│   │   │       ├── api_key.rs
+│   │   │       ├── deployment.rs
+│   │   │       ├── deploy.rs
+│   │   │       ├── logs.rs
+│   │   │       ├── mod.rs
+│   │   │       ├── project.rs
+│   │   │       └── resources.rs
+│   │   └── tests
+│   │       ├── integration
+│   │       │   ├── init.rs
+│   │       │   ├── main.rs
+│   │       │   ├── README.md
+│   │       │   └── run.rs
+│   │       └── resources
+│   │           ├── archiving
+│   │           │   ├── asset1
+│   │           │   ├── asset3
+│   │           │   ├── asset5
+│   │           │   ├── Cargo.toml
+│   │           │   ├── nested
+│   │           │   │   └── static
+│   │           │   │       ├── nested1
+│   │           │   │       └── nestedignore
+│   │           │   ├── Secrets.toml.example
+│   │           │   ├── Shuttle.toml
+│   │           │   └── src
+│   │           │       └── main.rs
+│   │           └── copyable-project
+│   │               ├── Cargo.toml
+│   │               └── src
+│   │                   └── main.rs
+│   ├── Cargo.toml
+│   ├── CHANGELOG.md
+│   ├── cliff.toml
+│   ├── codegen
+│   │   ├── Cargo.toml
+│   │   ├── src
+│   │   │   ├── lib.rs
+│   │   │   └── shuttle_main.rs
+│   │   └── tests
+│   │       └── compiler_output
+│   │           ├── missing-attribute.rs
+│   │           ├── missing-attribute.stderr
+│   │           ├── missing-return.rs
+│   │           ├── missing-return.stderr
+│   │           ├── return-tuple.rs
+│   │           └── return-tuple.stderr
+│   ├── CODE_OF_CONDUCT.md
+│   ├── common
+│   │   ├── Cargo.toml
+│   │   ├── src
+│   │   │   ├── certificate.rs
+│   │   │   ├── claims.rs
+│   │   │   ├── constants.rs
+│   │   │   ├── database.rs
+│   │   │   ├── deployment.rs
+│   │   │   ├── extract_propagation.rs
+│   │   │   ├── lib.rs
+│   │   │   ├── limits.rs
+│   │   │   ├── log.rs
+│   │   │   ├── models
+│   │   │   │   ├── admin.rs
+│   │   │   │   ├── deployment.rs
+│   │   │   │   ├── error.rs
+│   │   │   │   ├── mod.rs
+│   │   │   │   ├── project.rs
+│   │   │   │   ├── resource.rs
+│   │   │   │   ├── service.rs
+│   │   │   │   ├── stats.rs
+│   │   │   │   ├── team.rs
+│   │   │   │   └── user.rs
+│   │   │   ├── resource.rs
+│   │   │   ├── secrets.rs
+│   │   │   ├── templates.rs
+│   │   │   └── tracing.rs
+│   │   ├── typeshare.toml
+│   │   └── types.ts
+│   ├── common-tests
+│   │   ├── Cargo.toml
+│   │   └── src
+│   │       ├── cargo_shuttle.rs
+│   │       ├── lib.rs
+│   │       ├── logger.rs
+│   │       ├── permit_pdp.rs
+│   │       ├── postgres.rs
+│   │       └── provisioner.rs
+│   ├── Containerfile
+│   ├── CONTRIBUTING.md
+│   ├── deployer
+│   │   ├── build.rs
+│   │   ├── Cargo.toml
+│   │   ├── migrations
+│   │   │   ├── 0000_init.sql
+│   │   │   ├── 0001_next.sql
+│   │   │   ├── 0002_resource_config.sql
+│   │   │   ├── 0003_git.sql
+│   │   │   ├── 0004_change_service_id_to_ulid.sql
+│   │   │   ├── 0005_delete_old_secrets.sql
+│   │   │   ├── 0006_delete_outdated_resources.sql
+│   │   │   └── 0007_delete_logs.sql
+│   │   ├── prepare.sh
+│   │   ├── README.md
+│   │   ├── src
+│   │   │   ├── args.rs
+│   │   │   ├── deployment
+│   │   │   │   ├── gateway_client.rs
+│   │   │   │   ├── mod.rs
+│   │   │   │   ├── queue.rs
+│   │   │   │   ├── run.rs
+│   │   │   │   └── state_change_layer.rs
+│   │   │   ├── error.rs
+│   │   │   ├── handlers
+│   │   │   │   ├── error.rs
+│   │   │   │   ├── local.rs
+│   │   │   │   └── mod.rs
+│   │   │   ├── lib.rs
+│   │   │   ├── main.rs
+│   │   │   ├── persistence
+│   │   │   │   ├── deployment.rs
+│   │   │   │   ├── error.rs
+│   │   │   │   ├── mod.rs
+│   │   │   │   ├── resource
+│   │   │   │   │   ├── database.rs
+│   │   │   │   │   └── mod.rs
+│   │   │   │   ├── service.rs
+│   │   │   │   ├── state.rs
+│   │   │   │   └── user.rs
+│   │   │   └── runtime_manager.rs
+│   │   └── tests
+│   │       ├── deploy_layer
+│   │       │   ├── bind-panic
+│   │       │   │   ├── Cargo.toml
+│   │       │   │   └── src
+│   │       │   │       └── main.rs
+│   │       │   ├── main-panic
+│   │       │   │   ├── Cargo.toml
+│   │       │   │   └── src
+│   │       │   │       └── main.rs
+│   │       │   ├── self-stop
+│   │       │   │   ├── Cargo.toml
+│   │       │   │   └── src
+│   │       │   │       └── main.rs
+│   │       │   └── sleep-async
+│   │       │       ├── Cargo.toml
+│   │       │       └── src
+│   │       │           └── main.rs
+│   │       ├── integration_run.rs
+│   │       └── resources
+│   │           ├── bind-panic
+│   │           │   ├── Cargo.toml
+│   │           │   └── src
+│   │           │       └── main.rs
+│   │           ├── load-panic
+│   │           │   ├── Cargo.toml
+│   │           │   └── src
+│   │           │       └── main.rs
+│   │           ├── main-panic
+│   │           │   ├── Cargo.toml
+│   │           │   └── src
+│   │           │       └── main.rs
+│   │           ├── sleep-async
+│   │           │   ├── Cargo.toml
+│   │           │   └── src
+│   │           │       └── main.rs
+│   │           ├── tests-fail
+│   │           │   ├── Cargo.toml
+│   │           │   ├── Shuttle.toml
+│   │           │   └── src
+│   │           │       └── main.rs
+│   │           └── tests-pass
+│   │               ├── Cargo.toml
+│   │               ├── Shuttle.toml
+│   │               └── src
+│   │                   └── main.rs
+│   ├── DEVELOPING.md
+│   ├── docker-compose.dev.yml
+│   ├── docker-compose.yml
+│   ├── examples
+│   ├── extras
+│   │   ├── otel
+│   │   │   ├── Containerfile
+│   │   │   └── otel-collector-config.yaml
+│   │   └── postgres
+│   │       ├── Containerfile
+│   │       ├── shuttle-entrypoint.sh
+│   │       └── watch
+│   ├── gateway
+│   │   ├── build.rs
+│   │   ├── Cargo.toml
+│   │   ├── migrations
+│   │   │   ├── 0000_init.sql
+│   │   │   ├── 0001_add_top_level_account_perms.sql
+│   │   │   ├── 0002_custom_domains.sql
+│   │   │   ├── 0003_drop_accounts.sql
+│   │   │   ├── 0004_project-add-created-at.sql
+│   │   │   ├── 0005_refactor_to_ulid_primary_key.sql
+│   │   │   ├── 0006_uppercase_ulid.sql
+│   │   │   └── 0007_user_ids.sql
+│   │   ├── README.md
+│   │   ├── src
+│   │   │   ├── acme.rs
+│   │   │   ├── api
+│   │   │   │   ├── auth_layer.rs
+│   │   │   │   ├── latest.rs
+│   │   │   │   ├── mod.rs
+│   │   │   │   ├── project_caller.rs
+│   │   │   │   └── tracing.rs
+│   │   │   ├── args.rs
+│   │   │   ├── auth.rs
+│   │   │   ├── lib.rs
+│   │   │   ├── main.rs
+│   │   │   ├── project.rs
+│   │   │   ├── proxy.rs
+│   │   │   ├── service.rs
+│   │   │   ├── task.rs
+│   │   │   ├── tls.rs
+│   │   │   └── worker.rs
+│   │   ├── ulid0_aarch64.so
+│   │   ├── ulid0.dylib
+│   │   └── ulid0.so
+│   ├── install.ps1
+│   ├── install.sh
+│   ├── LICENSE
+│   ├── logger
+│   │   ├── Cargo.toml
+│   │   ├── migrations
+│   │   │   ├── 0000_init.sql
+│   │   │   └── 0001_index.sql
+│   │   ├── src
+│   │   │   ├── args.rs
+│   │   │   ├── dal.rs
+│   │   │   ├── lib.rs
+│   │   │   └── main.rs
+│   │   └── tests
+│   │       └── integration_tests.rs
+│   ├── Makefile
+│   ├── Makefile.toml
+│   ├── proto
+│   │   ├── Cargo.toml
+│   │   ├── logger.proto
+│   │   ├── provisioner.proto
+│   │   ├── README.md
+│   │   ├── resource-recorder.proto
+│   │   ├── runtime.proto
+│   │   └── src
+│   │       ├── generated
+│   │       │   ├── logger.rs
+│   │       │   ├── provisioner.rs
+│   │       │   ├── resource_recorder.rs
+│   │       │   └── runtime.rs
+│   │       ├── generated.rs
+│   │       └── lib.rs
+│   ├── provisioner
+│   │   ├── Cargo.toml
+│   │   ├── src
+│   │   │   ├── args.rs
+│   │   │   ├── error.rs
+│   │   │   ├── lib.rs
+│   │   │   └── main.rs
+│   │   └── tests
+│   │       ├── helpers.rs
+│   │       └── provisioner.rs
+│   ├── README.md
+│   ├── resource-recorder
+│   │   ├── Cargo.toml
+│   │   ├── migrations
+│   │   │   ├── 0000_init.sql
+│   │   │   └── 0001_delete_outdated_resources.sql
+│   │   ├── src
+│   │   │   ├── args.rs
+│   │   │   ├── dal.rs
+│   │   │   ├── lib.rs
+│   │   │   └── main.rs
+│   │   └── tests
+│   │       └── integration.rs
+│   ├── resources
+│   │   ├── aws-rds
+│   │   │   ├── Cargo.toml
+│   │   │   ├── README.md
+│   │   │   └── src
+│   │   │       └── lib.rs
+│   │   ├── openai
+│   │   │   ├── Cargo.toml
+│   │   │   └── src
+│   │   │       └── lib.rs
+│   │   ├── opendal
+│   │   │   ├── Cargo.toml
+│   │   │   ├── README.md
+│   │   │   └── src
+│   │   │       └── lib.rs
+│   │   ├── persist
+│   │   │   ├── Cargo.toml
+│   │   │   ├── README.md
+│   │   │   └── src
+│   │   │       └── lib.rs
+│   │   ├── qdrant
+│   │   │   ├── Cargo.toml
+│   │   │   └── src
+│   │   │       └── lib.rs
+│   │   ├── README.md
+│   │   ├── shared-db
+│   │   │   ├── Cargo.toml
+│   │   │   ├── README.md
+│   │   │   └── src
+│   │   │       ├── lib.rs
+│   │   │       ├── mongo.rs
+│   │   │       └── postgres.rs
+│   │   └── turso
+│   │       ├── Cargo.toml
+│   │       ├── README.md
+│   │       └── src
+│   │           └── lib.rs
+│   ├── runtime
+│   │   ├── Cargo.toml
+│   │   ├── README.md
+│   │   ├── src
+│   │   │   ├── alpha.rs
+│   │   │   ├── beta.rs
+│   │   │   ├── lib.rs
+│   │   │   ├── plugins.rs
+│   │   │   └── start.rs
+│   │   └── tests
+│   │       ├── integration
+│   │       │   ├── helpers.rs
+│   │       │   ├── loader.rs
+│   │       │   └── main.rs
+│   │       └── resources
+│   │           ├── bind-panic
+│   │           │   ├── Cargo.toml
+│   │           │   └── src
+│   │           │       └── main.rs
+│   │           ├── loader-panic
+│   │           │   ├── Cargo.toml
+│   │           │   └── src
+│   │           │       └── main.rs
+│   │           └── main-panic
+│   │               ├── Cargo.toml
+│   │               └── src
+│   │                   └── main.rs
+│   ├── scripts
+│   │   ├── apply-patches.sh
+│   │   ├── local-admin.sh
+│   │   ├── patches.toml
+│   │   ├── production.sh
+│   │   └── unstable.sh
+│   ├── service
+│   │   ├── Cargo.toml
+│   │   ├── src
+│   │   │   ├── builder.rs
+│   │   │   ├── error.rs
+│   │   │   ├── lib.rs
+│   │   │   └── runner.rs
+│   │   └── tests
+│   │       ├── integration
+│   │       │   ├── build_crate.rs
+│   │       │   └── main.rs
+│   │       └── resources
+│   │           ├── is-bin
+│   │           │   ├── Cargo.toml
+│   │           │   └── src
+│   │           │       └── main.rs
+│   │           ├── not-bin
+│   │           │   ├── Cargo.toml
+│   │           │   └── src
+│   │           │       └── lib.rs
+│   │           ├── not-shuttle
+│   │           │   ├── Cargo.toml
+│   │           │   └── src
+│   │           │       └── main.rs
+│   │           └── workspace
+│   │               ├── alpha
+│   │               │   ├── Cargo.toml
+│   │               │   └── src
+│   │               │       └── main.rs
+│   │               ├── alpha2
+│   │               │   ├── Cargo.toml
+│   │               │   └── src
+│   │               │       └── main.rs
+│   │               ├── Cargo.toml
+│   │               └── shared
+│   │                   ├── Cargo.toml
+│   │                   └── src
+│   │                       └── lib.rs
+│   └── services
+│       ├── README.md
+│       ├── shuttle-actix-web
+│       │   ├── Cargo.toml
+│       │   ├── README.md
+│       │   └── src
+│       │       └── lib.rs
+│       ├── shuttle-axum
+│       │   ├── Cargo.toml
+│       │   ├── README.md
+│       │   └── src
+│       │       └── lib.rs
+│       ├── shuttle-poem
+│       │   ├── Cargo.toml
+│       │   ├── README.md
+│       │   └── src
+│       │       └── lib.rs
+│       ├── shuttle-rocket
+│       │   ├── Cargo.toml
+│       │   ├── README.md
+│       │   └── src
+│       │       └── lib.rs
+│       ├── shuttle-salvo
+│       │   ├── Cargo.toml
+│       │   ├── README.md
+│       │   └── src
+│       │       └── lib.rs
+│       ├── shuttle-serenity
+│       │   ├── Cargo.toml
+│       │   ├── README.md
+│       │   └── src
+│       │       └── lib.rs
+│       ├── shuttle-thruster
+│       │   ├── Cargo.toml
+│       │   ├── README.md
+│       │   └── src
+│       │       └── lib.rs
+│       ├── shuttle-tide
+│       │   ├── Cargo.toml
+│       │   ├── README.md
+│       │   └── src
+│       │       └── lib.rs
+│       ├── shuttle-tower
+│       │   ├── Cargo.toml
+│       │   ├── README.md
+│       │   └── src
+│       │       └── lib.rs
+│       └── shuttle-warp
+│           ├── Cargo.toml
+│           ├── README.md
+│           └── src
+│               └── lib.rs
+└── cargo-shuttle-examples
+    ├── actix-web
+    │   ├── clerk
+    │   │   ├── backend
+    │   │   │   ├── Cargo.toml
+    │   │   │   ├── Secrets.toml.example
+    │   │   │   └── src
+    │   │   │       └── main.rs
+    │   │   ├── Cargo.toml
+    │   │   ├── frontend
+    │   │   │   ├── components.json
+    │   │   │   ├── index.html
+    │   │   │   ├── package.json
+    │   │   │   ├── package-lock.json
+    │   │   │   ├── postcss.config.js
+    │   │   │   ├── src
+    │   │   │   │   ├── App.tsx
+    │   │   │   │   ├── components
+    │   │   │   │   │   ├── ui
+    │   │   │   │   │   │   ├── avatar.tsx
+    │   │   │   │   │   │   └── table.tsx
+    │   │   │   │   │   └── users-table.tsx
+    │   │   │   │   ├── index.css
+    │   │   │   │   ├── lib
+    │   │   │   │   │   └── utils.ts
+    │   │   │   │   ├── main.tsx
+    │   │   │   │   └── vite-env.d.ts
+    │   │   │   ├── tailwind.config.js
+    │   │   │   ├── tsconfig.json
+    │   │   │   ├── tsconfig.node.json
+    │   │   │   └── vite.config.ts
+    │   │   ├── README.md
+    │   │   └── Shuttle.toml
+    │   ├── cookie-authentication
+    │   │   ├── Cargo.toml
+    │   │   ├── README.md
+    │   │   └── src
+    │   │       └── main.rs
+    │   ├── hello-world
+    │   │   ├── Cargo.toml
+    │   │   └── src
+    │   │       └── main.rs
+    │   ├── postgres
+    │   │   ├── Cargo.toml
+    │   │   ├── migrations
+    │   │   │   └── 0001_init.sql
+    │   │   ├── README.md
+    │   │   └── src
+    │   │       └── main.rs
+    │   ├── README.md
+    │   ├── static-files
+    │   │   ├── assets
+    │   │   │   └── index.html
+    │   │   ├── Cargo.toml
+    │   │   ├── README.md
+    │   │   ├── Shuttle.toml
+    │   │   └── src
+    │   │       └── main.rs
+    │   └── websocket-actorless
+    │       ├── Cargo.toml
+    │       ├── README.md
+    │       ├── Shuttle.toml
+    │       ├── src
+    │       │   └── main.rs
+    │       └── static
+    │           └── index.html
+    ├── axum
+    │   ├── hello-world
+    │   │   ├── Cargo.toml
+    │   │   └── src
+    │   │       └── main.rs
+    │   ├── htmx-crud
+    │   │   ├── Cargo.toml
+    │   │   ├── migrations
+    │   │   │   └── 0001_init.sql
+    │   │   ├── README.md
+    │   │   ├── src
+    │   │   │   ├── errors.rs
+    │   │   │   ├── main.rs
+    │   │   │   ├── models.rs
+    │   │   │   ├── router.rs
+    │   │   │   ├── routes.rs
+    │   │   │   └── templates.rs
+    │   │   └── templates
+    │   │       ├── base.html
+    │   │       ├── index.html
+    │   │       ├── stream.html
+    │   │       ├── styles.css
+    │   │       ├── todo.html
+    │   │       └── todos.html
+    │   ├── jwt-authentication
+    │   │   ├── Cargo.toml
+    │   │   ├── README.md
+    │   │   └── src
+    │   │       └── main.rs
+    │   ├── metadata
+    │   │   ├── Cargo.toml
+    │   │   └── src
+    │   │       └── main.rs
+    │   ├── oauth2
+    │   │   ├── Cargo.toml
+    │   │   ├── migrations
+    │   │   │   └── 0001_init.sql
+    │   │   ├── README.md
+    │   │   └── src
+    │   │       ├── errors.rs
+    │   │       ├── main.rs
+    │   │       └── oauth.rs
+    │   ├── openai
+    │   │   ├── Cargo.toml
+    │   │   ├── README.md
+    │   │   ├── Secrets.toml
+    │   │   └── src
+    │   │       └── main.rs
+    │   ├── postgres
+    │   │   ├── Cargo.toml
+    │   │   ├── migrations
+    │   │   │   └── 0001_init.sql
+    │   │   ├── README.md
+    │   │   └── src
+    │   │       └── main.rs
+    │   ├── qdrant
+    │   │   ├── Cargo.toml
+    │   │   ├── README.md
+    │   │   ├── Secrets.toml
+    │   │   └── src
+    │   │       └── main.rs
+    │   ├── static-files
+    │   │   ├── assets
+    │   │   │   ├── index.html
+    │   │   │   ├── script.js
+    │   │   │   └── style.css
+    │   │   ├── Cargo.toml
+    │   │   ├── README.md
+    │   │   ├── Shuttle.toml
+    │   │   └── src
+    │   │       └── main.rs
+    │   ├── turso
+    │   │   ├── Cargo.toml
+    │   │   ├── Secrets.dev.toml
+    │   │   ├── Secrets.toml
+    │   │   └── src
+    │   │       └── main.rs
+    │   └── websocket
+    │       ├── Cargo.toml
+    │       ├── Shuttle.toml
+    │       ├── src
+    │       │   └── main.rs
+    │       └── static
+    │           └── index.html
+    ├── _benchmarks
+    │   ├── axum-static-files.yml
+    │   ├── README.md
+    │   ├── saas-template.yml
+    │   └── salvo-image-rescaler.yml
+    ├── bevy
+    │   └── hello-world
+    │       ├── Cargo.toml
+    │       ├── dist
+    │       │   ├── index.html
+    │       │   └── Roboto-Black.ttf
+    │       ├── game
+    │       │   ├── Cargo.toml
+    │       │   └── src
+    │       │       └── main.rs
+    │       ├── Makefile
+    │       ├── README.md
+    │       ├── server
+    │       │   ├── Cargo.toml
+    │       │   └── src
+    │       │       └── main.rs
+    │       └── Shuttle.toml
+    ├── ci.sh
+    ├── custom-resource
+    │   └── pdo
+    │       ├── Cargo.toml
+    │       └── src
+    │           ├── lib.rs
+    │           └── main.rs
+    ├── custom-service
+    │   ├── none
+    │   │   ├── Cargo.toml
+    │   │   └── src
+    │   │       └── main.rs
+    │   └── request-scheduler
+    │       ├── Cargo.toml
+    │       ├── README.md
+    │       ├── request.sh
+    │       └── src
+    │           ├── error.rs
+    │           ├── lib.rs
+    │           ├── main.rs
+    │           └── router.rs
+    ├── fullstack-templates
+    │   └── saas
+    │       ├── backend
+    │       │   ├── Cargo.toml
+    │       │   ├── migrations
+    │       │   │   └── 20230415200225_schema.sql
+    │       │   └── src
+    │       │       ├── auth.rs
+    │       │       ├── customers.rs
+    │       │       ├── dashboard.rs
+    │       │       ├── deals.rs
+    │       │       ├── mail.rs
+    │       │       ├── main.rs
+    │       │       ├── payments.rs
+    │       │       └── router.rs
+    │       ├── Cargo.toml
+    │       ├── Mainpage.png
+    │       ├── next.config.js
+    │       ├── package.json
+    │       ├── package-lock.json
+    │       ├── postcss.config.js
+    │       ├── public
+    │       │   ├── favicon.ico
+    │       │   ├── next.svg
+    │       │   └── vercel.svg
+    │       ├── README.md
+    │       ├── Shuttle.toml
+    │       ├── src
+    │       │   ├── components
+    │       │   │   ├── AuthedLayout.tsx
+    │       │   │   ├── CustomerSingleModal.tsx
+    │       │   │   ├── DealSingleModal copy.tsx
+    │       │   │   ├── Layout.tsx
+    │       │   │   ├── Metrics.tsx
+    │       │   │   ├── navbar.tsx
+    │       │   │   ├── Navigation.tsx
+    │       │   │   ├── RecentSales.tsx
+    │       │   │   ├── SalesChart.tsx
+    │       │   │   ├── Sidebar.tsx
+    │       │   │   └── TopClients.tsx
+    │       │   ├── pages
+    │       │   │   ├── _app.tsx
+    │       │   │   ├── dashboard
+    │       │   │   │   ├── customers
+    │       │   │   │   │   ├── create.tsx
+    │       │   │   │   │   ├── edit.tsx
+    │       │   │   │   │   ├── [id].tsx
+    │       │   │   │   │   └── index.tsx
+    │       │   │   │   ├── deals
+    │       │   │   │   │   ├── create.tsx
+    │       │   │   │   │   ├── edit.tsx
+    │       │   │   │   │   └── index.tsx
+    │       │   │   │   ├── index.tsx
+    │       │   │   │   └── upgrade
+    │       │   │   │       ├── checkout
+    │       │   │   │       │   ├── failed.tsx
+    │       │   │   │       │   ├── index.tsx
+    │       │   │   │       │   └── success.tsx
+    │       │   │   │       └── index.tsx
+    │       │   │   ├── _document.tsx
+    │       │   │   ├── forgot.tsx
+    │       │   │   ├── index.tsx
+    │       │   │   ├── login.tsx
+    │       │   │   ├── pricing.tsx
+    │       │   │   └── register.tsx
+    │       │   ├── stores
+    │       │   │   └── zustandStore.ts
+    │       │   └── styles
+    │       │       └── globals.css
+    │       ├── tailwind.config.js
+    │       ├── tsconfig.json
+    │       └── turbowatch.ts
+    ├── loco
+    │   └── hello-world
+    │       ├── Cargo.toml
+    │       ├── config
+    │       │   ├── development.yaml
+    │       │   ├── production.yaml
+    │       │   └── test.yaml
+    │       ├── README.md
+    │       ├── src
+    │       │   ├── app.rs
+    │       │   ├── bin
+    │       │   │   ├── main.rs
+    │       │   │   └── shuttle.rs
+    │       │   ├── controllers
+    │       │   │   ├── home.rs
+    │       │   │   └── mod.rs
+    │       │   ├── lib.rs
+    │       │   └── views
+    │       │       ├── home.rs
+    │       │       └── mod.rs
+    │       └── tests
+    │           ├── mod.rs
+    │           └── requests
+    │               ├── home.rs
+    │               ├── mod.rs
+    │               └── snapshots
+    │                   └── can_get_home@home_request.snap
+    ├── other
+    │   ├── feature-flags
+    │   │   ├── Cargo.toml
+    │   │   └── src
+    │   │       └── main.rs
+    │   └── standalone-binary
+    │       ├── Cargo.toml
+    │       ├── README.md
+    │       ├── Secrets.toml
+    │       └── src
+    │           ├── bin
+    │           │   ├── shuttle.rs
+    │           │   └── standalone.rs
+    │           └── lib.rs
+    ├── poem
+    │   └── hello-world
+    │       ├── Cargo.toml
+    │       └── src
+    │           └── main.rs
+    ├── poise
+    │   └── hello-world
+    │       ├── Cargo.toml
+    │       ├── README.md
+    │       ├── Secrets.toml
+    │       └── src
+    │           └── main.rs
+    ├── README.md
+    ├── rocket
+    │   ├── dyn-templates
+    │   │   ├── Cargo.toml
+    │   │   ├── README.md
+    │   │   ├── Rocket.toml
+    │   │   ├── Shuttle.toml
+    │   │   ├── src
+    │   │   │   └── main.rs
+    │   │   └── templates
+    │   │       └── index.html.hbs
+    │   ├── hello-world
+    │   │   ├── Cargo.toml
+    │   │   └── src
+    │   │       └── main.rs
+    │   ├── jwt-authentication
+    │   │   ├── Cargo.toml
+    │   │   ├── README.md
+    │   │   └── src
+    │   │       ├── claims.rs
+    │   │       └── main.rs
+    │   ├── opendal-memory
+    │   │   ├── Cargo.toml
+    │   │   ├── README.md
+    │   │   └── src
+    │   │       └── main.rs
+    │   ├── postgres
+    │   │   ├── Cargo.toml
+    │   │   ├── schema.sql
+    │   │   ├── Secrets.toml
+    │   │   └── src
+    │   │       └── main.rs
+    │   ├── secrets
+    │   │   ├── Cargo.toml
+    │   │   ├── README.md
+    │   │   ├── Secrets.toml.example
+    │   │   └── src
+    │   │       └── main.rs
+    │   ├── static-files
+    │   │   ├── assets
+    │   │   │   ├── about.html
+    │   │   │   └── index.html
+    │   │   ├── Cargo.toml
+    │   │   ├── Shuttle.toml
+    │   │   └── src
+    │   │       └── main.rs
+    │   ├── url-shortener
+    │   │   ├── Cargo.toml
+    │   │   ├── migrations
+    │   │   │   └── 20220324143837_urls.sql
+    │   │   ├── README.md
+    │   │   └── src
+    │   │       └── main.rs
+    │   └── workspace
+    │       ├── Cargo.toml
+    │       ├── hello-world
+    │       │   ├── Cargo.toml
+    │       │   └── src
+    │       │       └── main.rs
+    │       └── shared
+    │           ├── Cargo.toml
+    │           └── src
+    │               └── lib.rs
+    ├── salvo
+    │   ├── hello-world
+    │   │   ├── Cargo.toml
+    │   │   └── src
+    │   │       └── main.rs
+    │   └── image-rescaler
+    │       ├── Cargo.toml
+    │       ├── README.md
+    │       └── src
+    │           ├── logo-square.png
+    │           └── main.rs
+    ├── _scripts
+    │   └── check-templates.rs
+    ├── serenity
+    │   ├── hello-world
+    │   │   ├── Cargo.toml
+    │   │   ├── README.md
+    │   │   ├── Secrets.toml
+    │   │   └── src
+    │   │       └── main.rs
+    │   ├── postgres
+    │   │   ├── Cargo.toml
+    │   │   ├── README.md
+    │   │   ├── schema.sql
+    │   │   ├── Secrets.toml
+    │   │   └── src
+    │   │       ├── db.rs
+    │   │       └── main.rs
+    │   └── weather-forecast
+    │       ├── Cargo.toml
+    │       ├── README.md
+    │       ├── Secrets.toml
+    │       └── src
+    │           ├── main.rs
+    │           └── weather.rs
+    ├── shuttle-cron
+    │   ├── Cargo.toml
+    │   └── src
+    │       └── main.rs
+    ├── templates.toml
+    ├── thruster
+    │   └── hello-world
+    │       ├── Cargo.toml
+    │       └── src
+    │           └── main.rs
+    ├── tide
+    │   └── hello-world
+    │       ├── Cargo.toml
+    │       └── src
+    │           └── main.rs
+    ├── tower
+    │   └── hello-world
+    │       ├── Cargo.toml
+    │       └── src
+    │           └── main.rs
+    ├── tracing
+    │   └── custom-tracing-subscriber
+    │       ├── Cargo.toml
+    │       └── src
+    │           └── main.rs
+    └── warp
+        └── hello-world
+            ├── Cargo.toml
+            └── src
+                └── main.rs
+
+321 directories, 660 files

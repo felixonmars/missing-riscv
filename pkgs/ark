@@ -1,0 +1,664 @@
+src
+├── ark-24.08.3
+│   ├── app
+│   │   ├── ark_dndextract.json.cmake
+│   │   ├── ark.qrc
+│   │   ├── arkrc
+│   │   ├── arkui.rc
+│   │   ├── batchextract.cpp
+│   │   ├── batchextract.h
+│   │   ├── CMakeLists.txt
+│   │   ├── compressfileitemaction.cpp
+│   │   ├── compressfileitemaction.h
+│   │   ├── compressfileitemaction.json
+│   │   ├── extractfileitemaction.cpp
+│   │   ├── extractfileitemaction.h
+│   │   ├── extractfileitemaction.json
+│   │   ├── extractHereDndPlugin.cpp
+│   │   ├── extractHereDndPlugin.h
+│   │   ├── icons
+│   │   │   ├── 128-apps-ark.png
+│   │   │   ├── 48-apps-ark.png
+│   │   │   ├── 64-apps-ark.png
+│   │   │   ├── CMakeLists.txt
+│   │   │   └── sc-apps-ark.svgz
+│   │   ├── kconf_update
+│   │   │   ├── ark_add_hamburgermenu_to_toolbar.sh
+│   │   │   ├── ark.upd
+│   │   │   └── CMakeLists.txt
+│   │   ├── MacOSXBundleInfo.plist.in
+│   │   ├── main.cpp
+│   │   ├── mainwindow.cpp
+│   │   ├── mainwindow.h
+│   │   ├── org.kde.ark.appdata.xml
+│   │   ├── org.kde.ark.desktop.cmake
+│   │   └── welcomeview
+│   │       ├── recentfilesmodel.cpp
+│   │       ├── recentfilesmodel.h
+│   │       ├── welcomeview.cpp
+│   │       ├── welcomeview.h
+│   │       └── welcomeview.ui
+│   ├── autotests
+│   │   ├── app
+│   │   │   ├── batchextracttest.cpp
+│   │   │   ├── CMakeLists.txt
+│   │   │   └── data
+│   │   │       ├── simple%archive.tar.gz
+│   │   │       └── test.txt.gz
+│   │   ├── CMakeLists.txt
+│   │   ├── kerfuffle
+│   │   │   ├── adddialogtest.cpp
+│   │   │   ├── addtest.cpp
+│   │   │   ├── addtoarchivetest.cpp
+│   │   │   ├── CMakeLists.txt
+│   │   │   ├── copytest.cpp
+│   │   │   ├── createdialogtest.cpp
+│   │   │   ├── data
+│   │   │   │   ├── addonsu-remove-14.1-x86-signed.zip
+│   │   │   │   ├── archive001.json
+│   │   │   │   ├── archive002.json
+│   │   │   │   ├── archive-deepsinglehierarchy.json
+│   │   │   │   ├── archive-emptysinglefolder.json
+│   │   │   │   ├── archive-malicious.json
+│   │   │   │   ├── archive-multiplefolders.json
+│   │   │   │   ├── archive-multivolume.7z.001
+│   │   │   │   ├── archive-multivolume.7z.002
+│   │   │   │   ├── archive-multivolume.7z.003
+│   │   │   │   ├── archive-multivolume.part1.rar
+│   │   │   │   ├── archive-multivolume.part2.rar
+│   │   │   │   ├── archive-multivolume.part3.rar
+│   │   │   │   ├── archive-nodir-manyfiles.json
+│   │   │   │   ├── archive-onetopfolder.json
+│   │   │   │   ├── archive-password.json
+│   │   │   │   ├── archive-singlefile.json
+│   │   │   │   ├── archivetest_encrypted.zip
+│   │   │   │   ├── archivetest_unencrypted.zip
+│   │   │   │   ├── archive-unorderedsinglefolder.json
+│   │   │   │   ├── archive-with-metadata.zip
+│   │   │   │   ├── archlinux-2015.09.01-dual_truncated.iso
+│   │   │   │   ├── a.txt
+│   │   │   │   ├── bug_#394542.zip
+│   │   │   │   ├── code-x.y.z.tar.gz
+│   │   │   │   ├── empty_folders.tar.gz
+│   │   │   │   ├── empty_folders.zip
+│   │   │   │   ├── firmware-pine64-20160329-6.1.aarch64.rpm
+│   │   │   │   ├── hello-1.0-x86_64.AppImage
+│   │   │   │   ├── hello-appimage-runtime.c
+│   │   │   │   ├── kubuntu-14.04.1-desktop-amd64_truncated.iso
+│   │   │   │   ├── libdummy.a
+│   │   │   │   ├── Makefile
+│   │   │   │   ├── one_toplevel_folder.7z
+│   │   │   │   ├── one_toplevel_folder.arj
+│   │   │   │   ├── one_toplevel_folder.zip
+│   │   │   │   ├── README
+│   │   │   │   ├── simplearchive.tar.bz2
+│   │   │   │   ├── simplearchive.tar.gz
+│   │   │   │   ├── simplearchive.tar.lrz
+│   │   │   │   ├── simplearchive.tar.lz
+│   │   │   │   ├── simplearchive.tar.lz4
+│   │   │   │   ├── simplearchive.tar.lzma
+│   │   │   │   ├── simplearchive.tar.lzo
+│   │   │   │   ├── simplearchive.tar.xz
+│   │   │   │   ├── simplearchive.tar.Z
+│   │   │   │   ├── simplearchive.tar.zst
+│   │   │   │   ├── simplearchive.xar
+│   │   │   │   ├── single-empty-folder.zip
+│   │   │   │   ├── smallarchive.deb
+│   │   │   │   ├── tar-v7.tar
+│   │   │   │   ├── test-3.4.0
+│   │   │   │   │   └── testfile1.txt
+│   │   │   │   ├── test.7z
+│   │   │   │   ├── test.arj
+│   │   │   │   ├── test%dir
+│   │   │   │   │   ├── testfile1.txt
+│   │   │   │   │   └── testfile2.txt
+│   │   │   │   ├── testdir
+│   │   │   │   │   ├── testfile1.txt
+│   │   │   │   │   └── testfile2.txt
+│   │   │   │   ├── testdir2
+│   │   │   │   │   └── testdir
+│   │   │   │   │       ├── testfile1.txt
+│   │   │   │   │       └── testfile2.txt
+│   │   │   │   ├── testdirwithemptysubdir
+│   │   │   │   │   ├── testfile1.txt
+│   │   │   │   │   └── testfile2.txt
+│   │   │   │   ├── testdirwithemptysubdir_1.rar
+│   │   │   │   ├── testdirwithsubdirs
+│   │   │   │   │   ├── subdir1
+│   │   │   │   │   │   ├── subdir2
+│   │   │   │   │   │   │   ├── subdir3
+│   │   │   │   │   │   │   │   └── testfile4.txt
+│   │   │   │   │   │   │   └── testfile3.txt
+│   │   │   │   │   │   └── testfile2.txt
+│   │   │   │   │   └── testfile1.txt
+│   │   │   │   ├── test_encrypted.arj
+│   │   │   │   ├── testfile.md
+│   │   │   │   ├── testfile.txt
+│   │   │   │   ├── test.odt
+│   │   │   │   ├── test_permissions.7z
+│   │   │   │   ├── test_permissions.rar
+│   │   │   │   ├── test_permissions.tar.bz2
+│   │   │   │   ├── test_permissions.zip
+│   │   │   │   ├── test.png.lzma
+│   │   │   │   ├── test.png.lzo
+│   │   │   │   ├── test.rar
+│   │   │   │   ├── test.sit
+│   │   │   │   ├── test.svgz
+│   │   │   │   ├── test.tar.bz2
+│   │   │   │   ├── test.txt.bz2
+│   │   │   │   ├── test.txt.gz
+│   │   │   │   ├── test.txt.lrz
+│   │   │   │   ├── test.txt.lz4
+│   │   │   │   ├── test.txt.zst
+│   │   │   │   ├── test.z
+│   │   │   │   ├── test.zip
+│   │   │   │   ├── test.zz
+│   │   │   │   ├── textfile1.txt
+│   │   │   │   ├── textfile2.txt
+│   │   │   │   ├── wget-download.tar.gz.1
+│   │   │   │   ├── wget.rpm
+│   │   │   │   └── zip_with_wrong_extension.rar
+│   │   │   ├── deletetest.cpp
+│   │   │   ├── extracttest.cpp
+│   │   │   ├── jobstest.cpp
+│   │   │   ├── jsonarchiveinterface.cpp
+│   │   │   ├── jsonarchiveinterface.h
+│   │   │   ├── jsonparser.cpp
+│   │   │   ├── jsonparser.h
+│   │   │   ├── loadtest.cpp
+│   │   │   ├── metadatatest.cpp
+│   │   │   ├── mimetypetest.cpp
+│   │   │   ├── movetest.cpp
+│   │   │   └── preservemetadatatest.cpp
+│   │   ├── plugins
+│   │   │   ├── cli7zplugin
+│   │   │   │   ├── cli7ztest.cpp
+│   │   │   │   ├── cli7ztest.h
+│   │   │   │   ├── CMakeLists.txt
+│   │   │   │   └── data
+│   │   │   │       ├── archive-encrypted-1509.txt
+│   │   │   │       ├── archive-encrypted-1514.txt
+│   │   │   │       ├── archive-encrypted-1602.txt
+│   │   │   │       ├── archive-encrypted-9381.txt
+│   │   │   │       ├── archive-multivol-1602.txt
+│   │   │   │       ├── archive-multivolume.7z.001
+│   │   │   │       ├── archive-multivolume.7z.002
+│   │   │   │       ├── archive-multivolume.7z.003
+│   │   │   │       ├── archive-with-symlink-1509.txt
+│   │   │   │       ├── archive-with-symlink-1514.txt
+│   │   │   │       ├── archive-with-symlink-1602.txt
+│   │   │   │       ├── archive-with-symlink-9381.txt
+│   │   │   │       ├── archive-zip-AES256-1602.txt
+│   │   │   │       ├── one_toplevel_folder.7z
+│   │   │   │       └── RDA-attributes.zip
+│   │   │   ├── cliarjplugin
+│   │   │   │   ├── cliarjtest.cpp
+│   │   │   │   ├── cliarjtest.h
+│   │   │   │   └── CMakeLists.txt
+│   │   │   ├── clirarplugin
+│   │   │   │   ├── clirartest.cpp
+│   │   │   │   ├── clirartest.h
+│   │   │   │   ├── CMakeLists.txt
+│   │   │   │   └── data
+│   │   │   │       ├── archive-corrupt-file-header-unrar3.txt
+│   │   │   │       ├── archive-corrupt-file-header-unrar4.txt
+│   │   │   │       ├── archive-corrupt-file-header-unrar5.txt
+│   │   │   │       ├── archive-encrypted-unrar4.txt
+│   │   │   │       ├── archive-encrypted-unrar5.txt
+│   │   │   │       ├── archive-multivol-unrar4.txt
+│   │   │   │       ├── archive-multivol-unrar5.txt
+│   │   │   │       ├── archive-RARv5-unrar3.txt
+│   │   │   │       ├── archive-RARv5-unrar4.txt
+│   │   │   │       ├── archive-RARv5-unrar5.txt
+│   │   │   │       ├── archive-recovery-record-unrar4.txt
+│   │   │   │       ├── archive-recovery-record-unrar5.txt
+│   │   │   │       ├── archive-with-symlink-unrar4.txt
+│   │   │   │       ├── archive-with-symlink-unrar5.txt
+│   │   │   │       ├── locked_archive.rar
+│   │   │   │       └── one_toplevel_folder.rar
+│   │   │   ├── cliunarchiverplugin
+│   │   │   │   ├── cliunarchivertest.cpp
+│   │   │   │   ├── cliunarchivertest.h
+│   │   │   │   ├── CMakeLists.txt
+│   │   │   │   └── data
+│   │   │   │       ├── empty_folders.rar
+│   │   │   │       ├── encrypted_entries.json
+│   │   │   │       ├── encrypted_entries.rar
+│   │   │   │       ├── hidden_files.rar
+│   │   │   │       ├── huge_archive.json
+│   │   │   │       ├── multiple_toplevel_entries.json
+│   │   │   │       ├── multiple_toplevel_entries.lha
+│   │   │   │       ├── multiple_toplevel_entries.rar
+│   │   │   │       ├── one_toplevel_folder.json
+│   │   │   │       ├── one_toplevel_folder.lha
+│   │   │   │       ├── one_toplevel_folder.rar
+│   │   │   │       ├── README
+│   │   │   │       └── test.sit
+│   │   │   ├── clizipplugin
+│   │   │   │   ├── cliziptest.cpp
+│   │   │   │   ├── cliziptest.h
+│   │   │   │   └── CMakeLists.txt
+│   │   │   └── CMakeLists.txt
+│   │   └── testhelper
+│   │       ├── abstractaddtest.cpp
+│   │       ├── abstractaddtest.h
+│   │       ├── CMakeLists.txt
+│   │       ├── testhelper.cpp
+│   │       └── testhelper.h
+│   ├── cmake
+│   │   └── modules
+│   │       └── FindLibZip.cmake
+│   ├── CMakeLists.txt
+│   ├── CMakePresets.json
+│   ├── config.h.in
+│   ├── CONTRIBUTING.md
+│   ├── COPYING.icons
+│   ├── doc
+│   │   ├── ark-comment.png
+│   │   ├── ark-mainwindow.png
+│   │   ├── CMakeLists.txt
+│   │   ├── create-archive.png
+│   │   ├── create-protected-archive.png
+│   │   ├── extract-dialog.png
+│   │   ├── index.docbook
+│   │   └── man-ark.1.docbook
+│   ├── kerfuffle
+│   │   ├── adddialog.cpp
+│   │   ├── adddialog.h
+│   │   ├── adddialog.ui
+│   │   ├── addtoarchive.cpp
+│   │   ├── addtoarchive.h
+│   │   ├── archiveentry.cpp
+│   │   ├── archiveentry.h
+│   │   ├── archiveformat.cpp
+│   │   ├── archiveformat.h
+│   │   ├── archiveinterface.cpp
+│   │   ├── archiveinterface.h
+│   │   ├── archive_kerfuffle.cpp
+│   │   ├── archive_kerfuffle.h
+│   │   ├── ark.kcfg
+│   │   ├── cliinterface.cpp
+│   │   ├── cliinterface.h
+│   │   ├── cliproperties.cpp
+│   │   ├── cliproperties.h
+│   │   ├── CMakeLists.txt
+│   │   ├── compressionoptionswidget.cpp
+│   │   ├── compressionoptionswidget.h
+│   │   ├── compressionoptionswidget.ui
+│   │   ├── createdialog.cpp
+│   │   ├── createdialog.h
+│   │   ├── createdialog.ui
+│   │   ├── extractiondialog.cpp
+│   │   ├── extractiondialog.h
+│   │   ├── extractiondialog.ui
+│   │   ├── extractionsettingspage.cpp
+│   │   ├── extractionsettingspage.h
+│   │   ├── extractionsettingspage.ui
+│   │   ├── generalsettingspage.cpp
+│   │   ├── generalsettingspage.h
+│   │   ├── generalsettingspage.ui
+│   │   ├── jobs.cpp
+│   │   ├── jobs.h
+│   │   ├── metadatabackup.cpp
+│   │   ├── metadatabackup.h
+│   │   ├── mimetypes.cpp
+│   │   ├── mimetypes.h
+│   │   ├── options.cpp
+│   │   ├── options.h
+│   │   ├── plugin.cpp
+│   │   ├── plugin.h
+│   │   ├── pluginmanager.cpp
+│   │   ├── pluginmanager.h
+│   │   ├── pluginsettingspage.cpp
+│   │   ├── pluginsettingspage.h
+│   │   ├── pluginsettingspage.ui
+│   │   ├── previewsettingspage.cpp
+│   │   ├── previewsettingspage.h
+│   │   ├── previewsettingspage.ui
+│   │   ├── propertiesdialog.cpp
+│   │   ├── propertiesdialog.h
+│   │   ├── propertiesdialog.ui
+│   │   ├── qstringtokenizer.cpp
+│   │   ├── qstringtokenizer.h
+│   │   ├── queries.cpp
+│   │   ├── queries.h
+│   │   ├── settingsdialog.cpp
+│   │   ├── settingsdialog.h
+│   │   ├── settings.kcfgc
+│   │   ├── settingspage.cpp
+│   │   ├── settingspage.h
+│   │   ├── util.h
+│   │   └── windows_stat.h
+│   ├── LICENSES
+│   │   ├── BSD-2-Clause.txt
+│   │   ├── CC0-1.0.txt
+│   │   ├── GPL-2.0-or-later.txt
+│   │   ├── LGPL-3.0-only.txt
+│   │   └── MIT.txt
+│   ├── logo.png
+│   ├── Mainpage.dox
+│   ├── Messages.sh
+│   ├── part
+│   │   ├── archivemodel.cpp
+│   │   ├── archivemodel.h
+│   │   ├── archivesortfiltermodel.cpp
+│   │   ├── archivesortfiltermodel.h
+│   │   ├── archiveview.cpp
+│   │   ├── archiveview.h
+│   │   ├── ark_part.desktop.cmake
+│   │   ├── ark_part.json.cmake
+│   │   ├── arkpart.qrc
+│   │   ├── ark_part.rc
+│   │   ├── arkviewer.cpp
+│   │   ├── arkviewer.h
+│   │   ├── ark_viewer.rc
+│   │   ├── arkviewer.ui
+│   │   ├── CMakeLists.txt
+│   │   ├── dnddbusinterface.xml
+│   │   ├── factory.cpp
+│   │   ├── factory.h
+│   │   ├── infopanel.cpp
+│   │   ├── infopanel.h
+│   │   ├── infopanel.ui
+│   │   ├── interface.h
+│   │   ├── jobtracker.cpp
+│   │   ├── jobtracker.h
+│   │   ├── jobtracker.ui
+│   │   ├── overwritedialog.cpp
+│   │   ├── overwritedialog.h
+│   │   ├── part.cpp
+│   │   └── part.h
+│   ├── plugins
+│   │   ├── cli7zplugin
+│   │   │   ├── cliplugin.cpp
+│   │   │   ├── cliplugin.h
+│   │   │   ├── CMakeLists.txt
+│   │   │   └── kerfuffle_cli7z.json.cmake
+│   │   ├── cliarjplugin
+│   │   │   ├── cliplugin.cpp
+│   │   │   ├── cliplugin.h
+│   │   │   ├── CMakeLists.txt
+│   │   │   └── kerfuffle_cliarj.json.cmake
+│   │   ├── cliplugin-example
+│   │   │   ├── cliplugin.cpp
+│   │   │   ├── cliplugin.h
+│   │   │   ├── CMakeLists.txt
+│   │   │   └── kerfuffle_cli.json_TEMPLATE
+│   │   ├── clirarplugin
+│   │   │   ├── cliplugin.cpp
+│   │   │   ├── cliplugin.h
+│   │   │   ├── CMakeLists.txt
+│   │   │   └── kerfuffle_clirar.json.cmake
+│   │   ├── CLI-README
+│   │   ├── cliunarchiverplugin
+│   │   │   ├── cliplugin.cpp
+│   │   │   ├── cliplugin.h
+│   │   │   ├── CMakeLists.txt
+│   │   │   └── kerfuffle_cliunarchiver.json.cmake
+│   │   ├── clizipplugin
+│   │   │   ├── cliplugin.cpp
+│   │   │   ├── cliplugin.h
+│   │   │   ├── CMakeLists.txt
+│   │   │   └── kerfuffle_clizip.json.cmake
+│   │   ├── CMakeLists.txt
+│   │   ├── libarchive
+│   │   │   ├── CMakeLists.txt
+│   │   │   ├── kerfuffle_libarchive.json.cmake
+│   │   │   ├── kerfuffle_libarchive_readonly.json.cmake
+│   │   │   ├── libarchiveplugin.cpp
+│   │   │   ├── libarchiveplugin.h
+│   │   │   ├── readonlylibarchiveplugin.cpp
+│   │   │   ├── readonlylibarchiveplugin.h
+│   │   │   ├── readwritelibarchiveplugin.cpp
+│   │   │   └── readwritelibarchiveplugin.h
+│   │   └── libzipplugin
+│   │       ├── CMakeLists.txt
+│   │       ├── kerfuffle_libzip.json.cmake
+│   │       ├── libzipplugin.cpp
+│   │       └── libzipplugin.h
+│   ├── po
+│   │   ├── af
+│   │   │   └── ark.po
+│   │   ├── ar
+│   │   │   └── ark.po
+│   │   ├── ast
+│   │   │   └── ark.po
+│   │   ├── az
+│   │   │   └── ark.po
+│   │   ├── be
+│   │   │   └── ark.po
+│   │   ├── bg
+│   │   │   └── ark.po
+│   │   ├── br
+│   │   │   └── ark.po
+│   │   ├── bs
+│   │   │   └── ark.po
+│   │   ├── ca
+│   │   │   ├── ark.po
+│   │   │   └── docs
+│   │   │       └── ark
+│   │   │           ├── index.docbook
+│   │   │           └── man-ark.1.docbook
+│   │   ├── ca@valencia
+│   │   │   └── ark.po
+│   │   ├── cs
+│   │   │   └── ark.po
+│   │   ├── cy
+│   │   │   └── ark.po
+│   │   ├── da
+│   │   │   └── ark.po
+│   │   ├── de
+│   │   │   ├── ark.po
+│   │   │   └── docs
+│   │   │       └── ark
+│   │   │           └── ark-mainwindow.png
+│   │   ├── el
+│   │   │   └── ark.po
+│   │   ├── en_GB
+│   │   │   └── ark.po
+│   │   ├── eo
+│   │   │   └── ark.po
+│   │   ├── es
+│   │   │   ├── ark.po
+│   │   │   └── docs
+│   │   │       └── ark
+│   │   │           ├── index.docbook
+│   │   │           └── man-ark.1.docbook
+│   │   ├── et
+│   │   │   ├── ark.po
+│   │   │   └── docs
+│   │   │       └── ark
+│   │   │           └── index.docbook
+│   │   ├── eu
+│   │   │   └── ark.po
+│   │   ├── fa
+│   │   │   └── ark.po
+│   │   ├── fi
+│   │   │   └── ark.po
+│   │   ├── fr
+│   │   │   ├── ark.po
+│   │   │   └── docs
+│   │   │       └── ark
+│   │   │           ├── ark-mainwindow.png
+│   │   │           └── man-ark.1.docbook
+│   │   ├── ga
+│   │   │   └── ark.po
+│   │   ├── gl
+│   │   │   ├── ark.po
+│   │   │   └── docs
+│   │   │       └── ark
+│   │   │           ├── index.docbook
+│   │   │           └── man-ark.1.docbook
+│   │   ├── he
+│   │   │   └── ark.po
+│   │   ├── hi
+│   │   │   └── ark.po
+│   │   ├── hne
+│   │   │   └── ark.po
+│   │   ├── hr
+│   │   │   └── ark.po
+│   │   ├── hu
+│   │   │   └── ark.po
+│   │   ├── ia
+│   │   │   └── ark.po
+│   │   ├── id
+│   │   │   └── ark.po
+│   │   ├── ie
+│   │   │   └── ark.po
+│   │   ├── is
+│   │   │   └── ark.po
+│   │   ├── it
+│   │   │   ├── ark.po
+│   │   │   └── docs
+│   │   │       └── ark
+│   │   │           ├── ark-comment.png
+│   │   │           ├── ark-mainwindow.png
+│   │   │           ├── create-archive.png
+│   │   │           ├── create-protected-archive.png
+│   │   │           ├── extract-dialog.png
+│   │   │           ├── index.docbook
+│   │   │           └── man-ark.1.docbook
+│   │   ├── ja
+│   │   │   └── ark.po
+│   │   ├── ka
+│   │   │   └── ark.po
+│   │   ├── kk
+│   │   │   └── ark.po
+│   │   ├── km
+│   │   │   └── ark.po
+│   │   ├── ko
+│   │   │   └── ark.po
+│   │   ├── ku
+│   │   │   └── ark.po
+│   │   ├── lt
+│   │   │   └── ark.po
+│   │   ├── lv
+│   │   │   └── ark.po
+│   │   ├── mk
+│   │   │   └── ark.po
+│   │   ├── mr
+│   │   │   └── ark.po
+│   │   ├── ms
+│   │   │   └── ark.po
+│   │   ├── nb
+│   │   │   └── ark.po
+│   │   ├── nds
+│   │   │   └── ark.po
+│   │   ├── ne
+│   │   │   └── ark.po
+│   │   ├── nl
+│   │   │   ├── ark.po
+│   │   │   └── docs
+│   │   │       └── ark
+│   │   │           ├── index.docbook
+│   │   │           └── man-ark.1.docbook
+│   │   ├── nn
+│   │   │   └── ark.po
+│   │   ├── oc
+│   │   │   └── ark.po
+│   │   ├── pa
+│   │   │   └── ark.po
+│   │   ├── pl
+│   │   │   ├── ark.po
+│   │   │   └── docs
+│   │   │       └── ark
+│   │   │           └── index.docbook
+│   │   ├── pt
+│   │   │   ├── ark.po
+│   │   │   └── docs
+│   │   │       └── ark
+│   │   │           └── index.docbook
+│   │   ├── pt_BR
+│   │   │   ├── ark.po
+│   │   │   └── docs
+│   │   │       └── ark
+│   │   │           ├── ark-mainwindow.png
+│   │   │           ├── create-protected-archive.png
+│   │   │           ├── index.docbook
+│   │   │           └── man-ark.1.docbook
+│   │   ├── ro
+│   │   │   └── ark.po
+│   │   ├── ru
+│   │   │   ├── ark.po
+│   │   │   └── docs
+│   │   │       └── ark
+│   │   │           └── index.docbook
+│   │   ├── se
+│   │   │   └── ark.po
+│   │   ├── sk
+│   │   │   └── ark.po
+│   │   ├── sl
+│   │   │   ├── ark.po
+│   │   │   └── docs
+│   │   │       └── ark
+│   │   │           ├── index.docbook
+│   │   │           └── man-ark.1.docbook
+│   │   ├── sq
+│   │   │   └── ark.po
+│   │   ├── sr
+│   │   │   ├── ark.po
+│   │   │   └── docs
+│   │   │       └── ark
+│   │   │           ├── index.docbook
+│   │   │           ├── l10n-track
+│   │   │           └── man-ark.1.docbook
+│   │   ├── sr@ijekavian
+│   │   │   └── ark.po
+│   │   ├── sr@ijekavianlatin
+│   │   │   └── ark.po
+│   │   ├── sr@latin
+│   │   │   ├── ark.po
+│   │   │   └── docs
+│   │   │       └── ark
+│   │   │           ├── index.docbook
+│   │   │           └── man-ark.1.docbook
+│   │   ├── sv
+│   │   │   ├── ark.po
+│   │   │   └── docs
+│   │   │       └── ark
+│   │   │           ├── index.docbook
+│   │   │           └── man-ark.1.docbook
+│   │   ├── ta
+│   │   │   └── ark.po
+│   │   ├── tg
+│   │   │   └── ark.po
+│   │   ├── th
+│   │   │   └── ark.po
+│   │   ├── tr
+│   │   │   ├── ark.po
+│   │   │   └── docs
+│   │   │       └── ark
+│   │   │           ├── index.docbook
+│   │   │           └── man-ark.1.docbook
+│   │   ├── ug
+│   │   │   └── ark.po
+│   │   ├── uk
+│   │   │   ├── ark.po
+│   │   │   └── docs
+│   │   │       └── ark
+│   │   │           ├── ark-comment.png
+│   │   │           ├── ark-mainwindow.png
+│   │   │           ├── create-archive.png
+│   │   │           ├── create-protected-archive.png
+│   │   │           ├── extract-dialog.png
+│   │   │           ├── index.docbook
+│   │   │           └── man-ark.1.docbook
+│   │   ├── uz
+│   │   │   └── ark.po
+│   │   ├── uz@cyrillic
+│   │   │   └── ark.po
+│   │   ├── xh
+│   │   │   └── ark.po
+│   │   ├── zh_CN
+│   │   │   └── ark.po
+│   │   ├── zh_HK
+│   │   │   └── ark.po
+│   │   └── zh_TW
+│   │       └── ark.po
+│   ├── README.md
+│   ├── README.packagers
+│   └── snapcraft.yaml
+├── ark-24.08.3.tar.xz -> /home/felix/packages/ark/ark-24.08.3.tar.xz
+└── ark-24.08.3.tar.xz.sig -> /home/felix/packages/ark/ark-24.08.3.tar.xz.sig
+
+162 directories, 500 files

@@ -1,0 +1,252 @@
+src
+└── pywebview
+    ├── appveyor.yml
+    ├── docs
+    │   ├── blog
+    │   │   ├── pywebview3.md
+    │   │   ├── pywebview3.png
+    │   │   ├── pywebview5.md
+    │   │   └── README.md
+    │   ├── CHANGELOG.md
+    │   ├── contributing
+    │   │   ├── bug_reporting.md
+    │   │   ├── development.md
+    │   │   ├── documentation.md
+    │   │   ├── donating.md
+    │   │   └── README.md
+    │   ├── examples
+    │   │   └── README.md
+    │   ├── guide
+    │   │   ├── api.md
+    │   │   ├── architecture.md
+    │   │   ├── debugging.md
+    │   │   ├── dom.md
+    │   │   ├── faq.md
+    │   │   ├── freezing.md
+    │   │   ├── installation.md
+    │   │   ├── interdomain.md
+    │   │   ├── README.md
+    │   │   ├── security.md
+    │   │   ├── usage.md
+    │   │   └── web_engine.md
+    │   ├── package.json
+    │   ├── package-lock.json
+    │   ├── README.md
+    │   └── _redirects
+    ├── examples
+    │   ├── assets
+    │   │   ├── cookies.html
+    │   │   ├── index.html
+    │   │   ├── video.mp4
+    │   │   └── video.webm
+    │   ├── cef.py
+    │   ├── change_url.py
+    │   ├── confirmation_dialog.py
+    │   ├── confirm_close.py
+    │   ├── cookies.py
+    │   ├── debug.py
+    │   ├── destroy_window.py
+    │   ├── dom_events.py
+    │   ├── dom_manipulation.py
+    │   ├── dom_traversal.py
+    │   ├── downloads.py
+    │   ├── drag_drop.py
+    │   ├── drag_region.py
+    │   ├── evaluate_js_async.py
+    │   ├── evaluate_js.py
+    │   ├── events.py
+    │   ├── expose.py
+    │   ├── flask_app
+    │   │   ├── gui
+    │   │   │   └── index.html
+    │   │   ├── README
+    │   │   ├── requirements.txt
+    │   │   └── src
+    │   │       ├── backend
+    │   │       │   ├── app.py
+    │   │       │   ├── main.py
+    │   │       │   └── server.py
+    │   │       └── frontend
+    │   │           └── README
+    │   ├── focus.py
+    │   ├── frameless.py
+    │   ├── fullscreen.py
+    │   ├── get_current_url.py
+    │   ├── get_elements.py
+    │   ├── hide_window.py
+    │   ├── http_server.py
+    │   ├── icon.py
+    │   ├── js_api.py
+    │   ├── links.py
+    │   ├── load_css.py
+    │   ├── load_html.py
+    │   ├── loading_animation.py
+    │   ├── localhost_ssl.py
+    │   ├── localization.py
+    │   ├── menu.py
+    │   ├── min_size.py
+    │   ├── move_window.py
+    │   ├── multiple_servers.py
+    │   ├── multiple_windows.py
+    │   ├── on_top.py
+    │   ├── open_file_dialog.py
+    │   ├── py2app_setup.py
+    │   ├── pystray_icon.py
+    │   ├── qt_test.py
+    │   ├── resize.py
+    │   ├── save_file_dialog.py
+    │   ├── screens.py
+    │   ├── settings.py
+    │   ├── simple_browser.py
+    │   ├── todos
+    │   │   ├── assets
+    │   │   │   ├── index.html
+    │   │   │   ├── logo.jpg
+    │   │   │   ├── script.js
+    │   │   │   └── styles.css
+    │   │   ├── buildozer.spec
+    │   │   ├── main.py
+    │   │   └── README.md
+    │   ├── toggle_fullscreen.py
+    │   ├── transparent.py
+    │   ├── user_agent.py
+    │   ├── vibrancy.py
+    │   ├── window_state.py
+    │   └── window_title_change.py
+    ├── interop
+    │   ├── android
+    │   │   ├── build.gradle
+    │   │   ├── lib
+    │   │   │   └── src
+    │   │   │       └── main
+    │   │   │           └── java
+    │   │   │               └── com
+    │   │   │                   └── pywebview
+    │   │   │                       ├── EventCallbackWrapper.java
+    │   │   │                       ├── JavascriptValueCallback.java
+    │   │   │                       ├── JsApiCallbackWrapper.java
+    │   │   │                       ├── PyJavascriptInterface.java
+    │   │   │                       ├── PyWebChromeClient.java
+    │   │   │                       └── PyWebViewClient.java
+    │   │   └── settings.gradle
+    │   └── mshtml
+    │       ├── Properties
+    │       │   └── AssemblyInfo.cs
+    │       ├── README.txt
+    │       ├── WebBrowserInterop.cs
+    │       ├── WebBrowserInterop.csproj
+    │       └── WebBrowserInterop.sln
+    ├── LICENSE
+    ├── logo
+    │   ├── banner.png
+    │   ├── logo-no-text.png
+    │   ├── logo.pdf
+    │   ├── logo.png
+    │   └── logo.svg
+    ├── MANIFEST.in
+    ├── pyproject.toml
+    ├── README.md
+    ├── requirements.txt
+    ├── SECURITY.md
+    ├── tests
+    │   ├── assets
+    │   │   ├── script.js
+    │   │   ├── styles.css
+    │   │   └── test.html
+    │   ├── conftest.py
+    │   ├── __init__.py
+    │   ├── run_cef.py
+    │   ├── run.ps1
+    │   ├── run.py
+    │   ├── run_qt.py
+    │   ├── run.sh
+    │   ├── test_bg_color.py
+    │   ├── test_cookies.py
+    │   ├── test_dom.py
+    │   ├── test_evaluate_js.py
+    │   ├── test_expose.py
+    │   ├── test_frameless.py
+    │   ├── test_fullscreen.py
+    │   ├── test_get_current_url.py
+    │   ├── test_get_elements.py
+    │   ├── test_hide_window.py
+    │   ├── test_http_server.py
+    │   ├── test_js_api.py
+    │   ├── test_load_html.py
+    │   ├── test_localization.py
+    │   ├── test_min_size.py
+    │   ├── test_move_window.py
+    │   ├── test_multi_window.py
+    │   ├── test_noresize.py
+    │   ├── test_on_top.py
+    │   ├── test_resize.py
+    │   ├── test_screens.py
+    │   ├── test_serialization.py
+    │   ├── test_set_title.py
+    │   ├── test_simple_browser.py
+    │   ├── test_start.py
+    │   ├── test_toggle_fullscreen.py
+    │   ├── test_token.py
+    │   ├── test_url_load.py
+    │   ├── test_vibrancy.py
+    │   ├── test_window.py
+    │   ├── util_cocoa.py
+    │   └── util.py
+    └── webview
+        ├── dom
+        │   ├── classlist.py
+        │   ├── dom.py
+        │   ├── element.py
+        │   ├── event.py
+        │   ├── __init__.py
+        │   └── propsdict.py
+        ├── errors.py
+        ├── event.py
+        ├── guilib.py
+        ├── http.py
+        ├── __init__.py
+        ├── js
+        │   ├── api.js
+        │   ├── customize.js
+        │   ├── finish.js
+        │   └── lib
+        │       ├── dom_json.js
+        │       └── polyfill.js
+        ├── lib
+        │   ├── Microsoft.Web.WebView2.Core.dll
+        │   ├── Microsoft.Web.WebView2.LICENSE.md
+        │   ├── Microsoft.Web.WebView2.WinForms.dll
+        │   ├── pywebview-android.jar
+        │   ├── runtimes
+        │   │   ├── win-arm64
+        │   │   │   └── native
+        │   │   │       └── WebView2Loader.dll
+        │   │   ├── win-x64
+        │   │   │   └── native
+        │   │   │       └── WebView2Loader.dll
+        │   │   └── win-x86
+        │   │       └── native
+        │   │           └── WebView2Loader.dll
+        │   ├── WebBrowserInterop.x64.dll
+        │   └── WebBrowserInterop.x86.dll
+        ├── localization.py
+        ├── menu.py
+        ├── platforms
+        │   ├── android.py
+        │   ├── cef.py
+        │   ├── cocoa.py
+        │   ├── edgechromium.py
+        │   ├── gtk.py
+        │   ├── __init__.py
+        │   ├── mshtml.py
+        │   ├── qt.py
+        │   └── winforms.py
+        ├── __pyinstaller
+        │   ├── hook-webview.py
+        │   └── __init__.py
+        ├── py.typed
+        ├── screen.py
+        ├── util.py
+        └── window.py
+
+43 directories, 207 files

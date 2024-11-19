@@ -1,0 +1,2101 @@
+src
+├── settings-folder.patch -> /home/felix/packages/simutrans/settings-folder.patch
+├── simutrans.appdata.xml -> /home/felix/packages/simutrans/simutrans.appdata.xml
+├── simutrans.desktop -> /home/felix/packages/simutrans/simutrans.desktop
+├── simutrans-src-124-2-1.zip -> /home/felix/packages/simutrans/simutrans-src-124-2-1.zip
+├── simutrans.svg -> /home/felix/packages/simutrans/simutrans.svg
+└── trunk
+    ├── cmake
+    │   ├── FindCCache.cmake
+    │   ├── FindMiniUPNP.cmake
+    │   ├── MacBundle.cmake
+    │   ├── SimutransBackend.cmake
+    │   ├── SimutransCompileOptions.cmake
+    │   ├── SimutransFindDependencies.cmake
+    │   ├── SimutransInstall.cmake
+    │   ├── SimutransRevision.cmake
+    │   ├── SimutransSourceList.cmake
+    │   └── SimutransVcpkgTriplet.cmake
+    ├── CMakeLists.txt
+    ├── common.mk
+    ├── config.default.in
+    ├── config.template
+    ├── configure.ac
+    ├── documentation
+    │   ├── about-the-code.txt
+    │   ├── coding_styles.txt
+    │   ├── header.txt
+    │   ├── NeuePalette.png
+    │   ├── ReservedColors.png
+    │   ├── simutrans-palette.pal
+    │   └── utf8-support.txt
+    ├── LICENSE.txt
+    ├── Makefile
+    ├── README.html
+    ├── README.md
+    ├── readme.txt
+    ├── reorganise-code-r10444.sh
+    ├── setup-development.sh
+    ├── simutrans
+    │   ├── ai
+    │   │   ├── readme.txt
+    │   │   ├── sqai
+    │   │   │   ├── ai.nut
+    │   │   │   ├── astar.nut
+    │   │   │   ├── basic.nut
+    │   │   │   ├── combined_connections.nut
+    │   │   │   ├── factorysearcher.nut
+    │   │   │   ├── industry_connection_planner.nut
+    │   │   │   ├── industry_manager.nut
+    │   │   │   ├── placefinder.nut
+    │   │   │   ├── prototyper.nut
+    │   │   │   ├── road_connector.nut
+    │   │   │   ├── save.nut
+    │   │   │   ├── ship_connector.nut
+    │   │   │   ├── station_manager.nut
+    │   │   │   └── vehicle_constructor.nut
+    │   │   └── sqai_rail
+    │   │       ├── ai.nut
+    │   │       ├── astar.nut
+    │   │       ├── basic.nut
+    │   │       ├── combined_connections.nut
+    │   │       ├── factorysearcher.nut
+    │   │       ├── industry_connection_planner.nut
+    │   │       ├── industry_manager.nut
+    │   │       ├── info.txt
+    │   │       ├── placefinder.nut
+    │   │       ├── prototyper.nut
+    │   │       ├── rail_connector.nut
+    │   │       ├── road_connector.nut
+    │   │       ├── save.nut
+    │   │       ├── ship_connector.nut
+    │   │       ├── station_manager.nut
+    │   │       └── vehicle_constructor.nut
+    │   ├── change_request.txt
+    │   ├── config
+    │   │   └── simuconf.tab
+    │   ├── copyright.txt
+    │   ├── font
+    │   │   ├── cyr.bdf
+    │   │   ├── Prop-Latin1.bdf
+    │   │   └── Prop-Latin2.bdf
+    │   ├── history.txt
+    │   ├── license_squirrel.txt
+    │   ├── license.txt
+    │   ├── music
+    │   │   ├── 01-Simutrans-Main-Theme.mid
+    │   │   ├── 02-Gotta-catch-that-train.mid
+    │   │   ├── 03-Sunday-drivers.mid
+    │   │   ├── 04-Simutrans-B-Theme.mid
+    │   │   ├── 05-Boring-afternoon.mid
+    │   │   ├── 06-A-busy-day-at-the-depot.mid
+    │   │   ├── 07-Transport-chaos.mid
+    │   │   ├── 08-The-journey-home.mid
+    │   │   ├── 09-Simupolitan-Swing.mid
+    │   │   ├── 10-Easy-driving.mid
+    │   │   ├── 11-Stucked-Convoi.mid
+    │   │   ├── 12-Steamin-across-the-prairies.mid
+    │   │   ├── 13-Stephenson-blues.mid
+    │   │   ├── 14-Last-journey-of-the-Niagara.mid
+    │   │   ├── 15-The-Wayside-Blues.mid
+    │   │   ├── 16-Midnight-Express2.mid
+    │   │   ├── 17-The-Benevolent-Dictators-March.mid
+    │   │   ├── 18-Ride-that-train.mid
+    │   │   ├── 19-Rockin-trucker.mid
+    │   │   ├── 20-Last-Trip.mid
+    │   │   ├── 21-Dusty-Eyes.mid
+    │   │   ├── 22-Variable-Journeys.mid
+    │   │   ├── 23-Something-for-Silver-Sand.mid
+    │   │   ├── 24-needlessly-striking.mid
+    │   │   ├── 25-Float-on-by.mid
+    │   │   ├── 26-Tantalizingly-Unusual.mid
+    │   │   ├── 27-March-Winds.mid
+    │   │   ├── 28-Road-to-Warm-Places.mid
+    │   │   ├── 29-Runaway.mid
+    │   │   ├── 30-On-the-waterfront.mid
+    │   │   ├── 31-Courtenay-Bridge.mid
+    │   │   ├── 32-incidental-skies.mid
+    │   │   ├── 33-Journey-to-times-gone-by.mid
+    │   │   ├── 34-flyingaway.mid
+    │   │   ├── 35-deep-ride.mid
+    │   │   ├── 36-faded-things.mid
+    │   │   ├── 37-inevitably-engrossed.mid
+    │   │   ├── 38-positive-thrill.mid
+    │   │   ├── 39-bangin-mover.mid
+    │   │   ├── 40-alternative.mid
+    │   │   ├── 41-Libertador.mid
+    │   │   ├── 42-Stranger-Echoes.mid
+    │   │   ├── 43-Driving-on-the-midnight-highway.mid
+    │   │   ├── 44-Above-the-sky.mid
+    │   │   ├── 45-Misty-Forest.mid
+    │   │   ├── 46-House-in-the-station.mid
+    │   │   ├── 47-Salty-Breeze.mid
+    │   │   ├── 48-Techno-movement.mid
+    │   │   ├── 49-Last-Sunday.mid
+    │   │   ├── 50-Snowy-Road.mid
+    │   │   ├── 51-Summer-Intersection.mid
+    │   │   ├── 52-Dreamy-Oriental-Nights.mid
+    │   │   ├── 53-Where-Thomassons-Lie.mid
+    │   │   ├── music.tab
+    │   │   └── readme.txt
+    │   ├── problem_report.txt
+    │   ├── readme.txt
+    │   ├── script
+    │   │   ├── ai_base.nut
+    │   │   ├── new_scenario_template.nut
+    │   │   ├── scenario_base.nut
+    │   │   ├── script_base.nut
+    │   │   ├── script_compat.nut
+    │   │   └── tool_base.nut
+    │   ├── text
+    │   │   ├── be.tab
+    │   │   ├── bg.tab
+    │   │   ├── ca.tab
+    │   │   ├── cn
+    │   │   │   ├── baum_build.txt
+    │   │   │   ├── color.txt
+    │   │   │   ├── enlarge_map.txt
+    │   │   │   ├── labellist_filter.txt
+    │   │   │   ├── save.txt
+    │   │   │   ├── scenario.txt
+    │   │   │   ├── settings.txt
+    │   │   │   ├── simutrans.txt
+    │   │   │   └── trafficlight_info.txt
+    │   │   ├── cn.tab
+    │   │   ├── cz
+    │   │   │   ├── airtools.txt
+    │   │   │   ├── baum_build.txt
+    │   │   │   ├── bridges.txt
+    │   │   │   ├── citybuilding_build.txt
+    │   │   │   ├── citylist_filter.txt
+    │   │   │   ├── citywindow.txt
+    │   │   │   ├── climates.txt
+    │   │   │   ├── color.txt
+    │   │   │   ├── convoidetail.txt
+    │   │   │   ├── convoi_filter.txt
+    │   │   │   ├── convoiinfo.txt
+    │   │   │   ├── convoi.txt
+    │   │   │   ├── curiosity_build.txt
+    │   │   │   ├── curiositylist_filter.txt
+    │   │   │   ├── depot.txt
+    │   │   │   ├── display.txt
+    │   │   │   ├── edittools.txt
+    │   │   │   ├── enlarge_map.txt
+    │   │   │   ├── factory_build.txt
+    │   │   │   ├── factorylist_filter.txt
+    │   │   │   ├── finances.txt
+    │   │   │   ├── goods_filter.txt
+    │   │   │   ├── haltlist_filter.txt
+    │   │   │   ├── haltlist.txt
+    │   │   │   ├── industry_info.txt
+    │   │   │   ├── inspection_tool.txt
+    │   │   │   ├── labellist_filter.txt
+    │   │   │   ├── language.txt
+    │   │   │   ├── linemanagement.txt
+    │   │   │   ├── list.txt
+    │   │   │   ├── load_relief.txt
+    │   │   │   ├── load.txt
+    │   │   │   ├── mailbox.txt
+    │   │   │   ├── mainmenu.txt
+    │   │   │   ├── map.txt
+    │   │   │   ├── monorailtools.txt
+    │   │   │   ├── mouse.txt
+    │   │   │   ├── new_world.txt
+    │   │   │   ├── options.txt
+    │   │   │   ├── password.txt
+    │   │   │   ├── players.txt
+    │   │   │   ├── privatesign_info.txt
+    │   │   │   ├── railtools.txt
+    │   │   │   ├── removal_tool.txt
+    │   │   │   ├── roadtools.txt
+    │   │   │   ├── save.txt
+    │   │   │   ├── scenario.txt
+    │   │   │   ├── schedule.txt
+    │   │   │   ├── server.txt
+    │   │   │   ├── settings.txt
+    │   │   │   ├── shiptools.txt
+    │   │   │   ├── signal_spacing.txt
+    │   │   │   ├── signals.txt
+    │   │   │   ├── simutrans.txt
+    │   │   │   ├── slopetools.txt
+    │   │   │   ├── sound.txt
+    │   │   │   ├── special.txt
+    │   │   │   ├── station_details.txt
+    │   │   │   ├── station.txt
+    │   │   │   ├── trafficlight_info.txt
+    │   │   │   ├── tramtools.txt
+    │   │   │   ├── underground.txt
+    │   │   │   └── window.txt
+    │   │   ├── cz.tab
+    │   │   ├── de
+    │   │   │   ├── airtools.txt
+    │   │   │   ├── baum_build.txt
+    │   │   │   ├── citybuilding_build.txt
+    │   │   │   ├── citygrowth.txt
+    │   │   │   ├── citylist_filter.txt
+    │   │   │   ├── citywindow.txt
+    │   │   │   ├── climates.txt
+    │   │   │   ├── color.txt
+    │   │   │   ├── convoidetail.txt
+    │   │   │   ├── convoi_filter.txt
+    │   │   │   ├── convoiinfo.txt
+    │   │   │   ├── convoi.txt
+    │   │   │   ├── curiosity_build.txt
+    │   │   │   ├── curiositylist_filter.txt
+    │   │   │   ├── depot.txt
+    │   │   │   ├── display.txt
+    │   │   │   ├── edittools.txt
+    │   │   │   ├── enlarge_map.txt
+    │   │   │   ├── factory_build.txt
+    │   │   │   ├── factorylist_filter.txt
+    │   │   │   ├── finances.txt
+    │   │   │   ├── general.txt
+    │   │   │   ├── goods_filter.txt
+    │   │   │   ├── haltlist_filter.txt
+    │   │   │   ├── haltlist.txt
+    │   │   │   ├── industry_info.txt
+    │   │   │   ├── labellist_filter.txt
+    │   │   │   ├── language.txt
+    │   │   │   ├── linedetails.txt
+    │   │   │   ├── linemanagement.txt
+    │   │   │   ├── list.txt
+    │   │   │   ├── load_relief.txt
+    │   │   │   ├── load.txt
+    │   │   │   ├── mailbox.txt
+    │   │   │   ├── mainmenu.txt
+    │   │   │   ├── map.txt
+    │   │   │   ├── monorailtools.txt
+    │   │   │   ├── new_world.txt
+    │   │   │   ├── options.txt
+    │   │   │   ├── password.txt
+    │   │   │   ├── players.txt
+    │   │   │   ├── privatesign_info.txt
+    │   │   │   ├── railtools.txt
+    │   │   │   ├── roadtools.txt
+    │   │   │   ├── save.txt
+    │   │   │   ├── scenario.txt
+    │   │   │   ├── schedule.txt
+    │   │   │   ├── server.txt
+    │   │   │   ├── settings.txt
+    │   │   │   ├── shiptools.txt
+    │   │   │   ├── signal_spacing.txt
+    │   │   │   ├── simutrans.txt
+    │   │   │   ├── slopetools.txt
+    │   │   │   ├── sound.txt
+    │   │   │   ├── special.txt
+    │   │   │   ├── station_details.txt
+    │   │   │   ├── station.txt
+    │   │   │   ├── trafficlight_info.txt
+    │   │   │   ├── tramtools.txt
+    │   │   │   ├── underground.txt
+    │   │   │   ├── vehiclelist.txt
+    │   │   │   └── window.txt
+    │   │   ├── de.tab
+    │   │   ├── dk
+    │   │   │   ├── color.txt
+    │   │   │   ├── convoi_filter.txt
+    │   │   │   ├── convoiinfo.txt
+    │   │   │   ├── convoi.txt
+    │   │   │   ├── depot.txt
+    │   │   │   ├── display.txt
+    │   │   │   ├── finances.txt
+    │   │   │   ├── haltlist_filter.txt
+    │   │   │   ├── haltlist.txt
+    │   │   │   ├── language.txt
+    │   │   │   ├── load.txt
+    │   │   │   ├── map.txt
+    │   │   │   ├── new_world.txt
+    │   │   │   ├── options.txt
+    │   │   │   ├── players.txt
+    │   │   │   ├── railtools.txt
+    │   │   │   ├── roadtools.txt
+    │   │   │   ├── save.txt
+    │   │   │   ├── schedule.txt
+    │   │   │   ├── shiptools.txt
+    │   │   │   ├── sound.txt
+    │   │   │   └── station.txt
+    │   │   ├── dk.tab
+    │   │   ├── en
+    │   │   │   ├── airtools.txt
+    │   │   │   ├── baum_build.txt
+    │   │   │   ├── citybuilding_build.txt
+    │   │   │   ├── citylist_filter.txt
+    │   │   │   ├── citywindow.txt
+    │   │   │   ├── climates.txt
+    │   │   │   ├── color.txt
+    │   │   │   ├── convoidetail.txt
+    │   │   │   ├── convoi_filter.txt
+    │   │   │   ├── convoiinfo.txt
+    │   │   │   ├── convoi.txt
+    │   │   │   ├── curiosity_build.txt
+    │   │   │   ├── curiositylist_filter.txt
+    │   │   │   ├── depotlist.txt
+    │   │   │   ├── depot.txt
+    │   │   │   ├── display.txt
+    │   │   │   ├── edittools.txt
+    │   │   │   ├── enlarge_map.txt
+    │   │   │   ├── factorylist_filter.txt
+    │   │   │   ├── finances.txt
+    │   │   │   ├── general.txt
+    │   │   │   ├── goods_filter.txt
+    │   │   │   ├── haltlist_filter.txt
+    │   │   │   ├── haltlist.txt
+    │   │   │   ├── industry_info.txt
+    │   │   │   ├── inspection_tool.txt
+    │   │   │   ├── jump_frame.txt
+    │   │   │   ├── labellist_filter.txt
+    │   │   │   ├── language.txt
+    │   │   │   ├── linedetails.txt
+    │   │   │   ├── linemanagement.txt
+    │   │   │   ├── list.txt
+    │   │   │   ├── load_relief.txt
+    │   │   │   ├── load.txt
+    │   │   │   ├── mailbox.txt
+    │   │   │   ├── map.txt
+    │   │   │   ├── monorailtools.txt
+    │   │   │   ├── new_world.txt
+    │   │   │   ├── options.txt
+    │   │   │   ├── password.txt
+    │   │   │   ├── players.txt
+    │   │   │   ├── privatesign_info.txt
+    │   │   │   ├── railtools.txt
+    │   │   │   ├── removal_tool.txt
+    │   │   │   ├── roadtools.txt
+    │   │   │   ├── save.txt
+    │   │   │   ├── scenario.txt
+    │   │   │   ├── schedule.txt
+    │   │   │   ├── server.txt
+    │   │   │   ├── settings.txt
+    │   │   │   ├── shiptools.txt
+    │   │   │   ├── signal_spacing.txt
+    │   │   │   ├── simutrans.txt
+    │   │   │   ├── slopetools.txt
+    │   │   │   ├── sound.txt
+    │   │   │   ├── special.txt
+    │   │   │   ├── station_details.txt
+    │   │   │   ├── station.txt
+    │   │   │   ├── trafficlight_info.txt
+    │   │   │   ├── tramtools.txt
+    │   │   │   ├── underground.txt
+    │   │   │   ├── vehiclelist.txt
+    │   │   │   └── window.txt
+    │   │   ├── en.tab
+    │   │   ├── eo.tab
+    │   │   ├── es
+    │   │   │   ├── airtools.txt
+    │   │   │   ├── baum_build.txt
+    │   │   │   ├── bridges.txt
+    │   │   │   ├── citybuilding_build.txt
+    │   │   │   ├── citygrowth.txt
+    │   │   │   ├── citylist_filter.txt
+    │   │   │   ├── citywindow.txt
+    │   │   │   ├── climates.txt
+    │   │   │   ├── color.txt
+    │   │   │   ├── convoidetail.txt
+    │   │   │   ├── convoi_filter.txt
+    │   │   │   ├── convoiinfo.txt
+    │   │   │   ├── convoi.txt
+    │   │   │   ├── curiositylist_filter.txt
+    │   │   │   ├── depot.txt
+    │   │   │   ├── display.txt
+    │   │   │   ├── edittools.txt
+    │   │   │   ├── factorylist_filter.txt
+    │   │   │   ├── finances.txt
+    │   │   │   ├── general.txt
+    │   │   │   ├── goods_filter.txt
+    │   │   │   ├── haltlist_filter.txt
+    │   │   │   ├── haltlist.txt
+    │   │   │   ├── industry_info.txt
+    │   │   │   ├── inspection_tool.txt
+    │   │   │   ├── language.txt
+    │   │   │   ├── linemanagement.txt
+    │   │   │   ├── list.txt
+    │   │   │   ├── load_relief.txt
+    │   │   │   ├── load.txt
+    │   │   │   ├── mailbox.txt
+    │   │   │   ├── map.txt
+    │   │   │   ├── monorailtools.txt
+    │   │   │   ├── new_world.txt
+    │   │   │   ├── options.txt
+    │   │   │   ├── players.txt
+    │   │   │   ├── railtools.txt
+    │   │   │   ├── removal_tool.txt
+    │   │   │   ├── roadtools.txt
+    │   │   │   ├── save.txt
+    │   │   │   ├── schedule.txt
+    │   │   │   ├── shiptools.txt
+    │   │   │   ├── simutrans.txt
+    │   │   │   ├── slopetools.txt
+    │   │   │   ├── sound.txt
+    │   │   │   ├── special.txt
+    │   │   │   ├── station_details.txt
+    │   │   │   ├── station.txt
+    │   │   │   ├── tramtools.txt
+    │   │   │   └── window.txt
+    │   │   ├── es.tab
+    │   │   ├── et.tab
+    │   │   ├── fi
+    │   │   │   └── new_world.txt
+    │   │   ├── fi.tab
+    │   │   ├── fp.tab
+    │   │   ├── fr
+    │   │   │   ├── airtools.txt
+    │   │   │   ├── baum_build.txt
+    │   │   │   ├── climates.txt
+    │   │   │   ├── color.txt
+    │   │   │   ├── convoi_filter.txt
+    │   │   │   ├── convoi.txt
+    │   │   │   ├── depot.txt
+    │   │   │   ├── display.txt
+    │   │   │   ├── finances.txt
+    │   │   │   ├── haltlist_filter.txt
+    │   │   │   ├── haltlist.txt
+    │   │   │   ├── language.txt
+    │   │   │   ├── load.txt
+    │   │   │   ├── mailbox.txt
+    │   │   │   ├── map.txt
+    │   │   │   ├── new_world.txt
+    │   │   │   ├── options.txt
+    │   │   │   ├── players.txt
+    │   │   │   ├── railtools.txt
+    │   │   │   ├── roadtools.txt
+    │   │   │   ├── save.txt
+    │   │   │   ├── schedule.txt
+    │   │   │   ├── shiptools.txt
+    │   │   │   ├── sound.txt
+    │   │   │   └── station.txt
+    │   │   ├── fr.tab
+    │   │   ├── gr.tab
+    │   │   ├── hr
+    │   │   │   ├── baum_build.txt
+    │   │   │   ├── citybuilding_build.txt
+    │   │   │   ├── citylist_filter.txt
+    │   │   │   ├── citywindow.txt
+    │   │   │   ├── climates.txt
+    │   │   │   ├── color.txt
+    │   │   │   ├── display.txt
+    │   │   │   ├── finances.txt
+    │   │   │   ├── general.txt
+    │   │   │   ├── language.txt
+    │   │   │   ├── linemanagement.txt
+    │   │   │   ├── list.txt
+    │   │   │   ├── load.txt
+    │   │   │   ├── options.txt
+    │   │   │   ├── players.txt
+    │   │   │   ├── simutrans.txt
+    │   │   │   ├── sound.txt
+    │   │   │   ├── station_details.txt
+    │   │   │   ├── underground.txt
+    │   │   │   └── window.txt
+    │   │   ├── hr.tab
+    │   │   ├── hu
+    │   │   │   ├── citylist_filter.txt
+    │   │   │   ├── citywindow.txt
+    │   │   │   ├── color.txt
+    │   │   │   ├── convoi_filter.txt
+    │   │   │   ├── convoi.txt
+    │   │   │   ├── depot.txt
+    │   │   │   ├── display.txt
+    │   │   │   ├── edittools.txt
+    │   │   │   ├── finances.txt
+    │   │   │   ├── goods_filter.txt
+    │   │   │   ├── haltlist_filter.txt
+    │   │   │   ├── haltlist.txt
+    │   │   │   ├── language.txt
+    │   │   │   ├── list.txt
+    │   │   │   ├── load.txt
+    │   │   │   ├── mailbox.txt
+    │   │   │   ├── map.txt
+    │   │   │   ├── new_world.txt
+    │   │   │   ├── options.txt
+    │   │   │   ├── players.txt
+    │   │   │   ├── railtools.txt
+    │   │   │   ├── roadtools.txt
+    │   │   │   ├── save.txt
+    │   │   │   ├── schedule.txt
+    │   │   │   ├── shiptools.txt
+    │   │   │   ├── sound.txt
+    │   │   │   ├── special.txt
+    │   │   │   ├── station_details.txt
+    │   │   │   ├── station.txt
+    │   │   │   └── tramtools.txt
+    │   │   ├── hu.tab
+    │   │   ├── id
+    │   │   │   ├── general.txt
+    │   │   │   └── simutrans.txt
+    │   │   ├── id.tab
+    │   │   ├── it
+    │   │   │   ├── airtools.txt
+    │   │   │   ├── baum_build.txt
+    │   │   │   ├── citylist_filter.txt
+    │   │   │   ├── citywindow.txt
+    │   │   │   ├── climates.txt
+    │   │   │   ├── color.txt
+    │   │   │   ├── convoidetail.txt
+    │   │   │   ├── convoiinfo.txt
+    │   │   │   ├── depot.txt
+    │   │   │   ├── display.txt
+    │   │   │   ├── finances.txt
+    │   │   │   ├── haltlist.txt
+    │   │   │   ├── language.txt
+    │   │   │   ├── load.txt
+    │   │   │   ├── mailbox.txt
+    │   │   │   ├── map.txt
+    │   │   │   ├── new_world.txt
+    │   │   │   ├── options.txt
+    │   │   │   ├── players.txt
+    │   │   │   ├── railtools.txt
+    │   │   │   ├── removal_tool.txt
+    │   │   │   ├── roadtools.txt
+    │   │   │   ├── save.txt
+    │   │   │   ├── scenario.txt
+    │   │   │   ├── shiptools.txt
+    │   │   │   ├── signal_spacing.txt
+    │   │   │   ├── sound.txt
+    │   │   │   ├── station_details.txt
+    │   │   │   ├── station.txt
+    │   │   │   ├── trafficlight_info.txt
+    │   │   │   └── window.txt
+    │   │   ├── it.tab
+    │   │   ├── ja
+    │   │   │   ├── airtools.txt
+    │   │   │   ├── baum_build.txt
+    │   │   │   ├── citybuilding_build.txt
+    │   │   │   ├── citylist_filter.txt
+    │   │   │   ├── citywindow.txt
+    │   │   │   ├── climates.txt
+    │   │   │   ├── color.txt
+    │   │   │   ├── convoidetail.txt
+    │   │   │   ├── convoi_filter.txt
+    │   │   │   ├── convoiinfo.txt
+    │   │   │   ├── convoi.txt
+    │   │   │   ├── curiosity_build.txt
+    │   │   │   ├── curiositylist_filter.txt
+    │   │   │   ├── depot.txt
+    │   │   │   ├── display.txt
+    │   │   │   ├── enlarge_map.txt
+    │   │   │   ├── factorylist_filter.txt
+    │   │   │   ├── finances.txt
+    │   │   │   ├── general.txt
+    │   │   │   ├── goods_filter.txt
+    │   │   │   ├── haltlist_filter.txt
+    │   │   │   ├── haltlist.txt
+    │   │   │   ├── industry_info.txt
+    │   │   │   ├── inspection_tool.txt
+    │   │   │   ├── jump_frame.txt
+    │   │   │   ├── language.txt
+    │   │   │   ├── linemanagement.txt
+    │   │   │   ├── list.txt
+    │   │   │   ├── load_relief.txt
+    │   │   │   ├── load.txt
+    │   │   │   ├── mailbox.txt
+    │   │   │   ├── map.txt
+    │   │   │   ├── monorailtools.txt
+    │   │   │   ├── new_world.txt
+    │   │   │   ├── options.txt
+    │   │   │   ├── password.txt
+    │   │   │   ├── players.txt
+    │   │   │   ├── privatesign_info.txt
+    │   │   │   ├── railtools.txt
+    │   │   │   ├── removal_tool.txt
+    │   │   │   ├── roadtools.txt
+    │   │   │   ├── save.txt
+    │   │   │   ├── scenario.txt
+    │   │   │   ├── schedule.txt
+    │   │   │   ├── server.txt
+    │   │   │   ├── settings.txt
+    │   │   │   ├── shiptools.txt
+    │   │   │   ├── signal_spacing.txt
+    │   │   │   ├── simutrans.txt
+    │   │   │   ├── slopetools.txt
+    │   │   │   ├── sound.txt
+    │   │   │   ├── special.txt
+    │   │   │   ├── station_details.txt
+    │   │   │   ├── station.txt
+    │   │   │   ├── trafficlight_info.txt
+    │   │   │   ├── tramtools.txt
+    │   │   │   └── window.txt
+    │   │   ├── ja.tab
+    │   │   ├── ko
+    │   │   │   ├── airtools.txt
+    │   │   │   ├── baum_build.txt
+    │   │   │   ├── citybuilding_build.txt
+    │   │   │   ├── citylist_filter.txt
+    │   │   │   ├── citywindow.txt
+    │   │   │   ├── climates.txt
+    │   │   │   ├── color.txt
+    │   │   │   ├── convoidetail.txt
+    │   │   │   ├── convoi_filter.txt
+    │   │   │   ├── convoiinfo.txt
+    │   │   │   ├── convoi.txt
+    │   │   │   ├── curiosity_build.txt
+    │   │   │   ├── curiositylist_filter.txt
+    │   │   │   ├── depot.txt
+    │   │   │   ├── display.txt
+    │   │   │   ├── edittools.txt
+    │   │   │   ├── enlarge_map.txt
+    │   │   │   ├── factorylist_filter.txt
+    │   │   │   ├── finances.txt
+    │   │   │   ├── general.txt
+    │   │   │   ├── goods_filter.txt
+    │   │   │   ├── haltlist_filter.txt
+    │   │   │   ├── haltlist.txt
+    │   │   │   ├── industry_info.txt
+    │   │   │   ├── inspection_tool.txt
+    │   │   │   ├── jump_frame.txt
+    │   │   │   ├── labellist_filter.txt
+    │   │   │   ├── language.txt
+    │   │   │   ├── linemanagement.txt
+    │   │   │   ├── list.txt
+    │   │   │   ├── load_relief.txt
+    │   │   │   ├── load.txt
+    │   │   │   ├── mailbox.txt
+    │   │   │   ├── map.txt
+    │   │   │   ├── monorailtools.txt
+    │   │   │   ├── new_world.txt
+    │   │   │   ├── options.txt
+    │   │   │   ├── password.txt
+    │   │   │   ├── players.txt
+    │   │   │   ├── privatesign_info.txt
+    │   │   │   ├── railtools.txt
+    │   │   │   ├── removal_tool.txt
+    │   │   │   ├── roadtools.txt
+    │   │   │   ├── save.txt
+    │   │   │   ├── scenario.txt
+    │   │   │   ├── schedule.txt
+    │   │   │   ├── server.txt
+    │   │   │   ├── settings.txt
+    │   │   │   ├── shiptools.txt
+    │   │   │   ├── signal_spacing.txt
+    │   │   │   ├── simutrans.txt
+    │   │   │   ├── slopetools.txt
+    │   │   │   ├── sound.txt
+    │   │   │   ├── special.txt
+    │   │   │   ├── station_details.txt
+    │   │   │   ├── station.txt
+    │   │   │   ├── trafficlight_info.txt
+    │   │   │   ├── tramtools.txt
+    │   │   │   ├── underground.txt
+    │   │   │   └── window.txt
+    │   │   ├── ko.tab
+    │   │   ├── lt.tab
+    │   │   ├── nl
+    │   │   │   ├── airtools.txt
+    │   │   │   ├── citylist_filter.txt
+    │   │   │   ├── citywindow.txt
+    │   │   │   ├── climates.txt
+    │   │   │   ├── color.txt
+    │   │   │   ├── convoidetail.txt
+    │   │   │   ├── convoi_filter.txt
+    │   │   │   ├── convoiinfo.txt
+    │   │   │   ├── convoi.txt
+    │   │   │   ├── curiositylist_filter.txt
+    │   │   │   ├── depot.txt
+    │   │   │   ├── display.txt
+    │   │   │   ├── general.txt
+    │   │   │   ├── mailbox.txt
+    │   │   │   ├── map.txt
+    │   │   │   ├── monorailtools.txt
+    │   │   │   ├── mouse.txt
+    │   │   │   └── signals.txt
+    │   │   ├── nl.tab
+    │   │   ├── no.tab
+    │   │   ├── ol
+    │   │   │   ├── climates.txt
+    │   │   │   ├── general.txt
+    │   │   │   ├── load_relief.txt
+    │   │   │   └── new_world.txt
+    │   │   ├── ol.tab
+    │   │   ├── pl
+    │   │   │   ├── color.txt
+    │   │   │   ├── depot.txt
+    │   │   │   ├── display.txt
+    │   │   │   ├── finances.txt
+    │   │   │   ├── language.txt
+    │   │   │   ├── load.txt
+    │   │   │   ├── map.txt
+    │   │   │   ├── new_world.txt
+    │   │   │   ├── options.txt
+    │   │   │   ├── players.txt
+    │   │   │   ├── railtools.txt
+    │   │   │   ├── roadtools.txt
+    │   │   │   ├── save.txt
+    │   │   │   ├── schedule.txt
+    │   │   │   ├── shiptools.txt
+    │   │   │   ├── sound.txt
+    │   │   │   └── station.txt
+    │   │   ├── pl.tab
+    │   │   ├── pt
+    │   │   │   ├── airtools.txt
+    │   │   │   ├── baum_build.txt
+    │   │   │   ├── citybuilding_build.txt
+    │   │   │   ├── citylist_filter.txt
+    │   │   │   ├── citywindow.txt
+    │   │   │   ├── climates.txt
+    │   │   │   ├── color.txt
+    │   │   │   ├── convoidetail.txt
+    │   │   │   ├── convoi_filter.txt
+    │   │   │   ├── convoiinfo.txt
+    │   │   │   ├── convoi.txt
+    │   │   │   ├── curiosity_build.txt
+    │   │   │   ├── curiositylist_filter.txt
+    │   │   │   ├── depot.txt
+    │   │   │   ├── display.txt
+    │   │   │   ├── edittools.txt
+    │   │   │   ├── enlarge_map.txt
+    │   │   │   ├── factorylist_filter.txt
+    │   │   │   ├── finances.txt
+    │   │   │   ├── general.txt
+    │   │   │   ├── goods_filter.txt
+    │   │   │   ├── haltlist_filter.txt
+    │   │   │   ├── haltlist.txt
+    │   │   │   ├── industry_info.txt
+    │   │   │   ├── inspection_tool.txt
+    │   │   │   ├── language.txt
+    │   │   │   ├── linemanagement.txt
+    │   │   │   ├── list.txt
+    │   │   │   ├── load_relief.txt
+    │   │   │   ├── load.txt
+    │   │   │   ├── mailbox.txt
+    │   │   │   ├── map.txt
+    │   │   │   ├── monorailtools.txt
+    │   │   │   ├── mouse.txt
+    │   │   │   ├── new_world.txt
+    │   │   │   ├── options.txt
+    │   │   │   ├── players.txt
+    │   │   │   ├── railtools.txt
+    │   │   │   ├── removal_tool.txt
+    │   │   │   ├── roadtools.txt
+    │   │   │   ├── save.txt
+    │   │   │   ├── scenario.txt
+    │   │   │   ├── schedule.txt
+    │   │   │   ├── shiptools.txt
+    │   │   │   ├── simutrans.txt
+    │   │   │   ├── slopetools.txt
+    │   │   │   ├── sound.txt
+    │   │   │   ├── special.txt
+    │   │   │   ├── station_details.txt
+    │   │   │   ├── station.txt
+    │   │   │   ├── trafficlight_info.txt
+    │   │   │   ├── tramtools.txt
+    │   │   │   └── window.txt
+    │   │   ├── pt.tab
+    │   │   ├── readme_citylist.txt
+    │   │   ├── ro
+    │   │   │   ├── airtools.txt
+    │   │   │   ├── color.txt
+    │   │   │   ├── depot.txt
+    │   │   │   ├── display.txt
+    │   │   │   ├── finances.txt
+    │   │   │   ├── language.txt
+    │   │   │   ├── load.txt
+    │   │   │   ├── map.txt
+    │   │   │   ├── new_world.txt
+    │   │   │   ├── options.txt
+    │   │   │   ├── players.txt
+    │   │   │   ├── railtools.txt
+    │   │   │   ├── roadtools.txt
+    │   │   │   ├── save.txt
+    │   │   │   ├── schedule.txt
+    │   │   │   ├── shiptools.txt
+    │   │   │   ├── sound.txt
+    │   │   │   ├── station_details.txt
+    │   │   │   └── station.txt
+    │   │   ├── ro.tab
+    │   │   ├── ru
+    │   │   │   ├── airtools.txt
+    │   │   │   ├── baum_build.txt
+    │   │   │   ├── citybuilding_build.txt
+    │   │   │   ├── color.txt
+    │   │   │   └── language.txt
+    │   │   ├── ru.tab
+    │   │   ├── sk
+    │   │   │   ├── bridges.txt
+    │   │   │   ├── color.txt
+    │   │   │   ├── convoi.txt
+    │   │   │   ├── depot.txt
+    │   │   │   ├── display.txt
+    │   │   │   ├── finances.txt
+    │   │   │   ├── general.txt
+    │   │   │   ├── haltlist.txt
+    │   │   │   ├── language.txt
+    │   │   │   ├── load.txt
+    │   │   │   ├── map.txt
+    │   │   │   ├── new_world.txt
+    │   │   │   ├── options.txt
+    │   │   │   ├── players.txt
+    │   │   │   ├── railtools.txt
+    │   │   │   ├── roadtools.txt
+    │   │   │   ├── save.txt
+    │   │   │   ├── schedule.txt
+    │   │   │   ├── shiptools.txt
+    │   │   │   ├── sound.txt
+    │   │   │   └── station.txt
+    │   │   ├── sk.tab
+    │   │   ├── sv
+    │   │   │   ├── airtools.txt
+    │   │   │   ├── baum_build.txt
+    │   │   │   ├── citybuilding_build.txt
+    │   │   │   ├── citywindow.txt
+    │   │   │   ├── depot.txt
+    │   │   │   ├── players.txt
+    │   │   │   ├── signal_spacing.txt
+    │   │   │   ├── simutrans.txt
+    │   │   │   └── underground.txt
+    │   │   ├── sv.tab
+    │   │   ├── th.tab
+    │   │   ├── tr
+    │   │   │   └── airtools.txt
+    │   │   ├── translate_users.txt
+    │   │   ├── tr.tab
+    │   │   ├── uk
+    │   │   │   ├── airtools.txt
+    │   │   │   ├── baum_build.txt
+    │   │   │   ├── bridges.txt
+    │   │   │   └── citybuilding_build.txt
+    │   │   ├── uk.tab
+    │   │   ├── zh
+    │   │   │   ├── baum_build.txt
+    │   │   │   ├── color.txt
+    │   │   │   ├── enlarge_map.txt
+    │   │   │   ├── labellist_filter.txt
+    │   │   │   ├── save.txt
+    │   │   │   ├── scenario.txt
+    │   │   │   ├── settings.txt
+    │   │   │   └── trafficlight_info.txt
+    │   │   └── zh.tab
+    │   ├── thanks.txt
+    │   └── themes
+    │       ├── aero.tab
+    │       ├── aerotheme.pak
+    │       ├── classic-large.tab
+    │       ├── classic.pak
+    │       ├── classic.tab
+    │       ├── flat.pak
+    │       ├── flat-skin-large.tab
+    │       ├── flat-skin.tab
+    │       ├── flat-skin-touch.tab
+    │       ├── flat-touch.pak
+    │       ├── highcontrast-large.pak
+    │       ├── high-contrast-large.tab
+    │       ├── highcontrast.pak
+    │       ├── high-contrast.tab
+    │       ├── menu.pak192comic.pak
+    │       ├── menu.pak192comicxxl.pak
+    │       ├── menu.pak64german_large.pak
+    │       ├── menu.pak64german.pak
+    │       ├── modern-large.pak
+    │       ├── modern.pak
+    │       ├── pak192comic.tab
+    │       ├── pak192comicxxl.tab
+    │       ├── pak64german_large.tab
+    │       ├── pak64german.tab
+    │       ├── theme-large.tab
+    │       └── themes.tab
+    ├── Simutrans-GDI.vcxproj
+    ├── Simutrans-GDI.vcxproj.filters
+    ├── Simutrans-Main.vcxitems
+    ├── Simutrans-Main.vcxitems.filters
+    ├── Simutrans-SDL2.vcxproj
+    ├── Simutrans-SDL2.vcxproj.filters
+    ├── Simutrans-Server.vcxproj
+    ├── Simutrans-Server.vcxproj.filters
+    ├── Simutrans.sln
+    ├── src
+    │   ├── android
+    │   │   ├── AndroidAppSettings.cfg
+    │   │   ├── AndroidBuild.sh
+    │   │   ├── android.cc
+    │   │   ├── android.h
+    │   │   ├── AndroidPreBuild.sh
+    │   │   ├── debug.bat
+    │   │   ├── icon.png
+    │   │   ├── signBundle.sh
+    │   │   ├── Simutrans-upload.keystore
+    │   │   └── unpak.sh
+    │   ├── base.tab
+    │   ├── external
+    │   │   ├── miniz.h
+    │   │   ├── readme.txt
+    │   │   ├── refresh.sh
+    │   │   ├── zip.c
+    │   │   └── zip.h
+    │   ├── linux
+    │   │   ├── com.simutrans.Simutrans.metainfo.xml
+    │   │   └── simutrans.desktop
+    │   ├── makeobj
+    │   │   ├── CMakeLists.txt
+    │   │   ├── Makefile
+    │   │   ├── makeobj.cc
+    │   │   ├── Makeobj.sln
+    │   │   ├── Makeobj.vcxproj
+    │   │   ├── Makeobj.vcxproj.filters
+    │   │   ├── RightClickCompileDat2PakSystem.reg
+    │   │   └── vcpkg.json
+    │   ├── nettool
+    │   │   ├── CMakeLists.txt
+    │   │   ├── Makefile
+    │   │   ├── nettool.cc
+    │   │   ├── Nettool.sln
+    │   │   └── Nettool.vcxproj
+    │   ├── OSX
+    │   │   ├── binary_picker.sh
+    │   │   ├── getversion.cc
+    │   │   ├── osx.mk
+    │   │   ├── plistgen.sh
+    │   │   ├── simutrans.icns
+    │   │   └── simutrans.sh
+    │   ├── paksetinfo.h
+    │   ├── patches
+    │   │   ├── dump-png.diff
+    │   │   ├── experimental-hierachical-patchfinder.diff
+    │   │   └── sun.diff
+    │   ├── script_ai_text.dat
+    │   ├── simutrans
+    │   │   ├── builder
+    │   │   │   ├── brueckenbauer.cc
+    │   │   │   ├── brueckenbauer.h
+    │   │   │   ├── fabrikbauer.cc
+    │   │   │   ├── fabrikbauer.h
+    │   │   │   ├── goods_manager.cc
+    │   │   │   ├── goods_manager.h
+    │   │   │   ├── hausbauer.cc
+    │   │   │   ├── hausbauer.h
+    │   │   │   ├── tree_builder.cc
+    │   │   │   ├── tree_builder.h
+    │   │   │   ├── tunnelbauer.cc
+    │   │   │   ├── tunnelbauer.h
+    │   │   │   ├── vehikelbauer.cc
+    │   │   │   ├── vehikelbauer.h
+    │   │   │   ├── wegbauer.cc
+    │   │   │   └── wegbauer.h
+    │   │   ├── convoihandle.h
+    │   │   ├── dataobj
+    │   │   │   ├── crossing_logic.cc
+    │   │   │   ├── crossing_logic.h
+    │   │   │   ├── environment.cc
+    │   │   │   ├── environment.h
+    │   │   │   ├── freelist.cc
+    │   │   │   ├── freelist.h
+    │   │   │   ├── gameinfo.cc
+    │   │   │   ├── gameinfo.h
+    │   │   │   ├── height_map_loader.cc
+    │   │   │   ├── height_map_loader.h
+    │   │   │   ├── koord3d.cc
+    │   │   │   ├── koord3d.h
+    │   │   │   ├── koord.cc
+    │   │   │   ├── koord.h
+    │   │   │   ├── loadsave.cc
+    │   │   │   ├── loadsave.h
+    │   │   │   ├── marker.cc
+    │   │   │   ├── marker.h
+    │   │   │   ├── objlist.cc
+    │   │   │   ├── objlist.h
+    │   │   │   ├── pakset_downloader.cc
+    │   │   │   ├── pakset_downloader.h
+    │   │   │   ├── pakset_manager.cc
+    │   │   │   ├── pakset_manager.h
+    │   │   │   ├── powernet.cc
+    │   │   │   ├── powernet.h
+    │   │   │   ├── records.cc
+    │   │   │   ├── records.h
+    │   │   │   ├── rect.cc
+    │   │   │   ├── rect.h
+    │   │   │   ├── ribi.cc
+    │   │   │   ├── ribi.h
+    │   │   │   ├── route.cc
+    │   │   │   ├── route.h
+    │   │   │   ├── scenario.cc
+    │   │   │   ├── scenario.h
+    │   │   │   ├── schedule.cc
+    │   │   │   ├── schedule_entry.h
+    │   │   │   ├── schedule.h
+    │   │   │   ├── settings.cc
+    │   │   │   ├── settings.h
+    │   │   │   ├── sve_cache.cc
+    │   │   │   ├── sve_cache.h
+    │   │   │   ├── tabfile.cc
+    │   │   │   ├── tabfile.h
+    │   │   │   ├── translator.cc
+    │   │   │   └── translator.h
+    │   │   ├── descriptor
+    │   │   │   ├── bridge_desc.cc
+    │   │   │   ├── bridge_desc.h
+    │   │   │   ├── building_desc.cc
+    │   │   │   ├── building_desc.h
+    │   │   │   ├── citycar_desc.h
+    │   │   │   ├── crossing_desc.h
+    │   │   │   ├── factory_desc.cc
+    │   │   │   ├── factory_desc.h
+    │   │   │   ├── goods_desc.cc
+    │   │   │   ├── goods_desc.h
+    │   │   │   ├── ground_desc.cc
+    │   │   │   ├── ground_desc.h
+    │   │   │   ├── groundobj_desc.h
+    │   │   │   ├── image_array.h
+    │   │   │   ├── image.cc
+    │   │   │   ├── image.h
+    │   │   │   ├── image_list.h
+    │   │   │   ├── intro_dates.h
+    │   │   │   ├── obj_base_desc.cc
+    │   │   │   ├── obj_base_desc.h
+    │   │   │   ├── obj_desc.h
+    │   │   │   ├── obj_node_info.h
+    │   │   │   ├── objversion.h
+    │   │   │   ├── pedestrian_desc.h
+    │   │   │   ├── reader
+    │   │   │   │   ├── bridge_reader.cc
+    │   │   │   │   ├── bridge_reader.h
+    │   │   │   │   ├── building_reader.cc
+    │   │   │   │   ├── building_reader.h
+    │   │   │   │   ├── citycar_reader.cc
+    │   │   │   │   ├── citycar_reader.h
+    │   │   │   │   ├── crossing_reader.cc
+    │   │   │   │   ├── crossing_reader.h
+    │   │   │   │   ├── factory_reader.cc
+    │   │   │   │   ├── factory_reader.h
+    │   │   │   │   ├── good_reader.cc
+    │   │   │   │   ├── good_reader.h
+    │   │   │   │   ├── groundobj_reader.cc
+    │   │   │   │   ├── groundobj_reader.h
+    │   │   │   │   ├── ground_reader.cc
+    │   │   │   │   ├── ground_reader.h
+    │   │   │   │   ├── imagelist2d_reader.cc
+    │   │   │   │   ├── imagelist2d_reader.h
+    │   │   │   │   ├── imagelist_reader.cc
+    │   │   │   │   ├── imagelist_reader.h
+    │   │   │   │   ├── image_reader.cc
+    │   │   │   │   ├── image_reader.h
+    │   │   │   │   ├── obj_reader.cc
+    │   │   │   │   ├── obj_reader.h
+    │   │   │   │   ├── pedestrian_reader.cc
+    │   │   │   │   ├── pedestrian_reader.h
+    │   │   │   │   ├── roadsign_reader.cc
+    │   │   │   │   ├── roadsign_reader.h
+    │   │   │   │   ├── root_reader.cc
+    │   │   │   │   ├── root_reader.h
+    │   │   │   │   ├── sim_reader.cc
+    │   │   │   │   ├── skin_reader.cc
+    │   │   │   │   ├── skin_reader.h
+    │   │   │   │   ├── sound_reader.cc
+    │   │   │   │   ├── sound_reader.h
+    │   │   │   │   ├── text_reader.cc
+    │   │   │   │   ├── text_reader.h
+    │   │   │   │   ├── tree_reader.cc
+    │   │   │   │   ├── tree_reader.h
+    │   │   │   │   ├── tunnel_reader.cc
+    │   │   │   │   ├── tunnel_reader.h
+    │   │   │   │   ├── vehicle_reader.cc
+    │   │   │   │   ├── vehicle_reader.h
+    │   │   │   │   ├── way_obj_reader.cc
+    │   │   │   │   ├── way_obj_reader.h
+    │   │   │   │   ├── way_reader.cc
+    │   │   │   │   ├── way_reader.h
+    │   │   │   │   ├── xref_reader.cc
+    │   │   │   │   └── xref_reader.h
+    │   │   │   ├── roadsign_desc.h
+    │   │   │   ├── skin_desc.h
+    │   │   │   ├── sound_desc.cc
+    │   │   │   ├── sound_desc.h
+    │   │   │   ├── spezial_obj_tpl.h
+    │   │   │   ├── text_desc.h
+    │   │   │   ├── tree_desc.h
+    │   │   │   ├── tunnel_desc.cc
+    │   │   │   ├── tunnel_desc.h
+    │   │   │   ├── vehicle_desc.cc
+    │   │   │   ├── vehicle_desc.h
+    │   │   │   ├── way_desc.cc
+    │   │   │   ├── way_desc.h
+    │   │   │   ├── way_obj_desc.h
+    │   │   │   ├── writer
+    │   │   │   │   ├── bridge_writer.cc
+    │   │   │   │   ├── bridge_writer.h
+    │   │   │   │   ├── building_writer.cc
+    │   │   │   │   ├── building_writer.h
+    │   │   │   │   ├── citycar_writer.cc
+    │   │   │   │   ├── citycar_writer.h
+    │   │   │   │   ├── crossing_writer.cc
+    │   │   │   │   ├── crossing_writer.h
+    │   │   │   │   ├── factory_writer.cc
+    │   │   │   │   ├── factory_writer.h
+    │   │   │   │   ├── get_climate.cc
+    │   │   │   │   ├── get_climate.h
+    │   │   │   │   ├── get_waytype.cc
+    │   │   │   │   ├── get_waytype.h
+    │   │   │   │   ├── good_writer.cc
+    │   │   │   │   ├── good_writer.h
+    │   │   │   │   ├── groundobj_writer.cc
+    │   │   │   │   ├── groundobj_writer.h
+    │   │   │   │   ├── ground_writer.cc
+    │   │   │   │   ├── ground_writer.h
+    │   │   │   │   ├── imagelist2d_writer.cc
+    │   │   │   │   ├── imagelist2d_writer.h
+    │   │   │   │   ├── imagelist_writer.cc
+    │   │   │   │   ├── imagelist_writer.h
+    │   │   │   │   ├── image_writer.cc
+    │   │   │   │   ├── image_writer.h
+    │   │   │   │   ├── obj_node.cc
+    │   │   │   │   ├── obj_node.h
+    │   │   │   │   ├── obj_pak_exception.h
+    │   │   │   │   ├── obj_writer.cc
+    │   │   │   │   ├── obj_writer.h
+    │   │   │   │   ├── pedestrian_writer.cc
+    │   │   │   │   ├── pedestrian_writer.h
+    │   │   │   │   ├── roadsign_writer.cc
+    │   │   │   │   ├── roadsign_writer.h
+    │   │   │   │   ├── root_writer.cc
+    │   │   │   │   ├── root_writer.h
+    │   │   │   │   ├── sim_writer.cc
+    │   │   │   │   ├── skin_writer.cc
+    │   │   │   │   ├── skin_writer.h
+    │   │   │   │   ├── sound_writer.cc
+    │   │   │   │   ├── sound_writer.h
+    │   │   │   │   ├── text_writer.cc
+    │   │   │   │   ├── text_writer.h
+    │   │   │   │   ├── tree_writer.cc
+    │   │   │   │   ├── tree_writer.h
+    │   │   │   │   ├── tunnel_writer.cc
+    │   │   │   │   ├── tunnel_writer.h
+    │   │   │   │   ├── vehicle_writer.cc
+    │   │   │   │   ├── vehicle_writer.h
+    │   │   │   │   ├── way_obj_writer.cc
+    │   │   │   │   ├── way_obj_writer.h
+    │   │   │   │   ├── way_writer.cc
+    │   │   │   │   ├── way_writer.h
+    │   │   │   │   ├── xref_writer.cc
+    │   │   │   │   └── xref_writer.h
+    │   │   │   └── xref_desc.h
+    │   │   ├── display
+    │   │   │   ├── clip_num.h
+    │   │   │   ├── font.cc
+    │   │   │   ├── font.h
+    │   │   │   ├── scr_coord.h
+    │   │   │   ├── simgraph0.cc
+    │   │   │   ├── simgraph16.cc
+    │   │   │   ├── simgraph.h
+    │   │   │   ├── simimg.h
+    │   │   │   ├── simview.cc
+    │   │   │   ├── simview.h
+    │   │   │   ├── viewport.cc
+    │   │   │   └── viewport.h
+    │   │   ├── freight_list_sorter.cc
+    │   │   ├── freight_list_sorter.h
+    │   │   ├── ground
+    │   │   │   ├── boden.cc
+    │   │   │   ├── boden.h
+    │   │   │   ├── brueckenboden.cc
+    │   │   │   ├── brueckenboden.h
+    │   │   │   ├── fundament.cc
+    │   │   │   ├── fundament.h
+    │   │   │   ├── grund.cc
+    │   │   │   ├── grund.h
+    │   │   │   ├── monorailboden.cc
+    │   │   │   ├── monorailboden.h
+    │   │   │   ├── tunnelboden.cc
+    │   │   │   ├── tunnelboden.h
+    │   │   │   ├── wasser.cc
+    │   │   │   └── wasser.h
+    │   │   ├── gui
+    │   │   │   ├── ai_option.cc
+    │   │   │   ├── ai_option.h
+    │   │   │   ├── ai_selector.cc
+    │   │   │   ├── ai_selector.h
+    │   │   │   ├── banner.cc
+    │   │   │   ├── banner.h
+    │   │   │   ├── base_info.cc
+    │   │   │   ├── base_info.h
+    │   │   │   ├── baum_edit.cc
+    │   │   │   ├── baum_edit.h
+    │   │   │   ├── chat_frame.cc
+    │   │   │   ├── chat_frame.h
+    │   │   │   ├── citybuilding_edit.cc
+    │   │   │   ├── citybuilding_edit.h
+    │   │   │   ├── city_info.cc
+    │   │   │   ├── city_info.h
+    │   │   │   ├── citylist_frame.cc
+    │   │   │   ├── citylist_frame.h
+    │   │   │   ├── citylist_stats.cc
+    │   │   │   ├── citylist_stats.h
+    │   │   │   ├── climates.cc
+    │   │   │   ├── climates.h
+    │   │   │   ├── components
+    │   │   │   │   ├── action_listener.h
+    │   │   │   │   ├── gui_action_creator.h
+    │   │   │   │   ├── gui_aligned_container.cc
+    │   │   │   │   ├── gui_aligned_container.h
+    │   │   │   │   ├── gui_building.cc
+    │   │   │   │   ├── gui_building.h
+    │   │   │   │   ├── gui_button.cc
+    │   │   │   │   ├── gui_button.h
+    │   │   │   │   ├── gui_button_to_chart.cc
+    │   │   │   │   ├── gui_button_to_chart.h
+    │   │   │   │   ├── gui_chart.cc
+    │   │   │   │   ├── gui_chart.h
+    │   │   │   │   ├── gui_colorbox.cc
+    │   │   │   │   ├── gui_colorbox.h
+    │   │   │   │   ├── gui_combobox.cc
+    │   │   │   │   ├── gui_combobox.h
+    │   │   │   │   ├── gui_component.cc
+    │   │   │   │   ├── gui_component.h
+    │   │   │   │   ├── gui_container.cc
+    │   │   │   │   ├── gui_container.h
+    │   │   │   │   ├── gui_convoiinfo.cc
+    │   │   │   │   ├── gui_convoiinfo.h
+    │   │   │   │   ├── gui_divider.cc
+    │   │   │   │   ├── gui_divider.h
+    │   │   │   │   ├── gui_fixedwidth_textarea.cc
+    │   │   │   │   ├── gui_fixedwidth_textarea.h
+    │   │   │   │   ├── gui_flowtext.cc
+    │   │   │   │   ├── gui_flowtext.h
+    │   │   │   │   ├── gui_image.cc
+    │   │   │   │   ├── gui_image.h
+    │   │   │   │   ├── gui_image_list.cc
+    │   │   │   │   ├── gui_image_list.h
+    │   │   │   │   ├── gui_label.cc
+    │   │   │   │   ├── gui_label.h
+    │   │   │   │   ├── gui_location_view.h
+    │   │   │   │   ├── gui_map_preview.cc
+    │   │   │   │   ├── gui_map_preview.h
+    │   │   │   │   ├── gui_numberinput.cc
+    │   │   │   │   ├── gui_numberinput.h
+    │   │   │   │   ├── gui_obj_view.cc
+    │   │   │   │   ├── gui_obj_view.h
+    │   │   │   │   ├── gui_schedule.cc
+    │   │   │   │   ├── gui_schedule.h
+    │   │   │   │   ├── gui_scrollbar.cc
+    │   │   │   │   ├── gui_scrollbar.h
+    │   │   │   │   ├── gui_scrolled_list.cc
+    │   │   │   │   ├── gui_scrolled_list.h
+    │   │   │   │   ├── gui_scrollpane.cc
+    │   │   │   │   ├── gui_scrollpane.h
+    │   │   │   │   ├── gui_speedbar.cc
+    │   │   │   │   ├── gui_speedbar.h
+    │   │   │   │   ├── gui_tab_panel.cc
+    │   │   │   │   ├── gui_tab_panel.h
+    │   │   │   │   ├── gui_textarea.cc
+    │   │   │   │   ├── gui_textarea.h
+    │   │   │   │   ├── gui_textinput.cc
+    │   │   │   │   ├── gui_textinput.h
+    │   │   │   │   ├── gui_timeinput.cc
+    │   │   │   │   ├── gui_timeinput.h
+    │   │   │   │   ├── gui_waytype_tab_panel.cc
+    │   │   │   │   ├── gui_waytype_tab_panel.h
+    │   │   │   │   ├── gui_world_view.cc
+    │   │   │   │   └── gui_world_view.h
+    │   │   │   ├── convoi_detail.cc
+    │   │   │   ├── convoi_detail.h
+    │   │   │   ├── convoi_filter_frame.cc
+    │   │   │   ├── convoi_filter_frame.h
+    │   │   │   ├── convoi_frame.cc
+    │   │   │   ├── convoi_frame.h
+    │   │   │   ├── convoi_info.cc
+    │   │   │   ├── convoi_info.h
+    │   │   │   ├── convoy_item.cc
+    │   │   │   ├── convoy_item.h
+    │   │   │   ├── curiosity_edit.cc
+    │   │   │   ├── curiosity_edit.h
+    │   │   │   ├── curiositylist_frame.cc
+    │   │   │   ├── curiositylist_frame.h
+    │   │   │   ├── curiositylist_stats.cc
+    │   │   │   ├── curiositylist_stats.h
+    │   │   │   ├── depot_frame.cc
+    │   │   │   ├── depot_frame.h
+    │   │   │   ├── depotlist_frame.cc
+    │   │   │   ├── depotlist_frame.h
+    │   │   │   ├── display_settings.cc
+    │   │   │   ├── display_settings.h
+    │   │   │   ├── enlarge_map_frame.cc
+    │   │   │   ├── enlarge_map_frame.h
+    │   │   │   ├── extend_edit.cc
+    │   │   │   ├── extend_edit.h
+    │   │   │   ├── fabrik_info.cc
+    │   │   │   ├── fabrik_info.h
+    │   │   │   ├── factory_chart.cc
+    │   │   │   ├── factory_chart.h
+    │   │   │   ├── factory_edit.cc
+    │   │   │   ├── factory_edit.h
+    │   │   │   ├── factorylist_frame.cc
+    │   │   │   ├── factorylist_frame.h
+    │   │   │   ├── factorylist_stats.cc
+    │   │   │   ├── factorylist_stats.h
+    │   │   │   ├── goods_frame.cc
+    │   │   │   ├── goods_frame.h
+    │   │   │   ├── goods_stats.cc
+    │   │   │   ├── goods_stats.h
+    │   │   │   ├── ground_info.cc
+    │   │   │   ├── ground_info.h
+    │   │   │   ├── groundobj_edit.cc
+    │   │   │   ├── groundobj_edit.h
+    │   │   │   ├── gui_frame.cc
+    │   │   │   ├── gui_frame.h
+    │   │   │   ├── gui_theme.cc
+    │   │   │   ├── gui_theme.h
+    │   │   │   ├── halt_info.cc
+    │   │   │   ├── halt_info.h
+    │   │   │   ├── halt_list_filter_frame.cc
+    │   │   │   ├── halt_list_filter_frame.h
+    │   │   │   ├── halt_list_frame.cc
+    │   │   │   ├── halt_list_frame.h
+    │   │   │   ├── halt_list_stats.cc
+    │   │   │   ├── halt_list_stats.h
+    │   │   │   ├── headquarter_info.cc
+    │   │   │   ├── headquarter_info.h
+    │   │   │   ├── help_frame.cc
+    │   │   │   ├── help_frame.h
+    │   │   │   ├── jump_frame.cc
+    │   │   │   ├── jump_frame.h
+    │   │   │   ├── kennfarbe.cc
+    │   │   │   ├── kennfarbe.h
+    │   │   │   ├── label_info.cc
+    │   │   │   ├── label_info.h
+    │   │   │   ├── labellist_frame.cc
+    │   │   │   ├── labellist_frame.h
+    │   │   │   ├── labellist_stats.cc
+    │   │   │   ├── labellist_stats.h
+    │   │   │   ├── line_item.cc
+    │   │   │   ├── line_item.h
+    │   │   │   ├── line_management_gui.cc
+    │   │   │   ├── line_management_gui.h
+    │   │   │   ├── loadfont_frame.cc
+    │   │   │   ├── loadfont_frame.h
+    │   │   │   ├── load_relief_frame.cc
+    │   │   │   ├── load_relief_frame.h
+    │   │   │   ├── loadsave_frame.cc
+    │   │   │   ├── loadsave_frame.h
+    │   │   │   ├── loadsoundfont_frame.cc
+    │   │   │   ├── loadsoundfont_frame.h
+    │   │   │   ├── map_frame.cc
+    │   │   │   ├── map_frame.h
+    │   │   │   ├── messagebox.cc
+    │   │   │   ├── messagebox.h
+    │   │   │   ├── message_frame.cc
+    │   │   │   ├── message_frame.h
+    │   │   │   ├── message_option.cc
+    │   │   │   ├── message_option.h
+    │   │   │   ├── message_stats.cc
+    │   │   │   ├── message_stats.h
+    │   │   │   ├── minimap.cc
+    │   │   │   ├── minimap.h
+    │   │   │   ├── money_frame.cc
+    │   │   │   ├── money_frame.h
+    │   │   │   ├── obj_info.cc
+    │   │   │   ├── obj_info.h
+    │   │   │   ├── optionen.cc
+    │   │   │   ├── optionen.h
+    │   │   │   ├── pakinstaller.cc
+    │   │   │   ├── pakinstaller.h
+    │   │   │   ├── pakselector.cc
+    │   │   │   ├── pakselector.h
+    │   │   │   ├── password_frame.cc
+    │   │   │   ├── password_frame.h
+    │   │   │   ├── player_frame.cc
+    │   │   │   ├── player_frame.h
+    │   │   │   ├── player_ranking_frame.cc
+    │   │   │   ├── player_ranking_frame.h
+    │   │   │   ├── privatesign_info.cc
+    │   │   │   ├── privatesign_info.h
+    │   │   │   ├── savegame_frame.cc
+    │   │   │   ├── savegame_frame.h
+    │   │   │   ├── scenario_frame.cc
+    │   │   │   ├── scenario_frame.h
+    │   │   │   ├── scenario_info.cc
+    │   │   │   ├── scenario_info.h
+    │   │   │   ├── schedule_list.cc
+    │   │   │   ├── schedule_list.h
+    │   │   │   ├── script_tool_frame.cc
+    │   │   │   ├── script_tool_frame.h
+    │   │   │   ├── server_frame.cc
+    │   │   │   ├── server_frame.h
+    │   │   │   ├── settings_frame.cc
+    │   │   │   ├── settings_frame.h
+    │   │   │   ├── settings_stats.cc
+    │   │   │   ├── settings_stats.h
+    │   │   │   ├── signal_info.cc
+    │   │   │   ├── signal_info.h
+    │   │   │   ├── signal_spacing.cc
+    │   │   │   ├── signal_spacing.h
+    │   │   │   ├── simwin.cc
+    │   │   │   ├── simwin.h
+    │   │   │   ├── sound_frame.cc
+    │   │   │   ├── sound_frame.h
+    │   │   │   ├── sprachen.cc
+    │   │   │   ├── sprachen.h
+    │   │   │   ├── station_building_select.cc
+    │   │   │   ├── station_building_select.h
+    │   │   │   ├── themeselector.cc
+    │   │   │   ├── themeselector.h
+    │   │   │   ├── tool_selector.cc
+    │   │   │   ├── tool_selector.h
+    │   │   │   ├── trafficlight_info.cc
+    │   │   │   ├── trafficlight_info.h
+    │   │   │   ├── vehiclelist_frame.cc
+    │   │   │   ├── vehiclelist_frame.h
+    │   │   │   ├── welt.cc
+    │   │   │   └── welt.h
+    │   │   ├── halthandle.h
+    │   │   ├── io
+    │   │   │   ├── classify_file.cc
+    │   │   │   ├── classify_file.h
+    │   │   │   ├── raw_image_bmp.cc
+    │   │   │   ├── raw_image.cc
+    │   │   │   ├── raw_image.h
+    │   │   │   ├── raw_image_png.cc
+    │   │   │   ├── raw_image_ppm.cc
+    │   │   │   └── rdwr
+    │   │   │       ├── adler32_stream.cc
+    │   │   │       ├── adler32_stream.h
+    │   │   │       ├── bzip2_file_rdwr_stream.cc
+    │   │   │       ├── bzip2_file_rdwr_stream.h
+    │   │   │       ├── compare_file_rd_stream.cc
+    │   │   │       ├── compare_file_rd_stream.h
+    │   │   │       ├── raw_file_rdwr_stream.cc
+    │   │   │       ├── raw_file_rdwr_stream.h
+    │   │   │       ├── rdwr_stream.cc
+    │   │   │       ├── rdwr_stream.h
+    │   │   │       ├── zlib_file_rdwr_stream.cc
+    │   │   │       ├── zlib_file_rdwr_stream.h
+    │   │   │       ├── zstd_file_rdwr_stream.cc
+    │   │   │       └── zstd_file_rdwr_stream.h
+    │   │   ├── linehandle.h
+    │   │   ├── macros.h
+    │   │   ├── music
+    │   │   │   ├── AVF_core-audio_midi.mm
+    │   │   │   ├── core-audio_midi.mm
+    │   │   │   ├── fluidsynth.cc
+    │   │   │   ├── music.h
+    │   │   │   ├── no_midi.cc
+    │   │   │   ├── sdl_midi.cc
+    │   │   │   └── w32_midi.cc
+    │   │   ├── network
+    │   │   │   ├── checksum.cc
+    │   │   │   ├── checksum.h
+    │   │   │   ├── memory_rw.cc
+    │   │   │   ├── memory_rw.h
+    │   │   │   ├── network_address.cc
+    │   │   │   ├── network_address.h
+    │   │   │   ├── network.cc
+    │   │   │   ├── network_cmd.cc
+    │   │   │   ├── network_cmd.h
+    │   │   │   ├── network_cmd_ingame.cc
+    │   │   │   ├── network_cmd_ingame.h
+    │   │   │   ├── network_cmd_scenario.cc
+    │   │   │   ├── network_cmd_scenario.h
+    │   │   │   ├── network_cmp_pakset.cc
+    │   │   │   ├── network_cmp_pakset.h
+    │   │   │   ├── network_file_transfer.cc
+    │   │   │   ├── network_file_transfer.h
+    │   │   │   ├── network.h
+    │   │   │   ├── network_packet.cc
+    │   │   │   ├── network_packet.h
+    │   │   │   ├── network_socket_list.cc
+    │   │   │   ├── network_socket_list.h
+    │   │   │   ├── pakset_info.cc
+    │   │   │   └── pakset_info.h
+    │   │   ├── obj
+    │   │   │   ├── baum.cc
+    │   │   │   ├── baum.h
+    │   │   │   ├── bruecke.cc
+    │   │   │   ├── bruecke.h
+    │   │   │   ├── crossing.cc
+    │   │   │   ├── crossing.h
+    │   │   │   ├── depot.cc
+    │   │   │   ├── depot.h
+    │   │   │   ├── dummy.h
+    │   │   │   ├── field.cc
+    │   │   │   ├── field.h
+    │   │   │   ├── gebaeude.cc
+    │   │   │   ├── gebaeude.h
+    │   │   │   ├── groundobj.cc
+    │   │   │   ├── groundobj.h
+    │   │   │   ├── label.cc
+    │   │   │   ├── label.h
+    │   │   │   ├── leitung2.cc
+    │   │   │   ├── leitung2.h
+    │   │   │   ├── pillar.cc
+    │   │   │   ├── pillar.h
+    │   │   │   ├── roadsign.cc
+    │   │   │   ├── roadsign.h
+    │   │   │   ├── signal.cc
+    │   │   │   ├── signal.h
+    │   │   │   ├── simobj.cc
+    │   │   │   ├── simobj.h
+    │   │   │   ├── tunnel.cc
+    │   │   │   ├── tunnel.h
+    │   │   │   ├── way
+    │   │   │   │   ├── kanal.cc
+    │   │   │   │   ├── kanal.h
+    │   │   │   │   ├── maglev.cc
+    │   │   │   │   ├── maglev.h
+    │   │   │   │   ├── monorail.cc
+    │   │   │   │   ├── monorail.h
+    │   │   │   │   ├── narrowgauge.cc
+    │   │   │   │   ├── narrowgauge.h
+    │   │   │   │   ├── runway.cc
+    │   │   │   │   ├── runway.h
+    │   │   │   │   ├── schiene.cc
+    │   │   │   │   ├── schiene.h
+    │   │   │   │   ├── strasse.cc
+    │   │   │   │   ├── strasse.h
+    │   │   │   │   ├── weg.cc
+    │   │   │   │   └── weg.h
+    │   │   │   ├── wayobj.cc
+    │   │   │   ├── wayobj.h
+    │   │   │   ├── wolke.cc
+    │   │   │   ├── wolke.h
+    │   │   │   ├── zeiger.cc
+    │   │   │   └── zeiger.h
+    │   │   ├── old_blockmanager.cc
+    │   │   ├── old_blockmanager.h
+    │   │   ├── pathes.h
+    │   │   ├── player
+    │   │   │   ├── ai.cc
+    │   │   │   ├── ai_goods.cc
+    │   │   │   ├── ai_goods.h
+    │   │   │   ├── ai.h
+    │   │   │   ├── ai_passenger.cc
+    │   │   │   ├── ai_passenger.h
+    │   │   │   ├── ai_scripted.cc
+    │   │   │   ├── ai_scripted.h
+    │   │   │   ├── finance.cc
+    │   │   │   ├── finance.h
+    │   │   │   ├── simplay.cc
+    │   │   │   └── simplay.h
+    │   │   ├── script
+    │   │   │   ├── api
+    │   │   │   │   ├── api_base.h
+    │   │   │   │   ├── api_city.cc
+    │   │   │   │   ├── api_command.cc
+    │   │   │   │   ├── api_command.h
+    │   │   │   │   ├── api_const.cc
+    │   │   │   │   ├── api_control.cc
+    │   │   │   │   ├── api_convoy.cc
+    │   │   │   │   ├── api_doc.h
+    │   │   │   │   ├── api_factory.cc
+    │   │   │   │   ├── api_gui.cc
+    │   │   │   │   ├── api.h
+    │   │   │   │   ├── api_halt.cc
+    │   │   │   │   ├── api_include.cc
+    │   │   │   │   ├── api_line.cc
+    │   │   │   │   ├── api_map_objects.cc
+    │   │   │   │   ├── api_obj_desc_base.cc
+    │   │   │   │   ├── api_obj_desc_base.h
+    │   │   │   │   ├── api_obj_desc.cc
+    │   │   │   │   ├── api_pathfinding.cc
+    │   │   │   │   ├── api_player.cc
+    │   │   │   │   ├── api_scenario.cc
+    │   │   │   │   ├── api_schedule.cc
+    │   │   │   │   ├── api_settings.cc
+    │   │   │   │   ├── api_simple.cc
+    │   │   │   │   ├── api_simple.h
+    │   │   │   │   ├── api_skeleton.cc
+    │   │   │   │   ├── api_skeleton.h
+    │   │   │   │   ├── api_tiles.cc
+    │   │   │   │   ├── api_world.cc
+    │   │   │   │   ├── changelog.h
+    │   │   │   │   ├── Doxyfile_SQAPI
+    │   │   │   │   ├── export.awk
+    │   │   │   │   ├── export_desc.cc
+    │   │   │   │   ├── export_desc.h
+    │   │   │   │   ├── filter_cpp.sh
+    │   │   │   │   ├── filter_sq.sh
+    │   │   │   │   ├── get_next.cc
+    │   │   │   │   ├── get_next.h
+    │   │   │   │   ├── squirrel_types_ai.awk
+    │   │   │   │   └── squirrel_types_scenario.awk
+    │   │   │   ├── api_class.cc
+    │   │   │   ├── api_class.h
+    │   │   │   ├── api_function.cc
+    │   │   │   ├── api_function.h
+    │   │   │   ├── api_param.cc
+    │   │   │   ├── api_param.h
+    │   │   │   ├── dynamic_string.cc
+    │   │   │   ├── dynamic_string.h
+    │   │   │   ├── export_objs.cc
+    │   │   │   ├── export_objs.h
+    │   │   │   ├── script.cc
+    │   │   │   ├── script.h
+    │   │   │   ├── script_loader.cc
+    │   │   │   ├── script_loader.h
+    │   │   │   ├── script_tool_manager.cc
+    │   │   │   └── script_tool_manager.h
+    │   │   ├── scrolltext.h
+    │   │   ├── simachenum.h
+    │   │   ├── simachievements.cc
+    │   │   ├── simachievements.h
+    │   │   ├── simcolor.h
+    │   │   ├── simconst.h
+    │   │   ├── simconvoi.cc
+    │   │   ├── simconvoi.h
+    │   │   ├── simdebug.cc
+    │   │   ├── simdebug.h
+    │   │   ├── simevent.cc
+    │   │   ├── simevent.h
+    │   │   ├── simfab.cc
+    │   │   ├── simfab.h
+    │   │   ├── simhalt.cc
+    │   │   ├── simhalt.h
+    │   │   ├── siminteraction.cc
+    │   │   ├── siminteraction.h
+    │   │   ├── simintr.cc
+    │   │   ├── simintr.h
+    │   │   ├── simio.cc
+    │   │   ├── simio.h
+    │   │   ├── simline.cc
+    │   │   ├── simline.h
+    │   │   ├── simlinemgmt.cc
+    │   │   ├── simlinemgmt.h
+    │   │   ├── simloadingscreen.cc
+    │   │   ├── simloadingscreen.h
+    │   │   ├── simmain.cc
+    │   │   ├── simmain.h
+    │   │   ├── simmem.cc
+    │   │   ├── simmem.h
+    │   │   ├── simmesg.cc
+    │   │   ├── simmesg.h
+    │   │   ├── simskin.cc
+    │   │   ├── simskin.h
+    │   │   ├── simsound.cc
+    │   │   ├── simsound.h
+    │   │   ├── simticker.cc
+    │   │   ├── simticker.h
+    │   │   ├── simtypes.h
+    │   │   ├── simunits.h
+    │   │   ├── Simutrans-full.svg
+    │   │   ├── simutrans.svg
+    │   │   ├── simversion.h
+    │   │   ├── simware.cc
+    │   │   ├── simware.h
+    │   │   ├── sound
+    │   │   │   ├── AVF_core-audio_sound.mm
+    │   │   │   ├── core-audio_sound.mm
+    │   │   │   ├── no_sound.cc
+    │   │   │   ├── sdl2_sound.cc
+    │   │   │   ├── sdl_mixer_sound.cc
+    │   │   │   ├── sdl_sound.cc
+    │   │   │   ├── sound.h
+    │   │   │   ├── win32_sound.cc
+    │   │   │   └── win32_sound_xa.cc
+    │   │   ├── sys
+    │   │   │   ├── clipboard_internal.cc
+    │   │   │   ├── clipboard_s2.cc
+    │   │   │   ├── clipboard_w32.cc
+    │   │   │   ├── simsys.cc
+    │   │   │   ├── simsys.h
+    │   │   │   ├── simsys_posix.cc
+    │   │   │   ├── simsys_s2.cc
+    │   │   │   └── simsys_w.cc
+    │   │   ├── tool
+    │   │   │   ├── simmenu.cc
+    │   │   │   ├── simmenu.h
+    │   │   │   ├── simtool.cc
+    │   │   │   ├── simtool-dialogs.h
+    │   │   │   ├── simtool.h
+    │   │   │   ├── simtool-scripted.cc
+    │   │   │   └── simtool-scripted.h
+    │   │   ├── tpl
+    │   │   │   ├── array2d_tpl.h
+    │   │   │   ├── array_tpl.h
+    │   │   │   ├── binary_heap_tpl.h
+    │   │   │   ├── freelist_iter_tpl.h
+    │   │   │   ├── freelist_tpl.h
+    │   │   │   ├── hashtable_tpl.h
+    │   │   │   ├── inthashtable_tpl.h
+    │   │   │   ├── minivec_tpl.h
+    │   │   │   ├── plainstringhashtable_tpl.h
+    │   │   │   ├── ptrhashtable_tpl.h
+    │   │   │   ├── quickstone_tpl.h
+    │   │   │   ├── slist_tpl.h
+    │   │   │   ├── sparse_tpl.h
+    │   │   │   ├── stringhashtable_tpl.h
+    │   │   │   ├── vector_tpl.h
+    │   │   │   └── weighted_vector_tpl.h
+    │   │   ├── utils
+    │   │   │   ├── cbuffer.cc
+    │   │   │   ├── cbuffer.h
+    │   │   │   ├── checklist.cc
+    │   │   │   ├── checklist.h
+    │   │   │   ├── csv.cc
+    │   │   │   ├── csv.h
+    │   │   │   ├── fetchopt.cc
+    │   │   │   ├── fetchopt.h
+    │   │   │   ├── int_math.h
+    │   │   │   ├── log.cc
+    │   │   │   ├── log.h
+    │   │   │   ├── plainstring.h
+    │   │   │   ├── searchfolder.cc
+    │   │   │   ├── searchfolder.h
+    │   │   │   ├── sha1.cc
+    │   │   │   ├── sha1.h
+    │   │   │   ├── sha1_hash.cc
+    │   │   │   ├── sha1_hash.h
+    │   │   │   ├── simrandom.cc
+    │   │   │   ├── simrandom.h
+    │   │   │   ├── simstring.cc
+    │   │   │   ├── simstring.h
+    │   │   │   ├── simthread.cc
+    │   │   │   ├── simthread.h
+    │   │   │   ├── unicode.cc
+    │   │   │   └── unicode.h
+    │   │   ├── vehicle
+    │   │   │   ├── air_vehicle.cc
+    │   │   │   ├── air_vehicle.h
+    │   │   │   ├── movingobj.cc
+    │   │   │   ├── movingobj.h
+    │   │   │   ├── overtaker.h
+    │   │   │   ├── pedestrian.cc
+    │   │   │   ├── pedestrian.h
+    │   │   │   ├── rail_vehicle.cc
+    │   │   │   ├── rail_vehicle.h
+    │   │   │   ├── road_vehicle.cc
+    │   │   │   ├── road_vehicle.h
+    │   │   │   ├── simroadtraffic.cc
+    │   │   │   ├── simroadtraffic.h
+    │   │   │   ├── simtestdriver.h
+    │   │   │   ├── vehicle_base.cc
+    │   │   │   ├── vehicle_base.h
+    │   │   │   ├── vehicle.cc
+    │   │   │   ├── vehicle.h
+    │   │   │   ├── water_vehicle.cc
+    │   │   │   └── water_vehicle.h
+    │   │   └── world
+    │   │       ├── building_placefinder.h
+    │   │       ├── placefinder.cc
+    │   │       ├── placefinder.h
+    │   │       ├── simcity.cc
+    │   │       ├── simcity.h
+    │   │       ├── simplan.cc
+    │   │       ├── simplan.h
+    │   │       ├── simworld.cc
+    │   │       ├── simworld.h
+    │   │       ├── surface.cc
+    │   │       ├── surface.h
+    │   │       ├── terraformer.cc
+    │   │       └── terraformer.h
+    │   ├── squirrel
+    │   │   ├── sqconfig.h
+    │   │   ├── sq_extensions.cc
+    │   │   ├── sq_extensions.h
+    │   │   ├── sqstdaux.h
+    │   │   ├── sqstdblob.h
+    │   │   ├── sqstdio.h
+    │   │   ├── sqstdlib
+    │   │   │   ├── sqstdaux.cc
+    │   │   │   ├── sqstdblob.cc
+    │   │   │   ├── sqstdblobimpl.h
+    │   │   │   ├── sqstdio.cc
+    │   │   │   ├── sqstdmath.cc
+    │   │   │   ├── sqstdrex.cc
+    │   │   │   ├── sqstdstream.cc
+    │   │   │   ├── sqstdstream.h
+    │   │   │   ├── sqstdstring.cc
+    │   │   │   └── sqstdsystem.cc
+    │   │   ├── sqstdmath.h
+    │   │   ├── sqstdstring.h
+    │   │   ├── sqstdsystem.h
+    │   │   ├── squirrel
+    │   │   │   ├── sqapi.cc
+    │   │   │   ├── sqarray.h
+    │   │   │   ├── sqbaselib.cc
+    │   │   │   ├── sqclass.cc
+    │   │   │   ├── sqclass.h
+    │   │   │   ├── sqclosure.h
+    │   │   │   ├── sqcompiler.cc
+    │   │   │   ├── sqcompiler.h
+    │   │   │   ├── sqdebug.cc
+    │   │   │   ├── sqfuncproto.h
+    │   │   │   ├── sqfuncstate.cc
+    │   │   │   ├── sqfuncstate.h
+    │   │   │   ├── sqlexer.cc
+    │   │   │   ├── sqlexer.h
+    │   │   │   ├── sqmem.cc
+    │   │   │   ├── sqobject.cc
+    │   │   │   ├── sqobject.h
+    │   │   │   ├── sqopcodes.h
+    │   │   │   ├── sqpcheader.h
+    │   │   │   ├── sqstate.cc
+    │   │   │   ├── sqstate.h
+    │   │   │   ├── sqstring.h
+    │   │   │   ├── sqtable.cc
+    │   │   │   ├── sqtable.h
+    │   │   │   ├── squserdata.h
+    │   │   │   ├── squtils.h
+    │   │   │   ├── sqvm.cc
+    │   │   │   └── sqvm.h
+    │   │   ├── squirrel.h
+    │   │   ├── squirrel_modifications.diff
+    │   │   ├── update_squirrel.awk
+    │   │   └── update_squirrel.sh
+    │   ├── steam
+    │   │   ├── achievements.cc
+    │   │   ├── achievements.h
+    │   │   ├── steam.cc
+    │   │   ├── steam.h
+    │   │   ├── workshop_item.cc
+    │   │   └── workshop_item.h
+    │   └── Windows
+    │       ├── MSI
+    │       │   ├── ProgramDataClear.js
+    │       │   └── Simutrans SDL2.vdproj
+    │       ├── nsis
+    │       │   ├── CC-BY-SA.txt
+    │       │   ├── GPL.txt
+    │       │   ├── installericon256.bmp
+    │       │   ├── languages.nsh
+    │       │   ├── license.rtf
+    │       │   ├── onlineupgrade.nsi
+    │       │   ├── other-functions.nsh
+    │       │   ├── pak128.txt
+    │       │   ├── paksets.nsh
+    │       │   ├── preparation-functions.nsh
+    │       │   ├── simutrans-noadmin.nsi
+    │       │   ├── simutrans.nsi
+    │       │   ├── simutrans-offline.nsi
+    │       │   ├── simutranssmall.bmp
+    │       │   └── simutrans-store.nsi
+    │       ├── old.ico
+    │       ├── simres.rc
+    │       ├── simutrans.ico
+    │       ├── Simutrans.manifest
+    │       └── stormoog.ico
+    ├── tests
+    │   ├── all_tests.nut
+    │   ├── empty-16x16.sve
+    │   ├── scenario.nut
+    │   ├── test_helpers.nut
+    │   └── tests
+    │       ├── test_building.nut
+    │       ├── test_city.nut
+    │       ├── test_climate.nut
+    │       ├── test_depot.nut
+    │       ├── test_dir.nut
+    │       ├── test_factory.nut
+    │       ├── test_good.nut
+    │       ├── test_groundobj.nut
+    │       ├── test_halt.nut
+    │       ├── test_headquarters.nut
+    │       ├── test_label.nut
+    │       ├── test_player.nut
+    │       ├── test_powerline.nut
+    │       ├── test_reservation.nut
+    │       ├── test_scenario.nut
+    │       ├── test_sign.nut
+    │       ├── test_slope.nut
+    │       ├── test_terraform.nut
+    │       ├── test_transport.nut
+    │       ├── test_trees.nut
+    │       ├── test_way_bridge.nut
+    │       ├── test_wayobj.nut
+    │       ├── test_way_road.nut
+    │       ├── test_way_runway.nut
+    │       ├── test_way_tram.nut
+    │       └── test_way_tunnel.nut
+    ├── themes.src
+    │   ├── aero
+    │   │   ├── aero.tab
+    │   │   ├── alt_back.png
+    │   │   ├── back.png
+    │   │   ├── button.png
+    │   │   ├── checkbutton.png
+    │   │   ├── divider.png
+    │   │   ├── editfield.png
+    │   │   ├── gadget.png
+    │   │   ├── listbox.png
+    │   │   ├── posbutton.png
+    │   │   ├── roundbutton.png
+    │   │   ├── scrollbar.png
+    │   │   ├── skins_aero.dat
+    │   │   └── skins_aero.png
+    │   ├── build_themes.sh
+    │   ├── flat
+    │   │   ├── back.png
+    │   │   ├── button.png
+    │   │   ├── checkbutton-small.png
+    │   │   ├── divider.png
+    │   │   ├── editfield.png
+    │   │   ├── flat-skin.dat
+    │   │   ├── flat-skin-large.tab
+    │   │   ├── flat-skin.tab
+    │   │   ├── flat-skin-touch.dat
+    │   │   ├── flat-skin-touch.tab
+    │   │   ├── gadget.png
+    │   │   ├── gadget-touch.png
+    │   │   ├── listbox.png
+    │   │   ├── posbutton-small.png
+    │   │   ├── scrollbar-small.png
+    │   │   ├── scrollbar-touch.png
+    │   │   └── titlebar.png
+    │   ├── highcontrast
+    │   │   ├── back.png
+    │   │   ├── button.png
+    │   │   ├── checkbutton.png
+    │   │   ├── divider.png
+    │   │   ├── editfield.png
+    │   │   ├── gadget.png
+    │   │   ├── high-contrast.tab
+    │   │   ├── listbox.png
+    │   │   ├── posbutton.png
+    │   │   ├── roundbutton.png
+    │   │   ├── scrollbar.png
+    │   │   └── theme.dat
+    │   ├── highcontrast-large
+    │   │   ├── back.png
+    │   │   ├── button.png
+    │   │   ├── checkbutton.png
+    │   │   ├── divider.png
+    │   │   ├── editfield.png
+    │   │   ├── gadget.png
+    │   │   ├── high-contrast-large.tab
+    │   │   ├── listbox.png
+    │   │   ├── posbutton.png
+    │   │   ├── roundbutton.png
+    │   │   ├── scrollbar.png
+    │   │   └── theme.dat
+    │   ├── modern
+    │   │   ├── back.png
+    │   │   ├── button.png
+    │   │   ├── checkbutton.png
+    │   │   ├── checkbutton-small.png
+    │   │   ├── divider.png
+    │   │   ├── editfield.png
+    │   │   ├── gadget.png
+    │   │   ├── listbox.png
+    │   │   ├── posbutton.png
+    │   │   ├── posbutton-small.png
+    │   │   ├── scrollbar.png
+    │   │   ├── scrollbar-small.png
+    │   │   ├── standard.dat
+    │   │   ├── standard-large.dat
+    │   │   ├── theme-large.tab
+    │   │   └── themes.tab
+    │   ├── pak192comic
+    │   │   ├── pak192comic
+    │   │   │   ├── back.png
+    │   │   │   ├── button.png
+    │   │   │   ├── button_.png
+    │   │   │   ├── checkbutton.png
+    │   │   │   ├── checkbutton_.png
+    │   │   │   ├── divider.png
+    │   │   │   ├── editfield.png
+    │   │   │   ├── gadget.png
+    │   │   │   ├── listbox.png
+    │   │   │   ├── posbutton.png
+    │   │   │   ├── posbutton_.png
+    │   │   │   ├── roundbutton.png
+    │   │   │   ├── roundbutton_.png
+    │   │   │   ├── scrollbar.png
+    │   │   │   └── theme.dat
+    │   │   ├── pak192comic.tab
+    │   │   ├── pak192comicxxl
+    │   │   │   ├── back.png
+    │   │   │   ├── button.png
+    │   │   │   ├── checkbutton.png
+    │   │   │   ├── divider.png
+    │   │   │   ├── editfield.png
+    │   │   │   ├── gadget.png
+    │   │   │   ├── listbox.png
+    │   │   │   ├── posbutton.png
+    │   │   │   ├── roundbutton.png
+    │   │   │   ├── scrollbar.png
+    │   │   │   └── theme.dat
+    │   │   └── pak192comicxxl.tab
+    │   ├── pak64german
+    │   │   ├── files
+    │   │   │   ├── back.png
+    │   │   │   ├── button.png
+    │   │   │   ├── checkbutton.png
+    │   │   │   ├── compass-iso.png
+    │   │   │   ├── compass-map.png
+    │   │   │   ├── display_factory_label.png
+    │   │   │   ├── display_marker_label.png
+    │   │   │   ├── display_station_label.png
+    │   │   │   ├── display_text_label.png
+    │   │   │   ├── divider.png
+    │   │   │   ├── editfield.png
+    │   │   │   ├── gadget_new.png
+    │   │   │   ├── gadget.png
+    │   │   │   ├── listbox.png
+    │   │   │   ├── ls-symbols.png
+    │   │   │   ├── ls-symbols_stops_new.png
+    │   │   │   ├── ls-symbols_stops.png
+    │   │   │   ├── new-symbols.png
+    │   │   │   ├── posbutton.png
+    │   │   │   ├── roundbutton.png
+    │   │   │   ├── scrollbar.png
+    │   │   │   ├── sim-symbols.dat
+    │   │   │   ├── singlesMessageSymbols.png
+    │   │   │   ├── skins_neu.png
+    │   │   │   ├── stations_status.png
+    │   │   │   └── theme.dat
+    │   │   ├── files_large
+    │   │   │   ├── back.png
+    │   │   │   ├── button.png
+    │   │   │   ├── checkbutton.png
+    │   │   │   ├── compass-iso.png
+    │   │   │   ├── compass-map.png
+    │   │   │   ├── dat_128.txt
+    │   │   │   ├── divider.png
+    │   │   │   ├── editfield.png
+    │   │   │   ├── gadget_new.png
+    │   │   │   ├── gadget.png
+    │   │   │   ├── listbox.png
+    │   │   │   ├── ls-symbols.png
+    │   │   │   ├── ls-symbols_stops_new.png
+    │   │   │   ├── ls-symbols_stops.png
+    │   │   │   ├── new-symbols.png
+    │   │   │   ├── posbutton.png
+    │   │   │   ├── roundbutton.png
+    │   │   │   ├── scrollbar.png
+    │   │   │   ├── sim-symbols.dat
+    │   │   │   ├── singlesMessageSymbols.png
+    │   │   │   ├── skins_neu.png
+    │   │   │   ├── stations_status.png
+    │   │   │   └── theme.dat
+    │   │   ├── pak64german_large.tab
+    │   │   └── pak64german.tab
+    │   └── standard
+    │       ├── back.png
+    │       ├── button.png
+    │       ├── checkbutton.png
+    │       ├── classic-large.tab
+    │       ├── classic.tab
+    │       ├── divider.png
+    │       ├── editfield.png
+    │       ├── gadget.png
+    │       ├── listbox.png
+    │       ├── posbutton.png
+    │       ├── roundbutton.png
+    │       ├── scrollbar.png
+    │       └── standard.dat
+    ├── todo.txt
+    ├── tools
+    │   ├── cleanup_code.sh
+    │   ├── distribute.sh
+    │   ├── get_lang_files.ps1
+    │   ├── get_lang_files.sh
+    │   ├── get_pak.ps1
+    │   ├── get_pak.sh
+    │   ├── get_revision.bat
+    │   ├── get_revision.ps1
+    │   ├── get_revision.sh
+    │   ├── install-building-libs-arm64.bat
+    │   ├── install-building-libs-x64.bat
+    │   ├── install-building-libs-x86.bat
+    │   ├── revision.jse
+    │   ├── run-automated-tests.sh
+    │   ├── setup-debian.sh
+    │   ├── setup-mingw.sh
+    │   └── zipsrc.sh
+    ├── translate_code
+    │   ├── base_things.csv
+    │   ├── batch_replace.sh
+    │   ├── translate_besch.csv
+    │   ├── translate_bild.csv
+    │   ├── translate_dataobj.csv
+    │   ├── translate_display.csv
+    │   ├── translate_fahrplan_h.csv
+    │   ├── translate_nsew.csv
+    │   └── translate_ribi.csv
+    ├── uncommon.mk
+    └── vcpkg.json
+
+97 directories, 2002 files

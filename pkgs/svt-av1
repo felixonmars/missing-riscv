@@ -1,0 +1,1204 @@
+src
+└── SVT-AV1
+    ├── Build
+    │   ├── linux
+    │   │   └── build.sh
+    │   ├── obj1fastdownloader.cmake
+    │   ├── pgohelper.cmake
+    │   └── windows
+    │       └── build.bat
+    ├── CHANGELOG.md
+    ├── cmake
+    │   └── toolchains
+    │       ├── aarch64_toolchain.cmake
+    │       └── android_aarch64_toolchain.cmake
+    ├── CMakeLists.txt
+    ├── Config
+    │   ├── ExampleFilmGrainTable.tbl
+    │   ├── PredStruct_level0.cfg
+    │   ├── PredStruct_level1.cfg
+    │   ├── PredStruct_level2.cfg
+    │   ├── PredStruct_level3.cfg
+    │   ├── PredStruct_level4.cfg
+    │   ├── PredStruct_level5.cfg
+    │   └── Sample.cfg
+    ├── CONTRIBUTING.md
+    ├── Dockerfile
+    ├── Docs
+    │   ├── Appendix-Alt-Refs.md
+    │   ├── Appendix-CDEF.md
+    │   ├── Appendix-CfL.md
+    │   ├── Appendix-Compliant-Subpel-Interpolation-Filter-Search.md
+    │   ├── Appendix-Compound-Mode-Prediction.md
+    │   ├── Appendix-DLF.md
+    │   ├── Appendix-Dynamic-Mini-GoP.md
+    │   ├── Appendix-Film-Grain-Synthesis.md
+    │   ├── Appendix-Global-Motion.md
+    │   ├── Appendix-Intra-Block-Copy.md
+    │   ├── Appendix-Local-Warped-Motion.md
+    │   ├── Appendix-Mode-Decision.md
+    │   ├── Appendix-Open-Loop-Motion-Estimation.md
+    │   ├── Appendix-Overlapped-Block-Motion-Compensation.md
+    │   ├── Appendix-Palette-Prediction.md
+    │   ├── Appendix-Rate-Control.md
+    │   ├── Appendix-Recursive-Intra.md
+    │   ├── Appendix-Reference-Scaling.md
+    │   ├── Appendix-Restoration-Filter.md
+    │   ├── Appendix-SQ-Weight.md
+    │   ├── Appendix-Super-Resolution.md
+    │   ├── Appendix-Switch-Frame.md
+    │   ├── Appendix-TPL.md
+    │   ├── Appendix-TX-Search.md
+    │   ├── Appendix-Variance-Boost.md
+    │   ├── ARM-Build-Guide.md
+    │   ├── Build-Guide.md
+    │   ├── CommonQuestions.md
+    │   ├── Contribute.md
+    │   ├── Ffmpeg.md
+    │   ├── img
+    │   │   ├── 10bit_packed.png
+    │   │   ├── 10bit_unpacked.png
+    │   │   ├── 10bit_yuv420p.png
+    │   │   ├── 8bit_yuv420p.png
+    │   │   ├── altref_fig1.png
+    │   │   ├── altref_fig2.png
+    │   │   ├── altref_newfig2.pdf
+    │   │   ├── altref_table1.png
+    │   │   ├── cfl_appendix_fig1.png
+    │   │   ├── cfl_appendix_table3.png
+    │   │   ├── CfL_fig1.png
+    │   │   ├── comp_mode_pred_fig10.png
+    │   │   ├── comp_mode_pred_fig11.png
+    │   │   ├── comp_mode_pred_fig12.png
+    │   │   ├── comp_mode_pred_fig13.png
+    │   │   ├── comp_mode_pred_fig1.png
+    │   │   ├── comp_mode_pred_fig2.png
+    │   │   ├── comp_mode_pred_fig3.png
+    │   │   ├── comp_mode_pred_fig4.png
+    │   │   ├── comp_mode_pred_fig5.png
+    │   │   ├── comp_mode_pred_fig6.png
+    │   │   ├── comp_mode_pred_fig7.png
+    │   │   ├── comp_mode_pred_fig8.png
+    │   │   ├── comp_mode_pred_fig9.png
+    │   │   ├── comp_mode_pred_table1.png
+    │   │   ├── comp_mode_pred_table2.png
+    │   │   ├── comp_mode_pred_table3.png
+    │   │   ├── comp_mode_pred_table4.png
+    │   │   ├── csifsa_fig1.png
+    │   │   ├── csifsa_fig2.png
+    │   │   ├── csifsa_fig3.png
+    │   │   ├── csifsa_fig4.png
+    │   │   ├── csifsa_table6.png
+    │   │   ├── csifs_figure3.png
+    │   │   ├── decoder_5_threads.png
+    │   │   ├── decoder_cdef_filter.png
+    │   │   ├── decoder_cdef_stage.png
+    │   │   ├── decoder_flow.png
+    │   │   ├── decoder_LF_horz.png
+    │   │   ├── decoder_LF_vert.png
+    │   │   ├── decoder_loop_filter_stage.png
+    │   │   ├── decoder_loop_restoration_stage.png
+    │   │   ├── decoder_main_thread.png
+    │   │   ├── decoder_NbrOffset.png
+    │   │   ├── decoder_Nbr.png
+    │   │   ├── decoder_parse_stage.png
+    │   │   ├── decoder_reconstruction_stage.png
+    │   │   ├── decoder_tile_parallel_l_gt_t.png
+    │   │   ├── decoder_tile_parallel_l_lt_t.png
+    │   │   ├── decoder_TileRowMT.png
+    │   │   ├── decoder_worker_thread.png
+    │   │   ├── dlf_fig1.png
+    │   │   ├── dlf_fig2.png
+    │   │   ├── dlf_fig3.png
+    │   │   ├── dlf_fig4.png
+    │   │   ├── dlf_new_fig4.png
+    │   │   ├── dlf_table5.png
+    │   │   ├── film_grain_fig1.png
+    │   │   ├── film_grain_fig2.png
+    │   │   ├── film_grain_fig3.png
+    │   │   ├── four_layer_minigop.png
+    │   │   ├── gm_fig1.png
+    │   │   ├── gm_fig2.png
+    │   │   ├── gm_fig3.png
+    │   │   ├── image10.png
+    │   │   ├── image18.png
+    │   │   ├── image19.png
+    │   │   ├── image1.png
+    │   │   ├── image20.png
+    │   │   ├── image21.png
+    │   │   ├── image22.png
+    │   │   ├── image23.png
+    │   │   ├── image24.png
+    │   │   ├── image25.png
+    │   │   ├── image26.png
+    │   │   ├── image27.png
+    │   │   ├── image28.png
+    │   │   ├── image2.png
+    │   │   ├── image3.png
+    │   │   ├── image4.png
+    │   │   ├── image5.png
+    │   │   ├── image6.png
+    │   │   ├── image7.png
+    │   │   ├── image8.png
+    │   │   ├── image9.png
+    │   │   ├── intra_block_copy_fig1.png
+    │   │   ├── intra_block_copy_fig2.png
+    │   │   ├── ipp_figure1.PNG
+    │   │   ├── ipp_figure3.PNG
+    │   │   ├── ipp_figure4.PNG
+    │   │   ├── local_warped_motion_fig1.png
+    │   │   ├── local_warped_motion_fig2.png
+    │   │   ├── local_warped_motion_fig3.png
+    │   │   ├── local_warped_motion_fig4.png
+    │   │   ├── local_warped_motion_fig5.png
+    │   │   ├── local_warped_motion_fig6.png
+    │   │   ├── local_warped_motion_fig_new1.png
+    │   │   ├── local_warped_motion_fig_new2.png
+    │   │   ├── local_warped_motion_fig_new3.png
+    │   │   ├── local_warped_motion_fig_new4.png
+    │   │   ├── local_warped_motion_table3.png
+    │   │   ├── md_figure1.png
+    │   │   ├── md_figure2.png
+    │   │   ├── md_figure3.png
+    │   │   ├── md_figure4.png
+    │   │   ├── md_figure5.png
+    │   │   ├── md_figure6.png
+    │   │   ├── me_fig1.png
+    │   │   ├── me_fig2.png
+    │   │   ├── me_fig3.png
+    │   │   ├── me_fig4.png
+    │   │   ├── me_fig5.png
+    │   │   ├── me_fig_new.png
+    │   │   ├── nsq_fig1.png
+    │   │   ├── obmc_fig1.png
+    │   │   ├── obmc_fig2.png
+    │   │   ├── obmc_fig3.png
+    │   │   ├── obmc_fig4.png
+    │   │   ├── obmc_fig5.png
+    │   │   ├── obmc_figure1.png
+    │   │   ├── obmc_figure2.png
+    │   │   ├── obmc_figure3.png
+    │   │   ├── obmc_figure4.png
+    │   │   ├── open_loop_fig1.png
+    │   │   ├── palette_prediction_fig1.png
+    │   │   ├── palette_prediction_fig2.png
+    │   │   ├── palette_prediction_table4.png
+    │   │   ├── rc_figure1.PNG
+    │   │   ├── rc_figure2.PNG
+    │   │   ├── rc_figure3.PNG
+    │   │   ├── rc_figure4.PNG
+    │   │   ├── rc_figure5.PNG
+    │   │   ├── recursive_intra_fig0.png
+    │   │   ├── recursive_intra_fig1.png
+    │   │   ├── recursive_intra_fig2.png
+    │   │   ├── recursive_intra_fig3.png
+    │   │   ├── recursive_intra_fig4.png
+    │   │   ├── recursive_intra_table-2.png
+    │   │   ├── reference_scaling_picture_size.png
+    │   │   ├── reference_scaling_pipeline.png
+    │   │   ├── ref_scale_API.png
+    │   │   ├── ref_scale_downscaled_buffers.png
+    │   │   ├── ref_scale_modes_dataflow.png
+    │   │   ├── restoration_filter_fig1.png
+    │   │   ├── restoration_filter_fig2.png
+    │   │   ├── restoration_filter_fig3.png
+    │   │   ├── restoration_filter_fig4.png
+    │   │   ├── restoration_filter_table4.png
+    │   │   ├── restoration_filter_table6.png
+    │   │   ├── sioplm_fig1.png
+    │   │   ├── sioplm_fig2.png
+    │   │   ├── sq_weight_fig1.png
+    │   │   ├── sq_weight_fig2.png
+    │   │   ├── superres_API.png
+    │   │   ├── superres_downscaled_buffers.png
+    │   │   ├── superres_new_modes_dataflow.png
+    │   │   ├── superres_picture_size.png
+    │   │   ├── superres_pipeline.png
+    │   │   ├── switch-at-key-frames-only.png
+    │   │   ├── switch-at-switch-frames-or-key-frames.png
+    │   │   ├── tpl_fig1.png
+    │   │   ├── tpl_fig2.png
+    │   │   ├── tpl_fig3.png
+    │   │   ├── tpl_fig4.png
+    │   │   ├── tpl_fig5.png
+    │   │   ├── tpl_graph1.png
+    │   │   ├── tpl_graph2.png
+    │   │   ├── tx_search_fig1.png
+    │   │   ├── tx_search_fig3.png
+    │   │   ├── tx_search_new_fig1.png
+    │   │   ├── tx_search_table4.png
+    │   │   ├── tx_search_table8.png
+    │   │   ├── tx_size_search_fig1.png
+    │   │   ├── tx_type_search_fig1.png
+    │   │   ├── tx_type_search_fig2.png
+    │   │   ├── vb_rock_novb_qp50.png
+    │   │   ├── vb_rock_octile_o1.png
+    │   │   ├── vb_rock_octile_o2.png
+    │   │   ├── vb_rock_octile_o4.png
+    │   │   ├── vb_rock_octile_o6.png
+    │   │   ├── vb_rock_octile_o8.png
+    │   │   ├── vb_rock_sb_enc.png
+    │   │   ├── vb_rock_sb_grid.png
+    │   │   ├── vb_rock_sb_orig.png
+    │   │   ├── vb_rock_sb_var_ord.png
+    │   │   ├── vb_rock_sb_var.png
+    │   │   ├── vb_rock_strength_s1.png
+    │   │   ├── vb_rock_strength_s2.png
+    │   │   ├── vb_rock_strength_s3.png
+    │   │   ├── vb_rock_strength_s4.png
+    │   │   ├── vb_rock_vb_qp53.png
+    │   │   ├── vb_strength.png
+    │   │   └── Wedge_Codebook_2020_01_11.png
+    │   ├── Parameters.md
+    │   ├── README.md
+    │   ├── svt-av1-encoder-design.md
+    │   ├── svt-av1_encoder_user_guide.md
+    │   └── System-Requirements.md
+    ├── ffmpeg_plugin
+    │   ├── n4.4
+    │   │   ├── 0001-avcodec-libsvtav1-Fix-duplicate-definition-of-caps_i.patch
+    │   │   ├── 0002-avcodec-libsvtav1-make-coded-GOP-type-configurable.patch
+    │   │   ├── 0003-avcodec-libsvtav1-Fix-value-range-for-rc-mode.patch
+    │   │   ├── 0004-avcodec-libsvtav1-properly-enforce-CQP-mode-when-set.patch
+    │   │   ├── 0005-avcodec-libsvtav1-add-a-svtav1-params-option-to-pass.patch
+    │   │   ├── 0006-avcodec-libsvtav1-update-some-options-and-defaults.patch
+    │   │   ├── 0007-avcodec-libsvtav1-deprecate-some-options.patch
+    │   │   ├── 0008-avcodec-libsvtav1-fine-tune-qp-mode-settings.patch
+    │   │   ├── 0009-avcodec-libsvtav1-pass-color-description-info.patch
+    │   │   ├── 0010-avcodec-libsvtav1-give-svtav1-params-priority-over-a.patch
+    │   │   ├── 0011-avcodec-libsvtav1-pass-pict_type-to-library.patch
+    │   │   ├── 0012-avcodec-libsvtav1-add-support-for-setting-chroma-sam.patch
+    │   │   ├── 0013-avcodec-libsvtav1-update-avctx-bit-rate-according-to.patch
+    │   │   ├── 0014-avcodec-libsvtav1-signal-CPB-properties-through-side.patch
+    │   │   ├── 0015-avcodec-libsvtav1-properly-initialize-the-flush-EbBu.patch
+    │   │   ├── 0016-avcodec-libsvtav1-remove-compressed_ten_bit_format-a.patch
+    │   │   ├── 0017-avcodec-libsvtav1-replace-vbv_bufsize-with-maximum_b.patch
+    │   │   ├── 0018-avcodec-libsvtav1-only-set-max_buf_sz-if-both-bitrat.patch
+    │   │   ├── 0019-avcodec-libsvtav1-don-t-force-a-default-value-for-de.patch
+    │   │   ├── 0020-avcodec-libsvtav1-use-larger-of-bit-rate-and-max-rat.patch
+    │   │   ├── 0021-libavcodec-libsvtav1-Allow-1-for-preset-option.patch
+    │   │   ├── 0022-libsvtav1-Add-workaround-for-gop_size-1.patch
+    │   │   ├── 0023-avcodec-svt-av1-Set-force_key_frames-only-when-gop_s.patch
+    │   │   ├── 0024-avcodec-libsvtav1-add-version-guard-for-external-par.patch
+    │   │   └── 0025-avcodec-libsvtav1-send-the-EOS-signal-without-a-one-.patch
+    │   ├── n5.0
+    │   │   ├── 0001-avcodec-libsvtav1-add-a-svtav1-params-option-to-pass.patch
+    │   │   ├── 0002-avcodec-libsvtav1-update-some-options-and-defaults.patch
+    │   │   ├── 0003-avcodec-libsvtav1-deprecate-some-options.patch
+    │   │   ├── 0004-avcodec-libsvtav1-fine-tune-qp-mode-settings.patch
+    │   │   ├── 0005-avcodec-libsvtav1-pass-color-description-info.patch
+    │   │   ├── 0006-avcodec-libsvtav1-give-svtav1-params-priority-over-a.patch
+    │   │   ├── 0007-avcodec-libsvtav1-pass-pict_type-to-library.patch
+    │   │   ├── 0008-avcodec-libsvtav1-add-support-for-setting-chroma-sam.patch
+    │   │   ├── 0009-avcodec-libsvtav1-update-avctx-bit-rate-according-to.patch
+    │   │   ├── 0010-avcodec-libsvtav1-signal-CPB-properties-through-side.patch
+    │   │   ├── 0011-avcodec-libsvtav1-properly-initialize-the-flush-EbBu.patch
+    │   │   ├── 0012-avcodec-libsvtav1-remove-compressed_ten_bit_format-a.patch
+    │   │   ├── 0013-avcodec-libsvtav1-replace-vbv_bufsize-with-maximum_b.patch
+    │   │   ├── 0014-avcodec-libsvtav1-only-set-max_buf_sz-if-both-bitrat.patch
+    │   │   ├── 0015-avcodec-libsvtav1-don-t-force-a-default-value-for-de.patch
+    │   │   ├── 0016-avcodec-libsvtav1-use-larger-of-bit-rate-and-max-rat.patch
+    │   │   ├── 0017-hwcontext_vulkan-remove-optional-encode-decode-exten.patch
+    │   │   ├── 0018-libavcodec-libsvtav1-Allow-1-for-preset-option.patch
+    │   │   ├── 0019-libsvtav1-Add-workaround-for-gop_size-1.patch
+    │   │   ├── 0020-avcodec-svt-av1-Set-force_key_frames-only-when-gop_s.patch
+    │   │   ├── 0021-avcodec-libsvtav1-add-version-guard-for-external-par.patch
+    │   │   └── 0022-avcodec-libsvtav1-send-the-EOS-signal-without-a-one-.patch
+    │   ├── n5.1
+    │   │   ├── 0001-avcodec-libsvtav1-properly-initialize-the-flush-EbBu.patch
+    │   │   ├── 0002-avcodec-libsvtav1-remove-compressed_ten_bit_format-a.patch
+    │   │   ├── 0003-avcodec-libsvtav1-replace-vbv_bufsize-with-maximum_b.patch
+    │   │   ├── 0004-avcodec-libsvtav1-only-set-max_buf_sz-if-both-bitrat.patch
+    │   │   ├── 0005-avcodec-libsvtav1-don-t-force-a-default-value-for-de.patch
+    │   │   ├── 0006-avcodec-libsvtav1-use-larger-of-bit-rate-and-max-rat.patch
+    │   │   ├── 0007-hwcontext_vulkan-remove-optional-encode-decode-exten.patch
+    │   │   ├── 0008-libavcodec-libsvtav1-Allow-1-for-preset-option.patch
+    │   │   ├── 0009-libsvtav1-Add-workaround-for-gop_size-1.patch
+    │   │   ├── 0010-avcodec-svt-av1-Set-force_key_frames-only-when-gop_s.patch
+    │   │   ├── 0011-avcodec-libsvtav1-add-version-guard-for-external-par.patch
+    │   │   └── 0012-avcodec-libsvtav1-send-the-EOS-signal-without-a-one-.patch
+    │   ├── n6.0
+    │   │   ├── 0001-avcodec-libsvtav1-use-larger-of-bit-rate-and-max-rat.patch
+    │   │   ├── 0002-libavcodec-libsvtav1-Allow-1-for-preset-option.patch
+    │   │   ├── 0003-libsvtav1-Add-workaround-for-gop_size-1.patch
+    │   │   ├── 0004-avcodec-svt-av1-Set-force_key_frames-only-when-gop_s.patch
+    │   │   ├── 0005-avcodec-libsvtav1-add-version-guard-for-external-par.patch
+    │   │   └── 0006-avcodec-libsvtav1-send-the-EOS-signal-without-a-one-.patch
+    │   ├── n6.1
+    │   │   ├── 0001-avcodec-libsvtav1-add-version-guard-for-external-par.patch
+    │   │   └── 0002-avcodec-libsvtav1-send-the-EOS-signal-without-a-one-.patch
+    │   └── README.md
+    ├── gstreamer-plugin
+    │   ├── CMakeLists.txt
+    │   ├── gstsvtav1enc.c
+    │   ├── gstsvtav1enc.h
+    │   ├── meson.build
+    │   └── README.md
+    ├── LICENSE-BSD2.md
+    ├── LICENSE.md
+    ├── PATENTS.md
+    ├── README.md
+    ├── snap
+    │   └── snapcraft.yaml
+    ├── Source
+    │   ├── API
+    │   │   ├── EbDebugMacros.h
+    │   │   ├── EbSvtAv1Enc.h
+    │   │   ├── EbSvtAv1ErrorCodes.h
+    │   │   ├── EbSvtAv1ExtFrameBuf.h
+    │   │   ├── EbSvtAv1Formats.h
+    │   │   ├── EbSvtAv1.h
+    │   │   └── EbSvtAv1Metadata.h
+    │   ├── App
+    │   │   ├── app_config.c
+    │   │   ├── app_config.h
+    │   │   ├── app_context.c
+    │   │   ├── app_context.h
+    │   │   ├── app_input_y4m.c
+    │   │   ├── app_input_y4m.h
+    │   │   ├── app_main.c
+    │   │   ├── app_output_ivf.c
+    │   │   ├── app_output_ivf.h
+    │   │   ├── app_process_cmd.c
+    │   │   ├── CMakeLists.txt
+    │   │   ├── svt_time.c
+    │   │   └── svt_time.h
+    │   └── Lib
+    │       ├── ASM_AVX2
+    │       │   ├── aom_subpixel_8t_intrin_avx2.c
+    │       │   ├── av1_inv_txfm_avx2.c
+    │       │   ├── av1_inv_txfm_avx2.h
+    │       │   ├── av1_quantize_avx2.c
+    │       │   ├── blend_a64_mask_avx2.c
+    │       │   ├── cdef_avx2.c
+    │       │   ├── cdef_block_avx2.c
+    │       │   ├── cfl_avx2.c
+    │       │   ├── CMakeLists.txt
+    │       │   ├── comb_avg_sad_intrin_avx2.c
+    │       │   ├── compute_sad_avx2.h
+    │       │   ├── compute_sad_intrin_avx2.c
+    │       │   ├── convolve_2d_avx2.c
+    │       │   ├── convolve_avx2.c
+    │       │   ├── convolve_avx2.h
+    │       │   ├── corner_match_avx2.c
+    │       │   ├── dav1d_x86inc.asm
+    │       │   ├── dwt_avx2.c
+    │       │   ├── encodetxb_avx2.c
+    │       │   ├── fft_avx2.c
+    │       │   ├── highbd_convolve_2d_avx2.c
+    │       │   ├── highbd_convolve_avx2.c
+    │       │   ├── highbd_fwd_txfm_avx2.c
+    │       │   ├── highbd_intra_pred_avx2.c
+    │       │   ├── highbd_inv_txfm_avx2.c
+    │       │   ├── highbd_jnt_convolve_avx2.c
+    │       │   ├── highbd_quantize_intrin_avx2.c
+    │       │   ├── highbd_variance_avx2.c
+    │       │   ├── highbd_warp_affine_avx2.c
+    │       │   ├── inter_prediction_com_avx2.c
+    │       │   ├── intra_pred_intrin_avx2.c
+    │       │   ├── itx16_avx2.asm
+    │       │   ├── itx_avx2.asm
+    │       │   ├── itx_hbd.h
+    │       │   ├── itx_lbd.h
+    │       │   ├── jnt_convolve_2d_avx2.c
+    │       │   ├── jnt_convolve_avx2.c
+    │       │   ├── mc16_avx2.asm
+    │       │   ├── mc_avx2.asm
+    │       │   ├── mc.h
+    │       │   ├── memory_avx2.h
+    │       │   ├── noise_model_avx2.c
+    │       │   ├── obmc_sad_avx2.c
+    │       │   ├── obmc_variance_avx2.c
+    │       │   ├── pack_unpack_intrinsic_avx2.c
+    │       │   ├── palette_avx2.c
+    │       │   ├── pickrst_avx2.c
+    │       │   ├── pickrst_avx2.h
+    │       │   ├── pic_operators_inline_avx2.h
+    │       │   ├── pic_operators_intrin_avx2.c
+    │       │   ├── resize_avx2.c
+    │       │   ├── restoration_pick_avx2.c
+    │       │   ├── selfguided_avx2.c
+    │       │   ├── sse_avx2.c
+    │       │   ├── ssim_avx2.c
+    │       │   ├── synonyms_avx2.h
+    │       │   ├── temporal_filtering_avx2.c
+    │       │   ├── transforms_intrin_avx2.c
+    │       │   ├── transpose_avx2.h
+    │       │   ├── txfm_common_avx2.h
+    │       │   ├── variance_avx2.c
+    │       │   ├── variance_impl_avx2.c
+    │       │   ├── warp_plane_avx2.c
+    │       │   ├── wiener_convolve_avx2.c
+    │       │   └── wiener_convolve_avx2.h
+    │       ├── ASM_AVX512
+    │       │   ├── cdef_avx512.c
+    │       │   ├── cdef_block_avx512.c
+    │       │   ├── CMakeLists.txt
+    │       │   ├── compute_sad_intrin_avx512.c
+    │       │   ├── convolve_2d_avx512.c
+    │       │   ├── convolve_avx512.c
+    │       │   ├── convolve_avx512.h
+    │       │   ├── encodetxb_avx512.c
+    │       │   ├── highbd_fwd_txfm_AVX512.c
+    │       │   ├── highbd_intra_pred_avx512.c
+    │       │   ├── highbd_inv_txfm_avx512.c
+    │       │   ├── jnt_convolve_2d_avx512.c
+    │       │   ├── jnt_convolve_avx512.c
+    │       │   ├── pickrst_avx512.c
+    │       │   ├── pic_operators_intrin_avx512.c
+    │       │   ├── synonyms_avx512.h
+    │       │   ├── transpose_avx512.h
+    │       │   ├── transpose_encoder_avx512.h
+    │       │   ├── variance_avx512.c
+    │       │   └── wiener_convolve_avx512.c
+    │       ├── ASM_NEON
+    │       │   ├── aom_convolve8_neon.c
+    │       │   ├── av1_inv_txfm_neon.c
+    │       │   ├── av1_inv_txfm_neon.h
+    │       │   ├── av1_quantize_neon.c
+    │       │   ├── blend_a64_mask_neon.c
+    │       │   ├── cdef_block_neon.c
+    │       │   ├── cdef_filter_block_neon.c
+    │       │   ├── cdef_neon.c
+    │       │   ├── cfl_neon.c
+    │       │   ├── CMakeLists.txt
+    │       │   ├── compound_convolve_neon.c
+    │       │   ├── compound_convolve_neon.h
+    │       │   ├── compute_sad_neon.c
+    │       │   ├── convolve_2d_neon.c
+    │       │   ├── convolve_neon.c
+    │       │   ├── convolve_neon.h
+    │       │   ├── dav1d_asm.S
+    │       │   ├── dav1d_util.S
+    │       │   ├── deblocking_filter_intrinsic_neon.c
+    │       │   ├── encodetxb_neon.c
+    │       │   ├── hadmard_path_neon.c
+    │       │   ├── highbd_convolve_2d_neon.c
+    │       │   ├── highbd_convolve_neon.c
+    │       │   ├── highbd_fwd_txfm_neon.c
+    │       │   ├── highbd_inv_txfm_neon.c
+    │       │   ├── highbd_jnt_convolve_neon.c
+    │       │   ├── highbd_jnt_convolve_neon_y.c
+    │       │   ├── highbd_txfm_utility_neon.h
+    │       │   ├── intra_prediction_neon.c
+    │       │   ├── itx_lbd_neon.h
+    │       │   ├── itx.S
+    │       │   ├── mem_neon.h
+    │       │   ├── obmc_constants_neon.h
+    │       │   ├── obmc_sad_neon.c
+    │       │   ├── obmc_variance_neon.c
+    │       │   ├── pack_unpack_intrin_neon.c
+    │       │   ├── pickrst_neon.c
+    │       │   ├── picture_operators_intrinsic_neon.c
+    │       │   ├── sad_neon.c
+    │       │   ├── selfguided_neon.c
+    │       │   ├── sse_neon.c
+    │       │   ├── sum_neon.h
+    │       │   ├── temporal_filtering_constants.h
+    │       │   ├── temporal_filtering_neon.c
+    │       │   ├── transforms_intrin_neon.c
+    │       │   ├── transpose_neon.h
+    │       │   ├── var_filter_neon.h
+    │       │   ├── variance_neon.c
+    │       │   ├── warp_plane_neon.c
+    │       │   └── wiener_convolve_neon.c
+    │       ├── ASM_SSE2
+    │       │   ├── aom_subpixel_8t_sse2.asm
+    │       │   ├── av1_txfm_sse2.h
+    │       │   ├── avc_style_mcp_intrin_sse.c
+    │       │   ├── CMakeLists.txt
+    │       │   ├── compute_mean_intrin_sse2.c
+    │       │   ├── compute_mean_sse2.h
+    │       │   ├── convolve_2d_sse2.c
+    │       │   ├── convolve_sse2.c
+    │       │   ├── dlf_intrin_sse2.c
+    │       │   ├── dlf_sse2.h
+    │       │   ├── encodetxb_sse2.c
+    │       │   ├── fft_sse2.c
+    │       │   ├── highbd_intrapred_sse2_.asm
+    │       │   ├── highbd_intrapred_sse2.c
+    │       │   ├── highbd_intrapred_sse2.h
+    │       │   ├── highbd_subtract_sse2.c
+    │       │   ├── highbd_variance_impl_sse2.asm
+    │       │   ├── highbd_variance_sse2.c
+    │       │   ├── intra_pred_av1_intrin_sse2.c
+    │       │   ├── intrapred_sse2.asm
+    │       │   ├── jnt_convolve_2d_sse2.c
+    │       │   ├── jnt_convolve_sse2.c
+    │       │   ├── lpf_common_sse2.h
+    │       │   ├── mcp_sse2.h
+    │       │   ├── me_sad_calc_intrin_sse2.c
+    │       │   ├── pack_unpack_intrin_sse2.c
+    │       │   ├── pic_operators_intrin_sse2.c
+    │       │   ├── picture_operators_sse2.asm
+    │       │   ├── picture_operators_sse2.h
+    │       │   ├── subpel_variance_sse2.asm
+    │       │   ├── subtract_sse2.asm
+    │       │   ├── synonyms.h
+    │       │   ├── transpose_sse2.h
+    │       │   ├── variance_sse2.c
+    │       │   ├── variance_sse2.h
+    │       │   ├── wiener_convolve_sse2.c
+    │       │   ├── x64inc.asm
+    │       │   ├── x64Macro.asm
+    │       │   ├── x64RegisterUtil.asm
+    │       │   ├── x86_abi_support.asm
+    │       │   └── x86inc.asm
+    │       ├── ASM_SSE4_1
+    │       │   ├── av1_convolve_scale_sse4.c
+    │       │   ├── av1_quantize_sse4_1.c
+    │       │   ├── av1_txfm1d_sse4.h
+    │       │   ├── av1_txfm_sse4.h
+    │       │   ├── blend_a64_mask_sse4.c
+    │       │   ├── blend_sse4.h
+    │       │   ├── cdef_block_sse4_1.c
+    │       │   ├── cdef_sse4.c
+    │       │   ├── CMakeLists.txt
+    │       │   ├── compute_sad_intrin_sse4_1.c
+    │       │   ├── corner_match_sse4.c
+    │       │   ├── encodetxb_sse4.c
+    │       │   ├── filterintra_sse4.c
+    │       │   ├── highbd_convolve_2d_sse4.c
+    │       │   ├── highbd_fwd_txfm_sse4.c
+    │       │   ├── highbd_inv_txfm_sse4.c
+    │       │   ├── highbd_jnt_convolve_sse4.c
+    │       │   ├── highbd_txfm_utility_sse4.h
+    │       │   ├── intrapred_16bit_intrin_sse4_1.c
+    │       │   ├── memory_sse4_1.h
+    │       │   ├── obmc_variance_sse4.c
+    │       │   ├── pickrst_sse4.c
+    │       │   ├── pic_operators_intrin_sse4_1.c
+    │       │   ├── reconinter_sse4.c
+    │       │   ├── selfguided_sse4.c
+    │       │   ├── temporal_filtering_constants.h
+    │       │   ├── temporal_filtering_sse4_1.c
+    │       │   └── warp_plane_sse4.c
+    │       ├── ASM_SSSE3
+    │       │   ├── aom_subpixel_8t_intrin_ssse3.c
+    │       │   ├── aom_subpixel_8t_ssse3.asm
+    │       │   ├── aom_subpixel_bilinear_ssse3.asm
+    │       │   ├── av1_inv_txfm_ssse3.c
+    │       │   ├── av1_inv_txfm_ssse3.h
+    │       │   ├── CMakeLists.txt
+    │       │   ├── highbd_convolve_2d_ssse3.c
+    │       │   ├── highbd_convolve_ssse3.c
+    │       │   ├── highbd_intrapred_intrin_ssse3.c
+    │       │   ├── highbd_wiener_convolve_ssse3.c
+    │       │   ├── intrapred_ssse3.c
+    │       │   ├── jnt_convolve_ssse3.c
+    │       │   ├── reconinter_ssse3.c
+    │       │   ├── subpel_variance_ssse3.asm
+    │       │   ├── variance_impl_ssse3.c
+    │       │   └── x86_abi_support.asm
+    │       ├── C_DEFAULT
+    │       │   ├── blend_a64_mask_c.c
+    │       │   ├── cfl_c.c
+    │       │   ├── CMakeLists.txt
+    │       │   ├── compute_sad_c.c
+    │       │   ├── compute_sad_c.h
+    │       │   ├── encode_txb_ref_c.c
+    │       │   ├── encode_txb_ref_c.h
+    │       │   ├── filterintra_c.c
+    │       │   ├── inter_prediction_c.c
+    │       │   ├── intra_prediction_c.c
+    │       │   ├── pack_unpack_c.c
+    │       │   ├── pack_unpack_c.h
+    │       │   ├── picture_operators_c.c
+    │       │   ├── picture_operators_c.h
+    │       │   ├── sad_av1.c
+    │       │   └── variance.c
+    │       ├── CMakeLists.txt
+    │       ├── Codec
+    │       │   ├── adaptive_mv_pred.c
+    │       │   ├── adaptive_mv_pred.h
+    │       │   ├── aom_dsp_rtcd.c
+    │       │   ├── aom_dsp_rtcd.h
+    │       │   ├── av1_common.h
+    │       │   ├── av1me.c
+    │       │   ├── av1me.h
+    │       │   ├── av1_structs.h
+    │       │   ├── bitstream_unit.c
+    │       │   ├── bitstream_unit.h
+    │       │   ├── blend_a64_mask.c
+    │       │   ├── block_structures.c
+    │       │   ├── block_structures.h
+    │       │   ├── cabac_context_model.c
+    │       │   ├── cabac_context_model.h
+    │       │   ├── cdef.c
+    │       │   ├── cdef.h
+    │       │   ├── cdef_process.c
+    │       │   ├── cdef_process.h
+    │       │   ├── CMakeLists.txt
+    │       │   ├── coding_loop.c
+    │       │   ├── coding_loop.h
+    │       │   ├── coding_unit.c
+    │       │   ├── coding_unit.h
+    │       │   ├── coefficients.h
+    │       │   ├── common_dsp_rtcd.c
+    │       │   ├── common_dsp_rtcd.h
+    │       │   ├── common_utils.h
+    │       │   ├── compute_mean.h
+    │       │   ├── compute_sad.h
+    │       │   ├── ConfigureGitVersion.cmake
+    │       │   ├── convolve.c
+    │       │   ├── convolve.h
+    │       │   ├── corner_detect.c
+    │       │   ├── corner_detect.h
+    │       │   ├── corner_match.c
+    │       │   ├── corner_match.h
+    │       │   ├── deblocking_common.c
+    │       │   ├── deblocking_common.h
+    │       │   ├── deblocking_filter.c
+    │       │   ├── deblocking_filter.h
+    │       │   ├── definitions.h
+    │       │   ├── dlf_process.c
+    │       │   ├── dlf_process.h
+    │       │   ├── dwt.c
+    │       │   ├── dwt.h
+    │       │   ├── EbVersion.h.in
+    │       │   ├── ec_object.h
+    │       │   ├── ec_process.c
+    │       │   ├── ec_process.h
+    │       │   ├── ec_results.c
+    │       │   ├── ec_results.h
+    │       │   ├── enc_cdef.c
+    │       │   ├── enc_cdef.h
+    │       │   ├── enc_dec_process.c
+    │       │   ├── enc_dec_process.h
+    │       │   ├── enc_dec_results.c
+    │       │   ├── enc_dec_results.h
+    │       │   ├── enc_dec_segments.c
+    │       │   ├── enc_dec_segments.h
+    │       │   ├── enc_dec_tasks.c
+    │       │   ├── enc_dec_tasks.h
+    │       │   ├── enc_inter_prediction.c
+    │       │   ├── enc_inter_prediction.h
+    │       │   ├── enc_intra_prediction.c
+    │       │   ├── enc_intra_prediction.h
+    │       │   ├── enc_mode_config.c
+    │       │   ├── enc_mode_config.h
+    │       │   ├── encode_context.c
+    │       │   ├── encode_context.h
+    │       │   ├── encoder.h
+    │       │   ├── enc_warped_motion.c
+    │       │   ├── enc_warped_motion.h
+    │       │   ├── entropy_coding.c
+    │       │   ├── entropy_coding.h
+    │       │   ├── fft.c
+    │       │   ├── fft_common.h
+    │       │   ├── filter.h
+    │       │   ├── firstpass.c
+    │       │   ├── firstpass.h
+    │       │   ├── full_loop.c
+    │       │   ├── full_loop.h
+    │       │   ├── global_me.c
+    │       │   ├── global_me_cost.c
+    │       │   ├── global_me_cost.h
+    │       │   ├── global_me.h
+    │       │   ├── global_motion.c
+    │       │   ├── global_motion.h
+    │       │   ├── grainSynthesis.c
+    │       │   ├── grainSynthesis.h
+    │       │   ├── hash.c
+    │       │   ├── hash.h
+    │       │   ├── hash_motion.c
+    │       │   ├── hash_motion.h
+    │       │   ├── initial_rc_process.c
+    │       │   ├── initial_rc_process.h
+    │       │   ├── initial_rc_reorder_queue.c
+    │       │   ├── initial_rc_reorder_queue.h
+    │       │   ├── initial_rc_results.c
+    │       │   ├── initial_rc_results.h
+    │       │   ├── inter_prediction.c
+    │       │   ├── inter_prediction.h
+    │       │   ├── intra_prediction.c
+    │       │   ├── intra_prediction.h
+    │       │   ├── inv_transforms.c
+    │       │   ├── inv_transforms.h
+    │       │   ├── k_means_template.h
+    │       │   ├── lambda_rate_tables.h
+    │       │   ├── mathutils.h
+    │       │   ├── mcomp.c
+    │       │   ├── mcomp.h
+    │       │   ├── md_config_process.c
+    │       │   ├── md_config_process.h
+    │       │   ├── md_process.c
+    │       │   ├── md_process.h
+    │       │   ├── md_rate_estimation.c
+    │       │   ├── md_rate_estimation.h
+    │       │   ├── me_context.c
+    │       │   ├── me_context.h
+    │       │   ├── me_process.c
+    │       │   ├── me_process.h
+    │       │   ├── me_results.c
+    │       │   ├── me_results.h
+    │       │   ├── me_sad_calculation.c
+    │       │   ├── me_sad_calculation.h
+    │       │   ├── me_sb_results.h
+    │       │   ├── mode_decision.c
+    │       │   ├── mode_decision.h
+    │       │   ├── motion_estimation.c
+    │       │   ├── motion_estimation.h
+    │       │   ├── motion_vector_unit.h
+    │       │   ├── mv.h
+    │       │   ├── neighbor_arrays.c
+    │       │   ├── neighbor_arrays.h
+    │       │   ├── noise_model.c
+    │       │   ├── noise_model.h
+    │       │   ├── noise_util.c
+    │       │   ├── noise_util.h
+    │       │   ├── object.h
+    │       │   ├── packetization_process.c
+    │       │   ├── packetization_process.h
+    │       │   ├── packetization_reorder_queue.c
+    │       │   ├── packetization_reorder_queue.h
+    │       │   ├── palette.c
+    │       │   ├── pass2_strategy.c
+    │       │   ├── pass2_strategy.h
+    │       │   ├── pcs.c
+    │       │   ├── pcs.h
+    │       │   ├── pd_process.c
+    │       │   ├── pd_process.h
+    │       │   ├── pd_queue.c
+    │       │   ├── pd_queue.h
+    │       │   ├── pd_reorder_queue.c
+    │       │   ├── pd_reorder_queue.h
+    │       │   ├── pd_results.c
+    │       │   ├── pd_results.h
+    │       │   ├── pic_analysis_process.c
+    │       │   ├── pic_analysis_process.h
+    │       │   ├── pic_analysis_results.c
+    │       │   ├── pic_analysis_results.h
+    │       │   ├── pic_buffer_desc.c
+    │       │   ├── pic_buffer_desc.h
+    │       │   ├── pic_demux_results.c
+    │       │   ├── pic_demux_results.h
+    │       │   ├── pic_manager_process.c
+    │       │   ├── pic_manager_process.h
+    │       │   ├── pic_manager_queue.c
+    │       │   ├── pic_manager_queue.h
+    │       │   ├── pic_operators.c
+    │       │   ├── pic_operators.h
+    │       │   ├── pred_structure.c
+    │       │   ├── pred_structure.h
+    │       │   ├── product_coding_loop.c
+    │       │   ├── q_matrices.h
+    │       │   ├── random.h
+    │       │   ├── ransac.c
+    │       │   ├── ransac.h
+    │       │   ├── rc_process.c
+    │       │   ├── rc_process.h
+    │       │   ├── rc_results.c
+    │       │   ├── rc_results.h
+    │       │   ├── rc_tasks.c
+    │       │   ├── rc_tasks.h
+    │       │   ├── rd_cost.c
+    │       │   ├── rd_cost.h
+    │       │   ├── reference_object.c
+    │       │   ├── reference_object.h
+    │       │   ├── resize.c
+    │       │   ├── resize.h
+    │       │   ├── resource_coordination_process.c
+    │       │   ├── resource_coordination_process.h
+    │       │   ├── resource_coordination_results.c
+    │       │   ├── resource_coordination_results.h
+    │       │   ├── restoration.c
+    │       │   ├── restoration.h
+    │       │   ├── restoration_pick.c
+    │       │   ├── restoration_pick.h
+    │       │   ├── rest_process.c
+    │       │   ├── rest_process.h
+    │       │   ├── segmentation.c
+    │       │   ├── segmentation.h
+    │       │   ├── segmentation_params.c
+    │       │   ├── segmentation_params.h
+    │       │   ├── sequence_control_set.c
+    │       │   ├── sequence_control_set.h
+    │       │   ├── src_ops_process.c
+    │       │   ├── src_ops_process.h
+    │       │   ├── super_res.c
+    │       │   ├── super_res.h
+    │       │   ├── svt_log.c
+    │       │   ├── svt_log.h
+    │       │   ├── svt_malloc.c
+    │       │   ├── svt_malloc.h
+    │       │   ├── svt_psnr.c
+    │       │   ├── svt_psnr.h
+    │       │   ├── svt_threads.c
+    │       │   ├── svt_threads.h
+    │       │   ├── svt_time.c
+    │       │   ├── svt_time.h
+    │       │   ├── sys_resource_manager.c
+    │       │   ├── sys_resource_manager.h
+    │       │   ├── temporal_filtering.c
+    │       │   ├── temporal_filtering.h
+    │       │   ├── transforms.c
+    │       │   ├── transforms.h
+    │       │   ├── utility.c
+    │       │   ├── utility.h
+    │       │   ├── vector.c
+    │       │   ├── vector.h
+    │       │   ├── warped_motion.c
+    │       │   └── warped_motion.h
+    │       ├── Globals
+    │       │   ├── CMakeLists.txt
+    │       │   ├── enc_handle.c
+    │       │   ├── enc_handle.h
+    │       │   ├── enc_settings.c
+    │       │   ├── enc_settings.h
+    │       │   ├── metadata_handle.c
+    │       │   └── metadata_handle.h
+    │       └── pkg-config.pc.in
+    ├── STYLE.md
+    ├── test
+    │   ├── acm_random.h
+    │   ├── AdaptiveScanTest.cc
+    │   ├── api_test
+    │   │   ├── CMakeLists.txt
+    │   │   ├── params.h
+    │   │   ├── SvtAv1EncApiTest.cc
+    │   │   ├── SvtAv1EncApiTest.h
+    │   │   └── SvtAv1EncParamsTest.cc
+    │   ├── av1_convolve_scale_test.cc
+    │   ├── BitstreamWriterTest.cc
+    │   ├── CdefTest.cc
+    │   ├── CMakeLists.txt
+    │   ├── CompoundUtilTest.cc
+    │   ├── compute_mean_test.cc
+    │   ├── convolve_test.cc
+    │   ├── corner_match_test.cc
+    │   ├── DeblockTest.cc
+    │   ├── Doxyfile
+    │   ├── dwt_test.cc
+    │   ├── e2e_test
+    │   │   ├── CMakeLists.txt
+    │   │   ├── CompareTools.h
+    │   │   ├── ConfigEncoder.cc
+    │   │   ├── ConfigEncoder.h
+    │   │   ├── dec_bitstream.c
+    │   │   ├── dec_bitstream.h
+    │   │   ├── DummyVideoSource.h
+    │   │   ├── E2eTestVectors.h
+    │   │   ├── FrameQueue.cc
+    │   │   ├── FrameQueue.h
+    │   │   ├── libaom_dependency.cmake
+    │   │   ├── ParseUtil.cc
+    │   │   ├── ParseUtil.h
+    │   │   ├── PerformanceCollect.cc
+    │   │   ├── PerformanceCollect.h
+    │   │   ├── RefDecoder.cc
+    │   │   ├── RefDecoder.h
+    │   │   ├── SvtAv1E2EFramework.cc
+    │   │   ├── SvtAv1E2EFramework.h
+    │   │   ├── SvtAv1E2EParamsTest.cc
+    │   │   ├── SvtAv1E2ETest.cc
+    │   │   ├── test_data_download_worker.cmake
+    │   │   ├── test_data_util.cmake
+    │   │   ├── test_vector_list.txt
+    │   │   ├── VideoFrame.h
+    │   │   ├── VideoSource.cc
+    │   │   ├── VideoSource.h
+    │   │   ├── Y4mVideoSource.cc
+    │   │   ├── Y4mVideoSource.h
+    │   │   ├── YuvVideoSource.cc
+    │   │   └── YuvVideoSource.h
+    │   ├── EncodeTxbAsmTest.cc
+    │   ├── FFTTest.cc
+    │   ├── FilmGrainExpectedResult.h
+    │   ├── FilmGrainTest.cc
+    │   ├── FilterIntraPredTest.cc
+    │   ├── ForwardtransformTests.cc
+    │   ├── frame_error_test.cc
+    │   ├── FwdTxfm1dTest.cc
+    │   ├── FwdTxfm2dAsmTest.cc
+    │   ├── FwdTxfm2dTest.cc
+    │   ├── GlobalMotionUtilTest.cc
+    │   ├── hadamard_test.cc
+    │   ├── HbdVarianceTest.cc
+    │   ├── highbd_intra_prediction_tests.cc
+    │   ├── highbd_intra_prediction_tests.h
+    │   ├── IntraBcUtilTest.cc
+    │   ├── intrapred_cfl_test.cc
+    │   ├── intrapred_dr_test.cc
+    │   ├── intrapred_edge_filter_test.cc
+    │   ├── intrapred_test.cc
+    │   ├── InvTxfm1dTest.cc
+    │   ├── InvTxfm2dAsmTest.cc
+    │   ├── MotionEstimationTest.cc
+    │   ├── noise_model_test.cc
+    │   ├── OBMCSadTest.cc
+    │   ├── OBMCVarianceTest.cc
+    │   ├── PackUnPackTest.cc
+    │   ├── PaletteModeUtilTest.cc
+    │   ├── PictureOperatorTest.cc
+    │   ├── PsnrTest.cc
+    │   ├── QuantAsmTest.cc
+    │   ├── quantize_func_test.cc
+    │   ├── random.h
+    │   ├── Readme.md
+    │   ├── ref
+    │   │   ├── TxfmRef.cc
+    │   │   └── TxfmRef.h
+    │   ├── ResidualTest.cc
+    │   ├── ResizeTest.cc
+    │   ├── RestorationPickTest.cc
+    │   ├── SadTest.cc
+    │   ├── selfguided_filter_test.cc
+    │   ├── SelfGuidedUtilTest.cc
+    │   ├── SpatialFullDistortionTest.cc
+    │   ├── ssim_test.cc
+    │   ├── stylecheck.sh
+    │   ├── subtract_avg_cfl_test.cc
+    │   ├── TemporalFilterTestPlanewise.cc
+    │   ├── TestEnv.c
+    │   ├── TxfmCommon.h
+    │   ├── unit_test.h
+    │   ├── unit_test_utility.c
+    │   ├── unit_test_utility.h
+    │   ├── util.h
+    │   ├── VarianceTest.cc
+    │   ├── vectors
+    │   │   ├── conformance_test.cfg
+    │   │   ├── longtime_comformance_test.cfg
+    │   │   ├── smoking_test.cfg
+    │   │   └── video_src.cfg
+    │   ├── warp_filter_test.cc
+    │   ├── warp_filter_test_util.cc
+    │   ├── warp_filter_test_util.h
+    │   ├── WedgeUtilTest.cc
+    │   └── wiener_convolve_test.cc
+    └── third_party
+        ├── aom
+        │   └── inc
+        │       └── aom
+        │           ├── aom_codec.h
+        │           ├── aomcx.h
+        │           ├── aom_decoder.h
+        │           ├── aomdx.h
+        │           ├── aom_encoder.h
+        │           ├── aom_frame_buffer.h
+        │           ├── aom.h
+        │           ├── aom_image.h
+        │           ├── aom_integer.h
+        │           └── inspection.h
+        ├── aom_dsp
+        │   ├── inc
+        │   │   ├── bitreader.h
+        │   │   └── entdec.h
+        │   └── src
+        │       ├── bitreader.c
+        │       └── entdec.c
+        ├── cpuinfo
+        │   ├── CMakeLists.txt
+        │   ├── deps
+        │   │   └── clog
+        │   │       ├── CMakeLists.txt
+        │   │       ├── include
+        │   │       │   └── clog.h
+        │   │       ├── LICENSE
+        │   │       └── src
+        │   │           └── clog.c
+        │   ├── include
+        │   │   └── cpuinfo.h
+        │   ├── LICENSE
+        │   └── src
+        │       ├── api.c
+        │       ├── cpuinfo
+        │       │   ├── common.h
+        │       │   ├── internal-api.h
+        │       │   ├── log.h
+        │       │   └── utils.h
+        │       ├── init.c
+        │       └── x86
+        │           ├── api.h
+        │           ├── bsd
+        │           │   └── init.c
+        │           ├── cpuid.h
+        │           ├── isa.c
+        │           ├── linux
+        │           │   └── init.c
+        │           ├── mach
+        │           │   └── x86_mach_init.c
+        │           ├── vendor.c
+        │           ├── windows
+        │           │   └── init.c
+        │           └── x86_init.c
+        ├── fastfeat
+        │   ├── CMakeLists.txt
+        │   ├── fast_9.c
+        │   ├── fast.c
+        │   ├── fast.h
+        │   ├── LICENSE
+        │   ├── nonmax.c
+        │   └── README.libaom
+        ├── googletest
+        │   ├── cmake
+        │   │   ├── Config.cmake.in
+        │   │   ├── gtest_main.pc.in
+        │   │   ├── gtest.pc.in
+        │   │   ├── internal_utils.cmake
+        │   │   └── libgtest.la.in
+        │   ├── CMakeLists.txt
+        │   ├── docs
+        │   │   └── README.md
+        │   ├── include
+        │   │   └── gtest
+        │   │       ├── gtest-assertion-result.h
+        │   │       ├── gtest-death-test.h
+        │   │       ├── gtest.h
+        │   │       ├── gtest-matchers.h
+        │   │       ├── gtest-message.h
+        │   │       ├── gtest-param-test.h
+        │   │       ├── gtest_pred_impl.h
+        │   │       ├── gtest-printers.h
+        │   │       ├── gtest_prod.h
+        │   │       ├── gtest-spi.h
+        │   │       ├── gtest-test-part.h
+        │   │       ├── gtest-typed-test.h
+        │   │       └── internal
+        │   │           ├── custom
+        │   │           │   ├── gtest.h
+        │   │           │   ├── gtest-port.h
+        │   │           │   ├── gtest-printers.h
+        │   │           │   └── README.md
+        │   │           ├── gtest-death-test-internal.h
+        │   │           ├── gtest-filepath.h
+        │   │           ├── gtest-internal.h
+        │   │           ├── gtest-param-util.h
+        │   │           ├── gtest-port-arch.h
+        │   │           ├── gtest-port.h
+        │   │           ├── gtest-string.h
+        │   │           └── gtest-type-util.h
+        │   ├── README.md
+        │   ├── samples
+        │   │   ├── prime_tables.h
+        │   │   ├── sample10_unittest.cc
+        │   │   ├── sample1.cc
+        │   │   ├── sample1.h
+        │   │   ├── sample1_unittest.cc
+        │   │   ├── sample2.cc
+        │   │   ├── sample2.h
+        │   │   ├── sample2_unittest.cc
+        │   │   ├── sample3-inl.h
+        │   │   ├── sample3_unittest.cc
+        │   │   ├── sample4.cc
+        │   │   ├── sample4.h
+        │   │   ├── sample4_unittest.cc
+        │   │   ├── sample5_unittest.cc
+        │   │   ├── sample6_unittest.cc
+        │   │   ├── sample7_unittest.cc
+        │   │   ├── sample8_unittest.cc
+        │   │   └── sample9_unittest.cc
+        │   ├── src
+        │   │   ├── gtest-all.cc
+        │   │   ├── gtest-assertion-result.cc
+        │   │   ├── gtest.cc
+        │   │   ├── gtest-death-test.cc
+        │   │   ├── gtest-filepath.cc
+        │   │   ├── gtest-internal-inl.h
+        │   │   ├── gtest_main.cc
+        │   │   ├── gtest-matchers.cc
+        │   │   ├── gtest-port.cc
+        │   │   ├── gtest-printers.cc
+        │   │   ├── gtest-test-part.cc
+        │   │   └── gtest-typed-test.cc
+        │   └── test
+        │       ├── BUILD.bazel
+        │       ├── googletest-break-on-failure-unittest_.cc
+        │       ├── googletest-break-on-failure-unittest.py
+        │       ├── googletest-catch-exceptions-test_.cc
+        │       ├── googletest-catch-exceptions-test.py
+        │       ├── googletest-color-test_.cc
+        │       ├── googletest-color-test.py
+        │       ├── googletest-death-test_ex_test.cc
+        │       ├── googletest-death-test-test.cc
+        │       ├── googletest-env-var-test_.cc
+        │       ├── googletest-env-var-test.py
+        │       ├── googletest-failfast-unittest_.cc
+        │       ├── googletest-failfast-unittest.py
+        │       ├── googletest-filepath-test.cc
+        │       ├── googletest-filter-unittest_.cc
+        │       ├── googletest-filter-unittest.py
+        │       ├── googletest-global-environment-unittest_.cc
+        │       ├── googletest-global-environment-unittest.py
+        │       ├── googletest-json-outfiles-test.py
+        │       ├── googletest-json-output-unittest.py
+        │       ├── googletest-listener-test.cc
+        │       ├── googletest-list-tests-unittest_.cc
+        │       ├── googletest-list-tests-unittest.py
+        │       ├── googletest-message-test.cc
+        │       ├── googletest-options-test.cc
+        │       ├── googletest-output-test_.cc
+        │       ├── googletest-output-test-golden-lin.txt
+        │       ├── googletest-output-test.py
+        │       ├── googletest-param-test2-test.cc
+        │       ├── googletest-param-test-invalid-name1-test_.cc
+        │       ├── googletest-param-test-invalid-name1-test.py
+        │       ├── googletest-param-test-invalid-name2-test_.cc
+        │       ├── googletest-param-test-invalid-name2-test.py
+        │       ├── googletest-param-test-test.cc
+        │       ├── googletest-param-test-test.h
+        │       ├── googletest-port-test.cc
+        │       ├── googletest-printers-test.cc
+        │       ├── googletest-setuptestsuite-test_.cc
+        │       ├── googletest-setuptestsuite-test.py
+        │       ├── googletest-shuffle-test_.cc
+        │       ├── googletest-shuffle-test.py
+        │       ├── googletest-test-part-test.cc
+        │       ├── googletest-throw-on-failure-test_.cc
+        │       ├── googletest-throw-on-failure-test.py
+        │       ├── googletest-uninitialized-test_.cc
+        │       ├── googletest-uninitialized-test.py
+        │       ├── gtest_all_test.cc
+        │       ├── gtest_assert_by_exception_test.cc
+        │       ├── gtest_environment_test.cc
+        │       ├── gtest_help_test_.cc
+        │       ├── gtest_help_test.py
+        │       ├── gtest_json_test_utils.py
+        │       ├── gtest_list_output_unittest_.cc
+        │       ├── gtest_list_output_unittest.py
+        │       ├── gtest_main_unittest.cc
+        │       ├── gtest_no_test_unittest.cc
+        │       ├── gtest_pred_impl_unittest.cc
+        │       ├── gtest_premature_exit_test.cc
+        │       ├── gtest_prod_test.cc
+        │       ├── gtest_repeat_test.cc
+        │       ├── gtest_skip_check_output_test.py
+        │       ├── gtest_skip_environment_check_output_test.py
+        │       ├── gtest_skip_in_environment_setup_test.cc
+        │       ├── gtest_skip_test.cc
+        │       ├── gtest_sole_header_test.cc
+        │       ├── gtest_stress_test.cc
+        │       ├── gtest_testbridge_test_.cc
+        │       ├── gtest_testbridge_test.py
+        │       ├── gtest_test_macro_stack_footprint_test.cc
+        │       ├── gtest_test_utils.py
+        │       ├── gtest_throw_on_failure_ex_test.cc
+        │       ├── gtest-typed-test2_test.cc
+        │       ├── gtest-typed-test_test.cc
+        │       ├── gtest-typed-test_test.h
+        │       ├── gtest-unittest-api_test.cc
+        │       ├── gtest_unittest.cc
+        │       ├── gtest_xml_outfile1_test_.cc
+        │       ├── gtest_xml_outfile2_test_.cc
+        │       ├── gtest_xml_outfiles_test.py
+        │       ├── gtest_xml_output_unittest_.cc
+        │       ├── gtest_xml_output_unittest.py
+        │       ├── gtest_xml_test_utils.py
+        │       ├── production.cc
+        │       └── production.h
+        └── safestringlib
+            ├── ignore_handler_s.c
+            ├── LICENSE
+            ├── safeclib_private.h
+            ├── safe_lib_errno.h
+            ├── safe_lib.h
+            ├── safe_str_constraint.c
+            ├── safe_str_constraint.h
+            ├── safe_str_lib.h
+            ├── safe_types.h
+            ├── strcpy_s.c
+            ├── strncpy_s.c
+            └── strnlen_s.c
+
+68 directories, 1134 files

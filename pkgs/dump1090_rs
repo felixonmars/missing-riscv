@@ -1,0 +1,40 @@
+src
+├── dump1090_rs-0.8.1
+│   ├── benches
+│   │   └── demod_benchmark.rs
+│   ├── Cargo.lock
+│   ├── Cargo.toml
+│   ├── CHANGELOG.md
+│   ├── Cross.toml
+│   ├── docker
+│   │   ├── aarch64-unknown-linux-gnu.Dockerfile
+│   │   ├── armv7-unknown-linux-gnueabihf.Dockerfile
+│   │   ├── README.md
+│   │   └── x86_64-unknown-linux-gnu.Dockerfile
+│   ├── docs
+│   │   └── optimizations.md
+│   ├── dump1090_rs
+│   │   ├── Cargo.toml
+│   │   ├── config.toml
+│   │   └── src
+│   │       ├── main.rs
+│   │       └── sdrconfig.rs
+│   ├── LICENSE
+│   ├── README.md
+│   ├── src
+│   │   ├── crc.rs
+│   │   ├── demod_2400.rs
+│   │   ├── icao_filter.rs
+│   │   ├── lib.rs
+│   │   ├── mode_s
+│   │   │   └── mod.rs
+│   │   └── utils.rs
+│   ├── test_iq
+│   │   ├── test_1641427457780.iq
+│   │   ├── test_1641428106243.iq
+│   │   └── test_1641428165033.iq
+│   └── tests
+│       └── test.rs
+└── dump1090_rs-0.8.1.tar.gz -> /home/felix/packages/dump1090_rs/dump1090_rs-0.8.1.tar.gz
+
+11 directories, 27 files

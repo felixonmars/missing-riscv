@@ -1,0 +1,2353 @@
+src
+├── apitrace
+│   ├── appveyor.yml
+│   ├── ci
+│   │   ├── build-centos-7.sh
+│   │   ├── build-docker.sh
+│   │   ├── build-macos.sh
+│   │   ├── build-mingw.sh
+│   │   ├── build-msvc.ps1
+│   │   ├── build-ubuntu-18.04.sh
+│   │   ├── docker
+│   │   │   ├── centos-7.Dockerfile
+│   │   │   ├── README.md
+│   │   │   └── ubuntu-18.04.Dockerfile
+│   │   └── README.md
+│   ├── cli
+│   │   ├── cli_diff.cpp
+│   │   ├── cli_diff_images.cpp
+│   │   ├── cli_diff_state.cpp
+│   │   ├── cli_dump.cpp
+│   │   ├── cli_dump_images.cpp
+│   │   ├── cli_gltrim.cpp
+│   │   ├── cli.hpp
+│   │   ├── cli_info.cpp
+│   │   ├── cli_leaks.cpp
+│   │   ├── cli_main.cpp
+│   │   ├── cli_pager.cpp
+│   │   ├── cli_pager.hpp
+│   │   ├── cli_pickle.cpp
+│   │   ├── cli_repack.cpp
+│   │   ├── cli_resources.cpp
+│   │   ├── cli_resources.hpp
+│   │   ├── cli_retrace.cpp
+│   │   ├── cli_retrace.hpp
+│   │   ├── cli_sed.cpp
+│   │   ├── cli_trace.cpp
+│   │   ├── cli_trim.cpp
+│   │   ├── CMakeLists.txt
+│   │   ├── pickle.hpp
+│   │   └── README.markdown
+│   ├── cmake
+│   │   ├── ConvenienceLibrary.cmake
+│   │   ├── FindDirectX.cmake
+│   │   ├── Findprocps.cmake
+│   │   ├── InstallPDB.cmake
+│   │   └── toolchain
+│   │       ├── mingw32.cmake
+│   │       └── mingw64.cmake
+│   ├── CMakeLists.txt
+│   ├── compat
+│   │   ├── cxx11-threads
+│   │   │   ├── condition_variable
+│   │   │   ├── mutex
+│   │   │   └── thread
+│   │   ├── cxx_compat.hpp
+│   │   └── winsdk_compat.h
+│   ├── dispatch
+│   │   ├── CMakeLists.txt
+│   │   ├── d2dimports.hpp
+│   │   ├── d3d10imports.hpp
+│   │   ├── d3d11imports.hpp
+│   │   ├── d3d8imports.hpp
+│   │   ├── d3d9imports.hpp
+│   │   ├── d3dimports.hpp
+│   │   ├── dcompimports.hpp
+│   │   ├── dispatch.py
+│   │   ├── dxgiint.h
+│   │   ├── dxva2imports.hpp
+│   │   ├── eglimports.hpp
+│   │   ├── glimports.hpp
+│   │   ├── glproc.py
+│   │   ├── __init__.py
+│   │   └── README.markdown
+│   ├── docs
+│   │   ├── BUGS.markdown
+│   │   ├── FORMAT.markdown
+│   │   ├── HACKING.markdown
+│   │   ├── INSTALL.markdown
+│   │   ├── NEWS.markdown
+│   │   ├── TODO.markdown
+│   │   ├── USAGE.markdown
+│   │   └── VMWX_map_buffer_debug.txt
+│   ├── frametrim
+│   │   ├── CMakeLists.txt
+│   │   ├── frametrim.markdown
+│   │   ├── ft_dependecyobject.cpp
+│   │   ├── ft_dependecyobject.hpp
+│   │   ├── ft_frametrimmer.cpp
+│   │   ├── ft_frametrimmer.hpp
+│   │   ├── ft_main.cpp
+│   │   ├── ft_matrixstate.cpp
+│   │   ├── ft_matrixstate.hpp
+│   │   ├── ft_tracecall.cpp
+│   │   ├── ft_tracecall.hpp
+│   │   └── tests
+│   ├── gui
+│   │   ├── adaptivedoublespinbox.cpp
+│   │   ├── adaptivedoublespinbox.h
+│   │   ├── apicalldelegate.cpp
+│   │   ├── apicalldelegate.h
+│   │   ├── apisurface.cpp
+│   │   ├── apisurface.h
+│   │   ├── apitracecall.cpp
+│   │   ├── apitracecall.h
+│   │   ├── apitrace.cpp
+│   │   ├── apitracefilter.cpp
+│   │   ├── apitracefilter.h
+│   │   ├── apitrace.h
+│   │   ├── apitracemodel.cpp
+│   │   ├── apitracemodel.h
+│   │   ├── argumentseditor.cpp
+│   │   ├── argumentseditor.h
+│   │   ├── calldurationgraph.h
+│   │   ├── CMakeLists.txt
+│   │   ├── glsledit.cpp
+│   │   ├── glsledit.h
+│   │   ├── graphing
+│   │   │   ├── frameaxiswidget.cpp
+│   │   │   ├── frameaxiswidget.h
+│   │   │   ├── graphaxiswidget.cpp
+│   │   │   ├── graphaxiswidget.h
+│   │   │   ├── graphing.h
+│   │   │   ├── graphlabelwidget.h
+│   │   │   ├── graphview.cpp
+│   │   │   ├── graphview.h
+│   │   │   ├── graphwidget.cpp
+│   │   │   ├── graphwidget.h
+│   │   │   ├── heatmapverticalaxiswidget.cpp
+│   │   │   ├── heatmapverticalaxiswidget.h
+│   │   │   ├── heatmapview.cpp
+│   │   │   ├── heatmapview.h
+│   │   │   ├── histogramview.cpp
+│   │   │   ├── histogramview.h
+│   │   │   ├── timeaxiswidget.cpp
+│   │   │   └── timeaxiswidget.h
+│   │   ├── imageviewer.cpp
+│   │   ├── imageviewer.h
+│   │   ├── jumpwidget.cpp
+│   │   ├── jumpwidget.h
+│   │   ├── leaktracethread.cpp
+│   │   ├── leaktracethread.h
+│   │   ├── main.cpp
+│   │   ├── mainwindow.cpp
+│   │   ├── mainwindow.h
+│   │   ├── pixelwidget.cpp
+│   │   ├── pixelwidget.h
+│   │   ├── profiledialog.cpp
+│   │   ├── profiledialog.h
+│   │   ├── profileheatmap.h
+│   │   ├── profiletablemodel.cpp
+│   │   ├── profiletablemodel.h
+│   │   ├── profiling.h
+│   │   ├── qapitrace.qrc
+│   │   ├── qubjson.cpp
+│   │   ├── qubjson.h
+│   │   ├── qubjson_test.cpp
+│   │   ├── README.markdown
+│   │   ├── resources
+│   │   │   ├── application-exit.png
+│   │   │   ├── dialog-close.png
+│   │   │   ├── dialog-information.png
+│   │   │   ├── document-edit.png
+│   │   │   ├── document-new.png
+│   │   │   ├── document-open.png
+│   │   │   ├── edit-find.png
+│   │   │   ├── edit-undo.png
+│   │   │   ├── emblem-locked.png
+│   │   │   ├── glreference-man.sh
+│   │   │   ├── glreference-registry.sh
+│   │   │   ├── glreference.tsv
+│   │   │   ├── go-bottom.png
+│   │   │   ├── go-down-search.png
+│   │   │   ├── go-jump.png
+│   │   │   ├── go-top.png
+│   │   │   ├── go-up-search.png
+│   │   │   ├── media-playback-start.png
+│   │   │   ├── media-playback-stop.png
+│   │   │   ├── media-record.png
+│   │   │   └── script-error.png
+│   │   ├── retracer.cpp
+│   │   ├── retracer.h
+│   │   ├── saverthread.cpp
+│   │   ├── saverthread.h
+│   │   ├── searchwidget.cpp
+│   │   ├── searchwidget.h
+│   │   ├── settingsdialog.cpp
+│   │   ├── settingsdialog.h
+│   │   ├── shaderssourcewidget.cpp
+│   │   ├── shaderssourcewidget.h
+│   │   ├── thumbnail.h
+│   │   ├── tracedialog.cpp
+│   │   ├── tracedialog.h
+│   │   ├── traceloader.cpp
+│   │   ├── traceloader.h
+│   │   ├── traceprocess.cpp
+│   │   ├── traceprocess.h
+│   │   ├── trimprocess.cpp
+│   │   ├── trimprocess.h
+│   │   ├── ui
+│   │   │   ├── argumentseditor.ui
+│   │   │   ├── imageviewer.ui
+│   │   │   ├── jumpwidget.ui
+│   │   │   ├── mainwindow.ui
+│   │   │   ├── profiledialog.ui
+│   │   │   ├── profilereplaydialog.ui
+│   │   │   ├── retracerdialog.ui
+│   │   │   ├── searchwidget.ui
+│   │   │   ├── settings.ui
+│   │   │   ├── shaderssourcewidget.ui
+│   │   │   └── tracedialog.ui
+│   │   ├── vertexdatainterpreter.cpp
+│   │   └── vertexdatainterpreter.h
+│   ├── helpers
+│   │   ├── CMakeLists.txt
+│   │   ├── com_ptr.hpp
+│   │   ├── d3d10size.hpp
+│   │   ├── d3d11size.hpp
+│   │   ├── d3d7size.hpp
+│   │   ├── d3d8size.hpp
+│   │   ├── d3d9size.hpp
+│   │   ├── d3dcommonsize.hpp
+│   │   ├── d3dshader.cpp
+│   │   ├── d3dshader.hpp
+│   │   ├── dxgisize.hpp
+│   │   ├── eglsize.cpp
+│   │   ├── eglsize.hpp
+│   │   ├── floating_point_conversion.hpp
+│   │   ├── glfeatures.cpp
+│   │   ├── glfeatures.hpp
+│   │   ├── glsize.hpp
+│   │   ├── halffloat.hpp
+│   │   └── README.markdown
+│   ├── inject
+│   │   ├── CMakeLists.txt
+│   │   ├── injectee_iat.cpp
+│   │   ├── injectee_mhook.cpp
+│   │   ├── inject.h
+│   │   ├── injector.cpp
+│   │   └── README.markdown
+│   ├── lib
+│   │   ├── CMakeLists.txt
+│   │   ├── guids
+│   │   │   ├── CMakeLists.txt
+│   │   │   ├── guids.cpp
+│   │   │   ├── guids_defs.hpp
+│   │   │   ├── guids_entries.h
+│   │   │   ├── guids.hpp
+│   │   │   └── guids_test.cpp
+│   │   ├── highlight
+│   │   │   ├── CMakeLists.txt
+│   │   │   ├── highlight.cpp
+│   │   │   └── highlight.hpp
+│   │   ├── image
+│   │   │   ├── CMakeLists.txt
+│   │   │   ├── image_bmp.cpp
+│   │   │   ├── image.hpp
+│   │   │   ├── image_md5.cpp
+│   │   │   ├── image_png.cpp
+│   │   │   ├── image_pnm.cpp
+│   │   │   ├── image_raw.cpp
+│   │   │   └── README.markdown
+│   │   ├── os
+│   │   │   ├── CMakeLists.txt
+│   │   │   ├── os_backtrace.cpp
+│   │   │   ├── os_backtrace.hpp
+│   │   │   ├── os_binary.hpp
+│   │   │   ├── os_crtdbg.cpp
+│   │   │   ├── os_crtdbg.hpp
+│   │   │   ├── os_dl.hpp
+│   │   │   ├── os.hpp
+│   │   │   ├── os_memory.hpp
+│   │   │   ├── os_osx.mm
+│   │   │   ├── os_posix.cpp
+│   │   │   ├── os_process.hpp
+│   │   │   ├── os_string.hpp
+│   │   │   ├── os_symbols.hpp
+│   │   │   ├── os_thread.hpp
+│   │   │   ├── os_thread_test.cpp
+│   │   │   ├── os_time.hpp
+│   │   │   ├── os_version.hpp
+│   │   │   ├── os_win32.cpp
+│   │   │   └── thread_pool.hpp
+│   │   ├── trace
+│   │   │   ├── CMakeLists.txt
+│   │   │   ├── trace_api.hpp
+│   │   │   ├── trace_callset.cpp
+│   │   │   ├── trace_callset.hpp
+│   │   │   ├── trace_dump.cpp
+│   │   │   ├── trace_dump.hpp
+│   │   │   ├── trace_dump_internal.hpp
+│   │   │   ├── trace_fast_callset.cpp
+│   │   │   ├── trace_fast_callset.hpp
+│   │   │   ├── trace_file_brotli.cpp
+│   │   │   ├── trace_file.cpp
+│   │   │   ├── trace_file.hpp
+│   │   │   ├── trace_file_read.cpp
+│   │   │   ├── trace_file_snappy.cpp
+│   │   │   ├── trace_file_zlib.cpp
+│   │   │   ├── trace_format.hpp
+│   │   │   ├── trace_lookup.hpp
+│   │   │   ├── trace_model.cpp
+│   │   │   ├── trace_model.hpp
+│   │   │   ├── trace_option.cpp
+│   │   │   ├── trace_option.hpp
+│   │   │   ├── trace_ostream.hpp
+│   │   │   ├── trace_ostream_snappy.cpp
+│   │   │   ├── trace_ostream_zlib.cpp
+│   │   │   ├── trace_parser.cpp
+│   │   │   ├── trace_parser_flags.cpp
+│   │   │   ├── trace_parser_flags_test.cpp
+│   │   │   ├── trace_parser.hpp
+│   │   │   ├── trace_parser_loop.cpp
+│   │   │   ├── trace_profiler.cpp
+│   │   │   ├── trace_profiler.hpp
+│   │   │   ├── trace_snappy.hpp
+│   │   │   ├── trace_writer.cpp
+│   │   │   ├── trace_writer.hpp
+│   │   │   ├── trace_writer_local.cpp
+│   │   │   ├── trace_writer_local.hpp
+│   │   │   └── trace_writer_model.cpp
+│   │   └── ubjson
+│   │       └── ubjson.hpp
+│   ├── LICENSE
+│   ├── README.markdown
+│   ├── retrace
+│   │   ├── CMakeLists.txt
+│   │   ├── d3d10state.cpp
+│   │   ├── d3d10state.hpp
+│   │   ├── d3d10state_images.cpp
+│   │   ├── d3d11state.cpp
+│   │   ├── d3d11state.hpp
+│   │   ├── d3d11state_images.cpp
+│   │   ├── d3d7state.cpp
+│   │   ├── d3d7state_images.cpp
+│   │   ├── d3d8state.cpp
+│   │   ├── d3d8state_images.cpp
+│   │   ├── d3d9retrace.py
+│   │   ├── d3d9state.cpp
+│   │   ├── d3d9state_formats.cpp
+│   │   ├── d3d9state.hpp
+│   │   ├── d3d9state_images.cpp
+│   │   ├── d3dretrace_dxgi.hpp
+│   │   ├── d3dretrace_dxgi_misc.cpp
+│   │   ├── d3dretrace_dxgi_priv.cpp
+│   │   ├── d3dretrace.hpp
+│   │   ├── d3dretrace_main.cpp
+│   │   ├── d3dretrace_ws.cpp
+│   │   ├── d3dstate.hpp
+│   │   ├── ddrawretrace.py
+│   │   ├── dllretrace.py
+│   │   ├── dxgiretrace.py
+│   │   ├── dxgistate.cpp
+│   │   ├── dxgistate.hpp
+│   │   ├── dxgistate_so.hpp
+│   │   ├── dxgistate_so.py
+│   │   ├── glproc_egl.cpp
+│   │   ├── glproc_gl.cpp
+│   │   ├── glretrace_cgl.cpp
+│   │   ├── glretrace_egl.cpp
+│   │   ├── glretrace_glx.cpp
+│   │   ├── glretrace.hpp
+│   │   ├── glretrace_main.cpp
+│   │   ├── glretrace.py
+│   │   ├── glretrace_wgl.cpp
+│   │   ├── glretrace_wgl_font_bitmaps.cpp
+│   │   ├── glretrace_wgl_font_outlines.cpp
+│   │   ├── glretrace_wgl.hpp
+│   │   ├── glretrace_ws.cpp
+│   │   ├── glstate.cpp
+│   │   ├── glstate_formats.cpp
+│   │   ├── glstate.hpp
+│   │   ├── glstate_images.cpp
+│   │   ├── glstate_internal.hpp
+│   │   ├── glstate_params.py
+│   │   ├── glstate_shaders.cpp
+│   │   ├── glws_cocoa.mm
+│   │   ├── glws.cpp
+│   │   ├── glws_egl_xlib.cpp
+│   │   ├── glws_glx.cpp
+│   │   ├── glws.hpp
+│   │   ├── glws_waffle.cpp
+│   │   ├── glws_wgl.cpp
+│   │   ├── glws_xlib.cpp
+│   │   ├── glws_xlib.hpp
+│   │   ├── Info.plist
+│   │   ├── json.cpp
+│   │   ├── json.hpp
+│   │   ├── metric_backend_amd_perfmon.cpp
+│   │   ├── metric_backend_amd_perfmon.hpp
+│   │   ├── metric_backend.hpp
+│   │   ├── metric_backend_intel_perfquery.cpp
+│   │   ├── metric_backend_intel_perfquery.hpp
+│   │   ├── metric_backend_opengl.cpp
+│   │   ├── metric_backend_opengl.hpp
+│   │   ├── metric_helper.cpp
+│   │   ├── metric_writer.cpp
+│   │   ├── metric_writer.hpp
+│   │   ├── mmap_allocator.hpp
+│   │   ├── process_name.cpp
+│   │   ├── process_name.hpp
+│   │   ├── README.markdown
+│   │   ├── retrace.cpp
+│   │   ├── retrace.hpp
+│   │   ├── retrace_main.cpp
+│   │   ├── retrace.py
+│   │   ├── retrace_stdc.cpp
+│   │   ├── retrace_swizzle.cpp
+│   │   ├── retrace_swizzle.hpp
+│   │   ├── scoped_allocator.hpp
+│   │   ├── state_writer.cpp
+│   │   ├── state_writer.hpp
+│   │   ├── state_writer_json.cpp
+│   │   ├── state_writer_ubjson.cpp
+│   │   ├── threaded_snapshot.hpp
+│   │   ├── ws.cpp
+│   │   ├── ws.hpp
+│   │   ├── ws_win32.cpp
+│   │   └── ws_win32.hpp
+│   ├── scripts
+│   │   ├── apitrace.PIXExp
+│   │   ├── CMakeLists.txt
+│   │   ├── convert.py
+│   │   ├── highlight.py
+│   │   ├── jsondiff.py
+│   │   ├── jsonextractimages.py
+│   │   ├── leaks.py
+│   │   ├── profileshader.py
+│   │   ├── retracediff.py
+│   │   ├── snapdiff.py
+│   │   ├── tracecheck.py
+│   │   ├── tracediff.py
+│   │   └── unpickle.py
+│   ├── specs
+│   │   ├── cglapi.py
+│   │   ├── d2d1.py
+│   │   ├── d3d10.py
+│   │   ├── d3d10sdklayers.py
+│   │   ├── d3d11.py
+│   │   ├── d3d11sdklayers.py
+│   │   ├── d3d8caps.py
+│   │   ├── d3d8.py
+│   │   ├── d3d8types.py
+│   │   ├── d3d9caps.py
+│   │   ├── d3d9.py
+│   │   ├── d3d9types.py
+│   │   ├── d3dcaps.py
+│   │   ├── d3d.py
+│   │   ├── d3dtypes.py
+│   │   ├── dcommon.py
+│   │   ├── dcomp.py
+│   │   ├── ddraw.py
+│   │   ├── debug.py
+│   │   ├── dwrite.py
+│   │   ├── dxgi.py
+│   │   ├── dxva2.py
+│   │   ├── eglapi.py
+│   │   ├── eglenum.py
+│   │   ├── glapi.py
+│   │   ├── glparams.py
+│   │   ├── gltypes.py
+│   │   ├── glxapi.py
+│   │   ├── __init__.py
+│   │   ├── README.markdown
+│   │   ├── scripts
+│   │   │   ├── c2api.py
+│   │   │   ├── cxx2api.h
+│   │   │   ├── cxx2api.py
+│   │   │   ├── Makefile
+│   │   │   ├── README.markdown
+│   │   │   ├── txt2api.py
+│   │   │   ├── xml2api.py
+│   │   │   ├── xml2enum.py
+│   │   │   └── xml2glparams.py
+│   │   ├── stdapi.py
+│   │   ├── wglapi.py
+│   │   ├── wglenum.py
+│   │   └── winapi.py
+│   ├── thirdparty
+│   │   ├── brotli
+│   │   ├── brotli.cmake
+│   │   ├── CMakeLists.txt
+│   │   ├── crc32c
+│   │   │   ├── CMakeLists.txt
+│   │   │   ├── crc32c.c
+│   │   │   ├── crc32c.hpp
+│   │   │   └── README.md
+│   │   ├── devcon
+│   │   │   ├── CMakeLists.txt
+│   │   │   ├── devcon.cpp
+│   │   │   ├── devcon.hpp
+│   │   │   └── license.rtf
+│   │   ├── directxmath
+│   │   ├── directxtex
+│   │   │   ├── CMakeLists.txt
+│   │   │   ├── DirectXTex
+│   │   │   │   ├── BC4BC5.cpp
+│   │   │   │   ├── BC6HBC7.cpp
+│   │   │   │   ├── BC.cpp
+│   │   │   │   ├── BCDirectCompute.cpp
+│   │   │   │   ├── BCDirectCompute.h
+│   │   │   │   ├── BC.h
+│   │   │   │   ├── DDS.h
+│   │   │   │   ├── DirectXTexCompress.cpp
+│   │   │   │   ├── DirectXTexCompressGPU.cpp
+│   │   │   │   ├── DirectXTexConvert.cpp
+│   │   │   │   ├── DirectXTexD3D11.cpp
+│   │   │   │   ├── DirectXTexDDS.cpp
+│   │   │   │   ├── DirectXTexFlipRotate.cpp
+│   │   │   │   ├── DirectXTex.h
+│   │   │   │   ├── DirectXTexImage.cpp
+│   │   │   │   ├── DirectXTex.inl
+│   │   │   │   ├── DirectXTexMipmaps.cpp
+│   │   │   │   ├── DirectXTexMisc.cpp
+│   │   │   │   ├── DirectXTexNormalMaps.cpp
+│   │   │   │   ├── DirectXTexP.h
+│   │   │   │   ├── DirectXTexPMAlpha.cpp
+│   │   │   │   ├── DirectXTexResize.cpp
+│   │   │   │   ├── DirectXTexTGA.cpp
+│   │   │   │   ├── DirectXTexUtil.cpp
+│   │   │   │   ├── DirectXTexWIC.cpp
+│   │   │   │   ├── filters.h
+│   │   │   │   └── scoped.h
+│   │   │   ├── mingw
+│   │   │   │   ├── guid.cpp
+│   │   │   │   └── tweaks.h
+│   │   │   ├── MIT.txt
+│   │   │   ├── ReadMe.txt
+│   │   │   └── XNAMath
+│   │   │       ├── xnamathconvert.inl
+│   │   │       ├── xnamath.h
+│   │   │       ├── xnamathmatrix.inl
+│   │   │       ├── xnamathmisc.inl
+│   │   │       └── xnamathvector.inl
+│   │   ├── dxerr
+│   │   │   ├── CMakeLists.txt
+│   │   │   ├── dxerr.cpp
+│   │   │   ├── dxerr.h
+│   │   │   └── license.txt
+│   │   ├── dxsdk_aug2007
+│   │   │   ├── d3d8caps.h
+│   │   │   ├── d3d8.h
+│   │   │   └── d3d8types.h
+│   │   ├── getopt
+│   │   │   ├── CMakeLists.txt
+│   │   │   ├── getopt.h
+│   │   │   ├── getopt_long.c
+│   │   │   └── LICENSE
+│   │   ├── gtest
+│   │   ├── gtest.cmake
+│   │   ├── khronos
+│   │   │   ├── EGL
+│   │   │   │   ├── eglext.h
+│   │   │   │   ├── egl.h
+│   │   │   │   ├── eglplatform.h
+│   │   │   │   └── eglplatform.patch
+│   │   │   ├── GL
+│   │   │   │   ├── glext.h
+│   │   │   │   ├── glext.patch
+│   │   │   │   ├── gl.h
+│   │   │   │   ├── glxext.h
+│   │   │   │   ├── glx.h
+│   │   │   │   └── wglext.h
+│   │   │   ├── GLES
+│   │   │   │   ├── glext.h
+│   │   │   │   ├── gl.h
+│   │   │   │   └── glplatform.h
+│   │   │   ├── GLES2
+│   │   │   │   ├── gl2ext.h
+│   │   │   │   ├── gl2.h
+│   │   │   │   └── gl2platform.h
+│   │   │   ├── KHR
+│   │   │   │   └── khrplatform.h
+│   │   │   ├── Makefile
+│   │   │   └── README.markdown
+│   │   ├── libbacktrace
+│   │   ├── libbacktrace.cmake
+│   │   ├── libpng
+│   │   ├── libpng.cmake
+│   │   ├── md5
+│   │   │   ├── CMakeLists.txt
+│   │   │   ├── md5.c
+│   │   │   └── md5.h
+│   │   ├── mhook
+│   │   │   ├── CMakeLists.txt
+│   │   │   ├── COPYING
+│   │   │   ├── disasm-lib
+│   │   │   │   ├── cpu.c
+│   │   │   │   ├── cpu.h
+│   │   │   │   ├── disasm.c
+│   │   │   │   ├── disasm.h
+│   │   │   │   ├── disasm_x86.c
+│   │   │   │   ├── disasm_x86.h
+│   │   │   │   ├── disasm_x86_tables.h
+│   │   │   │   ├── misc.c
+│   │   │   │   └── misc.h
+│   │   │   ├── mhook-lib
+│   │   │   │   ├── mhook.cpp
+│   │   │   │   └── mhook.h
+│   │   │   ├── mhook-test.cpp
+│   │   │   ├── stdafx.cpp
+│   │   │   └── stdafx.h
+│   │   ├── mingw
+│   │   │   └── wincodec
+│   │   │       └── wincodec.h
+│   │   ├── snappy
+│   │   ├── snappy.cmake
+│   │   ├── support
+│   │   │   ├── libbacktrace
+│   │   │   │   ├── closefds.py
+│   │   │   │   └── config.h.in
+│   │   │   └── snappy
+│   │   │       └── config.h
+│   │   ├── zlib
+│   │   └── zlib.cmake
+│   └── wrappers
+│       ├── cgltrace.py
+│       ├── CMakeLists.txt
+│       ├── config.cpp
+│       ├── config.hpp
+│       ├── d2d1trace.def
+│       ├── d2d1trace.py
+│       ├── d3d10.def
+│       ├── d3d11.def
+│       ├── d3d8.def
+│       ├── d3d8trace.py
+│       ├── d3d9.def
+│       ├── d3d9shader.cpp
+│       ├── d3d9shader.hpp
+│       ├── d3d9trace.py
+│       ├── d3dcommonshader.cpp
+│       ├── d3dcommonshader.hpp
+│       ├── ddraw.def
+│       ├── ddrawtrace.py
+│       ├── dlltrace.hpp
+│       ├── dlltrace.py
+│       ├── dlopen.hpp
+│       ├── dlsym.cpp
+│       ├── dxgi.def
+│       ├── dxgitrace.def
+│       ├── dxgitrace.hpp
+│       ├── dxgitrace.py
+│       ├── egltrace.py
+│       ├── egltrace.version
+│       ├── glcaps.cpp
+│       ├── glmemshadow.cpp
+│       ├── glmemshadow.hpp
+│       ├── glproc_egl.cpp
+│       ├── glproc_gl.cpp
+│       ├── gltrace_arrays.cpp
+│       ├── gltrace_arrays.hpp
+│       ├── gltrace.hpp
+│       ├── gltrace.py
+│       ├── gltrace_state.cpp
+│       ├── gltrace_unpack_compressed.cpp
+│       ├── gltrace_unpack_compressed.hpp
+│       ├── glxtrace.py
+│       ├── glxtrace.version
+│       ├── memtrace.cpp
+│       ├── memtrace.hpp
+│       ├── opengl32.def
+│       ├── README.markdown
+│       ├── stub.cpp
+│       ├── trace.py
+│       └── wgltrace.py
+├── brotli
+│   ├── BUILD.bazel
+│   ├── c
+│   │   ├── common
+│   │   │   ├── constants.c
+│   │   │   ├── constants.h
+│   │   │   ├── context.c
+│   │   │   ├── context.h
+│   │   │   ├── dictionary.bin
+│   │   │   ├── dictionary.bin.br
+│   │   │   ├── dictionary.c
+│   │   │   ├── dictionary.h
+│   │   │   ├── platform.c
+│   │   │   ├── platform.h
+│   │   │   ├── shared_dictionary.c
+│   │   │   ├── shared_dictionary_internal.h
+│   │   │   ├── transform.c
+│   │   │   ├── transform.h
+│   │   │   └── version.h
+│   │   ├── dec
+│   │   │   ├── bit_reader.c
+│   │   │   ├── bit_reader.h
+│   │   │   ├── decode.c
+│   │   │   ├── huffman.c
+│   │   │   ├── huffman.h
+│   │   │   ├── prefix.h
+│   │   │   ├── state.c
+│   │   │   └── state.h
+│   │   ├── enc
+│   │   │   ├── backward_references.c
+│   │   │   ├── backward_references.h
+│   │   │   ├── backward_references_hq.c
+│   │   │   ├── backward_references_hq.h
+│   │   │   ├── backward_references_inc.h
+│   │   │   ├── bit_cost.c
+│   │   │   ├── bit_cost.h
+│   │   │   ├── bit_cost_inc.h
+│   │   │   ├── block_encoder_inc.h
+│   │   │   ├── block_splitter.c
+│   │   │   ├── block_splitter.h
+│   │   │   ├── block_splitter_inc.h
+│   │   │   ├── brotli_bit_stream.c
+│   │   │   ├── brotli_bit_stream.h
+│   │   │   ├── cluster.c
+│   │   │   ├── cluster.h
+│   │   │   ├── cluster_inc.h
+│   │   │   ├── command.c
+│   │   │   ├── command.h
+│   │   │   ├── compound_dictionary.c
+│   │   │   ├── compound_dictionary.h
+│   │   │   ├── compress_fragment.c
+│   │   │   ├── compress_fragment.h
+│   │   │   ├── compress_fragment_two_pass.c
+│   │   │   ├── compress_fragment_two_pass.h
+│   │   │   ├── dictionary_hash.c
+│   │   │   ├── dictionary_hash.h
+│   │   │   ├── encode.c
+│   │   │   ├── encoder_dict.c
+│   │   │   ├── encoder_dict.h
+│   │   │   ├── entropy_encode.c
+│   │   │   ├── entropy_encode.h
+│   │   │   ├── entropy_encode_static.h
+│   │   │   ├── fast_log.c
+│   │   │   ├── fast_log.h
+│   │   │   ├── find_match_length.h
+│   │   │   ├── hash_composite_inc.h
+│   │   │   ├── hash_forgetful_chain_inc.h
+│   │   │   ├── hash.h
+│   │   │   ├── hash_longest_match64_inc.h
+│   │   │   ├── hash_longest_match64_simd_inc.h
+│   │   │   ├── hash_longest_match_inc.h
+│   │   │   ├── hash_longest_match_quickly_inc.h
+│   │   │   ├── hash_longest_match_simd_inc.h
+│   │   │   ├── hash_rolling_inc.h
+│   │   │   ├── hash_to_binary_tree_inc.h
+│   │   │   ├── histogram.c
+│   │   │   ├── histogram.h
+│   │   │   ├── histogram_inc.h
+│   │   │   ├── literal_cost.c
+│   │   │   ├── literal_cost.h
+│   │   │   ├── matching_tag_mask.h
+│   │   │   ├── memory.c
+│   │   │   ├── memory.h
+│   │   │   ├── metablock.c
+│   │   │   ├── metablock.h
+│   │   │   ├── metablock_inc.h
+│   │   │   ├── params.h
+│   │   │   ├── prefix.h
+│   │   │   ├── quality.h
+│   │   │   ├── ringbuffer.h
+│   │   │   ├── state.h
+│   │   │   ├── static_dict.c
+│   │   │   ├── static_dict.h
+│   │   │   ├── static_dict_lut.h
+│   │   │   ├── utf8_util.c
+│   │   │   ├── utf8_util.h
+│   │   │   └── write_bits.h
+│   │   ├── fuzz
+│   │   │   ├── BUILD.bazel
+│   │   │   ├── decode_fuzzer.c
+│   │   │   ├── run_decode_fuzzer.c
+│   │   │   ├── test_fuzzer.sh
+│   │   │   └── WORKSPACE.bazel
+│   │   ├── include
+│   │   │   └── brotli
+│   │   │       ├── decode.h
+│   │   │       ├── encode.h
+│   │   │       ├── port.h
+│   │   │       ├── shared_dictionary.h
+│   │   │       └── types.h
+│   │   └── tools
+│   │       ├── brotli.c
+│   │       └── brotli.md
+│   ├── CHANGELOG.md
+│   ├── CMakeLists.txt
+│   ├── CONTRIBUTING.md
+│   ├── csharp
+│   │   ├── injected_code.txt
+│   │   ├── org
+│   │   │   └── brotli
+│   │   │       └── dec
+│   │   │           ├── BitReader.cs
+│   │   │           ├── BitReaderTest.cs
+│   │   │           ├── BrotliInputStream.cs
+│   │   │           ├── BrotliRuntimeException.cs
+│   │   │           ├── Context.cs
+│   │   │           ├── Decode.cs
+│   │   │           ├── DecodeTest.cs
+│   │   │           ├── Dictionary.cs
+│   │   │           ├── DictionaryTest.cs
+│   │   │           ├── Huffman.cs
+│   │   │           ├── HuffmanTreeGroup.cs
+│   │   │           ├── IntReader.cs
+│   │   │           ├── Prefix.cs
+│   │   │           ├── RunningState.cs
+│   │   │           ├── State.cs
+│   │   │           ├── SynthTest.cs
+│   │   │           ├── Transform.cs
+│   │   │           ├── TransformTest.cs
+│   │   │           ├── Utils.cs
+│   │   │           └── WordTransformType.cs
+│   │   ├── sharpen.cfg
+│   │   └── transpile.sh
+│   ├── docs
+│   │   ├── brotli.1
+│   │   ├── brotli-comparison-study-2015-09-22.pdf
+│   │   ├── brotli.svg
+│   │   ├── constants.h.3
+│   │   ├── decode.h.3
+│   │   ├── encode.h.3
+│   │   └── types.h.3
+│   ├── fetch-spec
+│   │   └── shared-brotli-fetch-spec.txt
+│   ├── go
+│   │   ├── BUILD.bazel
+│   │   ├── cbrotli
+│   │   │   ├── BUILD.bazel
+│   │   │   ├── cbrotli_test.go
+│   │   │   ├── cgo.go
+│   │   │   ├── go.mod
+│   │   │   ├── reader.go
+│   │   │   └── writer.go
+│   │   └── WORKSPACE.bazel
+│   ├── java
+│   │   ├── BUILD.bazel
+│   │   ├── org
+│   │   │   └── brotli
+│   │   │       ├── common
+│   │   │       │   ├── BUILD.bazel
+│   │   │       │   └── SharedDictionaryType.java
+│   │   │       ├── dec
+│   │   │       │   ├── BitReader.java
+│   │   │       │   ├── BitReaderTest.java
+│   │   │       │   ├── BrotliInputStream.java
+│   │   │       │   ├── BrotliRuntimeException.java
+│   │   │       │   ├── BUILD.bazel
+│   │   │       │   ├── build_defs.bzl
+│   │   │       │   ├── CompoundDictionaryTest.java
+│   │   │       │   ├── Context.java
+│   │   │       │   ├── Decode.java
+│   │   │       │   ├── Decoder.java
+│   │   │       │   ├── DecodeTest.java
+│   │   │       │   ├── DictionaryData.java
+│   │   │       │   ├── Dictionary.java
+│   │   │       │   ├── DictionaryTest.java
+│   │   │       │   ├── EagerStreamTest.java
+│   │   │       │   ├── Huffman.java
+│   │   │       │   ├── kt
+│   │   │       │   │   ├── BrotliInputStream.kt
+│   │   │       │   │   ├── BUILD.bazel
+│   │   │       │   │   └── Decode.kt
+│   │   │       │   ├── pom.xml
+│   │   │       │   ├── proguard.pgcfg
+│   │   │       │   ├── SetDictionaryTest.java
+│   │   │       │   ├── State.java
+│   │   │       │   ├── SynthTest.java
+│   │   │       │   ├── TestUtils.java
+│   │   │       │   ├── Transform.java
+│   │   │       │   ├── TransformTest.java
+│   │   │       │   └── Utils.java
+│   │   │       ├── enc
+│   │   │       │   ├── BUILD.bazel
+│   │   │       │   ├── PreparedDictionaryGenerator.java
+│   │   │       │   └── PreparedDictionary.java
+│   │   │       ├── integration
+│   │   │       │   ├── Benchmark.java
+│   │   │       │   ├── BrotliJniTestBase.java
+│   │   │       │   ├── BUILD.bazel
+│   │   │       │   ├── BundleChecker.java
+│   │   │       │   ├── BundleHelper.java
+│   │   │       │   ├── fuzz_data.zip
+│   │   │       │   ├── pom.xml
+│   │   │       │   ├── test_corpus.zip
+│   │   │       │   └── test_data.zip
+│   │   │       ├── pom.xml
+│   │   │       └── wrapper
+│   │   │           ├── android
+│   │   │           │   ├── JniHelper.java
+│   │   │           │   ├── UseJni.java
+│   │   │           │   └── UseJniTest.java
+│   │   │           ├── common
+│   │   │           │   ├── BrotliCommon.java
+│   │   │           │   ├── BUILD.bazel
+│   │   │           │   ├── common_jni.cc
+│   │   │           │   ├── CommonJNI.java
+│   │   │           │   ├── SetRfcDictionaryTest.java
+│   │   │           │   └── SetZeroDictionaryTest.java
+│   │   │           ├── dec
+│   │   │           │   ├── BrotliDecoderChannel.java
+│   │   │           │   ├── BrotliDecoderChannelTest.java
+│   │   │           │   ├── BrotliInputStream.java
+│   │   │           │   ├── BrotliInputStreamTest.java
+│   │   │           │   ├── BUILD.bazel
+│   │   │           │   ├── CornerCasesTest.java
+│   │   │           │   ├── Decoder.java
+│   │   │           │   ├── decoder_jni.cc
+│   │   │           │   ├── decoder_jni.h
+│   │   │           │   ├── DecoderJNI.java
+│   │   │           │   ├── decoder_jni_onload.cc
+│   │   │           │   ├── DecoderTest.java
+│   │   │           │   └── EagerStreamTest.java
+│   │   │           └── enc
+│   │   │               ├── BrotliEncoderChannel.java
+│   │   │               ├── BrotliEncoderChannelTest.java
+│   │   │               ├── BrotliOutputStream.java
+│   │   │               ├── BrotliOutputStreamTest.java
+│   │   │               ├── BUILD.bazel
+│   │   │               ├── EmptyInputTest.java
+│   │   │               ├── Encoder.java
+│   │   │               ├── encoder_jni.cc
+│   │   │               ├── EncoderJNI.java
+│   │   │               ├── EncoderTest.java
+│   │   │               └── UseCompoundDictionaryTest.java
+│   │   └── WORKSPACE.bazel
+│   ├── js
+│   │   ├── bundle_test.js
+│   │   ├── bundle_test.ts
+│   │   ├── cli.js
+│   │   ├── decode.js
+│   │   ├── decode.min.js
+│   │   ├── decode_synth_test.js
+│   │   ├── decode_synth_test.ts
+│   │   ├── decode_test.js
+│   │   ├── decode_test.ts
+│   │   ├── decode.ts
+│   │   ├── package.json
+│   │   ├── test_data.js
+│   │   ├── test_data.tar
+│   │   └── test_data.ts
+│   ├── LICENSE
+│   ├── MANIFEST.in
+│   ├── pyproject.toml
+│   ├── python
+│   │   ├── bro.py
+│   │   ├── _brotli.c
+│   │   ├── brotli.py
+│   │   ├── Makefile
+│   │   ├── README.md
+│   │   └── tests
+│   │       ├── bro_test.py
+│   │       ├── compressor_test.py
+│   │       ├── compress_test.py
+│   │       ├── decompressor_test.py
+│   │       ├── decompress_test.py
+│   │       ├── __init__.py
+│   │       └── _test_utils.py
+│   ├── README
+│   ├── README.md
+│   ├── research
+│   │   ├── brotli_decoder.c
+│   │   ├── brotlidump.py
+│   │   ├── BUILD.bazel
+│   │   ├── BUILD.libdivsufsort
+│   │   ├── deorummolae.cc
+│   │   ├── deorummolae.h
+│   │   ├── dictionary.bin -> ../c/common/dictionary.bin
+│   │   ├── dictionary_generator.cc
+│   │   ├── draw_diff.cc
+│   │   ├── draw_histogram.cc
+│   │   ├── durchschlag.cc
+│   │   ├── durchschlag.h
+│   │   ├── find_opt_references.cc
+│   │   ├── img
+│   │   │   ├── enwik9_brotli.png
+│   │   │   ├── enwik9_diff.png
+│   │   │   └── enwik9_opt.png
+│   │   ├── read_dist.h
+│   │   ├── README.md
+│   │   ├── sieve.cc
+│   │   ├── sieve.h
+│   │   └── WORKSPACE.bazel
+│   ├── scripts
+│   │   ├── dictionary
+│   │   │   ├── README.md
+│   │   │   ├── step-01-download-rfc.py
+│   │   │   ├── step-02-rfc-to-bin.py
+│   │   │   ├── step-03-validate-bin.py
+│   │   │   └── step-04-generate-java-literals.py
+│   │   ├── download_testdata.sh
+│   │   ├── libbrotlicommon.pc.in
+│   │   ├── libbrotlidec.pc.in
+│   │   └── libbrotlienc.pc.in
+│   ├── SECURITY.md
+│   ├── setup.cfg
+│   ├── setup.py
+│   ├── tests
+│   │   ├── cli_test.sh
+│   │   ├── run-compatibility-test.cmake
+│   │   ├── run-roundtrip-test.cmake
+│   │   └── testdata
+│   │       ├── 10x10y
+│   │       ├── 10x10y.compressed
+│   │       ├── 64x
+│   │       ├── 64x.compressed
+│   │       ├── alice29.txt
+│   │       ├── alice29.txt.compressed
+│   │       ├── asyoulik.txt
+│   │       ├── asyoulik.txt.compressed
+│   │       ├── backward65536
+│   │       ├── backward65536.compressed
+│   │       ├── bb.binast
+│   │       ├── compressed_file
+│   │       ├── compressed_file.compressed
+│   │       ├── compressed_repeated
+│   │       ├── compressed_repeated.compressed
+│   │       ├── cp1251-utf16le
+│   │       ├── cp1251-utf16le.compressed
+│   │       ├── cp852-utf8
+│   │       ├── cp852-utf8.compressed
+│   │       ├── empty
+│   │       ├── empty.compressed
+│   │       ├── empty.compressed.00
+│   │       ├── empty.compressed.01
+│   │       ├── empty.compressed.02
+│   │       ├── empty.compressed.03
+│   │       ├── empty.compressed.04
+│   │       ├── empty.compressed.05
+│   │       ├── empty.compressed.06
+│   │       ├── empty.compressed.07
+│   │       ├── empty.compressed.08
+│   │       ├── empty.compressed.09
+│   │       ├── empty.compressed.10
+│   │       ├── empty.compressed.11
+│   │       ├── empty.compressed.12
+│   │       ├── empty.compressed.13
+│   │       ├── empty.compressed.14
+│   │       ├── empty.compressed.15
+│   │       ├── empty.compressed.16
+│   │       ├── empty.compressed.17
+│   │       ├── empty.compressed.18
+│   │       ├── lcet10.txt
+│   │       ├── lcet10.txt.compressed
+│   │       ├── mapsdatazrh
+│   │       ├── mapsdatazrh.compressed
+│   │       ├── monkey
+│   │       ├── monkey.compressed
+│   │       ├── plrabn12.txt
+│   │       ├── plrabn12.txt.compressed
+│   │       ├── quickfox
+│   │       ├── quickfox.compressed
+│   │       ├── quickfox_repeated
+│   │       ├── quickfox_repeated.compressed
+│   │       ├── random_chunks
+│   │       ├── random_org_10k.bin
+│   │       ├── random_org_10k.bin.compressed
+│   │       ├── ukkonooa
+│   │       ├── ukkonooa.compressed
+│   │       ├── x
+│   │       ├── x.compressed
+│   │       ├── x.compressed.00
+│   │       ├── x.compressed.01
+│   │       ├── x.compressed.02
+│   │       ├── x.compressed.03
+│   │       ├── xyzzy
+│   │       ├── xyzzy.compressed
+│   │       ├── zeros
+│   │       └── zeros.compressed
+│   └── WORKSPACE.bazel
+├── DirectXMath
+│   ├── build
+│   │   ├── DirectXMath-config.cmake.in
+│   │   ├── DirectXMath-GitHub-CMake-Dev17.yml
+│   │   ├── DirectXMath-GitHub-CMake.yml
+│   │   ├── DirectXMath-GitHub-Dev17.yml
+│   │   ├── DirectXMath-GitHub-MinGW.yml
+│   │   ├── DirectXMath-GitHub-WSL-11.yml
+│   │   ├── DirectXMath-GitHub-WSL.yml
+│   │   ├── DirectXMath-GitHub.yml
+│   │   ├── DirectXMath.pc.in
+│   │   ├── DirectXMath-SDL.yml
+│   │   ├── JoinPaths.cmake
+│   │   └── preparerelease.ps1
+│   ├── CHANGELOG.md
+│   ├── CMakeLists.txt
+│   ├── CMakePresets.json
+│   ├── CODE_OF_CONDUCT.md
+│   ├── Extensions
+│   │   ├── DirectXMathAVX2.h
+│   │   ├── DirectXMathAVX.h
+│   │   ├── DirectXMathBE.h
+│   │   ├── DirectXMathF16C.h
+│   │   ├── DirectXMathFMA3.h
+│   │   ├── DirectXMathFMA4.h
+│   │   ├── DirectXMathSSE3.h
+│   │   └── DirectXMathSSE4.h
+│   ├── Inc
+│   │   ├── DirectXCollision.h
+│   │   ├── DirectXCollision.inl
+│   │   ├── DirectXColors.h
+│   │   ├── DirectXMathConvert.inl
+│   │   ├── DirectXMath.h
+│   │   ├── DirectXMathMatrix.inl
+│   │   ├── DirectXMathMisc.inl
+│   │   ├── DirectXMathVector.inl
+│   │   ├── DirectXPackedVector.h
+│   │   └── DirectXPackedVector.inl
+│   ├── LICENSE
+│   ├── MatrixStack
+│   │   └── DirectXMatrixStack.h
+│   ├── README.md
+│   ├── SECURITY.md
+│   ├── SHMath
+│   │   ├── DirectXSH.cpp
+│   │   ├── DirectXSHD3D11.cpp
+│   │   ├── DirectXSHD3D12.cpp
+│   │   └── DirectXSH.h
+│   ├── Stereo3D
+│   │   ├── Stereo3DMatrixHelper.cpp
+│   │   └── Stereo3DMatrixHelper.h
+│   └── XDSP
+│       └── XDSP.h
+├── gltrim-tests
+│   ├── 2dfonts.test_trace
+│   ├── basic_shading.test_trace
+│   ├── CMakeLists.txt
+│   ├── compare-trace.sh
+│   ├── fbo-render.test_trace
+│   ├── glxgears.test_trace
+│   ├── LICENSE
+│   ├── normal_mapping.test_trace
+│   ├── README.md
+│   ├── red_triangle.test_trace
+│   ├── render_to_texture.test_trace
+│   ├── rotations.test_trace
+│   ├── shadowmaps.test_trace
+│   ├── textured_cube.test_trace
+│   └── transparency.test_trace
+├── googletest
+│   ├── BUILD.bazel
+│   ├── ci
+│   │   ├── linux-presubmit.sh
+│   │   ├── macos-presubmit.sh
+│   │   └── windows-presubmit.bat
+│   ├── CMakeLists.txt
+│   ├── CONTRIBUTING.md
+│   ├── CONTRIBUTORS
+│   ├── docs
+│   │   ├── advanced.md
+│   │   ├── assets
+│   │   │   └── css
+│   │   │       └── style.scss
+│   │   ├── community_created_documentation.md
+│   │   ├── _config.yml
+│   │   ├── _data
+│   │   │   └── navigation.yml
+│   │   ├── faq.md
+│   │   ├── gmock_cheat_sheet.md
+│   │   ├── gmock_cook_book.md
+│   │   ├── gmock_faq.md
+│   │   ├── gmock_for_dummies.md
+│   │   ├── index.md
+│   │   ├── _layouts
+│   │   │   └── default.html
+│   │   ├── pkgconfig.md
+│   │   ├── platforms.md
+│   │   ├── primer.md
+│   │   ├── quickstart-bazel.md
+│   │   ├── quickstart-cmake.md
+│   │   ├── reference
+│   │   │   ├── actions.md
+│   │   │   ├── assertions.md
+│   │   │   ├── matchers.md
+│   │   │   ├── mocking.md
+│   │   │   └── testing.md
+│   │   ├── samples.md
+│   │   └── _sass
+│   │       └── main.scss
+│   ├── fake_fuchsia_sdk.bzl
+│   ├── googlemock
+│   │   ├── cmake
+│   │   │   ├── gmock_main.pc.in
+│   │   │   └── gmock.pc.in
+│   │   ├── CMakeLists.txt
+│   │   ├── docs
+│   │   │   └── README.md
+│   │   ├── include
+│   │   │   └── gmock
+│   │   │       ├── gmock-actions.h
+│   │   │       ├── gmock-cardinalities.h
+│   │   │       ├── gmock-function-mocker.h
+│   │   │       ├── gmock.h
+│   │   │       ├── gmock-matchers.h
+│   │   │       ├── gmock-more-actions.h
+│   │   │       ├── gmock-more-matchers.h
+│   │   │       ├── gmock-nice-strict.h
+│   │   │       ├── gmock-spec-builders.h
+│   │   │       └── internal
+│   │   │           ├── custom
+│   │   │           │   ├── gmock-generated-actions.h
+│   │   │           │   ├── gmock-matchers.h
+│   │   │           │   ├── gmock-port.h
+│   │   │           │   └── README.md
+│   │   │           ├── gmock-internal-utils.h
+│   │   │           ├── gmock-port.h
+│   │   │           └── gmock-pp.h
+│   │   ├── README.md
+│   │   ├── src
+│   │   │   ├── gmock-all.cc
+│   │   │   ├── gmock-cardinalities.cc
+│   │   │   ├── gmock.cc
+│   │   │   ├── gmock-internal-utils.cc
+│   │   │   ├── gmock_main.cc
+│   │   │   ├── gmock-matchers.cc
+│   │   │   └── gmock-spec-builders.cc
+│   │   └── test
+│   │       ├── BUILD.bazel
+│   │       ├── gmock-actions_test.cc
+│   │       ├── gmock_all_test.cc
+│   │       ├── gmock-cardinalities_test.cc
+│   │       ├── gmock_ex_test.cc
+│   │       ├── gmock-function-mocker_test.cc
+│   │       ├── gmock-internal-utils_test.cc
+│   │       ├── gmock_leak_test_.cc
+│   │       ├── gmock_leak_test.py
+│   │       ├── gmock_link2_test.cc
+│   │       ├── gmock_link_test.cc
+│   │       ├── gmock_link_test.h
+│   │       ├── gmock-matchers-arithmetic_test.cc
+│   │       ├── gmock-matchers-comparisons_test.cc
+│   │       ├── gmock-matchers-containers_test.cc
+│   │       ├── gmock-matchers-misc_test.cc
+│   │       ├── gmock-matchers_test.h
+│   │       ├── gmock-more-actions_test.cc
+│   │       ├── gmock-nice-strict_test.cc
+│   │       ├── gmock_output_test_.cc
+│   │       ├── gmock_output_test_golden.txt
+│   │       ├── gmock_output_test.py
+│   │       ├── gmock-port_test.cc
+│   │       ├── gmock-pp-string_test.cc
+│   │       ├── gmock-pp_test.cc
+│   │       ├── gmock-spec-builders_test.cc
+│   │       ├── gmock_stress_test.cc
+│   │       ├── gmock_test.cc
+│   │       └── gmock_test_utils.py
+│   ├── googletest
+│   │   ├── cmake
+│   │   │   ├── Config.cmake.in
+│   │   │   ├── gtest_main.pc.in
+│   │   │   ├── gtest.pc.in
+│   │   │   ├── internal_utils.cmake
+│   │   │   └── libgtest.la.in
+│   │   ├── CMakeLists.txt
+│   │   ├── docs
+│   │   │   └── README.md
+│   │   ├── include
+│   │   │   └── gtest
+│   │   │       ├── gtest-assertion-result.h
+│   │   │       ├── gtest-death-test.h
+│   │   │       ├── gtest.h
+│   │   │       ├── gtest-matchers.h
+│   │   │       ├── gtest-message.h
+│   │   │       ├── gtest-param-test.h
+│   │   │       ├── gtest_pred_impl.h
+│   │   │       ├── gtest-printers.h
+│   │   │       ├── gtest_prod.h
+│   │   │       ├── gtest-spi.h
+│   │   │       ├── gtest-test-part.h
+│   │   │       ├── gtest-typed-test.h
+│   │   │       └── internal
+│   │   │           ├── custom
+│   │   │           │   ├── gtest.h
+│   │   │           │   ├── gtest-port.h
+│   │   │           │   ├── gtest-printers.h
+│   │   │           │   └── README.md
+│   │   │           ├── gtest-death-test-internal.h
+│   │   │           ├── gtest-filepath.h
+│   │   │           ├── gtest-internal.h
+│   │   │           ├── gtest-param-util.h
+│   │   │           ├── gtest-port-arch.h
+│   │   │           ├── gtest-port.h
+│   │   │           ├── gtest-string.h
+│   │   │           └── gtest-type-util.h
+│   │   ├── README.md
+│   │   ├── samples
+│   │   │   ├── prime_tables.h
+│   │   │   ├── sample10_unittest.cc
+│   │   │   ├── sample1.cc
+│   │   │   ├── sample1.h
+│   │   │   ├── sample1_unittest.cc
+│   │   │   ├── sample2.cc
+│   │   │   ├── sample2.h
+│   │   │   ├── sample2_unittest.cc
+│   │   │   ├── sample3-inl.h
+│   │   │   ├── sample3_unittest.cc
+│   │   │   ├── sample4.cc
+│   │   │   ├── sample4.h
+│   │   │   ├── sample4_unittest.cc
+│   │   │   ├── sample5_unittest.cc
+│   │   │   ├── sample6_unittest.cc
+│   │   │   ├── sample7_unittest.cc
+│   │   │   ├── sample8_unittest.cc
+│   │   │   └── sample9_unittest.cc
+│   │   ├── src
+│   │   │   ├── gtest-all.cc
+│   │   │   ├── gtest-assertion-result.cc
+│   │   │   ├── gtest.cc
+│   │   │   ├── gtest-death-test.cc
+│   │   │   ├── gtest-filepath.cc
+│   │   │   ├── gtest-internal-inl.h
+│   │   │   ├── gtest_main.cc
+│   │   │   ├── gtest-matchers.cc
+│   │   │   ├── gtest-port.cc
+│   │   │   ├── gtest-printers.cc
+│   │   │   ├── gtest-test-part.cc
+│   │   │   └── gtest-typed-test.cc
+│   │   └── test
+│   │       ├── BUILD.bazel
+│   │       ├── googletest-break-on-failure-unittest_.cc
+│   │       ├── googletest-break-on-failure-unittest.py
+│   │       ├── googletest-catch-exceptions-test_.cc
+│   │       ├── googletest-catch-exceptions-test.py
+│   │       ├── googletest-color-test_.cc
+│   │       ├── googletest-color-test.py
+│   │       ├── googletest-death-test_ex_test.cc
+│   │       ├── googletest-death-test-test.cc
+│   │       ├── googletest-env-var-test_.cc
+│   │       ├── googletest-env-var-test.py
+│   │       ├── googletest-failfast-unittest_.cc
+│   │       ├── googletest-failfast-unittest.py
+│   │       ├── googletest-filepath-test.cc
+│   │       ├── googletest-filter-unittest_.cc
+│   │       ├── googletest-filter-unittest.py
+│   │       ├── googletest-global-environment-unittest_.cc
+│   │       ├── googletest-global-environment-unittest.py
+│   │       ├── googletest-json-outfiles-test.py
+│   │       ├── googletest-json-output-unittest.py
+│   │       ├── googletest-listener-test.cc
+│   │       ├── googletest-list-tests-unittest_.cc
+│   │       ├── googletest-list-tests-unittest.py
+│   │       ├── googletest-message-test.cc
+│   │       ├── googletest-options-test.cc
+│   │       ├── googletest-output-test_.cc
+│   │       ├── googletest-output-test-golden-lin.txt
+│   │       ├── googletest-output-test.py
+│   │       ├── googletest-param-test2-test.cc
+│   │       ├── googletest-param-test-invalid-name1-test_.cc
+│   │       ├── googletest-param-test-invalid-name1-test.py
+│   │       ├── googletest-param-test-invalid-name2-test_.cc
+│   │       ├── googletest-param-test-invalid-name2-test.py
+│   │       ├── googletest-param-test-test.cc
+│   │       ├── googletest-param-test-test.h
+│   │       ├── googletest-port-test.cc
+│   │       ├── googletest-printers-test.cc
+│   │       ├── googletest-setuptestsuite-test_.cc
+│   │       ├── googletest-setuptestsuite-test.py
+│   │       ├── googletest-shuffle-test_.cc
+│   │       ├── googletest-shuffle-test.py
+│   │       ├── googletest-test-part-test.cc
+│   │       ├── googletest-throw-on-failure-test_.cc
+│   │       ├── googletest-throw-on-failure-test.py
+│   │       ├── googletest-uninitialized-test_.cc
+│   │       ├── googletest-uninitialized-test.py
+│   │       ├── gtest_all_test.cc
+│   │       ├── gtest_assert_by_exception_test.cc
+│   │       ├── gtest_dirs_test.cc
+│   │       ├── gtest_environment_test.cc
+│   │       ├── gtest_help_test_.cc
+│   │       ├── gtest_help_test.py
+│   │       ├── gtest_json_test_utils.py
+│   │       ├── gtest_list_output_unittest_.cc
+│   │       ├── gtest_list_output_unittest.py
+│   │       ├── gtest_main_unittest.cc
+│   │       ├── gtest_no_test_unittest.cc
+│   │       ├── gtest_pred_impl_unittest.cc
+│   │       ├── gtest_premature_exit_test.cc
+│   │       ├── gtest_prod_test.cc
+│   │       ├── gtest_repeat_test.cc
+│   │       ├── gtest_skip_check_output_test.py
+│   │       ├── gtest_skip_environment_check_output_test.py
+│   │       ├── gtest_skip_in_environment_setup_test.cc
+│   │       ├── gtest_skip_test.cc
+│   │       ├── gtest_sole_header_test.cc
+│   │       ├── gtest_stress_test.cc
+│   │       ├── gtest_testbridge_test_.cc
+│   │       ├── gtest_testbridge_test.py
+│   │       ├── gtest_test_macro_stack_footprint_test.cc
+│   │       ├── gtest_test_utils.py
+│   │       ├── gtest_throw_on_failure_ex_test.cc
+│   │       ├── gtest-typed-test2_test.cc
+│   │       ├── gtest-typed-test_test.cc
+│   │       ├── gtest-typed-test_test.h
+│   │       ├── gtest-unittest-api_test.cc
+│   │       ├── gtest_unittest.cc
+│   │       ├── gtest_xml_outfile1_test_.cc
+│   │       ├── gtest_xml_outfile2_test_.cc
+│   │       ├── gtest_xml_outfiles_test.py
+│   │       ├── gtest_xml_output_unittest_.cc
+│   │       ├── gtest_xml_output_unittest.py
+│   │       ├── gtest_xml_test_utils.py
+│   │       ├── production.cc
+│   │       └── production.h
+│   ├── googletest_deps.bzl
+│   ├── LICENSE
+│   ├── MODULE.bazel
+│   ├── README.md
+│   ├── WORKSPACE
+│   └── WORKSPACE.bzlmod
+├── libbacktrace
+│   ├── aclocal.m4
+│   ├── alloc.c
+│   ├── allocfail.c
+│   ├── allocfail.sh
+│   ├── atomic.c
+│   ├── backtrace.c
+│   ├── backtrace.h
+│   ├── backtrace-supported.h.in
+│   ├── btest.c
+│   ├── compile
+│   ├── config
+│   │   ├── enable.m4
+│   │   ├── lead-dot.m4
+│   │   ├── libtool.m4
+│   │   ├── lt~obsolete.m4
+│   │   ├── ltoptions.m4
+│   │   ├── ltsugar.m4
+│   │   ├── ltversion.m4
+│   │   ├── multi.m4
+│   │   ├── override.m4
+│   │   ├── unwind_ipinfo.m4
+│   │   └── warnings.m4
+│   ├── config.guess
+│   ├── config.h.in
+│   ├── config.sub
+│   ├── configure
+│   ├── configure.ac
+│   ├── dwarf.c
+│   ├── edtest2.c
+│   ├── edtest.c
+│   ├── elf.c
+│   ├── fileline.c
+│   ├── filenames.h
+│   ├── filetype.awk
+│   ├── install-debuginfo-for-buildid.sh.in
+│   ├── install-sh
+│   ├── instrumented_alloc.c
+│   ├── internal.h
+│   ├── Isaac.Newton-Opticks.txt
+│   ├── LICENSE
+│   ├── ltmain.sh
+│   ├── macho.c
+│   ├── Makefile.am
+│   ├── Makefile.in
+│   ├── missing
+│   ├── mmap.c
+│   ├── mmapio.c
+│   ├── move-if-change
+│   ├── mtest.c
+│   ├── nounwind.c
+│   ├── pecoff.c
+│   ├── posix.c
+│   ├── print.c
+│   ├── read.c
+│   ├── README.md
+│   ├── simple.c
+│   ├── sort.c
+│   ├── state.c
+│   ├── stest.c
+│   ├── test-driver
+│   ├── test_format.c
+│   ├── testlib.c
+│   ├── testlib.h
+│   ├── ttest.c
+│   ├── unittest.c
+│   ├── unknown.c
+│   ├── xcoff.c
+│   ├── xztest.c
+│   ├── zstdtest.c
+│   └── ztest.c
+├── libpng
+│   ├── aclocal.m4
+│   ├── ANNOUNCE
+│   ├── arm
+│   │   ├── arm_init.c
+│   │   ├── filter_neon_intrinsics.c
+│   │   ├── filter_neon.S
+│   │   └── palette_neon_intrinsics.c
+│   ├── AUTHORS
+│   ├── autogen.sh
+│   ├── CHANGES
+│   ├── ci
+│   │   ├── ci_autotools.sh
+│   │   ├── ci_cmake.sh
+│   │   └── ci_legacy.sh
+│   ├── CMakeLists.txt
+│   ├── compile
+│   ├── config.guess
+│   ├── config.h.in
+│   ├── config.sub
+│   ├── configure
+│   ├── configure.ac
+│   ├── contrib
+│   │   ├── arm-neon
+│   │   │   ├── android-ndk.c
+│   │   │   ├── linux-auxv.c
+│   │   │   ├── linux.c
+│   │   │   └── README
+│   │   ├── conftest
+│   │   │   ├── pngcp.dfa
+│   │   │   ├── read.dfa
+│   │   │   ├── README
+│   │   │   ├── simple.dfa
+│   │   │   ├── s_read.dfa
+│   │   │   ├── s_write.dfa
+│   │   │   └── write.dfa
+│   │   ├── examples
+│   │   │   ├── iccfrompng.c
+│   │   │   ├── pngpixel.c
+│   │   │   ├── pngtopng.c
+│   │   │   ├── README.txt
+│   │   │   └── simpleover.c
+│   │   ├── gregbook
+│   │   │   ├── COPYING
+│   │   │   ├── LICENSE
+│   │   │   ├── Makefile.mingw32
+│   │   │   ├── Makefile.sgi
+│   │   │   ├── Makefile.unx
+│   │   │   ├── Makefile.w32
+│   │   │   ├── makevms.com
+│   │   │   ├── README
+│   │   │   ├── readpng2.c
+│   │   │   ├── readpng2.h
+│   │   │   ├── readpng.c
+│   │   │   ├── readpng.h
+│   │   │   ├── readppm.c
+│   │   │   ├── rpng2-win.c
+│   │   │   ├── rpng2-x.c
+│   │   │   ├── rpng-win.c
+│   │   │   ├── rpng-x.c
+│   │   │   ├── toucan.png
+│   │   │   ├── wpng.c
+│   │   │   ├── writepng.c
+│   │   │   └── writepng.h
+│   │   ├── libtests
+│   │   │   ├── fakepng.c
+│   │   │   ├── gentests.sh
+│   │   │   ├── makepng.c
+│   │   │   ├── pngimage.c
+│   │   │   ├── pngstest.c
+│   │   │   ├── pngstest-errors.h
+│   │   │   ├── pngunknown.c
+│   │   │   ├── pngvalid.c
+│   │   │   ├── readpng.c
+│   │   │   ├── tarith.c
+│   │   │   └── timepng.c
+│   │   ├── mips-msa
+│   │   │   ├── linux.c
+│   │   │   └── README
+│   │   ├── oss-fuzz
+│   │   │   ├── build.sh
+│   │   │   ├── Dockerfile
+│   │   │   ├── libpng_read_fuzzer.cc
+│   │   │   ├── libpng_read_fuzzer.options
+│   │   │   ├── png.dict
+│   │   │   └── README.txt
+│   │   ├── pngminim
+│   │   │   ├── decoder
+│   │   │   │   ├── makefile
+│   │   │   │   ├── pngusr.dfa
+│   │   │   │   ├── pngusr.h
+│   │   │   │   └── README
+│   │   │   ├── encoder
+│   │   │   │   ├── makefile
+│   │   │   │   ├── pngusr.dfa
+│   │   │   │   ├── pngusr.h
+│   │   │   │   └── README
+│   │   │   ├── preader
+│   │   │   │   ├── makefile
+│   │   │   │   ├── pngusr.dfa
+│   │   │   │   ├── pngusr.h
+│   │   │   │   └── README
+│   │   │   └── README
+│   │   ├── pngminus
+│   │   │   ├── CHANGES.txt
+│   │   │   ├── CMakeLists.txt
+│   │   │   ├── LICENSE.txt
+│   │   │   ├── Makefile
+│   │   │   ├── makevms.com
+│   │   │   ├── png2pnm.bat
+│   │   │   ├── png2pnm.c
+│   │   │   ├── png2pnm.sh
+│   │   │   ├── pngminus.bat
+│   │   │   ├── pngminus.sh
+│   │   │   ├── pnm2png.bat
+│   │   │   ├── pnm2png.c
+│   │   │   ├── pnm2png.sh
+│   │   │   └── README.txt
+│   │   ├── pngsuite
+│   │   │   ├── bad_interlace_conversions.txt
+│   │   │   ├── basn0g01.png
+│   │   │   ├── basn0g02.png
+│   │   │   ├── basn0g04.png
+│   │   │   ├── basn0g08.png
+│   │   │   ├── basn0g16.png
+│   │   │   ├── basn2c08.png
+│   │   │   ├── basn2c16.png
+│   │   │   ├── basn3p01.png
+│   │   │   ├── basn3p02.png
+│   │   │   ├── basn3p04.png
+│   │   │   ├── basn3p08.png
+│   │   │   ├── basn4a08.png
+│   │   │   ├── basn4a16.png
+│   │   │   ├── basn6a08.png
+│   │   │   ├── basn6a16.png
+│   │   │   ├── ftbbn0g01.png
+│   │   │   ├── ftbbn0g02.png
+│   │   │   ├── ftbbn0g04.png
+│   │   │   ├── ftbbn2c16.png
+│   │   │   ├── ftbbn3p08.png
+│   │   │   ├── ftbgn2c16.png
+│   │   │   ├── ftbgn3p08.png
+│   │   │   ├── ftbrn2c08.png
+│   │   │   ├── ftbwn0g16.png
+│   │   │   ├── ftbwn3p08.png
+│   │   │   ├── ftbyn3p08.png
+│   │   │   ├── ftp0n0g08.png
+│   │   │   ├── ftp0n2c08.png
+│   │   │   ├── ftp0n3p08.png
+│   │   │   ├── ftp1n3p08.png
+│   │   │   ├── ibasn0g08.png
+│   │   │   ├── ibasn0g16.png
+│   │   │   ├── ibasn2c08.png
+│   │   │   ├── ibasn2c16.png
+│   │   │   ├── ibasn3p08.png
+│   │   │   ├── ibasn4a08.png
+│   │   │   ├── ibasn4a16.png
+│   │   │   ├── ibasn6a08.png
+│   │   │   ├── ibasn6a16.png
+│   │   │   ├── iftbbn2c16.png
+│   │   │   ├── iftbbn3p08.png
+│   │   │   ├── iftbgn2c16.png
+│   │   │   ├── iftbgn3p08.png
+│   │   │   ├── iftbrn2c08.png
+│   │   │   ├── iftbwn0g16.png
+│   │   │   ├── iftbwn3p08.png
+│   │   │   ├── iftbyn3p08.png
+│   │   │   ├── iftp0n0g08.png
+│   │   │   ├── iftp0n2c08.png
+│   │   │   ├── iftp0n3p08.png
+│   │   │   ├── iftp1n3p08.png
+│   │   │   ├── interlaced
+│   │   │   │   ├── ibasn0g01.png
+│   │   │   │   ├── ibasn0g02.png
+│   │   │   │   ├── ibasn0g04.png
+│   │   │   │   ├── ibasn3p01.png
+│   │   │   │   ├── ibasn3p02.png
+│   │   │   │   ├── ibasn3p04.png
+│   │   │   │   ├── iftbbn0g01.png
+│   │   │   │   ├── iftbbn0g02.png
+│   │   │   │   ├── iftbbn0g04.png
+│   │   │   │   └── README
+│   │   │   └── README
+│   │   ├── powerpc-vsx
+│   │   │   ├── linux_aux.c
+│   │   │   ├── linux.c
+│   │   │   └── README
+│   │   ├── README.txt
+│   │   ├── testpngs
+│   │   │   ├── crashers
+│   │   │   │   ├── badadler.png
+│   │   │   │   ├── badcrc.png
+│   │   │   │   ├── bad_iCCP.png
+│   │   │   │   ├── empty_ancillary_chunks.png
+│   │   │   │   ├── huge_bKGD_chunk.png
+│   │   │   │   ├── huge_cHRM_chunk.png
+│   │   │   │   ├── huge_eXIf_chunk.png
+│   │   │   │   ├── huge_gAMA_chunk.png
+│   │   │   │   ├── huge_hIST_chunk.png
+│   │   │   │   ├── huge_iCCP_chunk.png
+│   │   │   │   ├── huge_IDAT.png
+│   │   │   │   ├── huge_iTXt_chunk.png
+│   │   │   │   ├── huge_juNk_safe_to_copy.png
+│   │   │   │   ├── huge_juNK_unsafe_to_copy.png
+│   │   │   │   ├── huge_pCAL_chunk.png
+│   │   │   │   ├── huge_pHYs_chunk.png
+│   │   │   │   ├── huge_sCAL_chunk.png
+│   │   │   │   ├── huge_sPLT_chunk.png
+│   │   │   │   ├── huge_sRGB_chunk.png
+│   │   │   │   ├── huge_sTER_chunk.png
+│   │   │   │   ├── huge_tEXt_chunk.png
+│   │   │   │   ├── huge_tIME_chunk.png
+│   │   │   │   └── huge_zTXt_chunk.png
+│   │   │   ├── gray-1-1.8.png
+│   │   │   ├── gray-1-1.8-tRNS.png
+│   │   │   ├── gray-16-1.8.png
+│   │   │   ├── gray-16-1.8-tRNS.png
+│   │   │   ├── gray-16-linear.png
+│   │   │   ├── gray-16-linear-tRNS.png
+│   │   │   ├── gray-16.png
+│   │   │   ├── gray-16-sRGB.png
+│   │   │   ├── gray-16-sRGB-tRNS.png
+│   │   │   ├── gray-16-tRNS.png
+│   │   │   ├── gray-1-linear.png
+│   │   │   ├── gray-1-linear-tRNS.png
+│   │   │   ├── gray-1.png
+│   │   │   ├── gray-1-sRGB.png
+│   │   │   ├── gray-1-sRGB-tRNS.png
+│   │   │   ├── gray-1-tRNS.png
+│   │   │   ├── gray-2-1.8.png
+│   │   │   ├── gray-2-1.8-tRNS.png
+│   │   │   ├── gray-2-linear.png
+│   │   │   ├── gray-2-linear-tRNS.png
+│   │   │   ├── gray-2.png
+│   │   │   ├── gray-2-sRGB.png
+│   │   │   ├── gray-2-sRGB-tRNS.png
+│   │   │   ├── gray-2-tRNS.png
+│   │   │   ├── gray-4-1.8.png
+│   │   │   ├── gray-4-1.8-tRNS.png
+│   │   │   ├── gray-4-linear.png
+│   │   │   ├── gray-4-linear-tRNS.png
+│   │   │   ├── gray-4.png
+│   │   │   ├── gray-4-sRGB.png
+│   │   │   ├── gray-4-sRGB-tRNS.png
+│   │   │   ├── gray-4-tRNS.png
+│   │   │   ├── gray-8-1.8.png
+│   │   │   ├── gray-8-1.8-tRNS.png
+│   │   │   ├── gray-8-linear.png
+│   │   │   ├── gray-8-linear-tRNS.png
+│   │   │   ├── gray-8.png
+│   │   │   ├── gray-8-sRGB.png
+│   │   │   ├── gray-8-sRGB-tRNS.png
+│   │   │   ├── gray-8-tRNS.png
+│   │   │   ├── gray-alpha-16-1.8.png
+│   │   │   ├── gray-alpha-16-linear.png
+│   │   │   ├── gray-alpha-16.png
+│   │   │   ├── gray-alpha-16-sRGB.png
+│   │   │   ├── gray-alpha-8-1.8.png
+│   │   │   ├── gray-alpha-8-linear.png
+│   │   │   ├── gray-alpha-8.png
+│   │   │   ├── gray-alpha-8-sRGB.png
+│   │   │   ├── makepngs.sh
+│   │   │   ├── palette-1-1.8.png
+│   │   │   ├── palette-1-1.8-tRNS.png
+│   │   │   ├── palette-1-linear.png
+│   │   │   ├── palette-1-linear-tRNS.png
+│   │   │   ├── palette-1.png
+│   │   │   ├── palette-1-sRGB.png
+│   │   │   ├── palette-1-sRGB-tRNS.png
+│   │   │   ├── palette-1-tRNS.png
+│   │   │   ├── palette-2-1.8.png
+│   │   │   ├── palette-2-1.8-tRNS.png
+│   │   │   ├── palette-2-linear.png
+│   │   │   ├── palette-2-linear-tRNS.png
+│   │   │   ├── palette-2.png
+│   │   │   ├── palette-2-sRGB.png
+│   │   │   ├── palette-2-sRGB-tRNS.png
+│   │   │   ├── palette-2-tRNS.png
+│   │   │   ├── palette-4-1.8.png
+│   │   │   ├── palette-4-1.8-tRNS.png
+│   │   │   ├── palette-4-linear.png
+│   │   │   ├── palette-4-linear-tRNS.png
+│   │   │   ├── palette-4.png
+│   │   │   ├── palette-4-sRGB.png
+│   │   │   ├── palette-4-sRGB-tRNS.png
+│   │   │   ├── palette-4-tRNS.png
+│   │   │   ├── palette-8-1.8.png
+│   │   │   ├── palette-8-1.8-tRNS.png
+│   │   │   ├── palette-8-linear.png
+│   │   │   ├── palette-8-linear-tRNS.png
+│   │   │   ├── palette-8.png
+│   │   │   ├── palette-8-sRGB.png
+│   │   │   ├── palette-8-sRGB-tRNS.png
+│   │   │   ├── palette-8-tRNS.png
+│   │   │   ├── rgb-16-1.8.png
+│   │   │   ├── rgb-16-1.8-tRNS.png
+│   │   │   ├── rgb-16-linear.png
+│   │   │   ├── rgb-16-linear-tRNS.png
+│   │   │   ├── rgb-16.png
+│   │   │   ├── rgb-16-sRGB.png
+│   │   │   ├── rgb-16-sRGB-tRNS.png
+│   │   │   ├── rgb-16-tRNS.png
+│   │   │   ├── rgb-8-1.8.png
+│   │   │   ├── rgb-8-1.8-tRNS.png
+│   │   │   ├── rgb-8-linear.png
+│   │   │   ├── rgb-8-linear-tRNS.png
+│   │   │   ├── rgb-8.png
+│   │   │   ├── rgb-8-sRGB.png
+│   │   │   ├── rgb-8-sRGB-tRNS.png
+│   │   │   ├── rgb-8-tRNS.png
+│   │   │   ├── rgb-alpha-16-1.8.png
+│   │   │   ├── rgb-alpha-16-linear.png
+│   │   │   ├── rgb-alpha-16.png
+│   │   │   ├── rgb-alpha-16-sRGB.png
+│   │   │   ├── rgb-alpha-8-1.8.png
+│   │   │   ├── rgb-alpha-8-linear.png
+│   │   │   ├── rgb-alpha-8.png
+│   │   │   └── rgb-alpha-8-sRGB.png
+│   │   ├── tools
+│   │   │   ├── checksum-icc.c
+│   │   │   ├── chkfmt
+│   │   │   ├── cvtcolor.c
+│   │   │   ├── genpng.c
+│   │   │   ├── intgamma.sh
+│   │   │   ├── makesRGB.c
+│   │   │   ├── pngcp.c
+│   │   │   ├── pngfix.c
+│   │   │   ├── png-fix-itxt.c
+│   │   │   ├── README.txt
+│   │   │   ├── reindent
+│   │   │   └── sRGB.h
+│   │   └── visupng
+│   │       ├── cexcept.h
+│   │       ├── PngFile.c
+│   │       ├── PngFile.h
+│   │       ├── README.txt
+│   │       ├── resource.h
+│   │       ├── VisualPng.c
+│   │       ├── VisualPng.dsp
+│   │       ├── VisualPng.dsw
+│   │       ├── VisualPng.ico
+│   │       ├── VisualPng.png
+│   │       └── VisualPng.rc
+│   ├── depcomp
+│   ├── example.c
+│   ├── INSTALL
+│   ├── install-sh
+│   ├── intel
+│   │   ├── filter_sse2_intrinsics.c
+│   │   └── intel_init.c
+│   ├── libpng.3
+│   ├── libpng-config.in
+│   ├── libpng-manual.txt
+│   ├── libpng.pc.in
+│   ├── libpngpf.3
+│   ├── LICENSE
+│   ├── ltmain.sh
+│   ├── Makefile.am
+│   ├── Makefile.in
+│   ├── mips
+│   │   ├── filter_msa_intrinsics.c
+│   │   └── mips_init.c
+│   ├── missing
+│   ├── png.5
+│   ├── pngbar.jpg
+│   ├── pngbar.png
+│   ├── png.c
+│   ├── pngconf.h
+│   ├── pngdebug.h
+│   ├── pngerror.c
+│   ├── pngget.c
+│   ├── png.h
+│   ├── pnginfo.h
+│   ├── pngmem.c
+│   ├── pngnow.png
+│   ├── pngpread.c
+│   ├── pngpriv.h
+│   ├── pngread.c
+│   ├── pngrio.c
+│   ├── pngrtran.c
+│   ├── pngrutil.c
+│   ├── pngset.c
+│   ├── pngstruct.h
+│   ├── pngtest.c
+│   ├── pngtest.png
+│   ├── pngtrans.c
+│   ├── pngusr.dfa
+│   ├── pngwio.c
+│   ├── pngwrite.c
+│   ├── pngwtran.c
+│   ├── pngwutil.c
+│   ├── powerpc
+│   │   ├── filter_vsx_intrinsics.c
+│   │   └── powerpc_init.c
+│   ├── projects
+│   │   ├── owatcom
+│   │   │   ├── libpng.tgt
+│   │   │   ├── libpng.wpj
+│   │   │   ├── pngconfig.mak
+│   │   │   ├── pngstest.tgt
+│   │   │   ├── pngtest.tgt
+│   │   │   └── pngvalid.tgt
+│   │   ├── visualc71
+│   │   │   ├── libpng.sln
+│   │   │   ├── libpng.vcproj
+│   │   │   ├── pngtest.vcproj
+│   │   │   ├── PRJ0041.mak
+│   │   │   ├── README.txt
+│   │   │   ├── README_zlib.txt
+│   │   │   └── zlib.vcproj
+│   │   └── vstudio
+│   │       ├── libpng
+│   │       │   └── libpng.vcxproj
+│   │       ├── pnglibconf
+│   │       │   └── pnglibconf.vcxproj
+│   │       ├── pngstest
+│   │       │   └── pngstest.vcxproj
+│   │       ├── pngtest
+│   │       │   └── pngtest.vcxproj
+│   │       ├── pngunknown
+│   │       │   └── pngunknown.vcxproj
+│   │       ├── pngvalid
+│   │       │   └── pngvalid.vcxproj
+│   │       ├── README.txt
+│   │       ├── vstudio.sln
+│   │       ├── zlib
+│   │       │   └── zlib.vcxproj
+│   │       └── zlib.props
+│   ├── README
+│   ├── scripts
+│   │   ├── checksym.awk
+│   │   ├── descrip.mms
+│   │   ├── dfn.awk
+│   │   ├── genchk.cmake.in
+│   │   ├── genout.cmake.in
+│   │   ├── gensrc.cmake.in
+│   │   ├── intprefix.c
+│   │   ├── libpng-config-body.in
+│   │   ├── libpng-config-head.in
+│   │   ├── libpng.pc.in
+│   │   ├── libtool.m4
+│   │   ├── lt~obsolete.m4
+│   │   ├── ltoptions.m4
+│   │   ├── ltsugar.m4
+│   │   ├── ltversion.m4
+│   │   ├── macro.lst
+│   │   ├── makefile.32sunu
+│   │   ├── makefile.64sunu
+│   │   ├── makefile.acorn
+│   │   ├── makefile.aix
+│   │   ├── makefile.amiga
+│   │   ├── makefile.atari
+│   │   ├── makefile.bc32
+│   │   ├── makefile.beos
+│   │   ├── makefile.clang
+│   │   ├── makefile.darwin
+│   │   ├── makefile.dec
+│   │   ├── makefile.dj2
+│   │   ├── makefile.emcc
+│   │   ├── makefile.freebsd
+│   │   ├── makefile.gcc
+│   │   ├── makefile.hp64
+│   │   ├── makefile.hpgcc
+│   │   ├── makefile.hpux
+│   │   ├── makefile.ibmc
+│   │   ├── makefile.intel
+│   │   ├── makefile.linux
+│   │   ├── makefile.mips
+│   │   ├── makefile.msys
+│   │   ├── makefile.netbsd
+│   │   ├── makefile.openbsd
+│   │   ├── makefile.sco
+│   │   ├── makefile.sggcc
+│   │   ├── makefile.sgi
+│   │   ├── makefile.so9
+│   │   ├── makefile.solaris
+│   │   ├── makefile.std
+│   │   ├── makefile.sunos
+│   │   ├── makefile.vcwin32
+│   │   ├── makefile.vcwin-arm64
+│   │   ├── makevms.com
+│   │   ├── options.awk
+│   │   ├── pnglibconf.dfa
+│   │   ├── pnglibconf.h.prebuilt
+│   │   ├── pnglibconf.mak
+│   │   ├── pngwin.rc
+│   │   ├── prefix.c
+│   │   ├── README.txt
+│   │   ├── SCOPTIONS.ppc
+│   │   ├── smakefile.ppc
+│   │   ├── symbols.c
+│   │   ├── symbols.def
+│   │   ├── sym.c
+│   │   ├── test.cmake.in
+│   │   └── vers.c
+│   ├── test-driver
+│   ├── tests
+│   │   ├── pngimage-full
+│   │   ├── pngimage-quick
+│   │   ├── pngstest
+│   │   ├── pngstest-1.8
+│   │   ├── pngstest-1.8-alpha
+│   │   ├── pngstest-linear
+│   │   ├── pngstest-linear-alpha
+│   │   ├── pngstest-none
+│   │   ├── pngstest-none-alpha
+│   │   ├── pngstest-sRGB
+│   │   ├── pngstest-sRGB-alpha
+│   │   ├── pngtest-all
+│   │   ├── pngunknown-discard
+│   │   ├── pngunknown-IDAT
+│   │   ├── pngunknown-if-safe
+│   │   ├── pngunknown-sAPI
+│   │   ├── pngunknown-save
+│   │   ├── pngunknown-sTER
+│   │   ├── pngunknown-vpAg
+│   │   ├── pngvalid-gamma-16-to-8
+│   │   ├── pngvalid-gamma-alpha-mode
+│   │   ├── pngvalid-gamma-background
+│   │   ├── pngvalid-gamma-expand16-alpha-mode
+│   │   ├── pngvalid-gamma-expand16-background
+│   │   ├── pngvalid-gamma-expand16-transform
+│   │   ├── pngvalid-gamma-sbit
+│   │   ├── pngvalid-gamma-threshold
+│   │   ├── pngvalid-gamma-transform
+│   │   ├── pngvalid-progressive-interlace-standard
+│   │   ├── pngvalid-progressive-size
+│   │   ├── pngvalid-progressive-standard
+│   │   ├── pngvalid-standard
+│   │   └── pngvalid-transform
+│   ├── TODO
+│   └── TRADEMARK
+├── snappy
+│   ├── AUTHORS
+│   ├── BUILD.bazel
+│   ├── cmake
+│   │   ├── config.h.in
+│   │   └── SnappyConfig.cmake.in
+│   ├── CMakeLists.txt
+│   ├── CONTRIBUTING.md
+│   ├── COPYING
+│   ├── docs
+│   │   └── README.md
+│   ├── format_description.txt
+│   ├── framing_format.txt
+│   ├── MODULE.bazel
+│   ├── NEWS
+│   ├── README.md
+│   ├── snappy_benchmark.cc
+│   ├── snappy.cc
+│   ├── snappy-c.cc
+│   ├── snappy-c.h
+│   ├── snappy_compress_fuzzer.cc
+│   ├── snappy.h
+│   ├── snappy-internal.h
+│   ├── snappy-sinksource.cc
+│   ├── snappy-sinksource.h
+│   ├── snappy-stubs-internal.cc
+│   ├── snappy-stubs-internal.h
+│   ├── snappy-stubs-public.h.in
+│   ├── snappy-test.cc
+│   ├── snappy_test_data.cc
+│   ├── snappy_test_data.h
+│   ├── snappy-test.h
+│   ├── snappy_test_tool.cc
+│   ├── snappy_uncompress_fuzzer.cc
+│   ├── snappy_unittest.cc
+│   ├── testdata
+│   │   ├── alice29.txt
+│   │   ├── asyoulik.txt
+│   │   ├── baddata1.snappy
+│   │   ├── baddata2.snappy
+│   │   ├── baddata3.snappy
+│   │   ├── fireworks.jpeg
+│   │   ├── geo.protodata
+│   │   ├── html
+│   │   ├── html_x_4
+│   │   ├── kppkn.gtb
+│   │   ├── lcet10.txt
+│   │   ├── paper-100k.pdf
+│   │   ├── plrabn12.txt
+│   │   └── urls.10K
+│   ├── third_party
+│   │   ├── benchmark
+│   │   └── googletest
+│   ├── WORKSPACE
+│   └── WORKSPACE.bzlmod
+└── zlib
+    ├── adler32.c
+    ├── amiga
+    │   ├── Makefile.pup
+    │   └── Makefile.sas
+    ├── ChangeLog
+    ├── CMakeLists.txt
+    ├── compress.c
+    ├── configure
+    ├── contrib
+    │   ├── ada
+    │   │   ├── buffer_demo.adb
+    │   │   ├── mtest.adb
+    │   │   ├── read.adb
+    │   │   ├── readme.txt
+    │   │   ├── test.adb
+    │   │   ├── zlib.adb
+    │   │   ├── zlib.ads
+    │   │   ├── zlib.gpr
+    │   │   ├── zlib-streams.adb
+    │   │   ├── zlib-streams.ads
+    │   │   ├── zlib-thin.adb
+    │   │   └── zlib-thin.ads
+    │   ├── blast
+    │   │   ├── blast.c
+    │   │   ├── blast.h
+    │   │   ├── Makefile
+    │   │   ├── README
+    │   │   ├── test.pk
+    │   │   └── test.txt
+    │   ├── delphi
+    │   │   ├── readme.txt
+    │   │   ├── ZLibConst.pas
+    │   │   ├── zlibd32.mak
+    │   │   └── ZLib.pas
+    │   ├── dotzlib
+    │   │   ├── DotZLib
+    │   │   │   ├── AssemblyInfo.cs
+    │   │   │   ├── ChecksumImpl.cs
+    │   │   │   ├── CircularBuffer.cs
+    │   │   │   ├── CodecBase.cs
+    │   │   │   ├── Deflater.cs
+    │   │   │   ├── DotZLib.cs
+    │   │   │   ├── DotZLib.csproj
+    │   │   │   ├── GZipStream.cs
+    │   │   │   ├── Inflater.cs
+    │   │   │   └── UnitTests.cs
+    │   │   ├── DotZLib.build
+    │   │   ├── DotZLib.chm
+    │   │   ├── DotZLib.sln
+    │   │   ├── LICENSE_1_0.txt
+    │   │   └── readme.txt
+    │   ├── gcc_gvmat64
+    │   │   └── gvmat64.S
+    │   ├── infback9
+    │   │   ├── infback9.c
+    │   │   ├── infback9.h
+    │   │   ├── inffix9.h
+    │   │   ├── inflate9.h
+    │   │   ├── inftree9.c
+    │   │   ├── inftree9.h
+    │   │   └── README
+    │   ├── iostream
+    │   │   ├── test.cpp
+    │   │   ├── zfstream.cpp
+    │   │   └── zfstream.h
+    │   ├── iostream2
+    │   │   ├── zstream.h
+    │   │   └── zstream_test.cpp
+    │   ├── iostream3
+    │   │   ├── README
+    │   │   ├── test.cc
+    │   │   ├── TODO
+    │   │   ├── zfstream.cc
+    │   │   └── zfstream.h
+    │   ├── minizip
+    │   │   ├── configure.ac
+    │   │   ├── crypt.h
+    │   │   ├── ints.h
+    │   │   ├── ioapi.c
+    │   │   ├── ioapi.h
+    │   │   ├── iowin32.c
+    │   │   ├── iowin32.h
+    │   │   ├── Makefile
+    │   │   ├── Makefile.am
+    │   │   ├── make_vms.com
+    │   │   ├── miniunz.c
+    │   │   ├── miniunzip.1
+    │   │   ├── minizip.1
+    │   │   ├── MiniZip64_Changes.txt
+    │   │   ├── MiniZip64_info.txt
+    │   │   ├── minizip.c
+    │   │   ├── minizip.pc.in
+    │   │   ├── mztools.c
+    │   │   ├── mztools.h
+    │   │   ├── skipset.h
+    │   │   ├── unzip.c
+    │   │   ├── unzip.h
+    │   │   ├── zip.c
+    │   │   └── zip.h
+    │   ├── nuget
+    │   │   ├── nuget.csproj
+    │   │   └── nuget.sln
+    │   ├── pascal
+    │   │   ├── example.pas
+    │   │   ├── readme.txt
+    │   │   ├── zlibd32.mak
+    │   │   └── zlibpas.pas
+    │   ├── puff
+    │   │   ├── Makefile
+    │   │   ├── puff.c
+    │   │   ├── puff.h
+    │   │   ├── pufftest.c
+    │   │   ├── README
+    │   │   └── zeros.raw
+    │   ├── README.contrib
+    │   ├── testzlib
+    │   │   ├── testzlib.c
+    │   │   └── testzlib.txt
+    │   ├── untgz
+    │   │   ├── Makefile
+    │   │   ├── Makefile.msc
+    │   │   └── untgz.c
+    │   └── vstudio
+    │       ├── readme.txt
+    │       ├── vc10
+    │       │   ├── miniunz.vcxproj
+    │       │   ├── miniunz.vcxproj.filters
+    │       │   ├── minizip.vcxproj
+    │       │   ├── minizip.vcxproj.filters
+    │       │   ├── testzlibdll.vcxproj
+    │       │   ├── testzlibdll.vcxproj.filters
+    │       │   ├── testzlib.vcxproj
+    │       │   ├── testzlib.vcxproj.filters
+    │       │   ├── zlib.rc
+    │       │   ├── zlibstat.vcxproj
+    │       │   ├── zlibstat.vcxproj.filters
+    │       │   ├── zlibvc.def
+    │       │   ├── zlibvc.sln
+    │       │   ├── zlibvc.vcxproj
+    │       │   └── zlibvc.vcxproj.filters
+    │       ├── vc11
+    │       │   ├── miniunz.vcxproj
+    │       │   ├── minizip.vcxproj
+    │       │   ├── testzlibdll.vcxproj
+    │       │   ├── testzlib.vcxproj
+    │       │   ├── zlib.rc
+    │       │   ├── zlibstat.vcxproj
+    │       │   ├── zlibvc.def
+    │       │   ├── zlibvc.sln
+    │       │   └── zlibvc.vcxproj
+    │       ├── vc12
+    │       │   ├── miniunz.vcxproj
+    │       │   ├── minizip.vcxproj
+    │       │   ├── testzlibdll.vcxproj
+    │       │   ├── testzlib.vcxproj
+    │       │   ├── zlib.rc
+    │       │   ├── zlibstat.vcxproj
+    │       │   ├── zlibvc.def
+    │       │   ├── zlibvc.sln
+    │       │   └── zlibvc.vcxproj
+    │       ├── vc14
+    │       │   ├── miniunz.vcxproj
+    │       │   ├── minizip.vcxproj
+    │       │   ├── testzlibdll.vcxproj
+    │       │   ├── testzlib.vcxproj
+    │       │   ├── zlib.rc
+    │       │   ├── zlibstat.vcxproj
+    │       │   ├── zlibvc.def
+    │       │   ├── zlibvc.sln
+    │       │   └── zlibvc.vcxproj
+    │       ├── vc17
+    │       │   ├── miniunz.vcxproj
+    │       │   ├── minizip.vcxproj
+    │       │   ├── testzlibdll.vcxproj
+    │       │   ├── testzlib.vcxproj
+    │       │   ├── zlib.rc
+    │       │   ├── zlibstat.vcxproj
+    │       │   ├── zlibvc.def
+    │       │   ├── zlibvc.sln
+    │       │   └── zlibvc.vcxproj
+    │       └── vc9
+    │           ├── miniunz.vcproj
+    │           ├── minizip.vcproj
+    │           ├── testzlibdll.vcproj
+    │           ├── testzlib.vcproj
+    │           ├── zlib.rc
+    │           ├── zlibstat.vcproj
+    │           ├── zlibvc.def
+    │           ├── zlibvc.sln
+    │           └── zlibvc.vcproj
+    ├── crc32.c
+    ├── crc32.h
+    ├── deflate.c
+    ├── deflate.h
+    ├── doc
+    │   ├── algorithm.txt
+    │   ├── crc-doc.1.0.pdf
+    │   ├── rfc1950.txt
+    │   ├── rfc1951.txt
+    │   ├── rfc1952.txt
+    │   └── txtvsbin.txt
+    ├── examples
+    │   ├── enough.c
+    │   ├── fitblk.c
+    │   ├── gun.c
+    │   ├── gzappend.c
+    │   ├── gzjoin.c
+    │   ├── gzlog.c
+    │   ├── gzlog.h
+    │   ├── gznorm.c
+    │   ├── README.examples
+    │   ├── zlib_how.html
+    │   ├── zpipe.c
+    │   ├── zran.c
+    │   └── zran.h
+    ├── FAQ
+    ├── gzclose.c
+    ├── gzguts.h
+    ├── gzlib.c
+    ├── gzread.c
+    ├── gzwrite.c
+    ├── INDEX
+    ├── infback.c
+    ├── inffast.c
+    ├── inffast.h
+    ├── inffixed.h
+    ├── inflate.c
+    ├── inflate.h
+    ├── inftrees.c
+    ├── inftrees.h
+    ├── LICENSE
+    ├── Makefile
+    ├── Makefile.in
+    ├── make_vms.com
+    ├── msdos
+    │   ├── Makefile.bor
+    │   ├── Makefile.dj2
+    │   ├── Makefile.emx
+    │   ├── Makefile.msc
+    │   └── Makefile.tc
+    ├── nintendods
+    │   ├── Makefile
+    │   └── README
+    ├── old
+    │   ├── descrip.mms
+    │   ├── Makefile.emx
+    │   ├── Makefile.riscos
+    │   ├── os2
+    │   │   ├── Makefile.os2
+    │   │   └── zlib.def
+    │   ├── README
+    │   └── visual-basic.txt
+    ├── os400
+    │   ├── bndsrc
+    │   ├── make.sh
+    │   ├── README400
+    │   └── zlib.inc
+    ├── qnx
+    │   └── package.qpg
+    ├── README
+    ├── test
+    │   ├── example.c
+    │   ├── infcover.c
+    │   └── minigzip.c
+    ├── treebuild.xml
+    ├── trees.c
+    ├── trees.h
+    ├── uncompr.c
+    ├── watcom
+    │   ├── watcom_f.mak
+    │   └── watcom_l.mak
+    ├── win32
+    │   ├── DLL_FAQ.txt
+    │   ├── Makefile.bor
+    │   ├── Makefile.gcc
+    │   ├── Makefile.msc
+    │   ├── README-WIN32.txt
+    │   ├── VisualC.txt
+    │   ├── zlib1.rc
+    │   └── zlib.def
+    ├── zconf.h
+    ├── zconf.h.cmakein
+    ├── zconf.h.in
+    ├── zlib.3
+    ├── zlib.3.pdf
+    ├── zlib.h
+    ├── zlib.map
+    ├── zlib.pc.cmakein
+    ├── zlib.pc.in
+    ├── zutil.c
+    └── zutil.h
+
+224 directories, 2127 files

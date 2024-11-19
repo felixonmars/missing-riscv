@@ -1,0 +1,1211 @@
+src
+├── open-vm-tools-12.5.0.tar.gz -> /home/felix/packages/open-vm-tools/open-vm-tools-12.5.0.tar.gz
+├── open-vm-tools-stable-12.5.0
+│   ├── open-vm-tools
+│   │   ├── AUTHORS
+│   │   ├── ChangeLog
+│   │   ├── checkvm
+│   │   │   ├── checkvm.c
+│   │   │   ├── checkvm_version.h
+│   │   │   ├── COPYING
+│   │   │   └── Makefile.am
+│   │   ├── configure.ac
+│   │   ├── COPYING
+│   │   ├── docs
+│   │   │   ├── api
+│   │   │   │   ├── doxygen.conf
+│   │   │   │   ├── Makefile.am
+│   │   │   │   └── services
+│   │   │   │       ├── debug.txt
+│   │   │   │       ├── guestrpc.txt
+│   │   │   │       ├── main.doxy
+│   │   │   │       ├── plugins.txt
+│   │   │   │       └── utils.txt
+│   │   │   └── Makefile.am
+│   │   ├── hgfsclient
+│   │   │   ├── COPYING
+│   │   │   ├── hgfsclient.c
+│   │   │   ├── hgfsclient_version.h
+│   │   │   └── Makefile.am
+│   │   ├── lib
+│   │   │   ├── asyncsocket
+│   │   │   │   ├── asyncSocketBase.c
+│   │   │   │   ├── asyncSocketBase.h
+│   │   │   │   ├── asyncsocket.c
+│   │   │   │   ├── asyncSocketInterface.c
+│   │   │   │   ├── asyncSocketVTable.h
+│   │   │   │   └── Makefile.am
+│   │   │   ├── auth
+│   │   │   │   ├── authPosix.c
+│   │   │   │   └── Makefile.am
+│   │   │   ├── backdoor
+│   │   │   │   ├── backdoor.c
+│   │   │   │   ├── backdoorGcc32.c
+│   │   │   │   ├── backdoorGcc64_arm64.c
+│   │   │   │   ├── backdoorGcc64.c
+│   │   │   │   ├── backdoorInt.h
+│   │   │   │   └── Makefile.am
+│   │   │   ├── COPYING
+│   │   │   ├── dataMap
+│   │   │   │   ├── dataMap.c
+│   │   │   │   └── Makefile.am
+│   │   │   ├── dict
+│   │   │   │   ├── dictll.c
+│   │   │   │   └── Makefile.am
+│   │   │   ├── dynxdr
+│   │   │   │   ├── dynxdr.c
+│   │   │   │   ├── Makefile.am
+│   │   │   │   └── xdrutil.c
+│   │   │   ├── err
+│   │   │   │   ├── err.c
+│   │   │   │   ├── errInt.h
+│   │   │   │   ├── errPosix.c
+│   │   │   │   └── Makefile.am
+│   │   │   ├── file
+│   │   │   │   ├── file.c
+│   │   │   │   ├── fileInt.h
+│   │   │   │   ├── fileIO.c
+│   │   │   │   ├── fileIOPosix.c
+│   │   │   │   ├── fileLockPosix.c
+│   │   │   │   ├── fileLockPrimitive.c
+│   │   │   │   ├── filePosix.c
+│   │   │   │   ├── fileStandAlone.c
+│   │   │   │   ├── fileTemp.c
+│   │   │   │   ├── fileTempPosix.c
+│   │   │   │   └── Makefile.am
+│   │   │   ├── foundryMsg
+│   │   │   │   ├── foundryMsg.c
+│   │   │   │   ├── foundryPropertyListCommon.c
+│   │   │   │   ├── Makefile.am
+│   │   │   │   └── vixTranslateErrOpenSource.c
+│   │   │   ├── glibUtils
+│   │   │   │   ├── fileLogger.c
+│   │   │   │   ├── Makefile.am
+│   │   │   │   ├── stdLogger.c
+│   │   │   │   └── sysLogger.c
+│   │   │   ├── globalConfig
+│   │   │   │   ├── globalConfig.c
+│   │   │   │   └── Makefile.am
+│   │   │   ├── guestApp
+│   │   │   │   ├── guestApp.c
+│   │   │   │   └── Makefile.am
+│   │   │   ├── guestRpc
+│   │   │   │   ├── Makefile.am
+│   │   │   │   └── nicinfo.x
+│   │   │   ├── guestStoreClientHelper
+│   │   │   │   ├── guestStoreClient.c
+│   │   │   │   └── Makefile.am
+│   │   │   ├── hashMap
+│   │   │   │   ├── hashMap.c
+│   │   │   │   └── Makefile.am
+│   │   │   ├── hgfs
+│   │   │   │   ├── cpName.c
+│   │   │   │   ├── cpNameInt.h
+│   │   │   │   ├── cpNameLinux.c
+│   │   │   │   ├── cpNameLite.c
+│   │   │   │   ├── cpNameUtil.c
+│   │   │   │   ├── cpNameUtilInt.h
+│   │   │   │   ├── cpNameUtilLinux.c
+│   │   │   │   ├── hgfsEscape.c
+│   │   │   │   ├── hgfsUtil.c
+│   │   │   │   └── Makefile.am
+│   │   │   ├── hgfsBd
+│   │   │   │   ├── hgfsBd.c
+│   │   │   │   └── Makefile.am
+│   │   │   ├── hgfsHelper
+│   │   │   │   ├── hgfsHelperPosix.c
+│   │   │   │   └── Makefile.am
+│   │   │   ├── hgfsServer
+│   │   │   │   ├── hgfsCache.h
+│   │   │   │   ├── hgfsCacheStub.c
+│   │   │   │   ├── hgfsDirNotify.h
+│   │   │   │   ├── hgfsDirNotifyStub.c
+│   │   │   │   ├── hgfsServer.c
+│   │   │   │   ├── hgfsServerInt.h
+│   │   │   │   ├── hgfsServerLinux.c
+│   │   │   │   ├── hgfsServerOplock.c
+│   │   │   │   ├── hgfsServerOplock.h
+│   │   │   │   ├── hgfsServerOplockInt.h
+│   │   │   │   ├── hgfsServerOplockLinux.c
+│   │   │   │   ├── hgfsServerOplockMonitor.c
+│   │   │   │   ├── hgfsServerOplockMonitor.h
+│   │   │   │   ├── hgfsServerPacketUtil.c
+│   │   │   │   ├── hgfsServerParameters.c
+│   │   │   │   ├── hgfsServerParameters.h
+│   │   │   │   ├── hgfsThreadpool.h
+│   │   │   │   ├── hgfsThreadpoolStub.c
+│   │   │   │   └── Makefile.am
+│   │   │   ├── hgfsServerManagerGuest
+│   │   │   │   ├── hgfsChannelGuestBd.c
+│   │   │   │   ├── hgfsChannelGuest.c
+│   │   │   │   ├── hgfsChannelGuestInt.h
+│   │   │   │   ├── hgfsServerManagerGuest.c
+│   │   │   │   └── Makefile.am
+│   │   │   ├── hgfsServerPolicyGuest
+│   │   │   │   ├── hgfsServerPolicyGuest.c
+│   │   │   │   └── Makefile.am
+│   │   │   ├── hgfsUri
+│   │   │   │   ├── hgfsUriPosix.c
+│   │   │   │   └── Makefile.am
+│   │   │   ├── impersonate
+│   │   │   │   ├── impersonate.c
+│   │   │   │   ├── impersonateInt.h
+│   │   │   │   ├── impersonatePosix.c
+│   │   │   │   └── Makefile.am
+│   │   │   ├── include
+│   │   │   │   ├── asyncsocket.h
+│   │   │   │   ├── auth.h
+│   │   │   │   ├── backdoor_def.h
+│   │   │   │   ├── backdoor.h
+│   │   │   │   ├── backdoor_types.h
+│   │   │   │   ├── base64.h
+│   │   │   │   ├── buildNumber.h
+│   │   │   │   ├── capsProvider.h
+│   │   │   │   ├── circList.h
+│   │   │   │   ├── clamped.h
+│   │   │   │   ├── codeset.h
+│   │   │   │   ├── community_source.h
+│   │   │   │   ├── compat
+│   │   │   │   │   └── compat_stdarg.h
+│   │   │   │   ├── conf.h
+│   │   │   │   ├── config.h
+│   │   │   │   ├── cpName.h
+│   │   │   │   ├── cpNameLite.h
+│   │   │   │   ├── cpNameUtil.h
+│   │   │   │   ├── cryptoError.h
+│   │   │   │   ├── dataMap.h
+│   │   │   │   ├── dbllnklst.h
+│   │   │   │   ├── debug.h
+│   │   │   │   ├── deployPkg
+│   │   │   │   │   ├── deployPkgFormat.h
+│   │   │   │   │   └── linuxDeployment.h
+│   │   │   │   ├── dictll.h
+│   │   │   │   ├── dynarray.h
+│   │   │   │   ├── dynbuf.h
+│   │   │   │   ├── dynxdr.h
+│   │   │   │   ├── embed_version.h
+│   │   │   │   ├── err.h
+│   │   │   │   ├── escape.h
+│   │   │   │   ├── file_extensions.h
+│   │   │   │   ├── file.h
+│   │   │   │   ├── fileIO.h
+│   │   │   │   ├── fileLock.h
+│   │   │   │   ├── ghIntegrationCommon.h
+│   │   │   │   ├── glibUtils.h
+│   │   │   │   ├── globalConfig.h
+│   │   │   │   ├── guestApp.h
+│   │   │   │   ├── guestInfo.h
+│   │   │   │   ├── guest_msg_def.h
+│   │   │   │   ├── guest_os.h
+│   │   │   │   ├── guest_os_tables.h
+│   │   │   │   ├── guestStats.h
+│   │   │   │   ├── guestStoreClient.h
+│   │   │   │   ├── guestStoreConst.h
+│   │   │   │   ├── guestStoreDefs.h
+│   │   │   │   ├── hashMap.h
+│   │   │   │   ├── hashTable.h
+│   │   │   │   ├── hgfsBd.h
+│   │   │   │   ├── hgfsDevLinux.h
+│   │   │   │   ├── hgfsEscape.h
+│   │   │   │   ├── hgfs.h
+│   │   │   │   ├── hgfsHelper.h
+│   │   │   │   ├── hgfsProto.h
+│   │   │   │   ├── hgfsServer.h
+│   │   │   │   ├── hgfsServerManager.h
+│   │   │   │   ├── hgfsServerPolicy.h
+│   │   │   │   ├── hgfsUri.h
+│   │   │   │   ├── hgfsUtil.h
+│   │   │   │   ├── hgfsVirtualDir.h
+│   │   │   │   ├── hostinfo.h
+│   │   │   │   ├── hostType.h
+│   │   │   │   ├── imgcust-common
+│   │   │   │   │   ├── imgcust-api.h
+│   │   │   │   │   ├── log.h
+│   │   │   │   │   └── process.h
+│   │   │   │   ├── impersonate.h
+│   │   │   │   ├── includeCheck.h
+│   │   │   │   ├── ioplGet.h
+│   │   │   │   ├── iovector.h
+│   │   │   │   ├── jsmn.h
+│   │   │   │   ├── libExport.hh
+│   │   │   │   ├── localconfig.h
+│   │   │   │   ├── logFixed.h
+│   │   │   │   ├── log.h
+│   │   │   │   ├── loglevel_defs.h
+│   │   │   │   ├── loglevel_user.h
+│   │   │   │   ├── loglevel_userVars.h
+│   │   │   │   ├── logToHost.h
+│   │   │   │   ├── memaligned.h
+│   │   │   │   ├── message.h
+│   │   │   │   ├── mntinfo.h
+│   │   │   │   ├── msgfmt.h
+│   │   │   │   ├── msg.h
+│   │   │   │   ├── msgid_defs.h
+│   │   │   │   ├── msgid.h
+│   │   │   │   ├── msgList.h
+│   │   │   │   ├── mul64.h
+│   │   │   │   ├── mutexRank.h
+│   │   │   │   ├── mutexRankLib.h
+│   │   │   │   ├── netutil.h
+│   │   │   │   ├── nicInfo.h
+│   │   │   │   ├── panic.h
+│   │   │   │   ├── poll.h
+│   │   │   │   ├── pollImpl.h
+│   │   │   │   ├── posix.h
+│   │   │   │   ├── preference.h
+│   │   │   │   ├── procMgr.h
+│   │   │   │   ├── product.h
+│   │   │   │   ├── productState.h
+│   │   │   │   ├── random.h
+│   │   │   │   ├── removable_device.h
+│   │   │   │   ├── rpcin.h
+│   │   │   │   ├── rpcout.h
+│   │   │   │   ├── rpcvmxext.h
+│   │   │   │   ├── rpcvmx.h
+│   │   │   │   ├── sha1.h
+│   │   │   │   ├── sigc++2to3.h
+│   │   │   │   ├── sigPosixRegs.h
+│   │   │   │   ├── slashProc.h
+│   │   │   │   ├── sslDirect.h
+│   │   │   │   ├── str.h
+│   │   │   │   ├── strutil.h
+│   │   │   │   ├── su.h
+│   │   │   │   ├── syncDriver.h
+│   │   │   │   ├── syncDriverIoc.h
+│   │   │   │   ├── system.h
+│   │   │   │   ├── timeutil.h
+│   │   │   │   ├── tracer.hh
+│   │   │   │   ├── unicodeBase.h
+│   │   │   │   ├── unicode.h
+│   │   │   │   ├── unicodeICU.h
+│   │   │   │   ├── unicodeOperations.h
+│   │   │   │   ├── unicodeTransforms.h
+│   │   │   │   ├── unicodeTypes.h
+│   │   │   │   ├── userlock.h
+│   │   │   │   ├── util.h
+│   │   │   │   ├── utilZero.h
+│   │   │   │   ├── uuid.h
+│   │   │   │   ├── vixCommands.h
+│   │   │   │   ├── vix.h
+│   │   │   │   ├── vixOpenSource.h
+│   │   │   │   ├── vm_api.h
+│   │   │   │   ├── vm_assert.h
+│   │   │   │   ├── vm_atomic_arm64_begin.h
+│   │   │   │   ├── vm_atomic_arm64_end.h
+│   │   │   │   ├── vm_atomic.h
+│   │   │   │   ├── vm_basic_asm_arm64.h
+│   │   │   │   ├── vm_basic_asm.h
+│   │   │   │   ├── vm_basic_asm_x86_64.h
+│   │   │   │   ├── vm_basic_asm_x86_common.h
+│   │   │   │   ├── vm_basic_asm_x86.h
+│   │   │   │   ├── vm_basic_defs.h
+│   │   │   │   ├── vm_basic_types.h
+│   │   │   │   ├── vmblock.h
+│   │   │   │   ├── vmblock_user.h
+│   │   │   │   ├── vmcheck.h
+│   │   │   │   ├── vmci_defs.h
+│   │   │   │   ├── vmci_sockets.h
+│   │   │   │   ├── vm_compilation_options.h
+│   │   │   │   ├── vm_ctype.h
+│   │   │   │   ├── vm_device_version.h
+│   │   │   │   ├── vmfs.h
+│   │   │   │   ├── vmGuestAppMonitorLib.h
+│   │   │   │   ├── vmGuestLib.h
+│   │   │   │   ├── vmk_exports.h
+│   │   │   │   ├── vm_product.h
+│   │   │   │   ├── vm_product_versions.h
+│   │   │   │   ├── vmSessionId.h
+│   │   │   │   ├── vmsignal.h
+│   │   │   │   ├── vmstdio.h
+│   │   │   │   ├── vmsupport.h
+│   │   │   │   ├── vmtoolsd_version.h
+│   │   │   │   ├── vm_tools_version.h
+│   │   │   │   ├── vm_valgrind.h
+│   │   │   │   ├── vm_version.h
+│   │   │   │   ├── vm_vmx_type.h
+│   │   │   │   ├── vmware
+│   │   │   │   │   ├── guestrpc
+│   │   │   │   │   │   ├── appInfo.h
+│   │   │   │   │   │   ├── capabilities.h
+│   │   │   │   │   │   ├── containerInfo.h
+│   │   │   │   │   │   ├── deploypkg.h
+│   │   │   │   │   │   ├── guestcust-events.h
+│   │   │   │   │   │   ├── powerops.h
+│   │   │   │   │   │   ├── serviceDiscovery.h
+│   │   │   │   │   │   ├── tclodefs.h
+│   │   │   │   │   │   ├── timesync.h
+│   │   │   │   │   │   └── vmbackup.h
+│   │   │   │   │   └── tools
+│   │   │   │   │       ├── desktopevents.h
+│   │   │   │   │       ├── gdp.h
+│   │   │   │   │       ├── guestrpc.h
+│   │   │   │   │       ├── guestStoreClientLib.h
+│   │   │   │   │       ├── guestStore.h
+│   │   │   │   │       ├── i18n.h
+│   │   │   │   │       ├── log.h
+│   │   │   │   │       ├── plugin.h
+│   │   │   │   │       ├── rpcdebug.h
+│   │   │   │   │       ├── threadPool.h
+│   │   │   │   │       ├── utils.h
+│   │   │   │   │       └── vmbackup.h
+│   │   │   │   ├── vmware.h
+│   │   │   │   ├── vmxrpc.h
+│   │   │   │   ├── vthreadBase.h
+│   │   │   │   ├── wiper.h
+│   │   │   │   ├── x86_basic_defs.h
+│   │   │   │   ├── x86cpuid_asm.h
+│   │   │   │   ├── x86cpuid.h
+│   │   │   │   ├── x86vendor.h
+│   │   │   │   ├── xdg.h
+│   │   │   │   └── xdrutil.h
+│   │   │   ├── jsmn
+│   │   │   │   ├── jsmn.c
+│   │   │   │   ├── LICENSE
+│   │   │   │   ├── Makefile.am
+│   │   │   │   └── README
+│   │   │   ├── lock
+│   │   │   │   ├── Makefile.am
+│   │   │   │   ├── ulBarrier.c
+│   │   │   │   ├── ul.c
+│   │   │   │   ├── ulCondVar.c
+│   │   │   │   ├── ulExcl.c
+│   │   │   │   ├── ulInt.h
+│   │   │   │   ├── ulIntShared.h
+│   │   │   │   ├── ulRec.c
+│   │   │   │   ├── ulRW.c
+│   │   │   │   ├── ulSema.c
+│   │   │   │   └── ulStats.c
+│   │   │   ├── Makefile.am
+│   │   │   ├── message
+│   │   │   │   ├── Makefile.am
+│   │   │   │   └── message.c
+│   │   │   ├── misc
+│   │   │   │   ├── base64.c
+│   │   │   │   ├── codesetBase.c
+│   │   │   │   ├── codeset.c
+│   │   │   │   ├── codesetOld.c
+│   │   │   │   ├── codesetOld.h
+│   │   │   │   ├── codesetUTF8.c
+│   │   │   │   ├── dynarray.c
+│   │   │   │   ├── dynbuf.c
+│   │   │   │   ├── escape.c
+│   │   │   │   ├── hashTable.c
+│   │   │   │   ├── hostinfo.c
+│   │   │   │   ├── hostinfoHV.c
+│   │   │   │   ├── hostinfoInt.h
+│   │   │   │   ├── hostinfoPosix.c
+│   │   │   │   ├── hostname.c
+│   │   │   │   ├── hostType.c
+│   │   │   │   ├── idLinux.c
+│   │   │   │   ├── iovector.c
+│   │   │   │   ├── jsonUTF8.c
+│   │   │   │   ├── logFixed.c
+│   │   │   │   ├── machineID.c
+│   │   │   │   ├── Makefile.am
+│   │   │   │   ├── miscSolaris.c
+│   │   │   │   ├── posixDlopen.c
+│   │   │   │   ├── posixInt.h
+│   │   │   │   ├── posixPosix.c
+│   │   │   │   ├── posixPwd.c
+│   │   │   │   ├── prng.c
+│   │   │   │   ├── random.c
+│   │   │   │   ├── sha1.c
+│   │   │   │   ├── sleep.c
+│   │   │   │   ├── strutil.c
+│   │   │   │   ├── timeutil.c
+│   │   │   │   ├── utilMem.c
+│   │   │   │   ├── util_misc.c
+│   │   │   │   ├── vmstdio.c
+│   │   │   │   └── vthreadBase.c
+│   │   │   ├── netUtil
+│   │   │   │   ├── Makefile.am
+│   │   │   │   └── netUtilLinux.c
+│   │   │   ├── nicInfo
+│   │   │   │   ├── compareNicInfo.c
+│   │   │   │   ├── Makefile.am
+│   │   │   │   ├── nicInfo.c
+│   │   │   │   ├── nicInfoInt.h
+│   │   │   │   ├── nicInfoPosix.c
+│   │   │   │   └── util.c
+│   │   │   ├── panic
+│   │   │   │   ├── Makefile.am
+│   │   │   │   └── panic.c
+│   │   │   ├── panicDefault
+│   │   │   │   ├── Makefile.am
+│   │   │   │   └── panicDefault.c
+│   │   │   ├── poll
+│   │   │   │   ├── Makefile.am
+│   │   │   │   └── poll.c
+│   │   │   ├── pollGtk
+│   │   │   │   ├── Makefile.am
+│   │   │   │   └── pollGtk.c
+│   │   │   ├── procMgr
+│   │   │   │   ├── Makefile.am
+│   │   │   │   ├── procMgrPosix.c
+│   │   │   │   └── procMgrSolaris.c
+│   │   │   ├── rpcChannel
+│   │   │   │   ├── bdoorChannel.c
+│   │   │   │   ├── glib_stubs.c
+│   │   │   │   ├── Makefile.am
+│   │   │   │   ├── rpcChannel.c
+│   │   │   │   ├── rpcChannelInt.h
+│   │   │   │   ├── simpleSocket.c
+│   │   │   │   ├── simpleSocket.h
+│   │   │   │   └── vsockChannel.c
+│   │   │   ├── rpcIn
+│   │   │   │   ├── Makefile.am
+│   │   │   │   └── rpcin.c
+│   │   │   ├── rpcOut
+│   │   │   │   ├── Makefile.am
+│   │   │   │   └── rpcout.c
+│   │   │   ├── rpcVmx
+│   │   │   │   ├── Makefile.am
+│   │   │   │   └── rpcvmx.c
+│   │   │   ├── slashProc
+│   │   │   │   ├── Makefile.am
+│   │   │   │   ├── net.c
+│   │   │   │   └── slashProcNetInt.h
+│   │   │   ├── sslDirect
+│   │   │   │   ├── Makefile.am
+│   │   │   │   └── sslStubs.c
+│   │   │   ├── string
+│   │   │   │   ├── Makefile.am
+│   │   │   │   └── str.c
+│   │   │   ├── stubs
+│   │   │   │   ├── Makefile.am
+│   │   │   │   ├── stub-config.c
+│   │   │   │   ├── stub-debug.c
+│   │   │   │   ├── stub-log.c
+│   │   │   │   ├── stub-msgfmt-fbsd.c
+│   │   │   │   ├── stub-panic.c
+│   │   │   │   ├── stub-user-msg.c
+│   │   │   │   ├── stub-user-panic.c
+│   │   │   │   ├── stub-user-util.c
+│   │   │   │   └── stub-warning.c
+│   │   │   ├── syncDriver
+│   │   │   │   ├── Makefile.am
+│   │   │   │   ├── nullDriver.c
+│   │   │   │   ├── syncDriverInt.h
+│   │   │   │   ├── syncDriverLinux.c
+│   │   │   │   ├── syncDriverPosix.c
+│   │   │   │   └── vmSyncDriver.c
+│   │   │   ├── system
+│   │   │   │   ├── Makefile.am
+│   │   │   │   └── systemLinux.c
+│   │   │   ├── unicode
+│   │   │   │   ├── Makefile.am
+│   │   │   │   ├── unicodeCommon.c
+│   │   │   │   ├── unicodeICU.c
+│   │   │   │   ├── unicodeInt.h
+│   │   │   │   ├── unicodeSimpleBase.c
+│   │   │   │   ├── unicodeSimpleCaseFolding.c
+│   │   │   │   ├── unicodeSimpleOperations.c
+│   │   │   │   ├── unicodeSimpleTransforms.c
+│   │   │   │   ├── unicodeSimpleTypes.c
+│   │   │   │   └── unicodeStatic.c
+│   │   │   ├── user
+│   │   │   │   ├── Makefile.am
+│   │   │   │   ├── utilBacktrace.c
+│   │   │   │   └── util.c
+│   │   │   ├── vmCheck
+│   │   │   │   ├── Makefile.am
+│   │   │   │   └── vmcheck.c
+│   │   │   ├── vmSignal
+│   │   │   │   ├── Makefile.am
+│   │   │   │   └── vmsignal.c
+│   │   │   ├── wiper
+│   │   │   │   ├── Makefile.am
+│   │   │   │   ├── wiperCommon.c
+│   │   │   │   └── wiperPosix.c
+│   │   │   └── xdg
+│   │   │       ├── Makefile.am
+│   │   │       └── xdg.c
+│   │   ├── libappmonitor
+│   │   │   ├── appmonitor.pc.in
+│   │   │   ├── COPYING
+│   │   │   ├── Makefile.am
+│   │   │   ├── stub-debug.c
+│   │   │   ├── vmGuestAppMonitorLib.c
+│   │   │   ├── vmGuestAppMonitorLibInt.h
+│   │   │   └── vmguestappmonitorlib_version.h
+│   │   ├── libDeployPkg
+│   │   │   ├── COPYING
+│   │   │   ├── libDeployPkg.pc.in
+│   │   │   ├── linuxDeployment.c
+│   │   │   ├── linuxDeploymentUtilities.c
+│   │   │   ├── linuxDeploymentUtilities.h
+│   │   │   ├── Makefile.am
+│   │   │   ├── mspackConfig.h
+│   │   │   ├── mspackWrapper.c
+│   │   │   ├── mspackWrapper.h
+│   │   │   └── processPosix.c
+│   │   ├── libguestlib
+│   │   │   ├── COPYING
+│   │   │   ├── guestlibIoctl.x
+│   │   │   ├── guestlibV3.x
+│   │   │   ├── guestSDKLog.c
+│   │   │   ├── Makefile.am
+│   │   │   ├── vmGuestLib.c
+│   │   │   ├── vmGuestLibInt.h
+│   │   │   └── vmguestlib.pc.in
+│   │   ├── libguestStoreClient
+│   │   │   ├── COPYING
+│   │   │   ├── guestStoreClientLib.c
+│   │   │   ├── guestStoreClientLibInt.h
+│   │   │   ├── gueststoreclientlib_version.h
+│   │   │   └── Makefile.am
+│   │   ├── libhgfs
+│   │   │   ├── COPYING
+│   │   │   ├── hgfslib.c
+│   │   │   └── Makefile.am
+│   │   ├── libvmtools
+│   │   │   ├── COPYING
+│   │   │   ├── i18n.c
+│   │   │   ├── Makefile.am
+│   │   │   ├── monotonicTimer.c
+│   │   │   ├── signalSource.c
+│   │   │   ├── vmtools.c
+│   │   │   ├── vmtoolsConfig.c
+│   │   │   ├── vmtoolsInt.h
+│   │   │   ├── vmtoolslib_version.h
+│   │   │   ├── vmtoolsLog.c
+│   │   │   └── vmxLogger.c
+│   │   ├── LICENSE
+│   │   ├── m4
+│   │   │   ├── COPYING
+│   │   │   └── vmtools.m4
+│   │   ├── Makefile.am
+│   │   ├── modules
+│   │   │   ├── freebsd
+│   │   │   │   ├── shared
+│   │   │   │   │   ├── compat_freebsd.h
+│   │   │   │   │   ├── compat_mount.h
+│   │   │   │   │   ├── compat_priv.h
+│   │   │   │   │   └── compat_vop.h
+│   │   │   │   ├── vmblock
+│   │   │   │   │   ├── COPYING
+│   │   │   │   │   ├── Makefile
+│   │   │   │   │   ├── os.h
+│   │   │   │   │   ├── os_panic.c
+│   │   │   │   │   ├── subr.c
+│   │   │   │   │   ├── vfsops.c
+│   │   │   │   │   ├── vmblock_k.h
+│   │   │   │   │   └── vnops.c
+│   │   │   │   └── vmmemctl
+│   │   │   │       ├── COPYING
+│   │   │   │       ├── kernelStubsBSD.c
+│   │   │   │       ├── Makefile
+│   │   │   │       ├── os.c
+│   │   │   │       └── README
+│   │   │   ├── Makefile.am
+│   │   │   ├── shared
+│   │   │   │   ├── vmblock
+│   │   │   │   │   ├── block.c
+│   │   │   │   │   ├── block.h
+│   │   │   │   │   └── stubs.c
+│   │   │   │   ├── vmmemctl
+│   │   │   │   │   ├── backdoor_balloon.c
+│   │   │   │   │   ├── backdoor_balloon.h
+│   │   │   │   │   ├── balloon_def.h
+│   │   │   │   │   ├── balloonInt.h
+│   │   │   │   │   ├── dbllnklst.h
+│   │   │   │   │   ├── kernelStubs.h
+│   │   │   │   │   ├── kernelStubsSal.h
+│   │   │   │   │   ├── os.h
+│   │   │   │   │   ├── vmballoon.c
+│   │   │   │   │   └── vmballoon.h
+│   │   │   │   └── vmxnet
+│   │   │   │       ├── eth_public.h
+│   │   │   │       ├── net.h
+│   │   │   │       ├── net_sg.h
+│   │   │   │       ├── upt1_defs.h
+│   │   │   │       ├── vmnet_def.h
+│   │   │   │       ├── vmxnet2_def.h
+│   │   │   │       ├── vmxnet3_defs.h
+│   │   │   │       └── vmxnet_def.h
+│   │   │   └── solaris
+│   │   │       ├── vmblock
+│   │   │       │   ├── COPYING
+│   │   │       │   ├── Makefile
+│   │   │       │   ├── module.c
+│   │   │       │   ├── module.h
+│   │   │       │   ├── os.h
+│   │   │       │   ├── vfsops.c
+│   │   │       │   └── vnops.c
+│   │   │       ├── vmhgfs
+│   │   │       │   ├── COPYING
+│   │   │       │   ├── debug.c
+│   │   │       │   ├── debug.h
+│   │   │       │   ├── docs
+│   │   │       │   │   ├── append-to-devlink.tab
+│   │   │       │   │   ├── BUILD
+│   │   │       │   │   ├── FILES
+│   │   │       │   │   ├── hgfs-9-to-10.txt
+│   │   │       │   │   ├── hgfs.conf
+│   │   │       │   │   ├── kadb.txt
+│   │   │       │   │   ├── request-lifecycle.txt
+│   │   │       │   │   └── synchronization.txt
+│   │   │       │   ├── filesystem.c
+│   │   │       │   ├── filesystem.h
+│   │   │       │   ├── hgfsBdGlue.c
+│   │   │       │   ├── hgfsBdGlue.h
+│   │   │       │   ├── hgfsSolaris.h
+│   │   │       │   ├── hgfsState.c
+│   │   │       │   ├── hgfsState.h
+│   │   │       │   ├── kernelStubs.h
+│   │   │       │   ├── kernelStubsSolaris.c
+│   │   │       │   ├── Makefile
+│   │   │       │   ├── module.c
+│   │   │       │   ├── module.h
+│   │   │       │   ├── request.c
+│   │   │       │   ├── request.h
+│   │   │       │   ├── vnode.c
+│   │   │       │   └── vnode.h
+│   │   │       ├── vmmemctl
+│   │   │       │   ├── COPYING
+│   │   │       │   ├── kernelStubsSolaris.c
+│   │   │       │   ├── Makefile
+│   │   │       │   ├── os.c
+│   │   │       │   ├── README
+│   │   │       │   ├── vmballoon_kstats.c
+│   │   │       │   └── vmballoon_kstats.h
+│   │   │       ├── vmxnet
+│   │   │       │   ├── COPYING
+│   │   │       │   ├── Makefile
+│   │   │       │   └── vmxnet.c
+│   │   │       └── vmxnet3
+│   │   │           ├── COPYING
+│   │   │           ├── Makefile
+│   │   │           ├── vmxnet3_main.c
+│   │   │           ├── vmxnet3_rx.c
+│   │   │           ├── vmxnet3s.conf
+│   │   │           ├── vmxnet3_solaris_compat.h
+│   │   │           ├── vmxnet3_solaris.h
+│   │   │           ├── vmxnet3_tx.c
+│   │   │           └── vmxnet3_utils.c
+│   │   ├── namespacetool
+│   │   │   ├── COPYING
+│   │   │   ├── Makefile.am
+│   │   │   └── namespacetool.c
+│   │   ├── NEWS
+│   │   ├── pam
+│   │   │   ├── debian
+│   │   │   ├── generic
+│   │   │   ├── redhat
+│   │   │   └── suse
+│   │   ├── README
+│   │   ├── rpctool
+│   │   │   ├── COPYING
+│   │   │   ├── Makefile.am
+│   │   │   └── rpctool.c
+│   │   ├── scripts
+│   │   │   ├── build
+│   │   │   │   ├── instvmsg.sh
+│   │   │   │   └── rpcgen_wrapper.sh.in
+│   │   │   ├── common
+│   │   │   │   ├── guestproxy-ssl.conf
+│   │   │   │   ├── statechange.sh
+│   │   │   │   ├── statechange.subr
+│   │   │   │   ├── vm-support
+│   │   │   │   ├── vmware-toolbox.desktop
+│   │   │   │   └── vmware-xdg-detect-de
+│   │   │   ├── COPYING
+│   │   │   ├── freebsd
+│   │   │   │   └── network
+│   │   │   ├── linux
+│   │   │   │   └── network
+│   │   │   ├── Makefile.am
+│   │   │   └── solaris
+│   │   │       └── network
+│   │   ├── services
+│   │   │   ├── Makefile.am
+│   │   │   ├── plugins
+│   │   │   │   ├── appInfo
+│   │   │   │   │   ├── appInfo.c
+│   │   │   │   │   ├── appInfoInt.h
+│   │   │   │   │   ├── appInfoPosix.c
+│   │   │   │   │   ├── appInfoUtil.c
+│   │   │   │   │   ├── COPYING
+│   │   │   │   │   └── Makefile.am
+│   │   │   │   ├── componentMgr
+│   │   │   │   │   ├── componentMgr.c
+│   │   │   │   │   ├── componentMgrInstallAction.c
+│   │   │   │   │   ├── componentMgrInstallManager.c
+│   │   │   │   │   ├── componentMgrPlugin.h
+│   │   │   │   │   ├── componentMgrUtil.c
+│   │   │   │   │   ├── COPYING
+│   │   │   │   │   ├── Makefile.am
+│   │   │   │   │   └── svtminion.sh
+│   │   │   │   ├── containerInfo
+│   │   │   │   │   ├── containerInfo.c
+│   │   │   │   │   ├── containerInfo_docker.c
+│   │   │   │   │   ├── containerInfo_grpc.cc
+│   │   │   │   │   ├── containerInfoInt.h
+│   │   │   │   │   ├── COPYING
+│   │   │   │   │   └── Makefile.am
+│   │   │   │   ├── deployPkg
+│   │   │   │   │   ├── COPYING
+│   │   │   │   │   ├── deployPkg.c
+│   │   │   │   │   ├── deployPkgInt.h
+│   │   │   │   │   ├── deployPkgLog.c
+│   │   │   │   │   ├── deployPkgPlugin.c
+│   │   │   │   │   └── Makefile.am
+│   │   │   │   ├── desktopEvents
+│   │   │   │   │   ├── COPYING
+│   │   │   │   │   ├── deFeatures.h
+│   │   │   │   │   ├── desktopEvents.c
+│   │   │   │   │   ├── desktopEventsInt.h
+│   │   │   │   │   ├── Makefile.am
+│   │   │   │   │   ├── reload.c
+│   │   │   │   │   ├── sessionMgr.c
+│   │   │   │   │   ├── sessionMgrSignals.gm
+│   │   │   │   │   ├── x11Lock.c
+│   │   │   │   │   └── xioError.c
+│   │   │   │   ├── dndcp
+│   │   │   │   │   ├── COPYING
+│   │   │   │   │   ├── copyPasteCompat.c
+│   │   │   │   │   ├── copyPasteCompat.h
+│   │   │   │   │   ├── copyPasteCompatX11.c
+│   │   │   │   │   ├── copyPasteDnDX11.cpp
+│   │   │   │   │   ├── copyPasteUIX11.cpp
+│   │   │   │   │   ├── copyPasteUIX11.h
+│   │   │   │   │   ├── cpFileContents.x
+│   │   │   │   │   ├── dnd
+│   │   │   │   │   │   ├── copyPasteRpc.hh
+│   │   │   │   │   │   ├── copyPasteRpcV4.hh
+│   │   │   │   │   │   ├── dndClipboard.c
+│   │   │   │   │   │   ├── dndClipboard.h
+│   │   │   │   │   │   ├── dndCommon.c
+│   │   │   │   │   │   ├── dndCPLibExport.hh
+│   │   │   │   │   │   ├── dndCPMsgV4.c
+│   │   │   │   │   │   ├── dndCPMsgV4.h
+│   │   │   │   │   │   ├── dndCPTransport.h
+│   │   │   │   │   │   ├── dndFileContentsUtil.h
+│   │   │   │   │   │   ├── dnd.h
+│   │   │   │   │   │   ├── dndInt.h
+│   │   │   │   │   │   ├── dndLinux.c
+│   │   │   │   │   │   ├── dndMsg.c
+│   │   │   │   │   │   ├── dndMsg.h
+│   │   │   │   │   │   ├── dndRpc.hh
+│   │   │   │   │   │   ├── dndRpcV4.hh
+│   │   │   │   │   │   ├── dndXdg.c
+│   │   │   │   │   │   ├── fileTransferRpc.hh
+│   │   │   │   │   │   ├── fileTransferRpcV4.hh
+│   │   │   │   │   │   ├── rpcBase.h
+│   │   │   │   │   │   └── rpcV3Util.hpp
+│   │   │   │   │   ├── dndcp.cpp
+│   │   │   │   │   ├── dndFileList.hh
+│   │   │   │   │   ├── dndGuest
+│   │   │   │   │   │   ├── copyPasteRpcV3.cc
+│   │   │   │   │   │   ├── copyPasteRpcV3.hh
+│   │   │   │   │   │   ├── copyPasteRpcV4.cc
+│   │   │   │   │   │   ├── dndCPTransportGuestRpc.cpp
+│   │   │   │   │   │   ├── dndCPTransportGuestRpc.hpp
+│   │   │   │   │   │   ├── dndRpcListener.hpp
+│   │   │   │   │   │   ├── dndRpcV4.cc
+│   │   │   │   │   │   ├── fileTransferRpcV4.cc
+│   │   │   │   │   │   ├── guestCopyPasteDest.cc
+│   │   │   │   │   │   ├── guestCopyPasteMgr.cc
+│   │   │   │   │   │   ├── guestCopyPasteSrc.cc
+│   │   │   │   │   │   ├── rpcV3Util.cpp
+│   │   │   │   │   │   ├── rpcV4Util.cpp
+│   │   │   │   │   │   ├── rpcV4Util.hpp
+│   │   │   │   │   │   ├── vmGuestDnDCPMgr.cc
+│   │   │   │   │   │   ├── vmGuestDnDCPMgr.hh
+│   │   │   │   │   │   ├── vmGuestDnDMgr.cc
+│   │   │   │   │   │   ├── vmGuestDnDMgr.hh
+│   │   │   │   │   │   ├── vmGuestDnDSrc.cc
+│   │   │   │   │   │   ├── vmGuestDnDSrc.hh
+│   │   │   │   │   │   ├── vmGuestFileTransfer.cc
+│   │   │   │   │   │   └── vmGuestFileTransfer.hh
+│   │   │   │   │   ├── dndGuestBase
+│   │   │   │   │   │   ├── copyPasteDnDImpl.h
+│   │   │   │   │   │   ├── copyPasteDnDWrapper.cpp
+│   │   │   │   │   │   ├── copyPasteDnDWrapper.h
+│   │   │   │   │   │   ├── copyPasteDnDX11.h
+│   │   │   │   │   │   ├── dndFileList.cc
+│   │   │   │   │   │   ├── dndFileList.hh
+│   │   │   │   │   │   ├── dndPluginInt.h
+│   │   │   │   │   │   ├── dndRpcV3.cc
+│   │   │   │   │   │   ├── dndRpcV3.hh
+│   │   │   │   │   │   ├── dndUIX11.h
+│   │   │   │   │   │   ├── dragDetWndX11.h
+│   │   │   │   │   │   ├── guestCopyPaste.hh
+│   │   │   │   │   │   ├── guestDnDCPMgr.cc
+│   │   │   │   │   │   ├── guestDnDCPMgr.hh
+│   │   │   │   │   │   ├── guestDnDDest.cc
+│   │   │   │   │   │   ├── guestDnD.hh
+│   │   │   │   │   │   ├── guestDnDMgr.cc
+│   │   │   │   │   │   ├── guestDnDSrc.cc
+│   │   │   │   │   │   ├── guestFileTransfer.cc
+│   │   │   │   │   │   └── guestFileTransfer.hh
+│   │   │   │   │   ├── dndPluginIntX11.h
+│   │   │   │   │   ├── dndUIX11.cpp
+│   │   │   │   │   ├── dragDetWndX11.cpp
+│   │   │   │   │   ├── fakeMouseWayland
+│   │   │   │   │   │   ├── fakeMouseWayland.cpp
+│   │   │   │   │   │   └── fakeMouseWayland.h
+│   │   │   │   │   ├── Makefile.am
+│   │   │   │   │   ├── pointer.cpp
+│   │   │   │   │   ├── pointer.h
+│   │   │   │   │   ├── stringxx
+│   │   │   │   │   │   ├── autoCPtr.hh
+│   │   │   │   │   │   ├── string.cc
+│   │   │   │   │   │   ├── string.hh
+│   │   │   │   │   │   └── ubstr_t.hh
+│   │   │   │   │   ├── vmCopyPasteDnDWrapper.cpp
+│   │   │   │   │   ├── vmCopyPasteDnDWrapper.h
+│   │   │   │   │   └── xutils
+│   │   │   │   │       ├── xutils.cc
+│   │   │   │   │       └── xutils.hh
+│   │   │   │   ├── gdp
+│   │   │   │   │   ├── COPYING
+│   │   │   │   │   ├── gdpPlugin.c
+│   │   │   │   │   └── Makefile.am
+│   │   │   │   ├── guestInfo
+│   │   │   │   │   ├── COPYING
+│   │   │   │   │   ├── diskInfo.c
+│   │   │   │   │   ├── diskInfoPosix.c
+│   │   │   │   │   ├── guestInfoInt.h
+│   │   │   │   │   ├── guestInfoServer.c
+│   │   │   │   │   ├── Makefile.am
+│   │   │   │   │   └── perfMonLinux.c
+│   │   │   │   ├── guestStore
+│   │   │   │   │   ├── COPYING
+│   │   │   │   │   ├── guestStorePlugin.c
+│   │   │   │   │   └── Makefile.am
+│   │   │   │   ├── hgfsServer
+│   │   │   │   │   ├── COPYING
+│   │   │   │   │   ├── hgfsPlugin.c
+│   │   │   │   │   └── Makefile.am
+│   │   │   │   ├── Makefile.am
+│   │   │   │   ├── powerOps
+│   │   │   │   │   ├── COPYING
+│   │   │   │   │   ├── Makefile.am
+│   │   │   │   │   └── powerOps.c
+│   │   │   │   ├── resolutionKMS
+│   │   │   │   │   ├── COPYING
+│   │   │   │   │   ├── Makefile.am
+│   │   │   │   │   └── resolutionKMS.c
+│   │   │   │   ├── resolutionSet
+│   │   │   │   │   ├── COPYING
+│   │   │   │   │   ├── libvmwarectrl.c
+│   │   │   │   │   ├── libvmwarectrl.h
+│   │   │   │   │   ├── Makefile.am
+│   │   │   │   │   ├── resolutionCommon.c
+│   │   │   │   │   ├── resolutionCommon.h
+│   │   │   │   │   ├── resolutionDL.c
+│   │   │   │   │   ├── resolutionDL.h
+│   │   │   │   │   ├── resolutionInt.h
+│   │   │   │   │   ├── resolutionRandR12.c
+│   │   │   │   │   ├── resolutionRandR12.h
+│   │   │   │   │   ├── resolutionSet.c
+│   │   │   │   │   ├── resolutionX11.c
+│   │   │   │   │   ├── vmwarectrl.h
+│   │   │   │   │   └── vmwarectrlproto.h
+│   │   │   │   ├── serviceDiscovery
+│   │   │   │   │   ├── COPYING
+│   │   │   │   │   ├── get-connection-info.sh
+│   │   │   │   │   ├── get-listening-process-info.sh
+│   │   │   │   │   ├── get-listening-process-perf-metrics.sh
+│   │   │   │   │   ├── get-versions.sh
+│   │   │   │   │   ├── Makefile.am
+│   │   │   │   │   ├── serviceDiscovery.c
+│   │   │   │   │   ├── serviceDiscoveryInt.h
+│   │   │   │   │   └── serviceDiscoveryPosix.c
+│   │   │   │   ├── timeSync
+│   │   │   │   │   ├── COPYING
+│   │   │   │   │   ├── Makefile.am
+│   │   │   │   │   ├── pllLinux.c
+│   │   │   │   │   ├── pllNone.c
+│   │   │   │   │   ├── slewAdjtime.c
+│   │   │   │   │   ├── slewLinux.c
+│   │   │   │   │   ├── timeInfo.c
+│   │   │   │   │   ├── timeInfo.h
+│   │   │   │   │   ├── timeSync.c
+│   │   │   │   │   ├── timeSync.h
+│   │   │   │   │   ├── timeSyncPosix.c
+│   │   │   │   │   └── timeSyncPosix.h
+│   │   │   │   ├── vix
+│   │   │   │   │   ├── COPYING
+│   │   │   │   │   ├── foundryToolsDaemon.c
+│   │   │   │   │   ├── Makefile.am
+│   │   │   │   │   ├── vixPlugin.c
+│   │   │   │   │   ├── vixPluginInt.h
+│   │   │   │   │   ├── vixTools.c
+│   │   │   │   │   ├── vixToolsEnvVars.c
+│   │   │   │   │   └── vixToolsInt.h
+│   │   │   │   └── vmbackup
+│   │   │   │       ├── COPYING
+│   │   │   │       ├── guestQuiesce.x
+│   │   │   │       ├── Makefile.am
+│   │   │   │       ├── nullProvider.c
+│   │   │   │       ├── README
+│   │   │   │       ├── scriptOps.c
+│   │   │   │       ├── stateMachine.c
+│   │   │   │       ├── syncDriverOps.c
+│   │   │   │       ├── syncManifest.c
+│   │   │   │       ├── syncManifest.h
+│   │   │   │       ├── vmBackupInt.h
+│   │   │   │       └── vmBackupSignals.gm
+│   │   │   └── vmtoolsd
+│   │   │       ├── cmdLine.c
+│   │   │       ├── COPYING
+│   │   │       ├── l10n
+│   │   │       │   ├── de.vmsg
+│   │   │       │   ├── en.vmsg
+│   │   │       │   ├── es.vmsg
+│   │   │       │   ├── fr.vmsg
+│   │   │       │   ├── it.vmsg
+│   │   │       │   ├── ja.vmsg
+│   │   │       │   ├── ko.vmsg
+│   │   │       │   ├── zh_CN.vmsg
+│   │   │       │   └── zh_TW.vmsg
+│   │   │       ├── mainLoop.c
+│   │   │       ├── mainPosix.c
+│   │   │       ├── Makefile.am
+│   │   │       ├── pluginMgr.c
+│   │   │       ├── serviceObj.c
+│   │   │       ├── serviceObj.h
+│   │   │       ├── svcSignals.gm
+│   │   │       ├── threadPool.c
+│   │   │       ├── toolsCoreInt.h
+│   │   │       ├── toolsHangDetector.c
+│   │   │       ├── toolsHangDetector.h
+│   │   │       └── toolsRpc.c
+│   │   ├── tests
+│   │   │   ├── Makefile.am
+│   │   │   ├── testDebug
+│   │   │   │   ├── COPYING
+│   │   │   │   ├── Makefile.am
+│   │   │   │   └── testDebug.c
+│   │   │   ├── testPlugin
+│   │   │   │   ├── COPYING
+│   │   │   │   ├── Makefile.am
+│   │   │   │   ├── testData.x
+│   │   │   │   └── testPlugin.c
+│   │   │   ├── testVmblock
+│   │   │   │   ├── COPYING
+│   │   │   │   ├── Makefile.am
+│   │   │   │   ├── manual-blocker.c
+│   │   │   │   └── vmblocktest.c
+│   │   │   └── vmrpcdbg
+│   │   │       ├── COPYING
+│   │   │       ├── debugChannel.c
+│   │   │       ├── Makefile.am
+│   │   │       ├── vmrpcdbg.c
+│   │   │       └── vmrpcdbgInt.h
+│   │   ├── toolbox
+│   │   │   ├── COPYING
+│   │   │   ├── l10n
+│   │   │   │   ├── de.vmsg
+│   │   │   │   ├── en.vmsg
+│   │   │   │   ├── es.vmsg
+│   │   │   │   ├── fr.vmsg
+│   │   │   │   ├── it.vmsg
+│   │   │   │   ├── ja.vmsg
+│   │   │   │   ├── ko.vmsg
+│   │   │   │   ├── zh_CN.vmsg
+│   │   │   │   └── zh_TW.vmsg
+│   │   │   ├── Makefile.am
+│   │   │   ├── toolbox-cmd.c
+│   │   │   ├── toolboxcmd-config.c
+│   │   │   ├── toolboxcmd-devices.c
+│   │   │   ├── toolboxcmd-globalconf.c
+│   │   │   ├── toolboxcmd-gueststore.c
+│   │   │   ├── toolboxcmd-info.c
+│   │   │   ├── toolboxCmdInt.h
+│   │   │   ├── toolboxcmd-logging.c
+│   │   │   ├── toolboxcmd-scripts.c
+│   │   │   ├── toolboxcmd-shrink.c
+│   │   │   ├── toolboxcmd-stat.c
+│   │   │   ├── toolboxcmd-time.c
+│   │   │   └── toolboxcmd_version.h
+│   │   ├── tools.conf
+│   │   ├── udev
+│   │   │   ├── 99-vmware-scsi-udev.rules
+│   │   │   └── Makefile.am
+│   │   ├── vgauth
+│   │   │   ├── cli
+│   │   │   │   ├── l10n
+│   │   │   │   │   ├── de.vmsg
+│   │   │   │   │   ├── en.vmsg
+│   │   │   │   │   ├── es.vmsg
+│   │   │   │   │   ├── fr.vmsg
+│   │   │   │   │   ├── it.vmsg
+│   │   │   │   │   ├── ja.vmsg
+│   │   │   │   │   ├── ko.vmsg
+│   │   │   │   │   ├── zh_CN.vmsg
+│   │   │   │   │   └── zh_TW.vmsg
+│   │   │   │   ├── main.c
+│   │   │   │   └── Makefile.am
+│   │   │   ├── common
+│   │   │   │   ├── audit.c
+│   │   │   │   ├── audit.h
+│   │   │   │   ├── certverify.c
+│   │   │   │   ├── certverify.h
+│   │   │   │   ├── i18n.c
+│   │   │   │   ├── i18n.h
+│   │   │   │   ├── prefs.c
+│   │   │   │   ├── prefs.h
+│   │   │   │   ├── usercheck.c
+│   │   │   │   ├── usercheck.h
+│   │   │   │   ├── VGAuthBasicDefs.h
+│   │   │   │   ├── VGAuthLog.c
+│   │   │   │   ├── VGAuthLog.h
+│   │   │   │   ├── VGAuthProto.h
+│   │   │   │   ├── VGAuthUtil.c
+│   │   │   │   ├── VGAuthUtil.h
+│   │   │   │   ├── vmxlog.c
+│   │   │   │   ├── vmxlog.h
+│   │   │   │   ├── vmxrpc.c
+│   │   │   │   └── vmxrpc.h
+│   │   │   ├── COPYING
+│   │   │   ├── lib
+│   │   │   │   ├── alias.c
+│   │   │   │   ├── auth.c
+│   │   │   │   ├── authPosix.c
+│   │   │   │   ├── comm.c
+│   │   │   │   ├── common.c
+│   │   │   │   ├── errortext.c
+│   │   │   │   ├── impersonate.c
+│   │   │   │   ├── impersonateLinux.c
+│   │   │   │   ├── l10n
+│   │   │   │   │   ├── de.vmsg
+│   │   │   │   │   ├── en.vmsg
+│   │   │   │   │   ├── es.vmsg
+│   │   │   │   │   ├── fr.vmsg
+│   │   │   │   │   ├── it.vmsg
+│   │   │   │   │   ├── ja.vmsg
+│   │   │   │   │   ├── ko.vmsg
+│   │   │   │   │   ├── zh_CN.vmsg
+│   │   │   │   │   └── zh_TW.vmsg
+│   │   │   │   ├── Makefile.am
+│   │   │   │   ├── netPosix.c
+│   │   │   │   ├── proto.c
+│   │   │   │   └── VGAuthInt.h
+│   │   │   ├── Makefile.am
+│   │   │   ├── public
+│   │   │   │   ├── VGAuthAlias.h
+│   │   │   │   ├── VGAuthAuthentication.h
+│   │   │   │   ├── VGAuthCommon.h
+│   │   │   │   └── VGAuthError.h
+│   │   │   ├── service
+│   │   │   │   ├── fileLogger.c
+│   │   │   │   ├── gio.c
+│   │   │   │   ├── l10n
+│   │   │   │   │   ├── de.vmsg
+│   │   │   │   │   ├── en.vmsg
+│   │   │   │   │   ├── es.vmsg
+│   │   │   │   │   ├── fr.vmsg
+│   │   │   │   │   ├── it.vmsg
+│   │   │   │   │   ├── ja.vmsg
+│   │   │   │   │   ├── ko.vmsg
+│   │   │   │   │   ├── zh_CN.vmsg
+│   │   │   │   │   └── zh_TW.vmsg
+│   │   │   │   ├── log.c
+│   │   │   │   ├── main.c
+│   │   │   │   ├── Makefile.am
+│   │   │   │   ├── service.h
+│   │   │   │   ├── servicePosix.c
+│   │   │   │   ├── signalSource.c
+│   │   │   │   └── vgauth.conf
+│   │   │   ├── serviceImpl
+│   │   │   │   ├── alias.c
+│   │   │   │   ├── file.c
+│   │   │   │   ├── filePosix.c
+│   │   │   │   ├── netPosix.c
+│   │   │   │   ├── proto.c
+│   │   │   │   ├── random.c
+│   │   │   │   ├── saml-xmlsec1.c
+│   │   │   │   ├── schemas
+│   │   │   │   │   ├── catalog.xml
+│   │   │   │   │   ├── datatypes.dtd
+│   │   │   │   │   ├── saml-schema-assertion-2.0.xsd
+│   │   │   │   │   ├── xenc-schema.xsd
+│   │   │   │   │   ├── xmldsig-core-schema.xsd
+│   │   │   │   │   ├── XMLSchema.dtd
+│   │   │   │   │   ├── XMLSchema-hasFacetAndProperty.xsd
+│   │   │   │   │   ├── XMLSchema-instance.xsd
+│   │   │   │   │   ├── XMLSchema.xsd
+│   │   │   │   │   └── xml.xsd
+│   │   │   │   ├── service.c
+│   │   │   │   ├── serviceInt.h
+│   │   │   │   ├── ticket.c
+│   │   │   │   └── verify.c
+│   │   │   └── test
+│   │   │       ├── main.c
+│   │   │       ├── Makefile.am
+│   │   │       └── README.txt
+│   │   ├── vgauthImport
+│   │   │   ├── COPYING
+│   │   │   ├── Makefile.am
+│   │   │   └── vgauthImport.c
+│   │   ├── vmblock-fuse
+│   │   │   ├── COPYING
+│   │   │   ├── design.txt
+│   │   │   ├── fsops.c
+│   │   │   ├── fsops.h
+│   │   │   ├── main.c
+│   │   │   ├── Makefile.am
+│   │   │   ├── os.h
+│   │   │   └── util.c
+│   │   ├── vmblockmounter
+│   │   │   ├── COPYING
+│   │   │   ├── Makefile.am
+│   │   │   ├── vmblockmounter.c
+│   │   │   └── vmblockmounter_version.h
+│   │   ├── vmhgfs-fuse
+│   │   │   ├── bdhandler.c
+│   │   │   ├── bdhandler.h
+│   │   │   ├── cache.c
+│   │   │   ├── cache.h
+│   │   │   ├── config.c
+│   │   │   ├── config.h
+│   │   │   ├── COPYING
+│   │   │   ├── dir.c
+│   │   │   ├── file.c
+│   │   │   ├── file.h
+│   │   │   ├── filesystem.c
+│   │   │   ├── filesystem.h
+│   │   │   ├── fsutil.c
+│   │   │   ├── fsutil.h
+│   │   │   ├── link.c
+│   │   │   ├── linux
+│   │   │   │   └── list.h
+│   │   │   ├── main.c
+│   │   │   ├── Makefile.am
+│   │   │   ├── module.h
+│   │   │   ├── request.c
+│   │   │   ├── request.h
+│   │   │   ├── session.c
+│   │   │   ├── session.h
+│   │   │   ├── transport.c
+│   │   │   ├── transport.h
+│   │   │   └── vmhgfs_version.h
+│   │   ├── vmware-user-suid-wrapper
+│   │   │   ├── COPYING
+│   │   │   ├── main.c
+│   │   │   ├── Makefile.am
+│   │   │   ├── vmware-user.desktop.in
+│   │   │   ├── wrapper-freebsd.c
+│   │   │   ├── wrapper.h
+│   │   │   ├── wrapper-linux.c
+│   │   │   ├── wrapper-solaris.c
+│   │   │   └── wrapper_version.h
+│   │   ├── vmwgfxctrl
+│   │   │   ├── COPYING
+│   │   │   ├── main.c
+│   │   │   └── Makefile.am
+│   │   └── xferlogs
+│   │       ├── COPYING
+│   │       ├── Makefile.am
+│   │       ├── xferlogs.c
+│   │       └── xferlogs_version.h
+│   ├── README.md
+│   └── ReleaseNotes.md
+├── vmtoolsd.pam -> /home/felix/packages/open-vm-tools/vmtoolsd.pam
+├── vmtoolsd.service -> /home/felix/packages/open-vm-tools/vmtoolsd.service
+└── vmware-vmblock-fuse.service -> /home/felix/packages/open-vm-tools/vmware-vmblock-fuse.service
+
+153 directories, 1056 files

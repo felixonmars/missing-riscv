@@ -1,0 +1,2030 @@
+src
+├── mednafen
+│   ├── ABOUT-NLS
+│   ├── acinclude.m4
+│   ├── aclocal.m4
+│   ├── AUTHORS
+│   ├── autogen.sh
+│   ├── ChangeLog
+│   ├── compile
+│   ├── config.guess
+│   ├── config.rpath
+│   ├── config.sub
+│   ├── configure
+│   ├── configure.ac
+│   ├── COPYING
+│   ├── depcomp
+│   ├── Documentation
+│   │   ├── apple2.html
+│   │   ├── apple2.php
+│   │   ├── bwolf0.png
+│   │   ├── bwolf1.png
+│   │   ├── cdplay.html
+│   │   ├── cdplay.php
+│   │   ├── cheat.html
+│   │   ├── cheats.txt
+│   │   ├── debugger.html
+│   │   ├── docgen.inc
+│   │   ├── fname_format.txt
+│   │   ├── gba.html
+│   │   ├── gba.php
+│   │   ├── gb.html
+│   │   ├── gb.php
+│   │   ├── generate.sh
+│   │   ├── gg.html
+│   │   ├── gg.php
+│   │   ├── headerbg.png
+│   │   ├── lynx.html
+│   │   ├── lynx.php
+│   │   ├── md.html
+│   │   ├── md.php
+│   │   ├── mednafen.css
+│   │   ├── mednafen.html
+│   │   ├── mednafen.php
+│   │   ├── mednafen.png
+│   │   ├── modules.def
+│   │   ├── nes.html
+│   │   ├── nes.php
+│   │   ├── netplay.html
+│   │   ├── netplay.php
+│   │   ├── ngp.html
+│   │   ├── ngp.php
+│   │   ├── pce_fast.html
+│   │   ├── pce_fast.php
+│   │   ├── pce.html
+│   │   ├── pce.php
+│   │   ├── pcfx.html
+│   │   ├── pcfx.php
+│   │   ├── psx.html
+│   │   ├── psx.php
+│   │   ├── sapphire0.png
+│   │   ├── sapphire1.png
+│   │   ├── sasplay.html
+│   │   ├── sasplay.php
+│   │   ├── settings.def
+│   │   ├── sms.html
+│   │   ├── sms.php
+│   │   ├── snes_faust.html
+│   │   ├── snes_faust.php
+│   │   ├── snes.html
+│   │   ├── snes.php
+│   │   ├── ssfplay.html
+│   │   ├── ssfplay.php
+│   │   ├── ss.html
+│   │   ├── ss.php
+│   │   ├── vb.html
+│   │   ├── vb.php
+│   │   ├── wswan.html
+│   │   └── wswan.php
+│   ├── include
+│   │   ├── config.h.in
+│   │   ├── mednafen -> ../src
+│   │   ├── minilzo_external
+│   │   │   └── minilzo.h
+│   │   ├── minilzo_internal
+│   │   │   └── minilzo.h
+│   │   ├── trio_external
+│   │   │   ├── triodef.h
+│   │   │   ├── trio.h
+│   │   │   ├── trionan.h
+│   │   │   ├── triop.h
+│   │   │   └── triostr.h
+│   │   └── zstd_external
+│   │       └── zstd.h
+│   ├── INSTALL
+│   ├── install-sh
+│   ├── intl
+│   │   ├── bindtextdom.c
+│   │   ├── ChangeLog
+│   │   ├── config.charset
+│   │   ├── dcgettext.c
+│   │   ├── dcigettext.c
+│   │   ├── dcngettext.c
+│   │   ├── dgettext.c
+│   │   ├── dngettext.c
+│   │   ├── eval-plural.h
+│   │   ├── explodename.c
+│   │   ├── export.h
+│   │   ├── finddomain.c
+│   │   ├── gettext.c
+│   │   ├── gettextP.h
+│   │   ├── gmo.h
+│   │   ├── hash-string.c
+│   │   ├── hash-string.h
+│   │   ├── intl-compat.c
+│   │   ├── intl-exports.c
+│   │   ├── l10nflist.c
+│   │   ├── langprefs.c
+│   │   ├── libgnuintl.h.in
+│   │   ├── libintl.rc
+│   │   ├── loadinfo.h
+│   │   ├── loadmsgcat.c
+│   │   ├── localcharset.c
+│   │   ├── localcharset.h
+│   │   ├── locale.alias
+│   │   ├── localealias.c
+│   │   ├── localename.c
+│   │   ├── lock.c
+│   │   ├── lock.h
+│   │   ├── log.c
+│   │   ├── Makefile.in
+│   │   ├── ngettext.c
+│   │   ├── os2compat.c
+│   │   ├── os2compat.h
+│   │   ├── osdep.c
+│   │   ├── plural.c
+│   │   ├── plural-exp.c
+│   │   ├── plural-exp.h
+│   │   ├── plural.y
+│   │   ├── printf-args.c
+│   │   ├── printf-args.h
+│   │   ├── printf.c
+│   │   ├── printf-parse.c
+│   │   ├── printf-parse.h
+│   │   ├── ref-add.sin
+│   │   ├── ref-del.sin
+│   │   ├── relocatable.c
+│   │   ├── relocatable.h
+│   │   ├── setlocale.c
+│   │   ├── textdomain.c
+│   │   ├── threadlib.c
+│   │   ├── tsearch.c
+│   │   ├── tsearch.h
+│   │   ├── vasnprintf.c
+│   │   ├── vasnprintf.h
+│   │   ├── vasnwprintf.h
+│   │   ├── version.c
+│   │   ├── VERSION.txt
+│   │   ├── wprintf-parse.h
+│   │   └── xsize.h
+│   ├── m4
+│   │   ├── ax_append_compile_flags.m4
+│   │   ├── ax_append_flag.m4
+│   │   ├── ax_append_link_flags.m4
+│   │   ├── ax_check_compile_flag.m4
+│   │   ├── ax_check_link_flag.m4
+│   │   ├── ax_require_defined.m4
+│   │   ├── ChangeLog
+│   │   ├── codeset.m4
+│   │   ├── fcntl-o.m4
+│   │   ├── gettext.m4
+│   │   ├── glibc21.m4
+│   │   ├── glibc2.m4
+│   │   ├── iconv.m4
+│   │   ├── intdiv0.m4
+│   │   ├── intldir.m4
+│   │   ├── intl.m4
+│   │   ├── intlmacosx.m4
+│   │   ├── intmax.m4
+│   │   ├── inttypes-h.m4
+│   │   ├── inttypes_h.m4
+│   │   ├── inttypes-pri.m4
+│   │   ├── lcmessage.m4
+│   │   ├── lib-ld.m4
+│   │   ├── lib-link.m4
+│   │   ├── lib-prefix.m4
+│   │   ├── lock.m4
+│   │   ├── longdouble.m4
+│   │   ├── longlong.m4
+│   │   ├── nls.m4
+│   │   ├── po.m4
+│   │   ├── printf-posix.m4
+│   │   ├── progtest.m4
+│   │   ├── sdl2.m4
+│   │   ├── signed.m4
+│   │   ├── size_max.m4
+│   │   ├── stdint_h.m4
+│   │   ├── threadlib.m4
+│   │   ├── uintmax_t.m4
+│   │   ├── ulonglong.m4
+│   │   ├── visibility.m4
+│   │   ├── wchar_t.m4
+│   │   ├── wint_t.m4
+│   │   └── xsize.m4
+│   ├── Makefile.am
+│   ├── Makefile.in
+│   ├── missing
+│   ├── mkinstalldirs
+│   ├── mswin
+│   │   ├── build-mednafen.sh
+│   │   ├── build-mednafen-win9x.sh
+│   │   ├── build-toolchain.sh
+│   │   ├── build-toolchain-win9x.sh
+│   │   ├── flac-1.3.2-win9x.patch
+│   │   ├── gcc-4.9.4-mingw-w64-noforcepic-smalljmptab.patch
+│   │   ├── gcc-4.9.4-win9x.patch
+│   │   ├── mingw-w64-v5.0.3-win9x.patch
+│   │   ├── package-mednafen.sh
+│   │   ├── package-mednafen-win9x.sh
+│   │   ├── SDL-2.0.8-11835-win9x.patch
+│   │   ├── SDL2-2.28.5-altgr-grab.patch
+│   │   ├── SDL2-2.28.5-win2000.patch
+│   │   ├── zlib-1.2.13-mingw-w64.patch
+│   │   ├── zlib-1.2.8-mingw-w64.patch
+│   │   └── zlib-1.2.8-win9x.patch
+│   ├── NEWS
+│   ├── package.sh
+│   ├── po
+│   │   ├── boldquot.sed
+│   │   ├── ChangeLog
+│   │   ├── de.gmo
+│   │   ├── de.po
+│   │   ├── en@boldquot.header
+│   │   ├── en@quot.header
+│   │   ├── es.gmo
+│   │   ├── es.po
+│   │   ├── insert-header.sin
+│   │   ├── LINGUAS
+│   │   ├── Makefile.in.in
+│   │   ├── Makevars
+│   │   ├── mednafen.pot
+│   │   ├── POTFILES.in
+│   │   ├── quot.sed
+│   │   ├── remove-potcdate.sin
+│   │   ├── ru.gmo
+│   │   ├── Rules-quot
+│   │   ├── ru.po
+│   │   └── stamp-po
+│   ├── README
+│   ├── README.DOS
+│   ├── README.MSWIN
+│   ├── README.PORTING
+│   ├── src
+│   │   ├── apple2
+│   │   │   ├── apple2.cpp
+│   │   │   ├── apple2.h
+│   │   │   ├── debug.inc
+│   │   │   ├── disk2.cpp
+│   │   │   ├── disk2.h
+│   │   │   ├── firmware
+│   │   │   │   ├── hdd_driver.asm
+│   │   │   │   ├── hdd_driver.bin
+│   │   │   │   └── hdd_driver.bin.h
+│   │   │   ├── gameio.cpp
+│   │   │   ├── gameio.h
+│   │   │   ├── hdd.cpp
+│   │   │   ├── hdd.h
+│   │   │   ├── kbio.cpp
+│   │   │   ├── kbio.h
+│   │   │   ├── Makefile.am.inc
+│   │   │   ├── notes
+│   │   │   │   ├── blackman.cpp
+│   │   │   │   ├── CHROMA-ICS
+│   │   │   │   ├── lumacoeff-test.cpp
+│   │   │   │   ├── matrix-back.cpp
+│   │   │   │   ├── matrix.cpp
+│   │   │   │   └── NTSC-CHROMA-ICS
+│   │   │   ├── sound.cpp
+│   │   │   ├── sound.h
+│   │   │   ├── video.cpp
+│   │   │   └── video.h
+│   │   ├── AtomicFIFO.h
+│   │   ├── cdplay
+│   │   │   ├── cdplay.cpp
+│   │   │   └── Makefile.am.inc
+│   │   ├── cdrom
+│   │   │   ├── CDAccess_CCD.cpp
+│   │   │   ├── CDAccess_CCD.h
+│   │   │   ├── CDAccess.cpp
+│   │   │   ├── CDAccess.h
+│   │   │   ├── CDAccess_Image.cpp
+│   │   │   ├── CDAccess_Image.h
+│   │   │   ├── CDAFReader.cpp
+│   │   │   ├── CDAFReader_FLAC.cpp
+│   │   │   ├── CDAFReader_FLAC.h
+│   │   │   ├── CDAFReader.h
+│   │   │   ├── CDAFReader_MPC.cpp
+│   │   │   ├── CDAFReader_MPC.h
+│   │   │   ├── CDAFReader_PCM.cpp
+│   │   │   ├── CDAFReader_PCM.h
+│   │   │   ├── CDAFReader_Vorbis.cpp
+│   │   │   ├── CDAFReader_Vorbis.h
+│   │   │   ├── CDInterface.cpp
+│   │   │   ├── CDInterface.h
+│   │   │   ├── CDInterface_MT.cpp
+│   │   │   ├── CDInterface_MT.h
+│   │   │   ├── CDInterface_ST.cpp
+│   │   │   ├── CDInterface_ST.h
+│   │   │   ├── CDUtility.cpp
+│   │   │   ├── CDUtility.h
+│   │   │   ├── crc32.cpp
+│   │   │   ├── dvdisaster.h
+│   │   │   ├── galois.cpp
+│   │   │   ├── galois-inlines.h
+│   │   │   ├── l-ec.cpp
+│   │   │   ├── lec.cpp
+│   │   │   ├── lec.h
+│   │   │   ├── Makefile.am.inc
+│   │   │   ├── recover-raw.cpp
+│   │   │   ├── scsicd_cdda_filter.inc
+│   │   │   ├── scsicd.cpp
+│   │   │   ├── scsicd.h
+│   │   │   ├── scsicd-pce-commands.inc
+│   │   │   └── SimpleFIFO.h
+│   │   ├── cheat_formats
+│   │   │   ├── gb.cpp
+│   │   │   ├── gb.h
+│   │   │   ├── Makefile.am.inc
+│   │   │   ├── psx.cpp
+│   │   │   ├── psx.h
+│   │   │   ├── snes.cpp
+│   │   │   └── snes.h
+│   │   ├── compress
+│   │   │   ├── ArchiveReader.cpp
+│   │   │   ├── ArchiveReader.h
+│   │   │   ├── DecompressFilter.cpp
+│   │   │   ├── DecompressFilter.h
+│   │   │   ├── GZFileStream.cpp
+│   │   │   ├── GZFileStream.h
+│   │   │   ├── Makefile.am.inc
+│   │   │   ├── ZIPReader.cpp
+│   │   │   ├── ZIPReader.h
+│   │   │   ├── ZLInflateFilter.cpp
+│   │   │   ├── ZLInflateFilter.h
+│   │   │   ├── ZstdDecompressFilter.cpp
+│   │   │   └── ZstdDecompressFilter.h
+│   │   ├── cputest
+│   │   │   ├── cputest.c
+│   │   │   ├── cputest.h
+│   │   │   ├── Makefile.am.inc
+│   │   │   ├── ppc_cpu.c
+│   │   │   ├── README
+│   │   │   ├── x86_cpu.c
+│   │   │   └── x86_cpu.h
+│   │   ├── debug.cpp
+│   │   ├── debug.h
+│   │   ├── demo
+│   │   │   ├── demo.cpp
+│   │   │   └── Makefile.am.inc
+│   │   ├── desa68
+│   │   │   ├── desa68.c
+│   │   │   ├── desa68.h
+│   │   │   └── Makefile.am.inc
+│   │   ├── driver.h
+│   │   ├── drivers
+│   │   │   ├── 2xSaI.cpp
+│   │   │   ├── 2xSaI.h
+│   │   │   ├── args.cpp
+│   │   │   ├── args.h
+│   │   │   ├── cheat.cpp
+│   │   │   ├── cheat.h
+│   │   │   ├── console.cpp
+│   │   │   ├── console.h
+│   │   │   ├── debugger.cpp
+│   │   │   ├── debugger.h
+│   │   │   ├── ers.cpp
+│   │   │   ├── ers.h
+│   │   │   ├── fps.cpp
+│   │   │   ├── fps.h
+│   │   │   ├── gfxdebugger.cpp
+│   │   │   ├── gfxdebugger.h
+│   │   │   ├── help.cpp
+│   │   │   ├── help.h
+│   │   │   ├── hq2x.cpp
+│   │   │   ├── hq3x.cpp
+│   │   │   ├── hq4x.cpp
+│   │   │   ├── hqxx-common.cpp
+│   │   │   ├── hqxx-common.h
+│   │   │   ├── icon.h
+│   │   │   ├── input.cpp
+│   │   │   ├── input-default-buttons.h
+│   │   │   ├── input.h
+│   │   │   ├── Joystick.cpp
+│   │   │   ├── Joystick_DX5.cpp
+│   │   │   ├── Joystick_DX5.h
+│   │   │   ├── Joystick.h
+│   │   │   ├── Joystick_Linux.cpp
+│   │   │   ├── Joystick_Linux.h
+│   │   │   ├── Joystick_SDL.cpp
+│   │   │   ├── Joystick_SDL.h
+│   │   │   ├── Joystick_XInput.cpp
+│   │   │   ├── Joystick_XInput.h
+│   │   │   ├── keyboard.cpp
+│   │   │   ├── keyboard.h
+│   │   │   ├── keyboard_scancodes.h
+│   │   │   ├── logdebugger.cpp
+│   │   │   ├── logdebugger.h
+│   │   │   ├── main.cpp
+│   │   │   ├── main.h
+│   │   │   ├── Makefile.am
+│   │   │   ├── Makefile.in
+│   │   │   ├── memdebugger.cpp
+│   │   │   ├── memdebugger.h
+│   │   │   ├── mouse.cpp
+│   │   │   ├── mouse.h
+│   │   │   ├── netplay.cpp
+│   │   │   ├── netplay.h
+│   │   │   ├── nnx.cpp
+│   │   │   ├── nnx.h
+│   │   │   ├── nongl.cpp
+│   │   │   ├── nongl.h
+│   │   │   ├── opengl.cpp
+│   │   │   ├── opengl.h
+│   │   │   ├── prompt.cpp
+│   │   │   ├── prompt.h
+│   │   │   ├── README.WIN32
+│   │   │   ├── remote.cpp
+│   │   │   ├── remote.h
+│   │   │   ├── rmdui.cpp
+│   │   │   ├── rmdui.h
+│   │   │   ├── scale2x.c
+│   │   │   ├── scale2x.h
+│   │   │   ├── scale3x.c
+│   │   │   ├── scale3x.h
+│   │   │   ├── scalebit.c
+│   │   │   ├── scalebit.h
+│   │   │   ├── shader.cpp
+│   │   │   ├── shader.h
+│   │   │   ├── shader_sabr.inc
+│   │   │   ├── shader_scale2x.inc
+│   │   │   ├── sound.cpp
+│   │   │   ├── sound.h
+│   │   │   ├── TextEntry.cpp
+│   │   │   ├── TextEntry.h
+│   │   │   ├── video.cpp
+│   │   │   ├── video.h
+│   │   │   ├── video-state.cpp
+│   │   │   ├── video-state.h
+│   │   │   ├── win-icon.ico
+│   │   │   ├── win-manifest.xml
+│   │   │   └── win-resource.rc
+│   │   ├── drivers_dos
+│   │   │   ├── Makefile.am
+│   │   │   └── Makefile.in
+│   │   ├── drivers_libxxx
+│   │   │   ├── main.cpp
+│   │   │   ├── Makefile.am
+│   │   │   └── Makefile.in
+│   │   ├── endian.cpp
+│   │   ├── endian.h
+│   │   ├── error.cpp
+│   │   ├── error.h
+│   │   ├── ExtMemStream.cpp
+│   │   ├── ExtMemStream.h
+│   │   ├── file.cpp
+│   │   ├── file.h
+│   │   ├── FileStream.cpp
+│   │   ├── FileStream.h
+│   │   ├── gb
+│   │   │   ├── gbCodesCB.h
+│   │   │   ├── gbCodes.h
+│   │   │   ├── gb.cpp
+│   │   │   ├── gbGlobals.cpp
+│   │   │   ├── gbGlobals.h
+│   │   │   ├── gb.h
+│   │   │   ├── gfx.cpp
+│   │   │   ├── Makefile.am.inc
+│   │   │   ├── memory.cpp
+│   │   │   ├── memory.h
+│   │   │   ├── sound.cpp
+│   │   │   ├── sound.h
+│   │   │   ├── z80.cpp
+│   │   │   └── z80.h
+│   │   ├── gba
+│   │   │   ├── arm.cpp
+│   │   │   ├── arm.h
+│   │   │   ├── bios.cpp
+│   │   │   ├── bios.h
+│   │   │   ├── eeprom.cpp
+│   │   │   ├── eeprom.h
+│   │   │   ├── flash.cpp
+│   │   │   ├── flash.h
+│   │   │   ├── GBA.cpp
+│   │   │   ├── GBA.h
+│   │   │   ├── GBAinline.cpp
+│   │   │   ├── GBAinline.h
+│   │   │   ├── Gfx.cpp
+│   │   │   ├── gfx-draw.h
+│   │   │   ├── Gfx.h
+│   │   │   ├── Globals.cpp
+│   │   │   ├── Globals.h
+│   │   │   ├── Makefile.am.inc
+│   │   │   ├── Mode0.cpp
+│   │   │   ├── Mode1.cpp
+│   │   │   ├── Mode2.cpp
+│   │   │   ├── Mode3.cpp
+│   │   │   ├── Mode4.cpp
+│   │   │   ├── Mode5.cpp
+│   │   │   ├── myrom.h
+│   │   │   ├── Port.h
+│   │   │   ├── RTC.cpp
+│   │   │   ├── RTC.h
+│   │   │   ├── Sound.cpp
+│   │   │   ├── Sound.h
+│   │   │   ├── sram.cpp
+│   │   │   ├── sram.h
+│   │   │   ├── thumb.cpp
+│   │   │   └── thumb.h
+│   │   ├── general.cpp
+│   │   ├── general.h
+│   │   ├── gettext.h
+│   │   ├── git.cpp
+│   │   ├── git.h
+│   │   ├── hash
+│   │   │   ├── crc.cpp
+│   │   │   ├── crc.h
+│   │   │   ├── Makefile.am.inc
+│   │   │   ├── md5.cpp
+│   │   │   ├── md5.h
+│   │   │   ├── sha1.cpp
+│   │   │   ├── sha1.h
+│   │   │   ├── sha256.cpp
+│   │   │   └── sha256.h
+│   │   ├── hw_cpu
+│   │   │   ├── 6502
+│   │   │   │   ├── Core6502.h
+│   │   │   │   ├── Core6502.inc
+│   │   │   │   └── Core6502_step.inc
+│   │   │   ├── m68k
+│   │   │   │   ├── gen.cpp
+│   │   │   │   ├── m68k.cpp
+│   │   │   │   ├── m68k.h
+│   │   │   │   └── m68k_instr.inc
+│   │   │   ├── Makefile.am.inc
+│   │   │   ├── v810
+│   │   │   │   ├── v810_cpu.cpp
+│   │   │   │   ├── v810_cpuD.cpp
+│   │   │   │   ├── v810_cpuD.h
+│   │   │   │   ├── v810_cpu.h
+│   │   │   │   ├── v810_do_am.h
+│   │   │   │   ├── v810_fp_ops.cpp
+│   │   │   │   ├── v810_fp_ops.h
+│   │   │   │   ├── v810_oploop.inc
+│   │   │   │   └── v810_opt.h
+│   │   │   └── z80-fuse
+│   │   │       ├── opcodes_base.c
+│   │   │       ├── z80_cb.c
+│   │   │       ├── z80.cpp
+│   │   │       ├── z80_ddfd.c
+│   │   │       ├── z80_ddfdcb.c
+│   │   │       ├── z80_ed.c
+│   │   │       ├── z80.h
+│   │   │       ├── z80_macros.h
+│   │   │       └── z80_ops.cpp
+│   │   ├── hw_misc
+│   │   │   ├── arcade_card
+│   │   │   │   ├── arcade_card.cpp
+│   │   │   │   └── arcade_card.h
+│   │   │   └── Makefile.am.inc
+│   │   ├── hw_sound
+│   │   │   ├── gb_apu
+│   │   │   │   ├── blargg_common.h
+│   │   │   │   ├── blargg_config.h
+│   │   │   │   ├── blargg_source.h
+│   │   │   │   ├── Gb_Apu.cpp
+│   │   │   │   ├── Gb_Apu.h
+│   │   │   │   ├── Gb_Apu_State.cpp
+│   │   │   │   ├── Gb_Oscs.cpp
+│   │   │   │   └── Gb_Oscs.h
+│   │   │   ├── Makefile.am.inc
+│   │   │   ├── pce_psg
+│   │   │   │   ├── pce_psg.cpp
+│   │   │   │   └── pce_psg.h
+│   │   │   ├── sms_apu
+│   │   │   │   ├── Sms_Apu.cpp
+│   │   │   │   ├── Sms_Apu.h
+│   │   │   │   └── Sms_Oscs.h
+│   │   │   ├── ym2413
+│   │   │   │   ├── 2413tone.h
+│   │   │   │   ├── emu2413.cpp
+│   │   │   │   └── emu2413.h
+│   │   │   └── ym2612
+│   │   │       ├── Ym2612_Emu.cpp
+│   │   │       ├── Ym2612_Emu.h
+│   │   │       └── ym2612_opeg.inc
+│   │   ├── hw_video
+│   │   │   ├── huc6270
+│   │   │   │   ├── vdc.cpp
+│   │   │   │   └── vdc.h
+│   │   │   └── Makefile.am.inc
+│   │   ├── IPSPatcher.cpp
+│   │   ├── IPSPatcher.h
+│   │   ├── jump.h
+│   │   ├── lepacker.h
+│   │   ├── lynx
+│   │   │   ├── c6502mak.h
+│   │   │   ├── c65c02.cpp
+│   │   │   ├── c65c02.h
+│   │   │   ├── cart.cpp
+│   │   │   ├── cart.h
+│   │   │   ├── license.txt
+│   │   │   ├── lynxbase.h
+│   │   │   ├── lynxdef.h
+│   │   │   ├── machine.h
+│   │   │   ├── Makefile.am.inc
+│   │   │   ├── memmap.cpp
+│   │   │   ├── memmap.h
+│   │   │   ├── mikie.cpp
+│   │   │   ├── mikie.h
+│   │   │   ├── ram.cpp
+│   │   │   ├── ram.h
+│   │   │   ├── rom.cpp
+│   │   │   ├── rom.h
+│   │   │   ├── susie.cpp
+│   │   │   ├── susie.h
+│   │   │   ├── sysbase.h
+│   │   │   ├── system.cpp
+│   │   │   └── system.h
+│   │   ├── Makefile.am
+│   │   ├── Makefile.in
+│   │   ├── math_ops.h
+│   │   ├── md
+│   │   │   ├── cart
+│   │   │   │   ├── cart.cpp
+│   │   │   │   ├── cart.h
+│   │   │   │   ├── map_eeprom.cpp
+│   │   │   │   ├── map_eeprom.h
+│   │   │   │   ├── map_ff.cpp
+│   │   │   │   ├── map_ff.h
+│   │   │   │   ├── map_realtec.cpp
+│   │   │   │   ├── map_realtec.h
+│   │   │   │   ├── map_rmx3.cpp
+│   │   │   │   ├── map_rmx3.h
+│   │   │   │   ├── map_rom.cpp
+│   │   │   │   ├── map_rom.h
+│   │   │   │   ├── map_sbb.cpp
+│   │   │   │   ├── map_sbb.h
+│   │   │   │   ├── map_sram.cpp
+│   │   │   │   ├── map_sram.h
+│   │   │   │   ├── map_ssf2.cpp
+│   │   │   │   ├── map_ssf2.h
+│   │   │   │   ├── map_svp.cpp
+│   │   │   │   ├── map_svp.h
+│   │   │   │   ├── map_yase.cpp
+│   │   │   │   ├── map_yase.h
+│   │   │   │   ├── ssp16.c
+│   │   │   │   └── ssp16.h
+│   │   │   ├── cd
+│   │   │   │   ├── cdc_cdd.cpp
+│   │   │   │   ├── cdc_cdd.h
+│   │   │   │   ├── cd.cpp
+│   │   │   │   ├── cd.h
+│   │   │   │   ├── interrupt.cpp
+│   │   │   │   ├── interrupt.h
+│   │   │   │   ├── pcm.cpp
+│   │   │   │   ├── pcm.h
+│   │   │   │   ├── timer.cpp
+│   │   │   │   └── timer.h
+│   │   │   ├── debug.cpp
+│   │   │   ├── debug.h
+│   │   │   ├── genesis.cpp
+│   │   │   ├── genesis.h
+│   │   │   ├── genio.cpp
+│   │   │   ├── genio.h
+│   │   │   ├── header.cpp
+│   │   │   ├── header.h
+│   │   │   ├── hvc.h
+│   │   │   ├── input
+│   │   │   │   ├── 4way.cpp
+│   │   │   │   ├── 4way.h
+│   │   │   │   ├── gamepad.cpp
+│   │   │   │   ├── gamepad.h
+│   │   │   │   ├── megamouse.cpp
+│   │   │   │   ├── megamouse.h
+│   │   │   │   ├── multitap.cpp
+│   │   │   │   └── multitap.h
+│   │   │   ├── macros.h
+│   │   │   ├── Makefile.am.inc
+│   │   │   ├── mem68k.cpp
+│   │   │   ├── mem68k.h
+│   │   │   ├── membnk.cpp
+│   │   │   ├── membnk.h
+│   │   │   ├── memvdp.cpp
+│   │   │   ├── memvdp.h
+│   │   │   ├── memz80.cpp
+│   │   │   ├── memz80.h
+│   │   │   ├── shared.h
+│   │   │   ├── sound.cpp
+│   │   │   ├── sound.h
+│   │   │   ├── system.cpp
+│   │   │   ├── system.h
+│   │   │   ├── vcnt.h
+│   │   │   ├── vdp.cpp
+│   │   │   ├── vdp.h
+│   │   │   └── vdp_run.inc
+│   │   ├── mednafen.cpp
+│   │   ├── mednafen-driver.h
+│   │   ├── mednafen.h
+│   │   ├── memory.cpp
+│   │   ├── memory.h
+│   │   ├── MemoryStream.cpp
+│   │   ├── MemoryStream.h
+│   │   ├── mempatcher.cpp
+│   │   ├── mempatcher-driver.h
+│   │   ├── mempatcher.h
+│   │   ├── minilzo
+│   │   │   ├── lzoconf.h
+│   │   │   ├── lzodefs.h
+│   │   │   ├── Makefile.am.inc
+│   │   │   ├── minilzo.c
+│   │   │   ├── _minilzo.h
+│   │   │   ├── README.LZO
+│   │   │   └── README.MEDNAFEN
+│   │   ├── movie.cpp
+│   │   ├── movie-driver.h
+│   │   ├── movie.h
+│   │   ├── mpcdec
+│   │   │   ├── AUTHORS.MPCDEC
+│   │   │   ├── ChangeLog
+│   │   │   ├── CMakeLists.txt
+│   │   │   ├── COPYING.MPCDEC
+│   │   │   ├── crc32.c
+│   │   │   ├── datatypes.h
+│   │   │   ├── decoder.h
+│   │   │   ├── huffman.c
+│   │   │   ├── huffman.h
+│   │   │   ├── internal.h
+│   │   │   ├── Makefile.am.inc
+│   │   │   ├── minimax.h
+│   │   │   ├── mpc_bits_reader.c
+│   │   │   ├── mpc_bits_reader.h
+│   │   │   ├── mpcdec.h
+│   │   │   ├── mpcdec_math.h
+│   │   │   ├── mpc_decoder.c
+│   │   │   ├── mpc_demux.c
+│   │   │   ├── mpcmath.h
+│   │   │   ├── mpc_reader.c
+│   │   │   ├── mpc_types.h
+│   │   │   ├── reader.h
+│   │   │   ├── README
+│   │   │   ├── README.MEDNAFEN
+│   │   │   ├── requant.c
+│   │   │   ├── requant.h
+│   │   │   ├── streaminfo.c
+│   │   │   ├── streaminfo.h
+│   │   │   └── synth_filter.c
+│   │   ├── mthreading
+│   │   │   ├── Makefile.am.inc
+│   │   │   ├── MThreading_POSIX.cpp
+│   │   │   └── MThreading_Win32.cpp
+│   │   ├── MThreading.h
+│   │   ├── MTStreamReader.cpp
+│   │   ├── MTStreamReader.h
+│   │   ├── NativeVFS.cpp
+│   │   ├── NativeVFS.h
+│   │   ├── nes
+│   │   │   ├── boards
+│   │   │   │   ├── 107.cpp
+│   │   │   │   ├── 112.cpp
+│   │   │   │   ├── 113.cpp
+│   │   │   │   ├── 114.cpp
+│   │   │   │   ├── 117.cpp
+│   │   │   │   ├── 140.cpp
+│   │   │   │   ├── 151.cpp
+│   │   │   │   ├── 152.cpp
+│   │   │   │   ├── 156.cpp
+│   │   │   │   ├── 15.cpp
+│   │   │   │   ├── 163.cpp
+│   │   │   │   ├── 16.cpp
+│   │   │   │   ├── 180.cpp
+│   │   │   │   ├── 182.cpp
+│   │   │   │   ├── 184.cpp
+│   │   │   │   ├── 185.cpp
+│   │   │   │   ├── 187.cpp
+│   │   │   │   ├── 189.cpp
+│   │   │   │   ├── 18.cpp
+│   │   │   │   ├── 190.cpp
+│   │   │   │   ├── 193.cpp
+│   │   │   │   ├── 208.cpp
+│   │   │   │   ├── 21.cpp
+│   │   │   │   ├── 222.cpp
+│   │   │   │   ├── 228.cpp
+│   │   │   │   ├── 22.cpp
+│   │   │   │   ├── 232.cpp
+│   │   │   │   ├── 234.cpp
+│   │   │   │   ├── 23.cpp
+│   │   │   │   ├── 240.cpp
+│   │   │   │   ├── 241.cpp
+│   │   │   │   ├── 242.cpp
+│   │   │   │   ├── 244.cpp
+│   │   │   │   ├── 246.cpp
+│   │   │   │   ├── 248.cpp
+│   │   │   │   ├── 25.cpp
+│   │   │   │   ├── 30.cpp
+│   │   │   │   ├── 32.cpp
+│   │   │   │   ├── 33.cpp
+│   │   │   │   ├── 34.cpp
+│   │   │   │   ├── 38.cpp
+│   │   │   │   ├── 40.cpp
+│   │   │   │   ├── 41.cpp
+│   │   │   │   ├── 42.cpp
+│   │   │   │   ├── 46.cpp
+│   │   │   │   ├── 51.cpp
+│   │   │   │   ├── 65.cpp
+│   │   │   │   ├── 67.cpp
+│   │   │   │   ├── 68.cpp
+│   │   │   │   ├── 70.cpp
+│   │   │   │   ├── 72.cpp
+│   │   │   │   ├── 73.cpp
+│   │   │   │   ├── 75.cpp
+│   │   │   │   ├── 76.cpp
+│   │   │   │   ├── 77.cpp
+│   │   │   │   ├── 78.cpp
+│   │   │   │   ├── 80.cpp
+│   │   │   │   ├── 8237.cpp
+│   │   │   │   ├── 82.cpp
+│   │   │   │   ├── 86.cpp
+│   │   │   │   ├── 87.cpp
+│   │   │   │   ├── 88.cpp
+│   │   │   │   ├── 89.cpp
+│   │   │   │   ├── 8.cpp
+│   │   │   │   ├── 90.cpp
+│   │   │   │   ├── 92.cpp
+│   │   │   │   ├── 93.cpp
+│   │   │   │   ├── 94.cpp
+│   │   │   │   ├── 95.cpp
+│   │   │   │   ├── 96.cpp
+│   │   │   │   ├── 97.cpp
+│   │   │   │   ├── 99.cpp
+│   │   │   │   ├── codemasters.cpp
+│   │   │   │   ├── colordreams.cpp
+│   │   │   │   ├── deirom.cpp
+│   │   │   │   ├── emu2413.cpp
+│   │   │   │   ├── emu2413.h
+│   │   │   │   ├── emutypes.h
+│   │   │   │   ├── ffe.cpp
+│   │   │   │   ├── fme7.cpp
+│   │   │   │   ├── h2288.cpp
+│   │   │   │   ├── Makefile.am.inc
+│   │   │   │   ├── malee.cpp
+│   │   │   │   ├── mapinc.h
+│   │   │   │   ├── maxicart.cpp
+│   │   │   │   ├── mmc1.cpp
+│   │   │   │   ├── mmc2and4.cpp
+│   │   │   │   ├── mmc3.cpp
+│   │   │   │   ├── mmc5.cpp
+│   │   │   │   ├── n106.cpp
+│   │   │   │   ├── nina06.cpp
+│   │   │   │   ├── novel.cpp
+│   │   │   │   ├── sachen.cpp
+│   │   │   │   ├── simple.cpp
+│   │   │   │   ├── super24.cpp
+│   │   │   │   ├── supervision.cpp
+│   │   │   │   ├── tengen.cpp
+│   │   │   │   ├── vrc6.cpp
+│   │   │   │   ├── vrc7.cpp
+│   │   │   │   └── vrc7tone.h
+│   │   │   ├── cart.cpp
+│   │   │   ├── cart.h
+│   │   │   ├── debug.cpp
+│   │   │   ├── debug.h
+│   │   │   ├── dis6502.cpp
+│   │   │   ├── dis6502.h
+│   │   │   ├── fds.cpp
+│   │   │   ├── fds.h
+│   │   │   ├── fds-sound.cpp
+│   │   │   ├── fds-sound.h
+│   │   │   ├── ines-bad.inc
+│   │   │   ├── ines-correct.inc
+│   │   │   ├── ines.cpp
+│   │   │   ├── ines.h
+│   │   │   ├── input
+│   │   │   │   ├── arkanoid.cpp
+│   │   │   │   ├── bbattler2.cpp
+│   │   │   │   ├── cursor.cpp
+│   │   │   │   ├── cursor.h
+│   │   │   │   ├── fkb.cpp
+│   │   │   │   ├── fkb.h
+│   │   │   │   ├── ftrainer.cpp
+│   │   │   │   ├── hypershot.cpp
+│   │   │   │   ├── mahjong.cpp
+│   │   │   │   ├── Makefile.am.inc
+│   │   │   │   ├── oekakids.cpp
+│   │   │   │   ├── partytap.cpp
+│   │   │   │   ├── powerpad.cpp
+│   │   │   │   ├── shadow.cpp
+│   │   │   │   ├── share.h
+│   │   │   │   ├── suborkb.cpp
+│   │   │   │   ├── suborkb.h
+│   │   │   │   ├── toprider.cpp
+│   │   │   │   └── zapper.cpp
+│   │   │   ├── input.cpp
+│   │   │   ├── input.h
+│   │   │   ├── Makefile.am.inc
+│   │   │   ├── nes.cpp
+│   │   │   ├── nes.h
+│   │   │   ├── NES-TODO
+│   │   │   ├── nsf.cpp
+│   │   │   ├── nsfe.cpp
+│   │   │   ├── nsfe.h
+│   │   │   ├── nsf.h
+│   │   │   ├── ntsc
+│   │   │   │   ├── benchmark.c
+│   │   │   │   ├── changes.txt
+│   │   │   │   ├── demo.c
+│   │   │   │   ├── LGPL.txt
+│   │   │   │   ├── nes_ntsc.cpp
+│   │   │   │   ├── nes_ntsc.h
+│   │   │   │   ├── nes_ntsc.txt
+│   │   │   │   ├── nes.raw
+│   │   │   │   └── readme.txt
+│   │   │   ├── ops.h
+│   │   │   ├── ppu
+│   │   │   │   ├── fast-pputile.h
+│   │   │   │   ├── Makefile.am.inc
+│   │   │   │   ├── palette.cpp
+│   │   │   │   ├── palette.h
+│   │   │   │   ├── palettes
+│   │   │   │   │   ├── default.h
+│   │   │   │   │   ├── rp2c04-0001.h
+│   │   │   │   │   ├── rp2c04-0002.h
+│   │   │   │   │   ├── rp2c04-0003.h
+│   │   │   │   │   ├── rp2c04-0004.h
+│   │   │   │   │   └── rp2c0x.h
+│   │   │   │   ├── ppu.cpp
+│   │   │   │   ├── ppu-fastrl.h
+│   │   │   │   ├── ppu.h
+│   │   │   │   └── ppu-subline.h
+│   │   │   ├── sound.cpp
+│   │   │   ├── sound.h
+│   │   │   ├── unif.cpp
+│   │   │   ├── unif.h
+│   │   │   ├── vsuni.cpp
+│   │   │   ├── vsuni.h
+│   │   │   ├── x6502.cpp
+│   │   │   ├── x6502.h
+│   │   │   └── x6502struct.h
+│   │   ├── net
+│   │   │   ├── Makefile.am.inc
+│   │   │   ├── Net.cpp
+│   │   │   ├── Net.h
+│   │   │   ├── Net_POSIX.cpp
+│   │   │   ├── Net_POSIX.h
+│   │   │   ├── Net_WS2.cpp
+│   │   │   └── Net_WS2.h
+│   │   ├── netplay.cpp
+│   │   ├── netplay-driver.h
+│   │   ├── netplay.h
+│   │   ├── ngp
+│   │   │   ├── bios.cpp
+│   │   │   ├── bios.h
+│   │   │   ├── biosHLE.cpp
+│   │   │   ├── dma.cpp
+│   │   │   ├── dma.h
+│   │   │   ├── flash.cpp
+│   │   │   ├── flash.h
+│   │   │   ├── gfx.cpp
+│   │   │   ├── gfx.h
+│   │   │   ├── gfx_scanline_colour.cpp
+│   │   │   ├── gfx_scanline_mono.cpp
+│   │   │   ├── interrupt.cpp
+│   │   │   ├── interrupt.h
+│   │   │   ├── Makefile.am.inc
+│   │   │   ├── mem.cpp
+│   │   │   ├── mem.h
+│   │   │   ├── neopop.cpp
+│   │   │   ├── neopop.h
+│   │   │   ├── rom.cpp
+│   │   │   ├── rtc.cpp
+│   │   │   ├── rtc.h
+│   │   │   ├── sound.cpp
+│   │   │   ├── sound.h
+│   │   │   ├── T6W28_Apu.cpp
+│   │   │   ├── T6W28_Apu.h
+│   │   │   ├── T6W28_Oscs.h
+│   │   │   ├── TLCS-900h
+│   │   │   │   ├── TLCS900h_disassemble.cpp
+│   │   │   │   ├── TLCS900h_disassemble_dst.cpp
+│   │   │   │   ├── TLCS900h_disassemble_extra.cpp
+│   │   │   │   ├── TLCS900h_disassemble.h
+│   │   │   │   ├── TLCS900h_disassemble_reg.cpp
+│   │   │   │   ├── TLCS900h_disassemble_src.cpp
+│   │   │   │   ├── TLCS900h_interpret.cpp
+│   │   │   │   ├── TLCS900h_interpret_dst.cpp
+│   │   │   │   ├── TLCS900h_interpret_dst.h
+│   │   │   │   ├── TLCS900h_interpret.h
+│   │   │   │   ├── TLCS900h_interpret_reg.cpp
+│   │   │   │   ├── TLCS900h_interpret_reg.h
+│   │   │   │   ├── TLCS900h_interpret_single.cpp
+│   │   │   │   ├── TLCS900h_interpret_single.h
+│   │   │   │   ├── TLCS900h_interpret_src.cpp
+│   │   │   │   ├── TLCS900h_interpret_src.h
+│   │   │   │   ├── TLCS900h_registers.cpp
+│   │   │   │   ├── TLCS900h_registers.h
+│   │   │   │   ├── TLCS900h_registers_mapB.h
+│   │   │   │   ├── TLCS900h_registers_mapCodeB0.h
+│   │   │   │   ├── TLCS900h_registers_mapCodeB1.h
+│   │   │   │   ├── TLCS900h_registers_mapCodeB2.h
+│   │   │   │   ├── TLCS900h_registers_mapCodeB3.h
+│   │   │   │   ├── TLCS900h_registers_mapCodeL0.h
+│   │   │   │   ├── TLCS900h_registers_mapCodeL1.h
+│   │   │   │   ├── TLCS900h_registers_mapCodeL2.h
+│   │   │   │   ├── TLCS900h_registers_mapCodeL3.h
+│   │   │   │   ├── TLCS900h_registers_mapCodeW0.h
+│   │   │   │   ├── TLCS900h_registers_mapCodeW1.h
+│   │   │   │   ├── TLCS900h_registers_mapCodeW2.h
+│   │   │   │   ├── TLCS900h_registers_mapCodeW3.h
+│   │   │   │   ├── TLCS900h_registers_mapL.h
+│   │   │   │   └── TLCS900h_registers_mapW.h
+│   │   │   ├── Z80_interface.cpp
+│   │   │   └── Z80_interface.h
+│   │   ├── pce
+│   │   │   ├── debug.cpp
+│   │   │   ├── debug.h
+│   │   │   ├── dis6280.cpp
+│   │   │   ├── dis6280.h
+│   │   │   ├── hes.cpp
+│   │   │   ├── hes.h
+│   │   │   ├── huc6280.cpp
+│   │   │   ├── huc6280.h
+│   │   │   ├── huc6280_ops.inc
+│   │   │   ├── huc.cpp
+│   │   │   ├── huc.h
+│   │   │   ├── input
+│   │   │   │   ├── gamepad.cpp
+│   │   │   │   ├── gamepad.h
+│   │   │   │   ├── mouse.cpp
+│   │   │   │   ├── mouse.h
+│   │   │   │   ├── tsushinkb.cpp
+│   │   │   │   └── tsushinkb.h
+│   │   │   ├── input.cpp
+│   │   │   ├── input.h
+│   │   │   ├── Makefile.am.inc
+│   │   │   ├── mcgenjin.cpp
+│   │   │   ├── mcgenjin.h
+│   │   │   ├── notes
+│   │   │   │   ├── EVENT_SYSTEM_NOTES
+│   │   │   │   ├── GAME_NOTES
+│   │   │   │   ├── PATENTS
+│   │   │   │   └── pce-slend-241.patch
+│   │   │   ├── pcecd.cpp
+│   │   │   ├── pcecd.h
+│   │   │   ├── pce.cpp
+│   │   │   ├── pce.h
+│   │   │   ├── tsushin.cpp
+│   │   │   ├── tsushin.h
+│   │   │   ├── vce.cpp
+│   │   │   └── vce.h
+│   │   ├── pce_fast
+│   │   │   ├── hes.cpp
+│   │   │   ├── hes.h
+│   │   │   ├── huc6280.cpp
+│   │   │   ├── huc6280.h
+│   │   │   ├── huc6280_ops.inc
+│   │   │   ├── huc.cpp
+│   │   │   ├── huc.h
+│   │   │   ├── input.cpp
+│   │   │   ├── input.h
+│   │   │   ├── ioread.inc
+│   │   │   ├── Makefile.am.inc
+│   │   │   ├── pcecd.cpp
+│   │   │   ├── pcecd_drive.cpp
+│   │   │   ├── pcecd_drive.h
+│   │   │   ├── pcecd.h
+│   │   │   ├── pce.cpp
+│   │   │   ├── pce.h
+│   │   │   ├── psg.cpp
+│   │   │   ├── psg.h
+│   │   │   ├── vdc.cpp
+│   │   │   ├── vdc.h
+│   │   │   └── vpc_mix_inner.inc
+│   │   ├── pcfx
+│   │   │   ├── debug.cpp
+│   │   │   ├── debug.h
+│   │   │   ├── fxscsi.cpp
+│   │   │   ├── fxscsi.h
+│   │   │   ├── gamedb.inc
+│   │   │   ├── huc6273.cpp
+│   │   │   ├── huc6273.h
+│   │   │   ├── idct.cpp
+│   │   │   ├── idct.h
+│   │   │   ├── input
+│   │   │   │   ├── gamepad.cpp
+│   │   │   │   ├── gamepad.h
+│   │   │   │   ├── mouse.cpp
+│   │   │   │   └── mouse.h
+│   │   │   ├── input.cpp
+│   │   │   ├── input.h
+│   │   │   ├── interrupt.cpp
+│   │   │   ├── interrupt.h
+│   │   │   ├── io-handler.inc
+│   │   │   ├── king-bgfast-blit.inc
+│   │   │   ├── king-bgfast.inc
+│   │   │   ├── king.cpp
+│   │   │   ├── king.h
+│   │   │   ├── king_mix_body.inc
+│   │   │   ├── Makefile.am.inc
+│   │   │   ├── mem-handler.inc
+│   │   │   ├── notes
+│   │   │   │   └── GAME_NOTES
+│   │   │   ├── pcfx.cpp
+│   │   │   ├── pcfx.h
+│   │   │   ├── rainbow_acuv.inc
+│   │   │   ├── rainbow_acy.inc
+│   │   │   ├── rainbow.cpp
+│   │   │   ├── rainbow_dcuv.inc
+│   │   │   ├── rainbow_dcy.inc
+│   │   │   ├── rainbow.h
+│   │   │   ├── soundbox.cpp
+│   │   │   ├── soundbox.h
+│   │   │   ├── timer.cpp
+│   │   │   └── timer.h
+│   │   ├── player.cpp
+│   │   ├── player.h
+│   │   ├── PSFLoader.cpp
+│   │   ├── PSFLoader.h
+│   │   ├── psx
+│   │   │   ├── cdc.cpp
+│   │   │   ├── cdc.h
+│   │   │   ├── cpu.cpp
+│   │   │   ├── cpu.h
+│   │   │   ├── debug.cpp
+│   │   │   ├── debug.h
+│   │   │   ├── dis.cpp
+│   │   │   ├── dis.h
+│   │   │   ├── dma.cpp
+│   │   │   ├── dma.h
+│   │   │   ├── FastFIFO.h
+│   │   │   ├── frontio.cpp
+│   │   │   ├── frontio.h
+│   │   │   ├── gpu_common.inc
+│   │   │   ├── gpu.cpp
+│   │   │   ├── gpu.h
+│   │   │   ├── gpu_line.cpp
+│   │   │   ├── gpu_polygon.cpp
+│   │   │   ├── gpu_sprite.cpp
+│   │   │   ├── gte.cpp
+│   │   │   ├── gte.h
+│   │   │   ├── input
+│   │   │   │   ├── dualanalog.cpp
+│   │   │   │   ├── dualanalog.h
+│   │   │   │   ├── dualshock.cpp
+│   │   │   │   ├── dualshock.h
+│   │   │   │   ├── gamepad.cpp
+│   │   │   │   ├── gamepad.h
+│   │   │   │   ├── guncon.cpp
+│   │   │   │   ├── guncon.h
+│   │   │   │   ├── justifier.cpp
+│   │   │   │   ├── justifier.h
+│   │   │   │   ├── memcard.cpp
+│   │   │   │   ├── memcard.h
+│   │   │   │   ├── mouse.cpp
+│   │   │   │   ├── mouse.h
+│   │   │   │   ├── multitap.cpp
+│   │   │   │   ├── multitap.h
+│   │   │   │   ├── negcon.cpp
+│   │   │   │   └── negcon.h
+│   │   │   ├── irq.cpp
+│   │   │   ├── irq.h
+│   │   │   ├── Makefile.am.inc
+│   │   │   ├── masmem.h
+│   │   │   ├── mdec.cpp
+│   │   │   ├── mdec.h
+│   │   │   ├── notes
+│   │   │   │   ├── MULTITAP
+│   │   │   │   ├── PROBLEMATIC-GAMES
+│   │   │   │   ├── PSX-TODO
+│   │   │   │   ├── SOURCES
+│   │   │   │   ├── SPU-IRQ
+│   │   │   │   └── tristep.cpp
+│   │   │   ├── psx.cpp
+│   │   │   ├── psx.h
+│   │   │   ├── sio.cpp
+│   │   │   ├── sio.h
+│   │   │   ├── spu.cpp
+│   │   │   ├── spu_fir_table.inc
+│   │   │   ├── spu.h
+│   │   │   ├── spu_reverb.inc
+│   │   │   ├── timer.cpp
+│   │   │   └── timer.h
+│   │   ├── qtrecord.cpp
+│   │   ├── qtrecord.h
+│   │   ├── quicklz
+│   │   │   ├── Makefile.am.inc
+│   │   │   ├── quicklz.c
+│   │   │   └── quicklz.h
+│   │   ├── resampler
+│   │   │   ├── arch.h
+│   │   │   ├── fixed_generic.h
+│   │   │   ├── Makefile.am.inc
+│   │   │   ├── resample.c
+│   │   │   ├── resampler.h
+│   │   │   ├── resample_sse.h
+│   │   │   └── stack_alloc.h
+│   │   ├── sasplay
+│   │   │   ├── games.h
+│   │   │   ├── Makefile.am.inc
+│   │   │   ├── sasplay.cpp
+│   │   │   └── songs.h
+│   │   ├── settings-common.h
+│   │   ├── settings.cpp
+│   │   ├── settings.h
+│   │   ├── sexyal
+│   │   │   ├── convert.cpp
+│   │   │   ├── convert.h
+│   │   │   ├── drivers
+│   │   │   │   ├── alsa.cpp
+│   │   │   │   ├── cmi8738.cpp
+│   │   │   │   ├── dos_common.cpp
+│   │   │   │   ├── dos_common.h
+│   │   │   │   ├── dsound.cpp
+│   │   │   │   ├── dummy.cpp
+│   │   │   │   ├── es1370.cpp
+│   │   │   │   ├── es1371.cpp
+│   │   │   │   ├── jack.cpp
+│   │   │   │   ├── openbsd.cpp
+│   │   │   │   ├── oss.cpp
+│   │   │   │   ├── sb.cpp
+│   │   │   │   ├── sdl.cpp
+│   │   │   │   ├── wasapi.cpp
+│   │   │   │   └── wasapish.cpp
+│   │   │   ├── Makefile.am
+│   │   │   ├── Makefile.in
+│   │   │   ├── README
+│   │   │   ├── sexyal.cpp
+│   │   │   └── sexyal.h
+│   │   ├── SimpleBitset.h
+│   │   ├── sms
+│   │   │   ├── cart.cpp
+│   │   │   ├── cart.h
+│   │   │   ├── docs
+│   │   │   │   ├── changelog
+│   │   │   │   ├── compatability.txt
+│   │   │   │   ├── license
+│   │   │   │   ├── porting.txt
+│   │   │   │   └── readme.txt
+│   │   │   ├── hvc.inc
+│   │   │   ├── Makefile.am.inc
+│   │   │   ├── memz80.cpp
+│   │   │   ├── memz80.h
+│   │   │   ├── pio.cpp
+│   │   │   ├── pio.h
+│   │   │   ├── render.cpp
+│   │   │   ├── render.h
+│   │   │   ├── romdb.cpp
+│   │   │   ├── romdb.h
+│   │   │   ├── shared.h
+│   │   │   ├── sms.cpp
+│   │   │   ├── sms.h
+│   │   │   ├── sound.cpp
+│   │   │   ├── sound.h
+│   │   │   ├── system.cpp
+│   │   │   ├── system.h
+│   │   │   ├── tms.cpp
+│   │   │   ├── tms.h
+│   │   │   ├── vdp.cpp
+│   │   │   └── vdp.h
+│   │   ├── snes
+│   │   │   ├── interface.cpp
+│   │   │   ├── Makefile.am.inc
+│   │   │   ├── src
+│   │   │   │   ├── base.hpp
+│   │   │   │   ├── cartridge
+│   │   │   │   │   ├── cartridge.cpp
+│   │   │   │   │   ├── cartridge.hpp
+│   │   │   │   │   ├── gameboyheader.cpp
+│   │   │   │   │   ├── header.cpp
+│   │   │   │   │   └── serialization.cpp
+│   │   │   │   ├── cheat
+│   │   │   │   │   ├── cheat.cpp
+│   │   │   │   │   ├── cheat.hpp
+│   │   │   │   │   └── cheat-inline.hpp
+│   │   │   │   ├── chip
+│   │   │   │   │   ├── bsx
+│   │   │   │   │   │   ├── bsx_base.cpp
+│   │   │   │   │   │   ├── bsx_cart.cpp
+│   │   │   │   │   │   ├── bsx.cpp
+│   │   │   │   │   │   ├── bsx_flash.cpp
+│   │   │   │   │   │   └── bsx.hpp
+│   │   │   │   │   ├── chip.hpp
+│   │   │   │   │   ├── cx4
+│   │   │   │   │   │   ├── cx4.cpp
+│   │   │   │   │   │   ├── cx4.hpp
+│   │   │   │   │   │   ├── data.cpp
+│   │   │   │   │   │   ├── functions.cpp
+│   │   │   │   │   │   ├── oam.cpp
+│   │   │   │   │   │   ├── opcodes.cpp
+│   │   │   │   │   │   └── serialization.cpp
+│   │   │   │   │   ├── dsp1
+│   │   │   │   │   │   ├── dsp1.cpp
+│   │   │   │   │   │   ├── dsp1emu.cpp
+│   │   │   │   │   │   ├── dsp1emu.hpp
+│   │   │   │   │   │   ├── dsp1.hpp
+│   │   │   │   │   │   └── serialization.cpp
+│   │   │   │   │   ├── dsp2
+│   │   │   │   │   │   ├── dsp2.cpp
+│   │   │   │   │   │   ├── dsp2.hpp
+│   │   │   │   │   │   ├── opcodes.cpp
+│   │   │   │   │   │   └── serialization.cpp
+│   │   │   │   │   ├── dsp3
+│   │   │   │   │   │   ├── dsp3.cpp
+│   │   │   │   │   │   ├── dsp3emu.c
+│   │   │   │   │   │   └── dsp3.hpp
+│   │   │   │   │   ├── dsp4
+│   │   │   │   │   │   ├── dsp4.cpp
+│   │   │   │   │   │   ├── dsp4emu.c
+│   │   │   │   │   │   ├── dsp4emu.h
+│   │   │   │   │   │   └── dsp4.hpp
+│   │   │   │   │   ├── obc1
+│   │   │   │   │   │   ├── obc1.cpp
+│   │   │   │   │   │   ├── obc1.hpp
+│   │   │   │   │   │   └── serialization.cpp
+│   │   │   │   │   ├── sa1
+│   │   │   │   │   │   ├── bus
+│   │   │   │   │   │   │   ├── bus.cpp
+│   │   │   │   │   │   │   └── bus.hpp
+│   │   │   │   │   │   ├── dma
+│   │   │   │   │   │   │   ├── dma.cpp
+│   │   │   │   │   │   │   └── dma.hpp
+│   │   │   │   │   │   ├── memory
+│   │   │   │   │   │   │   ├── memory.cpp
+│   │   │   │   │   │   │   └── memory.hpp
+│   │   │   │   │   │   ├── mmio
+│   │   │   │   │   │   │   ├── mmio.cpp
+│   │   │   │   │   │   │   └── mmio.hpp
+│   │   │   │   │   │   ├── sa1.cpp
+│   │   │   │   │   │   ├── sa1.hpp
+│   │   │   │   │   │   └── serialization.cpp
+│   │   │   │   │   ├── sdd1
+│   │   │   │   │   │   ├── sdd1.cpp
+│   │   │   │   │   │   ├── sdd1emu.cpp
+│   │   │   │   │   │   ├── sdd1emu.hpp
+│   │   │   │   │   │   ├── sdd1.hpp
+│   │   │   │   │   │   └── serialization.cpp
+│   │   │   │   │   ├── spc7110
+│   │   │   │   │   │   ├── decomp.cpp
+│   │   │   │   │   │   ├── decomp.hpp
+│   │   │   │   │   │   ├── serialization.cpp
+│   │   │   │   │   │   ├── spc7110.cpp
+│   │   │   │   │   │   └── spc7110.hpp
+│   │   │   │   │   ├── srtc
+│   │   │   │   │   │   ├── serialization.cpp
+│   │   │   │   │   │   ├── srtc.cpp
+│   │   │   │   │   │   └── srtc.hpp
+│   │   │   │   │   ├── st010
+│   │   │   │   │   │   ├── serialization.cpp
+│   │   │   │   │   │   ├── st010.cpp
+│   │   │   │   │   │   ├── st010_data.hpp
+│   │   │   │   │   │   ├── st010.hpp
+│   │   │   │   │   │   └── st010_op.cpp
+│   │   │   │   │   └── superfx
+│   │   │   │   │       ├── bus
+│   │   │   │   │       │   ├── bus.cpp
+│   │   │   │   │       │   └── bus.hpp
+│   │   │   │   │       ├── core
+│   │   │   │   │       │   ├── core.cpp
+│   │   │   │   │       │   ├── core.hpp
+│   │   │   │   │       │   ├── opcodes.cpp
+│   │   │   │   │       │   ├── opcode_table.cpp
+│   │   │   │   │       │   └── registers.hpp
+│   │   │   │   │       ├── disasm
+│   │   │   │   │       │   ├── disasm.cpp
+│   │   │   │   │       │   └── disasm.hpp
+│   │   │   │   │       ├── memory
+│   │   │   │   │       │   ├── memory.cpp
+│   │   │   │   │       │   └── memory.hpp
+│   │   │   │   │       ├── mmio
+│   │   │   │   │       │   ├── mmio.cpp
+│   │   │   │   │       │   └── mmio.hpp
+│   │   │   │   │       ├── serialization.cpp
+│   │   │   │   │       ├── superfx.cpp
+│   │   │   │   │       ├── superfx.hpp
+│   │   │   │   │       └── timing
+│   │   │   │   │           ├── timing.cpp
+│   │   │   │   │           └── timing.hpp
+│   │   │   │   ├── cpu
+│   │   │   │   │   ├── core
+│   │   │   │   │   │   ├── algorithms.cpp
+│   │   │   │   │   │   ├── core.cpp
+│   │   │   │   │   │   ├── core.hpp
+│   │   │   │   │   │   ├── memory.hpp
+│   │   │   │   │   │   ├── opcode_misc.cpp
+│   │   │   │   │   │   ├── opcode_pc.cpp
+│   │   │   │   │   │   ├── opcode_read.cpp
+│   │   │   │   │   │   ├── opcode_rmw.cpp
+│   │   │   │   │   │   ├── opcode_write.cpp
+│   │   │   │   │   │   ├── registers.hpp
+│   │   │   │   │   │   ├── serialization.cpp
+│   │   │   │   │   │   └── table.cpp
+│   │   │   │   │   ├── cpu.cpp
+│   │   │   │   │   ├── cpu.hpp
+│   │   │   │   │   └── scpu
+│   │   │   │   │       ├── debugger
+│   │   │   │   │       │   ├── debugger.cpp
+│   │   │   │   │       │   └── debugger.hpp
+│   │   │   │   │       ├── dma
+│   │   │   │   │       │   ├── dma.cpp
+│   │   │   │   │       │   └── dma.hpp
+│   │   │   │   │       ├── memory
+│   │   │   │   │       │   ├── memory.cpp
+│   │   │   │   │       │   └── memory.hpp
+│   │   │   │   │       ├── mmio
+│   │   │   │   │       │   ├── mmio.cpp
+│   │   │   │   │       │   └── mmio.hpp
+│   │   │   │   │       ├── scpu.cpp
+│   │   │   │   │       ├── scpu.hpp
+│   │   │   │   │       ├── serialization.cpp
+│   │   │   │   │       └── timing
+│   │   │   │   │           ├── event.cpp
+│   │   │   │   │           ├── irq.cpp
+│   │   │   │   │           ├── joypad.cpp
+│   │   │   │   │           ├── timing.cpp
+│   │   │   │   │           └── timing.hpp
+│   │   │   │   ├── data
+│   │   │   │   │   ├── documentation.html
+│   │   │   │   │   └── license.html
+│   │   │   │   ├── interface.hpp
+│   │   │   │   ├── lib
+│   │   │   │   │   ├── libco
+│   │   │   │   │   │   ├── aarch64.c
+│   │   │   │   │   │   ├── amd64.c
+│   │   │   │   │   │   ├── arm.c
+│   │   │   │   │   │   ├── doc
+│   │   │   │   │   │   │   ├── examples
+│   │   │   │   │   │   │   │   ├── build.bat
+│   │   │   │   │   │   │   │   ├── build.sh
+│   │   │   │   │   │   │   │   ├── test_args.cpp
+│   │   │   │   │   │   │   │   ├── test.h
+│   │   │   │   │   │   │   │   ├── test_serialization.cpp
+│   │   │   │   │   │   │   │   └── test_timing.cpp
+│   │   │   │   │   │   │   ├── targets.md
+│   │   │   │   │   │   │   └── usage.md
+│   │   │   │   │   │   ├── fiber.c
+│   │   │   │   │   │   ├── libco.c
+│   │   │   │   │   │   ├── libco.h
+│   │   │   │   │   │   ├── LICENSE.LIBCO
+│   │   │   │   │   │   ├── ppc64v2.c
+│   │   │   │   │   │   ├── ppc.c
+│   │   │   │   │   │   ├── README.md
+│   │   │   │   │   │   ├── README.MEDNAFEN
+│   │   │   │   │   │   ├── settings.h
+│   │   │   │   │   │   ├── sjlj.c
+│   │   │   │   │   │   ├── ucontext.c
+│   │   │   │   │   │   └── x86.c
+│   │   │   │   │   └── nall
+│   │   │   │   │       ├── algorithm.hpp
+│   │   │   │   │       ├── array.hpp
+│   │   │   │   │       ├── bit.hpp
+│   │   │   │   │       ├── crc32.hpp
+│   │   │   │   │       ├── detect.hpp
+│   │   │   │   │       ├── endian.hpp
+│   │   │   │   │       ├── function.hpp
+│   │   │   │   │       ├── moduloarray.hpp
+│   │   │   │   │       ├── platform.hpp
+│   │   │   │   │       ├── priorityqueue.hpp
+│   │   │   │   │       ├── property.hpp
+│   │   │   │   │       ├── serial.hpp
+│   │   │   │   │       ├── serializer.hpp
+│   │   │   │   │       ├── static.hpp
+│   │   │   │   │       ├── stdint.hpp
+│   │   │   │   │       ├── traits.hpp
+│   │   │   │   │       ├── utility.hpp
+│   │   │   │   │       ├── varint.hpp
+│   │   │   │   │       └── vector.hpp
+│   │   │   │   ├── memory
+│   │   │   │   │   ├── memory.cpp
+│   │   │   │   │   ├── memory.hpp
+│   │   │   │   │   ├── memory-inline.hpp
+│   │   │   │   │   └── smemory
+│   │   │   │   │       ├── generic.cpp
+│   │   │   │   │       ├── serialization.cpp
+│   │   │   │   │       ├── smemory.cpp
+│   │   │   │   │       ├── smemory.hpp
+│   │   │   │   │       └── system.cpp
+│   │   │   │   ├── ppu
+│   │   │   │   │   ├── debugger
+│   │   │   │   │   │   ├── debugger.cpp
+│   │   │   │   │   │   ├── debugger.hpp
+│   │   │   │   │   │   └── render.cpp
+│   │   │   │   │   ├── memory
+│   │   │   │   │   │   ├── memory.cpp
+│   │   │   │   │   │   └── memory.hpp
+│   │   │   │   │   ├── mmio
+│   │   │   │   │   │   ├── mmio.cpp
+│   │   │   │   │   │   └── mmio.hpp
+│   │   │   │   │   ├── ppu.cpp
+│   │   │   │   │   ├── ppu.hpp
+│   │   │   │   │   ├── ppu-inline.hpp
+│   │   │   │   │   ├── render
+│   │   │   │   │   │   ├── addsub.cpp
+│   │   │   │   │   │   ├── bg.cpp
+│   │   │   │   │   │   ├── cache.cpp
+│   │   │   │   │   │   ├── line.cpp
+│   │   │   │   │   │   ├── mode7.cpp
+│   │   │   │   │   │   ├── oam.cpp
+│   │   │   │   │   │   ├── render.cpp
+│   │   │   │   │   │   ├── render.hpp
+│   │   │   │   │   │   └── windows.cpp
+│   │   │   │   │   └── serialization.cpp
+│   │   │   │   ├── sdsp
+│   │   │   │   │   ├── brr.cpp
+│   │   │   │   │   ├── counter.cpp
+│   │   │   │   │   ├── echo.cpp
+│   │   │   │   │   ├── envelope.cpp
+│   │   │   │   │   ├── gaussian.cpp
+│   │   │   │   │   ├── misc.cpp
+│   │   │   │   │   ├── sdsp.cpp
+│   │   │   │   │   ├── sdsp.hpp
+│   │   │   │   │   ├── serialization.cpp
+│   │   │   │   │   └── voice.cpp
+│   │   │   │   ├── smp
+│   │   │   │   │   ├── core
+│   │   │   │   │   │   ├── algorithms.cpp
+│   │   │   │   │   │   ├── core.cpp
+│   │   │   │   │   │   ├── core.hpp
+│   │   │   │   │   │   ├── memory.hpp
+│   │   │   │   │   │   ├── opcode_misc.cpp
+│   │   │   │   │   │   ├── opcode_mov.cpp
+│   │   │   │   │   │   ├── opcode_pc.cpp
+│   │   │   │   │   │   ├── opcode_read.cpp
+│   │   │   │   │   │   ├── opcode_rmw.cpp
+│   │   │   │   │   │   ├── registers.hpp
+│   │   │   │   │   │   ├── serialization.cpp
+│   │   │   │   │   │   └── table.cpp
+│   │   │   │   │   ├── smp.cpp
+│   │   │   │   │   ├── smp.hpp
+│   │   │   │   │   └── ssmp
+│   │   │   │   │       ├── debugger
+│   │   │   │   │       │   ├── debugger.cpp
+│   │   │   │   │       │   └── debugger.hpp
+│   │   │   │   │       ├── memory
+│   │   │   │   │       │   ├── memory.cpp
+│   │   │   │   │       │   └── memory.hpp
+│   │   │   │   │       ├── serialization.cpp
+│   │   │   │   │       ├── ssmp.cpp
+│   │   │   │   │       ├── ssmp.hpp
+│   │   │   │   │       └── timing
+│   │   │   │   │           ├── timing.cpp
+│   │   │   │   │           └── timing.hpp
+│   │   │   │   └── system
+│   │   │   │       ├── audio
+│   │   │   │       │   ├── audio.cpp
+│   │   │   │       │   └── audio.hpp
+│   │   │   │       ├── config
+│   │   │   │       │   ├── config.cpp
+│   │   │   │       │   └── config.hpp
+│   │   │   │       ├── debugger
+│   │   │   │       │   ├── debugger.cpp
+│   │   │   │       │   └── debugger.hpp
+│   │   │   │       ├── input
+│   │   │   │       │   ├── input.cpp
+│   │   │   │       │   └── input.hpp
+│   │   │   │       ├── interface
+│   │   │   │       │   └── interface.hpp
+│   │   │   │       ├── scheduler
+│   │   │   │       │   ├── scheduler.cpp
+│   │   │   │       │   └── scheduler.hpp
+│   │   │   │       ├── serialization.cpp
+│   │   │   │       ├── system.cpp
+│   │   │   │       ├── system.hpp
+│   │   │   │       └── video
+│   │   │   │           ├── video.cpp
+│   │   │   │           └── video.hpp
+│   │   │   └── VERSION.BSNES
+│   │   ├── snes_faust
+│   │   │   ├── apu.cpp
+│   │   │   ├── apu.h
+│   │   │   ├── cart
+│   │   │   │   ├── common.h
+│   │   │   │   ├── cx4.cpp
+│   │   │   │   ├── cx4.h
+│   │   │   │   ├── dsp1chip.h
+│   │   │   │   ├── dsp1.cpp
+│   │   │   │   ├── dsp1-datarom-synth.h
+│   │   │   │   ├── dsp1.h
+│   │   │   │   ├── dsp2chip.h
+│   │   │   │   ├── dsp2.cpp
+│   │   │   │   ├── dsp2.h
+│   │   │   │   ├── sa1.cpp
+│   │   │   │   ├── sa1cpu.cpp
+│   │   │   │   ├── sa1cpu.h
+│   │   │   │   ├── sa1.h
+│   │   │   │   ├── sdd1.cpp
+│   │   │   │   ├── sdd1.h
+│   │   │   │   ├── superfx.cpp
+│   │   │   │   └── superfx.h
+│   │   │   ├── cart.cpp
+│   │   │   ├── cart.h
+│   │   │   ├── cart-private.h
+│   │   │   ├── Core65816.h
+│   │   │   ├── Core65816.inc
+│   │   │   ├── cpu.cpp
+│   │   │   ├── cpu.h
+│   │   │   ├── cpu_hlif.inc
+│   │   │   ├── cpu_loop_body.inc
+│   │   │   ├── debug.cpp
+│   │   │   ├── debug.h
+│   │   │   ├── dis65816.cpp
+│   │   │   ├── dis65816.h
+│   │   │   ├── dma.inc
+│   │   │   ├── dsp.inc
+│   │   │   ├── input
+│   │   │   │   ├── common.h
+│   │   │   │   ├── gamepad.cpp
+│   │   │   │   ├── gamepad.h
+│   │   │   │   ├── mouse.cpp
+│   │   │   │   ├── mouse.h
+│   │   │   │   ├── multitap.cpp
+│   │   │   │   └── multitap.h
+│   │   │   ├── input.cpp
+│   │   │   ├── input_device.h
+│   │   │   ├── input.h
+│   │   │   ├── Makefile.am.inc
+│   │   │   ├── msu1.cpp
+│   │   │   ├── msu1.h
+│   │   │   ├── notes
+│   │   │   │   ├── GAME_NOTES
+│   │   │   │   ├── genops.cpp
+│   │   │   │   ├── ops2.txt
+│   │   │   │   ├── ops3.txt
+│   │   │   │   ├── ops.h
+│   │   │   │   ├── ops.txt
+│   │   │   │   └── PPU_DESIGN
+│   │   │   ├── ppu_base.inc
+│   │   │   ├── ppu_common.h
+│   │   │   ├── ppu_common.inc
+│   │   │   ├── ppu.cpp
+│   │   │   ├── ppu.h
+│   │   │   ├── ppu_mt.cpp
+│   │   │   ├── ppu_mtrender.cpp
+│   │   │   ├── ppu_mtrender.h
+│   │   │   ├── ppu_render_common.inc
+│   │   │   ├── ppu_st.cpp
+│   │   │   ├── snes.cpp
+│   │   │   ├── snes.h
+│   │   │   └── spc700.inc
+│   │   ├── SNSFLoader.cpp
+│   │   ├── SNSFLoader.h
+│   │   ├── sound
+│   │   │   ├── Blip_Buffer.cpp
+│   │   │   ├── Blip_Buffer.h
+│   │   │   ├── CassowaryResampler.cpp
+│   │   │   ├── CassowaryResampler.h
+│   │   │   ├── DSPUtility.cpp
+│   │   │   ├── DSPUtility.h
+│   │   │   ├── fir_blargg_common.h
+│   │   │   ├── fir_blargg_config.h
+│   │   │   ├── fir_blargg_endian.h
+│   │   │   ├── fir_blargg_source.h
+│   │   │   ├── Fir_Resampler.cpp
+│   │   │   ├── Fir_Resampler.h
+│   │   │   ├── Makefile.am.inc
+│   │   │   ├── okiadpcm.cpp
+│   │   │   ├── okiadpcm-deltatable.h
+│   │   │   ├── okiadpcm_generate.cpp
+│   │   │   ├── okiadpcm.h
+│   │   │   ├── OwlResampler.cpp
+│   │   │   ├── OwlResampler.h
+│   │   │   ├── ResamplerMAC.h
+│   │   │   ├── Stereo_Buffer.cpp
+│   │   │   ├── Stereo_Buffer.h
+│   │   │   ├── SwiftResampler_altivec.inc
+│   │   │   ├── SwiftResampler.cpp
+│   │   │   ├── SwiftResampler_generic.inc
+│   │   │   ├── SwiftResampler.h
+│   │   │   ├── SwiftResampler_neon.inc
+│   │   │   ├── SwiftResampler_sse2.inc
+│   │   │   ├── SwiftResampler_x86.inc
+│   │   │   ├── WAVRecord.cpp
+│   │   │   └── WAVRecord.h
+│   │   ├── SPCReader.cpp
+│   │   ├── SPCReader.h
+│   │   ├── ss
+│   │   │   ├── ak93c45.cpp
+│   │   │   ├── ak93c45.h
+│   │   │   ├── cart
+│   │   │   │   ├── ar4mp.cpp
+│   │   │   │   ├── ar4mp.h
+│   │   │   │   ├── backup.cpp
+│   │   │   │   ├── backup.h
+│   │   │   │   ├── bootrom.cpp
+│   │   │   │   ├── bootrom.h
+│   │   │   │   ├── common.h
+│   │   │   │   ├── cs1ram.cpp
+│   │   │   │   ├── cs1ram.h
+│   │   │   │   ├── extram.cpp
+│   │   │   │   ├── extram.h
+│   │   │   │   ├── rom.cpp
+│   │   │   │   ├── rom.h
+│   │   │   │   ├── stv.cpp
+│   │   │   │   └── stv.h
+│   │   │   ├── cart.cpp
+│   │   │   ├── cart.h
+│   │   │   ├── cdb.cpp
+│   │   │   ├── cdb.h
+│   │   │   ├── db.cpp
+│   │   │   ├── db.h
+│   │   │   ├── debug.inc
+│   │   │   ├── input
+│   │   │   │   ├── 3dpad.cpp
+│   │   │   │   ├── 3dpad.h
+│   │   │   │   ├── common.h
+│   │   │   │   ├── gamepad.cpp
+│   │   │   │   ├── gamepad.h
+│   │   │   │   ├── gun.cpp
+│   │   │   │   ├── gun.h
+│   │   │   │   ├── jpkeyboard.cpp
+│   │   │   │   ├── jpkeyboard.h
+│   │   │   │   ├── keyboard.cpp
+│   │   │   │   ├── keyboard.h
+│   │   │   │   ├── mission.cpp
+│   │   │   │   ├── mission.h
+│   │   │   │   ├── mouse.cpp
+│   │   │   │   ├── mouse.h
+│   │   │   │   ├── multitap.cpp
+│   │   │   │   ├── multitap.h
+│   │   │   │   ├── wheel.cpp
+│   │   │   │   └── wheel.h
+│   │   │   ├── Makefile.am
+│   │   │   ├── Makefile.in
+│   │   │   ├── notes
+│   │   │   │   ├── build_sh7095s_ctable.cpp
+│   │   │   │   ├── games.txt
+│   │   │   │   ├── gen_dsp.cpp
+│   │   │   │   ├── HOST-CPU-INTENSIVE-GAMES
+│   │   │   │   ├── PROBLEMATIC-GAMES
+│   │   │   │   ├── REFERENCES
+│   │   │   │   ├── SCSP-FM-GAMES
+│   │   │   │   └── WIDESCREEN-GAMES
+│   │   │   ├── scsp.h
+│   │   │   ├── scsp.inc
+│   │   │   ├── scu_aciv1tab.inc
+│   │   │   ├── scu_actab.inc
+│   │   │   ├── scu_btab.inc
+│   │   │   ├── scu_dsp_common.inc
+│   │   │   ├── scu_dsp_dmatab.inc
+│   │   │   ├── scu_dsp_gen.cpp
+│   │   │   ├── scu_dsp_gentab.inc
+│   │   │   ├── scu_dsp_jmp.cpp
+│   │   │   ├── scu_dsp_jmptab.inc
+│   │   │   ├── scu_dsp_misc.cpp
+│   │   │   ├── scu_dsp_misctab.inc
+│   │   │   ├── scu_dsp_mvi.cpp
+│   │   │   ├── scu_dsp_mvitab.inc
+│   │   │   ├── scu.h
+│   │   │   ├── scu.inc
+│   │   │   ├── sh7095.h
+│   │   │   ├── sh7095_idecodetab.inc
+│   │   │   ├── sh7095.inc
+│   │   │   ├── sh7095_opdefs.inc
+│   │   │   ├── sh7095_ops.inc
+│   │   │   ├── sh7095s_cnorm_dm.inc
+│   │   │   ├── sh7095s_cnorm.inc
+│   │   │   ├── sh7095s_ctable_dm.inc
+│   │   │   ├── sh7095s_ctable.inc
+│   │   │   ├── sh7095s_rsu.inc
+│   │   │   ├── smpc.cpp
+│   │   │   ├── smpc.h
+│   │   │   ├── smpc_iodevice.h
+│   │   │   ├── sound.cpp
+│   │   │   ├── sound.h
+│   │   │   ├── ss.cpp
+│   │   │   ├── ssf.cpp
+│   │   │   ├── ss.h
+│   │   │   ├── stvio.cpp
+│   │   │   ├── stvio.h
+│   │   │   ├── vdp1_common.h
+│   │   │   ├── vdp1.cpp
+│   │   │   ├── vdp1.h
+│   │   │   ├── vdp1_line.cpp
+│   │   │   ├── vdp1_poly.cpp
+│   │   │   ├── vdp1_sprite.cpp
+│   │   │   ├── vdp2_common.h
+│   │   │   ├── vdp2.cpp
+│   │   │   ├── vdp2.h
+│   │   │   ├── vdp2_render.cpp
+│   │   │   └── vdp2_render.h
+│   │   ├── SSFLoader.cpp
+│   │   ├── SSFLoader.h
+│   │   ├── state-common.h
+│   │   ├── state.cpp
+│   │   ├── state-driver.h
+│   │   ├── state.h
+│   │   ├── state_rewind.cpp
+│   │   ├── state_rewind.h
+│   │   ├── Stream.cpp
+│   │   ├── Stream.h
+│   │   ├── string
+│   │   │   ├── escape.cpp
+│   │   │   ├── escape.h
+│   │   │   ├── Makefile.am.inc
+│   │   │   ├── string.cpp
+│   │   │   └── string.h
+│   │   ├── tests.cpp
+│   │   ├── testsexp.cpp
+│   │   ├── testsexp.h
+│   │   ├── tests.h
+│   │   ├── time
+│   │   │   ├── Makefile.am.inc
+│   │   │   ├── Time_POSIX.cpp
+│   │   │   └── Time_Win32.cpp
+│   │   ├── Time.h
+│   │   ├── tremor
+│   │   │   ├── asm_arm.h
+│   │   │   ├── backends.h
+│   │   │   ├── bitwise.c
+│   │   │   ├── block.c
+│   │   │   ├── block.h
+│   │   │   ├── codebook.c
+│   │   │   ├── codebook.h
+│   │   │   ├── codec_internal.h
+│   │   │   ├── COPYING.TREMOR
+│   │   │   ├── floor0.c
+│   │   │   ├── floor1.c
+│   │   │   ├── framing.c
+│   │   │   ├── info.c
+│   │   │   ├── ivorbiscodec.h
+│   │   │   ├── ivorbisfile.h
+│   │   │   ├── lsp_lookup.h
+│   │   │   ├── Makefile.am.inc
+│   │   │   ├── mapping0.c
+│   │   │   ├── mdct.c
+│   │   │   ├── mdct.h
+│   │   │   ├── mdct_lookup.h
+│   │   │   ├── misc.h
+│   │   │   ├── ogg.h
+│   │   │   ├── os.h
+│   │   │   ├── os_types.h
+│   │   │   ├── README.MEDNAFEN
+│   │   │   ├── registry.c
+│   │   │   ├── registry.h
+│   │   │   ├── res012.c
+│   │   │   ├── sharedbook.c
+│   │   │   ├── synthesis.c
+│   │   │   ├── vorbisfile.c
+│   │   │   ├── window.c
+│   │   │   ├── window.h
+│   │   │   └── window_lookup.h
+│   │   ├── trio
+│   │   │   ├── CHANGES
+│   │   │   ├── Makefile.am.inc
+│   │   │   ├── MEDNAFEN-MODIFICATIONS
+│   │   │   ├── trio.c
+│   │   │   ├── triodef.h
+│   │   │   ├── trio.h
+│   │   │   ├── trionan.c
+│   │   │   ├── trionan.h
+│   │   │   ├── triop.h
+│   │   │   ├── triostr.c
+│   │   │   └── triostr.h
+│   │   ├── types.h
+│   │   ├── vb
+│   │   │   ├── debug.cpp
+│   │   │   ├── debug.h
+│   │   │   ├── input.cpp
+│   │   │   ├── input.h
+│   │   │   ├── Makefile.am.inc
+│   │   │   ├── timer.cpp
+│   │   │   ├── timer.h
+│   │   │   ├── vb.cpp
+│   │   │   ├── vb.h
+│   │   │   ├── vip.cpp
+│   │   │   ├── vip_draw.inc
+│   │   │   ├── vip.h
+│   │   │   ├── vsu.cpp
+│   │   │   └── vsu.h
+│   │   ├── video
+│   │   │   ├── convert.cpp
+│   │   │   ├── convert.h
+│   │   │   ├── Deinterlacer_Blend.cpp
+│   │   │   ├── Deinterlacer_Blend.h
+│   │   │   ├── Deinterlacer.cpp
+│   │   │   ├── Deinterlacer.h
+│   │   │   ├── Deinterlacer_Simple.cpp
+│   │   │   ├── Deinterlacer_Simple.h
+│   │   │   ├── font12x13ja.h
+│   │   │   ├── font18x18ko.h
+│   │   │   ├── font5x7.h
+│   │   │   ├── font6x12.h
+│   │   │   ├── font6x13.h
+│   │   │   ├── font6x9.h
+│   │   │   ├── font9x18.h
+│   │   │   ├── font-data-12x13.c
+│   │   │   ├── font-data-18x18.c
+│   │   │   ├── font-data.cpp
+│   │   │   ├── font-data.h
+│   │   │   ├── Makefile.am.inc
+│   │   │   ├── png.cpp
+│   │   │   ├── png.h
+│   │   │   ├── primitives.cpp
+│   │   │   ├── primitives.h
+│   │   │   ├── README.FONTS
+│   │   │   ├── resize.cpp
+│   │   │   ├── resize.h
+│   │   │   ├── surface.cpp
+│   │   │   ├── surface.h
+│   │   │   ├── tblur.cpp
+│   │   │   ├── tblur.h
+│   │   │   ├── text.cpp
+│   │   │   ├── text.h
+│   │   │   ├── video-common.h
+│   │   │   └── video.cpp
+│   │   ├── video-driver.h
+│   │   ├── video.h
+│   │   ├── VirtualFS.cpp
+│   │   ├── VirtualFS.h
+│   │   ├── win32-common.cpp
+│   │   ├── win32-common.h
+│   │   ├── wswan
+│   │   │   ├── comm.cpp
+│   │   │   ├── comm.h
+│   │   │   ├── debug.cpp
+│   │   │   ├── debug.h
+│   │   │   ├── dis
+│   │   │   │   ├── disasm.h
+│   │   │   │   ├── dis_decode.cpp
+│   │   │   │   ├── dis_groups.cpp
+│   │   │   │   ├── dis_tables.h
+│   │   │   │   ├── dis_tables.inc
+│   │   │   │   ├── opcodes.inc
+│   │   │   │   ├── resolve.cpp
+│   │   │   │   └── syntax.cpp
+│   │   │   ├── eeprom.cpp
+│   │   │   ├── eeprom.h
+│   │   │   ├── gfx.cpp
+│   │   │   ├── gfx.h
+│   │   │   ├── interrupt.cpp
+│   │   │   ├── interrupt.h
+│   │   │   ├── main.cpp
+│   │   │   ├── Makefile.am.inc
+│   │   │   ├── memory.cpp
+│   │   │   ├── memory.h
+│   │   │   ├── rtc.cpp
+│   │   │   ├── rtc.h
+│   │   │   ├── sound.cpp
+│   │   │   ├── sound.h
+│   │   │   ├── start.inc
+│   │   │   ├── tcache.cpp
+│   │   │   ├── v30mz.cpp
+│   │   │   ├── v30mz-ea.inc
+│   │   │   ├── v30mz.h
+│   │   │   ├── v30mz-modrm.inc
+│   │   │   ├── v30mz-private.h
+│   │   │   ├── wstech24.txt
+│   │   │   └── wswan.h
+│   │   └── zstd
+│   │       ├── common
+│   │       │   ├── bitstream.h
+│   │       │   ├── compiler.h
+│   │       │   ├── cpu.h
+│   │       │   ├── debug.h
+│   │       │   ├── entropy_common.c
+│   │       │   ├── error_private.c
+│   │       │   ├── error_private.h
+│   │       │   ├── fse_decompress.c
+│   │       │   ├── fse.h
+│   │       │   ├── huf.h
+│   │       │   ├── mem.h
+│   │       │   ├── xxhash.c
+│   │       │   ├── xxhash.h
+│   │       │   ├── zstd_common.c
+│   │       │   ├── zstd_deps.h
+│   │       │   ├── zstd_internal.h
+│   │       │   └── zstd_trace.h
+│   │       ├── COPYING.ZSTD
+│   │       ├── decompress
+│   │       │   ├── huf_decompress.c
+│   │       │   ├── zstd_ddict.c
+│   │       │   ├── zstd_ddict.h
+│   │       │   ├── zstd_decompress_block.c
+│   │       │   ├── zstd_decompress_block.h
+│   │       │   ├── zstd_decompress.c
+│   │       │   └── zstd_decompress_internal.h
+│   │       ├── LICENSE.ZSTD
+│   │       ├── Makefile.am.inc
+│   │       ├── README.MEDNAFEN
+│   │       ├── zstd_errors.h
+│   │       └── zstd.h
+│   ├── stamp-h1
+│   ├── tests
+│   │   ├── apple2
+│   │   │   ├── bintodsk.cpp
+│   │   │   ├── crc.inc
+│   │   │   ├── crctab-0.bin
+│   │   │   ├── crctab-1.bin
+│   │   │   ├── crctab-2.bin
+│   │   │   ├── crctab-3.bin
+│   │   │   ├── crctab-4.bin
+│   │   │   ├── crctab-5.bin
+│   │   │   ├── crctab-6.bin
+│   │   │   ├── crctab-7.bin
+│   │   │   ├── decimal
+│   │   │   │   ├── decimal.asm
+│   │   │   │   ├── decimal.bin
+│   │   │   │   └── decimal.dsk
+│   │   │   ├── decimal.bin
+│   │   │   └── gencrctab.cpp
+│   │   ├── pce
+│   │   │   ├── decimal
+│   │   │   │   ├── adc.asm
+│   │   │   │   ├── adc.pce
+│   │   │   │   ├── clean.sh
+│   │   │   │   ├── gen-results.cpp
+│   │   │   │   ├── make.sh
+│   │   │   │   ├── sbc.asm
+│   │   │   │   ├── sbc.pce
+│   │   │   │   └── XXc.inc
+│   │   │   ├── font.bin
+│   │   │   └── vcectdump
+│   │   │       ├── make.sh
+│   │   │       ├── vcectdump.asm
+│   │   │       └── vcectdump.pce
+│   │   └── psx
+│   │       ├── gpuprec.exe
+│   │       ├── linefuzz.exe
+│   │       ├── multires-newgpu.exe
+│   │       └── triorder.exe
+│   └── TODO
+└── mednafen-1.32.1.tar.xz -> /home/felix/packages/mednafen/mednafen-1.32.1.tar.xz
+
+170 directories, 1858 files

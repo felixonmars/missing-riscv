@@ -1,0 +1,1079 @@
+src
+├── config.toml -> /home/felix/packages/gitlab-runner/config.toml
+├── gitlab-runner
+│   ├── apps
+│   │   └── gitlab-runner-helper
+│   │       └── main.go
+│   ├── cache
+│   │   ├── adapter.go
+│   │   ├── adapter_test.go
+│   │   ├── azure
+│   │   │   ├── adapter.go
+│   │   │   ├── adapter_test.go
+│   │   │   ├── azure.go
+│   │   │   ├── azure_test.go
+│   │   │   ├── credentials_resolver.go
+│   │   │   ├── credentials_resolver_test.go
+│   │   │   └── mock_credentialsResolver.go
+│   │   ├── cache.go
+│   │   ├── cache_test.go
+│   │   ├── credentials_adapter.go
+│   │   ├── credentials_adapter_test.go
+│   │   ├── gcs
+│   │   │   ├── adapter.go
+│   │   │   ├── adapter_test.go
+│   │   │   ├── credentials_resolver.go
+│   │   │   ├── credentials_resolver_test.go
+│   │   │   ├── mock_credentialsResolver.go
+│   │   │   ├── mock_IamCredentialsClient.go
+│   │   │   └── mock_MetadataClient.go
+│   │   ├── gcsv2
+│   │   │   ├── adapter.go
+│   │   │   └── adapter_test.go
+│   │   ├── mock_Adapter.go
+│   │   ├── mock_CredentialsAdapter.go
+│   │   ├── s3
+│   │   │   ├── adapter.go
+│   │   │   ├── adapter_test.go
+│   │   │   ├── bucket_location_tripper.go
+│   │   │   ├── credentials_adapter.go
+│   │   │   ├── credentials_adapter_test.go
+│   │   │   ├── minio.go
+│   │   │   ├── minio_test.go
+│   │   │   └── mock_minioClient.go
+│   │   ├── s3v2
+│   │   │   ├── adapter.go
+│   │   │   ├── adapter_test.go
+│   │   │   ├── mock_s3Presigner.go
+│   │   │   ├── s3.go
+│   │   │   └── s3_test.go
+│   │   └── test
+│   │       └── adapter.go
+│   ├── CHANGELOG.md
+│   ├── ci
+│   │   ├── build_ci_image
+│   │   ├── _build_ci_image_common
+│   │   ├── build_go_fips_image
+│   │   ├── build_helper_docker
+│   │   ├── build_release_windows_images.ps1
+│   │   ├── build_ubi_fips_base_image
+│   │   ├── docker_commands
+│   │   ├── release_s3
+│   │   ├── touch_make_dependencies
+│   │   ├── upstream_commit_ref
+│   │   └── version
+│   ├── commands
+│   │   ├── builds_helper.go
+│   │   ├── builds_helper_integration_test.go
+│   │   ├── builds_helper_test.go
+│   │   ├── config.go
+│   │   ├── config_test.go
+│   │   ├── config_unix.go
+│   │   ├── config_windows.go
+│   │   ├── constants.go
+│   │   ├── fleeting
+│   │   │   ├── fleeting.go
+│   │   │   └── fleeting_integration_test.go
+│   │   ├── health_helper.go
+│   │   ├── helpers
+│   │   │   ├── archive
+│   │   │   │   ├── archive.go
+│   │   │   │   ├── archive_test.go
+│   │   │   │   ├── fastzip
+│   │   │   │   │   ├── options_test.go
+│   │   │   │   │   ├── zip_fastzip_archiver.go
+│   │   │   │   │   └── zip_fastzip_extractor.go
+│   │   │   │   ├── gziplegacy
+│   │   │   │   │   └── gzip_legacy_archiver.go
+│   │   │   │   ├── mock_Archiver.go
+│   │   │   │   ├── raw
+│   │   │   │   │   └── raw_archiver.go
+│   │   │   │   ├── tarzstd
+│   │   │   │   │   ├── ops_unix.go
+│   │   │   │   │   ├── ops_windows.go
+│   │   │   │   │   ├── tarzstd_archiver.go
+│   │   │   │   │   └── tarzstd_extractor.go
+│   │   │   │   └── ziplegacy
+│   │   │   │       ├── zip_legacy_archiver.go
+│   │   │   │       └── zip_legacy_extractor.go
+│   │   │   ├── archiver.go
+│   │   │   ├── archiver_test.go
+│   │   │   ├── artifact_metadata.go
+│   │   │   ├── artifact_metadata_test.go
+│   │   │   ├── artifacts_downloader.go
+│   │   │   ├── artifacts_downloader_test.go
+│   │   │   ├── artifacts_test.go
+│   │   │   ├── artifacts_uploader.go
+│   │   │   ├── artifacts_uploader_integration_test.go
+│   │   │   ├── artifacts_uploader_test.go
+│   │   │   ├── cache_archiver.go
+│   │   │   ├── cache_archiver_integration_test.go
+│   │   │   ├── cache_client.go
+│   │   │   ├── cache_extractor.go
+│   │   │   ├── cache_extractor_test.go
+│   │   │   ├── cache_init.go
+│   │   │   ├── cache_init_integration_test.go
+│   │   │   ├── file_archiver.go
+│   │   │   ├── file_archiver_test.go
+│   │   │   ├── health_check.go
+│   │   │   ├── health_check_integration_test.go
+│   │   │   ├── helpers_archiver_test.go
+│   │   │   ├── helpers_cache_archiver_test.go
+│   │   │   ├── meter
+│   │   │   │   ├── formatters.go
+│   │   │   │   ├── formatters_test.go
+│   │   │   │   ├── meter.go
+│   │   │   │   ├── reader.go
+│   │   │   │   ├── reader_test.go
+│   │   │   │   ├── writer.go
+│   │   │   │   └── writer_test.go
+│   │   │   ├── mock_logOutputWriter.go
+│   │   │   ├── mock_logStreamProvider.go
+│   │   │   ├── read_logs.go
+│   │   │   ├── read_logs_test.go
+│   │   │   ├── retry_helper.go
+│   │   │   ├── retry_helper_test.go
+│   │   │   └── testdata
+│   │   │       └── test-artifacts
+│   │   │           ├── file-0
+│   │   │           ├── file-1
+│   │   │           ├── file-2
+│   │   │           ├── file-3
+│   │   │           └── file-4
+│   │   ├── helpers_register_test.go
+│   │   ├── list.go
+│   │   ├── multi.go
+│   │   ├── multi_test.go
+│   │   ├── register.go
+│   │   ├── register_integration_test.go
+│   │   ├── register_test.go
+│   │   ├── register_windows_test.go
+│   │   ├── reset_token.go
+│   │   ├── service_darwin.go
+│   │   ├── service.go
+│   │   ├── service_integration_test.go
+│   │   ├── service_linux.go
+│   │   ├── service_portable.go
+│   │   ├── service_windows.go
+│   │   ├── single.go
+│   │   ├── single_test.go
+│   │   ├── unregister.go
+│   │   ├── user_mode_warning.go
+│   │   └── verify.go
+│   ├── common
+│   │   ├── allowed_images.go
+│   │   ├── allowed_images_test.go
+│   │   ├── build.go
+│   │   ├── buildlogger
+│   │   │   ├── build_logger.go
+│   │   │   ├── build_logger_test.go
+│   │   │   └── internal
+│   │   │       ├── masker
+│   │   │       │   ├── masker.go
+│   │   │       │   └── masker_test.go
+│   │   │       ├── nopcloser.go
+│   │   │       ├── sync.go
+│   │   │       ├── tee.go
+│   │   │       ├── timestamper
+│   │   │       │   ├── timestamper.go
+│   │   │       │   └── timestamper_test.go
+│   │   │       ├── tokensanitizer
+│   │   │       │   ├── token_masker.go
+│   │   │       │   └── token_masker_test.go
+│   │   │       ├── unique.go
+│   │   │       └── urlsanitizer
+│   │   │           ├── urlsanitizer.go
+│   │   │           └── urlsanitizer_test.go
+│   │   ├── build_settings.go
+│   │   ├── build_settings_test.go
+│   │   ├── buildtest
+│   │   │   ├── abort.go
+│   │   │   ├── binary.go
+│   │   │   ├── cleanup.go
+│   │   │   ├── job_output_limit.go
+│   │   │   ├── masking.go
+│   │   │   ├── sections.go
+│   │   │   ├── test.go
+│   │   │   └── variables.go
+│   │   ├── build_test.go
+│   │   ├── build_url_helper.go
+│   │   ├── command.go
+│   │   ├── config
+│   │   │   └── runner
+│   │   │       ├── monitoring
+│   │   │       │   ├── job_queuing_durations.go
+│   │   │       │   └── job_queuing_durations_test.go
+│   │   │       └── monitoring.go
+│   │   ├── config.go
+│   │   ├── config_test.go
+│   │   ├── config_validation.go
+│   │   ├── consts.go
+│   │   ├── executor.go
+│   │   ├── executor_test.go
+│   │   ├── failure_reason_mapper.go
+│   │   ├── failure_reason_mapper_test.go
+│   │   ├── mock_ConfigSaver.go
+│   │   ├── mock_ExecutorData.go
+│   │   ├── mock_Executor.go
+│   │   ├── mock_ExecutorProvider.go
+│   │   ├── mock_JobTrace.go
+│   │   ├── mock_logger.go
+│   │   ├── mock_Network.go
+│   │   ├── mock_SecretResolver.go
+│   │   ├── mock_SecretsResolver.go
+│   │   ├── mock_Shell.go
+│   │   ├── network.go
+│   │   ├── network_test.go
+│   │   ├── process_logger_adaptor.go
+│   │   ├── reset_token.go
+│   │   ├── secrets.go
+│   │   ├── secrets_test.go
+│   │   ├── shell.go
+│   │   ├── support.go
+│   │   ├── system_id_state.go
+│   │   ├── system_id_state_test.go
+│   │   ├── test.go
+│   │   ├── trace.go
+│   │   ├── variables.go
+│   │   ├── variables_test.go
+│   │   └── version.go
+│   ├── config.toml.example
+│   ├── CONTRIBUTING.md
+│   ├── Dangerfile
+│   ├── dockerfiles
+│   │   ├── ci
+│   │   │   ├── Dockerfile
+│   │   │   ├── Dockerfile.rebuild
+│   │   │   ├── go.fips.Dockerfile
+│   │   │   ├── go.fips.Dockerfile.rebuild
+│   │   │   ├── ubi.fips.base.Dockerfile
+│   │   │   └── ubi.fips.base.Dockerfile.rebuild
+│   │   ├── fips
+│   │   │   ├── helper.fips.Dockerfile
+│   │   │   └── runner.fips.Dockerfile
+│   │   ├── runner
+│   │   │   ├── alpine
+│   │   │   │   ├── Dockerfile
+│   │   │   │   ├── entrypoint
+│   │   │   │   ├── install-gitlab-runner
+│   │   │   │   └── README.md
+│   │   │   ├── install-deps
+│   │   │   ├── ubi-fips
+│   │   │   │   ├── Dockerfile
+│   │   │   │   ├── entrypoint
+│   │   │   │   ├── install-gitlab-runner
+│   │   │   │   └── README.md
+│   │   │   └── ubuntu
+│   │   │       ├── Dockerfile
+│   │   │       ├── entrypoint
+│   │   │       ├── install-gitlab-runner
+│   │   │       └── README.md
+│   │   └── runner-helper
+│   │       ├── binaries
+│   │       ├── Dockerfile.alpine
+│   │       ├── Dockerfile.alpine-edge
+│   │       ├── Dockerfile.fips
+│   │       ├── Dockerfile.ubuntu
+│   │       ├── Dockerfile.x86_64_nanoserver
+│   │       ├── Dockerfile.x86_64_servercore
+│   │       ├── helpers
+│   │       │   ├── checksum.ps1
+│   │       │   ├── entrypoint
+│   │       │   └── entrypoint.cmd
+│   │       └── scripts
+│   │           └── gitlab-runner-build
+│   ├── docs
+│   │   ├── commands
+│   │   │   └── index.md
+│   │   ├── configuration
+│   │   │   ├── advanced-configuration.md
+│   │   │   ├── autoscale.md
+│   │   │   ├── configuring_runner_operator.md
+│   │   │   ├── feature-flags.md
+│   │   │   ├── gpus.md
+│   │   │   ├── img
+│   │   │   │   ├── autoscale-example.png
+│   │   │   │   ├── autoscale-state-chart.png
+│   │   │   │   └── runner_fargate_driver_ssh.png
+│   │   │   ├── index.md
+│   │   │   ├── init.md
+│   │   │   ├── macos_setup.md
+│   │   │   ├── proxy.md
+│   │   │   ├── runner_autoscale_aws
+│   │   │   │   └── index.md
+│   │   │   ├── runner_autoscale_aws_fargate
+│   │   │   │   └── index.md
+│   │   │   ├── speed_up_job_execution.md
+│   │   │   └── tls-self-signed.md
+│   │   ├── development
+│   │   │   ├── add-windows-version.md
+│   │   │   ├── img
+│   │   │   │   └── rancher-configuration.png
+│   │   │   ├── index.md
+│   │   │   └── reviewing-gitlab-runner.md
+│   │   ├── executors
+│   │   │   ├── custom_examples
+│   │   │   │   ├── libvirt.md
+│   │   │   │   └── lxd.md
+│   │   │   ├── custom.md
+│   │   │   ├── docker_autoscaler.md
+│   │   │   ├── docker_machine.md
+│   │   │   ├── docker.md
+│   │   │   ├── index.md
+│   │   │   ├── instance.md
+│   │   │   ├── kubernetes
+│   │   │   │   ├── index.md
+│   │   │   │   ├── troubleshooting.md
+│   │   │   │   └── use_podman_with_kubernetes.md
+│   │   │   ├── parallels.md
+│   │   │   ├── shell.md
+│   │   │   ├── ssh.md
+│   │   │   └── virtualbox.md
+│   │   ├── faq
+│   │   │   └── index.md
+│   │   ├── fleet_scaling
+│   │   │   ├── fleeting.md
+│   │   │   └── index.md
+│   │   ├── index.md
+│   │   ├── install
+│   │   │   ├── bleeding-edge.md
+│   │   │   ├── docker.md
+│   │   │   ├── freebsd.md
+│   │   │   ├── gpg-keys
+│   │   │   │   ├── 9CE45ABC880721D4.pub.gpg
+│   │   │   │   └── A674BF8135DFA027.pub.gpg
+│   │   │   ├── img
+│   │   │   │   ├── openshift_allitems_v13_3.png
+│   │   │   │   ├── openshift_installoperator_v13_3.png
+│   │   │   │   └── openshift_success_v13_3.png
+│   │   │   ├── index.md
+│   │   │   ├── kubernetes-agent.md
+│   │   │   ├── kubernetes_helm_chart_configuration.md
+│   │   │   ├── kubernetes.md
+│   │   │   ├── kubernetes_troubleshooting.md
+│   │   │   ├── linux-manually.md
+│   │   │   ├── linux-repository.md
+│   │   │   ├── operator.md
+│   │   │   ├── osx.md
+│   │   │   ├── support-policy.md
+│   │   │   └── windows.md
+│   │   ├── internal
+│   │   │   ├── ci
+│   │   │   │   └── packages_iteration.md
+│   │   │   └── engineering
+│   │   │       └── executor-interface
+│   │   │           └── index.md
+│   │   ├── monitoring
+│   │   │   └── index.md
+│   │   ├── register
+│   │   │   └── index.md
+│   │   ├── runner_autoscale
+│   │   │   ├── img
+│   │   │   │   └── next-runner-autoscaling-overview.png
+│   │   │   └── index.md
+│   │   ├── security
+│   │   │   └── index.md
+│   │   └── shells
+│   │       └── index.md
+│   ├── executors
+│   │   ├── abstract.go
+│   │   ├── custom
+│   │   │   ├── api
+│   │   │   │   ├── config.go
+│   │   │   │   └── const.go
+│   │   │   ├── command
+│   │   │   │   ├── command.go
+│   │   │   │   ├── command_test.go
+│   │   │   │   ├── errors.go
+│   │   │   │   └── mock_Command.go
+│   │   │   ├── config.go
+│   │   │   ├── config_test.go
+│   │   │   ├── consts.go
+│   │   │   ├── custom.go
+│   │   │   ├── custom_test.go
+│   │   │   ├── integration_test.go
+│   │   │   ├── terminal.go
+│   │   │   ├── terminal_test.go
+│   │   │   └── testdata
+│   │   │       └── test_executor
+│   │   │           └── main.go
+│   │   ├── default_executor_provider.go
+│   │   ├── docker
+│   │   │   ├── autoscaler
+│   │   │   │   ├── autoscaler.go
+│   │   │   │   ├── autoscaler_integration_test.go
+│   │   │   │   ├── autoscaler_integration_unix_test.go
+│   │   │   │   └── autoscaler_integration_windows_test.go
+│   │   │   ├── config_updater.go
+│   │   │   ├── config_updater_test.go
+│   │   │   ├── consts.go
+│   │   │   ├── docker_command.go
+│   │   │   ├── docker_command_integration_test.go
+│   │   │   ├── docker.go
+│   │   │   ├── docker_test.go
+│   │   │   ├── internal
+│   │   │   │   ├── exec
+│   │   │   │   │   ├── exec.go
+│   │   │   │   │   ├── exec_test.go
+│   │   │   │   │   ├── mock_conn.go
+│   │   │   │   │   ├── mock_Docker.go
+│   │   │   │   │   └── mock_reader.go
+│   │   │   │   ├── labels
+│   │   │   │   │   ├── labels.go
+│   │   │   │   │   └── labels_test.go
+│   │   │   │   ├── networks
+│   │   │   │   │   ├── manager.go
+│   │   │   │   │   ├── manager_integration_test.go
+│   │   │   │   │   ├── manager_test.go
+│   │   │   │   │   ├── mock_debugLogger.go
+│   │   │   │   │   ├── mock_Manager.go
+│   │   │   │   │   └── utils.go
+│   │   │   │   ├── pull
+│   │   │   │   │   ├── manager.go
+│   │   │   │   │   ├── manager_test.go
+│   │   │   │   │   ├── mock_Manager.go
+│   │   │   │   │   └── mock_pullLogger.go
+│   │   │   │   ├── user
+│   │   │   │   │   ├── mock_Inspect.go
+│   │   │   │   │   ├── user.go
+│   │   │   │   │   └── user_test.go
+│   │   │   │   ├── volumes
+│   │   │   │   │   ├── manager.go
+│   │   │   │   │   ├── manager_integration_test.go
+│   │   │   │   │   ├── manager_integration_unix_test.go
+│   │   │   │   │   ├── manager_integration_windows_test.go
+│   │   │   │   │   ├── manager_test.go
+│   │   │   │   │   ├── manager_windows_test.go
+│   │   │   │   │   ├── mock_debugLogger.go
+│   │   │   │   │   ├── mock_Manager.go
+│   │   │   │   │   ├── parser
+│   │   │   │   │   │   ├── base_parser.go
+│   │   │   │   │   │   ├── errors.go
+│   │   │   │   │   │   ├── linux_parser.go
+│   │   │   │   │   │   ├── linux_parser_test.go
+│   │   │   │   │   │   ├── mock_Parser.go
+│   │   │   │   │   │   ├── parser.go
+│   │   │   │   │   │   ├── volume.go
+│   │   │   │   │   │   ├── volume_test.go
+│   │   │   │   │   │   ├── windows_parser.go
+│   │   │   │   │   │   ├── windows_parser_test.go
+│   │   │   │   │   │   ├── windows_path.go
+│   │   │   │   │   │   ├── windows_path_test.go
+│   │   │   │   │   │   └── windows_path_windows.go
+│   │   │   │   │   ├── permission
+│   │   │   │   │   │   ├── linux_set.go
+│   │   │   │   │   │   ├── linux_set_integration_test.go
+│   │   │   │   │   │   ├── linux_set_test.go
+│   │   │   │   │   │   ├── set.go
+│   │   │   │   │   │   └── windows_set.go
+│   │   │   │   │   ├── utils.go
+│   │   │   │   │   ├── utils_test.go
+│   │   │   │   │   └── utils_windows_test.go
+│   │   │   │   └── wait
+│   │   │   │       ├── mock_KillWaiter.go
+│   │   │   │       ├── mock_Waiter.go
+│   │   │   │       ├── wait.go
+│   │   │   │       └── wait_test.go
+│   │   │   ├── labeler.go
+│   │   │   ├── machine
+│   │   │   │   ├── collector.go
+│   │   │   │   ├── collector_test.go
+│   │   │   │   ├── consts.go
+│   │   │   │   ├── coordinator.go
+│   │   │   │   ├── coordinator_test.go
+│   │   │   │   ├── data.go
+│   │   │   │   ├── details.go
+│   │   │   │   ├── details_test.go
+│   │   │   │   ├── idle_limit_strategy.go
+│   │   │   │   ├── idle_limit_strategy_test.go
+│   │   │   │   ├── machine.go
+│   │   │   │   ├── machine_test.go
+│   │   │   │   ├── name.go
+│   │   │   │   ├── name_test.go
+│   │   │   │   ├── provider.go
+│   │   │   │   ├── provider_test.go
+│   │   │   │   ├── state.go
+│   │   │   │   ├── terminal.go
+│   │   │   │   └── terminal_test.go
+│   │   │   ├── network.go
+│   │   │   ├── pull.go
+│   │   │   ├── services.go
+│   │   │   ├── services_test.go
+│   │   │   ├── terminal.go
+│   │   │   ├── terminal_integration_test.go
+│   │   │   ├── terminal_test.go
+│   │   │   ├── tty.go
+│   │   │   └── volume.go
+│   │   ├── environment.go
+│   │   ├── init.go
+│   │   ├── instance
+│   │   │   ├── instance.go
+│   │   │   └── instance_integration_test.go
+│   │   ├── internal
+│   │   │   └── autoscaler
+│   │   │       ├── acquisition.go
+│   │   │       ├── acquisition_test.go
+│   │   │       ├── executor.go
+│   │   │       ├── executor_test.go
+│   │   │       ├── logger
+│   │   │       │   ├── logger.go
+│   │   │       │   └── logger_test.go
+│   │   │       ├── nesting_init.go
+│   │   │       ├── nesting_init_test.go
+│   │   │       ├── provider.go
+│   │   │       └── provider_test.go
+│   │   ├── kubernetes
+│   │   │   ├── container_entrypoint_forwarder.go
+│   │   │   ├── container_entrypoint_forwarder_test.go
+│   │   │   ├── exec.go
+│   │   │   ├── exec_test.go
+│   │   │   ├── feature.go
+│   │   │   ├── feature_test.go
+│   │   │   ├── helpers_kubernetes_test.go
+│   │   │   ├── host_aliases.go
+│   │   │   ├── host_aliases_test.go
+│   │   │   ├── internal
+│   │   │   │   └── pull
+│   │   │   │       ├── errors.go
+│   │   │   │       ├── manager.go
+│   │   │   │       ├── manager_test.go
+│   │   │   │       ├── mock_Manager.go
+│   │   │   │       └── mock_pullLogger.go
+│   │   │   ├── kubernetes.go
+│   │   │   ├── kubernetes_integration_test.go
+│   │   │   ├── kubernetes_test.go
+│   │   │   ├── log_processor.go
+│   │   │   ├── log_processor_test.go
+│   │   │   ├── mock_backoffCalculator.go
+│   │   │   ├── mock_featureChecker.go
+│   │   │   ├── mock_logProcessor.go
+│   │   │   ├── mock_logStreamer.go
+│   │   │   ├── mock_RemoteExecutor.go
+│   │   │   ├── overwrites.go
+│   │   │   ├── overwrites_test.go
+│   │   │   ├── service_proxy.go
+│   │   │   ├── service_proxy_test.go
+│   │   │   ├── terminal.go
+│   │   │   ├── util.go
+│   │   │   └── util_test.go
+│   │   ├── parallels
+│   │   │   ├── parallels.go
+│   │   │   ├── parallels_integration_test.go
+│   │   │   └── parallels_test.go
+│   │   ├── shell
+│   │   │   ├── shell.go
+│   │   │   ├── shell_integration_test.go
+│   │   │   ├── shell_terminal.go
+│   │   │   └── shell_test.go
+│   │   ├── ssh
+│   │   │   ├── ssh.go
+│   │   │   └── ssh_test.go
+│   │   ├── virtualbox
+│   │   │   ├── virtualbox.go
+│   │   │   ├── virtualbox_integration_test.go
+│   │   │   └── virtualbox_test.go
+│   │   └── vm
+│   │       ├── vm.go
+│   │       └── vm_test.go
+│   ├── go.mod
+│   ├── go.sum
+│   ├── helpers
+│   │   ├── akeyless
+│   │   │   └── service
+│   │   │       ├── akeyless.go
+│   │   │       ├── akeyless_test.go
+│   │   │       ├── mock_akeylessAPIClient.go
+│   │   │       └── mock_Akeyless.go
+│   │   ├── ansi_colors.go
+│   │   ├── archives
+│   │   │   ├── gzip_create.go
+│   │   │   ├── gzip_create_test.go
+│   │   │   ├── os_unix.go
+│   │   │   ├── os_windows.go
+│   │   │   ├── path_check_helper.go
+│   │   │   ├── path_check_helper_test.go
+│   │   │   ├── path_error_tracker.go
+│   │   │   ├── path_error_tracker_test.go
+│   │   │   ├── zip_create.go
+│   │   │   ├── zip_create_test.go
+│   │   │   ├── zip_create_unix_test.go
+│   │   │   ├── zip_create_windows_test.go
+│   │   │   ├── zip_extract.go
+│   │   │   ├── zip_extract_test.go
+│   │   │   ├── zip_extra.go
+│   │   │   ├── zip_extra_test.go
+│   │   │   ├── zip_extra_unix.go
+│   │   │   └── zip_extra_windows.go
+│   │   ├── azure_key_vault
+│   │   │   └── service
+│   │   │       ├── azure_key_vault.go
+│   │   │       └── mock_AzureKeyVault.go
+│   │   ├── build_section.go
+│   │   ├── build_section_test.go
+│   │   ├── certificate
+│   │   │   ├── certificate.go
+│   │   │   ├── mock_Generator.go
+│   │   │   ├── x509.go
+│   │   │   └── x509_test.go
+│   │   ├── cli
+│   │   │   ├── cpuprofile.go
+│   │   │   ├── fix_home.go
+│   │   │   ├── init_cli.go
+│   │   │   ├── init_cli_windows.go
+│   │   │   ├── runtime_platform.go
+│   │   │   └── warn_on_bool.go
+│   │   ├── container
+│   │   │   ├── helperimage
+│   │   │   │   ├── info.go
+│   │   │   │   ├── info_test.go
+│   │   │   │   ├── linux_info.go
+│   │   │   │   ├── linux_info_test.go
+│   │   │   │   ├── windows_info.go
+│   │   │   │   └── windows_info_test.go
+│   │   │   ├── services
+│   │   │   │   ├── services.go
+│   │   │   │   ├── services_test.go
+│   │   │   │   └── test
+│   │   │   │       └── test.go
+│   │   │   └── windows
+│   │   │       ├── version.go
+│   │   │       └── version_test.go
+│   │   ├── converter.go
+│   │   ├── converter_test.go
+│   │   ├── dns
+│   │   │   ├── test
+│   │   │   │   └── test.go
+│   │   │   ├── utils.go
+│   │   │   └── utils_test.go
+│   │   ├── docker
+│   │   │   ├── auth
+│   │   │   │   ├── auth.go
+│   │   │   │   ├── auth_test.go
+│   │   │   │   └── testdata
+│   │   │   │       ├── docker-credential-bin.sh
+│   │   │   │       └── docker-credential-windows.cmd
+│   │   │   ├── client.go
+│   │   │   ├── credentials.go
+│   │   │   ├── errors
+│   │   │   │   └── errors.go
+│   │   │   ├── machine_command.go
+│   │   │   ├── machine_command_test.go
+│   │   │   ├── machine.go
+│   │   │   ├── mock_Client.go
+│   │   │   ├── mock_Machine.go
+│   │   │   ├── official_docker_client.go
+│   │   │   ├── official_docker_client_test.go
+│   │   │   ├── options.go
+│   │   │   └── test
+│   │   │       └── error.go
+│   │   ├── fatal_panic.go
+│   │   ├── featureflags
+│   │   │   ├── flags.go
+│   │   │   └── flags_test.go
+│   │   ├── gcp_secret_manager
+│   │   │   └── service
+│   │   │       ├── gcp_secret_manager.go
+│   │   │       └── gcp_secret_manager_test.go
+│   │   ├── home_dir.go
+│   │   ├── integration_tests.go
+│   │   ├── limitwriter
+│   │   │   ├── limit_writer.go
+│   │   │   └── limit_writer_test.go
+│   │   ├── os
+│   │   │   ├── other.go
+│   │   │   └── windows.go
+│   │   ├── parallels
+│   │   │   └── control.go
+│   │   ├── path
+│   │   │   ├── unix_path.go
+│   │   │   ├── unix_path_test.go
+│   │   │   ├── windows_path.go
+│   │   │   └── windows_path_test.go
+│   │   ├── path.go
+│   │   ├── path_test.go
+│   │   ├── process
+│   │   │   ├── commander.go
+│   │   │   ├── commander_unix_test.go
+│   │   │   ├── group_unix_test.go
+│   │   │   ├── group_windows_test.go
+│   │   │   ├── helpers_killer_test.go
+│   │   │   ├── job_unix.go
+│   │   │   ├── job_windows.go
+│   │   │   ├── killer.go
+│   │   │   ├── killer_integration_test.go
+│   │   │   ├── killer_test.go
+│   │   │   ├── killer_unix.go
+│   │   │   ├── killer_unix_integration_test.go
+│   │   │   ├── killer_unix_test.go
+│   │   │   ├── killer_windows.go
+│   │   │   ├── killer_windows_integration_test.go
+│   │   │   ├── logger.go
+│   │   │   ├── mock_Commander.go
+│   │   │   ├── mock_killer.go
+│   │   │   ├── mock_KillWaiter.go
+│   │   │   ├── mock_Logger.go
+│   │   │   └── testdata
+│   │   │       └── sleep
+│   │   │           └── main.go
+│   │   ├── prometheus
+│   │   │   ├── failures_collector.go
+│   │   │   ├── failures_collector_test.go
+│   │   │   ├── log_hook.go
+│   │   │   └── log_hook_test.go
+│   │   ├── random_uuid.go
+│   │   ├── retry
+│   │   │   ├── mock_retryable.go
+│   │   │   ├── mock_valueRetryable.go
+│   │   │   ├── retry.go
+│   │   │   └── retry_test.go
+│   │   ├── secrets
+│   │   │   ├── errors.go
+│   │   │   ├── errors_test.go
+│   │   │   └── resolvers
+│   │   │       ├── akeyless
+│   │   │       │   ├── resolver.go
+│   │   │       │   └── resolver_test.go
+│   │   │       ├── azure_key_vault
+│   │   │       │   ├── azure_key_vault_resolver.go
+│   │   │       │   └── azure_key_vault_resolver_test.go
+│   │   │       ├── gcp_secret_manager
+│   │   │       │   ├── mock_client.go
+│   │   │       │   ├── resolver.go
+│   │   │       │   └── resolver_test.go
+│   │   │       └── vault
+│   │   │           ├── resolver.go
+│   │   │           └── resolver_test.go
+│   │   ├── sentry
+│   │   │   ├── log_hook.go
+│   │   │   └── log_hook_test.go
+│   │   ├── service
+│   │   │   ├── logger.go
+│   │   │   ├── logger_test.go
+│   │   │   ├── mock_stopStarter.go
+│   │   │   ├── scripts.go
+│   │   │   ├── service_factory.go
+│   │   │   ├── simple.go
+│   │   │   └── simple_test.go
+│   │   ├── shell_escape.go
+│   │   ├── shell_escape_test.go
+│   │   ├── shorten_token.go
+│   │   ├── shorten_token_test.go
+│   │   ├── ssh
+│   │   │   ├── consts.go
+│   │   │   ├── ssh_command.go
+│   │   │   ├── ssh_command_test.go
+│   │   │   ├── stub_ssh_server.go
+│   │   │   ├── stub_ssh_server_unix.go
+│   │   │   └── stub_ssh_server_windows.go
+│   │   ├── test
+│   │   │   └── helpers.go
+│   │   ├── timeperiod
+│   │   │   ├── period.go
+│   │   │   └── period_test.go
+│   │   ├── tls
+│   │   │   ├── ca_chain
+│   │   │   │   ├── builder.go
+│   │   │   │   ├── builder_test.go
+│   │   │   │   ├── helpers.go
+│   │   │   │   ├── helpers_test.go
+│   │   │   │   ├── mock_fetcher.go
+│   │   │   │   ├── mock_resolver.go
+│   │   │   │   ├── resolver_chain.go
+│   │   │   │   ├── resolver_chain_test.go
+│   │   │   │   ├── resolver.go
+│   │   │   │   ├── resolver_url.go
+│   │   │   │   ├── resolver_url_test.go
+│   │   │   │   ├── resolver_verify.go
+│   │   │   │   └── resolver_verify_test.go
+│   │   │   └── consts.go
+│   │   ├── toml_test.go
+│   │   ├── trace
+│   │   │   ├── buffer_fd0_test.go
+│   │   │   ├── buffer_fuzz.go
+│   │   │   ├── buffer.go
+│   │   │   ├── buffer_test.go
+│   │   │   └── testdata
+│   │   │       └── corpus
+│   │   │           ├── ipsum
+│   │   │           ├── log-1
+│   │   │           ├── log-2
+│   │   │           ├── log-3
+│   │   │           ├── log-4
+│   │   │           ├── log-5
+│   │   │           └── small-random
+│   │   ├── url
+│   │   │   ├── clean_url.go
+│   │   │   ├── clean_url_test.go
+│   │   │   ├── scrub_secrets.go
+│   │   │   └── scrub_secrets_test.go
+│   │   ├── vault
+│   │   │   ├── auth.go
+│   │   │   ├── auth_methods
+│   │   │   │   ├── data.go
+│   │   │   │   ├── data_test.go
+│   │   │   │   ├── jwt
+│   │   │   │   │   ├── auth.go
+│   │   │   │   │   └── auth_test.go
+│   │   │   │   ├── registry.go
+│   │   │   │   └── registry_test.go
+│   │   │   ├── client.go
+│   │   │   ├── client_test.go
+│   │   │   ├── internal
+│   │   │   │   └── registry
+│   │   │   │       ├── registry.go
+│   │   │   │       └── registry_test.go
+│   │   │   ├── mock_apiClient.go
+│   │   │   ├── mock_apiClientLogical.go
+│   │   │   ├── mock_apiClientSys.go
+│   │   │   ├── mock_AuthMethod.go
+│   │   │   ├── mock_Client.go
+│   │   │   ├── mock_Result.go
+│   │   │   ├── mock_SecretEngine.go
+│   │   │   ├── result.go
+│   │   │   ├── result_test.go
+│   │   │   ├── secret_engine.go
+│   │   │   ├── secret_engines
+│   │   │   │   ├── generic
+│   │   │   │   │   ├── engine.go
+│   │   │   │   │   └── engine_test.go
+│   │   │   │   ├── kv_v2
+│   │   │   │   │   ├── engine.go
+│   │   │   │   │   └── engine_test.go
+│   │   │   │   ├── operations.go
+│   │   │   │   ├── operations_test.go
+│   │   │   │   ├── registry.go
+│   │   │   │   └── registry_test.go
+│   │   │   ├── service
+│   │   │   │   ├── mock_Auth.go
+│   │   │   │   ├── mock_Engine.go
+│   │   │   │   ├── mock_Secret.go
+│   │   │   │   ├── mock_Vault.go
+│   │   │   │   ├── vault.go
+│   │   │   │   └── vault_test.go
+│   │   │   ├── utils.go
+│   │   │   └── utils_test.go
+│   │   ├── virtualbox
+│   │   │   ├── control.go
+│   │   │   ├── control_test.go
+│   │   │   └── control_windows.go
+│   │   └── warning_panic.go
+│   ├── LICENSE
+│   ├── log
+│   │   ├── configuration.go
+│   │   ├── configuration_test.go
+│   │   ├── dump_unix.go
+│   │   ├── dump_unix_test.go
+│   │   ├── dump_windows.go
+│   │   ├── mock_systemLogger.go
+│   │   ├── mock_systemService.go
+│   │   ├── runner_formatter.go
+│   │   ├── runner_formatter_test.go
+│   │   ├── secrets_cleanup.go
+│   │   ├── secrets_cleanup_test.go
+│   │   ├── system_logger.go
+│   │   ├── system_logger_test.go
+│   │   └── test
+│   │       ├── hook.go
+│   │       └── hook_test.go
+│   ├── magefiles
+│   │   ├── build
+│   │   │   ├── blueprint.go
+│   │   │   ├── checker.go
+│   │   │   ├── components.go
+│   │   │   ├── exporter.go
+│   │   │   └── variables.go
+│   │   ├── ci
+│   │   │   └── variables.go
+│   │   ├── docker
+│   │   │   └── buildx.go
+│   │   ├── docs
+│   │   │   └── writing_mage_targets.md
+│   │   ├── env
+│   │   │   └── var.go
+│   │   ├── images
+│   │   │   ├── helper.go
+│   │   │   └── runner.go
+│   │   ├── images.go
+│   │   ├── k8s.go
+│   │   ├── kubernetes
+│   │   │   ├── analyzer.go
+│   │   │   ├── blockLineReplacer.go
+│   │   │   └── generatePermissionsDocs.go
+│   │   ├── magefile.go
+│   │   ├── mageutils
+│   │   │   └── mageutils.go
+│   │   ├── packagecloud
+│   │   │   ├── push.go
+│   │   │   ├── push_test.go
+│   │   │   ├── releases.go
+│   │   │   └── yank.go
+│   │   ├── packagecloud.go
+│   │   ├── package_deb.go
+│   │   ├── package.go
+│   │   ├── package_rpm.go
+│   │   ├── packages
+│   │   │   ├── blueprint.go
+│   │   │   ├── create.go
+│   │   │   ├── package.go
+│   │   │   ├── verify.go
+│   │   │   └── verify_test.go
+│   │   └── resources.go
+│   ├── main.go
+│   ├── main_test.go
+│   ├── Makefile
+│   ├── Makefile.build.mk
+│   ├── Makefile.runner_helper.mk
+│   ├── network
+│   │   ├── api_requests_collector.go
+│   │   ├── api_requests_collector_test.go
+│   │   ├── client.go
+│   │   ├── client_test.go
+│   │   ├── config.go
+│   │   ├── gitlab.go
+│   │   ├── gitlab_test.go
+│   │   ├── mock_requester.go
+│   │   ├── patch_response.go
+│   │   ├── ratelimit_requester.go
+│   │   ├── ratelimit_requester_test.go
+│   │   ├── remote_job_state_response.go
+│   │   ├── remote_job_state_response_test.go
+│   │   ├── requester.go
+│   │   ├── trace.go
+│   │   └── trace_test.go
+│   ├── NOTICE
+│   ├── packaging
+│   │   ├── root
+│   │   │   └── usr
+│   │   │       ├── bin
+│   │   │       │   └── gitlab-ci-multi-runner -> gitlab-runner
+│   │   │       └── share
+│   │   │           └── gitlab-runner
+│   │   │               ├── clear-docker-cache
+│   │   │               ├── post-install
+│   │   │               └── pre-remove
+│   │   └── scripts
+│   │       ├── postinst.deb
+│   │       ├── postinst.rpm
+│   │       ├── prerm.deb
+│   │       └── prerm.rpm
+│   ├── PROCESS.md
+│   ├── Procfile
+│   ├── PROVENANCE.md
+│   ├── README.md
+│   ├── referees
+│   │   ├── metrics.go
+│   │   ├── metrics_test.go
+│   │   ├── mock_MetricsExecutor.go
+│   │   ├── mock_prometheusAPI.go
+│   │   ├── mock_prometheusValue.go
+│   │   ├── prometheus_api.go
+│   │   ├── referees.go
+│   │   └── referees_test.go
+│   ├── scripts
+│   │   ├── check-test-directives
+│   │   │   └── main.go
+│   │   ├── envs
+│   │   │   ├── allowlist_common.env
+│   │   │   ├── allowlist_unix.env
+│   │   │   ├── allowlist_windows.env
+│   │   │   └── README.md
+│   │   ├── lint-docs
+│   │   ├── local-env
+│   │   ├── pull-images-for-tests
+│   │   │   └── main.go
+│   │   ├── security-harness
+│   │   ├── sync-docker-images
+│   │   │   ├── main.go
+│   │   │   ├── runner_helper_variants_list.tpl
+│   │   │   ├── runner_variants_list.tpl
+│   │   │   ├── sync_docker_images_test.go
+│   │   │   └── testdata
+│   │   │       ├── dockerhub_tags_gitlab_runner_helper_latest_test.txt
+│   │   │       ├── dockerhub_tags_gitlab_runner_helper_test.txt
+│   │   │       └── dockerhub_tags_gitlab_runner_test.txt
+│   │   ├── update-feature-flags-docs
+│   │   │   └── main.go
+│   │   └── vagrant
+│   │       └── provision
+│   │           ├── base.ps1
+│   │           ├── enable_developer_mode.ps1
+│   │           ├── enable_sshd.ps1
+│   │           ├── install_PSWindowsUpdate.ps1
+│   │           └── windows_update.ps1
+│   ├── session
+│   │   ├── proxy
+│   │   │   ├── mock_Requester.go
+│   │   │   ├── proxy.go
+│   │   │   └── proxy_test.go
+│   │   ├── server.go
+│   │   ├── server_test.go
+│   │   ├── session.go
+│   │   ├── session_test.go
+│   │   └── terminal
+│   │       ├── mock_Conn.go
+│   │       ├── mock_InteractiveTerminal.go
+│   │       └── terminal.go
+│   ├── shells
+│   │   ├── abstract.go
+│   │   ├── abstract_test.go
+│   │   ├── bash.go
+│   │   ├── bash_test.go
+│   │   ├── consts.go
+│   │   ├── git_credentials_helper_integration_test.go
+│   │   ├── mock_ShellWriter.go
+│   │   ├── powershell.go
+│   │   ├── powershell_integration_test.go
+│   │   ├── powershell_test.go
+│   │   ├── shellstest
+│   │   │   └── utils.go
+│   │   ├── shell_writer.go
+│   │   ├── shell_writer_integration_test.go
+│   │   ├── shell_writer_test.go
+│   │   ├── trap_command_exit_status.go
+│   │   └── trap_command_exit_status_test.go
+│   ├── tests
+│   │   ├── dockerfiles
+│   │   │   ├── alpine-entrypoint
+│   │   │   │   ├── Dockerfile
+│   │   │   │   ├── Dockerfile.pre-post-trap
+│   │   │   │   ├── Dockerfile.stderr
+│   │   │   │   ├── entrypoint.pre-post-trap.sh
+│   │   │   │   ├── entrypoint.sh
+│   │   │   │   └── entrypoint-stderr.sh
+│   │   │   ├── alpine-id-overflow
+│   │   │   │   └── Dockerfile
+│   │   │   ├── alpine-no-root
+│   │   │   │   └── Dockerfile
+│   │   │   ├── counter-service
+│   │   │   │   └── Dockerfile
+│   │   │   ├── gitlab-runner-helper-entrypoint
+│   │   │   │   ├── dockerfile
+│   │   │   │   ├── entrypoint.sh
+│   │   │   │   └── scripts
+│   │   │   │       └── gitlab-runner-build
+│   │   │   ├── powershell-entrypoint
+│   │   │   │   ├── Dockerfile.pre-post-trap
+│   │   │   │   └── entrypoint.pre-post-trap.ps1
+│   │   │   └── README.md
+│   │   ├── test_installation.sh
+│   │   ├── test_script.sh
+│   │   └── ubuntu
+│   │       ├── Makefile
+│   │       └── Vagrantfile
+│   ├── Vagrantfile
+│   └── VERSION
+├── gitlab-runner.service -> /home/felix/packages/gitlab-runner/gitlab-runner.service
+├── gitlab-runner.sysusers -> /home/felix/packages/gitlab-runner/gitlab-runner.sysusers
+├── gitlab-runner.tmpfiles -> /home/felix/packages/gitlab-runner/gitlab-runner.tmpfiles
+├── prebuilt-alpine-arm-17.5.3.tar.xz -> /home/felix/packages/gitlab-runner/prebuilt-alpine-arm-17.5.3.tar.xz
+├── prebuilt-alpine-arm64-17.5.3.tar.xz -> /home/felix/packages/gitlab-runner/prebuilt-alpine-arm64-17.5.3.tar.xz
+├── prebuilt-alpine-s390x-17.5.3.tar.xz -> /home/felix/packages/gitlab-runner/prebuilt-alpine-s390x-17.5.3.tar.xz
+├── prebuilt-alpine-x86_64-17.5.3.tar.xz -> /home/felix/packages/gitlab-runner/prebuilt-alpine-x86_64-17.5.3.tar.xz
+├── prebuilt-alpine-x86_64-pwsh-17.5.3.tar.xz -> /home/felix/packages/gitlab-runner/prebuilt-alpine-x86_64-pwsh-17.5.3.tar.xz
+├── prebuilt-ubuntu-arm-17.5.3.tar.xz -> /home/felix/packages/gitlab-runner/prebuilt-ubuntu-arm-17.5.3.tar.xz
+├── prebuilt-ubuntu-arm64-17.5.3.tar.xz -> /home/felix/packages/gitlab-runner/prebuilt-ubuntu-arm64-17.5.3.tar.xz
+├── prebuilt-ubuntu-s390x-17.5.3.tar.xz -> /home/felix/packages/gitlab-runner/prebuilt-ubuntu-s390x-17.5.3.tar.xz
+├── prebuilt-ubuntu-x86_64-17.5.3.tar.xz -> /home/felix/packages/gitlab-runner/prebuilt-ubuntu-x86_64-17.5.3.tar.xz
+└── prebuilt-ubuntu-x86_64-pwsh-17.5.3.tar.xz -> /home/felix/packages/gitlab-runner/prebuilt-ubuntu-x86_64-pwsh-17.5.3.tar.xz
+
+208 directories, 869 files

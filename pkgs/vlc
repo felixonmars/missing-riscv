@@ -1,0 +1,5025 @@
+src
+├── taglib-2.patch -> /home/felix/packages/vlc/taglib-2.patch
+├── update-vlc-plugin-cache.hook -> /home/felix/packages/vlc/update-vlc-plugin-cache.hook
+├── vlc-3.0.21
+│   ├── ABOUT-NLS
+│   ├── aclocal.m4
+│   ├── AUTHORS
+│   ├── autotools
+│   │   ├── compile
+│   │   ├── config.guess
+│   │   ├── config.rpath
+│   │   ├── config.sub
+│   │   ├── depcomp
+│   │   ├── install-sh
+│   │   ├── ltmain.sh
+│   │   ├── missing
+│   │   ├── test-driver
+│   │   └── ylwrap
+│   ├── bin
+│   │   ├── breakpad.cpp
+│   │   ├── cachegen.c
+│   │   ├── darwinvlc.m
+│   │   ├── Makefile.am
+│   │   ├── Makefile.in
+│   │   ├── override.c
+│   │   ├── rootwrap.c
+│   │   ├── vlc.c
+│   │   ├── vlc_win32_rc.rc.in
+│   │   └── winvlc.c
+│   ├── bootstrap
+│   ├── ChangeLog
+│   ├── compat
+│   │   ├── aligned_alloc.c
+│   │   ├── asprintf.c
+│   │   ├── atof.c
+│   │   ├── atoll.c
+│   │   ├── dirfd.c
+│   │   ├── dummy.c
+│   │   ├── fdopendir.c
+│   │   ├── ffsll.c
+│   │   ├── flockfile.c
+│   │   ├── freeaddrinfo.c
+│   │   ├── fsync.c
+│   │   ├── gai_strerror.c
+│   │   ├── getdelim.c
+│   │   ├── getpid.c
+│   │   ├── gettimeofday.c
+│   │   ├── gmtime_r.c
+│   │   ├── inet_pton.c
+│   │   ├── lfind.c
+│   │   ├── lldiv.c
+│   │   ├── localtime_r.c
+│   │   ├── Makefile.am
+│   │   ├── Makefile.in
+│   │   ├── memrchr.c
+│   │   ├── nrand48.c
+│   │   ├── pathconf.c
+│   │   ├── poll.c
+│   │   ├── realpath.c
+│   │   ├── recvmsg.c
+│   │   ├── rewind.c
+│   │   ├── sendmsg.c
+│   │   ├── setenv.c
+│   │   ├── sigwait.c
+│   │   ├── sincos.c
+│   │   ├── strcasecmp.c
+│   │   ├── strcasestr.c
+│   │   ├── strdup.c
+│   │   ├── strlcpy.c
+│   │   ├── strndup.c
+│   │   ├── strnlen.c
+│   │   ├── strnstr.c
+│   │   ├── strsep.c
+│   │   ├── strtof.c
+│   │   ├── strtok_r.c
+│   │   ├── strtoll.c
+│   │   ├── strverscmp.c
+│   │   ├── swab.c
+│   │   ├── tdestroy.c
+│   │   ├── test
+│   │   │   └── strnstr.c
+│   │   ├── tfind.c
+│   │   ├── timegm.c
+│   │   ├── timespec_get.c
+│   │   └── vasprintf.c
+│   ├── config.h.in
+│   ├── configure
+│   ├── configure.ac
+│   ├── contrib
+│   │   ├── bootstrap
+│   │   └── src
+│   │       ├── a52
+│   │       │   ├── liba52-fixed.diff
+│   │       │   ├── liba52-inline.patch
+│   │       │   ├── liba52-pic.patch
+│   │       │   ├── liba52-silence.patch
+│   │       │   ├── rules.mak
+│   │       │   └── SHA512SUMS
+│   │       ├── amf
+│   │       │   ├── 0001-Differentiate-the-AMF_NO_VTABLE-based-on-the-compile.patch
+│   │       │   ├── 0001-Don-t-cast-amf_int64-when-using-a-format-string.patch
+│   │       │   ├── 0001-Fix-const-on-return-by-value-AMF_DECLARE_IID.patch
+│   │       │   ├── 0001-Fix-warning-when-_MSC_VER-is-not-defined.patch
+│   │       │   ├── 0001-Move-AMF_UNICODE-into-Platform.h.patch
+│   │       │   ├── 0002-Define-LPRI-d-ud-x-64-as-Unicode-wide-versions-of-AM.patch
+│   │       │   ├── 0002-Fix-const-on-return-by-value-Variant-values.patch
+│   │       │   ├── 0003-Define-AMFPRI-d-ud-x-64-using-the-standard-C-format-.patch
+│   │       │   ├── rules.mak
+│   │       │   └── SHA512SUMS
+│   │       ├── aom
+│   │       │   ├── 0002-cmake-win-fix-asm-flag-appending.patch
+│   │       │   ├── aom-android-cpufeatures.patch
+│   │       │   ├── aom-android-pthreads.patch
+│   │       │   ├── rules.mak
+│   │       │   └── SHA512SUMS
+│   │       ├── aribb24
+│   │       │   ├── libm.patch
+│   │       │   ├── rules.mak
+│   │       │   └── SHA512SUMS
+│   │       ├── aribb25
+│   │       │   ├── 0001-add-an-option-not-to-build-the-b25-sample-code.patch
+│   │       │   ├── 0001-fix-build-script.patch
+│   │       │   ├── 0002-fix-libs-include.patch
+│   │       │   ├── rules.mak
+│   │       │   └── SHA512SUMS
+│   │       ├── asdcplib
+│   │       │   ├── 0001-Remove-a-broken-unused-template-class.patch
+│   │       │   ├── adding-pkg-config-file.patch
+│   │       │   ├── port-to-nettle.patch
+│   │       │   ├── rules.mak
+│   │       │   ├── SHA512SUMS
+│   │       │   ├── static-programs.patch
+│   │       │   ├── win32-cross-compilation.patch
+│   │       │   └── win32-dirent.patch
+│   │       ├── ass
+│   │       │   ├── rules.mak
+│   │       │   └── SHA512SUMS
+│   │       ├── basu
+│   │       │   ├── rules.mak
+│   │       │   └── SHA512SUMS
+│   │       ├── bluray
+│   │       │   ├── 0001-install-bdjo_data-header.patch
+│   │       │   ├── rules.mak
+│   │       │   └── SHA512SUMS
+│   │       ├── bpg
+│   │       │   ├── pic.patch
+│   │       │   ├── rules.mak
+│   │       │   └── SHA512SUMS
+│   │       ├── breakpad
+│   │       │   ├── 0001-mac-client-Upgrade-Breakpad.xib-to-new-format.patch
+│   │       │   ├── rules.mak
+│   │       │   └── SHA512SUMS
+│   │       ├── caca
+│   │       │   ├── 0001-win32-don-t-for-_WIN32_WINNT-to-Win2K.patch
+│   │       │   ├── 0002-win32-don-t-redefine-GetCurrentConsoleFont-with-ming.patch
+│   │       │   ├── 0003-win32-use-ANSI-calls-explicitly.patch
+│   │       │   ├── 0004-win32-use-CreateFile2-when-compiling-for-Win8.patch
+│   │       │   ├── 0005-canvas-use-GetCurrentProcessId-on-Windows.patch
+│   │       │   ├── caca-fix-compilation-llvmgcc.patch
+│   │       │   ├── caca-fix-pkgconfig.patch
+│   │       │   ├── caca-llvm-weak-alias.patch
+│   │       │   ├── rules.mak
+│   │       │   └── SHA512SUMS
+│   │       ├── cargo
+│   │       │   ├── rules.mak
+│   │       │   └── SHA512SUMS
+│   │       ├── cddb
+│   │       │   ├── cddb-no-alarm.patch
+│   │       │   ├── cross.patch
+│   │       │   ├── fix-header-guards.patch
+│   │       │   ├── getenv-crash.patch
+│   │       │   ├── no-gettext.patch
+│   │       │   ├── rules.mak
+│   │       │   ├── SHA512SUMS
+│   │       │   └── win32-pkg.patch
+│   │       ├── change_prefix.sh
+│   │       ├── chromaprint
+│   │       │   ├── 0002-add-the-C-runtime-to-the-packages-to-link-to.patch
+│   │       │   ├── linklibs.patch
+│   │       │   ├── rules.mak
+│   │       │   └── SHA512SUMS
+│   │       ├── crystalhd
+│   │       │   ├── callback_proto.patch
+│   │       │   ├── rules.mak
+│   │       │   └── SHA512SUMS
+│   │       ├── d3d11
+│   │       │   ├── dxgi12.patch
+│   │       │   ├── dxgi1_3.idl
+│   │       │   ├── dxgi1_4.idl
+│   │       │   ├── dxgi1_5.idl
+│   │       │   ├── dxgi1_6.idl
+│   │       │   ├── dxgidebug.patch
+│   │       │   ├── processor_format.patch
+│   │       │   ├── rules.mak
+│   │       │   └── SHA512SUMS
+│   │       ├── d3d9
+│   │       │   ├── d3d9caps.patch
+│   │       │   ├── d3d9.patch
+│   │       │   ├── dxva2api.patch
+│   │       │   ├── rules.mak
+│   │       │   └── SHA512SUMS
+│   │       ├── daala
+│   │       │   └── rules.mak
+│   │       ├── dav1d
+│   │       │   ├── rules.mak
+│   │       │   └── SHA512SUMS
+│   │       ├── dca
+│   │       │   ├── rules.mak
+│   │       │   └── SHA512SUMS
+│   │       ├── decklink
+│   │       │   └── rules.mak
+│   │       ├── dvbpsi
+│   │       │   ├── 0001-really-identify-duplicates.patch
+│   │       │   ├── 0002-really-reset-packet-counter.patch
+│   │       │   ├── dvbpsi-noexamples.patch
+│   │       │   ├── dvbpsi-sys-types.patch
+│   │       │   ├── rules.mak
+│   │       │   └── SHA512SUMS
+│   │       ├── dvdcss
+│   │       │   ├── rules.mak
+│   │       │   └── SHA512SUMS
+│   │       ├── dvdnav
+│   │       │   ├── rules.mak
+│   │       │   └── SHA512SUMS
+│   │       ├── dvdread
+│   │       │   ├── 0001-ifo_types-avoid-forcing-a-higher-length-in-bitfield-.patch
+│   │       │   ├── 0001-nav_types-make-btin_t-not-packed.patch
+│   │       │   ├── 0002-nav_types-make-hli_t-and-pci_t-not-packed.patch
+│   │       │   ├── rules.mak
+│   │       │   └── SHA512SUMS
+│   │       ├── ebml
+│   │       │   ├── rules.mak
+│   │       │   └── SHA512SUMS
+│   │       ├── faad2
+│   │       │   ├── faad2-add-define.patch
+│   │       │   ├── faad2-disable-drc.patch
+│   │       │   ├── faad2-fix-71wPCEmapping.patch
+│   │       │   ├── faad2-fixed.patch
+│   │       │   ├── rules.mak
+│   │       │   └── SHA512SUMS
+│   │       ├── ffi
+│   │       │   ├── rules.mak
+│   │       │   └── SHA512SUMS
+│   │       ├── ffmpeg
+│   │       │   ├── 0001-avcodec-dxva2_hevc-add-support-for-parsing-HEVC-Rang.patch
+│   │       │   ├── 0001-avcodec-mpeg12dec-don-t-call-hw-end_frame-when-start.patch
+│   │       │   ├── 0001-avcodec-vp9-Do-not-destroy-uninitialized-mutexes-con.patch
+│   │       │   ├── 0001-bring-back-XP-support.patch
+│   │       │   ├── 0001-dxva2_hevc-don-t-use-frames-as-reference-if-they-are.patch
+│   │       │   ├── 0001-ffmpeg-add-target_os-support-for-emscripten.patch
+│   │       │   ├── 0001-fix-MediaFoundation-compilation-if-WINVER-was-forced.patch
+│   │       │   ├── 0001-fix-mf_utils-compilation-with-mingw64.patch
+│   │       │   ├── 0001-vulkan-Fix-win-i386-calling-convention.patch
+│   │       │   ├── 0001-w32pthread-fix-signature-of-WinRT-version-of-thread-.patch
+│   │       │   ├── 0002-avcodec-hevcdec-allow-HEVC-444-8-10-12-bits-decoding.patch
+│   │       │   ├── 0002-avcodec-mpeg12dec-don-t-end-a-slice-without-first_sl.patch
+│   │       │   ├── 0002-lavu-vulkan-fix-handle-type-for-32-bit-targets.patch
+│   │       │   ├── 0003-avcodec-hevcdec-allow-HEVC-422-10-12-bits-decoding-w.patch
+│   │       │   ├── armv7_fixup.patch
+│   │       │   ├── dxva_vc1_crash.patch
+│   │       │   ├── h264_early_SAR.patch
+│   │       │   ├── libav_gsm.patch
+│   │       │   ├── rules.mak
+│   │       │   └── SHA512SUMS
+│   │       ├── flac
+│   │       │   ├── 0001-Fixed-compilation-of-get_utf8_argv-for-Windows-UWP.patch
+│   │       │   ├── console_write.patch
+│   │       │   ├── dont-force-msvcrt-version.patch
+│   │       │   ├── no-createfilea.patch
+│   │       │   ├── remove_blocking_code_useless_flaclib.patch
+│   │       │   ├── rules.mak
+│   │       │   └── SHA512SUMS
+│   │       ├── fluid
+│   │       │   ├── fluid-pkg-static.patch
+│   │       │   ├── fluid-static-win32.patch
+│   │       │   ├── rules.mak
+│   │       │   └── SHA512SUMS
+│   │       ├── fluidlite
+│   │       │   └── rules.mak
+│   │       ├── fontconfig
+│   │       │   ├── fontconfig-march.patch
+│   │       │   ├── fontconfig-noxml2.patch
+│   │       │   ├── fontconfig-win32.patch
+│   │       │   ├── rules.mak
+│   │       │   └── SHA512SUMS
+│   │       ├── freetype2
+│   │       │   ├── rules.mak
+│   │       │   └── SHA512SUMS
+│   │       ├── fribidi
+│   │       │   ├── rules.mak
+│   │       │   └── SHA512SUMS
+│   │       ├── fxc2
+│   │       │   ├── 0001-make-Vn-argument-as-optional-and-provide-default-var.patch
+│   │       │   ├── 0002-accept-windows-style-flags-and-splitted-argument-val.patch
+│   │       │   ├── 0004-Revert-Fix-narrowing-conversion-from-int-to-BYTE.patch
+│   │       │   └── rules.mak
+│   │       ├── gcrypt
+│   │       │   ├── 0001-compat-provide-a-getpid-replacement-that-works-on-Wi.patch
+│   │       │   ├── 0001-random-Don-t-assume-that-_WIN64-implies-x86_64.patch
+│   │       │   ├── 0002-aarch64-mpi-Fix-building-the-mpi-aarch64-assembly-fo.patch
+│   │       │   ├── 0007-random-don-t-use-API-s-that-are-forbidden-in-UWP-app.patch
+│   │       │   ├── 0008-random-only-use-wincrypt-in-UWP-builds-if-WINSTORECO.patch
+│   │       │   ├── 64bits-relocation.patch
+│   │       │   ├── clang-mips64.patch
+│   │       │   ├── disable-tests-compilation.patch
+│   │       │   ├── fix-pthread-detection.patch
+│   │       │   ├── gcrypt-uwp-getpid.patch
+│   │       │   ├── rules.mak
+│   │       │   └── SHA512SUMS
+│   │       ├── gen-cmake-toolchain.py
+│   │       ├── gen-meson-crossfile.py
+│   │       ├── gen-meson-machinefile.py
+│   │       ├── get-arch.sh
+│   │       ├── gettext
+│   │       │   ├── 0001-libasprintf-On-mingw-really-use-our-vasprintf-functi.patch
+│   │       │   ├── 0002-libasprintf-Avoid-compilation-error-on-mingw-with-D_.patch
+│   │       │   ├── rules.mak
+│   │       │   └── SHA512SUMS
+│   │       ├── glad
+│   │       │   ├── rules.mak
+│   │       │   └── SHA512SUMS
+│   │       ├── glew
+│   │       │   ├── glew-drop-debug-postfix.patch
+│   │       │   ├── rules.mak
+│   │       │   ├── SHA512SUMS
+│   │       │   └── win32.patch
+│   │       ├── glib
+│   │       │   ├── rules.mak
+│   │       │   └── SHA512SUMS
+│   │       ├── glslang
+│   │       │   ├── glslang-win32.patch
+│   │       │   ├── rules.mak
+│   │       │   └── SHA512SUMS
+│   │       ├── gme
+│   │       │   ├── 0001-Export-the-proper-C-runtime-library.patch
+│   │       │   ├── 0002-link-with-libm-and-set-it-in-pkg-config-when-buildin.patch
+│   │       │   ├── 0003-fix-android-toolchain-broken-CMAKE_CXX_IMPLICIT_LINK.patch
+│   │       │   ├── 0004-Blip_Buffer-replace-assert-with-a-check.patch
+│   │       │   ├── add-libm.patch
+│   │       │   ├── mac-use-c-stdlib.patch
+│   │       │   ├── rules.mak
+│   │       │   ├── SHA512SUMS
+│   │       │   └── skip-underrun.patch
+│   │       ├── gmp
+│   │       │   ├── arm64-Add-GSYM_PREFIX-to-function-calls-in-assembly.patch
+│   │       │   ├── arm64-Change-adrp-add-relocations-to-darwin-style.patch
+│   │       │   ├── gmp-fix-asm-detection.patch
+│   │       │   ├── ppc64.patch
+│   │       │   ├── rules.mak
+│   │       │   ├── SHA512SUMS
+│   │       │   └── win-arm64.patch
+│   │       ├── gnutls
+│   │       │   ├── 0001-Don-t-assume-that-UNICODE-is-not-defined.patch
+│   │       │   ├── 0001-explicit_bzero-Do-not-call-SecureZeroMemory-on-UWP-b.patch
+│   │       │   ├── 0001-fcntl-do-not-call-GetHandleInformation-in-Winstore-a.patch
+│   │       │   ├── 0001-fix-mingw64-detection.patch
+│   │       │   ├── 0001-stat-fstat-Fix-when-compiling-for-versions-older-tha.patch
+│   │       │   ├── 0001-Use-CreateFile2-in-UWP-builds.patch
+│   │       │   ├── 0001-windows-Avoid-Wint-conversion-errors.patch
+│   │       │   ├── gnutls-fix-aarch64-compilation-appleos.patch
+│   │       │   ├── gnutls-fix-mangling.patch
+│   │       │   ├── rules.mak
+│   │       │   └── SHA512SUMS
+│   │       ├── goom
+│   │       │   ├── clang-emms.patch
+│   │       │   ├── goom2k4-0-memleaks.patch
+│   │       │   ├── goom2k4-0-win32.patch
+│   │       │   ├── goom2k4-autotools.patch
+│   │       │   ├── goom2k4-noxmmx.patch
+│   │       │   ├── goom2k4-osx.patch
+│   │       │   ├── goom2k4-xmmslibdir.patch
+│   │       │   ├── rules.mak
+│   │       │   └── SHA512SUMS
+│   │       ├── gpg-error
+│   │       │   ├── darwin-triplet.patch
+│   │       │   ├── gpg-error-createfile2.patch
+│   │       │   ├── gpg-error-uwp-fix.patch
+│   │       │   ├── gpg-error-uwp-GetFileSize.patch
+│   │       │   ├── lock-obj-pub.posix.h
+│   │       │   ├── missing-unistd-include.patch
+│   │       │   ├── no-executable.patch
+│   │       │   ├── rules.mak
+│   │       │   ├── SHA512SUMS
+│   │       │   ├── version-bump-gawk-5.patch
+│   │       │   ├── win32-extern-struct.patch
+│   │       │   ├── win32-unicode.patch
+│   │       │   ├── windres-make.patch
+│   │       │   └── winrt.patch
+│   │       ├── growl
+│   │       │   ├── fix-function-check.patch
+│   │       │   ├── growl-log-delegate.patch
+│   │       │   ├── growl-partial-availability.diff
+│   │       │   ├── growl-support-arm64.patch
+│   │       │   ├── growl-update-vcs-target.patch
+│   │       │   ├── rules.mak
+│   │       │   ├── security-nothanks.patch
+│   │       │   └── SHA512SUMS
+│   │       ├── gsm
+│   │       │   ├── gsm-cross.patch
+│   │       │   ├── gsm-missing-include.patch
+│   │       │   ├── rules.mak
+│   │       │   └── SHA512SUMS
+│   │       ├── harfbuzz
+│   │       │   ├── 0001-freetype-Fix-function-signatures-to-match-without-ca.patch
+│   │       │   ├── 0001-meson-Enable-big-objects-support-when-building-for-w.patch
+│   │       │   ├── 0002-Disable-Wcast-function-type-strict.patch
+│   │       │   ├── rules.mak
+│   │       │   └── SHA512SUMS
+│   │       ├── help.txt
+│   │       ├── iconv
+│   │       │   ├── 0001-Use-CreateFile2-in-UWP-builds.patch
+│   │       │   ├── bins.patch
+│   │       │   ├── libiconv-win64.patch
+│   │       │   ├── rules.mak
+│   │       │   ├── SHA512SUMS
+│   │       │   └── win32.patch
+│   │       ├── jack
+│   │       │   ├── config-osx.patch
+│   │       │   ├── rules.mak
+│   │       │   └── SHA512SUMS
+│   │       ├── jinja
+│   │       │   ├── rules.mak
+│   │       │   └── SHA512SUMS
+│   │       ├── jpeg
+│   │       │   ├── no_executables.patch
+│   │       │   ├── rules.mak
+│   │       │   └── SHA512SUMS
+│   │       ├── kate
+│   │       │   ├── rules.mak
+│   │       │   └── SHA512SUMS
+│   │       ├── lame
+│   │       │   ├── lame-fix-i386-on-aarch64.patch
+│   │       │   ├── lame-forceinline.patch
+│   │       │   ├── rules.mak
+│   │       │   ├── SHA512SUMS
+│   │       │   ├── sse.patch
+│   │       │   └── struct-float-copy.patch
+│   │       ├── libarchive
+│   │       │   ├── android.patch
+│   │       │   ├── rules.mak
+│   │       │   ├── SHA512SUMS
+│   │       │   └── winrt.patch
+│   │       ├── libaribcaption
+│   │       │   ├── rules.mak
+│   │       │   └── SHA512SUMS
+│   │       ├── libdsm
+│   │       │   ├── 0001-Avoid-relying-on-implicit-function-declarations.patch
+│   │       │   ├── 0001-use-GetCurrentProcessId-for-the-process-ID-on-Window.patch
+│   │       │   ├── rules.mak
+│   │       │   └── SHA512SUMS
+│   │       ├── libebur128
+│   │       │   ├── rules.mak
+│   │       │   └── SHA512SUMS
+│   │       ├── libmpeg2
+│   │       │   ├── libmpeg2-arm-pld.patch
+│   │       │   ├── libmpeg2-inline.patch
+│   │       │   ├── libmpeg2-mc-neon.patch
+│   │       │   ├── rules.mak
+│   │       │   └── SHA512SUMS
+│   │       ├── libplacebo
+│   │       │   ├── 0001-build-use-a-Makefile.patch
+│   │       │   ├── 0001-meson-allow-forcing-the-path-to-look-for-libraries.patch
+│   │       │   ├── 0001-meson-allow-overriding-python3-path.patch
+│   │       │   ├── 0001-vulkan-meson-add-the-clang-gcc-C-runtime.patch
+│   │       │   ├── rules.mak
+│   │       │   └── SHA512SUMS
+│   │       ├── librist
+│   │       │   ├── 0001-meson-don-t-force-the-Windows-version-if-it-s-higher.patch
+│   │       │   ├── librist-fix-libcjson-meson.patch
+│   │       │   ├── rules.mak
+│   │       │   ├── SHA512SUMS
+│   │       │   └── win32-timing.patch
+│   │       ├── libtasn1
+│   │       │   ├── 0001-Use-CreateFile2-in-UWP-builds.patch
+│   │       │   ├── no-executables.patch
+│   │       │   ├── rules.mak
+│   │       │   └── SHA512SUMS
+│   │       ├── libxml2
+│   │       │   ├── bins.patch
+│   │       │   ├── nogetcwd.patch
+│   │       │   ├── pthread.patch
+│   │       │   ├── rules.mak
+│   │       │   ├── SHA512SUMS
+│   │       │   └── win32.patch
+│   │       ├── live555
+│   │       │   ├── add-pkgconfig-file.patch
+│   │       │   ├── android-no-ifaddrs.patch
+│   │       │   ├── DISABLE_LOOPBACK_IP_ADDRESS_CHECK.patch
+│   │       │   ├── expose_server_string.patch
+│   │       │   ├── file-offset-bits-64.patch
+│   │       │   ├── in_addr-s_addr-field.patch
+│   │       │   ├── live555-formatmessage.patch
+│   │       │   ├── live555-nosignal.patch
+│   │       │   ├── mingw-static-libs.patch
+│   │       │   ├── no-null-reference.patch
+│   │       │   ├── rules.mak
+│   │       │   ├── SHA512SUMS
+│   │       │   └── winstore.patch
+│   │       ├── lua
+│   │       │   ├── Add-a-Makefile-variable-to-override-the-strip-tool.patch
+│   │       │   ├── Add-EXE_EXT-to-allow-specifying-binary-extension.patch
+│   │       │   ├── Add-version-to-library-name.patch
+│   │       │   ├── Avoid-usage-of-localeconv.patch
+│   │       │   ├── Create-and-install-a-.pc-file.patch
+│   │       │   ├── Create-an-import-library-needed-for-lld.patch
+│   │       │   ├── Disable-dynamic-library-loading-support.patch
+│   │       │   ├── Disable-system-and-popen-for-windows-store-builds.patch
+│   │       │   ├── Do-not-use-large-file-offsets-with-too-old-Android-A.patch
+│   │       │   ├── Do-not-use-log2f-with-too-old-Android-API-level.patch
+│   │       │   ├── Enforce-always-using-64bit-integers-floats.patch
+│   │       │   ├── implib.patch
+│   │       │   ├── luac-32bits.patch
+│   │       │   ├── lua-ios-support.patch
+│   │       │   ├── lua-noreadline.patch
+│   │       │   ├── lua-winrt.patch
+│   │       │   ├── no-dylibs.patch
+│   │       │   ├── no-localeconv.patch
+│   │       │   ├── rules.mak
+│   │       │   └── SHA512SUMS
+│   │       ├── mad
+│   │       │   ├── check-bitstream-length.patch
+│   │       │   ├── mad-foreign.patch
+│   │       │   ├── mad-ios-asm.patch
+│   │       │   ├── mad-mips-h-constraint-removal.patch
+│   │       │   ├── mad-noopt.patch
+│   │       │   ├── Provide-Thumb-2-alternative-code-for-MAD_F_MLN.diff
+│   │       │   ├── rules.mak
+│   │       │   └── SHA512SUMS
+│   │       ├── main.mak
+│   │       ├── main-rust.mak
+│   │       ├── markupsafe
+│   │       │   ├── rules.mak
+│   │       │   └── SHA512SUMS
+│   │       ├── matroska
+│   │       │   ├── rules.mak
+│   │       │   └── SHA512SUMS
+│   │       ├── medialibrary
+│   │       │   ├── rules.mak
+│   │       │   └── SHA512SUMS
+│   │       ├── meson-machinefile
+│   │       │   └── rules.mak
+│   │       ├── mfx
+│   │       │   ├── 0001-Add-missing-mfx_dispatcher_uwp.h-.cpp.patch
+│   │       │   ├── 0001-detect-winstore-builds-with-a-regular-mingw32-toolch.patch
+│   │       │   ├── 0001-fix-UWP-build-in-ming-w64.patch
+│   │       │   ├── 0002-Fix-linking-statically-with-intel_gfx_api-x86.dll.patch
+│   │       │   ├── 0002-fix-UWP-build-in-ming-w64.patch
+│   │       │   ├── 0003-Don-t-change-the-calling-convention-of-x86-gfx-api.patch
+│   │       │   ├── rules.mak
+│   │       │   └── SHA512SUMS
+│   │       ├── microdns
+│   │       │   ├── 0001-build-fix-getifaddrs-detection.patch
+│   │       │   ├── 0002-fix-dummy-mdns_list_interfaces.patch
+│   │       │   ├── rules.mak
+│   │       │   └── SHA512SUMS
+│   │       ├── mingw64
+│   │       │   ├── 0001-headers-allow-CryptAcquireContext-in-Win10-RS4-UWP-b.patch
+│   │       │   ├── 0001-headers-enable-GetFileInformationByHandle-in-Win10-U.patch
+│   │       │   ├── 0001-include-process-fix-bare-DllMain-_CRT_INIT-signature.patch
+│   │       │   ├── 0002-headers-allow-CryptGenRandom-in-Win10-19H1-UWP-build.patch
+│   │       │   ├── 0002-headers-enable-VirtualAlloc-Ex-in-Win10-UWP-builds.patch
+│   │       │   ├── 0003-headers-allow-more-wincrypt-API-s-in-Win10-RS4-UWP-b.patch
+│   │       │   ├── 0003-headers-enable-GetVolumePathNameW-in-Win10-UWP-build.patch
+│   │       │   ├── 0004-headers-allow-more-wincrypt-API-s-in-Win10-19H1-UWP-.patch
+│   │       │   ├── 0004-headers-enable-GET_MODULE_HANDLE_EX_xxx-defines-in-U.patch
+│   │       │   ├── 0005-crt-use-wincrypt-API-from-windowsapp-in-Windows-10.patch
+│   │       │   ├── 0005-headers-enable-CreateHardLinkW-in-Win10-19H1-UWP-bui.patch
+│   │       │   ├── 0006-headers-enable-more-module-API-in-Win10-19H1-UWP-bui.patch
+│   │       │   ├── 0007-crt-add-api-ms-core-registry-def-files.patch
+│   │       │   ├── 0008-headers-enable-some-Registry-API-calls-in-Win10-19H1.patch
+│   │       │   ├── 0009-headers-only-enable-GetFileInformationByHandle-for-1.patch
+│   │       │   ├── 0010-headers-allow-Get-SetHandleInformation-in-Win10-19H1.patch
+│   │       │   ├── 0011-crt-add-missing-api-ms-win-core-heap-l1-1-0.patch
+│   │       │   ├── 0012-headers-Allow-some-Heap-API-in-Win10-19H1-UWP-builds.patch
+│   │       │   ├── 0013-headers-enable-FindResourceW-in-Win10-19H1-UWP-build.patch
+│   │       │   ├── 0014-headers-check-which-version-of-UWP-Windows-contains-.patch
+│   │       │   ├── 0015-headers-enabled-LoadLibraryEx-flags-in-Win10-19H1-UW.patch
+│   │       │   ├── 0016-headers-Allow-SetDllDirectoryW-A-API-in-Win10-19H1-U.patch
+│   │       │   ├── 0017-headers-allow-FORMAT_MESSAGE_ALLOCATE_BUFFER-in-UWP.patch
+│   │       │   ├── 0018-headers-allow-RtlSecureZeroMemory-in-all-targets.patch
+│   │       │   ├── 0019-headers-use-inline-version-of-RtlSecureZeroMemory-fo.patch
+│   │       │   ├── rules.mak
+│   │       │   └── SHA512SUMS
+│   │       ├── modplug
+│   │       │   ├── fix-endianness-check.diff
+│   │       │   ├── macosx-do-not-force-min-version.patch
+│   │       │   ├── mac-use-c-stdlib.patch
+│   │       │   ├── modplug-win32-static.patch
+│   │       │   ├── rules.mak
+│   │       │   └── SHA512SUMS
+│   │       ├── mpcdec
+│   │       │   ├── 0004-libmpcdec-added-install-and-soversion.patch
+│   │       │   ├── 0005-If-BUILD_SHARED_LIBS-is-set-and-SHARED-undefined-the.patch
+│   │       │   ├── 0006-adapted-patch-0001-shared.patch-from-buildroot.patch
+│   │       │   ├── musepack-asinh-msvc.patch
+│   │       │   ├── musepack-no-binaries.patch
+│   │       │   ├── musepack-no-cflags-clobber.patch
+│   │       │   ├── rules.mak
+│   │       │   └── SHA512SUMS
+│   │       ├── mpg123
+│   │       │   ├── no-programs.patch
+│   │       │   ├── rules.mak
+│   │       │   └── SHA512SUMS
+│   │       ├── mysofa
+│   │       │   ├── rules.mak
+│   │       │   └── SHA512SUMS
+│   │       ├── ncurses
+│   │       │   ├── ncurses-win32.patch
+│   │       │   ├── rules.mak
+│   │       │   └── SHA512SUMS
+│   │       ├── nettle
+│   │       │   ├── rules.mak
+│   │       │   └── SHA512SUMS
+│   │       ├── nfs
+│   │       │   ├── rules.mak
+│   │       │   └── SHA512SUMS
+│   │       ├── nvcodec
+│   │       │   ├── rules.mak
+│   │       │   └── SHA512SUMS
+│   │       ├── ogg
+│   │       │   ├── libogg-configure.patch
+│   │       │   ├── libogg-disable-check.patch
+│   │       │   ├── rules.mak
+│   │       │   └── SHA512SUMS
+│   │       ├── openjpeg
+│   │       │   ├── freebsd.patch
+│   │       │   ├── install.patch
+│   │       │   ├── msvc.patch
+│   │       │   ├── openjp2_pthread.patch
+│   │       │   ├── pic.patch
+│   │       │   ├── restrict.patch
+│   │       │   ├── rules.mak
+│   │       │   └── SHA512SUMS
+│   │       ├── opus
+│   │       │   ├── 0001-meson-arm64.patch
+│   │       │   ├── rules.mak
+│   │       │   └── SHA512SUMS
+│   │       ├── orc
+│   │       │   ├── rules.mak
+│   │       │   ├── SHA512SUMS
+│   │       │   └── use-proper-func-detection.patch
+│   │       ├── pkg-rewrite-absolute.py
+│   │       ├── pkg-static.sh
+│   │       ├── png
+│   │       │   ├── 0001-Put-the-build-include-include-before-the-CMake-Platf.patch
+│   │       │   ├── automake.patch
+│   │       │   ├── bins.patch
+│   │       │   ├── rules.mak
+│   │       │   ├── SHA512SUMS
+│   │       │   └── winrt.patch
+│   │       ├── postproc
+│   │       │   ├── rules.mak
+│   │       │   └── win-pic.patch
+│   │       ├── projectM
+│   │       │   ├── clang6.patch
+│   │       │   ├── gcc6.patch
+│   │       │   ├── missing-includes.patch
+│   │       │   ├── projectm-cmake-install.patch
+│   │       │   ├── rules.mak
+│   │       │   ├── SHA512SUMS
+│   │       │   ├── win32.patch
+│   │       │   └── win64.patch
+│   │       ├── protobuf
+│   │       │   ├── dont-build-protoc.patch
+│   │       │   ├── include-algorithm.patch
+│   │       │   ├── protobuf-no-mingw-pthread.patch
+│   │       │   ├── rules.mak
+│   │       │   └── SHA512SUMS
+│   │       ├── pthreads
+│   │       │   ├── 0001-headers-Update-to-Wine-master-and-regenerate-H-from-.patch
+│   │       │   ├── 0002-headers-dxvahd-Regenerate-H-from-IDL.patch
+│   │       │   ├── rules.mak
+│   │       │   └── SHA512SUMS
+│   │       ├── pthread-stubs
+│   │       │   ├── rules.mak
+│   │       │   └── SHA512SUMS
+│   │       ├── qt
+│   │       │   ├── 0001-disable-qt_random_cpu.patch
+│   │       │   ├── 0001-Windows-QPA-Reimplement-calculation-of-window-frames_56.patch
+│   │       │   ├── 0002-Windows-QPA-Disable-systray-notification-sounds.patch
+│   │       │   ├── 0002-Windows-QPA-Use-new-EnableNonClientDpiScaling-for-Wi_56.patch
+│   │       │   ├── 0003-allow-cross-compilation-of-angle-with-wine.patch
+│   │       │   ├── 0003-QPA-prefer-lower-value-when-rounding-fractional-scaling.patch
+│   │       │   ├── 0004-qmake-don-t-limit-command-line-length-when-not-actua.patch
+│   │       │   ├── 0005-harfbuzz-Fix-building-for-win64-with-clang.patch
+│   │       │   ├── 0006-moc-Initialize-staticMetaObject-with-the-highest-use.patch
+│   │       │   ├── 0007-ANGLE-remove-static-assert-that-can-t-be-evaluated-b.patch
+│   │       │   ├── 0007-Only-define-QT_FASTCALL-on-x86_32.patch
+│   │       │   ├── 0008-ANGLE-disable-ANGLE_STD_ASYNC_WORKERS-when-compiling.patch
+│   │       │   ├── 0008-Skip-arm-pixman-drawhelpers-on-windows-just-like-on-.patch
+│   │       │   ├── 0009-Add-KHRONOS_STATIC-to-allow-static-linking-on-Windows.patch
+│   │       │   ├── 0009-mkspecs-Add-a-win32-clang-g-mkspec-for-clang-targeti.patch
+│   │       │   ├── 0010-Add-the-QT_HAS_xxx-macros-for-post-C-11-feature-test.patch
+│   │       │   ├── 0011-qCount-Leading-Trailing-ZeroBits-Use-__builtin_clzs-.patch
+│   │       │   ├── 0012-Remove-_bit_scan_-forward-reverse.patch
+│   │       │   ├── 0013-qsimd-Fix-compilation-with-trunk-clang-for-mingw.patch
+│   │       │   ├── 0014-QtTest-compile-in-C-17-mode-no-more-std-unary_functi.patch
+│   │       │   ├── 0015-foreach-remove-implementations-not-using-decltype.patch
+│   │       │   ├── 0016-Replace-custom-type-traits-with-std-one-s.patch
+│   │       │   ├── 0017-Rename-QtPrivate-is_-un-signed-to-QtPrivate-Is-Un-si.patch
+│   │       │   ├── 0018-Remove-qtypetraits.h-s-contents-altogether.patch
+│   │       │   ├── 0019-QFileSystemEngine-only-define-FILE_ID_INFO-for-build.patch
+│   │       │   ├── add-includedir-to-pc-file.patch
+│   │       │   ├── configure-env.py
+│   │       │   ├── force-pkgconfg-replace.patch
+│   │       │   ├── install_wrapper.sh
+│   │       │   ├── qt-fix-gcc11-build.patch
+│   │       │   ├── rules.mak
+│   │       │   ├── set-mkspecs-properties.patch
+│   │       │   ├── set-mkspecs-version.patch
+│   │       │   ├── SHA512SUMS
+│   │       │   └── systray-no-sound.patch
+│   │       ├── qtdeclarative
+│   │       │   ├── 0001-Make-sure-QQuickWidget-and-its-offscreen-window-s-sc.patch
+│   │       │   ├── 0002-Implement-accessibility-for-QQuickWidget.patch
+│   │       │   ├── rules.mak
+│   │       │   └── SHA512SUMS
+│   │       ├── qtgraphicaleffects
+│   │       │   ├── rules.mak
+│   │       │   └── SHA512SUMS
+│   │       ├── qtquickcontrols2
+│   │       │   ├── rules.mak
+│   │       │   └── SHA512SUMS
+│   │       ├── qtsvg
+│   │       │   ├── 0001-Force-the-usage-of-QtZlib-header.patch
+│   │       │   ├── rules.mak
+│   │       │   └── SHA512SUMS
+│   │       ├── qtwayland
+│   │       │   ├── rules.mak
+│   │       │   └── SHA512SUMS
+│   │       ├── qtx11extras
+│   │       │   ├── rules.mak
+│   │       │   └── SHA512SUMS
+│   │       ├── rav1e
+│   │       │   ├── rules.mak
+│   │       │   ├── SHA512SUMS
+│   │       │   └── unwind-resume-stub.patch
+│   │       ├── rav1e-vendor
+│   │       │   ├── rules.mak
+│   │       │   └── SHA512SUMS
+│   │       ├── README
+│   │       ├── README.md
+│   │       ├── regex
+│   │       │   ├── decls.patch
+│   │       │   ├── no-docs.patch
+│   │       │   ├── rules.mak
+│   │       │   └── SHA512SUMS
+│   │       ├── rnnoise
+│   │       │   └── rules.mak
+│   │       ├── salsa
+│   │       │   ├── rules.mak
+│   │       │   └── salsa-cast-fix.patch
+│   │       ├── samplerate
+│   │       │   ├── rules.mak
+│   │       │   └── SHA512SUMS
+│   │       ├── schroedinger
+│   │       │   ├── rules.mak
+│   │       │   ├── schroedinger-notests.patch
+│   │       │   └── SHA512SUMS
+│   │       ├── sdl
+│   │       │   ├── direct_palette_ref.diff
+│   │       │   ├── rules.mak
+│   │       │   └── SHA512SUMS
+│   │       ├── SDL_image
+│   │       │   ├── pkg-config.patch
+│   │       │   ├── rules.mak
+│   │       │   ├── SDL_image.patch
+│   │       │   └── SHA512SUMS
+│   │       ├── shout
+│   │       │   ├── 0001-Favor-GetCurrentProcessId-on-Windows.patch
+│   │       │   ├── add-missing-stdlib-stdio.patch
+│   │       │   ├── bsd.patch
+│   │       │   ├── fix-xiph_openssl.patch
+│   │       │   ├── libshout-arpa.patch
+│   │       │   ├── no-examples.patch
+│   │       │   ├── no-force-libwsock.patch
+│   │       │   ├── rules.mak
+│   │       │   ├── SHA512SUMS
+│   │       │   ├── should-win32-ws2tcpip.patch
+│   │       │   ├── shout-strings.patch
+│   │       │   ├── shout-timeval.patch
+│   │       │   ├── shout-win32-socklen.patch
+│   │       │   └── win32-gettimeofday.patch
+│   │       ├── sidplay2
+│   │       │   ├── rules.mak
+│   │       │   ├── SHA512SUMS
+│   │       │   ├── sidplay2-char-cast.patch
+│   │       │   ├── sidplay2-endian.patch
+│   │       │   ├── sidplay2-fix-overflow.patch
+│   │       │   ├── sidplay2-noutils.patch
+│   │       │   ├── sidplay2-openmode.patch
+│   │       │   ├── sidplay2-resid-dependency.patch
+│   │       │   ├── sidplay2-smartprt.patch
+│   │       │   ├── sidplay2-string.patch
+│   │       │   └── sidplay-fix-ln-s.patch
+│   │       ├── smb2
+│   │       │   ├── rules.mak
+│   │       │   └── SHA512SUMS
+│   │       ├── soxr
+│   │       │   ├── 0001-always-generate-.pc.patch
+│   │       │   ├── 0002-expose-Libs.private-in-.pc.patch
+│   │       │   ├── 0003-add-aarch64-support.patch
+│   │       │   ├── 0004-arm-fix-SIGILL-when-doing-divisions-on-some-old-arch.patch
+│   │       │   ├── aarch64.patch
+│   │       │   ├── find_ff_pkgconfig.patch
+│   │       │   ├── rules.mak
+│   │       │   ├── SHA512SUMS
+│   │       │   └── soxr-check-function.patch
+│   │       ├── sparkle
+│   │       │   ├── rules.mak
+│   │       │   └── SHA512SUMS
+│   │       ├── spatialaudio
+│   │       │   ├── rules.mak
+│   │       │   └── SHA512SUMS
+│   │       ├── speex
+│   │       │   ├── rules.mak
+│   │       │   └── SHA512SUMS
+│   │       ├── speexdsp
+│   │       │   ├── missing-stdint-for-aarch.patch
+│   │       │   ├── rules.mak
+│   │       │   └── SHA512SUMS
+│   │       ├── sqlite
+│   │       │   ├── rules.mak
+│   │       │   └── SHA512SUMS
+│   │       ├── srt
+│   │       │   ├── 0001-core-ifdef-MSG_TRUNC-nixes-fix.patch
+│   │       │   ├── fix-partial-availability.patch
+│   │       │   ├── rules.mak
+│   │       │   └── SHA512SUMS
+│   │       ├── ssh2
+│   │       │   ├── 0001-fix-gcrypt-linking.patch
+│   │       │   ├── no-tests.patch
+│   │       │   ├── rules.mak
+│   │       │   ├── SHA512SUMS
+│   │       │   └── winrt-no-agent.patch
+│   │       ├── taglib
+│   │       │   ├── 0001-Implement-ID3v2-readStyle-avoid-worst-case.patch
+│   │       │   ├── rules.mak
+│   │       │   └── SHA512SUMS
+│   │       ├── theora
+│   │       │   ├── libtheora-compiler-differentiation.patch
+│   │       │   ├── libtheora-no-forceaddr.patch
+│   │       │   ├── rules.mak
+│   │       │   └── SHA512SUMS
+│   │       ├── tiff
+│   │       │   ├── rules.mak
+│   │       │   ├── SHA512SUMS
+│   │       │   └── tiff-winstore.patch
+│   │       ├── tiger
+│   │       │   ├── autotools.patch
+│   │       │   ├── rules.mak
+│   │       │   └── SHA512SUMS
+│   │       ├── tremor
+│   │       │   ├── rules.mak
+│   │       │   └── tremor.patch
+│   │       ├── twolame
+│   │       │   ├── rules.mak
+│   │       │   └── SHA512SUMS
+│   │       ├── upnp
+│   │       │   ├── 0001-ThreadPool-Fix-non-UCRT-builds.patch
+│   │       │   ├── fix-reuseaddr-option.patch
+│   │       │   ├── libtool-nostdlib-workaround.patch
+│   │       │   ├── libupnp-pthread-force.patch
+│   │       │   ├── libupnp-win32-exports.patch
+│   │       │   ├── libupnp-win32.patch
+│   │       │   ├── miniserver.patch
+│   │       │   ├── revert-ifaddrs.patch
+│   │       │   ├── rules.mak
+│   │       │   ├── SHA512SUMS
+│   │       │   ├── win32-remove-wrong-safe-wrappers.patch
+│   │       │   └── windows-version-inet.patch
+│   │       ├── vncclient
+│   │       │   ├── cross-ar.patch
+│   │       │   ├── gnutls-recent.patch
+│   │       │   ├── libvncclient-libjpeg-win32.patch
+│   │       │   ├── png-detection.patch
+│   │       │   ├── rfbproto.patch
+│   │       │   ├── rules.mak
+│   │       │   ├── SHA512SUMS
+│   │       │   ├── vnc-gnutls-anon.patch
+│   │       │   └── vnc-gnutls-pkg.patch
+│   │       ├── vorbis
+│   │       │   ├── clang.patch
+│   │       │   ├── rules.mak
+│   │       │   ├── SHA512SUMS
+│   │       │   └── vorbis-bitcode.patch
+│   │       ├── vpx
+│   │       │   ├── darwin-do-not-overwrite-ld.patch
+│   │       │   ├── libvpx-android.patch
+│   │       │   ├── libvpx-darwin-aarch64.patch
+│   │       │   ├── libvpx-ios.patch
+│   │       │   ├── libvpx-remove-bitcode.patch
+│   │       │   ├── rules.mak
+│   │       │   └── SHA512SUMS
+│   │       ├── vulkan-headers
+│   │       │   ├── rules.mak
+│   │       │   └── SHA512SUMS
+│   │       ├── vulkan-loader
+│   │       │   ├── 002-proper-def-files-for-32bit.patch
+│   │       │   ├── 004-disable-suffix-in-static-lib.patch
+│   │       │   ├── libvulkan-32.def
+│   │       │   ├── rules.mak
+│   │       │   └── SHA512SUMS
+│   │       ├── wine-headers
+│   │       │   ├── rules.mak
+│   │       │   └── SHA512SUMS
+│   │       ├── wix
+│   │       │   ├── rules.mak
+│   │       │   └── SHA512SUMS
+│   │       ├── wixlzx
+│   │       │   ├── rules.mak
+│   │       │   └── SHA512SUMS
+│   │       ├── x262
+│   │       │   └── rules.mak
+│   │       ├── x264
+│   │       │   ├── 0001-osdep-use-direct-path-to-internal-x264.h.patch
+│   │       │   ├── rules.mak
+│   │       │   ├── SHA512SUMS
+│   │       │   └── x264-winstore.patch
+│   │       ├── x265
+│   │       │   ├── 0001-api-use-LoadLibraryExA-instead-of-LoadLibraryA.patch
+│   │       │   ├── 0001-threadpool-disable-group-affinity-in-UWP-builds.patch
+│   │       │   ├── rules.mak
+│   │       │   ├── SHA512SUMS
+│   │       │   ├── x265-enable-detect512.patch
+│   │       │   ├── x265-ldl-linking.patch
+│   │       │   ├── x265-no-pdb-install.patch
+│   │       │   └── x265-pkg-libs.patch
+│   │       ├── xau
+│   │       │   ├── rules.mak
+│   │       │   └── SHA512SUMS
+│   │       ├── xcb
+│   │       │   ├── rules.mak
+│   │       │   └── SHA512SUMS
+│   │       ├── xcb-proto
+│   │       │   ├── rules.mak
+│   │       │   └── SHA512SUMS
+│   │       ├── xorg-macros
+│   │       │   ├── rules.mak
+│   │       │   └── SHA512SUMS
+│   │       ├── xproto
+│   │       │   ├── rules.mak
+│   │       │   └── SHA512SUMS
+│   │       ├── zlib
+│   │       │   ├── 0001-Fix-mingw-static-library-name-on-mingw-and-Emscripte.patch
+│   │       │   ├── 0002-Add-an-option-to-enable-disable-building-examples.patch
+│   │       │   ├── no-shared.patch
+│   │       │   ├── rules.mak
+│   │       │   └── SHA512SUMS
+│   │       └── zvbi
+│   │           ├── rules.mak
+│   │           ├── SHA512SUMS
+│   │           ├── zvbi-android.patch
+│   │           ├── zvbi-fix-clang-support.patch
+│   │           ├── zvbi-fix-static-linking.patch
+│   │           ├── zvbi-ioctl.patch
+│   │           ├── zvbi-ssize_max.patch
+│   │           ├── zvbi-win32.patch
+│   │           └── zvbi-win32-undefined.patch
+│   ├── COPYING
+│   ├── COPYING.LIB
+│   ├── doc
+│   │   ├── ChangeLog-1999
+│   │   ├── ChangeLog-2000
+│   │   ├── ChangeLog-2001
+│   │   ├── ChangeLog-2002
+│   │   ├── ChangeLog-2003
+│   │   ├── ChangeLog-2004
+│   │   ├── ChangeLog-2005
+│   │   ├── ChangeLog-2006
+│   │   ├── ChangeLog-2007
+│   │   ├── ChangeLog-2008
+│   │   ├── ChangeLog-2009
+│   │   ├── ChangeLog-2010
+│   │   ├── ChangeLog-2011
+│   │   ├── ChangeLog-2012
+│   │   ├── ChangeLog-2013
+│   │   ├── ChangeLog-2014
+│   │   ├── ChangeLog-2015
+│   │   ├── ChangeLog-2016
+│   │   ├── ChangeLog-2017
+│   │   ├── ChangeLog-2018
+│   │   ├── ChangeLog-2019
+│   │   ├── ChangeLog-2020
+│   │   ├── ChangeLog-2021
+│   │   ├── ChangeLog-2022
+│   │   ├── ChangeLog-2023
+│   │   ├── ChangeLog-2024
+│   │   ├── demo.sh
+│   │   ├── Doxyfile.in
+│   │   ├── fortunes.txt
+│   │   ├── libvlc
+│   │   │   ├── CMakeLists.txt
+│   │   │   ├── gtk_player.c
+│   │   │   ├── libvlc_DVD_ripper.c
+│   │   │   ├── QtPlayer
+│   │   │   │   ├── LICENSE
+│   │   │   │   ├── main.cpp
+│   │   │   │   ├── player.cpp
+│   │   │   │   ├── player.h
+│   │   │   │   └── QtVLC.pro
+│   │   │   ├── vlc-thumb.c
+│   │   │   ├── win_player.c
+│   │   │   └── wx_player.cpp
+│   │   ├── lirc
+│   │   │   └── example.lircrc
+│   │   ├── Makefile.am
+│   │   ├── Makefile.in
+│   │   ├── release-howto.txt
+│   │   ├── skins
+│   │   │   ├── curve_maker
+│   │   │   │   ├── Bezier.bas
+│   │   │   │   ├── Bezier.frm
+│   │   │   │   ├── Bezier.frx
+│   │   │   │   ├── bezier.vbp
+│   │   │   │   └── Bezier.vbw
+│   │   │   ├── events-howto.txt
+│   │   │   └── skins-howto.txt
+│   │   ├── strings.txt
+│   │   ├── translations.txt
+│   │   ├── vlc.1
+│   │   └── vlc-wrapper.1
+│   ├── extras
+│   │   ├── analyser
+│   │   │   ├── emacs.init
+│   │   │   ├── valgrind.suppressions
+│   │   │   ├── vlc.vim
+│   │   │   ├── zsh_completion.sh
+│   │   │   └── zsh.cpp
+│   │   ├── buildsystem
+│   │   │   └── make.pl
+│   │   ├── misc
+│   │   │   ├── mpris.py
+│   │   │   └── mpris.xml
+│   │   ├── package
+│   │   │   ├── macosx
+│   │   │   │   ├── asset_sources
+│   │   │   │   │   └── vlc_app_icon.svg
+│   │   │   │   ├── build.sh
+│   │   │   │   ├── codesign.sh
+│   │   │   │   ├── configure.sh
+│   │   │   │   ├── dmg
+│   │   │   │   │   ├── background.tiff
+│   │   │   │   │   ├── disk_image.icns
+│   │   │   │   │   └── dmg_settings.py
+│   │   │   │   ├── package.mak
+│   │   │   │   ├── VLC.entitlements
+│   │   │   │   └── vlc.xcodeproj
+│   │   │   │       └── project.pbxproj
+│   │   │   ├── npapi.am
+│   │   │   └── win32
+│   │   │       ├── configure.sh
+│   │   │       ├── libvlc.dll.manifest
+│   │   │       ├── msi
+│   │   │       │   └── config.wxi.in
+│   │   │       ├── msi.mak
+│   │   │       ├── NSIS
+│   │   │       │   ├── languages
+│   │   │       │   │   ├── AfrikaansExtra.nsh
+│   │   │       │   │   ├── AlbanianExtra.nsh
+│   │   │       │   │   ├── ArabicExtra.nsh
+│   │   │       │   │   ├── AsturianExtra.nsh
+│   │   │       │   │   ├── BasqueExtra.nsh
+│   │   │       │   │   ├── BosnianExtra.nsh
+│   │   │       │   │   ├── BretonExtra.nsh
+│   │   │       │   │   ├── BulgarianExtra.nsh
+│   │   │       │   │   ├── CatalanExtra.nsh
+│   │   │       │   │   ├── CorsicanExtra.nsh
+│   │   │       │   │   ├── CroatianExtra.nsh
+│   │   │       │   │   ├── CzechExtra.nsh
+│   │   │       │   │   ├── DanishExtra.nsh
+│   │   │       │   │   ├── DutchExtra.nsh
+│   │   │       │   │   ├── EnglishExtra.nsh
+│   │   │       │   │   ├── EstonianExtra.nsh
+│   │   │       │   │   ├── FinnishExtra.nsh
+│   │   │       │   │   ├── FrenchExtra.nsh
+│   │   │       │   │   ├── GalicianExtra.nsh
+│   │   │       │   │   ├── GermanExtra.nsh
+│   │   │       │   │   ├── GreekExtra.nsh
+│   │   │       │   │   ├── HebrewExtra.nsh
+│   │   │       │   │   ├── HungarianExtra.nsh
+│   │   │       │   │   ├── IcelandicExtra.nsh
+│   │   │       │   │   ├── IndonesianExtra.nsh
+│   │   │       │   │   ├── ItalianExtra.nsh
+│   │   │       │   │   ├── JapaneseExtra.nsh
+│   │   │       │   │   ├── KhmerExtra.nsh
+│   │   │       │   │   ├── KoreanExtra.nsh
+│   │   │       │   │   ├── LatvianExtra.nsh
+│   │   │       │   │   ├── LithuanianExtra.nsh
+│   │   │       │   │   ├── MalayExtra.nsh
+│   │   │       │   │   ├── MongolianExtra.nsh
+│   │   │       │   │   ├── NorwegianExtra.nsh
+│   │   │       │   │   ├── NorwegianNynorskExtra.nsh
+│   │   │       │   │   ├── PolishExtra.nsh
+│   │   │       │   │   ├── PortugueseBRExtra.nsh
+│   │   │       │   │   ├── PortugueseExtra.nsh
+│   │   │       │   │   ├── RomanianExtra.nsh
+│   │   │       │   │   ├── RussianExtra.nsh
+│   │   │       │   │   ├── ScotsGaelicExtra.nsh
+│   │   │       │   │   ├── SerbianExtra.nsh
+│   │   │       │   │   ├── SimpChineseExtra.nsh
+│   │   │       │   │   ├── SlovakExtra.nsh
+│   │   │       │   │   ├── SlovenianExtra.nsh
+│   │   │       │   │   ├── SpanishExtra.nsh
+│   │   │       │   │   ├── SwedishExtra.nsh
+│   │   │       │   │   ├── ThaiExtra.nsh
+│   │   │       │   │   ├── TradChineseExtra.nsh
+│   │   │       │   │   ├── TurkishExtra.nsh
+│   │   │       │   │   ├── UkrainianExtra.nsh
+│   │   │       │   │   ├── UzbekExtra.nsh
+│   │   │       │   │   └── WelshExtra.nsh
+│   │   │       │   ├── spad.nsi.in
+│   │   │       │   ├── vlc_branding.bmp
+│   │   │       │   └── vlc.win32.nsi.in
+│   │   │       ├── package.mak
+│   │   │       └── vlc.exe.manifest
+│   │   └── tools
+│   │       ├── automake-clang.patch
+│   │       ├── bison-macOS-7df04f9.patch
+│   │       ├── bison-macOS-c41f233c.patch
+│   │       ├── bootstrap
+│   │       ├── cmake-enable-ALPN-support-on-macOS-10.14.patch
+│   │       ├── libtool-2.4.7-bitcode.patch
+│   │       ├── libtool-2.4.7-clang-libs.patch
+│   │       ├── libtool-2.4.7-response-files.patch
+│   │       ├── packages.mak
+│   │       ├── ragel-6.8-javacodegen.patch
+│   │       ├── SHA512SUMS
+│   │       └── tools.mak
+│   ├── include
+│   │   ├── vlc
+│   │   │   ├── deprecated.h
+│   │   │   ├── libvlc_dialog.h
+│   │   │   ├── libvlc_events.h
+│   │   │   ├── libvlc.h
+│   │   │   ├── libvlc_media_discoverer.h
+│   │   │   ├── libvlc_media.h
+│   │   │   ├── libvlc_media_library.h
+│   │   │   ├── libvlc_media_list.h
+│   │   │   ├── libvlc_media_list_player.h
+│   │   │   ├── libvlc_media_player.h
+│   │   │   ├── libvlc_renderer_discoverer.h
+│   │   │   ├── libvlc_version.h.in
+│   │   │   ├── libvlc_vlm.h
+│   │   │   └── vlc.h
+│   │   ├── vlc_access.h
+│   │   ├── vlc_actions.h
+│   │   ├── vlc_addons.h
+│   │   ├── vlc_aout.h
+│   │   ├── vlc_aout_volume.h
+│   │   ├── vlc_arrays.h
+│   │   ├── vlc_atomic.h
+│   │   ├── vlc_avcodec.h
+│   │   ├── vlc_bits.h
+│   │   ├── vlc_block.h
+│   │   ├── vlc_block_helper.h
+│   │   ├── vlc_boxes.h
+│   │   ├── vlc_charset.h
+│   │   ├── vlc_codec.h
+│   │   ├── vlc_codecs.h
+│   │   ├── vlc_common.h
+│   │   ├── vlc_config_cat.h
+│   │   ├── vlc_config.h
+│   │   ├── vlc_configuration.h
+│   │   ├── vlc_cpu.h
+│   │   ├── vlc_demux.h
+│   │   ├── vlc_dialog.h
+│   │   ├── vlc_epg.h
+│   │   ├── vlc_es.h
+│   │   ├── vlc_es_out.h
+│   │   ├── vlc_events.h
+│   │   ├── vlc_extensions.h
+│   │   ├── vlc_filter.h
+│   │   ├── vlc_fingerprinter.h
+│   │   ├── vlc_fixups.h
+│   │   ├── vlc_fourcc.h
+│   │   ├── vlc_fs.h
+│   │   ├── vlc_gcrypt.h
+│   │   ├── vlc_httpd.h
+│   │   ├── vlc_http.h
+│   │   ├── vlc_image.h
+│   │   ├── vlc_inhibit.h
+│   │   ├── vlc_input.h
+│   │   ├── vlc_input_item.h
+│   │   ├── vlc_interface.h
+│   │   ├── vlc_interrupt.h
+│   │   ├── vlc_intf_strings.h
+│   │   ├── vlc_iso_lang.h
+│   │   ├── vlc_keystore.h
+│   │   ├── vlc_main.h
+│   │   ├── vlc_md5.h
+│   │   ├── vlc_media_library.h
+│   │   ├── vlc_memory.h
+│   │   ├── vlc_memstream.h
+│   │   ├── vlc_messages.h
+│   │   ├── vlc_meta_fetcher.h
+│   │   ├── vlc_meta.h
+│   │   ├── vlc_mime.h
+│   │   ├── vlc_modules.h
+│   │   ├── vlc_mouse.h
+│   │   ├── vlc_mtime.h
+│   │   ├── vlc_network.h
+│   │   ├── vlc_objects.h
+│   │   ├── vlc_opengl.h
+│   │   ├── vlc_pgpkey.h
+│   │   ├── vlc_picture_fifo.h
+│   │   ├── vlc_picture.h
+│   │   ├── vlc_picture_pool.h
+│   │   ├── vlc_playlist.h
+│   │   ├── vlc_plugin.h
+│   │   ├── vlc_probe.h
+│   │   ├── vlc_rand.h
+│   │   ├── vlc_renderer_discovery.h
+│   │   ├── vlc_services_discovery.h
+│   │   ├── vlc_sout.h
+│   │   ├── vlc_spu.h
+│   │   ├── vlc_stream_extractor.h
+│   │   ├── vlc_stream.h
+│   │   ├── vlc_strings.h
+│   │   ├── vlc_subpicture.h
+│   │   ├── vlc_text_style.h
+│   │   ├── vlc_threads.h
+│   │   ├── vlc_timestamp_helper.h
+│   │   ├── vlc_tls.h
+│   │   ├── vlc_update.h
+│   │   ├── vlc_url.h
+│   │   ├── vlc_variables.h
+│   │   ├── vlc_video_splitter.h
+│   │   ├── vlc_viewpoint.h
+│   │   ├── vlc_vlm.h
+│   │   ├── vlc_vod.h
+│   │   ├── vlc_vout_display.h
+│   │   ├── vlc_vout.h
+│   │   ├── vlc_vout_osd.h
+│   │   ├── vlc_vout_window.h
+│   │   ├── vlc_vout_wrapper.h
+│   │   ├── vlc_xlib.h
+│   │   └── vlc_xml.h
+│   ├── INSTALL
+│   ├── lib
+│   │   ├── audio.c
+│   │   ├── core.c
+│   │   ├── dialog.c
+│   │   ├── error.c
+│   │   ├── event.c
+│   │   ├── libvlc_internal.h
+│   │   ├── libvlc.pc.in
+│   │   ├── libvlc.sym
+│   │   ├── log.c
+│   │   ├── Makefile.am
+│   │   ├── Makefile.in
+│   │   ├── media.c
+│   │   ├── media_discoverer.c
+│   │   ├── media_internal.h
+│   │   ├── media_library.c
+│   │   ├── media_list.c
+│   │   ├── media_list_internal.h
+│   │   ├── media_list_path.h
+│   │   ├── media_list_player.c
+│   │   ├── media_player.c
+│   │   ├── media_player_internal.h
+│   │   ├── playlist.c
+│   │   ├── renderer_discoverer.c
+│   │   ├── renderer_discoverer_internal.h
+│   │   ├── video.c
+│   │   └── vlm.c
+│   ├── m4
+│   │   ├── ax_append_compile_flags.m4
+│   │   ├── ax_append_flag.m4
+│   │   ├── ax_check_compile_flag.m4
+│   │   ├── ax_require_defined.m4
+│   │   ├── c11.m4
+│   │   ├── codeset.m4
+│   │   ├── dolt.m4
+│   │   ├── extern-inline.m4
+│   │   ├── gettext.m4
+│   │   ├── glibc21.m4
+│   │   ├── glibc2.m4
+│   │   ├── iconv.m4
+│   │   ├── intdiv0.m4
+│   │   ├── intldir.m4
+│   │   ├── intl.m4
+│   │   ├── intlmacosx.m4
+│   │   ├── intmax.m4
+│   │   ├── inttypes_h.m4
+│   │   ├── inttypes-pri.m4
+│   │   ├── lcmessage.m4
+│   │   ├── lib-ld.m4
+│   │   ├── lib-link.m4
+│   │   ├── lib-prefix.m4
+│   │   ├── libtool.m4
+│   │   ├── lock.m4
+│   │   ├── longlong.m4
+│   │   ├── lt~obsolete.m4
+│   │   ├── ltoptions.m4
+│   │   ├── ltsugar.m4
+│   │   ├── ltversion.m4
+│   │   ├── Makefile.am
+│   │   ├── Makefile.in
+│   │   ├── nls.m4
+│   │   ├── po.m4
+│   │   ├── printf-posix.m4
+│   │   ├── progtest.m4
+│   │   ├── size_max.m4
+│   │   ├── stdcxx_11.m4
+│   │   ├── stdint_h.m4
+│   │   ├── uintmax_t.m4
+│   │   ├── visibility.m4
+│   │   ├── vlc.m4
+│   │   ├── wchar_t.m4
+│   │   ├── wint_t.m4
+│   │   ├── with_pkg.m4
+│   │   └── xsize.m4
+│   ├── make-alias
+│   ├── Makefile.am
+│   ├── Makefile.in
+│   ├── modules
+│   │   ├── access
+│   │   │   ├── alsa.c
+│   │   │   ├── attachment.c
+│   │   │   ├── avaudiocapture.m
+│   │   │   ├── avcapture.m
+│   │   │   ├── avio.c
+│   │   │   ├── avio.h
+│   │   │   ├── bluray.c
+│   │   │   ├── cdda.c
+│   │   │   ├── concat.c
+│   │   │   ├── dc1394.c
+│   │   │   ├── dcp
+│   │   │   │   ├── dcp.cpp
+│   │   │   │   ├── dcpdecrypt.cpp
+│   │   │   │   ├── dcpparser.cpp
+│   │   │   │   └── dcpparser.h
+│   │   │   ├── decklink.cpp
+│   │   │   ├── directory.c
+│   │   │   ├── disc_helper.h
+│   │   │   ├── dshow
+│   │   │   │   ├── access.h
+│   │   │   │   ├── crossbar.cpp
+│   │   │   │   ├── dshow.cpp
+│   │   │   │   ├── filter.cpp
+│   │   │   │   ├── filter.h
+│   │   │   │   └── vlc_dshow.h
+│   │   │   ├── dsm
+│   │   │   │   ├── access.c
+│   │   │   │   └── sd.c
+│   │   │   ├── dtv
+│   │   │   │   ├── access.c
+│   │   │   │   ├── bdadefs.h
+│   │   │   │   ├── bdagraph.cpp
+│   │   │   │   ├── bdagraph.hpp
+│   │   │   │   ├── dtv.h
+│   │   │   │   ├── en50221.c
+│   │   │   │   ├── en50221_capmt.h
+│   │   │   │   ├── en50221.h
+│   │   │   │   └── linux.c
+│   │   │   ├── dvb
+│   │   │   │   ├── access.c
+│   │   │   │   ├── dvb.h
+│   │   │   │   ├── linux_dvb.c
+│   │   │   │   ├── scan.c
+│   │   │   │   ├── scan.h
+│   │   │   │   ├── scan_list.c
+│   │   │   │   └── scan_list.h
+│   │   │   ├── dv.c
+│   │   │   ├── dvdnav.c
+│   │   │   ├── dvdread.c
+│   │   │   ├── file.c
+│   │   │   ├── fs.c
+│   │   │   ├── fs.h
+│   │   │   ├── ftp.c
+│   │   │   ├── http
+│   │   │   │   ├── access.c
+│   │   │   │   ├── chunked.c
+│   │   │   │   ├── chunked_test.c
+│   │   │   │   ├── conn.h
+│   │   │   │   ├── connmgr.c
+│   │   │   │   ├── connmgr.h
+│   │   │   │   ├── file.c
+│   │   │   │   ├── file.h
+│   │   │   │   ├── file_test.c
+│   │   │   │   ├── h1conn.c
+│   │   │   │   ├── h1conn_test.c
+│   │   │   │   ├── h2conn.c
+│   │   │   │   ├── h2conn_test.c
+│   │   │   │   ├── h2frame.c
+│   │   │   │   ├── h2frame.h
+│   │   │   │   ├── h2frame_test.c
+│   │   │   │   ├── h2output.c
+│   │   │   │   ├── h2output.h
+│   │   │   │   ├── h2output_test.c
+│   │   │   │   ├── hpack.c
+│   │   │   │   ├── hpackenc.c
+│   │   │   │   ├── hpack.h
+│   │   │   │   ├── live.c
+│   │   │   │   ├── live.h
+│   │   │   │   ├── Makefile.am
+│   │   │   │   ├── message.c
+│   │   │   │   ├── message.h
+│   │   │   │   ├── message_test.c
+│   │   │   │   ├── resource.c
+│   │   │   │   ├── resource.h
+│   │   │   │   ├── transport.h
+│   │   │   │   ├── tunnel.c
+│   │   │   │   └── tunnel_test.c
+│   │   │   ├── http.c
+│   │   │   ├── idummy.c
+│   │   │   ├── imem-access.c
+│   │   │   ├── imem.c
+│   │   │   ├── jack.c
+│   │   │   ├── linsys
+│   │   │   │   ├── linsys_hdsdi.c
+│   │   │   │   ├── linsys_sdiaudio.h
+│   │   │   │   ├── linsys_sdi.c
+│   │   │   │   ├── linsys_sdi.h
+│   │   │   │   └── linsys_sdivideo.h
+│   │   │   ├── live555.cpp
+│   │   │   ├── live555_dtsgen.h
+│   │   │   ├── Makefile.am
+│   │   │   ├── mms
+│   │   │   │   ├── asf.c
+│   │   │   │   ├── asf.h
+│   │   │   │   ├── buffer.c
+│   │   │   │   ├── buffer.h
+│   │   │   │   ├── mms.c
+│   │   │   │   ├── mms.h
+│   │   │   │   ├── mmsh.c
+│   │   │   │   ├── mmsh.h
+│   │   │   │   ├── mmstu.c
+│   │   │   │   └── mmstu.h
+│   │   │   ├── mtp.c
+│   │   │   ├── nfs.c
+│   │   │   ├── oss.c
+│   │   │   ├── pulse.c
+│   │   │   ├── rdp.c
+│   │   │   ├── rist.c
+│   │   │   ├── rist.h
+│   │   │   ├── rtp
+│   │   │   │   ├── input.c
+│   │   │   │   ├── Makefile.am
+│   │   │   │   ├── rtp.c
+│   │   │   │   ├── rtp.h
+│   │   │   │   ├── session.c
+│   │   │   │   ├── srtp.c
+│   │   │   │   ├── srtp.h
+│   │   │   │   ├── srtp-test-aes.c
+│   │   │   │   ├── srtp-test-recv.c
+│   │   │   │   └── xiph.c
+│   │   │   ├── rtsp
+│   │   │   │   ├── access.c
+│   │   │   │   ├── real_asmrp.c
+│   │   │   │   ├── real.c
+│   │   │   │   ├── real.h
+│   │   │   │   ├── real_rmff.c
+│   │   │   │   ├── real_rmff.h
+│   │   │   │   ├── real_sdpplin.c
+│   │   │   │   ├── real_sdpplin.h
+│   │   │   │   ├── rtsp.c
+│   │   │   │   └── rtsp.h
+│   │   │   ├── satip.c
+│   │   │   ├── screen
+│   │   │   │   ├── mac.c
+│   │   │   │   ├── screen.c
+│   │   │   │   ├── screen.h
+│   │   │   │   ├── win32.c
+│   │   │   │   └── xcb.c
+│   │   │   ├── sdi.c
+│   │   │   ├── sdi.h
+│   │   │   ├── sdp.c
+│   │   │   ├── sftp.c
+│   │   │   ├── shm.c
+│   │   │   ├── smb2.c
+│   │   │   ├── smb.c
+│   │   │   ├── smb_common.h
+│   │   │   ├── srt.c
+│   │   │   ├── srt_common.c
+│   │   │   ├── srt_common.h
+│   │   │   ├── tcp.c
+│   │   │   ├── timecode.c
+│   │   │   ├── udp.c
+│   │   │   ├── v4l2
+│   │   │   │   ├── access.c
+│   │   │   │   ├── controls.c
+│   │   │   │   ├── demux.c
+│   │   │   │   ├── lib.c
+│   │   │   │   ├── linux
+│   │   │   │   │   ├── v4l2-common.h
+│   │   │   │   │   ├── v4l2-controls.h
+│   │   │   │   │   └── videodev2.h
+│   │   │   │   ├── radio.c
+│   │   │   │   ├── v4l2.c
+│   │   │   │   ├── v4l2.h
+│   │   │   │   ├── vbi.c
+│   │   │   │   └── video.c
+│   │   │   ├── vcd
+│   │   │   │   ├── cdrom.c
+│   │   │   │   ├── cdrom.h
+│   │   │   │   ├── cdrom_internals.h
+│   │   │   │   └── vcd.c
+│   │   │   ├── vdr.c
+│   │   │   ├── vnc.c
+│   │   │   └── wasapi.c
+│   │   ├── access_output
+│   │   │   ├── dummy.c
+│   │   │   ├── file.c
+│   │   │   ├── http.c
+│   │   │   ├── livehttp.c
+│   │   │   ├── Makefile.am
+│   │   │   ├── rist.c
+│   │   │   ├── shout.c
+│   │   │   ├── srt.c
+│   │   │   └── udp.c
+│   │   ├── arm_neon
+│   │   │   ├── amplify.S
+│   │   │   ├── asm.S
+│   │   │   ├── chroma_neon.h
+│   │   │   ├── chroma_yuv.c
+│   │   │   ├── deinterleave_chroma.S
+│   │   │   ├── i420_rgb.S
+│   │   │   ├── i420_rv16.S
+│   │   │   ├── i420_yuyv.S
+│   │   │   ├── i422_yuyv.S
+│   │   │   ├── Makefile.am
+│   │   │   ├── nv12_rgb.S
+│   │   │   ├── nv21_rgb.S
+│   │   │   ├── simple_channel_mixer.S
+│   │   │   ├── volume.c
+│   │   │   ├── yuv_rgb.c
+│   │   │   └── yuyv_i422.S
+│   │   ├── audio_filter
+│   │   │   ├── audiobargraph_a.c
+│   │   │   ├── channel_mixer
+│   │   │   │   ├── dolby.c
+│   │   │   │   ├── headphone.c
+│   │   │   │   ├── mono.c
+│   │   │   │   ├── remap.c
+│   │   │   │   ├── simple.c
+│   │   │   │   ├── simple_neon.h
+│   │   │   │   ├── spatialaudio.cpp
+│   │   │   │   └── trivial.c
+│   │   │   ├── chorus_flanger.c
+│   │   │   ├── compressor.c
+│   │   │   ├── converter
+│   │   │   │   ├── format.c
+│   │   │   │   └── tospdif.c
+│   │   │   ├── equalizer.c
+│   │   │   ├── equalizer_presets.h
+│   │   │   ├── gain.c
+│   │   │   ├── karaoke.c
+│   │   │   ├── Makefile.am
+│   │   │   ├── normvol.c
+│   │   │   ├── param_eq.c
+│   │   │   ├── resampler
+│   │   │   │   ├── bandlimited.c
+│   │   │   │   ├── bandlimited.h
+│   │   │   │   ├── soxr.c
+│   │   │   │   ├── speex.c
+│   │   │   │   ├── src.c
+│   │   │   │   └── ugly.c
+│   │   │   ├── scaletempo.c
+│   │   │   ├── spatializer
+│   │   │   │   ├── allpass.cpp
+│   │   │   │   ├── allpass.hpp
+│   │   │   │   ├── comb.cpp
+│   │   │   │   ├── comb.hpp
+│   │   │   │   ├── denormals.c
+│   │   │   │   ├── denormals.h
+│   │   │   │   ├── revmodel.cpp
+│   │   │   │   ├── revmodel.hpp
+│   │   │   │   ├── spatializer.cpp
+│   │   │   │   └── tuning.h
+│   │   │   └── stereo_widen.c
+│   │   ├── audio_mixer
+│   │   │   ├── float.c
+│   │   │   ├── integer.c
+│   │   │   └── Makefile.am
+│   │   ├── audio_output
+│   │   │   ├── adummy.c
+│   │   │   ├── alsa.c
+│   │   │   ├── amem.c
+│   │   │   ├── audiotrack.c
+│   │   │   ├── audiounit_ios.m
+│   │   │   ├── auhal.c
+│   │   │   ├── coreaudio_common.c
+│   │   │   ├── coreaudio_common.h
+│   │   │   ├── directsound.c
+│   │   │   ├── file.c
+│   │   │   ├── jack.c
+│   │   │   ├── kai.c
+│   │   │   ├── Makefile.am
+│   │   │   ├── mmdevice.c
+│   │   │   ├── mmdevice.h
+│   │   │   ├── opensles_android.c
+│   │   │   ├── oss.c
+│   │   │   ├── pulse.c
+│   │   │   ├── sndio.c
+│   │   │   ├── tizen_audio.c
+│   │   │   ├── vlcpulse.c
+│   │   │   ├── vlcpulse.h
+│   │   │   ├── volume.h
+│   │   │   ├── wasapi.c
+│   │   │   ├── waveout.c
+│   │   │   ├── windows_audio_common.h
+│   │   │   └── winstore.c
+│   │   ├── codec
+│   │   │   ├── a52.c
+│   │   │   ├── adpcm.c
+│   │   │   ├── aes3.c
+│   │   │   ├── aom.c
+│   │   │   ├── araw.c
+│   │   │   ├── arib
+│   │   │   │   ├── aribsub.c
+│   │   │   │   └── substext.h
+│   │   │   ├── atsc_a65.c
+│   │   │   ├── atsc_a65.h
+│   │   │   ├── audiotoolbox_midi.c
+│   │   │   ├── avcodec
+│   │   │   │   ├── audio.c
+│   │   │   │   ├── avcodec.c
+│   │   │   │   ├── avcodec.h
+│   │   │   │   ├── avcommon_compat.h
+│   │   │   │   ├── avcommon.h
+│   │   │   │   ├── chroma.c
+│   │   │   │   ├── chroma.h
+│   │   │   │   ├── d3d11va.c
+│   │   │   │   ├── directx_va.c
+│   │   │   │   ├── directx_va.h
+│   │   │   │   ├── dxva2.c
+│   │   │   │   ├── dxva_blacklist.c
+│   │   │   │   ├── encoder.c
+│   │   │   │   ├── fourcc.c
+│   │   │   │   ├── subtitle.c
+│   │   │   │   ├── vaapi.c
+│   │   │   │   ├── va.c
+│   │   │   │   ├── va.h
+│   │   │   │   ├── va_surface.c
+│   │   │   │   ├── va_surface.h
+│   │   │   │   ├── va_surface_internal.h
+│   │   │   │   └── video.c
+│   │   │   ├── bpg.c
+│   │   │   ├── cc.c
+│   │   │   ├── cc.h
+│   │   │   ├── cdg.c
+│   │   │   ├── cea708.c
+│   │   │   ├── cea708.h
+│   │   │   ├── crystalhd.c
+│   │   │   ├── cvdsub.c
+│   │   │   ├── daala.c
+│   │   │   ├── dav1d.c
+│   │   │   ├── dca.c
+│   │   │   ├── ddummy.c
+│   │   │   ├── dmo
+│   │   │   │   ├── buffer.c
+│   │   │   │   ├── dmo.c
+│   │   │   │   └── dmo.h
+│   │   │   ├── dvbsub.c
+│   │   │   ├── edummy.c
+│   │   │   ├── faad.c
+│   │   │   ├── fdkaac.c
+│   │   │   ├── flac.c
+│   │   │   ├── fluidsynth.c
+│   │   │   ├── g711.c
+│   │   │   ├── gstreamer
+│   │   │   │   ├── fourcc.c
+│   │   │   │   ├── gstdecode.c
+│   │   │   │   ├── gstvlcpictureplaneallocator.c
+│   │   │   │   ├── gstvlcpictureplaneallocator.h
+│   │   │   │   ├── gstvlcvideopool.c
+│   │   │   │   ├── gstvlcvideopool.h
+│   │   │   │   ├── gstvlcvideosink.c
+│   │   │   │   └── gstvlcvideosink.h
+│   │   │   ├── hxxx_helper.c
+│   │   │   ├── hxxx_helper.h
+│   │   │   ├── jpeg2000.h
+│   │   │   ├── jpeg.c
+│   │   │   ├── kate.c
+│   │   │   ├── libass.c
+│   │   │   ├── libmpeg2.c
+│   │   │   ├── lpcm.c
+│   │   │   ├── mad.c
+│   │   │   ├── Makefile.am
+│   │   │   ├── mft.c
+│   │   │   ├── mpg123.c
+│   │   │   ├── oggspots.c
+│   │   │   ├── omxil
+│   │   │   │   ├── mediacodec.c
+│   │   │   │   ├── mediacodec.h
+│   │   │   │   ├── mediacodec_jni.c
+│   │   │   │   ├── mediacodec_ndk.c
+│   │   │   │   ├── OMX_Audio.h
+│   │   │   │   ├── OMX_Broadcom.h
+│   │   │   │   ├── OMX_Component.h
+│   │   │   │   ├── OMX_Core.h
+│   │   │   │   ├── omxil.c
+│   │   │   │   ├── omxil_core.c
+│   │   │   │   ├── omxil_core.h
+│   │   │   │   ├── omxil.h
+│   │   │   │   ├── omxil_utils.h
+│   │   │   │   ├── OMX_Image.h
+│   │   │   │   ├── OMX_Index.h
+│   │   │   │   ├── OMX_IVCommon.h
+│   │   │   │   ├── OMX_Other.h
+│   │   │   │   ├── OMX_Types.h
+│   │   │   │   ├── OMX_Video.h
+│   │   │   │   ├── qcom.c
+│   │   │   │   ├── qcom.h
+│   │   │   │   ├── utils.c
+│   │   │   │   └── vout.c
+│   │   │   ├── opus.c
+│   │   │   ├── opus_header.c
+│   │   │   ├── opus_header.h
+│   │   │   ├── png.c
+│   │   │   ├── qsv.c
+│   │   │   ├── rawvideo.c
+│   │   │   ├── rtpvideo.c
+│   │   │   ├── schroedinger.c
+│   │   │   ├── scte18.c
+│   │   │   ├── scte18.h
+│   │   │   ├── scte27.c
+│   │   │   ├── sdl_image.c
+│   │   │   ├── shine.c
+│   │   │   ├── spdif.c
+│   │   │   ├── speex.c
+│   │   │   ├── spudec
+│   │   │   │   ├── parse.c
+│   │   │   │   ├── spudec.c
+│   │   │   │   └── spudec.h
+│   │   │   ├── stl.c
+│   │   │   ├── subsdec.c
+│   │   │   ├── substext.h
+│   │   │   ├── substx3g.c
+│   │   │   ├── subsusf.c
+│   │   │   ├── svcdsub.c
+│   │   │   ├── svg.c
+│   │   │   ├── synchro.c
+│   │   │   ├── synchro.h
+│   │   │   ├── t140.c
+│   │   │   ├── telx.c
+│   │   │   ├── textst.c
+│   │   │   ├── theora.c
+│   │   │   ├── ttml
+│   │   │   │   ├── substtml.c
+│   │   │   │   ├── ttml.c
+│   │   │   │   └── ttml.h
+│   │   │   ├── twolame.c
+│   │   │   ├── uleaddvaudio.c
+│   │   │   ├── videotoolbox.m
+│   │   │   ├── vorbis.c
+│   │   │   ├── vpx.c
+│   │   │   ├── vt_utils.c
+│   │   │   ├── vt_utils.h
+│   │   │   ├── webvtt
+│   │   │   │   ├── css_bridge.h
+│   │   │   │   ├── CSSGrammar.c
+│   │   │   │   ├── CSSGrammar.h
+│   │   │   │   ├── CSSGrammar.y
+│   │   │   │   ├── CSSLexer.c
+│   │   │   │   ├── CSSLexer.l
+│   │   │   │   ├── css_parser.c
+│   │   │   │   ├── css_parser.h
+│   │   │   │   ├── css_style.c
+│   │   │   │   ├── css_style.h
+│   │   │   │   ├── helpers.h
+│   │   │   │   ├── subsvtt.c
+│   │   │   │   ├── webvtt.c
+│   │   │   │   └── webvtt.h
+│   │   │   ├── wmafixed
+│   │   │   │   ├── asf.h
+│   │   │   │   ├── bitstream.c
+│   │   │   │   ├── bitstream.h
+│   │   │   │   ├── bswap.h
+│   │   │   │   ├── fft.c
+│   │   │   │   ├── fft.h
+│   │   │   │   ├── mdct.c
+│   │   │   │   ├── mdct.h
+│   │   │   │   ├── wma.c
+│   │   │   │   ├── wmadata.h
+│   │   │   │   ├── wmadec.h
+│   │   │   │   ├── wmadeci.c
+│   │   │   │   ├── wmafixed.c
+│   │   │   │   └── wmafixed.h
+│   │   │   ├── x264.c
+│   │   │   ├── x265.c
+│   │   │   ├── xwd.c
+│   │   │   └── zvbi.c
+│   │   ├── common.am
+│   │   ├── control
+│   │   │   ├── dbus
+│   │   │   │   ├── dbus.c
+│   │   │   │   ├── dbus_common.h
+│   │   │   │   ├── dbus_introspect.h
+│   │   │   │   ├── dbus_player.c
+│   │   │   │   ├── dbus_player.h
+│   │   │   │   ├── dbus_root.c
+│   │   │   │   ├── dbus_root.h
+│   │   │   │   ├── dbus_tracklist.c
+│   │   │   │   └── dbus_tracklist.h
+│   │   │   ├── dummy.c
+│   │   │   ├── gestures.c
+│   │   │   ├── globalhotkeys
+│   │   │   │   ├── win32.c
+│   │   │   │   └── xcb.c
+│   │   │   ├── hotkeys.c
+│   │   │   ├── intromsg.h
+│   │   │   ├── lirc.c
+│   │   │   ├── Makefile.am
+│   │   │   ├── motion.c
+│   │   │   ├── motionlib.c
+│   │   │   ├── motionlib.h
+│   │   │   ├── netsync.c
+│   │   │   ├── ntservice.c
+│   │   │   ├── oldrc.c
+│   │   │   ├── unimotion.c
+│   │   │   ├── unimotion.h
+│   │   │   └── win_msg.c
+│   │   ├── demux
+│   │   │   ├── adaptive
+│   │   │   │   ├── AbstractSource.hpp
+│   │   │   │   ├── adaptive.cpp
+│   │   │   │   ├── encryption
+│   │   │   │   │   ├── CommonEncryption.cpp
+│   │   │   │   │   ├── CommonEncryption.hpp
+│   │   │   │   │   ├── Keyring.cpp
+│   │   │   │   │   └── Keyring.hpp
+│   │   │   │   ├── http
+│   │   │   │   │   ├── AuthStorage.cpp
+│   │   │   │   │   ├── AuthStorage.hpp
+│   │   │   │   │   ├── BytesRange.cpp
+│   │   │   │   │   ├── BytesRange.hpp
+│   │   │   │   │   ├── Chunk.cpp
+│   │   │   │   │   ├── Chunk.h
+│   │   │   │   │   ├── ConnectionParams.cpp
+│   │   │   │   │   ├── ConnectionParams.hpp
+│   │   │   │   │   ├── Downloader.cpp
+│   │   │   │   │   ├── Downloader.hpp
+│   │   │   │   │   ├── HTTPConnection.cpp
+│   │   │   │   │   ├── HTTPConnection.hpp
+│   │   │   │   │   ├── HTTPConnectionManager.cpp
+│   │   │   │   │   └── HTTPConnectionManager.h
+│   │   │   │   ├── ID.cpp
+│   │   │   │   ├── ID.hpp
+│   │   │   │   ├── logic
+│   │   │   │   │   ├── AbstractAdaptationLogic.cpp
+│   │   │   │   │   ├── AbstractAdaptationLogic.h
+│   │   │   │   │   ├── AlwaysBestAdaptationLogic.cpp
+│   │   │   │   │   ├── AlwaysBestAdaptationLogic.h
+│   │   │   │   │   ├── AlwaysLowestAdaptationLogic.cpp
+│   │   │   │   │   ├── AlwaysLowestAdaptationLogic.hpp
+│   │   │   │   │   ├── BufferingLogic.cpp
+│   │   │   │   │   ├── BufferingLogic.hpp
+│   │   │   │   │   ├── IDownloadRateObserver.h
+│   │   │   │   │   ├── NearOptimalAdaptationLogic.cpp
+│   │   │   │   │   ├── NearOptimalAdaptationLogic.hpp
+│   │   │   │   │   ├── PredictiveAdaptationLogic.cpp
+│   │   │   │   │   ├── PredictiveAdaptationLogic.hpp
+│   │   │   │   │   ├── RateBasedAdaptationLogic.cpp
+│   │   │   │   │   ├── RateBasedAdaptationLogic.h
+│   │   │   │   │   ├── Representationselectors.cpp
+│   │   │   │   │   └── Representationselectors.hpp
+│   │   │   │   ├── mp4
+│   │   │   │   │   ├── AtomsReader.cpp
+│   │   │   │   │   └── AtomsReader.hpp
+│   │   │   │   ├── playlist
+│   │   │   │   │   ├── BaseAdaptationSet.cpp
+│   │   │   │   │   ├── BaseAdaptationSet.h
+│   │   │   │   │   ├── BasePeriod.cpp
+│   │   │   │   │   ├── BasePeriod.h
+│   │   │   │   │   ├── BasePlaylist.cpp
+│   │   │   │   │   ├── BasePlaylist.hpp
+│   │   │   │   │   ├── BaseRepresentation.cpp
+│   │   │   │   │   ├── BaseRepresentation.h
+│   │   │   │   │   ├── CodecDescription.cpp
+│   │   │   │   │   ├── CodecDescription.hpp
+│   │   │   │   │   ├── CommonAttributesElements.cpp
+│   │   │   │   │   ├── CommonAttributesElements.h
+│   │   │   │   │   ├── ICanonicalUrl.hpp
+│   │   │   │   │   ├── Inheritables.cpp
+│   │   │   │   │   ├── Inheritables.hpp
+│   │   │   │   │   ├── Role.cpp
+│   │   │   │   │   ├── Role.hpp
+│   │   │   │   │   ├── SegmentBase.cpp
+│   │   │   │   │   ├── SegmentBase.h
+│   │   │   │   │   ├── SegmentBaseType.cpp
+│   │   │   │   │   ├── SegmentBaseType.hpp
+│   │   │   │   │   ├── SegmentChunk.cpp
+│   │   │   │   │   ├── SegmentChunk.hpp
+│   │   │   │   │   ├── Segment.cpp
+│   │   │   │   │   ├── Segment.h
+│   │   │   │   │   ├── SegmentInformation.cpp
+│   │   │   │   │   ├── SegmentInformation.hpp
+│   │   │   │   │   ├── SegmentList.cpp
+│   │   │   │   │   ├── SegmentList.h
+│   │   │   │   │   ├── SegmentTemplate.cpp
+│   │   │   │   │   ├── SegmentTemplate.h
+│   │   │   │   │   ├── SegmentTimeline.cpp
+│   │   │   │   │   ├── SegmentTimeline.h
+│   │   │   │   │   ├── Templates.hpp
+│   │   │   │   │   ├── Url.cpp
+│   │   │   │   │   └── Url.hpp
+│   │   │   │   ├── PlaylistManager.cpp
+│   │   │   │   ├── PlaylistManager.h
+│   │   │   │   ├── plumbing
+│   │   │   │   │   ├── CommandsQueue.cpp
+│   │   │   │   │   ├── CommandsQueue.hpp
+│   │   │   │   │   ├── Demuxer.cpp
+│   │   │   │   │   ├── Demuxer.hpp
+│   │   │   │   │   ├── FakeESOut.cpp
+│   │   │   │   │   ├── FakeESOut.hpp
+│   │   │   │   │   ├── FakeESOutID.cpp
+│   │   │   │   │   ├── FakeESOutID.hpp
+│   │   │   │   │   ├── SourceStream.cpp
+│   │   │   │   │   └── SourceStream.hpp
+│   │   │   │   ├── SegmentTracker.cpp
+│   │   │   │   ├── SegmentTracker.hpp
+│   │   │   │   ├── SharedResources.cpp
+│   │   │   │   ├── SharedResources.hpp
+│   │   │   │   ├── StreamFormat.cpp
+│   │   │   │   ├── StreamFormat.hpp
+│   │   │   │   ├── Streams.cpp
+│   │   │   │   ├── Streams.hpp
+│   │   │   │   ├── test
+│   │   │   │   │   ├── logic
+│   │   │   │   │   │   └── BufferingLogic.cpp
+│   │   │   │   │   ├── playlist
+│   │   │   │   │   │   ├── Inheritables.cpp
+│   │   │   │   │   │   ├── M3U8.cpp
+│   │   │   │   │   │   ├── SegmentBase.cpp
+│   │   │   │   │   │   ├── SegmentList.cpp
+│   │   │   │   │   │   ├── SegmentTemplate.cpp
+│   │   │   │   │   │   ├── SegmentTimeline.cpp
+│   │   │   │   │   │   └── TemplatedUri.cpp
+│   │   │   │   │   ├── plumbing
+│   │   │   │   │   │   ├── CommandsQueue.cpp
+│   │   │   │   │   │   └── FakeEsOut.cpp
+│   │   │   │   │   ├── SegmentTracker.cpp
+│   │   │   │   │   ├── test.cpp
+│   │   │   │   │   ├── test.hpp
+│   │   │   │   │   └── tools
+│   │   │   │   │       └── Conversions.cpp
+│   │   │   │   ├── Time.hpp
+│   │   │   │   ├── tools
+│   │   │   │   │   ├── Conversions.cpp
+│   │   │   │   │   ├── Conversions.hpp
+│   │   │   │   │   ├── Debug.hpp
+│   │   │   │   │   ├── FormatNamespace.cpp
+│   │   │   │   │   ├── FormatNamespace.hpp
+│   │   │   │   │   ├── Helper.cpp
+│   │   │   │   │   ├── Helper.h
+│   │   │   │   │   ├── MovingAverage.hpp
+│   │   │   │   │   ├── Properties.hpp
+│   │   │   │   │   ├── Retrieve.cpp
+│   │   │   │   │   └── Retrieve.hpp
+│   │   │   │   └── xml
+│   │   │   │       ├── DOMHelper.cpp
+│   │   │   │       ├── DOMHelper.h
+│   │   │   │       ├── DOMParser.cpp
+│   │   │   │       ├── DOMParser.h
+│   │   │   │       ├── Node.cpp
+│   │   │   │       └── Node.h
+│   │   │   ├── aiff.c
+│   │   │   ├── asf
+│   │   │   │   ├── asf.c
+│   │   │   │   ├── asfpacket.c
+│   │   │   │   ├── asfpacket.h
+│   │   │   │   ├── libasf.c
+│   │   │   │   ├── libasf_guid.h
+│   │   │   │   └── libasf.h
+│   │   │   ├── au.c
+│   │   │   ├── av1_unpack.h
+│   │   │   ├── avformat
+│   │   │   │   ├── avformat.c
+│   │   │   │   ├── avformat.h
+│   │   │   │   ├── demux.c
+│   │   │   │   └── mux.c
+│   │   │   ├── avi
+│   │   │   │   ├── avi.c
+│   │   │   │   ├── libavi.c
+│   │   │   │   └── libavi.h
+│   │   │   ├── caf.c
+│   │   │   ├── cdg.c
+│   │   │   ├── dash
+│   │   │   │   ├── DASHManager.cpp
+│   │   │   │   ├── DASHManager.h
+│   │   │   │   ├── DASHStream.cpp
+│   │   │   │   ├── DASHStream.hpp
+│   │   │   │   ├── mp4
+│   │   │   │   │   ├── IndexReader.cpp
+│   │   │   │   │   └── IndexReader.hpp
+│   │   │   │   └── mpd
+│   │   │   │       ├── AdaptationSet.cpp
+│   │   │   │       ├── AdaptationSet.h
+│   │   │   │       ├── ContentDescription.cpp
+│   │   │   │       ├── ContentDescription.h
+│   │   │   │       ├── DASHCommonAttributesElements.cpp
+│   │   │   │       ├── DASHCommonAttributesElements.h
+│   │   │   │       ├── DASHSegment.cpp
+│   │   │   │       ├── DASHSegment.h
+│   │   │   │       ├── IsoffMainParser.cpp
+│   │   │   │       ├── IsoffMainParser.h
+│   │   │   │       ├── MPD.cpp
+│   │   │   │       ├── MPD.h
+│   │   │   │       ├── Profile.cpp
+│   │   │   │       ├── Profile.hpp
+│   │   │   │       ├── ProgramInformation.cpp
+│   │   │   │       ├── ProgramInformation.h
+│   │   │   │       ├── Representation.cpp
+│   │   │   │       ├── Representation.h
+│   │   │   │       ├── TemplatedUri.cpp
+│   │   │   │       ├── TemplatedUri.hpp
+│   │   │   │       ├── TrickModeType.cpp
+│   │   │   │       └── TrickModeType.h
+│   │   │   ├── demuxdump.c
+│   │   │   ├── dirac.c
+│   │   │   ├── directory.c
+│   │   │   ├── dvb-text.h
+│   │   │   ├── filter
+│   │   │   │   └── noseek.c
+│   │   │   ├── flac.c
+│   │   │   ├── gme.c
+│   │   │   ├── hls
+│   │   │   │   ├── HLSManager.cpp
+│   │   │   │   ├── HLSManager.hpp
+│   │   │   │   ├── HLSStreams.cpp
+│   │   │   │   ├── HLSStreams.hpp
+│   │   │   │   └── playlist
+│   │   │   │       ├── HLSRepresentation.cpp
+│   │   │   │       ├── HLSRepresentation.hpp
+│   │   │   │       ├── HLSSegment.cpp
+│   │   │   │       ├── HLSSegment.hpp
+│   │   │   │       ├── M3U8.cpp
+│   │   │   │       ├── M3U8.hpp
+│   │   │   │       ├── Parser.cpp
+│   │   │   │       ├── Parser.hpp
+│   │   │   │       ├── Tags.cpp
+│   │   │   │       └── Tags.hpp
+│   │   │   ├── image.c
+│   │   │   ├── Makefile.am
+│   │   │   ├── mjpeg.c
+│   │   │   ├── mkv
+│   │   │   │   ├── chapter_command.cpp
+│   │   │   │   ├── chapter_command.hpp
+│   │   │   │   ├── chapters.cpp
+│   │   │   │   ├── chapters.hpp
+│   │   │   │   ├── demux.cpp
+│   │   │   │   ├── demux.hpp
+│   │   │   │   ├── dispatcher.hpp
+│   │   │   │   ├── Ebml_dispatcher.hpp
+│   │   │   │   ├── Ebml_parser.cpp
+│   │   │   │   ├── Ebml_parser.hpp
+│   │   │   │   ├── matroska_segment.cpp
+│   │   │   │   ├── matroska_segment.hpp
+│   │   │   │   ├── matroska_segment_parse.cpp
+│   │   │   │   ├── matroska_segment_seeker.cpp
+│   │   │   │   ├── matroska_segment_seeker.hpp
+│   │   │   │   ├── mkv.cpp
+│   │   │   │   ├── mkv.hpp
+│   │   │   │   ├── stream_io_callback.cpp
+│   │   │   │   ├── stream_io_callback.hpp
+│   │   │   │   ├── string_dispatcher.hpp
+│   │   │   │   ├── util.cpp
+│   │   │   │   ├── util.hpp
+│   │   │   │   ├── virtual_segment.cpp
+│   │   │   │   └── virtual_segment.hpp
+│   │   │   ├── mod.c
+│   │   │   ├── moving_avg.h
+│   │   │   ├── mp4
+│   │   │   │   ├── avci.h
+│   │   │   │   ├── essetup.c
+│   │   │   │   ├── fragments.c
+│   │   │   │   ├── fragments.h
+│   │   │   │   ├── languages.h
+│   │   │   │   ├── libmp4.c
+│   │   │   │   ├── libmp4.h
+│   │   │   │   ├── meta.c
+│   │   │   │   ├── minibox.h
+│   │   │   │   ├── mp4.c
+│   │   │   │   ├── mp4.h
+│   │   │   │   └── mpeg4.h
+│   │   │   ├── mpc.c
+│   │   │   ├── mpeg
+│   │   │   │   ├── es.c
+│   │   │   │   ├── h26x.c
+│   │   │   │   ├── mpeg4_iod.c
+│   │   │   │   ├── mpeg4_iod.h
+│   │   │   │   ├── mpgv.c
+│   │   │   │   ├── pes.h
+│   │   │   │   ├── ps.c
+│   │   │   │   ├── ps.h
+│   │   │   │   ├── sections.c
+│   │   │   │   ├── sections.h
+│   │   │   │   ├── timestamps.h
+│   │   │   │   ├── ts_arib.c
+│   │   │   │   ├── ts_arib.h
+│   │   │   │   ├── ts.c
+│   │   │   │   ├── ts_decoders.c
+│   │   │   │   ├── ts_decoders.h
+│   │   │   │   ├── ts.h
+│   │   │   │   ├── ts_hotfixes.c
+│   │   │   │   ├── ts_hotfixes.h
+│   │   │   │   ├── ts_metadata.c
+│   │   │   │   ├── ts_metadata.h
+│   │   │   │   ├── ts_pid.c
+│   │   │   │   ├── ts_pid_fwd.h
+│   │   │   │   ├── ts_pid.h
+│   │   │   │   ├── ts_psi.c
+│   │   │   │   ├── ts_psi.h
+│   │   │   │   ├── ts_psip.c
+│   │   │   │   ├── ts_psip_dvbpsi_fixes.c
+│   │   │   │   ├── ts_psip_dvbpsi_fixes.h
+│   │   │   │   ├── ts_psip.h
+│   │   │   │   ├── ts_scte.c
+│   │   │   │   ├── ts_scte.h
+│   │   │   │   ├── ts_si.c
+│   │   │   │   ├── ts_si.h
+│   │   │   │   ├── ts_sl.c
+│   │   │   │   ├── ts_sl.h
+│   │   │   │   ├── ts_streams.c
+│   │   │   │   ├── ts_streams.h
+│   │   │   │   ├── ts_streams_private.h
+│   │   │   │   └── ts_strings.h
+│   │   │   ├── mxpeg_helper.h
+│   │   │   ├── nsc.c
+│   │   │   ├── nsv.c
+│   │   │   ├── nuv.c
+│   │   │   ├── ogg.c
+│   │   │   ├── ogg.h
+│   │   │   ├── oggseek.c
+│   │   │   ├── oggseek.h
+│   │   │   ├── opus.h
+│   │   │   ├── playlist
+│   │   │   │   ├── asx.c
+│   │   │   │   ├── b4s.c
+│   │   │   │   ├── dvb.c
+│   │   │   │   ├── ifo.c
+│   │   │   │   ├── itml.c
+│   │   │   │   ├── itml.h
+│   │   │   │   ├── m3u.c
+│   │   │   │   ├── playlist.c
+│   │   │   │   ├── playlist.h
+│   │   │   │   ├── pls.c
+│   │   │   │   ├── podcast.c
+│   │   │   │   ├── qtl.c
+│   │   │   │   ├── ram.c
+│   │   │   │   ├── sgimb.c
+│   │   │   │   ├── shoutcast.c
+│   │   │   │   ├── wpl.c
+│   │   │   │   └── xspf.c
+│   │   │   ├── pva.c
+│   │   │   ├── rawaud.c
+│   │   │   ├── rawdv.c
+│   │   │   ├── rawdv.h
+│   │   │   ├── rawvid.c
+│   │   │   ├── real.c
+│   │   │   ├── sid.cpp
+│   │   │   ├── smf.c
+│   │   │   ├── smooth
+│   │   │   │   ├── mp4
+│   │   │   │   │   ├── SmoothIndexReader.cpp
+│   │   │   │   │   └── SmoothIndexReader.hpp
+│   │   │   │   ├── playlist
+│   │   │   │   │   ├── ForgedInitSegment.cpp
+│   │   │   │   │   ├── ForgedInitSegment.hpp
+│   │   │   │   │   ├── Manifest.cpp
+│   │   │   │   │   ├── Manifest.hpp
+│   │   │   │   │   ├── MemoryChunk.cpp
+│   │   │   │   │   ├── MemoryChunk.hpp
+│   │   │   │   │   ├── QualityLevel.cpp
+│   │   │   │   │   ├── QualityLevel.hpp
+│   │   │   │   │   ├── SmoothParser.cpp
+│   │   │   │   │   ├── SmoothParser.hpp
+│   │   │   │   │   ├── SmoothSegment.cpp
+│   │   │   │   │   └── SmoothSegment.hpp
+│   │   │   │   ├── SmoothManager.cpp
+│   │   │   │   ├── SmoothManager.hpp
+│   │   │   │   ├── SmoothStream.cpp
+│   │   │   │   └── SmoothStream.hpp
+│   │   │   ├── stl.c
+│   │   │   ├── subtitle.c
+│   │   │   ├── subtitle_helper.h
+│   │   │   ├── timestamps_filter.h
+│   │   │   ├── tta.c
+│   │   │   ├── ttml.c
+│   │   │   ├── ty.c
+│   │   │   ├── vc1.c
+│   │   │   ├── vobsub.c
+│   │   │   ├── vobsub.h
+│   │   │   ├── voc.c
+│   │   │   ├── wav.c
+│   │   │   ├── webvtt.c
+│   │   │   ├── windows_audio_commons.h
+│   │   │   ├── xa.c
+│   │   │   ├── xiph.h
+│   │   │   ├── xiph_metadata.c
+│   │   │   └── xiph_metadata.h
+│   │   ├── dummy.cpp
+│   │   ├── gui
+│   │   │   ├── eject.c
+│   │   │   ├── macosx
+│   │   │   │   ├── AppleRemote.h
+│   │   │   │   ├── AppleRemote.m
+│   │   │   │   ├── applescript.h
+│   │   │   │   ├── applescript.m
+│   │   │   │   ├── CompatibilityFixes.h
+│   │   │   │   ├── CompatibilityFixes.m
+│   │   │   │   ├── helpers.h
+│   │   │   │   ├── iTunes.h
+│   │   │   │   ├── macosx.m
+│   │   │   │   ├── Makefile.am
+│   │   │   │   ├── misc.h
+│   │   │   │   ├── misc.m
+│   │   │   │   ├── NSGradient+VLCAdditions.h
+│   │   │   │   ├── NSGradient+VLCAdditions.m
+│   │   │   │   ├── NSScreen+VLCAdditions.h
+│   │   │   │   ├── NSScreen+VLCAdditions.m
+│   │   │   │   ├── NSSound+VLCAdditions.h
+│   │   │   │   ├── NSSound+VLCAdditions.m
+│   │   │   │   ├── prefs.h
+│   │   │   │   ├── prefs.m
+│   │   │   │   ├── prefs_widgets.h
+│   │   │   │   ├── prefs_widgets.m
+│   │   │   │   ├── PXSourceList
+│   │   │   │   │   ├── Internal
+│   │   │   │   │   │   ├── PXSourceListDelegateDataSourceProxy.h
+│   │   │   │   │   │   ├── PXSourceListDelegateDataSourceProxy.m
+│   │   │   │   │   │   ├── PXSourceListPrivateConstants.h
+│   │   │   │   │   │   ├── PXSourceListRuntimeAdditions.h
+│   │   │   │   │   │   └── PXSourceListRuntimeAdditions.m
+│   │   │   │   │   ├── PXSourceListBadgeCell.h
+│   │   │   │   │   ├── PXSourceListBadgeCell.m
+│   │   │   │   │   ├── PXSourceListBadgeView.h
+│   │   │   │   │   ├── PXSourceListBadgeView.m
+│   │   │   │   │   ├── PXSourceListDataSource.h
+│   │   │   │   │   ├── PXSourceListDelegate.h
+│   │   │   │   │   ├── PXSourceList.h
+│   │   │   │   │   ├── PXSourceListItem.h
+│   │   │   │   │   ├── PXSourceListItem.m
+│   │   │   │   │   ├── PXSourceList.m
+│   │   │   │   │   ├── PXSourceListTableCellView.h
+│   │   │   │   │   └── PXSourceListTableCellView.m
+│   │   │   │   ├── Resources
+│   │   │   │   │   ├── an.lproj
+│   │   │   │   │   │   └── InfoPlist.strings
+│   │   │   │   │   ├── App-Icons
+│   │   │   │   │   │   ├── VLC.icns
+│   │   │   │   │   │   └── VLC-Xmas.icns
+│   │   │   │   │   ├── ar.lproj
+│   │   │   │   │   │   └── InfoPlist.strings
+│   │   │   │   │   ├── as-IN.lproj
+│   │   │   │   │   │   └── InfoPlist.strings
+│   │   │   │   │   ├── ast.lproj
+│   │   │   │   │   │   └── InfoPlist.strings
+│   │   │   │   │   ├── be.lproj
+│   │   │   │   │   │   └── InfoPlist.strings
+│   │   │   │   │   ├── bg.lproj
+│   │   │   │   │   │   └── InfoPlist.strings
+│   │   │   │   │   ├── bn-IN.lproj
+│   │   │   │   │   │   └── InfoPlist.strings
+│   │   │   │   │   ├── br.lproj
+│   │   │   │   │   │   └── InfoPlist.strings
+│   │   │   │   │   ├── brx.lproj
+│   │   │   │   │   │   └── InfoPlist.strings
+│   │   │   │   │   ├── Button-Icons
+│   │   │   │   │   │   ├── VLCBackwardTemplate.pdf
+│   │   │   │   │   │   ├── VLCClearLogTemplate.pdf
+│   │   │   │   │   │   ├── VLCForwardTemplate.pdf
+│   │   │   │   │   │   ├── VLCFullscreenOffTemplate.pdf
+│   │   │   │   │   │   ├── VLCFullscreenOnTemplate.pdf
+│   │   │   │   │   │   ├── VLCNextTemplate.pdf
+│   │   │   │   │   │   ├── VLCPauseTemplate.pdf
+│   │   │   │   │   │   ├── VLCPlayTemplate.pdf
+│   │   │   │   │   │   ├── VLCPreviousTemplate.pdf
+│   │   │   │   │   │   ├── VLCSaveTemplate.pdf
+│   │   │   │   │   │   ├── VLCShuffleTemplate.pdf
+│   │   │   │   │   │   ├── VLCStatusBarIcon.pdf
+│   │   │   │   │   │   ├── VLCVolumeOffTemplate.pdf
+│   │   │   │   │   │   └── VLCVolumeOnTemplate.pdf
+│   │   │   │   │   ├── ca.lproj
+│   │   │   │   │   │   └── InfoPlist.strings
+│   │   │   │   │   ├── co.lproj
+│   │   │   │   │   │   └── InfoPlist.strings
+│   │   │   │   │   ├── cs.lproj
+│   │   │   │   │   │   └── InfoPlist.strings
+│   │   │   │   │   ├── cy.lproj
+│   │   │   │   │   │   └── InfoPlist.strings
+│   │   │   │   │   ├── da.lproj
+│   │   │   │   │   │   └── InfoPlist.strings
+│   │   │   │   │   ├── de.lproj
+│   │   │   │   │   │   └── InfoPlist.strings
+│   │   │   │   │   ├── dsa_pub.pem
+│   │   │   │   │   ├── el.lproj
+│   │   │   │   │   │   └── InfoPlist.strings
+│   │   │   │   │   ├── en-GB.lproj
+│   │   │   │   │   │   └── InfoPlist.strings
+│   │   │   │   │   ├── English.lproj
+│   │   │   │   │   │   └── InfoPlist.strings
+│   │   │   │   │   ├── es.lproj
+│   │   │   │   │   │   └── InfoPlist.strings
+│   │   │   │   │   ├── es-MX.lproj
+│   │   │   │   │   │   └── InfoPlist.strings
+│   │   │   │   │   ├── et.lproj
+│   │   │   │   │   │   └── InfoPlist.strings
+│   │   │   │   │   ├── eu.lproj
+│   │   │   │   │   │   └── InfoPlist.strings
+│   │   │   │   │   ├── fa.lproj
+│   │   │   │   │   │   └── InfoPlist.strings
+│   │   │   │   │   ├── File-Icons
+│   │   │   │   │   │   ├── aiff.icns
+│   │   │   │   │   │   ├── audio.icns
+│   │   │   │   │   │   ├── avi.icns
+│   │   │   │   │   │   ├── flv.icns
+│   │   │   │   │   │   ├── generic.icns
+│   │   │   │   │   │   ├── m4a.icns
+│   │   │   │   │   │   ├── m4v.icns
+│   │   │   │   │   │   ├── mkv.icns
+│   │   │   │   │   │   ├── mov.icns
+│   │   │   │   │   │   ├── movie.icns
+│   │   │   │   │   │   ├── mp3.icns
+│   │   │   │   │   │   ├── mpeg.icns
+│   │   │   │   │   │   ├── ogg.icns
+│   │   │   │   │   │   ├── playlist.icns
+│   │   │   │   │   │   ├── rm.icns
+│   │   │   │   │   │   ├── subtitle.icns
+│   │   │   │   │   │   ├── vob.icns
+│   │   │   │   │   │   ├── wav.icns
+│   │   │   │   │   │   ├── wma.icns
+│   │   │   │   │   │   └── wmv.icns
+│   │   │   │   │   ├── fi.lproj
+│   │   │   │   │   │   └── InfoPlist.strings
+│   │   │   │   │   ├── fr.lproj
+│   │   │   │   │   │   └── InfoPlist.strings
+│   │   │   │   │   ├── ga.lproj
+│   │   │   │   │   │   └── InfoPlist.strings
+│   │   │   │   │   ├── gd.lproj
+│   │   │   │   │   │   └── InfoPlist.strings
+│   │   │   │   │   ├── gl.lproj
+│   │   │   │   │   │   └── InfoPlist.strings
+│   │   │   │   │   ├── gu-IN.lproj
+│   │   │   │   │   │   └── InfoPlist.strings
+│   │   │   │   │   ├── he.lproj
+│   │   │   │   │   │   └── InfoPlist.strings
+│   │   │   │   │   ├── hi.lproj
+│   │   │   │   │   │   └── InfoPlist.strings
+│   │   │   │   │   ├── hr.lproj
+│   │   │   │   │   │   └── InfoPlist.strings
+│   │   │   │   │   ├── hu.lproj
+│   │   │   │   │   │   └── InfoPlist.strings
+│   │   │   │   │   ├── id.lproj
+│   │   │   │   │   │   └── InfoPlist.strings
+│   │   │   │   │   ├── is.lproj
+│   │   │   │   │   │   └── InfoPlist.strings
+│   │   │   │   │   ├── it.lproj
+│   │   │   │   │   │   └── InfoPlist.strings
+│   │   │   │   │   ├── ja.lproj
+│   │   │   │   │   │   └── InfoPlist.strings
+│   │   │   │   │   ├── kab.lproj
+│   │   │   │   │   │   └── InfoPlist.strings
+│   │   │   │   │   ├── ka.lproj
+│   │   │   │   │   │   └── InfoPlist.strings
+│   │   │   │   │   ├── kk.lproj
+│   │   │   │   │   │   └── InfoPlist.strings
+│   │   │   │   │   ├── km.lproj
+│   │   │   │   │   │   └── InfoPlist.strings
+│   │   │   │   │   ├── kn.lproj
+│   │   │   │   │   │   └── InfoPlist.strings
+│   │   │   │   │   ├── ko.lproj
+│   │   │   │   │   │   └── InfoPlist.strings
+│   │   │   │   │   ├── ku.lproj
+│   │   │   │   │   │   └── InfoPlist.strings
+│   │   │   │   │   ├── lt.lproj
+│   │   │   │   │   │   └── InfoPlist.strings
+│   │   │   │   │   ├── lv.lproj
+│   │   │   │   │   │   └── InfoPlist.strings
+│   │   │   │   │   ├── mainwindow
+│   │   │   │   │   │   ├── backward-3btns@2x.png
+│   │   │   │   │   │   ├── backward-3btns.png
+│   │   │   │   │   │   ├── backward-3btns-pressed@2x.png
+│   │   │   │   │   │   ├── backward-3btns-pressed.png
+│   │   │   │   │   │   ├── backward-6btns@2x.png
+│   │   │   │   │   │   ├── backward-6btns.png
+│   │   │   │   │   │   ├── backward-6btns-pressed@2x.png
+│   │   │   │   │   │   ├── backward-6btns-pressed.png
+│   │   │   │   │   │   ├── dropzone@2x.png
+│   │   │   │   │   │   ├── dropzone-background.png
+│   │   │   │   │   │   ├── dropzone.png
+│   │   │   │   │   │   ├── effects-double-buttons@2x.png
+│   │   │   │   │   │   ├── effects-double-buttons.png
+│   │   │   │   │   │   ├── effects-double-buttons-pressed@2x.png
+│   │   │   │   │   │   ├── effects-double-buttons-pressed.png
+│   │   │   │   │   │   ├── effects-one-button@2x.png
+│   │   │   │   │   │   ├── effects-one-button.png
+│   │   │   │   │   │   ├── effects-one-button-pressed@2x.png
+│   │   │   │   │   │   ├── effects-one-button-pressed.png
+│   │   │   │   │   │   ├── forward-3btns@2x.png
+│   │   │   │   │   │   ├── forward-3btns.png
+│   │   │   │   │   │   ├── forward-3btns-pressed@2x.png
+│   │   │   │   │   │   ├── forward-3btns-pressed.png
+│   │   │   │   │   │   ├── forward-6btns@2x.png
+│   │   │   │   │   │   ├── forward-6btns.png
+│   │   │   │   │   │   ├── forward-6btns-pressed@2x.png
+│   │   │   │   │   │   ├── forward-6btns-pressed.png
+│   │   │   │   │   │   ├── fullscreen-double-buttons@2x.png
+│   │   │   │   │   │   ├── fullscreen-double-buttons.png
+│   │   │   │   │   │   ├── fullscreen-double-buttons-pressed@2x.png
+│   │   │   │   │   │   ├── fullscreen-double-buttons-pressed.png
+│   │   │   │   │   │   ├── fullscreen-one-button@2x.png
+│   │   │   │   │   │   ├── fullscreen-one-button.png
+│   │   │   │   │   │   ├── fullscreen-one-button-pressed@2x.png
+│   │   │   │   │   │   ├── fullscreen-one-button-pressed.png
+│   │   │   │   │   │   ├── next-6btns@2x.png
+│   │   │   │   │   │   ├── next-6btns.png
+│   │   │   │   │   │   ├── next-6btns-pressed@2x.png
+│   │   │   │   │   │   ├── next-6btns-pressed.png
+│   │   │   │   │   │   ├── pause@2x.png
+│   │   │   │   │   │   ├── pause.png
+│   │   │   │   │   │   ├── pause-pressed@2x.png
+│   │   │   │   │   │   ├── pause-pressed.png
+│   │   │   │   │   │   ├── play@2x.png
+│   │   │   │   │   │   ├── playlist-1btn@2x.png
+│   │   │   │   │   │   ├── playlist-1btn.png
+│   │   │   │   │   │   ├── playlist-1btn-pressed@2x.png
+│   │   │   │   │   │   ├── playlist-1btn-pressed.png
+│   │   │   │   │   │   ├── playlist-btn@2x.png
+│   │   │   │   │   │   ├── playlist-btn.png
+│   │   │   │   │   │   ├── playlist-btn-pressed@2x.png
+│   │   │   │   │   │   ├── playlist-btn-pressed.png
+│   │   │   │   │   │   ├── play.png
+│   │   │   │   │   │   ├── play-pressed@2x.png
+│   │   │   │   │   │   ├── play-pressed.png
+│   │   │   │   │   │   ├── previous-6btns@2x.png
+│   │   │   │   │   │   ├── previous-6btns.png
+│   │   │   │   │   │   ├── previous-6btns-pressed@2x.png
+│   │   │   │   │   │   ├── previous-6btns-pressed.png
+│   │   │   │   │   │   ├── repeat@2x.png
+│   │   │   │   │   │   ├── repeat-all@2x.png
+│   │   │   │   │   │   ├── repeat-all.png
+│   │   │   │   │   │   ├── repeat-all-pressed@2x.png
+│   │   │   │   │   │   ├── repeat-all-pressed.png
+│   │   │   │   │   │   ├── repeat-one@2x.png
+│   │   │   │   │   │   ├── repeat-one.png
+│   │   │   │   │   │   ├── repeat-one-pressed@2x.png
+│   │   │   │   │   │   ├── repeat-one-pressed.png
+│   │   │   │   │   │   ├── repeat.png
+│   │   │   │   │   │   ├── repeat-pressed@2x.png
+│   │   │   │   │   │   ├── repeat-pressed.png
+│   │   │   │   │   │   ├── shuffle@2x.png
+│   │   │   │   │   │   ├── shuffle-blue@2x.png
+│   │   │   │   │   │   ├── shuffle-blue.png
+│   │   │   │   │   │   ├── shuffle-blue-pressed@2x.png
+│   │   │   │   │   │   ├── shuffle-blue-pressed.png
+│   │   │   │   │   │   ├── shuffle.png
+│   │   │   │   │   │   ├── shuffle-pressed@2x.png
+│   │   │   │   │   │   ├── shuffle-pressed.png
+│   │   │   │   │   │   ├── stop@2x.png
+│   │   │   │   │   │   ├── stop.png
+│   │   │   │   │   │   ├── stop-pressed@2x.png
+│   │   │   │   │   │   ├── stop-pressed.png
+│   │   │   │   │   │   ├── topbar_background.png
+│   │   │   │   │   │   ├── volume-high@2x.png
+│   │   │   │   │   │   ├── volume-high.png
+│   │   │   │   │   │   ├── volume-low@2x.png
+│   │   │   │   │   │   └── volume-low.png
+│   │   │   │   │   ├── mainwindow_dark
+│   │   │   │   │   │   ├── backward-3btns-dark@2x.png
+│   │   │   │   │   │   ├── backward-3btns-dark.png
+│   │   │   │   │   │   ├── backward-3btns-dark-pressed@2x.png
+│   │   │   │   │   │   ├── backward-3btns-dark-pressed.png
+│   │   │   │   │   │   ├── backward-6btns-dark@2x.png
+│   │   │   │   │   │   ├── backward-6btns-dark.png
+│   │   │   │   │   │   ├── backward-6btns-dark-pressed@2x.png
+│   │   │   │   │   │   ├── backward-6btns-dark-pressed.png
+│   │   │   │   │   │   ├── effects-double-buttons_dark@2x.png
+│   │   │   │   │   │   ├── effects-double-buttons_dark.png
+│   │   │   │   │   │   ├── effects-double-buttons-pressed_dark@2x.png
+│   │   │   │   │   │   ├── effects-double-buttons-pressed_dark.png
+│   │   │   │   │   │   ├── effects-one-button_dark@2x.png
+│   │   │   │   │   │   ├── effects-one-button_dark.png
+│   │   │   │   │   │   ├── effects-one-button-pressed-dark@2x.png
+│   │   │   │   │   │   ├── effects-one-button-pressed-dark.png
+│   │   │   │   │   │   ├── forward-3btns-dark@2x.png
+│   │   │   │   │   │   ├── forward-3btns-dark.png
+│   │   │   │   │   │   ├── forward-3btns-dark-pressed@2x.png
+│   │   │   │   │   │   ├── forward-3btns-dark-pressed.png
+│   │   │   │   │   │   ├── forward-6btns-dark@2x.png
+│   │   │   │   │   │   ├── forward-6btns-dark.png
+│   │   │   │   │   │   ├── forward-6btns-dark-pressed@2x.png
+│   │   │   │   │   │   ├── forward-6btns-dark-pressed.png
+│   │   │   │   │   │   ├── fullscreen-double-buttons_dark@2x.png
+│   │   │   │   │   │   ├── fullscreen-double-buttons_dark.png
+│   │   │   │   │   │   ├── fullscreen-double-buttons-pressed_dark@2x.png
+│   │   │   │   │   │   ├── fullscreen-double-buttons-pressed_dark.png
+│   │   │   │   │   │   ├── fullscreen-one-button_dark@2x.png
+│   │   │   │   │   │   ├── fullscreen-one-button_dark.png
+│   │   │   │   │   │   ├── fullscreen-one-button-pressed_dark@2x.png
+│   │   │   │   │   │   ├── fullscreen-one-button-pressed_dark.png
+│   │   │   │   │   │   ├── next-6btns-dark@2x.png
+│   │   │   │   │   │   ├── next-6btns-dark.png
+│   │   │   │   │   │   ├── next-6btns-dark-pressed@2x.png
+│   │   │   │   │   │   ├── next-6btns-dark-pressed.png
+│   │   │   │   │   │   ├── pause_dark@2x.png
+│   │   │   │   │   │   ├── pause_dark.png
+│   │   │   │   │   │   ├── pause-pressed_dark@2x.png
+│   │   │   │   │   │   ├── pause-pressed_dark.png
+│   │   │   │   │   │   ├── play_dark@2x.png
+│   │   │   │   │   │   ├── play_dark.png
+│   │   │   │   │   │   ├── playlist-1btn-dark@2x.png
+│   │   │   │   │   │   ├── playlist-1btn-dark.png
+│   │   │   │   │   │   ├── playlist-1btn-dark-pressed@2x.png
+│   │   │   │   │   │   ├── playlist-1btn-dark-pressed.png
+│   │   │   │   │   │   ├── playlist_dark@2x.png
+│   │   │   │   │   │   ├── playlist_dark.png
+│   │   │   │   │   │   ├── playlist-pressed_dark@2x.png
+│   │   │   │   │   │   ├── playlist-pressed_dark.png
+│   │   │   │   │   │   ├── play-pressed_dark@2x.png
+│   │   │   │   │   │   ├── play-pressed_dark.png
+│   │   │   │   │   │   ├── previous-6btns-dark@2x.png
+│   │   │   │   │   │   ├── previous-6btns-dark.png
+│   │   │   │   │   │   ├── previous-6btns-dark-pressed@2x.png
+│   │   │   │   │   │   ├── previous-6btns-dark-pressed.png
+│   │   │   │   │   │   ├── repeat-all-blue_dark@2x.png
+│   │   │   │   │   │   ├── repeat-all-blue_dark.png
+│   │   │   │   │   │   ├── repeat-all-blue-pressed_dark@2x.png
+│   │   │   │   │   │   ├── repeat-all-blue-pressed_dark.png
+│   │   │   │   │   │   ├── repeat_dark@2x.png
+│   │   │   │   │   │   ├── repeat_dark.png
+│   │   │   │   │   │   ├── repeat-one-blue_dark@2x.png
+│   │   │   │   │   │   ├── repeat-one-blue_dark.png
+│   │   │   │   │   │   ├── repeat-one-blue-pressed_dark@2x.png
+│   │   │   │   │   │   ├── repeat-one-blue-pressed_dark.png
+│   │   │   │   │   │   ├── repeat-pressed_dark@2x.png
+│   │   │   │   │   │   ├── repeat-pressed_dark.png
+│   │   │   │   │   │   ├── shuffle-blue_dark@2x.png
+│   │   │   │   │   │   ├── shuffle-blue_dark.png
+│   │   │   │   │   │   ├── shuffle-blue-pressed_dark@2x.png
+│   │   │   │   │   │   ├── shuffle-blue-pressed_dark.png
+│   │   │   │   │   │   ├── shuffle_dark@2x.png
+│   │   │   │   │   │   ├── shuffle_dark.png
+│   │   │   │   │   │   ├── shuffle-pressed_dark@2x.png
+│   │   │   │   │   │   ├── shuffle-pressed_dark.png
+│   │   │   │   │   │   ├── stop_dark@2x.png
+│   │   │   │   │   │   ├── stop_dark.png
+│   │   │   │   │   │   ├── stop-pressed_dark@2x.png
+│   │   │   │   │   │   ├── stop-pressed_dark.png
+│   │   │   │   │   │   ├── titlebar
+│   │   │   │   │   │   │   ├── lion
+│   │   │   │   │   │   │   │   ├── lion-window-close@2x.png
+│   │   │   │   │   │   │   │   ├── lion-window-close-graphite@2x.png
+│   │   │   │   │   │   │   │   ├── lion-window-close-graphite.png
+│   │   │   │   │   │   │   │   ├── lion-window-close-on@2x.png
+│   │   │   │   │   │   │   │   ├── lion-window-close-on-graphite@2x.png
+│   │   │   │   │   │   │   │   ├── lion-window-close-on-graphite.png
+│   │   │   │   │   │   │   │   ├── lion-window-close-on.png
+│   │   │   │   │   │   │   │   ├── lion-window-close-over@2x.png
+│   │   │   │   │   │   │   │   ├── lion-window-close-over-graphite@2x.png
+│   │   │   │   │   │   │   │   ├── lion-window-close-over-graphite.png
+│   │   │   │   │   │   │   │   ├── lion-window-close-over.png
+│   │   │   │   │   │   │   │   ├── lion-window-close.png
+│   │   │   │   │   │   │   │   ├── lion-window-fullscreen@2x.png
+│   │   │   │   │   │   │   │   ├── lion-window-fullscreen-on@2x.png
+│   │   │   │   │   │   │   │   ├── lion-window-fullscreen-on.png
+│   │   │   │   │   │   │   │   ├── lion-window-fullscreen-over@2x.png
+│   │   │   │   │   │   │   │   ├── lion-window-fullscreen-over.png
+│   │   │   │   │   │   │   │   ├── lion-window-fullscreen.png
+│   │   │   │   │   │   │   │   ├── lion-window-minimize@2x.png
+│   │   │   │   │   │   │   │   ├── lion-window-minimize-graphite@2x.png
+│   │   │   │   │   │   │   │   ├── lion-window-minimize-graphite.png
+│   │   │   │   │   │   │   │   ├── lion-window-minimize-on@2x.png
+│   │   │   │   │   │   │   │   ├── lion-window-minimize-on-graphite@2x.png
+│   │   │   │   │   │   │   │   ├── lion-window-minimize-on-graphite.png
+│   │   │   │   │   │   │   │   ├── lion-window-minimize-on.png
+│   │   │   │   │   │   │   │   ├── lion-window-minimize-over@2x.png
+│   │   │   │   │   │   │   │   ├── lion-window-minimize-over-graphite@2x.png
+│   │   │   │   │   │   │   │   ├── lion-window-minimize-over-graphite.png
+│   │   │   │   │   │   │   │   ├── lion-window-minimize-over.png
+│   │   │   │   │   │   │   │   ├── lion-window-minimize.png
+│   │   │   │   │   │   │   │   ├── lion-window-zoom@2x.png
+│   │   │   │   │   │   │   │   ├── lion-window-zoom-graphite@2x.png
+│   │   │   │   │   │   │   │   ├── lion-window-zoom-graphite.png
+│   │   │   │   │   │   │   │   ├── lion-window-zoom-on@2x.png
+│   │   │   │   │   │   │   │   ├── lion-window-zoom-on-graphite@2x.png
+│   │   │   │   │   │   │   │   ├── lion-window-zoom-on-graphite.png
+│   │   │   │   │   │   │   │   ├── lion-window-zoom-on.png
+│   │   │   │   │   │   │   │   ├── lion-window-zoom-over@2x.png
+│   │   │   │   │   │   │   │   ├── lion-window-zoom-over-graphite@2x.png
+│   │   │   │   │   │   │   │   ├── lion-window-zoom-over-graphite.png
+│   │   │   │   │   │   │   │   ├── lion-window-zoom-over.png
+│   │   │   │   │   │   │   │   └── lion-window-zoom.png
+│   │   │   │   │   │   │   └── yosemite
+│   │   │   │   │   │   │       ├── yosemite-window-close@2x.png
+│   │   │   │   │   │   │       ├── yosemite-window-close-graphite@2x.png
+│   │   │   │   │   │   │       ├── yosemite-window-close-graphite.png
+│   │   │   │   │   │   │       ├── yosemite-window-close-on@2x.png
+│   │   │   │   │   │   │       ├── yosemite-window-close-on-graphite@2x.png
+│   │   │   │   │   │   │       ├── yosemite-window-close-on-graphite.png
+│   │   │   │   │   │   │       ├── yosemite-window-close-on.png
+│   │   │   │   │   │   │       ├── yosemite-window-close-over@2x.png
+│   │   │   │   │   │   │       ├── yosemite-window-close-over-graphite@2x.png
+│   │   │   │   │   │   │       ├── yosemite-window-close-over-graphite.png
+│   │   │   │   │   │   │       ├── yosemite-window-close-over.png
+│   │   │   │   │   │   │       ├── yosemite-window-close.png
+│   │   │   │   │   │   │       ├── yosemite-window-fullscreen@2x.png
+│   │   │   │   │   │   │       ├── yosemite-window-fullscreen-graphite@2x.png
+│   │   │   │   │   │   │       ├── yosemite-window-fullscreen-graphite.png
+│   │   │   │   │   │   │       ├── yosemite-window-fullscreen-on@2x.png
+│   │   │   │   │   │   │       ├── yosemite-window-fullscreen-on-graphite@2x.png
+│   │   │   │   │   │   │       ├── yosemite-window-fullscreen-on-graphite.png
+│   │   │   │   │   │   │       ├── yosemite-window-fullscreen-on.png
+│   │   │   │   │   │   │       ├── yosemite-window-fullscreen-over@2x.png
+│   │   │   │   │   │   │       ├── yosemite-window-fullscreen-over-graphite@2x.png
+│   │   │   │   │   │   │       ├── yosemite-window-fullscreen-over-graphite.png
+│   │   │   │   │   │   │       ├── yosemite-window-fullscreen-over.png
+│   │   │   │   │   │   │       ├── yosemite-window-fullscreen.png
+│   │   │   │   │   │   │       ├── yosemite-window-minimize@2x.png
+│   │   │   │   │   │   │       ├── yosemite-window-minimize-graphite@2x.png
+│   │   │   │   │   │   │       ├── yosemite-window-minimize-graphite.png
+│   │   │   │   │   │   │       ├── yosemite-window-minimize-on@2x.png
+│   │   │   │   │   │   │       ├── yosemite-window-minimize-on-graphite@2x.png
+│   │   │   │   │   │   │       ├── yosemite-window-minimize-on-graphite.png
+│   │   │   │   │   │   │       ├── yosemite-window-minimize-on.png
+│   │   │   │   │   │   │       ├── yosemite-window-minimize-over@2x.png
+│   │   │   │   │   │   │       ├── yosemite-window-minimize-over-graphite@2x.png
+│   │   │   │   │   │   │       ├── yosemite-window-minimize-over-graphite.png
+│   │   │   │   │   │   │       ├── yosemite-window-minimize-over.png
+│   │   │   │   │   │   │       ├── yosemite-window-minimize.png
+│   │   │   │   │   │   │       ├── yosemite-window-zoom@2x.png
+│   │   │   │   │   │   │       ├── yosemite-window-zoom-graphite@2x.png
+│   │   │   │   │   │   │       ├── yosemite-window-zoom-graphite.png
+│   │   │   │   │   │   │       ├── yosemite-window-zoom-on@2x.png
+│   │   │   │   │   │   │       ├── yosemite-window-zoom-on-graphite@2x.png
+│   │   │   │   │   │   │       ├── yosemite-window-zoom-on-graphite.png
+│   │   │   │   │   │   │       ├── yosemite-window-zoom-on.png
+│   │   │   │   │   │   │       ├── yosemite-window-zoom-over@2x.png
+│   │   │   │   │   │   │       ├── yosemite-window-zoom-over-graphite@2x.png
+│   │   │   │   │   │   │       ├── yosemite-window-zoom-over-graphite.png
+│   │   │   │   │   │   │       ├── yosemite-window-zoom-over.png
+│   │   │   │   │   │   │       └── yosemite-window-zoom.png
+│   │   │   │   │   │   ├── topbar-dark-center-fill@2x.png
+│   │   │   │   │   │   ├── topbar-dark-center-fill.png
+│   │   │   │   │   │   ├── topbar-dark-left@2x.png
+│   │   │   │   │   │   ├── topbar-dark-left.png
+│   │   │   │   │   │   ├── topbar-dark-right@2x.png
+│   │   │   │   │   │   ├── topbar-dark-right.png
+│   │   │   │   │   │   ├── volume-high_dark@2x.png
+│   │   │   │   │   │   ├── volume-high_dark.png
+│   │   │   │   │   │   ├── volume-low_dark@2x.png
+│   │   │   │   │   │   ├── volume-low_dark.png
+│   │   │   │   │   │   └── window-resize.png
+│   │   │   │   │   ├── mainwindow_dark_yosemite
+│   │   │   │   │   │   ├── ys-backward-3btns-dark@2x.png
+│   │   │   │   │   │   ├── ys-backward-3btns-dark.png
+│   │   │   │   │   │   ├── ys-backward-3btns-dark-pressed@2x.png
+│   │   │   │   │   │   ├── ys-backward-3btns-dark-pressed.png
+│   │   │   │   │   │   ├── ys-backward-6btns-dark@2x.png
+│   │   │   │   │   │   ├── ys-backward-6btns-dark.png
+│   │   │   │   │   │   ├── ys-backward-6btns-dark-pressed@2x.png
+│   │   │   │   │   │   ├── ys-backward-6btns-dark-pressed.png
+│   │   │   │   │   │   ├── ys-effects-double-buttons_dark@2x.png
+│   │   │   │   │   │   ├── ys-effects-double-buttons_dark.png
+│   │   │   │   │   │   ├── ys-effects-double-buttons-pressed_dark@2x.png
+│   │   │   │   │   │   ├── ys-effects-double-buttons-pressed_dark.png
+│   │   │   │   │   │   ├── ys-effects-one-button_dark@2x.png
+│   │   │   │   │   │   ├── ys-effects-one-button_dark.png
+│   │   │   │   │   │   ├── ys-effects-one-button-pressed-dark@2x.png
+│   │   │   │   │   │   ├── ys-effects-one-button-pressed-dark.png
+│   │   │   │   │   │   ├── ys-forward-3btns-dark@2x.png
+│   │   │   │   │   │   ├── ys-forward-3btns-dark.png
+│   │   │   │   │   │   ├── ys-forward-3btns-dark-pressed@2x.png
+│   │   │   │   │   │   ├── ys-forward-3btns-dark-pressed.png
+│   │   │   │   │   │   ├── ys-forward-6btns-dark@2x.png
+│   │   │   │   │   │   ├── ys-forward-6btns-dark.png
+│   │   │   │   │   │   ├── ys-forward-6btns-dark-pressed@2x.png
+│   │   │   │   │   │   ├── ys-forward-6btns-dark-pressed.png
+│   │   │   │   │   │   ├── ys-fullscreen-double-buttons_dark@2x.png
+│   │   │   │   │   │   ├── ys-fullscreen-double-buttons_dark.png
+│   │   │   │   │   │   ├── ys-fullscreen-double-buttons-pressed_dark@2x.png
+│   │   │   │   │   │   ├── ys-fullscreen-double-buttons-pressed_dark.png
+│   │   │   │   │   │   ├── ys-fullscreen-one-button_dark@2x.png
+│   │   │   │   │   │   ├── ys-fullscreen-one-button_dark.png
+│   │   │   │   │   │   ├── ys-fullscreen-one-button-pressed_dark@2x.png
+│   │   │   │   │   │   ├── ys-fullscreen-one-button-pressed_dark.png
+│   │   │   │   │   │   ├── ys-next-6btns-dark@2x.png
+│   │   │   │   │   │   ├── ys-next-6btns-dark.png
+│   │   │   │   │   │   ├── ys-next-6btns-dark-pressed@2x.png
+│   │   │   │   │   │   ├── ys-next-6btns-dark-pressed.png
+│   │   │   │   │   │   ├── ys-pause_dark@2x.png
+│   │   │   │   │   │   ├── ys-pause_dark.png
+│   │   │   │   │   │   ├── ys-pause-pressed_dark@2x.png
+│   │   │   │   │   │   ├── ys-pause-pressed_dark.png
+│   │   │   │   │   │   ├── ys-play_dark@2x.png
+│   │   │   │   │   │   ├── ys-play_dark.png
+│   │   │   │   │   │   ├── ys-playlist-1btn-dark@2x.png
+│   │   │   │   │   │   ├── ys-playlist-1btn-dark.png
+│   │   │   │   │   │   ├── ys-playlist-1btn-dark-pressed@2x.png
+│   │   │   │   │   │   ├── ys-playlist-1btn-dark-pressed.png
+│   │   │   │   │   │   ├── ys-playlist_dark@2x.png
+│   │   │   │   │   │   ├── ys-playlist_dark.png
+│   │   │   │   │   │   ├── ys-playlist-pressed_dark@2x.png
+│   │   │   │   │   │   ├── ys-playlist-pressed_dark.png
+│   │   │   │   │   │   ├── ys-play-pressed_dark@2x.png
+│   │   │   │   │   │   ├── ys-play-pressed_dark.png
+│   │   │   │   │   │   ├── ys-previous-6btns-dark@2x.png
+│   │   │   │   │   │   ├── ys-previous-6btns-dark.png
+│   │   │   │   │   │   ├── ys-previous-6btns-dark-pressed@2x.png
+│   │   │   │   │   │   ├── ys-previous-6btns-dark-pressed.png
+│   │   │   │   │   │   ├── ys-repeat-all-blue_dark@2x.png
+│   │   │   │   │   │   ├── ys-repeat-all-blue_dark.png
+│   │   │   │   │   │   ├── ys-repeat-all-blue-pressed_dark@2x.png
+│   │   │   │   │   │   ├── ys-repeat-all-blue-pressed_dark.png
+│   │   │   │   │   │   ├── ys-repeat_dark@2x.png
+│   │   │   │   │   │   ├── ys-repeat_dark.png
+│   │   │   │   │   │   ├── ys-repeat-one-blue_dark@2x.png
+│   │   │   │   │   │   ├── ys-repeat-one-blue_dark.png
+│   │   │   │   │   │   ├── ys-repeat-one-blue-pressed_dark@2x.png
+│   │   │   │   │   │   ├── ys-repeat-one-blue-pressed_dark.png
+│   │   │   │   │   │   ├── ys-repeat-pressed_dark@2x.png
+│   │   │   │   │   │   ├── ys-repeat-pressed_dark.png
+│   │   │   │   │   │   ├── ys-shuffle-blue_dark@2x.png
+│   │   │   │   │   │   ├── ys-shuffle-blue_dark.png
+│   │   │   │   │   │   ├── ys-shuffle-blue-pressed_dark@2x.png
+│   │   │   │   │   │   ├── ys-shuffle-blue-pressed_dark.png
+│   │   │   │   │   │   ├── ys-shuffle_dark@2x.png
+│   │   │   │   │   │   ├── ys-shuffle_dark.png
+│   │   │   │   │   │   ├── ys-shuffle-pressed_dark@2x.png
+│   │   │   │   │   │   ├── ys-shuffle-pressed_dark.png
+│   │   │   │   │   │   ├── ys-stop_dark@2x.png
+│   │   │   │   │   │   ├── ys-stop_dark.png
+│   │   │   │   │   │   ├── ys-stop-pressed_dark@2x.png
+│   │   │   │   │   │   ├── ys-stop-pressed_dark.png
+│   │   │   │   │   │   ├── ys-topbar-dark-center-fill@2x.png
+│   │   │   │   │   │   ├── ys-topbar-dark-center-fill.png
+│   │   │   │   │   │   ├── ys-topbar-dark-left@2x.png
+│   │   │   │   │   │   ├── ys-topbar-dark-left.png
+│   │   │   │   │   │   ├── ys-topbar-dark-right@2x.png
+│   │   │   │   │   │   ├── ys-topbar-dark-right.png
+│   │   │   │   │   │   ├── ys-volume-high_dark@2x.png
+│   │   │   │   │   │   ├── ys-volume-high_dark.png
+│   │   │   │   │   │   ├── ys-volume-low_dark@2x.png
+│   │   │   │   │   │   └── ys-volume-low_dark.png
+│   │   │   │   │   ├── mainwindow_mojave_dark
+│   │   │   │   │   │   ├── mj-dropzone-dark@2x.png
+│   │   │   │   │   │   └── mj-dropzone-dark.png
+│   │   │   │   │   ├── mainwindow_yosemite
+│   │   │   │   │   │   ├── ys-backward-3btns@2x.png
+│   │   │   │   │   │   ├── ys-backward-3btns.png
+│   │   │   │   │   │   ├── ys-backward-3btns-pressed@2x.png
+│   │   │   │   │   │   ├── ys-backward-3btns-pressed.png
+│   │   │   │   │   │   ├── ys-backward-6btns@2x.png
+│   │   │   │   │   │   ├── ys-backward-6btns.png
+│   │   │   │   │   │   ├── ys-backward-6btns-pressed@2x.png
+│   │   │   │   │   │   ├── ys-backward-6btns-pressed.png
+│   │   │   │   │   │   ├── ys-dropzone@2x.png
+│   │   │   │   │   │   ├── ys-dropzone.png
+│   │   │   │   │   │   ├── ys-effects-double-buttons@2x.png
+│   │   │   │   │   │   ├── ys-effects-double-buttons.png
+│   │   │   │   │   │   ├── ys-effects-double-buttons-pressed@2x.png
+│   │   │   │   │   │   ├── ys-effects-double-buttons-pressed.png
+│   │   │   │   │   │   ├── ys-effects-one-button@2x.png
+│   │   │   │   │   │   ├── ys-effects-one-button.png
+│   │   │   │   │   │   ├── ys-effects-one-button-pressed@2x.png
+│   │   │   │   │   │   ├── ys-effects-one-button-pressed.png
+│   │   │   │   │   │   ├── ys-forward-3btns@2x.png
+│   │   │   │   │   │   ├── ys-forward-3btns.png
+│   │   │   │   │   │   ├── ys-forward-3btns-pressed@2x.png
+│   │   │   │   │   │   ├── ys-forward-3btns-pressed.png
+│   │   │   │   │   │   ├── ys-forward-6btns@2x.png
+│   │   │   │   │   │   ├── ys-forward-6btns.png
+│   │   │   │   │   │   ├── ys-forward-6btns-pressed@2x.png
+│   │   │   │   │   │   ├── ys-forward-6btns-pressed.png
+│   │   │   │   │   │   ├── ys-fullscreen-double-buttons@2x.png
+│   │   │   │   │   │   ├── ys-fullscreen-double-buttons.png
+│   │   │   │   │   │   ├── ys-fullscreen-double-buttons-pressed@2x.png
+│   │   │   │   │   │   ├── ys-fullscreen-double-buttons-pressed.png
+│   │   │   │   │   │   ├── ys-fullscreen-one-button@2x.png
+│   │   │   │   │   │   ├── ys-fullscreen-one-button.png
+│   │   │   │   │   │   ├── ys-fullscreen-one-button-pressed@2x.png
+│   │   │   │   │   │   ├── ys-fullscreen-one-button-pressed.png
+│   │   │   │   │   │   ├── ys-next-6btns@2x.png
+│   │   │   │   │   │   ├── ys-next-6btns.png
+│   │   │   │   │   │   ├── ys-next-6btns-pressed@2x.png
+│   │   │   │   │   │   ├── ys-next-6btns-pressed.png
+│   │   │   │   │   │   ├── ys-pause@2x.png
+│   │   │   │   │   │   ├── ys-pause.png
+│   │   │   │   │   │   ├── ys-pause-pressed@2x.png
+│   │   │   │   │   │   ├── ys-pause-pressed.png
+│   │   │   │   │   │   ├── ys-play@2x.png
+│   │   │   │   │   │   ├── ys-playlist-1btn@2x.png
+│   │   │   │   │   │   ├── ys-playlist-1btn.png
+│   │   │   │   │   │   ├── ys-playlist-1btn-pressed@2x.png
+│   │   │   │   │   │   ├── ys-playlist-1btn-pressed.png
+│   │   │   │   │   │   ├── ys-playlist-btn@2x.png
+│   │   │   │   │   │   ├── ys-playlist-btn.png
+│   │   │   │   │   │   ├── ys-playlist-btn-pressed@2x.png
+│   │   │   │   │   │   ├── ys-playlist-btn-pressed.png
+│   │   │   │   │   │   ├── ys-play.png
+│   │   │   │   │   │   ├── ys-play-pressed@2x.png
+│   │   │   │   │   │   ├── ys-play-pressed.png
+│   │   │   │   │   │   ├── ys-previous-6btns@2x.png
+│   │   │   │   │   │   ├── ys-previous-6btns.png
+│   │   │   │   │   │   ├── ys-previous-6btns-pressed@2x.png
+│   │   │   │   │   │   ├── ys-previous-6btns-pressed.png
+│   │   │   │   │   │   ├── ys-repeat@2x.png
+│   │   │   │   │   │   ├── ys-repeat-all@2x.png
+│   │   │   │   │   │   ├── ys-repeat-all.png
+│   │   │   │   │   │   ├── ys-repeat-all-pressed@2x.png
+│   │   │   │   │   │   ├── ys-repeat-all-pressed.png
+│   │   │   │   │   │   ├── ys-repeat-one@2x.png
+│   │   │   │   │   │   ├── ys-repeat-one.png
+│   │   │   │   │   │   ├── ys-repeat-one-pressed@2x.png
+│   │   │   │   │   │   ├── ys-repeat-one-pressed.png
+│   │   │   │   │   │   ├── ys-repeat.png
+│   │   │   │   │   │   ├── ys-repeat-pressed@2x.png
+│   │   │   │   │   │   ├── ys-repeat-pressed.png
+│   │   │   │   │   │   ├── ys-shuffle@2x.png
+│   │   │   │   │   │   ├── ys-shuffle-blue@2x.png
+│   │   │   │   │   │   ├── ys-shuffle-blue.png
+│   │   │   │   │   │   ├── ys-shuffle-blue-pressed@2x.png
+│   │   │   │   │   │   ├── ys-shuffle-blue-pressed.png
+│   │   │   │   │   │   ├── ys-shuffle.png
+│   │   │   │   │   │   ├── ys-shuffle-pressed@2x.png
+│   │   │   │   │   │   ├── ys-shuffle-pressed.png
+│   │   │   │   │   │   ├── ys-stop@2x.png
+│   │   │   │   │   │   ├── ys-stop.png
+│   │   │   │   │   │   ├── ys-stop-pressed@2x.png
+│   │   │   │   │   │   ├── ys-stop-pressed.png
+│   │   │   │   │   │   ├── ys-volume-high@2x.png
+│   │   │   │   │   │   ├── ys-volume-high.png
+│   │   │   │   │   │   ├── ys-volume-low@2x.png
+│   │   │   │   │   │   └── ys-volume-low.png
+│   │   │   │   │   ├── ml.lproj
+│   │   │   │   │   │   └── InfoPlist.strings
+│   │   │   │   │   ├── mr.lproj
+│   │   │   │   │   │   └── InfoPlist.strings
+│   │   │   │   │   ├── ms.lproj
+│   │   │   │   │   │   └── InfoPlist.strings
+│   │   │   │   │   ├── my.lproj
+│   │   │   │   │   │   └── InfoPlist.strings
+│   │   │   │   │   ├── nb.lproj
+│   │   │   │   │   │   └── InfoPlist.strings
+│   │   │   │   │   ├── ne.lproj
+│   │   │   │   │   │   └── InfoPlist.strings
+│   │   │   │   │   ├── nl.lproj
+│   │   │   │   │   │   └── InfoPlist.strings
+│   │   │   │   │   ├── nn.lproj
+│   │   │   │   │   │   └── InfoPlist.strings
+│   │   │   │   │   ├── noart.png
+│   │   │   │   │   ├── oc.lproj
+│   │   │   │   │   │   └── InfoPlist.strings
+│   │   │   │   │   ├── pa.lproj
+│   │   │   │   │   │   └── InfoPlist.strings
+│   │   │   │   │   ├── pl.lproj
+│   │   │   │   │   │   └── InfoPlist.strings
+│   │   │   │   │   ├── Pref-Icons
+│   │   │   │   │   │   ├── VLCAudioCone.png
+│   │   │   │   │   │   ├── VLCHotkeysCone.png
+│   │   │   │   │   │   ├── VLCInputCone.png
+│   │   │   │   │   │   ├── VLCInterfaceCone.png
+│   │   │   │   │   │   ├── VLCSubtitleCone.png
+│   │   │   │   │   │   └── VLCVideoCone.png
+│   │   │   │   │   ├── pt-BR.lproj
+│   │   │   │   │   │   └── InfoPlist.strings
+│   │   │   │   │   ├── pt-PT.lproj
+│   │   │   │   │   │   └── InfoPlist.strings
+│   │   │   │   │   ├── README
+│   │   │   │   │   ├── ro.lproj
+│   │   │   │   │   │   └── InfoPlist.strings
+│   │   │   │   │   ├── ru.lproj
+│   │   │   │   │   │   └── InfoPlist.strings
+│   │   │   │   │   ├── sat.lproj
+│   │   │   │   │   │   └── InfoPlist.strings
+│   │   │   │   │   ├── sc.lproj
+│   │   │   │   │   │   └── InfoPlist.strings
+│   │   │   │   │   ├── sidebar-icons
+│   │   │   │   │   │   ├── sidebar-local@2x.png
+│   │   │   │   │   │   ├── sidebar-local.png
+│   │   │   │   │   │   ├── sidebar-movie@2x.png
+│   │   │   │   │   │   ├── sidebar-movie.png
+│   │   │   │   │   │   ├── sidebar-music@2x.png
+│   │   │   │   │   │   ├── sidebar-music.png
+│   │   │   │   │   │   ├── sidebar-pictures@2x.png
+│   │   │   │   │   │   ├── sidebar-pictures.png
+│   │   │   │   │   │   ├── sidebar-playlist@2x.png
+│   │   │   │   │   │   ├── sidebar-playlist.png
+│   │   │   │   │   │   ├── sidebar-podcast@2x.png
+│   │   │   │   │   │   └── sidebar-podcast.png
+│   │   │   │   │   ├── sidebar-icons_mojave
+│   │   │   │   │   │   ├── dark
+│   │   │   │   │   │   │   ├── mv-dark-sidebar-local.pdf
+│   │   │   │   │   │   │   ├── mv-dark-sidebar-movie.pdf
+│   │   │   │   │   │   │   ├── mv-dark-sidebar-music.pdf
+│   │   │   │   │   │   │   ├── mv-dark-sidebar-pictures.pdf
+│   │   │   │   │   │   │   ├── mv-dark-sidebar-playlist.pdf
+│   │   │   │   │   │   │   └── mv-dark-sidebar-podcast.pdf
+│   │   │   │   │   │   └── light
+│   │   │   │   │   │       ├── mv-sidebar-local.pdf
+│   │   │   │   │   │       ├── mv-sidebar-movie.pdf
+│   │   │   │   │   │       ├── mv-sidebar-music.pdf
+│   │   │   │   │   │       ├── mv-sidebar-pictures.pdf
+│   │   │   │   │   │       ├── mv-sidebar-playlist.pdf
+│   │   │   │   │   │       └── mv-sidebar-podcast.pdf
+│   │   │   │   │   ├── sidebar-icons_yosemite
+│   │   │   │   │   │   ├── ys-sidebar-local@2x.png
+│   │   │   │   │   │   ├── ys-sidebar-local.png
+│   │   │   │   │   │   ├── ys-sidebar-movie@2x.png
+│   │   │   │   │   │   ├── ys-sidebar-movie.png
+│   │   │   │   │   │   ├── ys-sidebar-music@2x.png
+│   │   │   │   │   │   ├── ys-sidebar-music.png
+│   │   │   │   │   │   ├── ys-sidebar-pictures@2x.png
+│   │   │   │   │   │   ├── ys-sidebar-pictures.png
+│   │   │   │   │   │   ├── ys-sidebar-playlist@2x.png
+│   │   │   │   │   │   ├── ys-sidebar-playlist.png
+│   │   │   │   │   │   ├── ys-sidebar-podcast@2x.png
+│   │   │   │   │   │   └── ys-sidebar-podcast.png
+│   │   │   │   │   ├── si.lproj
+│   │   │   │   │   │   └── InfoPlist.strings
+│   │   │   │   │   ├── sk.lproj
+│   │   │   │   │   │   └── InfoPlist.strings
+│   │   │   │   │   ├── sl.lproj
+│   │   │   │   │   │   └── InfoPlist.strings
+│   │   │   │   │   ├── sq.lproj
+│   │   │   │   │   │   └── InfoPlist.strings
+│   │   │   │   │   ├── sr.lproj
+│   │   │   │   │   │   └── InfoPlist.strings
+│   │   │   │   │   ├── sv.lproj
+│   │   │   │   │   │   └── InfoPlist.strings
+│   │   │   │   │   ├── th.lproj
+│   │   │   │   │   │   └── InfoPlist.strings
+│   │   │   │   │   ├── tr.lproj
+│   │   │   │   │   │   └── InfoPlist.strings
+│   │   │   │   │   ├── uk.lproj
+│   │   │   │   │   │   └── InfoPlist.strings
+│   │   │   │   │   ├── vi.lproj
+│   │   │   │   │   │   └── InfoPlist.strings
+│   │   │   │   │   ├── vlc.scriptSuite
+│   │   │   │   │   ├── vlc.scriptTerminology
+│   │   │   │   │   ├── wa.lproj
+│   │   │   │   │   │   └── InfoPlist.strings
+│   │   │   │   │   ├── zh-Hans.lproj
+│   │   │   │   │   │   └── InfoPlist.strings
+│   │   │   │   │   └── zh-Hant.lproj
+│   │   │   │   │       └── InfoPlist.strings
+│   │   │   │   ├── SPMediaKeyTap.h
+│   │   │   │   ├── SPMediaKeyTap.m
+│   │   │   │   ├── Spotify.h
+│   │   │   │   ├── UI
+│   │   │   │   │   ├── About.xib
+│   │   │   │   │   ├── AddonManager.xib
+│   │   │   │   │   ├── AudioEffects.xib
+│   │   │   │   │   ├── Bookmarks.xib
+│   │   │   │   │   ├── ConvertAndSave.xib
+│   │   │   │   │   ├── CoreDialogs.xib
+│   │   │   │   │   ├── DetachedVideoWindow.xib
+│   │   │   │   │   ├── ErrorPanel.xib
+│   │   │   │   │   ├── Help.xib
+│   │   │   │   │   ├── LogMessageWindow.xib
+│   │   │   │   │   ├── MainMenu.xib
+│   │   │   │   │   ├── MainWindow.xib
+│   │   │   │   │   ├── MediaInfo.xib
+│   │   │   │   │   ├── Open.xib
+│   │   │   │   │   ├── PlaylistAccessoryView.xib
+│   │   │   │   │   ├── PlaylistMenu.xib
+│   │   │   │   │   ├── PopupPanel.xib
+│   │   │   │   │   ├── Preferences.xib
+│   │   │   │   │   ├── ResumeDialog.xib
+│   │   │   │   │   ├── SimplePreferences.xib
+│   │   │   │   │   ├── StreamOutput.xib
+│   │   │   │   │   ├── SyncTracks.xib
+│   │   │   │   │   ├── TextfieldPanel.xib
+│   │   │   │   │   ├── TimeSelectionPanel.xib
+│   │   │   │   │   ├── VideoEffects.xib
+│   │   │   │   │   ├── VLCFullScreenPanel.xib
+│   │   │   │   │   └── VLCStatusBarIconMainMenu.xib
+│   │   │   │   ├── VLCAboutWindowController.h
+│   │   │   │   ├── VLCAboutWindowController.m
+│   │   │   │   ├── VLCAddonListItem.h
+│   │   │   │   ├── VLCAddonListItem.m
+│   │   │   │   ├── VLCAddonsWindowController.h
+│   │   │   │   ├── VLCAddonsWindowController.m
+│   │   │   │   ├── VLCApplication.h
+│   │   │   │   ├── VLCApplication.m
+│   │   │   │   ├── VLCAudioEffectsWindowController.h
+│   │   │   │   ├── VLCAudioEffectsWindowController.m
+│   │   │   │   ├── VLCBookmarksWindowController.h
+│   │   │   │   ├── VLCBookmarksWindowController.m
+│   │   │   │   ├── VLCBottomBarView.h
+│   │   │   │   ├── VLCBottomBarView.m
+│   │   │   │   ├── VLCControlsBarCommon.h
+│   │   │   │   ├── VLCControlsBarCommon.m
+│   │   │   │   ├── VLCConvertAndSaveWindowController.h
+│   │   │   │   ├── VLCConvertAndSaveWindowController.m
+│   │   │   │   ├── VLCCoreDialogProvider.h
+│   │   │   │   ├── VLCCoreDialogProvider.m
+│   │   │   │   ├── VLCCoreInteraction.h
+│   │   │   │   ├── VLCCoreInteraction.m
+│   │   │   │   ├── VLCDefaultValueSliderCell.h
+│   │   │   │   ├── VLCDefaultValueSliderCell.m
+│   │   │   │   ├── VLCDefaultValueSlider.h
+│   │   │   │   ├── VLCDefaultValueSlider.m
+│   │   │   │   ├── VLCDocumentController.h
+│   │   │   │   ├── VLCDocumentController.m
+│   │   │   │   ├── VLCErrorWindowController.h
+│   │   │   │   ├── VLCErrorWindowController.m
+│   │   │   │   ├── VLCExtensionsDialogProvider.h
+│   │   │   │   ├── VLCExtensionsDialogProvider.m
+│   │   │   │   ├── VLCExtensionsManager.h
+│   │   │   │   ├── VLCExtensionsManager.m
+│   │   │   │   ├── VLCFSPanelController.h
+│   │   │   │   ├── VLCFSPanelController.m
+│   │   │   │   ├── VLCFSPanelDraggableView.h
+│   │   │   │   ├── VLCFSPanelDraggableView.m
+│   │   │   │   ├── VLCHelpWindowController.h
+│   │   │   │   ├── VLCHelpWindowController.m
+│   │   │   │   ├── VLCHexNumberFormatter.h
+│   │   │   │   ├── VLCHexNumberFormatter.m
+│   │   │   │   ├── VLCHotkeyChangeWindow.h
+│   │   │   │   ├── VLCHotkeyChangeWindow.m
+│   │   │   │   ├── VLCHUDButtonCell.h
+│   │   │   │   ├── VLCHUDButtonCell.m
+│   │   │   │   ├── VLCHUDCheckboxCell.h
+│   │   │   │   ├── VLCHUDCheckboxCell.m
+│   │   │   │   ├── VLCHUDOutlineView.h
+│   │   │   │   ├── VLCHUDOutlineView.m
+│   │   │   │   ├── VLCHUDPopUpButtonCell.h
+│   │   │   │   ├── VLCHUDPopUpButtonCell.m
+│   │   │   │   ├── VLCHUDScroller.h
+│   │   │   │   ├── VLCHUDScroller.m
+│   │   │   │   ├── VLCHUDSegmentedCell.h
+│   │   │   │   ├── VLCHUDSegmentedCell.m
+│   │   │   │   ├── VLCHUDSliderCell.h
+│   │   │   │   ├── VLCHUDSliderCell.m
+│   │   │   │   ├── VLCHUDStepperCell.h
+│   │   │   │   ├── VLCHUDStepperCell.m
+│   │   │   │   ├── VLCHUDTableCornerView.h
+│   │   │   │   ├── VLCHUDTableCornerView.m
+│   │   │   │   ├── VLCHUDTableView.h
+│   │   │   │   ├── VLCHUDTableView.m
+│   │   │   │   ├── VLCHUDTextFieldCell.h
+│   │   │   │   ├── VLCHUDTextFieldCell.m
+│   │   │   │   ├── VLCImageButton.h
+│   │   │   │   ├── VLCImageButton.m
+│   │   │   │   ├── VLCInputManager.h
+│   │   │   │   ├── VLCInputManager.m
+│   │   │   │   ├── VLCKeyboardBacklightControl.h
+│   │   │   │   ├── VLCKeyboardBacklightControl.m
+│   │   │   │   ├── VLCLogMessage.h
+│   │   │   │   ├── VLCLogMessage.m
+│   │   │   │   ├── VLCLogWindowController.h
+│   │   │   │   ├── VLCLogWindowController.m
+│   │   │   │   ├── VLCMain.h
+│   │   │   │   ├── VLCMain.m
+│   │   │   │   ├── VLCMainMenu.h
+│   │   │   │   ├── VLCMainMenu.m
+│   │   │   │   ├── VLCMain+OldPrefs.h
+│   │   │   │   ├── VLCMain+OldPrefs.m
+│   │   │   │   ├── VLCMainWindowControlsBar.h
+│   │   │   │   ├── VLCMainWindowControlsBar.m
+│   │   │   │   ├── VLCMainWindow.h
+│   │   │   │   ├── VLCMainWindow.m
+│   │   │   │   ├── VLCMainWindowTitleView.h
+│   │   │   │   ├── VLCMainWindowTitleView.m
+│   │   │   │   ├── VLCOpenWindowController.h
+│   │   │   │   ├── VLCOpenWindowController.m
+│   │   │   │   ├── VLCOutput.h
+│   │   │   │   ├── VLCOutput.m
+│   │   │   │   ├── VLCPlaylist.h
+│   │   │   │   ├── VLCPlaylistInfo.h
+│   │   │   │   ├── VLCPlaylistInfo.m
+│   │   │   │   ├── VLCPlaylist.m
+│   │   │   │   ├── VLCPlaylistView.h
+│   │   │   │   ├── VLCPlaylistView.m
+│   │   │   │   ├── VLCPLItem.h
+│   │   │   │   ├── VLCPLItem.m
+│   │   │   │   ├── VLCPLModel.h
+│   │   │   │   ├── VLCPLModel.m
+│   │   │   │   ├── VLCPopupPanelController.h
+│   │   │   │   ├── VLCPopupPanelController.m
+│   │   │   │   ├── VLCRemoteControlService.h
+│   │   │   │   ├── VLCRemoteControlService.m
+│   │   │   │   ├── VLCRendererDiscovery.h
+│   │   │   │   ├── VLCRendererDiscovery.m
+│   │   │   │   ├── VLCRendererItem.h
+│   │   │   │   ├── VLCRendererItem.m
+│   │   │   │   ├── VLCRendererMenuController.h
+│   │   │   │   ├── VLCRendererMenuController.m
+│   │   │   │   ├── VLCResumeDialogController.h
+│   │   │   │   ├── VLCResumeDialogController.m
+│   │   │   │   ├── VLCScrollingClipView.h
+│   │   │   │   ├── VLCScrollingClipView.m
+│   │   │   │   ├── VLCSidebarDataSource.h
+│   │   │   │   ├── VLCSidebarDataSource.m
+│   │   │   │   ├── VLCSimplePrefsController.h
+│   │   │   │   ├── VLCSimplePrefsController.m
+│   │   │   │   ├── VLCSimplePrefsWindow.h
+│   │   │   │   ├── VLCSimplePrefsWindow.m
+│   │   │   │   ├── VLCSliderCell.h
+│   │   │   │   ├── VLCSliderCell.m
+│   │   │   │   ├── VLCSlider.h
+│   │   │   │   ├── VLCSlider.m
+│   │   │   │   ├── VLCSourceListBadgeButton.h
+│   │   │   │   ├── VLCSourceListBadgeButton.m
+│   │   │   │   ├── VLCSourceListItem.h
+│   │   │   │   ├── VLCSourceListItem.m
+│   │   │   │   ├── VLCSourceListTableCellView.h
+│   │   │   │   ├── VLCSourceListTableCellView.m
+│   │   │   │   ├── VLCStatusBarIcon.h
+│   │   │   │   ├── VLCStatusBarIcon.m
+│   │   │   │   ├── VLCStringUtility.h
+│   │   │   │   ├── VLCStringUtility.m
+│   │   │   │   ├── VLCTextfieldPanelController.h
+│   │   │   │   ├── VLCTextfieldPanelController.m
+│   │   │   │   ├── VLCTimeField.h
+│   │   │   │   ├── VLCTimeField.m
+│   │   │   │   ├── VLCTimeSelectionPanelController.h
+│   │   │   │   ├── VLCTimeSelectionPanelController.m
+│   │   │   │   ├── VLCTintedImageButtonCell.h
+│   │   │   │   ├── VLCTintedImageButtonCell.m
+│   │   │   │   ├── VLCTrackSynchronizationWindowController.h
+│   │   │   │   ├── VLCTrackSynchronizationWindowController.m
+│   │   │   │   ├── VLCUIWidgets.h
+│   │   │   │   ├── VLCUIWidgets.m
+│   │   │   │   ├── VLCVideoEffectsWindowController.h
+│   │   │   │   ├── VLCVideoEffectsWindowController.m
+│   │   │   │   ├── VLCVolumeSliderCell.h
+│   │   │   │   ├── VLCVolumeSliderCell.m
+│   │   │   │   ├── VLCVolumeSlider.h
+│   │   │   │   ├── VLCVolumeSlider.m
+│   │   │   │   ├── VLCVoutView.h
+│   │   │   │   ├── VLCVoutView.m
+│   │   │   │   ├── VLCVoutWindowController.h
+│   │   │   │   ├── VLCVoutWindowController.m
+│   │   │   │   ├── VLCWrappableTextField.h
+│   │   │   │   ├── VLCWrappableTextField.m
+│   │   │   │   ├── Windows.h
+│   │   │   │   └── Windows.m
+│   │   │   ├── Makefile.am
+│   │   │   ├── minimal_macosx
+│   │   │   │   ├── intf.h
+│   │   │   │   ├── intf.m
+│   │   │   │   ├── macosx.c
+│   │   │   │   ├── misc.h
+│   │   │   │   ├── misc.m
+│   │   │   │   ├── VLCMinimalVoutWindow.h
+│   │   │   │   └── VLCMinimalVoutWindow.m
+│   │   │   ├── ncurses.c
+│   │   │   ├── qt
+│   │   │   │   ├── actions_manager.cpp
+│   │   │   │   ├── actions_manager.hpp
+│   │   │   │   ├── adapters
+│   │   │   │   │   ├── chromaprint.cpp
+│   │   │   │   │   ├── chromaprint.hpp
+│   │   │   │   │   ├── seekpoints.cpp
+│   │   │   │   │   ├── seekpoints.hpp
+│   │   │   │   │   ├── variables.cpp
+│   │   │   │   │   └── variables.hpp
+│   │   │   │   ├── components
+│   │   │   │   │   ├── complete_preferences.cpp
+│   │   │   │   │   ├── complete_preferences.hpp
+│   │   │   │   │   ├── controller.cpp
+│   │   │   │   │   ├── controller.hpp
+│   │   │   │   │   ├── controller_widget.cpp
+│   │   │   │   │   ├── controller_widget.hpp
+│   │   │   │   │   ├── epg
+│   │   │   │   │   │   ├── EPGChannels.cpp
+│   │   │   │   │   │   ├── EPGChannels.hpp
+│   │   │   │   │   │   ├── EPGItem.cpp
+│   │   │   │   │   │   ├── EPGItem.hpp
+│   │   │   │   │   │   ├── EPGProgram.cpp
+│   │   │   │   │   │   ├── EPGProgram.hpp
+│   │   │   │   │   │   ├── EPGRuler.cpp
+│   │   │   │   │   │   ├── EPGRuler.hpp
+│   │   │   │   │   │   ├── EPGView.cpp
+│   │   │   │   │   │   ├── EPGView.hpp
+│   │   │   │   │   │   ├── EPGWidget.cpp
+│   │   │   │   │   │   └── EPGWidget.hpp
+│   │   │   │   │   ├── extended_panels.cpp
+│   │   │   │   │   ├── extended_panels.hpp
+│   │   │   │   │   ├── info_panels.cpp
+│   │   │   │   │   ├── info_panels.hpp
+│   │   │   │   │   ├── info_widgets.cpp
+│   │   │   │   │   ├── info_widgets.hpp
+│   │   │   │   │   ├── interface_widgets.cpp
+│   │   │   │   │   ├── interface_widgets.hpp
+│   │   │   │   │   ├── open_panels.cpp
+│   │   │   │   │   ├── open_panels.hpp
+│   │   │   │   │   ├── playlist
+│   │   │   │   │   │   ├── playlist.cpp
+│   │   │   │   │   │   ├── playlist.hpp
+│   │   │   │   │   │   ├── playlist_item.cpp
+│   │   │   │   │   │   ├── playlist_item.hpp
+│   │   │   │   │   │   ├── playlist_model.cpp
+│   │   │   │   │   │   ├── playlist_model.hpp
+│   │   │   │   │   │   ├── selector.cpp
+│   │   │   │   │   │   ├── selector.hpp
+│   │   │   │   │   │   ├── sorting.h
+│   │   │   │   │   │   ├── standardpanel.cpp
+│   │   │   │   │   │   ├── standardpanel.hpp
+│   │   │   │   │   │   ├── views.cpp
+│   │   │   │   │   │   ├── views.hpp
+│   │   │   │   │   │   ├── vlc_model.cpp
+│   │   │   │   │   │   └── vlc_model.hpp
+│   │   │   │   │   ├── preferences_widgets.cpp
+│   │   │   │   │   ├── preferences_widgets.hpp
+│   │   │   │   │   ├── simple_preferences.cpp
+│   │   │   │   │   ├── simple_preferences.hpp
+│   │   │   │   │   └── sout
+│   │   │   │   │       ├── profile_selector.cpp
+│   │   │   │   │       ├── profile_selector.hpp
+│   │   │   │   │       ├── profiles.hpp
+│   │   │   │   │       ├── sout_widgets.cpp
+│   │   │   │   │       └── sout_widgets.hpp
+│   │   │   │   ├── dialogs
+│   │   │   │   │   ├── bookmarks.cpp
+│   │   │   │   │   ├── bookmarks.hpp
+│   │   │   │   │   ├── convert.cpp
+│   │   │   │   │   ├── convert.hpp
+│   │   │   │   │   ├── epg.cpp
+│   │   │   │   │   ├── epg.hpp
+│   │   │   │   │   ├── errors.cpp
+│   │   │   │   │   ├── errors.hpp
+│   │   │   │   │   ├── extended.cpp
+│   │   │   │   │   ├── extended.hpp
+│   │   │   │   │   ├── extensions.cpp
+│   │   │   │   │   ├── extensions.hpp
+│   │   │   │   │   ├── external.cpp
+│   │   │   │   │   ├── external.hpp
+│   │   │   │   │   ├── fingerprintdialog.cpp
+│   │   │   │   │   ├── fingerprintdialog.hpp
+│   │   │   │   │   ├── firstrun.cpp
+│   │   │   │   │   ├── firstrun.hpp
+│   │   │   │   │   ├── gototime.cpp
+│   │   │   │   │   ├── gototime.hpp
+│   │   │   │   │   ├── help.cpp
+│   │   │   │   │   ├── help.hpp
+│   │   │   │   │   ├── mediainfo.cpp
+│   │   │   │   │   ├── mediainfo.hpp
+│   │   │   │   │   ├── messages.cpp
+│   │   │   │   │   ├── messages.hpp
+│   │   │   │   │   ├── open.cpp
+│   │   │   │   │   ├── open.hpp
+│   │   │   │   │   ├── openurl.cpp
+│   │   │   │   │   ├── openurl.hpp
+│   │   │   │   │   ├── playlist.cpp
+│   │   │   │   │   ├── playlist.hpp
+│   │   │   │   │   ├── plugins.cpp
+│   │   │   │   │   ├── plugins.hpp
+│   │   │   │   │   ├── podcast_configuration.cpp
+│   │   │   │   │   ├── podcast_configuration.hpp
+│   │   │   │   │   ├── preferences.cpp
+│   │   │   │   │   ├── preferences.hpp
+│   │   │   │   │   ├── sout.cpp
+│   │   │   │   │   ├── sout.hpp
+│   │   │   │   │   ├── toolbar.cpp
+│   │   │   │   │   ├── toolbar.hpp
+│   │   │   │   │   ├── vlm.cpp
+│   │   │   │   │   └── vlm.hpp
+│   │   │   │   ├── dialogs_provider.cpp
+│   │   │   │   ├── dialogs_provider.hpp
+│   │   │   │   ├── extensions_manager.cpp
+│   │   │   │   ├── extensions_manager.hpp
+│   │   │   │   ├── input_manager.cpp
+│   │   │   │   ├── input_manager.hpp
+│   │   │   │   ├── main_interface.cpp
+│   │   │   │   ├── main_interface.hpp
+│   │   │   │   ├── main_interface_win32.cpp
+│   │   │   │   ├── main_interface_win32.hpp
+│   │   │   │   ├── Makefile.am
+│   │   │   │   ├── managers
+│   │   │   │   │   ├── addons_manager.cpp
+│   │   │   │   │   └── addons_manager.hpp
+│   │   │   │   ├── menus.cpp
+│   │   │   │   ├── menus.hpp
+│   │   │   │   ├── pixmaps
+│   │   │   │   │   ├── addons
+│   │   │   │   │   │   ├── addon_blue.svg
+│   │   │   │   │   │   ├── addon_broken.svg
+│   │   │   │   │   │   ├── addon_cyan.svg
+│   │   │   │   │   │   ├── addon_green.svg
+│   │   │   │   │   │   ├── addon_magenta.svg
+│   │   │   │   │   │   ├── addon_red.svg
+│   │   │   │   │   │   ├── addon.svg
+│   │   │   │   │   │   ├── addon_yellow.svg
+│   │   │   │   │   │   └── score.svg
+│   │   │   │   │   ├── clear.svg
+│   │   │   │   │   ├── eject.svg
+│   │   │   │   │   ├── faster2.svg
+│   │   │   │   │   ├── faster.svg
+│   │   │   │   │   ├── go-next.svg
+│   │   │   │   │   ├── lock.svg
+│   │   │   │   │   ├── menus
+│   │   │   │   │   │   ├── exit_16px.svg
+│   │   │   │   │   │   ├── help_16px.svg
+│   │   │   │   │   │   ├── info_16px.svg
+│   │   │   │   │   │   ├── messages_16px.svg
+│   │   │   │   │   │   ├── playlist_16px.svg
+│   │   │   │   │   │   ├── preferences_16px.svg
+│   │   │   │   │   │   ├── settings_16px.svg
+│   │   │   │   │   │   └── stream_16px.svg
+│   │   │   │   │   ├── next.svg
+│   │   │   │   │   ├── noart-64.png
+│   │   │   │   │   ├── noart.png
+│   │   │   │   │   ├── pause.svg
+│   │   │   │   │   ├── playlist
+│   │   │   │   │   │   ├── add.svg
+│   │   │   │   │   │   ├── dropzone.svg
+│   │   │   │   │   │   ├── playlist.svg
+│   │   │   │   │   │   ├── remove.svg
+│   │   │   │   │   │   ├── repeat_all.svg
+│   │   │   │   │   │   ├── repeat_off.svg
+│   │   │   │   │   │   ├── repeat_one.svg
+│   │   │   │   │   │   ├── shuffle_on.svg
+│   │   │   │   │   │   └── sidebar-icons
+│   │   │   │   │   │       ├── capture.svg
+│   │   │   │   │   │       ├── disc.svg
+│   │   │   │   │   │       ├── lan.svg
+│   │   │   │   │   │       ├── library.svg
+│   │   │   │   │   │       ├── movie.svg
+│   │   │   │   │   │       ├── mtp.svg
+│   │   │   │   │   │       ├── music.svg
+│   │   │   │   │   │       ├── network.svg
+│   │   │   │   │   │       ├── pictures.svg
+│   │   │   │   │   │       ├── playlist.svg
+│   │   │   │   │   │       ├── podcast.svg
+│   │   │   │   │   │       ├── screen.svg
+│   │   │   │   │   │       └── sd
+│   │   │   │   │   │           ├── appletrailers.svg
+│   │   │   │   │   │           ├── assembleenationale.svg
+│   │   │   │   │   │           ├── fmc.svg
+│   │   │   │   │   │           ├── frenchtv.svg
+│   │   │   │   │   │           ├── icecast.svg
+│   │   │   │   │   │           ├── jamendo.svg
+│   │   │   │   │   │           └── katsomo.svg
+│   │   │   │   │   ├── play.svg
+│   │   │   │   │   ├── prefs
+│   │   │   │   │   │   ├── advprefs_audio.svg
+│   │   │   │   │   │   ├── advprefs_codec.svg
+│   │   │   │   │   │   ├── advprefs_extended.svg
+│   │   │   │   │   │   ├── advprefs_intf.svg
+│   │   │   │   │   │   ├── advprefs_playlist.svg
+│   │   │   │   │   │   ├── advprefs_sout.svg
+│   │   │   │   │   │   ├── advprefs_video.svg
+│   │   │   │   │   │   ├── spref_cone_Audio_64.png
+│   │   │   │   │   │   ├── spref_cone_Hotkeys_64.png
+│   │   │   │   │   │   ├── spref_cone_Input_64.png
+│   │   │   │   │   │   ├── spref_cone_Interface_64.png
+│   │   │   │   │   │   ├── spref_cone_Subtitles_64.png
+│   │   │   │   │   │   └── spref_cone_Video_64.png
+│   │   │   │   │   ├── previous.svg
+│   │   │   │   │   ├── profile_new.svg
+│   │   │   │   │   ├── sample_complete.png
+│   │   │   │   │   ├── sample_minimal.png
+│   │   │   │   │   ├── sample_skins.png
+│   │   │   │   │   ├── search_clear.svg
+│   │   │   │   │   ├── slower2.svg
+│   │   │   │   │   ├── slower.svg
+│   │   │   │   │   ├── space.svg
+│   │   │   │   │   ├── stop.svg
+│   │   │   │   │   ├── toolbar
+│   │   │   │   │   │   ├── arrows.svg
+│   │   │   │   │   │   ├── aspect-ratio.svg
+│   │   │   │   │   │   ├── atob_noa.svg
+│   │   │   │   │   │   ├── atob_nob.svg
+│   │   │   │   │   │   ├── atob.svg
+│   │   │   │   │   │   ├── defullscreen.svg
+│   │   │   │   │   │   ├── dvd_menu.svg
+│   │   │   │   │   │   ├── dvd_next.svg
+│   │   │   │   │   │   ├── dvd_prev.svg
+│   │   │   │   │   │   ├── extended_16px.svg
+│   │   │   │   │   │   ├── frame-by-frame.svg
+│   │   │   │   │   │   ├── fullscreen.svg
+│   │   │   │   │   │   ├── play_reverse.svg
+│   │   │   │   │   │   ├── record_16px.svg
+│   │   │   │   │   │   ├── renderer.svg
+│   │   │   │   │   │   ├── skip_back.svg
+│   │   │   │   │   │   ├── skip_for.svg
+│   │   │   │   │   │   ├── snapshot.svg
+│   │   │   │   │   │   ├── tv.svg
+│   │   │   │   │   │   ├── tvtelx.svg
+│   │   │   │   │   │   ├── visu.svg
+│   │   │   │   │   │   ├── volume-high.svg
+│   │   │   │   │   │   ├── volume-low.svg
+│   │   │   │   │   │   ├── volume-medium.svg
+│   │   │   │   │   │   ├── volume-muted.svg
+│   │   │   │   │   │   ├── volume-slider-inside.svg
+│   │   │   │   │   │   └── volume-slider-outside.svg
+│   │   │   │   │   ├── types
+│   │   │   │   │   │   ├── capture-card_16px.svg
+│   │   │   │   │   │   ├── disc_16px.svg
+│   │   │   │   │   │   ├── file-asym_16px.svg
+│   │   │   │   │   │   ├── file-wide_16px.svg
+│   │   │   │   │   │   ├── folder-blue_16px.svg
+│   │   │   │   │   │   ├── folder-grey_16px.svg
+│   │   │   │   │   │   ├── harddisk_16px.svg
+│   │   │   │   │   │   ├── network_16px.svg
+│   │   │   │   │   │   ├── tape_16px.svg
+│   │   │   │   │   │   ├── type_directory.svg
+│   │   │   │   │   │   ├── type_file.svg
+│   │   │   │   │   │   ├── type_node.svg
+│   │   │   │   │   │   ├── type_playlist.svg
+│   │   │   │   │   │   ├── type_stream.svg
+│   │   │   │   │   │   └── type_unknown.xpm
+│   │   │   │   │   ├── update.svg
+│   │   │   │   │   ├── util
+│   │   │   │   │   │   ├── wait1.svg
+│   │   │   │   │   │   ├── wait2.svg
+│   │   │   │   │   │   ├── wait3.svg
+│   │   │   │   │   │   └── wait4.svg
+│   │   │   │   │   ├── valid.svg
+│   │   │   │   │   └── win7
+│   │   │   │   │       ├── win7thumbnail_next.svg
+│   │   │   │   │       ├── win7thumbnail_pause.svg
+│   │   │   │   │       ├── win7thumbnail_play.svg
+│   │   │   │   │       └── win7thumbnail_prev.svg
+│   │   │   │   ├── qt.cpp
+│   │   │   │   ├── qt.hpp
+│   │   │   │   ├── recents.cpp
+│   │   │   │   ├── recents.hpp
+│   │   │   │   ├── styles
+│   │   │   │   │   ├── seekstyle.cpp
+│   │   │   │   │   └── seekstyle.hpp
+│   │   │   │   ├── ui
+│   │   │   │   │   ├── about.ui
+│   │   │   │   │   ├── equalizer.ui
+│   │   │   │   │   ├── fingerprintdialog.ui
+│   │   │   │   │   ├── messages_panel.ui
+│   │   │   │   │   ├── open_capture.ui
+│   │   │   │   │   ├── open_disk.ui
+│   │   │   │   │   ├── open_file.ui
+│   │   │   │   │   ├── open_net.ui
+│   │   │   │   │   ├── open.ui
+│   │   │   │   │   ├── podcast_configuration.ui
+│   │   │   │   │   ├── profiles.ui
+│   │   │   │   │   ├── sout.ui
+│   │   │   │   │   ├── sprefs_audio.ui
+│   │   │   │   │   ├── sprefs_input.ui
+│   │   │   │   │   ├── sprefs_interface.ui
+│   │   │   │   │   ├── sprefs_subtitles.ui
+│   │   │   │   │   ├── sprefs_video.ui
+│   │   │   │   │   ├── streampanel.ui
+│   │   │   │   │   ├── update.ui
+│   │   │   │   │   ├── video_effects.ui
+│   │   │   │   │   └── vlm.ui
+│   │   │   │   ├── util
+│   │   │   │   │   ├── animators.cpp
+│   │   │   │   │   ├── animators.hpp
+│   │   │   │   │   ├── buttons
+│   │   │   │   │   │   ├── BrowseButton.cpp
+│   │   │   │   │   │   ├── BrowseButton.hpp
+│   │   │   │   │   │   ├── DeckButtonsLayout.cpp
+│   │   │   │   │   │   ├── DeckButtonsLayout.hpp
+│   │   │   │   │   │   ├── RoundButton.cpp
+│   │   │   │   │   │   └── RoundButton.hpp
+│   │   │   │   │   ├── customwidgets.cpp
+│   │   │   │   │   ├── customwidgets.hpp
+│   │   │   │   │   ├── imagehelper.cpp
+│   │   │   │   │   ├── imagehelper.hpp
+│   │   │   │   │   ├── input_slider.cpp
+│   │   │   │   │   ├── input_slider.hpp
+│   │   │   │   │   ├── pictureflow.cpp
+│   │   │   │   │   ├── pictureflow.hpp
+│   │   │   │   │   ├── qmenuview.cpp
+│   │   │   │   │   ├── qmenuview.hpp
+│   │   │   │   │   ├── qt_dirs.cpp
+│   │   │   │   │   ├── qt_dirs.hpp
+│   │   │   │   │   ├── qvlcapp.hpp
+│   │   │   │   │   ├── qvlcframe.hpp
+│   │   │   │   │   ├── registry.cpp
+│   │   │   │   │   ├── registry.hpp
+│   │   │   │   │   ├── searchlineedit.cpp
+│   │   │   │   │   ├── searchlineedit.hpp
+│   │   │   │   │   ├── singleton.hpp
+│   │   │   │   │   ├── timetooltip.cpp
+│   │   │   │   │   ├── timetooltip.hpp
+│   │   │   │   │   ├── validators.cpp
+│   │   │   │   │   └── validators.hpp
+│   │   │   │   └── vlc.qrc
+│   │   │   └── skins2
+│   │   │       ├── commands
+│   │   │       │   ├── async_queue.cpp
+│   │   │       │   ├── async_queue.hpp
+│   │   │       │   ├── cmd_add_item.cpp
+│   │   │       │   ├── cmd_add_item.hpp
+│   │   │       │   ├── cmd_audio.cpp
+│   │   │       │   ├── cmd_audio.hpp
+│   │   │       │   ├── cmd_callbacks.hpp
+│   │   │       │   ├── cmd_change_skin.cpp
+│   │   │       │   ├── cmd_change_skin.hpp
+│   │   │       │   ├── cmd_dialogs.hpp
+│   │   │       │   ├── cmd_dummy.hpp
+│   │   │       │   ├── cmd_dvd.cpp
+│   │   │       │   ├── cmd_dvd.hpp
+│   │   │       │   ├── cmd_fullscreen.cpp
+│   │   │       │   ├── cmd_fullscreen.hpp
+│   │   │       │   ├── cmd_generic.hpp
+│   │   │       │   ├── cmd_input.cpp
+│   │   │       │   ├── cmd_input.hpp
+│   │   │       │   ├── cmd_layout.cpp
+│   │   │       │   ├── cmd_layout.hpp
+│   │   │       │   ├── cmd_minimize.cpp
+│   │   │       │   ├── cmd_minimize.hpp
+│   │   │       │   ├── cmd_muxer.cpp
+│   │   │       │   ├── cmd_muxer.hpp
+│   │   │       │   ├── cmd_on_top.cpp
+│   │   │       │   ├── cmd_on_top.hpp
+│   │   │       │   ├── cmd_playlist.cpp
+│   │   │       │   ├── cmd_playlist.hpp
+│   │   │       │   ├── cmd_playtree.cpp
+│   │   │       │   ├── cmd_playtree.hpp
+│   │   │       │   ├── cmd_quit.cpp
+│   │   │       │   ├── cmd_quit.hpp
+│   │   │       │   ├── cmd_resize.cpp
+│   │   │       │   ├── cmd_resize.hpp
+│   │   │       │   ├── cmd_show_window.hpp
+│   │   │       │   ├── cmd_snapshot.cpp
+│   │   │       │   ├── cmd_snapshot.hpp
+│   │   │       │   ├── cmd_vars.cpp
+│   │   │       │   └── cmd_vars.hpp
+│   │   │       ├── controls
+│   │   │       │   ├── ctrl_button.cpp
+│   │   │       │   ├── ctrl_button.hpp
+│   │   │       │   ├── ctrl_checkbox.cpp
+│   │   │       │   ├── ctrl_checkbox.hpp
+│   │   │       │   ├── ctrl_flat.hpp
+│   │   │       │   ├── ctrl_generic.cpp
+│   │   │       │   ├── ctrl_generic.hpp
+│   │   │       │   ├── ctrl_image.cpp
+│   │   │       │   ├── ctrl_image.hpp
+│   │   │       │   ├── ctrl_list.cpp
+│   │   │       │   ├── ctrl_list.hpp
+│   │   │       │   ├── ctrl_move.cpp
+│   │   │       │   ├── ctrl_move.hpp
+│   │   │       │   ├── ctrl_radialslider.cpp
+│   │   │       │   ├── ctrl_radialslider.hpp
+│   │   │       │   ├── ctrl_resize.cpp
+│   │   │       │   ├── ctrl_resize.hpp
+│   │   │       │   ├── ctrl_slider.cpp
+│   │   │       │   ├── ctrl_slider.hpp
+│   │   │       │   ├── ctrl_text.cpp
+│   │   │       │   ├── ctrl_text.hpp
+│   │   │       │   ├── ctrl_tree.cpp
+│   │   │       │   ├── ctrl_tree.hpp
+│   │   │       │   ├── ctrl_video.cpp
+│   │   │       │   └── ctrl_video.hpp
+│   │   │       ├── events
+│   │   │       │   ├── evt_dragndrop.hpp
+│   │   │       │   ├── evt_enter.hpp
+│   │   │       │   ├── evt_focus.hpp
+│   │   │       │   ├── evt_generic.hpp
+│   │   │       │   ├── evt_input.cpp
+│   │   │       │   ├── evt_input.hpp
+│   │   │       │   ├── evt_key.cpp
+│   │   │       │   ├── evt_key.hpp
+│   │   │       │   ├── evt_leave.hpp
+│   │   │       │   ├── evt_menu.hpp
+│   │   │       │   ├── evt_motion.hpp
+│   │   │       │   ├── evt_mouse.cpp
+│   │   │       │   ├── evt_mouse.hpp
+│   │   │       │   ├── evt_refresh.hpp
+│   │   │       │   ├── evt_scroll.cpp
+│   │   │       │   ├── evt_scroll.hpp
+│   │   │       │   ├── evt_special.cpp
+│   │   │       │   └── evt_special.hpp
+│   │   │       ├── Makefile.am
+│   │   │       ├── os2
+│   │   │       │   ├── os2_dragdrop.cpp
+│   │   │       │   ├── os2_dragdrop.hpp
+│   │   │       │   ├── os2_factory.cpp
+│   │   │       │   ├── os2_factory.hpp
+│   │   │       │   ├── os2_graphics.cpp
+│   │   │       │   ├── os2_graphics.hpp
+│   │   │       │   ├── os2_loop.cpp
+│   │   │       │   ├── os2_loop.hpp
+│   │   │       │   ├── os2_popup.cpp
+│   │   │       │   ├── os2_popup.hpp
+│   │   │       │   ├── os2_timer.cpp
+│   │   │       │   ├── os2_timer.hpp
+│   │   │       │   ├── os2_tooltip.cpp
+│   │   │       │   ├── os2_tooltip.hpp
+│   │   │       │   ├── os2_window.cpp
+│   │   │       │   └── os2_window.hpp
+│   │   │       ├── parser
+│   │   │       │   ├── builder.cpp
+│   │   │       │   ├── builder_data.hpp
+│   │   │       │   ├── builder.hpp
+│   │   │       │   ├── expr_evaluator.cpp
+│   │   │       │   ├── expr_evaluator.hpp
+│   │   │       │   ├── interpreter.cpp
+│   │   │       │   ├── interpreter.hpp
+│   │   │       │   ├── skin_parser.cpp
+│   │   │       │   ├── skin_parser.hpp
+│   │   │       │   ├── xmlparser.cpp
+│   │   │       │   └── xmlparser.hpp
+│   │   │       ├── src
+│   │   │       │   ├── anchor.cpp
+│   │   │       │   ├── anchor.hpp
+│   │   │       │   ├── anim_bitmap.cpp
+│   │   │       │   ├── anim_bitmap.hpp
+│   │   │       │   ├── art_manager.cpp
+│   │   │       │   ├── art_manager.hpp
+│   │   │       │   ├── bitmap_font.cpp
+│   │   │       │   ├── bitmap_font.hpp
+│   │   │       │   ├── dialogs.cpp
+│   │   │       │   ├── dialogs.hpp
+│   │   │       │   ├── file_bitmap.cpp
+│   │   │       │   ├── file_bitmap.hpp
+│   │   │       │   ├── fsc_window.cpp
+│   │   │       │   ├── fsc_window.hpp
+│   │   │       │   ├── ft2_bitmap.cpp
+│   │   │       │   ├── ft2_bitmap.hpp
+│   │   │       │   ├── ft2_err.c
+│   │   │       │   ├── ft2_err.h
+│   │   │       │   ├── ft2_font.cpp
+│   │   │       │   ├── ft2_font.hpp
+│   │   │       │   ├── generic_bitmap.cpp
+│   │   │       │   ├── generic_bitmap.hpp
+│   │   │       │   ├── generic_font.hpp
+│   │   │       │   ├── generic_layout.cpp
+│   │   │       │   ├── generic_layout.hpp
+│   │   │       │   ├── generic_window.cpp
+│   │   │       │   ├── generic_window.hpp
+│   │   │       │   ├── ini_file.cpp
+│   │   │       │   ├── ini_file.hpp
+│   │   │       │   ├── logger.cpp
+│   │   │       │   ├── logger.hpp
+│   │   │       │   ├── os_factory.cpp
+│   │   │       │   ├── os_factory.hpp
+│   │   │       │   ├── os_graphics.hpp
+│   │   │       │   ├── os_loop.hpp
+│   │   │       │   ├── os_popup.hpp
+│   │   │       │   ├── os_timer.hpp
+│   │   │       │   ├── os_tooltip.hpp
+│   │   │       │   ├── os_window.hpp
+│   │   │       │   ├── popup.cpp
+│   │   │       │   ├── popup.hpp
+│   │   │       │   ├── scaled_bitmap.cpp
+│   │   │       │   ├── scaled_bitmap.hpp
+│   │   │       │   ├── skin_common.hpp
+│   │   │       │   ├── skin_main.cpp
+│   │   │       │   ├── theme.cpp
+│   │   │       │   ├── theme.hpp
+│   │   │       │   ├── theme_loader.cpp
+│   │   │       │   ├── theme_loader.hpp
+│   │   │       │   ├── theme_repository.cpp
+│   │   │       │   ├── theme_repository.hpp
+│   │   │       │   ├── tooltip.cpp
+│   │   │       │   ├── tooltip.hpp
+│   │   │       │   ├── top_window.cpp
+│   │   │       │   ├── top_window.hpp
+│   │   │       │   ├── var_manager.cpp
+│   │   │       │   ├── var_manager.hpp
+│   │   │       │   ├── vlcproc.cpp
+│   │   │       │   ├── vlcproc.hpp
+│   │   │       │   ├── vout_manager.cpp
+│   │   │       │   ├── vout_manager.hpp
+│   │   │       │   ├── vout_window.cpp
+│   │   │       │   ├── vout_window.hpp
+│   │   │       │   ├── window_manager.cpp
+│   │   │       │   └── window_manager.hpp
+│   │   │       ├── utils
+│   │   │       │   ├── bezier.cpp
+│   │   │       │   ├── bezier.hpp
+│   │   │       │   ├── fsm.cpp
+│   │   │       │   ├── fsm.hpp
+│   │   │       │   ├── observer.hpp
+│   │   │       │   ├── pointer.hpp
+│   │   │       │   ├── position.cpp
+│   │   │       │   ├── position.hpp
+│   │   │       │   ├── ustring.cpp
+│   │   │       │   ├── ustring.hpp
+│   │   │       │   ├── var_bool.cpp
+│   │   │       │   ├── var_bool.hpp
+│   │   │       │   ├── variable.hpp
+│   │   │       │   ├── var_list.cpp
+│   │   │       │   ├── var_list.hpp
+│   │   │       │   ├── var_percent.cpp
+│   │   │       │   ├── var_percent.hpp
+│   │   │       │   ├── var_string.cpp
+│   │   │       │   ├── var_string.hpp
+│   │   │       │   ├── var_text.cpp
+│   │   │       │   ├── var_text.hpp
+│   │   │       │   ├── var_tree.cpp
+│   │   │       │   └── var_tree.hpp
+│   │   │       ├── vars
+│   │   │       │   ├── equalizer.cpp
+│   │   │       │   ├── equalizer.hpp
+│   │   │       │   ├── playtree.cpp
+│   │   │       │   ├── playtree.hpp
+│   │   │       │   ├── time.cpp
+│   │   │       │   ├── time.hpp
+│   │   │       │   ├── volume.cpp
+│   │   │       │   └── volume.hpp
+│   │   │       ├── win32
+│   │   │       │   ├── win32_dragdrop.cpp
+│   │   │       │   ├── win32_dragdrop.hpp
+│   │   │       │   ├── win32_factory.cpp
+│   │   │       │   ├── win32_factory.hpp
+│   │   │       │   ├── win32_graphics.cpp
+│   │   │       │   ├── win32_graphics.hpp
+│   │   │       │   ├── win32_loop.cpp
+│   │   │       │   ├── win32_loop.hpp
+│   │   │       │   ├── win32_popup.cpp
+│   │   │       │   ├── win32_popup.hpp
+│   │   │       │   ├── win32_timer.cpp
+│   │   │       │   ├── win32_timer.hpp
+│   │   │       │   ├── win32_tooltip.cpp
+│   │   │       │   ├── win32_tooltip.hpp
+│   │   │       │   ├── win32_window.cpp
+│   │   │       │   └── win32_window.hpp
+│   │   │       └── x11
+│   │   │           ├── x11_display.cpp
+│   │   │           ├── x11_display.hpp
+│   │   │           ├── x11_dragdrop.cpp
+│   │   │           ├── x11_dragdrop.hpp
+│   │   │           ├── x11_factory.cpp
+│   │   │           ├── x11_factory.hpp
+│   │   │           ├── x11_graphics.cpp
+│   │   │           ├── x11_graphics.hpp
+│   │   │           ├── x11_loop.cpp
+│   │   │           ├── x11_loop.hpp
+│   │   │           ├── x11_popup.cpp
+│   │   │           ├── x11_popup.hpp
+│   │   │           ├── x11_timer.cpp
+│   │   │           ├── x11_timer.hpp
+│   │   │           ├── x11_tooltip.cpp
+│   │   │           ├── x11_tooltip.hpp
+│   │   │           ├── x11_window.cpp
+│   │   │           └── x11_window.hpp
+│   │   ├── hw
+│   │   │   ├── amf
+│   │   │   │   ├── amf_helper.c
+│   │   │   │   └── amf_helper.h
+│   │   │   ├── d3d11
+│   │   │   │   ├── d3d11_deinterlace.c
+│   │   │   │   ├── d3d11_filters.c
+│   │   │   │   ├── d3d11_filters.h
+│   │   │   │   ├── d3d11_instance.c
+│   │   │   │   ├── d3d11_surface.c
+│   │   │   │   └── Makefile.am
+│   │   │   ├── d3d9
+│   │   │   │   ├── d3d9_filters.c
+│   │   │   │   ├── d3d9_filters.h
+│   │   │   │   ├── d3d9_instance.c
+│   │   │   │   ├── dxa9.c
+│   │   │   │   ├── dxva2_deinterlace.c
+│   │   │   │   └── Makefile.am
+│   │   │   ├── mmal
+│   │   │   │   ├── codec.c
+│   │   │   │   ├── deinterlace.c
+│   │   │   │   ├── Makefile.am
+│   │   │   │   ├── Makefile.in
+│   │   │   │   ├── mmal_picture.c
+│   │   │   │   ├── mmal_picture.h
+│   │   │   │   └── vout.c
+│   │   │   ├── vaapi
+│   │   │   │   ├── chroma.c
+│   │   │   │   ├── filters.c
+│   │   │   │   ├── filters.h
+│   │   │   │   ├── Makefile.am
+│   │   │   │   ├── vlc_vaapi.c
+│   │   │   │   └── vlc_vaapi.h
+│   │   │   └── vdpau
+│   │   │       ├── adjust.c
+│   │   │       ├── avcodec.c
+│   │   │       ├── chroma.c
+│   │   │       ├── deinterlace.c
+│   │   │       ├── display.c
+│   │   │       ├── instance.c
+│   │   │       ├── Makefile.am
+│   │   │       ├── picture.c
+│   │   │       ├── sharpen.c
+│   │   │       ├── vlc_vdpau.c
+│   │   │       └── vlc_vdpau.h
+│   │   ├── keystore
+│   │   │   ├── file.c
+│   │   │   ├── file_crypt_android.c
+│   │   │   ├── file_crypt.h
+│   │   │   ├── file_crypt_win32.c
+│   │   │   ├── keychain.m
+│   │   │   ├── kwallet.c
+│   │   │   ├── list_util.c
+│   │   │   ├── list_util.h
+│   │   │   ├── Makefile.am
+│   │   │   ├── memory.c
+│   │   │   └── secret.c
+│   │   ├── list.sh
+│   │   ├── logger
+│   │   │   ├── android.c
+│   │   │   ├── console.c
+│   │   │   ├── file.c
+│   │   │   ├── journal.c
+│   │   │   ├── Makefile.am
+│   │   │   └── syslog.c
+│   │   ├── lua
+│   │   │   ├── demux.c
+│   │   │   ├── extension.c
+│   │   │   ├── extension.h
+│   │   │   ├── extension_thread.c
+│   │   │   ├── intf.c
+│   │   │   ├── libs
+│   │   │   │   ├── configuration.c
+│   │   │   │   ├── dialog.c
+│   │   │   │   ├── equalizer.c
+│   │   │   │   ├── errno.c
+│   │   │   │   ├── gettext.c
+│   │   │   │   ├── httpd.c
+│   │   │   │   ├── input.c
+│   │   │   │   ├── input.h
+│   │   │   │   ├── io.c
+│   │   │   │   ├── messages.c
+│   │   │   │   ├── misc.c
+│   │   │   │   ├── misc.h
+│   │   │   │   ├── net.c
+│   │   │   │   ├── objects.c
+│   │   │   │   ├── objects.h
+│   │   │   │   ├── osd.c
+│   │   │   │   ├── playlist.c
+│   │   │   │   ├── sd.c
+│   │   │   │   ├── stream.c
+│   │   │   │   ├── strings.c
+│   │   │   │   ├── variables.c
+│   │   │   │   ├── variables.h
+│   │   │   │   ├── video.c
+│   │   │   │   ├── vlm.c
+│   │   │   │   ├── volume.c
+│   │   │   │   ├── win.c
+│   │   │   │   └── xml.c
+│   │   │   ├── libs.h
+│   │   │   ├── Makefile.am
+│   │   │   ├── meta.c
+│   │   │   ├── services_discovery.c
+│   │   │   ├── vlc.c
+│   │   │   └── vlc.h
+│   │   ├── Makefile.am
+│   │   ├── Makefile.in
+│   │   ├── meta_engine
+│   │   │   ├── folder.c
+│   │   │   ├── ID3Genres.h
+│   │   │   ├── ID3Meta.h
+│   │   │   ├── ID3Tag.h
+│   │   │   ├── ID3Text.h
+│   │   │   ├── Makefile.am
+│   │   │   └── taglib.cpp
+│   │   ├── misc
+│   │   │   ├── addons
+│   │   │   │   ├── fsstorage.c
+│   │   │   │   ├── vorepository.c
+│   │   │   │   └── xmlreading.h
+│   │   │   ├── audioscrobbler.c
+│   │   │   ├── fingerprinter.c
+│   │   │   ├── gnutls.c
+│   │   │   ├── inhibit
+│   │   │   │   ├── dbus.c
+│   │   │   │   └── xdg.c
+│   │   │   ├── logger.c
+│   │   │   ├── Makefile.am
+│   │   │   ├── playlist
+│   │   │   │   ├── export.c
+│   │   │   │   ├── html.c
+│   │   │   │   ├── m3u.c
+│   │   │   │   └── xspf.c
+│   │   │   ├── rtsp.c
+│   │   │   ├── securetransport.c
+│   │   │   ├── stats.c
+│   │   │   ├── webservices
+│   │   │   │   ├── acoustid.c
+│   │   │   │   ├── acoustid.h
+│   │   │   │   ├── json.c
+│   │   │   │   ├── json.h
+│   │   │   │   ├── json_helper.h
+│   │   │   │   ├── musicbrainz.c
+│   │   │   │   └── musicbrainz.h
+│   │   │   └── xml
+│   │   │       └── libxml.c
+│   │   ├── module.rc.in
+│   │   ├── MODULES_LIST
+│   │   ├── mux
+│   │   │   ├── asf.c
+│   │   │   ├── avi.c
+│   │   │   ├── dummy.c
+│   │   │   ├── Makefile.am
+│   │   │   ├── mp4
+│   │   │   │   ├── libmp4mux.c
+│   │   │   │   ├── libmp4mux.h
+│   │   │   │   └── mp4.c
+│   │   │   ├── mpeg
+│   │   │   │   ├── bits.h
+│   │   │   │   ├── csa.c
+│   │   │   │   ├── csa.h
+│   │   │   │   ├── dvbpsi_compat.h
+│   │   │   │   ├── pes.c
+│   │   │   │   ├── pes.h
+│   │   │   │   ├── ps.c
+│   │   │   │   ├── streams.h
+│   │   │   │   ├── tables.c
+│   │   │   │   ├── tables.h
+│   │   │   │   ├── ts.c
+│   │   │   │   ├── tsutil.c
+│   │   │   │   └── tsutil.h
+│   │   │   ├── mpjpeg.c
+│   │   │   ├── ogg.c
+│   │   │   └── wav.c
+│   │   ├── notify
+│   │   │   ├── Makefile.am
+│   │   │   ├── notify.c
+│   │   │   └── osx_notifications.m
+│   │   ├── packetizer
+│   │   │   ├── a52.c
+│   │   │   ├── a52.h
+│   │   │   ├── av1.c
+│   │   │   ├── av1.h
+│   │   │   ├── av1_obu.c
+│   │   │   ├── av1_obu.h
+│   │   │   ├── avparser.c
+│   │   │   ├── avparser.h
+│   │   │   ├── copy.c
+│   │   │   ├── dirac.c
+│   │   │   ├── dts.c
+│   │   │   ├── dts_header.c
+│   │   │   ├── dts_header.h
+│   │   │   ├── flac.c
+│   │   │   ├── flac.h
+│   │   │   ├── h264.c
+│   │   │   ├── h264_nal.c
+│   │   │   ├── h264_nal.h
+│   │   │   ├── h264_slice.c
+│   │   │   ├── h264_slice.h
+│   │   │   ├── hevc.c
+│   │   │   ├── hevc_nal.c
+│   │   │   ├── hevc_nal.h
+│   │   │   ├── hxxx_common.c
+│   │   │   ├── hxxx_common.h
+│   │   │   ├── hxxx_nal.c
+│   │   │   ├── hxxx_nal.h
+│   │   │   ├── hxxx_sei.c
+│   │   │   ├── hxxx_sei.h
+│   │   │   ├── iso_color_tables.h
+│   │   │   ├── Makefile.am
+│   │   │   ├── mlp.c
+│   │   │   ├── mpeg4audio.c
+│   │   │   ├── mpeg4audio.h
+│   │   │   ├── mpeg4video.c
+│   │   │   ├── mpegaudio.c
+│   │   │   ├── mpegvideo.c
+│   │   │   ├── packetizer_helper.h
+│   │   │   ├── startcode_helper.h
+│   │   │   └── vc1.c
+│   │   ├── services_discovery
+│   │   │   ├── avahi.c
+│   │   │   ├── bonjour.m
+│   │   │   ├── Makefile.am
+│   │   │   ├── mediadirs.c
+│   │   │   ├── microdns.c
+│   │   │   ├── mtp.c
+│   │   │   ├── os2drive.c
+│   │   │   ├── podcast.c
+│   │   │   ├── pulse.c
+│   │   │   ├── sap.c
+│   │   │   ├── udev.c
+│   │   │   ├── upnp.cpp
+│   │   │   ├── upnp.hpp
+│   │   │   ├── windrive.c
+│   │   │   └── xcb_apps.c
+│   │   ├── spu
+│   │   │   ├── audiobargraph_v.c
+│   │   │   ├── dynamicoverlay
+│   │   │   │   ├── dynamicoverlay_buffer.c
+│   │   │   │   ├── dynamicoverlay.c
+│   │   │   │   ├── dynamicoverlay_commands.c
+│   │   │   │   ├── dynamicoverlay.h
+│   │   │   │   ├── dynamicoverlay_list.c
+│   │   │   │   └── dynamicoverlay_queue.c
+│   │   │   ├── logo.c
+│   │   │   ├── Makefile.am
+│   │   │   ├── marq.c
+│   │   │   ├── mosaic.c
+│   │   │   ├── mosaic.h
+│   │   │   ├── remoteosd.c
+│   │   │   ├── remoteosd_rfbproto.h
+│   │   │   ├── rss.c
+│   │   │   └── subsdelay.c
+│   │   ├── stream_extractor
+│   │   │   ├── archive.c
+│   │   │   └── Makefile.am
+│   │   ├── stream_filter
+│   │   │   ├── accesstweaks.c
+│   │   │   ├── adf.c
+│   │   │   ├── aribcam.c
+│   │   │   ├── cache_block.c
+│   │   │   ├── cache_read.c
+│   │   │   ├── decomp.c
+│   │   │   ├── hds
+│   │   │   │   └── hds.c
+│   │   │   ├── inflate.c
+│   │   │   ├── Makefile.am
+│   │   │   ├── prefetch.c
+│   │   │   ├── record.c
+│   │   │   └── skiptags.c
+│   │   ├── stream_out
+│   │   │   ├── autodel.c
+│   │   │   ├── bridge.c
+│   │   │   ├── chromaprint.c
+│   │   │   ├── chromaprint_data.h
+│   │   │   ├── chromecast
+│   │   │   │   ├── cast_channel.proto
+│   │   │   │   ├── cast.cpp
+│   │   │   │   ├── chromecast_common.h
+│   │   │   │   ├── chromecast_communication.cpp
+│   │   │   │   ├── chromecast_ctrl.cpp
+│   │   │   │   ├── chromecast_demux.cpp
+│   │   │   │   └── chromecast.h
+│   │   │   ├── cycle.c
+│   │   │   ├── delay.c
+│   │   │   ├── description.c
+│   │   │   ├── display.c
+│   │   │   ├── dummy.c
+│   │   │   ├── duplicate.c
+│   │   │   ├── es.c
+│   │   │   ├── gather.c
+│   │   │   ├── Makefile.am
+│   │   │   ├── mosaic_bridge.c
+│   │   │   ├── record.c
+│   │   │   ├── rtcp.c
+│   │   │   ├── rtp.c
+│   │   │   ├── rtpfmt.c
+│   │   │   ├── rtp.h
+│   │   │   ├── rtsp.c
+│   │   │   ├── setid.c
+│   │   │   ├── smem.c
+│   │   │   ├── standard.c
+│   │   │   ├── stats.c
+│   │   │   ├── transcode
+│   │   │   │   ├── audio.c
+│   │   │   │   ├── spu.c
+│   │   │   │   ├── transcode.c
+│   │   │   │   ├── transcode.h
+│   │   │   │   └── video.c
+│   │   │   └── vod.c
+│   │   ├── text_renderer
+│   │   │   ├── freetype
+│   │   │   │   ├── fonts
+│   │   │   │   │   ├── android.c
+│   │   │   │   │   ├── darwin.c
+│   │   │   │   │   ├── dwrite.cpp
+│   │   │   │   │   ├── fontconfig.c
+│   │   │   │   │   └── win32.c
+│   │   │   │   ├── freetype.c
+│   │   │   │   ├── freetype.h
+│   │   │   │   ├── platform_fonts.c
+│   │   │   │   ├── platform_fonts.h
+│   │   │   │   ├── text_layout.c
+│   │   │   │   └── text_layout.h
+│   │   │   ├── Makefile.am
+│   │   │   ├── nsspeechsynthesizer.m
+│   │   │   ├── sapi.cpp
+│   │   │   ├── svg.c
+│   │   │   └── tdummy.c
+│   │   ├── video_chroma
+│   │   │   ├── chain.c
+│   │   │   ├── copy.c
+│   │   │   ├── copy.h
+│   │   │   ├── cvpx.c
+│   │   │   ├── d3d11_fmt.c
+│   │   │   ├── d3d11_fmt.h
+│   │   │   ├── d3d9_fmt.c
+│   │   │   ├── d3d9_fmt.h
+│   │   │   ├── dxgi_fmt.c
+│   │   │   ├── dxgi_fmt.h
+│   │   │   ├── grey_yuv.c
+│   │   │   ├── i420_10_p010.c
+│   │   │   ├── i420_nv12.c
+│   │   │   ├── i420_rgb16.c
+│   │   │   ├── i420_rgb16_x86.c
+│   │   │   ├── i420_rgb8.c
+│   │   │   ├── i420_rgb.c
+│   │   │   ├── i420_rgb_c.h
+│   │   │   ├── i420_rgb.h
+│   │   │   ├── i420_rgb_mmx.h
+│   │   │   ├── i420_rgb_sse2.h
+│   │   │   ├── i420_yuy2.c
+│   │   │   ├── i420_yuy2.h
+│   │   │   ├── i422_i420.c
+│   │   │   ├── i422_yuy2.c
+│   │   │   ├── i422_yuy2.h
+│   │   │   ├── Makefile.am
+│   │   │   ├── omxdl.c
+│   │   │   ├── rv32.c
+│   │   │   ├── swscale.c
+│   │   │   ├── yuvp.c
+│   │   │   ├── yuy2_i420.c
+│   │   │   └── yuy2_i422.c
+│   │   ├── video_filter
+│   │   │   ├── adjust.c
+│   │   │   ├── adjust_sat_hue.c
+│   │   │   ├── adjust_sat_hue.h
+│   │   │   ├── alphamask.c
+│   │   │   ├── amf_vqenhancer.c
+│   │   │   ├── anaglyph.c
+│   │   │   ├── antiflicker.c
+│   │   │   ├── ball.c
+│   │   │   ├── blendbench.c
+│   │   │   ├── blend.cpp
+│   │   │   ├── bluescreen.c
+│   │   │   ├── canvas.c
+│   │   │   ├── ci_filters.m
+│   │   │   ├── colorthres.c
+│   │   │   ├── croppadd.c
+│   │   │   ├── deinterlace
+│   │   │   │   ├── algo_basic.c
+│   │   │   │   ├── algo_basic.h
+│   │   │   │   ├── algo_ivtc.c
+│   │   │   │   ├── algo_ivtc.h
+│   │   │   │   ├── algo_phosphor.c
+│   │   │   │   ├── algo_phosphor.h
+│   │   │   │   ├── algo_x.c
+│   │   │   │   ├── algo_x.h
+│   │   │   │   ├── algo_yadif.c
+│   │   │   │   ├── algo_yadif.h
+│   │   │   │   ├── common.c
+│   │   │   │   ├── common.h
+│   │   │   │   ├── deinterlace.c
+│   │   │   │   ├── deinterlace.h
+│   │   │   │   ├── helpers.c
+│   │   │   │   ├── helpers.h
+│   │   │   │   ├── merge_arm64.S
+│   │   │   │   ├── merge_arm.S
+│   │   │   │   ├── merge.c
+│   │   │   │   ├── merge.h
+│   │   │   │   ├── mmx.h
+│   │   │   │   ├── yadif.h
+│   │   │   │   └── yadif_template.h
+│   │   │   ├── edgedetection.c
+│   │   │   ├── erase.c
+│   │   │   ├── extract.c
+│   │   │   ├── filter_event_info.h
+│   │   │   ├── filter_picture.h
+│   │   │   ├── fps.c
+│   │   │   ├── freeze.c
+│   │   │   ├── gaussianblur.c
+│   │   │   ├── gradfun.c
+│   │   │   ├── gradfun.h
+│   │   │   ├── gradient.c
+│   │   │   ├── grain.c
+│   │   │   ├── hqdn3d.c
+│   │   │   ├── hqdn3d.h
+│   │   │   ├── invert.c
+│   │   │   ├── magnify.c
+│   │   │   ├── Makefile.am
+│   │   │   ├── mirror.c
+│   │   │   ├── motionblur.c
+│   │   │   ├── motiondetect.c
+│   │   │   ├── oldmovie.c
+│   │   │   ├── opencv_example.cpp
+│   │   │   ├── opencv_wrapper.c
+│   │   │   ├── posterize.c
+│   │   │   ├── postproc.c
+│   │   │   ├── psychedelic.c
+│   │   │   ├── puzzle_bezier.c
+│   │   │   ├── puzzle_bezier.h
+│   │   │   ├── puzzle.c
+│   │   │   ├── puzzle.h
+│   │   │   ├── puzzle_lib.c
+│   │   │   ├── puzzle_lib.h
+│   │   │   ├── puzzle_mgt.c
+│   │   │   ├── puzzle_mgt.h
+│   │   │   ├── puzzle_pce.c
+│   │   │   ├── puzzle_pce.h
+│   │   │   ├── ripple.c
+│   │   │   ├── rotate.c
+│   │   │   ├── scale.c
+│   │   │   ├── scene.c
+│   │   │   ├── sepia.c
+│   │   │   ├── sharpen.c
+│   │   │   ├── transform.c
+│   │   │   ├── vhs.c
+│   │   │   └── wave.c
+│   │   ├── video_output
+│   │   │   ├── aa.c
+│   │   │   ├── android
+│   │   │   │   ├── display.c
+│   │   │   │   ├── display.h
+│   │   │   │   ├── utils.c
+│   │   │   │   ├── utils.h
+│   │   │   │   └── window.c
+│   │   │   ├── caca.c
+│   │   │   ├── caopengllayer.m
+│   │   │   ├── decklink.cpp
+│   │   │   ├── drawable.c
+│   │   │   ├── evas.c
+│   │   │   ├── event_thread.c
+│   │   │   ├── event_thread.h
+│   │   │   ├── fb.c
+│   │   │   ├── flaschen.c
+│   │   │   ├── glx.c
+│   │   │   ├── ios.m
+│   │   │   ├── kva.c
+│   │   │   ├── macosx.m
+│   │   │   ├── Makefile.am
+│   │   │   ├── opengl
+│   │   │   │   ├── converter_android.c
+│   │   │   │   ├── converter_cvpx.c
+│   │   │   │   ├── converter.h
+│   │   │   │   ├── converter_sw.c
+│   │   │   │   ├── converter_vaapi.c
+│   │   │   │   ├── converter_vdpau.c
+│   │   │   │   ├── display.c
+│   │   │   │   ├── egl.c
+│   │   │   │   ├── fragment_shaders.c
+│   │   │   │   ├── internal.h
+│   │   │   │   ├── interop_dxva2.c
+│   │   │   │   ├── vout_helper.c
+│   │   │   │   └── vout_helper.h
+│   │   │   ├── README
+│   │   │   ├── vdummy.c
+│   │   │   ├── vmem.c
+│   │   │   ├── wayland
+│   │   │   │   ├── server-decoration.xml
+│   │   │   │   ├── shell.c
+│   │   │   │   ├── shm.c
+│   │   │   │   └── xdg-shell.c
+│   │   │   ├── win32
+│   │   │   │   ├── builtin_shaders.h
+│   │   │   │   ├── common.c
+│   │   │   │   ├── common.h
+│   │   │   │   ├── d3d11_quad.c
+│   │   │   │   ├── d3d11_quad.h
+│   │   │   │   ├── d3d11_scaler.cpp
+│   │   │   │   ├── d3d11_scaler.h
+│   │   │   │   ├── d3d11_shaders.c
+│   │   │   │   ├── d3d11_shaders.h
+│   │   │   │   ├── d3d11_tonemap.cpp
+│   │   │   │   ├── d3d11_tonemap.h
+│   │   │   │   ├── direct3d11.c
+│   │   │   │   ├── direct3d9.c
+│   │   │   │   ├── directdraw.c
+│   │   │   │   ├── events.c
+│   │   │   │   ├── events.h
+│   │   │   │   ├── glwin32.c
+│   │   │   │   ├── inhibit.c
+│   │   │   │   ├── sensors.cpp
+│   │   │   │   ├── wgl.c
+│   │   │   │   ├── win32touch.c
+│   │   │   │   ├── win32touch.h
+│   │   │   │   └── wingdi.c
+│   │   │   ├── xcb
+│   │   │   │   ├── events.c
+│   │   │   │   ├── events.h
+│   │   │   │   ├── keys.c
+│   │   │   │   ├── keysym.h
+│   │   │   │   ├── pictures.c
+│   │   │   │   ├── pictures.h
+│   │   │   │   ├── window.c
+│   │   │   │   ├── x11.c
+│   │   │   │   ├── xcb_keysym.h
+│   │   │   │   └── xvideo.c
+│   │   │   └── yuv.c
+│   │   ├── video_splitter
+│   │   │   ├── clone.c
+│   │   │   ├── Makefile.am
+│   │   │   ├── panoramix.c
+│   │   │   └── wall.c
+│   │   └── visualization
+│   │       ├── cyclic_buffer.h
+│   │       ├── glspectrum.c
+│   │       ├── goom.c
+│   │       ├── Makefile.am
+│   │       ├── projectm.cpp
+│   │       ├── visual
+│   │       │   ├── effects.c
+│   │       │   ├── fft.c
+│   │       │   ├── fft.h
+│   │       │   ├── visual.c
+│   │       │   ├── visual.h
+│   │       │   ├── window.c
+│   │       │   ├── window.h
+│   │       │   └── window_presets.h
+│   │       └── vsxu.cpp
+│   ├── NEWS
+│   ├── po
+│   │   ├── ach.gmo
+│   │   ├── ach.po
+│   │   ├── af.gmo
+│   │   ├── af.po
+│   │   ├── am_ET.gmo
+│   │   ├── am_ET.po
+│   │   ├── am.gmo
+│   │   ├── am.po
+│   │   ├── an.gmo
+│   │   ├── an.po
+│   │   ├── ar.gmo
+│   │   ├── ar.po
+│   │   ├── as_IN.gmo
+│   │   ├── as_IN.po
+│   │   ├── ast.gmo
+│   │   ├── ast.po
+│   │   ├── be.gmo
+│   │   ├── be.po
+│   │   ├── bg.gmo
+│   │   ├── bg.po
+│   │   ├── bn.gmo
+│   │   ├── bn_IN.gmo
+│   │   ├── bn_IN.po
+│   │   ├── bn.po
+│   │   ├── boldquot.sed
+│   │   ├── br.gmo
+│   │   ├── br.po
+│   │   ├── brx.gmo
+│   │   ├── brx.po
+│   │   ├── bs.gmo
+│   │   ├── bs.po
+│   │   ├── ca.gmo
+│   │   ├── ca.po
+│   │   ├── ca@valencia.gmo
+│   │   ├── ca@valencia.po
+│   │   ├── cgg.gmo
+│   │   ├── cgg.po
+│   │   ├── co.gmo
+│   │   ├── co.po
+│   │   ├── cs.gmo
+│   │   ├── cs.po
+│   │   ├── cy.gmo
+│   │   ├── cy.po
+│   │   ├── da.gmo
+│   │   ├── da.po
+│   │   ├── de.gmo
+│   │   ├── de.po
+│   │   ├── el.gmo
+│   │   ├── el.po
+│   │   ├── en@boldquot.header
+│   │   ├── en_GB.gmo
+│   │   ├── en_GB.po
+│   │   ├── en@quot.header
+│   │   ├── eo.gmo
+│   │   ├── eo.po
+│   │   ├── es.gmo
+│   │   ├── es_MX.gmo
+│   │   ├── es_MX.po
+│   │   ├── es.po
+│   │   ├── et.gmo
+│   │   ├── et.po
+│   │   ├── eu.gmo
+│   │   ├── eu.po
+│   │   ├── fa.gmo
+│   │   ├── fa.po
+│   │   ├── ff.gmo
+│   │   ├── ff.po
+│   │   ├── fi.gmo
+│   │   ├── fi.po
+│   │   ├── fr.gmo
+│   │   ├── fr.po
+│   │   ├── fur.gmo
+│   │   ├── fur.po
+│   │   ├── fy.gmo
+│   │   ├── fy.po
+│   │   ├── ga.gmo
+│   │   ├── ga.po
+│   │   ├── gd.gmo
+│   │   ├── gd.po
+│   │   ├── gl.gmo
+│   │   ├── gl.po
+│   │   ├── gu.gmo
+│   │   ├── gu.po
+│   │   ├── he.gmo
+│   │   ├── he.po
+│   │   ├── hi.gmo
+│   │   ├── hi.po
+│   │   ├── hr.gmo
+│   │   ├── hr.po
+│   │   ├── hu.gmo
+│   │   ├── hu.po
+│   │   ├── hy.gmo
+│   │   ├── hy.po
+│   │   ├── id.gmo
+│   │   ├── id.po
+│   │   ├── ie.gmo
+│   │   ├── ie.po
+│   │   ├── insert-header.sin
+│   │   ├── is.gmo
+│   │   ├── is.po
+│   │   ├── it.gmo
+│   │   ├── it.po
+│   │   ├── ja.gmo
+│   │   ├── ja.po
+│   │   ├── kab.gmo
+│   │   ├── kab.po
+│   │   ├── ka.gmo
+│   │   ├── ka.po
+│   │   ├── kk.gmo
+│   │   ├── kk.po
+│   │   ├── km.gmo
+│   │   ├── km.po
+│   │   ├── kn.gmo
+│   │   ├── kn.po
+│   │   ├── ko.gmo
+│   │   ├── ko.po
+│   │   ├── ks_IN.gmo
+│   │   ├── ks_IN.po
+│   │   ├── ku_IQ.gmo
+│   │   ├── ku_IQ.po
+│   │   ├── ky.gmo
+│   │   ├── ky.po
+│   │   ├── lg.gmo
+│   │   ├── lg.po
+│   │   ├── LINGUAS
+│   │   ├── lo.gmo
+│   │   ├── lo.po
+│   │   ├── lt.gmo
+│   │   ├── lt.po
+│   │   ├── lv.gmo
+│   │   ├── lv.po
+│   │   ├── mai.gmo
+│   │   ├── mai.po
+│   │   ├── Makefile.in.in
+│   │   ├── Makevars
+│   │   ├── mk.gmo
+│   │   ├── mk.po
+│   │   ├── ml.gmo
+│   │   ├── ml.po
+│   │   ├── mn.gmo
+│   │   ├── mn.po
+│   │   ├── mr.gmo
+│   │   ├── mr.po
+│   │   ├── ms.gmo
+│   │   ├── ms.po
+│   │   ├── my.gmo
+│   │   ├── my.po
+│   │   ├── nb.gmo
+│   │   ├── nb.po
+│   │   ├── ne.gmo
+│   │   ├── ne.po
+│   │   ├── nl.gmo
+│   │   ├── nl.po
+│   │   ├── nn.gmo
+│   │   ├── nn.po
+│   │   ├── oc.gmo
+│   │   ├── oc.po
+│   │   ├── or_IN.gmo
+│   │   ├── or_IN.po
+│   │   ├── pa.gmo
+│   │   ├── pa.po
+│   │   ├── pl.gmo
+│   │   ├── pl.po
+│   │   ├── POTFILES.in
+│   │   ├── ps.gmo
+│   │   ├── ps.po
+│   │   ├── pt_BR.gmo
+│   │   ├── pt_BR.po
+│   │   ├── pt_PT.gmo
+│   │   ├── pt_PT.po
+│   │   ├── quot.sed
+│   │   ├── remove-potcdate.sin
+│   │   ├── ro.gmo
+│   │   ├── ro.po
+│   │   ├── ru.gmo
+│   │   ├── Rules-quot
+│   │   ├── ru.po
+│   │   ├── si.gmo
+│   │   ├── si.po
+│   │   ├── sk.gmo
+│   │   ├── sk.po
+│   │   ├── sl.gmo
+│   │   ├── sl.po
+│   │   ├── sm.gmo
+│   │   ├── sm.po
+│   │   ├── sq.gmo
+│   │   ├── sq.po
+│   │   ├── sr.gmo
+│   │   ├── sr.po
+│   │   ├── stamp-po
+│   │   ├── sv.gmo
+│   │   ├── sv.po
+│   │   ├── sw.gmo
+│   │   ├── sw.po
+│   │   ├── ta.gmo
+│   │   ├── ta.po
+│   │   ├── te.gmo
+│   │   ├── te.po
+│   │   ├── th.gmo
+│   │   ├── th.po
+│   │   ├── tr.gmo
+│   │   ├── tr.po
+│   │   ├── tt.gmo
+│   │   ├── tt.po
+│   │   ├── ug.gmo
+│   │   ├── ug.po
+│   │   ├── uk.gmo
+│   │   ├── uk.po
+│   │   ├── uz.gmo
+│   │   ├── uz.po
+│   │   ├── vi.gmo
+│   │   ├── vi.po
+│   │   ├── vlc.pot
+│   │   ├── wa.gmo
+│   │   ├── wa.po
+│   │   ├── zh_CN.gmo
+│   │   ├── zh_CN.po
+│   │   ├── zh_TW.gmo
+│   │   ├── zh_TW.po
+│   │   ├── zu.gmo
+│   │   └── zu.po
+│   ├── README
+│   ├── share
+│   │   ├── hrtfs
+│   │   │   └── dodeca_and_7channel_3DSL_HRTF.sofa
+│   │   ├── icons
+│   │   │   ├── 128x128
+│   │   │   │   ├── vlc-kb.png
+│   │   │   │   ├── vlc.png
+│   │   │   │   └── vlc-xmas.png
+│   │   │   ├── 16x16
+│   │   │   │   ├── vlc.png
+│   │   │   │   └── vlc.xpm
+│   │   │   ├── 256x256
+│   │   │   │   └── vlc.png
+│   │   │   ├── 32x32
+│   │   │   │   ├── vlc.png
+│   │   │   │   ├── vlc-xmas.xpm
+│   │   │   │   └── vlc.xpm
+│   │   │   ├── 48x48
+│   │   │   │   ├── vlc.png
+│   │   │   │   └── vlc-xmas.png
+│   │   │   └── vlc.ico
+│   │   ├── Info.plist.in
+│   │   ├── lua
+│   │   │   ├── extensions
+│   │   │   │   ├── README.txt
+│   │   │   │   └── VLSub.lua
+│   │   │   ├── http
+│   │   │   │   ├── css
+│   │   │   │   │   ├── main.css
+│   │   │   │   │   ├── mobile.css
+│   │   │   │   │   └── ui-lightness
+│   │   │   │   │       ├── images
+│   │   │   │   │       │   ├── ui-bg_diagonals-thick_18_b81900_40x40.png
+│   │   │   │   │       │   ├── ui-bg_diagonals-thick_20_666666_40x40.png
+│   │   │   │   │       │   ├── ui-bg_flat_10_000000_40x100.png
+│   │   │   │   │       │   ├── ui-bg_glass_100_f6f6f6_1x400.png
+│   │   │   │   │       │   ├── ui-bg_glass_100_fdf5ce_1x400.png
+│   │   │   │   │       │   ├── ui-bg_glass_65_ffffff_1x400.png
+│   │   │   │   │       │   ├── ui-bg_gloss-wave_35_f6a828_500x100.png
+│   │   │   │   │       │   ├── ui-bg_highlight-soft_100_eeeeee_1x100.png
+│   │   │   │   │       │   ├── ui-bg_highlight-soft_75_ffe45c_1x100.png
+│   │   │   │   │       │   ├── ui-icons_222222_256x240.png
+│   │   │   │   │       │   ├── ui-icons_228ef1_256x240.png
+│   │   │   │   │       │   ├── ui-icons_ef8c08_256x240.png
+│   │   │   │   │       │   ├── ui-icons_ffd27a_256x240.png
+│   │   │   │   │       │   └── ui-icons_ffffff_256x240.png
+│   │   │   │   │       └── jquery-ui-1.8.13.custom.css
+│   │   │   │   ├── custom.lua
+│   │   │   │   ├── dialogs
+│   │   │   │   │   ├── batch_window.html
+│   │   │   │   │   ├── browse_window.html
+│   │   │   │   │   ├── create_stream.html
+│   │   │   │   │   ├── equalizer_window.html
+│   │   │   │   │   ├── error_window.html
+│   │   │   │   │   ├── mosaic_window.html
+│   │   │   │   │   ├── offset_window.html
+│   │   │   │   │   ├── stream_config_window.html
+│   │   │   │   │   └── stream_window.html
+│   │   │   │   ├── favicon.ico
+│   │   │   │   ├── images
+│   │   │   │   │   ├── Audio-48.png
+│   │   │   │   │   ├── Back-48.png
+│   │   │   │   │   ├── buttons.png
+│   │   │   │   │   ├── Folder-48.png
+│   │   │   │   │   ├── Other-48.png
+│   │   │   │   │   ├── speaker-32.png
+│   │   │   │   │   ├── Video-48.png
+│   │   │   │   │   ├── vlc16x16.png
+│   │   │   │   │   └── vlc-48.png
+│   │   │   │   ├── index.html
+│   │   │   │   ├── js
+│   │   │   │   │   ├── common.js
+│   │   │   │   │   ├── controllers.js
+│   │   │   │   │   ├── jquery.jstree.js
+│   │   │   │   │   └── ui.js
+│   │   │   │   ├── mobile_browse.html
+│   │   │   │   ├── mobile_equalizer.html
+│   │   │   │   ├── mobile.html
+│   │   │   │   ├── mobile_view.html
+│   │   │   │   ├── requests
+│   │   │   │   │   ├── browse.json
+│   │   │   │   │   ├── browse.xml
+│   │   │   │   │   ├── playlist.json
+│   │   │   │   │   ├── playlist_jstree.xml
+│   │   │   │   │   ├── playlist.xml
+│   │   │   │   │   ├── README.txt
+│   │   │   │   │   ├── status.json
+│   │   │   │   │   ├── status.xml
+│   │   │   │   │   ├── vlm_cmd.xml
+│   │   │   │   │   └── vlm.xml
+│   │   │   │   ├── view.html
+│   │   │   │   ├── vlm_export.html
+│   │   │   │   └── vlm.html
+│   │   │   ├── intf
+│   │   │   │   ├── cli.lua
+│   │   │   │   ├── dummy.lua
+│   │   │   │   ├── dumpmeta.lua
+│   │   │   │   ├── http.lua
+│   │   │   │   ├── luac.lua
+│   │   │   │   ├── modules
+│   │   │   │   │   ├── host.lua
+│   │   │   │   │   └── httprequests.lua
+│   │   │   │   ├── README.txt
+│   │   │   │   └── telnet.lua
+│   │   │   ├── meta
+│   │   │   │   ├── art
+│   │   │   │   │   ├── 00_musicbrainz.lua
+│   │   │   │   │   ├── 01_googleimage.lua
+│   │   │   │   │   ├── 02_frenchtv.lua
+│   │   │   │   │   ├── 03_lastfm.lua
+│   │   │   │   │   └── README.txt
+│   │   │   │   ├── fetcher
+│   │   │   │   │   └── README.txt
+│   │   │   │   ├── reader
+│   │   │   │   │   ├── filename.lua
+│   │   │   │   │   └── README.txt
+│   │   │   │   └── README.txt
+│   │   │   ├── modules
+│   │   │   │   ├── common.lua
+│   │   │   │   ├── dkjson.lua
+│   │   │   │   ├── sandbox.lua
+│   │   │   │   └── simplexml.lua
+│   │   │   ├── playlist
+│   │   │   │   ├── anevia_streams.lua
+│   │   │   │   ├── anevia_xml.lua
+│   │   │   │   ├── appletrailers.lua
+│   │   │   │   ├── bbc_co_uk.lua
+│   │   │   │   ├── break.lua
+│   │   │   │   ├── cue.lua
+│   │   │   │   ├── dailymotion.lua
+│   │   │   │   ├── extreme.lua
+│   │   │   │   ├── france2.lua
+│   │   │   │   ├── jamendo.lua
+│   │   │   │   ├── katsomo.lua
+│   │   │   │   ├── koreus.lua
+│   │   │   │   ├── lelombrik.lua
+│   │   │   │   ├── liveleak.lua
+│   │   │   │   ├── metacafe.lua
+│   │   │   │   ├── mpora.lua
+│   │   │   │   ├── newgrounds.lua
+│   │   │   │   ├── pinkbike.lua
+│   │   │   │   ├── README.txt
+│   │   │   │   ├── rockbox_fm_presets.lua
+│   │   │   │   ├── soundcloud.lua
+│   │   │   │   ├── twitch.lua
+│   │   │   │   ├── vimeo.lua
+│   │   │   │   ├── vocaroo.lua
+│   │   │   │   ├── youtube.lua
+│   │   │   │   └── zapiks.lua
+│   │   │   ├── README.txt
+│   │   │   └── sd
+│   │   │       ├── fmc.lua
+│   │   │       ├── icast.lua
+│   │   │       ├── icecast.lua
+│   │   │       ├── jamendo.lua
+│   │   │       └── README.txt
+│   │   ├── Makefile.am
+│   │   ├── Makefile.in
+│   │   ├── skins2
+│   │   │   ├── default
+│   │   │   │   ├── subX
+│   │   │   │   │   ├── about.png
+│   │   │   │   │   ├── eq.png
+│   │   │   │   │   ├── font.otf
+│   │   │   │   │   ├── main.png
+│   │   │   │   │   ├── playtreeglyphs.png
+│   │   │   │   │   ├── pl.png
+│   │   │   │   │   ├── sysbuttons.png
+│   │   │   │   │   ├── vol_anim.png
+│   │   │   │   │   └── vol_slider.png
+│   │   │   │   └── theme.xml
+│   │   │   ├── fonts
+│   │   │   │   ├── FreeSansBold.ttf
+│   │   │   │   └── FreeSans.ttf
+│   │   │   ├── skin.catalog
+│   │   │   ├── skin.dtd
+│   │   │   └── winamp2.xml
+│   │   ├── solid
+│   │   │   ├── vlc-openbd.desktop
+│   │   │   ├── vlc-opencda.desktop
+│   │   │   ├── vlc-opendvd.desktop
+│   │   │   └── vlc-openvcd.desktop
+│   │   ├── utils
+│   │   │   ├── audio-vlc-default.sh
+│   │   │   ├── gnome-vlc-default.sh
+│   │   │   └── video-vlc-default.sh
+│   │   ├── vlc512x512.png
+│   │   ├── vlc.appdata.xml.in.in
+│   │   ├── vlc.desktop.in
+│   │   └── vlc.desktop.mimetypes
+│   ├── src
+│   │   ├── android
+│   │   │   ├── error.c
+│   │   │   ├── specific.c
+│   │   │   └── thread.c
+│   │   ├── audio_output
+│   │   │   ├── aout_internal.h
+│   │   │   ├── common.c
+│   │   │   ├── dec.c
+│   │   │   ├── filters.c
+│   │   │   ├── output.c
+│   │   │   └── volume.c
+│   │   ├── check_headers
+│   │   ├── check_symbols
+│   │   ├── config
+│   │   │   ├── chain.c
+│   │   │   ├── cmdline.c
+│   │   │   ├── configuration.h
+│   │   │   ├── core.c
+│   │   │   ├── file.c
+│   │   │   ├── getopt.c
+│   │   │   ├── help.c
+│   │   │   ├── intf.c
+│   │   │   └── vlc_getopt.h
+│   │   ├── darwin
+│   │   │   ├── dirs.c
+│   │   │   ├── error.c
+│   │   │   ├── netconf.c
+│   │   │   ├── specific.c
+│   │   │   └── thread.c
+│   │   ├── extras
+│   │   │   └── libc.c
+│   │   ├── input
+│   │   │   ├── access.c
+│   │   │   ├── clock.c
+│   │   │   ├── clock.h
+│   │   │   ├── control.c
+│   │   │   ├── decoder.c
+│   │   │   ├── decoder.h
+│   │   │   ├── demux.c
+│   │   │   ├── demux_chained.c
+│   │   │   ├── demux.h
+│   │   │   ├── es_out.c
+│   │   │   ├── es_out.h
+│   │   │   ├── es_out_timeshift.c
+│   │   │   ├── es_out_timeshift.h
+│   │   │   ├── event.c
+│   │   │   ├── event.h
+│   │   │   ├── info.h
+│   │   │   ├── input.c
+│   │   │   ├── input_interface.h
+│   │   │   ├── input_internal.h
+│   │   │   ├── item.c
+│   │   │   ├── item.h
+│   │   │   ├── meta.c
+│   │   │   ├── mrl_helpers.h
+│   │   │   ├── resource.c
+│   │   │   ├── resource.h
+│   │   │   ├── services_discovery.c
+│   │   │   ├── stats.c
+│   │   │   ├── stream.c
+│   │   │   ├── stream_extractor.c
+│   │   │   ├── stream_fifo.c
+│   │   │   ├── stream_filter.c
+│   │   │   ├── stream.h
+│   │   │   ├── stream_memory.c
+│   │   │   ├── subtitles.c
+│   │   │   ├── var.c
+│   │   │   ├── vlm.c
+│   │   │   ├── vlm_event.c
+│   │   │   ├── vlm_event.h
+│   │   │   ├── vlm_internal.h
+│   │   │   └── vlmshell.c
+│   │   ├── interface
+│   │   │   ├── dialog.c
+│   │   │   └── interface.c
+│   │   ├── libvlc.c
+│   │   ├── libvlccore.sym
+│   │   ├── libvlc.h
+│   │   ├── libvlc-module.c
+│   │   ├── libvlc_win32_rc.rc.in
+│   │   ├── linux
+│   │   │   ├── cpu.c
+│   │   │   ├── dirs.c
+│   │   │   ├── getaddrinfo.c
+│   │   │   └── thread.c
+│   │   ├── Makefile.am
+│   │   ├── Makefile.in
+│   │   ├── misc
+│   │   │   ├── actions.c
+│   │   │   ├── addons.c
+│   │   │   ├── background_worker.c
+│   │   │   ├── background_worker.h
+│   │   │   ├── block.c
+│   │   │   ├── cpu.c
+│   │   │   ├── epg.c
+│   │   │   ├── error.c
+│   │   │   ├── es_format.c
+│   │   │   ├── events.c
+│   │   │   ├── exit.c
+│   │   │   ├── fifo.c
+│   │   │   ├── filter.c
+│   │   │   ├── filter_chain.c
+│   │   │   ├── fingerprinter.c
+│   │   │   ├── fourcc.c
+│   │   │   ├── fourcc_gen.c
+│   │   │   ├── fourcc_list.h
+│   │   │   ├── httpcookies.c
+│   │   │   ├── image.c
+│   │   │   ├── interrupt.c
+│   │   │   ├── interrupt.h
+│   │   │   ├── keystore.c
+│   │   │   ├── md5.c
+│   │   │   ├── messages.c
+│   │   │   ├── mime.c
+│   │   │   ├── mtime.c
+│   │   │   ├── objects.c
+│   │   │   ├── objres.c
+│   │   │   ├── picture.c
+│   │   │   ├── picture_fifo.c
+│   │   │   ├── picture.h
+│   │   │   ├── picture_pool.c
+│   │   │   ├── probe.c
+│   │   │   ├── rand.c
+│   │   │   ├── renderer_discovery.c
+│   │   │   ├── subpicture.c
+│   │   │   ├── subpicture.h
+│   │   │   ├── text_style.c
+│   │   │   ├── threads.c
+│   │   │   ├── update.c
+│   │   │   ├── update_crypto.c
+│   │   │   ├── update.h
+│   │   │   ├── variables.c
+│   │   │   ├── variables.h
+│   │   │   └── xml.c
+│   │   ├── missing.c
+│   │   ├── modules
+│   │   │   ├── bank.c
+│   │   │   ├── cache.c
+│   │   │   ├── entry.c
+│   │   │   ├── modules.c
+│   │   │   ├── modules.h
+│   │   │   └── textdomain.c
+│   │   ├── network
+│   │   │   ├── getaddrinfo.c
+│   │   │   ├── http_auth.c
+│   │   │   ├── httpd.c
+│   │   │   ├── io.c
+│   │   │   ├── rootbind.c
+│   │   │   ├── tcp.c
+│   │   │   ├── tls.c
+│   │   │   └── udp.c
+│   │   ├── os2
+│   │   │   ├── dirs.c
+│   │   │   ├── filesystem.c
+│   │   │   ├── getaddrinfo.c
+│   │   │   ├── netconf.c
+│   │   │   ├── plugin.c
+│   │   │   ├── rand.c
+│   │   │   ├── specific.c
+│   │   │   └── thread.c
+│   │   ├── playlist
+│   │   │   ├── aout.c
+│   │   │   ├── art.c
+│   │   │   ├── art.h
+│   │   │   ├── control.c
+│   │   │   ├── engine.c
+│   │   │   ├── fetcher.c
+│   │   │   ├── fetcher.h
+│   │   │   ├── item.c
+│   │   │   ├── loadsave.c
+│   │   │   ├── playlist_internal.h
+│   │   │   ├── preparser.c
+│   │   │   ├── preparser.h
+│   │   │   ├── renderer.c
+│   │   │   ├── search.c
+│   │   │   ├── services_discovery.c
+│   │   │   ├── sort.c
+│   │   │   ├── thread.c
+│   │   │   └── tree.c
+│   │   ├── posix
+│   │   │   ├── dirs.c
+│   │   │   ├── error.c
+│   │   │   ├── filesystem.c
+│   │   │   ├── getaddrinfo.c
+│   │   │   ├── netconf.c
+│   │   │   ├── plugin.c
+│   │   │   ├── rand.c
+│   │   │   ├── specific.c
+│   │   │   ├── thread.c
+│   │   │   └── timer.c
+│   │   ├── revision.c
+│   │   ├── revision.txt
+│   │   ├── stream_output
+│   │   │   ├── sap.c
+│   │   │   ├── sdp.c
+│   │   │   ├── stream_output.c
+│   │   │   └── stream_output.h
+│   │   ├── test
+│   │   │   ├── block_test.c
+│   │   │   ├── dictionary.c
+│   │   │   ├── headers.c
+│   │   │   ├── i18n_atof.c
+│   │   │   ├── interrupt.c
+│   │   │   ├── md5.c
+│   │   │   ├── mrl_helpers.c
+│   │   │   ├── picture_pool.c
+│   │   │   ├── sort.c
+│   │   │   ├── timer.c
+│   │   │   ├── url.c
+│   │   │   ├── utf8.c
+│   │   │   └── xmlent.c
+│   │   ├── text
+│   │   │   ├── charset.c
+│   │   │   ├── filesystem.c
+│   │   │   ├── iso-639_def.h
+│   │   │   ├── iso_lang.c
+│   │   │   ├── memstream.c
+│   │   │   ├── strings.c
+│   │   │   ├── unicode.c
+│   │   │   └── url.c
+│   │   ├── version.c
+│   │   ├── video_output
+│   │   │   ├── chrono.h
+│   │   │   ├── control.c
+│   │   │   ├── control.h
+│   │   │   ├── display.c
+│   │   │   ├── display.h
+│   │   │   ├── event.h
+│   │   │   ├── inhibit.c
+│   │   │   ├── inhibit.h
+│   │   │   ├── interlacing.c
+│   │   │   ├── interlacing.h
+│   │   │   ├── opengl.c
+│   │   │   ├── snapshot.c
+│   │   │   ├── snapshot.h
+│   │   │   ├── statistic.h
+│   │   │   ├── video_epg.c
+│   │   │   ├── video_output.c
+│   │   │   ├── video_text.c
+│   │   │   ├── video_widgets.c
+│   │   │   ├── vout_control.h
+│   │   │   ├── vout_internal.h
+│   │   │   ├── vout_intf.c
+│   │   │   ├── vout_spuregion_helper.h
+│   │   │   ├── vout_subpictures.c
+│   │   │   ├── vout_wrapper.c
+│   │   │   ├── window.c
+│   │   │   └── window.h
+│   │   ├── vlc-plugin.pc.in
+│   │   └── win32
+│   │       ├── dirs.c
+│   │       ├── error.c
+│   │       ├── filesystem.c
+│   │       ├── mta_holder.h
+│   │       ├── netconf.c
+│   │       ├── plugin.c
+│   │       ├── rand.c
+│   │       ├── specific.c
+│   │       ├── thread.c
+│   │       ├── timer.c
+│   │       └── winsock.c
+│   ├── test
+│   │   ├── check_POTFILES.sh
+│   │   ├── iosvlc.m
+│   │   ├── libvlc
+│   │   │   ├── core.c
+│   │   │   ├── equalizer.c
+│   │   │   ├── libvlc_additions.h
+│   │   │   ├── media.c
+│   │   │   ├── media_discoverer.c
+│   │   │   ├── media_list.c
+│   │   │   ├── media_list_player.c
+│   │   │   ├── media_player.c
+│   │   │   ├── meta.c
+│   │   │   ├── renderer_discoverer.c
+│   │   │   ├── slaves.c
+│   │   │   └── test.h
+│   │   ├── Makefile.am
+│   │   ├── Makefile.in
+│   │   ├── modules
+│   │   │   ├── keystore
+│   │   │   │   └── test.c
+│   │   │   ├── lua
+│   │   │   │   └── telnet.sh
+│   │   │   ├── misc
+│   │   │   │   └── tls.c
+│   │   │   └── packetizer
+│   │   │       └── hxxx.c
+│   │   ├── run_vlc.sh
+│   │   ├── samples
+│   │   │   ├── certs
+│   │   │   │   └── certkey.pem
+│   │   │   ├── empty.voc
+│   │   │   ├── image.jpg
+│   │   │   ├── slaves
+│   │   │   │   ├── lt-test.srt
+│   │   │   │   ├── nomatch.srt
+│   │   │   │   ├── test.aac
+│   │   │   │   ├── test.mp4
+│   │   │   │   ├── test.rt.srt
+│   │   │   │   └── t.mp4
+│   │   │   └── subitems
+│   │   │       ├── directory
+│   │   │       ├── file.jpg
+│   │   │       ├── file.mkv
+│   │   │       ├── file.mp3
+│   │   │       ├── file.png
+│   │   │       └── file.ts
+│   │   ├── src
+│   │   │   ├── config
+│   │   │   │   └── chain.c
+│   │   │   ├── crypto
+│   │   │   │   └── update.c
+│   │   │   ├── input
+│   │   │   │   ├── common.c
+│   │   │   │   ├── common.h
+│   │   │   │   ├── decoder.c
+│   │   │   │   ├── decoder.h
+│   │   │   │   ├── demux-run.c
+│   │   │   │   ├── demux-run.h
+│   │   │   │   ├── stream.c
+│   │   │   │   └── stream_fifo.c
+│   │   │   ├── interface
+│   │   │   │   └── dialog.c
+│   │   │   └── misc
+│   │   │       ├── bits.c
+│   │   │       ├── epg.c
+│   │   │       ├── keystore.c
+│   │   │       └── variables.c
+│   │   ├── TODO
+│   │   ├── vlc-demux-libfuzzer.c
+│   │   └── vlc-demux-run.c
+│   └── THANKS
+├── vlc-3.0.21.tar.xz -> /home/felix/packages/vlc/vlc-3.0.21.tar.xz
+└── vlc-3.0.21.tar.xz.asc -> /home/felix/packages/vlc/vlc-3.0.21.tar.xz.asc
+
+500 directories, 4523 files

@@ -1,0 +1,1895 @@
+src
+├── libwebsockets-4.3.3
+│   ├── bug_report.md
+│   ├── changelog
+│   ├── cmake
+│   │   ├── FindGit.cmake
+│   │   ├── FindMiniz.cmake
+│   │   ├── FindOpenSSLbins.cmake
+│   │   ├── libwebsockets-config.cmake.in
+│   │   ├── libwebsockets-config-version.cmake.in
+│   │   ├── LwsCheckRequirements.cmake
+│   │   ├── lws_config.h.in
+│   │   ├── lws_config_private.h.in
+│   │   └── UseRPMTools.cmake
+│   ├── CMakeLists-implied-options.txt
+│   ├── CMakeLists.txt
+│   ├── component.mk
+│   ├── contrib
+│   │   ├── abi
+│   │   │   ├── libwebsockets.json
+│   │   │   ├── lws-abi-update.sh
+│   │   │   └── README.md
+│   │   ├── Android.mk
+│   │   ├── cross-aarch64-android.cmake
+│   │   ├── cross-aarch64.cmake
+│   │   ├── cross-aarch64-qnx.cmake
+│   │   ├── cross-arm-android-gnueabi.cmake
+│   │   ├── cross-arm-linux-gnueabihf.cmake
+│   │   ├── cross-atmel.cmake
+│   │   ├── cross-esp32.cmake
+│   │   ├── cross-linkit.cmake
+│   │   ├── cross-ming.cmake
+│   │   ├── cross-openwrt-makefile
+│   │   ├── cross-w32.cmake
+│   │   ├── cross-w64.cmake
+│   │   └── iOS.cmake
+│   ├── doc-assets
+│   │   ├── abstract-overview.svg
+│   │   ├── accept-flow-1.svg
+│   │   ├── accept-flow-2.svg
+│   │   ├── accept-flow-3.svg
+│   │   ├── fault-injection.png
+│   │   ├── http-proxy-overview.svg
+│   │   ├── jit-trust-logo.png
+│   │   ├── jit-trust-overview.png
+│   │   ├── jit-trust-paths.png
+│   │   ├── jit-trust-single-trust.png
+│   │   ├── jit-trust-system-trust.png
+│   │   ├── lifecycle-context.png
+│   │   ├── lifecycle-server-wsi.png
+│   │   ├── lifecycle-wsi.png
+│   │   ├── lwsac.svg
+│   │   ├── lws_cache-1.png
+│   │   ├── lws_cache-2.png
+│   │   ├── lws-crypto-overview.svg
+│   │   ├── lws-detailed-latency-example.png
+│   │   ├── lws_dll.svg
+│   │   ├── lws-fts.svg
+│   │   ├── lwsgt-overview.png
+│   │   ├── lws_metrics-decimation.png
+│   │   ├── lws_metrics-policy.png
+│   │   ├── lws-overview.png
+│   │   ├── lws-relpol-1.svg
+│   │   ├── lws-relpol-2.svg
+│   │   ├── lws-relpol-3.svg
+│   │   ├── lws-relpol-4.svg
+│   │   ├── lws-relpol-5.svg
+│   │   ├── lws_sequencer.svg
+│   │   ├── lws-smp-example.png
+│   │   ├── lws-smp-ov.png
+│   │   ├── lws_struct-overview.svg
+│   │   ├── smd-message.png
+│   │   ├── smd-proxy.png
+│   │   ├── smd-single-process.png
+│   │   ├── ss-explain.png
+│   │   ├── ss-operation-modes.png
+│   │   ├── ss-state-flow.png
+│   │   ├── ss-state-flow-server.png
+│   │   ├── threadpool-states.svg
+│   │   ├── threadpool.svg
+│   │   ├── work.png
+│   │   └── wss2.png
+│   ├── include
+│   │   ├── libwebsockets
+│   │   │   ├── abstract
+│   │   │   │   ├── abstract.h
+│   │   │   │   ├── protocols
+│   │   │   │   │   └── smtp.h
+│   │   │   │   ├── protocols.h
+│   │   │   │   ├── transports
+│   │   │   │   │   ├── raw-skt.h
+│   │   │   │   │   └── unit-test.h
+│   │   │   │   └── transports.h
+│   │   │   ├── lws-adopt.h
+│   │   │   ├── lws-async-dns.h
+│   │   │   ├── lws-bb-i2c.h
+│   │   │   ├── lws-bb-spi.h
+│   │   │   ├── lws-button.h
+│   │   │   ├── lws-cache-ttl.h
+│   │   │   ├── lws-callbacks.h
+│   │   │   ├── lws-cgi.h
+│   │   │   ├── lws-client.h
+│   │   │   ├── lws-conmon.h
+│   │   │   ├── lws-context-vhost.h
+│   │   │   ├── lws-cose.h
+│   │   │   ├── lws-dbus.h
+│   │   │   ├── lws-diskcache.h
+│   │   │   ├── lws-display.h
+│   │   │   ├── lws-dll2.h
+│   │   │   ├── lws-dsh.h
+│   │   │   ├── lws-eventlib-exports.h
+│   │   │   ├── lws-fault-injection.h
+│   │   │   ├── lws-freertos.h
+│   │   │   ├── lws-fts.h
+│   │   │   ├── lws-genaes.h
+│   │   │   ├── lws-gencrypto.h
+│   │   │   ├── lws-genec.h
+│   │   │   ├── lws-genhash.h
+│   │   │   ├── lws-genrsa.h
+│   │   │   ├── lws-gpio.h
+│   │   │   ├── lws-http.h
+│   │   │   ├── lws-i2c.h
+│   │   │   ├── lws-ili9341-spi.h
+│   │   │   ├── lws-jose.h
+│   │   │   ├── lws-jwe.h
+│   │   │   ├── lws-jwk.h
+│   │   │   ├── lws-jws.h
+│   │   │   ├── lws-lecp.h
+│   │   │   ├── lws-led.h
+│   │   │   ├── lws-lejp.h
+│   │   │   ├── lws-logs.h
+│   │   │   ├── lws-lwsac.h
+│   │   │   ├── lws-map.h
+│   │   │   ├── lws-metrics.h
+│   │   │   ├── lws-misc.h
+│   │   │   ├── lws-mqtt.h
+│   │   │   ├── lws-netdev.h
+│   │   │   ├── lws-network-helper.h
+│   │   │   ├── lws-optee.h
+│   │   │   ├── lws-protocols-plugins.h
+│   │   │   ├── lws-purify.h
+│   │   │   ├── lws-pwm.h
+│   │   │   ├── lws-retry.h
+│   │   │   ├── lws-ring.h
+│   │   │   ├── lws-secure-streams-client.h
+│   │   │   ├── lws-secure-streams.h
+│   │   │   ├── lws-secure-streams-policy.h
+│   │   │   ├── lws-sequencer.h
+│   │   │   ├── lws-service.h
+│   │   │   ├── lws-settings.h
+│   │   │   ├── lws-sha1-base64.h
+│   │   │   ├── lws-smd.h
+│   │   │   ├── lws-spa.h
+│   │   │   ├── lws-spi.h
+│   │   │   ├── lws-ssd1306-i2c.h
+│   │   │   ├── lws-state.h
+│   │   │   ├── lws-struct.h
+│   │   │   ├── lws-system.h
+│   │   │   ├── lws-test-sequencer.h
+│   │   │   ├── lws-threadpool.h
+│   │   │   ├── lws-timeout-timer.h
+│   │   │   ├── lws-tls-sessions.h
+│   │   │   ├── lws-tokenize.h
+│   │   │   ├── lws-vfs.h
+│   │   │   ├── lws-writeable.h
+│   │   │   ├── lws-write.h
+│   │   │   ├── lws-ws-close.h
+│   │   │   ├── lws-ws-ext.h
+│   │   │   ├── lws-ws-state.h
+│   │   │   └── lws-x509.h
+│   │   ├── libwebsockets.h
+│   │   └── libwebsockets.hxx
+│   ├── Kconfig
+│   ├── lib
+│   │   ├── abstract
+│   │   │   ├── abstract.c
+│   │   │   ├── CMakeLists.txt
+│   │   │   ├── private-lib-abstract.h
+│   │   │   ├── protocols
+│   │   │   │   └── smtp
+│   │   │   │       ├── private-lib-abstract-protocols-smtp.h
+│   │   │   │       ├── smtp.c
+│   │   │   │       └── smtp-sequencer.c
+│   │   │   ├── README.md
+│   │   │   ├── test-sequencer.c
+│   │   │   └── transports
+│   │   │       ├── raw-skt.c
+│   │   │       └── unit-test.c
+│   │   ├── CMakeLists.txt
+│   │   ├── core
+│   │   │   ├── alloc.c
+│   │   │   ├── buflist.c
+│   │   │   ├── CMakeLists.txt
+│   │   │   ├── context.c
+│   │   │   ├── libwebsockets.c
+│   │   │   ├── logs.c
+│   │   │   ├── lws_dll2.c
+│   │   │   ├── lws_map.c
+│   │   │   ├── private-lib-core.h
+│   │   │   └── vfs.c
+│   │   ├── core-net
+│   │   │   ├── adopt.c
+│   │   │   ├── client
+│   │   │   │   ├── client.c
+│   │   │   │   ├── conmon.c
+│   │   │   │   ├── connect2.c
+│   │   │   │   ├── connect3.c
+│   │   │   │   ├── connect4.c
+│   │   │   │   ├── connect.c
+│   │   │   │   └── sort-dns.c
+│   │   │   ├── close.c
+│   │   │   ├── CMakeLists.txt
+│   │   │   ├── dummy-callback.c
+│   │   │   ├── lws-dsh.c
+│   │   │   ├── network.c
+│   │   │   ├── output.c
+│   │   │   ├── pollfd.c
+│   │   │   ├── private-lib-core-net.h
+│   │   │   ├── README.md
+│   │   │   ├── route.c
+│   │   │   ├── sequencer.c
+│   │   │   ├── service.c
+│   │   │   ├── socks5-client.c
+│   │   │   ├── sorted-usec-list.c
+│   │   │   ├── state.c
+│   │   │   ├── vhost.c
+│   │   │   ├── wsi.c
+│   │   │   └── wsi-timeout.c
+│   │   ├── cose
+│   │   │   ├── CMakeLists.txt
+│   │   │   ├── cose_key.c
+│   │   │   ├── cose_sign_alg.c
+│   │   │   ├── cose_sign.c
+│   │   │   ├── cose_validate_alg.c
+│   │   │   ├── cose_validate.c
+│   │   │   └── private-lib-cose.h
+│   │   ├── drivers
+│   │   │   ├── button
+│   │   │   │   ├── lws-button.c
+│   │   │   │   └── README.md
+│   │   │   ├── CMakeLists.txt
+│   │   │   ├── devices
+│   │   │   │   └── display
+│   │   │   │       ├── ili9341.h
+│   │   │   │       └── ssd1306.h
+│   │   │   ├── display
+│   │   │   │   ├── ili9341-spi.c
+│   │   │   │   ├── lws-display.c
+│   │   │   │   ├── README.md
+│   │   │   │   └── ssd1306-i2c.c
+│   │   │   ├── i2c
+│   │   │   │   ├── bitbang
+│   │   │   │   │   └── lws-bb-i2c.c
+│   │   │   │   └── lws-i2c.c
+│   │   │   ├── led
+│   │   │   │   ├── led-gpio.c
+│   │   │   │   ├── led-seq.c
+│   │   │   │   ├── private-lib-drivers-led.h
+│   │   │   │   └── README.md
+│   │   │   ├── netdev
+│   │   │   │   ├── netdev.c
+│   │   │   │   └── wifi.c
+│   │   │   ├── pwm
+│   │   │   │   └── pwm.c
+│   │   │   ├── README.md
+│   │   │   ├── settings
+│   │   │   │   └── settings.c
+│   │   │   └── spi
+│   │   │       ├── bitbang
+│   │   │       │   └── lws-bb-spi.c
+│   │   │       └── lws-spi.c
+│   │   ├── event-libs
+│   │   │   ├── CMakeLists.txt
+│   │   │   ├── glib
+│   │   │   │   ├── CMakeLists.txt
+│   │   │   │   ├── glib.c
+│   │   │   │   └── private-lib-event-libs-glib.h
+│   │   │   ├── libev
+│   │   │   │   ├── CMakeLists.txt
+│   │   │   │   ├── libev.c
+│   │   │   │   └── private-lib-event-libs-libev.h
+│   │   │   ├── libevent
+│   │   │   │   ├── CMakeLists.txt
+│   │   │   │   ├── libevent.c
+│   │   │   │   └── private-lib-event-libs-libevent.h
+│   │   │   ├── libuv
+│   │   │   │   ├── CMakeLists.txt
+│   │   │   │   ├── libuv.c
+│   │   │   │   └── private-lib-event-libs-libuv.h
+│   │   │   ├── poll
+│   │   │   │   ├── CMakeLists.txt
+│   │   │   │   ├── poll.c
+│   │   │   │   └── private-lib-event-libs-poll.h
+│   │   │   ├── private-lib-event-libs.h
+│   │   │   ├── README.md
+│   │   │   ├── sdevent
+│   │   │   │   ├── CMakeLists.txt
+│   │   │   │   ├── private-lib-event-libs-sdevent.h
+│   │   │   │   └── sdevent.c
+│   │   │   └── uloop
+│   │   │       ├── CMakeLists.txt
+│   │   │       ├── private-lib-event-libs-uloop.h
+│   │   │       └── uloop.c
+│   │   ├── jose
+│   │   │   ├── CMakeLists.txt
+│   │   │   ├── jwe
+│   │   │   │   ├── enc
+│   │   │   │   │   ├── aescbc.c
+│   │   │   │   │   ├── aesgcm.c
+│   │   │   │   │   └── aeskw.c
+│   │   │   │   ├── jwe.c
+│   │   │   │   ├── jwe-ecdh-es-aeskw.c
+│   │   │   │   ├── jwe-rsa-aescbc.c
+│   │   │   │   ├── jwe-rsa-aesgcm.c
+│   │   │   │   └── private-lib-jose-jwe.h
+│   │   │   ├── jwk
+│   │   │   │   ├── jose_key.c
+│   │   │   │   └── jwk.c
+│   │   │   ├── jws
+│   │   │   │   ├── jose.c
+│   │   │   │   ├── jws.c
+│   │   │   │   └── private-lib-jose-jws.h
+│   │   │   ├── private-lib-jose.h
+│   │   │   └── README.md
+│   │   ├── misc
+│   │   │   ├── base64-decode.c
+│   │   │   ├── cache-ttl
+│   │   │   │   ├── file.c
+│   │   │   │   ├── heap.c
+│   │   │   │   ├── lws-cache-ttl.c
+│   │   │   │   └── private-lib-misc-cache-ttl.h
+│   │   │   ├── CMakeLists.txt
+│   │   │   ├── daemonize.c
+│   │   │   ├── dir.c
+│   │   │   ├── diskcache.c
+│   │   │   ├── fsmount.c
+│   │   │   ├── fts
+│   │   │   │   ├── private-lib-misc-fts.h
+│   │   │   │   ├── README.md
+│   │   │   │   ├── trie.c
+│   │   │   │   └── trie-fd.c
+│   │   │   ├── getifaddrs.c
+│   │   │   ├── getifaddrs.h
+│   │   │   ├── ieeehalfprecision.c
+│   │   │   ├── lecp.c
+│   │   │   ├── lejp.c
+│   │   │   ├── lwsac
+│   │   │   │   ├── cached-file.c
+│   │   │   │   ├── lwsac.c
+│   │   │   │   ├── lwsac.cxx
+│   │   │   │   ├── private-lib-misc-lwsac.h
+│   │   │   │   └── README.md
+│   │   │   ├── lws-ring.c
+│   │   │   ├── lws-struct-lejp.c
+│   │   │   ├── lws-struct-sqlite.c
+│   │   │   ├── peer-limits.c
+│   │   │   ├── prng.c
+│   │   │   ├── romfs.c
+│   │   │   ├── romfs.h
+│   │   │   ├── sha-1.c
+│   │   │   └── threadpool
+│   │   │       ├── README.md
+│   │   │       └── threadpool.c
+│   │   ├── plat
+│   │   │   ├── freertos
+│   │   │   │   ├── CMakeLists.txt
+│   │   │   │   ├── esp32
+│   │   │   │   │   └── drivers
+│   │   │   │   │       ├── gpio-esp32.c
+│   │   │   │   │       ├── lws-plat-gpio.h
+│   │   │   │   │       ├── netdev
+│   │   │   │   │       │   └── wifi-esp32.c
+│   │   │   │   │       ├── pwm-esp32.c
+│   │   │   │   │       └── settings-esp32.c
+│   │   │   │   ├── freertos-fds.c
+│   │   │   │   ├── freertos-file.c
+│   │   │   │   ├── freertos-init.c
+│   │   │   │   ├── freertos-misc.c
+│   │   │   │   ├── freertos-pipe.c
+│   │   │   │   ├── freertos-resolv.c
+│   │   │   │   ├── freertos-service.c
+│   │   │   │   ├── freertos-sockets.c
+│   │   │   │   └── private-lib-plat-freertos.h
+│   │   │   ├── optee
+│   │   │   │   ├── CMakeLists.txt
+│   │   │   │   ├── lws-plat-optee.c
+│   │   │   │   ├── network.c
+│   │   │   │   └── private-lib-plat-optee.h
+│   │   │   ├── unix
+│   │   │   │   ├── android
+│   │   │   │   │   └── android-resolv.c
+│   │   │   │   ├── CMakeLists.txt
+│   │   │   │   ├── private-lib-plat-unix.h
+│   │   │   │   ├── unix-caps.c
+│   │   │   │   ├── unix-fds.c
+│   │   │   │   ├── unix-file.c
+│   │   │   │   ├── unix-init.c
+│   │   │   │   ├── unix-misc.c
+│   │   │   │   ├── unix-pipe.c
+│   │   │   │   ├── unix-plugins.c
+│   │   │   │   ├── unix-resolv.c
+│   │   │   │   ├── unix-service.c
+│   │   │   │   ├── unix-sockets.c
+│   │   │   │   └── unix-spawn.c
+│   │   │   └── windows
+│   │   │       ├── CMakeLists.txt
+│   │   │       ├── private-lib-plat-windows.h
+│   │   │       ├── windows-fds.c
+│   │   │       ├── windows-file.c
+│   │   │       ├── windows-init.c
+│   │   │       ├── windows-misc.c
+│   │   │       ├── windows-pipe.c
+│   │   │       ├── windows-plugins.c
+│   │   │       ├── windows-resolv.c
+│   │   │       ├── windows-service.c
+│   │   │       ├── windows-sockets.c
+│   │   │       └── windows-spawn.c
+│   │   ├── README.md
+│   │   ├── roles
+│   │   │   ├── cgi
+│   │   │   │   ├── cgi-server.c
+│   │   │   │   ├── CMakeLists.txt
+│   │   │   │   ├── ops-cgi.c
+│   │   │   │   └── private-lib-roles-cgi.h
+│   │   │   ├── CMakeLists.txt
+│   │   │   ├── dbus
+│   │   │   │   ├── CMakeLists.txt
+│   │   │   │   ├── dbus.c
+│   │   │   │   ├── private-lib-roles-dbus.h
+│   │   │   │   └── README.md
+│   │   │   ├── h1
+│   │   │   │   ├── CMakeLists.txt
+│   │   │   │   ├── ops-h1.c
+│   │   │   │   └── private-lib-roles-h1.h
+│   │   │   ├── h2
+│   │   │   │   ├── CMakeLists.txt
+│   │   │   │   ├── hpack.c
+│   │   │   │   ├── http2.c
+│   │   │   │   ├── huftable.h
+│   │   │   │   ├── minihuf.c
+│   │   │   │   ├── ops-h2.c
+│   │   │   │   └── private-lib-roles-h2.h
+│   │   │   ├── http
+│   │   │   │   ├── client
+│   │   │   │   │   └── client-http.c
+│   │   │   │   ├── CMakeLists.txt
+│   │   │   │   ├── compression
+│   │   │   │   │   ├── brotli
+│   │   │   │   │   │   └── brotli.c
+│   │   │   │   │   ├── deflate
+│   │   │   │   │   │   └── deflate.c
+│   │   │   │   │   ├── private-lib-roles-http-compression.h
+│   │   │   │   │   ├── README.md
+│   │   │   │   │   └── stream.c
+│   │   │   │   ├── cookie.c
+│   │   │   │   ├── date.c
+│   │   │   │   ├── header.c
+│   │   │   │   ├── lextable.h
+│   │   │   │   ├── lextable-strings.h
+│   │   │   │   ├── minilex.c
+│   │   │   │   ├── parsers.c
+│   │   │   │   ├── private-lib-roles-http.h
+│   │   │   │   └── server
+│   │   │   │       ├── access-log.c
+│   │   │   │       ├── fops-zip.c
+│   │   │   │       ├── lejp-conf.c
+│   │   │   │       ├── lws-spa.c
+│   │   │   │       ├── ranges.c
+│   │   │   │       ├── rewrite.c
+│   │   │   │       └── server.c
+│   │   │   ├── listen
+│   │   │   │   ├── CMakeLists.txt
+│   │   │   │   └── ops-listen.c
+│   │   │   ├── mqtt
+│   │   │   │   ├── client
+│   │   │   │   │   ├── client-mqtt.c
+│   │   │   │   │   └── client-mqtt-handshake.c
+│   │   │   │   ├── CMakeLists.txt
+│   │   │   │   ├── mqtt.c
+│   │   │   │   ├── ops-mqtt.c
+│   │   │   │   ├── primitives.c
+│   │   │   │   └── private-lib-roles-mqtt.h
+│   │   │   ├── netlink
+│   │   │   │   └── ops-netlink.c
+│   │   │   ├── pipe
+│   │   │   │   └── ops-pipe.c
+│   │   │   ├── private-lib-roles.h
+│   │   │   ├── raw-file
+│   │   │   │   ├── CMakeLists.txt
+│   │   │   │   └── ops-raw-file.c
+│   │   │   ├── raw-proxy
+│   │   │   │   ├── CMakeLists.txt
+│   │   │   │   ├── ops-raw-proxy.c
+│   │   │   │   └── private-lib-roles-raw-proxy.h
+│   │   │   ├── raw-skt
+│   │   │   │   ├── CMakeLists.txt
+│   │   │   │   └── ops-raw-skt.c
+│   │   │   ├── README.md
+│   │   │   └── ws
+│   │   │       ├── client-parser-ws.c
+│   │   │       ├── client-ws.c
+│   │   │       ├── CMakeLists.txt
+│   │   │       ├── ext
+│   │   │       │   ├── extension.c
+│   │   │       │   ├── extension-permessage-deflate.c
+│   │   │       │   └── extension-permessage-deflate.h
+│   │   │       ├── ops-ws.c
+│   │   │       ├── private-lib-roles-ws.h
+│   │   │       └── server-ws.c
+│   │   ├── secure-streams
+│   │   │   ├── CMakeLists.txt
+│   │   │   ├── cpp
+│   │   │   │   ├── lss.cxx
+│   │   │   │   ├── lssFile.cxx
+│   │   │   │   ├── lssMsg.cxx
+│   │   │   │   └── README.md
+│   │   │   ├── plugins
+│   │   │   │   └── ssp-h1url
+│   │   │   │       └── h1url.c
+│   │   │   ├── policy-common.c
+│   │   │   ├── policy-json.c
+│   │   │   ├── private-lib-secure-streams.h
+│   │   │   ├── protocols
+│   │   │   │   ├── README.md
+│   │   │   │   ├── ss-h1.c
+│   │   │   │   ├── ss-h2.c
+│   │   │   │   ├── ss-mqtt.c
+│   │   │   │   ├── ss-raw.c
+│   │   │   │   └── ss-ws.c
+│   │   │   ├── README.md
+│   │   │   ├── secure-streams.c
+│   │   │   ├── secure-streams-client.c
+│   │   │   ├── secure-streams-process.c
+│   │   │   ├── secure-streams-serialize.c
+│   │   │   └── system
+│   │   │       ├── auth-api.amazon.com
+│   │   │       │   └── auth.c
+│   │   │       ├── auth-sigv4
+│   │   │       │   └── sign.c
+│   │   │       ├── captive-portal-detect
+│   │   │       │   └── captive-portal-detect.c
+│   │   │       └── fetch-policy
+│   │   │           └── fetch-policy.c
+│   │   ├── system
+│   │   │   ├── async-dns
+│   │   │   │   ├── async-dns.c
+│   │   │   │   ├── async-dns-parse.c
+│   │   │   │   └── private-lib-async-dns.h
+│   │   │   ├── CMakeLists.txt
+│   │   │   ├── dhcpclient
+│   │   │   │   ├── dhcpc4.c
+│   │   │   │   ├── dhcpclient.c
+│   │   │   │   └── private-lib-system-dhcpclient.h
+│   │   │   ├── fault-injection
+│   │   │   │   ├── fault-injection.c
+│   │   │   │   └── private-lib-system-fault-injection.h
+│   │   │   ├── metrics
+│   │   │   │   ├── CMakeLists.txt
+│   │   │   │   ├── metrics.c
+│   │   │   │   └── private-lib-system-metrics.h
+│   │   │   ├── ntpclient
+│   │   │   │   └── ntpclient.c
+│   │   │   ├── README.md
+│   │   │   ├── smd
+│   │   │   │   ├── CMakeLists.txt
+│   │   │   │   ├── private-lib-system-smd.h
+│   │   │   │   ├── README.md
+│   │   │   │   └── smd.c
+│   │   │   └── system.c
+│   │   └── tls
+│   │       ├── CMakeLists.txt
+│   │       ├── lws-gencrypto-common.c
+│   │       ├── lws-genec-common.c
+│   │       ├── mbedtls
+│   │       │   ├── CMakeLists.txt
+│   │       │   ├── lws-genaes.c
+│   │       │   ├── lws-gencrypto.c
+│   │       │   ├── lws-genec.c
+│   │       │   ├── lws-genhash.c
+│   │       │   ├── lws-genrsa.c
+│   │       │   ├── mbedtls-client.c
+│   │       │   ├── mbedtls-extensions.c
+│   │       │   ├── mbedtls-server.c
+│   │       │   ├── mbedtls-session.c
+│   │       │   ├── mbedtls-ssl.c
+│   │       │   ├── mbedtls-tls.c
+│   │       │   ├── mbedtls-x509.c
+│   │       │   ├── private-lib-tls-mbedtls.h
+│   │       │   └── wrapper
+│   │       │       ├── include
+│   │       │       │   ├── internal
+│   │       │       │   │   ├── ssl3.h
+│   │       │       │   │   ├── ssl_cert.h
+│   │       │       │   │   ├── ssl_code.h
+│   │       │       │   │   ├── ssl_dbg.h
+│   │       │       │   │   ├── ssl_lib.h
+│   │       │       │   │   ├── ssl_methods.h
+│   │       │       │   │   ├── ssl_pkey.h
+│   │       │       │   │   ├── ssl_stack.h
+│   │       │       │   │   ├── ssl_types.h
+│   │       │       │   │   ├── ssl_x509.h
+│   │       │       │   │   ├── tls1.h
+│   │       │       │   │   └── x509_vfy.h
+│   │       │       │   ├── openssl
+│   │       │       │   │   └── ssl.h
+│   │       │       │   └── platform
+│   │       │       │       ├── ssl_pm.h
+│   │       │       │       └── ssl_port.h
+│   │       │       ├── library
+│   │       │       │   ├── ssl_cert.c
+│   │       │       │   ├── ssl_lib.c
+│   │       │       │   ├── ssl_methods.c
+│   │       │       │   ├── ssl_pkey.c
+│   │       │       │   ├── ssl_stack.c
+│   │       │       │   └── ssl_x509.c
+│   │       │       └── platform
+│   │       │           ├── ssl_pm.c
+│   │       │           └── ssl_port.c
+│   │       ├── openssl
+│   │       │   ├── lws-genaes.c
+│   │       │   ├── lws-gencrypto.c
+│   │       │   ├── lws-genec.c
+│   │       │   ├── lws-genhash.c
+│   │       │   ├── lws-genrsa.c
+│   │       │   ├── openssl-client.c
+│   │       │   ├── openssl-server.c
+│   │       │   ├── openssl-session.c
+│   │       │   ├── openssl-ssl.c
+│   │       │   ├── openssl-tls.c
+│   │       │   ├── openssl-x509.c
+│   │       │   └── private-lib-tls-openssl.h
+│   │       ├── private-jit-trust.h
+│   │       ├── private-lib-tls.h
+│   │       ├── private-network.h
+│   │       ├── tls.c
+│   │       ├── tls-client.c
+│   │       ├── tls-jit-trust.c
+│   │       ├── tls-network.c
+│   │       ├── tls-server.c
+│   │       └── tls-sessions.c
+│   ├── libwebsockets.dox
+│   ├── LICENSE
+│   ├── lwsws
+│   │   ├── CMakeLists.txt
+│   │   ├── etc-logrotate.d-lwsws
+│   │   ├── etc-lwsws-conf.d-localhost-EXAMPLE
+│   │   ├── etc-lwsws-conf-EXAMPLE
+│   │   ├── main.c
+│   │   └── usr-lib-systemd-system-lwsws.service
+│   ├── Makefile.projbuild
+│   ├── minimal-examples
+│   │   ├── abstract
+│   │   │   └── protocols
+│   │   │       └── smtp-client
+│   │   │           ├── CMakeLists.txt
+│   │   │           ├── main.c
+│   │   │           └── README.md
+│   │   ├── api-tests
+│   │   │   ├── api-test-async-dns
+│   │   │   │   ├── CMakeLists.txt
+│   │   │   │   └── main.c
+│   │   │   ├── api-test-cose
+│   │   │   │   ├── CMakeLists.txt
+│   │   │   │   ├── keys.c
+│   │   │   │   ├── main.c
+│   │   │   │   ├── README.md
+│   │   │   │   └── sign.c
+│   │   │   ├── api-test-dhcpc
+│   │   │   │   ├── CMakeLists.txt
+│   │   │   │   ├── main.c
+│   │   │   │   └── README.md
+│   │   │   ├── api-test-fts
+│   │   │   │   ├── canned-1.txt
+│   │   │   │   ├── canned-2.txt
+│   │   │   │   ├── CMakeLists.txt
+│   │   │   │   ├── les-mis-utf8.txt
+│   │   │   │   ├── main.c
+│   │   │   │   ├── README.md
+│   │   │   │   └── the-picture-of-dorian-gray.txt
+│   │   │   ├── api-test-gencrypto
+│   │   │   │   ├── CMakeLists.txt
+│   │   │   │   ├── lws-genaes.c
+│   │   │   │   ├── lws-genec.c
+│   │   │   │   ├── main.c
+│   │   │   │   └── README.md
+│   │   │   ├── api-test-jose
+│   │   │   │   ├── CMakeLists.txt
+│   │   │   │   ├── jwe.c
+│   │   │   │   ├── jwk.c
+│   │   │   │   ├── jws.c
+│   │   │   │   ├── main.c
+│   │   │   │   └── README.md
+│   │   │   ├── api-test-lecp
+│   │   │   │   ├── CMakeLists.txt
+│   │   │   │   ├── main.c
+│   │   │   │   └── README.md
+│   │   │   ├── api-test-lejp
+│   │   │   │   ├── CMakeLists.txt
+│   │   │   │   └── main.c
+│   │   │   ├── api-test-lwsac
+│   │   │   │   ├── CMakeLists.txt
+│   │   │   │   ├── main.c
+│   │   │   │   └── README.md
+│   │   │   ├── api-test-lws_cache
+│   │   │   │   ├── CMakeLists.txt
+│   │   │   │   ├── main.c
+│   │   │   │   ├── README.md
+│   │   │   │   └── text1.txt
+│   │   │   ├── api-test-lws_dsh
+│   │   │   │   ├── CMakeLists.txt
+│   │   │   │   ├── main.c
+│   │   │   │   └── README.md
+│   │   │   ├── api-test-lws_map
+│   │   │   │   ├── CMakeLists.txt
+│   │   │   │   └── main.c
+│   │   │   ├── api-test-lws_sequencer
+│   │   │   │   ├── CMakeLists.txt
+│   │   │   │   ├── libwebsockets.org.cer
+│   │   │   │   └── main.c
+│   │   │   ├── api-test-lws_smd
+│   │   │   │   ├── CMakeLists.txt
+│   │   │   │   └── main.c
+│   │   │   ├── api-test-lws_struct-json
+│   │   │   │   ├── CMakeLists.txt
+│   │   │   │   ├── main.c
+│   │   │   │   ├── README.md
+│   │   │   │   └── test2.c
+│   │   │   ├── api-test-lws_struct_sqlite
+│   │   │   │   ├── CMakeLists.txt
+│   │   │   │   ├── main.c
+│   │   │   │   └── README.md
+│   │   │   ├── api-test-lws_tokenize
+│   │   │   │   ├── CMakeLists.txt
+│   │   │   │   ├── main.c
+│   │   │   │   └── README.md
+│   │   │   ├── api-test-secure-streams
+│   │   │   │   ├── CMakeLists.txt
+│   │   │   │   ├── main.c
+│   │   │   │   └── README.md
+│   │   │   ├── api-test-smtp_client
+│   │   │   │   ├── CMakeLists.txt
+│   │   │   │   ├── main.c
+│   │   │   │   └── README.md
+│   │   │   └── README.md
+│   │   ├── client-server
+│   │   │   ├── minimal-ws-proxy
+│   │   │   │   ├── CMakeLists.txt
+│   │   │   │   ├── minimal-ws-proxy.c
+│   │   │   │   ├── mount-origin
+│   │   │   │   │   ├── example.js
+│   │   │   │   │   ├── favicon.ico
+│   │   │   │   │   ├── index.html
+│   │   │   │   │   ├── libwebsockets.org-logo.svg
+│   │   │   │   │   └── strict-csp.svg
+│   │   │   │   ├── protocol_lws_minimal.c
+│   │   │   │   └── README.md
+│   │   │   └── README.md
+│   │   ├── CMakeLists.txt
+│   │   ├── crypto
+│   │   │   ├── minimal-crypto-cose-key
+│   │   │   │   ├── CMakeLists.txt
+│   │   │   │   ├── main.c
+│   │   │   │   ├── README.md
+│   │   │   │   ├── set1.cks
+│   │   │   │   ├── sign1_pass01.sig
+│   │   │   │   ├── sign1_pass02.sig
+│   │   │   │   ├── sign1_pass03.sig
+│   │   │   │   ├── sign_pass01.sig
+│   │   │   │   ├── sign_pass02.sig
+│   │   │   │   └── sign_pass03.sig
+│   │   │   ├── minimal-crypto-cose-sign
+│   │   │   │   ├── CMakeLists.txt
+│   │   │   │   ├── main.c
+│   │   │   │   ├── payload.txt
+│   │   │   │   ├── README.md
+│   │   │   │   ├── rsa-4096.ck
+│   │   │   │   ├── set1.cks
+│   │   │   │   ├── sign1_pass01.sig
+│   │   │   │   ├── sign1_pass02.sig
+│   │   │   │   ├── sign1_pass03.sig
+│   │   │   │   ├── sign_pass01.sig
+│   │   │   │   ├── sign_pass02.sig
+│   │   │   │   ├── sign_pass03.sig
+│   │   │   │   └── sign-rsa4096.sig
+│   │   │   ├── minimal-crypto-jwe
+│   │   │   │   ├── CMakeLists.txt
+│   │   │   │   ├── key-rsa-4096.private
+│   │   │   │   ├── key-rsa-4096.pub
+│   │   │   │   ├── main.c
+│   │   │   │   └── README.md
+│   │   │   ├── minimal-crypto-jwk
+│   │   │   │   ├── CMakeLists.txt
+│   │   │   │   ├── main.c
+│   │   │   │   └── README.md
+│   │   │   ├── minimal-crypto-jws
+│   │   │   │   ├── CMakeLists.txt
+│   │   │   │   ├── main.c
+│   │   │   │   └── README.md
+│   │   │   ├── minimal-crypto-x509
+│   │   │   │   ├── CMakeLists.txt
+│   │   │   │   ├── main.c
+│   │   │   │   └── README.md
+│   │   │   └── README.md
+│   │   ├── dbus-client
+│   │   │   ├── minimal-dbus-client
+│   │   │   │   ├── CMakeLists.txt
+│   │   │   │   ├── minimal-dbus-client.c
+│   │   │   │   └── README.md
+│   │   │   ├── minimal-dbus-ws-proxy-testclient
+│   │   │   │   ├── CMakeLists.txt
+│   │   │   │   ├── minimal-dbus-ws-proxy-testclient.c
+│   │   │   │   └── README.md
+│   │   │   └── README.md
+│   │   ├── dbus-server
+│   │   │   ├── minimal-dbus-server
+│   │   │   │   ├── CMakeLists.txt
+│   │   │   │   ├── main.c
+│   │   │   │   └── README.md
+│   │   │   ├── minimal-dbus-ws-proxy
+│   │   │   │   ├── CMakeLists.txt
+│   │   │   │   ├── main.c
+│   │   │   │   ├── org.libwebsockets.wsclientproxy.conf
+│   │   │   │   ├── protocol_lws_minimal_dbus_ws_proxy.c
+│   │   │   │   └── README.md
+│   │   │   └── README.md
+│   │   ├── embedded
+│   │   │   └── esp32
+│   │   │       ├── esp-c3dev
+│   │   │       │   ├── CMakeLists.txt
+│   │   │       │   ├── lws-button.c
+│   │   │       │   ├── main
+│   │   │       │   │   ├── bb-i2c.c
+│   │   │       │   │   ├── bb-i2c.h
+│   │   │       │   │   ├── CMakeLists.txt
+│   │   │       │   │   ├── component.mk
+│   │   │       │   │   ├── devices.c
+│   │   │       │   │   ├── gpio-esp32.c
+│   │   │       │   │   ├── gpio-esp32.h
+│   │   │       │   │   ├── gpio.h
+│   │   │       │   │   ├── i2c.c
+│   │   │       │   │   ├── i2c.h
+│   │   │       │   │   ├── lws-minimal-esp32.c
+│   │   │       │   │   └── policy.h
+│   │   │       │   ├── partitions.csv
+│   │   │       │   ├── private-lib-plat-freertos.h
+│   │   │       │   ├── sdkconfig
+│   │   │       │   └── sdkconfig.h
+│   │   │       ├── esp-heltec-wb32
+│   │   │       │   ├── banded-img.h
+│   │   │       │   ├── CMakeLists.txt
+│   │   │       │   ├── main
+│   │   │       │   │   ├── CMakeLists.txt
+│   │   │       │   │   ├── devices.c
+│   │   │       │   │   ├── lws-minimal-esp32.c
+│   │   │       │   │   └── policy.h
+│   │   │       │   ├── partitions.csv
+│   │   │       │   ├── scan
+│   │   │       │   │   ├── output.bmp
+│   │   │       │   │   ├── pic.h
+│   │   │       │   │   ├── pic.h.1
+│   │   │       │   │   ├── scan
+│   │   │       │   │   ├── scan.c
+│   │   │       │   │   └── scan.sh
+│   │   │       │   ├── sdkconfig
+│   │   │       │   └── sdkconfig.h
+│   │   │       └── esp-wrover-kit
+│   │   │           ├── CMakeLists.txt
+│   │   │           ├── main
+│   │   │           │   ├── cat-565.h
+│   │   │           │   ├── CMakeLists.txt
+│   │   │           │   ├── devices.c
+│   │   │           │   ├── lws-minimal-esp32.c
+│   │   │           │   ├── policy.h
+│   │   │           │   └── static-policy.h
+│   │   │           ├── partitions.csv
+│   │   │           ├── rgb565
+│   │   │           │   └── rgb565.c
+│   │   │           ├── sdkconfig
+│   │   │           └── sdkconfig.h
+│   │   ├── gtk
+│   │   │   └── minimal-gtk
+│   │   │       ├── CMakeLists.txt
+│   │   │       ├── main.c
+│   │   │       ├── README.md
+│   │   │       └── warmcat.com.cer
+│   │   ├── http-client
+│   │   │   ├── minimal-http-client
+│   │   │   │   ├── CMakeLists.txt
+│   │   │   │   ├── minimal-http-client.c
+│   │   │   │   ├── README.md
+│   │   │   │   ├── warmcat.com.cer
+│   │   │   │   └── wrong.cer
+│   │   │   ├── minimal-http-client-attach
+│   │   │   │   ├── CMakeLists.txt
+│   │   │   │   ├── minimal-http-client-attach.c
+│   │   │   │   └── README.md
+│   │   │   ├── minimal-http-client-captive-portal
+│   │   │   │   ├── CMakeLists.txt
+│   │   │   │   ├── minimal-http-client-captive-portal.c
+│   │   │   │   └── README.md
+│   │   │   ├── minimal-http-client-certinfo
+│   │   │   │   ├── CMakeLists.txt
+│   │   │   │   ├── minimal-http-client-certinfo.c
+│   │   │   │   ├── README.md
+│   │   │   │   └── warmcat.com.cer
+│   │   │   ├── minimal-http-client-custom-headers
+│   │   │   │   ├── CMakeLists.txt
+│   │   │   │   ├── minimal-http-client-custom-headers.c
+│   │   │   │   ├── README.md
+│   │   │   │   └── warmcat.com.cer
+│   │   │   ├── minimal-http-client-h2-rxflow
+│   │   │   │   ├── CMakeLists.txt
+│   │   │   │   ├── minimal-http-client.c
+│   │   │   │   ├── README.md
+│   │   │   │   └── warmcat.com.cer
+│   │   │   ├── minimal-http-client-hugeurl
+│   │   │   │   ├── CMakeLists.txt
+│   │   │   │   ├── minimal-http-client-hugeurl.c
+│   │   │   │   ├── README.md
+│   │   │   │   └── warmcat.com.cer
+│   │   │   ├── minimal-http-client-jit-trust
+│   │   │   │   ├── CMakeLists.txt
+│   │   │   │   ├── minimal-http-client.c
+│   │   │   │   ├── README.md
+│   │   │   │   ├── trust_blob.h
+│   │   │   │   └── warmcat.com.cer
+│   │   │   ├── minimal-http-client-multi
+│   │   │   │   ├── CMakeLists.txt
+│   │   │   │   ├── minimal-http-client-multi.c
+│   │   │   │   ├── README.md
+│   │   │   │   └── warmcat.com.cer
+│   │   │   ├── minimal-http-client-post
+│   │   │   │   ├── CMakeLists.txt
+│   │   │   │   ├── libwebsockets.org.cer
+│   │   │   │   ├── minimal-http-client-post.c
+│   │   │   │   └── README.md
+│   │   │   └── README.md
+│   │   ├── http-server
+│   │   │   ├── minimal-http-server
+│   │   │   │   ├── CMakeLists.txt
+│   │   │   │   ├── minimal-http-server.c
+│   │   │   │   ├── mount-origin
+│   │   │   │   │   ├── 404.html
+│   │   │   │   │   ├── favicon.ico
+│   │   │   │   │   ├── index.html
+│   │   │   │   │   ├── libwebsockets.org-logo.svg
+│   │   │   │   │   └── strict-csp.svg
+│   │   │   │   └── README.md
+│   │   │   ├── minimal-http-server-basicauth
+│   │   │   │   ├── ba-passwords
+│   │   │   │   ├── CMakeLists.txt
+│   │   │   │   ├── minimal-http-server-basicauth.c
+│   │   │   │   ├── mount-origin
+│   │   │   │   │   ├── 404.html
+│   │   │   │   │   ├── favicon.ico
+│   │   │   │   │   ├── index.html
+│   │   │   │   │   ├── libwebsockets.org-logo.svg
+│   │   │   │   │   └── strict-csp.svg
+│   │   │   │   ├── mount-secret-origin
+│   │   │   │   │   ├── index.html
+│   │   │   │   │   └── libwebsockets.org-logo.svg
+│   │   │   │   └── README.md
+│   │   │   ├── minimal-http-server-cgi
+│   │   │   │   ├── CMakeLists.txt
+│   │   │   │   ├── minimal-http-server.c
+│   │   │   │   ├── my-cgi-script.sh
+│   │   │   │   └── README.md
+│   │   │   ├── minimal-http-server-custom-headers
+│   │   │   │   ├── CMakeLists.txt
+│   │   │   │   ├── localhost-100y.cert
+│   │   │   │   ├── localhost-100y.key
+│   │   │   │   ├── minimal-http-server-custom-headers.c
+│   │   │   │   ├── mount-origin
+│   │   │   │   │   ├── 404.html
+│   │   │   │   │   ├── error.css
+│   │   │   │   │   ├── favicon.ico
+│   │   │   │   │   ├── index.html
+│   │   │   │   │   ├── libwebsockets.org-logo.svg
+│   │   │   │   │   └── strict-csp.svg
+│   │   │   │   └── README.md
+│   │   │   ├── minimal-http-server-deaddrop
+│   │   │   │   ├── ba-passwords
+│   │   │   │   ├── CMakeLists.txt
+│   │   │   │   ├── localhost-100y.cert
+│   │   │   │   ├── localhost-100y.key
+│   │   │   │   ├── minimal-http-server-deaddrop.c
+│   │   │   │   ├── mount-origin
+│   │   │   │   │   ├── 404.html
+│   │   │   │   │   ├── deaddrop.css
+│   │   │   │   │   ├── deaddrop.js
+│   │   │   │   │   ├── drop.svg
+│   │   │   │   │   ├── favicon.ico
+│   │   │   │   │   ├── index.html
+│   │   │   │   │   ├── libwebsockets.org-logo.svg
+│   │   │   │   │   └── strict-csp.svg
+│   │   │   │   ├── README.md
+│   │   │   │   └── uploads
+│   │   │   │       └── user1
+│   │   │   │           └── placeholder.txt
+│   │   │   ├── minimal-http-server-dynamic
+│   │   │   │   ├── CMakeLists.txt
+│   │   │   │   ├── localhost-100y.cert
+│   │   │   │   ├── localhost-100y.key
+│   │   │   │   ├── minimal-http-server-dynamic.c
+│   │   │   │   ├── mount-origin
+│   │   │   │   │   ├── 404.html
+│   │   │   │   │   ├── favicon.ico
+│   │   │   │   │   ├── index.html
+│   │   │   │   │   ├── libwebsockets.org-logo.svg
+│   │   │   │   │   └── strict-csp.svg
+│   │   │   │   └── README.md
+│   │   │   ├── minimal-http-server-eventlib
+│   │   │   │   ├── CMakeLists.txt
+│   │   │   │   ├── localhost-100y.cert
+│   │   │   │   ├── localhost-100y.key
+│   │   │   │   ├── minimal-http-server-eventlib.c
+│   │   │   │   ├── mount-origin
+│   │   │   │   │   ├── 404.html
+│   │   │   │   │   ├── favicon.ico
+│   │   │   │   │   ├── index.html
+│   │   │   │   │   ├── libwebsockets.org-logo.svg
+│   │   │   │   │   └── strict-csp.svg
+│   │   │   │   └── README.md
+│   │   │   ├── minimal-http-server-eventlib-custom
+│   │   │   │   ├── CMakeLists.txt
+│   │   │   │   ├── minimal-http-server.c
+│   │   │   │   ├── mount-origin
+│   │   │   │   │   ├── 404.html
+│   │   │   │   │   ├── favicon.ico
+│   │   │   │   │   ├── index.html
+│   │   │   │   │   ├── libwebsockets.org-logo.svg
+│   │   │   │   │   ├── strict-csp.svg
+│   │   │   │   │   └── symlink.html -> index.html
+│   │   │   │   └── README.md
+│   │   │   ├── minimal-http-server-eventlib-demos
+│   │   │   │   ├── CMakeLists.txt
+│   │   │   │   ├── localhost-100y.cert
+│   │   │   │   ├── localhost-100y.key
+│   │   │   │   ├── minimal-http-server-eventlib-demos.c
+│   │   │   │   ├── mount-origin
+│   │   │   │   │   ├── 404.html
+│   │   │   │   │   ├── candide-uncompressed.zip
+│   │   │   │   │   ├── candide.zip
+│   │   │   │   │   ├── favicon.ico
+│   │   │   │   │   ├── http2.png
+│   │   │   │   │   ├── leaf.jpg
+│   │   │   │   │   ├── libwebsockets.org-logo.svg
+│   │   │   │   │   ├── lws-common.js
+│   │   │   │   │   ├── strict-csp.svg
+│   │   │   │   │   ├── test.css
+│   │   │   │   │   ├── test.html
+│   │   │   │   │   ├── test.js
+│   │   │   │   │   └── wss-over-h2.png
+│   │   │   │   └── README.md
+│   │   │   ├── minimal-http-server-eventlib-foreign
+│   │   │   │   ├── CMakeLists.txt
+│   │   │   │   ├── glib.c
+│   │   │   │   ├── libev.c
+│   │   │   │   ├── libevent.c
+│   │   │   │   ├── libsdevent.c
+│   │   │   │   ├── libuv.c
+│   │   │   │   ├── localhost-100y.cert
+│   │   │   │   ├── localhost-100y.key
+│   │   │   │   ├── minimal-http-server-eventlib-foreign.c
+│   │   │   │   ├── mount-origin
+│   │   │   │   │   ├── 404.html
+│   │   │   │   │   ├── favicon.ico
+│   │   │   │   │   ├── index.html
+│   │   │   │   │   ├── libwebsockets.org-logo.svg
+│   │   │   │   │   └── strict-csp.svg
+│   │   │   │   ├── private.h
+│   │   │   │   ├── README.md
+│   │   │   │   └── uloop.c
+│   │   │   ├── minimal-http-server-eventlib-smp
+│   │   │   │   ├── CMakeLists.txt
+│   │   │   │   ├── localhost-100y.cert
+│   │   │   │   ├── localhost-100y.key
+│   │   │   │   ├── minimal-http-server-eventlib-smp.c
+│   │   │   │   ├── mount-origin
+│   │   │   │   │   ├── 404.html
+│   │   │   │   │   ├── favicon.ico
+│   │   │   │   │   ├── index.html
+│   │   │   │   │   ├── libwebsockets.org-logo.svg
+│   │   │   │   │   └── strict-csp.svg
+│   │   │   │   └── README.md
+│   │   │   ├── minimal-http-server-form-get
+│   │   │   │   ├── CMakeLists.txt
+│   │   │   │   ├── minimal-http-server-form-get.c
+│   │   │   │   ├── mount-origin
+│   │   │   │   │   ├── 404.html
+│   │   │   │   │   ├── after-form1.html
+│   │   │   │   │   ├── favicon.ico
+│   │   │   │   │   ├── index.html
+│   │   │   │   │   ├── libwebsockets.org-logo.svg
+│   │   │   │   │   └── strict-csp.svg
+│   │   │   │   └── README.md
+│   │   │   ├── minimal-http-server-form-post
+│   │   │   │   ├── CMakeLists.txt
+│   │   │   │   ├── localhost-100y.cert
+│   │   │   │   ├── localhost-100y.key
+│   │   │   │   ├── minimal-http-server-form-post.c
+│   │   │   │   ├── mount-origin
+│   │   │   │   │   ├── 404.html
+│   │   │   │   │   ├── after-form1.html
+│   │   │   │   │   ├── favicon.ico
+│   │   │   │   │   ├── index.html
+│   │   │   │   │   ├── libwebsockets.org-logo.svg
+│   │   │   │   │   └── strict-csp.svg
+│   │   │   │   └── README.md
+│   │   │   ├── minimal-http-server-form-post-file
+│   │   │   │   ├── CMakeLists.txt
+│   │   │   │   ├── minimal-http-server-form-post-file.c
+│   │   │   │   ├── mount-origin
+│   │   │   │   │   ├── 404.html
+│   │   │   │   │   ├── after-form1.html
+│   │   │   │   │   ├── favicon.ico
+│   │   │   │   │   ├── index.html
+│   │   │   │   │   ├── libwebsockets.org-logo.svg
+│   │   │   │   │   └── strict-csp.svg
+│   │   │   │   └── README.md
+│   │   │   ├── minimal-http-server-form-post-lwsac
+│   │   │   │   ├── CMakeLists.txt
+│   │   │   │   ├── localhost-100y.cert
+│   │   │   │   ├── localhost-100y.key
+│   │   │   │   ├── minimal-http-server-form-post.c
+│   │   │   │   └── README.md
+│   │   │   ├── minimal-http-server-fulltext-search
+│   │   │   │   ├── CMakeLists.txt
+│   │   │   │   ├── lws-fts.index
+│   │   │   │   ├── minimal-http-server.c
+│   │   │   │   ├── mount-origin
+│   │   │   │   │   ├── 404.html
+│   │   │   │   │   ├── dorian-gray-wikipedia.jpg
+│   │   │   │   │   ├── favicon.ico
+│   │   │   │   │   ├── index.html
+│   │   │   │   │   ├── libwebsockets.org-logo.svg
+│   │   │   │   │   ├── lws-fts.css
+│   │   │   │   │   ├── lws-fts.js
+│   │   │   │   │   └── strict-csp.svg
+│   │   │   │   ├── README.md
+│   │   │   │   └── the-picture-of-dorian-gray.txt
+│   │   │   ├── minimal-http-server-h2-long-poll
+│   │   │   │   ├── CMakeLists.txt
+│   │   │   │   ├── localhost-100y.cert
+│   │   │   │   ├── localhost-100y.key
+│   │   │   │   ├── minimal-http-server.c
+│   │   │   │   └── README.md
+│   │   │   ├── minimal-http-server-mimetypes
+│   │   │   │   ├── CMakeLists.txt
+│   │   │   │   ├── minimal-http-server-mimetypes.c
+│   │   │   │   ├── mount-origin
+│   │   │   │   │   ├── 404.html
+│   │   │   │   │   ├── favicon.ico
+│   │   │   │   │   ├── index.html
+│   │   │   │   │   ├── libwebsockets.org-logo.svg
+│   │   │   │   │   ├── strict-csp.svg
+│   │   │   │   │   └── test.tar.bz2
+│   │   │   │   └── README.md
+│   │   │   ├── minimal-http-server-multivhost
+│   │   │   │   ├── CMakeLists.txt
+│   │   │   │   ├── minimal-http-server.c
+│   │   │   │   ├── mount-origin-localhost1
+│   │   │   │   │   ├── 404.html
+│   │   │   │   │   ├── favicon.ico
+│   │   │   │   │   ├── index.html
+│   │   │   │   │   ├── libwebsockets.org-logo.svg
+│   │   │   │   │   └── strict-csp.svg
+│   │   │   │   ├── mount-origin-localhost2
+│   │   │   │   │   ├── 404.html
+│   │   │   │   │   ├── favicon.ico
+│   │   │   │   │   ├── index.html
+│   │   │   │   │   ├── libwebsockets.org-logo.svg
+│   │   │   │   │   └── strict-csp.svg
+│   │   │   │   ├── mount-origin-localhost3
+│   │   │   │   │   ├── 404.html
+│   │   │   │   │   ├── favicon.ico
+│   │   │   │   │   ├── index.html
+│   │   │   │   │   ├── libwebsockets.org-logo.svg
+│   │   │   │   │   └── strict-csp.svg
+│   │   │   │   └── README.md
+│   │   │   ├── minimal-http-server-proxy
+│   │   │   │   ├── CMakeLists.txt
+│   │   │   │   ├── localhost-100y.cert
+│   │   │   │   ├── localhost-100y.key
+│   │   │   │   ├── minimal-http-server-proxy.c
+│   │   │   │   └── mount-origin
+│   │   │   │       ├── 404.html
+│   │   │   │       ├── favicon.ico
+│   │   │   │       ├── http2.png
+│   │   │   │       └── index.html
+│   │   │   ├── minimal-http-server-smp
+│   │   │   │   ├── CMakeLists.txt
+│   │   │   │   ├── localhost-100y.cert
+│   │   │   │   ├── localhost-100y.key
+│   │   │   │   ├── minimal-http-server-smp.c
+│   │   │   │   ├── mount-origin
+│   │   │   │   │   ├── favicon.ico
+│   │   │   │   │   ├── index.html
+│   │   │   │   │   ├── libwebsockets.org-logo.svg
+│   │   │   │   │   └── strict-csp.svg
+│   │   │   │   └── README.md
+│   │   │   ├── minimal-http-server-sse
+│   │   │   │   ├── CMakeLists.txt
+│   │   │   │   ├── localhost-100y.cert
+│   │   │   │   ├── localhost-100y.key
+│   │   │   │   ├── minimal-http-server-sse.c
+│   │   │   │   ├── mount-origin
+│   │   │   │   │   ├── 404.html
+│   │   │   │   │   ├── example.js
+│   │   │   │   │   ├── favicon.ico
+│   │   │   │   │   ├── index.html
+│   │   │   │   │   ├── libwebsockets.org-logo.svg
+│   │   │   │   │   └── strict-csp.svg
+│   │   │   │   └── README.md
+│   │   │   ├── minimal-http-server-sse-ring
+│   │   │   │   ├── CMakeLists.txt
+│   │   │   │   ├── minimal-http-server-sse-ring.c
+│   │   │   │   ├── mount-origin
+│   │   │   │   │   ├── 404.html
+│   │   │   │   │   ├── example.js
+│   │   │   │   │   ├── favicon.ico
+│   │   │   │   │   ├── index.html
+│   │   │   │   │   ├── libwebsockets.org-logo.svg
+│   │   │   │   │   └── strict-csp.svg
+│   │   │   │   └── README.md
+│   │   │   ├── minimal-http-server-tls
+│   │   │   │   ├── CMakeLists.txt
+│   │   │   │   ├── localhost-100y.cert
+│   │   │   │   ├── localhost-100y.key
+│   │   │   │   ├── minimal-http-server-tls.c
+│   │   │   │   ├── mount-origin
+│   │   │   │   │   ├── 404.html
+│   │   │   │   │   ├── example.js
+│   │   │   │   │   ├── favicon.ico
+│   │   │   │   │   ├── http2.png
+│   │   │   │   │   ├── index.html
+│   │   │   │   │   ├── libwebsockets.org-logo.svg
+│   │   │   │   │   └── strict-csp.svg
+│   │   │   │   └── README.md
+│   │   │   ├── minimal-http-server-tls-80
+│   │   │   │   ├── CMakeLists.txt
+│   │   │   │   ├── localhost-100y.cert
+│   │   │   │   ├── localhost-100y.key
+│   │   │   │   ├── minimal-http-server-tls-80.c
+│   │   │   │   ├── mount-origin
+│   │   │   │   │   ├── 404.html
+│   │   │   │   │   ├── example.js
+│   │   │   │   │   ├── favicon.ico
+│   │   │   │   │   ├── http2.png
+│   │   │   │   │   ├── index.html
+│   │   │   │   │   ├── libwebsockets.org-logo.svg
+│   │   │   │   │   └── strict-csp.svg
+│   │   │   │   └── README.md
+│   │   │   ├── minimal-http-server-tls-mem
+│   │   │   │   ├── CMakeLists.txt
+│   │   │   │   ├── minimal-http-server-tls-mem.c
+│   │   │   │   ├── mount-origin
+│   │   │   │   │   ├── 404.html
+│   │   │   │   │   ├── example.js
+│   │   │   │   │   ├── favicon.ico
+│   │   │   │   │   ├── http2.png
+│   │   │   │   │   ├── index.html
+│   │   │   │   │   ├── libwebsockets.org-logo.svg
+│   │   │   │   │   └── strict-csp.svg
+│   │   │   │   └── README.md
+│   │   │   └── README.md
+│   │   ├── mqtt-client
+│   │   │   ├── minimal-mqtt-client
+│   │   │   │   ├── CMakeLists.txt
+│   │   │   │   ├── minimal-mqtt-client.c
+│   │   │   │   ├── mosq-ca.crt
+│   │   │   │   ├── mosq-server.crt
+│   │   │   │   ├── mosq-server.key
+│   │   │   │   └── README.md
+│   │   │   ├── minimal-mqtt-client-multi
+│   │   │   │   ├── CMakeLists.txt
+│   │   │   │   ├── minimal-mqtt-client-multi.c
+│   │   │   │   ├── README.md
+│   │   │   │   ├── selftest.sh.broken-on-travis
+│   │   │   │   ├── warmcat.com.cer
+│   │   │   │   └── wget-log
+│   │   │   └── README.md
+│   │   ├── raw
+│   │   │   ├── minimal-raw-adopt-tcp
+│   │   │   │   ├── CMakeLists.txt
+│   │   │   │   ├── minimal-raw-adopt-tcp.c
+│   │   │   │   └── README.md
+│   │   │   ├── minimal-raw-adopt-udp
+│   │   │   │   ├── CMakeLists.txt
+│   │   │   │   ├── minimal-raw-adopt-udp.c
+│   │   │   │   └── README.md
+│   │   │   ├── minimal-raw-audio
+│   │   │   │   ├── audio.c
+│   │   │   │   ├── CMakeLists.txt
+│   │   │   │   └── README.md
+│   │   │   ├── minimal-raw-fallback-http-server
+│   │   │   │   ├── CMakeLists.txt
+│   │   │   │   ├── localhost-100y.cert
+│   │   │   │   ├── localhost-100y.key
+│   │   │   │   ├── minimal-raw-fallback-http-server.c
+│   │   │   │   ├── mount-origin
+│   │   │   │   │   ├── 404.html
+│   │   │   │   │   ├── favicon.ico
+│   │   │   │   │   ├── index.html
+│   │   │   │   │   ├── libwebsockets.org-logo.svg
+│   │   │   │   │   └── strict-csp.svg
+│   │   │   │   └── README.md
+│   │   │   ├── minimal-raw-file
+│   │   │   │   ├── CMakeLists.txt
+│   │   │   │   ├── minimal-raw-file.c
+│   │   │   │   └── README.md
+│   │   │   ├── minimal-raw-netcat
+│   │   │   │   ├── CMakeLists.txt
+│   │   │   │   ├── minimal-raw-netcat.c
+│   │   │   │   └── README.md
+│   │   │   ├── minimal-raw-proxy
+│   │   │   │   ├── CMakeLists.txt
+│   │   │   │   ├── minimal-raw-proxy.c
+│   │   │   │   └── README.md
+│   │   │   ├── minimal-raw-proxy-fallback
+│   │   │   │   ├── CMakeLists.txt
+│   │   │   │   ├── localhost-100y.cert
+│   │   │   │   ├── localhost-100y.key
+│   │   │   │   ├── minimal-raw-proxy-fallback.c
+│   │   │   │   ├── mount-origin
+│   │   │   │   │   ├── 404.html
+│   │   │   │   │   ├── favicon.ico
+│   │   │   │   │   ├── index.html
+│   │   │   │   │   ├── libwebsockets.org-logo.svg
+│   │   │   │   │   └── strict-csp.svg
+│   │   │   │   └── README.md
+│   │   │   ├── minimal-raw-serial
+│   │   │   │   ├── CMakeLists.txt
+│   │   │   │   ├── minimal-raw-file.c
+│   │   │   │   └── README.md
+│   │   │   ├── minimal-raw-vhost
+│   │   │   │   ├── CMakeLists.txt
+│   │   │   │   ├── localhost-100y.cert
+│   │   │   │   ├── localhost-100y.key
+│   │   │   │   ├── minimal-raw-vhost.c
+│   │   │   │   └── README.md
+│   │   │   └── README.md
+│   │   ├── README.md
+│   │   ├── secure-streams
+│   │   │   ├── minimal-secure-streams
+│   │   │   │   ├── CMakeLists.txt
+│   │   │   │   ├── minimal-secure-streams.c
+│   │   │   │   └── README.md
+│   │   │   ├── minimal-secure-streams-alexa
+│   │   │   │   ├── alexa.c
+│   │   │   │   ├── alexa_linux.ppn
+│   │   │   │   ├── audio.c
+│   │   │   │   ├── CMakeLists.txt
+│   │   │   │   ├── main.c
+│   │   │   │   ├── porcupine_params.pv
+│   │   │   │   ├── private.h
+│   │   │   │   └── README.md
+│   │   │   ├── minimal-secure-streams-avs
+│   │   │   │   ├── avs.c
+│   │   │   │   ├── CMakeLists.txt
+│   │   │   │   ├── main.c
+│   │   │   │   ├── main-client.c
+│   │   │   │   └── year.wav
+│   │   │   ├── minimal-secure-streams-binance
+│   │   │   │   ├── CMakeLists.txt
+│   │   │   │   ├── main.c
+│   │   │   │   ├── policy.json
+│   │   │   │   └── README.md
+│   │   │   ├── minimal-secure-streams-blob
+│   │   │   │   ├── CMakeLists.txt
+│   │   │   │   ├── minimal-secure-streams.c
+│   │   │   │   └── README.md
+│   │   │   ├── minimal-secure-streams-client-tx
+│   │   │   │   ├── CMakeLists.txt
+│   │   │   │   ├── minimal-secure-streams-client-tx.c
+│   │   │   │   └── README.md
+│   │   │   ├── minimal-secure-streams-cpp
+│   │   │   │   ├── CMakeLists.txt
+│   │   │   │   └── main.cxx
+│   │   │   ├── minimal-secure-streams-hugeurl
+│   │   │   │   ├── CMakeLists.txt
+│   │   │   │   ├── minimal-secure-streams.c
+│   │   │   │   └── README.md
+│   │   │   ├── minimal-secure-streams-metadata
+│   │   │   │   ├── CMakeLists.txt
+│   │   │   │   ├── minimal-secure-streams.c
+│   │   │   │   └── README.md
+│   │   │   ├── minimal-secure-streams-metrics-proxy
+│   │   │   │   └── metrics-proxy-policy.json
+│   │   │   ├── minimal-secure-streams-perf
+│   │   │   │   ├── CMakeLists.txt
+│   │   │   │   ├── minimal-secure-streams.c
+│   │   │   │   └── README.md
+│   │   │   ├── minimal-secure-streams-policy2c
+│   │   │   │   ├── CMakeLists.txt
+│   │   │   │   ├── minimal-secure-streams.c
+│   │   │   │   └── README.md
+│   │   │   ├── minimal-secure-streams-post
+│   │   │   │   ├── CMakeLists.txt
+│   │   │   │   ├── minimal-secure-streams-post.c
+│   │   │   │   └── README.md
+│   │   │   ├── minimal-secure-streams-proxy
+│   │   │   │   ├── CMakeLists.txt
+│   │   │   │   ├── main.c
+│   │   │   │   └── README.md
+│   │   │   ├── minimal-secure-streams-seq
+│   │   │   │   ├── CMakeLists.txt
+│   │   │   │   ├── minimal-secure-streams.c
+│   │   │   │   └── README.md
+│   │   │   ├── minimal-secure-streams-server
+│   │   │   │   ├── CMakeLists.txt
+│   │   │   │   ├── main.c
+│   │   │   │   ├── README.md
+│   │   │   │   ├── ss-client.c
+│   │   │   │   └── ss-server.c
+│   │   │   ├── minimal-secure-streams-server-raw
+│   │   │   │   ├── CMakeLists.txt
+│   │   │   │   ├── main.c
+│   │   │   │   ├── README.md
+│   │   │   │   └── ss-server.c
+│   │   │   ├── minimal-secure-streams-sigv4
+│   │   │   │   ├── CMakeLists.txt
+│   │   │   │   ├── policy.json
+│   │   │   │   ├── README.md
+│   │   │   │   ├── ss-s3-main.c
+│   │   │   │   ├── ss-s3-put.h
+│   │   │   │   ├── ss-s3-ss.c
+│   │   │   │   └── static_policy.h
+│   │   │   ├── minimal-secure-streams-smd
+│   │   │   │   ├── CMakeLists.txt
+│   │   │   │   ├── minimal-secure-streams-smd.c
+│   │   │   │   ├── multi.c
+│   │   │   │   └── README.md
+│   │   │   ├── minimal-secure-streams-staticpolicy
+│   │   │   │   ├── CMakeLists.txt
+│   │   │   │   ├── minimal-secure-streams.c
+│   │   │   │   ├── README.md
+│   │   │   │   ├── static-policy.h
+│   │   │   │   └── static-policy.json
+│   │   │   ├── minimal-secure-streams-stress
+│   │   │   │   ├── CMakeLists.txt
+│   │   │   │   ├── minimal-secure-streams.c
+│   │   │   │   └── README.md
+│   │   │   ├── minimal-secure-streams-testsfail
+│   │   │   │   ├── CMakeLists.txt
+│   │   │   │   ├── minimal-secure-streams-testsfail.c
+│   │   │   │   └── README.md
+│   │   │   ├── minimal-secure-streams-threads
+│   │   │   │   ├── CMakeLists.txt
+│   │   │   │   ├── minimal-secure-streams-threads.c
+│   │   │   │   └── README.md
+│   │   │   └── README.md
+│   │   ├── ws-client
+│   │   │   ├── minimal-ws-client
+│   │   │   │   ├── CMakeLists.txt
+│   │   │   │   ├── libwebsockets.org.cer
+│   │   │   │   ├── minimal-ws-client.c
+│   │   │   │   └── README.md
+│   │   │   ├── minimal-ws-client-binance
+│   │   │   │   ├── CMakeLists.txt
+│   │   │   │   ├── main.c
+│   │   │   │   └── README.md
+│   │   │   ├── minimal-ws-client-echo
+│   │   │   │   ├── CMakeLists.txt
+│   │   │   │   ├── minimal-ws-client-echo.c
+│   │   │   │   ├── protocol_lws_minimal_client_echo.c
+│   │   │   │   └── README.md
+│   │   │   ├── minimal-ws-client-ping
+│   │   │   │   ├── CMakeLists.txt
+│   │   │   │   ├── libwebsockets.org.cer
+│   │   │   │   ├── minimal-ws-client-ping.c
+│   │   │   │   └── README.md
+│   │   │   ├── minimal-ws-client-pmd-bulk
+│   │   │   │   ├── CMakeLists.txt
+│   │   │   │   ├── minimal-ws-client-pmd-bulk.c
+│   │   │   │   ├── protocol_lws_minimal_pmd_bulk.c
+│   │   │   │   └── README.md
+│   │   │   ├── minimal-ws-client-rx
+│   │   │   │   ├── CMakeLists.txt
+│   │   │   │   ├── libwebsockets.org.cer
+│   │   │   │   ├── minimal-ws-client.c
+│   │   │   │   └── README.md
+│   │   │   ├── minimal-ws-client-spam
+│   │   │   │   ├── CMakeLists.txt
+│   │   │   │   ├── libwebsockets.org.cer
+│   │   │   │   ├── minimal-ws-client-spam.c
+│   │   │   │   └── README.md
+│   │   │   ├── minimal-ws-client-spam-tx-rx
+│   │   │   │   ├── CMakeLists.txt
+│   │   │   │   ├── libwebsockets.org.cer
+│   │   │   │   └── minimal-ws-client.c
+│   │   │   ├── minimal-ws-client-tx
+│   │   │   │   ├── CMakeLists.txt
+│   │   │   │   ├── minimal-ws-client.c
+│   │   │   │   └── README.md
+│   │   │   └── README.md
+│   │   └── ws-server
+│   │       ├── minimal-ws-broker
+│   │       │   ├── CMakeLists.txt
+│   │       │   ├── minimal-ws-broker.c
+│   │       │   ├── mount-origin
+│   │       │   │   ├── example.js
+│   │       │   │   ├── favicon.ico
+│   │       │   │   ├── index.html
+│   │       │   │   ├── libwebsockets.org-logo.svg
+│   │       │   │   └── strict-csp.svg
+│   │       │   ├── protocol_lws_minimal.c
+│   │       │   └── README.md
+│   │       ├── minimal-ws-raw-proxy
+│   │       │   ├── CMakeLists.txt
+│   │       │   ├── localhost-100y.cert
+│   │       │   ├── localhost-100y.key
+│   │       │   ├── minimal-ws-raw-proxy.c
+│   │       │   ├── mount-origin
+│   │       │   │   ├── example.js
+│   │       │   │   ├── favicon.ico
+│   │       │   │   ├── index.html
+│   │       │   │   ├── libwebsockets.org-logo.svg
+│   │       │   │   └── strict-csp.svg
+│   │       │   └── README.md
+│   │       ├── minimal-ws-server
+│   │       │   ├── CMakeLists.txt
+│   │       │   ├── localhost-100y.cert
+│   │       │   ├── localhost-100y.key
+│   │       │   ├── minimal-ws-server.c
+│   │       │   ├── mount-origin
+│   │       │   │   ├── example.js
+│   │       │   │   ├── favicon.ico
+│   │       │   │   ├── index.html
+│   │       │   │   ├── libwebsockets.org-logo.svg
+│   │       │   │   └── strict-csp.svg
+│   │       │   ├── protocol_lws_minimal.c
+│   │       │   └── README.md
+│   │       ├── minimal-ws-server-echo
+│   │       │   ├── CMakeLists.txt
+│   │       │   ├── minimal-ws-server-echo.c
+│   │       │   ├── protocol_lws_minimal_server_echo.c
+│   │       │   └── README.md
+│   │       ├── minimal-ws-server-pmd
+│   │       │   ├── CMakeLists.txt
+│   │       │   ├── minimal-ws-server-pmd.c
+│   │       │   ├── mount-origin
+│   │       │   │   ├── example.js
+│   │       │   │   ├── favicon.ico
+│   │       │   │   ├── index.html
+│   │       │   │   ├── libwebsockets.org-logo.svg
+│   │       │   │   └── strict-csp.svg
+│   │       │   ├── protocol_lws_minimal.c
+│   │       │   └── README.md
+│   │       ├── minimal-ws-server-pmd-bulk
+│   │       │   ├── CMakeLists.txt
+│   │       │   ├── minimal-ws-server-pmd-bulk.c
+│   │       │   ├── mount-origin
+│   │       │   │   ├── example.js
+│   │       │   │   ├── favicon.ico
+│   │       │   │   ├── index.html
+│   │       │   │   ├── libwebsockets.org-logo.svg
+│   │       │   │   └── strict-csp.svg
+│   │       │   ├── protocol_lws_minimal_pmd_bulk.c
+│   │       │   └── README.md
+│   │       ├── minimal-ws-server-pmd-corner
+│   │       │   ├── CMakeLists.txt
+│   │       │   ├── minimal-ws-server-pmd-corner.c
+│   │       │   ├── mount-origin
+│   │       │   │   ├── example.js
+│   │       │   │   ├── favicon.ico
+│   │       │   │   ├── index.html
+│   │       │   │   ├── libwebsockets.org-logo.svg
+│   │       │   │   └── strict-csp.svg
+│   │       │   ├── protocol_lws_minimal.c
+│   │       │   └── README.md
+│   │       ├── minimal-ws-server-ring
+│   │       │   ├── CMakeLists.txt
+│   │       │   ├── minimal-ws-server-ring.c
+│   │       │   ├── mount-origin
+│   │       │   │   ├── example.js
+│   │       │   │   ├── favicon.ico
+│   │       │   │   ├── index.html
+│   │       │   │   ├── libwebsockets.org-logo.svg
+│   │       │   │   └── strict-csp.svg
+│   │       │   ├── protocol_lws_minimal.c
+│   │       │   └── README.md
+│   │       ├── minimal-ws-server-threadpool
+│   │       │   ├── CMakeLists.txt
+│   │       │   ├── minimal-ws-server-threadpool.c
+│   │       │   ├── mount-origin
+│   │       │   │   ├── example.js
+│   │       │   │   ├── favicon.ico
+│   │       │   │   ├── index.html
+│   │       │   │   ├── libwebsockets.org-logo.svg
+│   │       │   │   └── strict-csp.svg
+│   │       │   ├── protocol_lws_minimal_threadpool.c
+│   │       │   └── README.md
+│   │       ├── minimal-ws-server-threads
+│   │       │   ├── CMakeLists.txt
+│   │       │   ├── minimal-ws-server.c
+│   │       │   ├── mount-origin
+│   │       │   │   ├── example.js
+│   │       │   │   ├── favicon.ico
+│   │       │   │   ├── index.html
+│   │       │   │   ├── libwebsockets.org-logo.svg
+│   │       │   │   └── strict-csp.svg
+│   │       │   ├── protocol_lws_minimal.c
+│   │       │   └── README.md
+│   │       ├── minimal-ws-server-threads-foreign-libuv-smp
+│   │       │   ├── CMakeLists.txt
+│   │       │   ├── minimal-ws-server.c
+│   │       │   ├── mount-origin
+│   │       │   │   ├── example.js
+│   │       │   │   ├── favicon.ico
+│   │       │   │   ├── index.html
+│   │       │   │   ├── libwebsockets.org-logo.svg
+│   │       │   │   └── strict-csp.svg
+│   │       │   ├── protocol_lws_minimal.c
+│   │       │   └── README.md
+│   │       ├── minimal-ws-server-threads-smp
+│   │       │   ├── CMakeLists.txt
+│   │       │   ├── minimal-ws-server.c
+│   │       │   ├── mount-origin
+│   │       │   │   ├── example.js
+│   │       │   │   ├── favicon.ico
+│   │       │   │   ├── index.html
+│   │       │   │   ├── libwebsockets.org-logo.svg
+│   │       │   │   └── strict-csp.svg
+│   │       │   ├── protocol_lws_minimal.c
+│   │       │   └── README.md
+│   │       ├── minimal-ws-server-timer
+│   │       │   ├── CMakeLists.txt
+│   │       │   ├── localhost-100y.cert
+│   │       │   ├── localhost-100y.key
+│   │       │   ├── minimal-ws-server.c
+│   │       │   ├── mount-origin
+│   │       │   │   ├── example.js
+│   │       │   │   ├── favicon.ico
+│   │       │   │   ├── index.html
+│   │       │   │   ├── libwebsockets.org-logo.svg
+│   │       │   │   └── strict-csp.svg
+│   │       │   └── README.md
+│   │       └── README.md
+│   ├── minimal-examples-lowlevel
+│   │   └── raw
+│   │       └── minimal-raw-client
+│   │           ├── CMakeLists.txt
+│   │           └── main.c
+│   ├── plugins
+│   │   ├── acme-client
+│   │   │   └── protocol_lws_acme_client.c
+│   │   ├── CMakeLists.txt
+│   │   ├── deaddrop
+│   │   │   ├── assets
+│   │   │   │   ├── deaddrop.css
+│   │   │   │   ├── deaddrop.js
+│   │   │   │   ├── drop.svg
+│   │   │   │   └── index.html
+│   │   │   ├── protocol_lws_deaddrop.c
+│   │   │   └── README.md
+│   │   ├── lwsws-logo.png
+│   │   ├── protocol_client_loopback_test.c
+│   │   ├── protocol_dumb_increment.c
+│   │   ├── protocol_fulltext_demo.c
+│   │   ├── protocol_lws_mirror.c
+│   │   ├── protocol_lws_openmetrics_export.c
+│   │   ├── protocol_lws_raw_test.c
+│   │   ├── protocol_lws_sshd_demo.c
+│   │   ├── protocol_lws_status.c
+│   │   ├── protocol_post_demo.c
+│   │   ├── raw-proxy
+│   │   │   ├── protocol_lws_raw_proxy.c
+│   │   │   └── README.md
+│   │   ├── server-status.css
+│   │   └── ssh-base
+│   │       ├── crypto
+│   │       │   ├── chacha.c
+│   │       │   ├── ed25519.c
+│   │       │   ├── fe25519.c
+│   │       │   ├── fe25519.h
+│   │       │   ├── ge25519_base.data
+│   │       │   ├── ge25519.c
+│   │       │   ├── ge25519.h
+│   │       │   ├── poly1305.c
+│   │       │   ├── sc25519.c
+│   │       │   ├── sc25519.h
+│   │       │   └── smult_curve25519_ref.c
+│   │       ├── include
+│   │       │   ├── lws-plugin-sshd-static-build-includes.h
+│   │       │   ├── lws-plugin-ssh.h
+│   │       │   └── lws-ssh.h
+│   │       ├── kex-25519.c
+│   │       ├── sshd.c
+│   │       └── telnet.c
+│   ├── plugin-standalone
+│   │   ├── CMakeLists.txt
+│   │   └── protocol_example_standalone.c
+│   ├── README.md
+│   ├── READMEs
+│   │   ├── mainpage.md
+│   │   ├── README.async-dns.md
+│   │   ├── README.build-android.md
+│   │   ├── README.build.md
+│   │   ├── README.build-windows.md
+│   │   ├── README.captive-portal-detection.md
+│   │   ├── README.cbor-cose.md
+│   │   ├── README.cbor-lecp.md
+│   │   ├── README.ci.md
+│   │   ├── README.cmake.md
+│   │   ├── README.coding.md
+│   │   ├── README.content-security-policy.md
+│   │   ├── README.contributing.md
+│   │   ├── README.crypto-apis.md
+│   │   ├── README.ctest.md
+│   │   ├── README.debugging.md
+│   │   ├── README.esp32.md
+│   │   ├── README.event-libs.md
+│   │   ├── README.event-loops-intro.md
+│   │   ├── README.fault-injection.md
+│   │   ├── README.h2-long-poll.md
+│   │   ├── README.http-cache.md
+│   │   ├── README.http-fallback.md
+│   │   ├── README.http_parser.md
+│   │   ├── README.jit-trust.md
+│   │   ├── README.json-lejp.md
+│   │   ├── README.jwt.md
+│   │   ├── README.libressl.md
+│   │   ├── README.lifecycle.md
+│   │   ├── README.logging.md
+│   │   ├── README.lws_cache.md
+│   │   ├── README.lws_conmon.md
+│   │   ├── README.lws_dll.md
+│   │   ├── README.lws_map.md
+│   │   ├── README.lws_metrics.md
+│   │   ├── README.lws_plugins.md
+│   │   ├── README.lws_retry.md
+│   │   ├── README.lws_sequencer.md
+│   │   ├── README.lws_struct.md
+│   │   ├── README.lws_sul.md
+│   │   ├── README.lws_system.md
+│   │   ├── README.lwsws.md
+│   │   ├── README.plugin-acme.md
+│   │   ├── README.plugin-sshd-base.md
+│   │   ├── README.porting.md
+│   │   ├── README.problems.md
+│   │   ├── README.release-policy.md
+│   │   ├── README.routing.md
+│   │   ├── README.tcp_fastopen.md
+│   │   ├── README.test-apps.md
+│   │   ├── README.tls-sessions.md
+│   │   ├── README.udp.md
+│   │   ├── README.unix-domain-reverse-proxy.md
+│   │   ├── README.vulnerability-reporting.md
+│   │   └── release-checklist
+│   ├── scripts
+│   │   ├── ahrefs-topsites.sh
+│   │   ├── attack.sh
+│   │   ├── autobahn-test-client.sh
+│   │   ├── autobahn-test-server.sh
+│   │   ├── build-gcov.sh
+│   │   ├── client-ca
+│   │   │   ├── certindex.txt
+│   │   │   ├── create-ca.sh
+│   │   │   ├── create-client-cert.sh
+│   │   │   ├── create-server-cert.sh
+│   │   │   ├── serial
+│   │   │   └── tmp.cnf
+│   │   ├── ctest-background-kill.sh
+│   │   ├── ctest-background.sh
+│   │   ├── dox-extra.css
+│   │   ├── esp32.mk
+│   │   ├── gcov.sh
+│   │   ├── h2load.sh
+│   │   ├── h2load-smp.sh
+│   │   ├── h2spec.sh
+│   │   ├── mozilla-trust-gen.sh
+│   │   ├── test-dbus-proxy.sh
+│   │   ├── travis_control.sh
+│   │   └── travis_install.sh
+│   ├── test-apps
+│   │   ├── 1.png
+│   │   ├── 2.png
+│   │   ├── 3.png
+│   │   ├── 4.png
+│   │   ├── 5.png
+│   │   ├── 6.png
+│   │   ├── 7.png
+│   │   ├── 8.png
+│   │   ├── android
+│   │   │   ├── app
+│   │   │   │   ├── app.iml
+│   │   │   │   ├── build.gradle
+│   │   │   │   └── src
+│   │   │   │       └── main
+│   │   │   │           ├── AndroidManifest.xml
+│   │   │   │           ├── java
+│   │   │   │           │   └── org
+│   │   │   │           │       └── libwebsockets
+│   │   │   │           │           └── client
+│   │   │   │           │               ├── LwsService.java
+│   │   │   │           │               ├── MainActivity.java
+│   │   │   │           │               └── ThreadService.java
+│   │   │   │           ├── jni
+│   │   │   │           │   ├── Android.mk
+│   │   │   │           │   ├── Application.mk
+│   │   │   │           │   ├── LwsService.cpp
+│   │   │   │           │   └── NativeLibs.mk
+│   │   │   │           ├── libs
+│   │   │   │           │   └── placeholder
+│   │   │   │           └── res
+│   │   │   │               ├── drawable
+│   │   │   │               │   └── warmcat.png
+│   │   │   │               ├── layout
+│   │   │   │               │   └── activity_main.xml
+│   │   │   │               ├── mipmap-hdpi
+│   │   │   │               │   └── ic_launcher.png
+│   │   │   │               ├── mipmap-mdpi
+│   │   │   │               │   └── ic_launcher.png
+│   │   │   │               ├── mipmap-xhdpi
+│   │   │   │               │   └── ic_launcher.png
+│   │   │   │               ├── mipmap-xxhdpi
+│   │   │   │               │   └── ic_launcher.png
+│   │   │   │               ├── mipmap-xxxhdpi
+│   │   │   │               │   └── ic_launcher.png
+│   │   │   │               └── values
+│   │   │   │                   ├── colors.xml
+│   │   │   │                   ├── dimens.xml
+│   │   │   │                   ├── strings.xml
+│   │   │   │                   └── styles.xml
+│   │   │   ├── build.gradle
+│   │   │   ├── gradle.properties
+│   │   │   ├── README
+│   │   │   └── settings.gradle
+│   │   ├── candide-uncompressed.zip
+│   │   ├── candide.zip
+│   │   ├── CMakeLists.txt
+│   │   ├── favicon.ico
+│   │   ├── http2.png
+│   │   ├── leaf.jpg
+│   │   ├── libwebsockets.org-logo.png
+│   │   ├── libwebsockets.org-logo.svg
+│   │   ├── libwebsockets-test-server.service
+│   │   ├── lws-cgi-test.sh
+│   │   ├── lws-common.js
+│   │   ├── lws-ssh-test-keys
+│   │   ├── lws-ssh-test-keys.pub
+│   │   ├── private
+│   │   │   └── index.html
+│   │   ├── test-client.c
+│   │   ├── test.css
+│   │   ├── test.html
+│   │   ├── test.js
+│   │   ├── test-lecp.c
+│   │   ├── test-lejp.c
+│   │   ├── test-server.c
+│   │   ├── test-sshd.c
+│   │   └── wss-over-h2.png
+│   └── win32port
+│       ├── dirent
+│       │   └── dirent-win32.h
+│       ├── libwebsockets.nsi
+│       ├── version.rc.in
+│       ├── win32helpers
+│       │   ├── getopt.c
+│       │   ├── getopt.h
+│       │   ├── getopt_long.c
+│       │   ├── gettimeofday.c
+│       │   └── gettimeofday.h
+│       └── zlib
+│           ├── adler32.c
+│           ├── compress.c
+│           ├── crc32.c
+│           ├── crc32.h
+│           ├── deflate.c
+│           ├── deflate.h
+│           ├── gzguts.h
+│           ├── gzlib.c
+│           ├── gzread.c
+│           ├── gzwrite.c
+│           ├── infback.c
+│           ├── inffast.c
+│           ├── inffast.h
+│           ├── inffixed.h
+│           ├── inflate.c
+│           ├── inflate.h
+│           ├── inftrees.c
+│           ├── inftrees.h
+│           ├── trees.c
+│           ├── trees.h
+│           ├── uncompr.c
+│           ├── zconf.h
+│           ├── zlib.h
+│           ├── ZLib.vcxproj
+│           ├── ZLib.vcxproj.filters
+│           ├── zutil.c
+│           └── zutil.h
+└── libwebsockets-4.3.3.tar.gz -> /home/felix/packages/libwebsockets/libwebsockets-4.3.3.tar.gz
+
+343 directories, 1550 files

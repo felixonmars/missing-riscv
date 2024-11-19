@@ -1,0 +1,530 @@
+src
+├── azcopy-10.27.0.tar.gz -> /home/felix/packages/azcopy/azcopy-10.27.0.tar.gz
+└── azure-storage-azcopy-10.27.0
+    ├── azure-pipelines.yml
+    ├── azurePipelineTemplates
+    │   ├── run_scenarios.yml
+    │   └── run-ut.yml
+    ├── ChangeLog.md
+    ├── cmd
+    │   ├── benchmark.go
+    │   ├── cancel.go
+    │   ├── copyEnumeratorHelper.go
+    │   ├── copyEnumeratorHelper_test.go
+    │   ├── copyEnumeratorInit.go
+    │   ├── copyEnumeratorInit_test.go
+    │   ├── copy.go
+    │   ├── copyUtil.go
+    │   ├── copyUtil_test.go
+    │   ├── credentialUtil.go
+    │   ├── doc.go
+    │   ├── env.go
+    │   ├── gcpNameResolver.go
+    │   ├── gcpNameResolver_test.go
+    │   ├── helpMessages.go
+    │   ├── jobsClean.go
+    │   ├── jobs.go
+    │   ├── jobsList.go
+    │   ├── jobsList_test.go
+    │   ├── jobsRemove.go
+    │   ├── jobsResume.go
+    │   ├── jobsShow.go
+    │   ├── list.go
+    │   ├── list_test.go
+    │   ├── loadCLFS.go
+    │   ├── load.go
+    │   ├── login.go
+    │   ├── loginStatus.go
+    │   ├── logout.go
+    │   ├── make.go
+    │   ├── pathUtils.go
+    │   ├── pause.go
+    │   ├── removeEnumerator.go
+    │   ├── remove.go
+    │   ├── removeProcessor.go
+    │   ├── responseErrorParser.go
+    │   ├── root.go
+    │   ├── rpc.go
+    │   ├── s3NameResolver.go
+    │   ├── s3NameResolver_test.go
+    │   ├── setPropertiesEnumerator.go
+    │   ├── setProperties.go
+    │   ├── setPropertiesProcessor.go
+    │   ├── syncComparator.go
+    │   ├── syncEnumerator.go
+    │   ├── sync.go
+    │   ├── syncIndexer.go
+    │   ├── syncProcessor.go
+    │   ├── validators.go
+    │   ├── validators_test.go
+    │   ├── versionChecker.go
+    │   ├── versionChecker_test.go
+    │   ├── zc_attr_filter_notwin.go
+    │   ├── zc_attr_filter_windows.go
+    │   ├── zc_enumerator.go
+    │   ├── zc_filter.go
+    │   ├── zc_newobjectadapters.go
+    │   ├── zc_processor.go
+    │   ├── zc_traverser_benchmark.go
+    │   ├── zc_traverser_blob_account.go
+    │   ├── zc_traverser_blob.go
+    │   ├── zc_traverser_blob_versions.go
+    │   ├── zc_traverser_file_account.go
+    │   ├── zc_traverser_file.go
+    │   ├── zc_traverser_gcp.go
+    │   ├── zc_traverser_gcp_service.go
+    │   ├── zc_traverser_list.go
+    │   ├── zc_traverser_local.go
+    │   ├── zc_traverser_local_other.go
+    │   ├── zc_traverser_local_test.go
+    │   ├── zc_traverser_local_windows.go
+    │   ├── zc_traverser_s3.go
+    │   ├── zc_traverser_s3_service.go
+    │   ├── zt_block_size_to_bytes_test.go
+    │   ├── zt_copy_account_account_test.go
+    │   ├── zt_copy_blob_download_test.go
+    │   ├── zt_copy_blob_file_test.go
+    │   ├── zt_copy_blob_upload_test.go
+    │   ├── zt_copy_file_file_test.go
+    │   ├── zt_copy_s2smigration_test.go
+    │   ├── zt_credentialUtil_test.go
+    │   ├── zt_generic_filter_test.go
+    │   ├── zt_generic_processor_test.go
+    │   ├── zt_generic_service_traverser_test.go
+    │   ├── zt_generic_traverser_test.go
+    │   ├── zt_interceptors_for_test.go
+    │   ├── zt_make_test.go
+    │   ├── zt_overwrite_posix_properties_test.go
+    │   ├── zt_parseSize_test.go
+    │   ├── zt_pathUtils_test.go
+    │   ├── zt_remove_blob_test.go
+    │   ├── zt_remove_copy_test.go
+    │   ├── zt_remove_file_test.go
+    │   ├── zt_scenario_helpers_for_test.go
+    │   ├── zt_scenario_helpers_for_windows_test.go
+    │   ├── zt_set_properties_test.go
+    │   ├── zt_sync_blob_blob_test.go
+    │   ├── zt_sync_blob_local_test.go
+    │   ├── zt_sync_comparator_test.go
+    │   ├── zt_sync_file_file_test.go
+    │   ├── zt_sync_local_blob_test.go
+    │   ├── zt_sync_local_blob_windows_test.go
+    │   ├── zt_sync_processor_test.go
+    │   ├── zt_test.go
+    │   ├── zt_traverser_blob_test.go
+    │   └── zt_user_input_test.go
+    ├── CODE_OF_CONDUCT.md
+    ├── common
+    │   ├── access.go
+    │   ├── atomicmorph.go
+    │   ├── azError.go
+    │   ├── azure_ps_context_credential.go
+    │   ├── blobFSRecursiveDeletePolicy.go
+    │   ├── blobFSRecursiveDeletePolicy_test.go
+    │   ├── cacheLimiter.go
+    │   ├── chunkedFileWriter.go
+    │   ├── chunkStatusLogger.go
+    │   ├── clientFactory.go
+    │   ├── CountPerSecond.go
+    │   ├── cpuMonitor.go
+    │   ├── credCache_darwin.go
+    │   ├── credCacheGnomeKeyring_linux.go
+    │   ├── credCacheGnomeKeyringShim_linux.go
+    │   ├── credCacheInternal_linux.go
+    │   ├── credCacheInternal_windows.go
+    │   ├── credCache_linux.go
+    │   ├── credCacheModel.go
+    │   ├── credCache_windows.go
+    │   ├── credentialFactory.go
+    │   ├── decompressingWriter.go
+    │   ├── defaultlog.go
+    │   ├── defaultlog_syslog.go
+    │   ├── defaultlog_windows.go
+    │   ├── emptyChunkReader.go
+    │   ├── environment.go
+    │   ├── exclusiveStringMap.go
+    │   ├── extensions.go
+    │   ├── extensions_test.go
+    │   ├── fe-ste-models.go
+    │   ├── fe-ste-models_test.go
+    │   ├── folderCreationTracker_interface.go
+    │   ├── folderDeletionManager.go
+    │   ├── gcpModels.go
+    │   ├── gcpURLParts.go
+    │   ├── gcpURLParts_test.go
+    │   ├── genericResourceURLParts.go
+    │   ├── hash_data_adapter_ads_windows.go
+    │   ├── hash_data_adapter_hidden_files.go
+    │   ├── hash_data_adapter_xattr.go
+    │   ├── hash_data.go
+    │   ├── iff.go
+    │   ├── lifecyleMgr.go
+    │   ├── logger.go
+    │   ├── logger_unix.go
+    │   ├── logSanitizer.go
+    │   ├── LongPathHandler.go
+    │   ├── LongPathHandler_test.go
+    │   ├── messages.go
+    │   ├── mmf_darwin.go
+    │   ├── mmf_linux.go
+    │   ├── mmf_windows.go
+    │   ├── multiSizeSlicePool.go
+    │   ├── nocopy.go
+    │   ├── nullHasher.go
+    │   ├── oauthTokenManager.go
+    │   ├── oauthTokenManager_test.go
+    │   ├── osOpen_fallback.go
+    │   ├── osOpen_windows.go
+    │   ├── output.go
+    │   ├── parallel
+    │   │   ├── dirReader.go
+    │   │   ├── FileSystemCrawler.go
+    │   │   ├── Transformer.go
+    │   │   ├── TreeCrawler.go
+    │   │   ├── zt_FileSystemCrawlerTest_test.go
+    │   │   └── zt_FileSystemCrawlerTest_windowsInit_test.go
+    │   ├── prologueState.go
+    │   ├── proxy_forwarder.go
+    │   ├── proxy_forwarder_windows.go
+    │   ├── ProxyLookupCache.go
+    │   ├── randomDataGenerator.go
+    │   ├── rotatingWriter.go
+    │   ├── rotatingWriter_test.go
+    │   ├── rpc-models.go
+    │   ├── s3Models.go
+    │   ├── s3URLParts.go
+    │   ├── s3URLParts_test.go
+    │   ├── singleChunkReader.go
+    │   ├── trieForDirPath.go
+    │   ├── trieForDirPath_test.go
+    │   ├── unixStatAdapter.go
+    │   ├── unixStatAdapter_test.go
+    │   ├── util.go
+    │   ├── util_test.go
+    │   ├── uuid.go
+    │   ├── uuid_test.go
+    │   ├── version.go
+    │   ├── writeThoughFile.go
+    │   ├── writeThoughFile_linux.go
+    │   ├── writeThoughFile_windows.go
+    │   ├── writeThroughFile_darwin.go
+    │   ├── writeThroughFile_test.go
+    │   ├── zt_credCache_test.go
+    │   ├── zt_decompressingWriter_test.go
+    │   ├── zt_exclusiveStringMap_test.go
+    │   ├── zt_folderDeletionManager_test.go
+    │   ├── zt_logSanitizer_test.go
+    │   ├── zt_multiSliceBytePooler_test.go
+    │   └── zt_ProxyLookupCache_test.go
+    ├── docker
+    │   ├── buildandruncontainer.sh
+    │   ├── buildcontainer.sh
+    │   ├── build.sh
+    │   ├── Dockerfile
+    │   ├── DockerfileArm64
+    │   ├── DockerfileMariner
+    │   ├── dockerinstall.sh
+    │   ├── publishcontainer.sh
+    │   └── README.md
+    ├── e2e-cleanup.ps1
+    ├── e2e-cleanup.yml
+    ├── e2etest
+    │   ├── arm.go
+    │   ├── azcopyDebugHelper.go
+    │   ├── config.go
+    │   ├── declarativeHelpers.go
+    │   ├── declarativeResourceAdapters.go
+    │   ├── declarativeResourceManagers.go
+    │   ├── declarativeRunner.go
+    │   ├── declarativeScenario.go
+    │   ├── declarativeTestFiles.go
+    │   ├── declarativeWithPropertyProviders.go
+    │   ├── factory.go
+    │   ├── helpers.go
+    │   ├── managedDisks.go
+    │   ├── newe2e_account_registry.go
+    │   ├── newe2e_arm_client.go
+    │   ├── newe2e_arm_managed_disk.go
+    │   ├── newe2e_arm_resource_group.go
+    │   ├── newe2e_arm_storage_account.go
+    │   ├── newe2e_arm_subscription.go
+    │   ├── newe2e_arm_test_hooks.go
+    │   ├── newe2e_asserter.go
+    │   ├── newe2e_assertions.go
+    │   ├── newe2e_config.go
+    │   ├── newe2e_error_definition.go
+    │   ├── newe2e_generic_wrangling.go
+    │   ├── newe2e_multi_step_uploader.go
+    │   ├── newe2e_oauth_cache.go
+    │   ├── newe2e_object_content.go
+    │   ├── newe2e_object_resource_mapping.go
+    │   ├── newe2e_resource_definitions.go
+    │   ├── newe2e_resource_manager_azstorage.go
+    │   ├── newe2e_resource_manager_getter.go
+    │   ├── newe2e_resource_manager_interface.go
+    │   ├── newe2e_resource_manager_mock.go
+    │   ├── newe2e_resource_managers_blobfs.go
+    │   ├── newe2e_resource_managers_blob.go
+    │   ├── newe2e_resource_managers_file.go
+    │   ├── newe2e_resource_managers_local.go
+    │   ├── newe2e_resource_managers_local_windows.go
+    │   ├── newe2e_resource_trie.go
+    │   ├── newe2e_runazcopy_stdout.go
+    │   ├── newe2e_sas_generation.go
+    │   ├── newe2e_scenario_manager.go
+    │   ├── newe2e_scenario_options.go
+    │   ├── newe2e_scenario_variation_manager.go
+    │   ├── newe2e_suite_manager.go
+    │   ├── newe2e_task_azcopy_job_validate.go
+    │   ├── newe2e_task_resourcemanagement.go
+    │   ├── newe2e_task_runazcopy.go
+    │   ├── newe2e_task_runazcopy_parameters.go
+    │   ├── newe2e_task_validation.go
+    │   ├── newe2e_variations.go
+    │   ├── newe2e_workload_hook.go
+    │   ├── runner.go
+    │   ├── scenario_helpers.go
+    │   ├── scenario_os_helpers_for_linux.go
+    │   ├── scenario_os_helpers_for_windows.go
+    │   ├── scenario_os_helpers.go
+    │   ├── validator.go
+    │   ├── zt_aabasic_cli_ps_auth_test.go
+    │   ├── zt_aamanaged_disks_test.go
+    │   ├── zt_aanewe2e_testmain_test.go
+    │   ├── zt_azurite_test.go
+    │   ├── zt_basic_copy_sync_remove_test.go
+    │   ├── zt_bench_test.go
+    │   ├── zt_blob_index_tags_test.go
+    │   ├── zt_blob_versioning_test.go
+    │   ├── zt_cancel_test.go
+    │   ├── zt_change_detection_test.go
+    │   ├── zt_client_provided_key_test.go
+    │   ├── zt_content_header_test.go
+    │   ├── zt_copy_file_smb_test.go
+    │   ├── zt_decompress_test.go
+    │   ├── zt_empty_dir_name_test.go
+    │   ├── zt_enumeration_filter_test.go
+    │   ├── zt_enumeration_other_test.go
+    │   ├── zt_error_handling_test.go
+    │   ├── zt_logging_test.go
+    │   ├── zt_naming_file_and_folder_test.go
+    │   ├── zt_newe2e_autodetect_blob_type_test.go
+    │   ├── zt_newe2e_basic_functionality_test.go
+    │   ├── zt_newe2e_blobfs_test.go
+    │   ├── zt_newe2e_blob_test.go
+    │   ├── zt_newe2e_dryrun_test.go
+    │   ├── zt_newe2e_example_test.go
+    │   ├── zt_newe2e_file_oauth_test.go
+    │   ├── zt_newe2e_file_test.go
+    │   ├── zt_newe2e_fns_dir_test.go
+    │   ├── zt_newe2e_jobs_list_test.go
+    │   ├── zt_newe2e_list_test.go
+    │   ├── zt_newe2e_remove_test.go
+    │   ├── zt_newe2e_s2s_test.go
+    │   ├── zt_newe2e_sync_test.go
+    │   ├── zt_newe2e_workload_test.go
+    │   ├── zt_overwrite_test.go
+    │   ├── zt_preserve_access_tier_test.go
+    │   ├── zt_preserve_content_test.go
+    │   ├── zt_preserve_names_test.go
+    │   ├── zt_preserve_posix_properties_test.go
+    │   ├── zt_preserve_properties_test.go
+    │   ├── zt_preserve_smb_permissions_test.go
+    │   ├── zt_preserve_smb_properties_test.go
+    │   ├── zt_remove_test.go
+    │   ├── zt_resume_test.go
+    │   ├── zt_resume_windows_test.go
+    │   ├── zt_sync_local_file_test.go
+    │   ├── zt_trailingdot_test.go
+    │   ├── zt_version_test.go
+    │   └── zz_tests_to_add.go
+    ├── go_installer.sh
+    ├── go.mod
+    ├── go.sum
+    ├── jobsAdmin
+    │   ├── init.go
+    │   └── JobsAdmin.go
+    ├── LICENSE
+    ├── main.go
+    ├── main_unix.go
+    ├── main_windows.go
+    ├── MigrationGuideV8toV10.md
+    ├── mock_server
+    │   ├── closer.go
+    │   ├── closer_test.go
+    │   ├── doc.go
+    │   ├── mock.go
+    │   └── mock_test.go
+    ├── NOTICE.txt
+    ├── packages.csv
+    ├── perf-test.yaml
+    ├── readme-command-prompt.png
+    ├── README.md
+    ├── release-pipeline.yml
+    ├── sddl
+    │   ├── parseSddl.go
+    │   ├── parseSddl_test.go
+    │   ├── sddlHelper_linux.go
+    │   ├── sddlPortable_test.go
+    │   ├── sddlString.go
+    │   ├── sidTranslation_linux.go
+    │   ├── sidTranslation_other.go
+    │   └── sidTranslation_windows.go
+    ├── SECURITY.md
+    ├── setup
+    │   ├── azcopy_version_check_linux.yml
+    │   ├── esrp_sign_linux.yml
+    │   ├── esrp_sign_notarize_macos.yml
+    │   ├── esrp_sign_windows.yml
+    │   ├── releaseVersionUpdate.py
+    │   ├── test_artifacts.yml
+    │   └── trigger_m1_build.yml
+    ├── ste
+    │   ├── concurrency.go
+    │   ├── concurrency_test.go
+    │   ├── concurrencyTuner.go
+    │   ├── downloader-azureFiles.go
+    │   ├── downloader-azureFiles_linux.go
+    │   ├── downloader-azureFiles_windows.go
+    │   ├── downloader-blobFS.go
+    │   ├── downloader-blobFS_linux.go
+    │   ├── downloader-blobFS_other.go
+    │   ├── downloader-blob.go
+    │   ├── downloader-blob_linux.go
+    │   ├── downloader-blob_other.go
+    │   ├── downloader.go
+    │   ├── emptyCloseableReaderAt.go
+    │   ├── ErrorExt.go
+    │   ├── fileAttributesHelper.go
+    │   ├── folderCreationTracker.go
+    │   ├── folderCreationTracker_test.go
+    │   ├── joblog_lcm_wrapper.go
+    │   ├── JobPartPlanFileName.go
+    │   ├── JobPartPlan.go
+    │   ├── jobStatusManager.go
+    │   ├── md5Comparer.go
+    │   ├── mgr-JobMgr.go
+    │   ├── mgr-JobPartMgr.go
+    │   ├── mgr-JobPartMgr_test.go
+    │   ├── mgr-JobPartTransferMgr.go
+    │   ├── overwritePrompter.go
+    │   ├── pacedReadSeeker.go
+    │   ├── pacer-autoPacer.go
+    │   ├── pacer-nullAutoPacer.go
+    │   ├── pacer-tokenBucketPacer.go
+    │   ├── pageRangeOptimizer.go
+    │   ├── pageRangeOptimizer_test.go
+    │   ├── performanceAdvisor.go
+    │   ├── putListNeed.go
+    │   ├── remoteObjectExists.go
+    │   ├── s2sCopier-URLToBlob.go
+    │   ├── securityInfoPersistenceManager.go
+    │   ├── sender-appendBlobFromLocal.go
+    │   ├── sender-appendBlobFromURL.go
+    │   ├── sender-appendBlob.go
+    │   ├── sender-appendBlob_test.go
+    │   ├── sender-azureFileFromLocal.go
+    │   ├── sender-azureFileFromURL.go
+    │   ├── sender-azureFile.go
+    │   ├── sender-blobFolders.go
+    │   ├── sender-blobFolders_linux.go
+    │   ├── sender-blobFolders_other.go
+    │   ├── sender-blobFSFromLocal.go
+    │   ├── sender-blobFS.go
+    │   ├── sender-blobSymlinks.go
+    │   ├── sender-blobSymlinks_linux.go
+    │   ├── sender-blobSymlinks_other.go
+    │   ├── sender-blockBlobFromLocal.go
+    │   ├── sender-blockBlobFromURL.go
+    │   ├── sender-blockBlob.go
+    │   ├── sender_blockBlob_test.go
+    │   ├── sender-deleteHNSBlob_test.go
+    │   ├── sender.go
+    │   ├── sender-pageBlobFromLocal.go
+    │   ├── sender-pageBlobFromURL.go
+    │   ├── sender-pageBlob.go
+    │   ├── sourceAuthPolicy.go
+    │   ├── sourceInfoProvider-Benchmark.go
+    │   ├── sourceInfoProvider-Blob.go
+    │   ├── sourceInfoProvider-File.go
+    │   ├── sourceInfoProvider-GCP.go
+    │   ├── sourceInfoProvider.go
+    │   ├── sourceInfoProvider-Local.go
+    │   ├── sourceInfoProvider-Local_linux.go
+    │   ├── sourceInfoProvider-Local_windows.go
+    │   ├── sourceInfoProvider_md5_test.go
+    │   ├── sourceInfoProvider-S3.go
+    │   ├── srcAuthPolicy_test.go
+    │   ├── ste-pathUtils.go
+    │   ├── testJobPartTransferManager_test.go
+    │   ├── xfer-anyToRemote-file.go
+    │   ├── xfer-anyToRemote-fileProperties.go
+    │   ├── xfer-anyToRemote-folder.go
+    │   ├── xfer-anyToRemote-symlink.go
+    │   ├── xfer-deleteBlobFS.go
+    │   ├── xfer-deleteBlob.go
+    │   ├── xfer-deleteFile.go
+    │   ├── xfer.go
+    │   ├── xferLogPolicy.go
+    │   ├── xfer-remoteToLocal-file.go
+    │   ├── xfer-remoteToLocal-folder.go
+    │   ├── xfer-remoteToLocal-symlink.go
+    │   ├── xferRetryHelper.go
+    │   ├── xferRetryHelper_test.go
+    │   ├── xferRetryNotificationPolicy.go
+    │   ├── xfer-setProperties.go
+    │   ├── xferStatsPolicy.go
+    │   ├── xferVersionPolicy.go
+    │   ├── zt_concurrencyTuner_test.go
+    │   ├── zt_performanceAdvisor_test.go
+    │   ├── zt_ste_misc_windows_test.go
+    │   ├── zt_xfer-anyToRemote-file_test.go
+    │   └── zt_xferRetryNotificationPolicy_test.go
+    ├── testSuite
+    │   ├── cmd
+    │   │   ├── clean.go
+    │   │   ├── common.go
+    │   │   ├── create.go
+    │   │   ├── info.go
+    │   │   ├── list.go
+    │   │   ├── mmap_unix.go
+    │   │   ├── mmap_windows.go
+    │   │   ├── platdiff_unix.go
+    │   │   ├── platdiff_windows.go
+    │   │   ├── root.go
+    │   │   ├── testblobFS.go
+    │   │   ├── testblob.go
+    │   │   ├── testfile.go
+    │   │   └── upload.go
+    │   ├── main.go
+    │   └── scripts
+    │       ├── run_interactive_test.py
+    │       ├── run.py
+    │       ├── test_blob_download.py
+    │       ├── test_blobfs_download_sharedkey.py
+    │       ├── test_blobfs_upload_sharedkey.py
+    │       ├── test_blob_piping.py
+    │       ├── test_blob_sync.py
+    │       ├── test_google_cloud_storage_copy.py
+    │       ├── test_interactive_blob_download_oauth.py
+    │       ├── test_interactive_blobfs_download_oauth.py
+    │       ├── test_interactive_blobfs_upload_oauth.py
+    │       ├── test_interactive_operation_oauth.py
+    │       ├── test_service_to_service_copy.py
+    │       ├── test_upload_block_blob.py
+    │       ├── test_upload_page_blob.py
+    │       └── utility.py
+    ├── testSuite-exec
+    ├── tool_clean.sh
+    ├── tool_distributed_mutex.py
+    ├── tool_generate_packages.py
+    ├── tool_test_perf.sh
+    └── website
+        └── src
+            ├── css
+            │   └── styles.css
+            ├── index.html
+            └── js
+                └── scripts.js
+
+20 directories, 508 files

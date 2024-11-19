@@ -1,0 +1,2294 @@
+src
+├── darktable-4.8.1
+│   ├── AUTHORS
+│   ├── build.sh
+│   ├── cmake
+│   │   ├── cmake_uninstall.cmake.in
+│   │   ├── compiler-versions.cmake
+│   │   ├── compiler-warnings.cmake
+│   │   ├── darktable-packaging.cmake
+│   │   ├── manage-symbol-visibility.cmake
+│   │   ├── march-mtune.cmake
+│   │   ├── modules
+│   │   │   ├── AddCMockaMockTest.cmake
+│   │   │   ├── AddCMockaTest.cmake
+│   │   │   ├── CheckCCompilerFlagAndEnableIt.cmake
+│   │   │   ├── CheckCompilerFlagAndEnableIt.cmake
+│   │   │   ├── CheckCXXCompilerFlagAndEnableIt.cmake
+│   │   │   ├── cpuid.asm
+│   │   │   ├── DefineCMakeDefaults.cmake
+│   │   │   ├── FindColord.cmake
+│   │   │   ├── FindColordGTK.cmake
+│   │   │   ├── FindExiv2.cmake
+│   │   │   ├── FindGIO.cmake
+│   │   │   ├── FindGlib.cmake
+│   │   │   ├── FindGMIC.cmake
+│   │   │   ├── FindGModule.cmake
+│   │   │   ├── FindGphoto2.cmake
+│   │   │   ├── FindGraphicsMagick.cmake
+│   │   │   ├── FindGThread.cmake
+│   │   │   ├── FindGTK3.cmake
+│   │   │   ├── FindIsoCodes.cmake
+│   │   │   ├── FindJsonGlib.cmake
+│   │   │   ├── FindJXL.cmake
+│   │   │   ├── FindLCMS2.cmake
+│   │   │   ├── FindLensFun.cmake
+│   │   │   ├── Findlibheif.cmake
+│   │   │   ├── Findlibraw.cmake
+│   │   │   ├── FindLibsecret.cmake
+│   │   │   ├── FindLua54.cmake
+│   │   │   ├── FindMacIntegration.cmake
+│   │   │   ├── FindOpenEXR.cmake
+│   │   │   ├── FindOSMGpsMap.cmake
+│   │   │   ├── FindP11Kit.cmake
+│   │   │   ├── FindPangoCairo.cmake
+│   │   │   ├── FindPortMidi.cmake
+│   │   │   ├── FindPugixml.cmake
+│   │   │   ├── FindRsvg2.cmake
+│   │   │   ├── FindSaxon.cmake
+│   │   │   ├── FindSqlite3.cmake
+│   │   │   ├── FindUnity.cmake
+│   │   │   ├── FindWebP.cmake
+│   │   │   ├── LibFindMacros.cmake
+│   │   │   ├── NSIS.template.in
+│   │   │   ├── Prebuilt.cmake
+│   │   │   └── sse_test.c
+│   │   ├── toolchain_mingw64.cmake
+│   │   └── windows-macros.cmake
+│   ├── CMakeLists.txt
+│   ├── ConfigureChecks.cmake
+│   ├── CONTRIBUTING.md
+│   ├── data
+│   │   ├── CMakeLists.txt
+│   │   ├── darktable.bash
+│   │   ├── darktableconfig.dtd
+│   │   ├── darktableconfig.xml.in
+│   │   ├── gdb_commands
+│   │   ├── kernels
+│   │   │   ├── atrous.cl
+│   │   │   ├── basecurve.cl
+│   │   │   ├── basicadj.cl
+│   │   │   ├── basic.cl
+│   │   │   ├── bilateral.cl
+│   │   │   ├── blendop.cl
+│   │   │   ├── bloom.cl
+│   │   │   ├── blurs.cl
+│   │   │   ├── bspline.cl
+│   │   │   ├── channelmixer.cl
+│   │   │   ├── CMakeLists.txt
+│   │   │   ├── color_conversion.h
+│   │   │   ├── colorreconstruction.cl
+│   │   │   ├── colorspace.h
+│   │   │   ├── colorspaces.cl
+│   │   │   ├── common.h
+│   │   │   ├── demosaic_markesteijn.cl
+│   │   │   ├── demosaic_other.cl
+│   │   │   ├── demosaic_ppg.cl
+│   │   │   ├── demosaic_rcd.cl
+│   │   │   ├── demosaic_vng.cl
+│   │   │   ├── denoiseprofile.cl
+│   │   │   ├── diffuse.cl
+│   │   │   ├── dwt.cl
+│   │   │   ├── extended.cl
+│   │   │   ├── filmic.cl
+│   │   │   ├── gaussian.cl
+│   │   │   ├── guided_filter.cl
+│   │   │   ├── hazeremoval.cl
+│   │   │   ├── highpass.cl
+│   │   │   ├── liquify.cl
+│   │   │   ├── locallaplacian.cl
+│   │   │   ├── lut3d.cl
+│   │   │   ├── negadoctor.cl
+│   │   │   ├── nlmeans.cl
+│   │   │   ├── noise_generator.h
+│   │   │   ├── programs.conf
+│   │   │   ├── retouch.cl
+│   │   │   ├── rgbcurve.cl
+│   │   │   ├── rgblevels.cl
+│   │   │   ├── rgb_norms.h
+│   │   │   ├── sharpen.cl
+│   │   │   ├── sigmoid.cl
+│   │   │   └── soften.cl
+│   │   ├── latex
+│   │   │   └── photobook.cls
+│   │   ├── lua
+│   │   │   └── darktable
+│   │   │       └── debug.lua
+│   │   ├── luarc
+│   │   ├── noiseprofiles.json
+│   │   ├── noiseprofiles.schema
+│   │   ├── org.darktable.darktable.appdata.xml.in
+│   │   ├── org.darktable.darktable.desktop.in
+│   │   ├── pixmaps
+│   │   │   ├── 16x16
+│   │   │   │   └── darktable.png
+│   │   │   ├── 22x22
+│   │   │   │   └── darktable.png
+│   │   │   ├── 24x24
+│   │   │   │   └── darktable.png
+│   │   │   ├── 256x256
+│   │   │   │   └── darktable.png
+│   │   │   ├── 32x32
+│   │   │   │   └── darktable.png
+│   │   │   ├── 48x48
+│   │   │   │   └── darktable.png
+│   │   │   ├── 64x64
+│   │   │   │   └── darktable.png
+│   │   │   ├── CMakeLists.txt
+│   │   │   ├── dt_logo_128x128.ico
+│   │   │   ├── dt_logo_128x128.png
+│   │   │   ├── dt_text.svg
+│   │   │   ├── idbutton-1.png
+│   │   │   ├── idbutton-1.svg
+│   │   │   ├── idbutton-2.png
+│   │   │   ├── idbutton-2.svg
+│   │   │   ├── idbutton-3.png
+│   │   │   ├── idbutton-3.svg
+│   │   │   ├── idbutton.png
+│   │   │   ├── idbutton.svg
+│   │   │   ├── plugins
+│   │   │   │   └── darkroom
+│   │   │   │       ├── ashift.png
+│   │   │   │       ├── ashift.svg
+│   │   │   │       ├── atrous.png
+│   │   │   │       ├── atrous.svg
+│   │   │   │       ├── basecurve.png
+│   │   │   │       ├── basecurve.svg
+│   │   │   │       ├── bilateral.png
+│   │   │   │       ├── bilateral.svg
+│   │   │   │       ├── bloom.png
+│   │   │   │       ├── bloom.svg
+│   │   │   │       ├── borders.png
+│   │   │   │       ├── borders.svg
+│   │   │   │       ├── cacorrect.png
+│   │   │   │       ├── cacorrect.svg
+│   │   │   │       ├── channelmixer.png
+│   │   │   │       ├── channelmixer.svg
+│   │   │   │       ├── clahe.png
+│   │   │   │       ├── clahe.svg
+│   │   │   │       ├── clipping.png
+│   │   │   │       ├── clipping.svg
+│   │   │   │       ├── colisa.png
+│   │   │   │       ├── colisa.svg
+│   │   │   │       ├── colorcorrection.png
+│   │   │   │       ├── colorcorrection.svg
+│   │   │   │       ├── colorin.png
+│   │   │   │       ├── colorin.svg
+│   │   │   │       ├── colormapping.png
+│   │   │   │       ├── colormapping.svg
+│   │   │   │       ├── colorout.png
+│   │   │   │       ├── colorout.svg
+│   │   │   │       ├── colorreconstruct.png
+│   │   │   │       ├── colorreconstruct.svg
+│   │   │   │       ├── colortransfer.png
+│   │   │   │       ├── colortransfer.svg
+│   │   │   │       ├── colorzones.png
+│   │   │   │       ├── colorzones.svg
+│   │   │   │       ├── default.svg
+│   │   │   │       ├── demosaic.png
+│   │   │   │       ├── demosaic.svg
+│   │   │   │       ├── dither.png
+│   │   │   │       ├── dither.svg
+│   │   │   │       ├── exposure.png
+│   │   │   │       ├── exposure.svg
+│   │   │   │       ├── flip.png
+│   │   │   │       ├── flip.svg
+│   │   │   │       ├── graduatednd.png
+│   │   │   │       ├── graduatednd.svg
+│   │   │   │       ├── grain.png
+│   │   │   │       ├── grain.svg
+│   │   │   │       ├── hazeremoval.png
+│   │   │   │       ├── hazeremoval.svg
+│   │   │   │       ├── highlights.png
+│   │   │   │       ├── highlights.svg
+│   │   │   │       ├── highpass.png
+│   │   │   │       ├── highpass.svg
+│   │   │   │       ├── hotpixels.png
+│   │   │   │       ├── hotpixels.svg
+│   │   │   │       ├── invert.png
+│   │   │   │       ├── invert.svg
+│   │   │   │       ├── lens.png
+│   │   │   │       ├── lens.svg
+│   │   │   │       ├── levels.png
+│   │   │   │       ├── levels.svg
+│   │   │   │       ├── liquify.png
+│   │   │   │       ├── liquify.svg
+│   │   │   │       ├── lowlight.png
+│   │   │   │       ├── lowlight.svg
+│   │   │   │       ├── lowpass.png
+│   │   │   │       ├── lowpass.svg
+│   │   │   │       ├── monochrome.png
+│   │   │   │       ├── monochrome.svg
+│   │   │   │       ├── nlmeans.png
+│   │   │   │       ├── nlmeans.svg
+│   │   │   │       ├── overexposed.png
+│   │   │   │       ├── overexposed.svg
+│   │   │   │       ├── profile_gamma.png
+│   │   │   │       ├── profile_gamma.svg
+│   │   │   │       ├── rawdenoise.png
+│   │   │   │       ├── rawdenoise.svg
+│   │   │   │       ├── rawimport.png
+│   │   │   │       ├── rawimport.svg
+│   │   │   │       ├── rawprepare.png
+│   │   │   │       ├── rawprepare.svg
+│   │   │   │       ├── relight.png
+│   │   │   │       ├── relight.svg
+│   │   │   │       ├── shadhi.png
+│   │   │   │       ├── shadhi.svg
+│   │   │   │       ├── sharpen.png
+│   │   │   │       ├── sharpen.svg
+│   │   │   │       ├── soften.png
+│   │   │   │       ├── soften.svg
+│   │   │   │       ├── splittoning.png
+│   │   │   │       ├── splittoning.svg
+│   │   │   │       ├── spots.png
+│   │   │   │       ├── spots.svg
+│   │   │   │       ├── temperature.png
+│   │   │   │       ├── temperature.svg
+│   │   │   │       ├── template.png
+│   │   │   │       ├── template.svg
+│   │   │   │       ├── tonecurve.png
+│   │   │   │       ├── tonecurve.svg
+│   │   │   │       ├── tonemap.png
+│   │   │   │       ├── tonemap.svg
+│   │   │   │       ├── velvia.png
+│   │   │   │       ├── velvia.svg
+│   │   │   │       ├── vignette.png
+│   │   │   │       ├── vignette.svg
+│   │   │   │       ├── watermark.png
+│   │   │   │       ├── watermark.svg
+│   │   │   │       ├── zonesystem.png
+│   │   │   │       └── zonesystem.svg
+│   │   │   └── scalable
+│   │   │       ├── darktable-1.svg
+│   │   │       ├── darktable-2.svg
+│   │   │       ├── darktable-3.svg
+│   │   │       └── darktable.svg
+│   │   ├── pswp
+│   │   │   ├── default-skin
+│   │   │   │   ├── default-skin.css
+│   │   │   │   ├── default-skin.png
+│   │   │   │   ├── default-skin.svg
+│   │   │   │   └── preloader.gif
+│   │   │   ├── LICENSE
+│   │   │   ├── photoswipe.css
+│   │   │   ├── photoswipe.js
+│   │   │   ├── photoswipe.min.js
+│   │   │   ├── photoswipe-ui-default.js
+│   │   │   └── photoswipe-ui-default.min.js
+│   │   ├── style
+│   │   │   ├── bullet.gif
+│   │   │   ├── close.gif
+│   │   │   ├── closelabel.gif
+│   │   │   ├── donate-button.gif
+│   │   │   ├── download-icon.gif
+│   │   │   ├── favicon.ico
+│   │   │   ├── image-1.jpg
+│   │   │   ├── lightbox.css
+│   │   │   ├── loading.gif
+│   │   │   ├── nextlabel.gif
+│   │   │   ├── prevlabel.gif
+│   │   │   ├── style.css
+│   │   │   └── thumb-1.jpg
+│   │   ├── supported_extensions.cmake
+│   │   ├── themes
+│   │   │   ├── darktable.css
+│   │   │   ├── darktable-elegant-dark.css
+│   │   │   ├── darktable-elegant-darker.css
+│   │   │   ├── darktable-elegant-grey.css
+│   │   │   ├── darktable-icons.css
+│   │   │   ├── darktable-icons-dark.css
+│   │   │   ├── darktable-icons-darker.css
+│   │   │   └── darktable-icons-grey.css
+│   │   ├── watermarks
+│   │   │   ├── darktable.svg
+│   │   │   ├── fixed-size-text.svg
+│   │   │   ├── hasselblad.svg
+│   │   │   ├── metadata-template.svg
+│   │   │   ├── promo.svg
+│   │   │   ├── simple-text-shadow.svg
+│   │   │   └── simple-text.svg
+│   │   ├── wb_presets.json
+│   │   └── wb_presets.schema
+│   ├── DefineOptions.cmake
+│   ├── doc
+│   │   ├── CMakeLists.txt
+│   │   ├── doxygen.conf
+│   │   ├── grouping.txt
+│   │   ├── man
+│   │   │   ├── CMakeLists.txt
+│   │   │   ├── darktable-cli.pod
+│   │   │   ├── darktable-cltest.pod
+│   │   │   ├── darktable-cmstest.pod
+│   │   │   ├── darktable-generate-cache.pod
+│   │   │   ├── darktable.pod
+│   │   │   ├── po
+│   │   │   │   ├── CMakeLists.txt
+│   │   │   │   ├── de.po
+│   │   │   │   ├── es.po
+│   │   │   │   ├── fr.po
+│   │   │   │   └── LINGUAS
+│   │   │   └── README.md
+│   │   ├── NEWS
+│   │   ├── pdf
+│   │   │   ├── graphs
+│   │   │   │   ├── system.dia
+│   │   │   │   └── system.fig
+│   │   │   ├── hacking.tex
+│   │   │   └── version.tex
+│   │   ├── README.md
+│   │   ├── thumbnail_color_management.txt
+│   │   └── TRANSLATORS.md
+│   ├── iwyu.imp
+│   ├── LICENSE
+│   ├── packaging
+│   │   ├── arch
+│   │   │   └── README
+│   │   ├── CMakeLists.txt
+│   │   ├── macosx
+│   │   │   ├── 1_install_hb_dependencies.sh
+│   │   │   ├── 2_build_hb_darktable_custom.sh
+│   │   │   ├── 2_build_hb_darktable_default.sh
+│   │   │   ├── 3_make_hb_darktable_package.sh
+│   │   │   ├── 4_make_hb_darktable_dmg.sh
+│   │   │   ├── BUILD-ARM64.txt
+│   │   │   ├── BUILD_hb.txt
+│   │   │   ├── BUILD.txt
+│   │   │   ├── darktable.bundle
+│   │   │   ├── defaults.list
+│   │   │   ├── gtk-mac-bundler-0.7.4.patch
+│   │   │   ├── Icons.icns
+│   │   │   ├── Info.plist
+│   │   │   ├── make-app-bundle
+│   │   │   ├── open.desktop
+│   │   │   └── settings.ini
+│   │   ├── nix
+│   │   │   └── default.nix
+│   │   ├── opensuse
+│   │   │   ├── darktable.changes
+│   │   │   └── darktable.spec
+│   │   ├── Solaris_11
+│   │   │   ├── build_ips
+│   │   │   ├── darktable-manifest.pkg5.base
+│   │   │   ├── How_to_build_a_Solaris11_package
+│   │   │   └── README.Solaris
+│   │   ├── ubuntu
+│   │   │   └── README
+│   │   └── windows
+│   │       └── README.md
+│   ├── po
+│   │   ├── CMakeLists.txt
+│   │   ├── cs.po
+│   │   ├── darktable.pot
+│   │   ├── de.po
+│   │   ├── en@truecase.po
+│   │   ├── es.po
+│   │   ├── fi.po
+│   │   ├── fr.po
+│   │   ├── hu.po
+│   │   ├── it.po
+│   │   ├── ja.po
+│   │   ├── LINGUAS
+│   │   ├── nl.po
+│   │   ├── pl.po
+│   │   ├── POTFILES.in
+│   │   ├── POTFILES.skip
+│   │   ├── pt_BR.po
+│   │   ├── ru.po
+│   │   ├── sl.po
+│   │   ├── sq.po
+│   │   ├── uk.po
+│   │   ├── zh_CN.po
+│   │   └── zh_TW.po
+│   ├── README.md
+│   ├── RELEASE_NOTES.md
+│   ├── src
+│   │   ├── bauhaus
+│   │   │   ├── bauhaus.c
+│   │   │   └── bauhaus.h
+│   │   ├── chart
+│   │   │   ├── CMakeLists.txt
+│   │   │   ├── colorchart.c
+│   │   │   ├── colorchart.h
+│   │   │   ├── common.c
+│   │   │   ├── common.h
+│   │   │   ├── deltaE.c
+│   │   │   ├── deltaE.h
+│   │   │   ├── dtcairo.c
+│   │   │   ├── dtcairo.h
+│   │   │   ├── main.c
+│   │   │   ├── pfm.c
+│   │   │   ├── pfm.h
+│   │   │   ├── thinplate.c
+│   │   │   ├── thinplate.h
+│   │   │   ├── tonecurve.c
+│   │   │   └── tonecurve.h
+│   │   ├── cli
+│   │   │   ├── CMakeLists.txt
+│   │   │   └── main.c
+│   │   ├── cltest
+│   │   │   ├── CMakeLists.txt
+│   │   │   └── main.c
+│   │   ├── CMakeLists.txt
+│   │   ├── cmstest
+│   │   │   ├── CMakeLists.txt
+│   │   │   └── main.c
+│   │   ├── common
+│   │   │   ├── action.h
+│   │   │   ├── act_on.c
+│   │   │   ├── act_on.h
+│   │   │   ├── atomic.c
+│   │   │   ├── atomic.h
+│   │   │   ├── bilateral.c
+│   │   │   ├── bilateralcl.c
+│   │   │   ├── bilateralcl.h
+│   │   │   ├── bilateral.h
+│   │   │   ├── box_filters.c
+│   │   │   ├── box_filters.h
+│   │   │   ├── bspline.h
+│   │   │   ├── cache.c
+│   │   │   ├── cache.h
+│   │   │   ├── calculator.c
+│   │   │   ├── calculator.h
+│   │   │   ├── camera_control.c
+│   │   │   ├── camera_control.h
+│   │   │   ├── chromatic_adaptation.h
+│   │   │   ├── collection.c
+│   │   │   ├── collection.h
+│   │   │   ├── colorchecker.h
+│   │   │   ├── color_harmony.c
+│   │   │   ├── color_harmony.h
+│   │   │   ├── colorlabels.c
+│   │   │   ├── colorlabels.h
+│   │   │   ├── colormatrices.c
+│   │   │   ├── color_picker.c
+│   │   │   ├── color_picker.h
+│   │   │   ├── colorspaces.c
+│   │   │   ├── colorspaces.h
+│   │   │   ├── colorspaces_inline_conversions.h
+│   │   │   ├── color_vocabulary.c
+│   │   │   ├── color_vocabulary.h
+│   │   │   ├── cups_print.c
+│   │   │   ├── cups_print.h
+│   │   │   ├── curl_tools.c
+│   │   │   ├── curl_tools.h
+│   │   │   ├── curve_tools.c
+│   │   │   ├── curve_tools.h
+│   │   │   ├── custom_primaries.c
+│   │   │   ├── custom_primaries.h
+│   │   │   ├── darktable.c
+│   │   │   ├── darktable.h
+│   │   │   ├── darktable_ucs_22_helpers.h
+│   │   │   ├── database.c
+│   │   │   ├── database.h
+│   │   │   ├── datetime.c
+│   │   │   ├── datetime.h
+│   │   │   ├── dbus.c
+│   │   │   ├── dbus.h
+│   │   │   ├── debug.h
+│   │   │   ├── distance_transform.c
+│   │   │   ├── distance_transform.h
+│   │   │   ├── dlopencl.c
+│   │   │   ├── dlopencl.h
+│   │   │   ├── dng_opcode.c
+│   │   │   ├── dng_opcode.h
+│   │   │   ├── dtpthread.c
+│   │   │   ├── dtpthread.h
+│   │   │   ├── dttypes.h
+│   │   │   ├── dwt.c
+│   │   │   ├── dwt.h
+│   │   │   ├── dynload.c
+│   │   │   ├── dynload.h
+│   │   │   ├── eaw.c
+│   │   │   ├── eaw.h
+│   │   │   ├── eigf.h
+│   │   │   ├── exif.cc
+│   │   │   ├── exif.h
+│   │   │   ├── extra_optimizations.h
+│   │   │   ├── fast_guided_filter.h
+│   │   │   ├── file_location.c
+│   │   │   ├── file_location.h
+│   │   │   ├── film.c
+│   │   │   ├── film.h
+│   │   │   ├── focus.h
+│   │   │   ├── focus_peaking.h
+│   │   │   ├── gamut_mapping.h
+│   │   │   ├── gaussian.c
+│   │   │   ├── gaussian.h
+│   │   │   ├── geo.h
+│   │   │   ├── gimp.c
+│   │   │   ├── gimp.h
+│   │   │   ├── gpx.c
+│   │   │   ├── gpx.h
+│   │   │   ├── grealpath.h
+│   │   │   ├── grouping.c
+│   │   │   ├── grouping.h
+│   │   │   ├── guided_filter.c
+│   │   │   ├── guided_filter.h
+│   │   │   ├── heal.c
+│   │   │   ├── heal.h
+│   │   │   ├── heap.h
+│   │   │   ├── histogram.c
+│   │   │   ├── histogram.h
+│   │   │   ├── history.c
+│   │   │   ├── history.h
+│   │   │   ├── history_snapshot.c
+│   │   │   ├── history_snapshot.h
+│   │   │   ├── illuminants.h
+│   │   │   ├── imagebuf.c
+│   │   │   ├── imagebuf.h
+│   │   │   ├── image.c
+│   │   │   ├── image_cache.c
+│   │   │   ├── image_cache.h
+│   │   │   ├── image_compression.c
+│   │   │   ├── image_compression.h
+│   │   │   ├── image.h
+│   │   │   ├── import_session.c
+│   │   │   ├── import_session.h
+│   │   │   ├── interpolation.c
+│   │   │   ├── interpolation.h
+│   │   │   ├── introspection.h
+│   │   │   ├── iop_group.c
+│   │   │   ├── iop_group.h
+│   │   │   ├── iop_order.c
+│   │   │   ├── iop_order.h
+│   │   │   ├── iop_profile.c
+│   │   │   ├── iop_profile.h
+│   │   │   ├── l10n.c
+│   │   │   ├── l10n.h
+│   │   │   ├── locallaplacian.c
+│   │   │   ├── locallaplaciancl.c
+│   │   │   ├── locallaplaciancl.h
+│   │   │   ├── locallaplacian.h
+│   │   │   ├── luminance_mask.h
+│   │   │   ├── map_locations.c
+│   │   │   ├── map_locations.h
+│   │   │   ├── math.h
+│   │   │   ├── matrices.c
+│   │   │   ├── matrices.h
+│   │   │   ├── metadata.c
+│   │   │   ├── metadata_export.c
+│   │   │   ├── metadata_export.h
+│   │   │   ├── metadata.h
+│   │   │   ├── mipmap_cache.c
+│   │   │   ├── mipmap_cache.h
+│   │   │   ├── module_api.h
+│   │   │   ├── module.c
+│   │   │   ├── module.h
+│   │   │   ├── nlmeans_core.c
+│   │   │   ├── nlmeans_core.h
+│   │   │   ├── noiseprofiles.c
+│   │   │   ├── noiseprofiles.h
+│   │   │   ├── nvidia_gpus.h
+│   │   │   ├── opencl.c
+│   │   │   ├── opencl_drivers_blacklist.h
+│   │   │   ├── opencl.h
+│   │   │   ├── overlay.c
+│   │   │   ├── overlay.h
+│   │   │   ├── pdf.c
+│   │   │   ├── pdf.h
+│   │   │   ├── points.h
+│   │   │   ├── poison.h
+│   │   │   ├── presets.c
+│   │   │   ├── presets.h
+│   │   │   ├── printing.c
+│   │   │   ├── printing.h
+│   │   │   ├── printprof.c
+│   │   │   ├── printprof.h
+│   │   │   ├── profiling.c
+│   │   │   ├── profiling.h
+│   │   │   ├── pwstorage
+│   │   │   │   ├── backend_apple_keychain.c
+│   │   │   │   ├── backend_apple_keychain.h
+│   │   │   │   ├── backend_kwallet.c
+│   │   │   │   ├── backend_kwallet.h
+│   │   │   │   ├── backend_libsecret.c
+│   │   │   │   ├── backend_libsecret.h
+│   │   │   │   ├── backend_windows_credentials.c
+│   │   │   │   ├── backend_windows_credentials.h
+│   │   │   │   ├── pwstorage.c
+│   │   │   │   └── pwstorage.h
+│   │   │   ├── ratings.c
+│   │   │   ├── ratings.h
+│   │   │   ├── resource_limits.c
+│   │   │   ├── resource_limits.h
+│   │   │   ├── rgb_norms.h
+│   │   │   ├── selection.c
+│   │   │   ├── selection.h
+│   │   │   ├── splines.cpp
+│   │   │   ├── splines.h
+│   │   │   ├── sqliteicu.c
+│   │   │   ├── sqliteicu.h
+│   │   │   ├── srgb_tone_curve_values.h
+│   │   │   ├── sse.h
+│   │   │   ├── styles.c
+│   │   │   ├── styles.h
+│   │   │   ├── system_signal_handling.c
+│   │   │   ├── system_signal_handling.h
+│   │   │   ├── tags.c
+│   │   │   ├── tags.h
+│   │   │   ├── tea.h
+│   │   │   ├── undo.c
+│   │   │   ├── undo.h
+│   │   │   ├── usermanual_url.c
+│   │   │   ├── usermanual_url.h
+│   │   │   ├── utility.c
+│   │   │   ├── utility.h
+│   │   │   ├── variables.c
+│   │   │   ├── variables.h
+│   │   │   ├── wb_presets.c
+│   │   │   └── wb_presets.h
+│   │   ├── config.cmake.h
+│   │   ├── control
+│   │   │   ├── conf.c
+│   │   │   ├── conf.h
+│   │   │   ├── control.c
+│   │   │   ├── control.h
+│   │   │   ├── crawler.c
+│   │   │   ├── crawler.h
+│   │   │   ├── jobs
+│   │   │   │   ├── camera_jobs.c
+│   │   │   │   ├── camera_jobs.h
+│   │   │   │   ├── control_jobs.c
+│   │   │   │   ├── control_jobs.h
+│   │   │   │   ├── develop_jobs.c
+│   │   │   │   ├── develop_jobs.h
+│   │   │   │   ├── film_jobs.c
+│   │   │   │   ├── film_jobs.h
+│   │   │   │   ├── image_jobs.c
+│   │   │   │   └── image_jobs.h
+│   │   │   ├── jobs.c
+│   │   │   ├── jobs.h
+│   │   │   ├── progress.c
+│   │   │   ├── progress.h
+│   │   │   ├── settings.h
+│   │   │   ├── signal.c
+│   │   │   └── signal.h
+│   │   ├── develop
+│   │   │   ├── blend.c
+│   │   │   ├── blend_gui.c
+│   │   │   ├── blend.h
+│   │   │   ├── blends
+│   │   │   │   ├── blendif_lab.c
+│   │   │   │   ├── blendif_raw.c
+│   │   │   │   ├── blendif_rgb_hsl.c
+│   │   │   │   └── blendif_rgb_jzczhz.c
+│   │   │   ├── borders_helper.c
+│   │   │   ├── borders_helper.h
+│   │   │   ├── develop.c
+│   │   │   ├── develop.h
+│   │   │   ├── format.c
+│   │   │   ├── format.h
+│   │   │   ├── imageop.c
+│   │   │   ├── imageop_gui.c
+│   │   │   ├── imageop_gui.h
+│   │   │   ├── imageop.h
+│   │   │   ├── imageop_math.c
+│   │   │   ├── imageop_math.h
+│   │   │   ├── lightroom.c
+│   │   │   ├── lightroom.h
+│   │   │   ├── masks
+│   │   │   │   ├── brush.c
+│   │   │   │   ├── circle.c
+│   │   │   │   ├── detail.c
+│   │   │   │   ├── ellipse.c
+│   │   │   │   ├── gradient.c
+│   │   │   │   ├── group.c
+│   │   │   │   ├── masks.c
+│   │   │   │   └── path.c
+│   │   │   ├── masks.h
+│   │   │   ├── noise_generator.h
+│   │   │   ├── openmp_maths.h
+│   │   │   ├── pixelpipe.c
+│   │   │   ├── pixelpipe_cache.c
+│   │   │   ├── pixelpipe_cache.h
+│   │   │   ├── pixelpipe.h
+│   │   │   ├── pixelpipe_hb.c
+│   │   │   ├── pixelpipe_hb.h
+│   │   │   ├── tiling.c
+│   │   │   └── tiling.h
+│   │   ├── dtgtk
+│   │   │   ├── button.c
+│   │   │   ├── button.h
+│   │   │   ├── culling.c
+│   │   │   ├── culling.h
+│   │   │   ├── drawingarea.c
+│   │   │   ├── drawingarea.h
+│   │   │   ├── expander.c
+│   │   │   ├── expander.h
+│   │   │   ├── gradientslider.c
+│   │   │   ├── gradientslider.h
+│   │   │   ├── icon.c
+│   │   │   ├── icon.h
+│   │   │   ├── paint.c
+│   │   │   ├── paint.h
+│   │   │   ├── range.c
+│   │   │   ├── range.h
+│   │   │   ├── resetlabel.c
+│   │   │   ├── resetlabel.h
+│   │   │   ├── sidepanel.c
+│   │   │   ├── sidepanel.h
+│   │   │   ├── thumbnail_btn.c
+│   │   │   ├── thumbnail_btn.h
+│   │   │   ├── thumbnail.c
+│   │   │   ├── thumbnail.h
+│   │   │   ├── thumbtable.c
+│   │   │   ├── thumbtable.h
+│   │   │   ├── togglebutton.c
+│   │   │   └── togglebutton.h
+│   │   ├── external
+│   │   │   ├── cie_colorimetric_tables.c
+│   │   │   ├── CMakeLists.txt
+│   │   │   ├── LibRaw
+│   │   │   │   ├── bin
+│   │   │   │   ├── buildfiles
+│   │   │   │   │   ├── 4channels.pro
+│   │   │   │   │   ├── 4channels.vcxproj
+│   │   │   │   │   ├── 4channels.vcxproj.filters
+│   │   │   │   │   ├── dcraw_emu.pro
+│   │   │   │   │   ├── dcraw_emu.vcxproj
+│   │   │   │   │   ├── dcraw_emu.vcxproj.filters
+│   │   │   │   │   ├── dcraw_half.pro
+│   │   │   │   │   ├── dcraw_half.vcxproj
+│   │   │   │   │   ├── dcraw_half.vcxproj.filters
+│   │   │   │   │   ├── half_mt.pro
+│   │   │   │   │   ├── libraw-common-lib.pro
+│   │   │   │   │   ├── libraw-common.pro
+│   │   │   │   │   ├── libraw.pro
+│   │   │   │   │   ├── libraw.vcxproj
+│   │   │   │   │   ├── libraw.vcxproj.filters
+│   │   │   │   │   ├── mem_image.pro
+│   │   │   │   │   ├── mem_image.vcxproj
+│   │   │   │   │   ├── mem_image.vcxproj.filters
+│   │   │   │   │   ├── multirender_test.pro
+│   │   │   │   │   ├── multirender_test.vcxproj
+│   │   │   │   │   ├── multirender_test.vcxproj.filters
+│   │   │   │   │   ├── openbayer_sample.pro
+│   │   │   │   │   ├── openbayer_sample.vcxproj
+│   │   │   │   │   ├── openbayer_sample.vcxproj.filters
+│   │   │   │   │   ├── postprocessing_benchmark.pro
+│   │   │   │   │   ├── postprocessing_benchmark.vcxproj
+│   │   │   │   │   ├── postprocessing_benchmark.vcxproj.filters
+│   │   │   │   │   ├── raw-identify.pro
+│   │   │   │   │   ├── raw-identify.vcxproj
+│   │   │   │   │   ├── raw-identify.vcxproj.filters
+│   │   │   │   │   ├── rawtextdump.pro
+│   │   │   │   │   ├── rawtextdump.vcxproj
+│   │   │   │   │   ├── rawtextdump.vcxproj.filters
+│   │   │   │   │   ├── simple_dcraw.pro
+│   │   │   │   │   ├── simple_dcraw.vcxproj
+│   │   │   │   │   ├── simple_dcraw.vcxproj.filters
+│   │   │   │   │   ├── unprocessed_raw.pro
+│   │   │   │   │   ├── unprocessed_raw.vcxproj
+│   │   │   │   │   └── unprocessed_raw.vcxproj.filters
+│   │   │   │   ├── Changelog.txt
+│   │   │   │   ├── clist2c.pl
+│   │   │   │   ├── clist2html.pl
+│   │   │   │   ├── configure.ac
+│   │   │   │   ├── COPYRIGHT
+│   │   │   │   ├── DEVELOPER-NOTES
+│   │   │   │   ├── doc
+│   │   │   │   │   ├── API-C.html
+│   │   │   │   │   ├── API-CXX.html
+│   │   │   │   │   ├── API-datastruct.html
+│   │   │   │   │   ├── API-notes.html
+│   │   │   │   │   ├── API-overview.html
+│   │   │   │   │   ├── index.html
+│   │   │   │   │   ├── Install-LibRaw.html
+│   │   │   │   │   ├── Samples-LibRaw.html
+│   │   │   │   │   └── Why-LibRaw.html
+│   │   │   │   ├── export-dist.sh
+│   │   │   │   ├── GoPro
+│   │   │   │   │   ├── dng-sdk-1_4-allow-VC5-validate.diff
+│   │   │   │   │   ├── dng-sdk-1_6-1_7-hide-ccVc5-definitiion.diff
+│   │   │   │   │   ├── dng-sdk-1_6-hide-ccVc5-definitiion.diff
+│   │   │   │   │   ├── dng-sdk-allow-VC5-validate.diff
+│   │   │   │   │   ├── gpr_read_image.cpp.diff
+│   │   │   │   │   ├── gpr_read_image.cpp-dng16.diff
+│   │   │   │   │   ├── gpr_read_image.cpp-dng17.diff
+│   │   │   │   │   ├── gpr_read_image.h.diff
+│   │   │   │   │   ├── gpr_read_image.h-dng16.diff
+│   │   │   │   │   └── gpr_read_image.h-dng17.diff
+│   │   │   │   ├── INSTALL
+│   │   │   │   ├── internal
+│   │   │   │   │   ├── dcraw_defs.h
+│   │   │   │   │   ├── dcraw_fileio_defs.h
+│   │   │   │   │   ├── defines.h
+│   │   │   │   │   ├── dmp_include.h
+│   │   │   │   │   ├── libraw_cameraids.h
+│   │   │   │   │   ├── libraw_checked_buffer.h
+│   │   │   │   │   ├── libraw_cxx_defs.h
+│   │   │   │   │   ├── libraw_internal_funcs.h
+│   │   │   │   │   ├── losslessjpeg.h
+│   │   │   │   │   ├── var_defines.h
+│   │   │   │   │   └── x3f_tools.h
+│   │   │   │   ├── lib
+│   │   │   │   │   └── Makefile
+│   │   │   │   ├── libraw
+│   │   │   │   │   ├── libraw_alloc.h
+│   │   │   │   │   ├── libraw_const.h
+│   │   │   │   │   ├── libraw_datastream.h
+│   │   │   │   │   ├── libraw.h
+│   │   │   │   │   ├── libraw_internal.h
+│   │   │   │   │   ├── libraw_types.h
+│   │   │   │   │   └── libraw_version.h
+│   │   │   │   ├── libraw.pc.in
+│   │   │   │   ├── LibRaw.pro
+│   │   │   │   ├── libraw_r.pc.in
+│   │   │   │   ├── LibRaw.sln
+│   │   │   │   ├── LICENSE.CDDL
+│   │   │   │   ├── LICENSE.LGPL
+│   │   │   │   ├── m4
+│   │   │   │   │   └── ax_openmp.m4
+│   │   │   │   ├── Makefile.am
+│   │   │   │   ├── Makefile.devel
+│   │   │   │   ├── Makefile.devel.nopp
+│   │   │   │   ├── Makefile.devel.noppr2i
+│   │   │   │   ├── Makefile.dist
+│   │   │   │   ├── Makefile.mingw
+│   │   │   │   ├── Makefile.msvc
+│   │   │   │   ├── mkdist.sh
+│   │   │   │   ├── object
+│   │   │   │   ├── RawSpeed
+│   │   │   │   │   ├── rawspeed.cpucount-unix.patch
+│   │   │   │   │   ├── rawspeed.qmake-pro-files.patch
+│   │   │   │   │   ├── rawspeed.samsung-decoder.patch
+│   │   │   │   │   ├── rawspeed.uncompressed-color-dng.patch
+│   │   │   │   │   ├── rawspeed.win32-dll.patch
+│   │   │   │   │   └── rawspeed_xmldata.cpp
+│   │   │   │   ├── RawSpeed3
+│   │   │   │   │   ├── patches
+│   │   │   │   │   │   ├── 01.CameraMeta-extensibility.patch
+│   │   │   │   │   │   ├── 02.Makernotes-processing.patch
+│   │   │   │   │   │   ├── 03.remove-limits-and-logging.patch
+│   │   │   │   │   │   ├── 04.clang-cl-compatibility.patch
+│   │   │   │   │   │   └── 05.no-phase-one-correction.patch
+│   │   │   │   │   ├── rawspeed3_c_api
+│   │   │   │   │   │   ├── rawspeed3_capi.cpp
+│   │   │   │   │   │   ├── rawspeed3_capi.h
+│   │   │   │   │   │   ├── rawspeed3_capi_test.cpp
+│   │   │   │   │   │   └── rsxml2c.sh
+│   │   │   │   │   └── README.md
+│   │   │   │   ├── README.cmake
+│   │   │   │   ├── README.demosaic-packs
+│   │   │   │   ├── README.DNGSDK.txt
+│   │   │   │   ├── README.GoPro.txt
+│   │   │   │   ├── README.md
+│   │   │   │   ├── README.RawSpeed.txt
+│   │   │   │   ├── rsxml2c.sh
+│   │   │   │   ├── samples
+│   │   │   │   │   ├── 4channels.cpp
+│   │   │   │   │   ├── dcraw_emu.cpp
+│   │   │   │   │   ├── dcraw_half.c
+│   │   │   │   │   ├── half_mt.c
+│   │   │   │   │   ├── half_mt_win32.c
+│   │   │   │   │   ├── Makefile
+│   │   │   │   │   ├── mem_image_sample.cpp
+│   │   │   │   │   ├── multirender_test.cpp
+│   │   │   │   │   ├── openbayer_sample.cpp
+│   │   │   │   │   ├── postprocessing_benchmark.cpp
+│   │   │   │   │   ├── raw-identify.cpp
+│   │   │   │   │   ├── rawtextdump.cpp
+│   │   │   │   │   ├── simple_dcraw.cpp
+│   │   │   │   │   └── unprocessed_raw.cpp
+│   │   │   │   ├── shlib-version.sh
+│   │   │   │   ├── src
+│   │   │   │   │   ├── decoders
+│   │   │   │   │   │   ├── canon_600.cpp
+│   │   │   │   │   │   ├── crx.cpp
+│   │   │   │   │   │   ├── decoders_dcraw.cpp
+│   │   │   │   │   │   ├── decoders_libraw.cpp
+│   │   │   │   │   │   ├── decoders_libraw_dcrdefs.cpp
+│   │   │   │   │   │   ├── dng.cpp
+│   │   │   │   │   │   ├── fp_dng.cpp
+│   │   │   │   │   │   ├── fuji_compressed.cpp
+│   │   │   │   │   │   ├── generic.cpp
+│   │   │   │   │   │   ├── kodak_decoders.cpp
+│   │   │   │   │   │   ├── load_mfbacks.cpp
+│   │   │   │   │   │   ├── pana8.cpp
+│   │   │   │   │   │   ├── smal.cpp
+│   │   │   │   │   │   ├── sonycc.cpp
+│   │   │   │   │   │   ├── unpack.cpp
+│   │   │   │   │   │   └── unpack_thumb.cpp
+│   │   │   │   │   ├── decompressors
+│   │   │   │   │   │   └── losslessjpeg.cpp
+│   │   │   │   │   ├── demosaic
+│   │   │   │   │   │   ├── aahd_demosaic.cpp
+│   │   │   │   │   │   ├── ahd_demosaic.cpp
+│   │   │   │   │   │   ├── dcb_demosaic.cpp
+│   │   │   │   │   │   ├── dht_demosaic.cpp
+│   │   │   │   │   │   ├── misc_demosaic.cpp
+│   │   │   │   │   │   └── xtrans_demosaic.cpp
+│   │   │   │   │   ├── integration
+│   │   │   │   │   │   ├── dngsdk_glue.cpp
+│   │   │   │   │   │   └── rawspeed_glue.cpp
+│   │   │   │   │   ├── libraw_c_api.cpp
+│   │   │   │   │   ├── libraw_datastream.cpp
+│   │   │   │   │   ├── Makefile
+│   │   │   │   │   ├── metadata
+│   │   │   │   │   │   ├── adobepano.cpp
+│   │   │   │   │   │   ├── canon.cpp
+│   │   │   │   │   │   ├── ciff.cpp
+│   │   │   │   │   │   ├── cr3_parser.cpp
+│   │   │   │   │   │   ├── epson.cpp
+│   │   │   │   │   │   ├── exif_gps.cpp
+│   │   │   │   │   │   ├── fuji.cpp
+│   │   │   │   │   │   ├── hasselblad_model.cpp
+│   │   │   │   │   │   ├── identify.cpp
+│   │   │   │   │   │   ├── identify_tools.cpp
+│   │   │   │   │   │   ├── kodak.cpp
+│   │   │   │   │   │   ├── leica.cpp
+│   │   │   │   │   │   ├── makernotes.cpp
+│   │   │   │   │   │   ├── mediumformat.cpp
+│   │   │   │   │   │   ├── minolta.cpp
+│   │   │   │   │   │   ├── misc_parsers.cpp
+│   │   │   │   │   │   ├── nikon.cpp
+│   │   │   │   │   │   ├── normalize_model.cpp
+│   │   │   │   │   │   ├── olympus.cpp
+│   │   │   │   │   │   ├── p1.cpp
+│   │   │   │   │   │   ├── pentax.cpp
+│   │   │   │   │   │   ├── samsung.cpp
+│   │   │   │   │   │   ├── sony.cpp
+│   │   │   │   │   │   └── tiff.cpp
+│   │   │   │   │   ├── postprocessing
+│   │   │   │   │   │   ├── aspect_ratio.cpp
+│   │   │   │   │   │   ├── dcraw_process.cpp
+│   │   │   │   │   │   ├── mem_image.cpp
+│   │   │   │   │   │   ├── postprocessing_aux.cpp
+│   │   │   │   │   │   ├── postprocessing_ph.cpp
+│   │   │   │   │   │   ├── postprocessing_utils.cpp
+│   │   │   │   │   │   └── postprocessing_utils_dcrdefs.cpp
+│   │   │   │   │   ├── preprocessing
+│   │   │   │   │   │   ├── ext_preprocess.cpp
+│   │   │   │   │   │   ├── preprocessing_ph.cpp
+│   │   │   │   │   │   ├── raw2image.cpp
+│   │   │   │   │   │   └── subtract_black.cpp
+│   │   │   │   │   ├── tables
+│   │   │   │   │   │   ├── cameralist.cpp
+│   │   │   │   │   │   ├── colorconst.cpp
+│   │   │   │   │   │   ├── colordata.cpp
+│   │   │   │   │   │   └── wblists.cpp
+│   │   │   │   │   ├── utils
+│   │   │   │   │   │   ├── curves.cpp
+│   │   │   │   │   │   ├── decoder_info.cpp
+│   │   │   │   │   │   ├── init_close_utils.cpp
+│   │   │   │   │   │   ├── open.cpp
+│   │   │   │   │   │   ├── phaseone_processing.cpp
+│   │   │   │   │   │   ├── read_utils.cpp
+│   │   │   │   │   │   ├── thumb_utils.cpp
+│   │   │   │   │   │   ├── utils_dcraw.cpp
+│   │   │   │   │   │   └── utils_libraw.cpp
+│   │   │   │   │   ├── write
+│   │   │   │   │   │   ├── apply_profile.cpp
+│   │   │   │   │   │   ├── file_write.cpp
+│   │   │   │   │   │   ├── tiff_writer.cpp
+│   │   │   │   │   │   └── write_ph.cpp
+│   │   │   │   │   └── x3f
+│   │   │   │   │       ├── x3f_parse_process.cpp
+│   │   │   │   │       └── x3f_utils_patched.cpp
+│   │   │   │   └── version.sh
+│   │   │   ├── LibRaw-cmake
+│   │   │   │   ├── cmake
+│   │   │   │   │   ├── data
+│   │   │   │   │   │   ├── libraw_config.h.cmake
+│   │   │   │   │   │   ├── libraw.lsm.cmake
+│   │   │   │   │   │   ├── libraw.pc.cmake
+│   │   │   │   │   │   └── libraw_r.pc.cmake
+│   │   │   │   │   ├── librawConfig.cmake.in
+│   │   │   │   │   └── modules
+│   │   │   │   │       ├── FindLCMS2.cmake
+│   │   │   │   │       ├── FindLCMS.cmake
+│   │   │   │   │       ├── FindLibRaw.cmake
+│   │   │   │   │       ├── MacroBoolTo01.cmake
+│   │   │   │   │       ├── MacroLogFeature.cmake
+│   │   │   │   │       ├── MacroOptionalFindPackage.cmake
+│   │   │   │   │       └── Uninstall.cmake
+│   │   │   │   ├── CMakeLists.txt
+│   │   │   │   ├── INSTALL.CMAKE
+│   │   │   │   ├── LICENSE
+│   │   │   │   └── README.md
+│   │   │   ├── libxcf
+│   │   │   │   ├── CMakeLists.txt
+│   │   │   │   ├── LICENSE
+│   │   │   │   ├── README.md
+│   │   │   │   ├── state.dot
+│   │   │   │   ├── state.png
+│   │   │   │   ├── xcf.c
+│   │   │   │   ├── xcf.h
+│   │   │   │   ├── xcf_names.c
+│   │   │   │   └── xcf_names.h
+│   │   │   ├── lua
+│   │   │   │   ├── CMakeLists.txt
+│   │   │   │   ├── doc
+│   │   │   │   │   ├── contents.html
+│   │   │   │   │   ├── index.css
+│   │   │   │   │   ├── logo.gif
+│   │   │   │   │   ├── lua.1
+│   │   │   │   │   ├── luac.1
+│   │   │   │   │   ├── lua.css
+│   │   │   │   │   ├── manual.css
+│   │   │   │   │   ├── manual.html
+│   │   │   │   │   ├── osi-certified-72x60.png
+│   │   │   │   │   └── readme.html
+│   │   │   │   ├── Makefile
+│   │   │   │   ├── README
+│   │   │   │   └── src
+│   │   │   │       ├── lapi.c
+│   │   │   │       ├── lapi.h
+│   │   │   │       ├── lauxlib.c
+│   │   │   │       ├── lauxlib.h
+│   │   │   │       ├── lbaselib.c
+│   │   │   │       ├── lcode.c
+│   │   │   │       ├── lcode.h
+│   │   │   │       ├── lcorolib.c
+│   │   │   │       ├── lctype.c
+│   │   │   │       ├── lctype.h
+│   │   │   │       ├── ldblib.c
+│   │   │   │       ├── ldebug.c
+│   │   │   │       ├── ldebug.h
+│   │   │   │       ├── ldo.c
+│   │   │   │       ├── ldo.h
+│   │   │   │       ├── ldump.c
+│   │   │   │       ├── lfunc.c
+│   │   │   │       ├── lfunc.h
+│   │   │   │       ├── lgc.c
+│   │   │   │       ├── lgc.h
+│   │   │   │       ├── linit.c
+│   │   │   │       ├── liolib.c
+│   │   │   │       ├── ljumptab.h
+│   │   │   │       ├── llex.c
+│   │   │   │       ├── llex.h
+│   │   │   │       ├── llimits.h
+│   │   │   │       ├── lmathlib.c
+│   │   │   │       ├── lmem.c
+│   │   │   │       ├── lmem.h
+│   │   │   │       ├── loadlib.c
+│   │   │   │       ├── lobject.c
+│   │   │   │       ├── lobject.h
+│   │   │   │       ├── lopcodes.c
+│   │   │   │       ├── lopcodes.h
+│   │   │   │       ├── lopnames.h
+│   │   │   │       ├── loslib.c
+│   │   │   │       ├── lparser.c
+│   │   │   │       ├── lparser.h
+│   │   │   │       ├── lprefix.h
+│   │   │   │       ├── lstate.c
+│   │   │   │       ├── lstate.h
+│   │   │   │       ├── lstring.c
+│   │   │   │       ├── lstring.h
+│   │   │   │       ├── lstrlib.c
+│   │   │   │       ├── ltable.c
+│   │   │   │       ├── ltable.h
+│   │   │   │       ├── ltablib.c
+│   │   │   │       ├── ltm.c
+│   │   │   │       ├── ltm.h
+│   │   │   │       ├── lua.c
+│   │   │   │       ├── luac.c
+│   │   │   │       ├── luaconf.h
+│   │   │   │       ├── lua.h
+│   │   │   │       ├── lua.hpp
+│   │   │   │       ├── lualib.h
+│   │   │   │       ├── lundump.c
+│   │   │   │       ├── lundump.h
+│   │   │   │       ├── lutf8lib.c
+│   │   │   │       ├── lvm.c
+│   │   │   │       ├── lvm.h
+│   │   │   │       ├── lzio.c
+│   │   │   │       ├── lzio.h
+│   │   │   │       └── Makefile
+│   │   │   ├── LuaAutoC
+│   │   │   │   ├── CHANGELOG.md
+│   │   │   │   ├── CMakeLists.txt
+│   │   │   │   ├── examples
+│   │   │   │   │   ├── example_basic.c
+│   │   │   │   │   ├── example_convert.c
+│   │   │   │   │   ├── example_embed.c
+│   │   │   │   │   ├── example_enum.c
+│   │   │   │   │   ├── example_func.c
+│   │   │   │   │   ├── example_mod.c
+│   │   │   │   │   ├── example_struct.c
+│   │   │   │   │   └── example_unnested.c
+│   │   │   │   ├── lautocall.h
+│   │   │   │   ├── lautoc.c
+│   │   │   │   ├── lautoc.h
+│   │   │   │   ├── lautoc.lua
+│   │   │   │   ├── LICENSE.md
+│   │   │   │   ├── Makefile
+│   │   │   │   ├── package.json
+│   │   │   │   └── README.md
+│   │   │   ├── OpenCL
+│   │   │   │   ├── build.py
+│   │   │   │   ├── CL
+│   │   │   │   │   ├── cl_d3d10.h
+│   │   │   │   │   ├── cl_d3d11.h
+│   │   │   │   │   ├── cl_dx9_media_sharing.h
+│   │   │   │   │   ├── cl_dx9_media_sharing_intel.h
+│   │   │   │   │   ├── cl_egl.h
+│   │   │   │   │   ├── cl_ext.h
+│   │   │   │   │   ├── cl_ext_intel.h
+│   │   │   │   │   ├── cl_gl_ext.h
+│   │   │   │   │   ├── cl_gl.h
+│   │   │   │   │   ├── cl.h
+│   │   │   │   │   ├── cl_half.h
+│   │   │   │   │   ├── cl_icd.h
+│   │   │   │   │   ├── cl_layer.h
+│   │   │   │   │   ├── cl_platform.h
+│   │   │   │   │   ├── cl_va_api_media_sharing_intel.h
+│   │   │   │   │   ├── cl_version.h
+│   │   │   │   │   └── opencl.h
+│   │   │   │   ├── cmake
+│   │   │   │   │   └── JoinPaths.cmake
+│   │   │   │   ├── CMakeLists.txt
+│   │   │   │   ├── CODE_OF_CONDUCT.md
+│   │   │   │   ├── conanfile.py
+│   │   │   │   ├── LICENSE
+│   │   │   │   ├── OpenCL-Headers.pc.in
+│   │   │   │   ├── README.md
+│   │   │   │   ├── scripts
+│   │   │   │   │   ├── cl_ext.h.mako
+│   │   │   │   │   ├── gen
+│   │   │   │   │   │   └── __init__.py
+│   │   │   │   │   ├── gen_headers.py
+│   │   │   │   │   ├── README.md
+│   │   │   │   │   └── requirements.txt
+│   │   │   │   └── tests
+│   │   │   │       ├── CMakeLists.txt
+│   │   │   │       ├── conan
+│   │   │   │       │   ├── CMakeLists.txt
+│   │   │   │       │   ├── conanfile.py
+│   │   │   │       │   └── example.c
+│   │   │   │       ├── lang_c
+│   │   │   │       │   └── CMakeLists.txt
+│   │   │   │       ├── lang_cpp
+│   │   │   │       │   └── CMakeLists.txt
+│   │   │   │       ├── pkgconfig
+│   │   │   │       │   ├── bare
+│   │   │   │       │   │   └── CMakeLists.txt
+│   │   │   │       │   ├── pkgconfig.c
+│   │   │   │       │   └── sdk
+│   │   │   │       │       └── CMakeLists.txt
+│   │   │   │       ├── README.md
+│   │   │   │       ├── test_cl_d3d10.h.c
+│   │   │   │       ├── test_cl_d3d11.h.c
+│   │   │   │       ├── test_cl_dx9_media_sharing.h.c
+│   │   │   │       ├── test_cl_dx9_media_sharing_intel.h.c
+│   │   │   │       ├── test_cl_egl.h.c
+│   │   │   │       ├── test_cl_ext.h.c
+│   │   │   │       ├── test_cl_ext_intel.h.c
+│   │   │   │       ├── test_cl_gl_ext.h.c
+│   │   │   │       ├── test_cl_gl.h.c
+│   │   │   │       ├── test_cl_half.h.c
+│   │   │   │       ├── test_cl.h.c
+│   │   │   │       ├── test_cl_icd.h.c
+│   │   │   │       ├── test_cl_layer.h.c
+│   │   │   │       ├── test_cl_platform.h.c
+│   │   │   │       ├── test_cl_version.h.c
+│   │   │   │       ├── test_headers.c
+│   │   │   │       └── test_opencl.h.c
+│   │   │   ├── rawspeed
+│   │   │   │   ├── bench
+│   │   │   │   │   ├── CMakeLists.txt
+│   │   │   │   │   └── librawspeed
+│   │   │   │   │       ├── adt
+│   │   │   │   │       │   ├── CMakeLists.txt
+│   │   │   │   │       │   ├── CoalescingOutputIteratorBenchmark.cpp
+│   │   │   │   │       │   ├── DefaultInitAllocatorAdaptorBenchmark.cpp
+│   │   │   │   │       │   └── VariableLengthLoadBenchmark.cpp
+│   │   │   │   │       ├── bench
+│   │   │   │   │       │   ├── CMakeLists.txt
+│   │   │   │   │       │   ├── Common.cpp
+│   │   │   │   │       │   └── Common.h
+│   │   │   │   │       ├── bitstreams
+│   │   │   │   │       │   ├── BitStreamerBenchmark.cpp
+│   │   │   │   │       │   ├── BitStreamerJPEGBenchmark.cpp
+│   │   │   │   │       │   ├── BitStreamJPEGUtils.cpp
+│   │   │   │   │       │   ├── BitStreamJPEGUtils.h
+│   │   │   │   │       │   ├── BitVacuumerBenchmark.cpp
+│   │   │   │   │       │   ├── BitVacuumerJPEGBenchmark.cpp
+│   │   │   │   │       │   └── CMakeLists.txt
+│   │   │   │   │       ├── CMakeLists.txt
+│   │   │   │   │       ├── common
+│   │   │   │   │       │   ├── CMakeLists.txt
+│   │   │   │   │       │   └── CommonBenchmark.cpp
+│   │   │   │   │       ├── decompressors
+│   │   │   │   │       │   ├── CMakeLists.txt
+│   │   │   │   │       │   ├── DeflateDecompressorBenchmark.cpp
+│   │   │   │   │       │   └── UncompressedDecompressorBenchmark.cpp
+│   │   │   │   │       ├── interpolators
+│   │   │   │   │       │   ├── CMakeLists.txt
+│   │   │   │   │       │   └── Cr2sRawInterpolatorBenchmark.cpp
+│   │   │   │   │       └── metadata
+│   │   │   │   │           ├── CameraMetaDataBenchmark.cpp
+│   │   │   │   │           └── CMakeLists.txt
+│   │   │   │   ├── cmake
+│   │   │   │   │   ├── build-type.cmake
+│   │   │   │   │   ├── clang-tidy.cmake
+│   │   │   │   │   ├── cmake-command-wrappers.cmake
+│   │   │   │   │   ├── compiler-flags.cmake
+│   │   │   │   │   ├── compiler-versions.cmake
+│   │   │   │   │   ├── compiler-warnings-clang.cmake
+│   │   │   │   │   ├── compiler-warnings.cmake
+│   │   │   │   │   ├── compiler-warnings-gcc.cmake
+│   │   │   │   │   ├── debug-info.cmake
+│   │   │   │   │   ├── gcc-coverage.cmake
+│   │   │   │   │   ├── gcc-gcov.cmake
+│   │   │   │   │   ├── gcc-toolchain.cmake
+│   │   │   │   │   ├── genhtml.cmake
+│   │   │   │   │   ├── lcov.cmake
+│   │   │   │   │   ├── libc++.cmake
+│   │   │   │   │   ├── llvm-cov.cmake
+│   │   │   │   │   ├── llvm-opt-report.cmake
+│   │   │   │   │   ├── llvm-profdata.cmake
+│   │   │   │   │   ├── llvm-toolchain.cmake
+│   │   │   │   │   ├── Modules
+│   │   │   │   │   │   ├── CheckCXXCompilerFlagAndEnableIt.cmake
+│   │   │   │   │   │   ├── CheckJPEGSymbols.cmake
+│   │   │   │   │   │   ├── CheckZLIB.cmake
+│   │   │   │   │   │   ├── cpu-cache-line-size.cmake
+│   │   │   │   │   │   ├── cpu-cache-line-size.cpp
+│   │   │   │   │   │   ├── cpu-large-page-size.cmake
+│   │   │   │   │   │   ├── cpu-large-page-size.cpp
+│   │   │   │   │   │   ├── CpuMarch.cmake
+│   │   │   │   │   │   ├── cpu-page-size.cmake
+│   │   │   │   │   │   ├── cpu-page-size.cpp
+│   │   │   │   │   │   ├── FindCppFilt.cmake
+│   │   │   │   │   │   ├── FindDemangler.cmake
+│   │   │   │   │   │   ├── FindFind.cmake
+│   │   │   │   │   │   ├── FindGCCAr.cmake
+│   │   │   │   │   │   ├── FindGCCNm.cmake
+│   │   │   │   │   │   ├── FindGCCRanLib.cmake
+│   │   │   │   │   │   ├── FindGCov.cmake
+│   │   │   │   │   │   ├── FindGenHtml.cmake
+│   │   │   │   │   │   ├── FindLCov.cmake
+│   │   │   │   │   │   ├── FindLibFuzzingEngine.cmake
+│   │   │   │   │   │   ├── FindLLVMAr.cmake
+│   │   │   │   │   │   ├── FindLLVMClangTidy.cmake
+│   │   │   │   │   │   ├── FindLLVMCov.cmake
+│   │   │   │   │   │   ├── FindLLVMCXXFilt.cmake
+│   │   │   │   │   │   ├── FindLLVMLLD.cmake
+│   │   │   │   │   │   ├── FindLLVMNm.cmake
+│   │   │   │   │   │   ├── FindLLVMObjCopy.cmake
+│   │   │   │   │   │   ├── FindLLVMObjDump.cmake
+│   │   │   │   │   │   ├── FindLLVMOptViewer.cmake
+│   │   │   │   │   │   ├── FindLLVMProfData.cmake
+│   │   │   │   │   │   ├── FindLLVMRanLib.cmake
+│   │   │   │   │   │   ├── FindPugixml.cmake
+│   │   │   │   │   │   ├── FindSphinx.cmake
+│   │   │   │   │   │   ├── FindXMLLINT.cmake
+│   │   │   │   │   │   ├── GoogleBenchmark.cmake
+│   │   │   │   │   │   ├── GoogleBenchmark.cmake.in
+│   │   │   │   │   │   ├── GoogleTest.cmake
+│   │   │   │   │   │   ├── GoogleTest.cmake.in
+│   │   │   │   │   │   ├── LibFindMacros.cmake
+│   │   │   │   │   │   ├── LLVMOpenMP.cmake
+│   │   │   │   │   │   ├── LLVMOpenMP.cmake.in
+│   │   │   │   │   │   ├── Pugixml.cmake
+│   │   │   │   │   │   ├── Pugixml.cmake.in
+│   │   │   │   │   │   ├── run-xmllint.cmake
+│   │   │   │   │   │   ├── thread-local.cmake
+│   │   │   │   │   │   ├── Zlib.cmake
+│   │   │   │   │   │   └── Zlib.cmake.in
+│   │   │   │   │   ├── sample-based-testing.cmake
+│   │   │   │   │   └── src-dependencies.cmake
+│   │   │   │   ├── CMakeLists.txt
+│   │   │   │   ├── credits.txt
+│   │   │   │   ├── data
+│   │   │   │   │   ├── cameras.xml
+│   │   │   │   │   ├── cameras.xsd
+│   │   │   │   │   ├── CMakeLists.txt
+│   │   │   │   │   ├── README.md
+│   │   │   │   │   └── showcameras.xsl
+│   │   │   │   ├── docs
+│   │   │   │   │   ├── CameraSupport.rst
+│   │   │   │   │   ├── CMakeLists.txt
+│   │   │   │   │   ├── conf.py
+│   │   │   │   │   ├── Doxyfile.in
+│   │   │   │   │   ├── Doxygen.rst
+│   │   │   │   │   ├── index.rst
+│   │   │   │   │   ├── IntegrationTesting.rst
+│   │   │   │   │   ├── lnt
+│   │   │   │   │   │   └── index.rst
+│   │   │   │   │   ├── ReferenceSampleArchive.rst
+│   │   │   │   │   └── sphinx-pyexec.py
+│   │   │   │   ├── fuzz
+│   │   │   │   │   ├── all-fuzzers.txt
+│   │   │   │   │   ├── CMakeLists.txt
+│   │   │   │   │   ├── common.dict
+│   │   │   │   │   ├── corpora
+│   │   │   │   │   │   └── CMakeLists.txt
+│   │   │   │   │   ├── libFuzzer_dummy_main.cpp
+│   │   │   │   │   ├── librawspeed
+│   │   │   │   │   │   ├── bitstreams
+│   │   │   │   │   │   │   ├── BitVacuumerRoundtrip.cpp
+│   │   │   │   │   │   │   └── CMakeLists.txt
+│   │   │   │   │   │   ├── CMakeLists.txt
+│   │   │   │   │   │   ├── codes
+│   │   │   │   │   │   │   ├── CMakeLists.txt
+│   │   │   │   │   │   │   ├── PrefixCodeDecoder
+│   │   │   │   │   │   │   │   ├── CMakeLists.txt
+│   │   │   │   │   │   │   │   ├── Common.h
+│   │   │   │   │   │   │   │   ├── Dual.cpp
+│   │   │   │   │   │   │   │   └── Solo.cpp
+│   │   │   │   │   │   │   └── PrefixCodeEncoder
+│   │   │   │   │   │   │       ├── CMakeLists.txt
+│   │   │   │   │   │   │       └── PrefixCodeEncoder.cpp
+│   │   │   │   │   │   ├── common
+│   │   │   │   │   │   │   ├── CMakeLists.txt
+│   │   │   │   │   │   │   └── DngOpcodes.cpp
+│   │   │   │   │   │   ├── decoders
+│   │   │   │   │   │   │   ├── CMakeLists.txt
+│   │   │   │   │   │   │   └── TiffDecoders
+│   │   │   │   │   │   │       ├── CMakeLists.txt
+│   │   │   │   │   │   │       └── main.cpp
+│   │   │   │   │   │   ├── decompressors
+│   │   │   │   │   │   │   ├── CMakeLists.txt
+│   │   │   │   │   │   │   ├── Cr2Decompressor.cpp
+│   │   │   │   │   │   │   ├── Cr2LJpegDecoder.cpp
+│   │   │   │   │   │   │   ├── CrwDecompressor.cpp
+│   │   │   │   │   │   │   ├── DummyLJpegDecoder.cpp
+│   │   │   │   │   │   │   ├── FujiDecompressor.cpp
+│   │   │   │   │   │   │   ├── HasselbladDecompressor.cpp
+│   │   │   │   │   │   │   ├── HasselbladLJpegDecoder.cpp
+│   │   │   │   │   │   │   ├── KodakDecompressor.cpp
+│   │   │   │   │   │   │   ├── LJpegDecoder.cpp
+│   │   │   │   │   │   │   ├── LJpegDecompressor.cpp
+│   │   │   │   │   │   │   ├── NikonDecompressor.cpp
+│   │   │   │   │   │   │   ├── OlympusDecompressor.cpp
+│   │   │   │   │   │   │   ├── PanasonicV4Decompressor.cpp
+│   │   │   │   │   │   │   ├── PanasonicV5Decompressor.cpp
+│   │   │   │   │   │   │   ├── PanasonicV6Decompressor.cpp
+│   │   │   │   │   │   │   ├── PanasonicV7Decompressor.cpp
+│   │   │   │   │   │   │   ├── PentaxDecompressor.cpp
+│   │   │   │   │   │   │   ├── PhaseOneDecompressor.cpp
+│   │   │   │   │   │   │   ├── SamsungV0Decompressor.cpp
+│   │   │   │   │   │   │   ├── SamsungV1Decompressor.cpp
+│   │   │   │   │   │   │   ├── SamsungV2Decompressor.cpp
+│   │   │   │   │   │   │   ├── SonyArw1Decompressor.cpp
+│   │   │   │   │   │   │   ├── SonyArw2Decompressor.cpp
+│   │   │   │   │   │   │   ├── UncompressedDecompressor.cpp
+│   │   │   │   │   │   │   └── VC5Decompressor.cpp
+│   │   │   │   │   │   ├── fuzz
+│   │   │   │   │   │   │   ├── CMakeLists.txt
+│   │   │   │   │   │   │   ├── Common.cpp
+│   │   │   │   │   │   │   ├── Common.h
+│   │   │   │   │   │   │   └── RawSpeed.cpp
+│   │   │   │   │   │   └── parsers
+│   │   │   │   │   │       ├── CMakeLists.txt
+│   │   │   │   │   │       └── main.cpp
+│   │   │   │   │   └── rawspeed
+│   │   │   │   │       ├── CMakeLists.txt
+│   │   │   │   │       └── main.cpp
+│   │   │   │   ├── LICENSE
+│   │   │   │   ├── lnt
+│   │   │   │   │   ├── build-lit.local.cfg
+│   │   │   │   │   ├── CMakeLists.txt
+│   │   │   │   │   ├── lit.local.cfg
+│   │   │   │   │   ├── litsupport_rawspeed
+│   │   │   │   │   │   ├── __init__.py
+│   │   │   │   │   │   └── modules
+│   │   │   │   │   │       ├── __init__.py
+│   │   │   │   │   │       └── rsbench.py
+│   │   │   │   │   ├── raw-sample-archive
+│   │   │   │   │   │   ├── CMakeLists.txt
+│   │   │   │   │   │   ├── lit.local.cfg
+│   │   │   │   │   │   └── rsbench
+│   │   │   │   │   │       ├── CMakeLists.txt
+│   │   │   │   │   │       └── lit.local.cfg
+│   │   │   │   │   ├── RawSpeed.cpp
+│   │   │   │   │   └── README.rst
+│   │   │   │   ├── README.rst
+│   │   │   │   ├── src
+│   │   │   │   │   ├── CMakeLists.txt
+│   │   │   │   │   ├── config.h.in
+│   │   │   │   │   ├── external
+│   │   │   │   │   │   ├── AddressSanitizer.h
+│   │   │   │   │   │   ├── CMakeLists.txt
+│   │   │   │   │   │   ├── gopro
+│   │   │   │   │   │   │   └── vc5
+│   │   │   │   │   │   │       └── table17.inc
+│   │   │   │   │   │   ├── MemorySanitizer.h
+│   │   │   │   │   │   └── ThreadSafetyAnalysis.h
+│   │   │   │   │   ├── librawspeed
+│   │   │   │   │   │   ├── adt
+│   │   │   │   │   │   │   ├── AlignedAllocator.h
+│   │   │   │   │   │   │   ├── Array1DRef.h
+│   │   │   │   │   │   │   ├── Array2DRef.h
+│   │   │   │   │   │   │   ├── Bit.h
+│   │   │   │   │   │   │   ├── BitIterator.h
+│   │   │   │   │   │   │   ├── Casts.h
+│   │   │   │   │   │   │   ├── CMakeLists.txt
+│   │   │   │   │   │   │   ├── CoalescingOutputIterator.h
+│   │   │   │   │   │   │   ├── CroppedArray1DRef.h
+│   │   │   │   │   │   │   ├── CroppedArray2DRef.h
+│   │   │   │   │   │   │   ├── DefaultInitAllocatorAdaptor.h
+│   │   │   │   │   │   │   ├── Invariant.h
+│   │   │   │   │   │   │   ├── iterator_range.h
+│   │   │   │   │   │   │   ├── Mutex.h
+│   │   │   │   │   │   │   ├── NORangesSet.h
+│   │   │   │   │   │   │   ├── NotARational.h
+│   │   │   │   │   │   │   ├── Optional.h
+│   │   │   │   │   │   │   ├── PartitioningOutputIterator.h
+│   │   │   │   │   │   │   ├── Point.h
+│   │   │   │   │   │   │   ├── Range.h
+│   │   │   │   │   │   │   └── VariableLengthLoad.h
+│   │   │   │   │   │   ├── bitstreams
+│   │   │   │   │   │   │   ├── BitStreamer.cpp
+│   │   │   │   │   │   │   ├── BitStreamer.h
+│   │   │   │   │   │   │   ├── BitStreamerJPEG.h
+│   │   │   │   │   │   │   ├── BitStreamerLSB.h
+│   │   │   │   │   │   │   ├── BitStreamerMSB16.h
+│   │   │   │   │   │   │   ├── BitStreamerMSB32.h
+│   │   │   │   │   │   │   ├── BitStreamerMSB.h
+│   │   │   │   │   │   │   ├── BitStream.h
+│   │   │   │   │   │   │   ├── BitStreamJPEG.h
+│   │   │   │   │   │   │   ├── BitStreamLSB.h
+│   │   │   │   │   │   │   ├── BitStreamMSB16.h
+│   │   │   │   │   │   │   ├── BitStreamMSB32.h
+│   │   │   │   │   │   │   ├── BitStreamMSB.h
+│   │   │   │   │   │   │   ├── BitStreamPosition.h
+│   │   │   │   │   │   │   ├── BitStreams.h
+│   │   │   │   │   │   │   ├── BitVacuumer.h
+│   │   │   │   │   │   │   ├── BitVacuumerJPEG.h
+│   │   │   │   │   │   │   ├── BitVacuumerLSB.h
+│   │   │   │   │   │   │   ├── BitVacuumerMSB16.h
+│   │   │   │   │   │   │   ├── BitVacuumerMSB32.h
+│   │   │   │   │   │   │   ├── BitVacuumerMSB.h
+│   │   │   │   │   │   │   └── CMakeLists.txt
+│   │   │   │   │   │   ├── CMakeLists.txt
+│   │   │   │   │   │   ├── codes
+│   │   │   │   │   │   │   ├── AbstractPrefixCodeDecoder.h
+│   │   │   │   │   │   │   ├── AbstractPrefixCodeEncoder.h
+│   │   │   │   │   │   │   ├── AbstractPrefixCode.h
+│   │   │   │   │   │   │   ├── AbstractPrefixCodeTranscoder.h
+│   │   │   │   │   │   │   ├── BinaryPrefixTree.h
+│   │   │   │   │   │   │   ├── CMakeLists.txt
+│   │   │   │   │   │   │   ├── DummyPrefixCodeDecoder.h
+│   │   │   │   │   │   │   ├── HuffmanCode.h
+│   │   │   │   │   │   │   ├── PrefixCodeDecoder.h
+│   │   │   │   │   │   │   ├── PrefixCode.h
+│   │   │   │   │   │   │   ├── PrefixCodeLookupDecoder.h
+│   │   │   │   │   │   │   ├── PrefixCodeLUTDecoder.h
+│   │   │   │   │   │   │   ├── PrefixCodeTreeDecoder.h
+│   │   │   │   │   │   │   ├── PrefixCodeVectorDecoder.h
+│   │   │   │   │   │   │   └── PrefixCodeVectorEncoder.h
+│   │   │   │   │   │   ├── common
+│   │   │   │   │   │   │   ├── BayerPhase.h
+│   │   │   │   │   │   │   ├── ChecksumFile.cpp
+│   │   │   │   │   │   │   ├── ChecksumFile.h
+│   │   │   │   │   │   │   ├── CMakeLists.txt
+│   │   │   │   │   │   │   ├── Common.cpp
+│   │   │   │   │   │   │   ├── Common.h
+│   │   │   │   │   │   │   ├── CpuFeatures.cpp
+│   │   │   │   │   │   │   ├── CpuFeatures.h
+│   │   │   │   │   │   │   ├── DngOpcodes.cpp
+│   │   │   │   │   │   │   ├── DngOpcodes.h
+│   │   │   │   │   │   │   ├── ErrorLog.cpp
+│   │   │   │   │   │   │   ├── ErrorLog.h
+│   │   │   │   │   │   │   ├── FloatingPoint.h
+│   │   │   │   │   │   │   ├── GetNumberOfProcessorCores.cpp
+│   │   │   │   │   │   │   ├── RawImage.cpp
+│   │   │   │   │   │   │   ├── RawImageDataFloat.cpp
+│   │   │   │   │   │   │   ├── RawImageDataU16.cpp
+│   │   │   │   │   │   │   ├── RawImage.h
+│   │   │   │   │   │   │   ├── RawspeedException.cpp
+│   │   │   │   │   │   │   ├── RawspeedException.h
+│   │   │   │   │   │   │   ├── SimpleLUT.h
+│   │   │   │   │   │   │   ├── Spline.h
+│   │   │   │   │   │   │   ├── TableLookUp.cpp
+│   │   │   │   │   │   │   ├── TableLookUp.h
+│   │   │   │   │   │   │   └── XTransPhase.h
+│   │   │   │   │   │   ├── decoders
+│   │   │   │   │   │   │   ├── AbstractTiffDecoder.cpp
+│   │   │   │   │   │   │   ├── AbstractTiffDecoder.h
+│   │   │   │   │   │   │   ├── ArwDecoder.cpp
+│   │   │   │   │   │   │   ├── ArwDecoder.h
+│   │   │   │   │   │   │   ├── CMakeLists.txt
+│   │   │   │   │   │   │   ├── Cr2Decoder.cpp
+│   │   │   │   │   │   │   ├── Cr2Decoder.h
+│   │   │   │   │   │   │   ├── CrwDecoder.cpp
+│   │   │   │   │   │   │   ├── CrwDecoder.h
+│   │   │   │   │   │   │   ├── DcrDecoder.cpp
+│   │   │   │   │   │   │   ├── DcrDecoder.h
+│   │   │   │   │   │   │   ├── DcsDecoder.cpp
+│   │   │   │   │   │   │   ├── DcsDecoder.h
+│   │   │   │   │   │   │   ├── DngDecoder.cpp
+│   │   │   │   │   │   │   ├── DngDecoder.h
+│   │   │   │   │   │   │   ├── ErfDecoder.cpp
+│   │   │   │   │   │   │   ├── ErfDecoder.h
+│   │   │   │   │   │   │   ├── IiqDecoder.cpp
+│   │   │   │   │   │   │   ├── IiqDecoder.h
+│   │   │   │   │   │   │   ├── KdcDecoder.cpp
+│   │   │   │   │   │   │   ├── KdcDecoder.h
+│   │   │   │   │   │   │   ├── MefDecoder.cpp
+│   │   │   │   │   │   │   ├── MefDecoder.h
+│   │   │   │   │   │   │   ├── MosDecoder.cpp
+│   │   │   │   │   │   │   ├── MosDecoder.h
+│   │   │   │   │   │   │   ├── MrwDecoder.cpp
+│   │   │   │   │   │   │   ├── MrwDecoder.h
+│   │   │   │   │   │   │   ├── NakedDecoder.cpp
+│   │   │   │   │   │   │   ├── NakedDecoder.h
+│   │   │   │   │   │   │   ├── NefDecoder.cpp
+│   │   │   │   │   │   │   ├── NefDecoder.h
+│   │   │   │   │   │   │   ├── OrfDecoder.cpp
+│   │   │   │   │   │   │   ├── OrfDecoder.h
+│   │   │   │   │   │   │   ├── PefDecoder.cpp
+│   │   │   │   │   │   │   ├── PefDecoder.h
+│   │   │   │   │   │   │   ├── RafDecoder.cpp
+│   │   │   │   │   │   │   ├── RafDecoder.h
+│   │   │   │   │   │   │   ├── RawDecoder.cpp
+│   │   │   │   │   │   │   ├── RawDecoderException.cpp
+│   │   │   │   │   │   │   ├── RawDecoderException.h
+│   │   │   │   │   │   │   ├── RawDecoder.h
+│   │   │   │   │   │   │   ├── Rw2Decoder.cpp
+│   │   │   │   │   │   │   ├── Rw2Decoder.h
+│   │   │   │   │   │   │   ├── SimpleTiffDecoder.cpp
+│   │   │   │   │   │   │   ├── SimpleTiffDecoder.h
+│   │   │   │   │   │   │   ├── SrwDecoder.cpp
+│   │   │   │   │   │   │   ├── SrwDecoder.h
+│   │   │   │   │   │   │   ├── StiDecoder.cpp
+│   │   │   │   │   │   │   ├── StiDecoder.h
+│   │   │   │   │   │   │   ├── ThreefrDecoder.cpp
+│   │   │   │   │   │   │   └── ThreefrDecoder.h
+│   │   │   │   │   │   ├── decompressors
+│   │   │   │   │   │   │   ├── AbstractDecompressor.h
+│   │   │   │   │   │   │   ├── AbstractDngDecompressor.cpp
+│   │   │   │   │   │   │   ├── AbstractDngDecompressor.h
+│   │   │   │   │   │   │   ├── AbstractLJpegDecoder.cpp
+│   │   │   │   │   │   │   ├── AbstractLJpegDecoder.h
+│   │   │   │   │   │   │   ├── AbstractSamsungDecompressor.h
+│   │   │   │   │   │   │   ├── CMakeLists.txt
+│   │   │   │   │   │   │   ├── Cr2Decompressor.cpp
+│   │   │   │   │   │   │   ├── Cr2Decompressor.h
+│   │   │   │   │   │   │   ├── Cr2DecompressorImpl.h
+│   │   │   │   │   │   │   ├── Cr2LJpegDecoder.cpp
+│   │   │   │   │   │   │   ├── Cr2LJpegDecoder.h
+│   │   │   │   │   │   │   ├── CrwDecompressor.cpp
+│   │   │   │   │   │   │   ├── CrwDecompressor.h
+│   │   │   │   │   │   │   ├── DeflateDecompressor.cpp
+│   │   │   │   │   │   │   ├── DeflateDecompressor.h
+│   │   │   │   │   │   │   ├── FujiDecompressor.cpp
+│   │   │   │   │   │   │   ├── FujiDecompressor.h
+│   │   │   │   │   │   │   ├── HasselbladDecompressor.cpp
+│   │   │   │   │   │   │   ├── HasselbladDecompressor.h
+│   │   │   │   │   │   │   ├── HasselbladLJpegDecoder.cpp
+│   │   │   │   │   │   │   ├── HasselbladLJpegDecoder.h
+│   │   │   │   │   │   │   ├── JpegDecompressor.cpp
+│   │   │   │   │   │   │   ├── JpegDecompressor.h
+│   │   │   │   │   │   │   ├── JpegMarkers.h
+│   │   │   │   │   │   │   ├── KodakDecompressor.cpp
+│   │   │   │   │   │   │   ├── KodakDecompressor.h
+│   │   │   │   │   │   │   ├── LJpegDecoder.cpp
+│   │   │   │   │   │   │   ├── LJpegDecoder.h
+│   │   │   │   │   │   │   ├── LJpegDecompressor.cpp
+│   │   │   │   │   │   │   ├── LJpegDecompressor.h
+│   │   │   │   │   │   │   ├── NikonDecompressor.cpp
+│   │   │   │   │   │   │   ├── NikonDecompressor.h
+│   │   │   │   │   │   │   ├── OlympusDecompressor.cpp
+│   │   │   │   │   │   │   ├── OlympusDecompressor.h
+│   │   │   │   │   │   │   ├── PanasonicV4Decompressor.cpp
+│   │   │   │   │   │   │   ├── PanasonicV4Decompressor.h
+│   │   │   │   │   │   │   ├── PanasonicV5Decompressor.cpp
+│   │   │   │   │   │   │   ├── PanasonicV5Decompressor.h
+│   │   │   │   │   │   │   ├── PanasonicV6Decompressor.cpp
+│   │   │   │   │   │   │   ├── PanasonicV6Decompressor.h
+│   │   │   │   │   │   │   ├── PanasonicV7Decompressor.cpp
+│   │   │   │   │   │   │   ├── PanasonicV7Decompressor.h
+│   │   │   │   │   │   │   ├── PentaxDecompressor.cpp
+│   │   │   │   │   │   │   ├── PentaxDecompressor.h
+│   │   │   │   │   │   │   ├── PhaseOneDecompressor.cpp
+│   │   │   │   │   │   │   ├── PhaseOneDecompressor.h
+│   │   │   │   │   │   │   ├── SamsungV0Decompressor.cpp
+│   │   │   │   │   │   │   ├── SamsungV0Decompressor.h
+│   │   │   │   │   │   │   ├── SamsungV1Decompressor.cpp
+│   │   │   │   │   │   │   ├── SamsungV1Decompressor.h
+│   │   │   │   │   │   │   ├── SamsungV2Decompressor.cpp
+│   │   │   │   │   │   │   ├── SamsungV2Decompressor.h
+│   │   │   │   │   │   │   ├── SonyArw1Decompressor.cpp
+│   │   │   │   │   │   │   ├── SonyArw1Decompressor.h
+│   │   │   │   │   │   │   ├── SonyArw2Decompressor.cpp
+│   │   │   │   │   │   │   ├── SonyArw2Decompressor.h
+│   │   │   │   │   │   │   ├── UncompressedDecompressor.cpp
+│   │   │   │   │   │   │   ├── UncompressedDecompressor.h
+│   │   │   │   │   │   │   ├── VC5Decompressor.cpp
+│   │   │   │   │   │   │   └── VC5Decompressor.h
+│   │   │   │   │   │   ├── interpolators
+│   │   │   │   │   │   │   ├── CMakeLists.txt
+│   │   │   │   │   │   │   ├── Cr2sRawInterpolator.cpp
+│   │   │   │   │   │   │   └── Cr2sRawInterpolator.h
+│   │   │   │   │   │   ├── io
+│   │   │   │   │   │   │   ├── Buffer.h
+│   │   │   │   │   │   │   ├── ByteStream.h
+│   │   │   │   │   │   │   ├── CMakeLists.txt
+│   │   │   │   │   │   │   ├── Endianness.h
+│   │   │   │   │   │   │   ├── FileIOException.cpp
+│   │   │   │   │   │   │   ├── FileIOException.h
+│   │   │   │   │   │   │   ├── FileIO.h
+│   │   │   │   │   │   │   ├── FileReader.cpp
+│   │   │   │   │   │   │   ├── FileReader.h
+│   │   │   │   │   │   │   ├── FileWriter.cpp
+│   │   │   │   │   │   │   ├── FileWriter.h
+│   │   │   │   │   │   │   ├── IOException.cpp
+│   │   │   │   │   │   │   └── IOException.h
+│   │   │   │   │   │   ├── metadata
+│   │   │   │   │   │   │   ├── BlackArea.h
+│   │   │   │   │   │   │   ├── Camera.cpp
+│   │   │   │   │   │   │   ├── Camera.h
+│   │   │   │   │   │   │   ├── CameraMetaData.cpp
+│   │   │   │   │   │   │   ├── CameraMetadataException.cpp
+│   │   │   │   │   │   │   ├── CameraMetadataException.h
+│   │   │   │   │   │   │   ├── CameraMetaData.h
+│   │   │   │   │   │   │   ├── CameraSensorInfo.cpp
+│   │   │   │   │   │   │   ├── CameraSensorInfo.h
+│   │   │   │   │   │   │   ├── CMakeLists.txt
+│   │   │   │   │   │   │   ├── ColorFilterArray.cpp
+│   │   │   │   │   │   │   └── ColorFilterArray.h
+│   │   │   │   │   │   ├── parsers
+│   │   │   │   │   │   │   ├── CiffParser.cpp
+│   │   │   │   │   │   │   ├── CiffParserException.cpp
+│   │   │   │   │   │   │   ├── CiffParserException.h
+│   │   │   │   │   │   │   ├── CiffParser.h
+│   │   │   │   │   │   │   ├── CMakeLists.txt
+│   │   │   │   │   │   │   ├── FiffParser.cpp
+│   │   │   │   │   │   │   ├── FiffParserException.cpp
+│   │   │   │   │   │   │   ├── FiffParserException.h
+│   │   │   │   │   │   │   ├── FiffParser.h
+│   │   │   │   │   │   │   ├── RawParser.cpp
+│   │   │   │   │   │   │   ├── RawParserException.cpp
+│   │   │   │   │   │   │   ├── RawParserException.h
+│   │   │   │   │   │   │   ├── RawParser.h
+│   │   │   │   │   │   │   ├── TiffParser.cpp
+│   │   │   │   │   │   │   ├── TiffParserException.cpp
+│   │   │   │   │   │   │   ├── TiffParserException.h
+│   │   │   │   │   │   │   └── TiffParser.h
+│   │   │   │   │   │   ├── RawSpeed-API.h
+│   │   │   │   │   │   ├── README.md
+│   │   │   │   │   │   └── tiff
+│   │   │   │   │   │       ├── CiffEntry.cpp
+│   │   │   │   │   │       ├── CiffEntry.h
+│   │   │   │   │   │       ├── CiffIFD.cpp
+│   │   │   │   │   │       ├── CiffIFD.h
+│   │   │   │   │   │       ├── CiffTag.h
+│   │   │   │   │   │       ├── CMakeLists.txt
+│   │   │   │   │   │       ├── TiffEntry.cpp
+│   │   │   │   │   │       ├── TiffEntry.h
+│   │   │   │   │   │       ├── TiffIFD.cpp
+│   │   │   │   │   │       ├── TiffIFD.h
+│   │   │   │   │   │       └── TiffTag.h
+│   │   │   │   │   └── utilities
+│   │   │   │   │       ├── CMakeLists.txt
+│   │   │   │   │       ├── identify
+│   │   │   │   │       │   ├── CMakeLists.txt
+│   │   │   │   │       │   └── rawspeed-identify.cpp
+│   │   │   │   │       ├── rsbench
+│   │   │   │   │       │   ├── CMakeLists.txt
+│   │   │   │   │       │   └── main.cpp
+│   │   │   │   │       └── rstest
+│   │   │   │   │           ├── CMakeLists.txt
+│   │   │   │   │           ├── MD5Benchmark.cpp
+│   │   │   │   │           ├── md5.cpp
+│   │   │   │   │           ├── md5.h
+│   │   │   │   │           ├── MD5Test.cpp
+│   │   │   │   │           └── rstest.cpp
+│   │   │   │   └── test
+│   │   │   │       ├── CMakeLists.txt
+│   │   │   │       └── librawspeed
+│   │   │   │           ├── adt
+│   │   │   │           │   ├── BitTest.cpp
+│   │   │   │           │   ├── CMakeLists.txt
+│   │   │   │           │   ├── CoalescingOutputIteratorTest.cpp
+│   │   │   │           │   ├── NORangesSetTest.cpp
+│   │   │   │           │   ├── PartitioningOutputIteratorTest.cpp
+│   │   │   │           │   ├── PointTest.cpp
+│   │   │   │           │   ├── RangeTest.cpp
+│   │   │   │           │   ├── RangeTest.h
+│   │   │   │           │   └── VariableLengthLoadTest.cpp
+│   │   │   │           ├── bitstreams
+│   │   │   │           │   ├── BitSteramerMSBTest.cpp
+│   │   │   │           │   ├── BitStreamerJPEGTest.cpp
+│   │   │   │           │   ├── BitStreamerLSBTest.cpp
+│   │   │   │           │   ├── BitStreamerMSB16Test.cpp
+│   │   │   │           │   ├── BitStreamerMSB32Test.cpp
+│   │   │   │           │   ├── BitStreamerTest.h
+│   │   │   │           │   ├── BitVacuumerJPEGTest.cpp
+│   │   │   │           │   ├── BitVacuumerLSBTest.cpp
+│   │   │   │           │   ├── BitVacuumerMSB16Test.cpp
+│   │   │   │           │   ├── BitVacuumerMSB32Test.cpp
+│   │   │   │           │   ├── BitVacuumerMSBTest.cpp
+│   │   │   │           │   └── CMakeLists.txt
+│   │   │   │           ├── CMakeLists.txt
+│   │   │   │           ├── codes
+│   │   │   │           │   ├── CMakeLists.txt
+│   │   │   │           │   ├── HuffmanCodeTest.cpp
+│   │   │   │           │   └── HuffmanTableTest.cpp
+│   │   │   │           ├── common
+│   │   │   │           │   ├── BayerPhaseTest.cpp
+│   │   │   │           │   ├── ChecksumFileTest.cpp
+│   │   │   │           │   ├── CMakeLists.txt
+│   │   │   │           │   ├── CommonTest.cpp
+│   │   │   │           │   ├── CpuidTest.cpp
+│   │   │   │           │   └── SplineTest.cpp
+│   │   │   │           ├── io
+│   │   │   │           │   ├── CMakeLists.txt
+│   │   │   │           │   ├── EndiannessTest.cpp
+│   │   │   │           │   └── EndiannessTest.h
+│   │   │   │           ├── metadata
+│   │   │   │           │   ├── BlackAreaTest.cpp
+│   │   │   │           │   ├── CameraMetaDataTest.cpp
+│   │   │   │           │   ├── CameraSensorInfoTest.cpp
+│   │   │   │           │   ├── CameraTest.cpp
+│   │   │   │           │   ├── CMakeLists.txt
+│   │   │   │           │   └── ColorFilterArrayTest.cpp
+│   │   │   │           └── test
+│   │   │   │               ├── CMakeLists.txt
+│   │   │   │               ├── ExceptionsTest.cpp
+│   │   │   │               └── RawSpeed.cpp
+│   │   │   ├── ThreadSafetyAnalysis.h
+│   │   │   └── whereami
+│   │   │       ├── example
+│   │   │       │   ├── executable.c
+│   │   │       │   └── library.c
+│   │   │       ├── _gnu-make
+│   │   │       │   └── Makefile
+│   │   │       ├── _ios-xcode
+│   │   │       │   ├── WhereAmI-Info.plist
+│   │   │       │   └── WhereAmI.xcodeproj
+│   │   │       │       ├── project.pbxproj
+│   │   │       │       └── project.xcworkspace
+│   │   │       │           └── contents.xcworkspacedata
+│   │   │       ├── LICENSE.MIT
+│   │   │       ├── LICENSE.WTFPLv2
+│   │   │       ├── _mac-xcode
+│   │   │       │   └── WhereAmI.xcodeproj
+│   │   │       │       ├── project.pbxproj
+│   │   │       │       └── project.xcworkspace
+│   │   │       │           └── contents.xcworkspacedata
+│   │   │       ├── README.md
+│   │   │       ├── src
+│   │   │       │   ├── whereami.c
+│   │   │       │   └── whereami.h
+│   │   │       └── _win-vs14
+│   │   │           ├── Common.props
+│   │   │           ├── Debug.props
+│   │   │           ├── Executable.vcxproj
+│   │   │           ├── Library.vcxproj
+│   │   │           ├── Release.props
+│   │   │           ├── WhereAmI.sln
+│   │   │           ├── x64.props
+│   │   │           └── x86.props
+│   │   ├── generate-cache
+│   │   │   ├── CMakeLists.txt
+│   │   │   └── main.c
+│   │   ├── gui
+│   │   │   ├── about.c
+│   │   │   ├── about.h
+│   │   │   ├── accelerators.c
+│   │   │   ├── accelerators.h
+│   │   │   ├── color_picker_proxy.c
+│   │   │   ├── color_picker_proxy.h
+│   │   │   ├── drag_and_drop.h
+│   │   │   ├── draw.h
+│   │   │   ├── gtk.c
+│   │   │   ├── gtkentry.c
+│   │   │   ├── gtkentry.h
+│   │   │   ├── gtk.h
+│   │   │   ├── guides.c
+│   │   │   ├── guides.h
+│   │   │   ├── hist_dialog.c
+│   │   │   ├── hist_dialog.h
+│   │   │   ├── import_metadata.c
+│   │   │   ├── import_metadata.h
+│   │   │   ├── preferences.c
+│   │   │   ├── preferences_dialogs.h
+│   │   │   ├── preferences.h
+│   │   │   ├── presets.c
+│   │   │   ├── presets.h
+│   │   │   ├── styles_dialog.c
+│   │   │   └── styles.h
+│   │   ├── imageio
+│   │   │   ├── CMakeLists.txt
+│   │   │   ├── format
+│   │   │   │   ├── avif.c
+│   │   │   │   ├── CMakeLists.txt
+│   │   │   │   ├── copy.c
+│   │   │   │   ├── exr.cc
+│   │   │   │   ├── imageio_format_api.h
+│   │   │   │   ├── j2k.c
+│   │   │   │   ├── jpeg.c
+│   │   │   │   ├── jxl.c
+│   │   │   │   ├── pdf.c
+│   │   │   │   ├── pfm.c
+│   │   │   │   ├── png.c
+│   │   │   │   ├── ppm.c
+│   │   │   │   ├── tiff.c
+│   │   │   │   ├── webp.c
+│   │   │   │   └── xcf.c
+│   │   │   ├── imageio_avif.c
+│   │   │   ├── imageio_avif.h
+│   │   │   ├── imageio.c
+│   │   │   ├── imageio_common.h
+│   │   │   ├── imageio_dng.h
+│   │   │   ├── imageio_exr.cc
+│   │   │   ├── imageio_exr.h
+│   │   │   ├── imageio_exr.hh
+│   │   │   ├── imageio_gm.c
+│   │   │   ├── imageio_gm.h
+│   │   │   ├── imageio_heif.c
+│   │   │   ├── imageio_heif.h
+│   │   │   ├── imageio_im.c
+│   │   │   ├── imageio_im.h
+│   │   │   ├── imageio_j2k.c
+│   │   │   ├── imageio_j2k.h
+│   │   │   ├── imageio_jpeg.c
+│   │   │   ├── imageio_jpeg.h
+│   │   │   ├── imageio_jpegxl.c
+│   │   │   ├── imageio_jpegxl.h
+│   │   │   ├── imageio_libraw.c
+│   │   │   ├── imageio_libraw.h
+│   │   │   ├── imageio_module.c
+│   │   │   ├── imageio_module.h
+│   │   │   ├── imageio_pfm.c
+│   │   │   ├── imageio_pfm.h
+│   │   │   ├── imageio_png.c
+│   │   │   ├── imageio_png.h
+│   │   │   ├── imageio_pnm.c
+│   │   │   ├── imageio_pnm.h
+│   │   │   ├── imageio_qoi.c
+│   │   │   ├── imageio_qoi.h
+│   │   │   ├── imageio_rawspeed.cc
+│   │   │   ├── imageio_rawspeed.h
+│   │   │   ├── imageio_rgbe.c
+│   │   │   ├── imageio_rgbe.h
+│   │   │   ├── imageio_tiff.c
+│   │   │   ├── imageio_tiff.h
+│   │   │   ├── imageio_webp.c
+│   │   │   ├── imageio_webp.h
+│   │   │   ├── qoi.h
+│   │   │   └── storage
+│   │   │       ├── CMakeLists.txt
+│   │   │       ├── disk.c
+│   │   │       ├── email.c
+│   │   │       ├── gallery.c
+│   │   │       ├── imageio_storage_api.h
+│   │   │       ├── latex.c
+│   │   │       └── piwigo.c
+│   │   ├── iop
+│   │   │   ├── ashift.c
+│   │   │   ├── ashift_lsd.c
+│   │   │   ├── ashift_nmsimplex.c
+│   │   │   ├── atrous.c
+│   │   │   ├── basecurve.c
+│   │   │   ├── basicadj.c
+│   │   │   ├── bilat.c
+│   │   │   ├── bilateral.cc
+│   │   │   ├── bloom.c
+│   │   │   ├── blurs.c
+│   │   │   ├── borders.c
+│   │   │   ├── cacorrect.c
+│   │   │   ├── cacorrectrgb.c
+│   │   │   ├── censorize.c
+│   │   │   ├── channelmixer.c
+│   │   │   ├── channelmixerrgb.c
+│   │   │   ├── choleski.h
+│   │   │   ├── clahe.c
+│   │   │   ├── clipping.c
+│   │   │   ├── CMakeLists.txt
+│   │   │   ├── colisa.c
+│   │   │   ├── colorbalance.c
+│   │   │   ├── colorbalancergb.c
+│   │   │   ├── colorchecker.c
+│   │   │   ├── colorcontrast.c
+│   │   │   ├── colorcorrection.c
+│   │   │   ├── colorequal.c
+│   │   │   ├── colorin.c
+│   │   │   ├── colorize.c
+│   │   │   ├── colormapping.c
+│   │   │   ├── colorout.c
+│   │   │   ├── colorreconstruction.c
+│   │   │   ├── colortransfer.c
+│   │   │   ├── colorzones.c
+│   │   │   ├── crop.c
+│   │   │   ├── defringe.c
+│   │   │   ├── demosaic.c
+│   │   │   ├── demosaicing
+│   │   │   │   ├── amaze.cc
+│   │   │   │   ├── basics.c
+│   │   │   │   ├── dual.c
+│   │   │   │   ├── lmmse.c
+│   │   │   │   ├── passthrough.c
+│   │   │   │   ├── ppg.c
+│   │   │   │   ├── rcd.c
+│   │   │   │   ├── vng.c
+│   │   │   │   └── xtrans.c
+│   │   │   ├── denoiseprofile.c
+│   │   │   ├── diffuse.c
+│   │   │   ├── dither.c
+│   │   │   ├── enlargecanvas.c
+│   │   │   ├── equalizer.c
+│   │   │   ├── equalizer_eaw.h
+│   │   │   ├── exposure.c
+│   │   │   ├── filmic.c
+│   │   │   ├── filmicrgb.c
+│   │   │   ├── finalscale.c
+│   │   │   ├── flip.c
+│   │   │   ├── gamma.c
+│   │   │   ├── gaussian_elimination.h
+│   │   │   ├── globaltonemap.c
+│   │   │   ├── graduatednd.c
+│   │   │   ├── grain.c
+│   │   │   ├── hazeremoval.c
+│   │   │   ├── highlights.c
+│   │   │   ├── highpass.c
+│   │   │   ├── hlreconstruct
+│   │   │   │   ├── inpaint.c
+│   │   │   │   ├── laplacian.c
+│   │   │   │   ├── lch.c
+│   │   │   │   ├── opposed.c
+│   │   │   │   ├── segbased.c
+│   │   │   │   └── segmentation.c
+│   │   │   ├── hotpixels.c
+│   │   │   ├── invert.c
+│   │   │   ├── iop_api.h
+│   │   │   ├── lens.cc
+│   │   │   ├── levels.c
+│   │   │   ├── liquify.c
+│   │   │   ├── lowlight.c
+│   │   │   ├── lowpass.c
+│   │   │   ├── lut3d.c
+│   │   │   ├── lut3dgmic.cpp
+│   │   │   ├── mask_manager.c
+│   │   │   ├── monochrome.c
+│   │   │   ├── negadoctor.c
+│   │   │   ├── nlmeans.c
+│   │   │   ├── overexposed.c
+│   │   │   ├── overlay.c
+│   │   │   ├── Permutohedral.h
+│   │   │   ├── primaries.c
+│   │   │   ├── profile_gamma.c
+│   │   │   ├── rawdenoise.c
+│   │   │   ├── rawoverexposed.c
+│   │   │   ├── rawprepare.c
+│   │   │   ├── relight.c
+│   │   │   ├── retouch.c
+│   │   │   ├── rgbcurve.c
+│   │   │   ├── rgblevels.c
+│   │   │   ├── rotatepixels.c
+│   │   │   ├── scalepixels.c
+│   │   │   ├── shadhi.c
+│   │   │   ├── sharpen.c
+│   │   │   ├── sigmoid.c
+│   │   │   ├── soften.c
+│   │   │   ├── splittoning.c
+│   │   │   ├── spots.c
+│   │   │   ├── svd.h
+│   │   │   ├── temperature.c
+│   │   │   ├── tonecurve.c
+│   │   │   ├── toneequal.c
+│   │   │   ├── tonemap.cc
+│   │   │   ├── useless.c
+│   │   │   ├── velvia.c
+│   │   │   ├── vibrance.c
+│   │   │   ├── vignette.c
+│   │   │   ├── watermark.c
+│   │   │   └── zonesystem.c
+│   │   ├── is_supported_platform.h
+│   │   ├── libs
+│   │   │   ├── backgroundjobs.c
+│   │   │   ├── camera.c
+│   │   │   ├── CMakeLists.txt
+│   │   │   ├── collect.c
+│   │   │   ├── collect.h
+│   │   │   ├── colorpicker.c
+│   │   │   ├── colorpicker.h
+│   │   │   ├── copy_history.c
+│   │   │   ├── duplicate.c
+│   │   │   ├── export.c
+│   │   │   ├── export_metadata.c
+│   │   │   ├── filtering.c
+│   │   │   ├── filters
+│   │   │   │   ├── aperture.c
+│   │   │   │   ├── colors.c
+│   │   │   │   ├── date.c
+│   │   │   │   ├── exposure.c
+│   │   │   │   ├── filename.c
+│   │   │   │   ├── focal.c
+│   │   │   │   ├── history.c
+│   │   │   │   ├── iso.c
+│   │   │   │   ├── local_copy.c
+│   │   │   │   ├── misc.c
+│   │   │   │   ├── module_order.c
+│   │   │   │   ├── rating.c
+│   │   │   │   ├── rating_range.c
+│   │   │   │   ├── ratio.c
+│   │   │   │   └── search.c
+│   │   │   ├── geotagging.c
+│   │   │   ├── histogram.c
+│   │   │   ├── history.c
+│   │   │   ├── image.c
+│   │   │   ├── import.c
+│   │   │   ├── ioporder.c
+│   │   │   ├── lib_api.h
+│   │   │   ├── lib.c
+│   │   │   ├── lib.h
+│   │   │   ├── live_view.c
+│   │   │   ├── location.c
+│   │   │   ├── map_locations.c
+│   │   │   ├── map_settings.c
+│   │   │   ├── masks.c
+│   │   │   ├── metadata.c
+│   │   │   ├── metadata_view.c
+│   │   │   ├── modulegroups.c
+│   │   │   ├── modulegroups.h
+│   │   │   ├── navigation.c
+│   │   │   ├── print_settings.c
+│   │   │   ├── recentcollect.c
+│   │   │   ├── select.c
+│   │   │   ├── session.c
+│   │   │   ├── snapshots.c
+│   │   │   ├── styles.c
+│   │   │   ├── tagging.c
+│   │   │   └── tools
+│   │   │       ├── battery_indicator.c
+│   │   │       ├── colorlabels.c
+│   │   │       ├── darktable.c
+│   │   │       ├── filmstrip.c
+│   │   │       ├── filter.c
+│   │   │       ├── gamepad.c
+│   │   │       ├── global_toolbox.c
+│   │   │       ├── hinter.c
+│   │   │       ├── image_infos.c
+│   │   │       ├── lighttable.c
+│   │   │       ├── midi.c
+│   │   │       ├── module_toolbox.c
+│   │   │       ├── ratings.c
+│   │   │       ├── timeline.c
+│   │   │       ├── viewswitcher.c
+│   │   │       └── view_toolbox.c
+│   │   ├── lua
+│   │   │   ├── cairo.c
+│   │   │   ├── cairo.h
+│   │   │   ├── call.c
+│   │   │   ├── call.h
+│   │   │   ├── configuration.c
+│   │   │   ├── configuration.h
+│   │   │   ├── database.c
+│   │   │   ├── database.h
+│   │   │   ├── events.c
+│   │   │   ├── events.h
+│   │   │   ├── film.c
+│   │   │   ├── film.h
+│   │   │   ├── format.c
+│   │   │   ├── format.h
+│   │   │   ├── gettext.c
+│   │   │   ├── gettext.h
+│   │   │   ├── glist.c
+│   │   │   ├── glist.h
+│   │   │   ├── gui.c
+│   │   │   ├── guides.c
+│   │   │   ├── guides.h
+│   │   │   ├── gui.h
+│   │   │   ├── image.c
+│   │   │   ├── image.h
+│   │   │   ├── init.c
+│   │   │   ├── init.h
+│   │   │   ├── lib.c
+│   │   │   ├── lib.h
+│   │   │   ├── lua.c
+│   │   │   ├── lua.h
+│   │   │   ├── lualib.c
+│   │   │   ├── lualib.h
+│   │   │   ├── luastorage.c
+│   │   │   ├── luastorage.h
+│   │   │   ├── modules.c
+│   │   │   ├── modules.h
+│   │   │   ├── password.c
+│   │   │   ├── password.h
+│   │   │   ├── preferences.c
+│   │   │   ├── preferences.h
+│   │   │   ├── print.c
+│   │   │   ├── print.h
+│   │   │   ├── storage.c
+│   │   │   ├── storage.h
+│   │   │   ├── styles.c
+│   │   │   ├── styles.h
+│   │   │   ├── tags.c
+│   │   │   ├── tags.h
+│   │   │   ├── types.c
+│   │   │   ├── types.h
+│   │   │   ├── view.c
+│   │   │   ├── view.h
+│   │   │   └── widget
+│   │   │       ├── box.c
+│   │   │       ├── button.c
+│   │   │       ├── check_button.c
+│   │   │       ├── combobox.c
+│   │   │       ├── common.h
+│   │   │       ├── container.c
+│   │   │       ├── entry.c
+│   │   │       ├── file_chooser.c
+│   │   │       ├── label.c
+│   │   │       ├── section_label.c
+│   │   │       ├── separator.c
+│   │   │       ├── slider.c
+│   │   │       ├── stack.c
+│   │   │       ├── text_view.c
+│   │   │       ├── widget.c
+│   │   │       └── widget.h
+│   │   ├── main.c
+│   │   ├── osx
+│   │   │   ├── osx.h
+│   │   │   └── osx.mm
+│   │   ├── ppc64le
+│   │   │   └── altivec.h
+│   │   ├── tests
+│   │   │   ├── benchmark
+│   │   │   │   ├── darktable-bench
+│   │   │   │   ├── darktable-bench-3.4legacy-inv.xmp
+│   │   │   │   ├── darktable-bench-3.4legacy.xmp
+│   │   │   │   ├── darktable-bench-3.4.xmp
+│   │   │   │   ├── darktable-bench-3.6.xmp
+│   │   │   │   ├── darktable-bench-3.8.xmp
+│   │   │   │   ├── darktable-bench-4.2.xmp
+│   │   │   │   ├── darktable-bench-null.xmp
+│   │   │   │   └── README.txt
+│   │   │   ├── cache.c
+│   │   │   ├── CMakeLists.txt
+│   │   │   ├── Makefile
+│   │   │   ├── unittests
+│   │   │   │   ├── CMakeLists.txt
+│   │   │   │   ├── iop
+│   │   │   │   │   ├── CMakeLists.txt
+│   │   │   │   │   └── test_filmicrgb.c
+│   │   │   │   ├── README.md
+│   │   │   │   ├── test_sample.c
+│   │   │   │   └── util
+│   │   │   │       ├── assert.h
+│   │   │   │       ├── testimg.c
+│   │   │   │       ├── testimg.h
+│   │   │   │       └── tracing.h
+│   │   │   └── variables.c
+│   │   ├── version_gen.c
+│   │   ├── views
+│   │   │   ├── CMakeLists.txt
+│   │   │   ├── darkroom.c
+│   │   │   ├── lighttable.c
+│   │   │   ├── map.c
+│   │   │   ├── print.c
+│   │   │   ├── slideshow.c
+│   │   │   ├── tethering.c
+│   │   │   ├── view_api.h
+│   │   │   ├── view.c
+│   │   │   └── view.h
+│   │   └── win
+│   │       ├── darktable.rc.in
+│   │       ├── dtwin.c
+│   │       ├── dtwin.h
+│   │       ├── filepath.c
+│   │       ├── filepath.h
+│   │       ├── getdelim.c
+│   │       ├── getdelim.h
+│   │       ├── getrusage.c
+│   │       ├── getrusage.h
+│   │       ├── main_wrapper.h
+│   │       ├── rlimit.c
+│   │       ├── rlimit.h
+│   │       ├── scandir.c
+│   │       ├── scandir.h
+│   │       ├── statvfs.c
+│   │       ├── statvfs.h
+│   │       ├── strptime.c
+│   │       ├── strptime.h
+│   │       └── win.h
+│   └── tools
+│       ├── appimage-build-script.sh
+│       ├── authors_h.sh
+│       ├── basecurve
+│       │   ├── CMakeLists.txt
+│       │   ├── darktable-curve-tool.c
+│       │   ├── darktable-curve-tool-helper
+│       │   ├── exif-wrapper.cpp
+│       │   ├── plot.basecurve
+│       │   ├── plot.tonecurve
+│       │   └── README.cmake.md
+│       ├── check_camera_support
+│       ├── CMakeLists.txt
+│       ├── common.sh
+│       ├── create_control_svg.sh
+│       ├── create_version_c.sh
+│       ├── darktable-gnome-nightlight-disabled.sh
+│       ├── derive_filmic_v6_gamut_mapping.py
+│       ├── diff_lua_api.lua
+│       ├── dngmeta.rb
+│       ├── dngmeta.sh
+│       ├── dtstyle_to_xmp.py
+│       ├── extract_wb_from_images.sh
+│       ├── extract_wb.py
+│       ├── generate_darktablerc_conf.xsl
+│       ├── generate_darktablerc_doc.xsl
+│       ├── generate_darktablerc.xsl
+│       ├── generate_prefs.xsl
+│       ├── get_git_version_string.sh
+│       ├── get_last_commit_year.sh
+│       ├── introspection
+│       │   ├── ast.pm
+│       │   ├── code_gen.pm
+│       │   ├── parser.pl
+│       │   ├── parser.pm
+│       │   └── scanner.pm
+│       ├── listcams.sh
+│       ├── lua_doc
+│       │   ├── content.lua
+│       │   ├── core.lua
+│       │   ├── dumper.lua
+│       │   ├── old_api
+│       │   │   ├── dt_api202.lua
+│       │   │   ├── dt_api210dev.lua
+│       │   │   ├── dt_api300.lua
+│       │   │   ├── dt_api400.lua
+│       │   │   └── dt_api500.lua
+│       │   ├── README.txt
+│       │   ├── usermanual.lua
+│       │   └── wiki.lua
+│       ├── makeman.sh
+│       ├── memory_leaks.py
+│       ├── migrate_capture_one_pro.sql
+│       ├── noise
+│       │   ├── benchmark.sh
+│       │   ├── capture-images
+│       │   ├── check-image-correctness
+│       │   ├── CMakeLists.txt
+│       │   ├── darktable-gen-noiseprofile
+│       │   ├── extract-values-from-presets.awk
+│       │   ├── graph2.sh
+│       │   ├── graph.sh
+│       │   ├── noiseprofile.c
+│       │   ├── profiling-shot.xmp
+│       │   ├── raw linear.dtstyle
+│       │   └── subr.sh
+│       ├── parse_version_c.sh
+│       ├── purge_from_cache.sh
+│       ├── purge_nonexistent_images.bat
+│       ├── purge_non_existing_images.sh
+│       ├── purge_unused_tags.sh
+│       ├── rawspeed-check-canon.rb
+│       ├── rawspeed-check-nikon-modes.rb
+│       ├── rawspeed_common.rb
+│       ├── rawspeed-diff-cameras-xml.rb
+│       ├── release
+│       │   ├── create_release.sh
+│       │   ├── devel-stats.sh
+│       │   ├── generate-authors.sh
+│       │   ├── generate-last-translators-email.sh
+│       │   └── generate-translation.sh
+│       ├── show_icons_in_paint_c.pl
+│       ├── spyder-checkr-photo-coords.py
+│       ├── sync_wb_presets_with_ufraw
+│       ├── sync_wb_presets_with_ufraw-deepdiff
+│       ├── tiling.py
+│       ├── update_modelines.py
+│       ├── update_wb_presets_from_ufraw.sh
+│       ├── watch_folder.sh
+│       └── wb_presets_common.rb
+├── darktable-4.8.1.tar.xz -> /home/felix/packages/darktable/darktable-4.8.1.tar.xz
+└── darktable-4.8.1.tar.xz.asc -> /home/felix/packages/darktable/darktable-4.8.1.tar.xz.asc
+
+206 directories, 2086 files

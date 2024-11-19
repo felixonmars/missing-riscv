@@ -1,0 +1,3513 @@
+src
+├── hashcat-6.2.6
+│   ├── BUILD_CYGWIN.md
+│   ├── BUILD.md
+│   ├── BUILD_MSYS2.md
+│   ├── BUILD_WSL.md
+│   ├── charsets
+│   │   ├── base58.hcchr
+│   │   ├── combined
+│   │   │   ├── Bulgarian.hcchr
+│   │   │   ├── Castilian.hcchr
+│   │   │   ├── Catalan.hcchr
+│   │   │   ├── English.hcchr
+│   │   │   ├── French.hcchr
+│   │   │   ├── German.hcchr
+│   │   │   ├── Greek.hcchr
+│   │   │   ├── GreekPolytonic.hcchr
+│   │   │   ├── Italian.hcchr
+│   │   │   ├── Lithuanian.hcchr
+│   │   │   ├── Polish.hcchr
+│   │   │   ├── Portuguese.hcchr
+│   │   │   ├── Russian.hcchr
+│   │   │   ├── Slovak.hcchr
+│   │   │   └── Spanish.hcchr
+│   │   ├── DES_full.hcchr
+│   │   ├── DES_special
+│   │   │   ├── DES_alpha.hcchr
+│   │   │   ├── DES_numeral.hcchr
+│   │   │   └── multiple_nodes
+│   │   │       ├── DES_portion_0.hcchr
+│   │   │       ├── DES_portion_1.hcchr
+│   │   │       ├── DES_portion_2.hcchr
+│   │   │       ├── DES_portion_3.hcchr
+│   │   │       ├── DES_portion_4.hcchr
+│   │   │       ├── DES_portion_5.hcchr
+│   │   │       ├── DES_portion_6.hcchr
+│   │   │       ├── DES_portion_7.hcchr
+│   │   │       ├── DES_portion_8.hcchr
+│   │   │       ├── DES_portion_9.hcchr
+│   │   │       ├── DES_portion_A.hcchr
+│   │   │       ├── DES_portion_B.hcchr
+│   │   │       ├── DES_portion_C.hcchr
+│   │   │       ├── DES_portion_D.hcchr
+│   │   │       ├── DES_portion_E.hcchr
+│   │   │       └── DES_portion_F.hcchr
+│   │   ├── special
+│   │   │   ├── Castilian
+│   │   │   │   ├── es-ES_cp1252-special.hcchr
+│   │   │   │   ├── es-ES_ISO-8859-15-special.hcchr
+│   │   │   │   └── es-ES_ISO-8859-1-special.hcchr
+│   │   │   ├── Catalan
+│   │   │   │   ├── ca_cp1252-special.hcchr
+│   │   │   │   ├── ca_ISO-8859-15-special.hcchr
+│   │   │   │   └── ca_ISO-8859-1-special.hcchr
+│   │   │   ├── French
+│   │   │   │   ├── fr_cp1252-special.hcchr
+│   │   │   │   ├── fr_ISO-8859-15-special.hcchr
+│   │   │   │   ├── fr_ISO-8859-16-special.hcchr
+│   │   │   │   └── fr_ISO-8859-1-special.hcchr
+│   │   │   ├── German
+│   │   │   │   ├── de_cp1252-special.hcchr
+│   │   │   │   ├── de_ISO-8859-15-special.hcchr
+│   │   │   │   └── de_ISO-8859-1-special.hcchr
+│   │   │   ├── Greek
+│   │   │   │   ├── el_cp1253-special.hcchr
+│   │   │   │   └── el_ISO-8859-7-special.hcchr
+│   │   │   ├── Italian
+│   │   │   │   ├── it_cp1252-special.hcchr
+│   │   │   │   ├── it_ISO-8859-15-special.hcchr
+│   │   │   │   └── it_ISO-8859-1-special.hcchr
+│   │   │   ├── Polish
+│   │   │   │   └── pl_cp1250-special.hcchr
+│   │   │   ├── Portuguese
+│   │   │   │   ├── pt_cp1252-special.hcchr
+│   │   │   │   ├── pt_ISO-8859-15-special.hcchr
+│   │   │   │   └── pt_ISO-8859-1-special.hcchr
+│   │   │   ├── Russian
+│   │   │   │   ├── ru_cp1251-special.hcchr
+│   │   │   │   ├── ru_cp866-special.hcchr
+│   │   │   │   └── ru_ISO-8859-5-special.hcchr
+│   │   │   ├── Slovak
+│   │   │   │   ├── sk_cp1250-special.hcchr
+│   │   │   │   └── sk_ISO-8859-2-special.hcchr
+│   │   │   └── Spanish
+│   │   │       ├── es_cp1252-special.hcchr
+│   │   │       ├── es_ISO-8859-15-special.hcchr
+│   │   │       └── es_ISO-8859-1-special.hcchr
+│   │   └── standard
+│   │       ├── Bulgarian
+│   │       │   ├── bg_cp1251.hcchr
+│   │       │   ├── bg_ISO-8859-5.hcchr
+│   │       │   └── bg_KOI8-R.hcchr
+│   │       ├── Castilian
+│   │       │   ├── es-ES_cp1252.hcchr
+│   │       │   ├── es-ES_ISO-8859-15.hcchr
+│   │       │   └── es-ES_ISO-8859-1.hcchr
+│   │       ├── Catalan
+│   │       │   ├── ca_cp1252.hcchr
+│   │       │   ├── ca_ISO-8859-15.hcchr
+│   │       │   └── ca_ISO-8859-1.hcchr
+│   │       ├── English
+│   │       │   ├── en_cp1252.hcchr
+│   │       │   ├── en_ISO-8859-15.hcchr
+│   │       │   └── en_ISO-8859-1.hcchr
+│   │       ├── French
+│   │       │   ├── fr_cp1252.hcchr
+│   │       │   ├── fr_ISO-8859-15.hcchr
+│   │       │   ├── fr_ISO-8859-16.hcchr
+│   │       │   └── fr_ISO-8859-1.hcchr
+│   │       ├── German
+│   │       │   ├── de_cp1252.hcchr
+│   │       │   ├── de_ISO-8859-15.hcchr
+│   │       │   └── de_ISO-8859-1.hcchr
+│   │       ├── Greek
+│   │       │   ├── el_cp1253.hcchr
+│   │       │   └── el_ISO-8859-7.hcchr
+│   │       ├── GreekPolytonic
+│   │       │   ├── el_polytonic_cp1253.hcchr
+│   │       │   └── el_polytonic_ISO-8859-7.hcchr
+│   │       ├── Hungarian
+│   │       │   └── hu_cp1250.hcchr
+│   │       ├── Italian
+│   │       │   ├── it_cp1252.hcchr
+│   │       │   ├── it_ISO-8859-15.hcchr
+│   │       │   └── it_ISO-8859-1.hcchr
+│   │       ├── Lithuanian
+│   │       │   ├── lt_cp1257.hcchr
+│   │       │   ├── lt_ISO-8859-13.hcchr
+│   │       │   └── lt_ISO-8859-4.hcchr
+│   │       ├── Polish
+│   │       │   ├── pl_cp1250.hcchr
+│   │       │   └── pl_ISO-8859-2.hcchr
+│   │       ├── Portuguese
+│   │       │   ├── pt_cp1252.hcchr
+│   │       │   ├── pt_ISO-8859-15.hcchr
+│   │       │   └── pt_ISO-8859-1.hcchr
+│   │       ├── Russian
+│   │       │   ├── ru_cp1251.hcchr
+│   │       │   ├── ru_cp866.hcchr
+│   │       │   ├── ru_ISO-8859-5.hcchr
+│   │       │   └── ru_KOI8-R.hcchr
+│   │       ├── Slovak
+│   │       │   ├── sk_cp1250.hcchr
+│   │       │   └── sk_ISO-8859-2.hcchr
+│   │       └── Spanish
+│   │           ├── es_cp1252.hcchr
+│   │           ├── es_ISO-8859-15.hcchr
+│   │           └── es_ISO-8859-1.hcchr
+│   ├── deps
+│   │   ├── LZMA-SDK
+│   │   │   ├── C
+│   │   │   │   ├── 7zAlloc.c
+│   │   │   │   ├── 7zAlloc.h
+│   │   │   │   ├── 7zArcIn.c
+│   │   │   │   ├── 7zBuf2.c
+│   │   │   │   ├── 7zBuf.c
+│   │   │   │   ├── 7zBuf.h
+│   │   │   │   ├── 7zCrc.c
+│   │   │   │   ├── 7zCrc.h
+│   │   │   │   ├── 7zCrcOpt.c
+│   │   │   │   ├── 7zDec.c
+│   │   │   │   ├── 7zFile.c
+│   │   │   │   ├── 7zFile.h
+│   │   │   │   ├── 7z.h
+│   │   │   │   ├── 7zip_gcc_c.mak
+│   │   │   │   ├── 7zStream.c
+│   │   │   │   ├── 7zTypes.h
+│   │   │   │   ├── 7zVersion.h
+│   │   │   │   ├── 7zVersion.rc
+│   │   │   │   ├── Aes.c
+│   │   │   │   ├── Aes.h
+│   │   │   │   ├── AesOpt.c
+│   │   │   │   ├── Alloc.c
+│   │   │   │   ├── Alloc.h
+│   │   │   │   ├── Bcj2.c
+│   │   │   │   ├── Bcj2Enc.c
+│   │   │   │   ├── Bcj2.h
+│   │   │   │   ├── Bra86.c
+│   │   │   │   ├── Bra.c
+│   │   │   │   ├── Bra.h
+│   │   │   │   ├── BraIA64.c
+│   │   │   │   ├── Compiler.h
+│   │   │   │   ├── CpuArch.c
+│   │   │   │   ├── CpuArch.h
+│   │   │   │   ├── Delta.c
+│   │   │   │   ├── Delta.h
+│   │   │   │   ├── DllSecur.c
+│   │   │   │   ├── DllSecur.h
+│   │   │   │   ├── LzFind.c
+│   │   │   │   ├── LzFind.h
+│   │   │   │   ├── LzFindMt.c
+│   │   │   │   ├── LzFindMt.h
+│   │   │   │   ├── LzHash.h
+│   │   │   │   ├── Lzma2Dec.c
+│   │   │   │   ├── Lzma2Dec.h
+│   │   │   │   ├── Lzma2DecMt.c
+│   │   │   │   ├── Lzma2DecMt.h
+│   │   │   │   ├── Lzma2Enc.c
+│   │   │   │   ├── Lzma2Enc.h
+│   │   │   │   ├── Lzma86Dec.c
+│   │   │   │   ├── Lzma86Enc.c
+│   │   │   │   ├── Lzma86.h
+│   │   │   │   ├── LzmaDec.c
+│   │   │   │   ├── LzmaDec.h
+│   │   │   │   ├── LzmaEnc.c
+│   │   │   │   ├── LzmaEnc.h
+│   │   │   │   ├── LzmaLib.c
+│   │   │   │   ├── LzmaLib.h
+│   │   │   │   ├── MtCoder.c
+│   │   │   │   ├── MtCoder.h
+│   │   │   │   ├── MtDec.c
+│   │   │   │   ├── MtDec.h
+│   │   │   │   ├── Ppmd7.c
+│   │   │   │   ├── Ppmd7Dec.c
+│   │   │   │   ├── Ppmd7Enc.c
+│   │   │   │   ├── Ppmd7.h
+│   │   │   │   ├── Ppmd.h
+│   │   │   │   ├── Precomp.h
+│   │   │   │   ├── RotateDefs.h
+│   │   │   │   ├── Sha256.c
+│   │   │   │   ├── Sha256.h
+│   │   │   │   ├── Sha256Opt.c
+│   │   │   │   ├── Sort.c
+│   │   │   │   ├── Sort.h
+│   │   │   │   ├── Threads.c
+│   │   │   │   ├── Threads.h
+│   │   │   │   ├── Util
+│   │   │   │   │   ├── 7z
+│   │   │   │   │   │   ├── 7z.dsp
+│   │   │   │   │   │   ├── 7z.dsw
+│   │   │   │   │   │   ├── 7zMain.c
+│   │   │   │   │   │   ├── makefile
+│   │   │   │   │   │   ├── makefile.gcc
+│   │   │   │   │   │   ├── Precomp.c
+│   │   │   │   │   │   └── Precomp.h
+│   │   │   │   │   ├── Lzma
+│   │   │   │   │   │   ├── LzmaUtil.c
+│   │   │   │   │   │   ├── LzmaUtil.dsp
+│   │   │   │   │   │   ├── LzmaUtil.dsw
+│   │   │   │   │   │   ├── makefile
+│   │   │   │   │   │   └── makefile.gcc
+│   │   │   │   │   ├── LzmaLib
+│   │   │   │   │   │   ├── LzmaLib.def
+│   │   │   │   │   │   ├── LzmaLib.dsp
+│   │   │   │   │   │   ├── LzmaLib.dsw
+│   │   │   │   │   │   ├── LzmaLibExports.c
+│   │   │   │   │   │   ├── makefile
+│   │   │   │   │   │   └── resource.rc
+│   │   │   │   │   └── SfxSetup
+│   │   │   │   │       ├── makefile
+│   │   │   │   │       ├── makefile_con
+│   │   │   │   │       ├── Precomp.c
+│   │   │   │   │       ├── Precomp.h
+│   │   │   │   │       ├── resource.rc
+│   │   │   │   │       ├── setup.ico
+│   │   │   │   │       ├── SfxSetup.c
+│   │   │   │   │       ├── SfxSetup.dsp
+│   │   │   │   │       └── SfxSetup.dsw
+│   │   │   │   ├── var_clang_arm64.mak
+│   │   │   │   ├── var_clang.mak
+│   │   │   │   ├── var_clang_x64.mak
+│   │   │   │   ├── var_clang_x86.mak
+│   │   │   │   ├── var_gcc_arm64.mak
+│   │   │   │   ├── var_gcc.mak
+│   │   │   │   ├── var_gcc_x64.mak
+│   │   │   │   ├── var_gcc_x86.mak
+│   │   │   │   ├── var_mac_arm64.mak
+│   │   │   │   ├── var_mac_x64.mak
+│   │   │   │   ├── warn_clang_mac.mak
+│   │   │   │   ├── warn_clang.mak
+│   │   │   │   ├── warn_gcc.mak
+│   │   │   │   ├── Xz.c
+│   │   │   │   ├── XzCrc64.c
+│   │   │   │   ├── XzCrc64.h
+│   │   │   │   ├── XzCrc64Opt.c
+│   │   │   │   ├── XzDec.c
+│   │   │   │   ├── XzEnc.c
+│   │   │   │   ├── XzEnc.h
+│   │   │   │   ├── Xz.h
+│   │   │   │   └── XzIn.c
+│   │   │   └── DOC
+│   │   │       ├── 7zC.txt
+│   │   │       ├── 7zFormat.txt
+│   │   │       ├── installer.txt
+│   │   │       ├── lzma-history.txt
+│   │   │       ├── lzma-sdk.txt
+│   │   │       ├── lzma-specification.txt
+│   │   │       ├── lzma.txt
+│   │   │       └── Methods.txt
+│   │   ├── OpenCL-Headers
+│   │   │   ├── CL
+│   │   │   │   ├── cl_d3d10.h
+│   │   │   │   ├── cl_d3d11.h
+│   │   │   │   ├── cl_dx9_media_sharing.h
+│   │   │   │   ├── cl_dx9_media_sharing_intel.h
+│   │   │   │   ├── cl_egl.h
+│   │   │   │   ├── cl_ext.h
+│   │   │   │   ├── cl_ext_intel.h
+│   │   │   │   ├── cl_gl_ext.h
+│   │   │   │   ├── cl_gl.h
+│   │   │   │   ├── cl.h
+│   │   │   │   ├── cl_platform.h
+│   │   │   │   ├── cl_va_api_media_sharing_intel.h
+│   │   │   │   ├── cl_version.h
+│   │   │   │   └── opencl.h
+│   │   │   ├── CODE_OF_CONDUCT.md
+│   │   │   ├── LICENSE
+│   │   │   └── README.md
+│   │   ├── unrar
+│   │   │   ├── acknow.txt
+│   │   │   ├── arccmt.cpp
+│   │   │   ├── archive.cpp
+│   │   │   ├── archive.hpp
+│   │   │   ├── arcread.cpp
+│   │   │   ├── array.hpp
+│   │   │   ├── blake2s.cpp
+│   │   │   ├── blake2s.hpp
+│   │   │   ├── blake2sp.cpp
+│   │   │   ├── blake2s_sse.cpp
+│   │   │   ├── cmddata.cpp
+│   │   │   ├── cmddata.hpp
+│   │   │   ├── cmdfilter.cpp
+│   │   │   ├── cmdmix.cpp
+│   │   │   ├── coder.cpp
+│   │   │   ├── coder.hpp
+│   │   │   ├── compress.hpp
+│   │   │   ├── consio.cpp
+│   │   │   ├── consio.hpp
+│   │   │   ├── crc.cpp
+│   │   │   ├── crc.hpp
+│   │   │   ├── crypt1.cpp
+│   │   │   ├── crypt2.cpp
+│   │   │   ├── crypt3.cpp
+│   │   │   ├── crypt5.cpp
+│   │   │   ├── crypt.cpp
+│   │   │   ├── crypt.hpp
+│   │   │   ├── dll.cpp
+│   │   │   ├── dll.def
+│   │   │   ├── dll.hpp
+│   │   │   ├── dll_nocrypt.def
+│   │   │   ├── dll.rc
+│   │   │   ├── encname.cpp
+│   │   │   ├── encname.hpp
+│   │   │   ├── errhnd.cpp
+│   │   │   ├── errhnd.hpp
+│   │   │   ├── extinfo.cpp
+│   │   │   ├── extinfo.hpp
+│   │   │   ├── extract.cpp
+│   │   │   ├── extract.hpp
+│   │   │   ├── filcreat.cpp
+│   │   │   ├── filcreat.hpp
+│   │   │   ├── file.cpp
+│   │   │   ├── filefn.cpp
+│   │   │   ├── filefn.hpp
+│   │   │   ├── file.hpp
+│   │   │   ├── filestr.cpp
+│   │   │   ├── filestr.hpp
+│   │   │   ├── find.cpp
+│   │   │   ├── find.hpp
+│   │   │   ├── getbits.cpp
+│   │   │   ├── getbits.hpp
+│   │   │   ├── global.cpp
+│   │   │   ├── global.hpp
+│   │   │   ├── hardlinks.cpp
+│   │   │   ├── hash.cpp
+│   │   │   ├── hash.hpp
+│   │   │   ├── hc_decompress_rar.cpp
+│   │   │   ├── headers5.hpp
+│   │   │   ├── headers.cpp
+│   │   │   ├── headers.hpp
+│   │   │   ├── isnt.cpp
+│   │   │   ├── isnt.hpp
+│   │   │   ├── license.txt
+│   │   │   ├── list.cpp
+│   │   │   ├── list.hpp
+│   │   │   ├── loclang.hpp
+│   │   │   ├── log.cpp
+│   │   │   ├── log.hpp
+│   │   │   ├── makefile
+│   │   │   ├── match.cpp
+│   │   │   ├── match.hpp
+│   │   │   ├── model.cpp
+│   │   │   ├── model.hpp
+│   │   │   ├── options.cpp
+│   │   │   ├── options.hpp
+│   │   │   ├── os.hpp
+│   │   │   ├── pathfn.cpp
+│   │   │   ├── pathfn.hpp
+│   │   │   ├── qopen.cpp
+│   │   │   ├── qopen.hpp
+│   │   │   ├── rar.cpp
+│   │   │   ├── rardefs.hpp
+│   │   │   ├── rar.hpp
+│   │   │   ├── rarlang.hpp
+│   │   │   ├── raros.hpp
+│   │   │   ├── rarpch.cpp
+│   │   │   ├── rartypes.hpp
+│   │   │   ├── rarvm.cpp
+│   │   │   ├── rarvm.hpp
+│   │   │   ├── rawint.hpp
+│   │   │   ├── rawread.cpp
+│   │   │   ├── rawread.hpp
+│   │   │   ├── rdwrfn.cpp
+│   │   │   ├── rdwrfn.hpp
+│   │   │   ├── readme.txt
+│   │   │   ├── recvol3.cpp
+│   │   │   ├── recvol5.cpp
+│   │   │   ├── recvol.cpp
+│   │   │   ├── recvol.hpp
+│   │   │   ├── resource.cpp
+│   │   │   ├── resource.hpp
+│   │   │   ├── rijndael.cpp
+│   │   │   ├── rijndael.hpp
+│   │   │   ├── rs16.cpp
+│   │   │   ├── rs16.hpp
+│   │   │   ├── rs.cpp
+│   │   │   ├── rs.hpp
+│   │   │   ├── savepos.hpp
+│   │   │   ├── scantree.cpp
+│   │   │   ├── scantree.hpp
+│   │   │   ├── secpassword.cpp
+│   │   │   ├── secpassword.hpp
+│   │   │   ├── sha1.cpp
+│   │   │   ├── sha1.hpp
+│   │   │   ├── sha256.cpp
+│   │   │   ├── sha256.hpp
+│   │   │   ├── smallfn.cpp
+│   │   │   ├── smallfn.hpp
+│   │   │   ├── strfn.cpp
+│   │   │   ├── strfn.hpp
+│   │   │   ├── strlist.cpp
+│   │   │   ├── strlist.hpp
+│   │   │   ├── suballoc.cpp
+│   │   │   ├── suballoc.hpp
+│   │   │   ├── system.cpp
+│   │   │   ├── system.hpp
+│   │   │   ├── threadmisc.cpp
+│   │   │   ├── threadpool.cpp
+│   │   │   ├── threadpool.hpp
+│   │   │   ├── timefn.cpp
+│   │   │   ├── timefn.hpp
+│   │   │   ├── uicommon.cpp
+│   │   │   ├── uiconsole.cpp
+│   │   │   ├── ui.cpp
+│   │   │   ├── ui.hpp
+│   │   │   ├── uisilent.cpp
+│   │   │   ├── ulinks.cpp
+│   │   │   ├── unicode.cpp
+│   │   │   ├── unicode.hpp
+│   │   │   ├── unpack15.cpp
+│   │   │   ├── unpack20.cpp
+│   │   │   ├── unpack30.cpp
+│   │   │   ├── unpack50.cpp
+│   │   │   ├── unpack50frag.cpp
+│   │   │   ├── unpack50mt.cpp
+│   │   │   ├── unpack.cpp
+│   │   │   ├── unpack.hpp
+│   │   │   ├── unpackinline.cpp
+│   │   │   ├── UnRARDll.vcxproj
+│   │   │   ├── UnRAR.vcxproj
+│   │   │   ├── uowners.cpp
+│   │   │   ├── version.hpp
+│   │   │   ├── volume.cpp
+│   │   │   ├── volume.hpp
+│   │   │   ├── win32acl.cpp
+│   │   │   ├── win32lnk.cpp
+│   │   │   └── win32stm.cpp
+│   │   ├── xxHash
+│   │   │   ├── appveyor.yml
+│   │   │   ├── CHANGELOG
+│   │   │   ├── cmake_unofficial
+│   │   │   │   ├── CMakeLists.txt
+│   │   │   │   ├── README.md
+│   │   │   │   └── xxHashConfig.cmake.in
+│   │   │   ├── doc
+│   │   │   │   ├── README.md
+│   │   │   │   ├── xxhash.cry
+│   │   │   │   └── xxhash_spec.md
+│   │   │   ├── libxxhash.pc.in
+│   │   │   ├── LICENSE
+│   │   │   ├── Makefile
+│   │   │   ├── README.md
+│   │   │   ├── tests
+│   │   │   │   ├── bench
+│   │   │   │   │   ├── benchfn.c
+│   │   │   │   │   ├── benchfn.h
+│   │   │   │   │   ├── benchHash.c
+│   │   │   │   │   ├── benchHash.h
+│   │   │   │   │   ├── bhDisplay.c
+│   │   │   │   │   ├── bhDisplay.h
+│   │   │   │   │   ├── hashes.h
+│   │   │   │   │   ├── LICENSE
+│   │   │   │   │   ├── main.c
+│   │   │   │   │   ├── Makefile
+│   │   │   │   │   ├── timefn.c
+│   │   │   │   │   └── timefn.h
+│   │   │   │   ├── collisions
+│   │   │   │   │   ├── allcodecs
+│   │   │   │   │   │   ├── dummy.c
+│   │   │   │   │   │   ├── dummy.h
+│   │   │   │   │   │   └── README.md
+│   │   │   │   │   ├── hashes.h
+│   │   │   │   │   ├── LICENSE
+│   │   │   │   │   ├── main.c
+│   │   │   │   │   ├── Makefile
+│   │   │   │   │   ├── pool.c
+│   │   │   │   │   ├── pool.h
+│   │   │   │   │   ├── README.md
+│   │   │   │   │   ├── sort.cc
+│   │   │   │   │   ├── sort.hh
+│   │   │   │   │   ├── threading.c
+│   │   │   │   │   └── threading.h
+│   │   │   │   ├── generate_unicode_test.c
+│   │   │   │   ├── Makefile
+│   │   │   │   ├── multiInclude.c
+│   │   │   │   └── ppc_define.c
+│   │   │   ├── xxh3.h
+│   │   │   ├── xxhash.c
+│   │   │   ├── xxhash.h
+│   │   │   ├── xxhsum.1
+│   │   │   ├── xxhsum.1.md
+│   │   │   ├── xxhsum.c
+│   │   │   ├── xxh_x86dispatch.c
+│   │   │   └── xxh_x86dispatch.h
+│   │   └── zlib
+│   │       ├── adler32.c
+│   │       ├── amiga
+│   │       │   ├── Makefile.pup
+│   │       │   └── Makefile.sas
+│   │       ├── ChangeLog
+│   │       ├── CMakeLists.txt
+│   │       ├── compress.c
+│   │       ├── configure
+│   │       ├── contrib
+│   │       │   ├── ada
+│   │       │   │   ├── buffer_demo.adb
+│   │       │   │   ├── mtest.adb
+│   │       │   │   ├── read.adb
+│   │       │   │   ├── readme.txt
+│   │       │   │   ├── test.adb
+│   │       │   │   ├── zlib.adb
+│   │       │   │   ├── zlib.ads
+│   │       │   │   ├── zlib.gpr
+│   │       │   │   ├── zlib-streams.adb
+│   │       │   │   ├── zlib-streams.ads
+│   │       │   │   ├── zlib-thin.adb
+│   │       │   │   └── zlib-thin.ads
+│   │       │   ├── amd64
+│   │       │   │   └── amd64-match.S
+│   │       │   ├── asm686
+│   │       │   │   ├── match.S
+│   │       │   │   └── README.686
+│   │       │   ├── blast
+│   │       │   │   ├── blast.c
+│   │       │   │   ├── blast.h
+│   │       │   │   ├── Makefile
+│   │       │   │   ├── README
+│   │       │   │   ├── test.pk
+│   │       │   │   └── test.txt
+│   │       │   ├── delphi
+│   │       │   │   ├── readme.txt
+│   │       │   │   ├── ZLibConst.pas
+│   │       │   │   ├── zlibd32.mak
+│   │       │   │   └── ZLib.pas
+│   │       │   ├── dotzlib
+│   │       │   │   ├── DotZLib
+│   │       │   │   │   ├── AssemblyInfo.cs
+│   │       │   │   │   ├── ChecksumImpl.cs
+│   │       │   │   │   ├── CircularBuffer.cs
+│   │       │   │   │   ├── CodecBase.cs
+│   │       │   │   │   ├── Deflater.cs
+│   │       │   │   │   ├── DotZLib.cs
+│   │       │   │   │   ├── DotZLib.csproj
+│   │       │   │   │   ├── GZipStream.cs
+│   │       │   │   │   ├── Inflater.cs
+│   │       │   │   │   └── UnitTests.cs
+│   │       │   │   ├── DotZLib.build
+│   │       │   │   ├── DotZLib.chm
+│   │       │   │   ├── DotZLib.sln
+│   │       │   │   ├── LICENSE_1_0.txt
+│   │       │   │   └── readme.txt
+│   │       │   ├── gcc_gvmat64
+│   │       │   │   └── gvmat64.S
+│   │       │   ├── infback9
+│   │       │   │   ├── infback9.c
+│   │       │   │   ├── infback9.h
+│   │       │   │   ├── inffix9.h
+│   │       │   │   ├── inflate9.h
+│   │       │   │   ├── inftree9.c
+│   │       │   │   ├── inftree9.h
+│   │       │   │   └── README
+│   │       │   ├── inflate86
+│   │       │   │   ├── inffas86.c
+│   │       │   │   └── inffast.S
+│   │       │   ├── iostream
+│   │       │   │   ├── test.cpp
+│   │       │   │   ├── zfstream.cpp
+│   │       │   │   └── zfstream.h
+│   │       │   ├── iostream2
+│   │       │   │   ├── zstream.h
+│   │       │   │   └── zstream_test.cpp
+│   │       │   ├── iostream3
+│   │       │   │   ├── README
+│   │       │   │   ├── test.cc
+│   │       │   │   ├── TODO
+│   │       │   │   ├── zfstream.cc
+│   │       │   │   └── zfstream.h
+│   │       │   ├── masmx64
+│   │       │   │   ├── bld_ml64.bat
+│   │       │   │   ├── gvmat64.asm
+│   │       │   │   ├── inffas8664.c
+│   │       │   │   ├── inffasx64.asm
+│   │       │   │   └── readme.txt
+│   │       │   ├── masmx86
+│   │       │   │   ├── bld_ml32.bat
+│   │       │   │   ├── inffas32.asm
+│   │       │   │   ├── match686.asm
+│   │       │   │   └── readme.txt
+│   │       │   ├── minizip
+│   │       │   │   ├── configure.ac
+│   │       │   │   ├── crypt.h
+│   │       │   │   ├── ioapi.c
+│   │       │   │   ├── ioapi.h
+│   │       │   │   ├── iowin32.c
+│   │       │   │   ├── iowin32.h
+│   │       │   │   ├── Makefile
+│   │       │   │   ├── Makefile.am
+│   │       │   │   ├── make_vms.com
+│   │       │   │   ├── miniunz.c
+│   │       │   │   ├── miniunzip.1
+│   │       │   │   ├── minizip.1
+│   │       │   │   ├── MiniZip64_Changes.txt
+│   │       │   │   ├── MiniZip64_info.txt
+│   │       │   │   ├── minizip.c
+│   │       │   │   ├── minizip.pc.in
+│   │       │   │   ├── mztools.c
+│   │       │   │   ├── mztools.h
+│   │       │   │   ├── unzip.c
+│   │       │   │   ├── unzip.h
+│   │       │   │   ├── zip.c
+│   │       │   │   └── zip.h
+│   │       │   ├── pascal
+│   │       │   │   ├── example.pas
+│   │       │   │   ├── readme.txt
+│   │       │   │   ├── zlibd32.mak
+│   │       │   │   └── zlibpas.pas
+│   │       │   ├── puff
+│   │       │   │   ├── Makefile
+│   │       │   │   ├── puff.c
+│   │       │   │   ├── puff.h
+│   │       │   │   ├── pufftest.c
+│   │       │   │   ├── README
+│   │       │   │   └── zeros.raw
+│   │       │   ├── README.contrib
+│   │       │   ├── testzlib
+│   │       │   │   ├── testzlib.c
+│   │       │   │   └── testzlib.txt
+│   │       │   ├── untgz
+│   │       │   │   ├── Makefile
+│   │       │   │   ├── Makefile.msc
+│   │       │   │   └── untgz.c
+│   │       │   └── vstudio
+│   │       │       ├── readme.txt
+│   │       │       ├── vc10
+│   │       │       │   ├── miniunz.vcxproj
+│   │       │       │   ├── miniunz.vcxproj.filters
+│   │       │       │   ├── minizip.vcxproj
+│   │       │       │   ├── minizip.vcxproj.filters
+│   │       │       │   ├── testzlibdll.vcxproj
+│   │       │       │   ├── testzlibdll.vcxproj.filters
+│   │       │       │   ├── testzlib.vcxproj
+│   │       │       │   ├── testzlib.vcxproj.filters
+│   │       │       │   ├── zlib.rc
+│   │       │       │   ├── zlibstat.vcxproj
+│   │       │       │   ├── zlibstat.vcxproj.filters
+│   │       │       │   ├── zlibvc.def
+│   │       │       │   ├── zlibvc.sln
+│   │       │       │   ├── zlibvc.vcxproj
+│   │       │       │   └── zlibvc.vcxproj.filters
+│   │       │       ├── vc11
+│   │       │       │   ├── miniunz.vcxproj
+│   │       │       │   ├── minizip.vcxproj
+│   │       │       │   ├── testzlibdll.vcxproj
+│   │       │       │   ├── testzlib.vcxproj
+│   │       │       │   ├── zlib.rc
+│   │       │       │   ├── zlibstat.vcxproj
+│   │       │       │   ├── zlibvc.def
+│   │       │       │   ├── zlibvc.sln
+│   │       │       │   └── zlibvc.vcxproj
+│   │       │       ├── vc12
+│   │       │       │   ├── miniunz.vcxproj
+│   │       │       │   ├── minizip.vcxproj
+│   │       │       │   ├── testzlibdll.vcxproj
+│   │       │       │   ├── testzlib.vcxproj
+│   │       │       │   ├── zlib.rc
+│   │       │       │   ├── zlibstat.vcxproj
+│   │       │       │   ├── zlibvc.def
+│   │       │       │   ├── zlibvc.sln
+│   │       │       │   └── zlibvc.vcxproj
+│   │       │       ├── vc14
+│   │       │       │   ├── miniunz.vcxproj
+│   │       │       │   ├── minizip.vcxproj
+│   │       │       │   ├── testzlibdll.vcxproj
+│   │       │       │   ├── testzlib.vcxproj
+│   │       │       │   ├── zlib.rc
+│   │       │       │   ├── zlibstat.vcxproj
+│   │       │       │   ├── zlibvc.def
+│   │       │       │   ├── zlibvc.sln
+│   │       │       │   └── zlibvc.vcxproj
+│   │       │       └── vc9
+│   │       │           ├── miniunz.vcproj
+│   │       │           ├── minizip.vcproj
+│   │       │           ├── testzlibdll.vcproj
+│   │       │           ├── testzlib.vcproj
+│   │       │           ├── zlib.rc
+│   │       │           ├── zlibstat.vcproj
+│   │       │           ├── zlibvc.def
+│   │       │           ├── zlibvc.sln
+│   │       │           └── zlibvc.vcproj
+│   │       ├── crc32.c
+│   │       ├── crc32.h
+│   │       ├── deflate.c
+│   │       ├── deflate.h
+│   │       ├── doc
+│   │       │   ├── algorithm.txt
+│   │       │   ├── rfc1950.txt
+│   │       │   ├── rfc1951.txt
+│   │       │   ├── rfc1952.txt
+│   │       │   └── txtvsbin.txt
+│   │       ├── examples
+│   │       │   ├── enough.c
+│   │       │   ├── fitblk.c
+│   │       │   ├── gun.c
+│   │       │   ├── gzappend.c
+│   │       │   ├── gzjoin.c
+│   │       │   ├── gzlog.c
+│   │       │   ├── gzlog.h
+│   │       │   ├── README.examples
+│   │       │   ├── zlib_how.html
+│   │       │   ├── zpipe.c
+│   │       │   └── zran.c
+│   │       ├── FAQ
+│   │       ├── gzclose.c
+│   │       ├── gzguts.h
+│   │       ├── gzlib.c
+│   │       ├── gzread.c
+│   │       ├── gzwrite.c
+│   │       ├── INDEX
+│   │       ├── infback.c
+│   │       ├── inffast.c
+│   │       ├── inffast.h
+│   │       ├── inffixed.h
+│   │       ├── inflate.c
+│   │       ├── inflate.h
+│   │       ├── inftrees.c
+│   │       ├── inftrees.h
+│   │       ├── Makefile
+│   │       ├── Makefile.in
+│   │       ├── make_vms.com
+│   │       ├── msdos
+│   │       │   ├── Makefile.bor
+│   │       │   ├── Makefile.dj2
+│   │       │   ├── Makefile.emx
+│   │       │   ├── Makefile.msc
+│   │       │   └── Makefile.tc
+│   │       ├── nintendods
+│   │       │   ├── Makefile
+│   │       │   └── README
+│   │       ├── old
+│   │       │   ├── descrip.mms
+│   │       │   ├── Makefile.emx
+│   │       │   ├── Makefile.riscos
+│   │       │   ├── os2
+│   │       │   │   ├── Makefile.os2
+│   │       │   │   └── zlib.def
+│   │       │   ├── README
+│   │       │   └── visual-basic.txt
+│   │       ├── os400
+│   │       │   ├── bndsrc
+│   │       │   ├── make.sh
+│   │       │   ├── README400
+│   │       │   └── zlib.inc
+│   │       ├── qnx
+│   │       │   └── package.qpg
+│   │       ├── README
+│   │       ├── test
+│   │       │   ├── example.c
+│   │       │   ├── infcover.c
+│   │       │   └── minigzip.c
+│   │       ├── treebuild.xml
+│   │       ├── trees.c
+│   │       ├── trees.h
+│   │       ├── uncompr.c
+│   │       ├── watcom
+│   │       │   ├── watcom_f.mak
+│   │       │   └── watcom_l.mak
+│   │       ├── win32
+│   │       │   ├── DLL_FAQ.txt
+│   │       │   ├── Makefile.bor
+│   │       │   ├── Makefile.gcc
+│   │       │   ├── Makefile.msc
+│   │       │   ├── README-WIN32.txt
+│   │       │   ├── VisualC.txt
+│   │       │   ├── zlib1.rc
+│   │       │   └── zlib.def
+│   │       ├── zconf.h
+│   │       ├── zconf.h.cmakein
+│   │       ├── zconf.h.in
+│   │       ├── zlib2ansi
+│   │       ├── zlib.3
+│   │       ├── zlib.3.pdf
+│   │       ├── zlib.h
+│   │       ├── zlib.map
+│   │       ├── zlib.pc.cmakein
+│   │       ├── zlib.pc.in
+│   │       ├── zutil.c
+│   │       └── zutil.h
+│   ├── docs
+│   │   ├── changes.txt
+│   │   ├── contact.txt
+│   │   ├── credits.txt
+│   │   ├── hashcat-brain.md
+│   │   ├── hashcat-plugin-development-guide.md
+│   │   ├── keyboard-layout-mapping.md
+│   │   ├── license_libs
+│   │   │   ├── LZMA_SDK_LICENSE.txt
+│   │   │   ├── MINIZ_LICENSE.txt
+│   │   │   ├── OPENCL_HEADERS_LICENSE.txt
+│   │   │   ├── UNRAR_LICENSE.txt
+│   │   │   ├── XXHASH_LICENSE.txt
+│   │   │   └── ZLIB_LICENSE.txt
+│   │   ├── license.txt
+│   │   ├── limits.txt
+│   │   ├── performance.txt
+│   │   ├── readme.txt
+│   │   ├── rules.txt
+│   │   ├── slow-candidates-mode.md
+│   │   ├── status_codes.txt
+│   │   ├── team.txt
+│   │   └── user_manuals.txt
+│   ├── example0.cmd
+│   ├── example0.hash
+│   ├── example0.sh
+│   ├── example400.cmd
+│   ├── example400.hash
+│   ├── example400.sh
+│   ├── example500.cmd
+│   ├── example500.hash
+│   ├── example500.sh
+│   ├── example.dict
+│   ├── extra
+│   │   └── tab_completion
+│   │       ├── hashcat.sh
+│   │       ├── howto.txt
+│   │       └── install
+│   ├── hashcat.hcstat2
+│   ├── include
+│   │   ├── affinity.h
+│   │   ├── autotune.h
+│   │   ├── backend.h
+│   │   ├── benchmark.h
+│   │   ├── bitmap.h
+│   │   ├── bitops.h
+│   │   ├── brain.h
+│   │   ├── combinator.h
+│   │   ├── common.h
+│   │   ├── convert.h
+│   │   ├── cpt.h
+│   │   ├── cpu_crc32.h
+│   │   ├── debugfile.h
+│   │   ├── dictstat.h
+│   │   ├── dispatch.h
+│   │   ├── dynloader.h
+│   │   ├── emu_general.h
+│   │   ├── emu_inc_bignum_operations.h
+│   │   ├── emu_inc_cipher_aes.h
+│   │   ├── emu_inc_cipher_des.h
+│   │   ├── emu_inc_ecc_secp256k1.h
+│   │   ├── emu_inc_hash_base58.h
+│   │   ├── emu_inc_hash_md4.h
+│   │   ├── emu_inc_hash_md5.h
+│   │   ├── emu_inc_hash_sha1.h
+│   │   ├── emu_inc_hash_sha256.h
+│   │   ├── emu_inc_hash_sha512.h
+│   │   ├── emu_inc_radmin3_constants.h
+│   │   ├── emu_inc_rp.h
+│   │   ├── emu_inc_rp_optimized.h
+│   │   ├── event.h
+│   │   ├── ext_ADL.h
+│   │   ├── ext_cuda.h
+│   │   ├── ext_hip.h
+│   │   ├── ext_hiprtc.h
+│   │   ├── ext_iokit.h
+│   │   ├── ext_lzma.h
+│   │   ├── ext_metal.h
+│   │   ├── ext_nvapi.h
+│   │   ├── ext_nvml.h
+│   │   ├── ext_nvrtc.h
+│   │   ├── ext_OpenCL.h
+│   │   ├── ext_sysfs_amdgpu.h
+│   │   ├── ext_sysfs_cpu.h
+│   │   ├── filehandling.h
+│   │   ├── folder.h
+│   │   ├── hashcat.h
+│   │   ├── hashes.h
+│   │   ├── hlfmt.h
+│   │   ├── hwmon.h
+│   │   ├── induct.h
+│   │   ├── interface.h
+│   │   ├── keyboard_layout.h
+│   │   ├── locking.h
+│   │   ├── logfile.h
+│   │   ├── loopback.h
+│   │   ├── memory.h
+│   │   ├── modules.h
+│   │   ├── monitor.h
+│   │   ├── mpsp.h
+│   │   ├── outfile_check.h
+│   │   ├── outfile.h
+│   │   ├── pidfile.h
+│   │   ├── potfile.h
+│   │   ├── restore.h
+│   │   ├── rp_cpu.h
+│   │   ├── rp.h
+│   │   ├── selftest.h
+│   │   ├── shared.h
+│   │   ├── slow_candidates.h
+│   │   ├── sort_r.h
+│   │   ├── status.h
+│   │   ├── stdout.h
+│   │   ├── straight.h
+│   │   ├── terminal.h
+│   │   ├── thread.h
+│   │   ├── timer.h
+│   │   ├── tuningdb.h
+│   │   ├── types.h
+│   │   ├── usage.h
+│   │   ├── user_options.h
+│   │   └── wordlist.h
+│   ├── layouts
+│   │   ├── ch_de.hckmap
+│   │   ├── ch_fr.hckmap
+│   │   ├── de.hckmap
+│   │   ├── it.hckmap
+│   │   ├── ru.hckmap
+│   │   ├── se.hckmap
+│   │   └── us.hckmap
+│   ├── Makefile
+│   ├── masks
+│   │   ├── 8char-1l-1u-1d-1s-compliant.hcmask
+│   │   ├── 8char-1l-1u-1d-1s-noncompliant.hcmask
+│   │   ├── hashcat-default.hcmask
+│   │   ├── rockyou-1-60.hcmask
+│   │   ├── rockyou-2-1800.hcmask
+│   │   ├── rockyou-3-3600.hcmask
+│   │   ├── rockyou-4-43200.hcmask
+│   │   ├── rockyou-5-86400.hcmask
+│   │   ├── rockyou-6-864000.hcmask
+│   │   └── rockyou-7-2592000.hcmask
+│   ├── modules
+│   ├── obj
+│   │   └── contrib
+│   │       └── minizip
+│   ├── OpenCL
+│   │   ├── amp_a0.cl
+│   │   ├── amp_a1.cl
+│   │   ├── amp_a3.cl
+│   │   ├── inc_amp.h
+│   │   ├── inc_bignum_operations.cl
+│   │   ├── inc_bignum_operations.h
+│   │   ├── inc_cipher_aes.cl
+│   │   ├── inc_cipher_aes-gcm.cl
+│   │   ├── inc_cipher_aes-gcm.h
+│   │   ├── inc_cipher_aes.h
+│   │   ├── inc_cipher_camellia.cl
+│   │   ├── inc_cipher_camellia.h
+│   │   ├── inc_cipher_des.cl
+│   │   ├── inc_cipher_des.h
+│   │   ├── inc_cipher_kuznyechik.cl
+│   │   ├── inc_cipher_kuznyechik.h
+│   │   ├── inc_cipher_rc4.cl
+│   │   ├── inc_cipher_rc4.h
+│   │   ├── inc_cipher_serpent.cl
+│   │   ├── inc_cipher_serpent.h
+│   │   ├── inc_cipher_twofish.cl
+│   │   ├── inc_cipher_twofish.h
+│   │   ├── inc_common.cl
+│   │   ├── inc_common.h
+│   │   ├── inc_comp_multi_bs.cl
+│   │   ├── inc_comp_multi_bs.h
+│   │   ├── inc_comp_multi.cl
+│   │   ├── inc_comp_multi.h
+│   │   ├── inc_comp_single_bs.cl
+│   │   ├── inc_comp_single_bs.h
+│   │   ├── inc_comp_single.cl
+│   │   ├── inc_comp_single.h
+│   │   ├── inc_diskcryptor_xts.cl
+│   │   ├── inc_diskcryptor_xts.h
+│   │   ├── inc_ecc_secp256k1.cl
+│   │   ├── inc_ecc_secp256k1.h
+│   │   ├── inc_hash_base58.cl
+│   │   ├── inc_hash_base58.h
+│   │   ├── inc_hash_blake2b.cl
+│   │   ├── inc_hash_blake2b.h
+│   │   ├── inc_hash_md4.cl
+│   │   ├── inc_hash_md4.h
+│   │   ├── inc_hash_md5.cl
+│   │   ├── inc_hash_md5.h
+│   │   ├── inc_hash_ripemd160.cl
+│   │   ├── inc_hash_ripemd160.h
+│   │   ├── inc_hash_sha1.cl
+│   │   ├── inc_hash_sha1.h
+│   │   ├── inc_hash_sha224.cl
+│   │   ├── inc_hash_sha224.h
+│   │   ├── inc_hash_sha256.cl
+│   │   ├── inc_hash_sha256.h
+│   │   ├── inc_hash_sha384.cl
+│   │   ├── inc_hash_sha384.h
+│   │   ├── inc_hash_sha512.cl
+│   │   ├── inc_hash_sha512.h
+│   │   ├── inc_hash_streebog256.cl
+│   │   ├── inc_hash_streebog256.h
+│   │   ├── inc_hash_streebog512.cl
+│   │   ├── inc_hash_streebog512.h
+│   │   ├── inc_hash_whirlpool.cl
+│   │   ├── inc_hash_whirlpool.h
+│   │   ├── inc_luks_aes.cl
+│   │   ├── inc_luks_aes.h
+│   │   ├── inc_luks_af.cl
+│   │   ├── inc_luks_af.h
+│   │   ├── inc_luks_essiv.cl
+│   │   ├── inc_luks_essiv.h
+│   │   ├── inc_luks_serpent.cl
+│   │   ├── inc_luks_serpent.h
+│   │   ├── inc_luks_twofish.cl
+│   │   ├── inc_luks_twofish.h
+│   │   ├── inc_luks_xts.cl
+│   │   ├── inc_luks_xts.h
+│   │   ├── inc_markov.h
+│   │   ├── inc_platform.cl
+│   │   ├── inc_platform.h
+│   │   ├── inc_radmin3_constants.h
+│   │   ├── inc_rp.cl
+│   │   ├── inc_rp.h
+│   │   ├── inc_rp_optimized.cl
+│   │   ├── inc_rp_optimized.h
+│   │   ├── inc_scalar.cl
+│   │   ├── inc_scalar.h
+│   │   ├── inc_shared.h
+│   │   ├── inc_simd.cl
+│   │   ├── inc_simd.h
+│   │   ├── inc_truecrypt_crc32.cl
+│   │   ├── inc_truecrypt_crc32.h
+│   │   ├── inc_truecrypt_keyfile.cl
+│   │   ├── inc_truecrypt_keyfile.h
+│   │   ├── inc_truecrypt_xts.cl
+│   │   ├── inc_truecrypt_xts.h
+│   │   ├── inc_types.h
+│   │   ├── inc_vendor.h
+│   │   ├── inc_veracrypt_keyfile.cl
+│   │   ├── inc_veracrypt_keyfile.h
+│   │   ├── inc_veracrypt_xts.cl
+│   │   ├── inc_veracrypt_xts.h
+│   │   ├── inc_zip_inflate.cl
+│   │   ├── m00000_a0-optimized.cl
+│   │   ├── m00000_a0-pure.cl
+│   │   ├── m00000_a1-optimized.cl
+│   │   ├── m00000_a1-pure.cl
+│   │   ├── m00000_a3-optimized.cl
+│   │   ├── m00000_a3-pure.cl
+│   │   ├── m00010_a0-optimized.cl
+│   │   ├── m00010_a0-pure.cl
+│   │   ├── m00010_a1-optimized.cl
+│   │   ├── m00010_a1-pure.cl
+│   │   ├── m00010_a3-optimized.cl
+│   │   ├── m00010_a3-pure.cl
+│   │   ├── m00020_a0-optimized.cl
+│   │   ├── m00020_a0-pure.cl
+│   │   ├── m00020_a1-optimized.cl
+│   │   ├── m00020_a1-pure.cl
+│   │   ├── m00020_a3-optimized.cl
+│   │   ├── m00020_a3-pure.cl
+│   │   ├── m00030_a0-optimized.cl
+│   │   ├── m00030_a0-pure.cl
+│   │   ├── m00030_a1-optimized.cl
+│   │   ├── m00030_a1-pure.cl
+│   │   ├── m00030_a3-optimized.cl
+│   │   ├── m00030_a3-pure.cl
+│   │   ├── m00040_a0-optimized.cl
+│   │   ├── m00040_a0-pure.cl
+│   │   ├── m00040_a1-optimized.cl
+│   │   ├── m00040_a1-pure.cl
+│   │   ├── m00040_a3-optimized.cl
+│   │   ├── m00040_a3-pure.cl
+│   │   ├── m00050_a0-optimized.cl
+│   │   ├── m00050_a0-pure.cl
+│   │   ├── m00050_a1-optimized.cl
+│   │   ├── m00050_a1-pure.cl
+│   │   ├── m00050_a3-optimized.cl
+│   │   ├── m00050_a3-pure.cl
+│   │   ├── m00060_a0-optimized.cl
+│   │   ├── m00060_a0-pure.cl
+│   │   ├── m00060_a1-optimized.cl
+│   │   ├── m00060_a1-pure.cl
+│   │   ├── m00060_a3-optimized.cl
+│   │   ├── m00060_a3-pure.cl
+│   │   ├── m00070_a0-optimized.cl
+│   │   ├── m00070_a0-pure.cl
+│   │   ├── m00070_a1-optimized.cl
+│   │   ├── m00070_a1-pure.cl
+│   │   ├── m00070_a3-optimized.cl
+│   │   ├── m00070_a3-pure.cl
+│   │   ├── m00100_a0-optimized.cl
+│   │   ├── m00100_a0-pure.cl
+│   │   ├── m00100_a1-optimized.cl
+│   │   ├── m00100_a1-pure.cl
+│   │   ├── m00100_a3-optimized.cl
+│   │   ├── m00100_a3-pure.cl
+│   │   ├── m00110_a0-optimized.cl
+│   │   ├── m00110_a0-pure.cl
+│   │   ├── m00110_a1-optimized.cl
+│   │   ├── m00110_a1-pure.cl
+│   │   ├── m00110_a3-optimized.cl
+│   │   ├── m00110_a3-pure.cl
+│   │   ├── m00120_a0-optimized.cl
+│   │   ├── m00120_a0-pure.cl
+│   │   ├── m00120_a1-optimized.cl
+│   │   ├── m00120_a1-pure.cl
+│   │   ├── m00120_a3-optimized.cl
+│   │   ├── m00120_a3-pure.cl
+│   │   ├── m00130_a0-optimized.cl
+│   │   ├── m00130_a0-pure.cl
+│   │   ├── m00130_a1-optimized.cl
+│   │   ├── m00130_a1-pure.cl
+│   │   ├── m00130_a3-optimized.cl
+│   │   ├── m00130_a3-pure.cl
+│   │   ├── m00140_a0-optimized.cl
+│   │   ├── m00140_a0-pure.cl
+│   │   ├── m00140_a1-optimized.cl
+│   │   ├── m00140_a1-pure.cl
+│   │   ├── m00140_a3-optimized.cl
+│   │   ├── m00140_a3-pure.cl
+│   │   ├── m00150_a0-optimized.cl
+│   │   ├── m00150_a0-pure.cl
+│   │   ├── m00150_a1-optimized.cl
+│   │   ├── m00150_a1-pure.cl
+│   │   ├── m00150_a3-optimized.cl
+│   │   ├── m00150_a3-pure.cl
+│   │   ├── m00160_a0-optimized.cl
+│   │   ├── m00160_a0-pure.cl
+│   │   ├── m00160_a1-optimized.cl
+│   │   ├── m00160_a1-pure.cl
+│   │   ├── m00160_a3-optimized.cl
+│   │   ├── m00160_a3-pure.cl
+│   │   ├── m00170_a0-optimized.cl
+│   │   ├── m00170_a0-pure.cl
+│   │   ├── m00170_a1-optimized.cl
+│   │   ├── m00170_a1-pure.cl
+│   │   ├── m00170_a3-optimized.cl
+│   │   ├── m00170_a3-pure.cl
+│   │   ├── m00200_a0-optimized.cl
+│   │   ├── m00200_a1-optimized.cl
+│   │   ├── m00200_a3-optimized.cl
+│   │   ├── m00300_a0-optimized.cl
+│   │   ├── m00300_a0-pure.cl
+│   │   ├── m00300_a1-optimized.cl
+│   │   ├── m00300_a1-pure.cl
+│   │   ├── m00300_a3-optimized.cl
+│   │   ├── m00300_a3-pure.cl
+│   │   ├── m00400-optimized.cl
+│   │   ├── m00400-pure.cl
+│   │   ├── m00500-optimized.cl
+│   │   ├── m00500-pure.cl
+│   │   ├── m00600_a0-optimized.cl
+│   │   ├── m00600_a0-pure.cl
+│   │   ├── m00600_a1-optimized.cl
+│   │   ├── m00600_a1-pure.cl
+│   │   ├── m00600_a3-optimized.cl
+│   │   ├── m00600_a3-pure.cl
+│   │   ├── m00610_a0-optimized.cl
+│   │   ├── m00610_a0-pure.cl
+│   │   ├── m00610_a1-optimized.cl
+│   │   ├── m00610_a1-pure.cl
+│   │   ├── m00610_a3-optimized.cl
+│   │   ├── m00610_a3-pure.cl
+│   │   ├── m00620_a0-optimized.cl
+│   │   ├── m00620_a0-pure.cl
+│   │   ├── m00620_a1-optimized.cl
+│   │   ├── m00620_a1-pure.cl
+│   │   ├── m00620_a3-optimized.cl
+│   │   ├── m00620_a3-pure.cl
+│   │   ├── m00900_a0-optimized.cl
+│   │   ├── m00900_a0-pure.cl
+│   │   ├── m00900_a1-optimized.cl
+│   │   ├── m00900_a1-pure.cl
+│   │   ├── m00900_a3-optimized.cl
+│   │   ├── m00900_a3-pure.cl
+│   │   ├── m01000_a0-optimized.cl
+│   │   ├── m01000_a0-pure.cl
+│   │   ├── m01000_a1-optimized.cl
+│   │   ├── m01000_a1-pure.cl
+│   │   ├── m01000_a3-optimized.cl
+│   │   ├── m01000_a3-pure.cl
+│   │   ├── m01100_a0-optimized.cl
+│   │   ├── m01100_a0-pure.cl
+│   │   ├── m01100_a1-optimized.cl
+│   │   ├── m01100_a1-pure.cl
+│   │   ├── m01100_a3-optimized.cl
+│   │   ├── m01100_a3-pure.cl
+│   │   ├── m01300_a0-optimized.cl
+│   │   ├── m01300_a0-pure.cl
+│   │   ├── m01300_a1-optimized.cl
+│   │   ├── m01300_a1-pure.cl
+│   │   ├── m01300_a3-optimized.cl
+│   │   ├── m01300_a3-pure.cl
+│   │   ├── m01400_a0-optimized.cl
+│   │   ├── m01400_a0-pure.cl
+│   │   ├── m01400_a1-optimized.cl
+│   │   ├── m01400_a1-pure.cl
+│   │   ├── m01400_a3-optimized.cl
+│   │   ├── m01400_a3-pure.cl
+│   │   ├── m01410_a0-optimized.cl
+│   │   ├── m01410_a0-pure.cl
+│   │   ├── m01410_a1-optimized.cl
+│   │   ├── m01410_a1-pure.cl
+│   │   ├── m01410_a3-optimized.cl
+│   │   ├── m01410_a3-pure.cl
+│   │   ├── m01420_a0-optimized.cl
+│   │   ├── m01420_a0-pure.cl
+│   │   ├── m01420_a1-optimized.cl
+│   │   ├── m01420_a1-pure.cl
+│   │   ├── m01420_a3-optimized.cl
+│   │   ├── m01420_a3-pure.cl
+│   │   ├── m01430_a0-optimized.cl
+│   │   ├── m01430_a0-pure.cl
+│   │   ├── m01430_a1-optimized.cl
+│   │   ├── m01430_a1-pure.cl
+│   │   ├── m01430_a3-optimized.cl
+│   │   ├── m01430_a3-pure.cl
+│   │   ├── m01440_a0-optimized.cl
+│   │   ├── m01440_a0-pure.cl
+│   │   ├── m01440_a1-optimized.cl
+│   │   ├── m01440_a1-pure.cl
+│   │   ├── m01440_a3-optimized.cl
+│   │   ├── m01440_a3-pure.cl
+│   │   ├── m01450_a0-optimized.cl
+│   │   ├── m01450_a0-pure.cl
+│   │   ├── m01450_a1-optimized.cl
+│   │   ├── m01450_a1-pure.cl
+│   │   ├── m01450_a3-optimized.cl
+│   │   ├── m01450_a3-pure.cl
+│   │   ├── m01460_a0-optimized.cl
+│   │   ├── m01460_a0-pure.cl
+│   │   ├── m01460_a1-optimized.cl
+│   │   ├── m01460_a1-pure.cl
+│   │   ├── m01460_a3-optimized.cl
+│   │   ├── m01460_a3-pure.cl
+│   │   ├── m01470_a0-optimized.cl
+│   │   ├── m01470_a0-pure.cl
+│   │   ├── m01470_a1-optimized.cl
+│   │   ├── m01470_a1-pure.cl
+│   │   ├── m01470_a3-optimized.cl
+│   │   ├── m01470_a3-pure.cl
+│   │   ├── m01500_a0-pure.cl
+│   │   ├── m01500_a1-pure.cl
+│   │   ├── m01500_a3-pure.cl
+│   │   ├── m01600-optimized.cl
+│   │   ├── m01600-pure.cl
+│   │   ├── m01700_a0-optimized.cl
+│   │   ├── m01700_a0-pure.cl
+│   │   ├── m01700_a1-optimized.cl
+│   │   ├── m01700_a1-pure.cl
+│   │   ├── m01700_a3-optimized.cl
+│   │   ├── m01700_a3-pure.cl
+│   │   ├── m01710_a0-optimized.cl
+│   │   ├── m01710_a0-pure.cl
+│   │   ├── m01710_a1-optimized.cl
+│   │   ├── m01710_a1-pure.cl
+│   │   ├── m01710_a3-optimized.cl
+│   │   ├── m01710_a3-pure.cl
+│   │   ├── m01720_a0-optimized.cl
+│   │   ├── m01720_a0-pure.cl
+│   │   ├── m01720_a1-optimized.cl
+│   │   ├── m01720_a1-pure.cl
+│   │   ├── m01720_a3-optimized.cl
+│   │   ├── m01720_a3-pure.cl
+│   │   ├── m01730_a0-optimized.cl
+│   │   ├── m01730_a0-pure.cl
+│   │   ├── m01730_a1-optimized.cl
+│   │   ├── m01730_a1-pure.cl
+│   │   ├── m01730_a3-optimized.cl
+│   │   ├── m01730_a3-pure.cl
+│   │   ├── m01740_a0-optimized.cl
+│   │   ├── m01740_a0-pure.cl
+│   │   ├── m01740_a1-optimized.cl
+│   │   ├── m01740_a1-pure.cl
+│   │   ├── m01740_a3-optimized.cl
+│   │   ├── m01740_a3-pure.cl
+│   │   ├── m01750_a0-optimized.cl
+│   │   ├── m01750_a0-pure.cl
+│   │   ├── m01750_a1-optimized.cl
+│   │   ├── m01750_a1-pure.cl
+│   │   ├── m01750_a3-optimized.cl
+│   │   ├── m01750_a3-pure.cl
+│   │   ├── m01760_a0-optimized.cl
+│   │   ├── m01760_a0-pure.cl
+│   │   ├── m01760_a1-optimized.cl
+│   │   ├── m01760_a1-pure.cl
+│   │   ├── m01760_a3-optimized.cl
+│   │   ├── m01760_a3-pure.cl
+│   │   ├── m01770_a0-optimized.cl
+│   │   ├── m01770_a0-pure.cl
+│   │   ├── m01770_a1-optimized.cl
+│   │   ├── m01770_a1-pure.cl
+│   │   ├── m01770_a3-optimized.cl
+│   │   ├── m01770_a3-pure.cl
+│   │   ├── m01800-optimized.cl
+│   │   ├── m01800-pure.cl
+│   │   ├── m02000_a0-optimized.cl
+│   │   ├── m02000_a0-pure.cl
+│   │   ├── m02000_a1-optimized.cl
+│   │   ├── m02000_a1-pure.cl
+│   │   ├── m02000_a3-optimized.cl
+│   │   ├── m02000_a3-pure.cl
+│   │   ├── m02100-pure.cl
+│   │   ├── m02400_a0-optimized.cl
+│   │   ├── m02400_a1-optimized.cl
+│   │   ├── m02400_a3-optimized.cl
+│   │   ├── m02410_a0-optimized.cl
+│   │   ├── m02410_a1-optimized.cl
+│   │   ├── m02410_a3-optimized.cl
+│   │   ├── m02500-pure.cl
+│   │   ├── m02501-pure.cl
+│   │   ├── m02610_a0-optimized.cl
+│   │   ├── m02610_a0-pure.cl
+│   │   ├── m02610_a1-optimized.cl
+│   │   ├── m02610_a1-pure.cl
+│   │   ├── m02610_a3-optimized.cl
+│   │   ├── m02610_a3-pure.cl
+│   │   ├── m02710_a0-optimized.cl
+│   │   ├── m02710_a1-optimized.cl
+│   │   ├── m02710_a3-optimized.cl
+│   │   ├── m02810_a0-optimized.cl
+│   │   ├── m02810_a0-pure.cl
+│   │   ├── m02810_a1-optimized.cl
+│   │   ├── m02810_a1-pure.cl
+│   │   ├── m02810_a3-optimized.cl
+│   │   ├── m02810_a3-pure.cl
+│   │   ├── m03000_a0-pure.cl
+│   │   ├── m03000_a1-pure.cl
+│   │   ├── m03000_a3-pure.cl
+│   │   ├── m03100_a0-optimized.cl
+│   │   ├── m03100_a1-optimized.cl
+│   │   ├── m03100_a3-optimized.cl
+│   │   ├── m03200-pure.cl
+│   │   ├── m03500_a0-optimized.cl
+│   │   ├── m03500_a0-pure.cl
+│   │   ├── m03500_a1-optimized.cl
+│   │   ├── m03500_a1-pure.cl
+│   │   ├── m03500_a3-optimized.cl
+│   │   ├── m03500_a3-pure.cl
+│   │   ├── m03710_a0-optimized.cl
+│   │   ├── m03710_a0-pure.cl
+│   │   ├── m03710_a1-optimized.cl
+│   │   ├── m03710_a1-pure.cl
+│   │   ├── m03710_a3-optimized.cl
+│   │   ├── m03710_a3-pure.cl
+│   │   ├── m03800_a0-optimized.cl
+│   │   ├── m03800_a0-pure.cl
+│   │   ├── m03800_a1-optimized.cl
+│   │   ├── m03800_a1-pure.cl
+│   │   ├── m03800_a3-optimized.cl
+│   │   ├── m03800_a3-pure.cl
+│   │   ├── m03910_a0-optimized.cl
+│   │   ├── m03910_a0-pure.cl
+│   │   ├── m03910_a1-optimized.cl
+│   │   ├── m03910_a1-pure.cl
+│   │   ├── m03910_a3-optimized.cl
+│   │   ├── m03910_a3-pure.cl
+│   │   ├── m04010_a0-optimized.cl
+│   │   ├── m04010_a0-pure.cl
+│   │   ├── m04010_a1-optimized.cl
+│   │   ├── m04010_a1-pure.cl
+│   │   ├── m04010_a3-optimized.cl
+│   │   ├── m04010_a3-pure.cl
+│   │   ├── m04110_a0-optimized.cl
+│   │   ├── m04110_a0-pure.cl
+│   │   ├── m04110_a1-optimized.cl
+│   │   ├── m04110_a1-pure.cl
+│   │   ├── m04110_a3-optimized.cl
+│   │   ├── m04110_a3-pure.cl
+│   │   ├── m04310_a0-optimized.cl
+│   │   ├── m04310_a0-pure.cl
+│   │   ├── m04310_a1-optimized.cl
+│   │   ├── m04310_a1-pure.cl
+│   │   ├── m04310_a3-optimized.cl
+│   │   ├── m04310_a3-pure.cl
+│   │   ├── m04400_a0-optimized.cl
+│   │   ├── m04400_a0-pure.cl
+│   │   ├── m04400_a1-optimized.cl
+│   │   ├── m04400_a1-pure.cl
+│   │   ├── m04400_a3-optimized.cl
+│   │   ├── m04400_a3-pure.cl
+│   │   ├── m04410_a0-optimized.cl
+│   │   ├── m04410_a0-pure.cl
+│   │   ├── m04410_a1-optimized.cl
+│   │   ├── m04410_a1-pure.cl
+│   │   ├── m04410_a3-optimized.cl
+│   │   ├── m04410_a3-pure.cl
+│   │   ├── m04500_a0-optimized.cl
+│   │   ├── m04500_a0-pure.cl
+│   │   ├── m04500_a1-optimized.cl
+│   │   ├── m04500_a1-pure.cl
+│   │   ├── m04500_a3-optimized.cl
+│   │   ├── m04500_a3-pure.cl
+│   │   ├── m04510_a0-optimized.cl
+│   │   ├── m04510_a0-pure.cl
+│   │   ├── m04510_a1-optimized.cl
+│   │   ├── m04510_a1-pure.cl
+│   │   ├── m04510_a3-optimized.cl
+│   │   ├── m04510_a3-pure.cl
+│   │   ├── m04520_a0-optimized.cl
+│   │   ├── m04520_a0-pure.cl
+│   │   ├── m04520_a1-optimized.cl
+│   │   ├── m04520_a1-pure.cl
+│   │   ├── m04520_a3-optimized.cl
+│   │   ├── m04520_a3-pure.cl
+│   │   ├── m04700_a0-optimized.cl
+│   │   ├── m04700_a0-pure.cl
+│   │   ├── m04700_a1-optimized.cl
+│   │   ├── m04700_a1-pure.cl
+│   │   ├── m04700_a3-optimized.cl
+│   │   ├── m04700_a3-pure.cl
+│   │   ├── m04710_a0-optimized.cl
+│   │   ├── m04710_a0-pure.cl
+│   │   ├── m04710_a1-optimized.cl
+│   │   ├── m04710_a1-pure.cl
+│   │   ├── m04710_a3-optimized.cl
+│   │   ├── m04710_a3-pure.cl
+│   │   ├── m04800_a0-optimized.cl
+│   │   ├── m04800_a0-pure.cl
+│   │   ├── m04800_a1-optimized.cl
+│   │   ├── m04800_a1-pure.cl
+│   │   ├── m04800_a3-optimized.cl
+│   │   ├── m04800_a3-pure.cl
+│   │   ├── m04900_a0-optimized.cl
+│   │   ├── m04900_a0-pure.cl
+│   │   ├── m04900_a1-optimized.cl
+│   │   ├── m04900_a1-pure.cl
+│   │   ├── m04900_a3-optimized.cl
+│   │   ├── m04900_a3-pure.cl
+│   │   ├── m05000_a0-optimized.cl
+│   │   ├── m05000_a0-pure.cl
+│   │   ├── m05000_a1-optimized.cl
+│   │   ├── m05000_a1-pure.cl
+│   │   ├── m05000_a3-optimized.cl
+│   │   ├── m05000_a3-pure.cl
+│   │   ├── m05100_a0-optimized.cl
+│   │   ├── m05100_a0-pure.cl
+│   │   ├── m05100_a1-optimized.cl
+│   │   ├── m05100_a1-pure.cl
+│   │   ├── m05100_a3-optimized.cl
+│   │   ├── m05100_a3-pure.cl
+│   │   ├── m05200-pure.cl
+│   │   ├── m05300_a0-optimized.cl
+│   │   ├── m05300_a0-pure.cl
+│   │   ├── m05300_a1-optimized.cl
+│   │   ├── m05300_a1-pure.cl
+│   │   ├── m05300_a3-optimized.cl
+│   │   ├── m05300_a3-pure.cl
+│   │   ├── m05400_a0-optimized.cl
+│   │   ├── m05400_a0-pure.cl
+│   │   ├── m05400_a1-optimized.cl
+│   │   ├── m05400_a1-pure.cl
+│   │   ├── m05400_a3-optimized.cl
+│   │   ├── m05400_a3-pure.cl
+│   │   ├── m05500_a0-optimized.cl
+│   │   ├── m05500_a0-pure.cl
+│   │   ├── m05500_a1-optimized.cl
+│   │   ├── m05500_a1-pure.cl
+│   │   ├── m05500_a3-optimized.cl
+│   │   ├── m05500_a3-pure.cl
+│   │   ├── m05600_a0-optimized.cl
+│   │   ├── m05600_a0-pure.cl
+│   │   ├── m05600_a1-optimized.cl
+│   │   ├── m05600_a1-pure.cl
+│   │   ├── m05600_a3-optimized.cl
+│   │   ├── m05600_a3-pure.cl
+│   │   ├── m05800-optimized.cl
+│   │   ├── m05800-pure.cl
+│   │   ├── m06000_a0-optimized.cl
+│   │   ├── m06000_a0-pure.cl
+│   │   ├── m06000_a1-optimized.cl
+│   │   ├── m06000_a1-pure.cl
+│   │   ├── m06000_a3-optimized.cl
+│   │   ├── m06000_a3-pure.cl
+│   │   ├── m06100_a0-optimized.cl
+│   │   ├── m06100_a0-pure.cl
+│   │   ├── m06100_a1-optimized.cl
+│   │   ├── m06100_a1-pure.cl
+│   │   ├── m06100_a3-optimized.cl
+│   │   ├── m06100_a3-pure.cl
+│   │   ├── m06211-pure.cl
+│   │   ├── m06212-pure.cl
+│   │   ├── m06213-pure.cl
+│   │   ├── m06221-pure.cl
+│   │   ├── m06222-pure.cl
+│   │   ├── m06223-pure.cl
+│   │   ├── m06231-pure.cl
+│   │   ├── m06232-pure.cl
+│   │   ├── m06233-pure.cl
+│   │   ├── m06300-optimized.cl
+│   │   ├── m06300-pure.cl
+│   │   ├── m06400-pure.cl
+│   │   ├── m06500-pure.cl
+│   │   ├── m06600-pure.cl
+│   │   ├── m06700-pure.cl
+│   │   ├── m06800-pure.cl
+│   │   ├── m06900_a0-optimized.cl
+│   │   ├── m06900_a1-optimized.cl
+│   │   ├── m06900_a3-optimized.cl
+│   │   ├── m07000_a0-optimized.cl
+│   │   ├── m07000_a0-pure.cl
+│   │   ├── m07000_a1-optimized.cl
+│   │   ├── m07000_a1-pure.cl
+│   │   ├── m07000_a3-optimized.cl
+│   │   ├── m07000_a3-pure.cl
+│   │   ├── m07100-pure.cl
+│   │   ├── m07300_a0-optimized.cl
+│   │   ├── m07300_a0-pure.cl
+│   │   ├── m07300_a1-optimized.cl
+│   │   ├── m07300_a1-pure.cl
+│   │   ├── m07300_a3-optimized.cl
+│   │   ├── m07300_a3-pure.cl
+│   │   ├── m07400-optimized.cl
+│   │   ├── m07400-pure.cl
+│   │   ├── m07500_a0-optimized.cl
+│   │   ├── m07500_a0-pure.cl
+│   │   ├── m07500_a1-optimized.cl
+│   │   ├── m07500_a1-pure.cl
+│   │   ├── m07500_a3-optimized.cl
+│   │   ├── m07500_a3-pure.cl
+│   │   ├── m07700_a0-optimized.cl
+│   │   ├── m07700_a1-optimized.cl
+│   │   ├── m07700_a3-optimized.cl
+│   │   ├── m07701_a0-optimized.cl
+│   │   ├── m07701_a1-optimized.cl
+│   │   ├── m07701_a3-optimized.cl
+│   │   ├── m07800_a0-optimized.cl
+│   │   ├── m07800_a1-optimized.cl
+│   │   ├── m07800_a3-optimized.cl
+│   │   ├── m07801_a0-optimized.cl
+│   │   ├── m07801_a1-optimized.cl
+│   │   ├── m07801_a3-optimized.cl
+│   │   ├── m07900-pure.cl
+│   │   ├── m08000_a0-optimized.cl
+│   │   ├── m08000_a1-optimized.cl
+│   │   ├── m08000_a3-optimized.cl
+│   │   ├── m08100_a0-optimized.cl
+│   │   ├── m08100_a0-pure.cl
+│   │   ├── m08100_a1-optimized.cl
+│   │   ├── m08100_a1-pure.cl
+│   │   ├── m08100_a3-optimized.cl
+│   │   ├── m08100_a3-pure.cl
+│   │   ├── m08200-pure.cl
+│   │   ├── m08300_a0-optimized.cl
+│   │   ├── m08300_a0-pure.cl
+│   │   ├── m08300_a1-optimized.cl
+│   │   ├── m08300_a1-pure.cl
+│   │   ├── m08300_a3-optimized.cl
+│   │   ├── m08300_a3-pure.cl
+│   │   ├── m08400_a0-optimized.cl
+│   │   ├── m08400_a0-pure.cl
+│   │   ├── m08400_a1-optimized.cl
+│   │   ├── m08400_a1-pure.cl
+│   │   ├── m08400_a3-optimized.cl
+│   │   ├── m08400_a3-pure.cl
+│   │   ├── m08500_a0-pure.cl
+│   │   ├── m08500_a1-pure.cl
+│   │   ├── m08500_a3-pure.cl
+│   │   ├── m08600_a0-pure.cl
+│   │   ├── m08600_a1-pure.cl
+│   │   ├── m08600_a3-pure.cl
+│   │   ├── m08700_a0-optimized.cl
+│   │   ├── m08700_a1-optimized.cl
+│   │   ├── m08700_a3-optimized.cl
+│   │   ├── m08800-pure.cl
+│   │   ├── m08900-pure.cl
+│   │   ├── m09000-pure.cl
+│   │   ├── m09100-pure.cl
+│   │   ├── m09400-pure.cl
+│   │   ├── m09500-pure.cl
+│   │   ├── m09600-pure.cl
+│   │   ├── m09700_a0-optimized.cl
+│   │   ├── m09700_a1-optimized.cl
+│   │   ├── m09700_a3-optimized.cl
+│   │   ├── m09710_a0-optimized.cl
+│   │   ├── m09710_a1-optimized.cl
+│   │   ├── m09710_a3-optimized.cl
+│   │   ├── m09720_a0-optimized.cl
+│   │   ├── m09720_a1-optimized.cl
+│   │   ├── m09720_a3-optimized.cl
+│   │   ├── m09800_a0-optimized.cl
+│   │   ├── m09800_a1-optimized.cl
+│   │   ├── m09800_a3-optimized.cl
+│   │   ├── m09810_a0-optimized.cl
+│   │   ├── m09810_a1-optimized.cl
+│   │   ├── m09810_a3-optimized.cl
+│   │   ├── m09820_a0-optimized.cl
+│   │   ├── m09820_a1-optimized.cl
+│   │   ├── m09820_a3-optimized.cl
+│   │   ├── m09900_a0-optimized.cl
+│   │   ├── m09900_a0-pure.cl
+│   │   ├── m09900_a1-optimized.cl
+│   │   ├── m09900_a1-pure.cl
+│   │   ├── m09900_a3-optimized.cl
+│   │   ├── m09900_a3-pure.cl
+│   │   ├── m10100_a0-optimized.cl
+│   │   ├── m10100_a1-optimized.cl
+│   │   ├── m10100_a3-optimized.cl
+│   │   ├── m10300-pure.cl
+│   │   ├── m10400_a0-optimized.cl
+│   │   ├── m10400_a1-optimized.cl
+│   │   ├── m10400_a3-optimized.cl
+│   │   ├── m10410_a0-optimized.cl
+│   │   ├── m10410_a1-optimized.cl
+│   │   ├── m10410_a3-optimized.cl
+│   │   ├── m10420_a0-optimized.cl
+│   │   ├── m10420_a1-optimized.cl
+│   │   ├── m10420_a3-optimized.cl
+│   │   ├── m10500-pure.cl
+│   │   ├── m10700-optimized.cl
+│   │   ├── m10700-pure.cl
+│   │   ├── m10800_a0-optimized.cl
+│   │   ├── m10800_a0-pure.cl
+│   │   ├── m10800_a1-optimized.cl
+│   │   ├── m10800_a1-pure.cl
+│   │   ├── m10800_a3-optimized.cl
+│   │   ├── m10800_a3-pure.cl
+│   │   ├── m10810_a0-optimized.cl
+│   │   ├── m10810_a0-pure.cl
+│   │   ├── m10810_a1-optimized.cl
+│   │   ├── m10810_a1-pure.cl
+│   │   ├── m10810_a3-optimized.cl
+│   │   ├── m10810_a3-pure.cl
+│   │   ├── m10820_a0-optimized.cl
+│   │   ├── m10820_a0-pure.cl
+│   │   ├── m10820_a1-optimized.cl
+│   │   ├── m10820_a1-pure.cl
+│   │   ├── m10820_a3-optimized.cl
+│   │   ├── m10820_a3-pure.cl
+│   │   ├── m10830_a0-optimized.cl
+│   │   ├── m10830_a0-pure.cl
+│   │   ├── m10830_a1-optimized.cl
+│   │   ├── m10830_a1-pure.cl
+│   │   ├── m10830_a3-optimized.cl
+│   │   ├── m10830_a3-pure.cl
+│   │   ├── m10840_a0-optimized.cl
+│   │   ├── m10840_a0-pure.cl
+│   │   ├── m10840_a1-optimized.cl
+│   │   ├── m10840_a1-pure.cl
+│   │   ├── m10840_a3-optimized.cl
+│   │   ├── m10840_a3-pure.cl
+│   │   ├── m10870_a0-optimized.cl
+│   │   ├── m10870_a0-pure.cl
+│   │   ├── m10870_a1-optimized.cl
+│   │   ├── m10870_a1-pure.cl
+│   │   ├── m10870_a3-optimized.cl
+│   │   ├── m10870_a3-pure.cl
+│   │   ├── m10900-pure.cl
+│   │   ├── m11000_a0-optimized.cl
+│   │   ├── m11000_a0-pure.cl
+│   │   ├── m11000_a1-optimized.cl
+│   │   ├── m11000_a1-pure.cl
+│   │   ├── m11000_a3-optimized.cl
+│   │   ├── m11000_a3-pure.cl
+│   │   ├── m11100_a0-optimized.cl
+│   │   ├── m11100_a0-pure.cl
+│   │   ├── m11100_a1-optimized.cl
+│   │   ├── m11100_a1-pure.cl
+│   │   ├── m11100_a3-optimized.cl
+│   │   ├── m11100_a3-pure.cl
+│   │   ├── m11200_a0-optimized.cl
+│   │   ├── m11200_a0-pure.cl
+│   │   ├── m11200_a1-optimized.cl
+│   │   ├── m11200_a1-pure.cl
+│   │   ├── m11200_a3-optimized.cl
+│   │   ├── m11200_a3-pure.cl
+│   │   ├── m11300-pure.cl
+│   │   ├── m11400_a0-pure.cl
+│   │   ├── m11400_a1-pure.cl
+│   │   ├── m11400_a3-pure.cl
+│   │   ├── m11500_a0-optimized.cl
+│   │   ├── m11500_a1-optimized.cl
+│   │   ├── m11500_a3-optimized.cl
+│   │   ├── m11600-optimized.cl
+│   │   ├── m11600-pure.cl
+│   │   ├── m11700_a0-optimized.cl
+│   │   ├── m11700_a0-pure.cl
+│   │   ├── m11700_a1-optimized.cl
+│   │   ├── m11700_a1-pure.cl
+│   │   ├── m11700_a3-optimized.cl
+│   │   ├── m11700_a3-pure.cl
+│   │   ├── m11750_a0-pure.cl
+│   │   ├── m11750_a1-pure.cl
+│   │   ├── m11750_a3-pure.cl
+│   │   ├── m11760_a0-pure.cl
+│   │   ├── m11760_a1-pure.cl
+│   │   ├── m11760_a3-pure.cl
+│   │   ├── m11800_a0-optimized.cl
+│   │   ├── m11800_a0-pure.cl
+│   │   ├── m11800_a1-optimized.cl
+│   │   ├── m11800_a1-pure.cl
+│   │   ├── m11800_a3-optimized.cl
+│   │   ├── m11800_a3-pure.cl
+│   │   ├── m11850_a0-pure.cl
+│   │   ├── m11850_a1-pure.cl
+│   │   ├── m11850_a3-pure.cl
+│   │   ├── m11860_a0-pure.cl
+│   │   ├── m11860_a1-pure.cl
+│   │   ├── m11860_a3-pure.cl
+│   │   ├── m11900-pure.cl
+│   │   ├── m12000-pure.cl
+│   │   ├── m12200-pure.cl
+│   │   ├── m12300-pure.cl
+│   │   ├── m12400-pure.cl
+│   │   ├── m12500-optimized.cl
+│   │   ├── m12500-pure.cl
+│   │   ├── m12600_a0-optimized.cl
+│   │   ├── m12600_a0-pure.cl
+│   │   ├── m12600_a1-optimized.cl
+│   │   ├── m12600_a1-pure.cl
+│   │   ├── m12600_a3-optimized.cl
+│   │   ├── m12600_a3-pure.cl
+│   │   ├── m12700-pure.cl
+│   │   ├── m12800-pure.cl
+│   │   ├── m12900-pure.cl
+│   │   ├── m13000-pure.cl
+│   │   ├── m13100_a0-optimized.cl
+│   │   ├── m13100_a0-pure.cl
+│   │   ├── m13100_a1-optimized.cl
+│   │   ├── m13100_a1-pure.cl
+│   │   ├── m13100_a3-optimized.cl
+│   │   ├── m13100_a3-pure.cl
+│   │   ├── m13200-pure.cl
+│   │   ├── m13300_a0-optimized.cl
+│   │   ├── m13300_a0-pure.cl
+│   │   ├── m13300_a1-optimized.cl
+│   │   ├── m13300_a1-pure.cl
+│   │   ├── m13300_a3-optimized.cl
+│   │   ├── m13300_a3-pure.cl
+│   │   ├── m13400-pure.cl
+│   │   ├── m13500_a0-optimized.cl
+│   │   ├── m13500_a0-pure.cl
+│   │   ├── m13500_a1-optimized.cl
+│   │   ├── m13500_a1-pure.cl
+│   │   ├── m13500_a3-optimized.cl
+│   │   ├── m13500_a3-pure.cl
+│   │   ├── m13600-pure.cl
+│   │   ├── m13711-pure.cl
+│   │   ├── m13712-pure.cl
+│   │   ├── m13713-pure.cl
+│   │   ├── m13721-pure.cl
+│   │   ├── m13722-pure.cl
+│   │   ├── m13723-pure.cl
+│   │   ├── m13731-pure.cl
+│   │   ├── m13732-pure.cl
+│   │   ├── m13733-pure.cl
+│   │   ├── m13751-pure.cl
+│   │   ├── m13752-pure.cl
+│   │   ├── m13753-pure.cl
+│   │   ├── m13771-pure.cl
+│   │   ├── m13772-pure.cl
+│   │   ├── m13773-pure.cl
+│   │   ├── m13800_a0-optimized.cl
+│   │   ├── m13800_a0-pure.cl
+│   │   ├── m13800_a1-optimized.cl
+│   │   ├── m13800_a1-pure.cl
+│   │   ├── m13800_a3-optimized.cl
+│   │   ├── m13800_a3-pure.cl
+│   │   ├── m13900_a0-optimized.cl
+│   │   ├── m13900_a0-pure.cl
+│   │   ├── m13900_a1-optimized.cl
+│   │   ├── m13900_a1-pure.cl
+│   │   ├── m13900_a3-optimized.cl
+│   │   ├── m13900_a3-pure.cl
+│   │   ├── m14000_a0-pure.cl
+│   │   ├── m14000_a1-pure.cl
+│   │   ├── m14000_a3-pure.cl
+│   │   ├── m14100_a0-pure.cl
+│   │   ├── m14100_a1-pure.cl
+│   │   ├── m14100_a3-pure.cl
+│   │   ├── m14400_a0-optimized.cl
+│   │   ├── m14400_a0-pure.cl
+│   │   ├── m14400_a1-optimized.cl
+│   │   ├── m14400_a1-pure.cl
+│   │   ├── m14400_a3-optimized.cl
+│   │   ├── m14400_a3-pure.cl
+│   │   ├── m14511_a0-pure.cl
+│   │   ├── m14511_a1-pure.cl
+│   │   ├── m14511_a3-pure.cl
+│   │   ├── m14512_a0-pure.cl
+│   │   ├── m14512_a1-pure.cl
+│   │   ├── m14512_a3-pure.cl
+│   │   ├── m14513_a0-pure.cl
+│   │   ├── m14513_a1-pure.cl
+│   │   ├── m14513_a3-pure.cl
+│   │   ├── m14521_a0-pure.cl
+│   │   ├── m14521_a1-pure.cl
+│   │   ├── m14521_a3-pure.cl
+│   │   ├── m14522_a0-pure.cl
+│   │   ├── m14522_a1-pure.cl
+│   │   ├── m14522_a3-pure.cl
+│   │   ├── m14523_a0-pure.cl
+│   │   ├── m14523_a1-pure.cl
+│   │   ├── m14523_a3-pure.cl
+│   │   ├── m14531_a0-pure.cl
+│   │   ├── m14531_a1-pure.cl
+│   │   ├── m14531_a3-pure.cl
+│   │   ├── m14532_a0-pure.cl
+│   │   ├── m14532_a1-pure.cl
+│   │   ├── m14532_a3-pure.cl
+│   │   ├── m14533_a0-pure.cl
+│   │   ├── m14533_a1-pure.cl
+│   │   ├── m14533_a3-pure.cl
+│   │   ├── m14541_a0-pure.cl
+│   │   ├── m14541_a1-pure.cl
+│   │   ├── m14541_a3-pure.cl
+│   │   ├── m14542_a0-pure.cl
+│   │   ├── m14542_a1-pure.cl
+│   │   ├── m14542_a3-pure.cl
+│   │   ├── m14543_a0-pure.cl
+│   │   ├── m14543_a1-pure.cl
+│   │   ├── m14543_a3-pure.cl
+│   │   ├── m14551_a0-pure.cl
+│   │   ├── m14551_a1-pure.cl
+│   │   ├── m14551_a3-pure.cl
+│   │   ├── m14552_a0-pure.cl
+│   │   ├── m14552_a1-pure.cl
+│   │   ├── m14552_a3-pure.cl
+│   │   ├── m14553_a0-pure.cl
+│   │   ├── m14553_a1-pure.cl
+│   │   ├── m14553_a3-pure.cl
+│   │   ├── m14611-pure.cl
+│   │   ├── m14612-pure.cl
+│   │   ├── m14613-pure.cl
+│   │   ├── m14621-pure.cl
+│   │   ├── m14622-pure.cl
+│   │   ├── m14623-pure.cl
+│   │   ├── m14631-pure.cl
+│   │   ├── m14632-pure.cl
+│   │   ├── m14633-pure.cl
+│   │   ├── m14641-pure.cl
+│   │   ├── m14642-pure.cl
+│   │   ├── m14643-pure.cl
+│   │   ├── m14700-pure.cl
+│   │   ├── m14800-pure.cl
+│   │   ├── m14900_a0-optimized.cl
+│   │   ├── m14900_a1-optimized.cl
+│   │   ├── m14900_a3-optimized.cl
+│   │   ├── m15000_a0-optimized.cl
+│   │   ├── m15000_a0-pure.cl
+│   │   ├── m15000_a1-optimized.cl
+│   │   ├── m15000_a1-pure.cl
+│   │   ├── m15000_a3-optimized.cl
+│   │   ├── m15000_a3-pure.cl
+│   │   ├── m15100-pure.cl
+│   │   ├── m15300-pure.cl
+│   │   ├── m15310-pure.cl
+│   │   ├── m15400_a0-optimized.cl
+│   │   ├── m15400_a1-optimized.cl
+│   │   ├── m15400_a3-optimized.cl
+│   │   ├── m15500_a0-optimized.cl
+│   │   ├── m15500_a0-pure.cl
+│   │   ├── m15500_a1-optimized.cl
+│   │   ├── m15500_a1-pure.cl
+│   │   ├── m15500_a3-optimized.cl
+│   │   ├── m15500_a3-pure.cl
+│   │   ├── m15600-pure.cl
+│   │   ├── m15700-pure.cl
+│   │   ├── m15900-pure.cl
+│   │   ├── m15910-pure.cl
+│   │   ├── m16000_a0-pure.cl
+│   │   ├── m16000_a1-pure.cl
+│   │   ├── m16000_a3-pure.cl
+│   │   ├── m16100_a0-optimized.cl
+│   │   ├── m16100_a0-pure.cl
+│   │   ├── m16100_a1-optimized.cl
+│   │   ├── m16100_a1-pure.cl
+│   │   ├── m16100_a3-optimized.cl
+│   │   ├── m16100_a3-pure.cl
+│   │   ├── m16200-pure.cl
+│   │   ├── m16300-pure.cl
+│   │   ├── m16400_a0-optimized.cl
+│   │   ├── m16400_a0-pure.cl
+│   │   ├── m16400_a1-optimized.cl
+│   │   ├── m16400_a1-pure.cl
+│   │   ├── m16400_a3-optimized.cl
+│   │   ├── m16400_a3-pure.cl
+│   │   ├── m16511_a0-pure.cl
+│   │   ├── m16511_a1-pure.cl
+│   │   ├── m16511_a3-pure.cl
+│   │   ├── m16512_a0-pure.cl
+│   │   ├── m16512_a1-pure.cl
+│   │   ├── m16512_a3-pure.cl
+│   │   ├── m16513_a0-pure.cl
+│   │   ├── m16513_a1-pure.cl
+│   │   ├── m16513_a3-pure.cl
+│   │   ├── m16600_a0-optimized.cl
+│   │   ├── m16600_a0-pure.cl
+│   │   ├── m16600_a1-optimized.cl
+│   │   ├── m16600_a1-pure.cl
+│   │   ├── m16600_a3-optimized.cl
+│   │   ├── m16600_a3-pure.cl
+│   │   ├── m16800-pure.cl
+│   │   ├── m16801-pure.cl
+│   │   ├── m16900-pure.cl
+│   │   ├── m17010-pure.cl
+│   │   ├── m17200_a0-pure.cl
+│   │   ├── m17200_a1-pure.cl
+│   │   ├── m17200_a3-pure.cl
+│   │   ├── m17210_a0-pure.cl
+│   │   ├── m17210_a1-pure.cl
+│   │   ├── m17210_a3-pure.cl
+│   │   ├── m17220_a0-pure.cl
+│   │   ├── m17220_a1-pure.cl
+│   │   ├── m17220_a3-pure.cl
+│   │   ├── m17225_a0-pure.cl
+│   │   ├── m17225_a1-pure.cl
+│   │   ├── m17225_a3-pure.cl
+│   │   ├── m17230_a0-pure.cl
+│   │   ├── m17230_a1-pure.cl
+│   │   ├── m17230_a3-pure.cl
+│   │   ├── m17300_a0-optimized.cl
+│   │   ├── m17300_a1-optimized.cl
+│   │   ├── m17300_a3-optimized.cl
+│   │   ├── m17400_a0-optimized.cl
+│   │   ├── m17400_a1-optimized.cl
+│   │   ├── m17400_a3-optimized.cl
+│   │   ├── m17500_a0-optimized.cl
+│   │   ├── m17500_a1-optimized.cl
+│   │   ├── m17500_a3-optimized.cl
+│   │   ├── m17600_a0-optimized.cl
+│   │   ├── m17600_a1-optimized.cl
+│   │   ├── m17600_a3-optimized.cl
+│   │   ├── m17700_a0-optimized.cl
+│   │   ├── m17700_a1-optimized.cl
+│   │   ├── m17700_a3-optimized.cl
+│   │   ├── m17800_a0-optimized.cl
+│   │   ├── m17800_a1-optimized.cl
+│   │   ├── m17800_a3-optimized.cl
+│   │   ├── m17900_a0-optimized.cl
+│   │   ├── m17900_a1-optimized.cl
+│   │   ├── m17900_a3-optimized.cl
+│   │   ├── m18000_a0-optimized.cl
+│   │   ├── m18000_a1-optimized.cl
+│   │   ├── m18000_a3-optimized.cl
+│   │   ├── m18100_a0-pure.cl
+│   │   ├── m18100_a1-pure.cl
+│   │   ├── m18100_a3-pure.cl
+│   │   ├── m18200_a0-optimized.cl
+│   │   ├── m18200_a0-pure.cl
+│   │   ├── m18200_a1-optimized.cl
+│   │   ├── m18200_a1-pure.cl
+│   │   ├── m18200_a3-optimized.cl
+│   │   ├── m18200_a3-pure.cl
+│   │   ├── m18300-pure.cl
+│   │   ├── m18400-pure.cl
+│   │   ├── m18500_a0-pure.cl
+│   │   ├── m18500_a1-pure.cl
+│   │   ├── m18500_a3-pure.cl
+│   │   ├── m18600-pure.cl
+│   │   ├── m18700_a0-optimized.cl
+│   │   ├── m18700_a0-pure.cl
+│   │   ├── m18700_a1-optimized.cl
+│   │   ├── m18700_a1-pure.cl
+│   │   ├── m18700_a3-optimized.cl
+│   │   ├── m18700_a3-pure.cl
+│   │   ├── m18800-pure.cl
+│   │   ├── m18900-pure.cl
+│   │   ├── m19000-pure.cl
+│   │   ├── m19100-pure.cl
+│   │   ├── m19200-pure.cl
+│   │   ├── m19300_a0-pure.cl
+│   │   ├── m19300_a1-pure.cl
+│   │   ├── m19300_a3-pure.cl
+│   │   ├── m19500_a0-pure.cl
+│   │   ├── m19500_a1-pure.cl
+│   │   ├── m19500_a3-pure.cl
+│   │   ├── m19600-pure.cl
+│   │   ├── m19700-pure.cl
+│   │   ├── m19800-pure.cl
+│   │   ├── m19900-pure.cl
+│   │   ├── m20011-pure.cl
+│   │   ├── m20012-pure.cl
+│   │   ├── m20013-pure.cl
+│   │   ├── m20500_a0-pure.cl
+│   │   ├── m20500_a1-pure.cl
+│   │   ├── m20500_a3-pure.cl
+│   │   ├── m20510_a0-pure.cl
+│   │   ├── m20510_a1-pure.cl
+│   │   ├── m20510_a3-pure.cl
+│   │   ├── m20600-pure.cl
+│   │   ├── m20710_a0-optimized.cl
+│   │   ├── m20710_a0-pure.cl
+│   │   ├── m20710_a1-optimized.cl
+│   │   ├── m20710_a1-pure.cl
+│   │   ├── m20710_a3-optimized.cl
+│   │   ├── m20710_a3-pure.cl
+│   │   ├── m20720_a0-pure.cl
+│   │   ├── m20720_a1-pure.cl
+│   │   ├── m20720_a3-pure.cl
+│   │   ├── m20800_a0-optimized.cl
+│   │   ├── m20800_a0-pure.cl
+│   │   ├── m20800_a1-optimized.cl
+│   │   ├── m20800_a1-pure.cl
+│   │   ├── m20800_a3-optimized.cl
+│   │   ├── m20800_a3-pure.cl
+│   │   ├── m20900_a0-optimized.cl
+│   │   ├── m20900_a0-pure.cl
+│   │   ├── m20900_a1-optimized.cl
+│   │   ├── m20900_a1-pure.cl
+│   │   ├── m20900_a3-optimized.cl
+│   │   ├── m20900_a3-pure.cl
+│   │   ├── m21000_a0-optimized.cl
+│   │   ├── m21000_a0-pure.cl
+│   │   ├── m21000_a1-optimized.cl
+│   │   ├── m21000_a1-pure.cl
+│   │   ├── m21000_a3-optimized.cl
+│   │   ├── m21000_a3-pure.cl
+│   │   ├── m21100_a0-optimized.cl
+│   │   ├── m21100_a0-pure.cl
+│   │   ├── m21100_a1-optimized.cl
+│   │   ├── m21100_a1-pure.cl
+│   │   ├── m21100_a3-optimized.cl
+│   │   ├── m21100_a3-pure.cl
+│   │   ├── m21200_a0-optimized.cl
+│   │   ├── m21200_a0-pure.cl
+│   │   ├── m21200_a1-optimized.cl
+│   │   ├── m21200_a1-pure.cl
+│   │   ├── m21200_a3-optimized.cl
+│   │   ├── m21200_a3-pure.cl
+│   │   ├── m21300_a0-pure.cl
+│   │   ├── m21300_a1-pure.cl
+│   │   ├── m21300_a3-pure.cl
+│   │   ├── m21400_a0-optimized.cl
+│   │   ├── m21400_a0-pure.cl
+│   │   ├── m21400_a1-optimized.cl
+│   │   ├── m21400_a1-pure.cl
+│   │   ├── m21400_a3-optimized.cl
+│   │   ├── m21400_a3-pure.cl
+│   │   ├── m21420_a0-pure.cl
+│   │   ├── m21420_a1-pure.cl
+│   │   ├── m21420_a3-pure.cl
+│   │   ├── m21500-pure.cl
+│   │   ├── m21600-pure.cl
+│   │   ├── m21700-pure.cl
+│   │   ├── m21800-pure.cl
+│   │   ├── m22000-pure.cl
+│   │   ├── m22001-pure.cl
+│   │   ├── m22100-pure.cl
+│   │   ├── m22200_a0-optimized.cl
+│   │   ├── m22200_a0-pure.cl
+│   │   ├── m22200_a1-optimized.cl
+│   │   ├── m22200_a1-pure.cl
+│   │   ├── m22200_a3-optimized.cl
+│   │   ├── m22200_a3-pure.cl
+│   │   ├── m22300_a0-optimized.cl
+│   │   ├── m22300_a0-pure.cl
+│   │   ├── m22300_a1-optimized.cl
+│   │   ├── m22300_a1-pure.cl
+│   │   ├── m22300_a3-optimized.cl
+│   │   ├── m22300_a3-pure.cl
+│   │   ├── m22400-pure.cl
+│   │   ├── m22500_a0-optimized.cl
+│   │   ├── m22500_a0-pure.cl
+│   │   ├── m22500_a1-optimized.cl
+│   │   ├── m22500_a1-pure.cl
+│   │   ├── m22500_a3-optimized.cl
+│   │   ├── m22500_a3-pure.cl
+│   │   ├── m22600-pure.cl
+│   │   ├── m22700-pure.cl
+│   │   ├── m22911_a0-pure.cl
+│   │   ├── m22911_a1-pure.cl
+│   │   ├── m22911_a3-pure.cl
+│   │   ├── m22921_a0-pure.cl
+│   │   ├── m22921_a1-pure.cl
+│   │   ├── m22921_a3-pure.cl
+│   │   ├── m22931_a0-pure.cl
+│   │   ├── m22931_a1-pure.cl
+│   │   ├── m22931_a3-pure.cl
+│   │   ├── m22941_a0-pure.cl
+│   │   ├── m22941_a1-pure.cl
+│   │   ├── m22941_a3-pure.cl
+│   │   ├── m22951_a0-pure.cl
+│   │   ├── m22951_a1-pure.cl
+│   │   ├── m22951_a3-pure.cl
+│   │   ├── m23001_a0-optimized.cl
+│   │   ├── m23001_a0-pure.cl
+│   │   ├── m23001_a1-optimized.cl
+│   │   ├── m23001_a1-pure.cl
+│   │   ├── m23001_a3-optimized.cl
+│   │   ├── m23001_a3-pure.cl
+│   │   ├── m23002_a0-optimized.cl
+│   │   ├── m23002_a0-pure.cl
+│   │   ├── m23002_a1-optimized.cl
+│   │   ├── m23002_a1-pure.cl
+│   │   ├── m23002_a3-optimized.cl
+│   │   ├── m23002_a3-pure.cl
+│   │   ├── m23003_a0-optimized.cl
+│   │   ├── m23003_a0-pure.cl
+│   │   ├── m23003_a1-optimized.cl
+│   │   ├── m23003_a1-pure.cl
+│   │   ├── m23003_a3-optimized.cl
+│   │   ├── m23003_a3-pure.cl
+│   │   ├── m23100-pure.cl
+│   │   ├── m23200-pure.cl
+│   │   ├── m23300-pure.cl
+│   │   ├── m23400-pure.cl
+│   │   ├── m23500-pure.cl
+│   │   ├── m23600-pure.cl
+│   │   ├── m23700-optimized.cl
+│   │   ├── m23700-pure.cl
+│   │   ├── m23800-optimized.cl
+│   │   ├── m23800-pure.cl
+│   │   ├── m23900-pure.cl
+│   │   ├── m24100-pure.cl
+│   │   ├── m24200-pure.cl
+│   │   ├── m24300_a0-optimized.cl
+│   │   ├── m24300_a0-pure.cl
+│   │   ├── m24300_a1-optimized.cl
+│   │   ├── m24300_a1-pure.cl
+│   │   ├── m24300_a3-optimized.cl
+│   │   ├── m24300_a3-pure.cl
+│   │   ├── m24410-pure.cl
+│   │   ├── m24420-pure.cl
+│   │   ├── m24500-pure.cl
+│   │   ├── m24610-pure.cl
+│   │   ├── m24620-pure.cl
+│   │   ├── m24630-pure.cl
+│   │   ├── m24700_a0-optimized.cl
+│   │   ├── m24700_a0-pure.cl
+│   │   ├── m24700_a1-optimized.cl
+│   │   ├── m24700_a1-pure.cl
+│   │   ├── m24700_a3-optimized.cl
+│   │   ├── m24700_a3-pure.cl
+│   │   ├── m24800_a0-optimized.cl
+│   │   ├── m24800_a0-pure.cl
+│   │   ├── m24800_a1-optimized.cl
+│   │   ├── m24800_a1-pure.cl
+│   │   ├── m24800_a3-optimized.cl
+│   │   ├── m24800_a3-pure.cl
+│   │   ├── m24900_a0-optimized.cl
+│   │   ├── m24900_a1-optimized.cl
+│   │   ├── m24900_a3-optimized.cl
+│   │   ├── m25000-pure.cl
+│   │   ├── m25100-pure.cl
+│   │   ├── m25200-pure.cl
+│   │   ├── m25300-pure.cl
+│   │   ├── m25400-pure.cl
+│   │   ├── m25500-pure.cl
+│   │   ├── m25600-pure.cl
+│   │   ├── m25700_a0-optimized.cl
+│   │   ├── m25700_a1-optimized.cl
+│   │   ├── m25700_a3-optimized.cl
+│   │   ├── m25800-pure.cl
+│   │   ├── m25900-pure.cl
+│   │   ├── m26000_a0-pure.cl
+│   │   ├── m26000_a1-pure.cl
+│   │   ├── m26000_a3-pure.cl
+│   │   ├── m26100-pure.cl
+│   │   ├── m26200_a0-pure.cl
+│   │   ├── m26200_a1-pure.cl
+│   │   ├── m26200_a3-pure.cl
+│   │   ├── m26300_a0-pure.cl
+│   │   ├── m26300_a1-pure.cl
+│   │   ├── m26300_a3-pure.cl
+│   │   ├── m26401_a0-optimized.cl
+│   │   ├── m26401_a1-optimized.cl
+│   │   ├── m26401_a3-optimized.cl
+│   │   ├── m26402_a0-optimized.cl
+│   │   ├── m26402_a1-optimized.cl
+│   │   ├── m26402_a3-optimized.cl
+│   │   ├── m26403_a0-optimized.cl
+│   │   ├── m26403_a1-optimized.cl
+│   │   ├── m26403_a3-optimized.cl
+│   │   ├── m26500-pure.cl
+│   │   ├── m26600-pure.cl
+│   │   ├── m26700-pure.cl
+│   │   ├── m26800-pure.cl
+│   │   ├── m26900-pure.cl
+│   │   ├── m27000-pure.cl
+│   │   ├── m27100-pure.cl
+│   │   ├── m27200_a0-optimized.cl
+│   │   ├── m27200_a0-pure.cl
+│   │   ├── m27200_a1-optimized.cl
+│   │   ├── m27200_a1-pure.cl
+│   │   ├── m27200_a3-optimized.cl
+│   │   ├── m27200_a3-pure.cl
+│   │   ├── m27300-pure.cl
+│   │   ├── m27400-pure.cl
+│   │   ├── m27500-pure.cl
+│   │   ├── m27600-pure.cl
+│   │   ├── m27700-pure.cl
+│   │   ├── m27800_a0-optimized.cl
+│   │   ├── m27800_a1-optimized.cl
+│   │   ├── m27800_a3-optimized.cl
+│   │   ├── m27900_a0-optimized.cl
+│   │   ├── m27900_a1-optimized.cl
+│   │   ├── m27900_a3-optimized.cl
+│   │   ├── m28000_a0-optimized.cl
+│   │   ├── m28000_a1-optimized.cl
+│   │   ├── m28000_a3-optimized.cl
+│   │   ├── m28100-pure.cl
+│   │   ├── m28200-pure.cl
+│   │   ├── m28300_a0-pure.cl
+│   │   ├── m28300_a1-pure.cl
+│   │   ├── m28300_a3-pure.cl
+│   │   ├── m28400-pure.cl
+│   │   ├── m28501_a0-pure.cl
+│   │   ├── m28501_a1-pure.cl
+│   │   ├── m28501_a3-pure.cl
+│   │   ├── m28502_a0-pure.cl
+│   │   ├── m28502_a1-pure.cl
+│   │   ├── m28502_a3-pure.cl
+│   │   ├── m28505_a0-pure.cl
+│   │   ├── m28505_a1-pure.cl
+│   │   ├── m28505_a3-pure.cl
+│   │   ├── m28506_a0-pure.cl
+│   │   ├── m28506_a1-pure.cl
+│   │   ├── m28506_a3-pure.cl
+│   │   ├── m28600-pure.cl
+│   │   ├── m28700_a0-optimized.cl
+│   │   ├── m28700_a0-pure.cl
+│   │   ├── m28700_a1-optimized.cl
+│   │   ├── m28700_a1-pure.cl
+│   │   ├── m28700_a3-optimized.cl
+│   │   ├── m28700_a3-pure.cl
+│   │   ├── m28800-pure.cl
+│   │   ├── m28900-pure.cl
+│   │   ├── m29000_a0-pure.cl
+│   │   ├── m29000_a1-pure.cl
+│   │   ├── m29000_a3-pure.cl
+│   │   ├── m29100_a0-pure.cl
+│   │   ├── m29100_a1-pure.cl
+│   │   ├── m29100_a3-pure.cl
+│   │   ├── m29200_a0-pure.cl
+│   │   ├── m29200_a1-pure.cl
+│   │   ├── m29200_a3-pure.cl
+│   │   ├── m29600-pure.cl
+│   │   ├── m29700-pure.cl
+│   │   ├── markov_be.cl
+│   │   ├── markov_le.cl
+│   │   └── shared.cl
+│   ├── README.md
+│   ├── rules
+│   │   ├── best64.rule
+│   │   ├── combinator.rule
+│   │   ├── d3ad0ne.rule
+│   │   ├── dive.rule
+│   │   ├── generated2.rule
+│   │   ├── generated.rule
+│   │   ├── hybrid
+│   │   │   ├── append_d_passthrough.rule
+│   │   │   ├── append_d.rule
+│   │   │   ├── append_ds_passthrough.rule
+│   │   │   ├── append_ds.rule
+│   │   │   ├── append_du_passthrough.rule
+│   │   │   ├── append_du.rule
+│   │   │   ├── append_dus_passthrough.rule
+│   │   │   ├── append_dus.rule
+│   │   │   ├── append_hl_passthrough.rule
+│   │   │   ├── append_hl.rule
+│   │   │   ├── append_hu_passthrough.rule
+│   │   │   ├── append_hu.rule
+│   │   │   ├── append_ld_passthrough.rule
+│   │   │   ├── append_ld.rule
+│   │   │   ├── append_lds_passthrough.rule
+│   │   │   ├── append_lds.rule
+│   │   │   ├── append_ldu_passthrough.rule
+│   │   │   ├── append_ldu.rule
+│   │   │   ├── append_ldus_passthrough.rule
+│   │   │   ├── append_ldus.rule
+│   │   │   ├── append_l_passthrough.rule
+│   │   │   ├── append_l.rule
+│   │   │   ├── append_ls_passthrough.rule
+│   │   │   ├── append_ls.rule
+│   │   │   ├── append_lu_passthrough.rule
+│   │   │   ├── append_lu.rule
+│   │   │   ├── append_lus_passthrough.rule
+│   │   │   ├── append_lus.rule
+│   │   │   ├── append_s_passthrough.rule
+│   │   │   ├── append_s.rule
+│   │   │   ├── append_u_passthrough.rule
+│   │   │   ├── append_u.rule
+│   │   │   ├── append_us_passthrough.rule
+│   │   │   ├── append_us.rule
+│   │   │   ├── prepend_d_passthrough.rule
+│   │   │   ├── prepend_d.rule
+│   │   │   ├── prepend_ds_passthrough.rule
+│   │   │   ├── prepend_ds.rule
+│   │   │   ├── prepend_du_passthrough.rule
+│   │   │   ├── prepend_du.rule
+│   │   │   ├── prepend_dus_passthrough.rule
+│   │   │   ├── prepend_dus.rule
+│   │   │   ├── prepend_hl_passthrough.rule
+│   │   │   ├── prepend_hl.rule
+│   │   │   ├── prepend_hu_passthrough.rule
+│   │   │   ├── prepend_hu.rule
+│   │   │   ├── prepend_ld_passthrough.rule
+│   │   │   ├── prepend_ld.rule
+│   │   │   ├── prepend_lds_passthrough.rule
+│   │   │   ├── prepend_lds.rule
+│   │   │   ├── prepend_ldu_passthrough.rule
+│   │   │   ├── prepend_ldu.rule
+│   │   │   ├── prepend_ldus_passthrough.rule
+│   │   │   ├── prepend_ldus.rule
+│   │   │   ├── prepend_l_passthrough.rule
+│   │   │   ├── prepend_l.rule
+│   │   │   ├── prepend_ls_passthrough.rule
+│   │   │   ├── prepend_ls.rule
+│   │   │   ├── prepend_lu_passthrough.rule
+│   │   │   ├── prepend_lu.rule
+│   │   │   ├── prepend_lus_passthrough.rule
+│   │   │   ├── prepend_lus.rule
+│   │   │   ├── prepend_s_passthrough.rule
+│   │   │   ├── prepend_s.rule
+│   │   │   ├── prepend_u_passthrough.rule
+│   │   │   ├── prepend_u.rule
+│   │   │   ├── prepend_us_passthrough.rule
+│   │   │   └── prepend_us.rule
+│   │   ├── Incisive-leetspeak.rule
+│   │   ├── InsidePro-HashManager.rule
+│   │   ├── InsidePro-PasswordsPro.rule
+│   │   ├── leetspeak.rule
+│   │   ├── oscommerce.rule
+│   │   ├── rockyou-30000.rule
+│   │   ├── specific.rule
+│   │   ├── T0XlC_3_rule.rule
+│   │   ├── T0XlC-insert_00-99_1950-2050_toprules_0_F.rule
+│   │   ├── T0XlC_insert_HTML_entities_0_Z.rule
+│   │   ├── T0XlC-insert_space_and_special_0_F.rule
+│   │   ├── T0XlC-insert_top_100_passwords_1_G.rule
+│   │   ├── T0XlC.rule
+│   │   ├── T0XlCv2.rule
+│   │   ├── toggles1.rule
+│   │   ├── toggles2.rule
+│   │   ├── toggles3.rule
+│   │   ├── toggles4.rule
+│   │   ├── toggles5.rule
+│   │   └── unix-ninja-leetspeak.rule
+│   ├── src
+│   │   ├── affinity.c
+│   │   ├── autotune.c
+│   │   ├── backend.c
+│   │   ├── benchmark.c
+│   │   ├── bitmap.c
+│   │   ├── bitops.c
+│   │   ├── brain.c
+│   │   ├── combinator.c
+│   │   ├── common.c
+│   │   ├── convert.c
+│   │   ├── cpt.c
+│   │   ├── cpu_crc32.c
+│   │   ├── debugfile.c
+│   │   ├── dictstat.c
+│   │   ├── dispatch.c
+│   │   ├── dynloader.c
+│   │   ├── emu_general.c
+│   │   ├── emu_inc_bignum_operations.c
+│   │   ├── emu_inc_cipher_aes.c
+│   │   ├── emu_inc_cipher_camellia.c
+│   │   ├── emu_inc_cipher_des.c
+│   │   ├── emu_inc_cipher_kuznyechik.c
+│   │   ├── emu_inc_cipher_serpent.c
+│   │   ├── emu_inc_cipher_twofish.c
+│   │   ├── emu_inc_common.c
+│   │   ├── emu_inc_ecc_secp256k1.c
+│   │   ├── emu_inc_hash_base58.c
+│   │   ├── emu_inc_hash_md4.c
+│   │   ├── emu_inc_hash_md5.c
+│   │   ├── emu_inc_hash_ripemd160.c
+│   │   ├── emu_inc_hash_sha1.c
+│   │   ├── emu_inc_hash_sha224.c
+│   │   ├── emu_inc_hash_sha256.c
+│   │   ├── emu_inc_hash_sha384.c
+│   │   ├── emu_inc_hash_sha512.c
+│   │   ├── emu_inc_hash_streebog256.c
+│   │   ├── emu_inc_hash_streebog512.c
+│   │   ├── emu_inc_hash_whirlpool.c
+│   │   ├── emu_inc_platform.c
+│   │   ├── emu_inc_rp.c
+│   │   ├── emu_inc_rp_optimized.c
+│   │   ├── emu_inc_scalar.c
+│   │   ├── emu_inc_simd.c
+│   │   ├── event.c
+│   │   ├── ext_ADL.c
+│   │   ├── ext_cuda.c
+│   │   ├── ext_hip.c
+│   │   ├── ext_hiprtc.c
+│   │   ├── ext_iokit.c
+│   │   ├── ext_lzma.c
+│   │   ├── ext_metal.m
+│   │   ├── ext_nvapi.c
+│   │   ├── ext_nvml.c
+│   │   ├── ext_nvrtc.c
+│   │   ├── ext_OpenCL.c
+│   │   ├── ext_sysfs_amdgpu.c
+│   │   ├── ext_sysfs_cpu.c
+│   │   ├── filehandling.c
+│   │   ├── folder.c
+│   │   ├── hashcat.c
+│   │   ├── hashes.c
+│   │   ├── hlfmt.c
+│   │   ├── hwmon.c
+│   │   ├── induct.c
+│   │   ├── interface.c
+│   │   ├── keyboard_layout.c
+│   │   ├── locking.c
+│   │   ├── logfile.c
+│   │   ├── loopback.c
+│   │   ├── main.c
+│   │   ├── Makefile
+│   │   ├── memory.c
+│   │   ├── modules
+│   │   │   ├── module_00000.c
+│   │   │   ├── module_00010.c
+│   │   │   ├── module_00011.c
+│   │   │   ├── module_00012.c
+│   │   │   ├── module_00020.c
+│   │   │   ├── module_00021.c
+│   │   │   ├── module_00022.c
+│   │   │   ├── module_00023.c
+│   │   │   ├── module_00024.c
+│   │   │   ├── module_00030.c
+│   │   │   ├── module_00040.c
+│   │   │   ├── module_00050.c
+│   │   │   ├── module_00060.c
+│   │   │   ├── module_00070.c
+│   │   │   ├── module_00100.c
+│   │   │   ├── module_00101.c
+│   │   │   ├── module_00110.c
+│   │   │   ├── module_00111.c
+│   │   │   ├── module_00112.c
+│   │   │   ├── module_00120.c
+│   │   │   ├── module_00121.c
+│   │   │   ├── module_00122.c
+│   │   │   ├── module_00124.c
+│   │   │   ├── module_00125.c
+│   │   │   ├── module_00130.c
+│   │   │   ├── module_00131.c
+│   │   │   ├── module_00132.c
+│   │   │   ├── module_00133.c
+│   │   │   ├── module_00140.c
+│   │   │   ├── module_00141.c
+│   │   │   ├── module_00150.c
+│   │   │   ├── module_00160.c
+│   │   │   ├── module_00170.c
+│   │   │   ├── module_00200.c
+│   │   │   ├── module_00300.c
+│   │   │   ├── module_00400.c
+│   │   │   ├── module_00500.c
+│   │   │   ├── module_00501.c
+│   │   │   ├── module_00600.c
+│   │   │   ├── module_00610.c
+│   │   │   ├── module_00620.c
+│   │   │   ├── module_00900.c
+│   │   │   ├── module_01000.c
+│   │   │   ├── module_01100.c
+│   │   │   ├── module_01300.c
+│   │   │   ├── module_01400.c
+│   │   │   ├── module_01410.c
+│   │   │   ├── module_01411.c
+│   │   │   ├── module_01420.c
+│   │   │   ├── module_01421.c
+│   │   │   ├── module_01430.c
+│   │   │   ├── module_01440.c
+│   │   │   ├── module_01441.c
+│   │   │   ├── module_01450.c
+│   │   │   ├── module_01460.c
+│   │   │   ├── module_01470.c
+│   │   │   ├── module_01500.c
+│   │   │   ├── module_01600.c
+│   │   │   ├── module_01700.c
+│   │   │   ├── module_01710.c
+│   │   │   ├── module_01711.c
+│   │   │   ├── module_01720.c
+│   │   │   ├── module_01722.c
+│   │   │   ├── module_01730.c
+│   │   │   ├── module_01731.c
+│   │   │   ├── module_01740.c
+│   │   │   ├── module_01750.c
+│   │   │   ├── module_01760.c
+│   │   │   ├── module_01770.c
+│   │   │   ├── module_01800.c
+│   │   │   ├── module_02000.c
+│   │   │   ├── module_02100.c
+│   │   │   ├── module_02400.c
+│   │   │   ├── module_02410.c
+│   │   │   ├── module_02500.c
+│   │   │   ├── module_02501.c
+│   │   │   ├── module_02600.c
+│   │   │   ├── module_02611.c
+│   │   │   ├── module_02612.c
+│   │   │   ├── module_02711.c
+│   │   │   ├── module_02811.c
+│   │   │   ├── module_03000.c
+│   │   │   ├── module_03100.c
+│   │   │   ├── module_03200.c
+│   │   │   ├── module_03500.c
+│   │   │   ├── module_03710.c
+│   │   │   ├── module_03711.c
+│   │   │   ├── module_03800.c
+│   │   │   ├── module_03910.c
+│   │   │   ├── module_04010.c
+│   │   │   ├── module_04110.c
+│   │   │   ├── module_04300.c
+│   │   │   ├── module_04400.c
+│   │   │   ├── module_04410.c
+│   │   │   ├── module_04500.c
+│   │   │   ├── module_04510.c
+│   │   │   ├── module_04520.c
+│   │   │   ├── module_04521.c
+│   │   │   ├── module_04522.c
+│   │   │   ├── module_04700.c
+│   │   │   ├── module_04710.c
+│   │   │   ├── module_04711.c
+│   │   │   ├── module_04800.c
+│   │   │   ├── module_04900.c
+│   │   │   ├── module_05000.c
+│   │   │   ├── module_05100.c
+│   │   │   ├── module_05200.c
+│   │   │   ├── module_05300.c
+│   │   │   ├── module_05400.c
+│   │   │   ├── module_05500.c
+│   │   │   ├── module_05600.c
+│   │   │   ├── module_05700.c
+│   │   │   ├── module_05800.c
+│   │   │   ├── module_06000.c
+│   │   │   ├── module_06100.c
+│   │   │   ├── module_06211.c
+│   │   │   ├── module_06212.c
+│   │   │   ├── module_06213.c
+│   │   │   ├── module_06221.c
+│   │   │   ├── module_06222.c
+│   │   │   ├── module_06223.c
+│   │   │   ├── module_06231.c
+│   │   │   ├── module_06232.c
+│   │   │   ├── module_06233.c
+│   │   │   ├── module_06241.c
+│   │   │   ├── module_06242.c
+│   │   │   ├── module_06243.c
+│   │   │   ├── module_06300.c
+│   │   │   ├── module_06400.c
+│   │   │   ├── module_06500.c
+│   │   │   ├── module_06600.c
+│   │   │   ├── module_06700.c
+│   │   │   ├── module_06800.c
+│   │   │   ├── module_06900.c
+│   │   │   ├── module_07000.c
+│   │   │   ├── module_07100.c
+│   │   │   ├── module_07200.c
+│   │   │   ├── module_07300.c
+│   │   │   ├── module_07400.c
+│   │   │   ├── module_07401.c
+│   │   │   ├── module_07500.c
+│   │   │   ├── module_07700.c
+│   │   │   ├── module_07701.c
+│   │   │   ├── module_07800.c
+│   │   │   ├── module_07801.c
+│   │   │   ├── module_07900.c
+│   │   │   ├── module_08000.c
+│   │   │   ├── module_08100.c
+│   │   │   ├── module_08200.c
+│   │   │   ├── module_08300.c
+│   │   │   ├── module_08400.c
+│   │   │   ├── module_08500.c
+│   │   │   ├── module_08600.c
+│   │   │   ├── module_08700.c
+│   │   │   ├── module_08800.c
+│   │   │   ├── module_08900.c
+│   │   │   ├── module_09000.c
+│   │   │   ├── module_09100.c
+│   │   │   ├── module_09200.c
+│   │   │   ├── module_09300.c
+│   │   │   ├── module_09400.c
+│   │   │   ├── module_09500.c
+│   │   │   ├── module_09600.c
+│   │   │   ├── module_09700.c
+│   │   │   ├── module_09710.c
+│   │   │   ├── module_09720.c
+│   │   │   ├── module_09800.c
+│   │   │   ├── module_09810.c
+│   │   │   ├── module_09820.c
+│   │   │   ├── module_09900.c
+│   │   │   ├── module_10000.c
+│   │   │   ├── module_10100.c
+│   │   │   ├── module_10200.c
+│   │   │   ├── module_10300.c
+│   │   │   ├── module_10400.c
+│   │   │   ├── module_10410.c
+│   │   │   ├── module_10420.c
+│   │   │   ├── module_10500.c
+│   │   │   ├── module_10600.c
+│   │   │   ├── module_10700.c
+│   │   │   ├── module_10800.c
+│   │   │   ├── module_10810.c
+│   │   │   ├── module_10820.c
+│   │   │   ├── module_10830.c
+│   │   │   ├── module_10840.c
+│   │   │   ├── module_10870.c
+│   │   │   ├── module_10900.c
+│   │   │   ├── module_10901.c
+│   │   │   ├── module_11000.c
+│   │   │   ├── module_11100.c
+│   │   │   ├── module_11200.c
+│   │   │   ├── module_11300.c
+│   │   │   ├── module_11400.c
+│   │   │   ├── module_11500.c
+│   │   │   ├── module_11600.c
+│   │   │   ├── module_11700.c
+│   │   │   ├── module_11750.c
+│   │   │   ├── module_11760.c
+│   │   │   ├── module_11800.c
+│   │   │   ├── module_11850.c
+│   │   │   ├── module_11860.c
+│   │   │   ├── module_11900.c
+│   │   │   ├── module_12000.c
+│   │   │   ├── module_12001.c
+│   │   │   ├── module_12100.c
+│   │   │   ├── module_12200.c
+│   │   │   ├── module_12300.c
+│   │   │   ├── module_12400.c
+│   │   │   ├── module_12500.c
+│   │   │   ├── module_12600.c
+│   │   │   ├── module_12700.c
+│   │   │   ├── module_12800.c
+│   │   │   ├── module_12900.c
+│   │   │   ├── module_13000.c
+│   │   │   ├── module_13100.c
+│   │   │   ├── module_13200.c
+│   │   │   ├── module_13300.c
+│   │   │   ├── module_13400.c
+│   │   │   ├── module_13500.c
+│   │   │   ├── module_13600.c
+│   │   │   ├── module_13711.c
+│   │   │   ├── module_13712.c
+│   │   │   ├── module_13713.c
+│   │   │   ├── module_13721.c
+│   │   │   ├── module_13722.c
+│   │   │   ├── module_13723.c
+│   │   │   ├── module_13731.c
+│   │   │   ├── module_13732.c
+│   │   │   ├── module_13733.c
+│   │   │   ├── module_13741.c
+│   │   │   ├── module_13742.c
+│   │   │   ├── module_13743.c
+│   │   │   ├── module_13751.c
+│   │   │   ├── module_13752.c
+│   │   │   ├── module_13753.c
+│   │   │   ├── module_13761.c
+│   │   │   ├── module_13762.c
+│   │   │   ├── module_13763.c
+│   │   │   ├── module_13771.c
+│   │   │   ├── module_13772.c
+│   │   │   ├── module_13773.c
+│   │   │   ├── module_13781.c
+│   │   │   ├── module_13782.c
+│   │   │   ├── module_13783.c
+│   │   │   ├── module_13800.c
+│   │   │   ├── module_13900.c
+│   │   │   ├── module_14000.c
+│   │   │   ├── module_14100.c
+│   │   │   ├── module_14400.c
+│   │   │   ├── module_14500.c
+│   │   │   ├── module_14600.c
+│   │   │   ├── module_14700.c
+│   │   │   ├── module_14800.c
+│   │   │   ├── module_14900.c
+│   │   │   ├── module_15000.c
+│   │   │   ├── module_15100.c
+│   │   │   ├── module_15200.c
+│   │   │   ├── module_15300.c
+│   │   │   ├── module_15310.c
+│   │   │   ├── module_15400.c
+│   │   │   ├── module_15500.c
+│   │   │   ├── module_15600.c
+│   │   │   ├── module_15700.c
+│   │   │   ├── module_15900.c
+│   │   │   ├── module_15910.c
+│   │   │   ├── module_16000.c
+│   │   │   ├── module_16100.c
+│   │   │   ├── module_16200.c
+│   │   │   ├── module_16300.c
+│   │   │   ├── module_16400.c
+│   │   │   ├── module_16500.c
+│   │   │   ├── module_16600.c
+│   │   │   ├── module_16700.c
+│   │   │   ├── module_16800.c
+│   │   │   ├── module_16801.c
+│   │   │   ├── module_16900.c
+│   │   │   ├── module_17010.c
+│   │   │   ├── module_17200.c
+│   │   │   ├── module_17210.c
+│   │   │   ├── module_17220.c
+│   │   │   ├── module_17225.c
+│   │   │   ├── module_17230.c
+│   │   │   ├── module_17300.c
+│   │   │   ├── module_17400.c
+│   │   │   ├── module_17500.c
+│   │   │   ├── module_17600.c
+│   │   │   ├── module_17700.c
+│   │   │   ├── module_17800.c
+│   │   │   ├── module_17900.c
+│   │   │   ├── module_18000.c
+│   │   │   ├── module_18100.c
+│   │   │   ├── module_18200.c
+│   │   │   ├── module_18300.c
+│   │   │   ├── module_18400.c
+│   │   │   ├── module_18500.c
+│   │   │   ├── module_18600.c
+│   │   │   ├── module_18700.c
+│   │   │   ├── module_18800.c
+│   │   │   ├── module_18900.c
+│   │   │   ├── module_19000.c
+│   │   │   ├── module_19100.c
+│   │   │   ├── module_19200.c
+│   │   │   ├── module_19300.c
+│   │   │   ├── module_19500.c
+│   │   │   ├── module_19600.c
+│   │   │   ├── module_19700.c
+│   │   │   ├── module_19800.c
+│   │   │   ├── module_19900.c
+│   │   │   ├── module_20011.c
+│   │   │   ├── module_20012.c
+│   │   │   ├── module_20013.c
+│   │   │   ├── module_20200.c
+│   │   │   ├── module_20300.c
+│   │   │   ├── module_20400.c
+│   │   │   ├── module_20500.c
+│   │   │   ├── module_20510.c
+│   │   │   ├── module_20600.c
+│   │   │   ├── module_20710.c
+│   │   │   ├── module_20711.c
+│   │   │   ├── module_20720.c
+│   │   │   ├── module_20800.c
+│   │   │   ├── module_20900.c
+│   │   │   ├── module_21000.c
+│   │   │   ├── module_21100.c
+│   │   │   ├── module_21200.c
+│   │   │   ├── module_21300.c
+│   │   │   ├── module_21400.c
+│   │   │   ├── module_21420.c
+│   │   │   ├── module_21500.c
+│   │   │   ├── module_21501.c
+│   │   │   ├── module_21600.c
+│   │   │   ├── module_21700.c
+│   │   │   ├── module_21800.c
+│   │   │   ├── module_22000.c
+│   │   │   ├── module_22001.c
+│   │   │   ├── module_22100.c
+│   │   │   ├── module_22200.c
+│   │   │   ├── module_22300.c
+│   │   │   ├── module_22301.c
+│   │   │   ├── module_22400.c
+│   │   │   ├── module_22500.c
+│   │   │   ├── module_22600.c
+│   │   │   ├── module_22700.c
+│   │   │   ├── module_22911.c
+│   │   │   ├── module_22921.c
+│   │   │   ├── module_22931.c
+│   │   │   ├── module_22941.c
+│   │   │   ├── module_22951.c
+│   │   │   ├── module_23001.c
+│   │   │   ├── module_23002.c
+│   │   │   ├── module_23003.c
+│   │   │   ├── module_23100.c
+│   │   │   ├── module_23200.c
+│   │   │   ├── module_23300.c
+│   │   │   ├── module_23400.c
+│   │   │   ├── module_23500.c
+│   │   │   ├── module_23600.c
+│   │   │   ├── module_23700.c
+│   │   │   ├── module_23800.c
+│   │   │   ├── module_23900.c
+│   │   │   ├── module_24100.c
+│   │   │   ├── module_24200.c
+│   │   │   ├── module_24300.c
+│   │   │   ├── module_24410.c
+│   │   │   ├── module_24420.c
+│   │   │   ├── module_24500.c
+│   │   │   ├── module_24600.c
+│   │   │   ├── module_24700.c
+│   │   │   ├── module_24800.c
+│   │   │   ├── module_24900.c
+│   │   │   ├── module_25000.c
+│   │   │   ├── module_25100.c
+│   │   │   ├── module_25200.c
+│   │   │   ├── module_25300.c
+│   │   │   ├── module_25400.c
+│   │   │   ├── module_25500.c
+│   │   │   ├── module_25600.c
+│   │   │   ├── module_25700.c
+│   │   │   ├── module_25800.c
+│   │   │   ├── module_25900.c
+│   │   │   ├── module_26000.c
+│   │   │   ├── module_26100.c
+│   │   │   ├── module_26200.c
+│   │   │   ├── module_26300.c
+│   │   │   ├── module_26401.c
+│   │   │   ├── module_26402.c
+│   │   │   ├── module_26403.c
+│   │   │   ├── module_26500.c
+│   │   │   ├── module_26600.c
+│   │   │   ├── module_26700.c
+│   │   │   ├── module_26800.c
+│   │   │   ├── module_26900.c
+│   │   │   ├── module_27000.c
+│   │   │   ├── module_27100.c
+│   │   │   ├── module_27200.c
+│   │   │   ├── module_27300.c
+│   │   │   ├── module_27400.c
+│   │   │   ├── module_27500.c
+│   │   │   ├── module_27600.c
+│   │   │   ├── module_27700.c
+│   │   │   ├── module_27800.c
+│   │   │   ├── module_27900.c
+│   │   │   ├── module_28000.c
+│   │   │   ├── module_28100.c
+│   │   │   ├── module_28200.c
+│   │   │   ├── module_28300.c
+│   │   │   ├── module_28400.c
+│   │   │   ├── module_28501.c
+│   │   │   ├── module_28502.c
+│   │   │   ├── module_28503.c
+│   │   │   ├── module_28504.c
+│   │   │   ├── module_28505.c
+│   │   │   ├── module_28506.c
+│   │   │   ├── module_28600.c
+│   │   │   ├── module_28700.c
+│   │   │   ├── module_28800.c
+│   │   │   ├── module_28900.c
+│   │   │   ├── module_29000.c
+│   │   │   ├── module_29100.c
+│   │   │   ├── module_29200.c
+│   │   │   ├── module_29311.c
+│   │   │   ├── module_29312.c
+│   │   │   ├── module_29313.c
+│   │   │   ├── module_29321.c
+│   │   │   ├── module_29322.c
+│   │   │   ├── module_29323.c
+│   │   │   ├── module_29331.c
+│   │   │   ├── module_29332.c
+│   │   │   ├── module_29333.c
+│   │   │   ├── module_29341.c
+│   │   │   ├── module_29342.c
+│   │   │   ├── module_29343.c
+│   │   │   ├── module_29411.c
+│   │   │   ├── module_29412.c
+│   │   │   ├── module_29413.c
+│   │   │   ├── module_29421.c
+│   │   │   ├── module_29422.c
+│   │   │   ├── module_29423.c
+│   │   │   ├── module_29431.c
+│   │   │   ├── module_29432.c
+│   │   │   ├── module_29433.c
+│   │   │   ├── module_29441.c
+│   │   │   ├── module_29442.c
+│   │   │   ├── module_29443.c
+│   │   │   ├── module_29451.c
+│   │   │   ├── module_29452.c
+│   │   │   ├── module_29453.c
+│   │   │   ├── module_29461.c
+│   │   │   ├── module_29462.c
+│   │   │   ├── module_29463.c
+│   │   │   ├── module_29471.c
+│   │   │   ├── module_29472.c
+│   │   │   ├── module_29473.c
+│   │   │   ├── module_29481.c
+│   │   │   ├── module_29482.c
+│   │   │   ├── module_29483.c
+│   │   │   ├── module_29511.c
+│   │   │   ├── module_29512.c
+│   │   │   ├── module_29513.c
+│   │   │   ├── module_29521.c
+│   │   │   ├── module_29522.c
+│   │   │   ├── module_29523.c
+│   │   │   ├── module_29531.c
+│   │   │   ├── module_29532.c
+│   │   │   ├── module_29533.c
+│   │   │   ├── module_29541.c
+│   │   │   ├── module_29542.c
+│   │   │   ├── module_29543.c
+│   │   │   ├── module_29600.c
+│   │   │   ├── module_29700.c
+│   │   │   ├── module_30000.c
+│   │   │   ├── module_30120.c
+│   │   │   └── module_99999.c
+│   │   ├── monitor.c
+│   │   ├── mpsp.c
+│   │   ├── outfile.c
+│   │   ├── outfile_check.c
+│   │   ├── pidfile.c
+│   │   ├── potfile.c
+│   │   ├── restore.c
+│   │   ├── rp.c
+│   │   ├── rp_cpu.c
+│   │   ├── selftest.c
+│   │   ├── shared.c
+│   │   ├── slow_candidates.c
+│   │   ├── status.c
+│   │   ├── stdout.c
+│   │   ├── straight.c
+│   │   ├── terminal.c
+│   │   ├── thread.c
+│   │   ├── timer.c
+│   │   ├── tuningdb.c
+│   │   ├── usage.c
+│   │   ├── user_options.c
+│   │   └── wordlist.c
+│   ├── tools
+│   │   ├── aescrypt2hashcat.pl
+│   │   ├── benchmark_deep.pl
+│   │   ├── bitwarden2hashcat.py
+│   │   ├── cl_tests
+│   │   │   ├── hashcat_ripemd160_aes_128.img
+│   │   │   ├── hashcat_ripemd160_aes_192.img
+│   │   │   ├── hashcat_ripemd160_aes_256.img
+│   │   │   ├── hashcat_ripemd160_serpent_128.img
+│   │   │   ├── hashcat_ripemd160_serpent_192.img
+│   │   │   ├── hashcat_ripemd160_serpent_256.img
+│   │   │   ├── hashcat_ripemd160_twofish_128.img
+│   │   │   ├── hashcat_ripemd160_twofish_192.img
+│   │   │   ├── hashcat_ripemd160_twofish_256.img
+│   │   │   ├── hashcat_sha1_aes_128.img
+│   │   │   ├── hashcat_sha1_aes_192.img
+│   │   │   ├── hashcat_sha1_aes_256.img
+│   │   │   ├── hashcat_sha1_serpent_128.img
+│   │   │   ├── hashcat_sha1_serpent_192.img
+│   │   │   ├── hashcat_sha1_serpent_256.img
+│   │   │   ├── hashcat_sha1_twofish_128.img
+│   │   │   ├── hashcat_sha1_twofish_192.img
+│   │   │   ├── hashcat_sha1_twofish_256.img
+│   │   │   ├── hashcat_sha256_aes_128.img
+│   │   │   ├── hashcat_sha256_aes_192.img
+│   │   │   ├── hashcat_sha256_aes_256.img
+│   │   │   ├── hashcat_sha256_serpent_128.img
+│   │   │   ├── hashcat_sha256_serpent_192.img
+│   │   │   ├── hashcat_sha256_serpent_256.img
+│   │   │   ├── hashcat_sha256_twofish_128.img
+│   │   │   ├── hashcat_sha256_twofish_192.img
+│   │   │   ├── hashcat_sha256_twofish_256.img
+│   │   │   ├── hashcat_sha512_aes_128.img
+│   │   │   ├── hashcat_sha512_aes_192.img
+│   │   │   ├── hashcat_sha512_aes_256.img
+│   │   │   ├── hashcat_sha512_serpent_128.img
+│   │   │   ├── hashcat_sha512_serpent_192.img
+│   │   │   ├── hashcat_sha512_serpent_256.img
+│   │   │   ├── hashcat_sha512_twofish_128.img
+│   │   │   ├── hashcat_sha512_twofish_192.img
+│   │   │   ├── hashcat_sha512_twofish_256.img
+│   │   │   ├── hashcat_whirlpool_aes_128.img
+│   │   │   ├── hashcat_whirlpool_aes_192.img
+│   │   │   ├── hashcat_whirlpool_aes_256.img
+│   │   │   ├── hashcat_whirlpool_serpent_128.img
+│   │   │   ├── hashcat_whirlpool_serpent_192.img
+│   │   │   ├── hashcat_whirlpool_serpent_256.img
+│   │   │   ├── hashcat_whirlpool_twofish_128.img
+│   │   │   ├── hashcat_whirlpool_twofish_192.img
+│   │   │   └── hashcat_whirlpool_twofish_256.img
+│   │   ├── code_generators
+│   │   │   ├── GEN_AMD_switch_buffer_by_offset_1x64_be_S.pl
+│   │   │   ├── GEN_AMD_switch_buffer_by_offset_1x64_le_S.pl
+│   │   │   ├── GEN_AMD_switch_buffer_by_offset_4x4_be_S.pl
+│   │   │   ├── GEN_AMD_switch_buffer_by_offset_4x4_carry_be_S.pl
+│   │   │   ├── GEN_AMD_switch_buffer_by_offset_4x4_le_S.pl
+│   │   │   ├── GEN_AMD_switch_buffer_by_offset_8x4_be_S.pl
+│   │   │   ├── GEN_AMD_switch_buffer_by_offset_8x4_carry_be_S.pl
+│   │   │   ├── GEN_NV_switch_buffer_by_offset_1x64_be_S.pl
+│   │   │   ├── GEN_NV_switch_buffer_by_offset_1x64_le_S.pl
+│   │   │   ├── GEN_NV_switch_buffer_by_offset_4x4_be_S.pl
+│   │   │   ├── GEN_NV_switch_buffer_by_offset_4x4_carry_be_S.pl
+│   │   │   ├── GEN_NV_switch_buffer_by_offset_4x4_le_S.pl
+│   │   │   ├── GEN_NV_switch_buffer_by_offset_8x4_be_S.pl
+│   │   │   ├── GEN_NV_switch_buffer_by_offset_8x4_carry_be_S.pl
+│   │   │   ├── GEN_truncate_block_16x4_be.pl
+│   │   │   ├── GEN_truncate_block_16x4_le.pl
+│   │   │   ├── GEN_truncate_block_4x4_be.pl
+│   │   │   └── GEN_truncate_block_4x4_le.pl
+│   │   ├── cryptoloop2hashcat.py
+│   │   ├── exodus2hashcat.py
+│   │   ├── install_modules.sh
+│   │   ├── luks2hashcat.py
+│   │   ├── metamask2hashcat.py
+│   │   ├── mozilla2hashcat.py
+│   │   ├── package_bin.sh
+│   │   ├── pdf_tests
+│   │   │   ├── owner.hash
+│   │   │   ├── owner.in
+│   │   │   ├── owner.pdf
+│   │   │   ├── _README.txt
+│   │   │   ├── user.hash
+│   │   │   ├── user-owner.hash
+│   │   │   ├── user-owner.pdf
+│   │   │   ├── user-owner_userpw-in-hash.hash
+│   │   │   ├── user-owner_userpw-in-hash.in
+│   │   │   ├── user.pdf
+│   │   │   ├── user_userpw-in-hash.hash
+│   │   │   └── user_userpw-in-hash.in
+│   │   ├── radmin3_to_hashcat.pl
+│   │   ├── recursivefiles2sha256sum.pl
+│   │   ├── rules-test-cases.yaml
+│   │   ├── securenotes2hashcat.pl
+│   │   ├── sqlcipher2hashcat.pl
+│   │   ├── tc_tests
+│   │   │   ├── hashcat_ripemd160_aes_boot.tc
+│   │   │   ├── hashcat_ripemd160_aes.tc
+│   │   │   ├── hashcat_ripemd160_aes-twofish_boot.tc
+│   │   │   ├── hashcat_ripemd160_aes-twofish-serpent_boot.tc
+│   │   │   ├── hashcat_ripemd160_aes-twofish-serpent.tc
+│   │   │   ├── hashcat_ripemd160_aes-twofish.tc
+│   │   │   ├── hashcat_ripemd160_serpent-aes_boot.tc
+│   │   │   ├── hashcat_ripemd160_serpent-aes.tc
+│   │   │   ├── hashcat_ripemd160_serpent_boot.tc
+│   │   │   ├── hashcat_ripemd160_serpent.tc
+│   │   │   ├── hashcat_ripemd160_serpent-twofish-aes_boot.tc
+│   │   │   ├── hashcat_ripemd160_serpent-twofish-aes.tc
+│   │   │   ├── hashcat_ripemd160_twofish_boot.tc
+│   │   │   ├── hashcat_ripemd160_twofish-serpent_boot.tc
+│   │   │   ├── hashcat_ripemd160_twofish-serpent.tc
+│   │   │   ├── hashcat_ripemd160_twofish.tc
+│   │   │   ├── hashcat_sha512_aes.tc
+│   │   │   ├── hashcat_sha512_aes-twofish-serpent.tc
+│   │   │   ├── hashcat_sha512_aes-twofish.tc
+│   │   │   ├── hashcat_sha512_serpent-aes.tc
+│   │   │   ├── hashcat_sha512_serpent.tc
+│   │   │   ├── hashcat_sha512_serpent-twofish-aes.tc
+│   │   │   ├── hashcat_sha512_twofish-serpent.tc
+│   │   │   ├── hashcat_sha512_twofish.tc
+│   │   │   ├── hashcat_whirlpool_aes.tc
+│   │   │   ├── hashcat_whirlpool_aes-twofish-serpent.tc
+│   │   │   ├── hashcat_whirlpool_aes-twofish.tc
+│   │   │   ├── hashcat_whirlpool_serpent-aes.tc
+│   │   │   ├── hashcat_whirlpool_serpent.tc
+│   │   │   ├── hashcat_whirlpool_serpent-twofish-aes.tc
+│   │   │   ├── hashcat_whirlpool_twofish-serpent.tc
+│   │   │   └── hashcat_whirlpool_twofish.tc
+│   │   ├── test_modules
+│   │   │   ├── m00000.pm
+│   │   │   ├── m00010.pm
+│   │   │   ├── m00011.pm
+│   │   │   ├── m00012.pm
+│   │   │   ├── m00020.pm
+│   │   │   ├── m00021.pm
+│   │   │   ├── m00022.pm
+│   │   │   ├── m00023.pm
+│   │   │   ├── m00024.pm
+│   │   │   ├── m00030.pm
+│   │   │   ├── m00040.pm
+│   │   │   ├── m00050.pm
+│   │   │   ├── m00060.pm
+│   │   │   ├── m00070.pm
+│   │   │   ├── m00100.pm
+│   │   │   ├── m00101.pm
+│   │   │   ├── m00110.pm
+│   │   │   ├── m00111.pm
+│   │   │   ├── m00112.pm
+│   │   │   ├── m00120.pm
+│   │   │   ├── m00121.pm
+│   │   │   ├── m00122.pm
+│   │   │   ├── m00124.pm
+│   │   │   ├── m00125.pm
+│   │   │   ├── m00130.pm
+│   │   │   ├── m00131.pm
+│   │   │   ├── m00132.pm
+│   │   │   ├── m00133.pm
+│   │   │   ├── m00140.pm
+│   │   │   ├── m00141.pm
+│   │   │   ├── m00150.pm
+│   │   │   ├── m00160.pm
+│   │   │   ├── m00170.pm
+│   │   │   ├── m00200.pm
+│   │   │   ├── m00300.pm
+│   │   │   ├── m00400.pm
+│   │   │   ├── m00500.pm
+│   │   │   ├── m00600.pm
+│   │   │   ├── m00610.pm
+│   │   │   ├── m00620.pm
+│   │   │   ├── m00900.pm
+│   │   │   ├── m01000.pm
+│   │   │   ├── m01100.pm
+│   │   │   ├── m01300.pm
+│   │   │   ├── m01400.pm
+│   │   │   ├── m01410.pm
+│   │   │   ├── m01411.pm
+│   │   │   ├── m01420.pm
+│   │   │   ├── m01421.pm
+│   │   │   ├── m01430.pm
+│   │   │   ├── m01440.pm
+│   │   │   ├── m01441.pm
+│   │   │   ├── m01450.pm
+│   │   │   ├── m01460.pm
+│   │   │   ├── m01470.pm
+│   │   │   ├── m01500.pm
+│   │   │   ├── m01600.pm
+│   │   │   ├── m01700.pm
+│   │   │   ├── m01710.pm
+│   │   │   ├── m01711.pm
+│   │   │   ├── m01720.pm
+│   │   │   ├── m01722.pm
+│   │   │   ├── m01730.pm
+│   │   │   ├── m01731.pm
+│   │   │   ├── m01740.pm
+│   │   │   ├── m01750.pm
+│   │   │   ├── m01760.pm
+│   │   │   ├── m01770.pm
+│   │   │   ├── m01800.pm
+│   │   │   ├── m02100.pm
+│   │   │   ├── m02400.pm
+│   │   │   ├── m02410.pm
+│   │   │   ├── m02500.pm
+│   │   │   ├── m02600.pm
+│   │   │   ├── m02611.pm
+│   │   │   ├── m02612.pm
+│   │   │   ├── m02711.pm
+│   │   │   ├── m02811.pm
+│   │   │   ├── m03000.pm
+│   │   │   ├── m03100.pm
+│   │   │   ├── m03200.pm
+│   │   │   ├── m03500.pm
+│   │   │   ├── m03710.pm
+│   │   │   ├── m03711.pm
+│   │   │   ├── m03800.pm
+│   │   │   ├── m03910.pm
+│   │   │   ├── m04010.pm
+│   │   │   ├── m04110.pm
+│   │   │   ├── m04300.pm
+│   │   │   ├── m04400.pm
+│   │   │   ├── m04410.pm
+│   │   │   ├── m04500.pm
+│   │   │   ├── m04510.pm
+│   │   │   ├── m04520.pm
+│   │   │   ├── m04521.pm
+│   │   │   ├── m04522.pm
+│   │   │   ├── m04700.pm
+│   │   │   ├── m04710.pm
+│   │   │   ├── m04711.pm
+│   │   │   ├── m04800.pm
+│   │   │   ├── m04900.pm
+│   │   │   ├── m05000.pm
+│   │   │   ├── m05100.pm
+│   │   │   ├── m05300.pm
+│   │   │   ├── m05400.pm
+│   │   │   ├── m05500.pm
+│   │   │   ├── m05600.pm
+│   │   │   ├── m05700.pm
+│   │   │   ├── m05800.pm
+│   │   │   ├── m06000.pm
+│   │   │   ├── m06100.pm
+│   │   │   ├── m06300.pm
+│   │   │   ├── m06400.pm
+│   │   │   ├── m06500.pm
+│   │   │   ├── m06600.pm
+│   │   │   ├── m06700.pm
+│   │   │   ├── m06800.pm
+│   │   │   ├── m06900.pm
+│   │   │   ├── m07000.pm
+│   │   │   ├── m07100.pm
+│   │   │   ├── m07200.pm
+│   │   │   ├── m07300.pm
+│   │   │   ├── m07400.pm
+│   │   │   ├── m07401.pm
+│   │   │   ├── m07500.pm
+│   │   │   ├── m07700.pm
+│   │   │   ├── m07701.pm
+│   │   │   ├── m07800.pm
+│   │   │   ├── m07801.pm
+│   │   │   ├── m07900.pm
+│   │   │   ├── m08000.pm
+│   │   │   ├── m08100.pm
+│   │   │   ├── m08200.pm
+│   │   │   ├── m08300.pm
+│   │   │   ├── m08400.pm
+│   │   │   ├── m08500.pm
+│   │   │   ├── m08600.pm
+│   │   │   ├── m08700.pm
+│   │   │   ├── m08900.pm
+│   │   │   ├── m09100.pm
+│   │   │   ├── m09200.pm
+│   │   │   ├── m09300.pm
+│   │   │   ├── m09400.pm
+│   │   │   ├── m09500.pm
+│   │   │   ├── m09600.pm
+│   │   │   ├── m09700.pm
+│   │   │   ├── m09800.pm
+│   │   │   ├── m09900.pm
+│   │   │   ├── m10000.pm
+│   │   │   ├── m10100.pm
+│   │   │   ├── m10200.pm
+│   │   │   ├── m10300.pm
+│   │   │   ├── m10400.pm
+│   │   │   ├── m10500.pm
+│   │   │   ├── m10600.pm
+│   │   │   ├── m10700.pm
+│   │   │   ├── m10800.pm
+│   │   │   ├── m10810.pm
+│   │   │   ├── m10820.pm
+│   │   │   ├── m10830.pm
+│   │   │   ├── m10840.pm
+│   │   │   ├── m10870.pm
+│   │   │   ├── m10900.pm
+│   │   │   ├── m10901.pm
+│   │   │   ├── m11000.pm
+│   │   │   ├── m11100.pm
+│   │   │   ├── m11200.pm
+│   │   │   ├── m11300.pm
+│   │   │   ├── m11400.pm
+│   │   │   ├── m11500.pm
+│   │   │   ├── m11600.pm
+│   │   │   ├── m11700.pm
+│   │   │   ├── m11750.pm
+│   │   │   ├── m11760.pm
+│   │   │   ├── m11800.pm
+│   │   │   ├── m11850.pm
+│   │   │   ├── m11860.pm
+│   │   │   ├── m11900.pm
+│   │   │   ├── m12000.pm
+│   │   │   ├── m12001.pm
+│   │   │   ├── m12100.pm
+│   │   │   ├── m12200.pm
+│   │   │   ├── m12300.pm
+│   │   │   ├── m12400.pm
+│   │   │   ├── m12500.pm
+│   │   │   ├── m12600.pm
+│   │   │   ├── m12700.pm
+│   │   │   ├── m12800.pm
+│   │   │   ├── m12900.pm
+│   │   │   ├── m13000.pm
+│   │   │   ├── m13100.pm
+│   │   │   ├── m13200.pm
+│   │   │   ├── m13300.pm
+│   │   │   ├── m13400.pm
+│   │   │   ├── m13500.pm
+│   │   │   ├── m13600.pm
+│   │   │   ├── m13800.pm
+│   │   │   ├── m13900.pm
+│   │   │   ├── m14000.pm
+│   │   │   ├── m14100.pm
+│   │   │   ├── m14400.pm
+│   │   │   ├── m14700.pm
+│   │   │   ├── m14800.pm
+│   │   │   ├── m14900.pm
+│   │   │   ├── m15000.pm
+│   │   │   ├── m15100.pm
+│   │   │   ├── m15200.pm
+│   │   │   ├── m15300.pm
+│   │   │   ├── m15310.pm
+│   │   │   ├── m15400.pm
+│   │   │   ├── m15500.pm
+│   │   │   ├── m15600.pm
+│   │   │   ├── m15700.pm
+│   │   │   ├── m15900.pm
+│   │   │   ├── m15910.pm
+│   │   │   ├── m16000.pm
+│   │   │   ├── m16100.pm
+│   │   │   ├── m16200.pm
+│   │   │   ├── m16300.pm
+│   │   │   ├── m16400.pm
+│   │   │   ├── m16500.pm
+│   │   │   ├── m16600.pm
+│   │   │   ├── m16700.pm
+│   │   │   ├── m16800.pm
+│   │   │   ├── m16900.pm
+│   │   │   ├── m17300.pm
+│   │   │   ├── m17400.pm
+│   │   │   ├── m17500.pm
+│   │   │   ├── m17600.pm
+│   │   │   ├── m17700.pm
+│   │   │   ├── m17800.pm
+│   │   │   ├── m17900.pm
+│   │   │   ├── m18000.pm
+│   │   │   ├── m18100.pm
+│   │   │   ├── m18200.pm
+│   │   │   ├── m18300.pm
+│   │   │   ├── m18400.pm
+│   │   │   ├── m18500.pm
+│   │   │   ├── m18600.pm
+│   │   │   ├── m18700.pm
+│   │   │   ├── m18800.pm
+│   │   │   ├── m18900.pm
+│   │   │   ├── m19000.pm
+│   │   │   ├── m19100.pm
+│   │   │   ├── m19200.pm
+│   │   │   ├── m19300.pm
+│   │   │   ├── m19500.pm
+│   │   │   ├── m19600.pm
+│   │   │   ├── m19700.pm
+│   │   │   ├── m19800.pm
+│   │   │   ├── m19900.pm
+│   │   │   ├── m20011.pm
+│   │   │   ├── m20012.pm
+│   │   │   ├── m20013.pm
+│   │   │   ├── m20200.pm
+│   │   │   ├── m20300.pm
+│   │   │   ├── m20400.pm
+│   │   │   ├── m20500.pm
+│   │   │   ├── m20510.pm
+│   │   │   ├── m20600.pm
+│   │   │   ├── m20710.pm
+│   │   │   ├── m20711.pm
+│   │   │   ├── m20720.pm
+│   │   │   ├── m20800.pm
+│   │   │   ├── m20900.pm
+│   │   │   ├── m21000.pm
+│   │   │   ├── m21100.pm
+│   │   │   ├── m21200.pm
+│   │   │   ├── m21300.pm
+│   │   │   ├── m21400.pm
+│   │   │   ├── m21420.pm
+│   │   │   ├── m21500.pm
+│   │   │   ├── m21501.pm
+│   │   │   ├── m21600.pm
+│   │   │   ├── m21700.pm
+│   │   │   ├── m21800.pm
+│   │   │   ├── m22000.pm
+│   │   │   ├── m22100.pm
+│   │   │   ├── m22200.pm
+│   │   │   ├── m22300.pm
+│   │   │   ├── m22301.pm
+│   │   │   ├── m22400.pm
+│   │   │   ├── m22500.pm
+│   │   │   ├── m22600.pm
+│   │   │   ├── m22700.pm
+│   │   │   ├── m22911.pm
+│   │   │   ├── m22921.pm
+│   │   │   ├── m22931.pm
+│   │   │   ├── m22941.pm
+│   │   │   ├── m22951.pm
+│   │   │   ├── m23001.pm
+│   │   │   ├── m23002.pm
+│   │   │   ├── m23003.pm
+│   │   │   ├── m23100.pm
+│   │   │   ├── m23200.pm
+│   │   │   ├── m23300.pm
+│   │   │   ├── m23400.pm
+│   │   │   ├── m23500.pm
+│   │   │   ├── m23600.pm
+│   │   │   ├── m23700.pm
+│   │   │   ├── m23900.pm
+│   │   │   ├── m24100.pm
+│   │   │   ├── m24200.pm
+│   │   │   ├── m24300.pm
+│   │   │   ├── m24410.pm
+│   │   │   ├── m24420.pm
+│   │   │   ├── m24500.pm
+│   │   │   ├── m24600.pm
+│   │   │   ├── m24700.pm
+│   │   │   ├── m24800.pm
+│   │   │   ├── m24900.pm
+│   │   │   ├── m25000.pm
+│   │   │   ├── m25100.pm
+│   │   │   ├── m25200.pm
+│   │   │   ├── m25300.pm
+│   │   │   ├── m25400.pm
+│   │   │   ├── m25500.pm
+│   │   │   ├── m25600.pm
+│   │   │   ├── m25700.pm
+│   │   │   ├── m25800.pm
+│   │   │   ├── m25900.pm
+│   │   │   ├── m26000.pm
+│   │   │   ├── m26100.pm
+│   │   │   ├── m26200.pm
+│   │   │   ├── m26300.pm
+│   │   │   ├── m26401.pm
+│   │   │   ├── m26402.pm
+│   │   │   ├── m26403.pm
+│   │   │   ├── m26500.pm
+│   │   │   ├── m26600.pm
+│   │   │   ├── m26700.pm
+│   │   │   ├── m26800.pm
+│   │   │   ├── m26900.pm
+│   │   │   ├── m27000.pm
+│   │   │   ├── m27100.pm
+│   │   │   ├── m27200.pm
+│   │   │   ├── m27300.pm
+│   │   │   ├── m27400.pm
+│   │   │   ├── m27500.pm
+│   │   │   ├── m27600.pm
+│   │   │   ├── m27700.pm
+│   │   │   ├── m27800.pm
+│   │   │   ├── m27900.pm
+│   │   │   ├── m28000.pm
+│   │   │   ├── m28100.pm
+│   │   │   ├── m28200.pm
+│   │   │   ├── m28300.pm
+│   │   │   ├── m28400.pm
+│   │   │   ├── m28501.pm
+│   │   │   ├── m28502.pm
+│   │   │   ├── m28503.pm
+│   │   │   ├── m28504.pm
+│   │   │   ├── m28505.pm
+│   │   │   ├── m28506.pm
+│   │   │   ├── m28600.pm
+│   │   │   ├── m28700.pm
+│   │   │   ├── m28800.pm
+│   │   │   ├── m28900.pm
+│   │   │   ├── m29000.pm
+│   │   │   ├── m29100.pm
+│   │   │   ├── m29200.pm
+│   │   │   ├── m29600.pm
+│   │   │   ├── m29700.pm
+│   │   │   └── README.md
+│   │   ├── test.pl
+│   │   ├── test_rules.pl
+│   │   ├── test.sh
+│   │   ├── truecrypt2hashcat.py
+│   │   ├── vc_tests
+│   │   │   ├── hashcat_ripemd160_aes_boot.vc
+│   │   │   ├── hashcat_ripemd160_aes-twofish_boot.vc
+│   │   │   ├── hashcat_ripemd160_aes-twofish-serpent_boot.vc
+│   │   │   ├── hashcat_ripemd160_aes-twofish-serpent.vc
+│   │   │   ├── hashcat_ripemd160_aes-twofish.vc
+│   │   │   ├── hashcat_ripemd160_aes.vc
+│   │   │   ├── hashcat_ripemd160_serpent-aes.vc
+│   │   │   ├── hashcat_ripemd160_serpent-twofish-aes.vc
+│   │   │   ├── hashcat_ripemd160_serpent.vc
+│   │   │   ├── hashcat_ripemd160_twofish-serpent.vc
+│   │   │   ├── hashcat_ripemd160_twofish.vc
+│   │   │   ├── hashcat_sha256_aes_boot_pim500.vc
+│   │   │   ├── hashcat_sha256_aes-twofish-serpent.vc
+│   │   │   ├── hashcat_sha256_aes-twofish.vc
+│   │   │   ├── hashcat_sha256_aes.vc
+│   │   │   ├── hashcat_sha256_camellia-kuznyechik.vc
+│   │   │   ├── hashcat_sha256_camellia-serpent.vc
+│   │   │   ├── hashcat_sha256_camellia.vc
+│   │   │   ├── hashcat_sha256_kuznyechik-aes.vc
+│   │   │   ├── hashcat_sha256_kuznyechik-serpent-camellia.vc
+│   │   │   ├── hashcat_sha256_kuznyechik-twofish.vc
+│   │   │   ├── hashcat_sha256_kuznyechik.vc
+│   │   │   ├── hashcat_sha256_serpent-aes_boot.vc
+│   │   │   ├── hashcat_sha256_serpent-aes.vc
+│   │   │   ├── hashcat_sha256_serpent-twofish-aes_boot.vc
+│   │   │   ├── hashcat_sha256_serpent-twofish-aes.vc
+│   │   │   ├── hashcat_sha256_serpent.vc
+│   │   │   ├── hashcat_sha256_twofish_boot.vc
+│   │   │   ├── hashcat_sha256_twofish-serpent.vc
+│   │   │   ├── hashcat_sha256_twofish.vc
+│   │   │   ├── hashcat_sha512_aes-twofish-serpent.vc
+│   │   │   ├── hashcat_sha512_aes-twofish.vc
+│   │   │   ├── hashcat_sha512_aes.vc
+│   │   │   ├── hashcat_sha512_camellia-kuznyechik.vc
+│   │   │   ├── hashcat_sha512_camellia-serpent.vc
+│   │   │   ├── hashcat_sha512_camellia.vc
+│   │   │   ├── hashcat_sha512_kuznyechik-aes.vc
+│   │   │   ├── hashcat_sha512_kuznyechik-serpent-camellia.vc
+│   │   │   ├── hashcat_sha512_kuznyechik-twofish.vc
+│   │   │   ├── hashcat_sha512_kuznyechik.vc
+│   │   │   ├── hashcat_sha512_serpent-aes.vc
+│   │   │   ├── hashcat_sha512_serpent-twofish-aes.vc
+│   │   │   ├── hashcat_sha512_serpent.vc
+│   │   │   ├── hashcat_sha512_twofish-serpent.vc
+│   │   │   ├── hashcat_sha512_twofish.vc
+│   │   │   ├── hashcat_streebog_aes-twofish-serpent.vc
+│   │   │   ├── hashcat_streebog_aes-twofish.vc
+│   │   │   ├── hashcat_streebog_aes.vc
+│   │   │   ├── hashcat_streebog_camellia-kuznyechik.vc
+│   │   │   ├── hashcat_streebog_camellia-serpent.vc
+│   │   │   ├── hashcat_streebog_camellia.vc
+│   │   │   ├── hashcat_streebog_kuznyechik-aes.vc
+│   │   │   ├── hashcat_streebog_kuznyechik-serpent-camellia.vc
+│   │   │   ├── hashcat_streebog_kuznyechik-twofish.vc
+│   │   │   ├── hashcat_streebog_kuznyechik.vc
+│   │   │   ├── hashcat_streebog_serpent-aes.vc
+│   │   │   ├── hashcat_streebog_serpent-twofish-aes.vc
+│   │   │   ├── hashcat_streebog_serpent.vc
+│   │   │   ├── hashcat_streebog_twofish-serpent.vc
+│   │   │   ├── hashcat_streebog_twofish.vc
+│   │   │   ├── hashcat_whirlpool_aes-twofish-serpent.vc
+│   │   │   ├── hashcat_whirlpool_aes-twofish.vc
+│   │   │   ├── hashcat_whirlpool_aes.vc
+│   │   │   ├── hashcat_whirlpool_camellia-kuznyechik.vc
+│   │   │   ├── hashcat_whirlpool_camellia-serpent.vc
+│   │   │   ├── hashcat_whirlpool_camellia.vc
+│   │   │   ├── hashcat_whirlpool_kuznyechik-aes.vc
+│   │   │   ├── hashcat_whirlpool_kuznyechik-serpent-camellia.vc
+│   │   │   ├── hashcat_whirlpool_kuznyechik-twofish.vc
+│   │   │   ├── hashcat_whirlpool_kuznyechik.vc
+│   │   │   ├── hashcat_whirlpool_serpent-aes.vc
+│   │   │   ├── hashcat_whirlpool_serpent-twofish-aes.vc
+│   │   │   ├── hashcat_whirlpool_serpent.vc
+│   │   │   ├── hashcat_whirlpool_twofish-serpent.vc
+│   │   │   └── hashcat_whirlpool_twofish.vc
+│   │   ├── veracrypt2hashcat.py
+│   │   ├── virtualbox2hashcat.py
+│   │   ├── vmwarevmx2hashcat.py
+│   │   ├── win-iconv-32.diff
+│   │   └── win-iconv-64.diff
+│   └── tunings
+│       ├── Alias.hctune
+│       ├── Device_GeForce_GTX_TITAN.hctune
+│       ├── Module_08900.hctune
+│       ├── Module_09300.hctune
+│       ├── Module_15700.hctune
+│       ├── Module_22700.hctune
+│       ├── Module_27700.hctune
+│       ├── Module_28200.hctune
+│       ├── Modules_bcrypt.hctune
+│       ├── Modules_default.hctune
+│       └── README.md
+├── hashcat-6.2.6.tar.gz -> /home/felix/packages/hashcat/hashcat-6.2.6.tar.gz
+└── hashcat-6.2.6.tar.gz.asc -> /home/felix/packages/hashcat/hashcat-6.2.6.tar.gz.asc
+
+118 directories, 3393 files

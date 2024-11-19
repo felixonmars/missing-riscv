@@ -1,0 +1,67 @@
+src
+├── jiter-0.7.0
+│   ├── Cargo.toml
+│   ├── codecov.yml
+│   ├── crates
+│   │   ├── fuzz
+│   │   │   ├── Cargo.toml
+│   │   │   └── fuzz_targets
+│   │   │       ├── compare_skip.rs
+│   │   │       └── compare_to_serde.rs
+│   │   ├── jiter
+│   │   │   ├── benches
+│   │   │   │   ├── bigints_array.json
+│   │   │   │   ├── floats_array.json
+│   │   │   │   ├── generate_big.py
+│   │   │   │   ├── main.rs
+│   │   │   │   ├── massive_ints_array.json
+│   │   │   │   ├── medium_response.json
+│   │   │   │   ├── pass1.json
+│   │   │   │   ├── pass2.json
+│   │   │   │   ├── python.rs
+│   │   │   │   ├── sentence.json
+│   │   │   │   ├── short_numbers.json
+│   │   │   │   ├── string_array.json
+│   │   │   │   ├── string_array_unique.json
+│   │   │   │   ├── true_array.json
+│   │   │   │   ├── true_object.json
+│   │   │   │   ├── unicode.json
+│   │   │   │   └── x100.json
+│   │   │   ├── build.rs
+│   │   │   ├── Cargo.toml
+│   │   │   ├── LICENSE -> ../../LICENSE
+│   │   │   ├── README.md
+│   │   │   ├── src
+│   │   │   │   ├── errors.rs
+│   │   │   │   ├── jiter.rs
+│   │   │   │   ├── lazy_index_map.rs
+│   │   │   │   ├── lib.rs
+│   │   │   │   ├── number_decoder.rs
+│   │   │   │   ├── parse.rs
+│   │   │   │   ├── py_lossless_float.rs
+│   │   │   │   ├── py_string_cache.rs
+│   │   │   │   ├── python.rs
+│   │   │   │   ├── simd_aarch64.rs
+│   │   │   │   ├── string_decoder.rs
+│   │   │   │   └── value.rs
+│   │   │   └── tests
+│   │   │       ├── main.rs
+│   │   │       └── python.rs
+│   │   └── jiter-python
+│   │       ├── bench.py
+│   │       ├── Cargo.toml
+│   │       ├── jiter.pyi
+│   │       ├── pyproject.toml
+│   │       ├── README.md
+│   │       ├── requirements.txt
+│   │       ├── src
+│   │       │   └── lib.rs
+│   │       └── tests
+│   │           ├── requirements.txt
+│   │           └── test_jiter.py
+│   ├── LICENSE
+│   ├── Makefile
+│   └── README.md
+└── python-jiter-0.7.0.tar.gz -> /home/felix/packages/python-jiter/python-jiter-0.7.0.tar.gz
+
+12 directories, 53 files

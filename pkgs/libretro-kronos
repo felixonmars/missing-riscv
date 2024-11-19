@@ -1,0 +1,2870 @@
+src
+└── libretro-yabause
+    ├── appveyor.yml
+    ├── README.md
+    ├── win_template
+    │   ├── icudt53.dll
+    │   ├── icuin53.dll
+    │   ├── icuuc53.dll
+    │   ├── mini18n.dll
+    │   ├── platforms
+    │   │   ├── qminimald.dll
+    │   │   ├── qminimal.dll
+    │   │   ├── qoffscreend.dll
+    │   │   ├── qoffscreen.dll
+    │   │   ├── qwindowsd.dll
+    │   │   └── qwindows.dll
+    │   ├── Qt5Core.dll
+    │   ├── Qt5Gui.dll
+    │   ├── Qt5Multimedia.dll
+    │   ├── Qt5Network.dll
+    │   ├── Qt5OpenGL.dll
+    │   ├── Qt5Widgets.dll
+    │   ├── readme.txt
+    │   ├── SDL2.dll
+    │   └── trans
+    │       ├── kronos_ar.yts
+    │       ├── kronos_de.yts
+    │       ├── kronos_es.yts
+    │       ├── kronos_fr.yts
+    │       ├── kronos_it.yts
+    │       ├── kronos_ja.yts
+    │       ├── kronos_lt.yts
+    │       ├── kronos_nl.yts
+    │       ├── kronos_pt_BR.yts
+    │       ├── kronos_pt.yts
+    │       ├── kronos_ru.yts
+    │       ├── kronos_sv.yts
+    │       ├── kronos_zh_CN.yts
+    │       └── kronos_zh_TW.yts
+    └── yabause
+        ├── AUTHORS
+        ├── ChangeLog
+        ├── CMake
+        │   ├── Packages
+        │   │   ├── FindDirectX.cmake
+        │   │   ├── FindEGL.cmake
+        │   │   └── FindOpenGLES.cmake
+        │   └── Utils
+        │       └── FindPkgMacros.cmake
+        ├── CMakeLists.txt
+        ├── CMakeSettings.json
+        ├── CMakeTests
+        │   ├── FindGLEW.cmake
+        │   └── FindSDL2.cmake
+        ├── COPYING
+        ├── doc
+        │   ├── CMakeLists.txt
+        │   └── Doxyfile.in
+        ├── GOALS
+        ├── l10n
+        │   ├── CMakeLists.txt
+        │   ├── kronos_ar.yts
+        │   ├── kronos_default.yts
+        │   ├── kronos_de.yts
+        │   ├── kronos_es.yts
+        │   ├── kronos_fr.yts
+        │   ├── kronos_it.yts
+        │   ├── kronos_ja.yts
+        │   ├── kronos_lt.yts
+        │   ├── kronos_nl.yts
+        │   ├── kronos_pt_BR.yts
+        │   ├── kronos_pt.yts
+        │   ├── kronos_ru.yts
+        │   ├── kronos_sv.yts
+        │   ├── kronos_zh_CN.yts
+        │   └── kronos_zh_TW.yts
+        ├── README
+        ├── README.DC
+        ├── README.LIN
+        ├── README.MAC
+        ├── README.QT
+        ├── README.WIN
+        ├── src
+        │   ├── CMakeLists.txt
+        │   ├── config.h.in
+        │   ├── core
+        │   │   ├── cd
+        │   │   │   ├── freebsd
+        │   │   │   │   └── cd-freebsd.c
+        │   │   │   ├── libretro
+        │   │   │   │   └── cd-libretro.c
+        │   │   │   ├── linux
+        │   │   │   │   └── cd-linux.c
+        │   │   │   ├── mac
+        │   │   │   │   └── cd-macosx.c
+        │   │   │   ├── netbsd
+        │   │   │   │   └── cd-netbsd.c
+        │   │   │   └── windows
+        │   │   │       ├── cd-windows.c
+        │   │   │       └── fakeddk.h
+        │   │   ├── m68k
+        │   │   │   ├── m68kcore.c
+        │   │   │   ├── m68kcore.h
+        │   │   │   ├── m68kmusashi.c
+        │   │   │   ├── m68kmusashi.h
+        │   │   │   └── musashi
+        │   │   │       ├── CMakeLists.txt
+        │   │   │       ├── m68kconf.h
+        │   │   │       ├── m68kcpu.c
+        │   │   │       ├── m68kcpu.h
+        │   │   │       ├── m68kdasm.c
+        │   │   │       ├── m68k.h
+        │   │   │       ├── m68k_in.c
+        │   │   │       ├── m68kmake.c
+        │   │   │       ├── m68kopac.c
+        │   │   │       ├── m68kopdm.c
+        │   │   │       ├── m68kopnz.c
+        │   │   │       ├── m68kops.c
+        │   │   │       ├── m68kops.h
+        │   │   │       └── readme.txt
+        │   │   ├── net
+        │   │   │   ├── dummy
+        │   │   │   │   └── sock-dummy.c
+        │   │   │   ├── linux
+        │   │   │   │   └── sock-linux.c
+        │   │   │   ├── sock.h
+        │   │   │   └── windows
+        │   │   │       └── sock-windows.c
+        │   │   ├── osd
+        │   │   │   ├── include
+        │   │   │   │   ├── font.h
+        │   │   │   │   └── osdcore.h
+        │   │   │   └── src
+        │   │   │       └── osdcore.c
+        │   │   ├── peripheral
+        │   │   │   ├── common
+        │   │   │   │   ├── peripheral.c
+        │   │   │   │   └── peripheral.h
+        │   │   │   ├── dx
+        │   │   │   │   ├── perdx.c
+        │   │   │   │   └── perdx.h
+        │   │   │   ├── linux
+        │   │   │   │   ├── perlinuxjoy.c
+        │   │   │   │   └── perlinuxjoy.h
+        │   │   │   ├── mac
+        │   │   │   │   ├── macjoy.c
+        │   │   │   │   ├── macjoy.h
+        │   │   │   │   ├── permacjoy.c
+        │   │   │   │   └── permacjoy.h
+        │   │   │   └── sdl
+        │   │   │       ├── persdljoy.c
+        │   │   │       └── persdljoy.h
+        │   │   ├── sh2
+        │   │   │   ├── sh2_kronos
+        │   │   │   │   ├── include
+        │   │   │   │   │   ├── generate_func.sh
+        │   │   │   │   │   ├── opcode_functions_define.h
+        │   │   │   │   │   ├── sh2_functions.inc
+        │   │   │   │   │   └── sh2int_kronos.h
+        │   │   │   │   └── src
+        │   │   │   │       ├── sh2int.c
+        │   │   │   │       └── sh2_opcodes.c
+        │   │   │   └── sh2_simple
+        │   │   │       ├── include
+        │   │   │       │   └── sh2int.h
+        │   │   │       └── src
+        │   │   │           └── sh2int.c
+        │   │   ├── sound
+        │   │   │   ├── al
+        │   │   │   │   ├── sndal.c
+        │   │   │   │   └── sndal.h
+        │   │   │   ├── dummy
+        │   │   │   │   └── snddummy.c
+        │   │   │   ├── dx
+        │   │   │   │   ├── snddx.c
+        │   │   │   │   └── snddx.h
+        │   │   │   ├── mac
+        │   │   │   │   ├── sndmac.c
+        │   │   │   │   └── sndmac.h
+        │   │   │   ├── sdl
+        │   │   │   │   ├── sndsdl.c
+        │   │   │   │   └── sndsdl.h
+        │   │   │   └── wav
+        │   │   │       └── sndwav.c
+        │   │   └── video
+        │   │       ├── opengl
+        │   │       │   ├── common
+        │   │       │   │   ├── include
+        │   │       │   │   │   ├── 2xbrz_shader.h
+        │   │       │   │   │   ├── 4xbrz_shader.h
+        │   │       │   │   │   ├── bicubic_shader.h
+        │   │       │   │   │   ├── common_glshader.h
+        │   │       │   │   │   ├── glext.h
+        │   │       │   │   │   ├── hq4x_lut.h
+        │   │       │   │   │   ├── hq4x_shader.h
+        │   │       │   │   │   ├── scanline_shader.h
+        │   │       │   │   │   ├── vidshared.h
+        │   │       │   │   │   └── ygl.h
+        │   │       │   │   └── src
+        │   │       │   │       ├── commongl.c
+        │   │       │   │       ├── common_glshader.c
+        │   │       │   │       ├── ogl_shader.c
+        │   │       │   │       ├── rbg_compute.cpp
+        │   │       │   │       ├── upscale_shader.c
+        │   │       │   │       └── vidshared.c
+        │   │       │   ├── compute_shader
+        │   │       │   │   ├── include
+        │   │       │   │   │   ├── vdp1_compute.h
+        │   │       │   │   │   ├── vdp1_prog_compute.h
+        │   │       │   │   │   └── vidcs.h
+        │   │       │   │   └── src
+        │   │       │   │       ├── vdp1_compute.c
+        │   │       │   │       ├── vidcs.c
+        │   │       │   │       └── yglcs.c
+        │   │       │   └── core
+        │   │       │       ├── include
+        │   │       │       │   └── vidogl.h
+        │   │       │       └── src
+        │   │       │           ├── vidogl.c
+        │   │       │           └── yglcache.c
+        │   │       └── soft
+        │   │           ├── titan
+        │   │           │   ├── titan.c
+        │   │           │   └── titan.h
+        │   │           ├── vidsoft.c
+        │   │           └── vidsoft.h
+        │   ├── ctrl
+        │   │   ├── include
+        │   │   │   ├── core.h
+        │   │   │   ├── movie.h
+        │   │   │   ├── stv.h
+        │   │   │   ├── yabause.h
+        │   │   │   └── yui.h
+        │   │   ├── src
+        │   │   │   ├── movie.c
+        │   │   │   ├── stv.c
+        │   │   │   └── yabause.c
+        │   │   └── threads
+        │   │       ├── linux
+        │   │       │   ├── pthread_barrier.c
+        │   │       │   └── pthread_barrier.h
+        │   │       ├── thr-dummy.c
+        │   │       ├── threads.h
+        │   │       ├── thr-linux.c
+        │   │       ├── thr-macosx.c
+        │   │       ├── thr-rthreads.c
+        │   │       └── thr-windows.c
+        │   ├── libretro
+        │   │   ├── glsym_private.c
+        │   │   ├── glsym_private.h
+        │   │   ├── jni
+        │   │   │   ├── Android.mk
+        │   │   │   └── Application.mk
+        │   │   ├── libretro.c
+        │   │   ├── libretro-common
+        │   │   │   ├── audio
+        │   │   │   │   ├── audio_mix.c
+        │   │   │   │   ├── audio_mixer.c
+        │   │   │   │   ├── conversion
+        │   │   │   │   │   ├── float_to_s16.c
+        │   │   │   │   │   ├── float_to_s16_neon.c
+        │   │   │   │   │   ├── float_to_s16_neon.S
+        │   │   │   │   │   ├── s16_to_float.c
+        │   │   │   │   │   ├── s16_to_float_neon.c
+        │   │   │   │   │   └── s16_to_float_neon.S
+        │   │   │   │   ├── dsp_filter.c
+        │   │   │   │   ├── dsp_filters
+        │   │   │   │   │   ├── BassBoost.dsp
+        │   │   │   │   │   ├── ChipTuneEnhance.dsp
+        │   │   │   │   │   ├── chorus.c
+        │   │   │   │   │   ├── Chorus.dsp
+        │   │   │   │   │   ├── configure
+        │   │   │   │   │   ├── crystalizer.c
+        │   │   │   │   │   ├── Crystalizer.dsp
+        │   │   │   │   │   ├── echo.c
+        │   │   │   │   │   ├── Echo.dsp
+        │   │   │   │   │   ├── EchoReverb.dsp
+        │   │   │   │   │   ├── eq.c
+        │   │   │   │   │   ├── EQ.dsp
+        │   │   │   │   │   ├── fft
+        │   │   │   │   │   │   ├── fft.c
+        │   │   │   │   │   │   └── fft.h
+        │   │   │   │   │   ├── HighShelfDampen.dsp
+        │   │   │   │   │   ├── iir.c
+        │   │   │   │   │   ├── IIR.dsp
+        │   │   │   │   │   ├── link.T
+        │   │   │   │   │   ├── LowPassCPS.dsp
+        │   │   │   │   │   ├── Makefile
+        │   │   │   │   │   ├── Mono.dsp
+        │   │   │   │   │   ├── panning.c
+        │   │   │   │   │   ├── Panning.dsp
+        │   │   │   │   │   ├── phaser.c
+        │   │   │   │   │   ├── Phaser.dsp
+        │   │   │   │   │   ├── reverb.c
+        │   │   │   │   │   ├── Reverb.dsp
+        │   │   │   │   │   ├── tremolo.c
+        │   │   │   │   │   ├── Tremolo.dsp
+        │   │   │   │   │   ├── vibrato.c
+        │   │   │   │   │   ├── Vibrato.dsp
+        │   │   │   │   │   ├── wahwah.c
+        │   │   │   │   │   └── WahWah.dsp
+        │   │   │   │   └── resampler
+        │   │   │   │       ├── audio_resampler.c
+        │   │   │   │       └── drivers
+        │   │   │   │           ├── nearest_resampler.c
+        │   │   │   │           ├── sinc_resampler.c
+        │   │   │   │           └── sinc_resampler_neon.S
+        │   │   │   ├── cdrom
+        │   │   │   │   └── cdrom.c
+        │   │   │   ├── compat
+        │   │   │   │   ├── compat_fnmatch.c
+        │   │   │   │   ├── compat_getopt.c
+        │   │   │   │   ├── compat_ifaddrs.c
+        │   │   │   │   ├── compat_posix_string.c
+        │   │   │   │   ├── compat_snprintf.c
+        │   │   │   │   ├── compat_strcasestr.c
+        │   │   │   │   ├── compat_strl.c
+        │   │   │   │   ├── compat_vscprintf.c
+        │   │   │   │   └── fopen_utf8.c
+        │   │   │   ├── crt
+        │   │   │   │   ├── include
+        │   │   │   │   │   └── string.h
+        │   │   │   │   └── string.c
+        │   │   │   ├── dynamic
+        │   │   │   │   └── dylib.c
+        │   │   │   ├── encodings
+        │   │   │   │   ├── encoding_base64.c
+        │   │   │   │   ├── encoding_crc32.c
+        │   │   │   │   └── encoding_utf.c
+        │   │   │   ├── features
+        │   │   │   │   └── features_cpu.c
+        │   │   │   ├── file
+        │   │   │   │   ├── archive_file_7z.c
+        │   │   │   │   ├── archive_file.c
+        │   │   │   │   ├── archive_file_zlib.c
+        │   │   │   │   ├── config_file.c
+        │   │   │   │   ├── config_file_userdata.c
+        │   │   │   │   ├── file_path.c
+        │   │   │   │   ├── file_path_io.c
+        │   │   │   │   ├── nbio
+        │   │   │   │   │   ├── nbio_intf.c
+        │   │   │   │   │   ├── nbio_linux.c
+        │   │   │   │   │   ├── nbio_orbis.c
+        │   │   │   │   │   ├── nbio_stdio.c
+        │   │   │   │   │   ├── nbio_unixmmap.c
+        │   │   │   │   │   └── nbio_windowsmmap.c
+        │   │   │   │   └── retro_dirent.c
+        │   │   │   ├── formats
+        │   │   │   │   ├── bmp
+        │   │   │   │   │   ├── rbmp.c
+        │   │   │   │   │   └── rbmp_encode.c
+        │   │   │   │   ├── cdfs
+        │   │   │   │   │   └── cdfs.c
+        │   │   │   │   ├── image_texture.c
+        │   │   │   │   ├── image_transfer.c
+        │   │   │   │   ├── jpeg
+        │   │   │   │   │   └── rjpeg.c
+        │   │   │   │   ├── json
+        │   │   │   │   │   ├── jsonsax.c
+        │   │   │   │   │   └── jsonsax_full.c
+        │   │   │   │   ├── libchdr
+        │   │   │   │   │   ├── libchdr_bitstream.c
+        │   │   │   │   │   ├── libchdr_cdrom.c
+        │   │   │   │   │   ├── libchdr_chd.c
+        │   │   │   │   │   ├── libchdr_flac.c
+        │   │   │   │   │   ├── libchdr_flac_codec.c
+        │   │   │   │   │   ├── libchdr_huffman.c
+        │   │   │   │   │   ├── libchdr_lzma.c
+        │   │   │   │   │   └── libchdr_zlib.c
+        │   │   │   │   ├── logiqx_dat
+        │   │   │   │   │   └── logiqx_dat.c
+        │   │   │   │   ├── m3u
+        │   │   │   │   │   └── m3u_file.c
+        │   │   │   │   ├── png
+        │   │   │   │   │   ├── rpng.c
+        │   │   │   │   │   ├── rpng_encode.c
+        │   │   │   │   │   └── rpng_internal.h
+        │   │   │   │   ├── tga
+        │   │   │   │   │   └── rtga.c
+        │   │   │   │   ├── wav
+        │   │   │   │   │   └── rwav.c
+        │   │   │   │   └── xml
+        │   │   │   │       ├── rxml.c
+        │   │   │   │       └── test
+        │   │   │   │           ├── Makefile
+        │   │   │   │           └── rxml_test.c
+        │   │   │   ├── gfx
+        │   │   │   │   ├── gl_capabilities.c
+        │   │   │   │   └── scaler
+        │   │   │   │       ├── pixconv.c
+        │   │   │   │       ├── scaler.c
+        │   │   │   │       ├── scaler_filter.c
+        │   │   │   │       └── scaler_int.c
+        │   │   │   ├── glsm
+        │   │   │   │   └── glsm.c
+        │   │   │   ├── glsym
+        │   │   │   │   ├── glgen.py
+        │   │   │   │   ├── glsym_es2.c
+        │   │   │   │   ├── glsym_es3.c
+        │   │   │   │   ├── glsym_gl.c
+        │   │   │   │   ├── README.md
+        │   │   │   │   ├── rglgen.c
+        │   │   │   │   ├── rglgen.py
+        │   │   │   │   └── xglgen.py
+        │   │   │   ├── hash
+        │   │   │   │   └── rhash.c
+        │   │   │   ├── include
+        │   │   │   │   ├── array
+        │   │   │   │   │   └── rbuf.h
+        │   │   │   │   ├── audio
+        │   │   │   │   │   ├── audio_mixer.h
+        │   │   │   │   │   ├── audio_mix.h
+        │   │   │   │   │   ├── audio_resampler.h
+        │   │   │   │   │   ├── conversion
+        │   │   │   │   │   │   ├── float_to_s16.h
+        │   │   │   │   │   │   └── s16_to_float.h
+        │   │   │   │   │   └── dsp_filter.h
+        │   │   │   │   ├── boolean.h
+        │   │   │   │   ├── cdrom
+        │   │   │   │   │   └── cdrom.h
+        │   │   │   │   ├── clamping.h
+        │   │   │   │   ├── compat
+        │   │   │   │   │   ├── apple_compat.h
+        │   │   │   │   │   ├── fnmatch.h
+        │   │   │   │   │   ├── fopen_utf8.h
+        │   │   │   │   │   ├── getopt.h
+        │   │   │   │   │   ├── ifaddrs.h
+        │   │   │   │   │   ├── intrinsics.h
+        │   │   │   │   │   ├── msvc
+        │   │   │   │   │   │   └── stdint.h
+        │   │   │   │   │   ├── msvc.h
+        │   │   │   │   │   ├── posix_string.h
+        │   │   │   │   │   ├── strcasestr.h
+        │   │   │   │   │   ├── strl.h
+        │   │   │   │   │   ├── zconf.h
+        │   │   │   │   │   ├── zconf.h.in
+        │   │   │   │   │   ├── zlib
+        │   │   │   │   │   │   ├── zconf.h
+        │   │   │   │   │   │   ├── zconf.h.in
+        │   │   │   │   │   │   ├── zlib.h
+        │   │   │   │   │   │   └── zutil.h
+        │   │   │   │   │   ├── zlib.h
+        │   │   │   │   │   └── zutil.h
+        │   │   │   │   ├── dynamic
+        │   │   │   │   │   └── dylib.h
+        │   │   │   │   ├── encodings
+        │   │   │   │   │   ├── base64.h
+        │   │   │   │   │   ├── crc32.h
+        │   │   │   │   │   ├── utf.h
+        │   │   │   │   │   └── win32.h
+        │   │   │   │   ├── fastcpy.h
+        │   │   │   │   ├── features
+        │   │   │   │   │   └── features_cpu.h
+        │   │   │   │   ├── file
+        │   │   │   │   │   ├── archive_file.h
+        │   │   │   │   │   ├── config_file.h
+        │   │   │   │   │   ├── config_file_userdata.h
+        │   │   │   │   │   ├── file_path.h
+        │   │   │   │   │   └── nbio.h
+        │   │   │   │   ├── filters.h
+        │   │   │   │   ├── formats
+        │   │   │   │   │   ├── cdfs.h
+        │   │   │   │   │   ├── image.h
+        │   │   │   │   │   ├── jsonsax_full.h
+        │   │   │   │   │   ├── jsonsax.h
+        │   │   │   │   │   ├── logiqx_dat.h
+        │   │   │   │   │   ├── m3u_file.h
+        │   │   │   │   │   ├── rbmp.h
+        │   │   │   │   │   ├── rjpeg.h
+        │   │   │   │   │   ├── rpng.h
+        │   │   │   │   │   ├── rtga.h
+        │   │   │   │   │   ├── rwav.h
+        │   │   │   │   │   └── rxml.h
+        │   │   │   │   ├── gfx
+        │   │   │   │   │   ├── gl_capabilities.h
+        │   │   │   │   │   ├── math
+        │   │   │   │   │   │   ├── matrix_3x3.h
+        │   │   │   │   │   │   ├── matrix_4x4.h
+        │   │   │   │   │   │   ├── vector_2.h
+        │   │   │   │   │   │   ├── vector_3.h
+        │   │   │   │   │   │   └── vector_4.h
+        │   │   │   │   │   ├── scaler
+        │   │   │   │   │   │   ├── filter.h
+        │   │   │   │   │   │   ├── pixconv.h
+        │   │   │   │   │   │   ├── scaler.h
+        │   │   │   │   │   │   └── scaler_int.h
+        │   │   │   │   │   └── video_frame.h
+        │   │   │   │   ├── glsm
+        │   │   │   │   │   ├── glsm.h
+        │   │   │   │   │   └── glsmsym.h
+        │   │   │   │   ├── glsym
+        │   │   │   │   │   ├── glsym_es2.h
+        │   │   │   │   │   ├── glsym_es3.h
+        │   │   │   │   │   ├── glsym_gl.h
+        │   │   │   │   │   ├── glsym.h
+        │   │   │   │   │   ├── rglgen.h
+        │   │   │   │   │   ├── rglgen_headers.h
+        │   │   │   │   │   ├── rglgen_private_headers.h
+        │   │   │   │   │   └── switch
+        │   │   │   │   │       ├── nx_gl.h
+        │   │   │   │   │       └── nx_glsym.h
+        │   │   │   │   ├── libchdr
+        │   │   │   │   │   ├── bitstream.h
+        │   │   │   │   │   ├── cdrom.h
+        │   │   │   │   │   ├── chd.h
+        │   │   │   │   │   ├── coretypes.h
+        │   │   │   │   │   ├── flac.h
+        │   │   │   │   │   ├── huffman.h
+        │   │   │   │   │   ├── libchdr_zlib.h
+        │   │   │   │   │   ├── lzma.h
+        │   │   │   │   │   └── minmax.h
+        │   │   │   │   ├── libco.h
+        │   │   │   │   ├── libretro_d3d.h
+        │   │   │   │   ├── libretro_dspfilter.h
+        │   │   │   │   ├── libretro_gskit_ps2.h
+        │   │   │   │   ├── libretro.h
+        │   │   │   │   ├── libretro_vulkan.h
+        │   │   │   │   ├── lists
+        │   │   │   │   │   ├── dir_list.h
+        │   │   │   │   │   ├── file_list.h
+        │   │   │   │   │   └── string_list.h
+        │   │   │   │   ├── math
+        │   │   │   │   │   ├── complex.h
+        │   │   │   │   │   ├── float_minmax.h
+        │   │   │   │   │   └── fxp.h
+        │   │   │   │   ├── media
+        │   │   │   │   │   └── media_detect_cd.h
+        │   │   │   │   ├── memalign.h
+        │   │   │   │   ├── memmap.h
+        │   │   │   │   ├── net
+        │   │   │   │   │   ├── net_compat.h
+        │   │   │   │   │   ├── net_http.h
+        │   │   │   │   │   ├── net_http_parse.h
+        │   │   │   │   │   ├── net_ifinfo.h
+        │   │   │   │   │   ├── net_natt.h
+        │   │   │   │   │   ├── net_socket.h
+        │   │   │   │   │   └── net_socket_ssl.h
+        │   │   │   │   ├── playlists
+        │   │   │   │   │   └── label_sanitization.h
+        │   │   │   │   ├── queues
+        │   │   │   │   │   ├── fifo_queue.h
+        │   │   │   │   │   ├── message_queue.h
+        │   │   │   │   │   └── task_queue.h
+        │   │   │   │   ├── retro_assert.h
+        │   │   │   │   ├── retro_common_api.h
+        │   │   │   │   ├── retro_common.h
+        │   │   │   │   ├── retro_dirent.h
+        │   │   │   │   ├── retro_endianness.h
+        │   │   │   │   ├── retro_environment.h
+        │   │   │   │   ├── retro_inline.h
+        │   │   │   │   ├── retro_math.h
+        │   │   │   │   ├── retro_miscellaneous.h
+        │   │   │   │   ├── retro_stat.h
+        │   │   │   │   ├── retro_timers.h
+        │   │   │   │   ├── rhash.h
+        │   │   │   │   ├── rthreads
+        │   │   │   │   │   ├── async_job.h
+        │   │   │   │   │   ├── rthreads.h
+        │   │   │   │   │   └── tpool.h
+        │   │   │   │   ├── streams
+        │   │   │   │   │   ├── chd_stream.h
+        │   │   │   │   │   ├── file_stream.h
+        │   │   │   │   │   ├── file_stream_transforms.h
+        │   │   │   │   │   ├── interface_stream.h
+        │   │   │   │   │   ├── memory_stream.h
+        │   │   │   │   │   ├── rzip_stream.h
+        │   │   │   │   │   ├── stdin_stream.h
+        │   │   │   │   │   └── trans_stream.h
+        │   │   │   │   ├── string
+        │   │   │   │   │   └── stdstring.h
+        │   │   │   │   ├── time
+        │   │   │   │   │   └── rtime.h
+        │   │   │   │   ├── utils
+        │   │   │   │   │   └── md5.h
+        │   │   │   │   ├── vfs
+        │   │   │   │   │   ├── vfs.h
+        │   │   │   │   │   ├── vfs_implementation_cdrom.h
+        │   │   │   │   │   └── vfs_implementation.h
+        │   │   │   │   └── vulkan
+        │   │   │   │       └── vulkan_symbol_wrapper.h
+        │   │   │   ├── libco
+        │   │   │   │   ├── aarch64.c
+        │   │   │   │   ├── amd64.c
+        │   │   │   │   ├── armeabi.c
+        │   │   │   │   ├── fiber.c
+        │   │   │   │   ├── genode.cpp
+        │   │   │   │   ├── libco.c
+        │   │   │   │   ├── ppc.c
+        │   │   │   │   ├── psp1.c
+        │   │   │   │   ├── psp2.c
+        │   │   │   │   ├── scefiber.c
+        │   │   │   │   ├── sjlj.c
+        │   │   │   │   ├── ucontext.c
+        │   │   │   │   └── x86.c
+        │   │   │   ├── lists
+        │   │   │   │   ├── dir_list.c
+        │   │   │   │   ├── file_list.c
+        │   │   │   │   ├── string_list.c
+        │   │   │   │   └── vector_list.c
+        │   │   │   ├── media
+        │   │   │   │   └── media_detect_cd.c
+        │   │   │   ├── memmap
+        │   │   │   │   ├── memalign.c
+        │   │   │   │   └── memmap.c
+        │   │   │   ├── net
+        │   │   │   │   ├── net_compat.c
+        │   │   │   │   ├── net_http.c
+        │   │   │   │   ├── net_http_parse.c
+        │   │   │   │   ├── net_ifinfo.c
+        │   │   │   │   ├── net_natt.c
+        │   │   │   │   ├── net_socket.c
+        │   │   │   │   └── net_socket_ssl.c
+        │   │   │   ├── playlists
+        │   │   │   │   └── label_sanitization.c
+        │   │   │   ├── queues
+        │   │   │   │   ├── fifo_queue.c
+        │   │   │   │   ├── message_queue.c
+        │   │   │   │   └── task_queue.c
+        │   │   │   ├── rthreads
+        │   │   │   │   ├── ctr_pthread.h
+        │   │   │   │   ├── gx_pthread.h
+        │   │   │   │   ├── psp_pthread.h
+        │   │   │   │   ├── rthreads.c
+        │   │   │   │   ├── tpool.c
+        │   │   │   │   ├── wiiu_pthread.h
+        │   │   │   │   └── xenon_sdl_threads.c
+        │   │   │   ├── samples
+        │   │   │   │   ├── compat
+        │   │   │   │   │   ├── fnmatch
+        │   │   │   │   │   │   ├── compat_fnmatch_test.c
+        │   │   │   │   │   │   └── Makefile
+        │   │   │   │   │   ├── snprintf
+        │   │   │   │   │   │   └── snprintf_test.c
+        │   │   │   │   │   └── strl
+        │   │   │   │   │       └── strl_test.c
+        │   │   │   │   ├── core_options
+        │   │   │   │   │   ├── example_default
+        │   │   │   │   │   │   ├── libretro_core_options.h
+        │   │   │   │   │   │   └── libretro_core_options_intl.h
+        │   │   │   │   │   ├── example_hide_option
+        │   │   │   │   │   │   ├── libretro_core_options.h
+        │   │   │   │   │   │   └── libretro_core_options_intl.h
+        │   │   │   │   │   ├── example_translation
+        │   │   │   │   │   │   ├── libretro_core_options.h
+        │   │   │   │   │   │   └── libretro_core_options_intl.h
+        │   │   │   │   │   └── README.md
+        │   │   │   │   ├── file
+        │   │   │   │   │   ├── config_file
+        │   │   │   │   │   │   ├── config_file_test.c
+        │   │   │   │   │   │   └── Makefile
+        │   │   │   │   │   └── nbio
+        │   │   │   │   │       ├── Makefile
+        │   │   │   │   │       └── nbio_test.c
+        │   │   │   │   ├── formats
+        │   │   │   │   │   ├── png
+        │   │   │   │   │   │   ├── Makefile
+        │   │   │   │   │   │   └── rpng_test.c
+        │   │   │   │   │   └── xml
+        │   │   │   │   │       ├── Makefile
+        │   │   │   │   │       └── rxml_test.c
+        │   │   │   │   ├── net
+        │   │   │   │   │   ├── http_test
+        │   │   │   │   │   ├── Makefile
+        │   │   │   │   │   ├── net_http_parse_test.c
+        │   │   │   │   │   ├── net_http_test.c
+        │   │   │   │   │   ├── net_ifinfo
+        │   │   │   │   │   ├── net_ifinfo_test.c
+        │   │   │   │   │   └── udp-test.c
+        │   │   │   │   └── utils
+        │   │   │   │       ├── crc32.c
+        │   │   │   │       ├── Makefile
+        │   │   │   │       ├── md5_test.c
+        │   │   │   │       └── sha1_main.c
+        │   │   │   ├── streams
+        │   │   │   │   ├── chd_stream.c
+        │   │   │   │   ├── file_stream.c
+        │   │   │   │   ├── file_stream_transforms.c
+        │   │   │   │   ├── interface_stream.c
+        │   │   │   │   ├── memory_stream.c
+        │   │   │   │   ├── rzip_stream.c
+        │   │   │   │   ├── stdin_stream.c
+        │   │   │   │   ├── trans_stream.c
+        │   │   │   │   ├── trans_stream_pipe.c
+        │   │   │   │   └── trans_stream_zlib.c
+        │   │   │   ├── string
+        │   │   │   │   └── stdstring.c
+        │   │   │   ├── time
+        │   │   │   │   └── rtime.c
+        │   │   │   ├── utils
+        │   │   │   │   ├── debugbreak
+        │   │   │   │   │   └── debugbreak.c
+        │   │   │   │   ├── djb2.c
+        │   │   │   │   ├── md5.c
+        │   │   │   │   └── sha1.c
+        │   │   │   ├── vfs
+        │   │   │   │   ├── vfs_implementation.c
+        │   │   │   │   ├── vfs_implementation_cdrom.c
+        │   │   │   │   └── vfs_implementation_uwp.cpp
+        │   │   │   └── vulkan
+        │   │   │       └── vulkan_symbol_wrapper.c
+        │   │   ├── libretro_core_options.h
+        │   │   ├── link.T
+        │   │   ├── Makefile
+        │   │   ├── Makefile.common
+        │   │   └── README.md
+        │   ├── port
+        │   │   ├── linux
+        │   │   │   ├── CMakeLists.txt
+        │   │   │   ├── main.c
+        │   │   │   ├── main_gl_test.c
+        │   │   │   ├── main_test.c
+        │   │   │   ├── platform
+        │   │   │   │   └── glfw
+        │   │   │   │       ├── platform.c
+        │   │   │   │       └── platform.h
+        │   │   │   └── test
+        │   │   │       ├── addc_test.cpp
+        │   │   │       ├── addi_test.cpp
+        │   │   │       ├── add_test.cpp
+        │   │   │       ├── addv_test.cpp
+        │   │   │       ├── bf_test.cpp
+        │   │   │       ├── bra_test.cpp
+        │   │   │       ├── bsr_test.cpp
+        │   │   │       ├── bt_test.cpp
+        │   │   │       ├── clrmac_test.cpp
+        │   │   │       ├── clrt_test.cpp
+        │   │   │       ├── CMakeLists.txt
+        │   │   │       ├── cmim_test.cpp
+        │   │   │       ├── cmpeq_test.cpp
+        │   │   │       ├── cmpge_test.cpp
+        │   │   │       ├── cmpgt_test.cpp
+        │   │   │       ├── cmphs_test.cpp
+        │   │   │       ├── cmpphi_test.cpp
+        │   │   │       ├── cmppl_test.cpp
+        │   │   │       ├── cmppz_test.cpp
+        │   │   │       ├── cmpstr_test.cpp
+        │   │   │       ├── div0s_test.cpp
+        │   │   │       ├── div1_test.cpp
+        │   │   │       ├── dmuls_test.cpp
+        │   │   │       ├── dmulu_test.cpp
+        │   │   │       ├── dt_test.cpp
+        │   │   │       ├── extsb_test.cpp
+        │   │   │       ├── extsw_test.cpp
+        │   │   │       ├── extub_test.cpp
+        │   │   │       ├── extuw_test.cpp
+        │   │   │       ├── jmp_test.cpp
+        │   │   │       ├── jsr_test.cpp
+        │   │   │       ├── LDC_GBR_INC_test.cpp
+        │   │   │       ├── ldc_test.cpp
+        │   │   │       ├── lds_test.cpp
+        │   │   │       ├── logic_test.cpp
+        │   │   │       ├── macl_test.cpp
+        │   │   │       ├── macw_test.cpp
+        │   │   │       ├── mova_test.cpp
+        │   │   │       ├── movi_test.cpp
+        │   │   │       ├── movlp_test.cpp
+        │   │   │       ├── movt_test.cpp
+        │   │   │       ├── mull_test.cpp
+        │   │   │       ├── muls_test.cpp
+        │   │   │       ├── mulu_test.cpp
+        │   │   │       ├── negc_test.cpp
+        │   │   │       ├── orb_test.cpp
+        │   │   │       ├── rotcl_test.cpp
+        │   │   │       ├── rotcr_test.cpp
+        │   │   │       ├── rotl_test.cpp
+        │   │   │       ├── rotr_test.cpp
+        │   │   │       ├── rte_test.cpp
+        │   │   │       ├── shal_test.cpp
+        │   │   │       ├── shar_test.cpp
+        │   │   │       ├── shll_test.cpp
+        │   │   │       ├── shlr_test.cpp
+        │   │   │       ├── stc_test.cpp
+        │   │   │       ├── sts_test.cpp
+        │   │   │       ├── subc_test.cpp
+        │   │   │       ├── sub_test.cpp
+        │   │   │       ├── subv_test.cpp
+        │   │   │       ├── swapb_test.cpp
+        │   │   │       ├── swapw_test.cpp
+        │   │   │       ├── tas_test.cpp
+        │   │   │       ├── testb_test.cpp
+        │   │   │       ├── test.cpp
+        │   │   │       ├── testi_test.cpp
+        │   │   │       ├── test_test.cpp
+        │   │   │       ├── trapa_test.cpp
+        │   │   │       ├── xori_test.cpp
+        │   │   │       └── xtract_test.cpp
+        │   │   ├── logo.bmp
+        │   │   ├── logo.ico
+        │   │   ├── logo.png
+        │   │   ├── logo.svg
+        │   │   └── qt
+        │   │       ├── Arguments.cpp
+        │   │       ├── Arguments.h
+        │   │       ├── CMakeLists.txt
+        │   │       ├── CommonDialogs.cpp
+        │   │       ├── CommonDialogs.h
+        │   │       ├── doc
+        │   │       │   └── kronos.1
+        │   │       ├── kronos.desktop.in
+        │   │       ├── main.cpp
+        │   │       ├── mkspecs
+        │   │       │   ├── win32-osx-g++
+        │   │       │   │   ├── qmake.conf
+        │   │       │   │   └── qplatformdefs.h
+        │   │       │   └── win32-x11-g++
+        │   │       │       ├── qmake.conf
+        │   │       │       └── qplatformdefs.h
+        │   │       ├── PerQt.c
+        │   │       ├── PerQt.h
+        │   │       ├── QtYabause.cpp
+        │   │       ├── QtYabause.h
+        │   │       ├── resources
+        │   │       │   ├── icons
+        │   │       │   │   ├── 3dcontroller.png
+        │   │       │   │   ├── actions
+        │   │       │   │   │   ├── about.png
+        │   │       │   │   │   ├── backup_ram.png
+        │   │       │   │   │   ├── button_cancel.png
+        │   │       │   │   │   ├── button_ok.png
+        │   │       │   │   │   ├── cd.png
+        │   │       │   │   │   ├── cheat_search.png
+        │   │       │   │   │   ├── cheats.png
+        │   │       │   │   │   ├── compatibility.png
+        │   │       │   │   │   ├── debug_cpu.png
+        │   │       │   │   │   ├── fps.png
+        │   │       │   │   │   ├── frame_skipping.png
+        │   │       │   │   │   ├── fullscreen.png
+        │   │       │   │   │   ├── iso.png
+        │   │       │   │   │   ├── layer.png
+        │   │       │   │   │   ├── load_state.png
+        │   │       │   │   │   ├── log.png
+        │   │       │   │   │   ├── mute.png
+        │   │       │   │   │   ├── no_fullscreen.png
+        │   │       │   │   │   ├── open_file.png
+        │   │       │   │   │   ├── pause.png
+        │   │       │   │   │   ├── play.png
+        │   │       │   │   │   ├── quit.png
+        │   │       │   │   │   ├── reset.png
+        │   │       │   │   │   ├── save_state.png
+        │   │       │   │   │   ├── screenshot.png
+        │   │       │   │   │   ├── settings.png
+        │   │       │   │   │   ├── sound.png
+        │   │       │   │   │   ├── transfert.png
+        │   │       │   │   │   └── video.png
+        │   │       │   │   ├── cabinet.png
+        │   │       │   │   ├── controller.png
+        │   │       │   │   ├── Discord-Logo-Black.png
+        │   │       │   │   ├── Discord-Logo-Color.png
+        │   │       │   │   ├── Discord-Logo-White.png
+        │   │       │   │   ├── doublemissionstick.png
+        │   │       │   │   ├── kronos.icns
+        │   │       │   │   ├── kronos.png
+        │   │       │   │   ├── kronos.rc
+        │   │       │   │   ├── made.png
+        │   │       │   │   ├── missionstick.png
+        │   │       │   │   ├── mouse.png
+        │   │       │   │   ├── wheel.png
+        │   │       │   │   └── youtube_social_squircle_red.png
+        │   │       │   └── resources.qrc
+        │   │       ├── Settings.cpp
+        │   │       ├── Settings.h
+        │   │       ├── translations
+        │   │       │   ├── yabause_fr.ts
+        │   │       │   └── yabause_pt.ts
+        │   │       ├── ui
+        │   │       │   ├── UI3DControlPadSetting.cpp
+        │   │       │   ├── UI3DControlPadSetting.h
+        │   │       │   ├── UI3DControlPadSetting.ui
+        │   │       │   ├── UIAbout.cpp
+        │   │       │   ├── UIAbout.h
+        │   │       │   ├── UIAbout.ui
+        │   │       │   ├── UIBackupRam.cpp
+        │   │       │   ├── UIBackupRam.h
+        │   │       │   ├── UIBackupRam.ui
+        │   │       │   ├── UICheatAR.cpp
+        │   │       │   ├── UICheatAR.h
+        │   │       │   ├── UICheatAR.ui
+        │   │       │   ├── UICheatRaw.cpp
+        │   │       │   ├── UICheatRaw.h
+        │   │       │   ├── UICheatRaw.ui
+        │   │       │   ├── UICheats.cpp
+        │   │       │   ├── UICheatSearch.cpp
+        │   │       │   ├── UICheatSearch.h
+        │   │       │   ├── UICheatSearch.ui
+        │   │       │   ├── UICheats.h
+        │   │       │   ├── UICheats.ui
+        │   │       │   ├── UIControllerSetting.cpp
+        │   │       │   ├── UIControllerSetting.h
+        │   │       │   ├── UIDebugVDP1.cpp
+        │   │       │   ├── UIDebugVDP1.h
+        │   │       │   ├── UIDebugVDP1.ui
+        │   │       │   ├── UIDebugVDP2.cpp
+        │   │       │   ├── UIDebugVDP2.h
+        │   │       │   ├── UIDebugVDP2.ui
+        │   │       │   ├── UIDebugVDP2Viewer.cpp
+        │   │       │   ├── UIDebugVDP2Viewer.h
+        │   │       │   ├── UIDebugVDP2Viewer.ui
+        │   │       │   ├── UIDisasm.cpp
+        │   │       │   ├── UIDisasm.h
+        │   │       │   ├── UIDoubleMissionStickSetting.cpp
+        │   │       │   ├── UIDoubleMissionStickSetting.h
+        │   │       │   ├── UIDoubleMissionStickSetting.ui
+        │   │       │   ├── UIGunSetting.cpp
+        │   │       │   ├── UIGunSetting.h
+        │   │       │   ├── UIGunSetting.ui
+        │   │       │   ├── UIHexEditor.cpp
+        │   │       │   ├── UIHexEditor.h
+        │   │       │   ├── UIHexInput.cpp
+        │   │       │   ├── UIHexInput.h
+        │   │       │   ├── UIHexInput.ui
+        │   │       │   ├── UIMemoryEditor.cpp
+        │   │       │   ├── UIMemoryEditor.h
+        │   │       │   ├── UIMemoryEditor.ui
+        │   │       │   ├── UIMemorySearch.cpp
+        │   │       │   ├── UIMemorySearch.h
+        │   │       │   ├── UIMemorySearch.ui
+        │   │       │   ├── UIMemoryTransfer.cpp
+        │   │       │   ├── UIMemoryTransfer.h
+        │   │       │   ├── UIMemoryTransfer.ui
+        │   │       │   ├── UIMissionStickSetting.cpp
+        │   │       │   ├── UIMissionStickSetting.h
+        │   │       │   ├── UIMissionStickSetting.ui
+        │   │       │   ├── UIMouseSetting.cpp
+        │   │       │   ├── UIMouseSetting.h
+        │   │       │   ├── UIMouseSetting.ui
+        │   │       │   ├── UIPadSetting.cpp
+        │   │       │   ├── UIPadSetting.h
+        │   │       │   ├── UIPadSetting.ui
+        │   │       │   ├── UIPortManager.cpp
+        │   │       │   ├── UIPortManager.h
+        │   │       │   ├── UIPortManager.ui
+        │   │       │   ├── UISettings.cpp
+        │   │       │   ├── UISettings.h
+        │   │       │   ├── UISettings.ui
+        │   │       │   ├── UIShortcutManager.cpp
+        │   │       │   ├── UIShortcutManager.h
+        │   │       │   ├── UISTVSetting.cpp
+        │   │       │   ├── UISTVSetting.h
+        │   │       │   ├── UISTVSetting.ui
+        │   │       │   ├── UIWheelSetting.cpp
+        │   │       │   ├── UIWheelSetting.h
+        │   │       │   ├── UIWheelSetting.ui
+        │   │       │   ├── UIYabause.cpp
+        │   │       │   ├── UIYabause.h
+        │   │       │   └── UIYabause.ui
+        │   │       ├── VolatileSettings.cpp
+        │   │       ├── VolatileSettings.h
+        │   │       ├── YabauseGL.cpp
+        │   │       ├── YabauseGL.h
+        │   │       ├── YabauseSoftGL.cpp
+        │   │       ├── YabauseThread.cpp
+        │   │       └── YabauseThread.h
+        │   ├── sys
+        │   │   ├── bios
+        │   │   │   ├── include
+        │   │   │   │   └── bios.h
+        │   │   │   └── src
+        │   │   │       └── bios.c
+        │   │   ├── memory
+        │   │   │   ├── include
+        │   │   │   │   ├── cs0.h
+        │   │   │   │   ├── cs1.h
+        │   │   │   │   ├── cs2.h
+        │   │   │   │   ├── decrypt.h
+        │   │   │   │   ├── eeprom.h
+        │   │   │   │   └── memory.h
+        │   │   │   └── src
+        │   │   │       ├── cs0.c
+        │   │   │       ├── cs1.c
+        │   │   │       ├── cs2.c
+        │   │   │       ├── decrypt.c
+        │   │   │       ├── eeprom.c
+        │   │   │       └── memory.c
+        │   │   ├── scsp
+        │   │   │   ├── include
+        │   │   │   │   ├── scspdsp.h
+        │   │   │   │   └── scsp.h
+        │   │   │   └── src
+        │   │   │       ├── scsp.c
+        │   │   │       └── scspdsp.c
+        │   │   ├── scu
+        │   │   │   ├── include
+        │   │   │   │   └── scu.h
+        │   │   │   └── src
+        │   │   │       └── scu.c
+        │   │   ├── sh2
+        │   │   │   ├── include
+        │   │   │   │   └── sh2core.h
+        │   │   │   └── src
+        │   │   │       └── sh2core.c
+        │   │   ├── smpc
+        │   │   │   ├── include
+        │   │   │   │   └── smpc.h
+        │   │   │   └── src
+        │   │   │       └── smpc.c
+        │   │   ├── vdp1
+        │   │   │   ├── include
+        │   │   │   │   └── vdp1.h
+        │   │   │   └── src
+        │   │   │       └── vdp1.c
+        │   │   └── vdp2
+        │   │       ├── include
+        │   │       │   ├── vdp2debug.h
+        │   │       │   └── vdp2.h
+        │   │       └── src
+        │   │           ├── vdp2.c
+        │   │           └── vdp2debug.c
+        │   ├── tools
+        │   │   ├── gllibs
+        │   │   │   ├── glew
+        │   │   │   │   └── glew.c
+        │   │   │   └── include
+        │   │   │       └── GL
+        │   │   │           ├── eglew.h
+        │   │   │           ├── glew.h
+        │   │   │           ├── glxew.h
+        │   │   │           └── wglew.h
+        │   │   ├── junzip
+        │   │   │   ├── junzip.c
+        │   │   │   └── junzip.h
+        │   │   ├── libchdr
+        │   │   │   ├── CMakeLists.txt
+        │   │   │   ├── deps
+        │   │   │   │   ├── crypto
+        │   │   │   │   │   ├── aes.c
+        │   │   │   │   │   ├── aes.h
+        │   │   │   │   │   ├── aes_test.c
+        │   │   │   │   │   ├── arcfour.c
+        │   │   │   │   │   ├── arcfour.h
+        │   │   │   │   │   ├── arcfour_test.c
+        │   │   │   │   │   ├── base64.c
+        │   │   │   │   │   ├── base64.h
+        │   │   │   │   │   ├── base64_test.c
+        │   │   │   │   │   ├── blowfish.c
+        │   │   │   │   │   ├── blowfish.h
+        │   │   │   │   │   ├── blowfish_test.c
+        │   │   │   │   │   ├── des.c
+        │   │   │   │   │   ├── des.h
+        │   │   │   │   │   ├── des_test.c
+        │   │   │   │   │   ├── md2.c
+        │   │   │   │   │   ├── md2.h
+        │   │   │   │   │   ├── md2_test.c
+        │   │   │   │   │   ├── md5.c
+        │   │   │   │   │   ├── md5.h
+        │   │   │   │   │   ├── md5_test.c
+        │   │   │   │   │   ├── README.md
+        │   │   │   │   │   ├── rot-13.c
+        │   │   │   │   │   ├── rot-13.h
+        │   │   │   │   │   ├── rot-13_test.c
+        │   │   │   │   │   ├── sha1.c
+        │   │   │   │   │   ├── sha1.h
+        │   │   │   │   │   ├── sha1_test.c
+        │   │   │   │   │   ├── sha256.c
+        │   │   │   │   │   ├── sha256.h
+        │   │   │   │   │   └── sha256_test.c
+        │   │   │   │   ├── flac-1.3.2
+        │   │   │   │   │   ├── aclocal.m4
+        │   │   │   │   │   ├── ar-lib
+        │   │   │   │   │   ├── AUTHORS
+        │   │   │   │   │   ├── autogen.sh
+        │   │   │   │   │   ├── compile
+        │   │   │   │   │   ├── config.guess
+        │   │   │   │   │   ├── config.h.in
+        │   │   │   │   │   ├── config.rpath
+        │   │   │   │   │   ├── config.sub
+        │   │   │   │   │   ├── configure
+        │   │   │   │   │   ├── configure.ac
+        │   │   │   │   │   ├── COPYING.FDL
+        │   │   │   │   │   ├── COPYING.GPL
+        │   │   │   │   │   ├── COPYING.LGPL
+        │   │   │   │   │   ├── COPYING.Xiph
+        │   │   │   │   │   ├── depcomp
+        │   │   │   │   │   ├── doc
+        │   │   │   │   │   │   ├── Doxyfile.in
+        │   │   │   │   │   │   ├── doxygen.footer.html
+        │   │   │   │   │   │   ├── doxygen.header.html
+        │   │   │   │   │   │   ├── FLAC.tag
+        │   │   │   │   │   │   ├── html
+        │   │   │   │   │   │   │   ├── changelog.html
+        │   │   │   │   │   │   │   ├── developers.html
+        │   │   │   │   │   │   │   ├── documentation_bugs.html
+        │   │   │   │   │   │   │   ├── documentation_example_code.html
+        │   │   │   │   │   │   │   ├── documentation_format_overview.html
+        │   │   │   │   │   │   │   ├── documentation.html
+        │   │   │   │   │   │   │   ├── documentation_tools_flac.html
+        │   │   │   │   │   │   │   ├── documentation_tools.html
+        │   │   │   │   │   │   │   ├── documentation_tools_metaflac.html
+        │   │   │   │   │   │   │   ├── faq.html
+        │   │   │   │   │   │   │   ├── favicon.ico
+        │   │   │   │   │   │   │   ├── features.html
+        │   │   │   │   │   │   │   ├── flac.css
+        │   │   │   │   │   │   │   ├── format.html
+        │   │   │   │   │   │   │   ├── id.html
+        │   │   │   │   │   │   │   ├── images
+        │   │   │   │   │   │   │   │   ├── logo130.gif
+        │   │   │   │   │   │   │   │   ├── logo.svg
+        │   │   │   │   │   │   │   │   ├── Makefile.am
+        │   │   │   │   │   │   │   │   └── Makefile.in
+        │   │   │   │   │   │   │   ├── index.html
+        │   │   │   │   │   │   │   ├── license.html
+        │   │   │   │   │   │   │   ├── Makefile.am
+        │   │   │   │   │   │   │   ├── Makefile.in
+        │   │   │   │   │   │   │   └── ogg_mapping.html
+        │   │   │   │   │   │   ├── isoflac.txt
+        │   │   │   │   │   │   ├── Makefile.am
+        │   │   │   │   │   │   ├── Makefile.in
+        │   │   │   │   │   │   └── Makefile.lite
+        │   │   │   │   │   ├── examples
+        │   │   │   │   │   │   ├── c
+        │   │   │   │   │   │   │   ├── decode
+        │   │   │   │   │   │   │   │   ├── file
+        │   │   │   │   │   │   │   │   │   ├── example_c_decode_file.vcproj
+        │   │   │   │   │   │   │   │   │   ├── example_c_decode_file.vcxproj
+        │   │   │   │   │   │   │   │   │   ├── example_c_decode_file.vcxproj.filters
+        │   │   │   │   │   │   │   │   │   ├── main.c
+        │   │   │   │   │   │   │   │   │   ├── Makefile.am
+        │   │   │   │   │   │   │   │   │   ├── Makefile.in
+        │   │   │   │   │   │   │   │   │   └── Makefile.lite
+        │   │   │   │   │   │   │   │   ├── Makefile.am
+        │   │   │   │   │   │   │   │   └── Makefile.in
+        │   │   │   │   │   │   │   ├── encode
+        │   │   │   │   │   │   │   │   ├── file
+        │   │   │   │   │   │   │   │   │   ├── example_c_encode_file.vcproj
+        │   │   │   │   │   │   │   │   │   ├── example_c_encode_file.vcxproj
+        │   │   │   │   │   │   │   │   │   ├── example_c_encode_file.vcxproj.filters
+        │   │   │   │   │   │   │   │   │   ├── main.c
+        │   │   │   │   │   │   │   │   │   ├── Makefile.am
+        │   │   │   │   │   │   │   │   │   ├── Makefile.in
+        │   │   │   │   │   │   │   │   │   └── Makefile.lite
+        │   │   │   │   │   │   │   │   ├── Makefile.am
+        │   │   │   │   │   │   │   │   └── Makefile.in
+        │   │   │   │   │   │   │   ├── Makefile.am
+        │   │   │   │   │   │   │   └── Makefile.in
+        │   │   │   │   │   │   ├── cpp
+        │   │   │   │   │   │   │   ├── decode
+        │   │   │   │   │   │   │   │   ├── file
+        │   │   │   │   │   │   │   │   │   ├── example_cpp_decode_file.vcproj
+        │   │   │   │   │   │   │   │   │   ├── example_cpp_decode_file.vcxproj
+        │   │   │   │   │   │   │   │   │   ├── example_cpp_decode_file.vcxproj.filters
+        │   │   │   │   │   │   │   │   │   ├── main.cpp
+        │   │   │   │   │   │   │   │   │   ├── Makefile.am
+        │   │   │   │   │   │   │   │   │   ├── Makefile.in
+        │   │   │   │   │   │   │   │   │   └── Makefile.lite
+        │   │   │   │   │   │   │   │   ├── Makefile.am
+        │   │   │   │   │   │   │   │   └── Makefile.in
+        │   │   │   │   │   │   │   ├── encode
+        │   │   │   │   │   │   │   │   ├── file
+        │   │   │   │   │   │   │   │   │   ├── example_cpp_encode_file.vcproj
+        │   │   │   │   │   │   │   │   │   ├── example_cpp_encode_file.vcxproj
+        │   │   │   │   │   │   │   │   │   ├── example_cpp_encode_file.vcxproj.filters
+        │   │   │   │   │   │   │   │   │   ├── main.cpp
+        │   │   │   │   │   │   │   │   │   ├── Makefile.am
+        │   │   │   │   │   │   │   │   │   ├── Makefile.in
+        │   │   │   │   │   │   │   │   │   └── Makefile.lite
+        │   │   │   │   │   │   │   │   ├── Makefile.am
+        │   │   │   │   │   │   │   │   └── Makefile.in
+        │   │   │   │   │   │   │   ├── Makefile.am
+        │   │   │   │   │   │   │   └── Makefile.in
+        │   │   │   │   │   │   ├── Makefile.am
+        │   │   │   │   │   │   ├── Makefile.in
+        │   │   │   │   │   │   ├── Makefile.lite
+        │   │   │   │   │   │   └── README
+        │   │   │   │   │   ├── FLAC.sln
+        │   │   │   │   │   ├── FLAC-vs2005.sln
+        │   │   │   │   │   ├── include
+        │   │   │   │   │   │   ├── FLAC
+        │   │   │   │   │   │   │   ├── all.h
+        │   │   │   │   │   │   │   ├── assert.h
+        │   │   │   │   │   │   │   ├── callback.h
+        │   │   │   │   │   │   │   ├── export.h
+        │   │   │   │   │   │   │   ├── format.h
+        │   │   │   │   │   │   │   ├── Makefile.am
+        │   │   │   │   │   │   │   ├── Makefile.in
+        │   │   │   │   │   │   │   ├── metadata.h
+        │   │   │   │   │   │   │   ├── ordinals.h
+        │   │   │   │   │   │   │   ├── stream_decoder.h
+        │   │   │   │   │   │   │   └── stream_encoder.h
+        │   │   │   │   │   │   ├── FLAC++
+        │   │   │   │   │   │   │   ├── all.h
+        │   │   │   │   │   │   │   ├── decoder.h
+        │   │   │   │   │   │   │   ├── encoder.h
+        │   │   │   │   │   │   │   ├── export.h
+        │   │   │   │   │   │   │   ├── Makefile.am
+        │   │   │   │   │   │   │   ├── Makefile.in
+        │   │   │   │   │   │   │   └── metadata.h
+        │   │   │   │   │   │   ├── Makefile.am
+        │   │   │   │   │   │   ├── Makefile.in
+        │   │   │   │   │   │   ├── share
+        │   │   │   │   │   │   │   ├── alloc.h
+        │   │   │   │   │   │   │   ├── compat.h
+        │   │   │   │   │   │   │   ├── endswap.h
+        │   │   │   │   │   │   │   ├── getopt.h
+        │   │   │   │   │   │   │   ├── grabbag
+        │   │   │   │   │   │   │   │   ├── cuesheet.h
+        │   │   │   │   │   │   │   │   ├── file.h
+        │   │   │   │   │   │   │   │   ├── Makefile.am
+        │   │   │   │   │   │   │   │   ├── Makefile.in
+        │   │   │   │   │   │   │   │   ├── picture.h
+        │   │   │   │   │   │   │   │   ├── replaygain.h
+        │   │   │   │   │   │   │   │   └── seektable.h
+        │   │   │   │   │   │   │   ├── grabbag.h
+        │   │   │   │   │   │   │   ├── macros.h
+        │   │   │   │   │   │   │   ├── Makefile.am
+        │   │   │   │   │   │   │   ├── Makefile.in
+        │   │   │   │   │   │   │   ├── private.h
+        │   │   │   │   │   │   │   ├── replaygain_analysis.h
+        │   │   │   │   │   │   │   ├── replaygain_synthesis.h
+        │   │   │   │   │   │   │   ├── safe_str.h
+        │   │   │   │   │   │   │   ├── utf8.h
+        │   │   │   │   │   │   │   ├── windows_unicode_filenames.h
+        │   │   │   │   │   │   │   └── win_utf8_io.h
+        │   │   │   │   │   │   └── test_libs_common
+        │   │   │   │   │   │       ├── file_utils_flac.h
+        │   │   │   │   │   │       ├── Makefile.am
+        │   │   │   │   │   │       ├── Makefile.in
+        │   │   │   │   │   │       └── metadata_utils.h
+        │   │   │   │   │   ├── install-sh
+        │   │   │   │   │   ├── ltmain.sh
+        │   │   │   │   │   ├── m4
+        │   │   │   │   │   │   ├── add_cflags.m4
+        │   │   │   │   │   │   ├── add_cxxflags.m4
+        │   │   │   │   │   │   ├── bswap.m4
+        │   │   │   │   │   │   ├── clang.m4
+        │   │   │   │   │   │   ├── codeset.m4
+        │   │   │   │   │   │   ├── endian.m4
+        │   │   │   │   │   │   ├── gcc_version.m4
+        │   │   │   │   │   │   ├── iconv.m4
+        │   │   │   │   │   │   ├── lib-ld.m4
+        │   │   │   │   │   │   ├── lib-link.m4
+        │   │   │   │   │   │   ├── lib-prefix.m4
+        │   │   │   │   │   │   ├── libtool.m4
+        │   │   │   │   │   │   ├── lt~obsolete.m4
+        │   │   │   │   │   │   ├── ltoptions.m4
+        │   │   │   │   │   │   ├── ltsugar.m4
+        │   │   │   │   │   │   ├── ltversion.m4
+        │   │   │   │   │   │   ├── Makefile.am
+        │   │   │   │   │   │   ├── Makefile.in
+        │   │   │   │   │   │   ├── ogg.m4
+        │   │   │   │   │   │   ├── really_gcc.m4
+        │   │   │   │   │   │   ├── stack_protect.m4
+        │   │   │   │   │   │   └── xmms.m4
+        │   │   │   │   │   ├── Makefile.am
+        │   │   │   │   │   ├── Makefile.deps
+        │   │   │   │   │   ├── Makefile.in
+        │   │   │   │   │   ├── Makefile.lite
+        │   │   │   │   │   ├── man
+        │   │   │   │   │   │   ├── flac.1
+        │   │   │   │   │   │   ├── flac.sgml
+        │   │   │   │   │   │   ├── Makefile.am
+        │   │   │   │   │   │   ├── Makefile.in
+        │   │   │   │   │   │   ├── metaflac.1
+        │   │   │   │   │   │   └── metaflac.sgml
+        │   │   │   │   │   ├── microbench
+        │   │   │   │   │   │   ├── benchmark_residual.c
+        │   │   │   │   │   │   ├── Makefile.am
+        │   │   │   │   │   │   ├── Makefile.in
+        │   │   │   │   │   │   ├── util.c
+        │   │   │   │   │   │   └── util.h
+        │   │   │   │   │   ├── missing
+        │   │   │   │   │   ├── objs
+        │   │   │   │   │   │   ├── debug
+        │   │   │   │   │   │   │   ├── bin
+        │   │   │   │   │   │   │   │   ├── Makefile.am
+        │   │   │   │   │   │   │   │   └── Makefile.in
+        │   │   │   │   │   │   │   ├── lib
+        │   │   │   │   │   │   │   │   ├── Makefile.am
+        │   │   │   │   │   │   │   │   └── Makefile.in
+        │   │   │   │   │   │   │   ├── Makefile.am
+        │   │   │   │   │   │   │   └── Makefile.in
+        │   │   │   │   │   │   ├── Makefile.am
+        │   │   │   │   │   │   ├── Makefile.in
+        │   │   │   │   │   │   └── release
+        │   │   │   │   │   │       ├── bin
+        │   │   │   │   │   │       │   ├── Makefile.am
+        │   │   │   │   │   │       │   └── Makefile.in
+        │   │   │   │   │   │       ├── lib
+        │   │   │   │   │   │       │   ├── Makefile.am
+        │   │   │   │   │   │       │   └── Makefile.in
+        │   │   │   │   │   │       ├── Makefile.am
+        │   │   │   │   │   │       └── Makefile.in
+        │   │   │   │   │   ├── README
+        │   │   │   │   │   ├── src
+        │   │   │   │   │   │   ├── flac
+        │   │   │   │   │   │   │   ├── analyze.c
+        │   │   │   │   │   │   │   ├── analyze.h
+        │   │   │   │   │   │   │   ├── decode.c
+        │   │   │   │   │   │   │   ├── decode.h
+        │   │   │   │   │   │   │   ├── encode.c
+        │   │   │   │   │   │   │   ├── encode.h
+        │   │   │   │   │   │   │   ├── flac.vcproj
+        │   │   │   │   │   │   │   ├── flac.vcxproj
+        │   │   │   │   │   │   │   ├── flac.vcxproj.filters
+        │   │   │   │   │   │   │   ├── foreign_metadata.c
+        │   │   │   │   │   │   │   ├── foreign_metadata.h
+        │   │   │   │   │   │   │   ├── iffscan.c
+        │   │   │   │   │   │   │   ├── iffscan.vcproj
+        │   │   │   │   │   │   │   ├── iffscan.vcxproj
+        │   │   │   │   │   │   │   ├── iffscan.vcxproj.filters
+        │   │   │   │   │   │   │   ├── local_string_utils.c
+        │   │   │   │   │   │   │   ├── local_string_utils.h
+        │   │   │   │   │   │   │   ├── main.c
+        │   │   │   │   │   │   │   ├── Makefile.am
+        │   │   │   │   │   │   │   ├── Makefile.in
+        │   │   │   │   │   │   │   ├── Makefile.lite
+        │   │   │   │   │   │   │   ├── Makefile.lite.iffscan
+        │   │   │   │   │   │   │   ├── utils.c
+        │   │   │   │   │   │   │   ├── utils.h
+        │   │   │   │   │   │   │   ├── vorbiscomment.c
+        │   │   │   │   │   │   │   └── vorbiscomment.h
+        │   │   │   │   │   │   ├── libFLAC
+        │   │   │   │   │   │   │   ├── bitmath.c
+        │   │   │   │   │   │   │   ├── bitreader.c
+        │   │   │   │   │   │   │   ├── bitwriter.c
+        │   │   │   │   │   │   │   ├── cpu.c
+        │   │   │   │   │   │   │   ├── crc.c
+        │   │   │   │   │   │   │   ├── fixed.c
+        │   │   │   │   │   │   │   ├── fixed_intrin_sse2.c
+        │   │   │   │   │   │   │   ├── fixed_intrin_ssse3.c
+        │   │   │   │   │   │   │   ├── flac.pc.in
+        │   │   │   │   │   │   │   ├── float.c
+        │   │   │   │   │   │   │   ├── format.c
+        │   │   │   │   │   │   │   ├── ia32
+        │   │   │   │   │   │   │   │   ├── cpu_asm.nasm
+        │   │   │   │   │   │   │   │   ├── fixed_asm.nasm
+        │   │   │   │   │   │   │   │   ├── lpc_asm.nasm
+        │   │   │   │   │   │   │   │   ├── Makefile.am
+        │   │   │   │   │   │   │   │   ├── Makefile.in
+        │   │   │   │   │   │   │   │   └── nasm.h
+        │   │   │   │   │   │   │   ├── include
+        │   │   │   │   │   │   │   │   ├── Makefile.am
+        │   │   │   │   │   │   │   │   ├── Makefile.in
+        │   │   │   │   │   │   │   │   ├── private
+        │   │   │   │   │   │   │   │   │   ├── all.h
+        │   │   │   │   │   │   │   │   │   ├── bitmath.h
+        │   │   │   │   │   │   │   │   │   ├── bitreader.h
+        │   │   │   │   │   │   │   │   │   ├── bitwriter.h
+        │   │   │   │   │   │   │   │   │   ├── cpu.h
+        │   │   │   │   │   │   │   │   │   ├── crc.h
+        │   │   │   │   │   │   │   │   │   ├── fixed.h
+        │   │   │   │   │   │   │   │   │   ├── float.h
+        │   │   │   │   │   │   │   │   │   ├── format.h
+        │   │   │   │   │   │   │   │   │   ├── lpc.h
+        │   │   │   │   │   │   │   │   │   ├── macros.h
+        │   │   │   │   │   │   │   │   │   ├── Makefile.am
+        │   │   │   │   │   │   │   │   │   ├── Makefile.in
+        │   │   │   │   │   │   │   │   │   ├── md5.h
+        │   │   │   │   │   │   │   │   │   ├── memory.h
+        │   │   │   │   │   │   │   │   │   ├── metadata.h
+        │   │   │   │   │   │   │   │   │   ├── ogg_decoder_aspect.h
+        │   │   │   │   │   │   │   │   │   ├── ogg_encoder_aspect.h
+        │   │   │   │   │   │   │   │   │   ├── ogg_helper.h
+        │   │   │   │   │   │   │   │   │   ├── ogg_mapping.h
+        │   │   │   │   │   │   │   │   │   ├── stream_encoder_framing.h
+        │   │   │   │   │   │   │   │   │   ├── stream_encoder.h
+        │   │   │   │   │   │   │   │   │   └── window.h
+        │   │   │   │   │   │   │   │   └── protected
+        │   │   │   │   │   │   │   │       ├── all.h
+        │   │   │   │   │   │   │   │       ├── Makefile.am
+        │   │   │   │   │   │   │   │       ├── Makefile.in
+        │   │   │   │   │   │   │   │       ├── stream_decoder.h
+        │   │   │   │   │   │   │   │       └── stream_encoder.h
+        │   │   │   │   │   │   │   ├── libFLAC_dynamic.vcproj
+        │   │   │   │   │   │   │   ├── libFLAC_dynamic.vcxproj
+        │   │   │   │   │   │   │   ├── libFLAC_dynamic.vcxproj.filters
+        │   │   │   │   │   │   │   ├── libFLAC.m4
+        │   │   │   │   │   │   │   ├── libFLAC_static.vcproj
+        │   │   │   │   │   │   │   ├── libFLAC_static.vcxproj
+        │   │   │   │   │   │   │   ├── libFLAC_static.vcxproj.filters
+        │   │   │   │   │   │   │   ├── lpc.c
+        │   │   │   │   │   │   │   ├── lpc_intrin_avx2.c
+        │   │   │   │   │   │   │   ├── lpc_intrin_sse2.c
+        │   │   │   │   │   │   │   ├── lpc_intrin_sse41.c
+        │   │   │   │   │   │   │   ├── lpc_intrin_sse.c
+        │   │   │   │   │   │   │   ├── Makefile.am
+        │   │   │   │   │   │   │   ├── Makefile.in
+        │   │   │   │   │   │   │   ├── Makefile.lite
+        │   │   │   │   │   │   │   ├── md5.c
+        │   │   │   │   │   │   │   ├── memory.c
+        │   │   │   │   │   │   │   ├── metadata_iterators.c
+        │   │   │   │   │   │   │   ├── metadata_object.c
+        │   │   │   │   │   │   │   ├── ogg_decoder_aspect.c
+        │   │   │   │   │   │   │   ├── ogg_encoder_aspect.c
+        │   │   │   │   │   │   │   ├── ogg_helper.c
+        │   │   │   │   │   │   │   ├── ogg_mapping.c
+        │   │   │   │   │   │   │   ├── stream_decoder.c
+        │   │   │   │   │   │   │   ├── stream_encoder.c
+        │   │   │   │   │   │   │   ├── stream_encoder_framing.c
+        │   │   │   │   │   │   │   ├── stream_encoder_intrin_avx2.c
+        │   │   │   │   │   │   │   ├── stream_encoder_intrin_sse2.c
+        │   │   │   │   │   │   │   ├── stream_encoder_intrin_ssse3.c
+        │   │   │   │   │   │   │   ├── window.c
+        │   │   │   │   │   │   │   └── windows_unicode_filenames.c
+        │   │   │   │   │   │   ├── libFLAC++
+        │   │   │   │   │   │   │   ├── flac++.pc.in
+        │   │   │   │   │   │   │   ├── libFLAC++_dynamic.vcproj
+        │   │   │   │   │   │   │   ├── libFLAC++_dynamic.vcxproj
+        │   │   │   │   │   │   │   ├── libFLAC++_dynamic.vcxproj.filters
+        │   │   │   │   │   │   │   ├── libFLAC++.m4
+        │   │   │   │   │   │   │   ├── libFLAC++_static.vcproj
+        │   │   │   │   │   │   │   ├── libFLAC++_static.vcxproj
+        │   │   │   │   │   │   │   ├── libFLAC++_static.vcxproj.filters
+        │   │   │   │   │   │   │   ├── Makefile.am
+        │   │   │   │   │   │   │   ├── Makefile.in
+        │   │   │   │   │   │   │   ├── Makefile.lite
+        │   │   │   │   │   │   │   ├── metadata.cpp
+        │   │   │   │   │   │   │   ├── stream_decoder.cpp
+        │   │   │   │   │   │   │   └── stream_encoder.cpp
+        │   │   │   │   │   │   ├── Makefile.am
+        │   │   │   │   │   │   ├── Makefile.in
+        │   │   │   │   │   │   ├── Makefile.lite
+        │   │   │   │   │   │   ├── metaflac
+        │   │   │   │   │   │   │   ├── main.c
+        │   │   │   │   │   │   │   ├── Makefile.am
+        │   │   │   │   │   │   │   ├── Makefile.in
+        │   │   │   │   │   │   │   ├── Makefile.lite
+        │   │   │   │   │   │   │   ├── metaflac.vcproj
+        │   │   │   │   │   │   │   ├── metaflac.vcxproj
+        │   │   │   │   │   │   │   ├── metaflac.vcxproj.filters
+        │   │   │   │   │   │   │   ├── operations.c
+        │   │   │   │   │   │   │   ├── operations.h
+        │   │   │   │   │   │   │   ├── operations_shorthand_cuesheet.c
+        │   │   │   │   │   │   │   ├── operations_shorthand.h
+        │   │   │   │   │   │   │   ├── operations_shorthand_picture.c
+        │   │   │   │   │   │   │   ├── operations_shorthand_seektable.c
+        │   │   │   │   │   │   │   ├── operations_shorthand_streaminfo.c
+        │   │   │   │   │   │   │   ├── operations_shorthand_vorbiscomment.c
+        │   │   │   │   │   │   │   ├── options.c
+        │   │   │   │   │   │   │   ├── options.h
+        │   │   │   │   │   │   │   ├── usage.c
+        │   │   │   │   │   │   │   ├── usage.h
+        │   │   │   │   │   │   │   ├── utils.c
+        │   │   │   │   │   │   │   └── utils.h
+        │   │   │   │   │   │   ├── plugin_common
+        │   │   │   │   │   │   │   ├── all.h
+        │   │   │   │   │   │   │   ├── charset.c
+        │   │   │   │   │   │   │   ├── charset.h
+        │   │   │   │   │   │   │   ├── defs.h
+        │   │   │   │   │   │   │   ├── dither.c
+        │   │   │   │   │   │   │   ├── dither.h
+        │   │   │   │   │   │   │   ├── Makefile.am
+        │   │   │   │   │   │   │   ├── Makefile.in
+        │   │   │   │   │   │   │   ├── Makefile.lite
+        │   │   │   │   │   │   │   ├── README
+        │   │   │   │   │   │   │   ├── replaygain.c
+        │   │   │   │   │   │   │   ├── replaygain.h
+        │   │   │   │   │   │   │   ├── tags.c
+        │   │   │   │   │   │   │   └── tags.h
+        │   │   │   │   │   │   ├── plugin_xmms
+        │   │   │   │   │   │   │   ├── charset.c
+        │   │   │   │   │   │   │   ├── charset.h
+        │   │   │   │   │   │   │   ├── configure.c
+        │   │   │   │   │   │   │   ├── configure.h
+        │   │   │   │   │   │   │   ├── fileinfo.c
+        │   │   │   │   │   │   │   ├── http.c
+        │   │   │   │   │   │   │   ├── http.h
+        │   │   │   │   │   │   │   ├── locale_hack.h
+        │   │   │   │   │   │   │   ├── Makefile.am
+        │   │   │   │   │   │   │   ├── Makefile.in
+        │   │   │   │   │   │   │   ├── Makefile.lite
+        │   │   │   │   │   │   │   ├── plugin.c
+        │   │   │   │   │   │   │   ├── plugin.h
+        │   │   │   │   │   │   │   ├── tag.c
+        │   │   │   │   │   │   │   └── tag.h
+        │   │   │   │   │   │   ├── share
+        │   │   │   │   │   │   │   ├── getopt
+        │   │   │   │   │   │   │   │   ├── getopt1.c
+        │   │   │   │   │   │   │   │   ├── getopt.c
+        │   │   │   │   │   │   │   │   ├── getopt_static.vcproj
+        │   │   │   │   │   │   │   │   ├── getopt_static.vcxproj
+        │   │   │   │   │   │   │   │   ├── getopt_static.vcxproj.filters
+        │   │   │   │   │   │   │   │   └── Makefile.lite
+        │   │   │   │   │   │   │   ├── grabbag
+        │   │   │   │   │   │   │   │   ├── alloc.c
+        │   │   │   │   │   │   │   │   ├── cuesheet.c
+        │   │   │   │   │   │   │   │   ├── file.c
+        │   │   │   │   │   │   │   │   ├── grabbag_static.vcproj
+        │   │   │   │   │   │   │   │   ├── grabbag_static.vcxproj
+        │   │   │   │   │   │   │   │   ├── grabbag_static.vcxproj.filters
+        │   │   │   │   │   │   │   │   ├── Makefile.lite
+        │   │   │   │   │   │   │   │   ├── picture.c
+        │   │   │   │   │   │   │   │   ├── replaygain.c
+        │   │   │   │   │   │   │   │   ├── seektable.c
+        │   │   │   │   │   │   │   │   └── snprintf.c
+        │   │   │   │   │   │   │   ├── Makefile.am
+        │   │   │   │   │   │   │   ├── Makefile.in
+        │   │   │   │   │   │   │   ├── Makefile.lite
+        │   │   │   │   │   │   │   ├── README
+        │   │   │   │   │   │   │   ├── replaygain_analysis
+        │   │   │   │   │   │   │   │   ├── Makefile.lite
+        │   │   │   │   │   │   │   │   ├── replaygain_analysis.c
+        │   │   │   │   │   │   │   │   ├── replaygain_analysis_static.vcproj
+        │   │   │   │   │   │   │   │   ├── replaygain_analysis_static.vcxproj
+        │   │   │   │   │   │   │   │   └── replaygain_analysis_static.vcxproj.filters
+        │   │   │   │   │   │   │   ├── replaygain_synthesis
+        │   │   │   │   │   │   │   │   ├── Makefile.lite
+        │   │   │   │   │   │   │   │   ├── replaygain_synthesis.c
+        │   │   │   │   │   │   │   │   ├── replaygain_synthesis_static.vcproj
+        │   │   │   │   │   │   │   │   ├── replaygain_synthesis_static.vcxproj
+        │   │   │   │   │   │   │   │   └── replaygain_synthesis_static.vcxproj.filters
+        │   │   │   │   │   │   │   ├── utf8
+        │   │   │   │   │   │   │   │   ├── charmaps.h
+        │   │   │   │   │   │   │   │   ├── charset.c
+        │   │   │   │   │   │   │   │   ├── charset.h
+        │   │   │   │   │   │   │   │   ├── charset_test.c
+        │   │   │   │   │   │   │   │   ├── iconvert.c
+        │   │   │   │   │   │   │   │   ├── iconvert.h
+        │   │   │   │   │   │   │   │   ├── Makefile.lite
+        │   │   │   │   │   │   │   │   ├── makemap.c
+        │   │   │   │   │   │   │   │   ├── utf8.c
+        │   │   │   │   │   │   │   │   ├── utf8_static.vcproj
+        │   │   │   │   │   │   │   │   ├── utf8_static.vcxproj
+        │   │   │   │   │   │   │   │   └── utf8_static.vcxproj.filters
+        │   │   │   │   │   │   │   └── win_utf8_io
+        │   │   │   │   │   │   │       ├── Makefile.lite
+        │   │   │   │   │   │   │       ├── win_utf8_io.c
+        │   │   │   │   │   │   │       ├── win_utf8_io_static.vcproj
+        │   │   │   │   │   │   │       ├── win_utf8_io_static.vcxproj
+        │   │   │   │   │   │   │       └── win_utf8_io_static.vcxproj.filters
+        │   │   │   │   │   │   ├── test_grabbag
+        │   │   │   │   │   │   │   ├── cuesheet
+        │   │   │   │   │   │   │   │   ├── main.c
+        │   │   │   │   │   │   │   │   ├── Makefile.am
+        │   │   │   │   │   │   │   │   ├── Makefile.in
+        │   │   │   │   │   │   │   │   ├── Makefile.lite
+        │   │   │   │   │   │   │   │   ├── test_cuesheet.vcproj
+        │   │   │   │   │   │   │   │   ├── test_cuesheet.vcxproj
+        │   │   │   │   │   │   │   │   └── test_cuesheet.vcxproj.filters
+        │   │   │   │   │   │   │   ├── Makefile.am
+        │   │   │   │   │   │   │   ├── Makefile.in
+        │   │   │   │   │   │   │   ├── Makefile.lite
+        │   │   │   │   │   │   │   └── picture
+        │   │   │   │   │   │   │       ├── main.c
+        │   │   │   │   │   │   │       ├── Makefile.am
+        │   │   │   │   │   │   │       ├── Makefile.in
+        │   │   │   │   │   │   │       ├── Makefile.lite
+        │   │   │   │   │   │   │       ├── test_picture.vcproj
+        │   │   │   │   │   │   │       ├── test_picture.vcxproj
+        │   │   │   │   │   │   │       └── test_picture.vcxproj.filters
+        │   │   │   │   │   │   ├── test_libFLAC
+        │   │   │   │   │   │   │   ├── bitwriter.c
+        │   │   │   │   │   │   │   ├── bitwriter.h
+        │   │   │   │   │   │   │   ├── decoders.c
+        │   │   │   │   │   │   │   ├── decoders.h
+        │   │   │   │   │   │   │   ├── encoders.c
+        │   │   │   │   │   │   │   ├── encoders.h
+        │   │   │   │   │   │   │   ├── endswap.c
+        │   │   │   │   │   │   │   ├── endswap.h
+        │   │   │   │   │   │   │   ├── format.c
+        │   │   │   │   │   │   │   ├── format.h
+        │   │   │   │   │   │   │   ├── main.c
+        │   │   │   │   │   │   │   ├── Makefile.am
+        │   │   │   │   │   │   │   ├── Makefile.in
+        │   │   │   │   │   │   │   ├── Makefile.lite
+        │   │   │   │   │   │   │   ├── md5.c
+        │   │   │   │   │   │   │   ├── md5.h
+        │   │   │   │   │   │   │   ├── metadata.c
+        │   │   │   │   │   │   │   ├── metadata.h
+        │   │   │   │   │   │   │   ├── metadata_manip.c
+        │   │   │   │   │   │   │   ├── metadata_object.c
+        │   │   │   │   │   │   │   ├── test_libFLAC.vcproj
+        │   │   │   │   │   │   │   ├── test_libFLAC.vcxproj
+        │   │   │   │   │   │   │   └── test_libFLAC.vcxproj.filters
+        │   │   │   │   │   │   ├── test_libFLAC++
+        │   │   │   │   │   │   │   ├── decoders.cpp
+        │   │   │   │   │   │   │   ├── decoders.h
+        │   │   │   │   │   │   │   ├── encoders.cpp
+        │   │   │   │   │   │   │   ├── encoders.h
+        │   │   │   │   │   │   │   ├── main.cpp
+        │   │   │   │   │   │   │   ├── Makefile.am
+        │   │   │   │   │   │   │   ├── Makefile.in
+        │   │   │   │   │   │   │   ├── Makefile.lite
+        │   │   │   │   │   │   │   ├── metadata.cpp
+        │   │   │   │   │   │   │   ├── metadata.h
+        │   │   │   │   │   │   │   ├── metadata_manip.cpp
+        │   │   │   │   │   │   │   ├── metadata_object.cpp
+        │   │   │   │   │   │   │   ├── test_libFLAC++.vcproj
+        │   │   │   │   │   │   │   ├── test_libFLAC++.vcxproj
+        │   │   │   │   │   │   │   └── test_libFLAC++.vcxproj.filters
+        │   │   │   │   │   │   ├── test_libs_common
+        │   │   │   │   │   │   │   ├── file_utils_flac.c
+        │   │   │   │   │   │   │   ├── Makefile.am
+        │   │   │   │   │   │   │   ├── Makefile.in
+        │   │   │   │   │   │   │   ├── Makefile.lite
+        │   │   │   │   │   │   │   ├── metadata_utils.c
+        │   │   │   │   │   │   │   ├── README
+        │   │   │   │   │   │   │   ├── test_libs_common_static.vcproj
+        │   │   │   │   │   │   │   ├── test_libs_common_static.vcxproj
+        │   │   │   │   │   │   │   └── test_libs_common_static.vcxproj.filters
+        │   │   │   │   │   │   ├── test_seeking
+        │   │   │   │   │   │   │   ├── main.c
+        │   │   │   │   │   │   │   ├── Makefile.am
+        │   │   │   │   │   │   │   ├── Makefile.in
+        │   │   │   │   │   │   │   ├── Makefile.lite
+        │   │   │   │   │   │   │   ├── test_seeking.vcproj
+        │   │   │   │   │   │   │   ├── test_seeking.vcxproj
+        │   │   │   │   │   │   │   └── test_seeking.vcxproj.filters
+        │   │   │   │   │   │   ├── test_streams
+        │   │   │   │   │   │   │   ├── main.c
+        │   │   │   │   │   │   │   ├── Makefile.am
+        │   │   │   │   │   │   │   ├── Makefile.in
+        │   │   │   │   │   │   │   ├── Makefile.lite
+        │   │   │   │   │   │   │   ├── test_streams.vcproj
+        │   │   │   │   │   │   │   ├── test_streams.vcxproj
+        │   │   │   │   │   │   │   └── test_streams.vcxproj.filters
+        │   │   │   │   │   │   └── utils
+        │   │   │   │   │   │       ├── flacdiff
+        │   │   │   │   │   │       │   ├── flacdiff.vcproj
+        │   │   │   │   │   │       │   ├── flacdiff.vcxproj
+        │   │   │   │   │   │       │   ├── flacdiff.vcxproj.filters
+        │   │   │   │   │   │       │   ├── main.cpp
+        │   │   │   │   │   │       │   ├── Makefile.am
+        │   │   │   │   │   │       │   ├── Makefile.in
+        │   │   │   │   │   │       │   └── Makefile.lite
+        │   │   │   │   │   │       ├── flactimer
+        │   │   │   │   │   │       │   ├── flactimer.vcproj
+        │   │   │   │   │   │       │   ├── flactimer.vcxproj
+        │   │   │   │   │   │       │   ├── flactimer.vcxproj.filters
+        │   │   │   │   │   │       │   ├── main.cpp
+        │   │   │   │   │   │       │   ├── Makefile.am
+        │   │   │   │   │   │       │   ├── Makefile.in
+        │   │   │   │   │   │       │   └── Makefile.lite
+        │   │   │   │   │   │       ├── Makefile.am
+        │   │   │   │   │   │       └── Makefile.in
+        │   │   │   │   │   ├── strip_non_asm_libtool_args.sh
+        │   │   │   │   │   └── test
+        │   │   │   │   │       ├── common.sh.in
+        │   │   │   │   │       ├── cuesheet.ok
+        │   │   │   │   │       ├── cuesheets
+        │   │   │   │   │       │   ├── bad.000.CATALOG_multiple.cue
+        │   │   │   │   │       │   ├── bad.001.CATALOG_missing_number.cue
+        │   │   │   │   │       │   ├── bad.002.CATALOG_number_too_long.cue
+        │   │   │   │   │       │   ├── bad.003.CATALOG_not_13_digits.cue
+        │   │   │   │   │       │   ├── bad.030.FLAGS_multiple.cue
+        │   │   │   │   │       │   ├── bad.031.FLAGS_wrong_place_1.cue
+        │   │   │   │   │       │   ├── bad.032.FLAGS_wrong_place_2.cue
+        │   │   │   │   │       │   ├── bad.060.INDEX_wrong_place.cue
+        │   │   │   │   │       │   ├── bad.061.INDEX_missing_number.cue
+        │   │   │   │   │       │   ├── bad.062.INDEX_invalid_number_1.cue
+        │   │   │   │   │       │   ├── bad.063.first_INDEX_not_0_or_1.cue
+        │   │   │   │   │       │   ├── bad.064.INDEX_num_non_sequential.cue
+        │   │   │   │   │       │   ├── bad.065.INDEX_num_out_of_range.cue
+        │   │   │   │   │       │   ├── bad.066.INDEX_missing_offset.cue
+        │   │   │   │   │       │   ├── bad.067.INDEX_illegal_offset.cue
+        │   │   │   │   │       │   ├── bad.068.INDEX_cdda_illegal_offset.cue
+        │   │   │   │   │       │   ├── bad.069.nonzero_first_INDEX.cue
+        │   │   │   │   │       │   ├── bad.070.INDEX_offset_not_ascending_1.cue
+        │   │   │   │   │       │   ├── bad.071.INDEX_offset_not_ascending_2.cue
+        │   │   │   │   │       │   ├── bad.110.ISRC_multiple.cue
+        │   │   │   │   │       │   ├── bad.111.ISRC_wrong_place_1.cue
+        │   │   │   │   │       │   ├── bad.112.ISRC_wrong_place_2.cue
+        │   │   │   │   │       │   ├── bad.113.ISRC_missing_number.cue
+        │   │   │   │   │       │   ├── bad.114.ISRC_invalid_number.cue
+        │   │   │   │   │       │   ├── bad.130.TRACK_missing_INDEX_01_1.cue
+        │   │   │   │   │       │   ├── bad.131.TRACK_missing_INDEX_01_2.cue
+        │   │   │   │   │       │   ├── bad.132.TRACK_missing_INDEX_01_3.cue
+        │   │   │   │   │       │   ├── bad.133.TRACK_missing_INDEX_01_4.cue
+        │   │   │   │   │       │   ├── bad.134.TRACK_missing_number.cue
+        │   │   │   │   │       │   ├── bad.135.TRACK_invalid_number_1.cue
+        │   │   │   │   │       │   ├── bad.136.TRACK_invalid_number_2.cue
+        │   │   │   │   │       │   ├── bad.137.TRACK_cdda_out_of_range.cue
+        │   │   │   │   │       │   ├── bad.138.TRACK_num_non_sequential.cue
+        │   │   │   │   │       │   ├── bad.139.TRACK_missing_type.cue
+        │   │   │   │   │       │   ├── bad.140.no_TRACKs.cue
+        │   │   │   │   │       │   ├── bad.200.FLAC_leadin_missing_offset.cue
+        │   │   │   │   │       │   ├── bad.201.FLAC_leadin_illegal_offset.cue
+        │   │   │   │   │       │   ├── bad.202.FLAC_leadin_cdda_illegal_offset.cue
+        │   │   │   │   │       │   ├── bad.230.FLAC_leadout_multiple.cue
+        │   │   │   │   │       │   ├── bad.231.FLAC_leadout_missing_track.cue
+        │   │   │   │   │       │   ├── bad.232.FLAC_leadout_illegal_track.cue
+        │   │   │   │   │       │   ├── bad.233.FLAC_leadout_missing_offset.cue
+        │   │   │   │   │       │   ├── bad.234.FLAC_leadout_illegal_offset.cue
+        │   │   │   │   │       │   ├── bad.235.FLAC_leadout_offset_not_211680000.cue
+        │   │   │   │   │       │   ├── good.000.cue
+        │   │   │   │   │       │   ├── good.001.cue
+        │   │   │   │   │       │   ├── good.002.dos_format.cue
+        │   │   │   │   │       │   ├── good.003.missing_final_newline.cue
+        │   │   │   │   │       │   ├── good.004.dos_format.missing_final_newline.cue
+        │   │   │   │   │       │   ├── good.005.quoted.isrc.cue
+        │   │   │   │   │       │   ├── Makefile.am
+        │   │   │   │   │       │   └── Makefile.in
+        │   │   │   │   │       ├── flac-to-flac-metadata-test-files
+        │   │   │   │   │       │   ├── case00a-expect.meta
+        │   │   │   │   │       │   ├── case01a-expect.meta
+        │   │   │   │   │       │   ├── case01b-expect.meta
+        │   │   │   │   │       │   ├── case01c-expect.meta
+        │   │   │   │   │       │   ├── case01d-expect.meta
+        │   │   │   │   │       │   ├── case01e-expect.meta
+        │   │   │   │   │       │   ├── case02a-expect.meta
+        │   │   │   │   │       │   ├── case02b-expect.meta
+        │   │   │   │   │       │   ├── case02c-expect.meta
+        │   │   │   │   │       │   ├── case03a-expect.meta
+        │   │   │   │   │       │   ├── case03b-expect.meta
+        │   │   │   │   │       │   ├── case03c-expect.meta
+        │   │   │   │   │       │   ├── case04a-expect.meta
+        │   │   │   │   │       │   ├── case04b-expect.meta
+        │   │   │   │   │       │   ├── case04c-expect.meta
+        │   │   │   │   │       │   ├── case04d-expect.meta
+        │   │   │   │   │       │   ├── case04e-expect.meta
+        │   │   │   │   │       │   ├── input0.cue
+        │   │   │   │   │       │   ├── input-SCPAP.flac
+        │   │   │   │   │       │   ├── input-SCVA.flac
+        │   │   │   │   │       │   ├── input-SCVAUP.flac
+        │   │   │   │   │       │   ├── input-SCVPAP.flac
+        │   │   │   │   │       │   ├── input-SVAUP.flac
+        │   │   │   │   │       │   ├── input-VA.flac
+        │   │   │   │   │       │   ├── Makefile.am
+        │   │   │   │   │       │   └── Makefile.in
+        │   │   │   │   │       ├── Makefile.am
+        │   │   │   │   │       ├── Makefile.in
+        │   │   │   │   │       ├── Makefile.lite
+        │   │   │   │   │       ├── metaflac.flac.in
+        │   │   │   │   │       ├── metaflac.flac.ok
+        │   │   │   │   │       ├── metaflac-test-files
+        │   │   │   │   │       │   ├── case00-expect.meta
+        │   │   │   │   │       │   ├── case01-expect.meta
+        │   │   │   │   │       │   ├── case02-expect.meta
+        │   │   │   │   │       │   ├── case03-expect.meta
+        │   │   │   │   │       │   ├── case04-expect.meta
+        │   │   │   │   │       │   ├── case05-expect.meta
+        │   │   │   │   │       │   ├── case06-expect.meta
+        │   │   │   │   │       │   ├── case07-expect.meta
+        │   │   │   │   │       │   ├── case08-expect.meta
+        │   │   │   │   │       │   ├── case09-expect.meta
+        │   │   │   │   │       │   ├── case10-expect.meta
+        │   │   │   │   │       │   ├── case11-expect.meta
+        │   │   │   │   │       │   ├── case12-expect.meta
+        │   │   │   │   │       │   ├── case13-expect.meta
+        │   │   │   │   │       │   ├── case14-expect.meta
+        │   │   │   │   │       │   ├── case15-expect.meta
+        │   │   │   │   │       │   ├── case16-expect.meta
+        │   │   │   │   │       │   ├── case17-expect.meta
+        │   │   │   │   │       │   ├── case18-expect.meta
+        │   │   │   │   │       │   ├── case19-expect.meta
+        │   │   │   │   │       │   ├── case20-expect.meta
+        │   │   │   │   │       │   ├── case21-expect.meta
+        │   │   │   │   │       │   ├── case22-expect.meta
+        │   │   │   │   │       │   ├── case23-expect.meta
+        │   │   │   │   │       │   ├── case24-expect.meta
+        │   │   │   │   │       │   ├── case25-expect.meta
+        │   │   │   │   │       │   ├── case26-expect.meta
+        │   │   │   │   │       │   ├── case27-expect.meta
+        │   │   │   │   │       │   ├── case28-expect.meta
+        │   │   │   │   │       │   ├── case29-expect.meta
+        │   │   │   │   │       │   ├── case30-expect.meta
+        │   │   │   │   │       │   ├── case31-expect.meta
+        │   │   │   │   │       │   ├── case32-expect.meta
+        │   │   │   │   │       │   ├── case33-expect.meta
+        │   │   │   │   │       │   ├── case34-expect.meta
+        │   │   │   │   │       │   ├── case35-expect.meta
+        │   │   │   │   │       │   ├── case36-expect.meta
+        │   │   │   │   │       │   ├── case37-expect.meta
+        │   │   │   │   │       │   ├── case38-expect.meta
+        │   │   │   │   │       │   ├── case39-expect.meta
+        │   │   │   │   │       │   ├── case40-expect.meta
+        │   │   │   │   │       │   ├── case41-expect.meta
+        │   │   │   │   │       │   ├── case42-expect.meta
+        │   │   │   │   │       │   ├── case43-expect.meta
+        │   │   │   │   │       │   ├── case44-expect.meta
+        │   │   │   │   │       │   ├── case45-expect.meta
+        │   │   │   │   │       │   ├── case46-expect.meta
+        │   │   │   │   │       │   ├── case47-expect.meta
+        │   │   │   │   │       │   ├── case48-expect.meta
+        │   │   │   │   │       │   ├── case49-expect.meta
+        │   │   │   │   │       │   ├── case50-expect.meta
+        │   │   │   │   │       │   ├── case51-expect.meta
+        │   │   │   │   │       │   ├── case52-expect.meta
+        │   │   │   │   │       │   ├── case53-expect.meta
+        │   │   │   │   │       │   ├── case54-expect.meta
+        │   │   │   │   │       │   ├── case55-expect.meta
+        │   │   │   │   │       │   ├── case56-expect.meta
+        │   │   │   │   │       │   ├── case57-expect.meta
+        │   │   │   │   │       │   ├── case58-expect.meta
+        │   │   │   │   │       │   ├── case59-expect.meta
+        │   │   │   │   │       │   ├── case60-expect.meta
+        │   │   │   │   │       │   ├── case61-expect.meta
+        │   │   │   │   │       │   ├── case62-expect.meta
+        │   │   │   │   │       │   ├── Makefile.am
+        │   │   │   │   │       │   └── Makefile.in
+        │   │   │   │   │       ├── picture.ok
+        │   │   │   │   │       ├── pictures
+        │   │   │   │   │       │   ├── 0.gif
+        │   │   │   │   │       │   ├── 0.jpg
+        │   │   │   │   │       │   ├── 0.png
+        │   │   │   │   │       │   ├── 1.gif
+        │   │   │   │   │       │   ├── 1.png
+        │   │   │   │   │       │   ├── 2.gif
+        │   │   │   │   │       │   ├── 2.png
+        │   │   │   │   │       │   ├── 3.png
+        │   │   │   │   │       │   ├── 4.jpg
+        │   │   │   │   │       │   ├── 4.png
+        │   │   │   │   │       │   ├── 5.png
+        │   │   │   │   │       │   ├── 6.png
+        │   │   │   │   │       │   ├── 7.png
+        │   │   │   │   │       │   ├── 8.png
+        │   │   │   │   │       │   ├── Makefile.am
+        │   │   │   │   │       │   └── Makefile.in
+        │   │   │   │   │       ├── test_compression.sh
+        │   │   │   │   │       ├── test_flac.sh
+        │   │   │   │   │       ├── test_grabbag.sh
+        │   │   │   │   │       ├── test_libFLAC++.sh
+        │   │   │   │   │       ├── test_libFLAC.sh
+        │   │   │   │   │       ├── test_metaflac.sh
+        │   │   │   │   │       ├── test_replaygain.sh
+        │   │   │   │   │       ├── test_seeking.sh
+        │   │   │   │   │       ├── test_streams.sh
+        │   │   │   │   │       └── write_iff.pl
+        │   │   │   │   ├── lzma-16.04
+        │   │   │   │   │   ├── Asm
+        │   │   │   │   │   │   ├── arm
+        │   │   │   │   │   │   │   └── 7zCrcOpt.asm
+        │   │   │   │   │   │   └── x86
+        │   │   │   │   │   │       ├── 7zAsm.asm
+        │   │   │   │   │   │       ├── 7zCrcOpt.asm
+        │   │   │   │   │   │       ├── AesOpt.asm
+        │   │   │   │   │   │       └── XzCrc64Opt.asm
+        │   │   │   │   │   ├── bin
+        │   │   │   │   │   │   ├── 7zdec.exe
+        │   │   │   │   │   │   ├── 7zr.exe
+        │   │   │   │   │   │   ├── 7zS2con.sfx
+        │   │   │   │   │   │   ├── 7zS2.sfx
+        │   │   │   │   │   │   ├── 7zSD.sfx
+        │   │   │   │   │   │   ├── installer
+        │   │   │   │   │   │   │   ├── config.txt
+        │   │   │   │   │   │   │   └── cr.bat
+        │   │   │   │   │   │   ├── lzma.exe
+        │   │   │   │   │   │   └── x64
+        │   │   │   │   │   │       └── 7zr.exe
+        │   │   │   │   │   ├── C
+        │   │   │   │   │   │   ├── 7zAlloc.c
+        │   │   │   │   │   │   ├── 7zAlloc.h
+        │   │   │   │   │   │   ├── 7zArcIn.c
+        │   │   │   │   │   │   ├── 7zBuf2.c
+        │   │   │   │   │   │   ├── 7zBuf.c
+        │   │   │   │   │   │   ├── 7zBuf.h
+        │   │   │   │   │   │   ├── 7zCrc.c
+        │   │   │   │   │   │   ├── 7zCrc.h
+        │   │   │   │   │   │   ├── 7zCrcOpt.c
+        │   │   │   │   │   │   ├── 7zDec.c
+        │   │   │   │   │   │   ├── 7zFile.c
+        │   │   │   │   │   │   ├── 7zFile.h
+        │   │   │   │   │   │   ├── 7z.h
+        │   │   │   │   │   │   ├── 7zStream.c
+        │   │   │   │   │   │   ├── 7zTypes.h
+        │   │   │   │   │   │   ├── 7zVersion.h
+        │   │   │   │   │   │   ├── 7zVersion.rc
+        │   │   │   │   │   │   ├── Aes.c
+        │   │   │   │   │   │   ├── Aes.h
+        │   │   │   │   │   │   ├── AesOpt.c
+        │   │   │   │   │   │   ├── Alloc.c
+        │   │   │   │   │   │   ├── Alloc.h
+        │   │   │   │   │   │   ├── Bcj2.c
+        │   │   │   │   │   │   ├── Bcj2Enc.c
+        │   │   │   │   │   │   ├── Bcj2.h
+        │   │   │   │   │   │   ├── Bra86.c
+        │   │   │   │   │   │   ├── Bra.c
+        │   │   │   │   │   │   ├── Bra.h
+        │   │   │   │   │   │   ├── BraIA64.c
+        │   │   │   │   │   │   ├── Compiler.h
+        │   │   │   │   │   │   ├── CpuArch.c
+        │   │   │   │   │   │   ├── CpuArch.h
+        │   │   │   │   │   │   ├── Delta.c
+        │   │   │   │   │   │   ├── Delta.h
+        │   │   │   │   │   │   ├── DllSecur.c
+        │   │   │   │   │   │   ├── DllSecur.h
+        │   │   │   │   │   │   ├── LzFind.c
+        │   │   │   │   │   │   ├── LzFind.h
+        │   │   │   │   │   │   ├── LzFindMt.c
+        │   │   │   │   │   │   ├── LzFindMt.h
+        │   │   │   │   │   │   ├── LzHash.h
+        │   │   │   │   │   │   ├── Lzma2Dec.c
+        │   │   │   │   │   │   ├── Lzma2Dec.h
+        │   │   │   │   │   │   ├── Lzma2Enc.c
+        │   │   │   │   │   │   ├── Lzma2Enc.h
+        │   │   │   │   │   │   ├── Lzma86Dec.c
+        │   │   │   │   │   │   ├── Lzma86Enc.c
+        │   │   │   │   │   │   ├── Lzma86.h
+        │   │   │   │   │   │   ├── LzmaDec.c
+        │   │   │   │   │   │   ├── LzmaDec.h
+        │   │   │   │   │   │   ├── LzmaEnc.c
+        │   │   │   │   │   │   ├── LzmaEnc.h
+        │   │   │   │   │   │   ├── LzmaLib.c
+        │   │   │   │   │   │   ├── LzmaLib.h
+        │   │   │   │   │   │   ├── MtCoder.c
+        │   │   │   │   │   │   ├── MtCoder.h
+        │   │   │   │   │   │   ├── Ppmd7.c
+        │   │   │   │   │   │   ├── Ppmd7Dec.c
+        │   │   │   │   │   │   ├── Ppmd7Enc.c
+        │   │   │   │   │   │   ├── Ppmd7.h
+        │   │   │   │   │   │   ├── Ppmd.h
+        │   │   │   │   │   │   ├── Precomp.h
+        │   │   │   │   │   │   ├── RotateDefs.h
+        │   │   │   │   │   │   ├── Sha256.c
+        │   │   │   │   │   │   ├── Sha256.h
+        │   │   │   │   │   │   ├── Sort.c
+        │   │   │   │   │   │   ├── Sort.h
+        │   │   │   │   │   │   ├── Threads.c
+        │   │   │   │   │   │   ├── Threads.h
+        │   │   │   │   │   │   ├── Util
+        │   │   │   │   │   │   │   ├── 7z
+        │   │   │   │   │   │   │   │   ├── 7z.dsp
+        │   │   │   │   │   │   │   │   ├── 7z.dsw
+        │   │   │   │   │   │   │   │   ├── 7zMain.c
+        │   │   │   │   │   │   │   │   ├── makefile
+        │   │   │   │   │   │   │   │   ├── makefile.gcc
+        │   │   │   │   │   │   │   │   ├── Precomp.c
+        │   │   │   │   │   │   │   │   └── Precomp.h
+        │   │   │   │   │   │   │   ├── Lzma
+        │   │   │   │   │   │   │   │   ├── LzmaUtil.c
+        │   │   │   │   │   │   │   │   ├── LzmaUtil.dsp
+        │   │   │   │   │   │   │   │   ├── LzmaUtil.dsw
+        │   │   │   │   │   │   │   │   ├── makefile
+        │   │   │   │   │   │   │   │   └── makefile.gcc
+        │   │   │   │   │   │   │   ├── LzmaLib
+        │   │   │   │   │   │   │   │   ├── LzmaLib.def
+        │   │   │   │   │   │   │   │   ├── LzmaLib.dsp
+        │   │   │   │   │   │   │   │   ├── LzmaLib.dsw
+        │   │   │   │   │   │   │   │   ├── LzmaLibExports.c
+        │   │   │   │   │   │   │   │   ├── makefile
+        │   │   │   │   │   │   │   │   └── resource.rc
+        │   │   │   │   │   │   │   └── SfxSetup
+        │   │   │   │   │   │   │       ├── makefile
+        │   │   │   │   │   │   │       ├── makefile_con
+        │   │   │   │   │   │   │       ├── Precomp.c
+        │   │   │   │   │   │   │       ├── Precomp.h
+        │   │   │   │   │   │   │       ├── resource.rc
+        │   │   │   │   │   │   │       ├── setup.ico
+        │   │   │   │   │   │   │       ├── SfxSetup.c
+        │   │   │   │   │   │   │       ├── SfxSetup.dsp
+        │   │   │   │   │   │   │       └── SfxSetup.dsw
+        │   │   │   │   │   │   ├── Xz.c
+        │   │   │   │   │   │   ├── XzCrc64.c
+        │   │   │   │   │   │   ├── XzCrc64.h
+        │   │   │   │   │   │   ├── XzCrc64Opt.c
+        │   │   │   │   │   │   ├── XzDec.c
+        │   │   │   │   │   │   ├── XzEnc.c
+        │   │   │   │   │   │   ├── XzEnc.h
+        │   │   │   │   │   │   ├── Xz.h
+        │   │   │   │   │   │   └── XzIn.c
+        │   │   │   │   │   ├── CPP
+        │   │   │   │   │   │   ├── 7zip
+        │   │   │   │   │   │   │   ├── 7zip.mak
+        │   │   │   │   │   │   │   ├── Aes.mak
+        │   │   │   │   │   │   │   ├── Archive
+        │   │   │   │   │   │   │   │   ├── 7z
+        │   │   │   │   │   │   │   │   │   ├── 7zCompressionMode.cpp
+        │   │   │   │   │   │   │   │   │   ├── 7zCompressionMode.h
+        │   │   │   │   │   │   │   │   │   ├── 7zDecode.cpp
+        │   │   │   │   │   │   │   │   │   ├── 7zDecode.h
+        │   │   │   │   │   │   │   │   │   ├── 7zEncode.cpp
+        │   │   │   │   │   │   │   │   │   ├── 7zEncode.h
+        │   │   │   │   │   │   │   │   │   ├── 7zExtract.cpp
+        │   │   │   │   │   │   │   │   │   ├── 7zFolderInStream.cpp
+        │   │   │   │   │   │   │   │   │   ├── 7zFolderInStream.h
+        │   │   │   │   │   │   │   │   │   ├── 7zHandler.cpp
+        │   │   │   │   │   │   │   │   │   ├── 7zHandler.h
+        │   │   │   │   │   │   │   │   │   ├── 7zHandlerOut.cpp
+        │   │   │   │   │   │   │   │   │   ├── 7zHeader.cpp
+        │   │   │   │   │   │   │   │   │   ├── 7zHeader.h
+        │   │   │   │   │   │   │   │   │   ├── 7zIn.cpp
+        │   │   │   │   │   │   │   │   │   ├── 7zIn.h
+        │   │   │   │   │   │   │   │   │   ├── 7zItem.h
+        │   │   │   │   │   │   │   │   │   ├── 7zOut.cpp
+        │   │   │   │   │   │   │   │   │   ├── 7zOut.h
+        │   │   │   │   │   │   │   │   │   ├── 7zProperties.cpp
+        │   │   │   │   │   │   │   │   │   ├── 7zProperties.h
+        │   │   │   │   │   │   │   │   │   ├── 7zRegister.cpp
+        │   │   │   │   │   │   │   │   │   ├── 7zSpecStream.cpp
+        │   │   │   │   │   │   │   │   │   ├── 7zSpecStream.h
+        │   │   │   │   │   │   │   │   │   ├── 7zUpdate.cpp
+        │   │   │   │   │   │   │   │   │   ├── 7zUpdate.h
+        │   │   │   │   │   │   │   │   │   ├── StdAfx.cpp
+        │   │   │   │   │   │   │   │   │   └── StdAfx.h
+        │   │   │   │   │   │   │   │   ├── Archive2.def
+        │   │   │   │   │   │   │   │   ├── Archive.def
+        │   │   │   │   │   │   │   │   ├── ArchiveExports.cpp
+        │   │   │   │   │   │   │   │   ├── Common
+        │   │   │   │   │   │   │   │   │   ├── CoderMixer2.cpp
+        │   │   │   │   │   │   │   │   │   ├── CoderMixer2.h
+        │   │   │   │   │   │   │   │   │   ├── DummyOutStream.cpp
+        │   │   │   │   │   │   │   │   │   ├── DummyOutStream.h
+        │   │   │   │   │   │   │   │   │   ├── HandlerOut.cpp
+        │   │   │   │   │   │   │   │   │   ├── HandlerOut.h
+        │   │   │   │   │   │   │   │   │   ├── InStreamWithCRC.cpp
+        │   │   │   │   │   │   │   │   │   ├── InStreamWithCRC.h
+        │   │   │   │   │   │   │   │   │   ├── ItemNameUtils.cpp
+        │   │   │   │   │   │   │   │   │   ├── ItemNameUtils.h
+        │   │   │   │   │   │   │   │   │   ├── MultiStream.cpp
+        │   │   │   │   │   │   │   │   │   ├── MultiStream.h
+        │   │   │   │   │   │   │   │   │   ├── OutStreamWithCRC.cpp
+        │   │   │   │   │   │   │   │   │   ├── OutStreamWithCRC.h
+        │   │   │   │   │   │   │   │   │   ├── ParseProperties.cpp
+        │   │   │   │   │   │   │   │   │   ├── ParseProperties.h
+        │   │   │   │   │   │   │   │   │   └── StdAfx.h
+        │   │   │   │   │   │   │   │   ├── DllExports2.cpp
+        │   │   │   │   │   │   │   │   ├── IArchive.h
+        │   │   │   │   │   │   │   │   ├── Icons
+        │   │   │   │   │   │   │   │   │   └── 7z.ico
+        │   │   │   │   │   │   │   │   ├── LzmaHandler.cpp
+        │   │   │   │   │   │   │   │   ├── SplitHandler.cpp
+        │   │   │   │   │   │   │   │   ├── StdAfx.h
+        │   │   │   │   │   │   │   │   ├── XzHandler.cpp
+        │   │   │   │   │   │   │   │   └── XzHandler.h
+        │   │   │   │   │   │   │   ├── Asm.mak
+        │   │   │   │   │   │   │   ├── Bundles
+        │   │   │   │   │   │   │   │   ├── Alone7z
+        │   │   │   │   │   │   │   │   │   ├── Alone.dsp
+        │   │   │   │   │   │   │   │   │   ├── Alone.dsw
+        │   │   │   │   │   │   │   │   │   ├── makefile
+        │   │   │   │   │   │   │   │   │   ├── resource.rc
+        │   │   │   │   │   │   │   │   │   ├── StdAfx.cpp
+        │   │   │   │   │   │   │   │   │   └── StdAfx.h
+        │   │   │   │   │   │   │   │   ├── Format7zExtractR
+        │   │   │   │   │   │   │   │   │   ├── makefile
+        │   │   │   │   │   │   │   │   │   ├── resource.rc
+        │   │   │   │   │   │   │   │   │   ├── StdAfx.cpp
+        │   │   │   │   │   │   │   │   │   └── StdAfx.h
+        │   │   │   │   │   │   │   │   ├── Format7zR
+        │   │   │   │   │   │   │   │   │   ├── makefile
+        │   │   │   │   │   │   │   │   │   ├── resource.rc
+        │   │   │   │   │   │   │   │   │   ├── StdAfx.cpp
+        │   │   │   │   │   │   │   │   │   └── StdAfx.h
+        │   │   │   │   │   │   │   │   ├── LzmaCon
+        │   │   │   │   │   │   │   │   │   ├── LzmaAlone.cpp
+        │   │   │   │   │   │   │   │   │   ├── LzmaCon.dsp
+        │   │   │   │   │   │   │   │   │   ├── LzmaCon.dsw
+        │   │   │   │   │   │   │   │   │   ├── makefile
+        │   │   │   │   │   │   │   │   │   ├── makefile.gcc
+        │   │   │   │   │   │   │   │   │   ├── resource.rc
+        │   │   │   │   │   │   │   │   │   ├── StdAfx.cpp
+        │   │   │   │   │   │   │   │   │   └── StdAfx.h
+        │   │   │   │   │   │   │   │   ├── LzmaSpec
+        │   │   │   │   │   │   │   │   │   └── LzmaSpec.cpp
+        │   │   │   │   │   │   │   │   ├── SFXCon
+        │   │   │   │   │   │   │   │   │   ├── 7z.ico
+        │   │   │   │   │   │   │   │   │   ├── makefile
+        │   │   │   │   │   │   │   │   │   ├── resource.rc
+        │   │   │   │   │   │   │   │   │   ├── SfxCon.cpp
+        │   │   │   │   │   │   │   │   │   ├── SFXCon.dsp
+        │   │   │   │   │   │   │   │   │   ├── SFXCon.dsw
+        │   │   │   │   │   │   │   │   │   ├── StdAfx.cpp
+        │   │   │   │   │   │   │   │   │   └── StdAfx.h
+        │   │   │   │   │   │   │   │   ├── SFXSetup
+        │   │   │   │   │   │   │   │   │   ├── ExtractCallbackSfx.cpp
+        │   │   │   │   │   │   │   │   │   ├── ExtractCallbackSfx.h
+        │   │   │   │   │   │   │   │   │   ├── ExtractEngine.cpp
+        │   │   │   │   │   │   │   │   │   ├── ExtractEngine.h
+        │   │   │   │   │   │   │   │   │   ├── makefile
+        │   │   │   │   │   │   │   │   │   ├── resource.h
+        │   │   │   │   │   │   │   │   │   ├── resource.rc
+        │   │   │   │   │   │   │   │   │   ├── setup.ico
+        │   │   │   │   │   │   │   │   │   ├── SfxSetup.cpp
+        │   │   │   │   │   │   │   │   │   ├── SFXSetup.dsp
+        │   │   │   │   │   │   │   │   │   ├── SFXSetup.dsw
+        │   │   │   │   │   │   │   │   │   ├── StdAfx.cpp
+        │   │   │   │   │   │   │   │   │   └── StdAfx.h
+        │   │   │   │   │   │   │   │   └── SFXWin
+        │   │   │   │   │   │   │   │       ├── 7z.ico
+        │   │   │   │   │   │   │   │       ├── makefile
+        │   │   │   │   │   │   │   │       ├── resource.h
+        │   │   │   │   │   │   │   │       ├── resource.rc
+        │   │   │   │   │   │   │   │       ├── SfxWin.cpp
+        │   │   │   │   │   │   │   │       ├── SFXWin.dsp
+        │   │   │   │   │   │   │   │       ├── SFXWin.dsw
+        │   │   │   │   │   │   │   │       ├── StdAfx.cpp
+        │   │   │   │   │   │   │   │       └── StdAfx.h
+        │   │   │   │   │   │   │   ├── Common
+        │   │   │   │   │   │   │   │   ├── CreateCoder.cpp
+        │   │   │   │   │   │   │   │   ├── CreateCoder.h
+        │   │   │   │   │   │   │   │   ├── CWrappers.cpp
+        │   │   │   │   │   │   │   │   ├── CWrappers.h
+        │   │   │   │   │   │   │   │   ├── FilePathAutoRename.cpp
+        │   │   │   │   │   │   │   │   ├── FilePathAutoRename.h
+        │   │   │   │   │   │   │   │   ├── FileStreams.cpp
+        │   │   │   │   │   │   │   │   ├── FileStreams.h
+        │   │   │   │   │   │   │   │   ├── FilterCoder.cpp
+        │   │   │   │   │   │   │   │   ├── FilterCoder.h
+        │   │   │   │   │   │   │   │   ├── InBuffer.cpp
+        │   │   │   │   │   │   │   │   ├── InBuffer.h
+        │   │   │   │   │   │   │   │   ├── InOutTempBuffer.cpp
+        │   │   │   │   │   │   │   │   ├── InOutTempBuffer.h
+        │   │   │   │   │   │   │   │   ├── LimitedStreams.cpp
+        │   │   │   │   │   │   │   │   ├── LimitedStreams.h
+        │   │   │   │   │   │   │   │   ├── LockedStream.cpp
+        │   │   │   │   │   │   │   │   ├── LockedStream.h
+        │   │   │   │   │   │   │   │   ├── MethodId.cpp
+        │   │   │   │   │   │   │   │   ├── MethodId.h
+        │   │   │   │   │   │   │   │   ├── MethodProps.cpp
+        │   │   │   │   │   │   │   │   ├── MethodProps.h
+        │   │   │   │   │   │   │   │   ├── OffsetStream.cpp
+        │   │   │   │   │   │   │   │   ├── OffsetStream.h
+        │   │   │   │   │   │   │   │   ├── OutBuffer.cpp
+        │   │   │   │   │   │   │   │   ├── OutBuffer.h
+        │   │   │   │   │   │   │   │   ├── ProgressUtils.cpp
+        │   │   │   │   │   │   │   │   ├── ProgressUtils.h
+        │   │   │   │   │   │   │   │   ├── PropId.cpp
+        │   │   │   │   │   │   │   │   ├── RegisterArc.h
+        │   │   │   │   │   │   │   │   ├── RegisterCodec.h
+        │   │   │   │   │   │   │   │   ├── StdAfx.h
+        │   │   │   │   │   │   │   │   ├── StreamBinder.cpp
+        │   │   │   │   │   │   │   │   ├── StreamBinder.h
+        │   │   │   │   │   │   │   │   ├── StreamObjects.cpp
+        │   │   │   │   │   │   │   │   ├── StreamObjects.h
+        │   │   │   │   │   │   │   │   ├── StreamUtils.cpp
+        │   │   │   │   │   │   │   │   ├── StreamUtils.h
+        │   │   │   │   │   │   │   │   ├── UniqBlocks.cpp
+        │   │   │   │   │   │   │   │   ├── UniqBlocks.h
+        │   │   │   │   │   │   │   │   ├── VirtThread.cpp
+        │   │   │   │   │   │   │   │   └── VirtThread.h
+        │   │   │   │   │   │   │   ├── Compress
+        │   │   │   │   │   │   │   │   ├── Bcj2Coder.cpp
+        │   │   │   │   │   │   │   │   ├── Bcj2Coder.h
+        │   │   │   │   │   │   │   │   ├── Bcj2Register.cpp
+        │   │   │   │   │   │   │   │   ├── BcjCoder.cpp
+        │   │   │   │   │   │   │   │   ├── BcjCoder.h
+        │   │   │   │   │   │   │   │   ├── BcjRegister.cpp
+        │   │   │   │   │   │   │   │   ├── BranchMisc.cpp
+        │   │   │   │   │   │   │   │   ├── BranchMisc.h
+        │   │   │   │   │   │   │   │   ├── BranchRegister.cpp
+        │   │   │   │   │   │   │   │   ├── ByteSwap.cpp
+        │   │   │   │   │   │   │   │   ├── CodecExports.cpp
+        │   │   │   │   │   │   │   │   ├── CopyCoder.cpp
+        │   │   │   │   │   │   │   │   ├── CopyCoder.h
+        │   │   │   │   │   │   │   │   ├── CopyRegister.cpp
+        │   │   │   │   │   │   │   │   ├── DeltaFilter.cpp
+        │   │   │   │   │   │   │   │   ├── Lzma2Decoder.cpp
+        │   │   │   │   │   │   │   │   ├── Lzma2Decoder.h
+        │   │   │   │   │   │   │   │   ├── Lzma2Encoder.cpp
+        │   │   │   │   │   │   │   │   ├── Lzma2Encoder.h
+        │   │   │   │   │   │   │   │   ├── Lzma2Register.cpp
+        │   │   │   │   │   │   │   │   ├── LzmaDecoder.cpp
+        │   │   │   │   │   │   │   │   ├── LzmaDecoder.h
+        │   │   │   │   │   │   │   │   ├── LzmaEncoder.cpp
+        │   │   │   │   │   │   │   │   ├── LzmaEncoder.h
+        │   │   │   │   │   │   │   │   ├── LzmaRegister.cpp
+        │   │   │   │   │   │   │   │   ├── PpmdDecoder.cpp
+        │   │   │   │   │   │   │   │   ├── PpmdDecoder.h
+        │   │   │   │   │   │   │   │   ├── PpmdEncoder.cpp
+        │   │   │   │   │   │   │   │   ├── PpmdEncoder.h
+        │   │   │   │   │   │   │   │   ├── PpmdRegister.cpp
+        │   │   │   │   │   │   │   │   └── StdAfx.h
+        │   │   │   │   │   │   │   ├── Crc64.mak
+        │   │   │   │   │   │   │   ├── Crc.mak
+        │   │   │   │   │   │   │   ├── Crypto
+        │   │   │   │   │   │   │   │   ├── 7zAes.cpp
+        │   │   │   │   │   │   │   │   ├── 7zAes.h
+        │   │   │   │   │   │   │   │   ├── 7zAesRegister.cpp
+        │   │   │   │   │   │   │   │   ├── MyAes.cpp
+        │   │   │   │   │   │   │   │   ├── MyAes.h
+        │   │   │   │   │   │   │   │   ├── MyAesReg.cpp
+        │   │   │   │   │   │   │   │   ├── RandGen.cpp
+        │   │   │   │   │   │   │   │   ├── RandGen.h
+        │   │   │   │   │   │   │   │   └── StdAfx.h
+        │   │   │   │   │   │   │   ├── GuiCommon.rc
+        │   │   │   │   │   │   │   ├── Guid.txt
+        │   │   │   │   │   │   │   ├── ICoder.h
+        │   │   │   │   │   │   │   ├── IDecl.h
+        │   │   │   │   │   │   │   ├── IPassword.h
+        │   │   │   │   │   │   │   ├── IProgress.h
+        │   │   │   │   │   │   │   ├── IStream.h
+        │   │   │   │   │   │   │   ├── MyVersion.h
+        │   │   │   │   │   │   │   ├── MyVersionInfo.rc
+        │   │   │   │   │   │   │   ├── PropID.h
+        │   │   │   │   │   │   │   ├── SubBuild.mak
+        │   │   │   │   │   │   │   └── UI
+        │   │   │   │   │   │   │       ├── Client7z
+        │   │   │   │   │   │   │       │   ├── Client7z.cpp
+        │   │   │   │   │   │   │       │   ├── Client7z.dsp
+        │   │   │   │   │   │   │       │   ├── Client7z.dsw
+        │   │   │   │   │   │   │       │   ├── makefile
+        │   │   │   │   │   │   │       │   ├── resource.rc
+        │   │   │   │   │   │   │       │   ├── StdAfx.cpp
+        │   │   │   │   │   │   │       │   └── StdAfx.h
+        │   │   │   │   │   │   │       ├── Common
+        │   │   │   │   │   │   │       │   ├── ArchiveCommandLine.cpp
+        │   │   │   │   │   │   │       │   ├── ArchiveCommandLine.h
+        │   │   │   │   │   │   │       │   ├── ArchiveExtractCallback.cpp
+        │   │   │   │   │   │   │       │   ├── ArchiveExtractCallback.h
+        │   │   │   │   │   │   │       │   ├── ArchiveName.cpp
+        │   │   │   │   │   │   │       │   ├── ArchiveName.h
+        │   │   │   │   │   │   │       │   ├── ArchiveOpenCallback.cpp
+        │   │   │   │   │   │   │       │   ├── ArchiveOpenCallback.h
+        │   │   │   │   │   │   │       │   ├── Bench.cpp
+        │   │   │   │   │   │   │       │   ├── Bench.h
+        │   │   │   │   │   │   │       │   ├── DefaultName.cpp
+        │   │   │   │   │   │   │       │   ├── DefaultName.h
+        │   │   │   │   │   │   │       │   ├── DirItem.h
+        │   │   │   │   │   │   │       │   ├── EnumDirItems.cpp
+        │   │   │   │   │   │   │       │   ├── EnumDirItems.h
+        │   │   │   │   │   │   │       │   ├── ExitCode.h
+        │   │   │   │   │   │   │       │   ├── Extract.cpp
+        │   │   │   │   │   │   │       │   ├── Extract.h
+        │   │   │   │   │   │   │       │   ├── ExtractingFilePath.cpp
+        │   │   │   │   │   │   │       │   ├── ExtractingFilePath.h
+        │   │   │   │   │   │   │       │   ├── ExtractMode.h
+        │   │   │   │   │   │   │       │   ├── HashCalc.cpp
+        │   │   │   │   │   │   │       │   ├── HashCalc.h
+        │   │   │   │   │   │   │       │   ├── IFileExtractCallback.h
+        │   │   │   │   │   │   │       │   ├── LoadCodecs.cpp
+        │   │   │   │   │   │   │       │   ├── LoadCodecs.h
+        │   │   │   │   │   │   │       │   ├── OpenArchive.cpp
+        │   │   │   │   │   │   │       │   ├── OpenArchive.h
+        │   │   │   │   │   │   │       │   ├── Property.h
+        │   │   │   │   │   │   │       │   ├── PropIDUtils.cpp
+        │   │   │   │   │   │   │       │   ├── PropIDUtils.h
+        │   │   │   │   │   │   │       │   ├── SetProperties.cpp
+        │   │   │   │   │   │   │       │   ├── SetProperties.h
+        │   │   │   │   │   │   │       │   ├── SortUtils.cpp
+        │   │   │   │   │   │   │       │   ├── SortUtils.h
+        │   │   │   │   │   │   │       │   ├── StdAfx.h
+        │   │   │   │   │   │   │       │   ├── TempFiles.cpp
+        │   │   │   │   │   │   │       │   ├── TempFiles.h
+        │   │   │   │   │   │   │       │   ├── UpdateAction.cpp
+        │   │   │   │   │   │   │       │   ├── UpdateAction.h
+        │   │   │   │   │   │   │       │   ├── UpdateCallback.cpp
+        │   │   │   │   │   │   │       │   ├── UpdateCallback.h
+        │   │   │   │   │   │   │       │   ├── Update.cpp
+        │   │   │   │   │   │   │       │   ├── Update.h
+        │   │   │   │   │   │   │       │   ├── UpdatePair.cpp
+        │   │   │   │   │   │   │       │   ├── UpdatePair.h
+        │   │   │   │   │   │   │       │   ├── UpdateProduce.cpp
+        │   │   │   │   │   │   │       │   ├── UpdateProduce.h
+        │   │   │   │   │   │   │       │   ├── WorkDir.cpp
+        │   │   │   │   │   │   │       │   ├── WorkDir.h
+        │   │   │   │   │   │   │       │   └── ZipRegistry.h
+        │   │   │   │   │   │   │       ├── Console
+        │   │   │   │   │   │   │       │   ├── BenchCon.cpp
+        │   │   │   │   │   │   │       │   ├── BenchCon.h
+        │   │   │   │   │   │   │       │   ├── ConsoleClose.cpp
+        │   │   │   │   │   │   │       │   ├── ConsoleClose.h
+        │   │   │   │   │   │   │       │   ├── Console.mak
+        │   │   │   │   │   │   │       │   ├── ExtractCallbackConsole.cpp
+        │   │   │   │   │   │   │       │   ├── ExtractCallbackConsole.h
+        │   │   │   │   │   │   │       │   ├── HashCon.cpp
+        │   │   │   │   │   │   │       │   ├── HashCon.h
+        │   │   │   │   │   │   │       │   ├── List.cpp
+        │   │   │   │   │   │   │       │   ├── List.h
+        │   │   │   │   │   │   │       │   ├── MainAr.cpp
+        │   │   │   │   │   │   │       │   ├── Main.cpp
+        │   │   │   │   │   │   │       │   ├── makefile
+        │   │   │   │   │   │   │       │   ├── OpenCallbackConsole.cpp
+        │   │   │   │   │   │   │       │   ├── OpenCallbackConsole.h
+        │   │   │   │   │   │   │       │   ├── PercentPrinter.cpp
+        │   │   │   │   │   │   │       │   ├── PercentPrinter.h
+        │   │   │   │   │   │   │       │   ├── resource.rc
+        │   │   │   │   │   │   │       │   ├── StdAfx.cpp
+        │   │   │   │   │   │   │       │   ├── StdAfx.h
+        │   │   │   │   │   │   │       │   ├── UpdateCallbackConsole.cpp
+        │   │   │   │   │   │   │       │   ├── UpdateCallbackConsole.h
+        │   │   │   │   │   │   │       │   ├── UserInputUtils.cpp
+        │   │   │   │   │   │   │       │   └── UserInputUtils.h
+        │   │   │   │   │   │   │       ├── Explorer
+        │   │   │   │   │   │   │       │   ├── MyMessages.cpp
+        │   │   │   │   │   │   │       │   └── MyMessages.h
+        │   │   │   │   │   │   │       ├── FileManager
+        │   │   │   │   │   │   │       │   ├── BrowseDialog.cpp
+        │   │   │   │   │   │   │       │   ├── BrowseDialog.h
+        │   │   │   │   │   │   │       │   ├── BrowseDialogRes.h
+        │   │   │   │   │   │   │       │   ├── ComboDialog.cpp
+        │   │   │   │   │   │   │       │   ├── ComboDialog.h
+        │   │   │   │   │   │   │       │   ├── ComboDialogRes.h
+        │   │   │   │   │   │   │       │   ├── DialogSize.h
+        │   │   │   │   │   │   │       │   ├── ExtractCallback.cpp
+        │   │   │   │   │   │   │       │   ├── ExtractCallback.h
+        │   │   │   │   │   │   │       │   ├── FormatUtils.cpp
+        │   │   │   │   │   │   │       │   ├── FormatUtils.h
+        │   │   │   │   │   │   │       │   ├── LangUtils.h
+        │   │   │   │   │   │   │       │   ├── MyWindowsNew.h
+        │   │   │   │   │   │   │       │   ├── OverwriteDialog.cpp
+        │   │   │   │   │   │   │       │   ├── OverwriteDialog.h
+        │   │   │   │   │   │   │       │   ├── OverwriteDialog.rc
+        │   │   │   │   │   │   │       │   ├── OverwriteDialogRes.h
+        │   │   │   │   │   │   │       │   ├── PasswordDialog.cpp
+        │   │   │   │   │   │   │       │   ├── PasswordDialog.h
+        │   │   │   │   │   │   │       │   ├── PasswordDialog.rc
+        │   │   │   │   │   │   │       │   ├── PasswordDialogRes.h
+        │   │   │   │   │   │   │       │   ├── ProgressDialog2a.rc
+        │   │   │   │   │   │   │       │   ├── ProgressDialog2.cpp
+        │   │   │   │   │   │   │       │   ├── ProgressDialog2.h
+        │   │   │   │   │   │   │       │   ├── ProgressDialog2.rc
+        │   │   │   │   │   │   │       │   ├── ProgressDialog2Res.h
+        │   │   │   │   │   │   │       │   ├── ProgressDialog.cpp
+        │   │   │   │   │   │   │       │   ├── ProgressDialog.h
+        │   │   │   │   │   │   │       │   ├── ProgressDialog.rc
+        │   │   │   │   │   │   │       │   ├── ProgressDialogRes.h
+        │   │   │   │   │   │   │       │   ├── PropertyName.cpp
+        │   │   │   │   │   │   │       │   ├── PropertyName.h
+        │   │   │   │   │   │   │       │   ├── PropertyNameRes.h
+        │   │   │   │   │   │   │       │   ├── resourceGui.h
+        │   │   │   │   │   │   │       │   ├── resource.h
+        │   │   │   │   │   │   │       │   ├── SysIconUtils.cpp
+        │   │   │   │   │   │   │       │   └── SysIconUtils.h
+        │   │   │   │   │   │   │       └── GUI
+        │   │   │   │   │   │   │           ├── ExtractDialog.cpp
+        │   │   │   │   │   │   │           ├── ExtractDialog.h
+        │   │   │   │   │   │   │           ├── ExtractDialog.rc
+        │   │   │   │   │   │   │           ├── ExtractDialogRes.h
+        │   │   │   │   │   │   │           ├── ExtractGUI.cpp
+        │   │   │   │   │   │   │           ├── ExtractGUI.h
+        │   │   │   │   │   │   │           ├── Extract.rc
+        │   │   │   │   │   │   │           ├── ExtractRes.h
+        │   │   │   │   │   │   │           ├── HashGUI.h
+        │   │   │   │   │   │   │           └── resource2.h
+        │   │   │   │   │   │   ├── Build.mak
+        │   │   │   │   │   │   ├── Common
+        │   │   │   │   │   │   │   ├── AutoPtr.h
+        │   │   │   │   │   │   │   ├── C_FileIO.cpp
+        │   │   │   │   │   │   │   ├── C_FileIO.h
+        │   │   │   │   │   │   │   ├── CommandLineParser.cpp
+        │   │   │   │   │   │   │   ├── CommandLineParser.h
+        │   │   │   │   │   │   │   ├── Common.h
+        │   │   │   │   │   │   │   ├── ComTry.h
+        │   │   │   │   │   │   │   ├── CRC.cpp
+        │   │   │   │   │   │   │   ├── CrcReg.cpp
+        │   │   │   │   │   │   │   ├── Defs.h
+        │   │   │   │   │   │   │   ├── DynamicBuffer.h
+        │   │   │   │   │   │   │   ├── IntToString.cpp
+        │   │   │   │   │   │   │   ├── IntToString.h
+        │   │   │   │   │   │   │   ├── Lang.h
+        │   │   │   │   │   │   │   ├── ListFileUtils.cpp
+        │   │   │   │   │   │   │   ├── ListFileUtils.h
+        │   │   │   │   │   │   │   ├── MyBuffer.h
+        │   │   │   │   │   │   │   ├── MyCom.h
+        │   │   │   │   │   │   │   ├── MyException.h
+        │   │   │   │   │   │   │   ├── MyGuidDef.h
+        │   │   │   │   │   │   │   ├── MyInitGuid.h
+        │   │   │   │   │   │   │   ├── MyLinux.h
+        │   │   │   │   │   │   │   ├── MyString.cpp
+        │   │   │   │   │   │   │   ├── MyString.h
+        │   │   │   │   │   │   │   ├── MyTypes.h
+        │   │   │   │   │   │   │   ├── MyUnknown.h
+        │   │   │   │   │   │   │   ├── MyVector.cpp
+        │   │   │   │   │   │   │   ├── MyVector.h
+        │   │   │   │   │   │   │   ├── MyWindows.cpp
+        │   │   │   │   │   │   │   ├── MyWindows.h
+        │   │   │   │   │   │   │   ├── NewHandler.cpp
+        │   │   │   │   │   │   │   ├── NewHandler.h
+        │   │   │   │   │   │   │   ├── Sha256Reg.cpp
+        │   │   │   │   │   │   │   ├── StdAfx.h
+        │   │   │   │   │   │   │   ├── StdInStream.cpp
+        │   │   │   │   │   │   │   ├── StdInStream.h
+        │   │   │   │   │   │   │   ├── StdOutStream.cpp
+        │   │   │   │   │   │   │   ├── StdOutStream.h
+        │   │   │   │   │   │   │   ├── StringConvert.cpp
+        │   │   │   │   │   │   │   ├── StringConvert.h
+        │   │   │   │   │   │   │   ├── StringToInt.cpp
+        │   │   │   │   │   │   │   ├── StringToInt.h
+        │   │   │   │   │   │   │   ├── TextConfig.cpp
+        │   │   │   │   │   │   │   ├── TextConfig.h
+        │   │   │   │   │   │   │   ├── UTFConvert.cpp
+        │   │   │   │   │   │   │   ├── UTFConvert.h
+        │   │   │   │   │   │   │   ├── Wildcard.cpp
+        │   │   │   │   │   │   │   ├── Wildcard.h
+        │   │   │   │   │   │   │   └── XzCrc64Reg.cpp
+        │   │   │   │   │   │   └── Windows
+        │   │   │   │   │   │       ├── COM.h
+        │   │   │   │   │   │       ├── CommonDialog.cpp
+        │   │   │   │   │   │       ├── CommonDialog.h
+        │   │   │   │   │   │       ├── Control
+        │   │   │   │   │   │       │   ├── ComboBox.cpp
+        │   │   │   │   │   │       │   ├── ComboBox.h
+        │   │   │   │   │   │       │   ├── CommandBar.h
+        │   │   │   │   │   │       │   ├── Dialog.cpp
+        │   │   │   │   │   │       │   ├── Dialog.h
+        │   │   │   │   │   │       │   ├── Edit.h
+        │   │   │   │   │   │       │   ├── ImageList.cpp
+        │   │   │   │   │   │       │   ├── ImageList.h
+        │   │   │   │   │   │       │   ├── ListView.cpp
+        │   │   │   │   │   │       │   ├── ListView.h
+        │   │   │   │   │   │       │   ├── ProgressBar.h
+        │   │   │   │   │   │       │   ├── PropertyPage.cpp
+        │   │   │   │   │   │       │   ├── PropertyPage.h
+        │   │   │   │   │   │       │   ├── ReBar.h
+        │   │   │   │   │   │       │   ├── Static.h
+        │   │   │   │   │   │       │   ├── StatusBar.h
+        │   │   │   │   │   │       │   ├── StdAfx.h
+        │   │   │   │   │   │       │   ├── ToolBar.h
+        │   │   │   │   │   │       │   ├── Trackbar.h
+        │   │   │   │   │   │       │   ├── Window2.cpp
+        │   │   │   │   │   │       │   └── Window2.h
+        │   │   │   │   │   │       ├── Defs.h
+        │   │   │   │   │   │       ├── DLL.cpp
+        │   │   │   │   │   │       ├── DLL.h
+        │   │   │   │   │   │       ├── ErrorMsg.cpp
+        │   │   │   │   │   │       ├── ErrorMsg.h
+        │   │   │   │   │   │       ├── FileDir.cpp
+        │   │   │   │   │   │       ├── FileDir.h
+        │   │   │   │   │   │       ├── FileFind.cpp
+        │   │   │   │   │   │       ├── FileFind.h
+        │   │   │   │   │   │       ├── FileIO.cpp
+        │   │   │   │   │   │       ├── FileIO.h
+        │   │   │   │   │   │       ├── FileLink.cpp
+        │   │   │   │   │   │       ├── FileMapping.cpp
+        │   │   │   │   │   │       ├── FileMapping.h
+        │   │   │   │   │   │       ├── FileName.cpp
+        │   │   │   │   │   │       ├── FileName.h
+        │   │   │   │   │   │       ├── FileSystem.cpp
+        │   │   │   │   │   │       ├── FileSystem.h
+        │   │   │   │   │   │       ├── Handle.h
+        │   │   │   │   │   │       ├── MemoryLock.cpp
+        │   │   │   │   │   │       ├── MemoryLock.h
+        │   │   │   │   │   │       ├── NtCheck.h
+        │   │   │   │   │   │       ├── PropVariantConv.cpp
+        │   │   │   │   │   │       ├── PropVariantConv.h
+        │   │   │   │   │   │       ├── PropVariant.cpp
+        │   │   │   │   │   │       ├── PropVariant.h
+        │   │   │   │   │   │       ├── Registry.cpp
+        │   │   │   │   │   │       ├── Registry.h
+        │   │   │   │   │   │       ├── ResourceString.cpp
+        │   │   │   │   │   │       ├── ResourceString.h
+        │   │   │   │   │   │       ├── SecurityUtils.cpp
+        │   │   │   │   │   │       ├── SecurityUtils.h
+        │   │   │   │   │   │       ├── Shell.cpp
+        │   │   │   │   │   │       ├── Shell.h
+        │   │   │   │   │   │       ├── StdAfx.h
+        │   │   │   │   │   │       ├── Synchronization.cpp
+        │   │   │   │   │   │       ├── Synchronization.h
+        │   │   │   │   │   │       ├── System.cpp
+        │   │   │   │   │   │       ├── System.h
+        │   │   │   │   │   │       ├── Thread.h
+        │   │   │   │   │   │       ├── TimeUtils.cpp
+        │   │   │   │   │   │       ├── TimeUtils.h
+        │   │   │   │   │   │       ├── Window.cpp
+        │   │   │   │   │   │       └── Window.h
+        │   │   │   │   │   ├── CS
+        │   │   │   │   │   │   └── 7zip
+        │   │   │   │   │   │       ├── Common
+        │   │   │   │   │   │       │   ├── CommandLineParser.cs
+        │   │   │   │   │   │       │   ├── CRC.cs
+        │   │   │   │   │   │       │   ├── InBuffer.cs
+        │   │   │   │   │   │       │   └── OutBuffer.cs
+        │   │   │   │   │   │       ├── Compress
+        │   │   │   │   │   │       │   ├── LZ
+        │   │   │   │   │   │       │   │   ├── IMatchFinder.cs
+        │   │   │   │   │   │       │   │   ├── LzBinTree.cs
+        │   │   │   │   │   │       │   │   ├── LzInWindow.cs
+        │   │   │   │   │   │       │   │   └── LzOutWindow.cs
+        │   │   │   │   │   │       │   ├── LZMA
+        │   │   │   │   │   │       │   │   ├── LzmaBase.cs
+        │   │   │   │   │   │       │   │   ├── LzmaDecoder.cs
+        │   │   │   │   │   │       │   │   └── LzmaEncoder.cs
+        │   │   │   │   │   │       │   ├── LzmaAlone
+        │   │   │   │   │   │       │   │   ├── LzmaAlone.cs
+        │   │   │   │   │   │       │   │   ├── LzmaAlone.csproj
+        │   │   │   │   │   │       │   │   ├── LzmaAlone.sln
+        │   │   │   │   │   │       │   │   ├── LzmaBench.cs
+        │   │   │   │   │   │       │   │   ├── obj
+        │   │   │   │   │   │       │   │   │   ├── Debug
+        │   │   │   │   │   │       │   │   │   │   ├── LzmaAlone.csprojAssemblyReference.cache
+        │   │   │   │   │   │       │   │   │   │   └── LzmaAlone.csproj.CoreCompileInputs.cache
+        │   │   │   │   │   │       │   │   │   └── Release
+        │   │   │   │   │   │       │   │   │       └── LzmaAlone.csproj.CoreCompileInputs.cache
+        │   │   │   │   │   │       │   │   └── Properties
+        │   │   │   │   │   │       │   │       ├── AssemblyInfo.cs
+        │   │   │   │   │   │       │   │       ├── Resources.cs
+        │   │   │   │   │   │       │   │       └── Settings.cs
+        │   │   │   │   │   │       │   └── RangeCoder
+        │   │   │   │   │   │       │       ├── RangeCoderBit.cs
+        │   │   │   │   │   │       │       ├── RangeCoderBitTree.cs
+        │   │   │   │   │   │       │       └── RangeCoder.cs
+        │   │   │   │   │   │       └── ICoder.cs
+        │   │   │   │   │   ├── DOC
+        │   │   │   │   │   │   ├── 7zC.txt
+        │   │   │   │   │   │   ├── 7zFormat.txt
+        │   │   │   │   │   │   ├── installer.txt
+        │   │   │   │   │   │   ├── lzma-history.txt
+        │   │   │   │   │   │   ├── lzma-sdk.txt
+        │   │   │   │   │   │   ├── lzma-specification.txt
+        │   │   │   │   │   │   ├── lzma.txt
+        │   │   │   │   │   │   └── Methods.txt
+        │   │   │   │   │   └── Java
+        │   │   │   │   │       └── SevenZip
+        │   │   │   │   │           ├── Compression
+        │   │   │   │   │           │   ├── LZ
+        │   │   │   │   │           │   │   ├── BinTree.java
+        │   │   │   │   │           │   │   ├── InWindow.java
+        │   │   │   │   │           │   │   └── OutWindow.java
+        │   │   │   │   │           │   ├── LZMA
+        │   │   │   │   │           │   │   ├── Base.java
+        │   │   │   │   │           │   │   ├── Decoder.java
+        │   │   │   │   │           │   │   └── Encoder.java
+        │   │   │   │   │           │   └── RangeCoder
+        │   │   │   │   │           │       ├── BitTreeDecoder.java
+        │   │   │   │   │           │       ├── BitTreeEncoder.java
+        │   │   │   │   │           │       ├── Decoder.java
+        │   │   │   │   │           │       └── Encoder.java
+        │   │   │   │   │           ├── CRC.java
+        │   │   │   │   │           ├── ICodeProgress.java
+        │   │   │   │   │           ├── LzmaAlone.java
+        │   │   │   │   │           └── LzmaBench.java
+        │   │   │   │   └── zlib-1.2.11
+        │   │   │   │       ├── adler32.c
+        │   │   │   │       ├── amiga
+        │   │   │   │       │   ├── Makefile.pup
+        │   │   │   │       │   └── Makefile.sas
+        │   │   │   │       ├── ChangeLog
+        │   │   │   │       ├── CMakeLists.txt
+        │   │   │   │       ├── compress.c
+        │   │   │   │       ├── configure
+        │   │   │   │       ├── contrib
+        │   │   │   │       │   ├── ada
+        │   │   │   │       │   │   ├── buffer_demo.adb
+        │   │   │   │       │   │   ├── mtest.adb
+        │   │   │   │       │   │   ├── read.adb
+        │   │   │   │       │   │   ├── readme.txt
+        │   │   │   │       │   │   ├── test.adb
+        │   │   │   │       │   │   ├── zlib.adb
+        │   │   │   │       │   │   ├── zlib.ads
+        │   │   │   │       │   │   ├── zlib.gpr
+        │   │   │   │       │   │   ├── zlib-streams.adb
+        │   │   │   │       │   │   ├── zlib-streams.ads
+        │   │   │   │       │   │   ├── zlib-thin.adb
+        │   │   │   │       │   │   └── zlib-thin.ads
+        │   │   │   │       │   ├── amd64
+        │   │   │   │       │   │   └── amd64-match.S
+        │   │   │   │       │   ├── asm686
+        │   │   │   │       │   │   ├── match.S
+        │   │   │   │       │   │   └── README.686
+        │   │   │   │       │   ├── blast
+        │   │   │   │       │   │   ├── blast.c
+        │   │   │   │       │   │   ├── blast.h
+        │   │   │   │       │   │   ├── Makefile
+        │   │   │   │       │   │   ├── README
+        │   │   │   │       │   │   ├── test.pk
+        │   │   │   │       │   │   └── test.txt
+        │   │   │   │       │   ├── delphi
+        │   │   │   │       │   │   ├── readme.txt
+        │   │   │   │       │   │   ├── ZLibConst.pas
+        │   │   │   │       │   │   ├── zlibd32.mak
+        │   │   │   │       │   │   └── ZLib.pas
+        │   │   │   │       │   ├── dotzlib
+        │   │   │   │       │   │   ├── DotZLib
+        │   │   │   │       │   │   │   ├── AssemblyInfo.cs
+        │   │   │   │       │   │   │   ├── ChecksumImpl.cs
+        │   │   │   │       │   │   │   ├── CircularBuffer.cs
+        │   │   │   │       │   │   │   ├── CodecBase.cs
+        │   │   │   │       │   │   │   ├── Deflater.cs
+        │   │   │   │       │   │   │   ├── DotZLib.cs
+        │   │   │   │       │   │   │   ├── DotZLib.csproj
+        │   │   │   │       │   │   │   ├── GZipStream.cs
+        │   │   │   │       │   │   │   ├── Inflater.cs
+        │   │   │   │       │   │   │   └── UnitTests.cs
+        │   │   │   │       │   │   ├── DotZLib.build
+        │   │   │   │       │   │   ├── DotZLib.chm
+        │   │   │   │       │   │   ├── DotZLib.sln
+        │   │   │   │       │   │   ├── LICENSE_1_0.txt
+        │   │   │   │       │   │   └── readme.txt
+        │   │   │   │       │   ├── gcc_gvmat64
+        │   │   │   │       │   │   └── gvmat64.S
+        │   │   │   │       │   ├── infback9
+        │   │   │   │       │   │   ├── infback9.c
+        │   │   │   │       │   │   ├── infback9.h
+        │   │   │   │       │   │   ├── inffix9.h
+        │   │   │   │       │   │   ├── inflate9.h
+        │   │   │   │       │   │   ├── inftree9.c
+        │   │   │   │       │   │   ├── inftree9.h
+        │   │   │   │       │   │   └── README
+        │   │   │   │       │   ├── inflate86
+        │   │   │   │       │   │   ├── inffas86.c
+        │   │   │   │       │   │   └── inffast.S
+        │   │   │   │       │   ├── iostream
+        │   │   │   │       │   │   ├── test.cpp
+        │   │   │   │       │   │   ├── zfstream.cpp
+        │   │   │   │       │   │   └── zfstream.h
+        │   │   │   │       │   ├── iostream2
+        │   │   │   │       │   │   ├── zstream.h
+        │   │   │   │       │   │   └── zstream_test.cpp
+        │   │   │   │       │   ├── iostream3
+        │   │   │   │       │   │   ├── README
+        │   │   │   │       │   │   ├── test.cc
+        │   │   │   │       │   │   ├── TODO
+        │   │   │   │       │   │   ├── zfstream.cc
+        │   │   │   │       │   │   └── zfstream.h
+        │   │   │   │       │   ├── masmx64
+        │   │   │   │       │   │   ├── bld_ml64.bat
+        │   │   │   │       │   │   ├── gvmat64.asm
+        │   │   │   │       │   │   ├── inffas8664.c
+        │   │   │   │       │   │   ├── inffasx64.asm
+        │   │   │   │       │   │   └── readme.txt
+        │   │   │   │       │   ├── masmx86
+        │   │   │   │       │   │   ├── bld_ml32.bat
+        │   │   │   │       │   │   ├── inffas32.asm
+        │   │   │   │       │   │   ├── match686.asm
+        │   │   │   │       │   │   └── readme.txt
+        │   │   │   │       │   ├── minizip
+        │   │   │   │       │   │   ├── configure.ac
+        │   │   │   │       │   │   ├── crypt.h
+        │   │   │   │       │   │   ├── ioapi.c
+        │   │   │   │       │   │   ├── ioapi.h
+        │   │   │   │       │   │   ├── iowin32.c
+        │   │   │   │       │   │   ├── iowin32.h
+        │   │   │   │       │   │   ├── Makefile
+        │   │   │   │       │   │   ├── Makefile.am
+        │   │   │   │       │   │   ├── make_vms.com
+        │   │   │   │       │   │   ├── miniunz.c
+        │   │   │   │       │   │   ├── miniunzip.1
+        │   │   │   │       │   │   ├── minizip.1
+        │   │   │   │       │   │   ├── MiniZip64_Changes.txt
+        │   │   │   │       │   │   ├── MiniZip64_info.txt
+        │   │   │   │       │   │   ├── minizip.c
+        │   │   │   │       │   │   ├── minizip.pc.in
+        │   │   │   │       │   │   ├── mztools.c
+        │   │   │   │       │   │   ├── mztools.h
+        │   │   │   │       │   │   ├── unzip.c
+        │   │   │   │       │   │   ├── unzip.h
+        │   │   │   │       │   │   ├── zip.c
+        │   │   │   │       │   │   └── zip.h
+        │   │   │   │       │   ├── pascal
+        │   │   │   │       │   │   ├── example.pas
+        │   │   │   │       │   │   ├── readme.txt
+        │   │   │   │       │   │   ├── zlibd32.mak
+        │   │   │   │       │   │   └── zlibpas.pas
+        │   │   │   │       │   ├── puff
+        │   │   │   │       │   │   ├── Makefile
+        │   │   │   │       │   │   ├── puff.c
+        │   │   │   │       │   │   ├── puff.h
+        │   │   │   │       │   │   ├── pufftest.c
+        │   │   │   │       │   │   ├── README
+        │   │   │   │       │   │   └── zeros.raw
+        │   │   │   │       │   ├── README.contrib
+        │   │   │   │       │   ├── testzlib
+        │   │   │   │       │   │   ├── testzlib.c
+        │   │   │   │       │   │   └── testzlib.txt
+        │   │   │   │       │   ├── untgz
+        │   │   │   │       │   │   ├── Makefile
+        │   │   │   │       │   │   ├── Makefile.msc
+        │   │   │   │       │   │   └── untgz.c
+        │   │   │   │       │   └── vstudio
+        │   │   │   │       │       ├── readme.txt
+        │   │   │   │       │       ├── vc10
+        │   │   │   │       │       │   ├── miniunz.vcxproj
+        │   │   │   │       │       │   ├── miniunz.vcxproj.filters
+        │   │   │   │       │       │   ├── minizip.vcxproj
+        │   │   │   │       │       │   ├── minizip.vcxproj.filters
+        │   │   │   │       │       │   ├── testzlibdll.vcxproj
+        │   │   │   │       │       │   ├── testzlibdll.vcxproj.filters
+        │   │   │   │       │       │   ├── testzlib.vcxproj
+        │   │   │   │       │       │   ├── testzlib.vcxproj.filters
+        │   │   │   │       │       │   ├── zlib.rc
+        │   │   │   │       │       │   ├── zlibstat.vcxproj
+        │   │   │   │       │       │   ├── zlibstat.vcxproj.filters
+        │   │   │   │       │       │   ├── zlibvc.def
+        │   │   │   │       │       │   ├── zlibvc.sln
+        │   │   │   │       │       │   ├── zlibvc.vcxproj
+        │   │   │   │       │       │   └── zlibvc.vcxproj.filters
+        │   │   │   │       │       ├── vc11
+        │   │   │   │       │       │   ├── miniunz.vcxproj
+        │   │   │   │       │       │   ├── minizip.vcxproj
+        │   │   │   │       │       │   ├── testzlibdll.vcxproj
+        │   │   │   │       │       │   ├── testzlib.vcxproj
+        │   │   │   │       │       │   ├── zlib.rc
+        │   │   │   │       │       │   ├── zlibstat.vcxproj
+        │   │   │   │       │       │   ├── zlibvc.def
+        │   │   │   │       │       │   ├── zlibvc.sln
+        │   │   │   │       │       │   └── zlibvc.vcxproj
+        │   │   │   │       │       ├── vc12
+        │   │   │   │       │       │   ├── miniunz.vcxproj
+        │   │   │   │       │       │   ├── minizip.vcxproj
+        │   │   │   │       │       │   ├── testzlibdll.vcxproj
+        │   │   │   │       │       │   ├── testzlib.vcxproj
+        │   │   │   │       │       │   ├── zlib.rc
+        │   │   │   │       │       │   ├── zlibstat.vcxproj
+        │   │   │   │       │       │   ├── zlibvc.def
+        │   │   │   │       │       │   ├── zlibvc.sln
+        │   │   │   │       │       │   └── zlibvc.vcxproj
+        │   │   │   │       │       ├── vc14
+        │   │   │   │       │       │   ├── miniunz.vcxproj
+        │   │   │   │       │       │   ├── minizip.vcxproj
+        │   │   │   │       │       │   ├── testzlibdll.vcxproj
+        │   │   │   │       │       │   ├── testzlib.vcxproj
+        │   │   │   │       │       │   ├── zlib.rc
+        │   │   │   │       │       │   ├── zlibstat.vcxproj
+        │   │   │   │       │       │   ├── zlibvc.def
+        │   │   │   │       │       │   ├── zlibvc.sln
+        │   │   │   │       │       │   └── zlibvc.vcxproj
+        │   │   │   │       │       └── vc9
+        │   │   │   │       │           ├── miniunz.vcproj
+        │   │   │   │       │           ├── minizip.vcproj
+        │   │   │   │       │           ├── testzlibdll.vcproj
+        │   │   │   │       │           ├── testzlib.vcproj
+        │   │   │   │       │           ├── zlib.rc
+        │   │   │   │       │           ├── zlibstat.vcproj
+        │   │   │   │       │           ├── zlibvc.def
+        │   │   │   │       │           ├── zlibvc.sln
+        │   │   │   │       │           └── zlibvc.vcproj
+        │   │   │   │       ├── crc32.c
+        │   │   │   │       ├── crc32.h
+        │   │   │   │       ├── deflate.c
+        │   │   │   │       ├── deflate.h
+        │   │   │   │       ├── doc
+        │   │   │   │       │   ├── algorithm.txt
+        │   │   │   │       │   ├── rfc1950.txt
+        │   │   │   │       │   ├── rfc1951.txt
+        │   │   │   │       │   ├── rfc1952.txt
+        │   │   │   │       │   └── txtvsbin.txt
+        │   │   │   │       ├── examples
+        │   │   │   │       │   ├── enough.c
+        │   │   │   │       │   ├── fitblk.c
+        │   │   │   │       │   ├── gun.c
+        │   │   │   │       │   ├── gzappend.c
+        │   │   │   │       │   ├── gzjoin.c
+        │   │   │   │       │   ├── gzlog.c
+        │   │   │   │       │   ├── gzlog.h
+        │   │   │   │       │   ├── README.examples
+        │   │   │   │       │   ├── zlib_how.html
+        │   │   │   │       │   ├── zpipe.c
+        │   │   │   │       │   └── zran.c
+        │   │   │   │       ├── FAQ
+        │   │   │   │       ├── gzclose.c
+        │   │   │   │       ├── gzguts.h
+        │   │   │   │       ├── gzlib.c
+        │   │   │   │       ├── gzread.c
+        │   │   │   │       ├── gzwrite.c
+        │   │   │   │       ├── INDEX
+        │   │   │   │       ├── infback.c
+        │   │   │   │       ├── inffast.c
+        │   │   │   │       ├── inffast.h
+        │   │   │   │       ├── inffixed.h
+        │   │   │   │       ├── inflate.c
+        │   │   │   │       ├── inflate.h
+        │   │   │   │       ├── inftrees.c
+        │   │   │   │       ├── inftrees.h
+        │   │   │   │       ├── Makefile
+        │   │   │   │       ├── Makefile.in
+        │   │   │   │       ├── make_vms.com
+        │   │   │   │       ├── msdos
+        │   │   │   │       │   ├── Makefile.bor
+        │   │   │   │       │   ├── Makefile.dj2
+        │   │   │   │       │   ├── Makefile.emx
+        │   │   │   │       │   ├── Makefile.msc
+        │   │   │   │       │   └── Makefile.tc
+        │   │   │   │       ├── nintendods
+        │   │   │   │       │   ├── Makefile
+        │   │   │   │       │   └── README
+        │   │   │   │       ├── old
+        │   │   │   │       │   ├── descrip.mms
+        │   │   │   │       │   ├── Makefile.emx
+        │   │   │   │       │   ├── Makefile.riscos
+        │   │   │   │       │   ├── os2
+        │   │   │   │       │   │   ├── Makefile.os2
+        │   │   │   │       │   │   └── zlib.def
+        │   │   │   │       │   ├── README
+        │   │   │   │       │   └── visual-basic.txt
+        │   │   │   │       ├── os400
+        │   │   │   │       │   ├── bndsrc
+        │   │   │   │       │   ├── make.sh
+        │   │   │   │       │   ├── README400
+        │   │   │   │       │   └── zlib.inc
+        │   │   │   │       ├── qnx
+        │   │   │   │       │   └── package.qpg
+        │   │   │   │       ├── README
+        │   │   │   │       ├── test
+        │   │   │   │       │   ├── example.c
+        │   │   │   │       │   ├── infcover.c
+        │   │   │   │       │   └── minigzip.c
+        │   │   │   │       ├── treebuild.xml
+        │   │   │   │       ├── trees.c
+        │   │   │   │       ├── trees.h
+        │   │   │   │       ├── uncompr.c
+        │   │   │   │       ├── watcom
+        │   │   │   │       │   ├── watcom_f.mak
+        │   │   │   │       │   └── watcom_l.mak
+        │   │   │   │       ├── win32
+        │   │   │   │       │   ├── DLL_FAQ.txt
+        │   │   │   │       │   ├── Makefile.bor
+        │   │   │   │       │   ├── Makefile.gcc
+        │   │   │   │       │   ├── Makefile.msc
+        │   │   │   │       │   ├── README-WIN32.txt
+        │   │   │   │       │   ├── VisualC.txt
+        │   │   │   │       │   ├── zlib1.rc
+        │   │   │   │       │   └── zlib.def
+        │   │   │   │       ├── zconf.h
+        │   │   │   │       ├── zconf.h.cmakein
+        │   │   │   │       ├── zconf.h.in
+        │   │   │   │       ├── zlib2ansi
+        │   │   │   │       ├── zlib.3
+        │   │   │   │       ├── zlib.3.pdf
+        │   │   │   │       ├── zlib.h
+        │   │   │   │       ├── zlib.map
+        │   │   │   │       ├── zlib.pc.cmakein
+        │   │   │   │       ├── zlib.pc.in
+        │   │   │   │       ├── zutil.c
+        │   │   │   │       └── zutil.h
+        │   │   │   ├── LICENSE.txt
+        │   │   │   ├── README.md
+        │   │   │   └── src
+        │   │   │       ├── bitstream.c
+        │   │   │       ├── bitstream.h
+        │   │   │       ├── cdrom.c
+        │   │   │       ├── cdrom.h
+        │   │   │       ├── chd.c
+        │   │   │       ├── chd.h
+        │   │   │       ├── coretypes.h
+        │   │   │       ├── flac.c
+        │   │   │       ├── flac.h
+        │   │   │       ├── huffman.c
+        │   │   │       └── huffman.h
+        │   │   ├── mini18n
+        │   │   │   ├── ChangeLog
+        │   │   │   ├── cmake
+        │   │   │   │   ├── check_wcs_functions.c
+        │   │   │   │   └── windows.cmake
+        │   │   │   ├── CMakeLists.txt
+        │   │   │   ├── COPYING
+        │   │   │   ├── doc
+        │   │   │   │   ├── CMakeLists.txt
+        │   │   │   │   ├── Doxyfile.in
+        │   │   │   │   ├── mini18n.3
+        │   │   │   │   └── mini18n_set_locale.3
+        │   │   │   ├── example
+        │   │   │   │   ├── CMakeLists.txt
+        │   │   │   │   ├── fr
+        │   │   │   │   ├── main.c
+        │   │   │   │   └── multi.c
+        │   │   │   ├── README
+        │   │   │   └── src
+        │   │   │       ├── CMakeLists.txt
+        │   │   │       ├── mini18n.c
+        │   │   │       ├── mini18n.h
+        │   │   │       ├── mini18n-multi.c
+        │   │   │       ├── mini18n-multi.h
+        │   │   │       ├── mini18n_pv_conv.h
+        │   │   │       ├── mini18n_pv_conv_windows.c
+        │   │   │       ├── mini18n_pv_conv_windows.h
+        │   │   │       ├── mini18n_pv_data.c
+        │   │   │       ├── mini18n_pv_data.h
+        │   │   │       ├── mini18n_pv_file.h
+        │   │   │       ├── mini18n_pv_file_po.c
+        │   │   │       ├── mini18n_pv_file_po.h
+        │   │   │       ├── mini18n_pv_file_yts.c
+        │   │   │       ├── mini18n_pv_file_yts.h
+        │   │   │       ├── mini18n_pv_hash.c
+        │   │   │       ├── mini18n_pv_hash.h
+        │   │   │       ├── mini18n_pv_list.c
+        │   │   │       └── mini18n_pv_list.h
+        │   │   └── nanovg
+        │   │       ├── fontstash.h
+        │   │       ├── nanovg.c
+        │   │       ├── nanovg_gl.h
+        │   │       ├── nanovg_gl_utils.h
+        │   │       ├── nanovg.h
+        │   │       ├── nanovg_osdcore.c
+        │   │       ├── nanovg_osdcore.h
+        │   │       ├── Roboto-Bold.h
+        │   │       ├── Roboto-Regular.h
+        │   │       ├── stb_image.h
+        │   │       └── stb_truetype.h
+        │   └── utils
+        │       ├── include
+        │       │   ├── cdbase.h
+        │       │   ├── cheat.h
+        │       │   ├── db.h
+        │       │   ├── debug.h
+        │       │   ├── error.h
+        │       │   ├── gameinfo.h
+        │       │   ├── japmodem.h
+        │       │   ├── netlink.h
+        │       │   └── profile.h
+        │       └── src
+        │           ├── cdbase.c
+        │           ├── cheat.c
+        │           ├── db.c
+        │           ├── debug.c
+        │           ├── error.c
+        │           ├── gameinfo.c
+        │           ├── japmodem.c
+        │           ├── netlink.c
+        │           └── profile.c
+        └── TODO
+
+393 directories, 2475 files

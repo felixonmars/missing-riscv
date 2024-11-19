@@ -1,0 +1,21 @@
+src
+├── mod-0.2.0.1
+│   ├── bench
+│   │   └── Bench.hs
+│   ├── cbits
+│   │   ├── aarch64.c
+│   │   └── aarch64.h
+│   ├── changelog.md
+│   ├── Data
+│   │   ├── Mod
+│   │   │   ├── Compat.hs
+│   │   │   └── Word.hs
+│   │   └── Mod.hs
+│   ├── LICENSE
+│   ├── mod.cabal
+│   ├── README.md
+│   └── test
+│       └── Test.hs
+└── mod-0.2.0.1.tar.gz -> /home/felix/packages/haskell-mod/mod-0.2.0.1.tar.gz
+
+7 directories, 12 files

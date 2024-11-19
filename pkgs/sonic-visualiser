@@ -1,0 +1,1639 @@
+src
+├── sonic-visualiser-5.0.1
+│   ├── bqaudioio
+│   │   ├── bqaudioio
+│   │   │   ├── ApplicationPlaybackSource.h
+│   │   │   ├── ApplicationRecordTarget.h
+│   │   │   ├── AudioFactory.h
+│   │   │   ├── ResamplerWrapper.h
+│   │   │   ├── Suspendable.h
+│   │   │   ├── SystemAudioIO.h
+│   │   │   ├── SystemPlaybackTarget.h
+│   │   │   └── SystemRecordSource.h
+│   │   ├── build
+│   │   │   └── Makefile.inc
+│   │   ├── COPYING
+│   │   ├── Makefile
+│   │   ├── README.md
+│   │   └── src
+│   │       ├── AudioFactory.cpp
+│   │       ├── DynamicJACK.h
+│   │       ├── Gains.h
+│   │       ├── JACKAudioIO.cpp
+│   │       ├── JACKAudioIO.h
+│   │       ├── Log.cpp
+│   │       ├── Log.h
+│   │       ├── Mode.h
+│   │       ├── PortAudioIO.cpp
+│   │       ├── PortAudioIO.h
+│   │       ├── PulseAudioIO.cpp
+│   │       ├── PulseAudioIO.h
+│   │       ├── ResamplerWrapper.cpp
+│   │       ├── SystemPlaybackTarget.cpp
+│   │       └── SystemRecordSource.cpp
+│   ├── bqaudiostream
+│   │   ├── bqaudiostream
+│   │   │   ├── AudioReadStreamFactory.h
+│   │   │   ├── AudioReadStream.h
+│   │   │   ├── AudioWriteStreamFactory.h
+│   │   │   ├── AudioWriteStream.h
+│   │   │   └── Exceptions.h
+│   │   ├── build
+│   │   │   └── Makefile.inc
+│   │   ├── COPYING
+│   │   ├── Makefile
+│   │   ├── README.md
+│   │   ├── src
+│   │   │   ├── AudioReadStream.cpp
+│   │   │   ├── AudioReadStreamFactory.cpp
+│   │   │   ├── AudioStreamExceptions.cpp
+│   │   │   ├── AudioWriteStreamFactory.cpp
+│   │   │   ├── CoreAudioReadStream.cpp
+│   │   │   ├── CoreAudioReadStream.h
+│   │   │   ├── CoreAudioWriteStream.cpp
+│   │   │   ├── CoreAudioWriteStream.h
+│   │   │   ├── MediaFoundationReadStream.cpp
+│   │   │   ├── MediaFoundationReadStream.h
+│   │   │   ├── MiniMP3ReadStream.cpp
+│   │   │   ├── MiniMP3ReadStream.h
+│   │   │   ├── OggVorbisReadStream.cpp
+│   │   │   ├── OggVorbisReadStream.h
+│   │   │   ├── OpusReadStream.cpp
+│   │   │   ├── OpusReadStream.h
+│   │   │   ├── OpusWriteStream.cpp
+│   │   │   ├── OpusWriteStream.h
+│   │   │   ├── SimpleWavFileReadStream.cpp
+│   │   │   ├── SimpleWavFileReadStream.h
+│   │   │   ├── SimpleWavFileWriteStream.cpp
+│   │   │   ├── SimpleWavFileWriteStream.h
+│   │   │   ├── WavFileReadStream.cpp
+│   │   │   ├── WavFileReadStream.h
+│   │   │   ├── WavFileWriteStream.cpp
+│   │   │   └── WavFileWriteStream.h
+│   │   └── test
+│   │       ├── AudioStreamTestData.h
+│   │       ├── generate.cpp
+│   │       ├── generate.pro
+│   │       ├── main.cpp
+│   │       ├── TestAudioStreamRead.h
+│   │       ├── testfiles
+│   │       │   ├── 12000-6-16.aiff
+│   │       │   ├── 20samples
+│   │       │   ├── 20samples.wav
+│   │       │   ├── 32000-1-16.wav
+│   │       │   ├── 32000-1.aac
+│   │       │   ├── 32000-1.mp3
+│   │       │   ├── 32000-1.ogg
+│   │       │   ├── 44100-1-32.wav
+│   │       │   ├── 44100-2-16.wav
+│   │       │   ├── 44100-2-8.wav
+│   │       │   ├── 44100-2.aac
+│   │       │   ├── 44100-2.flac
+│   │       │   ├── 44100-2.mp3
+│   │       │   ├── 44100-2.ogg
+│   │       │   ├── 48000-1-16.wav
+│   │       │   ├── 48000-1-24.aiff
+│   │       │   ├── 48000-2.opus
+│   │       │   ├── 8000-1-8
+│   │       │   ├── 8000-1-8.wav
+│   │       │   ├── 8000-2-16.wav
+│   │       │   └── 8000-6-16.wav
+│   │       ├── test.pro
+│   │       ├── TestSimpleWavRead.h
+│   │       ├── TestWavReadWhileWriting.h
+│   │       ├── TestWavReadWrite.h
+│   │       └── TestWavSeek.h
+│   ├── bqfft
+│   │   ├── bqfft
+│   │   │   └── FFT.h
+│   │   ├── build
+│   │   │   ├── Makefile.inc
+│   │   │   ├── Makefile.linux.all
+│   │   │   ├── Makefile.linux.fftw
+│   │   │   ├── Makefile.linux.fftw-double-only
+│   │   │   ├── Makefile.linux.fftw-single-only
+│   │   │   ├── Makefile.linux.ipp
+│   │   │   ├── Makefile.linux.kissfft
+│   │   │   ├── Makefile.linux.sleef
+│   │   │   ├── Makefile.osx
+│   │   │   └── run-platform-tests.sh
+│   │   ├── COPYING
+│   │   ├── Makefile
+│   │   ├── README.md
+│   │   ├── src
+│   │   │   └── FFT.cpp
+│   │   └── test
+│   │       ├── TestFFT.cpp
+│   │       └── timings.cpp
+│   ├── bqresample
+│   │   ├── bqresample
+│   │   │   └── Resampler.h
+│   │   ├── build
+│   │   │   ├── Makefile.inc
+│   │   │   ├── Makefile.linux.ipp
+│   │   │   ├── Makefile.linux.libsamplerate
+│   │   │   ├── Makefile.linux.speex
+│   │   │   ├── Makefile.linux.speexdsp
+│   │   │   ├── Makefile.osx.libsamplerate
+│   │   │   └── run-platform-tests.sh
+│   │   ├── COPYING
+│   │   ├── example
+│   │   │   └── resample.cpp
+│   │   ├── ext
+│   │   │   └── speex
+│   │   │       ├── COPYING
+│   │   │       ├── resample.c
+│   │   │       └── speex_resampler.h
+│   │   ├── Makefile
+│   │   ├── README.md
+│   │   ├── src
+│   │   │   ├── BQResampler.cpp
+│   │   │   ├── BQResampler.h
+│   │   │   ├── common.cpp
+│   │   │   ├── common.h
+│   │   │   └── Resampler.cpp
+│   │   └── test
+│   │       ├── e2e
+│   │       │   ├── e2e.cpp
+│   │       │   ├── halve.cpp
+│   │       │   ├── oversample.cpp
+│   │       │   ├── random.cpp
+│   │       │   ├── sweep-log.wav
+│   │       │   └── undulating.cpp
+│   │       └── TestResampler.cpp
+│   ├── bqthingfactory
+│   │   ├── bqthingfactory
+│   │   │   └── ThingFactory.h
+│   │   ├── COPYING
+│   │   └── README.md
+│   ├── bqvec
+│   │   ├── bqvec
+│   │   │   ├── Allocators.h
+│   │   │   ├── Barrier.h
+│   │   │   ├── ComplexTypes.h
+│   │   │   ├── Range.h
+│   │   │   ├── Restrict.h
+│   │   │   ├── RingBuffer.h
+│   │   │   ├── VectorOpsComplex.h
+│   │   │   └── VectorOps.h
+│   │   ├── build
+│   │   │   ├── Makefile.inc
+│   │   │   ├── Makefile.linux
+│   │   │   ├── Makefile.linux.ipp
+│   │   │   ├── Makefile.linux.min
+│   │   │   ├── Makefile.osx
+│   │   │   └── run-platform-tests.sh
+│   │   ├── COPYING
+│   │   ├── Makefile
+│   │   ├── pommier
+│   │   │   ├── neon_mathfun.h
+│   │   │   └── sse_mathfun.h
+│   │   ├── README.md
+│   │   ├── src
+│   │   │   ├── Allocators.cpp
+│   │   │   ├── Barrier.cpp
+│   │   │   └── VectorOpsComplex.cpp
+│   │   └── test
+│   │       ├── TestAllocators.cpp
+│   │       ├── TestVectorOpsComplex.cpp
+│   │       ├── TestVectorOps.cpp
+│   │       └── Timings.cpp
+│   ├── CHANGELOG
+│   ├── checker
+│   │   ├── checker
+│   │   │   ├── checkcode.h
+│   │   │   ├── knownplugincandidates.h
+│   │   │   ├── knownplugins.h
+│   │   │   └── plugincandidates.h
+│   │   ├── checker-client.pro
+│   │   ├── checker-lib.pro
+│   │   ├── checker.pri
+│   │   ├── checker.pro
+│   │   ├── COPYING
+│   │   ├── helper.pro
+│   │   ├── README
+│   │   ├── src
+│   │   │   ├── checker-client.cpp
+│   │   │   ├── helper.cpp
+│   │   │   ├── knownplugincandidates.cpp
+│   │   │   ├── knownplugins.cpp
+│   │   │   └── plugincandidates.cpp
+│   │   └── version.h
+│   ├── CITATION
+│   ├── COMPILE_linux.md
+│   ├── COMPILE_macos.md
+│   ├── COMPILE_windows.md
+│   ├── CONTRIBUTING.md
+│   ├── COPYING
+│   ├── dataquay
+│   │   ├── CHANGELOG
+│   │   ├── config.pri
+│   │   ├── COPYING
+│   │   ├── dataquay
+│   │   │   ├── BasicStore.h
+│   │   │   ├── Connection.h
+│   │   │   ├── Node.h
+│   │   │   ├── objectmapper
+│   │   │   │   ├── ContainerBuilder.h
+│   │   │   │   ├── ObjectBuilder.h
+│   │   │   │   ├── ObjectLoader.h
+│   │   │   │   ├── ObjectMapperDefs.h
+│   │   │   │   ├── ObjectMapperExceptions.h
+│   │   │   │   ├── ObjectMapperForwarder.h
+│   │   │   │   ├── ObjectMapper.h
+│   │   │   │   ├── ObjectStorer.h
+│   │   │   │   └── TypeMapping.h
+│   │   │   ├── PropertyObject.h
+│   │   │   ├── RDFException.h
+│   │   │   ├── Store.h
+│   │   │   ├── TransactionalStore.h
+│   │   │   ├── Transaction.h
+│   │   │   ├── Triple.h
+│   │   │   └── Uri.h
+│   │   ├── dataquay.pro
+│   │   ├── deploy
+│   │   │   ├── dataquay.pc.in
+│   │   │   └── update-version.sh
+│   │   ├── doc-overview
+│   │   ├── Doxyfile
+│   │   ├── examples
+│   │   │   ├── ConnectionLoader.cpp
+│   │   │   ├── TransactionalCommand.cpp
+│   │   │   ├── TransactionalCommand.h
+│   │   │   └── VariantEncoderExample.cpp
+│   │   ├── lib.pro
+│   │   ├── README.txt
+│   │   ├── src
+│   │   │   ├── acsymbols.c
+│   │   │   ├── backend
+│   │   │   │   ├── BasicStoreRedland.cpp
+│   │   │   │   ├── BasicStoreSord.cpp
+│   │   │   │   └── define-check.cpp
+│   │   │   ├── Connection.cpp
+│   │   │   ├── Debug.h
+│   │   │   ├── Node.cpp
+│   │   │   ├── objectmapper
+│   │   │   │   ├── ContainerBuilder.cpp
+│   │   │   │   ├── ObjectBuilder.cpp
+│   │   │   │   ├── ObjectLoader.cpp
+│   │   │   │   ├── ObjectMapper.cpp
+│   │   │   │   ├── ObjectMapperForwarder.cpp
+│   │   │   │   ├── ObjectStorer.cpp
+│   │   │   │   └── TypeMapping.cpp
+│   │   │   ├── PropertyObject.cpp
+│   │   │   ├── RDFException.cpp
+│   │   │   ├── Store.cpp
+│   │   │   ├── TransactionalStore.cpp
+│   │   │   ├── Transaction.cpp
+│   │   │   ├── Triple.cpp
+│   │   │   └── Uri.cpp
+│   │   └── tests
+│   │       ├── main.cpp
+│   │       ├── TestBasicStore.h
+│   │       ├── TestDatatypes.cpp
+│   │       ├── TestDatatypes.h
+│   │       ├── TestImportOptions.h
+│   │       ├── TestObjectMapper.h
+│   │       ├── TestObjects.h
+│   │       ├── test-qt.pro
+│   │       ├── TestQtWidgets.cpp
+│   │       ├── test-qt-widgets.ttl
+│   │       ├── tests.pro
+│   │       └── TestTransactionalStore.h
+│   ├── deploy
+│   │   ├── clean-build-and-package
+│   │   ├── clean-build-and-package.bat
+│   │   ├── cross
+│   │   │   ├── macos-arm64.txt
+│   │   │   └── macos-x86_64.txt
+│   │   ├── linux
+│   │   │   ├── AppRun
+│   │   │   ├── bintray.json
+│   │   │   ├── build-and-test-appimage.sh
+│   │   │   ├── build-and-test-deb.sh
+│   │   │   ├── debian-dependencies.sh
+│   │   │   ├── deb-skeleton
+│   │   │   │   ├── DEBIAN
+│   │   │   │   │   └── control
+│   │   │   │   └── usr
+│   │   │   │       └── share
+│   │   │   │           ├── applications
+│   │   │   │           │   └── sonic-visualiser.desktop
+│   │   │   │           └── doc
+│   │   │   │               └── sonic-visualiser
+│   │   │   │                   ├── changelog.Debian.gz
+│   │   │   │                   ├── copyright
+│   │   │   │                   └── README
+│   │   │   ├── deploy-appimage.sh
+│   │   │   ├── deploy-deb.sh
+│   │   │   ├── doc
+│   │   │   │   └── sonic-visualiser
+│   │   │   │       └── copyright
+│   │   │   ├── docker
+│   │   │   │   ├── Dockerfile_appimage.in
+│   │   │   │   ├── Dockerfile_deb.in
+│   │   │   │   ├── Dockerfile_test_appimage.in
+│   │   │   │   └── Dockerfile_test_deb.in
+│   │   │   ├── fix-lintian-bits.sh
+│   │   │   └── remember-to-run-lintian
+│   │   ├── macos
+│   │   │   ├── copy-qt.sh
+│   │   │   ├── deploy-and-package.sh
+│   │   │   ├── deploy.sh
+│   │   │   ├── Entitlements.plist
+│   │   │   ├── HelperEntitlements.plist
+│   │   │   ├── Info.plist
+│   │   │   ├── notarize.sh
+│   │   │   ├── paths.sh
+│   │   │   ├── qt.conf
+│   │   │   └── sign.sh
+│   │   ├── metadata.sh
+│   │   ├── src
+│   │   │   ├── archive.sh
+│   │   │   └── archive-tip.sh
+│   │   └── win64
+│   │       ├── build-32-helpers.bat
+│   │       ├── build-64.bat
+│   │       ├── build-64-debug.bat
+│   │       ├── build-and-package.bat
+│   │       ├── generate-wxs.ps1
+│   │       ├── License.rtf
+│   │       ├── main.bmp
+│   │       ├── README-Vamp32.txt
+│   │       ├── README-Vamp.txt
+│   │       ├── sonic-visualiser.wxs.in
+│   │       ├── store-notes.txt
+│   │       └── top.bmp
+│   ├── Doxyfile
+│   ├── i18n
+│   │   ├── cs.lproj
+│   │   │   └── InfoPlist.strings
+│   │   ├── en.lproj
+│   │   │   └── InfoPlist.strings
+│   │   ├── ru.lproj
+│   │   │   └── InfoPlist.strings
+│   │   ├── sonic-visualiser_cs_CZ.qm
+│   │   ├── sonic-visualiser_cs_CZ.ts
+│   │   ├── sonic-visualiser_en_GB.qm
+│   │   ├── sonic-visualiser_en_GB.ts
+│   │   ├── sonic-visualiser_en_US.qm
+│   │   ├── sonic-visualiser_en_US.ts
+│   │   ├── sonic-visualiser_ru.qm
+│   │   ├── sonic-visualiser_ru.ts
+│   │   └── tips_en.xml
+│   ├── icons
+│   │   ├── align-on.png
+│   │   ├── align.png
+│   │   ├── annotation.png
+│   │   ├── colour3d.png
+│   │   ├── cross.png
+│   │   ├── datadelete.png
+│   │   ├── dataedit.png
+│   │   ├── datainsert.png
+│   │   ├── derivative.png
+│   │   ├── draw-curve.png
+│   │   ├── draw.png
+│   │   ├── editcopy.png
+│   │   ├── editcut.png
+│   │   ├── editdelete.png
+│   │   ├── editpaste.png
+│   │   ├── emptypage.png
+│   │   ├── erase.png
+│   │   ├── exit.png
+│   │   ├── fader_background.png
+│   │   ├── fader_knob.png
+│   │   ├── fader_knob_red.png
+│   │   ├── fader_leds.png
+│   │   ├── faders.png
+│   │   ├── ffwd-end.png
+│   │   ├── ffwd.png
+│   │   ├── fileclose.png
+│   │   ├── filenew-22.png
+│   │   ├── filenew.png
+│   │   ├── fileopen-22.png
+│   │   ├── fileopenaudio.png
+│   │   ├── fileopen.png
+│   │   ├── fileopensession.png
+│   │   ├── filesave-22.png
+│   │   ├── filesaveas-22.png
+│   │   ├── filesaveas.png
+│   │   ├── filesave.png
+│   │   ├── help.png
+│   │   ├── hh.gif
+│   │   ├── hh.png
+│   │   ├── image.png
+│   │   ├── info.png
+│   │   ├── instants.png
+│   │   ├── invert-vertical.png
+│   │   ├── lines.png
+│   │   ├── measure1cursor.xbm
+│   │   ├── measure1mask.xbm
+│   │   ├── measure2cursor.xbm
+│   │   ├── measure2mask.xbm
+│   │   ├── measure.png
+│   │   ├── mono.png
+│   │   ├── move.png
+│   │   ├── navigate.png
+│   │   ├── new.png
+│   │   ├── normalise-columns.png
+│   │   ├── normalise.png
+│   │   ├── notes.png
+│   │   ├── opaque.png
+│   │   ├── pane.png
+│   │   ├── playfollow-on.png
+│   │   ├── playfollow.png
+│   │   ├── playloop-on.png
+│   │   ├── playloop.png
+│   │   ├── playpause-on.png
+│   │   ├── playpause-orig.png
+│   │   ├── playpause.png
+│   │   ├── playselectionloop.png
+│   │   ├── playselection-on.png
+│   │   ├── playselection.png
+│   │   ├── qm-logo-larger.png
+│   │   ├── qm-logo-smaller.png
+│   │   ├── README
+│   │   ├── redo.png
+│   │   ├── regions.png
+│   │   ├── rewind.png
+│   │   ├── rewind-start.png
+│   │   ├── scalable
+│   │   │   ├── align.svg
+│   │   │   ├── arrow-above.svg
+│   │   │   ├── arrow-above-white.svg
+│   │   │   ├── arrow-below.svg
+│   │   │   ├── arrow-below-white.svg
+│   │   │   ├── arrow-left.svg
+│   │   │   ├── arrow-left-white.svg
+│   │   │   ├── blank.svg
+│   │   │   ├── boxes.svg
+│   │   │   ├── cancel.svg
+│   │   │   ├── chooseScore.svg
+│   │   │   ├── colour3d.svg
+│   │   │   ├── COPYING
+│   │   │   ├── cross.svg
+│   │   │   ├── dataaccept.svg
+│   │   │   ├── datadelete.svg
+│   │   │   ├── dataedit.svg
+│   │   │   ├── derivative.svg
+│   │   │   ├── down.svg
+│   │   │   ├── draw.svg
+│   │   │   ├── editcopy.svg
+│   │   │   ├── editcut.svg
+│   │   │   ├── editdelete.svg
+│   │   │   ├── editpaste.svg
+│   │   │   ├── erase.svg
+│   │   │   ├── exit.svg
+│   │   │   ├── faders.svg
+│   │   │   ├── ffwd-end.svg
+│   │   │   ├── ffwd.svg
+│   │   │   ├── filenew.svg
+│   │   │   ├── fileopenaudio.svg
+│   │   │   ├── fileopen.svg
+│   │   │   ├── filesaveas.svg
+│   │   │   ├── filesave.svg
+│   │   │   ├── filesavesv.svg
+│   │   │   ├── fill.svg
+│   │   │   ├── help.svg
+│   │   │   ├── info.svg
+│   │   │   ├── instants.svg
+│   │   │   ├── interpolate.svg
+│   │   │   ├── invert-colour.svg
+│   │   │   ├── invert-vertical.svg
+│   │   │   ├── lines.svg
+│   │   │   ├── measure.svg
+│   │   │   ├── move.svg
+│   │   │   ├── navigate.svg
+│   │   │   ├── normalise-columns.svg
+│   │   │   ├── normalise.svg
+│   │   │   ├── notes.svg
+│   │   │   ├── opaque.svg
+│   │   │   ├── pane.svg
+│   │   │   ├── pause.svg
+│   │   │   ├── playfollow.svg
+│   │   │   ├── playloop.svg
+│   │   │   ├── playpause.svg
+│   │   │   ├── playselection.svg
+│   │   │   ├── play.svg
+│   │   │   ├── plus.svg
+│   │   │   ├── README
+│   │   │   ├── record.svg
+│   │   │   ├── redo.svg
+│   │   │   ├── regions.svg
+│   │   │   ├── rewind-start.svg
+│   │   │   ├── rewind.svg
+│   │   │   ├── select.svg
+│   │   │   ├── show-peaks.svg
+│   │   │   ├── smooth.svg
+│   │   │   ├── solo.svg
+│   │   │   ├── speaker.svg
+│   │   │   ├── spectrogram.svg
+│   │   │   ├── spectrum.svg
+│   │   │   ├── sv-128x128.png
+│   │   │   ├── sv-16x16.png
+│   │   │   ├── sv-22x22.png
+│   │   │   ├── sv-24x24.png
+│   │   │   ├── sv-32x32.png
+│   │   │   ├── sv-48x48.png
+│   │   │   ├── sv-64x64.png
+│   │   │   ├── sv-icon-light.svg
+│   │   │   ├── sv-icon.svg
+│   │   │   ├── sv-splash@2x.png
+│   │   │   ├── sv-splash-dark.svg
+│   │   │   ├── sv-splash.png
+│   │   │   ├── sv-splash.svg
+│   │   │   ├── text.svg
+│   │   │   ├── timeruler.svg
+│   │   │   ├── undo.svg
+│   │   │   ├── up.svg
+│   │   │   ├── values.svg
+│   │   │   ├── waveform.svg
+│   │   │   ├── zoom-fit.svg
+│   │   │   ├── zoom-in.svg
+│   │   │   ├── zoom-out.svg
+│   │   │   ├── zoom-reset.svg
+│   │   │   └── zoom.svg
+│   │   ├── select.png
+│   │   ├── sharpen.png
+│   │   ├── show-peaks.png
+│   │   ├── smooth.png
+│   │   ├── solo-on.png
+│   │   ├── solo.png
+│   │   ├── sonic-visualiser.svg
+│   │   ├── speaker.png
+│   │   ├── spectrogram-22x22.png
+│   │   ├── spectrogram.png
+│   │   ├── spectrum.png
+│   │   ├── stereo.png
+│   │   ├── sv-128x128.png
+│   │   ├── sv-16x16.png
+│   │   ├── sv-22x22.png
+│   │   ├── sv-24x24.png
+│   │   ├── sv-32x32.png
+│   │   ├── sv-48x48.png
+│   │   ├── sv-64x64.png
+│   │   ├── svicon16.png
+│   │   ├── svicon32.png
+│   │   ├── sv-icon-light.svg
+│   │   ├── sv-icon.svg
+│   │   ├── sv-macicon.icns
+│   │   ├── sv.rc
+│   │   ├── sv-winicon.ico
+│   │   ├── text.png
+│   │   ├── timeruler.png
+│   │   ├── undo.png
+│   │   ├── values.png
+│   │   ├── waveform.png
+│   │   ├── zoom-fit.png
+│   │   ├── zoom-in.png
+│   │   ├── zoom-out.png
+│   │   ├── zoom.png
+│   │   └── zoom-reset.png
+│   ├── main
+│   │   ├── main.cpp
+│   │   ├── MainWindow.cpp
+│   │   ├── MainWindow.h
+│   │   ├── NetworkPermissionTester.cpp
+│   │   ├── NetworkPermissionTester.h
+│   │   ├── OSCHandler.cpp
+│   │   ├── PreferencesDialog.cpp
+│   │   ├── PreferencesDialog.h
+│   │   ├── Surveyer.cpp
+│   │   ├── Surveyer.h
+│   │   ├── SVSplash.cpp
+│   │   └── SVSplash.h
+│   ├── meson.build
+│   ├── meson_options.txt
+│   ├── misc
+│   │   ├── ladspa.cat
+│   │   ├── run-clang-tidy.sh
+│   │   └── update-i18n.sh
+│   ├── piper
+│   │   ├── capnp
+│   │   │   ├── check.sh
+│   │   │   ├── piper.capnp
+│   │   │   └── piper.rpc.capnp
+│   │   ├── check.sh
+│   │   ├── COPYING
+│   │   ├── json
+│   │   │   ├── check.sh
+│   │   │   ├── examples
+│   │   │   │   ├── basic.json
+│   │   │   │   ├── configuration.json
+│   │   │   │   ├── configurationrequest.json
+│   │   │   │   ├── configurationresponse.json
+│   │   │   │   ├── configuredoutputdescriptor.json
+│   │   │   │   ├── enums.json
+│   │   │   │   ├── error.json
+│   │   │   │   ├── extractorstaticdata.json
+│   │   │   │   ├── feature-array.json
+│   │   │   │   ├── feature-base64.json
+│   │   │   │   ├── featureset.json
+│   │   │   │   ├── finishrequest.json
+│   │   │   │   ├── finishresponse.json
+│   │   │   │   ├── framing.json
+│   │   │   │   ├── listrequest.json
+│   │   │   │   ├── listresponse.json
+│   │   │   │   ├── loadrequest.json
+│   │   │   │   ├── loadresponse.json
+│   │   │   │   ├── outputdescriptor.json
+│   │   │   │   ├── parameterdescriptor.json
+│   │   │   │   ├── processinput-array.json
+│   │   │   │   ├── processinput-base64.json
+│   │   │   │   ├── processrequest.json
+│   │   │   │   ├── processresponse.json
+│   │   │   │   ├── realtime.json
+│   │   │   │   ├── rpcrequest.json
+│   │   │   │   ├── rpcresponse-error.json
+│   │   │   │   ├── rpcresponse-ok.json
+│   │   │   │   ├── serialisedarray-array.json
+│   │   │   │   ├── serialisedarray-base64.json
+│   │   │   │   ├── staticoutputdescriptor.json
+│   │   │   │   └── valueextents.json
+│   │   │   └── schema
+│   │   │       ├── basic.json
+│   │   │       ├── configuration.json
+│   │   │       ├── configurationrequest.json
+│   │   │       ├── configurationresponse.json
+│   │   │       ├── configuredoutputdescriptor.json
+│   │   │       ├── enums.json
+│   │   │       ├── error.json
+│   │   │       ├── extractorstaticdata.json
+│   │   │       ├── feature.json
+│   │   │       ├── featureset.json
+│   │   │       ├── finishrequest.json
+│   │   │       ├── finishresponse.json
+│   │   │       ├── framing.json
+│   │   │       ├── listrequest.json
+│   │   │       ├── listresponse.json
+│   │   │       ├── loadrequest.json
+│   │   │       ├── loadresponse.json
+│   │   │       ├── outputdescriptor.json
+│   │   │       ├── parameterdescriptor.json
+│   │   │       ├── processinput.json
+│   │   │       ├── processrequest.json
+│   │   │       ├── processresponse.json
+│   │   │       ├── realtime.json
+│   │   │       ├── rpcrequest.json
+│   │   │       ├── rpcresponse.json
+│   │   │       ├── serialisedarray.json
+│   │   │       ├── staticoutputdescriptor.json
+│   │   │       └── valueextents.json
+│   │   └── README.md
+│   ├── piper-vamp-cpp
+│   │   ├── COPYING
+│   │   ├── ext
+│   │   │   ├── base-n
+│   │   │   │   ├── example
+│   │   │   │   │   └── basen_example.cpp
+│   │   │   │   ├── include
+│   │   │   │   │   └── basen.hpp
+│   │   │   │   ├── LICENSE
+│   │   │   │   └── README.md
+│   │   │   ├── catch
+│   │   │   │   ├── catch.hpp
+│   │   │   │   └── LICENSE_1_0.txt
+│   │   │   ├── json11
+│   │   │   │   ├── CMakeLists.txt
+│   │   │   │   ├── json11.cpp
+│   │   │   │   ├── json11.hpp
+│   │   │   │   ├── json11.pc.in
+│   │   │   │   ├── LICENSE.txt
+│   │   │   │   ├── Makefile
+│   │   │   │   ├── README.md
+│   │   │   │   └── test.cpp
+│   │   │   ├── serd
+│   │   │   │   ├── COPYING
+│   │   │   │   ├── README
+│   │   │   │   ├── serd
+│   │   │   │   │   └── serd.h
+│   │   │   │   └── src
+│   │   │   │       ├── byte_source.c
+│   │   │   │       ├── env.c
+│   │   │   │       ├── node.c
+│   │   │   │       ├── reader.c
+│   │   │   │       ├── serd_config.h
+│   │   │   │       ├── serdi.c
+│   │   │   │       ├── serd_internal.h
+│   │   │   │       ├── string.c
+│   │   │   │       ├── uri.c
+│   │   │   │       └── writer.c
+│   │   │   └── sord
+│   │   │       ├── COPYING
+│   │   │       ├── README
+│   │   │       ├── sord
+│   │   │       │   ├── sord.h
+│   │   │       │   └── sordmm.hpp
+│   │   │       ├── sord-single.c
+│   │   │       └── src
+│   │   │           ├── sord.c
+│   │   │           ├── sord_config.h
+│   │   │           ├── sordi.c
+│   │   │           ├── sord_internal.h
+│   │   │           ├── sordmm_test.cpp
+│   │   │           ├── sord_test.c
+│   │   │           ├── sord_validate.c
+│   │   │           ├── syntax.c
+│   │   │           └── zix
+│   │   │               ├── btree.c
+│   │   │               ├── btree.h
+│   │   │               ├── common.h
+│   │   │               ├── digest.c
+│   │   │               ├── digest.h
+│   │   │               ├── hash.c
+│   │   │               └── hash.h
+│   │   ├── Makefile
+│   │   ├── README.md
+│   │   ├── test
+│   │   │   ├── main.cpp
+│   │   │   └── vamp-client
+│   │   │       └── tst_PluginStub.cpp
+│   │   ├── test.sh
+│   │   ├── vamp-capnp
+│   │   │   ├── piper-capnp.cpp
+│   │   │   └── VampnProto.h
+│   │   ├── vamp-client
+│   │   │   ├── CapnpRRClient.h
+│   │   │   ├── Exceptions.h
+│   │   │   ├── Loader.h
+│   │   │   ├── PiperVampPlugin.h
+│   │   │   ├── PluginClient.h
+│   │   │   ├── qt
+│   │   │   │   ├── PiperAutoPlugin.h
+│   │   │   │   ├── ProcessQtTransport.h
+│   │   │   │   ├── test.cpp
+│   │   │   │   └── test.pro
+│   │   │   └── SynchronousTransport.h
+│   │   ├── vamp-json
+│   │   │   └── VampJson.h
+│   │   ├── vamp-server
+│   │   │   ├── convert.cpp
+│   │   │   ├── simple-server.cpp
+│   │   │   └── test.sh
+│   │   └── vamp-support
+│   │       ├── AssignedPluginHandleMapper.h
+│   │       ├── CountingPluginHandleMapper.h
+│   │       ├── DefaultPluginOutputIdMapper.h
+│   │       ├── LoaderRequests.h
+│   │       ├── PluginConfiguration.h
+│   │       ├── PluginHandleMapper.h
+│   │       ├── PluginOutputIdMapper.h
+│   │       ├── PluginProgramParameters.h
+│   │       ├── PluginStaticData.h
+│   │       ├── PreservingPluginHandleMapper.h
+│   │       ├── PreservingPluginOutputIdMapper.h
+│   │       ├── RequestOrResponse.h
+│   │       ├── RequestResponse.h
+│   │       ├── RequestResponseType.h
+│   │       ├── StaticOutputDescriptor.h
+│   │       └── StaticOutputRdf.h
+│   ├── README_githubexport.txt
+│   ├── README.md
+│   ├── README_OSC.md
+│   ├── samples
+│   │   ├── bass.wav
+│   │   ├── beep.wav
+│   │   ├── bounce.wav
+│   │   ├── clap.wav
+│   │   ├── click.wav
+│   │   ├── cowbell.wav
+│   │   ├── elecpiano.wav
+│   │   ├── hihat.wav
+│   │   ├── kick.wav
+│   │   ├── organ.wav
+│   │   ├── piano.wav
+│   │   ├── README
+│   │   ├── silent.wav
+│   │   ├── snare.wav
+│   │   ├── stick.wav
+│   │   ├── strike.wav
+│   │   └── tap.wav
+│   ├── sonic-visualiser.desktop
+│   ├── sonic-visualiser.qrc
+│   ├── svapp
+│   │   ├── align
+│   │   │   ├── Align.cpp
+│   │   │   ├── Aligner.h
+│   │   │   ├── Align.h
+│   │   │   ├── DTW.h
+│   │   │   ├── ExternalProgramAligner.cpp
+│   │   │   ├── ExternalProgramAligner.h
+│   │   │   ├── LinearAligner.cpp
+│   │   │   ├── LinearAligner.h
+│   │   │   ├── MATCHAligner.cpp
+│   │   │   ├── MATCHAligner.h
+│   │   │   ├── TransformDTWAligner.cpp
+│   │   │   └── TransformDTWAligner.h
+│   │   ├── audio
+│   │   │   ├── AudioCallbackPlaySource.cpp
+│   │   │   ├── AudioCallbackPlaySource.h
+│   │   │   ├── AudioCallbackRecordTarget.cpp
+│   │   │   ├── AudioCallbackRecordTarget.h
+│   │   │   ├── AudioGenerator.cpp
+│   │   │   ├── AudioGenerator.h
+│   │   │   ├── ClipMixer.cpp
+│   │   │   ├── ClipMixer.h
+│   │   │   ├── ContinuousSynth.cpp
+│   │   │   ├── ContinuousSynth.h
+│   │   │   ├── EffectWrapper.cpp
+│   │   │   ├── EffectWrapper.h
+│   │   │   ├── PlaySpeedRangeMapper.cpp
+│   │   │   ├── PlaySpeedRangeMapper.h
+│   │   │   ├── TimeStretchWrapper.cpp
+│   │   │   └── TimeStretchWrapper.h
+│   │   ├── COPYING
+│   │   ├── Doxyfile
+│   │   └── framework
+│   │       ├── Document.cpp
+│   │       ├── Document.h
+│   │       ├── MainWindowBase.cpp
+│   │       ├── MainWindowBase.h
+│   │       ├── OSCScript.h
+│   │       ├── SVFileReader.cpp
+│   │       ├── SVFileReader.h
+│   │       ├── TransformUserConfigurator.cpp
+│   │       ├── TransformUserConfigurator.h
+│   │       ├── VersionTester.cpp
+│   │       └── VersionTester.h
+│   ├── svcore
+│   │   ├── base
+│   │   │   ├── AudioLevel.cpp
+│   │   │   ├── AudioLevel.h
+│   │   │   ├── AudioPlaySource.h
+│   │   │   ├── AudioRecordTarget.h
+│   │   │   ├── BaseTypes.h
+│   │   │   ├── ById.cpp
+│   │   │   ├── ById.h
+│   │   │   ├── Clipboard.cpp
+│   │   │   ├── Clipboard.h
+│   │   │   ├── ColumnOp.cpp
+│   │   │   ├── ColumnOp.h
+│   │   │   ├── Command.cpp
+│   │   │   ├── Command.h
+│   │   │   ├── DataExportOptions.h
+│   │   │   ├── Debug.cpp
+│   │   │   ├── Debug.h
+│   │   │   ├── Event.h
+│   │   │   ├── EventSeries.cpp
+│   │   │   ├── EventSeries.h
+│   │   │   ├── Exceptions.cpp
+│   │   │   ├── Exceptions.h
+│   │   │   ├── Extents.h
+│   │   │   ├── FrameTimer.h
+│   │   │   ├── HelperExecPath.cpp
+│   │   │   ├── HelperExecPath.h
+│   │   │   ├── HitCount.cpp
+│   │   │   ├── HitCount.h
+│   │   │   ├── LogRange.cpp
+│   │   │   ├── LogRange.h
+│   │   │   ├── MagnitudeRange.h
+│   │   │   ├── MovingMedian.h
+│   │   │   ├── NoteData.h
+│   │   │   ├── NoteExportable.h
+│   │   │   ├── Pitch.cpp
+│   │   │   ├── Pitch.h
+│   │   │   ├── Playable.h
+│   │   │   ├── PlayParameterRepository.cpp
+│   │   │   ├── PlayParameterRepository.h
+│   │   │   ├── PlayParameters.cpp
+│   │   │   ├── PlayParameters.h
+│   │   │   ├── Preferences.cpp
+│   │   │   ├── Preferences.h
+│   │   │   ├── Profiler.cpp
+│   │   │   ├── Profiler.h
+│   │   │   ├── ProgressPrinter.cpp
+│   │   │   ├── ProgressPrinter.h
+│   │   │   ├── ProgressReporter.cpp
+│   │   │   ├── ProgressReporter.h
+│   │   │   ├── PropertyContainer.cpp
+│   │   │   ├── PropertyContainer.h
+│   │   │   ├── RangeMapper.cpp
+│   │   │   ├── RangeMapper.h
+│   │   │   ├── RealTime.h
+│   │   │   ├── RealTimeSV.cpp
+│   │   │   ├── RecentFiles.cpp
+│   │   │   ├── RecentFiles.h
+│   │   │   ├── RecordDirectory.cpp
+│   │   │   ├── RecordDirectory.h
+│   │   │   ├── ResourceFinder.cpp
+│   │   │   ├── ResourceFinder.h
+│   │   │   ├── RingBuffer.h
+│   │   │   ├── ScaleTickIntervals.h
+│   │   │   ├── Scavenger.h
+│   │   │   ├── Selection.cpp
+│   │   │   ├── Selection.h
+│   │   │   ├── Serialiser.cpp
+│   │   │   ├── Serialiser.h
+│   │   │   ├── StorageAdviser.cpp
+│   │   │   ├── StorageAdviser.h
+│   │   │   ├── StringBits.cpp
+│   │   │   ├── StringBits.h
+│   │   │   ├── Strings.cpp
+│   │   │   ├── Strings.h
+│   │   │   ├── TempDirectory.cpp
+│   │   │   ├── TempDirectory.h
+│   │   │   ├── TempWriteFile.cpp
+│   │   │   ├── TempWriteFile.h
+│   │   │   ├── test
+│   │   │   │   ├── files.pri
+│   │   │   │   ├── StressEventSeries.h
+│   │   │   │   ├── svcore-base-test.cpp
+│   │   │   │   ├── TestById.h
+│   │   │   │   ├── TestColumnOp.h
+│   │   │   │   ├── TestEventSeries.h
+│   │   │   │   ├── TestLogRange.h
+│   │   │   │   ├── TestMovingMedian.h
+│   │   │   │   ├── TestOurRealTime.h
+│   │   │   │   ├── TestPitch.h
+│   │   │   │   ├── TestRangeMapper.h
+│   │   │   │   ├── TestScaleTickIntervals.h
+│   │   │   │   ├── TestStringBits.h
+│   │   │   │   └── TestVampRealTime.h
+│   │   │   ├── TextMatcher.cpp
+│   │   │   ├── TextMatcher.h
+│   │   │   ├── Thread.cpp
+│   │   │   ├── Thread.h
+│   │   │   ├── UnitDatabase.cpp
+│   │   │   ├── UnitDatabase.h
+│   │   │   ├── ViewManagerBase.cpp
+│   │   │   ├── ViewManagerBase.h
+│   │   │   ├── Window.h
+│   │   │   ├── XmlExportable.cpp
+│   │   │   ├── XmlExportable.h
+│   │   │   ├── ZoomConstraint.h
+│   │   │   ├── ZoomLevel.cpp
+│   │   │   └── ZoomLevel.h
+│   │   ├── COPYING
+│   │   ├── data
+│   │   │   ├── fileio
+│   │   │   │   ├── AudioFileReader.cpp
+│   │   │   │   ├── AudioFileReaderFactory.cpp
+│   │   │   │   ├── AudioFileReaderFactory.h
+│   │   │   │   ├── AudioFileReader.h
+│   │   │   │   ├── AudioFileSizeEstimator.cpp
+│   │   │   │   ├── AudioFileSizeEstimator.h
+│   │   │   │   ├── BQAFileReader.cpp
+│   │   │   │   ├── BQAFileReader.h
+│   │   │   │   ├── BZipFileDevice.cpp
+│   │   │   │   ├── BZipFileDevice.h
+│   │   │   │   ├── CachedFile.cpp
+│   │   │   │   ├── CachedFile.h
+│   │   │   │   ├── CodedAudioFileReader.cpp
+│   │   │   │   ├── CodedAudioFileReader.h
+│   │   │   │   ├── CSVFileReader.cpp
+│   │   │   │   ├── CSVFileReader.h
+│   │   │   │   ├── CSVFileWriter.cpp
+│   │   │   │   ├── CSVFileWriter.h
+│   │   │   │   ├── CSVFormat.cpp
+│   │   │   │   ├── CSVFormat.h
+│   │   │   │   ├── CSVStreamWriter.h
+│   │   │   │   ├── DataFileReaderFactory.cpp
+│   │   │   │   ├── DataFileReaderFactory.h
+│   │   │   │   ├── DataFileReader.h
+│   │   │   │   ├── DecodingWavFileReader.cpp
+│   │   │   │   ├── DecodingWavFileReader.h
+│   │   │   │   ├── FileFinder.h
+│   │   │   │   ├── FileReadThread.cpp
+│   │   │   │   ├── FileReadThread.h
+│   │   │   │   ├── FileSource.cpp
+│   │   │   │   ├── FileSource.h
+│   │   │   │   ├── MIDIFileReader.cpp
+│   │   │   │   ├── MIDIFileReader.h
+│   │   │   │   ├── MIDIFileWriter.cpp
+│   │   │   │   ├── MIDIFileWriter.h
+│   │   │   │   ├── MP3FileReader.cpp
+│   │   │   │   ├── MP3FileReader.h
+│   │   │   │   ├── PlaylistFileReader.cpp
+│   │   │   │   ├── PlaylistFileReader.h
+│   │   │   │   ├── test
+│   │   │   │   │   ├── audio
+│   │   │   │   │   │   ├── aac
+│   │   │   │   │   │   │   ├── 32000-1.m4a
+│   │   │   │   │   │   │   └── 44100-2.m4a
+│   │   │   │   │   │   ├── aiff
+│   │   │   │   │   │   │   ├── 12000-6-16.aiff
+│   │   │   │   │   │   │   └── 48000-1-24.aiff
+│   │   │   │   │   │   ├── apple_lossless
+│   │   │   │   │   │   │   ├── 32000-1.m4a
+│   │   │   │   │   │   │   └── 44100-2.m4a
+│   │   │   │   │   │   ├── flac
+│   │   │   │   │   │   │   └── 44100-2.flac
+│   │   │   │   │   │   ├── mp3
+│   │   │   │   │   │   │   ├── 32000-1.mp3
+│   │   │   │   │   │   │   └── 44100-2.mp3
+│   │   │   │   │   │   ├── ogg
+│   │   │   │   │   │   │   ├── 32000-1.ogg
+│   │   │   │   │   │   │   └── 44100-2.ogg
+│   │   │   │   │   │   ├── opus
+│   │   │   │   │   │   │   └── 48000-2.opus
+│   │   │   │   │   │   ├── wav
+│   │   │   │   │   │   │   ├── 32000-1-16.wav
+│   │   │   │   │   │   │   ├── 44100-1-32.wav
+│   │   │   │   │   │   │   ├── 44100-2-16.wav
+│   │   │   │   │   │   │   ├── 44100-2-8.wav
+│   │   │   │   │   │   │   ├── 48000-1-16.wav
+│   │   │   │   │   │   │   ├── 8000-1-8.wav
+│   │   │   │   │   │   │   ├── 8000-2-16.wav
+│   │   │   │   │   │   │   └── 8000-6-16.wav
+│   │   │   │   │   │   └── wma
+│   │   │   │   │   │       └── 44100-2.wma
+│   │   │   │   │   ├── AudioFileReaderTest.h
+│   │   │   │   │   ├── AudioFileWriterTest.h
+│   │   │   │   │   ├── AudioTestData.h
+│   │   │   │   │   ├── BogusAudioFileReaderTest.h
+│   │   │   │   │   ├── csv
+│   │   │   │   │   │   ├── bad-negative-duration.csv
+│   │   │   │   │   │   ├── column-qualities.csv
+│   │   │   │   │   │   ├── comment.csv
+│   │   │   │   │   │   ├── model-type-1d-samples.csv
+│   │   │   │   │   │   ├── model-type-1d-samples-header.csv
+│   │   │   │   │   │   ├── model-type-1d-seconds.csv
+│   │   │   │   │   │   ├── model-type-1d-seconds-header.csv
+│   │   │   │   │   │   ├── model-type-2d-duration-samples.csv
+│   │   │   │   │   │   ├── model-type-2d-duration-samples-header.csv
+│   │   │   │   │   │   ├── model-type-2d-duration-seconds.csv
+│   │   │   │   │   │   ├── model-type-2d-duration-seconds-header.csv
+│   │   │   │   │   │   ├── model-type-2d-endtime-samples.csv
+│   │   │   │   │   │   ├── model-type-2d-endtime-samples-header.csv
+│   │   │   │   │   │   ├── model-type-2d-endtime-seconds.csv
+│   │   │   │   │   │   ├── model-type-2d-endtime-seconds-header.csv
+│   │   │   │   │   │   ├── model-type-2d-implicit.csv
+│   │   │   │   │   │   ├── model-type-2d-implicit-header.csv
+│   │   │   │   │   │   ├── model-type-2d-samples.csv
+│   │   │   │   │   │   ├── model-type-2d-samples-header.csv
+│   │   │   │   │   │   ├── model-type-2d-seconds.csv
+│   │   │   │   │   │   ├── model-type-2d-seconds-header.csv
+│   │   │   │   │   │   ├── model-type-3d-implicit.csv
+│   │   │   │   │   │   ├── model-type-3d-implicit-header.csv
+│   │   │   │   │   │   ├── model-type-3d-samples.csv
+│   │   │   │   │   │   ├── model-type-3d-samples-header.csv
+│   │   │   │   │   │   ├── model-type-3d-seconds.csv
+│   │   │   │   │   │   ├── model-type-3d-seconds-header.csv
+│   │   │   │   │   │   ├── quoting.csv
+│   │   │   │   │   │   ├── separator-colon.csv
+│   │   │   │   │   │   ├── separator-comma.csv
+│   │   │   │   │   │   ├── separator-many.csv
+│   │   │   │   │   │   ├── separator-pipe.csv
+│   │   │   │   │   │   ├── separator-space.csv
+│   │   │   │   │   │   ├── separator-tab.csv
+│   │   │   │   │   │   ├── with-blank-lines-1d.csv
+│   │   │   │   │   │   ├── with-blank-lines-2d.csv
+│   │   │   │   │   │   └── with-blank-lines-3d.csv
+│   │   │   │   │   ├── CSVFormatTest.h
+│   │   │   │   │   ├── CSVReaderTest.h
+│   │   │   │   │   ├── CSVStreamWriterTest.h
+│   │   │   │   │   ├── encodings
+│   │   │   │   │   │   ├── id3v2-iso-8859-1.mp3
+│   │   │   │   │   │   ├── id3v2-ucs-2.mp3
+│   │   │   │   │   │   ├── Tëmple of Spörks.flac
+│   │   │   │   │   │   ├── Tëmple of Spörks.m4a
+│   │   │   │   │   │   ├── Tëmple of Spörks.mp3
+│   │   │   │   │   │   ├── Tëmple of Spörks.ogg
+│   │   │   │   │   │   ├── Tëmple of Spörks.opus
+│   │   │   │   │   │   ├── Tëmple of Spörks.wav
+│   │   │   │   │   │   ├── Tëmple of Spörks.wma
+│   │   │   │   │   │   ├── スポークの寺院.mp3
+│   │   │   │   │   │   ├── スポークの寺院.ogg
+│   │   │   │   │   │   └── スポークの寺院.wav
+│   │   │   │   │   ├── EncodingTest.h
+│   │   │   │   │   ├── files.pri
+│   │   │   │   │   ├── midi
+│   │   │   │   │   │   ├── 아브라카다브라.mid
+│   │   │   │   │   │   └── scale.mid
+│   │   │   │   │   ├── MIDIFileReaderTest.h
+│   │   │   │   │   ├── svcore-data-fileio-test.cpp
+│   │   │   │   │   ├── UnsupportedFormat.cpp
+│   │   │   │   │   └── UnsupportedFormat.h
+│   │   │   │   ├── TextTest.cpp
+│   │   │   │   ├── TextTest.h
+│   │   │   │   ├── WavFileReader.cpp
+│   │   │   │   ├── WavFileReader.h
+│   │   │   │   ├── WavFileWriter.cpp
+│   │   │   │   └── WavFileWriter.h
+│   │   │   ├── midi
+│   │   │   │   ├── MIDIEvent.h
+│   │   │   │   ├── MIDIInput.cpp
+│   │   │   │   ├── MIDIInput.h
+│   │   │   │   └── rtmidi
+│   │   │   │       ├── RtMidi.cpp
+│   │   │   │       └── RtMidi.h
+│   │   │   ├── model
+│   │   │   │   ├── AggregateWaveModel.cpp
+│   │   │   │   ├── AggregateWaveModel.h
+│   │   │   │   ├── AlignmentModel.cpp
+│   │   │   │   ├── AlignmentModel.h
+│   │   │   │   ├── BasicCompressedDenseThreeDimensionalModel.cpp
+│   │   │   │   ├── BasicCompressedDenseThreeDimensionalModel.h
+│   │   │   │   ├── BoxModel.h
+│   │   │   │   ├── DeferredNotifier.h
+│   │   │   │   ├── Dense3DModelPeakCache.cpp
+│   │   │   │   ├── Dense3DModelPeakCache.h
+│   │   │   │   ├── DenseThreeDimensionalModel.h
+│   │   │   │   ├── DenseTimeValueModel.cpp
+│   │   │   │   ├── DenseTimeValueModel.h
+│   │   │   │   ├── EditableDenseThreeDimensionalModel.cpp
+│   │   │   │   ├── EditableDenseThreeDimensionalModel.h
+│   │   │   │   ├── EventCommands.h
+│   │   │   │   ├── FFTModel.cpp
+│   │   │   │   ├── FFTModel.h
+│   │   │   │   ├── ImageModel.h
+│   │   │   │   ├── Labeller.h
+│   │   │   │   ├── Model.cpp
+│   │   │   │   ├── ModelDataTableModel.cpp
+│   │   │   │   ├── ModelDataTableModel.h
+│   │   │   │   ├── Model.h
+│   │   │   │   ├── NoteModel.h
+│   │   │   │   ├── Path.h
+│   │   │   │   ├── PowerOfSqrtTwoZoomConstraint.cpp
+│   │   │   │   ├── PowerOfSqrtTwoZoomConstraint.h
+│   │   │   │   ├── PowerOfTwoZoomConstraint.cpp
+│   │   │   │   ├── PowerOfTwoZoomConstraint.h
+│   │   │   │   ├── RangeSummarisableTimeValueModel.cpp
+│   │   │   │   ├── RangeSummarisableTimeValueModel.h
+│   │   │   │   ├── ReadOnlyWaveFileModel.cpp
+│   │   │   │   ├── ReadOnlyWaveFileModel.h
+│   │   │   │   ├── RegionModel.h
+│   │   │   │   ├── RelativelyFineZoomConstraint.cpp
+│   │   │   │   ├── RelativelyFineZoomConstraint.h
+│   │   │   │   ├── SparseOneDimensionalModel.h
+│   │   │   │   ├── SparseTimeValueModel.h
+│   │   │   │   ├── TabularModel.h
+│   │   │   │   ├── test
+│   │   │   │   │   ├── Compares.h
+│   │   │   │   │   ├── files.pri
+│   │   │   │   │   ├── MockWaveModel.cpp
+│   │   │   │   │   ├── MockWaveModel.h
+│   │   │   │   │   ├── svcore-data-model-test.cpp
+│   │   │   │   │   ├── TestFFTModel.h
+│   │   │   │   │   ├── TestSparseModels.h
+│   │   │   │   │   ├── TestWaveformOversampler.h
+│   │   │   │   │   └── TestZoomConstraints.h
+│   │   │   │   ├── TextModel.h
+│   │   │   │   ├── WaveFileModel.cpp
+│   │   │   │   ├── WaveFileModel.h
+│   │   │   │   ├── WaveformOversampler.cpp
+│   │   │   │   ├── WaveformOversampler.h
+│   │   │   │   ├── WritableWaveFileModel.cpp
+│   │   │   │   └── WritableWaveFileModel.h
+│   │   │   └── osc
+│   │   │       ├── demoscript.sh
+│   │   │       ├── OSCMessageCallback.h
+│   │   │       ├── OSCMessage.cpp
+│   │   │       ├── OSCMessage.h
+│   │   │       ├── OSCQueue.cpp
+│   │   │       ├── OSCQueue.h
+│   │   │       ├── sv-command
+│   │   │       └── sv-osc-send.c
+│   │   ├── Doxyfile
+│   │   ├── plugin
+│   │   │   ├── api
+│   │   │   │   ├── alsa
+│   │   │   │   │   ├── asoundef.h
+│   │   │   │   │   ├── asoundlib.h
+│   │   │   │   │   ├── README
+│   │   │   │   │   ├── seq_event.h
+│   │   │   │   │   ├── seq.h
+│   │   │   │   │   ├── seq_midi_event.h
+│   │   │   │   │   └── sound
+│   │   │   │   │       └── asequencer.h
+│   │   │   │   ├── dssi_alsa_compat.c
+│   │   │   │   ├── dssi.h
+│   │   │   │   ├── ladspa.h
+│   │   │   │   └── new_dssi_transport_patch
+│   │   │   ├── DSSIPluginFactory.cpp
+│   │   │   ├── DSSIPluginFactory.h
+│   │   │   ├── DSSIPluginInstance.cpp
+│   │   │   ├── DSSIPluginInstance.h
+│   │   │   ├── FeatureExtractionPluginFactory.cpp
+│   │   │   ├── FeatureExtractionPluginFactory.h
+│   │   │   ├── LADSPAPluginFactory.cpp
+│   │   │   ├── LADSPAPluginFactory.h
+│   │   │   ├── LADSPAPluginInstance.cpp
+│   │   │   ├── LADSPAPluginInstance.h
+│   │   │   ├── NativeVampPluginFactory.cpp
+│   │   │   ├── NativeVampPluginFactory.h
+│   │   │   ├── PiperVampPluginFactory.cpp
+│   │   │   ├── PiperVampPluginFactory.h
+│   │   │   ├── PluginIdentifier.cpp
+│   │   │   ├── PluginIdentifier.h
+│   │   │   ├── PluginPathSetter.cpp
+│   │   │   ├── PluginPathSetter.h
+│   │   │   ├── plugins
+│   │   │   │   ├── SamplePlayer.cpp
+│   │   │   │   └── SamplePlayer.h
+│   │   │   ├── PluginScan.cpp
+│   │   │   ├── PluginScan.h
+│   │   │   ├── PluginXml.cpp
+│   │   │   ├── PluginXml.h
+│   │   │   ├── Provider.h
+│   │   │   ├── RealTimePluginFactory.cpp
+│   │   │   ├── RealTimePluginFactory.h
+│   │   │   ├── RealTimePluginInstance.cpp
+│   │   │   └── RealTimePluginInstance.h
+│   │   ├── rdf
+│   │   │   ├── PluginRDFDescription.cpp
+│   │   │   ├── PluginRDFDescription.h
+│   │   │   ├── PluginRDFIndexer.cpp
+│   │   │   ├── PluginRDFIndexer.h
+│   │   │   ├── RDFExporter.cpp
+│   │   │   ├── RDFExporter.h
+│   │   │   ├── RDFFeatureWriter.cpp
+│   │   │   ├── RDFFeatureWriter.h
+│   │   │   ├── RDFImporter.cpp
+│   │   │   ├── RDFImporter.h
+│   │   │   ├── RDFTransformFactory.cpp
+│   │   │   └── RDFTransformFactory.h
+│   │   ├── system
+│   │   │   ├── Init.cpp
+│   │   │   ├── Init.h
+│   │   │   ├── os-other.cpp
+│   │   │   ├── os-win10.cpp
+│   │   │   ├── System.cpp
+│   │   │   ├── System.h
+│   │   │   └── test
+│   │   │       ├── files.pri
+│   │   │       ├── svcore-system-test.cpp
+│   │   │       └── TestEnv.h
+│   │   └── transform
+│   │       ├── CSVFeatureWriter.cpp
+│   │       ├── CSVFeatureWriter.h
+│   │       ├── FeatureExtractionModelTransformer.cpp
+│   │       ├── FeatureExtractionModelTransformer.h
+│   │       ├── FeatureWriter.h
+│   │       ├── FileFeatureWriter.cpp
+│   │       ├── FileFeatureWriter.h
+│   │       ├── ModelTransformer.cpp
+│   │       ├── ModelTransformerFactory.cpp
+│   │       ├── ModelTransformerFactory.h
+│   │       ├── ModelTransformer.h
+│   │       ├── RealTimeEffectModelTransformer.cpp
+│   │       ├── RealTimeEffectModelTransformer.h
+│   │       ├── Transform.cpp
+│   │       ├── TransformDescription.h
+│   │       ├── TransformFactory.cpp
+│   │       ├── TransformFactory.h
+│   │       └── Transform.h
+│   ├── svgui
+│   │   ├── COPYING
+│   │   ├── Doxyfile
+│   │   ├── layer
+│   │   │   ├── BoxLayer.cpp
+│   │   │   ├── BoxLayer.h
+│   │   │   ├── Colour3DPlotExporter.cpp
+│   │   │   ├── Colour3DPlotExporter.h
+│   │   │   ├── Colour3DPlotLayer.cpp
+│   │   │   ├── Colour3DPlotLayer.h
+│   │   │   ├── Colour3DPlotRenderer.cpp
+│   │   │   ├── Colour3DPlotRenderer.h
+│   │   │   ├── ColourDatabase.cpp
+│   │   │   ├── ColourDatabase.h
+│   │   │   ├── ColourMapper.cpp
+│   │   │   ├── ColourMapper.h
+│   │   │   ├── ColourScale.cpp
+│   │   │   ├── ColourScale.h
+│   │   │   ├── ColourScaleLayer.h
+│   │   │   ├── CoordinateScale.cpp
+│   │   │   ├── CoordinateScale.h
+│   │   │   ├── FlexiNoteLayer.cpp
+│   │   │   ├── FlexiNoteLayer.h
+│   │   │   ├── HorizontalFrequencyScale.cpp
+│   │   │   ├── HorizontalFrequencyScale.h
+│   │   │   ├── HorizontalScaleProvider.h
+│   │   │   ├── ImageLayer.cpp
+│   │   │   ├── ImageLayer.h
+│   │   │   ├── ImageRegionFinder.cpp
+│   │   │   ├── ImageRegionFinder.h
+│   │   │   ├── Layer.cpp
+│   │   │   ├── LayerFactory.cpp
+│   │   │   ├── LayerFactory.h
+│   │   │   ├── LayerGeometryProvider.h
+│   │   │   ├── Layer.h
+│   │   │   ├── LinearColourScale.cpp
+│   │   │   ├── LinearColourScale.h
+│   │   │   ├── LinearNumericalScale.cpp
+│   │   │   ├── LinearNumericalScale.h
+│   │   │   ├── LogColourScale.cpp
+│   │   │   ├── LogColourScale.h
+│   │   │   ├── LogNumericalScale.cpp
+│   │   │   ├── LogNumericalScale.h
+│   │   │   ├── NoteLayer.cpp
+│   │   │   ├── NoteLayer.h
+│   │   │   ├── PaintAssistant.cpp
+│   │   │   ├── PaintAssistant.h
+│   │   │   ├── PianoScale.cpp
+│   │   │   ├── PianoScale.h
+│   │   │   ├── RegionLayer.cpp
+│   │   │   ├── RegionLayer.h
+│   │   │   ├── RenderTimer.h
+│   │   │   ├── ScrollableImageCache.cpp
+│   │   │   ├── ScrollableImageCache.h
+│   │   │   ├── ScrollableMagRangeCache.cpp
+│   │   │   ├── ScrollableMagRangeCache.h
+│   │   │   ├── ShowLayerCommand.h
+│   │   │   ├── SingleColourLayer.cpp
+│   │   │   ├── SingleColourLayer.h
+│   │   │   ├── SliceableLayer.h
+│   │   │   ├── SliceLayer.cpp
+│   │   │   ├── SliceLayer.h
+│   │   │   ├── SpectrogramLayer.cpp
+│   │   │   ├── SpectrogramLayer.h
+│   │   │   ├── SpectrumLayer.cpp
+│   │   │   ├── SpectrumLayer.h
+│   │   │   ├── TextLayer.cpp
+│   │   │   ├── TextLayer.h
+│   │   │   ├── TimeInstantLayer.cpp
+│   │   │   ├── TimeInstantLayer.h
+│   │   │   ├── TimeRulerLayer.cpp
+│   │   │   ├── TimeRulerLayer.h
+│   │   │   ├── TimeValueLayer.cpp
+│   │   │   ├── TimeValueLayer.h
+│   │   │   ├── VerticalBinLayer.h
+│   │   │   ├── WaveformLayer.cpp
+│   │   │   └── WaveformLayer.h
+│   │   ├── view
+│   │   │   ├── AlignmentView.cpp
+│   │   │   ├── AlignmentView.h
+│   │   │   ├── Overview.cpp
+│   │   │   ├── Overview.h
+│   │   │   ├── Pane.cpp
+│   │   │   ├── Pane.h
+│   │   │   ├── PaneStack.cpp
+│   │   │   ├── PaneStack.h
+│   │   │   ├── View.cpp
+│   │   │   ├── View.h
+│   │   │   ├── ViewManager.cpp
+│   │   │   ├── ViewManager.h
+│   │   │   └── ViewProxy.h
+│   │   └── widgets
+│   │       ├── ActivityLog.cpp
+│   │       ├── ActivityLog.h
+│   │       ├── AudioDial.cpp
+│   │       ├── AudioDial.h
+│   │       ├── ClickableLabel.h
+│   │       ├── ColourComboBox.cpp
+│   │       ├── ColourComboBox.h
+│   │       ├── ColourMapComboBox.cpp
+│   │       ├── ColourMapComboBox.h
+│   │       ├── ColourNameDialog.cpp
+│   │       ├── ColourNameDialog.h
+│   │       ├── CommandHistory.cpp
+│   │       ├── CommandHistory.h
+│   │       ├── CSVAudioFormatDialog.cpp
+│   │       ├── CSVAudioFormatDialog.h
+│   │       ├── CSVExportDialog.cpp
+│   │       ├── CSVExportDialog.h
+│   │       ├── CSVFormatDialog.cpp
+│   │       ├── CSVFormatDialog.h
+│   │       ├── Fader.cpp
+│   │       ├── Fader.h
+│   │       ├── IconLoader.cpp
+│   │       ├── IconLoader.h
+│   │       ├── ImageDialog.cpp
+│   │       ├── ImageDialog.h
+│   │       ├── InteractiveFileFinder.cpp
+│   │       ├── InteractiveFileFinder.h
+│   │       ├── ItemEditDialog.cpp
+│   │       ├── ItemEditDialog.h
+│   │       ├── KeyReference.cpp
+│   │       ├── KeyReference.h
+│   │       ├── LabelCounterInputDialog.cpp
+│   │       ├── LabelCounterInputDialog.h
+│   │       ├── LayerTree.cpp
+│   │       ├── LayerTreeDialog.cpp
+│   │       ├── LayerTreeDialog.h
+│   │       ├── LayerTree.h
+│   │       ├── LEDButton.cpp
+│   │       ├── LEDButton.h
+│   │       ├── LevelPanToolButton.cpp
+│   │       ├── LevelPanToolButton.h
+│   │       ├── LevelPanWidget.cpp
+│   │       ├── LevelPanWidget.h
+│   │       ├── ListInputDialog.cpp
+│   │       ├── ListInputDialog.h
+│   │       ├── MenuTitle.h
+│   │       ├── MIDIFileImportDialog.cpp
+│   │       ├── MIDIFileImportDialog.h
+│   │       ├── ModelDataTableDialog.cpp
+│   │       ├── ModelDataTableDialog.h
+│   │       ├── NotifyingCheckBox.cpp
+│   │       ├── NotifyingCheckBox.h
+│   │       ├── NotifyingComboBox.cpp
+│   │       ├── NotifyingComboBox.h
+│   │       ├── NotifyingPushButton.cpp
+│   │       ├── NotifyingPushButton.h
+│   │       ├── NotifyingTabBar.cpp
+│   │       ├── NotifyingTabBar.h
+│   │       ├── NotifyingToolButton.cpp
+│   │       ├── NotifyingToolButton.h
+│   │       ├── Panner.cpp
+│   │       ├── Panner.h
+│   │       ├── PluginParameterBox.cpp
+│   │       ├── PluginParameterBox.h
+│   │       ├── PluginParameterDialog.cpp
+│   │       ├── PluginParameterDialog.h
+│   │       ├── PluginPathConfigurator.cpp
+│   │       ├── PluginPathConfigurator.h
+│   │       ├── PluginReviewDialog.cpp
+│   │       ├── PluginReviewDialog.h
+│   │       ├── ProgressDialog.cpp
+│   │       ├── ProgressDialog.h
+│   │       ├── PropertyBox.cpp
+│   │       ├── PropertyBox.h
+│   │       ├── PropertyStack.cpp
+│   │       ├── PropertyStack.h
+│   │       ├── RangeInputDialog.cpp
+│   │       ├── RangeInputDialog.h
+│   │       ├── SelectableLabel.cpp
+│   │       ├── SelectableLabel.h
+│   │       ├── SubdividingMenu.cpp
+│   │       ├── SubdividingMenu.h
+│   │       ├── TextAbbrev.cpp
+│   │       ├── TextAbbrev.h
+│   │       ├── Thumbwheel.cpp
+│   │       ├── Thumbwheel.h
+│   │       ├── TipDialog.cpp
+│   │       ├── TipDialog.h
+│   │       ├── TransformFinder.cpp
+│   │       ├── TransformFinder.h
+│   │       ├── UnitConverter.cpp
+│   │       ├── UnitConverter.h
+│   │       ├── WheelCounter.h
+│   │       ├── WidgetScale.h
+│   │       ├── WindowShapePreview.cpp
+│   │       ├── WindowShapePreview.h
+│   │       ├── WindowTypeSelector.cpp
+│   │       └── WindowTypeSelector.h
+│   ├── templates
+│   │   ├── default.svt
+│   │   ├── Scrolling Waveforms.svt
+│   │   ├── Spectrograms.svt
+│   │   └── Waveform and Melodic Range Spectrogram.svt
+│   ├── TRANSLATION.md
+│   ├── vamp-plugin-sdk
+│   │   ├── acinclude.m4
+│   │   ├── CHANGELOG
+│   │   ├── CMakeLists.txt
+│   │   ├── configure
+│   │   ├── configure.ac
+│   │   ├── COPYING
+│   │   ├── examples
+│   │   │   ├── AmplitudeFollower.cpp
+│   │   │   ├── AmplitudeFollower.h
+│   │   │   ├── FixedTempoEstimator.cpp
+│   │   │   ├── FixedTempoEstimator.h
+│   │   │   ├── PercussionOnsetDetector.cpp
+│   │   │   ├── PercussionOnsetDetector.h
+│   │   │   ├── plugins.cpp
+│   │   │   ├── PowerSpectrum.cpp
+│   │   │   ├── PowerSpectrum.h
+│   │   │   ├── SpectralCentroid.cpp
+│   │   │   ├── SpectralCentroid.h
+│   │   │   ├── vamp-example-plugins.cat
+│   │   │   ├── vamp-example-plugins.n3
+│   │   │   ├── ZeroCrossing.cpp
+│   │   │   └── ZeroCrossing.h
+│   │   ├── host
+│   │   │   ├── system.h
+│   │   │   ├── test-c.c
+│   │   │   └── vamp-simple-host.cpp
+│   │   ├── Makefile.in
+│   │   ├── otherbuilds
+│   │   │   ├── docker
+│   │   │   │   ├── build.sh
+│   │   │   │   ├── Dockerfile_v2.10_ubuntu1604
+│   │   │   │   ├── Dockerfile_v2.7.1_ubuntu1404
+│   │   │   │   ├── Dockerfile_v2.7.1_ubuntu1604
+│   │   │   │   ├── Dockerfile_v2.7_ubuntu1404
+│   │   │   │   ├── Dockerfile_v2.7_ubuntu1604
+│   │   │   │   ├── Dockerfile_v2.8_ubuntu1604
+│   │   │   │   └── Dockerfile_v2.9_ubuntu1604
+│   │   │   ├── Doxyfile
+│   │   │   ├── libvamp-hostsdk.la.in
+│   │   │   ├── libvamp-sdk.la.in
+│   │   │   ├── Makefile.mingw32
+│   │   │   ├── Makefile.mingw64
+│   │   │   ├── Makefile.osx
+│   │   │   ├── README.linux
+│   │   │   ├── README.msvc
+│   │   │   ├── README.osx
+│   │   │   ├── update-version.sh
+│   │   │   ├── VampExamplePlugins.vcxproj
+│   │   │   ├── VampHostSDK.sln
+│   │   │   ├── VampHostSDK.vcxproj
+│   │   │   ├── VampPluginSDK.vcxproj
+│   │   │   ├── VampSDK.sln
+│   │   │   └── VampSimpleHost.vcxproj
+│   │   ├── pkgconfig
+│   │   │   ├── vamp-hostsdk.pc.in
+│   │   │   ├── vamp.pc.in
+│   │   │   └── vamp-sdk.pc.in
+│   │   ├── rdf
+│   │   │   ├── doc
+│   │   │   │   ├── glance.htm
+│   │   │   │   ├── vamp.html
+│   │   │   │   └── vamp.pl
+│   │   │   ├── generator
+│   │   │   │   └── vamp-rdf-template-generator.cpp
+│   │   │   ├── README
+│   │   │   ├── ToDo
+│   │   │   ├── vamp.n3
+│   │   │   └── vamp.rdf
+│   │   ├── README.md
+│   │   ├── README_on_compatibility.md
+│   │   ├── skeleton
+│   │   │   ├── Makefile.inc
+│   │   │   ├── Makefile.linux
+│   │   │   ├── Makefile.mingw32
+│   │   │   ├── Makefile.osx
+│   │   │   ├── MyPlugin.cpp
+│   │   │   ├── MyPlugin.h
+│   │   │   ├── plugins.cpp
+│   │   │   ├── vamp-plugin.list
+│   │   │   └── vamp-plugin.map
+│   │   ├── src
+│   │   │   ├── doc-overview
+│   │   │   ├── vamp-hostsdk
+│   │   │   │   ├── acsymbols.c
+│   │   │   │   ├── Files.cpp
+│   │   │   │   ├── Files.h
+│   │   │   │   ├── host-c.cpp
+│   │   │   │   ├── PluginBufferingAdapter.cpp
+│   │   │   │   ├── PluginChannelAdapter.cpp
+│   │   │   │   ├── PluginHostAdapter.cpp
+│   │   │   │   ├── PluginInputDomainAdapter.cpp
+│   │   │   │   ├── PluginLoader.cpp
+│   │   │   │   ├── PluginSummarisingAdapter.cpp
+│   │   │   │   ├── PluginWrapper.cpp
+│   │   │   │   ├── RealTime.cpp
+│   │   │   │   └── Window.h
+│   │   │   └── vamp-sdk
+│   │   │       ├── acsymbols.c
+│   │   │       ├── ext
+│   │   │       │   ├── vamp_kiss_fft.c
+│   │   │       │   ├── vamp_kiss_fft_guts.h
+│   │   │       │   ├── vamp_kiss_fft.h
+│   │   │       │   ├── vamp_kiss_fftr.c
+│   │   │       │   └── vamp_kiss_fftr.h
+│   │   │       ├── FFT.cpp
+│   │   │       ├── FFTimpl.cpp
+│   │   │       ├── PluginAdapter.cpp
+│   │   │       └── RealTime.cpp
+│   │   ├── test
+│   │   │   ├── expected
+│   │   │   │   ├── vamp-test-plugin_curve-fsr-mixed.txt
+│   │   │   │   ├── vamp-test-plugin_curve-fsr-timed.txt
+│   │   │   │   ├── vamp-test-plugin_curve-fsr.txt
+│   │   │   │   ├── vamp-test-plugin_curve-oss.txt
+│   │   │   │   ├── vamp-test-plugin_curve-vsr.txt
+│   │   │   │   ├── vamp-test-plugin-freq_curve-fsr-mixed.txt
+│   │   │   │   ├── vamp-test-plugin-freq_curve-fsr-timed.txt
+│   │   │   │   ├── vamp-test-plugin-freq_curve-fsr.txt
+│   │   │   │   ├── vamp-test-plugin-freq_curve-oss.txt
+│   │   │   │   ├── vamp-test-plugin-freq_curve-vsr.txt
+│   │   │   │   ├── vamp-test-plugin-freq_grid-fsr.txt
+│   │   │   │   ├── vamp-test-plugin-freq_grid-oss.txt
+│   │   │   │   ├── vamp-test-plugin-freq_input-summary.txt
+│   │   │   │   ├── vamp-test-plugin-freq_input-timestamp.txt
+│   │   │   │   ├── vamp-test-plugin-freq_instants.txt
+│   │   │   │   ├── vamp-test-plugin-freq_notes-regions.txt
+│   │   │   │   ├── vamp-test-plugin_grid-fsr.txt
+│   │   │   │   ├── vamp-test-plugin_grid-oss.txt
+│   │   │   │   ├── vamp-test-plugin_input-summary.txt
+│   │   │   │   ├── vamp-test-plugin_input-timestamp.txt
+│   │   │   │   ├── vamp-test-plugin_instants.txt
+│   │   │   │   └── vamp-test-plugin_notes-regions.txt
+│   │   │   ├── run-test-plugin-regression.sh
+│   │   │   ├── testsignal.ipynb
+│   │   │   └── testsignal.wav
+│   │   ├── vamp
+│   │   │   └── vamp.h
+│   │   ├── vamp-hostsdk
+│   │   │   ├── host-c.h
+│   │   │   ├── hostguard.h
+│   │   │   ├── PluginBase.h
+│   │   │   ├── PluginBufferingAdapter.h
+│   │   │   ├── PluginChannelAdapter.h
+│   │   │   ├── Plugin.h
+│   │   │   ├── PluginHostAdapter.h
+│   │   │   ├── PluginInputDomainAdapter.h
+│   │   │   ├── PluginLoader.h
+│   │   │   ├── PluginSummarisingAdapter.h
+│   │   │   ├── PluginWrapper.h
+│   │   │   ├── RealTime.h
+│   │   │   └── vamp-hostsdk.h
+│   │   ├── vamp-plugin.list
+│   │   ├── vamp-plugin.map
+│   │   └── vamp-sdk
+│   │       ├── FFT.h
+│   │       ├── plugguard.h
+│   │       ├── PluginAdapter.h
+│   │       ├── PluginBase.h
+│   │       ├── Plugin.h
+│   │       ├── RealTime.h
+│   │       └── vamp-sdk.h
+│   ├── version.h.in
+│   ├── x-sonicvisualiser.desktop
+│   └── x-sonicvisualiser-layer.desktop
+└── sonic-visualiser-5.0.1.tar.gz -> /home/felix/packages/sonic-visualiser/sonic-visualiser-5.0.1.tar.gz
+
+159 directories, 1478 files

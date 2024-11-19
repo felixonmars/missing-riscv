@@ -1,0 +1,4517 @@
+src
+├── turbo-2.2.3.tar.gz -> /home/felix/packages/turbo/turbo-2.2.3.tar.gz
+└── turborepo-2.2.3
+    ├── buildcontainer
+    │   ├── cosign.pub
+    │   ├── Dockerfile
+    │   ├── Dockerfile.base
+    │   ├── entrypoint.sh
+    │   ├── LICENSE
+    │   ├── Makefile
+    │   └── README.md
+    ├── Cargo.lock
+    ├── Cargo.toml
+    ├── cli
+    │   ├── combined-shim.yml
+    │   ├── LICENSE
+    │   ├── Makefile
+    │   ├── package.json
+    │   ├── README.md
+    │   ├── scripts
+    │   │   └── npm-native-packages
+    │   │       ├── npm-native-packages.js
+    │   │       └── template
+    │   │           ├── bin
+    │   │           │   └── turbo
+    │   │           ├── README.md
+    │   │           └── template.package.json
+    │   └── turbo.json
+    ├── clippy.toml
+    ├── CODE_OF_CONDUCT.md
+    ├── CONTRIBUTING.md
+    ├── crates
+    │   ├── tower-uds
+    │   │   ├── Cargo.toml
+    │   │   └── src
+    │   │       └── lib.rs
+    │   ├── turborepo
+    │   │   ├── Cargo.toml
+    │   │   ├── README.md
+    │   │   └── src
+    │   │       └── main.rs
+    │   ├── turborepo-analytics
+    │   │   ├── Cargo.toml
+    │   │   └── src
+    │   │       └── lib.rs
+    │   ├── turborepo-api-client
+    │   │   ├── Cargo.toml
+    │   │   └── src
+    │   │       ├── analytics.rs
+    │   │       ├── error.rs
+    │   │       ├── lib.rs
+    │   │       ├── retry.rs
+    │   │       ├── spaces.rs
+    │   │       └── telemetry.rs
+    │   ├── turborepo-auth
+    │   │   ├── Cargo.toml
+    │   │   └── src
+    │   │       ├── auth
+    │   │       │   ├── login.rs
+    │   │       │   ├── logout.rs
+    │   │       │   ├── mod.rs
+    │   │       │   └── sso.rs
+    │   │       ├── error.rs
+    │   │       ├── lib.rs
+    │   │       ├── login_server.rs
+    │   │       └── ui
+    │   │           ├── messages.rs
+    │   │           └── mod.rs
+    │   ├── turborepo-cache
+    │   │   ├── Cargo.toml
+    │   │   ├── fixtures
+    │   │   │   ├── name-traversal.tar
+    │   │   │   ├── name-traversal.tar.zst
+    │   │   │   ├── windows-unsafe.tar
+    │   │   │   └── windows-unsafe.tar.zst
+    │   │   └── src
+    │   │       ├── async_cache.rs
+    │   │       ├── cache_archive
+    │   │       │   ├── create.rs
+    │   │       │   ├── mod.rs
+    │   │       │   ├── restore_directory.rs
+    │   │       │   ├── restore_regular.rs
+    │   │       │   ├── restore.rs
+    │   │       │   └── restore_symlink.rs
+    │   │       ├── fs.rs
+    │   │       ├── http.rs
+    │   │       ├── lib.rs
+    │   │       ├── multiplexer.rs
+    │   │       ├── signature_authentication.rs
+    │   │       ├── test_cases.rs
+    │   │       └── upload_progress.rs
+    │   ├── turborepo-ci
+    │   │   ├── Cargo.toml
+    │   │   └── src
+    │   │       ├── lib.rs
+    │   │       ├── vendor_behavior.rs
+    │   │       └── vendors.rs
+    │   ├── turborepo-dirs
+    │   │   ├── Cargo.toml
+    │   │   └── src
+    │   │       └── lib.rs
+    │   ├── turborepo-env
+    │   │   ├── Cargo.toml
+    │   │   └── src
+    │   │       ├── lib.rs
+    │   │       └── platform.rs
+    │   ├── turborepo-errors
+    │   │   ├── Cargo.toml
+    │   │   └── src
+    │   │       └── lib.rs
+    │   ├── turborepo-filewatch
+    │   │   ├── build.rs
+    │   │   ├── Cargo.toml
+    │   │   └── src
+    │   │       ├── cookies.rs
+    │   │       ├── debouncer.rs
+    │   │       ├── fsevent.rs
+    │   │       ├── globwatcher.rs
+    │   │       ├── hash_watcher.rs
+    │   │       ├── lib.rs
+    │   │       ├── optional_watch.rs
+    │   │       └── package_watcher.rs
+    │   ├── turborepo-fs
+    │   │   ├── Cargo.toml
+    │   │   └── src
+    │   │       └── lib.rs
+    │   ├── turborepo-globwalk
+    │   │   ├── Cargo.toml
+    │   │   └── src
+    │   │       └── lib.rs
+    │   ├── turborepo-globwatch
+    │   │   ├── Cargo.toml
+    │   │   ├── examples
+    │   │   │   └── cancel.rs
+    │   │   ├── readme.md
+    │   │   └── src
+    │   │       └── lib.rs
+    │   ├── turborepo-graph-utils
+    │   │   ├── Cargo.toml
+    │   │   └── src
+    │   │       ├── lib.rs
+    │   │       └── walker.rs
+    │   ├── turborepo-lib
+    │   │   ├── build.rs
+    │   │   ├── Cargo.toml
+    │   │   ├── fixtures
+    │   │   │   └── local_config
+    │   │   │       ├── turbo.v1.json
+    │   │   │       ├── turbo.v2.json
+    │   │   │       └── turbov2.package-lock.json
+    │   │   ├── README.md
+    │   │   ├── src
+    │   │   │   ├── child.rs
+    │   │   │   ├── cli
+    │   │   │   │   ├── error.rs
+    │   │   │   │   └── mod.rs
+    │   │   │   ├── commands
+    │   │   │   │   ├── bin.rs
+    │   │   │   │   ├── config.rs
+    │   │   │   │   ├── daemon.rs
+    │   │   │   │   ├── generate.rs
+    │   │   │   │   ├── link.rs
+    │   │   │   │   ├── login.rs
+    │   │   │   │   ├── logout.rs
+    │   │   │   │   ├── ls.rs
+    │   │   │   │   ├── mod.rs
+    │   │   │   │   ├── prune.rs
+    │   │   │   │   ├── query.rs
+    │   │   │   │   ├── run.rs
+    │   │   │   │   ├── scan.rs
+    │   │   │   │   ├── telemetry.rs
+    │   │   │   │   └── unlink.rs
+    │   │   │   ├── config
+    │   │   │   │   ├── env.rs
+    │   │   │   │   ├── file.rs
+    │   │   │   │   ├── mod.rs
+    │   │   │   │   ├── override_env.rs
+    │   │   │   │   └── turbo_json.rs
+    │   │   │   ├── daemon
+    │   │   │   │   ├── bump_timeout_layer.rs
+    │   │   │   │   ├── bump_timeout.rs
+    │   │   │   │   ├── client.rs
+    │   │   │   │   ├── connector.rs
+    │   │   │   │   ├── default_timeout_layer.rs
+    │   │   │   │   ├── endpoint.rs
+    │   │   │   │   ├── mod.rs
+    │   │   │   │   ├── proto
+    │   │   │   │   │   └── turbod.proto
+    │   │   │   │   └── server.rs
+    │   │   │   ├── diagnostics.rs
+    │   │   │   ├── engine
+    │   │   │   │   ├── builder.rs
+    │   │   │   │   ├── dot.rs
+    │   │   │   │   ├── execute.rs
+    │   │   │   │   ├── mermaid.rs
+    │   │   │   │   └── mod.rs
+    │   │   │   ├── framework.rs
+    │   │   │   ├── gitignore.rs
+    │   │   │   ├── globwatcher
+    │   │   │   │   └── mod.rs
+    │   │   │   ├── hash
+    │   │   │   │   ├── mod.rs
+    │   │   │   │   ├── proto.capnp
+    │   │   │   │   └── traits.rs
+    │   │   │   ├── lib.rs
+    │   │   │   ├── opts.rs
+    │   │   │   ├── package_changes_watcher.rs
+    │   │   │   ├── panic_handler.rs
+    │   │   │   ├── process
+    │   │   │   │   ├── child.rs
+    │   │   │   │   ├── command.rs
+    │   │   │   │   └── mod.rs
+    │   │   │   ├── query
+    │   │   │   │   ├── file.rs
+    │   │   │   │   ├── mod.rs
+    │   │   │   │   ├── package_graph.rs
+    │   │   │   │   ├── package.rs
+    │   │   │   │   ├── server.rs
+    │   │   │   │   └── task.rs
+    │   │   │   ├── rewrite_json.rs
+    │   │   │   ├── run
+    │   │   │   │   ├── builder.rs
+    │   │   │   │   ├── cache.rs
+    │   │   │   │   ├── error.rs
+    │   │   │   │   ├── global_hash.rs
+    │   │   │   │   ├── graph_visualizer.rs
+    │   │   │   │   ├── mod.rs
+    │   │   │   │   ├── package_discovery
+    │   │   │   │   │   └── mod.rs
+    │   │   │   │   ├── scope
+    │   │   │   │   │   ├── change_detector.rs
+    │   │   │   │   │   ├── filter.rs
+    │   │   │   │   │   ├── mod.rs
+    │   │   │   │   │   ├── simple_glob.rs
+    │   │   │   │   │   └── target_selector.rs
+    │   │   │   │   ├── summary
+    │   │   │   │   │   ├── duration.rs
+    │   │   │   │   │   ├── execution.rs
+    │   │   │   │   │   ├── global_hash.rs
+    │   │   │   │   │   ├── mod.rs
+    │   │   │   │   │   ├── scm.rs
+    │   │   │   │   │   ├── spaces.rs
+    │   │   │   │   │   ├── task_factory.rs
+    │   │   │   │   │   └── task.rs
+    │   │   │   │   ├── task_access.rs
+    │   │   │   │   ├── task_id.rs
+    │   │   │   │   ├── ui.rs
+    │   │   │   │   └── watch.rs
+    │   │   │   ├── shim
+    │   │   │   │   ├── local_turbo_config.rs
+    │   │   │   │   ├── local_turbo_state.rs
+    │   │   │   │   ├── mod.rs
+    │   │   │   │   ├── parser.rs
+    │   │   │   │   └── turbo_state.rs
+    │   │   │   ├── signal.rs
+    │   │   │   ├── task_graph
+    │   │   │   │   ├── mod.rs
+    │   │   │   │   └── visitor.rs
+    │   │   │   ├── task_hash.rs
+    │   │   │   ├── tracing.rs
+    │   │   │   └── turbo_json
+    │   │   │       ├── loader.rs
+    │   │   │       ├── mod.rs
+    │   │   │       └── parser.rs
+    │   │   └── test
+    │   │       └── scripts
+    │   │           ├── hello_no_line.js
+    │   │           ├── hello_non_utf8.js
+    │   │           ├── hello_world_hello_moon.js
+    │   │           ├── hello_world.js
+    │   │           ├── sleep_5_ignore.js
+    │   │           ├── sleep_5_interruptable.js
+    │   │           └── stdin_stdout.js
+    │   ├── turborepo-lockfiles
+    │   │   ├── Cargo.toml
+    │   │   ├── examples
+    │   │   │   ├── berry_resolutions.rs
+    │   │   │   └── yarn.lock
+    │   │   ├── fixtures
+    │   │   │   ├── berry-builtin.lock
+    │   │   │   ├── berry.lock
+    │   │   │   ├── berry-protocol-collision.lock
+    │   │   │   ├── berry_semver.lock
+    │   │   │   ├── minimal-berry.lock
+    │   │   │   ├── minimal-berry-resolutions.lock
+    │   │   │   ├── npm-lock.json
+    │   │   │   ├── npm-lock-workspace-variation.json
+    │   │   │   ├── pnpm6turbo.yaml
+    │   │   │   ├── pnpm6-workspace.yaml
+    │   │   │   ├── pnpm7-workspace.yaml
+    │   │   │   ├── pnpm8turbo.yaml
+    │   │   │   ├── pnpm8.yaml
+    │   │   │   ├── pnpm-absolute-v6.yaml
+    │   │   │   ├── pnpm-absolute.yaml
+    │   │   │   ├── pnpm-override.yaml
+    │   │   │   ├── pnpm-patch-v6.yaml
+    │   │   │   ├── pnpm-patch.yaml
+    │   │   │   ├── pnpm-peer-v6.yaml
+    │   │   │   ├── pnpm-top-level-dupe.yaml
+    │   │   │   ├── pnpm-v6.1.yaml
+    │   │   │   ├── pnpm-v7-patch.yaml
+    │   │   │   ├── pnpm-v7-peer.yaml
+    │   │   │   ├── pnpm-v7.yaml
+    │   │   │   ├── pnpm-v9.yaml
+    │   │   │   ├── robust-berry-resolutions.lock
+    │   │   │   ├── workspace-peer-dependency.json
+    │   │   │   ├── yarn1full.lock
+    │   │   │   ├── yarn1.lock
+    │   │   │   ├── yarn4-direct-and-indirect.lock
+    │   │   │   ├── yarn4-mixed-protocol.lock
+    │   │   │   ├── yarn4-patch.lock
+    │   │   │   └── yarn4-resolution.lock
+    │   │   └── src
+    │   │       ├── berry
+    │   │       │   ├── de.rs
+    │   │       │   ├── identifiers.rs
+    │   │       │   ├── mod.rs
+    │   │       │   ├── protocol_resolver.rs
+    │   │       │   ├── resolution.pest
+    │   │       │   ├── resolution.rs
+    │   │       │   └── ser.rs
+    │   │       ├── bun
+    │   │       │   ├── de.rs
+    │   │       │   └── mod.rs
+    │   │       ├── error.rs
+    │   │       ├── lib.rs
+    │   │       ├── npm.rs
+    │   │       ├── pnpm
+    │   │       │   ├── data.rs
+    │   │       │   ├── dep_path.rs
+    │   │       │   ├── de.rs
+    │   │       │   ├── mod.rs
+    │   │       │   └── ser.rs
+    │   │       └── yarn1
+    │   │           ├── de.rs
+    │   │           ├── mod.rs
+    │   │           └── ser.rs
+    │   ├── turborepo-lsp
+    │   │   ├── Cargo.toml
+    │   │   ├── readme.md
+    │   │   └── src
+    │   │       ├── lib.rs
+    │   │       └── main.rs
+    │   ├── turborepo-paths
+    │   │   ├── Cargo.toml
+    │   │   └── src
+    │   │       ├── absolute_system_path_buf.rs
+    │   │       ├── absolute_system_path.rs
+    │   │       ├── anchored_system_path_buf.rs
+    │   │       ├── anchored_system_path.rs
+    │   │       ├── lib.rs
+    │   │       ├── relative_unix_path_buf.rs
+    │   │       └── relative_unix_path.rs
+    │   ├── turborepo-pidlock
+    │   │   ├── Cargo.toml
+    │   │   ├── deny.toml
+    │   │   ├── LICENSE-MIT
+    │   │   ├── README.md
+    │   │   └── src
+    │   │       └── lib.rs
+    │   ├── turborepo-repository
+    │   │   ├── Cargo.toml
+    │   │   └── src
+    │   │       ├── change_mapper
+    │   │       │   ├── mod.rs
+    │   │       │   └── package.rs
+    │   │       ├── discovery.rs
+    │   │       ├── inference.rs
+    │   │       ├── lib.rs
+    │   │       ├── package_graph
+    │   │       │   ├── builder.rs
+    │   │       │   ├── dep_splitter.rs
+    │   │       │   ├── mod.rs
+    │   │       │   └── npmrc.rs
+    │   │       ├── package_json.rs
+    │   │       └── package_manager
+    │   │           ├── bun.rs
+    │   │           ├── fixtures
+    │   │           │   ├── package.json
+    │   │           │   ├── pnpm-patches.json
+    │   │           │   └── pnpm-workspace.yaml
+    │   │           ├── mod.rs
+    │   │           ├── npm.rs
+    │   │           ├── pnpm.rs
+    │   │           └── yarn.rs
+    │   ├── turborepo-scm
+    │   │   ├── Cargo.toml
+    │   │   ├── fixtures
+    │   │   │   └── 01-git-hash-object
+    │   │   │       ├── child
+    │   │   │       │   ├── child.json
+    │   │   │       │   └── grandchild
+    │   │   │       │       └── grandchild.json
+    │   │   │       └── root.json
+    │   │   ├── README.md
+    │   │   └── src
+    │   │       ├── git.rs
+    │   │       ├── hash_object.rs
+    │   │       ├── lib.rs
+    │   │       ├── ls_tree.rs
+    │   │       ├── manual.rs
+    │   │       ├── package_deps.rs
+    │   │       └── status.rs
+    │   ├── turborepo-telemetry
+    │   │   ├── Cargo.toml
+    │   │   ├── README.md
+    │   │   └── src
+    │   │       ├── config.rs
+    │   │       ├── errors.rs
+    │   │       ├── events
+    │   │       │   ├── command.rs
+    │   │       │   ├── generic.rs
+    │   │       │   ├── mod.rs
+    │   │       │   ├── repo.rs
+    │   │       │   └── task.rs
+    │   │       └── lib.rs
+    │   ├── turborepo-ui
+    │   │   ├── Cargo.toml
+    │   │   ├── src
+    │   │   │   ├── color_selector.rs
+    │   │   │   ├── lib.rs
+    │   │   │   ├── line.rs
+    │   │   │   ├── logs.rs
+    │   │   │   ├── output.rs
+    │   │   │   ├── prefixed.rs
+    │   │   │   ├── sender.rs
+    │   │   │   ├── tui
+    │   │   │   │   ├── app.rs
+    │   │   │   │   ├── clipboard.rs
+    │   │   │   │   ├── debouncer.rs
+    │   │   │   │   ├── event.rs
+    │   │   │   │   ├── handle.rs
+    │   │   │   │   ├── input.rs
+    │   │   │   │   ├── mod.rs
+    │   │   │   │   ├── pane.rs
+    │   │   │   │   ├── search.rs
+    │   │   │   │   ├── size.rs
+    │   │   │   │   ├── spinner.rs
+    │   │   │   │   ├── state.rs
+    │   │   │   │   ├── table.rs
+    │   │   │   │   ├── task.rs
+    │   │   │   │   └── term_output.rs
+    │   │   │   └── wui
+    │   │   │       ├── event.rs
+    │   │   │       ├── mod.rs
+    │   │   │       ├── query.rs
+    │   │   │       ├── sender.rs
+    │   │   │       └── subscriber.rs
+    │   │   └── tests
+    │   │       └── threads.rs
+    │   ├── turborepo-unescape
+    │   │   ├── Cargo.toml
+    │   │   └── src
+    │   │       └── lib.rs
+    │   ├── turborepo-updater
+    │   │   ├── Cargo.toml
+    │   │   └── src
+    │   │       ├── lib.rs
+    │   │       └── ui
+    │   │           ├── mod.rs
+    │   │           └── utils.rs
+    │   ├── turborepo-vercel-api
+    │   │   ├── Cargo.toml
+    │   │   └── src
+    │   │       ├── lib.rs
+    │   │       ├── snapshots
+    │   │       │   ├── turborepo_vercel_api__tests__with-id-local-hit.snap
+    │   │       │   ├── turborepo_vercel_api__tests__with-id-remote-miss.snap
+    │   │       │   └── turborepo_vercel_api__tests__without-id-remote-miss.snap
+    │   │       ├── telemetry.rs
+    │   │       └── token.rs
+    │   ├── turborepo-vercel-api-mock
+    │   │   ├── Cargo.toml
+    │   │   └── src
+    │   │       ├── lib.rs
+    │   │       └── main.rs
+    │   ├── turborepo-vt100
+    │   │   ├── Cargo.toml
+    │   │   ├── CHANGELOG.md
+    │   │   ├── LICENSE
+    │   │   ├── README.md
+    │   │   ├── src
+    │   │   │   ├── attrs.rs
+    │   │   │   ├── callbacks.rs
+    │   │   │   ├── cell.rs
+    │   │   │   ├── entire_screen.rs
+    │   │   │   ├── grid.rs
+    │   │   │   ├── lib.rs
+    │   │   │   ├── parser.rs
+    │   │   │   ├── perform.rs
+    │   │   │   ├── row.rs
+    │   │   │   ├── screen.rs
+    │   │   │   ├── term.rs
+    │   │   │   └── tui_term.rs
+    │   │   └── tests
+    │   │       ├── attr.rs
+    │   │       ├── basic.rs
+    │   │       ├── control.rs
+    │   │       ├── csi.rs
+    │   │       ├── data
+    │   │       │   ├── fixtures
+    │   │       │   │   ├── absolute_movement
+    │   │       │   │   │   ├── 10.json
+    │   │       │   │   │   ├── 10.typescript
+    │   │       │   │   │   ├── 11.json
+    │   │       │   │   │   ├── 11.typescript
+    │   │       │   │   │   ├── 1.json
+    │   │       │   │   │   ├── 1.typescript
+    │   │       │   │   │   ├── 2.json
+    │   │       │   │   │   ├── 2.typescript
+    │   │       │   │   │   ├── 3.json
+    │   │       │   │   │   ├── 3.typescript
+    │   │       │   │   │   ├── 4.json
+    │   │       │   │   │   ├── 4.typescript
+    │   │       │   │   │   ├── 5.json
+    │   │       │   │   │   ├── 5.typescript
+    │   │       │   │   │   ├── 6.json
+    │   │       │   │   │   ├── 6.typescript
+    │   │       │   │   │   ├── 7.json
+    │   │       │   │   │   ├── 7.typescript
+    │   │       │   │   │   ├── 8.json
+    │   │       │   │   │   ├── 8.typescript
+    │   │       │   │   │   ├── 9.json
+    │   │       │   │   │   └── 9.typescript
+    │   │       │   │   ├── absolute_movement.in
+    │   │       │   │   ├── alternate_buffer
+    │   │       │   │   │   ├── 10.json
+    │   │       │   │   │   ├── 10.typescript
+    │   │       │   │   │   ├── 11.json
+    │   │       │   │   │   ├── 11.typescript
+    │   │       │   │   │   ├── 12.json
+    │   │       │   │   │   ├── 12.typescript
+    │   │       │   │   │   ├── 13.json
+    │   │       │   │   │   ├── 13.typescript
+    │   │       │   │   │   ├── 14.json
+    │   │       │   │   │   ├── 14.typescript
+    │   │       │   │   │   ├── 1.json
+    │   │       │   │   │   ├── 1.typescript
+    │   │       │   │   │   ├── 2.json
+    │   │       │   │   │   ├── 2.typescript
+    │   │       │   │   │   ├── 3.json
+    │   │       │   │   │   ├── 3.typescript
+    │   │       │   │   │   ├── 4.json
+    │   │       │   │   │   ├── 4.typescript
+    │   │       │   │   │   ├── 5.json
+    │   │       │   │   │   ├── 5.typescript
+    │   │       │   │   │   ├── 6.json
+    │   │       │   │   │   ├── 6.typescript
+    │   │       │   │   │   ├── 7.json
+    │   │       │   │   │   ├── 7.typescript
+    │   │       │   │   │   ├── 8.json
+    │   │       │   │   │   ├── 8.typescript
+    │   │       │   │   │   ├── 9.json
+    │   │       │   │   │   └── 9.typescript
+    │   │       │   │   ├── alternate_buffer.in
+    │   │       │   │   ├── ascii
+    │   │       │   │   │   ├── 1.json
+    │   │       │   │   │   └── 1.typescript
+    │   │       │   │   ├── ascii.in
+    │   │       │   │   ├── attrs
+    │   │       │   │   │   ├── 10.json
+    │   │       │   │   │   ├── 10.typescript
+    │   │       │   │   │   ├── 11.json
+    │   │       │   │   │   ├── 11.typescript
+    │   │       │   │   │   ├── 12.json
+    │   │       │   │   │   ├── 12.typescript
+    │   │       │   │   │   ├── 13.json
+    │   │       │   │   │   ├── 13.typescript
+    │   │       │   │   │   ├── 1.json
+    │   │       │   │   │   ├── 1.typescript
+    │   │       │   │   │   ├── 2.json
+    │   │       │   │   │   ├── 2.typescript
+    │   │       │   │   │   ├── 3.json
+    │   │       │   │   │   ├── 3.typescript
+    │   │       │   │   │   ├── 4.json
+    │   │       │   │   │   ├── 4.typescript
+    │   │       │   │   │   ├── 5.json
+    │   │       │   │   │   ├── 5.typescript
+    │   │       │   │   │   ├── 6.json
+    │   │       │   │   │   ├── 6.typescript
+    │   │       │   │   │   ├── 7.json
+    │   │       │   │   │   ├── 7.typescript
+    │   │       │   │   │   ├── 8.json
+    │   │       │   │   │   ├── 8.typescript
+    │   │       │   │   │   ├── 9.json
+    │   │       │   │   │   └── 9.typescript
+    │   │       │   │   ├── attrs.in
+    │   │       │   │   ├── bs
+    │   │       │   │   │   ├── 1.json
+    │   │       │   │   │   ├── 1.typescript
+    │   │       │   │   │   ├── 2.json
+    │   │       │   │   │   └── 2.typescript
+    │   │       │   │   ├── bs.in
+    │   │       │   │   ├── colors
+    │   │       │   │   │   ├── 10.json
+    │   │       │   │   │   ├── 10.typescript
+    │   │       │   │   │   ├── 11.json
+    │   │       │   │   │   ├── 11.typescript
+    │   │       │   │   │   ├── 12.json
+    │   │       │   │   │   ├── 12.typescript
+    │   │       │   │   │   ├── 13.json
+    │   │       │   │   │   ├── 13.typescript
+    │   │       │   │   │   ├── 14.json
+    │   │       │   │   │   ├── 14.typescript
+    │   │       │   │   │   ├── 15.json
+    │   │       │   │   │   ├── 15.typescript
+    │   │       │   │   │   ├── 16.json
+    │   │       │   │   │   ├── 16.typescript
+    │   │       │   │   │   ├── 17.json
+    │   │       │   │   │   ├── 17.typescript
+    │   │       │   │   │   ├── 18.json
+    │   │       │   │   │   ├── 18.typescript
+    │   │       │   │   │   ├── 19.json
+    │   │       │   │   │   ├── 19.typescript
+    │   │       │   │   │   ├── 1.json
+    │   │       │   │   │   ├── 1.typescript
+    │   │       │   │   │   ├── 20.json
+    │   │       │   │   │   ├── 20.typescript
+    │   │       │   │   │   ├── 21.json
+    │   │       │   │   │   ├── 21.typescript
+    │   │       │   │   │   ├── 22.json
+    │   │       │   │   │   ├── 22.typescript
+    │   │       │   │   │   ├── 2.json
+    │   │       │   │   │   ├── 2.typescript
+    │   │       │   │   │   ├── 3.json
+    │   │       │   │   │   ├── 3.typescript
+    │   │       │   │   │   ├── 4.json
+    │   │       │   │   │   ├── 4.typescript
+    │   │       │   │   │   ├── 5.json
+    │   │       │   │   │   ├── 5.typescript
+    │   │       │   │   │   ├── 6.json
+    │   │       │   │   │   ├── 6.typescript
+    │   │       │   │   │   ├── 7.json
+    │   │       │   │   │   ├── 7.typescript
+    │   │       │   │   │   ├── 8.json
+    │   │       │   │   │   ├── 8.typescript
+    │   │       │   │   │   ├── 9.json
+    │   │       │   │   │   └── 9.typescript
+    │   │       │   │   ├── colors.in
+    │   │       │   │   ├── combining
+    │   │       │   │   │   ├── 10.json
+    │   │       │   │   │   ├── 10.typescript
+    │   │       │   │   │   ├── 11.json
+    │   │       │   │   │   ├── 11.typescript
+    │   │       │   │   │   ├── 12.json
+    │   │       │   │   │   ├── 12.typescript
+    │   │       │   │   │   ├── 13.json
+    │   │       │   │   │   ├── 13.typescript
+    │   │       │   │   │   ├── 14.json
+    │   │       │   │   │   ├── 14.typescript
+    │   │       │   │   │   ├── 1.json
+    │   │       │   │   │   ├── 1.typescript
+    │   │       │   │   │   ├── 2.json
+    │   │       │   │   │   ├── 2.typescript
+    │   │       │   │   │   ├── 3.json
+    │   │       │   │   │   ├── 3.typescript
+    │   │       │   │   │   ├── 4.json
+    │   │       │   │   │   ├── 4.typescript
+    │   │       │   │   │   ├── 5.json
+    │   │       │   │   │   ├── 5.typescript
+    │   │       │   │   │   ├── 6.json
+    │   │       │   │   │   ├── 6.typescript
+    │   │       │   │   │   ├── 7.json
+    │   │       │   │   │   ├── 7.typescript
+    │   │       │   │   │   ├── 8.json
+    │   │       │   │   │   ├── 8.typescript
+    │   │       │   │   │   ├── 9.json
+    │   │       │   │   │   └── 9.typescript
+    │   │       │   │   ├── combining.in
+    │   │       │   │   ├── cr
+    │   │       │   │   │   ├── 1.json
+    │   │       │   │   │   └── 1.typescript
+    │   │       │   │   ├── cr.in
+    │   │       │   │   ├── deckpam
+    │   │       │   │   │   ├── 1.json
+    │   │       │   │   │   ├── 1.typescript
+    │   │       │   │   │   ├── 2.json
+    │   │       │   │   │   └── 2.typescript
+    │   │       │   │   ├── deckpam.in
+    │   │       │   │   ├── decsc
+    │   │       │   │   │   ├── 1.json
+    │   │       │   │   │   ├── 1.typescript
+    │   │       │   │   │   ├── 2.json
+    │   │       │   │   │   ├── 2.typescript
+    │   │       │   │   │   ├── 3.json
+    │   │       │   │   │   ├── 3.typescript
+    │   │       │   │   │   ├── 4.json
+    │   │       │   │   │   ├── 4.typescript
+    │   │       │   │   │   ├── 5.json
+    │   │       │   │   │   ├── 5.typescript
+    │   │       │   │   │   ├── 6.json
+    │   │       │   │   │   ├── 6.typescript
+    │   │       │   │   │   ├── 7.json
+    │   │       │   │   │   ├── 7.typescript
+    │   │       │   │   │   ├── 8.json
+    │   │       │   │   │   └── 8.typescript
+    │   │       │   │   ├── decsc.in
+    │   │       │   │   ├── decstbm
+    │   │       │   │   │   ├── 10.json
+    │   │       │   │   │   ├── 10.typescript
+    │   │       │   │   │   ├── 11.json
+    │   │       │   │   │   ├── 11.typescript
+    │   │       │   │   │   ├── 12.json
+    │   │       │   │   │   ├── 12.typescript
+    │   │       │   │   │   ├── 13.json
+    │   │       │   │   │   ├── 13.typescript
+    │   │       │   │   │   ├── 14.json
+    │   │       │   │   │   ├── 14.typescript
+    │   │       │   │   │   ├── 15.json
+    │   │       │   │   │   ├── 15.typescript
+    │   │       │   │   │   ├── 1.json
+    │   │       │   │   │   ├── 1.typescript
+    │   │       │   │   │   ├── 2.json
+    │   │       │   │   │   ├── 2.typescript
+    │   │       │   │   │   ├── 3.json
+    │   │       │   │   │   ├── 3.typescript
+    │   │       │   │   │   ├── 4.json
+    │   │       │   │   │   ├── 4.typescript
+    │   │       │   │   │   ├── 5.json
+    │   │       │   │   │   ├── 5.typescript
+    │   │       │   │   │   ├── 6.json
+    │   │       │   │   │   ├── 6.typescript
+    │   │       │   │   │   ├── 7.json
+    │   │       │   │   │   ├── 7.typescript
+    │   │       │   │   │   ├── 8.json
+    │   │       │   │   │   ├── 8.typescript
+    │   │       │   │   │   ├── 9.json
+    │   │       │   │   │   └── 9.typescript
+    │   │       │   │   ├── decstbm.in
+    │   │       │   │   ├── ed
+    │   │       │   │   │   ├── 10.json
+    │   │       │   │   │   ├── 10.typescript
+    │   │       │   │   │   ├── 11.json
+    │   │       │   │   │   ├── 11.typescript
+    │   │       │   │   │   ├── 12.json
+    │   │       │   │   │   ├── 12.typescript
+    │   │       │   │   │   ├── 13.json
+    │   │       │   │   │   ├── 13.typescript
+    │   │       │   │   │   ├── 14.json
+    │   │       │   │   │   ├── 14.typescript
+    │   │       │   │   │   ├── 15.json
+    │   │       │   │   │   ├── 15.typescript
+    │   │       │   │   │   ├── 16.json
+    │   │       │   │   │   ├── 16.typescript
+    │   │       │   │   │   ├── 17.json
+    │   │       │   │   │   ├── 17.typescript
+    │   │       │   │   │   ├── 18.json
+    │   │       │   │   │   ├── 18.typescript
+    │   │       │   │   │   ├── 19.json
+    │   │       │   │   │   ├── 19.typescript
+    │   │       │   │   │   ├── 1.json
+    │   │       │   │   │   ├── 1.typescript
+    │   │       │   │   │   ├── 20.json
+    │   │       │   │   │   ├── 20.typescript
+    │   │       │   │   │   ├── 21.json
+    │   │       │   │   │   ├── 21.typescript
+    │   │       │   │   │   ├── 2.json
+    │   │       │   │   │   ├── 2.typescript
+    │   │       │   │   │   ├── 3.json
+    │   │       │   │   │   ├── 3.typescript
+    │   │       │   │   │   ├── 4.json
+    │   │       │   │   │   ├── 4.typescript
+    │   │       │   │   │   ├── 5.json
+    │   │       │   │   │   ├── 5.typescript
+    │   │       │   │   │   ├── 6.json
+    │   │       │   │   │   ├── 6.typescript
+    │   │       │   │   │   ├── 7.json
+    │   │       │   │   │   ├── 7.typescript
+    │   │       │   │   │   ├── 8.json
+    │   │       │   │   │   ├── 8.typescript
+    │   │       │   │   │   ├── 9.json
+    │   │       │   │   │   └── 9.typescript
+    │   │       │   │   ├── ed.in
+    │   │       │   │   ├── el
+    │   │       │   │   │   ├── 10.json
+    │   │       │   │   │   ├── 10.typescript
+    │   │       │   │   │   ├── 11.json
+    │   │       │   │   │   ├── 11.typescript
+    │   │       │   │   │   ├── 12.json
+    │   │       │   │   │   ├── 12.typescript
+    │   │       │   │   │   ├── 13.json
+    │   │       │   │   │   ├── 13.typescript
+    │   │       │   │   │   ├── 14.json
+    │   │       │   │   │   ├── 14.typescript
+    │   │       │   │   │   ├── 15.json
+    │   │       │   │   │   ├── 15.typescript
+    │   │       │   │   │   ├── 16.json
+    │   │       │   │   │   ├── 16.typescript
+    │   │       │   │   │   ├── 17.json
+    │   │       │   │   │   ├── 17.typescript
+    │   │       │   │   │   ├── 18.json
+    │   │       │   │   │   ├── 18.typescript
+    │   │       │   │   │   ├── 19.json
+    │   │       │   │   │   ├── 19.typescript
+    │   │       │   │   │   ├── 1.json
+    │   │       │   │   │   ├── 1.typescript
+    │   │       │   │   │   ├── 20.json
+    │   │       │   │   │   ├── 20.typescript
+    │   │       │   │   │   ├── 21.json
+    │   │       │   │   │   ├── 21.typescript
+    │   │       │   │   │   ├── 22.json
+    │   │       │   │   │   ├── 22.typescript
+    │   │       │   │   │   ├── 23.json
+    │   │       │   │   │   ├── 23.typescript
+    │   │       │   │   │   ├── 24.json
+    │   │       │   │   │   ├── 24.typescript
+    │   │       │   │   │   ├── 25.json
+    │   │       │   │   │   ├── 25.typescript
+    │   │       │   │   │   ├── 26.json
+    │   │       │   │   │   ├── 26.typescript
+    │   │       │   │   │   ├── 2.json
+    │   │       │   │   │   ├── 2.typescript
+    │   │       │   │   │   ├── 3.json
+    │   │       │   │   │   ├── 3.typescript
+    │   │       │   │   │   ├── 4.json
+    │   │       │   │   │   ├── 4.typescript
+    │   │       │   │   │   ├── 5.json
+    │   │       │   │   │   ├── 5.typescript
+    │   │       │   │   │   ├── 6.json
+    │   │       │   │   │   ├── 6.typescript
+    │   │       │   │   │   ├── 7.json
+    │   │       │   │   │   ├── 7.typescript
+    │   │       │   │   │   ├── 8.json
+    │   │       │   │   │   ├── 8.typescript
+    │   │       │   │   │   ├── 9.json
+    │   │       │   │   │   └── 9.typescript
+    │   │       │   │   ├── el.in
+    │   │       │   │   ├── ff
+    │   │       │   │   │   ├── 1.json
+    │   │       │   │   │   ├── 1.typescript
+    │   │       │   │   │   ├── 2.json
+    │   │       │   │   │   ├── 2.typescript
+    │   │       │   │   │   ├── 3.json
+    │   │       │   │   │   ├── 3.typescript
+    │   │       │   │   │   ├── 4.json
+    │   │       │   │   │   ├── 4.typescript
+    │   │       │   │   │   ├── 5.json
+    │   │       │   │   │   └── 5.typescript
+    │   │       │   │   ├── ff.in
+    │   │       │   │   ├── ich_dch_ech
+    │   │       │   │   │   ├── 10.json
+    │   │       │   │   │   ├── 10.typescript
+    │   │       │   │   │   ├── 11.json
+    │   │       │   │   │   ├── 11.typescript
+    │   │       │   │   │   ├── 12.json
+    │   │       │   │   │   ├── 12.typescript
+    │   │       │   │   │   ├── 13.json
+    │   │       │   │   │   ├── 13.typescript
+    │   │       │   │   │   ├── 14.json
+    │   │       │   │   │   ├── 14.typescript
+    │   │       │   │   │   ├── 15.json
+    │   │       │   │   │   ├── 15.typescript
+    │   │       │   │   │   ├── 1.json
+    │   │       │   │   │   ├── 1.typescript
+    │   │       │   │   │   ├── 2.json
+    │   │       │   │   │   ├── 2.typescript
+    │   │       │   │   │   ├── 3.json
+    │   │       │   │   │   ├── 3.typescript
+    │   │       │   │   │   ├── 4.json
+    │   │       │   │   │   ├── 4.typescript
+    │   │       │   │   │   ├── 5.json
+    │   │       │   │   │   ├── 5.typescript
+    │   │       │   │   │   ├── 6.json
+    │   │       │   │   │   ├── 6.typescript
+    │   │       │   │   │   ├── 7.json
+    │   │       │   │   │   ├── 7.typescript
+    │   │       │   │   │   ├── 8.json
+    │   │       │   │   │   ├── 8.typescript
+    │   │       │   │   │   ├── 9.json
+    │   │       │   │   │   └── 9.typescript
+    │   │       │   │   ├── ich_dch_ech.in
+    │   │       │   │   ├── icon_name
+    │   │       │   │   │   ├── 1.json
+    │   │       │   │   │   ├── 1.typescript
+    │   │       │   │   │   ├── 2.json
+    │   │       │   │   │   └── 2.typescript
+    │   │       │   │   ├── icon_name.in
+    │   │       │   │   ├── il_dl
+    │   │       │   │   │   ├── 10.json
+    │   │       │   │   │   ├── 10.typescript
+    │   │       │   │   │   ├── 11.json
+    │   │       │   │   │   ├── 11.typescript
+    │   │       │   │   │   ├── 12.json
+    │   │       │   │   │   ├── 12.typescript
+    │   │       │   │   │   ├── 13.json
+    │   │       │   │   │   ├── 13.typescript
+    │   │       │   │   │   ├── 14.json
+    │   │       │   │   │   ├── 14.typescript
+    │   │       │   │   │   ├── 15.json
+    │   │       │   │   │   ├── 15.typescript
+    │   │       │   │   │   ├── 16.json
+    │   │       │   │   │   ├── 16.typescript
+    │   │       │   │   │   ├── 17.json
+    │   │       │   │   │   ├── 17.typescript
+    │   │       │   │   │   ├── 18.json
+    │   │       │   │   │   ├── 18.typescript
+    │   │       │   │   │   ├── 19.json
+    │   │       │   │   │   ├── 19.typescript
+    │   │       │   │   │   ├── 1.json
+    │   │       │   │   │   ├── 1.typescript
+    │   │       │   │   │   ├── 20.json
+    │   │       │   │   │   ├── 20.typescript
+    │   │       │   │   │   ├── 21.json
+    │   │       │   │   │   ├── 21.typescript
+    │   │       │   │   │   ├── 22.json
+    │   │       │   │   │   ├── 22.typescript
+    │   │       │   │   │   ├── 23.json
+    │   │       │   │   │   ├── 23.typescript
+    │   │       │   │   │   ├── 24.json
+    │   │       │   │   │   ├── 24.typescript
+    │   │       │   │   │   ├── 2.json
+    │   │       │   │   │   ├── 2.typescript
+    │   │       │   │   │   ├── 3.json
+    │   │       │   │   │   ├── 3.typescript
+    │   │       │   │   │   ├── 4.json
+    │   │       │   │   │   ├── 4.typescript
+    │   │       │   │   │   ├── 5.json
+    │   │       │   │   │   ├── 5.typescript
+    │   │       │   │   │   ├── 6.json
+    │   │       │   │   │   ├── 6.typescript
+    │   │       │   │   │   ├── 7.json
+    │   │       │   │   │   ├── 7.typescript
+    │   │       │   │   │   ├── 8.json
+    │   │       │   │   │   ├── 8.typescript
+    │   │       │   │   │   ├── 9.json
+    │   │       │   │   │   └── 9.typescript
+    │   │       │   │   ├── il_dl.in
+    │   │       │   │   ├── intermediate_control
+    │   │       │   │   │   ├── 1.json
+    │   │       │   │   │   ├── 1.typescript
+    │   │       │   │   │   ├── 2.json
+    │   │       │   │   │   ├── 2.typescript
+    │   │       │   │   │   ├── 3.json
+    │   │       │   │   │   ├── 3.typescript
+    │   │       │   │   │   ├── 4.json
+    │   │       │   │   │   └── 4.typescript
+    │   │       │   │   ├── intermediate_control.in
+    │   │       │   │   ├── lf
+    │   │       │   │   │   ├── 1.json
+    │   │       │   │   │   ├── 1.typescript
+    │   │       │   │   │   ├── 2.json
+    │   │       │   │   │   ├── 2.typescript
+    │   │       │   │   │   ├── 3.json
+    │   │       │   │   │   ├── 3.typescript
+    │   │       │   │   │   ├── 4.json
+    │   │       │   │   │   ├── 4.typescript
+    │   │       │   │   │   ├── 5.json
+    │   │       │   │   │   └── 5.typescript
+    │   │       │   │   ├── lf.in
+    │   │       │   │   ├── modes
+    │   │       │   │   │   ├── 10.json
+    │   │       │   │   │   ├── 10.typescript
+    │   │       │   │   │   ├── 11.json
+    │   │       │   │   │   ├── 11.typescript
+    │   │       │   │   │   ├── 12.json
+    │   │       │   │   │   ├── 12.typescript
+    │   │       │   │   │   ├── 13.json
+    │   │       │   │   │   ├── 13.typescript
+    │   │       │   │   │   ├── 14.json
+    │   │       │   │   │   ├── 14.typescript
+    │   │       │   │   │   ├── 15.json
+    │   │       │   │   │   ├── 15.typescript
+    │   │       │   │   │   ├── 16.json
+    │   │       │   │   │   ├── 16.typescript
+    │   │       │   │   │   ├── 17.json
+    │   │       │   │   │   ├── 17.typescript
+    │   │       │   │   │   ├── 18.json
+    │   │       │   │   │   ├── 18.typescript
+    │   │       │   │   │   ├── 19.json
+    │   │       │   │   │   ├── 19.typescript
+    │   │       │   │   │   ├── 1.json
+    │   │       │   │   │   ├── 1.typescript
+    │   │       │   │   │   ├── 20.json
+    │   │       │   │   │   ├── 20.typescript
+    │   │       │   │   │   ├── 2.json
+    │   │       │   │   │   ├── 2.typescript
+    │   │       │   │   │   ├── 3.json
+    │   │       │   │   │   ├── 3.typescript
+    │   │       │   │   │   ├── 4.json
+    │   │       │   │   │   ├── 4.typescript
+    │   │       │   │   │   ├── 5.json
+    │   │       │   │   │   ├── 5.typescript
+    │   │       │   │   │   ├── 6.json
+    │   │       │   │   │   ├── 6.typescript
+    │   │       │   │   │   ├── 7.json
+    │   │       │   │   │   ├── 7.typescript
+    │   │       │   │   │   ├── 8.json
+    │   │       │   │   │   ├── 8.typescript
+    │   │       │   │   │   ├── 9.json
+    │   │       │   │   │   └── 9.typescript
+    │   │       │   │   ├── modes.in
+    │   │       │   │   ├── newlines
+    │   │       │   │   │   ├── 1.json
+    │   │       │   │   │   └── 1.typescript
+    │   │       │   │   ├── newlines.in
+    │   │       │   │   ├── origin_mode
+    │   │       │   │   │   ├── 1.json
+    │   │       │   │   │   ├── 1.typescript
+    │   │       │   │   │   ├── 2.json
+    │   │       │   │   │   ├── 2.typescript
+    │   │       │   │   │   ├── 3.json
+    │   │       │   │   │   ├── 3.typescript
+    │   │       │   │   │   ├── 4.json
+    │   │       │   │   │   ├── 4.typescript
+    │   │       │   │   │   ├── 5.json
+    │   │       │   │   │   ├── 5.typescript
+    │   │       │   │   │   ├── 6.json
+    │   │       │   │   │   ├── 6.typescript
+    │   │       │   │   │   ├── 7.json
+    │   │       │   │   │   ├── 7.typescript
+    │   │       │   │   │   ├── 8.json
+    │   │       │   │   │   ├── 8.typescript
+    │   │       │   │   │   ├── 9.json
+    │   │       │   │   │   └── 9.typescript
+    │   │       │   │   ├── origin_mode.in
+    │   │       │   │   ├── relative_movement
+    │   │       │   │   │   ├── 10.json
+    │   │       │   │   │   ├── 10.typescript
+    │   │       │   │   │   ├── 11.json
+    │   │       │   │   │   ├── 11.typescript
+    │   │       │   │   │   ├── 12.json
+    │   │       │   │   │   ├── 12.typescript
+    │   │       │   │   │   ├── 13.json
+    │   │       │   │   │   ├── 13.typescript
+    │   │       │   │   │   ├── 14.json
+    │   │       │   │   │   ├── 14.typescript
+    │   │       │   │   │   ├── 15.json
+    │   │       │   │   │   ├── 15.typescript
+    │   │       │   │   │   ├── 16.json
+    │   │       │   │   │   ├── 16.typescript
+    │   │       │   │   │   ├── 17.json
+    │   │       │   │   │   ├── 17.typescript
+    │   │       │   │   │   ├── 18.json
+    │   │       │   │   │   ├── 18.typescript
+    │   │       │   │   │   ├── 19.json
+    │   │       │   │   │   ├── 19.typescript
+    │   │       │   │   │   ├── 1.json
+    │   │       │   │   │   ├── 1.typescript
+    │   │       │   │   │   ├── 20.json
+    │   │       │   │   │   ├── 20.typescript
+    │   │       │   │   │   ├── 21.json
+    │   │       │   │   │   ├── 21.typescript
+    │   │       │   │   │   ├── 2.json
+    │   │       │   │   │   ├── 2.typescript
+    │   │       │   │   │   ├── 3.json
+    │   │       │   │   │   ├── 3.typescript
+    │   │       │   │   │   ├── 4.json
+    │   │       │   │   │   ├── 4.typescript
+    │   │       │   │   │   ├── 5.json
+    │   │       │   │   │   ├── 5.typescript
+    │   │       │   │   │   ├── 6.json
+    │   │       │   │   │   ├── 6.typescript
+    │   │       │   │   │   ├── 7.json
+    │   │       │   │   │   ├── 7.typescript
+    │   │       │   │   │   ├── 8.json
+    │   │       │   │   │   ├── 8.typescript
+    │   │       │   │   │   ├── 9.json
+    │   │       │   │   │   └── 9.typescript
+    │   │       │   │   ├── relative_movement.in
+    │   │       │   │   ├── ri
+    │   │       │   │   │   ├── 1.json
+    │   │       │   │   │   ├── 1.typescript
+    │   │       │   │   │   ├── 2.json
+    │   │       │   │   │   ├── 2.typescript
+    │   │       │   │   │   ├── 3.json
+    │   │       │   │   │   ├── 3.typescript
+    │   │       │   │   │   ├── 4.json
+    │   │       │   │   │   ├── 4.typescript
+    │   │       │   │   │   ├── 5.json
+    │   │       │   │   │   ├── 5.typescript
+    │   │       │   │   │   ├── 6.json
+    │   │       │   │   │   └── 6.typescript
+    │   │       │   │   ├── ri.in
+    │   │       │   │   ├── ris
+    │   │       │   │   │   ├── 1.json
+    │   │       │   │   │   ├── 1.typescript
+    │   │       │   │   │   ├── 2.json
+    │   │       │   │   │   └── 2.typescript
+    │   │       │   │   ├── ris.in
+    │   │       │   │   ├── scroll
+    │   │       │   │   │   ├── 1.json
+    │   │       │   │   │   ├── 1.typescript
+    │   │       │   │   │   ├── 2.json
+    │   │       │   │   │   ├── 2.typescript
+    │   │       │   │   │   ├── 3.json
+    │   │       │   │   │   ├── 3.typescript
+    │   │       │   │   │   ├── 4.json
+    │   │       │   │   │   ├── 4.typescript
+    │   │       │   │   │   ├── 5.json
+    │   │       │   │   │   ├── 5.typescript
+    │   │       │   │   │   ├── 6.json
+    │   │       │   │   │   └── 6.typescript
+    │   │       │   │   ├── scroll.in
+    │   │       │   │   ├── split_escape_sequences
+    │   │       │   │   │   ├── 10.json
+    │   │       │   │   │   ├── 10.typescript
+    │   │       │   │   │   ├── 11.json
+    │   │       │   │   │   ├── 11.typescript
+    │   │       │   │   │   ├── 12.json
+    │   │       │   │   │   ├── 12.typescript
+    │   │       │   │   │   ├── 13.json
+    │   │       │   │   │   ├── 13.typescript
+    │   │       │   │   │   ├── 14.json
+    │   │       │   │   │   ├── 14.typescript
+    │   │       │   │   │   ├── 15.json
+    │   │       │   │   │   ├── 15.typescript
+    │   │       │   │   │   ├── 16.json
+    │   │       │   │   │   ├── 16.typescript
+    │   │       │   │   │   ├── 17.json
+    │   │       │   │   │   ├── 17.typescript
+    │   │       │   │   │   ├── 18.json
+    │   │       │   │   │   ├── 18.typescript
+    │   │       │   │   │   ├── 19.json
+    │   │       │   │   │   ├── 19.typescript
+    │   │       │   │   │   ├── 1.json
+    │   │       │   │   │   ├── 1.typescript
+    │   │       │   │   │   ├── 20.json
+    │   │       │   │   │   ├── 20.typescript
+    │   │       │   │   │   ├── 21.json
+    │   │       │   │   │   ├── 21.typescript
+    │   │       │   │   │   ├── 22.json
+    │   │       │   │   │   ├── 22.typescript
+    │   │       │   │   │   ├── 23.json
+    │   │       │   │   │   ├── 23.typescript
+    │   │       │   │   │   ├── 24.json
+    │   │       │   │   │   ├── 24.typescript
+    │   │       │   │   │   ├── 25.json
+    │   │       │   │   │   ├── 25.typescript
+    │   │       │   │   │   ├── 26.json
+    │   │       │   │   │   ├── 26.typescript
+    │   │       │   │   │   ├── 27.json
+    │   │       │   │   │   ├── 27.typescript
+    │   │       │   │   │   ├── 28.json
+    │   │       │   │   │   ├── 28.typescript
+    │   │       │   │   │   ├── 29.json
+    │   │       │   │   │   ├── 29.typescript
+    │   │       │   │   │   ├── 2.json
+    │   │       │   │   │   ├── 2.typescript
+    │   │       │   │   │   ├── 3.json
+    │   │       │   │   │   ├── 3.typescript
+    │   │       │   │   │   ├── 4.json
+    │   │       │   │   │   ├── 4.typescript
+    │   │       │   │   │   ├── 5.json
+    │   │       │   │   │   ├── 5.typescript
+    │   │       │   │   │   ├── 6.json
+    │   │       │   │   │   ├── 6.typescript
+    │   │       │   │   │   ├── 7.json
+    │   │       │   │   │   ├── 7.typescript
+    │   │       │   │   │   ├── 8.json
+    │   │       │   │   │   ├── 8.typescript
+    │   │       │   │   │   ├── 9.json
+    │   │       │   │   │   └── 9.typescript
+    │   │       │   │   ├── split_escape_sequences.in
+    │   │       │   │   ├── split_utf8
+    │   │       │   │   │   ├── 10.json
+    │   │       │   │   │   ├── 10.typescript
+    │   │       │   │   │   ├── 1.json
+    │   │       │   │   │   ├── 1.typescript
+    │   │       │   │   │   ├── 2.json
+    │   │       │   │   │   ├── 2.typescript
+    │   │       │   │   │   ├── 3.json
+    │   │       │   │   │   ├── 3.typescript
+    │   │       │   │   │   ├── 4.json
+    │   │       │   │   │   ├── 4.typescript
+    │   │       │   │   │   ├── 5.json
+    │   │       │   │   │   ├── 5.typescript
+    │   │       │   │   │   ├── 6.json
+    │   │       │   │   │   ├── 6.typescript
+    │   │       │   │   │   ├── 7.json
+    │   │       │   │   │   ├── 7.typescript
+    │   │       │   │   │   ├── 8.json
+    │   │       │   │   │   ├── 8.typescript
+    │   │       │   │   │   ├── 9.json
+    │   │       │   │   │   └── 9.typescript
+    │   │       │   │   ├── split_utf8.in
+    │   │       │   │   ├── tab
+    │   │       │   │   │   ├── 1.json
+    │   │       │   │   │   └── 1.typescript
+    │   │       │   │   ├── tab.in
+    │   │       │   │   ├── title
+    │   │       │   │   │   ├── 1.json
+    │   │       │   │   │   ├── 1.typescript
+    │   │       │   │   │   ├── 2.json
+    │   │       │   │   │   └── 2.typescript
+    │   │       │   │   ├── title_icon_name
+    │   │       │   │   │   ├── 1.json
+    │   │       │   │   │   ├── 1.typescript
+    │   │       │   │   │   ├── 2.json
+    │   │       │   │   │   ├── 2.typescript
+    │   │       │   │   │   ├── 3.json
+    │   │       │   │   │   ├── 3.typescript
+    │   │       │   │   │   ├── 4.json
+    │   │       │   │   │   ├── 4.typescript
+    │   │       │   │   │   ├── 5.json
+    │   │       │   │   │   └── 5.typescript
+    │   │       │   │   ├── title_icon_name.in
+    │   │       │   │   ├── title.in
+    │   │       │   │   ├── unknown_osc
+    │   │       │   │   │   ├── 1.json
+    │   │       │   │   │   └── 1.typescript
+    │   │       │   │   ├── unknown_osc.in
+    │   │       │   │   ├── utf8
+    │   │       │   │   │   ├── 1.json
+    │   │       │   │   │   ├── 1.typescript
+    │   │       │   │   │   ├── 2.json
+    │   │       │   │   │   └── 2.typescript
+    │   │       │   │   ├── utf8.in
+    │   │       │   │   ├── vt
+    │   │       │   │   │   ├── 1.json
+    │   │       │   │   │   ├── 1.typescript
+    │   │       │   │   │   ├── 2.json
+    │   │       │   │   │   ├── 2.typescript
+    │   │       │   │   │   ├── 3.json
+    │   │       │   │   │   ├── 3.typescript
+    │   │       │   │   │   ├── 4.json
+    │   │       │   │   │   ├── 4.typescript
+    │   │       │   │   │   ├── 5.json
+    │   │       │   │   │   └── 5.typescript
+    │   │       │   │   ├── vt.in
+    │   │       │   │   ├── wide
+    │   │       │   │   │   ├── 10.json
+    │   │       │   │   │   ├── 10.typescript
+    │   │       │   │   │   ├── 11.json
+    │   │       │   │   │   ├── 11.typescript
+    │   │       │   │   │   ├── 12.json
+    │   │       │   │   │   ├── 12.typescript
+    │   │       │   │   │   ├── 13.json
+    │   │       │   │   │   ├── 13.typescript
+    │   │       │   │   │   ├── 14.json
+    │   │       │   │   │   ├── 14.typescript
+    │   │       │   │   │   ├── 15.json
+    │   │       │   │   │   ├── 15.typescript
+    │   │       │   │   │   ├── 16.json
+    │   │       │   │   │   ├── 16.typescript
+    │   │       │   │   │   ├── 17.json
+    │   │       │   │   │   ├── 17.typescript
+    │   │       │   │   │   ├── 18.json
+    │   │       │   │   │   ├── 18.typescript
+    │   │       │   │   │   ├── 19.json
+    │   │       │   │   │   ├── 19.typescript
+    │   │       │   │   │   ├── 1.json
+    │   │       │   │   │   ├── 1.typescript
+    │   │       │   │   │   ├── 20.json
+    │   │       │   │   │   ├── 20.typescript
+    │   │       │   │   │   ├── 21.json
+    │   │       │   │   │   ├── 21.typescript
+    │   │       │   │   │   ├── 22.json
+    │   │       │   │   │   ├── 22.typescript
+    │   │       │   │   │   ├── 23.json
+    │   │       │   │   │   ├── 23.typescript
+    │   │       │   │   │   ├── 24.json
+    │   │       │   │   │   ├── 24.typescript
+    │   │       │   │   │   ├── 25.json
+    │   │       │   │   │   ├── 25.typescript
+    │   │       │   │   │   ├── 2.json
+    │   │       │   │   │   ├── 2.typescript
+    │   │       │   │   │   ├── 3.json
+    │   │       │   │   │   ├── 3.typescript
+    │   │       │   │   │   ├── 4.json
+    │   │       │   │   │   ├── 4.typescript
+    │   │       │   │   │   ├── 5.json
+    │   │       │   │   │   ├── 5.typescript
+    │   │       │   │   │   ├── 6.json
+    │   │       │   │   │   ├── 6.typescript
+    │   │       │   │   │   ├── 7.json
+    │   │       │   │   │   ├── 7.typescript
+    │   │       │   │   │   ├── 8.json
+    │   │       │   │   │   ├── 8.typescript
+    │   │       │   │   │   ├── 9.json
+    │   │       │   │   │   └── 9.typescript
+    │   │       │   │   ├── wide.in
+    │   │       │   │   ├── wrap
+    │   │       │   │   │   ├── 10.json
+    │   │       │   │   │   ├── 10.typescript
+    │   │       │   │   │   ├── 11.json
+    │   │       │   │   │   ├── 11.typescript
+    │   │       │   │   │   ├── 12.json
+    │   │       │   │   │   ├── 12.typescript
+    │   │       │   │   │   ├── 13.json
+    │   │       │   │   │   ├── 13.typescript
+    │   │       │   │   │   ├── 14.json
+    │   │       │   │   │   ├── 14.typescript
+    │   │       │   │   │   ├── 15.json
+    │   │       │   │   │   ├── 15.typescript
+    │   │       │   │   │   ├── 16.json
+    │   │       │   │   │   ├── 16.typescript
+    │   │       │   │   │   ├── 17.json
+    │   │       │   │   │   ├── 17.typescript
+    │   │       │   │   │   ├── 18.json
+    │   │       │   │   │   ├── 18.typescript
+    │   │       │   │   │   ├── 19.json
+    │   │       │   │   │   ├── 19.typescript
+    │   │       │   │   │   ├── 1.json
+    │   │       │   │   │   ├── 1.typescript
+    │   │       │   │   │   ├── 20.json
+    │   │       │   │   │   ├── 20.typescript
+    │   │       │   │   │   ├── 21.json
+    │   │       │   │   │   ├── 21.typescript
+    │   │       │   │   │   ├── 22.json
+    │   │       │   │   │   ├── 22.typescript
+    │   │       │   │   │   ├── 23.json
+    │   │       │   │   │   ├── 23.typescript
+    │   │       │   │   │   ├── 24.json
+    │   │       │   │   │   ├── 24.typescript
+    │   │       │   │   │   ├── 25.json
+    │   │       │   │   │   ├── 25.typescript
+    │   │       │   │   │   ├── 26.json
+    │   │       │   │   │   ├── 26.typescript
+    │   │       │   │   │   ├── 27.json
+    │   │       │   │   │   ├── 27.typescript
+    │   │       │   │   │   ├── 28.json
+    │   │       │   │   │   ├── 28.typescript
+    │   │       │   │   │   ├── 29.json
+    │   │       │   │   │   ├── 29.typescript
+    │   │       │   │   │   ├── 2.json
+    │   │       │   │   │   ├── 2.typescript
+    │   │       │   │   │   ├── 30.json
+    │   │       │   │   │   ├── 30.typescript
+    │   │       │   │   │   ├── 31.json
+    │   │       │   │   │   ├── 31.typescript
+    │   │       │   │   │   ├── 32.json
+    │   │       │   │   │   ├── 32.typescript
+    │   │       │   │   │   ├── 33.json
+    │   │       │   │   │   ├── 33.typescript
+    │   │       │   │   │   ├── 34.json
+    │   │       │   │   │   ├── 34.typescript
+    │   │       │   │   │   ├── 3.json
+    │   │       │   │   │   ├── 3.typescript
+    │   │       │   │   │   ├── 4.json
+    │   │       │   │   │   ├── 4.typescript
+    │   │       │   │   │   ├── 5.json
+    │   │       │   │   │   ├── 5.typescript
+    │   │       │   │   │   ├── 6.json
+    │   │       │   │   │   ├── 6.typescript
+    │   │       │   │   │   ├── 7.json
+    │   │       │   │   │   ├── 7.typescript
+    │   │       │   │   │   ├── 8.json
+    │   │       │   │   │   ├── 8.typescript
+    │   │       │   │   │   ├── 9.json
+    │   │       │   │   │   └── 9.typescript
+    │   │       │   │   ├── wrap.in
+    │   │       │   │   ├── wrap_weird
+    │   │       │   │   │   ├── 1.json
+    │   │       │   │   │   ├── 1.typescript
+    │   │       │   │   │   ├── 2.json
+    │   │       │   │   │   └── 2.typescript
+    │   │       │   │   └── wrap_weird.in
+    │   │       │   └── weechat.typescript
+    │   │       ├── entire_screen.rs
+    │   │       ├── escape.rs
+    │   │       ├── helpers
+    │   │       │   ├── fixtures.rs
+    │   │       │   └── mod.rs
+    │   │       ├── init.rs
+    │   │       ├── mode.rs
+    │   │       ├── osc.rs
+    │   │       ├── processing.rs
+    │   │       ├── quickcheck.rs
+    │   │       ├── scroll.rs
+    │   │       ├── select.rs
+    │   │       ├── split-escapes.rs
+    │   │       ├── text.rs
+    │   │       ├── weird.rs
+    │   │       ├── window_contents.rs
+    │   │       └── write.rs
+    │   ├── turborepo-wax
+    │   │   ├── Cargo.lock
+    │   │   ├── Cargo.toml
+    │   │   ├── doc
+    │   │   │   ├── wax-favicon.svg
+    │   │   │   └── wax.svg
+    │   │   ├── LICENSE
+    │   │   ├── README.md
+    │   │   ├── src
+    │   │   │   ├── capture.rs
+    │   │   │   ├── diagnostics
+    │   │   │   │   ├── miette.rs
+    │   │   │   │   └── mod.rs
+    │   │   │   ├── encode.rs
+    │   │   │   ├── lib.rs
+    │   │   │   ├── rule.rs
+    │   │   │   ├── token
+    │   │   │   │   ├── mod.rs
+    │   │   │   │   ├── parse.rs
+    │   │   │   │   └── variance.rs
+    │   │   │   └── walk
+    │   │   │       ├── filter.rs
+    │   │   │       ├── glob.rs
+    │   │   │       └── mod.rs
+    │   │   └── tests
+    │   │       └── walk.rs
+    │   └── turbo-trace
+    │       ├── Cargo.toml
+    │       └── src
+    │           ├── import_finder.rs
+    │           ├── lib.rs
+    │           ├── main.rs
+    │           └── tracer.rs
+    ├── deny.toml
+    ├── docs
+    │   ├── package.json
+    │   ├── pack-docs
+    │   │   ├── advanced
+    │   │   │   └── profiling.mdx
+    │   │   ├── benchmarks.mdx
+    │   │   ├── core-concepts.mdx
+    │   │   ├── features
+    │   │   │   ├── css.mdx
+    │   │   │   ├── dev-server.mdx
+    │   │   │   ├── frameworks.mdx
+    │   │   │   ├── imports.mdx
+    │   │   │   ├── index.mdx
+    │   │   │   ├── javascript.mdx
+    │   │   │   ├── meta.json
+    │   │   │   ├── static-assets.mdx
+    │   │   │   └── typescript.mdx
+    │   │   ├── index.mdx
+    │   │   ├── meta.json
+    │   │   ├── migrating-from-webpack.mdx
+    │   │   ├── roadmap.mdx
+    │   │   └── why-turbopack.mdx
+    │   ├── README.MD
+    │   ├── repo-docs
+    │   │   ├── acknowledgments.mdx
+    │   │   ├── community.mdx
+    │   │   ├── core-concepts
+    │   │   │   ├── index.mdx
+    │   │   │   ├── internal-packages.mdx
+    │   │   │   ├── meta.json
+    │   │   │   ├── package-and-task-graph.mdx
+    │   │   │   ├── package-types.mdx
+    │   │   │   └── remote-caching.mdx
+    │   │   ├── crafting-your-repository
+    │   │   │   ├── caching.mdx
+    │   │   │   ├── configuring-tasks.mdx
+    │   │   │   ├── constructing-ci.mdx
+    │   │   │   ├── creating-an-internal-package.mdx
+    │   │   │   ├── developing-applications.mdx
+    │   │   │   ├── index.mdx
+    │   │   │   ├── managing-dependencies.mdx
+    │   │   │   ├── meta.json
+    │   │   │   ├── running-tasks.mdx
+    │   │   │   ├── structuring-a-repository.mdx
+    │   │   │   ├── understanding-your-repository.mdx
+    │   │   │   ├── upgrading.mdx
+    │   │   │   └── using-environment-variables.mdx
+    │   │   ├── getting-started
+    │   │   │   ├── add-to-existing-repository.mdx
+    │   │   │   ├── editor-integration.mdx
+    │   │   │   ├── index.mdx
+    │   │   │   ├── installation.mdx
+    │   │   │   ├── meta.json
+    │   │   │   └── support-policy.mdx
+    │   │   ├── guides
+    │   │   │   ├── ci-vendors
+    │   │   │   │   ├── circleci.mdx
+    │   │   │   │   ├── github-actions.mdx
+    │   │   │   │   ├── gitlab-ci.mdx
+    │   │   │   │   ├── index.mdx
+    │   │   │   │   ├── meta.json
+    │   │   │   │   ├── travis-ci.mdx
+    │   │   │   │   └── vercel.mdx
+    │   │   │   ├── frameworks
+    │   │   │   │   ├── index.mdx
+    │   │   │   │   ├── meta.json
+    │   │   │   │   ├── nextjs.mdx
+    │   │   │   │   ├── nuxt.mdx
+    │   │   │   │   ├── sveltekit.mdx
+    │   │   │   │   └── vite.mdx
+    │   │   │   ├── generating-code.mdx
+    │   │   │   ├── handling-platforms.mdx
+    │   │   │   ├── index.mdx
+    │   │   │   ├── meta.json
+    │   │   │   ├── multi-language.mdx
+    │   │   │   ├── publishing-libraries.mdx
+    │   │   │   ├── single-package-workspaces.mdx
+    │   │   │   ├── skipping-tasks.mdx
+    │   │   │   └── tools
+    │   │   │       ├── biome.mdx
+    │   │   │       ├── create-turbo-callout.tsx
+    │   │   │       ├── docker.mdx
+    │   │   │       ├── eslint.mdx
+    │   │   │       ├── index.mdx
+    │   │   │       ├── jest.mdx
+    │   │   │       ├── meta.json
+    │   │   │       ├── prisma.mdx
+    │   │   │       ├── storybook.mdx
+    │   │   │       ├── typescript.mdx
+    │   │   │       └── vitest.mdx
+    │   │   ├── index.mdx
+    │   │   ├── messages
+    │   │   │   ├── invalid-env-prefix.mdx
+    │   │   │   ├── missing-root-task-in-turbo-json.mdx
+    │   │   │   ├── package-task-in-single-package-workspace.mdx
+    │   │   │   └── unnecessary-package-task-syntax.mdx
+    │   │   ├── meta.json
+    │   │   ├── reference
+    │   │   │   ├── bin.mdx
+    │   │   │   ├── configuration.mdx
+    │   │   │   ├── create-turbo.mdx
+    │   │   │   ├── eslint-config-turbo.mdx
+    │   │   │   ├── generate.mdx
+    │   │   │   ├── globs.mdx
+    │   │   │   ├── index.mdx
+    │   │   │   ├── link.mdx
+    │   │   │   ├── login.mdx
+    │   │   │   ├── logout.mdx
+    │   │   │   ├── ls.mdx
+    │   │   │   ├── meta.json
+    │   │   │   ├── package-configurations.mdx
+    │   │   │   ├── prune.mdx
+    │   │   │   ├── query.mdx
+    │   │   │   ├── run.mdx
+    │   │   │   ├── scan.mdx
+    │   │   │   ├── system-environment-variables.mdx
+    │   │   │   ├── telemetry.mdx
+    │   │   │   ├── turbo-codemod.mdx
+    │   │   │   ├── turbo-gen.mdx
+    │   │   │   ├── turbo-ignore.mdx
+    │   │   │   ├── unlink.mdx
+    │   │   │   └── watch.mdx
+    │   │   └── telemetry.mdx
+    │   ├── src
+    │   │   ├── github.ts
+    │   │   └── validate-docs-links.ts
+    │   ├── tsconfig.json
+    │   └── types.d.ts
+    ├── examples
+    │   ├── basic
+    │   │   ├── apps
+    │   │   │   ├── docs
+    │   │   │   │   ├── app
+    │   │   │   │   │   ├── favicon.ico
+    │   │   │   │   │   ├── fonts
+    │   │   │   │   │   │   ├── GeistMonoVF.woff
+    │   │   │   │   │   │   └── GeistVF.woff
+    │   │   │   │   │   ├── globals.css
+    │   │   │   │   │   ├── layout.tsx
+    │   │   │   │   │   ├── page.module.css
+    │   │   │   │   │   └── page.tsx
+    │   │   │   │   ├── next.config.mjs
+    │   │   │   │   ├── next-env.d.ts
+    │   │   │   │   ├── package.json
+    │   │   │   │   ├── public
+    │   │   │   │   │   ├── file-text.svg
+    │   │   │   │   │   ├── globe.svg
+    │   │   │   │   │   ├── next.svg
+    │   │   │   │   │   ├── vercel.svg
+    │   │   │   │   │   └── window.svg
+    │   │   │   │   ├── README.md
+    │   │   │   │   └── tsconfig.json
+    │   │   │   └── web
+    │   │   │       ├── app
+    │   │   │       │   ├── favicon.ico
+    │   │   │       │   ├── fonts
+    │   │   │       │   │   ├── GeistMonoVF.woff
+    │   │   │       │   │   └── GeistVF.woff
+    │   │   │       │   ├── globals.css
+    │   │   │       │   ├── layout.tsx
+    │   │   │       │   ├── page.module.css
+    │   │   │       │   └── page.tsx
+    │   │   │       ├── next.config.mjs
+    │   │   │       ├── next-env.d.ts
+    │   │   │       ├── package.json
+    │   │   │       ├── public
+    │   │   │       │   ├── file-text.svg
+    │   │   │       │   ├── globe.svg
+    │   │   │       │   ├── next.svg
+    │   │   │       │   ├── vercel.svg
+    │   │   │       │   └── window.svg
+    │   │   │       ├── README.md
+    │   │   │       └── tsconfig.json
+    │   │   ├── meta.json
+    │   │   ├── package.json
+    │   │   ├── packages
+    │   │   │   ├── eslint-config
+    │   │   │   │   ├── library.js
+    │   │   │   │   ├── next.js
+    │   │   │   │   ├── package.json
+    │   │   │   │   ├── react-internal.js
+    │   │   │   │   └── README.md
+    │   │   │   ├── typescript-config
+    │   │   │   │   ├── base.json
+    │   │   │   │   ├── nextjs.json
+    │   │   │   │   ├── package.json
+    │   │   │   │   └── react-library.json
+    │   │   │   └── ui
+    │   │   │       ├── package.json
+    │   │   │       ├── src
+    │   │   │       │   ├── button.tsx
+    │   │   │       │   ├── card.tsx
+    │   │   │       │   └── code.tsx
+    │   │   │       ├── tsconfig.json
+    │   │   │       ├── tsconfig.lint.json
+    │   │   │       └── turbo
+    │   │   │           └── generators
+    │   │   │               ├── config.ts
+    │   │   │               └── templates
+    │   │   │                   └── component.hbs
+    │   │   ├── pnpm-lock.yaml
+    │   │   ├── pnpm-workspace.yaml
+    │   │   ├── README.md
+    │   │   └── turbo.json
+    │   ├── design-system
+    │   │   ├── apps
+    │   │   │   └── docs
+    │   │   │       ├── package.json
+    │   │   │       ├── stories
+    │   │   │       │   └── button.stories.tsx
+    │   │   │       ├── tsconfig.json
+    │   │   │       └── vite.config.ts
+    │   │   ├── meta.json
+    │   │   ├── package.json
+    │   │   ├── packages
+    │   │   │   ├── eslint-config
+    │   │   │   │   ├── library.js
+    │   │   │   │   ├── package.json
+    │   │   │   │   ├── react.js
+    │   │   │   │   ├── README.md
+    │   │   │   │   └── storybook.js
+    │   │   │   ├── typescript-config
+    │   │   │   │   ├── base.json
+    │   │   │   │   ├── package.json
+    │   │   │   │   ├── react-app.json
+    │   │   │   │   └── react-library.json
+    │   │   │   └── ui
+    │   │   │       ├── package.json
+    │   │   │       ├── src
+    │   │   │       │   └── button.tsx
+    │   │   │       ├── tsconfig.json
+    │   │   │       └── tsup.config.ts
+    │   │   ├── pnpm-lock.yaml
+    │   │   ├── pnpm-workspace.yaml
+    │   │   ├── README.md
+    │   │   └── turbo.json
+    │   ├── kitchen-sink
+    │   │   ├── apps
+    │   │   │   ├── admin
+    │   │   │   │   ├── index.html
+    │   │   │   │   ├── package.json
+    │   │   │   │   ├── public
+    │   │   │   │   │   └── favicon.ico
+    │   │   │   │   ├── src
+    │   │   │   │   │   ├── app
+    │   │   │   │   │   │   ├── index.tsx
+    │   │   │   │   │   │   └── styles.css
+    │   │   │   │   │   ├── index.css
+    │   │   │   │   │   └── main.tsx
+    │   │   │   │   ├── tsconfig.json
+    │   │   │   │   ├── turbo.json
+    │   │   │   │   └── vite.config.ts
+    │   │   │   ├── api
+    │   │   │   │   ├── package.json
+    │   │   │   │   ├── src
+    │   │   │   │   │   ├── index.ts
+    │   │   │   │   │   ├── server.ts
+    │   │   │   │   │   └── __tests__
+    │   │   │   │   │       └── server.test.ts
+    │   │   │   │   ├── tsconfig.json
+    │   │   │   │   ├── tsup.config.ts
+    │   │   │   │   └── turbo.json
+    │   │   │   ├── blog
+    │   │   │   │   ├── app
+    │   │   │   │   │   ├── root.tsx
+    │   │   │   │   │   ├── routes
+    │   │   │   │   │   │   ├── edge.tsx
+    │   │   │   │   │   │   └── _index.tsx
+    │   │   │   │   │   └── styles.css
+    │   │   │   │   ├── package.json
+    │   │   │   │   ├── public
+    │   │   │   │   │   └── favicon.ico
+    │   │   │   │   ├── README.md
+    │   │   │   │   ├── tsconfig.json
+    │   │   │   │   └── vite.config.ts
+    │   │   │   └── storefront
+    │   │   │       ├── next.config.js
+    │   │   │       ├── next-env.d.ts
+    │   │   │       ├── package.json
+    │   │   │       ├── public
+    │   │   │       │   └── favicon.ico
+    │   │   │       ├── src
+    │   │   │       │   └── app
+    │   │   │       │       ├── layout.tsx
+    │   │   │       │       ├── page.tsx
+    │   │   │       │       └── styles.css
+    │   │   │       ├── tsconfig.json
+    │   │   │       └── turbo.json
+    │   │   ├── meta.json
+    │   │   ├── package.json
+    │   │   ├── packages
+    │   │   │   ├── config-eslint
+    │   │   │   │   ├── index.js
+    │   │   │   │   ├── next.js
+    │   │   │   │   ├── package.json
+    │   │   │   │   ├── react.js
+    │   │   │   │   ├── README.md
+    │   │   │   │   ├── remix.js
+    │   │   │   │   └── server.js
+    │   │   │   ├── config-typescript
+    │   │   │   │   ├── base.json
+    │   │   │   │   ├── nextjs.json
+    │   │   │   │   ├── package.json
+    │   │   │   │   ├── react-app.json
+    │   │   │   │   ├── react-library.json
+    │   │   │   │   ├── remix.json
+    │   │   │   │   └── vite.json
+    │   │   │   ├── jest-presets
+    │   │   │   │   ├── browser
+    │   │   │   │   │   └── jest-preset.js
+    │   │   │   │   ├── node
+    │   │   │   │   │   └── jest-preset.js
+    │   │   │   │   └── package.json
+    │   │   │   ├── logger
+    │   │   │   │   ├── package.json
+    │   │   │   │   ├── src
+    │   │   │   │   │   ├── index.ts
+    │   │   │   │   │   └── __tests__
+    │   │   │   │   │       └── log.test.ts
+    │   │   │   │   ├── tsconfig.json
+    │   │   │   │   ├── tsup.config.ts
+    │   │   │   │   └── turbo.json
+    │   │   │   └── ui
+    │   │   │       ├── package.json
+    │   │   │       ├── src
+    │   │   │       │   ├── counter-button
+    │   │   │       │   │   ├── index.test.tsx
+    │   │   │       │   │   └── index.tsx
+    │   │   │       │   └── link
+    │   │   │       │       ├── index.test.tsx
+    │   │   │       │       └── index.tsx
+    │   │   │       ├── tsconfig.json
+    │   │   │       ├── tsup.config.ts
+    │   │   │       └── turbo.json
+    │   │   ├── pnpm-lock.yaml
+    │   │   ├── pnpm-workspace.yaml
+    │   │   ├── README.md
+    │   │   └── turbo.json
+    │   ├── non-monorepo
+    │   │   ├── app
+    │   │   │   ├── favicon.ico
+    │   │   │   ├── globals.css
+    │   │   │   ├── layout.tsx
+    │   │   │   ├── page.module.css
+    │   │   │   └── page.tsx
+    │   │   ├── meta.json
+    │   │   ├── next.config.js
+    │   │   ├── next-env.d.ts
+    │   │   ├── package.json
+    │   │   ├── package-lock.json
+    │   │   ├── public
+    │   │   │   ├── next.svg
+    │   │   │   └── vercel.svg
+    │   │   ├── README.md
+    │   │   ├── tsconfig.json
+    │   │   └── turbo.json
+    │   ├── package.json
+    │   ├── turbo.json
+    │   ├── with-berry
+    │   │   ├── apps
+    │   │   │   ├── docs
+    │   │   │   │   ├── app
+    │   │   │   │   │   ├── layout.tsx
+    │   │   │   │   │   └── page.tsx
+    │   │   │   │   ├── next.config.js
+    │   │   │   │   ├── next-env.d.ts
+    │   │   │   │   ├── package.json
+    │   │   │   │   ├── README.md
+    │   │   │   │   └── tsconfig.json
+    │   │   │   └── web
+    │   │   │       ├── app
+    │   │   │       │   ├── layout.tsx
+    │   │   │       │   └── page.tsx
+    │   │   │       ├── next.config.js
+    │   │   │       ├── next-env.d.ts
+    │   │   │       ├── package.json
+    │   │   │       ├── README.md
+    │   │   │       └── tsconfig.json
+    │   │   ├── package.json
+    │   │   ├── packages
+    │   │   │   ├── eslint-config
+    │   │   │   │   ├── library.js
+    │   │   │   │   ├── next.js
+    │   │   │   │   ├── package.json
+    │   │   │   │   ├── react-internal.js
+    │   │   │   │   └── README.md
+    │   │   │   ├── tsconfig
+    │   │   │   │   ├── base.json
+    │   │   │   │   ├── nextjs.json
+    │   │   │   │   ├── package.json
+    │   │   │   │   └── react-library.json
+    │   │   │   └── ui
+    │   │   │       ├── package.json
+    │   │   │       ├── src
+    │   │   │       │   ├── Button.tsx
+    │   │   │       │   └── Header.tsx
+    │   │   │       └── tsconfig.json
+    │   │   ├── README.md
+    │   │   ├── turbo.json
+    │   │   └── yarn.lock
+    │   ├── with-changesets
+    │   │   ├── apps
+    │   │   │   └── docs
+    │   │   │       ├── next.config.js
+    │   │   │       ├── next-env.d.ts
+    │   │   │       ├── package.json
+    │   │   │       ├── src
+    │   │   │       │   └── app
+    │   │   │       │       ├── layout.tsx
+    │   │   │       │       └── page.tsx
+    │   │   │       └── tsconfig.json
+    │   │   ├── meta.json
+    │   │   ├── package.json
+    │   │   ├── packages
+    │   │   │   ├── acme-core
+    │   │   │   │   ├── package.json
+    │   │   │   │   ├── src
+    │   │   │   │   │   ├── Button.tsx
+    │   │   │   │   │   └── index.tsx
+    │   │   │   │   ├── tsconfig.json
+    │   │   │   │   └── tsup.config.ts
+    │   │   │   ├── acme-tsconfig
+    │   │   │   │   ├── base.json
+    │   │   │   │   ├── nextjs.json
+    │   │   │   │   ├── node14.json
+    │   │   │   │   ├── package.json
+    │   │   │   │   └── react-library.json
+    │   │   │   ├── acme-utils
+    │   │   │   │   ├── package.json
+    │   │   │   │   ├── src
+    │   │   │   │   │   ├── index.tsx
+    │   │   │   │   │   ├── toSlug.ts
+    │   │   │   │   │   ├── useIsomorphicLayoutEffect.tsx
+    │   │   │   │   │   └── usePrevious.tsx
+    │   │   │   │   └── tsconfig.json
+    │   │   │   └── eslint-config
+    │   │   │       ├── library.js
+    │   │   │       ├── next.js
+    │   │   │       ├── package.json
+    │   │   │       ├── react-internal.js
+    │   │   │       └── README.md
+    │   │   ├── pnpm-lock.yaml
+    │   │   ├── pnpm-workspace.yaml
+    │   │   ├── README.md
+    │   │   └── turbo.json
+    │   ├── with-docker
+    │   │   ├── apps
+    │   │   │   ├── api
+    │   │   │   │   ├── Dockerfile
+    │   │   │   │   ├── package.json
+    │   │   │   │   ├── src
+    │   │   │   │   │   ├── index.ts
+    │   │   │   │   │   ├── server.ts
+    │   │   │   │   │   └── __tests__
+    │   │   │   │   │       └── server.test.ts
+    │   │   │   │   └── tsconfig.json
+    │   │   │   └── web
+    │   │   │       ├── Dockerfile
+    │   │   │       ├── next.config.js
+    │   │   │       ├── next-env.d.ts
+    │   │   │       ├── package.json
+    │   │   │       ├── public
+    │   │   │       ├── README.md
+    │   │   │       ├── src
+    │   │   │       │   └── app
+    │   │   │       │       ├── layout.tsx
+    │   │   │       │       └── page.tsx
+    │   │   │       └── tsconfig.json
+    │   │   ├── docker-compose.yml
+    │   │   ├── meta.json
+    │   │   ├── package.json
+    │   │   ├── packages
+    │   │   │   ├── eslint-config
+    │   │   │   │   ├── library.js
+    │   │   │   │   ├── next.js
+    │   │   │   │   ├── package.json
+    │   │   │   │   ├── react-internal.js
+    │   │   │   │   ├── README.md
+    │   │   │   │   └── server.js
+    │   │   │   ├── jest-presets
+    │   │   │   │   ├── node
+    │   │   │   │   │   └── jest-preset.js
+    │   │   │   │   └── package.json
+    │   │   │   ├── logger
+    │   │   │   │   ├── package.json
+    │   │   │   │   ├── src
+    │   │   │   │   │   ├── index.ts
+    │   │   │   │   │   └── __tests__
+    │   │   │   │   │       └── log.test.ts
+    │   │   │   │   └── tsconfig.json
+    │   │   │   ├── typescript-config
+    │   │   │   │   ├── base.json
+    │   │   │   │   ├── nextjs.json
+    │   │   │   │   ├── package.json
+    │   │   │   │   ├── react-library.json
+    │   │   │   │   └── README.md
+    │   │   │   └── ui
+    │   │   │       ├── package.json
+    │   │   │       ├── src
+    │   │   │       │   └── button.tsx
+    │   │   │       └── tsconfig.json
+    │   │   ├── README.md
+    │   │   ├── turbo.json
+    │   │   └── yarn.lock
+    │   ├── with-gatsby
+    │   │   ├── apps
+    │   │   │   ├── docs
+    │   │   │   │   ├── next.config.js
+    │   │   │   │   ├── next-env.d.ts
+    │   │   │   │   ├── package.json
+    │   │   │   │   ├── pages
+    │   │   │   │   │   └── index.tsx
+    │   │   │   │   ├── README.md
+    │   │   │   │   ├── tsconfig.json
+    │   │   │   │   └── turbo.json
+    │   │   │   └── web
+    │   │   │       ├── gatsby-config.ts
+    │   │   │       ├── package.json
+    │   │   │       ├── README.md
+    │   │   │       ├── src
+    │   │   │       │   └── pages
+    │   │   │       │       ├── 404.tsx
+    │   │   │       │       └── index.tsx
+    │   │   │       ├── tsconfig.json
+    │   │   │       └── turbo.json
+    │   │   ├── meta.json
+    │   │   ├── package.json
+    │   │   ├── packages
+    │   │   │   ├── eslint-config
+    │   │   │   │   ├── gatsby.js
+    │   │   │   │   ├── library.js
+    │   │   │   │   ├── next.js
+    │   │   │   │   ├── package.json
+    │   │   │   │   ├── react-internal.js
+    │   │   │   │   └── README.md
+    │   │   │   ├── typescript-config
+    │   │   │   │   ├── base.json
+    │   │   │   │   ├── gatsby.json
+    │   │   │   │   ├── nextjs.json
+    │   │   │   │   ├── package.json
+    │   │   │   │   ├── react-library.json
+    │   │   │   │   └── README.md
+    │   │   │   └── ui
+    │   │   │       ├── package.json
+    │   │   │       ├── src
+    │   │   │       │   └── button.tsx
+    │   │   │       └── tsconfig.json
+    │   │   ├── pnpm-lock.yaml
+    │   │   ├── pnpm-workspace.yaml
+    │   │   ├── README.md
+    │   │   └── turbo.json
+    │   ├── with-nestjs
+    │   │   ├── apps
+    │   │   │   ├── api
+    │   │   │   │   ├── jest.config.js
+    │   │   │   │   ├── nest-cli.json
+    │   │   │   │   ├── package.json
+    │   │   │   │   ├── README.md
+    │   │   │   │   ├── src
+    │   │   │   │   │   ├── app.controller.spec.ts
+    │   │   │   │   │   ├── app.controller.ts
+    │   │   │   │   │   ├── app.module.ts
+    │   │   │   │   │   ├── app.service.ts
+    │   │   │   │   │   ├── links
+    │   │   │   │   │   │   ├── links.controller.spec.ts
+    │   │   │   │   │   │   ├── links.controller.ts
+    │   │   │   │   │   │   ├── links.module.ts
+    │   │   │   │   │   │   ├── links.service.spec.ts
+    │   │   │   │   │   │   └── links.service.ts
+    │   │   │   │   │   └── main.ts
+    │   │   │   │   ├── test
+    │   │   │   │   │   ├── app.e2e-spec.ts
+    │   │   │   │   │   └── jest-e2e.json
+    │   │   │   │   ├── tsconfig.build.json
+    │   │   │   │   └── tsconfig.json
+    │   │   │   └── web
+    │   │   │       ├── app
+    │   │   │       │   ├── favicon.ico
+    │   │   │       │   ├── globals.css
+    │   │   │       │   ├── layout.tsx
+    │   │   │       │   ├── page.module.css
+    │   │   │       │   └── page.tsx
+    │   │   │       ├── jest.config.js
+    │   │   │       ├── next.config.js
+    │   │   │       ├── next-env.d.ts
+    │   │   │       ├── package.json
+    │   │   │       ├── playwright.config.ts
+    │   │   │       ├── public
+    │   │   │       │   ├── circles.svg
+    │   │   │       │   ├── next.svg
+    │   │   │       │   ├── turborepo.svg
+    │   │   │       │   └── vercel.svg
+    │   │   │       ├── README.md
+    │   │   │       ├── test
+    │   │   │       │   ├── e2e
+    │   │   │       │   │   └── page.e2e-spec.ts
+    │   │   │       │   ├── layout.spec.tsx
+    │   │   │       │   ├── page.spec.tsx
+    │   │   │       │   └── __snapshots__
+    │   │   │       │       └── page.spec.tsx.snap
+    │   │   │       └── tsconfig.json
+    │   │   ├── meta.json
+    │   │   ├── package.json
+    │   │   ├── packages
+    │   │   │   ├── api
+    │   │   │   │   ├── package.json
+    │   │   │   │   ├── src
+    │   │   │   │   │   ├── index.ts
+    │   │   │   │   │   └── links
+    │   │   │   │   │       ├── dto
+    │   │   │   │   │       │   ├── create-link.dto.ts
+    │   │   │   │   │       │   └── update-link.dto.ts
+    │   │   │   │   │       └── entities
+    │   │   │   │   │           └── link.entity.ts
+    │   │   │   │   └── tsconfig.json
+    │   │   │   ├── eslint-config
+    │   │   │   │   ├── base.js
+    │   │   │   │   ├── library.js
+    │   │   │   │   ├── nest.js
+    │   │   │   │   ├── next.js
+    │   │   │   │   ├── package.json
+    │   │   │   │   ├── prettier-base.js
+    │   │   │   │   ├── react-internal.js
+    │   │   │   │   └── README.md
+    │   │   │   ├── jest-config
+    │   │   │   │   ├── base.js
+    │   │   │   │   ├── nest.js
+    │   │   │   │   ├── next.js
+    │   │   │   │   └── package.json
+    │   │   │   ├── typescript-config
+    │   │   │   │   ├── base.json
+    │   │   │   │   ├── nestjs.json
+    │   │   │   │   ├── nextjs.json
+    │   │   │   │   ├── package.json
+    │   │   │   │   └── react-library.json
+    │   │   │   └── ui
+    │   │   │       ├── package.json
+    │   │   │       ├── src
+    │   │   │       │   ├── button.tsx
+    │   │   │       │   ├── card.tsx
+    │   │   │       │   └── code.tsx
+    │   │   │       ├── tsconfig.json
+    │   │   │       ├── tsconfig.lint.json
+    │   │   │       └── turbo
+    │   │   │           └── generators
+    │   │   │               ├── config.ts
+    │   │   │               └── templates
+    │   │   │                   └── component.hbs
+    │   │   ├── pnpm-lock.yaml
+    │   │   ├── pnpm-workspace.yaml
+    │   │   ├── README.md
+    │   │   ├── tsconfig.json
+    │   │   └── turbo.json
+    │   ├── with-nextjs
+    │   │   └── README.md
+    │   ├── with-npm
+    │   │   ├── apps
+    │   │   │   ├── docs
+    │   │   │   │   ├── app
+    │   │   │   │   │   ├── favicon.ico
+    │   │   │   │   │   ├── globals.css
+    │   │   │   │   │   ├── layout.tsx
+    │   │   │   │   │   ├── page.module.css
+    │   │   │   │   │   └── page.tsx
+    │   │   │   │   ├── next.config.js
+    │   │   │   │   ├── next-env.d.ts
+    │   │   │   │   ├── package.json
+    │   │   │   │   ├── public
+    │   │   │   │   │   ├── circles.svg
+    │   │   │   │   │   ├── next.svg
+    │   │   │   │   │   ├── turborepo.svg
+    │   │   │   │   │   └── vercel.svg
+    │   │   │   │   ├── README.md
+    │   │   │   │   └── tsconfig.json
+    │   │   │   └── web
+    │   │   │       ├── app
+    │   │   │       │   ├── favicon.ico
+    │   │   │       │   ├── globals.css
+    │   │   │       │   ├── layout.tsx
+    │   │   │       │   ├── page.module.css
+    │   │   │       │   └── page.tsx
+    │   │   │       ├── next.config.js
+    │   │   │       ├── next-env.d.ts
+    │   │   │       ├── package.json
+    │   │   │       ├── public
+    │   │   │       │   ├── circles.svg
+    │   │   │       │   ├── next.svg
+    │   │   │       │   ├── turborepo.svg
+    │   │   │       │   └── vercel.svg
+    │   │   │       ├── README.md
+    │   │   │       └── tsconfig.json
+    │   │   ├── package.json
+    │   │   ├── package-lock.json
+    │   │   ├── packages
+    │   │   │   ├── eslint-config
+    │   │   │   │   ├── library.js
+    │   │   │   │   ├── next.js
+    │   │   │   │   ├── package.json
+    │   │   │   │   ├── react-internal.js
+    │   │   │   │   └── README.md
+    │   │   │   ├── typescript-config
+    │   │   │   │   ├── base.json
+    │   │   │   │   ├── nextjs.json
+    │   │   │   │   ├── package.json
+    │   │   │   │   └── react-library.json
+    │   │   │   └── ui
+    │   │   │       ├── package.json
+    │   │   │       ├── src
+    │   │   │       │   ├── card.tsx
+    │   │   │       │   └── code.tsx
+    │   │   │       ├── tsconfig.json
+    │   │   │       ├── tsconfig.lint.json
+    │   │   │       ├── turbo
+    │   │   │       │   └── generators
+    │   │   │       │       ├── config.ts
+    │   │   │       │       └── templates
+    │   │   │       │           └── component.hbs
+    │   │   │       └── turbo.json
+    │   │   ├── README.md
+    │   │   └── turbo.json
+    │   ├── with-prisma
+    │   │   ├── apps
+    │   │   │   └── web
+    │   │   │       ├── app
+    │   │   │       │   ├── layout.tsx
+    │   │   │       │   └── page.tsx
+    │   │   │       ├── next.config.js
+    │   │   │       ├── next-env.d.ts
+    │   │   │       ├── package.json
+    │   │   │       ├── README.md
+    │   │   │       └── tsconfig.json
+    │   │   ├── docker-compose.yml
+    │   │   ├── meta.json
+    │   │   ├── package.json
+    │   │   ├── packages
+    │   │   │   ├── config-eslint
+    │   │   │   │   ├── library.js
+    │   │   │   │   ├── next.js
+    │   │   │   │   ├── package.json
+    │   │   │   │   └── README.md
+    │   │   │   ├── config-typescript
+    │   │   │   │   ├── base.json
+    │   │   │   │   ├── nextjs.json
+    │   │   │   │   └── package.json
+    │   │   │   └── database
+    │   │   │       ├── package.json
+    │   │   │       ├── prisma
+    │   │   │       │   └── schema.prisma
+    │   │   │       ├── src
+    │   │   │       │   ├── client.ts
+    │   │   │       │   └── seed.ts
+    │   │   │       └── tsconfig.json
+    │   │   ├── README.md
+    │   │   ├── turbo.json
+    │   │   └── yarn.lock
+    │   ├── with-react-native-web
+    │   │   ├── apps
+    │   │   │   ├── native
+    │   │   │   │   ├── app.json
+    │   │   │   │   ├── App.tsx
+    │   │   │   │   ├── assets
+    │   │   │   │   │   ├── adaptive-icon.png
+    │   │   │   │   │   ├── favicon.png
+    │   │   │   │   │   ├── icon.png
+    │   │   │   │   │   └── splash.png
+    │   │   │   │   ├── babel.config.js
+    │   │   │   │   ├── index.js
+    │   │   │   │   ├── metro.config.js
+    │   │   │   │   ├── package.json
+    │   │   │   │   ├── README.md
+    │   │   │   │   └── tsconfig.json
+    │   │   │   └── web
+    │   │   │       ├── app
+    │   │   │       │   ├── layout.tsx
+    │   │   │       │   └── page.tsx
+    │   │   │       ├── next.config.js
+    │   │   │       ├── next-env.d.ts
+    │   │   │       ├── package.json
+    │   │   │       ├── README.md
+    │   │   │       ├── styles
+    │   │   │       │   ├── global.css
+    │   │   │       │   └── index.module.css
+    │   │   │       └── tsconfig.json
+    │   │   ├── meta.json
+    │   │   ├── package.json
+    │   │   ├── packages
+    │   │   │   ├── typescript-config
+    │   │   │   │   ├── base.json
+    │   │   │   │   ├── nextjs.json
+    │   │   │   │   ├── package.json
+    │   │   │   │   └── react-native-library.json
+    │   │   │   └── ui
+    │   │   │       ├── package.json
+    │   │   │       ├── src
+    │   │   │       │   ├── button.tsx
+    │   │   │       │   └── index.tsx
+    │   │   │       ├── tsconfig.json
+    │   │   │       └── tsup.config.ts
+    │   │   ├── README.md
+    │   │   ├── turbo.json
+    │   │   └── yarn.lock
+    │   ├── with-rollup
+    │   │   ├── apps
+    │   │   │   └── web
+    │   │   │       ├── next.config.js
+    │   │   │       ├── next-env.d.ts
+    │   │   │       ├── package.json
+    │   │   │       ├── pages
+    │   │   │       │   └── index.tsx
+    │   │   │       ├── README.md
+    │   │   │       └── tsconfig.json
+    │   │   ├── meta.json
+    │   │   ├── package.json
+    │   │   ├── packages
+    │   │   │   ├── config-eslint
+    │   │   │   │   ├── library.js
+    │   │   │   │   ├── next.js
+    │   │   │   │   ├── package.json
+    │   │   │   │   ├── react-internal.js
+    │   │   │   │   └── README.md
+    │   │   │   ├── config-typescript
+    │   │   │   │   ├── base.json
+    │   │   │   │   ├── nextjs.json
+    │   │   │   │   ├── package.json
+    │   │   │   │   └── react-library.json
+    │   │   │   └── ui
+    │   │   │       ├── Button.tsx
+    │   │   │       ├── Header.tsx
+    │   │   │       ├── package.json
+    │   │   │       ├── rollup.config.js
+    │   │   │       └── tsconfig.json
+    │   │   ├── pnpm-lock.yaml
+    │   │   ├── pnpm-workspace.yaml
+    │   │   ├── README.md
+    │   │   └── turbo.json
+    │   ├── with-shell-commands
+    │   │   ├── apps
+    │   │   │   ├── app-a
+    │   │   │   │   ├── package.json
+    │   │   │   │   └── README.md
+    │   │   │   └── app-b
+    │   │   │       ├── package.json
+    │   │   │       └── README.md
+    │   │   ├── package.json
+    │   │   ├── packages
+    │   │   │   ├── pkg-a
+    │   │   │   │   ├── package.json
+    │   │   │   │   └── README.md
+    │   │   │   ├── pkg-b
+    │   │   │   │   ├── package.json
+    │   │   │   │   └── README.md
+    │   │   │   └── tooling-config
+    │   │   │       ├── package.json
+    │   │   │       └── README.md
+    │   │   ├── pnpm-lock.yaml
+    │   │   ├── pnpm-workspace.yaml
+    │   │   ├── README.md
+    │   │   └── turbo.json
+    │   ├── with-svelte
+    │   │   ├── apps
+    │   │   │   ├── docs
+    │   │   │   │   ├── package.json
+    │   │   │   │   ├── playwright.config.ts
+    │   │   │   │   ├── README.md
+    │   │   │   │   ├── src
+    │   │   │   │   │   ├── app.d.ts
+    │   │   │   │   │   ├── app.html
+    │   │   │   │   │   ├── index.test.ts
+    │   │   │   │   │   ├── lib
+    │   │   │   │   │   │   └── index.ts
+    │   │   │   │   │   └── routes
+    │   │   │   │   │       └── +page.svelte
+    │   │   │   │   ├── static
+    │   │   │   │   │   └── favicon.png
+    │   │   │   │   ├── svelte.config.js
+    │   │   │   │   ├── tests
+    │   │   │   │   │   └── test.ts
+    │   │   │   │   ├── tsconfig.json
+    │   │   │   │   └── vite.config.ts
+    │   │   │   └── web
+    │   │   │       ├── package.json
+    │   │   │       ├── playwright.config.ts
+    │   │   │       ├── README.md
+    │   │   │       ├── src
+    │   │   │       │   ├── app.d.ts
+    │   │   │       │   ├── app.html
+    │   │   │       │   ├── index.test.ts
+    │   │   │       │   ├── lib
+    │   │   │       │   │   └── index.ts
+    │   │   │       │   └── routes
+    │   │   │       │       └── +page.svelte
+    │   │   │       ├── static
+    │   │   │       │   └── favicon.png
+    │   │   │       ├── svelte.config.js
+    │   │   │       ├── tests
+    │   │   │       │   └── test.ts
+    │   │   │       ├── tsconfig.json
+    │   │   │       └── vite.config.ts
+    │   │   ├── meta.json
+    │   │   ├── package.json
+    │   │   ├── packages
+    │   │   │   ├── config-eslint
+    │   │   │   │   ├── index.js
+    │   │   │   │   └── package.json
+    │   │   │   └── ui
+    │   │   │       ├── components
+    │   │   │       │   └── MyCounterButton.svelte
+    │   │   │       ├── index.ts
+    │   │   │       └── package.json
+    │   │   ├── pnpm-lock.yaml
+    │   │   ├── pnpm-workspace.yaml
+    │   │   ├── README.md
+    │   │   └── turbo.json
+    │   ├── with-tailwind
+    │   │   ├── apps
+    │   │   │   ├── docs
+    │   │   │   │   ├── next.config.js
+    │   │   │   │   ├── next-env.d.ts
+    │   │   │   │   ├── package.json
+    │   │   │   │   ├── postcss.config.js
+    │   │   │   │   ├── public
+    │   │   │   │   │   ├── circles.svg
+    │   │   │   │   │   ├── next.svg
+    │   │   │   │   │   ├── turborepo.svg
+    │   │   │   │   │   └── vercel.svg
+    │   │   │   │   ├── README.md
+    │   │   │   │   ├── src
+    │   │   │   │   │   └── app
+    │   │   │   │   │       ├── favicon.ico
+    │   │   │   │   │       ├── globals.css
+    │   │   │   │   │       ├── layout.tsx
+    │   │   │   │   │       └── page.tsx
+    │   │   │   │   ├── tailwind.config.ts
+    │   │   │   │   └── tsconfig.json
+    │   │   │   └── web
+    │   │   │       ├── next.config.js
+    │   │   │       ├── next-env.d.ts
+    │   │   │       ├── package.json
+    │   │   │       ├── postcss.config.js
+    │   │   │       ├── public
+    │   │   │       │   ├── circles.svg
+    │   │   │       │   ├── next.svg
+    │   │   │       │   ├── turborepo.svg
+    │   │   │       │   └── vercel.svg
+    │   │   │       ├── README.md
+    │   │   │       ├── src
+    │   │   │       │   └── app
+    │   │   │       │       ├── favicon.ico
+    │   │   │       │       ├── globals.css
+    │   │   │       │       ├── layout.tsx
+    │   │   │       │       └── page.tsx
+    │   │   │       ├── tailwind.config.ts
+    │   │   │       └── tsconfig.json
+    │   │   ├── meta.json
+    │   │   ├── package.json
+    │   │   ├── packages
+    │   │   │   ├── config-eslint
+    │   │   │   │   ├── library.js
+    │   │   │   │   ├── next.js
+    │   │   │   │   ├── package.json
+    │   │   │   │   ├── react.js
+    │   │   │   │   └── README.md
+    │   │   │   ├── config-tailwind
+    │   │   │   │   ├── package.json
+    │   │   │   │   ├── tailwind.config.ts
+    │   │   │   │   └── tsconfig.json
+    │   │   │   ├── config-typescript
+    │   │   │   │   ├── base.json
+    │   │   │   │   ├── nextjs.json
+    │   │   │   │   ├── package.json
+    │   │   │   │   └── react-library.json
+    │   │   │   └── ui
+    │   │   │       ├── package.json
+    │   │   │       ├── postcss.config.js
+    │   │   │       ├── src
+    │   │   │       │   ├── card.tsx
+    │   │   │       │   └── styles.css
+    │   │   │       ├── tailwind.config.ts
+    │   │   │       └── tsconfig.json
+    │   │   ├── pnpm-lock.yaml
+    │   │   ├── pnpm-workspace.yaml
+    │   │   ├── README.md
+    │   │   └── turbo.json
+    │   ├── with-typeorm
+    │   │   ├── apps
+    │   │   │   ├── docs
+    │   │   │   │   ├── app
+    │   │   │   │   │   ├── favicon.ico
+    │   │   │   │   │   ├── globals.css
+    │   │   │   │   │   ├── layout.tsx
+    │   │   │   │   │   ├── page.module.css
+    │   │   │   │   │   └── page.tsx
+    │   │   │   │   ├── next.config.js
+    │   │   │   │   ├── next-env.d.ts
+    │   │   │   │   ├── package.json
+    │   │   │   │   ├── public
+    │   │   │   │   │   ├── circles.svg
+    │   │   │   │   │   ├── next.svg
+    │   │   │   │   │   ├── turborepo.svg
+    │   │   │   │   │   └── vercel.svg
+    │   │   │   │   ├── README.md
+    │   │   │   │   └── tsconfig.json
+    │   │   │   └── web
+    │   │   │       ├── app
+    │   │   │       │   ├── api
+    │   │   │       │   │   └── todo
+    │   │   │       │   │       ├── [id]
+    │   │   │       │   │       │   └── route.ts
+    │   │   │       │   │       └── route.ts
+    │   │   │       │   ├── favicon.ico
+    │   │   │       │   ├── globals.css
+    │   │   │       │   ├── layout.tsx
+    │   │   │       │   ├── page.module.css
+    │   │   │       │   └── page.tsx
+    │   │   │       ├── next.config.js
+    │   │   │       ├── next-env.d.ts
+    │   │   │       ├── package.json
+    │   │   │       ├── public
+    │   │   │       │   ├── circles.svg
+    │   │   │       │   ├── next.svg
+    │   │   │       │   ├── turborepo.svg
+    │   │   │       │   └── vercel.svg
+    │   │   │       ├── README.md
+    │   │   │       └── tsconfig.json
+    │   │   ├── docker-compose.yml
+    │   │   ├── meta.json
+    │   │   ├── package.json
+    │   │   ├── packages
+    │   │   │   ├── eslint-config
+    │   │   │   │   ├── library.js
+    │   │   │   │   ├── next.js
+    │   │   │   │   ├── package.json
+    │   │   │   │   ├── react-internal.js
+    │   │   │   │   └── README.md
+    │   │   │   ├── typeorm-service
+    │   │   │   │   ├── package.json
+    │   │   │   │   ├── src
+    │   │   │   │   │   ├── domain
+    │   │   │   │   │   │   └── todo
+    │   │   │   │   │   │       ├── todo.entity.ts
+    │   │   │   │   │   │       ├── todo.repository.ts
+    │   │   │   │   │   │       └── todo.service.ts
+    │   │   │   │   │   ├── helper
+    │   │   │   │   │   │   ├── di-container.ts
+    │   │   │   │   │   │   └── reflect-factory.ts
+    │   │   │   │   │   ├── index.ts
+    │   │   │   │   │   └── orm-config.ts
+    │   │   │   │   ├── __test__
+    │   │   │   │   │   ├── todo-service.test.ts
+    │   │   │   │   │   └── typeorm.test.ts
+    │   │   │   │   ├── tsconfig.json
+    │   │   │   │   └── vitest.config.ts
+    │   │   │   ├── typescript-config
+    │   │   │   │   ├── base.json
+    │   │   │   │   ├── nextjs.json
+    │   │   │   │   ├── package.json
+    │   │   │   │   └── react-library.json
+    │   │   │   └── ui
+    │   │   │       ├── package.json
+    │   │   │       ├── src
+    │   │   │       │   ├── button.tsx
+    │   │   │       │   ├── card.tsx
+    │   │   │       │   └── code.tsx
+    │   │   │       ├── tsconfig.json
+    │   │   │       ├── tsconfig.lint.json
+    │   │   │       └── turbo
+    │   │   │           └── generators
+    │   │   │               ├── config.ts
+    │   │   │               └── templates
+    │   │   │                   └── component.hbs
+    │   │   ├── pnpm-lock.yaml
+    │   │   ├── pnpm-workspace.yaml
+    │   │   ├── README.md
+    │   │   ├── tsconfig.json
+    │   │   └── turbo.json
+    │   ├── with-vite
+    │   │   ├── apps
+    │   │   │   ├── docs
+    │   │   │   │   ├── index.html
+    │   │   │   │   ├── package.json
+    │   │   │   │   ├── public
+    │   │   │   │   │   ├── typescript.svg
+    │   │   │   │   │   └── vite.svg
+    │   │   │   │   ├── src
+    │   │   │   │   │   ├── main.ts
+    │   │   │   │   │   ├── style.css
+    │   │   │   │   │   └── vite-env.d.ts
+    │   │   │   │   └── tsconfig.json
+    │   │   │   └── web
+    │   │   │       ├── index.html
+    │   │   │       ├── package.json
+    │   │   │       ├── public
+    │   │   │       │   ├── typescript.svg
+    │   │   │       │   └── vite.svg
+    │   │   │       ├── src
+    │   │   │       │   ├── main.ts
+    │   │   │       │   ├── style.css
+    │   │   │       │   └── vite-env.d.ts
+    │   │   │       └── tsconfig.json
+    │   │   ├── meta.json
+    │   │   ├── package.json
+    │   │   ├── packages
+    │   │   │   ├── eslint-config
+    │   │   │   │   ├── index.js
+    │   │   │   │   └── package.json
+    │   │   │   ├── typescript-config
+    │   │   │   │   ├── base.json
+    │   │   │   │   ├── package.json
+    │   │   │   │   └── vite.json
+    │   │   │   └── ui
+    │   │   │       ├── components
+    │   │   │       │   ├── counter.ts
+    │   │   │       │   └── header.ts
+    │   │   │       ├── index.ts
+    │   │   │       ├── package.json
+    │   │   │       ├── tsconfig.json
+    │   │   │       └── utils
+    │   │   │           └── counter.ts
+    │   │   ├── pnpm-lock.yaml
+    │   │   ├── pnpm-workspace.yaml
+    │   │   ├── README.md
+    │   │   └── turbo.json
+    │   ├── with-vue-nuxt
+    │   │   ├── apps
+    │   │   │   ├── docs
+    │   │   │   │   ├── app.vue
+    │   │   │   │   ├── nuxt.config.ts
+    │   │   │   │   ├── package.json
+    │   │   │   │   ├── pnpm-lock.yaml
+    │   │   │   │   ├── public
+    │   │   │   │   │   └── favicon.ico
+    │   │   │   │   ├── README.md
+    │   │   │   │   ├── server
+    │   │   │   │   │   └── tsconfig.json
+    │   │   │   │   └── tsconfig.json
+    │   │   │   └── web
+    │   │   │       ├── env.d.ts
+    │   │   │       ├── index.html
+    │   │   │       ├── package.json
+    │   │   │       ├── public
+    │   │   │       │   └── favicon.ico
+    │   │   │       ├── README.md
+    │   │   │       ├── src
+    │   │   │       │   ├── app.vue
+    │   │   │       │   └── main.ts
+    │   │   │       ├── tsconfig.app.json
+    │   │   │       ├── tsconfig.json
+    │   │   │       ├── tsconfig.node.json
+    │   │   │       └── vite.config.ts
+    │   │   ├── meta.json
+    │   │   ├── package.json
+    │   │   ├── packages
+    │   │   │   ├── eslint-config-custom
+    │   │   │   │   ├── library.js
+    │   │   │   │   ├── nuxt.js
+    │   │   │   │   ├── package.json
+    │   │   │   │   ├── README.md
+    │   │   │   │   └── vue.js
+    │   │   │   ├── tsconfig
+    │   │   │   │   ├── base.json
+    │   │   │   │   ├── nuxt.json
+    │   │   │   │   ├── package.json
+    │   │   │   │   └── vue.json
+    │   │   │   └── ui
+    │   │   │       ├── index.ts
+    │   │   │       ├── package.json
+    │   │   │       ├── src
+    │   │   │       │   ├── assets
+    │   │   │       │   │   ├── circles.svg
+    │   │   │       │   │   ├── next.svg
+    │   │   │       │   │   ├── turborepo.svg
+    │   │   │       │   │   └── vercel.svg
+    │   │   │       │   ├── card.vue
+    │   │   │       │   ├── gradient.vue
+    │   │   │       │   └── page.vue
+    │   │   │       └── tsconfig.json
+    │   │   ├── pnpm-lock.yaml
+    │   │   ├── pnpm-workspace.yaml
+    │   │   ├── README.md
+    │   │   └── turbo.json
+    │   └── with-yarn
+    │       ├── apps
+    │       │   ├── docs
+    │       │   │   ├── app
+    │       │   │   │   ├── favicon.ico
+    │       │   │   │   ├── globals.css
+    │       │   │   │   ├── layout.tsx
+    │       │   │   │   ├── page.module.css
+    │       │   │   │   └── page.tsx
+    │       │   │   ├── next.config.js
+    │       │   │   ├── next-env.d.ts
+    │       │   │   ├── package.json
+    │       │   │   ├── public
+    │       │   │   │   ├── circles.svg
+    │       │   │   │   ├── next.svg
+    │       │   │   │   ├── turborepo.svg
+    │       │   │   │   └── vercel.svg
+    │       │   │   ├── README.md
+    │       │   │   └── tsconfig.json
+    │       │   └── web
+    │       │       ├── app
+    │       │       │   ├── favicon.ico
+    │       │       │   ├── globals.css
+    │       │       │   ├── layout.tsx
+    │       │       │   ├── page.module.css
+    │       │       │   └── page.tsx
+    │       │       ├── next.config.js
+    │       │       ├── next-env.d.ts
+    │       │       ├── package.json
+    │       │       ├── public
+    │       │       │   ├── circles.svg
+    │       │       │   ├── next.svg
+    │       │       │   ├── turborepo.svg
+    │       │       │   └── vercel.svg
+    │       │       ├── README.md
+    │       │       └── tsconfig.json
+    │       ├── package.json
+    │       ├── packages
+    │       │   ├── eslint-config
+    │       │   │   ├── library.js
+    │       │   │   ├── next.js
+    │       │   │   ├── package.json
+    │       │   │   ├── react-internal.js
+    │       │   │   └── README.md
+    │       │   ├── typescript-config
+    │       │   │   ├── base.json
+    │       │   │   ├── nextjs.json
+    │       │   │   ├── package.json
+    │       │   │   └── react-library.json
+    │       │   └── ui
+    │       │       ├── package.json
+    │       │       ├── src
+    │       │       │   ├── card.tsx
+    │       │       │   └── code.tsx
+    │       │       ├── tsconfig.json
+    │       │       ├── tsconfig.lint.json
+    │       │       ├── turbo
+    │       │       │   └── generators
+    │       │       │       ├── config.ts
+    │       │       │       └── templates
+    │       │       │           └── component.hbs
+    │       │       └── turbo.json
+    │       ├── README.md
+    │       ├── turbo.json
+    │       └── yarn.lock
+    ├── LICENSE
+    ├── NOTICES.md
+    ├── package.json
+    ├── packages
+    │   ├── create-turbo
+    │   │   ├── jest.config.js
+    │   │   ├── LICENSE
+    │   │   ├── package.json
+    │   │   ├── README.md
+    │   │   ├── src
+    │   │   │   ├── cli.ts
+    │   │   │   ├── commands
+    │   │   │   │   ├── create
+    │   │   │   │   │   ├── index.ts
+    │   │   │   │   │   ├── prompts.ts
+    │   │   │   │   │   └── types.ts
+    │   │   │   │   └── index.ts
+    │   │   │   ├── transforms
+    │   │   │   │   ├── errors.ts
+    │   │   │   │   ├── git-ignore.ts
+    │   │   │   │   ├── index.ts
+    │   │   │   │   ├── official-starter.ts
+    │   │   │   │   ├── package-manager.ts
+    │   │   │   │   ├── pnpm-eslint.ts
+    │   │   │   │   └── types.ts
+    │   │   │   └── utils
+    │   │   │       ├── git.ts
+    │   │   │       ├── isDefaultExample.ts
+    │   │   │       ├── isOnline.ts
+    │   │   │       └── notifyUpdate.ts
+    │   │   ├── __tests__
+    │   │   │   ├── git.test.ts
+    │   │   │   ├── index.test.ts
+    │   │   │   └── test-utils.ts
+    │   │   ├── tsconfig.json
+    │   │   ├── tsup.config.ts
+    │   │   └── turbo.json
+    │   ├── eslint-config
+    │   │   ├── library.js
+    │   │   ├── next.js
+    │   │   ├── package.json
+    │   │   └── README.md
+    │   ├── eslint-config-turbo
+    │   │   ├── index.js
+    │   │   ├── LICENSE
+    │   │   ├── package.json
+    │   │   └── README.md
+    │   ├── eslint-plugin-turbo
+    │   │   ├── docs
+    │   │   │   └── rules
+    │   │   │       └── no-undeclared-env-vars.md
+    │   │   ├── __fixtures__
+    │   │   │   ├── configs
+    │   │   │   │   └── single
+    │   │   │   │       ├── package.json
+    │   │   │   │       └── turbo.json
+    │   │   │   ├── framework-inference
+    │   │   │   │   ├── apps
+    │   │   │   │   │   ├── kitchen-sink
+    │   │   │   │   │   │   ├── index.js
+    │   │   │   │   │   │   └── package.json
+    │   │   │   │   │   ├── nextjs
+    │   │   │   │   │   │   ├── index.js
+    │   │   │   │   │   │   └── package.json
+    │   │   │   │   │   └── vite
+    │   │   │   │   │       ├── index.js
+    │   │   │   │   │       └── package.json
+    │   │   │   │   ├── package.json
+    │   │   │   │   └── turbo.json
+    │   │   │   ├── workspace
+    │   │   │   │   ├── child
+    │   │   │   │   │   └── child.js
+    │   │   │   │   ├── package.json
+    │   │   │   │   ├── package-lock.json
+    │   │   │   │   ├── peer.js
+    │   │   │   │   └── turbo.json
+    │   │   │   └── workspace-configs
+    │   │   │       ├── apps
+    │   │   │       │   ├── docs
+    │   │   │       │   │   ├── index.js
+    │   │   │       │   │   ├── package.json
+    │   │   │       │   │   └── turbo.json
+    │   │   │       │   └── web
+    │   │   │       │       ├── index.js
+    │   │   │       │       ├── package.json
+    │   │   │       │       └── turbo.json
+    │   │   │       ├── package.json
+    │   │   │       ├── packages
+    │   │   │       │   └── ui
+    │   │   │       │       ├── index.js
+    │   │   │       │       ├── package.json
+    │   │   │       │       └── turbo.json
+    │   │   │       └── turbo.json
+    │   │   ├── jest.config.js
+    │   │   ├── lib
+    │   │   │   ├── configs
+    │   │   │   │   └── recommended.ts
+    │   │   │   ├── constants.ts
+    │   │   │   ├── index.ts
+    │   │   │   ├── rules
+    │   │   │   │   └── no-undeclared-env-vars.ts
+    │   │   │   └── utils
+    │   │   │       ├── calculate-inputs.ts
+    │   │   │       ├── dotenv-processing.ts
+    │   │   │       └── wildcard-processing.ts
+    │   │   ├── LICENSE
+    │   │   ├── package.json
+    │   │   ├── README.md
+    │   │   ├── __tests__
+    │   │   │   ├── cwd.test.ts
+    │   │   │   └── lib
+    │   │   │       └── no-undeclared-env-vars
+    │   │   │           ├── configs
+    │   │   │           │   ├── no-undeclared-env-vars.commonjs.test.ts
+    │   │   │           │   └── no-undeclared-env-vars.module.test.ts
+    │   │   │           ├── framework-inference
+    │   │   │           │   ├── no-undeclared-env-vars.commonjs.test.ts
+    │   │   │           │   └── no-undeclared-env-vars.module.test.ts
+    │   │   │           ├── no-undeclared-env-vars.commonjs.test.ts
+    │   │   │           ├── no-undeclared-env-vars.module.test.ts
+    │   │   │           └── workspace-configs
+    │   │   │               ├── no-undeclared-env-vars.commonjs.test.ts
+    │   │   │               └── no-undeclared-env-vars.module.test.ts
+    │   │   ├── tsconfig.json
+    │   │   ├── tsup.config.ts
+    │   │   └── turbo.json
+    │   ├── prysk
+    │   │   ├── index.mjs
+    │   │   └── package.json
+    │   ├── top-issues
+    │   │   ├── package.json
+    │   │   ├── README.md
+    │   │   └── src
+    │   │       └── index.mjs
+    │   ├── tsconfig
+    │   │   ├── base.json
+    │   │   ├── library.json
+    │   │   ├── package.json
+    │   │   └── README.md
+    │   ├── turbo
+    │   │   ├── bin
+    │   │   │   └── turbo
+    │   │   ├── bump-version.js
+    │   │   ├── package.json
+    │   │   └── README.md
+    │   ├── turbo-benchmark
+    │   │   ├── package.json
+    │   │   ├── profiles
+    │   │   ├── README.md
+    │   │   ├── src
+    │   │   │   ├── generate.mjs
+    │   │   │   ├── helpers.ts
+    │   │   │   ├── index.ts
+    │   │   │   ├── templates
+    │   │   │   │   ├── jest.config.js
+    │   │   │   │   ├── src
+    │   │   │   │   │   ├── index.ts
+    │   │   │   │   │   └── __tests__
+    │   │   │   │   │       ├── index.test.ts
+    │   │   │   │   │       └── tsconfig.json
+    │   │   │   │   └── tsconfig.json
+    │   │   │   └── ttft
+    │   │   │       ├── build-vega.ts
+    │   │   │       ├── index.ts
+    │   │   │       ├── run.ts
+    │   │   │       ├── slack.ts
+    │   │   │       └── tinybird.ts
+    │   │   ├── tsconfig.json
+    │   │   └── turbo.json
+    │   ├── turbo-codemod
+    │   │   ├── index.d.ts
+    │   │   ├── jest.config.js
+    │   │   ├── LICENSE
+    │   │   ├── package.json
+    │   │   ├── README.md
+    │   │   ├── src
+    │   │   │   ├── cli.ts
+    │   │   │   ├── commands
+    │   │   │   │   ├── index.ts
+    │   │   │   │   ├── migrate
+    │   │   │   │   │   ├── index.ts
+    │   │   │   │   │   ├── steps
+    │   │   │   │   │   │   ├── getCurrentVersion.ts
+    │   │   │   │   │   │   ├── getLatestVersion.ts
+    │   │   │   │   │   │   ├── getTransformsForMigration.ts
+    │   │   │   │   │   │   ├── getTurboUpgradeCommand.ts
+    │   │   │   │   │   │   └── shutdownDaemon.ts
+    │   │   │   │   │   ├── types.ts
+    │   │   │   │   │   └── utils.ts
+    │   │   │   │   └── transform
+    │   │   │   │       ├── index.ts
+    │   │   │   │       └── types.ts
+    │   │   │   ├── runner
+    │   │   │   │   ├── FileTransform.ts
+    │   │   │   │   ├── index.ts
+    │   │   │   │   ├── Runner.ts
+    │   │   │   │   └── types.ts
+    │   │   │   ├── transforms
+    │   │   │   │   ├── add-package-manager.ts
+    │   │   │   │   ├── add-package-names.ts
+    │   │   │   │   ├── clean-globs.ts
+    │   │   │   │   ├── create-turbo-config.ts
+    │   │   │   │   ├── migrate-dot-env.ts
+    │   │   │   │   ├── migrate-env-var-dependencies.ts
+    │   │   │   │   ├── README.md
+    │   │   │   │   ├── rename-output-mode.ts
+    │   │   │   │   ├── rename-pipeline.ts
+    │   │   │   │   ├── set-default-outputs.ts
+    │   │   │   │   ├── stabilize-env-mode.ts
+    │   │   │   │   ├── stabilize-ui.ts
+    │   │   │   │   └── transform-env-literals-to-wildcards.ts
+    │   │   │   ├── types.ts
+    │   │   │   └── utils
+    │   │   │       ├── checkGitStatus.ts
+    │   │   │       ├── directoryInfo.ts
+    │   │   │       ├── getTransformerHelpers.ts
+    │   │   │       ├── loadTransformers.ts
+    │   │   │       ├── loadTurboJson.ts
+    │   │   │       ├── logger.ts
+    │   │   │       ├── looksLikeRepo.ts
+    │   │   │       └── notifyUpdate.ts
+    │   │   ├── __tests__
+    │   │   │   ├── add-package-manager.test.ts
+    │   │   │   ├── add-package-names.test.ts
+    │   │   │   ├── clean-globs.test.ts
+    │   │   │   ├── create-turbo-config.test.ts
+    │   │   │   ├── __fixtures__
+    │   │   │   │   ├── add-package-manager
+    │   │   │   │   │   ├── has-package-manager
+    │   │   │   │   │   │   └── package.json
+    │   │   │   │   │   ├── no-package-manager
+    │   │   │   │   │   │   └── package.json
+    │   │   │   │   │   └── wrong-package-manager
+    │   │   │   │   │       └── package.json
+    │   │   │   │   ├── add-package-names
+    │   │   │   │   │   ├── correct-names
+    │   │   │   │   │   │   ├── package.json
+    │   │   │   │   │   │   └── packages
+    │   │   │   │   │   │       ├── ui
+    │   │   │   │   │   │       │   └── package.json
+    │   │   │   │   │   │       └── utils
+    │   │   │   │   │   │           └── package.json
+    │   │   │   │   │   ├── duplicate-names
+    │   │   │   │   │   │   ├── package.json
+    │   │   │   │   │   │   └── packages
+    │   │   │   │   │   │       ├── apps
+    │   │   │   │   │   │       │   ├── docs
+    │   │   │   │   │   │       │   │   └── package.json
+    │   │   │   │   │   │       │   └── web
+    │   │   │   │   │   │       │       └── package.json
+    │   │   │   │   │   │       ├── ui
+    │   │   │   │   │   │       │   └── package.json
+    │   │   │   │   │   │       └── utils
+    │   │   │   │   │   │           └── package.json
+    │   │   │   │   │   ├── ignored-packages
+    │   │   │   │   │   │   ├── package.json
+    │   │   │   │   │   │   ├── packages
+    │   │   │   │   │   │   │   ├── ui
+    │   │   │   │   │   │   │   │   └── package.json
+    │   │   │   │   │   │   │   └── utils
+    │   │   │   │   │   │   │       └── package.json
+    │   │   │   │   │   │   └── pnpm-workspace.yaml
+    │   │   │   │   │   └── missing-names
+    │   │   │   │   │       ├── package.json
+    │   │   │   │   │       └── packages
+    │   │   │   │   │           ├── ui
+    │   │   │   │   │           │   └── package.json
+    │   │   │   │   │           └── utils
+    │   │   │   │   │               └── package.json
+    │   │   │   │   ├── clean-globs
+    │   │   │   │   │   └── clean-globs
+    │   │   │   │   │       ├── package.json
+    │   │   │   │   │       └── turbo.json
+    │   │   │   │   ├── create-turbo-config
+    │   │   │   │   │   ├── both-configs
+    │   │   │   │   │   │   ├── package.json
+    │   │   │   │   │   │   └── turbo.json
+    │   │   │   │   │   ├── no-package-json-config
+    │   │   │   │   │   │   └── package.json
+    │   │   │   │   │   ├── no-package-json-file
+    │   │   │   │   │   │   └── a-random-file.txt
+    │   │   │   │   │   ├── no-turbo-json-config
+    │   │   │   │   │   │   └── package.json
+    │   │   │   │   │   └── turbo-json-config
+    │   │   │   │   │       ├── package.json
+    │   │   │   │   │       └── turbo.json
+    │   │   │   │   ├── get-turbo-upgrade-command
+    │   │   │   │   │   ├── no-deps
+    │   │   │   │   │   │   └── package.json
+    │   │   │   │   │   ├── no-package
+    │   │   │   │   │   │   └── README.md
+    │   │   │   │   │   ├── normal-workspaces
+    │   │   │   │   │   │   └── package.json
+    │   │   │   │   │   ├── normal-workspaces-dev-install
+    │   │   │   │   │   │   └── package.json
+    │   │   │   │   │   ├── no-turbo
+    │   │   │   │   │   │   └── package.json
+    │   │   │   │   │   ├── pnpm-workspaces
+    │   │   │   │   │   │   ├── package.json
+    │   │   │   │   │   │   └── pnpm-workspace.yaml
+    │   │   │   │   │   ├── pnpm-workspaces-dev-install
+    │   │   │   │   │   │   ├── package.json
+    │   │   │   │   │   │   └── pnpm-workspace.yaml
+    │   │   │   │   │   ├── single-package
+    │   │   │   │   │   │   └── package.json
+    │   │   │   │   │   └── single-package-dev-install
+    │   │   │   │   │       └── package.json
+    │   │   │   │   ├── migrate
+    │   │   │   │   │   ├── no-repo
+    │   │   │   │   │   │   └── README.md
+    │   │   │   │   │   ├── old-turbo
+    │   │   │   │   │   │   └── package.json
+    │   │   │   │   │   └── turbo-1
+    │   │   │   │   │       ├── package.json
+    │   │   │   │   │       └── turbo.json
+    │   │   │   │   ├── migrate-dot-env
+    │   │   │   │   │   ├── no-dot-env
+    │   │   │   │   │   │   ├── package.json
+    │   │   │   │   │   │   └── turbo.json
+    │   │   │   │   │   ├── no-pipeline
+    │   │   │   │   │   │   ├── package.json
+    │   │   │   │   │   │   └── turbo.json
+    │   │   │   │   │   ├── no-turbo-json
+    │   │   │   │   │   │   └── package.json
+    │   │   │   │   │   ├── with-dot-env
+    │   │   │   │   │   │   ├── package.json
+    │   │   │   │   │   │   └── turbo.json
+    │   │   │   │   │   └── workspace-configs
+    │   │   │   │   │       ├── apps
+    │   │   │   │   │       │   ├── docs
+    │   │   │   │   │       │   │   ├── index.js
+    │   │   │   │   │       │   │   ├── package.json
+    │   │   │   │   │       │   │   └── turbo.json
+    │   │   │   │   │       │   └── web
+    │   │   │   │   │       │       ├── index.js
+    │   │   │   │   │       │       ├── package.json
+    │   │   │   │   │       │       └── turbo.json
+    │   │   │   │   │       ├── package.json
+    │   │   │   │   │       ├── packages
+    │   │   │   │   │       │   └── ui
+    │   │   │   │   │       │       ├── index.js
+    │   │   │   │   │       │       ├── package.json
+    │   │   │   │   │       │       └── turbo.json
+    │   │   │   │   │       └── turbo.json
+    │   │   │   │   ├── migrate-env-var-dependencies
+    │   │   │   │   │   ├── env-dependencies
+    │   │   │   │   │   │   └── turbo.json
+    │   │   │   │   │   ├── migrated-env-dependencies
+    │   │   │   │   │   │   └── turbo.json
+    │   │   │   │   │   ├── no-turbo-json
+    │   │   │   │   │   │   └── package.json
+    │   │   │   │   │   ├── old-config
+    │   │   │   │   │   │   ├── package.json
+    │   │   │   │   │   │   └── turbo.json
+    │   │   │   │   │   └── workspace-configs
+    │   │   │   │   │       ├── apps
+    │   │   │   │   │       │   ├── docs
+    │   │   │   │   │       │   │   ├── index.js
+    │   │   │   │   │       │   │   ├── package.json
+    │   │   │   │   │       │   │   └── turbo.json
+    │   │   │   │   │       │   └── web
+    │   │   │   │   │       │       ├── index.js
+    │   │   │   │   │       │       ├── package.json
+    │   │   │   │   │       │       └── turbo.json
+    │   │   │   │   │       ├── package.json
+    │   │   │   │   │       ├── packages
+    │   │   │   │   │       │   └── ui
+    │   │   │   │   │       │       ├── index.js
+    │   │   │   │   │       │       ├── package.json
+    │   │   │   │   │       │       └── turbo.json
+    │   │   │   │   │       └── turbo.json
+    │   │   │   │   ├── rename-output-mode
+    │   │   │   │   │   ├── invalid-output-mode
+    │   │   │   │   │   │   ├── package.json
+    │   │   │   │   │   │   └── turbo.json
+    │   │   │   │   │   ├── no-output-mode
+    │   │   │   │   │   │   ├── package.json
+    │   │   │   │   │   │   └── turbo.json
+    │   │   │   │   │   ├── no-pipeline
+    │   │   │   │   │   │   ├── package.json
+    │   │   │   │   │   │   └── turbo.json
+    │   │   │   │   │   ├── no-turbo-json
+    │   │   │   │   │   │   └── package.json
+    │   │   │   │   │   ├── old-config
+    │   │   │   │   │   │   ├── package.json
+    │   │   │   │   │   │   └── turbo.json
+    │   │   │   │   │   ├── old-output-mode
+    │   │   │   │   │   │   ├── package.json
+    │   │   │   │   │   │   └── turbo.json
+    │   │   │   │   │   └── workspace-configs
+    │   │   │   │   │       ├── apps
+    │   │   │   │   │       │   ├── docs
+    │   │   │   │   │       │   │   ├── index.js
+    │   │   │   │   │       │   │   ├── package.json
+    │   │   │   │   │       │   │   └── turbo.json
+    │   │   │   │   │       │   └── web
+    │   │   │   │   │       │       ├── index.js
+    │   │   │   │   │       │       ├── package.json
+    │   │   │   │   │       │       └── turbo.json
+    │   │   │   │   │       ├── package.json
+    │   │   │   │   │       ├── packages
+    │   │   │   │   │       │   └── ui
+    │   │   │   │   │       │       ├── index.js
+    │   │   │   │   │       │       ├── package.json
+    │   │   │   │   │       │       └── turbo.json
+    │   │   │   │   │       └── turbo.json
+    │   │   │   │   ├── rename-pipeline
+    │   │   │   │   │   ├── no-turbo-json
+    │   │   │   │   │   │   └── package.json
+    │   │   │   │   │   ├── root-only
+    │   │   │   │   │   │   ├── important.txt
+    │   │   │   │   │   │   ├── package.json
+    │   │   │   │   │   │   └── turbo.json
+    │   │   │   │   │   ├── with-tasks
+    │   │   │   │   │   │   └── turbo.json
+    │   │   │   │   │   └── workspace-configs
+    │   │   │   │   │       ├── apps
+    │   │   │   │   │       │   ├── docs
+    │   │   │   │   │       │   │   ├── index.js
+    │   │   │   │   │       │   │   ├── package.json
+    │   │   │   │   │       │   │   └── turbo.json
+    │   │   │   │   │       │   └── web
+    │   │   │   │   │       │       ├── index.js
+    │   │   │   │   │       │       ├── package.json
+    │   │   │   │   │       │       └── turbo.json
+    │   │   │   │   │       ├── package.json
+    │   │   │   │   │       ├── packages
+    │   │   │   │   │       │   └── ui
+    │   │   │   │   │       │       ├── index.js
+    │   │   │   │   │       │       ├── package.json
+    │   │   │   │   │       │       └── turbo.json
+    │   │   │   │   │       └── turbo.json
+    │   │   │   │   ├── set-default-outputs
+    │   │   │   │   │   ├── invalid-outputs
+    │   │   │   │   │   │   ├── package.json
+    │   │   │   │   │   │   └── turbo.json
+    │   │   │   │   │   ├── no-outputs
+    │   │   │   │   │   │   ├── package.json
+    │   │   │   │   │   │   └── turbo.json
+    │   │   │   │   │   ├── no-pipeline
+    │   │   │   │   │   │   ├── package.json
+    │   │   │   │   │   │   └── turbo.json
+    │   │   │   │   │   ├── no-turbo-json
+    │   │   │   │   │   │   └── package.json
+    │   │   │   │   │   ├── old-config
+    │   │   │   │   │   │   ├── package.json
+    │   │   │   │   │   │   └── turbo.json
+    │   │   │   │   │   ├── old-outputs
+    │   │   │   │   │   │   ├── package.json
+    │   │   │   │   │   │   └── turbo.json
+    │   │   │   │   │   └── workspace-configs
+    │   │   │   │   │       ├── apps
+    │   │   │   │   │       │   ├── docs
+    │   │   │   │   │       │   │   ├── index.js
+    │   │   │   │   │       │   │   ├── package.json
+    │   │   │   │   │       │   │   └── turbo.json
+    │   │   │   │   │       │   └── web
+    │   │   │   │   │       │       ├── index.js
+    │   │   │   │   │       │       ├── package.json
+    │   │   │   │   │       │       └── turbo.json
+    │   │   │   │   │       ├── package.json
+    │   │   │   │   │       ├── packages
+    │   │   │   │   │       │   └── ui
+    │   │   │   │   │       │       ├── index.js
+    │   │   │   │   │       │       ├── package.json
+    │   │   │   │   │       │       └── turbo.json
+    │   │   │   │   │       └── turbo.json
+    │   │   │   │   ├── stabilize-env-mode
+    │   │   │   │   │   ├── has-both
+    │   │   │   │   │   │   └── turbo.json
+    │   │   │   │   │   ├── has-duplicates
+    │   │   │   │   │   │   └── turbo.json
+    │   │   │   │   │   ├── has-empty
+    │   │   │   │   │   │   └── turbo.json
+    │   │   │   │   │   ├── has-neither
+    │   │   │   │   │   │   └── turbo.json
+    │   │   │   │   │   ├── has-new
+    │   │   │   │   │   │   └── turbo.json
+    │   │   │   │   │   ├── has-old
+    │   │   │   │   │   │   └── turbo.json
+    │   │   │   │   │   ├── no-turbo-json
+    │   │   │   │   │   │   └── package.json
+    │   │   │   │   │   ├── old-config
+    │   │   │   │   │   │   └── package.json
+    │   │   │   │   │   └── workspace-configs
+    │   │   │   │   │       ├── apps
+    │   │   │   │   │       │   ├── docs
+    │   │   │   │   │       │   │   ├── package.json
+    │   │   │   │   │       │   │   └── turbo.json
+    │   │   │   │   │       │   └── website
+    │   │   │   │   │       │       ├── package.json
+    │   │   │   │   │       │       └── turbo.json
+    │   │   │   │   │       ├── package.json
+    │   │   │   │   │       └── turbo.json
+    │   │   │   │   ├── stabilize-ui
+    │   │   │   │   │   ├── disabled
+    │   │   │   │   │   │   ├── package.json
+    │   │   │   │   │   │   └── turbo.json
+    │   │   │   │   │   ├── enabled
+    │   │   │   │   │   │   ├── package.json
+    │   │   │   │   │   │   └── turbo.json
+    │   │   │   │   │   ├── no-config
+    │   │   │   │   │   │   ├── package.json
+    │   │   │   │   │   │   └── turbo.json
+    │   │   │   │   │   └── no-turbo-json
+    │   │   │   │   │       └── package.json
+    │   │   │   │   ├── transform
+    │   │   │   │   │   └── basic
+    │   │   │   │   │       └── package.json
+    │   │   │   │   └── transform-env-literals-to-wildcards
+    │   │   │   │       ├── has-empty
+    │   │   │   │       │   └── turbo.json
+    │   │   │   │       ├── has-nothing
+    │   │   │   │       │   └── turbo.json
+    │   │   │   │       ├── needs-rewriting
+    │   │   │   │       │   └── turbo.json
+    │   │   │   │       ├── no-turbo-json
+    │   │   │   │       │   └── package.json
+    │   │   │   │       ├── old-config
+    │   │   │   │       │   └── package.json
+    │   │   │   │       └── workspace-configs
+    │   │   │   │           ├── apps
+    │   │   │   │           │   ├── docs
+    │   │   │   │           │   │   ├── package.json
+    │   │   │   │           │   │   └── turbo.json
+    │   │   │   │           │   └── website
+    │   │   │   │           │       ├── package.json
+    │   │   │   │           │       └── turbo.json
+    │   │   │   │           ├── package.json
+    │   │   │   │           └── turbo.json
+    │   │   │   ├── generate-package-name.test.ts
+    │   │   │   ├── get-transforms-for-migration.test.ts
+    │   │   │   ├── get-turbo-upgrade-command.test.ts
+    │   │   │   ├── migrate-dot-env.test.ts
+    │   │   │   ├── migrate-env-var-dependencies.test.ts
+    │   │   │   ├── migrate.test.ts
+    │   │   │   ├── rename-output-mode.test.ts
+    │   │   │   ├── rename-pipeline.ts
+    │   │   │   ├── set-default-outputs.test.ts
+    │   │   │   ├── stabilize-env-mode.test.ts
+    │   │   │   ├── stabilize-ui.test.ts
+    │   │   │   ├── test-utils.ts
+    │   │   │   ├── transform-env-literals-to-wildcards.test.ts
+    │   │   │   └── transform.test.ts
+    │   │   ├── tsconfig.json
+    │   │   ├── tsup.config.ts
+    │   │   └── turbo
+    │   │       └── generators
+    │   │           ├── config.ts
+    │   │           └── templates
+    │   │               ├── transformer.hbs
+    │   │               └── transformer.test.hbs
+    │   ├── turbo-exe-stub
+    │   │   ├── build.sh
+    │   │   ├── package.json
+    │   │   ├── turbo.cpp
+    │   │   └── turbo.json
+    │   ├── turbo-gen
+    │   │   ├── jest.config.js
+    │   │   ├── LICENSE
+    │   │   ├── package.json
+    │   │   ├── README.md
+    │   │   ├── src
+    │   │   │   ├── cli.ts
+    │   │   │   ├── commands
+    │   │   │   │   ├── index.ts
+    │   │   │   │   ├── raw
+    │   │   │   │   │   └── index.ts
+    │   │   │   │   ├── run
+    │   │   │   │   │   ├── index.ts
+    │   │   │   │   │   └── prompts.ts
+    │   │   │   │   └── workspace
+    │   │   │   │       ├── index.ts
+    │   │   │   │       └── prompts.ts
+    │   │   │   ├── generators
+    │   │   │   │   ├── copy.ts
+    │   │   │   │   ├── custom.ts
+    │   │   │   │   ├── empty.ts
+    │   │   │   │   ├── index.ts
+    │   │   │   │   └── types.ts
+    │   │   │   ├── templates
+    │   │   │   │   ├── simple-js
+    │   │   │   │   │   ├── config.js
+    │   │   │   │   │   ├── package.json
+    │   │   │   │   │   └── templates
+    │   │   │   │   │       └── turborepo-generators.hbs
+    │   │   │   │   └── simple-ts
+    │   │   │   │       ├── config.ts
+    │   │   │   │       ├── package.json
+    │   │   │   │       └── templates
+    │   │   │   │           └── turborepo-generators.hbs
+    │   │   │   ├── types.ts
+    │   │   │   └── utils
+    │   │   │       ├── error.ts
+    │   │   │       ├── gatherAddRequirements.ts
+    │   │   │       ├── getProject.ts
+    │   │   │       ├── getWorkspaceList.ts
+    │   │   │       ├── getWorkspaceStructure.ts
+    │   │   │       ├── notifyUpdate.ts
+    │   │   │       ├── plop.ts
+    │   │   │       ├── setupFromTemplate.ts
+    │   │   │       └── workspaceRoots.ts
+    │   │   ├── __tests__
+    │   │   │   ├── raw.test.ts
+    │   │   │   └── test-utils.ts
+    │   │   ├── tsconfig.json
+    │   │   ├── tsup.config.ts
+    │   │   └── turbo.json
+    │   ├── turbo-ignore
+    │   │   ├── __fixtures__
+    │   │   │   ├── app
+    │   │   │   │   └── package.json
+    │   │   │   ├── invalid-app
+    │   │   │   │   └── package.json
+    │   │   │   ├── invalid_turbo_json
+    │   │   │   │   ├── package.json
+    │   │   │   │   └── turbo.json
+    │   │   │   ├── no-app
+    │   │   │   │   └── index.js
+    │   │   │   ├── no_turbo_deps
+    │   │   │   │   ├── package.json
+    │   │   │   │   └── turbo.json
+    │   │   │   ├── no_turbo_deps_v1
+    │   │   │   │   ├── package.json
+    │   │   │   │   └── turbo.json
+    │   │   │   └── turbo_in_deps
+    │   │   │       ├── package.json
+    │   │   │       └── turbo.json
+    │   │   ├── jest.config.js
+    │   │   ├── package.json
+    │   │   ├── README.md
+    │   │   ├── src
+    │   │   │   ├── checkCommit.ts
+    │   │   │   ├── cli.ts
+    │   │   │   ├── errors.ts
+    │   │   │   ├── getComparison.ts
+    │   │   │   ├── getTask.ts
+    │   │   │   ├── getTurboVersion.ts
+    │   │   │   ├── getWorkspace.ts
+    │   │   │   ├── ignore.ts
+    │   │   │   ├── logger.ts
+    │   │   │   └── types.ts
+    │   │   ├── __tests__
+    │   │   │   ├── checkCommit.test.ts
+    │   │   │   ├── errors.test.ts
+    │   │   │   ├── getComparison.test.ts
+    │   │   │   ├── getTask.test.ts
+    │   │   │   ├── getTurboVersion.test.ts
+    │   │   │   ├── getWorkspace.test.ts
+    │   │   │   └── ignore.test.ts
+    │   │   ├── tsconfig.json
+    │   │   └── tsup.config.ts
+    │   ├── turbo-repository
+    │   │   ├── js
+    │   │   │   ├── index.d.ts
+    │   │   │   ├── index.js
+    │   │   │   ├── package.json
+    │   │   │   └── README.md
+    │   │   ├── native
+    │   │   ├── npm
+    │   │   │   ├── darwin-arm64
+    │   │   │   │   └── package.json
+    │   │   │   ├── darwin-x64
+    │   │   │   │   └── package.json
+    │   │   │   ├── linux-arm64-gnu
+    │   │   │   │   └── package.json
+    │   │   │   ├── linux-arm64-musl
+    │   │   │   │   └── package.json
+    │   │   │   ├── linux-x64-gnu
+    │   │   │   │   └── package.json
+    │   │   │   ├── linux-x64-musl
+    │   │   │   │   └── package.json
+    │   │   │   ├── win32-arm64-msvc
+    │   │   │   │   └── package.json
+    │   │   │   └── win32-x64-msvc
+    │   │   │       └── package.json
+    │   │   ├── package.json
+    │   │   ├── README.md
+    │   │   ├── rust
+    │   │   │   ├── build.rs
+    │   │   │   ├── Cargo.toml
+    │   │   │   ├── README.md
+    │   │   │   └── src
+    │   │   │       ├── internal.rs
+    │   │   │       └── lib.rs
+    │   │   ├── scripts
+    │   │   │   ├── build.sh
+    │   │   │   ├── bump-version.sh
+    │   │   │   ├── publish.mjs
+    │   │   │   └── test.mjs
+    │   │   ├── __tests__
+    │   │   │   ├── affected-packages.test.ts
+    │   │   │   ├── find-packages.test.ts
+    │   │   │   ├── fixtures
+    │   │   │   │   └── monorepo
+    │   │   │   │       ├── apps
+    │   │   │   │       │   └── app
+    │   │   │   │       │       └── package.json
+    │   │   │   │       ├── package.json
+    │   │   │   │       ├── packages
+    │   │   │   │       │   ├── blank
+    │   │   │   │       │   │   └── package.json
+    │   │   │   │       │   └── ui
+    │   │   │   │       │       └── package.json
+    │   │   │   │       ├── pnpm-lock.yaml
+    │   │   │   │       └── pnpm-workspace.yaml
+    │   │   │   └── workspace.test.ts
+    │   │   └── turbo.json
+    │   ├── turbo-telemetry
+    │   │   ├── LICENSE
+    │   │   ├── package.json
+    │   │   ├── README.md
+    │   │   ├── src
+    │   │   │   ├── client.test.ts
+    │   │   │   ├── client.ts
+    │   │   │   ├── cli.ts
+    │   │   │   ├── config.test.ts
+    │   │   │   ├── config.ts
+    │   │   │   ├── events
+    │   │   │   │   ├── create-turbo.ts
+    │   │   │   │   ├── turbo-ignore.ts
+    │   │   │   │   └── types.ts
+    │   │   │   ├── index.ts
+    │   │   │   ├── init.ts
+    │   │   │   ├── utils.test.ts
+    │   │   │   └── utils.ts
+    │   │   └── tsconfig.json
+    │   ├── turbo-test-utils
+    │   │   ├── package.json
+    │   │   ├── README.md
+    │   │   ├── src
+    │   │   │   ├── index.ts
+    │   │   │   ├── mockEnv.ts
+    │   │   │   ├── spyConsole.ts
+    │   │   │   ├── spyExit.ts
+    │   │   │   ├── useFixtures.ts
+    │   │   │   └── validateLogs.ts
+    │   │   └── tsconfig.json
+    │   ├── turbo-types
+    │   │   ├── package.json
+    │   │   ├── README.md
+    │   │   ├── schemas
+    │   │   │   ├── schema.json
+    │   │   │   ├── schema.v1.json
+    │   │   │   └── schema.v2.json
+    │   │   ├── scripts
+    │   │   │   └── generate-schema.ts
+    │   │   ├── src
+    │   │   │   ├── index.ts
+    │   │   │   ├── json
+    │   │   │   │   └── frameworks.json
+    │   │   │   └── types
+    │   │   │       ├── config-v1.ts
+    │   │   │       ├── config-v2.ts
+    │   │   │       ├── dry.ts
+    │   │   │       └── frameworks.ts
+    │   │   ├── tsconfig.json
+    │   │   └── turbo.json
+    │   ├── turbo-utils
+    │   │   ├── __fixtures__
+    │   │   │   └── common
+    │   │   │       ├── old-workspace-config
+    │   │   │       │   ├── apps
+    │   │   │       │   │   ├── docs
+    │   │   │       │   │   │   ├── index.js
+    │   │   │       │   │   │   └── package.json
+    │   │   │       │   │   └── web
+    │   │   │       │   │       ├── index.js
+    │   │   │       │   │       └── package.json
+    │   │   │       │   ├── package.json
+    │   │   │       │   ├── packages
+    │   │   │       │   │   ├── ui
+    │   │   │       │   │   │   ├── index.js
+    │   │   │       │   │   │   └── package.json
+    │   │   │       │   │   └── utils
+    │   │   │       │   │       ├── index.js
+    │   │   │       │   │       └── package.json
+    │   │   │       │   └── turbo.json
+    │   │   │       ├── single-package
+    │   │   │       │   ├── child
+    │   │   │       │   │   └── child.js
+    │   │   │       │   ├── package.json
+    │   │   │       │   └── turbo.json
+    │   │   │       └── workspace-configs
+    │   │   │           ├── apps
+    │   │   │           │   ├── docs
+    │   │   │           │   │   ├── index.js
+    │   │   │           │   │   └── package.json
+    │   │   │           │   └── web
+    │   │   │           │       ├── index.js
+    │   │   │           │       ├── package.json
+    │   │   │           │       └── turbo.json
+    │   │   │           ├── package.json
+    │   │   │           ├── packages
+    │   │   │           │   ├── ui
+    │   │   │           │   │   ├── index.js
+    │   │   │           │   │   ├── package.json
+    │   │   │           │   │   └── turbo.json
+    │   │   │           │   └── utils
+    │   │   │           │       ├── index.js
+    │   │   │           │       ├── package.json
+    │   │   │           │       └── turbo.json
+    │   │   │           └── turbo.json
+    │   │   ├── jest.config.js
+    │   │   ├── LICENSE
+    │   │   ├── package.json
+    │   │   ├── README.md
+    │   │   ├── src
+    │   │   │   ├── convertCase.ts
+    │   │   │   ├── createProject.ts
+    │   │   │   ├── examples.ts
+    │   │   │   ├── getTurboConfigs.ts
+    │   │   │   ├── getTurboRoot.ts
+    │   │   │   ├── index.ts
+    │   │   │   ├── isFolderEmpty.ts
+    │   │   │   ├── isWriteable.ts
+    │   │   │   ├── logger.ts
+    │   │   │   ├── managers.ts
+    │   │   │   ├── searchUp.ts
+    │   │   │   ├── types.ts
+    │   │   │   └── validateDirectory.ts
+    │   │   ├── __tests__
+    │   │   │   ├── convertCase.test.ts
+    │   │   │   ├── examples.test.ts
+    │   │   │   ├── getTurboConfigs.test.ts
+    │   │   │   ├── getTurboRoot.test.ts
+    │   │   │   ├── isFolderEmpty.test.ts
+    │   │   │   └── isWritable.test.ts
+    │   │   └── tsconfig.json
+    │   ├── turbo-vsc
+    │   │   ├── ARCHITECTURE.md
+    │   │   ├── CONTRIBUTING.md
+    │   │   ├── LICENSE
+    │   │   ├── package.json
+    │   │   ├── README.md
+    │   │   ├── resources
+    │   │   │   ├── contextual-codemod.png
+    │   │   │   ├── globs.png
+    │   │   │   ├── icon.png
+    │   │   │   ├── icon.svg
+    │   │   │   ├── readme-hero.png
+    │   │   │   └── references.png
+    │   │   ├── src
+    │   │   │   └── extension.ts
+    │   │   └── tsconfig.json
+    │   └── turbo-workspaces
+    │       ├── __fixtures__
+    │       │   ├── bun
+    │       │   │   ├── monorepo
+    │       │   │   │   ├── apps
+    │       │   │   │   │   ├── docs
+    │       │   │   │   │   │   └── package.json
+    │       │   │   │   │   └── web
+    │       │   │   │   │       └── package.json
+    │       │   │   │   ├── bun.lockb
+    │       │   │   │   ├── package.json
+    │       │   │   │   └── packages
+    │       │   │   │       ├── tsconfig
+    │       │   │   │       │   └── package.json
+    │       │   │   │       └── ui
+    │       │   │   │           └── package.json
+    │       │   │   └── non-monorepo
+    │       │   │       ├── bun.lockb
+    │       │   │       └── package.json
+    │       │   ├── invalid
+    │       │   │   └── index.js
+    │       │   ├── npm
+    │       │   │   ├── monorepo
+    │       │   │   │   ├── apps
+    │       │   │   │   │   ├── docs
+    │       │   │   │   │   │   └── package.json
+    │       │   │   │   │   └── web
+    │       │   │   │   │       └── package.json
+    │       │   │   │   ├── package.json
+    │       │   │   │   ├── package-lock.json
+    │       │   │   │   └── packages
+    │       │   │   │       ├── tsconfig
+    │       │   │   │       │   └── package.json
+    │       │   │   │       └── ui
+    │       │   │   │           └── package.json
+    │       │   │   └── non-monorepo
+    │       │   │       ├── package.json
+    │       │   │       └── package-lock.json
+    │       │   ├── pnpm
+    │       │   │   ├── monorepo
+    │       │   │   │   ├── apps
+    │       │   │   │   │   ├── docs
+    │       │   │   │   │   │   └── package.json
+    │       │   │   │   │   └── web
+    │       │   │   │   │       └── package.json
+    │       │   │   │   ├── package.json
+    │       │   │   │   ├── packages
+    │       │   │   │   │   ├── tsconfig
+    │       │   │   │   │   │   └── package.json
+    │       │   │   │   │   └── ui
+    │       │   │   │   │       └── package.json
+    │       │   │   │   ├── pnpm-lock.yaml
+    │       │   │   │   └── pnpm-workspace.yaml
+    │       │   │   └── non-monorepo
+    │       │   │       ├── package.json
+    │       │   │       └── pnpm-lock.yaml
+    │       │   └── yarn
+    │       │       ├── monorepo
+    │       │       │   ├── apps
+    │       │       │   │   ├── docs
+    │       │       │   │   │   └── package.json
+    │       │       │   │   └── web
+    │       │       │   │       └── package.json
+    │       │       │   ├── package.json
+    │       │       │   ├── packages
+    │       │       │   │   ├── tsconfig
+    │       │       │   │   │   └── package.json
+    │       │       │   │   └── ui
+    │       │       │   │       └── package.json
+    │       │       │   └── yarn.lock
+    │       │       └── non-monorepo
+    │       │           ├── package.json
+    │       │           └── yarn.lock
+    │       ├── jest.config.js
+    │       ├── LICENSE
+    │       ├── package.json
+    │       ├── README.md
+    │       ├── src
+    │       │   ├── cli.ts
+    │       │   ├── commands
+    │       │   │   ├── convert
+    │       │   │   │   ├── index.ts
+    │       │   │   │   └── types.ts
+    │       │   │   ├── index.ts
+    │       │   │   └── summary
+    │       │   │       ├── index.ts
+    │       │   │       └── types.ts
+    │       │   ├── convert.ts
+    │       │   ├── errors.ts
+    │       │   ├── getWorkspaceDetails.ts
+    │       │   ├── index.ts
+    │       │   ├── install.ts
+    │       │   ├── logger.ts
+    │       │   ├── managers
+    │       │   │   ├── bun.ts
+    │       │   │   ├── index.ts
+    │       │   │   ├── npm.ts
+    │       │   │   ├── pnpm.ts
+    │       │   │   └── yarn.ts
+    │       │   ├── types.ts
+    │       │   ├── updateDependencies.ts
+    │       │   └── utils.ts
+    │       ├── __tests__
+    │       │   ├── index.test.ts
+    │       │   ├── managers.test.ts
+    │       │   ├── test-utils.ts
+    │       │   └── utils.test.ts
+    │       ├── tsconfig.json
+    │       ├── tsup.config.ts
+    │       └── turbo.json
+    ├── pnpm-lock.yaml
+    ├── pnpm-workspace.yaml
+    ├── README.md
+    ├── release.md
+    ├── rust-toolchain.toml
+    ├── scripts
+    │   ├── ignore-examples.js
+    │   ├── server.js
+    │   ├── update-examples-dep.sh
+    │   └── version.js
+    ├── SECURITY.md
+    ├── sgconfig.yml
+    ├── socket.yaml
+    ├── troubleshooting.md
+    ├── tsconfig.json
+    ├── tsconfig.project.json
+    ├── turbo.json
+    ├── turborepo-tests
+    │   ├── example-basic
+    │   │   ├── package.json
+    │   │   └── turbo.json
+    │   ├── example-design-system
+    │   │   ├── package.json
+    │   │   └── turbo.json
+    │   ├── example-kitchen-sink
+    │   │   ├── package.json
+    │   │   └── turbo.json
+    │   ├── example-non-monorepo
+    │   │   ├── package.json
+    │   │   └── turbo.json
+    │   ├── example-with-berry
+    │   │   ├── package.json
+    │   │   └── turbo.json
+    │   ├── example-with-changesets
+    │   │   ├── package.json
+    │   │   └── turbo.json
+    │   ├── example-with-npm
+    │   │   ├── package.json
+    │   │   └── turbo.json
+    │   ├── example-with-react-native-web
+    │   │   ├── package.json
+    │   │   └── turbo.json
+    │   ├── example-with-rollup
+    │   │   ├── package.json
+    │   │   └── turbo.json
+    │   ├── example-with-svelte
+    │   │   ├── package.json
+    │   │   └── turbo.json
+    │   ├── example-with-tailwind
+    │   │   ├── package.json
+    │   │   └── turbo.json
+    │   ├── example-with-vite
+    │   │   ├── package.json
+    │   │   └── turbo.json
+    │   ├── example-with-yarn
+    │   │   ├── package.json
+    │   │   └── turbo.json
+    │   ├── helpers
+    │   │   ├── copy_fixture.sh
+    │   │   ├── find_global_hash.sh
+    │   │   ├── install_deps.sh
+    │   │   ├── mock_existing_login.sh
+    │   │   ├── mock_telemetry_config.sh
+    │   │   ├── mock_turbo_config.sh
+    │   │   ├── package.json
+    │   │   ├── replace_turbo_json.sh
+    │   │   ├── run_summary.sh
+    │   │   ├── setup_example_test.sh
+    │   │   ├── setup_git.sh
+    │   │   ├── setup_integration_test.sh
+    │   │   ├── setup_package_manager.sh
+    │   │   ├── setup.sh
+    │   │   └── turbo.json
+    │   ├── integration
+    │   │   ├── fixtures
+    │   │   │   ├── basic_monorepo
+    │   │   │   │   ├── apps
+    │   │   │   │   │   └── my-app
+    │   │   │   │   │       └── package.json
+    │   │   │   │   ├── bar.txt
+    │   │   │   │   ├── foo.txt
+    │   │   │   │   ├── package.json
+    │   │   │   │   ├── packages
+    │   │   │   │   │   ├── another
+    │   │   │   │   │   │   └── package.json
+    │   │   │   │   │   └── util
+    │   │   │   │   │       └── package.json
+    │   │   │   │   └── turbo.json
+    │   │   │   ├── berry_resolutions
+    │   │   │   │   ├── package.json
+    │   │   │   │   ├── packages
+    │   │   │   │   │   ├── a
+    │   │   │   │   │   │   └── package.json
+    │   │   │   │   │   └── b
+    │   │   │   │   │       └── package.json
+    │   │   │   │   └── yarn.lock
+    │   │   │   ├── composable_config
+    │   │   │   │   ├── apps
+    │   │   │   │   │   ├── add-keys
+    │   │   │   │   │   │   ├── out
+    │   │   │   │   │   │   ├── package.json
+    │   │   │   │   │   │   ├── src
+    │   │   │   │   │   │   │   └── foo.txt
+    │   │   │   │   │   │   └── turbo.json
+    │   │   │   │   │   ├── add-tasks
+    │   │   │   │   │   │   ├── out
+    │   │   │   │   │   │   ├── package.json
+    │   │   │   │   │   │   ├── src
+    │   │   │   │   │   │   │   └── foo.txt
+    │   │   │   │   │   │   └── turbo.json
+    │   │   │   │   │   ├── bad-json
+    │   │   │   │   │   │   └── package.json
+    │   │   │   │   │   ├── cached
+    │   │   │   │   │   │   ├── out
+    │   │   │   │   │   │   ├── package.json
+    │   │   │   │   │   │   └── turbo.json
+    │   │   │   │   │   ├── config-change
+    │   │   │   │   │   │   ├── package.json
+    │   │   │   │   │   │   ├── src
+    │   │   │   │   │   │   │   └── foo.txt
+    │   │   │   │   │   │   ├── turbo-changed.json
+    │   │   │   │   │   │   └── turbo.json
+    │   │   │   │   │   ├── cross-workspace
+    │   │   │   │   │   │   ├── package.json
+    │   │   │   │   │   │   └── turbo.json
+    │   │   │   │   │   ├── invalid-config
+    │   │   │   │   │   │   ├── package.json
+    │   │   │   │   │   │   └── turbo.json
+    │   │   │   │   │   ├── missing-workspace-config
+    │   │   │   │   │   │   ├── out
+    │   │   │   │   │   │   ├── package.json
+    │   │   │   │   │   │   └── src
+    │   │   │   │   │   │       └── foo.txt
+    │   │   │   │   │   ├── omit-keys
+    │   │   │   │   │   │   ├── out
+    │   │   │   │   │   │   ├── package.json
+    │   │   │   │   │   │   ├── src
+    │   │   │   │   │   │   │   └── foo.txt
+    │   │   │   │   │   │   └── turbo.json
+    │   │   │   │   │   ├── override-values
+    │   │   │   │   │   │   ├── lib
+    │   │   │   │   │   │   ├── out
+    │   │   │   │   │   │   ├── package.json
+    │   │   │   │   │   │   ├── src
+    │   │   │   │   │   │   │   └── foo.txt
+    │   │   │   │   │   │   └── turbo.json
+    │   │   │   │   │   └── persistent
+    │   │   │   │   │       ├── package.json
+    │   │   │   │   │       └── turbo.json
+    │   │   │   │   ├── package.json
+    │   │   │   │   ├── package-lock.json
+    │   │   │   │   ├── packages
+    │   │   │   │   │   └── blank-pkg
+    │   │   │   │   │       ├── package.json
+    │   │   │   │   │       └── turbo.json
+    │   │   │   │   └── turbo.json
+    │   │   │   ├── dir_globs
+    │   │   │   │   ├── apps
+    │   │   │   │   │   └── my-app
+    │   │   │   │   │       └── package.json
+    │   │   │   │   ├── package.json
+    │   │   │   │   ├── packages
+    │   │   │   │   │   └── util
+    │   │   │   │   │       ├── package.json
+    │   │   │   │   │       └── src
+    │   │   │   │   │           └── boo.txt
+    │   │   │   │   └── turbo.json
+    │   │   │   ├── find_turbo
+    │   │   │   │   ├── hoisted
+    │   │   │   │   │   ├── node_modules
+    │   │   │   │   │   │   ├── turbo-darwin-64
+    │   │   │   │   │   │   │   ├── bin
+    │   │   │   │   │   │   │   │   └── turbo
+    │   │   │   │   │   │   │   └── package.json
+    │   │   │   │   │   │   ├── turbo-darwin-arm64
+    │   │   │   │   │   │   │   ├── bin
+    │   │   │   │   │   │   │   │   └── turbo
+    │   │   │   │   │   │   │   └── package.json
+    │   │   │   │   │   │   ├── turbo-linux-64
+    │   │   │   │   │   │   │   ├── bin
+    │   │   │   │   │   │   │   │   └── turbo
+    │   │   │   │   │   │   │   └── package.json
+    │   │   │   │   │   │   ├── turbo-linux-arm64
+    │   │   │   │   │   │   │   ├── bin
+    │   │   │   │   │   │   │   │   └── turbo
+    │   │   │   │   │   │   │   └── package.json
+    │   │   │   │   │   │   ├── turbo-windows-64
+    │   │   │   │   │   │   │   ├── bin
+    │   │   │   │   │   │   │   └── package.json
+    │   │   │   │   │   │   └── turbo-windows-arm64
+    │   │   │   │   │   │       ├── bin
+    │   │   │   │   │   │       └── package.json
+    │   │   │   │   │   ├── package.json
+    │   │   │   │   │   └── turbo.json
+    │   │   │   │   ├── linked
+    │   │   │   │   │   ├── node_modules
+    │   │   │   │   │   │   └── turbo -> .pnpm/turbo@1.0.0/node_modules/turbo
+    │   │   │   │   │   ├── package.json
+    │   │   │   │   │   └── turbo.json
+    │   │   │   │   ├── nested
+    │   │   │   │   │   ├── node_modules
+    │   │   │   │   │   │   └── turbo
+    │   │   │   │   │   │       ├── bin
+    │   │   │   │   │   │       │   └── turbo
+    │   │   │   │   │   │       ├── node_modules
+    │   │   │   │   │   │       │   ├── turbo-darwin-64
+    │   │   │   │   │   │       │   │   ├── bin
+    │   │   │   │   │   │       │   │   │   └── turbo
+    │   │   │   │   │   │       │   │   └── package.json
+    │   │   │   │   │   │       │   ├── turbo-darwin-arm64
+    │   │   │   │   │   │       │   │   ├── bin
+    │   │   │   │   │   │       │   │   │   └── turbo
+    │   │   │   │   │   │       │   │   └── package.json
+    │   │   │   │   │   │       │   ├── turbo-linux-64
+    │   │   │   │   │   │       │   │   ├── bin
+    │   │   │   │   │   │       │   │   │   └── turbo
+    │   │   │   │   │   │       │   │   └── package.json
+    │   │   │   │   │   │       │   ├── turbo-linux-arm64
+    │   │   │   │   │   │       │   │   ├── bin
+    │   │   │   │   │   │       │   │   │   └── turbo
+    │   │   │   │   │   │       │   │   └── package.json
+    │   │   │   │   │   │       │   ├── turbo-windows-64
+    │   │   │   │   │   │       │   │   ├── bin
+    │   │   │   │   │   │       │   │   └── package.json
+    │   │   │   │   │   │       │   └── turbo-windows-arm64
+    │   │   │   │   │   │       │       ├── bin
+    │   │   │   │   │   │       │       └── package.json
+    │   │   │   │   │   │       └── package.json
+    │   │   │   │   │   ├── package.json
+    │   │   │   │   │   └── turbo.json
+    │   │   │   │   ├── self
+    │   │   │   │   │   ├── node_modules
+    │   │   │   │   │   │   ├── turbo-darwin-64
+    │   │   │   │   │   │   │   ├── bin
+    │   │   │   │   │   │   │   │   └── turbo
+    │   │   │   │   │   │   │   └── package.json
+    │   │   │   │   │   │   ├── turbo-darwin-arm64
+    │   │   │   │   │   │   │   ├── bin
+    │   │   │   │   │   │   │   │   └── turbo
+    │   │   │   │   │   │   │   └── package.json
+    │   │   │   │   │   │   ├── turbo-linux-64
+    │   │   │   │   │   │   │   ├── bin
+    │   │   │   │   │   │   │   │   └── turbo
+    │   │   │   │   │   │   │   └── package.json
+    │   │   │   │   │   │   ├── turbo-linux-arm64
+    │   │   │   │   │   │   │   ├── bin
+    │   │   │   │   │   │   │   │   └── turbo
+    │   │   │   │   │   │   │   └── package.json
+    │   │   │   │   │   │   ├── turbo-windows-64
+    │   │   │   │   │   │   │   ├── bin
+    │   │   │   │   │   │   │   └── package.json
+    │   │   │   │   │   │   └── turbo-windows-arm64
+    │   │   │   │   │   │       ├── bin
+    │   │   │   │   │   │       └── package.json
+    │   │   │   │   │   ├── package.json
+    │   │   │   │   │   └── turbo.json
+    │   │   │   │   ├── unplugged
+    │   │   │   │   │   ├── package.json
+    │   │   │   │   │   └── turbo.json
+    │   │   │   │   ├── unplugged_env_moved
+    │   │   │   │   │   ├── package.json
+    │   │   │   │   │   └── turbo.json
+    │   │   │   │   └── unplugged_moved
+    │   │   │   │       ├── package.json
+    │   │   │   │       └── turbo.json
+    │   │   │   ├── framework_inference
+    │   │   │   │   ├── apps
+    │   │   │   │   │   └── docs
+    │   │   │   │   │       └── package.json
+    │   │   │   │   ├── package.json
+    │   │   │   │   ├── package-lock.json
+    │   │   │   │   └── turbo.json
+    │   │   │   ├── global_deps
+    │   │   │   │   ├── apps
+    │   │   │   │   │   └── my-app
+    │   │   │   │   │       └── package.json
+    │   │   │   │   ├── global_deps
+    │   │   │   │   │   ├── bar.txt
+    │   │   │   │   │   └── foo.txt
+    │   │   │   │   ├── package.json
+    │   │   │   │   ├── packages
+    │   │   │   │   │   ├── another
+    │   │   │   │   │   │   └── package.json
+    │   │   │   │   │   └── util
+    │   │   │   │   │       └── package.json
+    │   │   │   │   ├── README.md
+    │   │   │   │   └── turbo.json
+    │   │   │   ├── inference
+    │   │   │   │   ├── has_workspaces
+    │   │   │   │   │   ├── apps
+    │   │   │   │   │   │   ├── docs
+    │   │   │   │   │   │   │   └── package.json
+    │   │   │   │   │   │   └── web
+    │   │   │   │   │   │       └── package.json
+    │   │   │   │   │   ├── crates
+    │   │   │   │   │   │   └── super-crate
+    │   │   │   │   │   │       └── tests
+    │   │   │   │   │   │           └── test-package
+    │   │   │   │   │   │               └── package.json
+    │   │   │   │   │   ├── package.json
+    │   │   │   │   │   ├── packages
+    │   │   │   │   │   │   ├── eslint-config-custom
+    │   │   │   │   │   │   │   └── package.json
+    │   │   │   │   │   │   └── ui-library
+    │   │   │   │   │   │       ├── package.json
+    │   │   │   │   │   │       ├── src
+    │   │   │   │   │   │       └── turbo.json
+    │   │   │   │   │   └── turbo.json
+    │   │   │   │   ├── nested_workspaces
+    │   │   │   │   │   ├── outer
+    │   │   │   │   │   │   ├── apps
+    │   │   │   │   │   │   │   ├── docs
+    │   │   │   │   │   │   │   │   └── package.json
+    │   │   │   │   │   │   │   └── web
+    │   │   │   │   │   │   │       └── package.json
+    │   │   │   │   │   │   ├── inner
+    │   │   │   │   │   │   │   ├── apps
+    │   │   │   │   │   │   │   │   ├── docs
+    │   │   │   │   │   │   │   │   │   └── package.json
+    │   │   │   │   │   │   │   │   └── web
+    │   │   │   │   │   │   │   │       └── package.json
+    │   │   │   │   │   │   │   ├── package.json
+    │   │   │   │   │   │   │   ├── packages
+    │   │   │   │   │   │   │   │   ├── eslint-config-custom
+    │   │   │   │   │   │   │   │   │   └── package.json
+    │   │   │   │   │   │   │   │   └── ui-library
+    │   │   │   │   │   │   │   │       └── package.json
+    │   │   │   │   │   │   │   └── turbo.json
+    │   │   │   │   │   │   ├── inner-no-turbo
+    │   │   │   │   │   │   │   ├── apps
+    │   │   │   │   │   │   │   │   ├── docs
+    │   │   │   │   │   │   │   │   │   └── package.json
+    │   │   │   │   │   │   │   │   └── web
+    │   │   │   │   │   │   │   │       └── package.json
+    │   │   │   │   │   │   │   ├── package.json
+    │   │   │   │   │   │   │   └── packages
+    │   │   │   │   │   │   │       ├── eslint-config-custom
+    │   │   │   │   │   │   │       │   └── package.json
+    │   │   │   │   │   │   │       └── ui-library
+    │   │   │   │   │   │   │           └── package.json
+    │   │   │   │   │   │   ├── package.json
+    │   │   │   │   │   │   ├── package-lock.json
+    │   │   │   │   │   │   ├── packages
+    │   │   │   │   │   │   │   ├── eslint-config-custom
+    │   │   │   │   │   │   │   │   └── package.json
+    │   │   │   │   │   │   │   └── ui-library
+    │   │   │   │   │   │   │       └── package.json
+    │   │   │   │   │   │   └── turbo.json
+    │   │   │   │   │   ├── outer-no-turbo
+    │   │   │   │   │   │   ├── apps
+    │   │   │   │   │   │   │   ├── docs
+    │   │   │   │   │   │   │   │   └── package.json
+    │   │   │   │   │   │   │   └── web
+    │   │   │   │   │   │   │       └── package.json
+    │   │   │   │   │   │   ├── inner
+    │   │   │   │   │   │   │   ├── apps
+    │   │   │   │   │   │   │   │   ├── docs
+    │   │   │   │   │   │   │   │   │   └── package.json
+    │   │   │   │   │   │   │   │   └── web
+    │   │   │   │   │   │   │   │       └── package.json
+    │   │   │   │   │   │   │   ├── package.json
+    │   │   │   │   │   │   │   ├── packages
+    │   │   │   │   │   │   │   │   ├── eslint-config-custom
+    │   │   │   │   │   │   │   │   │   └── package.json
+    │   │   │   │   │   │   │   │   └── ui-library
+    │   │   │   │   │   │   │   │       └── package.json
+    │   │   │   │   │   │   │   └── turbo.json
+    │   │   │   │   │   │   ├── inner-no-turbo
+    │   │   │   │   │   │   │   ├── apps
+    │   │   │   │   │   │   │   │   ├── docs
+    │   │   │   │   │   │   │   │   │   └── package.json
+    │   │   │   │   │   │   │   │   └── web
+    │   │   │   │   │   │   │   │       └── package.json
+    │   │   │   │   │   │   │   ├── package.json
+    │   │   │   │   │   │   │   └── packages
+    │   │   │   │   │   │   │       ├── eslint-config-custom
+    │   │   │   │   │   │   │       │   └── package.json
+    │   │   │   │   │   │   │       └── ui-library
+    │   │   │   │   │   │   │           └── package.json
+    │   │   │   │   │   │   ├── package.json
+    │   │   │   │   │   │   ├── package-lock.json
+    │   │   │   │   │   │   └── packages
+    │   │   │   │   │   │       ├── eslint-config-custom
+    │   │   │   │   │   │       │   └── package.json
+    │   │   │   │   │   │       └── ui-library
+    │   │   │   │   │   │           └── package.json
+    │   │   │   │   │   └── README.md
+    │   │   │   │   └── no_workspaces
+    │   │   │   │       ├── package.json
+    │   │   │   │       └── parent
+    │   │   │   │           ├── child
+    │   │   │   │           │   └── package.json
+    │   │   │   │           └── package.json
+    │   │   │   ├── lockfile_aware_caching
+    │   │   │   │   ├── apps
+    │   │   │   │   │   ├── a
+    │   │   │   │   │   │   └── package.json
+    │   │   │   │   │   └── b
+    │   │   │   │   │       └── package.json
+    │   │   │   │   └── turbo.json
+    │   │   │   ├── monorepo_dependency_error
+    │   │   │   │   ├── apps
+    │   │   │   │   │   ├── my-app
+    │   │   │   │   │   │   └── package.json
+    │   │   │   │   │   ├── other-app
+    │   │   │   │   │   │   └── package.json
+    │   │   │   │   │   └── some-lib
+    │   │   │   │   │       └── package.json
+    │   │   │   │   ├── package.json
+    │   │   │   │   └── turbo.json
+    │   │   │   ├── monorepo_no_turbo_json
+    │   │   │   │   ├── apps
+    │   │   │   │   │   └── my-app
+    │   │   │   │   │       └── package.json
+    │   │   │   │   ├── bar.txt
+    │   │   │   │   ├── foo.txt
+    │   │   │   │   ├── package.json
+    │   │   │   │   └── packages
+    │   │   │   │       ├── another
+    │   │   │   │       │   └── package.json
+    │   │   │   │       └── util
+    │   │   │   │           └── package.json
+    │   │   │   ├── monorepo_one_script_error
+    │   │   │   │   ├── apps
+    │   │   │   │   │   └── my-app
+    │   │   │   │   │       └── package.json
+    │   │   │   │   ├── package.json
+    │   │   │   │   └── turbo.json
+    │   │   │   ├── monorepo_with_root_dep
+    │   │   │   │   ├── apps
+    │   │   │   │   │   ├── docs
+    │   │   │   │   │   │   ├── package.json
+    │   │   │   │   │   │   └── turbo.json
+    │   │   │   │   │   └── web
+    │   │   │   │   │       └── package.json
+    │   │   │   │   ├── package.json
+    │   │   │   │   ├── packages
+    │   │   │   │   │   ├── shared
+    │   │   │   │   │   │   └── package.json
+    │   │   │   │   │   └── util
+    │   │   │   │   │       └── package.json
+    │   │   │   │   ├── patches
+    │   │   │   │   │   └── is-number@7.0.0.patch
+    │   │   │   │   ├── pnpm-lock.yaml
+    │   │   │   │   ├── pnpm-workspace.yaml
+    │   │   │   │   └── turbo.json
+    │   │   │   ├── nested_packages
+    │   │   │   │   ├── apps
+    │   │   │   │   │   └── my-app
+    │   │   │   │   │       └── package.json
+    │   │   │   │   ├── package.json
+    │   │   │   │   └── turbo.json
+    │   │   │   ├── ordered
+    │   │   │   │   ├── apps
+    │   │   │   │   │   └── my-app
+    │   │   │   │   │       └── package.json
+    │   │   │   │   ├── package.json
+    │   │   │   │   ├── packages
+    │   │   │   │   │   └── util
+    │   │   │   │   │       └── package.json
+    │   │   │   │   └── turbo.json
+    │   │   │   ├── persistent_dependencies
+    │   │   │   │   ├── 10-too-many
+    │   │   │   │   │   ├── apps
+    │   │   │   │   │   │   ├── one
+    │   │   │   │   │   │   │   └── package.json
+    │   │   │   │   │   │   └── two
+    │   │   │   │   │   │       └── package.json
+    │   │   │   │   │   ├── package.json
+    │   │   │   │   │   └── turbo.json
+    │   │   │   │   ├── 1-topological
+    │   │   │   │   │   ├── apps
+    │   │   │   │   │   │   └── app-a
+    │   │   │   │   │   │       └── package.json
+    │   │   │   │   │   ├── package.json
+    │   │   │   │   │   ├── packages
+    │   │   │   │   │   │   └── pkg-a
+    │   │   │   │   │   │       └── package.json
+    │   │   │   │   │   └── turbo.json
+    │   │   │   │   ├── 2-same-workspace
+    │   │   │   │   │   ├── apps
+    │   │   │   │   │   │   └── app-a
+    │   │   │   │   │   │       └── package.json
+    │   │   │   │   │   ├── package.json
+    │   │   │   │   │   └── turbo.json
+    │   │   │   │   ├── 3-workspace-specific
+    │   │   │   │   │   ├── apps
+    │   │   │   │   │   │   └── app-a
+    │   │   │   │   │   │       └── package.json
+    │   │   │   │   │   ├── package.json
+    │   │   │   │   │   ├── packages
+    │   │   │   │   │   │   └── pkg-a
+    │   │   │   │   │   │       └── package.json
+    │   │   │   │   │   └── turbo.json
+    │   │   │   │   ├── 4-cross-workspace
+    │   │   │   │   │   ├── apps
+    │   │   │   │   │   │   └── app-a
+    │   │   │   │   │   │       └── package.json
+    │   │   │   │   │   ├── package.json
+    │   │   │   │   │   ├── packages
+    │   │   │   │   │   │   └── pkg-a
+    │   │   │   │   │   │       └── package.json
+    │   │   │   │   │   └── turbo.json
+    │   │   │   │   ├── 5-root-workspace
+    │   │   │   │   │   ├── apps
+    │   │   │   │   │   │   └── app-a
+    │   │   │   │   │   │       └── package.json
+    │   │   │   │   │   ├── package.json
+    │   │   │   │   │   └── turbo.json
+    │   │   │   │   ├── 6-topological-unimplemented
+    │   │   │   │   │   ├── apps
+    │   │   │   │   │   │   └── app-a
+    │   │   │   │   │   │       └── package.json
+    │   │   │   │   │   ├── package.json
+    │   │   │   │   │   ├── packages
+    │   │   │   │   │   │   └── pkg-a
+    │   │   │   │   │   │       └── package.json
+    │   │   │   │   │   └── turbo.json
+    │   │   │   │   ├── 7-topological-nested
+    │   │   │   │   │   ├── apps
+    │   │   │   │   │   │   └── app-a
+    │   │   │   │   │   │       └── package.json
+    │   │   │   │   │   ├── package.json
+    │   │   │   │   │   ├── packages
+    │   │   │   │   │   │   ├── pkg-a
+    │   │   │   │   │   │   │   └── package.json
+    │   │   │   │   │   │   └── pkg-b
+    │   │   │   │   │   │       └── package.json
+    │   │   │   │   │   └── turbo.json
+    │   │   │   │   ├── 8-topological-with-extra
+    │   │   │   │   │   ├── apps
+    │   │   │   │   │   │   └── app-a
+    │   │   │   │   │   │       └── package.json
+    │   │   │   │   │   ├── package.json
+    │   │   │   │   │   ├── packages
+    │   │   │   │   │   │   ├── pkg-a
+    │   │   │   │   │   │   │   └── package.json
+    │   │   │   │   │   │   ├── pkg-b
+    │   │   │   │   │   │   │   └── package.json
+    │   │   │   │   │   │   └── pkg-z
+    │   │   │   │   │   │       └── package.json
+    │   │   │   │   │   └── turbo.json
+    │   │   │   │   └── 9-cross-workspace-nested
+    │   │   │   │       ├── apps
+    │   │   │   │       │   ├── app-a
+    │   │   │   │       │   │   └── package.json
+    │   │   │   │       │   ├── app-b
+    │   │   │   │       │   │   └── package.json
+    │   │   │   │       │   ├── app-c
+    │   │   │   │       │   │   └── package.json
+    │   │   │   │       │   └── app-z
+    │   │   │   │       │       └── package.json
+    │   │   │   │       ├── package.json
+    │   │   │   │       └── turbo.json
+    │   │   │   ├── root_deps
+    │   │   │   │   ├── apps
+    │   │   │   │   │   └── my-app
+    │   │   │   │   │       └── package.json
+    │   │   │   │   ├── package.json
+    │   │   │   │   ├── packages
+    │   │   │   │   │   ├── another
+    │   │   │   │   │   │   └── package.json
+    │   │   │   │   │   ├── util
+    │   │   │   │   │   │   └── package.json
+    │   │   │   │   │   └── yet-another
+    │   │   │   │   │       └── package.json
+    │   │   │   │   └── turbo.json
+    │   │   │   ├── run_logging
+    │   │   │   │   ├── app-a
+    │   │   │   │   │   └── package.json
+    │   │   │   │   ├── package.json
+    │   │   │   │   └── turbo.json
+    │   │   │   ├── single_package
+    │   │   │   │   ├── package.json
+    │   │   │   │   ├── somefile.txt
+    │   │   │   │   └── turbo.json
+    │   │   │   ├── strict_env_vars
+    │   │   │   │   ├── apps
+    │   │   │   │   │   └── my-app
+    │   │   │   │   │       ├── build.sh
+    │   │   │   │   │       └── package.json
+    │   │   │   │   ├── package.json
+    │   │   │   │   └── turbo.json
+    │   │   │   ├── task_dependencies
+    │   │   │   │   ├── complex
+    │   │   │   │   │   ├── app-a
+    │   │   │   │   │   │   └── package.json
+    │   │   │   │   │   ├── app-b
+    │   │   │   │   │   │   └── package.json
+    │   │   │   │   │   ├── lib-a
+    │   │   │   │   │   │   └── package.json
+    │   │   │   │   │   ├── lib-b
+    │   │   │   │   │   │   └── package.json
+    │   │   │   │   │   ├── lib-c
+    │   │   │   │   │   │   └── package.json
+    │   │   │   │   │   ├── lib-d
+    │   │   │   │   │   │   └── package.json
+    │   │   │   │   │   ├── package.json
+    │   │   │   │   │   └── turbo.json
+    │   │   │   │   ├── invalid-dependency
+    │   │   │   │   │   ├── app-a
+    │   │   │   │   │   │   └── package.json
+    │   │   │   │   │   ├── app-b
+    │   │   │   │   │   │   └── package.json
+    │   │   │   │   │   ├── lib-a
+    │   │   │   │   │   │   └── package.json
+    │   │   │   │   │   ├── lib-b
+    │   │   │   │   │   │   └── package.json
+    │   │   │   │   │   ├── lib-c
+    │   │   │   │   │   │   └── package.json
+    │   │   │   │   │   ├── lib-d
+    │   │   │   │   │   │   └── package.json
+    │   │   │   │   │   ├── package.json
+    │   │   │   │   │   └── turbo.json
+    │   │   │   │   ├── overwriting
+    │   │   │   │   │   ├── package.json
+    │   │   │   │   │   ├── turbo.json
+    │   │   │   │   │   ├── workspace-a
+    │   │   │   │   │   │   └── package.json
+    │   │   │   │   │   └── workspace-b
+    │   │   │   │   │       └── package.json
+    │   │   │   │   ├── query
+    │   │   │   │   │   ├── app-a
+    │   │   │   │   │   │   └── package.json
+    │   │   │   │   │   ├── app-b
+    │   │   │   │   │   │   └── package.json
+    │   │   │   │   │   ├── lib-a
+    │   │   │   │   │   │   └── package.json
+    │   │   │   │   │   ├── lib-b
+    │   │   │   │   │   │   └── package.json
+    │   │   │   │   │   ├── lib-c
+    │   │   │   │   │   │   └── package.json
+    │   │   │   │   │   ├── lib-d
+    │   │   │   │   │   │   └── package.json
+    │   │   │   │   │   ├── package.json
+    │   │   │   │   │   └── turbo.json
+    │   │   │   │   ├── root-to-workspace
+    │   │   │   │   │   ├── package.json
+    │   │   │   │   │   ├── packages
+    │   │   │   │   │   │   └── lib-a
+    │   │   │   │   │   │       └── package.json
+    │   │   │   │   │   └── turbo.json
+    │   │   │   │   ├── topological
+    │   │   │   │   │   ├── apps
+    │   │   │   │   │   │   └── my-app
+    │   │   │   │   │   │       └── package.json
+    │   │   │   │   │   ├── package.json
+    │   │   │   │   │   ├── packages
+    │   │   │   │   │   │   └── util
+    │   │   │   │   │   │       └── package.json
+    │   │   │   │   │   └── turbo.json
+    │   │   │   │   └── workspace-tasks
+    │   │   │   │       ├── package.json
+    │   │   │   │       ├── turbo.json
+    │   │   │   │       ├── workspace-a
+    │   │   │   │       │   └── package.json
+    │   │   │   │       └── workspace-b
+    │   │   │   │           └── package.json
+    │   │   │   ├── turbo-configs
+    │   │   │   │   ├── abs-path-global-deps.json
+    │   │   │   │   ├── abs-path-global-deps-win.json
+    │   │   │   │   ├── abs-path-inputs.json
+    │   │   │   │   ├── abs-path-inputs-win.json
+    │   │   │   │   ├── abs-path-outputs.json
+    │   │   │   │   ├── abs-path-outputs-win.json
+    │   │   │   │   ├── gitignored-inputs.json
+    │   │   │   │   ├── interactive.json
+    │   │   │   │   ├── interruptible-but-not-persistent.json
+    │   │   │   │   ├── invalid-env-var.json
+    │   │   │   │   ├── package-task.json
+    │   │   │   │   ├── parse-error.json
+    │   │   │   │   ├── spaces-failure.json
+    │   │   │   │   ├── strict_env_vars
+    │   │   │   │   │   ├── all.json
+    │   │   │   │   │   ├── global_pt-empty.json
+    │   │   │   │   │   ├── global_pt.json
+    │   │   │   │   │   ├── task_pt-empty.json
+    │   │   │   │   │   └── task_pt.json
+    │   │   │   │   └── syntax-error.json
+    │   │   │   ├── turbo_trace
+    │   │   │   │   ├── bar.js
+    │   │   │   │   ├── button.tsx
+    │   │   │   │   ├── circular2.ts
+    │   │   │   │   ├── circular.ts
+    │   │   │   │   ├── foo.js
+    │   │   │   │   ├── invalid.ts
+    │   │   │   │   ├── main.ts
+    │   │   │   │   ├── package.json
+    │   │   │   │   ├── README.md
+    │   │   │   │   └── turbo.json
+    │   │   │   └── with-pkg-deps
+    │   │   │       ├── apps
+    │   │   │       │   └── my-app
+    │   │   │       │       └── package.json
+    │   │   │       ├── package.json
+    │   │   │       ├── packages
+    │   │   │       │   ├── another
+    │   │   │       │   │   └── package.json
+    │   │   │       │   └── util
+    │   │   │       │       └── package.json
+    │   │   │       └── turbo.json
+    │   │   ├── package.json
+    │   │   ├── README.md
+    │   │   ├── tests
+    │   │   │   ├── affected-rdeps.t
+    │   │   │   ├── affected.t
+    │   │   │   ├── bad-flag.t
+    │   │   │   ├── bad-turbo-json.t
+    │   │   │   ├── command-bin.t
+    │   │   │   ├── command-link.t
+    │   │   │   ├── command-login.t
+    │   │   │   ├── command-logout.t
+    │   │   │   ├── command-ls.t
+    │   │   │   ├── command-query.t
+    │   │   │   ├── command-telemetry.t
+    │   │   │   ├── command-unlink.t
+    │   │   │   ├── command-version.t
+    │   │   │   ├── config.t
+    │   │   │   ├── conflicting-flags.t
+    │   │   │   ├── daemon
+    │   │   │   │   └── verbosity.t
+    │   │   │   ├── dry-json
+    │   │   │   │   ├── monorepo-no-changes.t
+    │   │   │   │   ├── monorepo.t
+    │   │   │   │   ├── README.md
+    │   │   │   │   ├── single-package-no-change.t
+    │   │   │   │   ├── single-package-no-config.t
+    │   │   │   │   ├── single-package.t
+    │   │   │   │   └── single-package-with-deps.t
+    │   │   │   ├── dry-run.t
+    │   │   │   ├── edit-turbo-json
+    │   │   │   │   ├── fixture-configs
+    │   │   │   │   │   ├── 1-baseline.json
+    │   │   │   │   │   ├── 2-update-pipeline.json
+    │   │   │   │   │   ├── 3-update-global-env.json
+    │   │   │   │   │   ├── 4-update-global-deps.json
+    │   │   │   │   │   ├── 5-update-global-deps-materially.json
+    │   │   │   │   │   ├── 6-update-passthrough-env.json
+    │   │   │   │   │   ├── a-baseline.json
+    │   │   │   │   │   ├── b-change-only-my-app.json
+    │   │   │   │   │   ├── c-my-app-depends-on.json
+    │   │   │   │   │   ├── d-depends-on-util.json
+    │   │   │   │   │   └── e-depends-on-util-but-modified.json
+    │   │   │   │   ├── global.t
+    │   │   │   │   └── task.t
+    │   │   │   ├── engines.t
+    │   │   │   ├── filter-run.t
+    │   │   │   ├── find-correct-turbo.t
+    │   │   │   ├── find-turbo
+    │   │   │   │   ├── hard-mode.t
+    │   │   │   │   ├── hoisted.t
+    │   │   │   │   ├── linked.t
+    │   │   │   │   ├── nested.t
+    │   │   │   │   ├── self.t
+    │   │   │   │   ├── set_link.sh
+    │   │   │   │   ├── setup.sh
+    │   │   │   │   ├── set_version.sh
+    │   │   │   │   ├── unplugged-env-moved.t
+    │   │   │   │   ├── unplugged-moved.t
+    │   │   │   │   └── unplugged.t
+    │   │   │   ├── framework-inference.t
+    │   │   │   ├── global-deps.t
+    │   │   │   ├── global-env.t
+    │   │   │   ├── inference
+    │   │   │   │   ├── has-workspaces.t
+    │   │   │   │   ├── nested_workspaces_setup.sh
+    │   │   │   │   ├── nested-workspaces.t
+    │   │   │   │   ├── no_workspaces_setup.sh
+    │   │   │   │   ├── no-workspaces.t
+    │   │   │   │   └── package-lock.json
+    │   │   │   ├── interactive.t
+    │   │   │   ├── invalid-package-json.t
+    │   │   │   ├── lockfile-aware-caching
+    │   │   │   │   ├── berry
+    │   │   │   │   │   ├── package.json
+    │   │   │   │   │   ├── turbo-bump.patch
+    │   │   │   │   │   ├── yarn.lock
+    │   │   │   │   │   └── yarn-lock.patch
+    │   │   │   │   ├── berry.t
+    │   │   │   │   ├── new-package.t
+    │   │   │   │   ├── npm
+    │   │   │   │   │   ├── package.json
+    │   │   │   │   │   ├── package-lock.json
+    │   │   │   │   │   ├── package-lock.patch
+    │   │   │   │   │   └── turbo-bump.patch
+    │   │   │   │   ├── npm.t
+    │   │   │   │   ├── pnpm
+    │   │   │   │   │   ├── package.json
+    │   │   │   │   │   ├── pnpm-lock.patch
+    │   │   │   │   │   ├── pnpm-lock.yaml
+    │   │   │   │   │   ├── pnpm-workspace.yaml
+    │   │   │   │   │   └── turbo-bump.patch
+    │   │   │   │   ├── pnpm.t
+    │   │   │   │   ├── setup.sh
+    │   │   │   │   ├── yarn
+    │   │   │   │   │   ├── new-lock
+    │   │   │   │   │   ├── package.json
+    │   │   │   │   │   ├── turbo-bump.patch
+    │   │   │   │   │   ├── yarn.lock
+    │   │   │   │   │   └── yarn-lock.patch
+    │   │   │   │   └── yarn.t
+    │   │   │   ├── no-args.t
+    │   │   │   ├── package-manager.t
+    │   │   │   ├── persistent-dependencies
+    │   │   │   │   ├── 10-too-many.t
+    │   │   │   │   ├── 1-topological.t
+    │   │   │   │   ├── 2-same-workspace.t
+    │   │   │   │   ├── 3-workspace-specific.t
+    │   │   │   │   ├── 4-cross-workspace.t
+    │   │   │   │   ├── 5-root-workspace.t
+    │   │   │   │   ├── 6-topological-unimplemented.t
+    │   │   │   │   ├── 7-topological-nested.t
+    │   │   │   │   ├── 8-topological-with-extra.t
+    │   │   │   │   └── 9-cross-workspace-nested.t
+    │   │   │   ├── pkg-inference.t
+    │   │   │   ├── prune
+    │   │   │   │   ├── composable-config.t
+    │   │   │   │   ├── docker.t
+    │   │   │   │   ├── includes-root-deps.t
+    │   │   │   │   ├── out-dir.t
+    │   │   │   │   ├── produces-valid-turbo-json.t
+    │   │   │   │   ├── resolutions.t
+    │   │   │   │   └── yarn-pnp.t
+    │   │   │   ├── query
+    │   │   │   │   ├── tasks.t
+    │   │   │   │   ├── validation.t
+    │   │   │   │   └── variables.t
+    │   │   │   ├── recursive-turbo.t
+    │   │   │   ├── run
+    │   │   │   │   ├── absolute-path-error.t
+    │   │   │   │   ├── allow-no-root-turbo.t
+    │   │   │   │   ├── big-status.t
+    │   │   │   │   ├── continue.t
+    │   │   │   │   ├── daemon-build.disabled
+    │   │   │   │   ├── force.t
+    │   │   │   │   ├── gitignored-inputs.t
+    │   │   │   │   ├── globs.t
+    │   │   │   │   ├── graph.t
+    │   │   │   │   ├── infer-pkg.t
+    │   │   │   │   ├── missing-tasks.t
+    │   │   │   │   ├── no-root-turbo.t
+    │   │   │   │   ├── one-script-error.t
+    │   │   │   │   ├── path-with-spaces.t
+    │   │   │   │   ├── profile.t
+    │   │   │   │   ├── single-package
+    │   │   │   │   │   ├── dry-run-pnpm.t
+    │   │   │   │   │   ├── dry-run.t
+    │   │   │   │   │   ├── graph.t
+    │   │   │   │   │   ├── no-config.t
+    │   │   │   │   │   ├── run.t
+    │   │   │   │   │   ├── run-yarn.t
+    │   │   │   │   │   ├── with-deps-dry-run.t
+    │   │   │   │   │   ├── with-deps-graph.t
+    │   │   │   │   │   └── with-deps-run.t
+    │   │   │   │   └── unnamed-packages.t
+    │   │   │   ├── run-caching
+    │   │   │   │   ├── cache-state.t
+    │   │   │   │   ├── excluded-inputs
+    │   │   │   │   │   ├── excluded-inputs.t
+    │   │   │   │   │   └── turbo.json
+    │   │   │   │   ├── global-deps.t
+    │   │   │   │   ├── remote-caching-enable.t
+    │   │   │   │   └── root-deps.t
+    │   │   │   ├── run-logging
+    │   │   │   │   ├── errors-only.t
+    │   │   │   │   ├── log-order-github.t
+    │   │   │   │   ├── log-order-grouped.t
+    │   │   │   │   ├── log-order-stream.t
+    │   │   │   │   ├── log-prefix.t
+    │   │   │   │   └── verbosity.t
+    │   │   │   ├── run-summary
+    │   │   │   │   ├── discovery.t
+    │   │   │   │   ├── enable.t
+    │   │   │   │   ├── error.t
+    │   │   │   │   ├── monorepo.t
+    │   │   │   │   ├── single-package.t
+    │   │   │   │   ├── sorting-deps.t
+    │   │   │   │   └── strict-env.t
+    │   │   │   ├── shim-errors.t
+    │   │   │   ├── spaces-failure.t
+    │   │   │   ├── strict-env-vars
+    │   │   │   │   ├── dry-json.t
+    │   │   │   │   ├── global-hash-infer.t
+    │   │   │   │   ├── global-hash-loose.t
+    │   │   │   │   ├── global-hash-no-value.t
+    │   │   │   │   ├── global-hash-strict.t
+    │   │   │   │   ├── usage-loose.t
+    │   │   │   │   └── usage-strict.t
+    │   │   │   ├── task-dependencies
+    │   │   │   │   ├── complex.t
+    │   │   │   │   ├── overwriting.t
+    │   │   │   │   ├── root-workspace.t
+    │   │   │   │   ├── topological.t
+    │   │   │   │   └── workspace-tasks.t
+    │   │   │   ├── turbo-help.t
+    │   │   │   ├── turbo-trace.t
+    │   │   │   └── workspace-configs
+    │   │   │       ├── add-keys.t
+    │   │   │       ├── add-tasks.t
+    │   │   │       ├── bad-json.t
+    │   │   │       ├── cache.t
+    │   │   │       ├── config-change.t
+    │   │   │       ├── cross-workspace.t
+    │   │   │       ├── invalid-config.t
+    │   │   │       ├── missing-workspace-config-deps.t
+    │   │   │       ├── missing-workspace-config.t
+    │   │   │       ├── omit-keys-deps.t
+    │   │   │       ├── omit-keys.t
+    │   │   │       ├── override-values-deps.t
+    │   │   │       ├── override-values.t
+    │   │   │       └── persistent.t
+    │   │   └── turbo.json
+    │   └── README.md
+    ├── turbow.js
+    ├── vercel.json
+    └── version.txt
+
+1154 directories, 3361 files

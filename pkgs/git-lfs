@@ -1,0 +1,812 @@
+src
+└── git-lfs
+    ├── CHANGELOG.md
+    ├── CODE-OF-CONDUCT.md
+    ├── commands
+    │   ├── command_checkout.go
+    │   ├── command_clean.go
+    │   ├── command_clone.go
+    │   ├── command_dedup.go
+    │   ├── command_env.go
+    │   ├── command_ext.go
+    │   ├── command_fetch.go
+    │   ├── command_filter_process.go
+    │   ├── command_fsck.go
+    │   ├── command_install.go
+    │   ├── command_lock.go
+    │   ├── command_locks.go
+    │   ├── command_logs.go
+    │   ├── command_ls_files.go
+    │   ├── command_merge_driver.go
+    │   ├── command_migrate_export.go
+    │   ├── command_migrate.go
+    │   ├── command_migrate_import.go
+    │   ├── command_migrate_info.go
+    │   ├── command_pointer.go
+    │   ├── command_post_checkout.go
+    │   ├── command_post_commit.go
+    │   ├── command_post_merge.go
+    │   ├── command_pre_push.go
+    │   ├── command_prune.go
+    │   ├── command_pull.go
+    │   ├── command_push.go
+    │   ├── commands.go
+    │   ├── command_smudge.go
+    │   ├── command_standalone_file.go
+    │   ├── command_status.go
+    │   ├── commands_test.go
+    │   ├── command_track.go
+    │   ├── command_uninstall.go
+    │   ├── command_unlock.go
+    │   ├── command_untrack.go
+    │   ├── command_update.go
+    │   ├── command_version.go
+    │   ├── lockverifier.go
+    │   ├── multiwriter.go
+    │   ├── path.go
+    │   ├── path_nix.go
+    │   ├── path_windows.go
+    │   ├── pointers.go
+    │   ├── pull.go
+    │   ├── run.go
+    │   ├── uploader.go
+    │   └── uploader_test.go
+    ├── config
+    │   ├── config.go
+    │   ├── config_test.go
+    │   ├── delayed_environment.go
+    │   ├── environment.go
+    │   ├── environment_test.go
+    │   ├── extension.go
+    │   ├── extension_test.go
+    │   ├── fetcher.go
+    │   ├── git_fetcher.go
+    │   ├── git_fetcher_test.go
+    │   ├── map_fetcher.go
+    │   ├── netrc.go
+    │   ├── netrc_nix.go
+    │   ├── netrc_windows.go
+    │   ├── os_fetcher.go
+    │   ├── url_config.go
+    │   ├── url_config_test.go
+    │   ├── util_nix.go
+    │   ├── util_windows.go
+    │   └── version.go
+    ├── CONTRIBUTING.md
+    ├── creds
+    │   ├── access.go
+    │   ├── creds.go
+    │   ├── creds_nix.go
+    │   ├── creds_test.go
+    │   ├── creds_windows.go
+    │   ├── netrc.go
+    │   └── netrc_test.go
+    ├── debian
+    │   ├── changelog
+    │   ├── compat
+    │   ├── control
+    │   ├── copyright
+    │   ├── git-lfs.lintian-overrides
+    │   ├── git-lfs.manpages
+    │   ├── postinst
+    │   ├── prerm
+    │   ├── rules
+    │   └── source
+    │       └── format
+    ├── docker
+    │   ├── README.md
+    │   └── run_dockers.bsh
+    ├── docs
+    │   ├── api
+    │   │   ├── authentication.md
+    │   │   ├── basic-transfers.md
+    │   │   ├── batch.md
+    │   │   ├── locking.md
+    │   │   ├── README.md
+    │   │   ├── schemas
+    │   │   │   ├── http-batch-request-schema.json -> ../../../tq/schemas/http-batch-request-schema.json
+    │   │   │   ├── http-batch-response-schema.json -> ../../../tq/schemas/http-batch-response-schema.json
+    │   │   │   ├── http-lock-create-request-schema.json -> ../../../locking/schemas/http-lock-create-request-schema.json
+    │   │   │   ├── http-lock-create-response-schema.json -> ../../../locking/schemas/http-lock-create-response-schema.json
+    │   │   │   ├── http-lock-delete-request-schema.json -> ../../../locking/schemas/http-lock-delete-request-schema.json
+    │   │   │   ├── http-lock-list-response-schema.json -> ../../../locking/schemas/http-lock-list-response-schema.json
+    │   │   │   └── http-lock-verify-response-schema.json -> ../../../locking/schemas/http-lock-verify-response-schema.json
+    │   │   └── server-discovery.md
+    │   ├── custom-transfers.md
+    │   ├── extensions.md
+    │   ├── howto
+    │   │   └── release-git-lfs.md
+    │   ├── l10n.md
+    │   ├── man
+    │   │   ├── git-lfs.adoc
+    │   │   ├── git-lfs-checkout.adoc
+    │   │   ├── git-lfs-clean.adoc
+    │   │   ├── git-lfs-clone.adoc
+    │   │   ├── git-lfs-completion.adoc
+    │   │   ├── git-lfs-config.adoc
+    │   │   ├── git-lfs-dedup.adoc
+    │   │   ├── git-lfs-env.adoc
+    │   │   ├── git-lfs-ext.adoc
+    │   │   ├── git-lfs-faq.adoc
+    │   │   ├── git-lfs-fetch.adoc
+    │   │   ├── git-lfs-filter-process.adoc
+    │   │   ├── git-lfs-fsck.adoc
+    │   │   ├── git-lfs-install.adoc
+    │   │   ├── git-lfs-lock.adoc
+    │   │   ├── git-lfs-locks.adoc
+    │   │   ├── git-lfs-logs.adoc
+    │   │   ├── git-lfs-ls-files.adoc
+    │   │   ├── git-lfs-merge-driver.adoc
+    │   │   ├── git-lfs-migrate.adoc
+    │   │   ├── git-lfs-pointer.adoc
+    │   │   ├── git-lfs-post-checkout.adoc
+    │   │   ├── git-lfs-post-commit.adoc
+    │   │   ├── git-lfs-post-merge.adoc
+    │   │   ├── git-lfs-pre-push.adoc
+    │   │   ├── git-lfs-prune.adoc
+    │   │   ├── git-lfs-pull.adoc
+    │   │   ├── git-lfs-push.adoc
+    │   │   ├── git-lfs-smudge.adoc
+    │   │   ├── git-lfs-standalone-file.adoc
+    │   │   ├── git-lfs-status.adoc
+    │   │   ├── git-lfs-track.adoc
+    │   │   ├── git-lfs-uninstall.adoc
+    │   │   ├── git-lfs-unlock.adoc
+    │   │   ├── git-lfs-untrack.adoc
+    │   │   ├── git-lfs-update.adoc
+    │   │   └── mangen.go
+    │   ├── proposals
+    │   │   ├── locking_api.md
+    │   │   ├── locking.md
+    │   │   ├── locking_notes.md
+    │   │   ├── multipart_transfer_mode.md
+    │   │   ├── ntlm.md
+    │   │   ├── README.md
+    │   │   ├── ssh_adapter.md
+    │   │   └── transfer_adapters.md
+    │   ├── README.md
+    │   └── spec.md
+    ├── errors
+    │   ├── context.go
+    │   ├── errors.go
+    │   ├── errors_test.go
+    │   ├── types.go
+    │   └── types_test.go
+    ├── filepathfilter
+    │   ├── filepathfilter.go
+    │   └── filepathfilter_test.go
+    ├── fs
+    │   ├── cleanup.go
+    │   ├── fs.go
+    │   └── fs_test.go
+    ├── git
+    │   ├── attribs.go
+    │   ├── config.go
+    │   ├── config_test.go
+    │   ├── filter_process_scanner.go
+    │   ├── filter_process_scanner_test.go
+    │   ├── filter_process_status.go
+    │   ├── gitattr
+    │   │   ├── attr.go
+    │   │   ├── attr_test.go
+    │   │   ├── macro.go
+    │   │   ├── macro_test.go
+    │   │   ├── tree.go
+    │   │   └── tree_test.go
+    │   ├── git.go
+    │   ├── githistory
+    │   │   ├── fixtures
+    │   │   │   ├── identical-blobs.git
+    │   │   │   │   ├── config
+    │   │   │   │   ├── HEAD
+    │   │   │   │   ├── index
+    │   │   │   │   ├── logs
+    │   │   │   │   │   ├── HEAD
+    │   │   │   │   │   └── refs
+    │   │   │   │   │       └── heads
+    │   │   │   │   │           └── master
+    │   │   │   │   ├── objects
+    │   │   │   │   │   ├── 42
+    │   │   │   │   │   │   └── 723ad796caa500ddf4e3f6ad37600ed5a65491
+    │   │   │   │   │   ├── 94
+    │   │   │   │   │   │   └── f3610c08588440112ed977376f26a8fba169b0
+    │   │   │   │   │   └── b6
+    │   │   │   │   │       └── 2b45ed2b59cf32dd676ca47497e76a1dab9c7e
+    │   │   │   │   └── refs
+    │   │   │   │       └── heads
+    │   │   │   │           └── master
+    │   │   │   ├── linear-history.git
+    │   │   │   │   ├── config
+    │   │   │   │   ├── HEAD
+    │   │   │   │   ├── index
+    │   │   │   │   ├── logs
+    │   │   │   │   │   ├── HEAD
+    │   │   │   │   │   └── refs
+    │   │   │   │   │       └── heads
+    │   │   │   │   │           └── master
+    │   │   │   │   ├── objects
+    │   │   │   │   │   ├── 56
+    │   │   │   │   │   │   └── a6051ca2b02b04ef92d5150c9ef600403cb1de
+    │   │   │   │   │   ├── 62
+    │   │   │   │   │   │   └── 811b8f930323895033b3b338c35f51c0b7268b
+    │   │   │   │   │   ├── 6e
+    │   │   │   │   │   │   └── 07bd31cb70c4add2c973481ad4fa38b235ca69
+    │   │   │   │   │   ├── 71
+    │   │   │   │   │   │   └── a488ec1804ee97ea651b094aa9181ca85aab0a
+    │   │   │   │   │   ├── c5
+    │   │   │   │   │   │   └── decfe1fcf39b8c489f4a0bf3b3823676339f80
+    │   │   │   │   │   ├── d8
+    │   │   │   │   │   │   └── 263ee9860594d2806b0dfd1bfd17528b0ba2a4
+    │   │   │   │   │   ├── e4
+    │   │   │   │   │   │   └── 40e5c842586965a7fb77deda2eca68612b1f53
+    │   │   │   │   │   ├── e6
+    │   │   │   │   │   │   └── 69b63f829bfb0b91fc52a5bcea53dd7977a0ee
+    │   │   │   │   │   └── ef
+    │   │   │   │   │       └── eab7a9b61312fa56fc74eee1e0f5a714abfb70
+    │   │   │   │   └── refs
+    │   │   │   │       └── heads
+    │   │   │   │           └── master
+    │   │   │   ├── linear-history-with-annotated-tags.git
+    │   │   │   │   ├── config
+    │   │   │   │   ├── HEAD
+    │   │   │   │   ├── index
+    │   │   │   │   ├── logs
+    │   │   │   │   │   ├── HEAD
+    │   │   │   │   │   └── refs
+    │   │   │   │   │       └── heads
+    │   │   │   │   │           └── master
+    │   │   │   │   ├── objects
+    │   │   │   │   │   ├── 05
+    │   │   │   │   │   │   └── 797a38b05f910e6efe40dc1a5c0a046a9403e8
+    │   │   │   │   │   ├── 20
+    │   │   │   │   │   │   └── ecedad3e74a113695fe5f00ab003694e2e1e9c
+    │   │   │   │   │   ├── 22
+    │   │   │   │   │   │   └── 8afe30855933151f7a88e70d9d88314fd2f191
+    │   │   │   │   │   ├── 2e
+    │   │   │   │   │   │   └── 65efe2a145dda7ee51d1741299f848e5bf752e
+    │   │   │   │   │   ├── 34
+    │   │   │   │   │   │   └── 10062ba67c5ed59b854387a8bc0ec012479368
+    │   │   │   │   │   ├── 3c
+    │   │   │   │   │   │   └── b3201d7942353fff5f45e03d114e8e7a061f87
+    │   │   │   │   │   ├── 4a
+    │   │   │   │   │   │   └── 78e180c45f18489941174df19d538c26d5318b
+    │   │   │   │   │   ├── 52
+    │   │   │   │   │   │   └── a8963f48d54c7d352695a278ca4b025e130cb4
+    │   │   │   │   │   ├── 63
+    │   │   │   │   │   │   └── d8dbd40c23542e740659a7168a0ce3138ea748
+    │   │   │   │   │   ├── 6b
+    │   │   │   │   │   │   └── de0b381fa1a039396445e2ce5a28c0451fde15
+    │   │   │   │   │   ├── 91
+    │   │   │   │   │   │   └── b85be6928569390e937479509b80a1d0dccb0c
+    │   │   │   │   │   └── d9
+    │   │   │   │   │       └── 41e4756add6b06f5bee766fcf669f55419f13f
+    │   │   │   │   └── refs
+    │   │   │   │       ├── heads
+    │   │   │   │       │   └── master
+    │   │   │   │       └── tags
+    │   │   │   │           └── middle
+    │   │   │   ├── linear-history-with-tags.git
+    │   │   │   │   ├── config
+    │   │   │   │   ├── HEAD
+    │   │   │   │   ├── index
+    │   │   │   │   ├── logs
+    │   │   │   │   │   ├── HEAD
+    │   │   │   │   │   └── refs
+    │   │   │   │   │       └── heads
+    │   │   │   │   │           └── master
+    │   │   │   │   ├── objects
+    │   │   │   │   │   ├── 20
+    │   │   │   │   │   │   └── ecedad3e74a113695fe5f00ab003694e2e1e9c
+    │   │   │   │   │   ├── 22
+    │   │   │   │   │   │   └── 8afe30855933151f7a88e70d9d88314fd2f191
+    │   │   │   │   │   ├── 2e
+    │   │   │   │   │   │   └── 65efe2a145dda7ee51d1741299f848e5bf752e
+    │   │   │   │   │   ├── 34
+    │   │   │   │   │   │   └── 10062ba67c5ed59b854387a8bc0ec012479368
+    │   │   │   │   │   ├── 3c
+    │   │   │   │   │   │   └── b3201d7942353fff5f45e03d114e8e7a061f87
+    │   │   │   │   │   ├── 52
+    │   │   │   │   │   │   └── a8963f48d54c7d352695a278ca4b025e130cb4
+    │   │   │   │   │   ├── 63
+    │   │   │   │   │   │   └── d8dbd40c23542e740659a7168a0ce3138ea748
+    │   │   │   │   │   ├── 91
+    │   │   │   │   │   │   └── b85be6928569390e937479509b80a1d0dccb0c
+    │   │   │   │   │   └── d9
+    │   │   │   │   │       └── 41e4756add6b06f5bee766fcf669f55419f13f
+    │   │   │   │   └── refs
+    │   │   │   │       ├── heads
+    │   │   │   │       │   └── master
+    │   │   │   │       └── tags
+    │   │   │   │           └── middle
+    │   │   │   ├── non-repeated-subtrees.git
+    │   │   │   │   ├── config
+    │   │   │   │   ├── HEAD
+    │   │   │   │   ├── index
+    │   │   │   │   ├── logs
+    │   │   │   │   │   ├── HEAD
+    │   │   │   │   │   └── refs
+    │   │   │   │   │       └── heads
+    │   │   │   │   │           └── master
+    │   │   │   │   ├── objects
+    │   │   │   │   │   ├── 07
+    │   │   │   │   │   │   └── bd7fbfc41b7d36135bcffe7c465490f4aca32d
+    │   │   │   │   │   ├── 12
+    │   │   │   │   │   │   └── 7ececad475cde6da0048051d62121cabd23194
+    │   │   │   │   │   ├── 19
+    │   │   │   │   │   │   └── acdd81ab0abc15c771fe005bf1c2825e4e6080
+    │   │   │   │   │   ├── 37
+    │   │   │   │   │   │   └── f99c7f2706d317b3bf7ff13d574eef33d8788a
+    │   │   │   │   │   ├── 3d
+    │   │   │   │   │   │   └── 1baaaceec085c52e3e57a47a75b87b7615d0ef
+    │   │   │   │   │   ├── 8d
+    │   │   │   │   │   │   └── 14cbf983b3fad683171c9418998d9f68340823
+    │   │   │   │   │   └── bc
+    │   │   │   │   │       └── 63077ac5e575ccc9dbbd93dc882f1e10600ea7
+    │   │   │   │   └── refs
+    │   │   │   │       └── heads
+    │   │   │   │           └── master
+    │   │   │   ├── octopus-merge.git
+    │   │   │   │   ├── config
+    │   │   │   │   ├── HEAD
+    │   │   │   │   ├── index
+    │   │   │   │   ├── logs
+    │   │   │   │   │   ├── HEAD
+    │   │   │   │   │   └── refs
+    │   │   │   │   │       └── heads
+    │   │   │   │   │           ├── branch-a
+    │   │   │   │   │           ├── branch-b
+    │   │   │   │   │           └── master
+    │   │   │   │   ├── objects
+    │   │   │   │   │   ├── 04
+    │   │   │   │   │   │   └── df07b08ca746b3167d0f1d1514e2f39a52c16c
+    │   │   │   │   │   ├── 15
+    │   │   │   │   │   │   └── 805fe2044dc1a0508853e93d1a230bd94636be
+    │   │   │   │   │   ├── 25
+    │   │   │   │   │   │   └── 1e6b3461a3b5adc6bab694d5ae1abc878edf85
+    │   │   │   │   │   ├── 2e
+    │   │   │   │   │   │   └── 65efe2a145dda7ee51d1741299f848e5bf752e
+    │   │   │   │   │   ├── 2f
+    │   │   │   │   │   │   └── 3a8ec99d5b459b41b6675e52758e397c5e3103
+    │   │   │   │   │   ├── 5a
+    │   │   │   │   │   │   └── 0581b158a81b8fc5d2169c2ac2ca7772ff13fd
+    │   │   │   │   │   ├── 63
+    │   │   │   │   │   │   └── d8dbd40c23542e740659a7168a0ce3138ea748
+    │   │   │   │   │   ├── 6c
+    │   │   │   │   │   │   └── 9ccaeb45446e3fa88cd5848a940fd34c18192b
+    │   │   │   │   │   ├── 8b
+    │   │   │   │   │   │   └── e6d64cddab01f53381e9feafe50d95ca5e6629
+    │   │   │   │   │   ├── b6
+    │   │   │   │   │   │   └── fc4c620b67d95f953a5c1c1230aaab5db5a1b0
+    │   │   │   │   │   └── e9
+    │   │   │   │   │       └── 4edfabfb7605f7cb959b4ce8fb6652b509fe03
+    │   │   │   │   ├── ORIG_HEAD
+    │   │   │   │   └── refs
+    │   │   │   │       └── heads
+    │   │   │   │           ├── branch-a
+    │   │   │   │           ├── branch-b
+    │   │   │   │           └── master
+    │   │   │   ├── packed-objects.git
+    │   │   │   │   ├── config
+    │   │   │   │   ├── HEAD
+    │   │   │   │   ├── index
+    │   │   │   │   ├── info
+    │   │   │   │   │   └── refs
+    │   │   │   │   ├── logs
+    │   │   │   │   │   ├── HEAD
+    │   │   │   │   │   └── refs
+    │   │   │   │   │       └── heads
+    │   │   │   │   │           └── master
+    │   │   │   │   ├── objects
+    │   │   │   │   │   ├── info
+    │   │   │   │   │   │   └── packs
+    │   │   │   │   │   └── pack
+    │   │   │   │   │       ├── pack-ac516ce2d006668dc5e001e8dda0aa1c7198500f.idx
+    │   │   │   │   │       └── pack-ac516ce2d006668dc5e001e8dda0aa1c7198500f.pack
+    │   │   │   │   └── refs
+    │   │   │   │       └── heads
+    │   │   │   │           └── master
+    │   │   │   └── repeated-subtrees.git
+    │   │   │       ├── config
+    │   │   │       ├── HEAD
+    │   │   │       ├── index
+    │   │   │       ├── logs
+    │   │   │       │   ├── HEAD
+    │   │   │       │   └── refs
+    │   │   │       │       └── heads
+    │   │   │       │           └── master
+    │   │   │       ├── objects
+    │   │   │       │   ├── 0b
+    │   │   │       │   │   └── 4747509ab885114690ff291f8f108045b1d749
+    │   │   │       │   ├── 12
+    │   │   │       │   │   └── b98c239e8f933d213617a1b965333d478b2743
+    │   │   │       │   ├── 2e
+    │   │   │       │   │   └── 65efe2a145dda7ee51d1741299f848e5bf752e
+    │   │   │       │   ├── 47
+    │   │   │       │   │   └── d4d71022adc7ec6a14250d23491e535ec228f4
+    │   │   │       │   ├── 5e
+    │   │   │       │   │   └── 497ceceb14ad3c43bac781ed5c804bc67e8f3b
+    │   │   │       │   ├── 63
+    │   │   │       │   │   └── d8dbd40c23542e740659a7168a0ce3138ea748
+    │   │   │       │   ├── b9
+    │   │   │       │   │   └── 621d5d84b3174de020ad2c869f43b2f61f337f
+    │   │   │       │   └── bc
+    │   │   │       │       └── 4d1181aca5a33673d7c5d4c209d09ce1cfabd7
+    │   │   │       └── refs
+    │   │   │           └── heads
+    │   │   │               └── master
+    │   │   ├── fixtures_test.go
+    │   │   ├── ref_updater.go
+    │   │   ├── ref_updater_test.go
+    │   │   ├── rewriter.go
+    │   │   └── rewriter_test.go
+    │   ├── git_test.go
+    │   ├── ls_files.go
+    │   ├── ls_tree_scanner.go
+    │   ├── ls_tree_scanner_test.go
+    │   ├── object_scanner.go
+    │   ├── refs.go
+    │   ├── refs_test.go
+    │   ├── rev_list_scanner.go
+    │   ├── rev_list_scanner_test.go
+    │   └── version.go
+    ├── git-lfs.go
+    ├── git-lfs_windows_arm64.go
+    ├── git-lfs_windows.go
+    ├── go.mod
+    ├── go.sum
+    ├── INSTALLING.md
+    ├── lfs
+    │   ├── attribute.go
+    │   ├── config.go
+    │   ├── config_test.go
+    │   ├── diff_index_scanner.go
+    │   ├── extension.go
+    │   ├── gitfilter_clean.go
+    │   ├── gitfilter.go
+    │   ├── gitfilter_smudge.go
+    │   ├── gitscanner_catfilebatchcheck.go
+    │   ├── gitscanner_catfilebatchcheckscanner_test.go
+    │   ├── gitscanner_catfilebatch.go
+    │   ├── gitscanner.go
+    │   ├── gitscanner_index.go
+    │   ├── gitscanner_log.go
+    │   ├── gitscanner_pointerscanner_test.go
+    │   ├── gitscanner_refs.go
+    │   ├── gitscanner_remotes.go
+    │   ├── gitscanner_tree.go
+    │   ├── hook.go
+    │   ├── lfs.go
+    │   ├── lfs_test.go
+    │   ├── pointer.go
+    │   ├── pointer_test.go
+    │   ├── scanner_git_test.go
+    │   ├── scanner.go
+    │   ├── scanner_test.go
+    │   ├── util_generic.go
+    │   ├── util.go
+    │   └── util_test.go
+    ├── lfsapi
+    │   ├── auth.go
+    │   ├── auth_test.go
+    │   ├── body.go
+    │   ├── client.go
+    │   ├── endpoint_finder.go
+    │   ├── endpoint_finder_test.go
+    │   ├── kerberos.go
+    │   ├── lfsapi.go
+    │   └── response_test.go
+    ├── lfshttp
+    │   ├── body.go
+    │   ├── certs_darwin.go
+    │   ├── certs.go
+    │   ├── certs_nix.go
+    │   ├── certs_test.go
+    │   ├── certs_windows.go
+    │   ├── client.go
+    │   ├── client_test.go
+    │   ├── cookies.go
+    │   ├── endpoint.go
+    │   ├── errors.go
+    │   ├── lfshttp.go
+    │   ├── proxy.go
+    │   ├── proxy_test.go
+    │   ├── retries.go
+    │   ├── retries_test.go
+    │   ├── ssh.go
+    │   ├── ssh_test.go
+    │   ├── standalone
+    │   │   └── standalone.go
+    │   ├── stats.go
+    │   ├── stats_test.go
+    │   ├── verbose.go
+    │   └── verbose_test.go
+    ├── LICENSE.md
+    ├── locking
+    │   ├── api.go
+    │   ├── api_test.go
+    │   ├── cache.go
+    │   ├── cache_test.go
+    │   ├── lockable.go
+    │   ├── locks.go
+    │   ├── locks_test.go
+    │   ├── schemas
+    │   │   ├── http-lock-create-request-schema.json
+    │   │   ├── http-lock-create-response-schema.json
+    │   │   ├── http-lock-delete-request-schema.json
+    │   │   ├── http-lock-list-response-schema.json
+    │   │   └── http-lock-verify-response-schema.json
+    │   └── ssh.go
+    ├── Makefile
+    ├── po
+    │   └── es.po
+    ├── README.md
+    ├── rpm
+    │   ├── build_rpms.bsh
+    │   ├── INSTALL.md
+    │   └── SPECS
+    │       ├── git-lfs.spec
+    │       └── rubygem-asciidoctor.spec
+    ├── script
+    │   ├── build-git
+    │   ├── changelog
+    │   ├── cibuild
+    │   ├── compile-win-installer-unsigned.bat
+    │   ├── distro-tool -> lib/distro.rb
+    │   ├── gen-i-reverse
+    │   ├── hash-files
+    │   ├── install-git-source
+    │   ├── install.sh
+    │   ├── lib
+    │   │   └── distro.rb
+    │   ├── macos
+    │   │   └── manifest.json
+    │   ├── notarize
+    │   ├── packagecloud.rb
+    │   ├── spec
+    │   │   └── distro_spec.rb
+    │   ├── update-version
+    │   ├── upload
+    │   └── windows-installer
+    │       ├── git-lfs-logo.bmp
+    │       ├── git-lfs-logo.ico
+    │       ├── git-lfs-wizard-image.bmp
+    │       └── inno-setup-git-lfs-installer.iss
+    ├── SECURITY.md
+    ├── ssh
+    │   ├── connection.go
+    │   ├── pktline.go
+    │   ├── protocol.go
+    │   ├── ssh.go
+    │   └── ssh_test.go
+    ├── subprocess
+    │   ├── buffered_cmd.go
+    │   ├── cmd.go
+    │   ├── path.go
+    │   ├── path_nix.go
+    │   ├── path_windows.go
+    │   ├── subprocess.go
+    │   ├── subprocess_nix.go
+    │   ├── subprocess_test.go
+    │   └── subprocess_windows.go
+    ├── t
+    │   ├── cmd
+    │   │   ├── git-credential-lfsnoop.go
+    │   │   ├── git-credential-lfstest.go
+    │   │   ├── lfs-askpass.go
+    │   │   ├── lfs-ssh-echo.go
+    │   │   ├── lfs-ssh-proxy-test.go
+    │   │   ├── lfstest-badpathcheck.go
+    │   │   ├── lfstest-count-tests.go
+    │   │   ├── lfstest-customadapter.go
+    │   │   ├── lfstest-gitserver.go
+    │   │   ├── lfstest-nanomtime.go
+    │   │   ├── lfstest-realpath.go
+    │   │   ├── lfstest-standalonecustomadapter.go
+    │   │   ├── lfstest-testutils.go
+    │   │   └── util
+    │   │       └── testutils.go
+    │   ├── fixtures
+    │   │   ├── completions
+    │   │   │   ├── git-lfs-completion.bash
+    │   │   │   ├── git-lfs-completion.fish
+    │   │   │   └── git-lfs-completion.zsh
+    │   │   ├── migrate.sh
+    │   │   └── templates
+    │   │       ├── HEAD
+    │   │       └── info
+    │   │           └── exclude
+    │   ├── git-lfs-test-server-api
+    │   │   ├── main.go
+    │   │   ├── README.md
+    │   │   ├── testdownload.go
+    │   │   └── testupload.go
+    │   ├── Makefile
+    │   ├── README.md
+    │   ├── t-alternates.sh
+    │   ├── t-askpass.sh
+    │   ├── t-attributes.sh
+    │   ├── t-batch-error-handling.sh
+    │   ├── t-batch-retries-ratelimit.sh
+    │   ├── t-batch-retries.sh
+    │   ├── t-batch-storage-retries-ratelimit.sh
+    │   ├── t-batch-transfer.sh
+    │   ├── t-batch-unknown-oids.sh
+    │   ├── t-checkout.sh
+    │   ├── t-cherry-pick-commits.sh
+    │   ├── t-chunked-transfer-encoding.sh
+    │   ├── t-clean.sh
+    │   ├── t-clone-deprecated.sh
+    │   ├── t-clone.sh
+    │   ├── t-commit-delete-push.sh
+    │   ├── t-completion.sh
+    │   ├── t-config.sh
+    │   ├── t-content-type.sh
+    │   ├── t-credentials-no-prompt.sh
+    │   ├── t-credentials.sh
+    │   ├── t-custom-transfers.sh
+    │   ├── t-dedup.sh
+    │   ├── t-duplicate-oids.sh
+    │   ├── t-env.sh
+    │   ├── testenv.sh
+    │   ├── testhelpers.sh
+    │   ├── testlib.sh
+    │   ├── t-expired.sh
+    │   ├── t-extra-header.sh
+    │   ├── t-ext.sh
+    │   ├── t-fetch-include.sh
+    │   ├── t-fetch-paths.sh
+    │   ├── t-fetch-recent.sh
+    │   ├── t-fetch-refspec.sh
+    │   ├── t-fetch.sh
+    │   ├── t-filter-branch.sh
+    │   ├── t-filter-process.sh
+    │   ├── t-fsck.sh
+    │   ├── t-happy-path.sh
+    │   ├── t-install-custom-hooks-path.sh
+    │   ├── t-install-custom-hooks-path-unsupported.sh
+    │   ├── t-install.sh
+    │   ├── t-install-worktree.sh
+    │   ├── t-install-worktree-unsupported.sh
+    │   ├── t-lock.sh
+    │   ├── t-locks.sh
+    │   ├── t-logs.sh
+    │   ├── t-ls-files.sh
+    │   ├── t-malformed-pointers.sh
+    │   ├── t-merge-driver.sh
+    │   ├── t-mergetool.sh
+    │   ├── t-migrate-export.sh
+    │   ├── t-migrate-fixup.sh
+    │   ├── t-migrate-import-no-rewrite.sh
+    │   ├── t-migrate-import.sh
+    │   ├── t-migrate-info.sh
+    │   ├── t-multiple-remotes.sh
+    │   ├── t-no-remote.sh
+    │   ├── t-object-authenticated.sh
+    │   ├── t-path.sh
+    │   ├── t-pointer.sh
+    │   ├── t-post-checkout.sh
+    │   ├── t-post-commit.sh
+    │   ├── t-post-merge.sh
+    │   ├── t-pre-push.sh
+    │   ├── t-progress-meter.sh
+    │   ├── t-progress.sh
+    │   ├── t-prune.sh
+    │   ├── t-prune-worktree.sh
+    │   ├── t-pull.sh
+    │   ├── t-push-bad-dns.sh
+    │   ├── t-push-failures-local.sh
+    │   ├── t-push-failures-remote.sh
+    │   ├── t-push-file-with-branch-name.sh
+    │   ├── t-push.sh
+    │   ├── t-reference-clone.sh
+    │   ├── t-repo-format.sh
+    │   ├── t-resume-http-range.sh
+    │   ├── t-resume-tus.sh
+    │   ├── t-smudge.sh
+    │   ├── t-ssh.sh
+    │   ├── t-standalone-file.sh
+    │   ├── t-status.sh
+    │   ├── t-submodule-lfsconfig.sh
+    │   ├── t-submodule-recurse.sh
+    │   ├── t-submodule.sh
+    │   ├── t-tempfile.sh
+    │   ├── t-track-attrs.sh
+    │   ├── t-track.sh
+    │   ├── t-track-wildcards.sh
+    │   ├── t-umask.sh
+    │   ├── t-uninstall.sh
+    │   ├── t-uninstall-worktree.sh
+    │   ├── t-uninstall-worktree-unsupported.sh
+    │   ├── t-unlock.sh
+    │   ├── t-untrack.sh
+    │   ├── t-unusual-filenames.sh
+    │   ├── t-update.sh
+    │   ├── t-upload-redirect.sh
+    │   ├── t-verify.sh
+    │   ├── t-version.sh
+    │   ├── t-worktree.sh
+    │   └── t-zero-len-file.sh
+    ├── tasklog
+    │   ├── list_task.go
+    │   ├── list_task_test.go
+    │   ├── log.go
+    │   ├── log_test.go
+    │   ├── percentage_task.go
+    │   ├── percentage_task_test.go
+    │   ├── simple_task.go
+    │   ├── simple_task_test.go
+    │   ├── task.go
+    │   ├── waiting_task.go
+    │   └── waiting_task_test.go
+    ├── tools
+    │   ├── channels.go
+    │   ├── copycallback.go
+    │   ├── copycallback_test.go
+    │   ├── cygwin.go
+    │   ├── cygwin_windows.go
+    │   ├── filetools.go
+    │   ├── filetools_nix.go
+    │   ├── filetools_test.go
+    │   ├── filetools_windows.go
+    │   ├── humanize
+    │   │   ├── humanize.go
+    │   │   ├── humanize_test.go
+    │   │   └── package.go
+    │   ├── iotools.go
+    │   ├── iotools_test.go
+    │   ├── kv
+    │   │   ├── keyvaluestore.go
+    │   │   └── keyvaluestore_test.go
+    │   ├── math.go
+    │   ├── math_test.go
+    │   ├── ordered_set.go
+    │   ├── ordered_set_test.go
+    │   ├── os_tools.go
+    │   ├── robustio.go
+    │   ├── robustio_windows.go
+    │   ├── stringset.go
+    │   ├── str_tools.go
+    │   ├── str_tools_test.go
+    │   ├── sync_writer.go
+    │   ├── time_tools.go
+    │   ├── time_tools_test.go
+    │   ├── umask_nix.go
+    │   ├── umask_windows.go
+    │   ├── util_darwin.go
+    │   ├── util_darwin_test.go
+    │   ├── util_generic.go
+    │   ├── util_linux.go
+    │   ├── util_test.go
+    │   ├── util_windows.go
+    │   └── util_windows_test.go
+    ├── tq
+    │   ├── adapterbase.go
+    │   ├── api.go
+    │   ├── api_test.go
+    │   ├── basic_download.go
+    │   ├── basic_upload.go
+    │   ├── custom.go
+    │   ├── custom_test.go
+    │   ├── errors.go
+    │   ├── errors_test.go
+    │   ├── manifest.go
+    │   ├── manifest_test.go
+    │   ├── meter.go
+    │   ├── schemas
+    │   │   ├── http-batch-request-schema.json
+    │   │   └── http-batch-response-schema.json
+    │   ├── ssh.go
+    │   ├── transfer.go
+    │   ├── transfer_queue.go
+    │   ├── transfer_queue_test.go
+    │   ├── transfer_test.go
+    │   ├── tus_upload.go
+    │   ├── verify.go
+    │   └── verify_test.go
+    ├── tr
+    │   ├── trgen
+    │   │   └── trgen.go
+    │   └── tr.go
+    └── versioninfo.json
+
+173 directories, 637 files

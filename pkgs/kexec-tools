@@ -1,0 +1,404 @@
+src
+└── kexec-tools
+    ├── AUTHORS
+    ├── bootstrap
+    ├── config
+    │   ├── config.guess
+    │   ├── config.sub
+    │   └── install-sh
+    ├── configure.ac
+    ├── COPYING
+    ├── doc
+    │   ├── linux-i386-boot.txt
+    │   ├── linux-i386-zero-page.txt
+    │   ├── Makefile
+    │   ├── mpc85xx.txt
+    │   ├── multiboot.html
+    │   └── nbi-spec.txt
+    ├── include
+    │   ├── boot
+    │   │   ├── beoboot.h
+    │   │   ├── elf_boot.h
+    │   │   └── linuxbios_tables.h
+    │   ├── elf.h
+    │   ├── image.h
+    │   ├── kexec-pe-zboot.h
+    │   ├── kexec-uImage.h
+    │   ├── Makefile
+    │   ├── unused.h
+    │   └── x86
+    │       ├── mb_header.h
+    │       ├── mb_info.h
+    │       ├── multiboot2.h
+    │       └── x86-linux.h
+    ├── INSTALL
+    ├── kexec
+    │   ├── add_buffer.c
+    │   ├── add_segment.c
+    │   ├── arch
+    │   │   ├── alpha
+    │   │   │   ├── include
+    │   │   │   │   └── arch
+    │   │   │   │       └── options.h
+    │   │   │   └── Makefile
+    │   │   ├── arm
+    │   │   │   ├── crashdump-arm.c
+    │   │   │   ├── crashdump-arm.h
+    │   │   │   ├── include
+    │   │   │   │   └── arch
+    │   │   │   │       └── options.h
+    │   │   │   ├── iomem.h
+    │   │   │   ├── kexec-arm.c
+    │   │   │   ├── kexec-arm.h
+    │   │   │   ├── kexec-elf-rel-arm.c
+    │   │   │   ├── kexec-uImage-arm.c
+    │   │   │   ├── kexec-zImage-arm.c
+    │   │   │   ├── Makefile
+    │   │   │   ├── phys_to_virt.c
+    │   │   │   └── phys_to_virt.h
+    │   │   ├── arm64
+    │   │   │   ├── crashdump-arm64.c
+    │   │   │   ├── crashdump-arm64.h
+    │   │   │   ├── image-header.h
+    │   │   │   ├── include
+    │   │   │   │   └── arch
+    │   │   │   │       └── options.h
+    │   │   │   ├── iomem.h
+    │   │   │   ├── kexec-arm64.c
+    │   │   │   ├── kexec-arm64.h
+    │   │   │   ├── kexec-elf-arm64.c
+    │   │   │   ├── kexec-image-arm64.c
+    │   │   │   ├── kexec-uImage-arm64.c
+    │   │   │   ├── kexec-vmlinuz-arm64.c
+    │   │   │   └── Makefile
+    │   │   ├── cris
+    │   │   │   ├── cris-setup-simple.S
+    │   │   │   ├── include
+    │   │   │   │   └── arch
+    │   │   │   │       └── options.h
+    │   │   │   ├── kexec-cris.c
+    │   │   │   ├── kexec-cris.h
+    │   │   │   ├── kexec-elf-cris.c
+    │   │   │   ├── kexec-elf-rel-cris.c
+    │   │   │   └── Makefile
+    │   │   ├── hppa
+    │   │   │   ├── include
+    │   │   │   │   └── arch
+    │   │   │   │       └── options.h
+    │   │   │   ├── kexec-elf-hppa.c
+    │   │   │   ├── kexec-elf-rel-hppa.c
+    │   │   │   ├── kexec-hppa.c
+    │   │   │   ├── kexec-hppa.h
+    │   │   │   └── Makefile
+    │   │   ├── i386
+    │   │   │   ├── crashdump-x86.c
+    │   │   │   ├── crashdump-x86.h
+    │   │   │   ├── include
+    │   │   │   │   └── arch
+    │   │   │   │       └── options.h
+    │   │   │   ├── kexec-beoboot-x86.c
+    │   │   │   ├── kexec-bzImage.c
+    │   │   │   ├── kexec-elf-rel-x86.c
+    │   │   │   ├── kexec-elf-x86.c
+    │   │   │   ├── kexec-mb2-x86.c
+    │   │   │   ├── kexec-multiboot-x86.c
+    │   │   │   ├── kexec-nbi.c
+    │   │   │   ├── kexec-x86.c
+    │   │   │   ├── kexec-x86-common.c
+    │   │   │   ├── kexec-x86.h
+    │   │   │   ├── Makefile
+    │   │   │   ├── x86-linux-setup.c
+    │   │   │   └── x86-linux-setup.h
+    │   │   ├── ia64
+    │   │   │   ├── crashdump-ia64.c
+    │   │   │   ├── crashdump-ia64.h
+    │   │   │   ├── include
+    │   │   │   │   └── arch
+    │   │   │   │       └── options.h
+    │   │   │   ├── kexec-elf-ia64.c
+    │   │   │   ├── kexec-elf-rel-ia64.c
+    │   │   │   ├── kexec-ia64.c
+    │   │   │   ├── kexec-ia64.h
+    │   │   │   ├── kexec-iomem.c
+    │   │   │   └── Makefile
+    │   │   ├── loongarch
+    │   │   │   ├── crashdump-loongarch.c
+    │   │   │   ├── crashdump-loongarch.h
+    │   │   │   ├── image-header.h
+    │   │   │   ├── include
+    │   │   │   │   └── arch
+    │   │   │   │       └── options.h
+    │   │   │   ├── iomem.h
+    │   │   │   ├── kexec-elf-loongarch.c
+    │   │   │   ├── kexec-elf-rel-loongarch.c
+    │   │   │   ├── kexec-loongarch.c
+    │   │   │   ├── kexec-loongarch.h
+    │   │   │   ├── kexec-pei-loongarch.c
+    │   │   │   ├── kexec-pez-loongarch.c
+    │   │   │   └── Makefile
+    │   │   ├── m68k
+    │   │   │   ├── bootinfo.c
+    │   │   │   ├── bootinfo.h
+    │   │   │   ├── include
+    │   │   │   │   └── arch
+    │   │   │   │       └── options.h
+    │   │   │   ├── kexec-elf-m68k.c
+    │   │   │   ├── kexec-elf-rel-m68k.c
+    │   │   │   ├── kexec-m68k.c
+    │   │   │   ├── kexec-m68k.h
+    │   │   │   └── Makefile
+    │   │   ├── mips
+    │   │   │   ├── crashdump-mips.c
+    │   │   │   ├── crashdump-mips.h
+    │   │   │   ├── include
+    │   │   │   │   └── arch
+    │   │   │   │       └── options.h
+    │   │   │   ├── kexec-elf-mips.c
+    │   │   │   ├── kexec-elf-rel-mips.c
+    │   │   │   ├── kexec-mips.c
+    │   │   │   ├── kexec-mips.h
+    │   │   │   └── Makefile
+    │   │   ├── ppc
+    │   │   │   ├── crashdump-powerpc.c
+    │   │   │   ├── crashdump-powerpc.h
+    │   │   │   ├── fixup_dtb.c
+    │   │   │   ├── fixup_dtb.h
+    │   │   │   ├── fs2dt.c
+    │   │   │   ├── include
+    │   │   │   │   ├── arch
+    │   │   │   │   │   └── options.h
+    │   │   │   │   ├── page.h
+    │   │   │   │   └── types.h
+    │   │   │   ├── kexec-dol-ppc.c
+    │   │   │   ├── kexec-elf-ppc.c
+    │   │   │   ├── kexec-elf-rel-ppc.c
+    │   │   │   ├── kexec-ppc.c
+    │   │   │   ├── kexec-ppc.h
+    │   │   │   ├── kexec-uImage-ppc.c
+    │   │   │   ├── libfdt-wrapper.c
+    │   │   │   ├── Makefile
+    │   │   │   ├── ops.h
+    │   │   │   ├── ppc_asm.h
+    │   │   │   ├── ppc-setup-dol.S
+    │   │   │   └── ppc-setup-simple.S
+    │   │   ├── ppc64
+    │   │   │   ├── crashdump-ppc64.c
+    │   │   │   ├── crashdump-ppc64.h
+    │   │   │   ├── fdt.c
+    │   │   │   ├── include
+    │   │   │   │   └── arch
+    │   │   │   │       ├── fdt.h
+    │   │   │   │       └── options.h
+    │   │   │   ├── kexec-elf-ppc64.c
+    │   │   │   ├── kexec-elf-rel-ppc64.c
+    │   │   │   ├── kexec-ppc64.c
+    │   │   │   ├── kexec-ppc64.h
+    │   │   │   ├── kexec-zImage-ppc64.c
+    │   │   │   └── Makefile
+    │   │   ├── s390
+    │   │   │   ├── crashdump-s390.c
+    │   │   │   ├── include
+    │   │   │   │   └── arch
+    │   │   │   │       └── options.h
+    │   │   │   ├── kexec-elf-rel-s390.c
+    │   │   │   ├── kexec-image.c
+    │   │   │   ├── kexec-s390.c
+    │   │   │   ├── kexec-s390.h
+    │   │   │   └── Makefile
+    │   │   ├── sh
+    │   │   │   ├── crashdump-sh.c
+    │   │   │   ├── crashdump-sh.h
+    │   │   │   ├── include
+    │   │   │   │   └── arch
+    │   │   │   │       └── options.h
+    │   │   │   ├── kexec-elf-rel-sh.c
+    │   │   │   ├── kexec-elf-sh.c
+    │   │   │   ├── kexec-netbsd-sh.c
+    │   │   │   ├── kexec-sh.c
+    │   │   │   ├── kexec-sh.h
+    │   │   │   ├── kexec-uImage-sh.c
+    │   │   │   ├── kexec-zImage-sh.c
+    │   │   │   ├── Makefile
+    │   │   │   └── netbsd_booter.S
+    │   │   └── x86_64
+    │   │       ├── include
+    │   │       │   └── arch
+    │   │       │       └── options.h -> ../../../i386/include/arch/options.h
+    │   │       ├── kexec-bzImage64.c
+    │   │       ├── kexec-elf-rel-x86_64.c
+    │   │       ├── kexec-elf-x86_64.c
+    │   │       ├── kexec-x86_64.c
+    │   │       ├── kexec-x86_64.h
+    │   │       └── Makefile
+    │   ├── arch_reuse_initrd.c
+    │   ├── crashdump.c
+    │   ├── crashdump-elf.c
+    │   ├── crashdump.h
+    │   ├── crashdump-xen.c
+    │   ├── dt-ops.c
+    │   ├── dt-ops.h
+    │   ├── firmware_memmap.c
+    │   ├── firmware_memmap.h
+    │   ├── fs2dt.c
+    │   ├── fs2dt.h
+    │   ├── ifdown.c
+    │   ├── kexec.8
+    │   ├── kexec.c
+    │   ├── kexec-elf-boot.c
+    │   ├── kexec-elf-boot.h
+    │   ├── kexec-elf.c
+    │   ├── kexec-elf-core.c
+    │   ├── kexec-elf-exec.c
+    │   ├── kexec-elf.h
+    │   ├── kexec-elf-rel.c
+    │   ├── kexec.h
+    │   ├── kexec-iomem.c
+    │   ├── kexec-lzma.h
+    │   ├── kexec-pe-zboot.c
+    │   ├── kexec-sha256.h
+    │   ├── kexec-syscall.h
+    │   ├── kexec-uImage.c
+    │   ├── kexec-xen.c
+    │   ├── kexec-xen.h
+    │   ├── kexec-zlib.h
+    │   ├── libfdt
+    │   │   ├── fdt.c
+    │   │   ├── fdt.h
+    │   │   ├── fdt_ro.c
+    │   │   ├── fdt_rw.c
+    │   │   ├── fdt_strerror.c
+    │   │   ├── fdt_sw.c
+    │   │   ├── fdt_wip.c
+    │   │   ├── libfdt_env.h
+    │   │   ├── libfdt.h
+    │   │   ├── libfdt_internal.h
+    │   │   ├── Makefile.libfdt
+    │   │   └── TODO
+    │   ├── lzma.c
+    │   ├── Makefile
+    │   ├── mem_regions.c
+    │   ├── mem_regions.h
+    │   ├── phys_arch.c
+    │   ├── phys_to_virt.c
+    │   ├── proc_iomem.c
+    │   ├── symbols.c
+    │   ├── virt_to_phys.c
+    │   └── zlib.c
+    ├── kexec_test
+    │   ├── kexec_test16.S
+    │   ├── kexec_test.S
+    │   ├── Makefile
+    │   └── x86-setup-legacy-pic.S
+    ├── kexec-tools.spec.in
+    ├── Makefile.in
+    ├── News
+    ├── purgatory
+    │   ├── arch
+    │   │   ├── alpha
+    │   │   │   └── Makefile
+    │   │   ├── arm
+    │   │   │   └── Makefile
+    │   │   ├── arm64
+    │   │   │   ├── entry.S
+    │   │   │   ├── Makefile
+    │   │   │   └── purgatory-arm64.c
+    │   │   ├── i386
+    │   │   │   ├── compat_x86_64.S
+    │   │   │   ├── console-x86.c
+    │   │   │   ├── crashdump_backup.c
+    │   │   │   ├── entry32-16-debug.S
+    │   │   │   ├── entry32-16.S
+    │   │   │   ├── entry32.S
+    │   │   │   ├── include
+    │   │   │   │   └── arch
+    │   │   │   │       ├── debug.h
+    │   │   │   │       └── io.h
+    │   │   │   ├── Makefile
+    │   │   │   ├── pic.c
+    │   │   │   ├── purgatory-x86.c
+    │   │   │   ├── purgatory-x86.h
+    │   │   │   ├── setup-x86.S
+    │   │   │   ├── stack.S
+    │   │   │   └── vga.c
+    │   │   ├── ia64
+    │   │   │   ├── console-ia64.c
+    │   │   │   ├── entry.S
+    │   │   │   ├── io.h
+    │   │   │   ├── Makefile
+    │   │   │   ├── purgatory-ia64.c
+    │   │   │   ├── purgatory-ia64.h
+    │   │   │   └── vga.c
+    │   │   ├── loongarch
+    │   │   │   ├── console-loongarch.c
+    │   │   │   ├── Makefile
+    │   │   │   ├── purgatory-loongarch.c
+    │   │   │   └── purgatory-loongarch.h
+    │   │   ├── mips
+    │   │   │   ├── console-mips.c
+    │   │   │   ├── Makefile
+    │   │   │   ├── purgatory-mips.c
+    │   │   │   └── purgatory-mips.h
+    │   │   ├── ppc
+    │   │   │   ├── console-ppc.c
+    │   │   │   ├── Makefile
+    │   │   │   ├── misc.S
+    │   │   │   ├── ppc_asm.h
+    │   │   │   ├── purgatory-ppc.c
+    │   │   │   ├── purgatory-ppc.h
+    │   │   │   └── v2wrap_32.S
+    │   │   ├── ppc64
+    │   │   │   ├── console-ppc64.c
+    │   │   │   ├── crashdump_backup.c
+    │   │   │   ├── hvCall.h
+    │   │   │   ├── hvCall.S
+    │   │   │   ├── Makefile
+    │   │   │   ├── misc.S
+    │   │   │   ├── ppc64_asm.h
+    │   │   │   ├── purgatory-ppc64.c
+    │   │   │   ├── purgatory-ppc64.h
+    │   │   │   └── v2wrap.S
+    │   │   ├── s390
+    │   │   │   ├── console-s390.c
+    │   │   │   ├── Makefile
+    │   │   │   ├── purgatory-s390.c
+    │   │   │   └── setup-s390.S
+    │   │   ├── sh
+    │   │   │   └── Makefile
+    │   │   └── x86_64
+    │   │       ├── entry64-32.S
+    │   │       ├── entry64.S
+    │   │       ├── include
+    │   │       │   └── arch
+    │   │       │       ├── debug.h
+    │   │       │       └── io.h
+    │   │       ├── Makefile
+    │   │       ├── purgatory-x86_64.c
+    │   │       ├── purgatory-x86_64.h
+    │   │       ├── setup-x86_64.S
+    │   │       └── stack.S
+    │   ├── include
+    │   │   ├── purgatory.h
+    │   │   └── string.h
+    │   ├── Makefile
+    │   ├── printf.c
+    │   ├── purgatory.c
+    │   └── string.c
+    ├── TODO
+    ├── util
+    │   ├── bin-to-hex.c
+    │   └── Makefile
+    ├── util_lib
+    │   ├── compute_ip_checksum.c
+    │   ├── elf_info.c
+    │   ├── include
+    │   │   ├── elf_info.h
+    │   │   ├── ip_checksum.h
+    │   │   └── sha256.h
+    │   ├── Makefile
+    │   └── sha256.c
+    └── vmcore-dmesg
+        ├── Makefile
+        ├── vmcore-dmesg.8
+        └── vmcore-dmesg.c
+
+79 directories, 323 files

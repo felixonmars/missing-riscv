@@ -1,0 +1,28 @@
+src
+├── chimera-0.4.1.0
+│   ├── bench
+│   │   ├── Bench.hs
+│   │   ├── Memoize.hs
+│   │   └── Read.hs
+│   ├── cbits
+│   │   ├── aarch64.c
+│   │   └── aarch64.h
+│   ├── changelog.md
+│   ├── chimera.cabal
+│   ├── LICENSE
+│   ├── README.md
+│   ├── src
+│   │   └── Data
+│   │       ├── Chimera
+│   │       │   ├── Compat.hs
+│   │       │   ├── ContinuousMapping.hs
+│   │       │   ├── FromIntegral.hs
+│   │       │   ├── Internal.hs
+│   │       │   ├── Memoize.hs
+│   │       │   └── WheelMapping.hs
+│   │       └── Chimera.hs
+│   └── test
+│       └── Test.hs
+└── chimera-0.4.1.0.tar.gz -> /home/felix/packages/haskell-chimera/chimera-0.4.1.0.tar.gz
+
+8 directories, 18 files

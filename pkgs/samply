@@ -1,0 +1,362 @@
+src
+├── samply-0.12.0.tar.gz -> /home/felix/packages/samply/samply-0.12.0.tar.gz
+└── samply-samply-v0.12.0
+    ├── API.md
+    ├── Cargo.lock
+    ├── Cargo.toml
+    ├── fixtures
+    │   ├── android32-ci
+    │   │   ├── libmozglue.so.dbg
+    │   │   └── libsoftokn3.so.dbg
+    │   ├── android32-local
+    │   │   ├── libmozglue.so
+    │   │   └── libsoftokn3.so
+    │   ├── linux64-ci
+    │   │   └── firefox
+    │   ├── macos-ci
+    │   │   ├── firefox
+    │   │   ├── libmozglue.dylib
+    │   │   ├── libmozglue.dylib.dSYM
+    │   │   │   └── Contents
+    │   │   │       ├── Info.plist
+    │   │   │       └── Resources
+    │   │   │           └── DWARF
+    │   │   │               └── libmozglue.dylib
+    │   │   └── libsoftokn3.dylib
+    │   ├── macos-local
+    │   │   ├── firefox
+    │   │   └── libmozglue.dylib
+    │   ├── other
+    │   │   ├── example-linux
+    │   │   ├── example-linux-fallback
+    │   │   ├── ls-linux
+    │   │   │   ├── 260a3e6e46db57abf718f6a3562c6eedccf269.debug
+    │   │   │   ├── coreutils.debug
+    │   │   │   ├── ls
+    │   │   │   ├── ls-profile.json
+    │   │   │   └── README.md
+    │   │   └── simple-example
+    │   │       ├── build-dwp-debuglink.sh
+    │   │       ├── build-mac-dsym.sh
+    │   │       ├── build-mac-oso.sh
+    │   │       ├── build-regular-debuglink.sh
+    │   │       ├── build-with-dwo.sh
+    │   │       ├── build-with-dwp.sh
+    │   │       ├── out
+    │   │       │   ├── dwp-debuglink
+    │   │       │   │   ├── main
+    │   │       │   │   └── main.dbg
+    │   │       │   ├── mac-dsym
+    │   │       │   │   ├── main
+    │   │       │   │   └── main.dSYM
+    │   │       │   │       └── Contents
+    │   │       │   │           ├── Info.plist
+    │   │       │   │           └── Resources
+    │   │       │   │               ├── DWARF
+    │   │       │   │               │   └── main
+    │   │       │   │               └── Relocations
+    │   │       │   │                   └── aarch64
+    │   │       │   │                       └── main.yml
+    │   │       │   ├── mac-oso
+    │   │       │   │   ├── file1.o
+    │   │       │   │   ├── file2.o
+    │   │       │   │   ├── file3.o
+    │   │       │   │   ├── libfile23.a
+    │   │       │   │   ├── main
+    │   │       │   │   └── main.o
+    │   │       │   ├── regular-debuglink
+    │   │       │   │   ├── main
+    │   │       │   │   └── main.dbg
+    │   │       │   ├── with-dwo
+    │   │       │   │   ├── file1.dwo
+    │   │       │   │   ├── file1.o
+    │   │       │   │   ├── file2.dwo
+    │   │       │   │   ├── file2.o
+    │   │       │   │   ├── file3.dwo
+    │   │       │   │   ├── file3.o
+    │   │       │   │   ├── libfile23.a
+    │   │       │   │   ├── main
+    │   │       │   │   ├── main.dwo
+    │   │       │   │   └── main.o
+    │   │       │   └── with-dwp
+    │   │       │       ├── main
+    │   │       │       └── main.dwp
+    │   │       └── src
+    │   │           ├── file1.cpp
+    │   │           ├── file1.h
+    │   │           ├── file2.cpp
+    │   │           ├── file2.h
+    │   │           ├── file3.cpp
+    │   │           ├── file3.h
+    │   │           └── main.cpp
+    │   ├── requests
+    │   │   ├── android32-ci-nonxul.json
+    │   │   ├── android32-ci-xul.json
+    │   │   ├── android64-ci-nonxul.json
+    │   │   ├── android64-ci-xul.json
+    │   │   ├── linux64-ci-nonxul.json
+    │   │   ├── linux64-ci-xul.json
+    │   │   ├── macos-ci-nonxul-1.json
+    │   │   ├── macos-ci-nonxul-2.json
+    │   │   ├── macos-ci-xul.json
+    │   │   ├── macos-local-xul.json
+    │   │   ├── Readme.md
+    │   │   ├── win64-ci-nonxul.json
+    │   │   ├── win64-ci-xul.json
+    │   │   ├── win64-local-nonxul.json
+    │   │   └── win64-local-xul.json
+    │   ├── snapshots
+    │   │   ├── api-v5-android32-local.txt
+    │   │   ├── api-v5-stripped-macos.txt
+    │   │   ├── api-v5-win64-ci.txt
+    │   │   ├── api-v5-win64-local-1.txt
+    │   │   ├── api-v5-win-exe.txt
+    │   │   ├── asm_with_continue.txt
+    │   │   ├── asm_x86_64.txt
+    │   │   ├── win64-ci-mozglue.pdb.txt
+    │   │   └── win64-xul.pdb.json
+    │   ├── win64-ci
+    │   │   ├── firefox.exe
+    │   │   ├── firefox.pdb
+    │   │   ├── mozglue.dll
+    │   │   ├── mozglue.pdb
+    │   │   ├── softokn3.dll
+    │   │   ├── softokn3.pdb
+    │   │   ├── WriteArgument.exe
+    │   │   └── WriteArgument.pdb
+    │   └── win64-local
+    │       ├── firefox.exe
+    │       ├── firefox.pdb
+    │       ├── mozglue.dll
+    │       ├── mozglue.pdb
+    │       └── updater.exe
+    ├── flake.lock
+    ├── flake.nix
+    ├── fxprof-processed-profile
+    │   ├── Cargo.toml
+    │   ├── README.md
+    │   ├── src
+    │   │   ├── category_color.rs
+    │   │   ├── category.rs
+    │   │   ├── counters.rs
+    │   │   ├── cpu_delta.rs
+    │   │   ├── fast_hash_map.rs
+    │   │   ├── frame.rs
+    │   │   ├── frame_table.rs
+    │   │   ├── func_table.rs
+    │   │   ├── global_lib_table.rs
+    │   │   ├── lib_mappings.rs
+    │   │   ├── library_info.rs
+    │   │   ├── lib.rs
+    │   │   ├── markers.rs
+    │   │   ├── marker_table.rs
+    │   │   ├── native_symbols.rs
+    │   │   ├── process.rs
+    │   │   ├── profile.rs
+    │   │   ├── reference_timestamp.rs
+    │   │   ├── resource_table.rs
+    │   │   ├── sample_table.rs
+    │   │   ├── serialization_helpers.rs
+    │   │   ├── stack_table.rs
+    │   │   ├── string_table.rs
+    │   │   ├── thread.rs
+    │   │   ├── thread_string_table.rs
+    │   │   └── timestamp.rs
+    │   └── tests
+    │       └── integration_tests
+    │           └── main.rs
+    ├── gecko_profile
+    │   ├── Cargo.toml
+    │   ├── README.md
+    │   └── src
+    │       ├── lib.rs
+    │       └── markers.rs
+    ├── LICENSE-APACHE
+    ├── LICENSE-MIT
+    ├── README.md
+    ├── RELEASES.md
+    ├── samply
+    │   ├── Cargo.toml
+    │   ├── README.md
+    │   ├── release.toml
+    │   ├── resources
+    │   │   └── libsamply_mac_preload.dylib.gz
+    │   └── src
+    │       ├── import
+    │       │   ├── mod.rs
+    │       │   └── perf.rs
+    │       ├── linux
+    │       │   ├── mod.rs
+    │       │   ├── perf_event.rs
+    │       │   ├── perf_group.rs
+    │       │   ├── process.rs
+    │       │   ├── proc_maps.rs
+    │       │   ├── profiler.rs
+    │       │   ├── sorter.rs
+    │       │   └── sys.rs
+    │       ├── linux_shared
+    │       │   ├── avma_range.rs
+    │       │   ├── context_switch.rs
+    │       │   ├── converter.rs
+    │       │   ├── convert_regs.rs
+    │       │   ├── event_interpretation.rs
+    │       │   ├── injected_jit_object.rs
+    │       │   ├── kernel_symbols.rs
+    │       │   ├── mmap_range_or_vec.rs
+    │       │   ├── mod.rs
+    │       │   ├── object_rewriter.rs
+    │       │   ├── pe_mappings.rs
+    │       │   ├── processes.rs
+    │       │   ├── process.rs
+    │       │   ├── process_threads.rs
+    │       │   ├── rss_stat.rs
+    │       │   ├── svma_file_range.rs
+    │       │   ├── thread.rs
+    │       │   └── vdso.rs
+    │       ├── mac
+    │       │   ├── dyld_bindings.rs
+    │       │   ├── error.rs
+    │       │   ├── kernel_error.rs
+    │       │   ├── mach_ipc
+    │       │   │   ├── mach_sys.rs
+    │       │   │   ├── mod.rs
+    │       │   │   └── README.md
+    │       │   ├── mod.rs
+    │       │   ├── process_launcher.rs
+    │       │   ├── proc_maps.rs
+    │       │   ├── profiler.rs
+    │       │   ├── sampler.rs
+    │       │   ├── task_profiler.rs
+    │       │   ├── thread_act.rs
+    │       │   ├── thread_info.rs
+    │       │   ├── thread_profiler.rs
+    │       │   └── time.rs
+    │       ├── main.rs
+    │       ├── profile_json_preparse.rs
+    │       ├── server.rs
+    │       └── shared
+    │           ├── jit_category_manager.rs
+    │           ├── jitdump_manager.rs
+    │           ├── jit_function_add_marker.rs
+    │           ├── jit_function_recycler.rs
+    │           ├── lib_mappings.rs
+    │           ├── marker_file.rs
+    │           ├── mod.rs
+    │           ├── perf_map.rs
+    │           ├── process_sample_data.rs
+    │           ├── recording_props.rs
+    │           ├── recycling.rs
+    │           ├── stack_converter.rs
+    │           ├── stack_depth_limiting_frame_iter.rs
+    │           ├── timestamp_converter.rs
+    │           ├── types.rs
+    │           ├── unresolved_samples.rs
+    │           └── utils.rs
+    ├── samply-api
+    │   ├── Cargo.toml
+    │   ├── README.md
+    │   ├── src
+    │   │   ├── api_file_path.rs
+    │   │   ├── asm
+    │   │   │   ├── mod.rs
+    │   │   │   ├── request_json.rs
+    │   │   │   └── response_json.rs
+    │   │   ├── error.rs
+    │   │   ├── hex.rs
+    │   │   ├── lib.rs
+    │   │   ├── source
+    │   │   │   ├── mod.rs
+    │   │   │   ├── request_json.rs
+    │   │   │   └── response_json.rs
+    │   │   └── symbolicate
+    │   │       ├── looked_up_addresses.rs
+    │   │       ├── mod.rs
+    │   │       ├── request_json.rs
+    │   │       └── response_json.rs
+    │   └── tests
+    │       └── integration_tests
+    │           └── main.rs
+    ├── samply-mac-preload
+    │   ├── binaries
+    │   │   ├── libsamply_mac_preload_arm64.dylib
+    │   │   ├── libsamply_mac_preload.dylib
+    │   │   └── libsamply_mac_preload_x86_64.dylib
+    │   ├── build.sh
+    │   ├── Cargo.lock
+    │   ├── Cargo.toml
+    │   ├── README.md
+    │   └── src
+    │       ├── lib.rs
+    │       ├── mach_ipc.rs
+    │       └── mach_sys.rs
+    ├── samply-symbols
+    │   ├── Cargo.toml
+    │   ├── README.md
+    │   ├── src
+    │   │   ├── binary_image.rs
+    │   │   ├── breakpad
+    │   │   │   ├── index.rs
+    │   │   │   ├── mod.rs
+    │   │   │   └── symbol_map.rs
+    │   │   ├── cache.rs
+    │   │   ├── chunked_read_buffer_manager.rs
+    │   │   ├── compact_symbol_table.rs
+    │   │   ├── debugid_util.rs
+    │   │   ├── demangle_ocaml.rs
+    │   │   ├── demangle.rs
+    │   │   ├── dwarf.rs
+    │   │   ├── elf.rs
+    │   │   ├── error.rs
+    │   │   ├── external_file.rs
+    │   │   ├── jitdump.rs
+    │   │   ├── lib.rs
+    │   │   ├── macho.rs
+    │   │   ├── mapped_path.rs
+    │   │   ├── path_mapper.rs
+    │   │   ├── shared.rs
+    │   │   ├── symbol_map_object.rs
+    │   │   ├── symbol_map.rs
+    │   │   └── windows.rs
+    │   └── tests
+    │       └── integration_tests
+    │           └── main.rs
+    ├── tools
+    │   ├── benchmarks
+    │   │   ├── Cargo.toml
+    │   │   └── src
+    │   │       └── main.rs
+    │   ├── dump_table
+    │   │   ├── Cargo.toml
+    │   │   └── src
+    │   │       ├── lib.rs
+    │   │       └── main.rs
+    │   └── query_api
+    │       ├── Cargo.toml
+    │       └── src
+    │           ├── lib.rs
+    │           └── main.rs
+    ├── wholesym
+    │   ├── Cargo.toml
+    │   ├── LICENSE-APACHE
+    │   ├── LICENSE-MIT
+    │   ├── README.md
+    │   ├── src
+    │   │   ├── config.rs
+    │   │   ├── debuginfod.rs
+    │   │   ├── helper.rs
+    │   │   ├── lib.rs
+    │   │   ├── moria_mac.rs
+    │   │   ├── moria_mac_spotlight.rs
+    │   │   ├── symbol_manager.rs
+    │   │   └── vdso.rs
+    │   └── tests
+    │       └── integration_tests
+    │           └── main.rs
+    └── wholesym-addr2line
+        ├── Cargo.toml
+        ├── LICENSE-APACHE
+        ├── LICENSE-MIT
+        └── src
+            └── main.rs
+
+76 directories, 284 files

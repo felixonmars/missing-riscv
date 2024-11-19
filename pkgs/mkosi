@@ -1,0 +1,250 @@
+src
+├── mkosi-24.3
+│   ├── action.yaml
+│   ├── bin
+│   │   └── mkosi
+│   ├── blog
+│   │   └── content
+│   │       └── a-reintroduction-to-mkosi.md
+│   ├── docs
+│   │   ├── assets
+│   │   │   └── systemd-logo.svg
+│   │   ├── bootable.md
+│   │   ├── building-rpms-from-source.md
+│   │   ├── CNAME
+│   │   ├── _data
+│   │   │   ├── documentation_page.json
+│   │   │   └── project_pages.json
+│   │   ├── distribution-policy.md
+│   │   ├── favicon.png
+│   │   ├── fonts
+│   │   │   ├── heebo-bold.woff
+│   │   │   └── heebo-regular.woff
+│   │   ├── _includes
+│   │   │   ├── footer.html
+│   │   │   ├── header.html
+│   │   │   └── head.html
+│   │   ├── index.md
+│   │   ├── initrd.md
+│   │   ├── _layouts
+│   │   │   ├── default.html
+│   │   │   └── forward.html
+│   │   ├── style.css
+│   │   └── sysext.md
+│   ├── kernel-install
+│   │   └── 50-mkosi.install
+│   ├── LICENSE
+│   ├── LICENSE.GPL2
+│   ├── MANIFEST.in
+│   ├── mkosi
+│   │   ├── archive.py
+│   │   ├── burn.py
+│   │   ├── completion.py
+│   │   ├── config.py
+│   │   ├── context.py
+│   │   ├── distributions
+│   │   │   ├── alma.py
+│   │   │   ├── arch.py
+│   │   │   ├── centos.py
+│   │   │   ├── custom.py
+│   │   │   ├── debian.py
+│   │   │   ├── fedora.py
+│   │   │   ├── __init__.py
+│   │   │   ├── mageia.py
+│   │   │   ├── openmandriva.py
+│   │   │   ├── opensuse.py
+│   │   │   ├── rhel.py
+│   │   │   ├── rhel_ubi.py
+│   │   │   ├── rocky.py
+│   │   │   └── ubuntu.py
+│   │   ├── __init__.py
+│   │   ├── initrd
+│   │   │   ├── __main__.py
+│   │   │   └── resources
+│   │   │       ├── __init__.py
+│   │   │       └── mkosi-initrd.md
+│   │   ├── installer
+│   │   │   ├── apt.py
+│   │   │   ├── dnf.py
+│   │   │   ├── __init__.py
+│   │   │   ├── pacman.py
+│   │   │   ├── rpm.py
+│   │   │   └── zypper.py
+│   │   ├── kmod.py
+│   │   ├── log.py
+│   │   ├── __main__.py
+│   │   ├── manifest.py
+│   │   ├── mounts.py
+│   │   ├── pager.py
+│   │   ├── partition.py
+│   │   ├── qemu.py
+│   │   ├── resources
+│   │   │   ├── completion.bash
+│   │   │   ├── completion.zsh
+│   │   │   ├── __init__.py
+│   │   │   ├── mkosi-initrd
+│   │   │   │   ├── mkosi.conf
+│   │   │   │   ├── mkosi.conf.d
+│   │   │   │   │   ├── 10-arch.conf
+│   │   │   │   │   ├── 10-centos.conf
+│   │   │   │   │   ├── 10-centos-fedora.conf
+│   │   │   │   │   ├── 10-debian-ubuntu
+│   │   │   │   │   │   ├── mkosi.conf
+│   │   │   │   │   │   └── mkosi.conf.d
+│   │   │   │   │   │       └── 10-libtss.conf
+│   │   │   │   │   ├── 10-fedora.conf
+│   │   │   │   │   ├── 10-opensuse.conf
+│   │   │   │   │   └── 20-stub.conf
+│   │   │   │   └── mkosi.extra
+│   │   │   │       └── usr
+│   │   │   │           └── lib
+│   │   │   │               ├── systemd
+│   │   │   │               │   ├── system
+│   │   │   │               │   │   └── systemd-cryptsetup@.service.d
+│   │   │   │               │   │       └── credential.conf
+│   │   │   │               │   └── system-preset
+│   │   │   │               │       └── 99-mkosi.preset
+│   │   │   │               └── udev
+│   │   │   │                   └── rules.d
+│   │   │   │                       ├── 10-mkosi-initrd-dm.rules
+│   │   │   │                       └── 10-mkosi-initrd-md.rules
+│   │   │   ├── mkosi.md
+│   │   │   ├── mkosi-tools
+│   │   │   │   ├── mkosi.conf
+│   │   │   │   ├── mkosi.conf.d
+│   │   │   │   │   ├── 10-arch.conf
+│   │   │   │   │   ├── 10-centos
+│   │   │   │   │   │   ├── mkosi.conf
+│   │   │   │   │   │   └── mkosi.conf.d
+│   │   │   │   │   │       ├── 10-epel.conf
+│   │   │   │   │   │       └── 20-epel-packages.conf
+│   │   │   │   │   ├── 10-centos-fedora
+│   │   │   │   │   │   ├── mkosi.conf
+│   │   │   │   │   │   └── mkosi.conf.d
+│   │   │   │   │   │       └── 10-uefi.conf
+│   │   │   │   │   ├── 10-debian-ubuntu
+│   │   │   │   │   │   ├── mkosi.conf
+│   │   │   │   │   │   └── mkosi.conf.d
+│   │   │   │   │   │       ├── grub.conf
+│   │   │   │   │   │       ├── systemd-boot.conf
+│   │   │   │   │   │       ├── ubuntu-keyring.conf
+│   │   │   │   │   │       └── virtiofsd.conf
+│   │   │   │   │   ├── 10-fedora
+│   │   │   │   │   │   ├── mkosi.conf
+│   │   │   │   │   │   └── mkosi.conf.d
+│   │   │   │   │   │       └── 10-uefi.conf
+│   │   │   │   │   └── 10-opensuse.conf
+│   │   │   │   └── mkosi.prepare.chroot
+│   │   │   └── repart
+│   │   │       └── definitions
+│   │   │           ├── confext.repart.d
+│   │   │           │   ├── 10-root.conf
+│   │   │           │   ├── 20-root-verity.conf
+│   │   │           │   └── 30-root-verity-sig.conf
+│   │   │           ├── portable.repart.d
+│   │   │           │   ├── 10-root.conf
+│   │   │           │   ├── 20-root-verity.conf
+│   │   │           │   └── 30-root-verity-sig.conf
+│   │   │           └── sysext.repart.d
+│   │   │               ├── 10-root.conf
+│   │   │               ├── 20-root-verity.conf
+│   │   │               └── 30-root-verity-sig.conf
+│   │   ├── run.py
+│   │   ├── sandbox.py
+│   │   ├── tree.py
+│   │   ├── types.py
+│   │   ├── user.py
+│   │   ├── util.py
+│   │   ├── versioncomp.py
+│   │   └── vmspawn.py
+│   ├── mkosi.conf
+│   ├── mkosi.conf.d
+│   │   ├── 15-bootable.conf
+│   │   ├── 15-memory.conf
+│   │   ├── 15-metadata.conf
+│   │   ├── 15-x86-64.conf
+│   │   ├── 20-arch.conf
+│   │   ├── 20-centos
+│   │   │   ├── mkosi.conf
+│   │   │   └── mkosi.conf.d
+│   │   │       └── epel.conf
+│   │   ├── 20-debian
+│   │   │   ├── mkosi.conf
+│   │   │   └── mkosi.conf.d
+│   │   │       ├── 20-arm64.conf
+│   │   │       ├── 20-x86-64.conf
+│   │   │       └── 20-x86.conf
+│   │   ├── 20-fedora
+│   │   │   ├── mkosi.conf
+│   │   │   └── mkosi.conf.d
+│   │   │       ├── 20-arm64.conf
+│   │   │       └── 20-x86_64.conf
+│   │   ├── 20-opensuse
+│   │   │   ├── mkosi.conf
+│   │   │   └── mkosi.conf.d
+│   │   │       └── x86-64.conf
+│   │   ├── 20-rhel-ubi.conf
+│   │   ├── 20-ubuntu
+│   │   │   ├── mkosi.conf
+│   │   │   ├── mkosi.conf.d
+│   │   │   │   └── 20-jammy.conf
+│   │   │   └── mkosi.pkgmngr
+│   │   │       └── etc
+│   │   │           └── apt
+│   │   │               └── sources.list.d
+│   │   │                   └── kernel-utils.sources
+│   │   ├── 30-centos-fedora
+│   │   │   ├── mkosi.conf
+│   │   │   └── mkosi.conf.d
+│   │   │       ├── 20-arm64.conf
+│   │   │       ├── 20-uefi.conf
+│   │   │       └── 20-x86-64.conf
+│   │   ├── 30-debian-ubuntu
+│   │   │   ├── mkosi.conf
+│   │   │   └── mkosi.conf.d
+│   │   │       ├── 20-ext4-orphan-file.conf
+│   │   │       ├── 20-systemd-extra.conf
+│   │   │       └── 20-x86-64.conf
+│   │   └── 30-rpm
+│   │       ├── mkosi.build.chroot
+│   │       ├── mkosi.conf
+│   │       └── mkosi.prepare
+│   ├── mkosi.extra
+│   │   └── usr
+│   │       └── lib
+│   │           ├── repart.d
+│   │           │   └── root.conf
+│   │           └── systemd
+│   │               ├── mkosi-check-and-shutdown.sh
+│   │               ├── system
+│   │               │   ├── mkosi-check-and-shutdown.service
+│   │               │   └── systemd-machine-id-commit.service.d
+│   │               │       └── timeout.conf
+│   │               └── system-preset
+│   │                   ├── 00-mkosi.preset
+│   │                   └── 99-mkosi.preset
+│   ├── mkosi-initrd -> mkosi/resources/mkosi-initrd
+│   ├── mkosi.md -> mkosi/resources/mkosi.md
+│   ├── mkosi.postinst
+│   ├── mkosi.prepare
+│   ├── mkosi.prepare.chroot
+│   ├── NEWS.md
+│   ├── pyproject.toml
+│   ├── README.md
+│   ├── tests
+│   │   ├── conftest.py
+│   │   ├── __init__.py
+│   │   ├── test_boot.py
+│   │   ├── test_config.py
+│   │   ├── test_initrd.py
+│   │   ├── test_json.py
+│   │   ├── test_sysext.py
+│   │   └── test_versioncomp.py
+│   └── tools
+│       ├── do-a-release.sh
+│       ├── generate-zipapp.sh
+│       └── make-man-page.sh
+├── mkosi-24.3.tar.gz -> /home/felix/packages/mkosi/mkosi-24.3.tar.gz
+└── mkosi.tmpfiles -> /home/felix/packages/mkosi/mkosi.tmpfiles
+
+77 directories, 171 files

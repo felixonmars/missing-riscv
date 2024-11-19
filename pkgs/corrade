@@ -1,0 +1,668 @@
+src
+└── corrade
+    ├── CMakeLists.txt
+    ├── conanfile.py
+    ├── CONTRIBUTING.md
+    ├── COPYING
+    ├── COPYING-examples
+    ├── CREDITS.md
+    ├── doc
+    │   ├── 00-page-order.dox
+    │   ├── acme.dox
+    │   ├── building-corrade.dox
+    │   ├── codingstyle
+    │   │   ├── comments.h
+    │   │   ├── doxygen-code-block.h
+    │   │   ├── doxygen-code-block-workaround.h
+    │   │   ├── doxygen-code-inline.h
+    │   │   ├── doxygen-configurationvalue.h
+    │   │   ├── doxygen-debugoperatorenum.h
+    │   │   ├── doxygen-debugoperator.h
+    │   │   ├── doxygen-file.h
+    │   │   ├── doxygen-function.h
+    │   │   ├── doxygen.h
+    │   │   ├── doxygen-macro.h
+    │   │   ├── doxygen-overload.h
+    │   │   ├── doxygen-sections.h
+    │   │   ├── doxygen-short.h
+    │   │   └── doxygen-thirdparty.h
+    │   ├── conf-public.py
+    │   ├── conf.py
+    │   ├── corrade-changelog.dox
+    │   ├── corrade-changelog-old.dox
+    │   ├── corrade-cmake.dox
+    │   ├── corrade-coding-style.dox
+    │   ├── corrade-credits.dox
+    │   ├── corrade-developers.dox
+    │   ├── corrade-example-index.dox
+    │   ├── corrade-singles.dox
+    │   ├── Doxyfile
+    │   ├── Doxyfile-mcss
+    │   ├── Doxyfile-public
+    │   ├── favicon.ico
+    │   ├── interconnect.dox
+    │   ├── main.dox
+    │   ├── mainpage.dox
+    │   ├── namespaces.dox
+    │   ├── plugin-management.dox
+    │   ├── resource-management.dox
+    │   ├── snippets
+    │   │   ├── acme-driver.h
+    │   │   ├── android.cpp
+    │   │   ├── CMakeLists.txt
+    │   │   ├── Containers.cpp
+    │   │   ├── containers-growable-array-sanitizer.ansi
+    │   │   ├── Containers-stl17.cpp
+    │   │   ├── Containers-stl2a.cpp
+    │   │   ├── Containers-stl.cpp
+    │   │   ├── Interconnect.cpp
+    │   │   ├── PluginManager.cpp
+    │   │   ├── TestSuite2.cpp
+    │   │   ├── TestSuite3.cpp
+    │   │   ├── testsuite.ansi
+    │   │   ├── testsuite-basic.ansi
+    │   │   ├── testsuite-basic.cpp
+    │   │   ├── testsuite-benchmark.ansi
+    │   │   ├── testsuite-benchmark.cpp
+    │   │   ├── testsuite-benchmark-custom.ansi
+    │   │   ├── testsuite-benchmark-custom.cpp
+    │   │   ├── testsuite.cmake
+    │   │   ├── TestSuite.cpp
+    │   │   ├── testsuite-instanced.ansi
+    │   │   ├── testsuite-instanced.cpp
+    │   │   ├── testsuite-iteration.ansi
+    │   │   ├── testsuite-iteration.cpp
+    │   │   ├── testsuite-repeated.ansi
+    │   │   ├── testsuite-repeated.cpp
+    │   │   ├── testsuite-save-diagnostic.ansi
+    │   │   ├── testsuite-save-diagnostic.cpp
+    │   │   ├── testsuite-templated.ansi
+    │   │   ├── testsuite-templated.cpp
+    │   │   ├── Utility.cpp
+    │   │   ├── UtilityDebug-color.ansi
+    │   │   └── UtilityDebug-color-greyscale.ansi
+    │   ├── stl.tag
+    │   └── testsuite.dox
+    ├── modules
+    │   ├── CMakeLists.txt
+    │   ├── CorradeConfig.cmake
+    │   ├── CorradeLibSuffix.cmake
+    │   ├── FindCorrade.cmake
+    │   ├── FindNodeJs.cmake
+    │   └── UseCorrade.cmake
+    ├── package
+    │   ├── archlinux
+    │   │   ├── corrade
+    │   │   │   └── PKGBUILD
+    │   │   ├── corrade-git
+    │   │   │   └── PKGBUILD
+    │   │   ├── PKGBUILD
+    │   │   ├── PKGBUILD-android-arm64
+    │   │   ├── PKGBUILD-clang
+    │   │   ├── PKGBUILD-clang-addresssanitizer
+    │   │   ├── PKGBUILD-clang-analyzer
+    │   │   ├── PKGBUILD-clang-libc++
+    │   │   ├── PKGBUILD-clang-threadsanitizer
+    │   │   ├── PKGBUILD-coverage
+    │   │   ├── PKGBUILD-emscripten
+    │   │   ├── PKGBUILD-emscripten-wasm
+    │   │   ├── PKGBUILD-gcc48
+    │   │   ├── PKGBUILD-gcc5
+    │   │   ├── PKGBUILD-mingw-w64
+    │   │   └── PKGBUILD-release
+    │   ├── ci
+    │   │   ├── appveyor-cache-reset.txt
+    │   │   ├── appveyor-desktop.bat
+    │   │   ├── appveyor-desktop-mingw.bat
+    │   │   ├── appveyor-lcov.sh
+    │   │   ├── appveyor-rt.bat
+    │   │   ├── appveyor.yml
+    │   │   ├── threadsanitizer.conf
+    │   │   ├── travis-android-arm.sh
+    │   │   ├── travis-desktop.sh
+    │   │   ├── travis-emscripten.sh
+    │   │   ├── travis-ios-simulator.sh
+    │   │   └── travis.yml
+    │   ├── conan
+    │   │   ├── CMakeLists.txt
+    │   │   └── test_package
+    │   │       ├── CMakeLists.txt
+    │   │       ├── conanfile.py
+    │   │       └── test_package.cpp
+    │   ├── debian
+    │   │   ├── changelog
+    │   │   ├── compat
+    │   │   ├── control
+    │   │   ├── copyright
+    │   │   ├── corrade-dev.install
+    │   │   ├── corrade.install
+    │   │   ├── rules
+    │   │   └── source
+    │   │       └── format
+    │   ├── gentoo
+    │   │   └── dev-libs
+    │   │       └── corrade
+    │   │           ├── corrade-9999.ebuild
+    │   │           └── Manifest
+    │   ├── homebrew
+    │   │   └── corrade.rb
+    │   ├── make-github-like-archive.sh
+    │   ├── msys
+    │   │   ├── corrade
+    │   │   │   └── PKGBUILD
+    │   │   └── PKGBUILD
+    │   └── rpm
+    │       ├── corrade.changes
+    │       └── corrade.spec
+    ├── README.md
+    ├── src
+    │   ├── acme
+    │   │   ├── acme.py
+    │   │   └── test
+    │   │       ├── bom
+    │   │       │   └── input.h
+    │   │       ├── comments
+    │   │       │   ├── expected.h
+    │   │       │   └── input.h
+    │   │       ├── includes
+    │   │       │   ├── Dir
+    │   │       │   │   ├── Absolute.h
+    │   │       │   │   ├── Bla.h
+    │   │       │   │   └── Relative.h
+    │   │       │   ├── expected.h
+    │   │       │   ├── input.h
+    │   │       │   ├── Local.h
+    │   │       │   └── Oof.h
+    │   │       ├── __init__.py
+    │   │       ├── no_copyright_include_placeholders
+    │   │       │   ├── expected.h
+    │   │       │   └── input.h
+    │   │       ├── pragmas
+    │   │       │   ├── expected.h
+    │   │       │   └── input.h
+    │   │       ├── preprocessor
+    │   │       │   ├── expected.h
+    │   │       │   └── input.h
+    │   │       ├── revision_stats
+    │   │       │   ├── expected.h
+    │   │       │   ├── input.h
+    │   │       │   └── output
+    │   │       │       └── dummy
+    │   │       └── test.py
+    │   ├── CMakeLists.txt
+    │   ├── Corrade
+    │   │   ├── CMakeLists.txt
+    │   │   ├── configure.h.cmake
+    │   │   ├── Containers
+    │   │   │   ├── Array.h
+    │   │   │   ├── ArrayView.h
+    │   │   │   ├── ArrayViewStl.h
+    │   │   │   ├── ArrayViewStlSpan.h
+    │   │   │   ├── CMakeLists.txt
+    │   │   │   ├── constructHelpers.h
+    │   │   │   ├── Containers.h
+    │   │   │   ├── EnumSet.h
+    │   │   │   ├── EnumSet.hpp
+    │   │   │   ├── GrowableArray.h
+    │   │   │   ├── Implementation
+    │   │   │   │   └── RawForwardList.h
+    │   │   │   ├── LinkedList.h
+    │   │   │   ├── Optional.h
+    │   │   │   ├── OptionalStl.h
+    │   │   │   ├── Pointer.h
+    │   │   │   ├── PointerStl.h
+    │   │   │   ├── Reference.h
+    │   │   │   ├── ReferenceStl.h
+    │   │   │   ├── ScopedExit.h
+    │   │   │   ├── ScopeGuard.h
+    │   │   │   ├── StaticArray.h
+    │   │   │   ├── StridedArrayView.h
+    │   │   │   ├── Tags.h
+    │   │   │   └── Test
+    │   │   │       ├── ArrayStlSpanTest.cpp
+    │   │   │       ├── ArrayTest.cpp
+    │   │   │       ├── ArrayViewStlSpanTest.cpp
+    │   │   │       ├── ArrayViewStlTest.cpp
+    │   │   │       ├── ArrayViewTest.cpp
+    │   │   │       ├── CMakeLists.txt
+    │   │   │       ├── EnumSetTest.cpp
+    │   │   │       ├── GrowableArraySanitizerFailTest.cpp
+    │   │   │       ├── GrowableArrayTest.cpp
+    │   │   │       ├── LinkedListTest.cpp
+    │   │   │       ├── OptionalStlTest.cpp
+    │   │   │       ├── OptionalTest.cpp
+    │   │   │       ├── PointerStlTest.cpp
+    │   │   │       ├── PointerTest.cpp
+    │   │   │       ├── RawForwardListTest.cpp
+    │   │   │       ├── ReferenceStlTest.cpp
+    │   │   │       ├── ReferenceTest.cpp
+    │   │   │       ├── ScopeGuardTest.cpp
+    │   │   │       ├── StaticArrayStlSpanTest.cpp
+    │   │   │       ├── StaticArrayTest.cpp
+    │   │   │       ├── StaticArrayViewStlSpanTest.cpp
+    │   │   │       ├── StaticArrayViewStlTest.cpp
+    │   │   │       ├── StaticArrayViewTest.cpp
+    │   │   │       ├── StridedArrayViewTest.cpp
+    │   │   │       └── TagsTest.cpp
+    │   │   ├── Corrade.h
+    │   │   ├── CorradeMain.cpp
+    │   │   ├── Interconnect
+    │   │   │   ├── CMakeLists.txt
+    │   │   │   ├── Connection.cpp
+    │   │   │   ├── Connection.h
+    │   │   │   ├── Emitter.cpp
+    │   │   │   ├── Emitter.h
+    │   │   │   ├── Implementation
+    │   │   │   │   └── ReceiverConnection.h
+    │   │   │   ├── Interconnect.h
+    │   │   │   ├── Receiver.cpp
+    │   │   │   ├── Receiver.h
+    │   │   │   ├── StateMachine.h
+    │   │   │   ├── Test
+    │   │   │   │   ├── Benchmark.cpp
+    │   │   │   │   ├── CMakeLists.txt
+    │   │   │   │   ├── EmitterLibrary.cpp
+    │   │   │   │   ├── EmitterLibrary.h
+    │   │   │   │   ├── LibraryTest.cpp
+    │   │   │   │   ├── StateMachineTest.cpp
+    │   │   │   │   └── Test.cpp
+    │   │   │   └── visibility.h
+    │   │   ├── PluginManager
+    │   │   │   ├── AbstractManager.cpp
+    │   │   │   ├── AbstractManager.h
+    │   │   │   ├── AbstractManagingPlugin.h
+    │   │   │   ├── AbstractPlugin.cpp
+    │   │   │   ├── AbstractPlugin.h
+    │   │   │   ├── CMakeLists.txt
+    │   │   │   ├── configure.h.cmake
+    │   │   │   ├── Manager.h
+    │   │   │   ├── PluginManager.h
+    │   │   │   ├── PluginMetadata.cpp
+    │   │   │   ├── PluginMetadata.h
+    │   │   │   ├── Test
+    │   │   │   │   ├── AbstractAnimal.cpp
+    │   │   │   │   ├── AbstractAnimal.h
+    │   │   │   │   ├── AbstractCustomSuffix.cpp
+    │   │   │   │   ├── AbstractCustomSuffix.h
+    │   │   │   │   ├── AbstractDeletable.cpp
+    │   │   │   │   ├── AbstractDeletable.h
+    │   │   │   │   ├── AbstractDisabledMetadata.cpp
+    │   │   │   │   ├── AbstractDisabledMetadata.h
+    │   │   │   │   ├── AbstractFood.cpp
+    │   │   │   │   ├── AbstractFood.h
+    │   │   │   │   ├── AbstractPluginTest.cpp
+    │   │   │   │   ├── animals
+    │   │   │   │   │   ├── Bulldog.conf
+    │   │   │   │   │   ├── Bulldog.cpp
+    │   │   │   │   │   ├── Canary.conf
+    │   │   │   │   │   ├── Canary.cpp
+    │   │   │   │   │   ├── Canary.h
+    │   │   │   │   │   ├── CMakeLists.txt
+    │   │   │   │   │   ├── Dird.conf
+    │   │   │   │   │   ├── Dird.cpp
+    │   │   │   │   │   ├── Dog.conf
+    │   │   │   │   │   ├── Dog.cpp
+    │   │   │   │   │   ├── Dog.h
+    │   │   │   │   │   ├── PitBull.conf
+    │   │   │   │   │   ├── PitBull.cpp
+    │   │   │   │   │   ├── Snail.conf
+    │   │   │   │   │   └── Snail.cpp
+    │   │   │   │   ├── CMakeLists.txt
+    │   │   │   │   ├── configure.h.cmake
+    │   │   │   │   ├── custom-suffix
+    │   │   │   │   │   ├── CMakeLists.txt
+    │   │   │   │   │   ├── CustomSuffix.cpp
+    │   │   │   │   │   ├── CustomSuffix.modconf
+    │   │   │   │   │   ├── CustomSuffixStatic.cpp
+    │   │   │   │   │   └── CustomSuffixStatic.modconf
+    │   │   │   │   ├── deletable
+    │   │   │   │   │   ├── CMakeLists.txt
+    │   │   │   │   │   ├── Deletable.conf
+    │   │   │   │   │   └── Deletable.cpp
+    │   │   │   │   ├── disabled-metadata
+    │   │   │   │   │   ├── CMakeLists.txt
+    │   │   │   │   │   ├── DisabledMetadata.cpp
+    │   │   │   │   │   └── DisabledMetadataStatic.cpp
+    │   │   │   │   ├── doggo
+    │   │   │   │   │   ├── CMakeLists.txt
+    │   │   │   │   │   ├── Doggo.conf
+    │   │   │   │   │   └── Doggo.cpp
+    │   │   │   │   ├── dummy.conf
+    │   │   │   │   ├── food
+    │   │   │   │   │   ├── CMakeLists.txt
+    │   │   │   │   │   ├── HotDog.conf
+    │   │   │   │   │   ├── HotDog.cpp
+    │   │   │   │   │   ├── HotDogWithSnail.conf
+    │   │   │   │   │   ├── OldBread.conf
+    │   │   │   │   │   ├── OldBread.cpp
+    │   │   │   │   │   ├── RottenTomato.conf
+    │   │   │   │   │   └── RottenTomato.cpp
+    │   │   │   │   ├── GlobalStateAcrossLibrariesLibrary.cpp
+    │   │   │   │   ├── GlobalStateAcrossLibrariesLibrary.h
+    │   │   │   │   ├── GlobalStateAcrossLibrariesTest.cpp
+    │   │   │   │   ├── ImportStaticTest.cpp
+    │   │   │   │   ├── init-fini
+    │   │   │   │   │   ├── CMakeLists.txt
+    │   │   │   │   │   ├── InitFiniDynamic.conf
+    │   │   │   │   │   ├── InitFiniDynamic.cpp
+    │   │   │   │   │   ├── InitFini.h
+    │   │   │   │   │   ├── InitFiniStatic.cpp
+    │   │   │   │   │   └── InitFiniStatic.h
+    │   │   │   │   ├── ManagerInitFiniTest.cpp
+    │   │   │   │   ├── ManagerTest.cpp
+    │   │   │   │   ├── wrong
+    │   │   │   │   │   ├── CMakeLists.txt
+    │   │   │   │   │   ├── NoPluginFinalizer.cpp
+    │   │   │   │   │   ├── NoPluginInitializer.cpp
+    │   │   │   │   │   ├── NoPluginInstancer.cpp
+    │   │   │   │   │   ├── NoPluginInterface.cpp
+    │   │   │   │   │   ├── NoPluginVersion.cpp
+    │   │   │   │   │   └── UnresolvedReference.cpp
+    │   │   │   │   └── wrong-metadata
+    │   │   │   │       ├── CMakeLists.txt
+    │   │   │   │       ├── WrongMetadata.conf
+    │   │   │   │       ├── WrongMetadata.cpp
+    │   │   │   │       └── WrongMetadata.h
+    │   │   │   └── visibility.h
+    │   │   ├── Test
+    │   │   │   ├── CMakeLists.txt
+    │   │   │   ├── configure.h.cmake
+    │   │   │   ├── CppStandardTest.cpp
+    │   │   │   ├── MainTest.cpp
+    │   │   │   ├── TargetTest.cpp
+    │   │   │   └── VersionTest.cpp
+    │   │   ├── TestSuite
+    │   │   │   ├── AdbRunner.sh
+    │   │   │   ├── CMakeLists.txt
+    │   │   │   ├── Comparator.cpp
+    │   │   │   ├── Comparator.h
+    │   │   │   ├── Compare
+    │   │   │   │   ├── CMakeLists.txt
+    │   │   │   │   ├── Container.h
+    │   │   │   │   ├── File.cpp
+    │   │   │   │   ├── File.h
+    │   │   │   │   ├── FileToString.cpp
+    │   │   │   │   ├── FileToString.h
+    │   │   │   │   ├── FloatingPoint.cpp
+    │   │   │   │   ├── FloatingPoint.h
+    │   │   │   │   ├── Numeric.h
+    │   │   │   │   ├── SortedContainer.h
+    │   │   │   │   ├── StringToFile.cpp
+    │   │   │   │   ├── StringToFile.h
+    │   │   │   │   └── Test
+    │   │   │   │       ├── CMakeLists.txt
+    │   │   │   │       ├── configure.h.cmake
+    │   │   │   │       ├── ContainerTest.cpp
+    │   │   │   │       ├── FileTest.cpp
+    │   │   │   │       ├── FileTestFiles
+    │   │   │   │       │   ├── base.txt
+    │   │   │   │       │   ├── different.txt
+    │   │   │   │       │   ├── empty.txt
+    │   │   │   │       │   ├── hýždě.txt
+    │   │   │   │       │   └── smaller.txt
+    │   │   │   │       ├── FileToStringTest.cpp
+    │   │   │   │       ├── FloatingPointTest.cpp
+    │   │   │   │       ├── NumericTest.cpp
+    │   │   │   │       ├── SortedContainerTest.cpp
+    │   │   │   │       └── StringToFileTest.cpp
+    │   │   │   ├── EmscriptenRunner.html.in
+    │   │   │   ├── Implementation
+    │   │   │   │   ├── BenchmarkCounters.h
+    │   │   │   │   └── BenchmarkStats.h
+    │   │   │   ├── Test
+    │   │   │   │   ├── ArgumentsTest.cpp
+    │   │   │   │   ├── BenchmarkStatsTest.cpp
+    │   │   │   │   ├── BundledFilesTest.cpp
+    │   │   │   │   ├── BundledFilesTestFiles
+    │   │   │   │   │   ├── a.txt
+    │   │   │   │   │   ├── b.txt
+    │   │   │   │   │   ├── c.txt
+    │   │   │   │   │   └── d.txt
+    │   │   │   │   ├── CMakeLists.txt
+    │   │   │   │   ├── ComparatorTest.cpp
+    │   │   │   │   ├── configure.h.cmake
+    │   │   │   │   ├── FailingTest.cpp
+    │   │   │   │   ├── TesterTest.cpp
+    │   │   │   │   └── TesterTestFiles
+    │   │   │   │       ├── abortOnFailSkip.txt
+    │   │   │   │       ├── abortOnFail.txt
+    │   │   │   │       ├── benchmarkCpuClock.txt
+    │   │   │   │       ├── benchmarkCpuCycles.txt
+    │   │   │   │       ├── benchmarkCpuScalingWarning.txt
+    │   │   │   │       ├── benchmarkCpuScalingWarningVerbose.txt
+    │   │   │   │       ├── benchmarkDebugBuildNote.txt
+    │   │   │   │       ├── benchmarkDiscardAll.txt
+    │   │   │   │       ├── benchmarkWallClock.txt
+    │   │   │   │       ├── compareMessageFailed.txt
+    │   │   │   │       ├── compareMessageVerboseDisabled.txt
+    │   │   │   │       ├── compareMessageVerboseEnabled.txt
+    │   │   │   │       ├── compareMessageXfail.txt
+    │   │   │   │       ├── cpu-governor-performance.txt
+    │   │   │   │       ├── cpu-governor-powersave.txt
+    │   │   │   │       ├── noCatch.txt
+    │   │   │   │       ├── noXfail.txt
+    │   │   │   │       ├── repeatAll.txt
+    │   │   │   │       ├── repeatEvery.txt
+    │   │   │   │       ├── saveDiagnosticAbortOnFail.txt
+    │   │   │   │       ├── saveDiagnosticFailedDisabled.txt
+    │   │   │   │       ├── saveDiagnosticFailedEnabled.txt
+    │   │   │   │       ├── saveDiagnosticSucceededDisabled.txt
+    │   │   │   │       ├── saveDiagnosticSucceededEnabled.txt
+    │   │   │   │       ├── saveDiagnosticVerboseDisabled.txt
+    │   │   │   │       ├── saveDiagnosticVerboseEnabled.txt
+    │   │   │   │       ├── saveDiagnosticXfail.txt
+    │   │   │   │       ├── saveDiagnosticXpassDisabled.txt
+    │   │   │   │       ├── saveDiagnosticXpassEnabled.txt
+    │   │   │   │       ├── shuffleOne.txt
+    │   │   │   │       ├── skipBenchmarks.txt
+    │   │   │   │       ├── skipOnly.txt
+    │   │   │   │       ├── skipTests.txt
+    │   │   │   │       ├── testName.txt
+    │   │   │   │       └── test.txt
+    │   │   │   ├── Tester.cpp
+    │   │   │   ├── Tester.h
+    │   │   │   ├── TestSuite.h
+    │   │   │   ├── visibility.h
+    │   │   │   └── XCTestRunner.mm.in
+    │   │   ├── Utility
+    │   │   │   ├── AbstractHash.h
+    │   │   │   ├── Algorithms.cpp
+    │   │   │   ├── Algorithms.h
+    │   │   │   ├── AndroidLogStreamBuffer.cpp
+    │   │   │   ├── AndroidLogStreamBuffer.h
+    │   │   │   ├── Arguments.cpp
+    │   │   │   ├── Arguments.h
+    │   │   │   ├── Assert.h
+    │   │   │   ├── CMakeLists.txt
+    │   │   │   ├── Configuration.cpp
+    │   │   │   ├── ConfigurationGroup.cpp
+    │   │   │   ├── ConfigurationGroup.h
+    │   │   │   ├── Configuration.h
+    │   │   │   ├── ConfigurationValue.cpp
+    │   │   │   ├── ConfigurationValue.h
+    │   │   │   ├── Debug.cpp
+    │   │   │   ├── Debug.h
+    │   │   │   ├── DebugStl.h
+    │   │   │   ├── Directory.cpp
+    │   │   │   ├── Directory.h
+    │   │   │   ├── EndiannessBatch.h
+    │   │   │   ├── Endianness.h
+    │   │   │   ├── FileWatcher.cpp
+    │   │   │   ├── FileWatcher.h
+    │   │   │   ├── Format.cpp
+    │   │   │   ├── Format.h
+    │   │   │   ├── FormatStl.h
+    │   │   │   ├── Implementation
+    │   │   │   │   ├── Resource.h
+    │   │   │   │   ├── tweakable.h
+    │   │   │   │   ├── WindowsError.cpp
+    │   │   │   │   ├── WindowsError.h
+    │   │   │   │   ├── WindowsWeakSymbol.cpp
+    │   │   │   │   └── WindowsWeakSymbol.h
+    │   │   │   ├── Macros.h
+    │   │   │   ├── MurmurHash2.cpp
+    │   │   │   ├── MurmurHash2.h
+    │   │   │   ├── rc.cpp
+    │   │   │   ├── Resource.cpp
+    │   │   │   ├── Resource.h
+    │   │   │   ├── Sha1.cpp
+    │   │   │   ├── Sha1.h
+    │   │   │   ├── StlForwardArray.h
+    │   │   │   ├── StlForwardString.h
+    │   │   │   ├── StlForwardTuple.h
+    │   │   │   ├── StlForwardVector.h
+    │   │   │   ├── StlMath.h
+    │   │   │   ├── String.cpp
+    │   │   │   ├── String.h
+    │   │   │   ├── System.cpp
+    │   │   │   ├── System.h
+    │   │   │   ├── Test
+    │   │   │   │   ├── AlgorithmsTest.cpp
+    │   │   │   │   ├── ArgumentsTest.cpp
+    │   │   │   │   ├── AssertDisabledTest.cpp
+    │   │   │   │   ├── AssertGracefulTest.cpp
+    │   │   │   │   ├── AssertTest.cpp
+    │   │   │   │   ├── CMakeLists.txt
+    │   │   │   │   ├── ConfigurationTest.cpp
+    │   │   │   │   ├── ConfigurationTestFiles
+    │   │   │   │   │   ├── bom.conf
+    │   │   │   │   │   ├── comments.conf
+    │   │   │   │   │   ├── comments-saved.conf
+    │   │   │   │   │   ├── eol-mixed.conf
+    │   │   │   │   │   ├── eol-unix.conf
+    │   │   │   │   │   ├── eol-windows.conf
+    │   │   │   │   │   ├── hierarchic.conf
+    │   │   │   │   │   ├── hierarchic-empty-group.conf
+    │   │   │   │   │   ├── hierarchic-empty-subgroup.conf
+    │   │   │   │   │   ├── hierarchic-missing-bracket.conf
+    │   │   │   │   │   ├── hierarchic-modified.conf
+    │   │   │   │   │   ├── hierarchic-shortcuts.conf
+    │   │   │   │   │   ├── hierarchic-shortcuts-modified.conf
+    │   │   │   │   │   ├── hýždě.conf
+    │   │   │   │   │   ├── missing-equals.conf
+    │   │   │   │   │   ├── missing-multiline-quote.conf
+    │   │   │   │   │   ├── missing-quote.conf
+    │   │   │   │   │   ├── multiLine.conf
+    │   │   │   │   │   ├── multiLine-crlf.conf
+    │   │   │   │   │   ├── multiLine-crlf-saved.conf
+    │   │   │   │   │   ├── multiLine-saved.conf
+    │   │   │   │   │   ├── parse.conf
+    │   │   │   │   │   ├── parse-modified.conf
+    │   │   │   │   │   ├── whitespaces.conf
+    │   │   │   │   │   └── whitespaces-saved.conf
+    │   │   │   │   ├── ConfigurationValueTest.cpp
+    │   │   │   │   ├── configure.h.cmake
+    │   │   │   │   ├── DebugTest.cpp
+    │   │   │   │   ├── DirectoryTest.cpp
+    │   │   │   │   ├── DirectoryTestFiles
+    │   │   │   │   │   ├── dir
+    │   │   │   │   │   │   └── dummy
+    │   │   │   │   │   └── file
+    │   │   │   │   ├── DirectoryTestFilesUtf8
+    │   │   │   │   │   ├── hýždě
+    │   │   │   │   │   └── šňůra
+    │   │   │   │   │       └── dummy
+    │   │   │   │   ├── EndiannessTest.cpp
+    │   │   │   │   ├── FatalTest.cpp
+    │   │   │   │   ├── FileWatcherTest.cpp
+    │   │   │   │   ├── FormatTest.cpp
+    │   │   │   │   ├── GlobalStateAcrossLibrariesLibrary.cpp
+    │   │   │   │   ├── GlobalStateAcrossLibrariesLibrary.h
+    │   │   │   │   ├── GlobalStateAcrossLibrariesTest.cpp
+    │   │   │   │   ├── HashDigestTest.cpp
+    │   │   │   │   ├── MacrosTest.cpp
+    │   │   │   │   ├── MurmurHash2Test.cpp
+    │   │   │   │   ├── ResourceStaticTest.cpp
+    │   │   │   │   ├── ResourceTest.cpp
+    │   │   │   │   ├── ResourceTestFiles
+    │   │   │   │   │   ├── compiled.cpp
+    │   │   │   │   │   ├── compiled-empty.cpp
+    │   │   │   │   │   ├── compiled-nothing.cpp
+    │   │   │   │   │   ├── compiled-unicode.cpp
+    │   │   │   │   │   ├── consequence2.txt
+    │   │   │   │   │   ├── consequence.bin
+    │   │   │   │   │   ├── empty.bin
+    │   │   │   │   │   ├── hýždě.bin
+    │   │   │   │   │   ├── hýždě.conf
+    │   │   │   │   │   ├── predisposition2.txt
+    │   │   │   │   │   ├── predisposition.bin
+    │   │   │   │   │   ├── resources.conf
+    │   │   │   │   │   ├── resources-empty-alias.conf
+    │   │   │   │   │   ├── resources-empty-file.conf
+    │   │   │   │   │   ├── resources-empty-filename.conf
+    │   │   │   │   │   ├── resources-empty-group.conf
+    │   │   │   │   │   ├── resources-no-group.conf
+    │   │   │   │   │   ├── resources-nonexistent.conf
+    │   │   │   │   │   ├── resources-nothing.conf
+    │   │   │   │   │   ├── resources-overriden.conf
+    │   │   │   │   │   ├── resources-overriden-different.conf
+    │   │   │   │   │   ├── resources-overriden-none.conf
+    │   │   │   │   │   └── resources-overriden-nonexistent-file.conf
+    │   │   │   │   ├── Sha1Test.cpp
+    │   │   │   │   ├── Sha1Test.py
+    │   │   │   │   ├── StlForwardArrayTest.cpp
+    │   │   │   │   ├── StlForwardStringTest.cpp
+    │   │   │   │   ├── StlForwardTupleTest.cpp
+    │   │   │   │   ├── StlForwardVectorTest.cpp
+    │   │   │   │   ├── StlMathTest.cpp
+    │   │   │   │   ├── StringTest.cpp
+    │   │   │   │   ├── SystemTest.cpp
+    │   │   │   │   ├── TweakableIntegrationTest.cpp
+    │   │   │   │   ├── TweakableParserTest.cpp
+    │   │   │   │   ├── TweakableTest.cpp
+    │   │   │   │   ├── TypeTraitsTest.cpp
+    │   │   │   │   └── UnicodeTest.cpp
+    │   │   │   ├── Tweakable.cpp
+    │   │   │   ├── Tweakable.h
+    │   │   │   ├── TweakableParser.cpp
+    │   │   │   ├── TweakableParser.h
+    │   │   │   ├── TypeTraits.h
+    │   │   │   ├── Unicode.cpp
+    │   │   │   ├── Unicode.h
+    │   │   │   ├── utilities.h
+    │   │   │   ├── Utility.h
+    │   │   │   ├── visibility.h
+    │   │   │   └── VisibilityMacros.h
+    │   │   └── version.h.cmake
+    │   ├── dummy.cpp
+    │   ├── examples
+    │   │   ├── CMakeLists.txt
+    │   │   ├── interconnect
+    │   │   │   ├── CMakeLists.txt
+    │   │   │   └── main.cpp
+    │   │   ├── pluginmanager
+    │   │   │   ├── AbstractAnimal.h
+    │   │   │   ├── Canary.conf
+    │   │   │   ├── Canary.cpp
+    │   │   │   ├── CMakeLists.txt
+    │   │   │   ├── Dog.conf
+    │   │   │   ├── Dog.cpp
+    │   │   │   └── main.cpp
+    │   │   ├── resource
+    │   │   │   ├── CMakeLists.txt
+    │   │   │   ├── icon.png
+    │   │   │   ├── licenses
+    │   │   │   │   └── en.txt
+    │   │   │   ├── main.cpp
+    │   │   │   └── resources.conf
+    │   │   └── testsuite
+    │   │       ├── CMakeLists.txt
+    │   │       └── MyTest.cpp
+    │   └── singles
+    │       ├── base.h
+    │       ├── CorradeArray.h
+    │       ├── CorradeArrayView.h
+    │       ├── CorradeOptional.h
+    │       ├── CorradePointer.h
+    │       ├── CorradeReference.h
+    │       ├── CorradeScopeGuard.h
+    │       ├── CorradeStlForwardArray.h
+    │       ├── CorradeStlForwardString.h
+    │       ├── CorradeStlForwardTuple.h
+    │       ├── CorradeStlForwardVector.h
+    │       ├── CorradeStlMath.h
+    │       ├── CorradeStridedArrayView.h
+    │       └── generate.sh
+    └── toolchains
+
+78 directories, 588 files

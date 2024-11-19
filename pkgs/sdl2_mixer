@@ -1,0 +1,542 @@
+src
+├── SDL2_mixer-2.8.0
+│   ├── acinclude
+│   │   ├── ax_compute_relative_paths.m4
+│   │   ├── ax_normalize_path.m4
+│   │   ├── ax_recursive_eval.m4
+│   │   ├── libtool.m4
+│   │   ├── lt~obsolete.m4
+│   │   ├── ltoptions.m4
+│   │   ├── ltsugar.m4
+│   │   ├── ltversion.m4
+│   │   ├── pkg.m4
+│   │   └── sdl2.m4
+│   ├── Android.mk
+│   ├── autogen.sh
+│   ├── build-scripts
+│   │   ├── android-prefab.sh
+│   │   ├── config.guess
+│   │   ├── config.sub
+│   │   ├── install-sh
+│   │   ├── ltmain.sh
+│   │   └── mkinstalldirs
+│   ├── CHANGES.txt
+│   ├── cmake
+│   │   ├── CommonFindSDL2.cmake
+│   │   ├── FindFLAC.cmake
+│   │   ├── FindFluidSynth.cmake
+│   │   ├── Findgme.cmake
+│   │   ├── Findlibxmp.cmake
+│   │   ├── Findlibxmp-lite.cmake
+│   │   ├── Findmodplug.cmake
+│   │   ├── Findmpg123.cmake
+│   │   ├── FindOpusFile.cmake
+│   │   ├── FindPrivateSDL2.cmake
+│   │   ├── FindSDL2main.cmake
+│   │   ├── Findtremor.cmake
+│   │   ├── FindVorbis.cmake
+│   │   ├── Findwavpack.cmake
+│   │   ├── PkgConfigHelper.cmake
+│   │   ├── PrivateSdlFunctions.cmake
+│   │   └── test
+│   │       ├── CMakeLists.txt
+│   │       └── main.c
+│   ├── CMakeLists.txt
+│   ├── configure
+│   ├── configure.ac
+│   ├── external
+│   │   ├── download.sh
+│   │   └── Get-GitModules.ps1
+│   ├── include
+│   │   └── SDL_mixer.h
+│   ├── LICENSE.txt
+│   ├── Makefile.in
+│   ├── Makefile.os2
+│   ├── mingw
+│   │   └── pkg-support
+│   │       └── cmake
+│   │           ├── sdl2_mixer-config.cmake
+│   │           └── sdl2_mixer-config-version.cmake
+│   ├── playmus.c
+│   ├── playwave.c
+│   ├── README.txt
+│   ├── sdl2_mixer-config.cmake.in
+│   ├── SDL2_mixerConfig.cmake.in
+│   ├── sdl2_mixer-config-version.cmake.in
+│   ├── SDL2_mixer.pc.in
+│   ├── SDL2_mixer.spec
+│   ├── SDL2_mixer.spec.in
+│   ├── src
+│   │   ├── codecs
+│   │   │   ├── dr_libs
+│   │   │   │   ├── dr_flac.h
+│   │   │   │   ├── LICENSE
+│   │   │   │   └── README.md
+│   │   │   ├── load_aiff.c
+│   │   │   ├── load_aiff.h
+│   │   │   ├── load_voc.c
+│   │   │   ├── load_voc.h
+│   │   │   ├── minimp3
+│   │   │   │   ├── LICENSE
+│   │   │   │   ├── minimp3_ex.h
+│   │   │   │   ├── minimp3.h
+│   │   │   │   └── README.md
+│   │   │   ├── mp3utils.c
+│   │   │   ├── mp3utils.h
+│   │   │   ├── music_cmd.c
+│   │   │   ├── music_cmd.h
+│   │   │   ├── music_drflac.c
+│   │   │   ├── music_drflac.h
+│   │   │   ├── music_flac.c
+│   │   │   ├── music_flac.h
+│   │   │   ├── music_fluidsynth.c
+│   │   │   ├── music_fluidsynth.h
+│   │   │   ├── music_gme.c
+│   │   │   ├── music_gme.h
+│   │   │   ├── music_minimp3.c
+│   │   │   ├── music_minimp3.h
+│   │   │   ├── music_modplug.c
+│   │   │   ├── music_modplug.h
+│   │   │   ├── music_mpg123.c
+│   │   │   ├── music_mpg123.h
+│   │   │   ├── music_nativemidi.c
+│   │   │   ├── music_nativemidi.h
+│   │   │   ├── music_ogg.c
+│   │   │   ├── music_ogg.h
+│   │   │   ├── music_ogg_stb.c
+│   │   │   ├── music_opus.c
+│   │   │   ├── music_opus.h
+│   │   │   ├── music_timidity.c
+│   │   │   ├── music_timidity.h
+│   │   │   ├── music_wav.c
+│   │   │   ├── music_wav.h
+│   │   │   ├── music_wavpack.c
+│   │   │   ├── music_wavpack.h
+│   │   │   ├── music_xmp.c
+│   │   │   ├── music_xmp.h
+│   │   │   ├── native_midi
+│   │   │   │   ├── native_midi_common.c
+│   │   │   │   ├── native_midi_common.h
+│   │   │   │   ├── native_midi.h
+│   │   │   │   ├── native_midi_haiku.cpp
+│   │   │   │   ├── native_midi_macosx.c
+│   │   │   │   └── native_midi_win32.c
+│   │   │   ├── stb_vorbis
+│   │   │   │   ├── README.txt
+│   │   │   │   └── stb_vorbis.h
+│   │   │   └── timidity
+│   │   │       ├── Android.mk
+│   │   │       ├── CHANGES
+│   │   │       ├── common.c
+│   │   │       ├── common.h
+│   │   │       ├── COPYING
+│   │   │       ├── FAQ
+│   │   │       ├── instrum.c
+│   │   │       ├── instrum.h
+│   │   │       ├── mix.c
+│   │   │       ├── mix.h
+│   │   │       ├── options.h
+│   │   │       ├── output.c
+│   │   │       ├── output.h
+│   │   │       ├── playmidi.c
+│   │   │       ├── playmidi.h
+│   │   │       ├── README
+│   │   │       ├── readmidi.c
+│   │   │       ├── readmidi.h
+│   │   │       ├── resample.c
+│   │   │       ├── resample.h
+│   │   │       ├── tables.c
+│   │   │       ├── tables.h
+│   │   │       ├── timidity.c
+│   │   │       ├── timidity.h
+│   │   │       └── TODO
+│   │   ├── effect_position.c
+│   │   ├── effects_internal.c
+│   │   ├── effects_internal.h
+│   │   ├── effect_stereoreverse.c
+│   │   ├── mixer.c
+│   │   ├── mixer.h
+│   │   ├── music.c
+│   │   ├── music.h
+│   │   ├── utils.c
+│   │   └── utils.h
+│   ├── version.rc
+│   ├── VisualC
+│   │   ├── clean.sh
+│   │   ├── external
+│   │   │   ├── include
+│   │   │   │   ├── gme
+│   │   │   │   │   └── gme.h
+│   │   │   │   ├── libmodplug
+│   │   │   │   │   └── modplug.h
+│   │   │   │   ├── ogg
+│   │   │   │   │   ├── config_types.h
+│   │   │   │   │   ├── ogg.h
+│   │   │   │   │   └── os_types.h
+│   │   │   │   ├── opus
+│   │   │   │   │   ├── opus_defines.h
+│   │   │   │   │   ├── opusfile.h
+│   │   │   │   │   ├── opus.h
+│   │   │   │   │   ├── opus_multistream.h
+│   │   │   │   │   ├── opus_projection.h
+│   │   │   │   │   └── opus_types.h
+│   │   │   │   ├── opusfile.h
+│   │   │   │   ├── wavpack
+│   │   │   │   │   └── wavpack.h
+│   │   │   │   └── xmp.h
+│   │   │   └── optional
+│   │   │       ├── x64
+│   │   │       │   ├── libgme.dll
+│   │   │       │   ├── libogg-0.dll
+│   │   │       │   ├── libopus-0.dll
+│   │   │       │   ├── libopusfile-0.dll
+│   │   │       │   ├── libwavpack-1.dll
+│   │   │       │   ├── libxmp.dll
+│   │   │       │   ├── LICENSE.gme.txt
+│   │   │       │   ├── LICENSE.ogg-vorbis.txt
+│   │   │       │   ├── LICENSE.opusfile.txt
+│   │   │       │   ├── LICENSE.opus.txt
+│   │   │       │   ├── LICENSE.wavpack.txt
+│   │   │       │   └── LICENSE.xmp.txt
+│   │   │       └── x86
+│   │   │           ├── libgme.dll
+│   │   │           ├── libogg-0.dll
+│   │   │           ├── libopus-0.dll
+│   │   │           ├── libopusfile-0.dll
+│   │   │           ├── libwavpack-1.dll
+│   │   │           ├── libxmp.dll
+│   │   │           ├── LICENSE.gme.txt
+│   │   │           ├── LICENSE.ogg-vorbis.txt
+│   │   │           ├── LICENSE.opusfile.txt
+│   │   │           ├── LICENSE.opus.txt
+│   │   │           ├── LICENSE.wavpack.txt
+│   │   │           └── LICENSE.xmp.txt
+│   │   ├── native_midi
+│   │   │   └── native_midi.vcxproj
+│   │   ├── pkg-support
+│   │   │   └── cmake
+│   │   │       ├── sdl2_mixer-config.cmake
+│   │   │       └── sdl2_mixer-config-version.cmake
+│   │   ├── playmus
+│   │   │   └── playmus.vcxproj
+│   │   ├── playwave
+│   │   │   └── playwave.vcxproj
+│   │   ├── resource.h
+│   │   ├── SDL_mixer.sln
+│   │   ├── SDL_mixer.vcxproj
+│   │   ├── SDL_mixer.vcxproj.filters
+│   │   ├── timidity
+│   │   │   └── timidity.vcxproj
+│   │   └── Version.rc
+│   ├── VisualC-WinRT
+│   │   ├── SDL_mixer-UWP.sln
+│   │   ├── SDL_mixer-UWP.vcxproj
+│   │   └── SDL_mixer-UWP.vcxproj.filters
+│   └── Xcode
+│       ├── config.xcconfig
+│       ├── FLAC
+│       │   ├── config.h
+│       │   └── FLAC.xcodeproj
+│       │       └── project.pbxproj
+│       ├── gme
+│       │   └── gme.xcodeproj
+│       │       └── project.pbxproj
+│       ├── Info-Framework.plist
+│       ├── iOS
+│       │   └── SDL2.framework
+│       │       ├── default.metallib
+│       │       ├── Headers
+│       │       │   ├── begin_code.h
+│       │       │   ├── close_code.h
+│       │       │   ├── SDL_assert.h
+│       │       │   ├── SDL_atomic.h
+│       │       │   ├── SDL_audio.h
+│       │       │   ├── SDL_bits.h
+│       │       │   ├── SDL_blendmode.h
+│       │       │   ├── SDL_clipboard.h
+│       │       │   ├── SDL_config.h
+│       │       │   ├── SDL_config_iphoneos.h
+│       │       │   ├── SDL_copying.h
+│       │       │   ├── SDL_cpuinfo.h
+│       │       │   ├── SDL_endian.h
+│       │       │   ├── SDL_error.h
+│       │       │   ├── SDL_events.h
+│       │       │   ├── SDL_filesystem.h
+│       │       │   ├── SDL_gamecontroller.h
+│       │       │   ├── SDL_gesture.h
+│       │       │   ├── SDL.h
+│       │       │   ├── SDL_haptic.h
+│       │       │   ├── SDL_hidapi.h
+│       │       │   ├── SDL_hints.h
+│       │       │   ├── SDL_joystick.h
+│       │       │   ├── SDL_keyboard.h
+│       │       │   ├── SDL_keycode.h
+│       │       │   ├── SDL_loadso.h
+│       │       │   ├── SDL_locale.h
+│       │       │   ├── SDL_log.h
+│       │       │   ├── SDL_main.h
+│       │       │   ├── SDL_messagebox.h
+│       │       │   ├── SDL_metal.h
+│       │       │   ├── SDL_misc.h
+│       │       │   ├── SDL_mouse.h
+│       │       │   ├── SDL_mutex.h
+│       │       │   ├── SDL_name.h
+│       │       │   ├── SDL_opengles2_gl2ext.h
+│       │       │   ├── SDL_opengles2_gl2.h
+│       │       │   ├── SDL_opengles2_gl2platform.h
+│       │       │   ├── SDL_opengles2.h
+│       │       │   ├── SDL_opengles2_khrplatform.h
+│       │       │   ├── SDL_opengles.h
+│       │       │   ├── SDL_opengl_glext.h
+│       │       │   ├── SDL_opengl.h
+│       │       │   ├── SDL_pixels.h
+│       │       │   ├── SDL_platform.h
+│       │       │   ├── SDL_power.h
+│       │       │   ├── SDL_quit.h
+│       │       │   ├── SDL_rect.h
+│       │       │   ├── SDL_render.h
+│       │       │   ├── SDL_revision.h
+│       │       │   ├── SDL_rwops.h
+│       │       │   ├── SDL_scancode.h
+│       │       │   ├── SDL_sensor.h
+│       │       │   ├── SDL_shape.h
+│       │       │   ├── SDL_stdinc.h
+│       │       │   ├── SDL_surface.h
+│       │       │   ├── SDL_system.h
+│       │       │   ├── SDL_syswm.h
+│       │       │   ├── SDL_thread.h
+│       │       │   ├── SDL_timer.h
+│       │       │   ├── SDL_touch.h
+│       │       │   ├── SDL_types.h
+│       │       │   ├── SDL_version.h
+│       │       │   ├── SDL_video.h
+│       │       │   └── SDL_vulkan.h
+│       │       ├── Info.plist
+│       │       ├── License.txt
+│       │       ├── ReadMe.txt
+│       │       └── SDL2
+│       ├── libmodplug
+│       │   └── libmodplug.xcodeproj
+│       │       └── project.pbxproj
+│       ├── macOS
+│       │   └── SDL2.framework
+│       │       ├── Headers -> Versions/Current/Headers
+│       │       ├── Resources -> Versions/Current/Resources
+│       │       ├── SDL2 -> Versions/Current/SDL2
+│       │       └── Versions
+│       │           ├── A
+│       │           │   ├── _CodeSignature
+│       │           │   │   └── CodeResources
+│       │           │   ├── Headers
+│       │           │   │   ├── begin_code.h
+│       │           │   │   ├── close_code.h
+│       │           │   │   ├── SDL_assert.h
+│       │           │   │   ├── SDL_atomic.h
+│       │           │   │   ├── SDL_audio.h
+│       │           │   │   ├── SDL_bits.h
+│       │           │   │   ├── SDL_blendmode.h
+│       │           │   │   ├── SDL_clipboard.h
+│       │           │   │   ├── SDL_config.h
+│       │           │   │   ├── SDL_config_macosx.h
+│       │           │   │   ├── SDL_copying.h
+│       │           │   │   ├── SDL_cpuinfo.h
+│       │           │   │   ├── SDL_endian.h
+│       │           │   │   ├── SDL_error.h
+│       │           │   │   ├── SDL_events.h
+│       │           │   │   ├── SDL_filesystem.h
+│       │           │   │   ├── SDL_gamecontroller.h
+│       │           │   │   ├── SDL_gesture.h
+│       │           │   │   ├── SDL.h
+│       │           │   │   ├── SDL_haptic.h
+│       │           │   │   ├── SDL_hidapi.h
+│       │           │   │   ├── SDL_hints.h
+│       │           │   │   ├── SDL_joystick.h
+│       │           │   │   ├── SDL_keyboard.h
+│       │           │   │   ├── SDL_keycode.h
+│       │           │   │   ├── SDL_loadso.h
+│       │           │   │   ├── SDL_locale.h
+│       │           │   │   ├── SDL_log.h
+│       │           │   │   ├── SDL_main.h
+│       │           │   │   ├── SDL_messagebox.h
+│       │           │   │   ├── SDL_metal.h
+│       │           │   │   ├── SDL_misc.h
+│       │           │   │   ├── SDL_mouse.h
+│       │           │   │   ├── SDL_mutex.h
+│       │           │   │   ├── SDL_name.h
+│       │           │   │   ├── SDL_opengles2_gl2ext.h
+│       │           │   │   ├── SDL_opengles2_gl2.h
+│       │           │   │   ├── SDL_opengles2_gl2platform.h
+│       │           │   │   ├── SDL_opengles2.h
+│       │           │   │   ├── SDL_opengles2_khrplatform.h
+│       │           │   │   ├── SDL_opengles.h
+│       │           │   │   ├── SDL_opengl_glext.h
+│       │           │   │   ├── SDL_opengl.h
+│       │           │   │   ├── SDL_pixels.h
+│       │           │   │   ├── SDL_platform.h
+│       │           │   │   ├── SDL_power.h
+│       │           │   │   ├── SDL_quit.h
+│       │           │   │   ├── SDL_rect.h
+│       │           │   │   ├── SDL_render.h
+│       │           │   │   ├── SDL_revision.h
+│       │           │   │   ├── SDL_rwops.h
+│       │           │   │   ├── SDL_scancode.h
+│       │           │   │   ├── SDL_sensor.h
+│       │           │   │   ├── SDL_shape.h
+│       │           │   │   ├── SDL_stdinc.h
+│       │           │   │   ├── SDL_surface.h
+│       │           │   │   ├── SDL_system.h
+│       │           │   │   ├── SDL_syswm.h
+│       │           │   │   ├── SDL_thread.h
+│       │           │   │   ├── SDL_timer.h
+│       │           │   │   ├── SDL_touch.h
+│       │           │   │   ├── SDL_types.h
+│       │           │   │   ├── SDL_version.h
+│       │           │   │   ├── SDL_video.h
+│       │           │   │   └── SDL_vulkan.h
+│       │           │   ├── Resources
+│       │           │   │   ├── default.metallib
+│       │           │   │   ├── Info.plist
+│       │           │   │   ├── License.txt
+│       │           │   │   └── ReadMe.txt
+│       │           │   └── SDL2
+│       │           └── Current -> A
+│       ├── mpg123
+│       │   ├── arm64
+│       │   │   └── config.h
+│       │   ├── armv7
+│       │   │   └── config.h
+│       │   ├── config.xcconfig
+│       │   ├── mpg123.h
+│       │   ├── mpg123.xcodeproj
+│       │   │   └── project.pbxproj
+│       │   └── x86_64
+│       │       └── config.h
+│       ├── ogg
+│       │   └── ogg.xcodeproj
+│       │       └── project.pbxproj
+│       ├── opus
+│       │   ├── arm64
+│       │   │   └── config.h
+│       │   ├── armv7
+│       │   │   └── config.h
+│       │   ├── config.xcconfig
+│       │   ├── opus.xcodeproj
+│       │   │   └── project.pbxproj
+│       │   └── x86_64
+│       │       └── config.h
+│       ├── package
+│       ├── pkg-support
+│       │   ├── mkpackage.sh
+│       │   ├── resources
+│       │   │   ├── CMake
+│       │   │   │   ├── sdl2_mixer-config.cmake
+│       │   │   │   └── sdl2_mixer-config-version.cmake
+│       │   │   ├── ReadMe.txt
+│       │   │   └── Welcome.txt
+│       │   └── SDL_mixer.info
+│       ├── playmus
+│       │   ├── macOS
+│       │   │   └── macOS.entitlements
+│       │   ├── playmus.xcodeproj
+│       │   │   └── project.pbxproj
+│       │   └── SDL_uikit_main.c
+│       ├── playwave
+│       │   ├── macOS
+│       │   │   └── macOS.entitlements
+│       │   ├── playwave.xcodeproj
+│       │   │   └── project.pbxproj
+│       │   └── SDL_uikit_main.c
+│       ├── SDL_mixer.xcodeproj
+│       │   └── project.pbxproj
+│       ├── tremor
+│       │   ├── config.h
+│       │   └── tremor.xcodeproj
+│       │       └── project.pbxproj
+│       ├── tvOS
+│       │   └── SDL2.framework
+│       │       ├── default.metallib
+│       │       ├── Headers
+│       │       │   ├── begin_code.h
+│       │       │   ├── close_code.h
+│       │       │   ├── SDL_assert.h
+│       │       │   ├── SDL_atomic.h
+│       │       │   ├── SDL_audio.h
+│       │       │   ├── SDL_bits.h
+│       │       │   ├── SDL_blendmode.h
+│       │       │   ├── SDL_clipboard.h
+│       │       │   ├── SDL_config.h
+│       │       │   ├── SDL_config_iphoneos.h
+│       │       │   ├── SDL_copying.h
+│       │       │   ├── SDL_cpuinfo.h
+│       │       │   ├── SDL_endian.h
+│       │       │   ├── SDL_error.h
+│       │       │   ├── SDL_events.h
+│       │       │   ├── SDL_filesystem.h
+│       │       │   ├── SDL_gamecontroller.h
+│       │       │   ├── SDL_gesture.h
+│       │       │   ├── SDL.h
+│       │       │   ├── SDL_haptic.h
+│       │       │   ├── SDL_hidapi.h
+│       │       │   ├── SDL_hints.h
+│       │       │   ├── SDL_joystick.h
+│       │       │   ├── SDL_keyboard.h
+│       │       │   ├── SDL_keycode.h
+│       │       │   ├── SDL_loadso.h
+│       │       │   ├── SDL_locale.h
+│       │       │   ├── SDL_log.h
+│       │       │   ├── SDL_main.h
+│       │       │   ├── SDL_messagebox.h
+│       │       │   ├── SDL_metal.h
+│       │       │   ├── SDL_misc.h
+│       │       │   ├── SDL_mouse.h
+│       │       │   ├── SDL_mutex.h
+│       │       │   ├── SDL_name.h
+│       │       │   ├── SDL_opengles2_gl2ext.h
+│       │       │   ├── SDL_opengles2_gl2.h
+│       │       │   ├── SDL_opengles2_gl2platform.h
+│       │       │   ├── SDL_opengles2.h
+│       │       │   ├── SDL_opengles2_khrplatform.h
+│       │       │   ├── SDL_opengles.h
+│       │       │   ├── SDL_opengl_glext.h
+│       │       │   ├── SDL_opengl.h
+│       │       │   ├── SDL_pixels.h
+│       │       │   ├── SDL_platform.h
+│       │       │   ├── SDL_power.h
+│       │       │   ├── SDL_quit.h
+│       │       │   ├── SDL_rect.h
+│       │       │   ├── SDL_render.h
+│       │       │   ├── SDL_revision.h
+│       │       │   ├── SDL_rwops.h
+│       │       │   ├── SDL_scancode.h
+│       │       │   ├── SDL_sensor.h
+│       │       │   ├── SDL_shape.h
+│       │       │   ├── SDL_stdinc.h
+│       │       │   ├── SDL_surface.h
+│       │       │   ├── SDL_system.h
+│       │       │   ├── SDL_syswm.h
+│       │       │   ├── SDL_thread.h
+│       │       │   ├── SDL_timer.h
+│       │       │   ├── SDL_touch.h
+│       │       │   ├── SDL_types.h
+│       │       │   ├── SDL_version.h
+│       │       │   ├── SDL_video.h
+│       │       │   └── SDL_vulkan.h
+│       │       ├── Info.plist
+│       │       ├── License.txt
+│       │       ├── ReadMe.txt
+│       │       └── SDL2
+│       ├── vorbis
+│       │   ├── config.h
+│       │   └── vorbis.xcodeproj
+│       │       └── project.pbxproj
+│       ├── wavpack
+│       │   ├── config.xcconfig
+│       │   └── wavpack.xcodeproj
+│       │       └── project.pbxproj
+│       └── xmp
+│           └── xmp.xcodeproj
+│               └── project.pbxproj
+├── SDL2_mixer-2.8.0.tar.gz -> /home/felix/packages/sdl2_mixer/SDL2_mixer-2.8.0.tar.gz
+└── SDL2_mixer-2.8.0.tar.gz.sig -> /home/felix/packages/sdl2_mixer/SDL2_mixer-2.8.0.tar.gz.sig
+
+89 directories, 451 files

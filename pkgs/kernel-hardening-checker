@@ -1,0 +1,106 @@
+src
+└── kernel-hardening-checker
+    ├── bin
+    │   └── kernel-hardening-checker
+    ├── issues.md
+    ├── kernel_hardening_checker
+    │   ├── checks.py
+    │   ├── config_files
+    │   │   ├── defconfigs
+    │   │   │   ├── arm64_defconfig_4.20.config
+    │   │   │   ├── arm64_defconfig_5.0.config
+    │   │   │   ├── arm64_defconfig_5.10.config
+    │   │   │   ├── arm64_defconfig_5.14_clang.config
+    │   │   │   ├── arm64_defconfig_5.14.config
+    │   │   │   ├── arm64_defconfig_5.17_clang.config
+    │   │   │   ├── arm64_defconfig_5.17.config
+    │   │   │   ├── arm64_defconfig_5.4.config
+    │   │   │   ├── arm64_defconfig_5.5.config
+    │   │   │   ├── arm64_defconfig_5.7.config
+    │   │   │   ├── arm64_defconfig_5.9.config
+    │   │   │   ├── arm64_defconfig_6.10.config
+    │   │   │   ├── arm64_defconfig_6.1_clang.config
+    │   │   │   ├── arm64_defconfig_6.1.config
+    │   │   │   ├── arm64_defconfig_6.6.config
+    │   │   │   ├── arm_defconfig_4.20.config
+    │   │   │   ├── arm_defconfig_5.0.config
+    │   │   │   ├── arm_defconfig_5.10.config
+    │   │   │   ├── arm_defconfig_5.14.config
+    │   │   │   ├── arm_defconfig_5.17.config
+    │   │   │   ├── arm_defconfig_5.4.config
+    │   │   │   ├── arm_defconfig_5.5.config
+    │   │   │   ├── arm_defconfig_5.7.config
+    │   │   │   ├── arm_defconfig_5.9.config
+    │   │   │   ├── arm_defconfig_6.10.config
+    │   │   │   ├── arm_defconfig_6.1.config
+    │   │   │   ├── arm_defconfig_6.6.config
+    │   │   │   ├── x86_32_defconfig_4.20.config
+    │   │   │   ├── x86_32_defconfig_5.0.config
+    │   │   │   ├── x86_32_defconfig_5.10.config
+    │   │   │   ├── x86_32_defconfig_5.14.config
+    │   │   │   ├── x86_32_defconfig_5.17.config
+    │   │   │   ├── x86_32_defconfig_5.4.config
+    │   │   │   ├── x86_32_defconfig_5.5.config
+    │   │   │   ├── x86_32_defconfig_5.7.config
+    │   │   │   ├── x86_32_defconfig_5.9.config
+    │   │   │   ├── x86_32_defconfig_6.10.config
+    │   │   │   ├── x86_32_defconfig_6.1.config
+    │   │   │   ├── x86_32_defconfig_6.6.config
+    │   │   │   ├── x86_64_defconfig_4.20.config
+    │   │   │   ├── x86_64_defconfig_5.0.config
+    │   │   │   ├── x86_64_defconfig_5.10.config
+    │   │   │   ├── x86_64_defconfig_5.14.config
+    │   │   │   ├── x86_64_defconfig_5.17.config
+    │   │   │   ├── x86_64_defconfig_5.4.config
+    │   │   │   ├── x86_64_defconfig_5.5.config
+    │   │   │   ├── x86_64_defconfig_5.7.config
+    │   │   │   ├── x86_64_defconfig_5.9.config
+    │   │   │   ├── x86_64_defconfig_6.10.config
+    │   │   │   ├── x86_64_defconfig_6.1.config
+    │   │   │   └── x86_64_defconfig_6.6.config
+    │   │   ├── distros
+    │   │   │   ├── Alpinelinux-edge.config
+    │   │   │   ├── AmazonLinux2.config
+    │   │   │   ├── android_gki_android13-5.10.config
+    │   │   │   ├── android_pixel-3a.config
+    │   │   │   ├── android_pixel-7.config
+    │   │   │   ├── android_samsung_s23.config
+    │   │   │   ├── Archlinux-hardened.config
+    │   │   │   ├── cbl-mariner.config
+    │   │   │   ├── clearlinux-master.config
+    │   │   │   ├── clipos_kernel_doc.txt
+    │   │   │   ├── debian-buster.config
+    │   │   │   ├── example_config.gz
+    │   │   │   ├── example_sysctls.txt
+    │   │   │   ├── fedora_34.config
+    │   │   │   ├── fedora_38.config
+    │   │   │   ├── get-nixos-kconfig.nix
+    │   │   │   ├── nixpkgs-linux_hardened.config
+    │   │   │   ├── nixpkgs-linux_latest.config
+    │   │   │   ├── nixpkgs-linux_lts.config
+    │   │   │   ├── openSUSE-15.1.config
+    │   │   │   ├── oracle-uek6.config
+    │   │   │   ├── pentoo-livecd.config
+    │   │   │   ├── rhel-8.0.config
+    │   │   │   ├── SLE15.config
+    │   │   │   └── ubuntu-22.04.config
+    │   │   ├── kspp-recommendations
+    │   │   │   ├── kspp-cmdline-x86-64.txt
+    │   │   │   ├── kspp-kconfig-arm64-clang.config
+    │   │   │   ├── kspp-kconfig-arm64-gcc.config
+    │   │   │   ├── kspp-kconfig-arm.config
+    │   │   │   ├── kspp-kconfig-x86-32.config
+    │   │   │   ├── kspp-kconfig-x86-64-clang.config
+    │   │   │   ├── kspp-kconfig-x86-64-gcc.config
+    │   │   │   └── kspp-sysctl.txt
+    │   │   └── links.txt
+    │   ├── engine.py
+    │   ├── __init__.py
+    │   └── test_engine.py
+    ├── LICENSE.txt
+    ├── MANIFEST.in
+    ├── README.md
+    ├── setup.cfg
+    └── setup.py
+
+8 directories, 96 files

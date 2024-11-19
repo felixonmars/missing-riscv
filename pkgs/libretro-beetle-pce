@@ -1,0 +1,1389 @@
+src
+└── libretro-beetle-pce
+    ├── appveyor.yml
+    ├── COPYING
+    ├── deps
+    │   ├── libchdr
+    │   │   ├── CMakeLists.txt
+    │   │   ├── deps
+    │   │   │   ├── lzma-24.05
+    │   │   │   │   ├── Asm
+    │   │   │   │   │   ├── arm64
+    │   │   │   │   │   │   ├── 7zAsm.S
+    │   │   │   │   │   │   └── LzmaDecOpt.S
+    │   │   │   │   │   └── x86
+    │   │   │   │   │       ├── 7zAsm.asm
+    │   │   │   │   │       └── LzmaDecOpt.asm
+    │   │   │   │   ├── CMakeLists.txt
+    │   │   │   │   ├── include
+    │   │   │   │   │   ├── 7zTypes.h
+    │   │   │   │   │   ├── 7zWindows.h
+    │   │   │   │   │   ├── Alloc.h
+    │   │   │   │   │   ├── Bra.h
+    │   │   │   │   │   ├── Compiler.h
+    │   │   │   │   │   ├── CpuArch.h
+    │   │   │   │   │   ├── Delta.h
+    │   │   │   │   │   ├── LzFind.h
+    │   │   │   │   │   ├── LzHash.h
+    │   │   │   │   │   ├── Lzma86.h
+    │   │   │   │   │   ├── LzmaDec.h
+    │   │   │   │   │   ├── LzmaEnc.h
+    │   │   │   │   │   ├── Precomp.h
+    │   │   │   │   │   ├── RotateDefs.h
+    │   │   │   │   │   └── Sort.h
+    │   │   │   │   ├── LICENSE
+    │   │   │   │   └── src
+    │   │   │   │       ├── Alloc.c
+    │   │   │   │       ├── Bra86.c
+    │   │   │   │       ├── Bra.c
+    │   │   │   │       ├── BraIA64.c
+    │   │   │   │       ├── CpuArch.c
+    │   │   │   │       ├── Delta.c
+    │   │   │   │       ├── LzFind.c
+    │   │   │   │       ├── Lzma86Dec.c
+    │   │   │   │       ├── LzmaDec.c
+    │   │   │   │       ├── LzmaEnc.c
+    │   │   │   │       └── Sort.c
+    │   │   │   ├── zlib-1.3.1
+    │   │   │   │   ├── adler32.c
+    │   │   │   │   ├── amiga
+    │   │   │   │   │   ├── Makefile.pup
+    │   │   │   │   │   └── Makefile.sas
+    │   │   │   │   ├── ChangeLog
+    │   │   │   │   ├── CMakeLists.txt
+    │   │   │   │   ├── compress.c
+    │   │   │   │   ├── configure
+    │   │   │   │   ├── contrib
+    │   │   │   │   │   ├── ada
+    │   │   │   │   │   │   ├── buffer_demo.adb
+    │   │   │   │   │   │   ├── mtest.adb
+    │   │   │   │   │   │   ├── read.adb
+    │   │   │   │   │   │   ├── readme.txt
+    │   │   │   │   │   │   ├── test.adb
+    │   │   │   │   │   │   ├── zlib.adb
+    │   │   │   │   │   │   ├── zlib.ads
+    │   │   │   │   │   │   ├── zlib.gpr
+    │   │   │   │   │   │   ├── zlib-streams.adb
+    │   │   │   │   │   │   ├── zlib-streams.ads
+    │   │   │   │   │   │   ├── zlib-thin.adb
+    │   │   │   │   │   │   └── zlib-thin.ads
+    │   │   │   │   │   ├── blast
+    │   │   │   │   │   │   ├── blast.c
+    │   │   │   │   │   │   ├── blast.h
+    │   │   │   │   │   │   ├── Makefile
+    │   │   │   │   │   │   ├── README
+    │   │   │   │   │   │   ├── test.pk
+    │   │   │   │   │   │   └── test.txt
+    │   │   │   │   │   ├── delphi
+    │   │   │   │   │   │   ├── readme.txt
+    │   │   │   │   │   │   ├── ZLibConst.pas
+    │   │   │   │   │   │   ├── zlibd32.mak
+    │   │   │   │   │   │   └── ZLib.pas
+    │   │   │   │   │   ├── dotzlib
+    │   │   │   │   │   │   ├── DotZLib
+    │   │   │   │   │   │   │   ├── AssemblyInfo.cs
+    │   │   │   │   │   │   │   ├── ChecksumImpl.cs
+    │   │   │   │   │   │   │   ├── CircularBuffer.cs
+    │   │   │   │   │   │   │   ├── CodecBase.cs
+    │   │   │   │   │   │   │   ├── Deflater.cs
+    │   │   │   │   │   │   │   ├── DotZLib.cs
+    │   │   │   │   │   │   │   ├── DotZLib.csproj
+    │   │   │   │   │   │   │   ├── GZipStream.cs
+    │   │   │   │   │   │   │   ├── Inflater.cs
+    │   │   │   │   │   │   │   └── UnitTests.cs
+    │   │   │   │   │   │   ├── DotZLib.build
+    │   │   │   │   │   │   ├── DotZLib.chm
+    │   │   │   │   │   │   ├── DotZLib.sln
+    │   │   │   │   │   │   ├── LICENSE_1_0.txt
+    │   │   │   │   │   │   └── readme.txt
+    │   │   │   │   │   ├── gcc_gvmat64
+    │   │   │   │   │   │   └── gvmat64.S
+    │   │   │   │   │   ├── infback9
+    │   │   │   │   │   │   ├── infback9.c
+    │   │   │   │   │   │   ├── infback9.h
+    │   │   │   │   │   │   ├── inffix9.h
+    │   │   │   │   │   │   ├── inflate9.h
+    │   │   │   │   │   │   ├── inftree9.c
+    │   │   │   │   │   │   ├── inftree9.h
+    │   │   │   │   │   │   └── README
+    │   │   │   │   │   ├── iostream
+    │   │   │   │   │   │   ├── test.cpp
+    │   │   │   │   │   │   ├── zfstream.cpp
+    │   │   │   │   │   │   └── zfstream.h
+    │   │   │   │   │   ├── iostream2
+    │   │   │   │   │   │   ├── zstream.h
+    │   │   │   │   │   │   └── zstream_test.cpp
+    │   │   │   │   │   ├── iostream3
+    │   │   │   │   │   │   ├── README
+    │   │   │   │   │   │   ├── test.cc
+    │   │   │   │   │   │   ├── TODO
+    │   │   │   │   │   │   ├── zfstream.cc
+    │   │   │   │   │   │   └── zfstream.h
+    │   │   │   │   │   ├── minizip
+    │   │   │   │   │   │   ├── configure.ac
+    │   │   │   │   │   │   ├── crypt.h
+    │   │   │   │   │   │   ├── ioapi.c
+    │   │   │   │   │   │   ├── ioapi.h
+    │   │   │   │   │   │   ├── iowin32.c
+    │   │   │   │   │   │   ├── iowin32.h
+    │   │   │   │   │   │   ├── Makefile
+    │   │   │   │   │   │   ├── Makefile.am
+    │   │   │   │   │   │   ├── make_vms.com
+    │   │   │   │   │   │   ├── miniunz.c
+    │   │   │   │   │   │   ├── miniunzip.1
+    │   │   │   │   │   │   ├── minizip.1
+    │   │   │   │   │   │   ├── MiniZip64_Changes.txt
+    │   │   │   │   │   │   ├── MiniZip64_info.txt
+    │   │   │   │   │   │   ├── minizip.c
+    │   │   │   │   │   │   ├── minizip.pc.in
+    │   │   │   │   │   │   ├── mztools.c
+    │   │   │   │   │   │   ├── mztools.h
+    │   │   │   │   │   │   ├── unzip.c
+    │   │   │   │   │   │   ├── unzip.h
+    │   │   │   │   │   │   ├── zip.c
+    │   │   │   │   │   │   └── zip.h
+    │   │   │   │   │   ├── nuget
+    │   │   │   │   │   │   ├── nuget.csproj
+    │   │   │   │   │   │   └── nuget.sln
+    │   │   │   │   │   ├── pascal
+    │   │   │   │   │   │   ├── example.pas
+    │   │   │   │   │   │   ├── readme.txt
+    │   │   │   │   │   │   ├── zlibd32.mak
+    │   │   │   │   │   │   └── zlibpas.pas
+    │   │   │   │   │   ├── puff
+    │   │   │   │   │   │   ├── Makefile
+    │   │   │   │   │   │   ├── puff.c
+    │   │   │   │   │   │   ├── puff.h
+    │   │   │   │   │   │   ├── pufftest.c
+    │   │   │   │   │   │   ├── README
+    │   │   │   │   │   │   └── zeros.raw
+    │   │   │   │   │   ├── README.contrib
+    │   │   │   │   │   ├── testzlib
+    │   │   │   │   │   │   ├── testzlib.c
+    │   │   │   │   │   │   └── testzlib.txt
+    │   │   │   │   │   ├── untgz
+    │   │   │   │   │   │   ├── Makefile
+    │   │   │   │   │   │   ├── Makefile.msc
+    │   │   │   │   │   │   └── untgz.c
+    │   │   │   │   │   └── vstudio
+    │   │   │   │   │       ├── readme.txt
+    │   │   │   │   │       ├── vc10
+    │   │   │   │   │       │   ├── miniunz.vcxproj
+    │   │   │   │   │       │   ├── miniunz.vcxproj.filters
+    │   │   │   │   │       │   ├── minizip.vcxproj
+    │   │   │   │   │       │   ├── minizip.vcxproj.filters
+    │   │   │   │   │       │   ├── testzlibdll.vcxproj
+    │   │   │   │   │       │   ├── testzlibdll.vcxproj.filters
+    │   │   │   │   │       │   ├── testzlib.vcxproj
+    │   │   │   │   │       │   ├── testzlib.vcxproj.filters
+    │   │   │   │   │       │   ├── zlib.rc
+    │   │   │   │   │       │   ├── zlibstat.vcxproj
+    │   │   │   │   │       │   ├── zlibstat.vcxproj.filters
+    │   │   │   │   │       │   ├── zlibvc.def
+    │   │   │   │   │       │   ├── zlibvc.sln
+    │   │   │   │   │       │   ├── zlibvc.vcxproj
+    │   │   │   │   │       │   └── zlibvc.vcxproj.filters
+    │   │   │   │   │       ├── vc11
+    │   │   │   │   │       │   ├── miniunz.vcxproj
+    │   │   │   │   │       │   ├── minizip.vcxproj
+    │   │   │   │   │       │   ├── testzlibdll.vcxproj
+    │   │   │   │   │       │   ├── testzlib.vcxproj
+    │   │   │   │   │       │   ├── zlib.rc
+    │   │   │   │   │       │   ├── zlibstat.vcxproj
+    │   │   │   │   │       │   ├── zlibvc.def
+    │   │   │   │   │       │   ├── zlibvc.sln
+    │   │   │   │   │       │   └── zlibvc.vcxproj
+    │   │   │   │   │       ├── vc12
+    │   │   │   │   │       │   ├── miniunz.vcxproj
+    │   │   │   │   │       │   ├── minizip.vcxproj
+    │   │   │   │   │       │   ├── testzlibdll.vcxproj
+    │   │   │   │   │       │   ├── testzlib.vcxproj
+    │   │   │   │   │       │   ├── zlib.rc
+    │   │   │   │   │       │   ├── zlibstat.vcxproj
+    │   │   │   │   │       │   ├── zlibvc.def
+    │   │   │   │   │       │   ├── zlibvc.sln
+    │   │   │   │   │       │   └── zlibvc.vcxproj
+    │   │   │   │   │       ├── vc14
+    │   │   │   │   │       │   ├── miniunz.vcxproj
+    │   │   │   │   │       │   ├── minizip.vcxproj
+    │   │   │   │   │       │   ├── testzlibdll.vcxproj
+    │   │   │   │   │       │   ├── testzlib.vcxproj
+    │   │   │   │   │       │   ├── zlib.rc
+    │   │   │   │   │       │   ├── zlibstat.vcxproj
+    │   │   │   │   │       │   ├── zlibvc.def
+    │   │   │   │   │       │   ├── zlibvc.sln
+    │   │   │   │   │       │   └── zlibvc.vcxproj
+    │   │   │   │   │       ├── vc17
+    │   │   │   │   │       │   ├── miniunz.vcxproj
+    │   │   │   │   │       │   ├── minizip.vcxproj
+    │   │   │   │   │       │   ├── testzlibdll.vcxproj
+    │   │   │   │   │       │   ├── testzlib.vcxproj
+    │   │   │   │   │       │   ├── zlib.rc
+    │   │   │   │   │       │   ├── zlibstat.vcxproj
+    │   │   │   │   │       │   ├── zlibvc.def
+    │   │   │   │   │       │   ├── zlibvc.sln
+    │   │   │   │   │       │   └── zlibvc.vcxproj
+    │   │   │   │   │       └── vc9
+    │   │   │   │   │           ├── miniunz.vcproj
+    │   │   │   │   │           ├── minizip.vcproj
+    │   │   │   │   │           ├── testzlibdll.vcproj
+    │   │   │   │   │           ├── testzlib.vcproj
+    │   │   │   │   │           ├── zlib.rc
+    │   │   │   │   │           ├── zlibstat.vcproj
+    │   │   │   │   │           ├── zlibvc.def
+    │   │   │   │   │           ├── zlibvc.sln
+    │   │   │   │   │           └── zlibvc.vcproj
+    │   │   │   │   ├── crc32.c
+    │   │   │   │   ├── crc32.h
+    │   │   │   │   ├── deflate.c
+    │   │   │   │   ├── deflate.h
+    │   │   │   │   ├── doc
+    │   │   │   │   │   ├── algorithm.txt
+    │   │   │   │   │   ├── crc-doc.1.0.pdf
+    │   │   │   │   │   ├── rfc1950.txt
+    │   │   │   │   │   ├── rfc1951.txt
+    │   │   │   │   │   ├── rfc1952.txt
+    │   │   │   │   │   └── txtvsbin.txt
+    │   │   │   │   ├── examples
+    │   │   │   │   │   ├── enough.c
+    │   │   │   │   │   ├── fitblk.c
+    │   │   │   │   │   ├── gun.c
+    │   │   │   │   │   ├── gzappend.c
+    │   │   │   │   │   ├── gzjoin.c
+    │   │   │   │   │   ├── gzlog.c
+    │   │   │   │   │   ├── gzlog.h
+    │   │   │   │   │   ├── gznorm.c
+    │   │   │   │   │   ├── README.examples
+    │   │   │   │   │   ├── zlib_how.html
+    │   │   │   │   │   ├── zpipe.c
+    │   │   │   │   │   ├── zran.c
+    │   │   │   │   │   └── zran.h
+    │   │   │   │   ├── FAQ
+    │   │   │   │   ├── gzclose.c
+    │   │   │   │   ├── gzguts.h
+    │   │   │   │   ├── gzlib.c
+    │   │   │   │   ├── gzread.c
+    │   │   │   │   ├── gzwrite.c
+    │   │   │   │   ├── INDEX
+    │   │   │   │   ├── infback.c
+    │   │   │   │   ├── inffast.c
+    │   │   │   │   ├── inffast.h
+    │   │   │   │   ├── inffixed.h
+    │   │   │   │   ├── inflate.c
+    │   │   │   │   ├── inflate.h
+    │   │   │   │   ├── inftrees.c
+    │   │   │   │   ├── inftrees.h
+    │   │   │   │   ├── LICENSE
+    │   │   │   │   ├── Makefile
+    │   │   │   │   ├── Makefile.in
+    │   │   │   │   ├── make_vms.com
+    │   │   │   │   ├── msdos
+    │   │   │   │   │   ├── Makefile.bor
+    │   │   │   │   │   ├── Makefile.dj2
+    │   │   │   │   │   ├── Makefile.emx
+    │   │   │   │   │   ├── Makefile.msc
+    │   │   │   │   │   └── Makefile.tc
+    │   │   │   │   ├── nintendods
+    │   │   │   │   │   ├── Makefile
+    │   │   │   │   │   └── README
+    │   │   │   │   ├── old
+    │   │   │   │   │   ├── descrip.mms
+    │   │   │   │   │   ├── Makefile.emx
+    │   │   │   │   │   ├── Makefile.riscos
+    │   │   │   │   │   ├── os2
+    │   │   │   │   │   │   ├── Makefile.os2
+    │   │   │   │   │   │   └── zlib.def
+    │   │   │   │   │   ├── README
+    │   │   │   │   │   └── visual-basic.txt
+    │   │   │   │   ├── os400
+    │   │   │   │   │   ├── bndsrc
+    │   │   │   │   │   ├── make.sh
+    │   │   │   │   │   ├── README400
+    │   │   │   │   │   └── zlib.inc
+    │   │   │   │   ├── qnx
+    │   │   │   │   │   └── package.qpg
+    │   │   │   │   ├── README
+    │   │   │   │   ├── test
+    │   │   │   │   │   ├── example.c
+    │   │   │   │   │   ├── infcover.c
+    │   │   │   │   │   └── minigzip.c
+    │   │   │   │   ├── treebuild.xml
+    │   │   │   │   ├── trees.c
+    │   │   │   │   ├── trees.h
+    │   │   │   │   ├── uncompr.c
+    │   │   │   │   ├── watcom
+    │   │   │   │   │   ├── watcom_f.mak
+    │   │   │   │   │   └── watcom_l.mak
+    │   │   │   │   ├── win32
+    │   │   │   │   │   ├── DLL_FAQ.txt
+    │   │   │   │   │   ├── Makefile.bor
+    │   │   │   │   │   ├── Makefile.gcc
+    │   │   │   │   │   ├── Makefile.msc
+    │   │   │   │   │   ├── README-WIN32.txt
+    │   │   │   │   │   ├── VisualC.txt
+    │   │   │   │   │   ├── zlib1.rc
+    │   │   │   │   │   └── zlib.def
+    │   │   │   │   ├── zconf.h
+    │   │   │   │   ├── zconf.h.cmakein
+    │   │   │   │   ├── zconf.h.in
+    │   │   │   │   ├── zlib.3
+    │   │   │   │   ├── zlib.3.pdf
+    │   │   │   │   ├── zlib.h
+    │   │   │   │   ├── zlib.map
+    │   │   │   │   ├── zlib.pc.cmakein
+    │   │   │   │   ├── zlib.pc.in
+    │   │   │   │   ├── zutil.c
+    │   │   │   │   └── zutil.h
+    │   │   │   └── zstd-1.5.6
+    │   │   │       ├── build
+    │   │   │       │   ├── cmake
+    │   │   │       │   │   ├── CMakeLists.txt
+    │   │   │       │   │   ├── CMakeModules
+    │   │   │       │   │   │   ├── AddZstdCompilationFlags.cmake
+    │   │   │       │   │   │   ├── FindLibLZ4.cmake
+    │   │   │       │   │   │   ├── GetZstdLibraryVersion.cmake
+    │   │   │       │   │   │   └── JoinPaths.cmake
+    │   │   │       │   │   ├── contrib
+    │   │   │       │   │   │   ├── CMakeLists.txt
+    │   │   │       │   │   │   ├── gen_html
+    │   │   │       │   │   │   │   └── CMakeLists.txt
+    │   │   │       │   │   │   └── pzstd
+    │   │   │       │   │   │       └── CMakeLists.txt
+    │   │   │       │   │   ├── lib
+    │   │   │       │   │   │   ├── CMakeLists.txt
+    │   │   │       │   │   │   └── cmake_uninstall.cmake.in
+    │   │   │       │   │   ├── programs
+    │   │   │       │   │   │   └── CMakeLists.txt
+    │   │   │       │   │   ├── README.md
+    │   │   │       │   │   ├── tests
+    │   │   │       │   │   │   └── CMakeLists.txt
+    │   │   │       │   │   └── zstdConfig.cmake.in
+    │   │   │       │   ├── LICENSE
+    │   │   │       │   ├── meson
+    │   │   │       │   │   ├── contrib
+    │   │   │       │   │   │   ├── gen_html
+    │   │   │       │   │   │   │   └── meson.build
+    │   │   │       │   │   │   ├── meson.build
+    │   │   │       │   │   │   └── pzstd
+    │   │   │       │   │   │       └── meson.build
+    │   │   │       │   │   ├── GetZstdLibraryVersion.py
+    │   │   │       │   │   ├── InstallSymlink.py
+    │   │   │       │   │   ├── lib
+    │   │   │       │   │   │   └── meson.build
+    │   │   │       │   │   ├── meson.build
+    │   │   │       │   │   ├── meson_options.txt
+    │   │   │       │   │   ├── programs
+    │   │   │       │   │   │   └── meson.build
+    │   │   │       │   │   ├── README.md
+    │   │   │       │   │   └── tests
+    │   │   │       │   │       ├── meson.build
+    │   │   │       │   │       └── valgrindTest.py
+    │   │   │       │   ├── README.md
+    │   │   │       │   ├── single_file_libs
+    │   │   │       │   │   ├── build_decoder_test.sh
+    │   │   │       │   │   ├── build_library_test.sh
+    │   │   │       │   │   ├── combine.py
+    │   │   │       │   │   ├── combine.sh
+    │   │   │       │   │   ├── create_single_file_decoder.sh
+    │   │   │       │   │   ├── create_single_file_library.sh
+    │   │   │       │   │   ├── examples
+    │   │   │       │   │   │   ├── emscripten.c
+    │   │   │       │   │   │   ├── README.md
+    │   │   │       │   │   │   ├── roundtrip.c
+    │   │   │       │   │   │   ├── shell.html
+    │   │   │       │   │   │   ├── simple.c
+    │   │   │       │   │   │   ├── testcard-dxt1.inl
+    │   │   │       │   │   │   ├── testcard.png
+    │   │   │       │   │   │   └── testcard-zstd.inl
+    │   │   │       │   │   ├── README.md
+    │   │   │       │   │   ├── zstddeclib-in.c
+    │   │   │       │   │   └── zstd-in.c
+    │   │   │       │   ├── VS2008
+    │   │   │       │   │   ├── fullbench
+    │   │   │       │   │   │   └── fullbench.vcproj
+    │   │   │       │   │   ├── fuzzer
+    │   │   │       │   │   │   └── fuzzer.vcproj
+    │   │   │       │   │   ├── zstd
+    │   │   │       │   │   │   └── zstd.vcproj
+    │   │   │       │   │   ├── zstdlib
+    │   │   │       │   │   │   └── zstdlib.vcproj
+    │   │   │       │   │   └── zstd.sln
+    │   │   │       │   ├── VS2010
+    │   │   │       │   │   ├── CompileAsCpp.props
+    │   │   │       │   │   ├── datagen
+    │   │   │       │   │   │   └── datagen.vcxproj
+    │   │   │       │   │   ├── fullbench
+    │   │   │       │   │   │   └── fullbench.vcxproj
+    │   │   │       │   │   ├── fullbench-dll
+    │   │   │       │   │   │   └── fullbench-dll.vcxproj
+    │   │   │       │   │   ├── fuzzer
+    │   │   │       │   │   │   └── fuzzer.vcxproj
+    │   │   │       │   │   ├── libzstd
+    │   │   │       │   │   │   └── libzstd.vcxproj
+    │   │   │       │   │   ├── libzstd-dll
+    │   │   │       │   │   │   ├── libzstd-dll.rc
+    │   │   │       │   │   │   └── libzstd-dll.vcxproj
+    │   │   │       │   │   ├── zstd
+    │   │   │       │   │   │   ├── zstd.rc
+    │   │   │       │   │   │   └── zstd.vcxproj
+    │   │   │       │   │   └── zstd.sln
+    │   │   │       │   └── VS_scripts
+    │   │   │       │       ├── build.generic.cmd
+    │   │   │       │       ├── build.VS2010.cmd
+    │   │   │       │       ├── build.VS2012.cmd
+    │   │   │       │       ├── build.VS2013.cmd
+    │   │   │       │       ├── build.VS2015.cmd
+    │   │   │       │       ├── build.VS2017.cmd
+    │   │   │       │       ├── build.VS2017Community.cmd
+    │   │   │       │       ├── build.VS2017Enterprise.cmd
+    │   │   │       │       ├── build.VS2017Professional.cmd
+    │   │   │       │       └── README.md
+    │   │   │       ├── CHANGELOG
+    │   │   │       ├── CODE_OF_CONDUCT.md
+    │   │   │       ├── contrib
+    │   │   │       │   ├── cleanTabs
+    │   │   │       │   ├── diagnose_corruption
+    │   │   │       │   │   ├── check_flipped_bits.c
+    │   │   │       │   │   └── Makefile
+    │   │   │       │   ├── docker
+    │   │   │       │   │   ├── Dockerfile
+    │   │   │       │   │   └── README.md
+    │   │   │       │   ├── externalSequenceProducer
+    │   │   │       │   │   ├── main.c
+    │   │   │       │   │   ├── Makefile
+    │   │   │       │   │   ├── README.md
+    │   │   │       │   │   ├── sequence_producer.c
+    │   │   │       │   │   └── sequence_producer.h
+    │   │   │       │   ├── freestanding_lib
+    │   │   │       │   │   └── freestanding.py
+    │   │   │       │   ├── gen_html
+    │   │   │       │   │   ├── gen_html.cpp
+    │   │   │       │   │   ├── gen-zstd-manual.sh
+    │   │   │       │   │   ├── Makefile
+    │   │   │       │   │   └── README.md
+    │   │   │       │   ├── largeNbDicts
+    │   │   │       │   │   ├── largeNbDicts.c
+    │   │   │       │   │   ├── Makefile
+    │   │   │       │   │   └── README.md
+    │   │   │       │   ├── linux-kernel
+    │   │   │       │   │   ├── btrfs-benchmark.sh
+    │   │   │       │   │   ├── btrfs-extract-benchmark.sh
+    │   │   │       │   │   ├── decompress_sources.h
+    │   │   │       │   │   ├── linux.mk
+    │   │   │       │   │   ├── linux_zstd.h
+    │   │   │       │   │   ├── Makefile
+    │   │   │       │   │   ├── mem.h
+    │   │   │       │   │   ├── README.md
+    │   │   │       │   │   ├── squashfs-benchmark.sh
+    │   │   │       │   │   ├── test
+    │   │   │       │   │   │   ├── include
+    │   │   │       │   │   │   │   ├── asm
+    │   │   │       │   │   │   │   │   └── unaligned.h
+    │   │   │       │   │   │   │   └── linux
+    │   │   │       │   │   │   │       ├── compiler.h
+    │   │   │       │   │   │   │       ├── errno.h
+    │   │   │       │   │   │   │       ├── kernel.h
+    │   │   │       │   │   │   │       ├── limits.h
+    │   │   │       │   │   │   │       ├── math64.h
+    │   │   │       │   │   │   │       ├── module.h
+    │   │   │       │   │   │   │       ├── printk.h
+    │   │   │       │   │   │   │       ├── stddef.h
+    │   │   │       │   │   │   │       ├── swab.h
+    │   │   │       │   │   │   │       ├── types.h
+    │   │   │       │   │   │   │       └── xxhash.h
+    │   │   │       │   │   │   ├── macro-test.sh
+    │   │   │       │   │   │   ├── Makefile
+    │   │   │       │   │   │   ├── static_test.c
+    │   │   │       │   │   │   └── test.c
+    │   │   │       │   │   ├── zstd_common_module.c
+    │   │   │       │   │   ├── zstd_compress_module.c
+    │   │   │       │   │   ├── zstd_decompress_module.c
+    │   │   │       │   │   └── zstd_deps.h
+    │   │   │       │   ├── match_finders
+    │   │   │       │   │   ├── README.md
+    │   │   │       │   │   ├── zstd_edist.c
+    │   │   │       │   │   └── zstd_edist.h
+    │   │   │       │   ├── premake
+    │   │   │       │   │   ├── premake4.lua
+    │   │   │       │   │   └── zstd.lua
+    │   │   │       │   ├── pzstd
+    │   │   │       │   │   ├── BUCK
+    │   │   │       │   │   ├── ErrorHolder.h
+    │   │   │       │   │   ├── images
+    │   │   │       │   │   │   ├── Cspeed.png
+    │   │   │       │   │   │   └── Dspeed.png
+    │   │   │       │   │   ├── Logging.h
+    │   │   │       │   │   ├── main.cpp
+    │   │   │       │   │   ├── Makefile
+    │   │   │       │   │   ├── Options.cpp
+    │   │   │       │   │   ├── Options.h
+    │   │   │       │   │   ├── Pzstd.cpp
+    │   │   │       │   │   ├── Pzstd.h
+    │   │   │       │   │   ├── README.md
+    │   │   │       │   │   ├── SkippableFrame.cpp
+    │   │   │       │   │   ├── SkippableFrame.h
+    │   │   │       │   │   ├── test
+    │   │   │       │   │   │   ├── BUCK
+    │   │   │       │   │   │   ├── OptionsTest.cpp
+    │   │   │       │   │   │   ├── PzstdTest.cpp
+    │   │   │       │   │   │   ├── RoundTrip.h
+    │   │   │       │   │   │   └── RoundTripTest.cpp
+    │   │   │       │   │   └── utils
+    │   │   │       │   │       ├── BUCK
+    │   │   │       │   │       ├── Buffer.h
+    │   │   │       │   │       ├── FileSystem.h
+    │   │   │       │   │       ├── Likely.h
+    │   │   │       │   │       ├── Portability.h
+    │   │   │       │   │       ├── Range.h
+    │   │   │       │   │       ├── ResourcePool.h
+    │   │   │       │   │       ├── ScopeGuard.h
+    │   │   │       │   │       ├── test
+    │   │   │       │   │       │   ├── BUCK
+    │   │   │       │   │       │   ├── BufferTest.cpp
+    │   │   │       │   │       │   ├── RangeTest.cpp
+    │   │   │       │   │       │   ├── ResourcePoolTest.cpp
+    │   │   │       │   │       │   ├── ScopeGuardTest.cpp
+    │   │   │       │   │       │   ├── ThreadPoolTest.cpp
+    │   │   │       │   │       │   └── WorkQueueTest.cpp
+    │   │   │       │   │       ├── ThreadPool.h
+    │   │   │       │   │       └── WorkQueue.h
+    │   │   │       │   ├── recovery
+    │   │   │       │   │   ├── Makefile
+    │   │   │       │   │   └── recover_directory.c
+    │   │   │       │   ├── seekable_format
+    │   │   │       │   │   ├── examples
+    │   │   │       │   │   │   ├── Makefile
+    │   │   │       │   │   │   ├── parallel_compression.c
+    │   │   │       │   │   │   ├── parallel_processing.c
+    │   │   │       │   │   │   ├── seekable_compression.c
+    │   │   │       │   │   │   ├── seekable_decompression.c
+    │   │   │       │   │   │   └── seekable_decompression_mem.c
+    │   │   │       │   │   ├── README.md
+    │   │   │       │   │   ├── tests
+    │   │   │       │   │   │   ├── Makefile
+    │   │   │       │   │   │   └── seekable_tests.c
+    │   │   │       │   │   ├── zstd_seekable_compression_format.md
+    │   │   │       │   │   ├── zstd_seekable.h
+    │   │   │       │   │   ├── zstdseek_compress.c
+    │   │   │       │   │   └── zstdseek_decompress.c
+    │   │   │       │   ├── seqBench
+    │   │   │       │   │   ├── Makefile
+    │   │   │       │   │   └── seqBench.c
+    │   │   │       │   ├── snap
+    │   │   │       │   │   └── snapcraft.yaml
+    │   │   │       │   └── VS2005
+    │   │   │       │       ├── fullbench
+    │   │   │       │       │   └── fullbench.vcproj
+    │   │   │       │       ├── fuzzer
+    │   │   │       │       │   └── fuzzer.vcproj
+    │   │   │       │       ├── README.md
+    │   │   │       │       ├── zstd
+    │   │   │       │       │   └── zstd.vcproj
+    │   │   │       │       ├── zstdlib
+    │   │   │       │       │   └── zstdlib.vcproj
+    │   │   │       │       └── zstd.sln
+    │   │   │       ├── CONTRIBUTING.md
+    │   │   │       ├── COPYING
+    │   │   │       ├── doc
+    │   │   │       │   ├── decompressor_errata.md
+    │   │   │       │   ├── decompressor_permissive.md
+    │   │   │       │   ├── educational_decoder
+    │   │   │       │   │   ├── harness.c
+    │   │   │       │   │   ├── Makefile
+    │   │   │       │   │   ├── README.md
+    │   │   │       │   │   ├── zstd_decompress.c
+    │   │   │       │   │   └── zstd_decompress.h
+    │   │   │       │   ├── images
+    │   │   │       │   │   ├── cdict_v136.png
+    │   │   │       │   │   ├── CSpeed2.png
+    │   │   │       │   │   ├── DCspeed5.png
+    │   │   │       │   │   ├── dict-cr.png
+    │   │   │       │   │   ├── dict-cs.png
+    │   │   │       │   │   ├── dict-ds.png
+    │   │   │       │   │   ├── DSpeed3.png
+    │   │   │       │   │   ├── zstd_cdict_v1_3_5.png
+    │   │   │       │   │   └── zstd_logo86.png
+    │   │   │       │   ├── README.md
+    │   │   │       │   ├── zstd_compression_format.md
+    │   │   │       │   └── zstd_manual.html
+    │   │   │       ├── examples
+    │   │   │       │   ├── common.h
+    │   │   │       │   ├── dictionary_compression.c
+    │   │   │       │   ├── dictionary_decompression.c
+    │   │   │       │   ├── Makefile
+    │   │   │       │   ├── multiple_simple_compression.c
+    │   │   │       │   ├── multiple_streaming_compression.c
+    │   │   │       │   ├── README.md
+    │   │   │       │   ├── simple_compression.c
+    │   │   │       │   ├── simple_decompression.c
+    │   │   │       │   ├── streaming_compression.c
+    │   │   │       │   ├── streaming_compression_thread_pool.c
+    │   │   │       │   ├── streaming_decompression.c
+    │   │   │       │   └── streaming_memory_usage.c
+    │   │   │       ├── lib
+    │   │   │       │   ├── BUCK
+    │   │   │       │   ├── common
+    │   │   │       │   │   ├── allocations.h
+    │   │   │       │   │   ├── bits.h
+    │   │   │       │   │   ├── bitstream.h
+    │   │   │       │   │   ├── compiler.h
+    │   │   │       │   │   ├── cpu.h
+    │   │   │       │   │   ├── debug.c
+    │   │   │       │   │   ├── debug.h
+    │   │   │       │   │   ├── entropy_common.c
+    │   │   │       │   │   ├── error_private.c
+    │   │   │       │   │   ├── error_private.h
+    │   │   │       │   │   ├── fse_decompress.c
+    │   │   │       │   │   ├── fse.h
+    │   │   │       │   │   ├── huf.h
+    │   │   │       │   │   ├── mem.h
+    │   │   │       │   │   ├── pool.c
+    │   │   │       │   │   ├── pool.h
+    │   │   │       │   │   ├── portability_macros.h
+    │   │   │       │   │   ├── threading.c
+    │   │   │       │   │   ├── threading.h
+    │   │   │       │   │   ├── xxhash.c
+    │   │   │       │   │   ├── xxhash.h
+    │   │   │       │   │   ├── zstd_common.c
+    │   │   │       │   │   ├── zstd_deps.h
+    │   │   │       │   │   ├── zstd_internal.h
+    │   │   │       │   │   └── zstd_trace.h
+    │   │   │       │   ├── compress
+    │   │   │       │   │   ├── clevels.h
+    │   │   │       │   │   ├── fse_compress.c
+    │   │   │       │   │   ├── hist.c
+    │   │   │       │   │   ├── hist.h
+    │   │   │       │   │   ├── huf_compress.c
+    │   │   │       │   │   ├── zstd_compress.c
+    │   │   │       │   │   ├── zstd_compress_internal.h
+    │   │   │       │   │   ├── zstd_compress_literals.c
+    │   │   │       │   │   ├── zstd_compress_literals.h
+    │   │   │       │   │   ├── zstd_compress_sequences.c
+    │   │   │       │   │   ├── zstd_compress_sequences.h
+    │   │   │       │   │   ├── zstd_compress_superblock.c
+    │   │   │       │   │   ├── zstd_compress_superblock.h
+    │   │   │       │   │   ├── zstd_cwksp.h
+    │   │   │       │   │   ├── zstd_double_fast.c
+    │   │   │       │   │   ├── zstd_double_fast.h
+    │   │   │       │   │   ├── zstd_fast.c
+    │   │   │       │   │   ├── zstd_fast.h
+    │   │   │       │   │   ├── zstd_lazy.c
+    │   │   │       │   │   ├── zstd_lazy.h
+    │   │   │       │   │   ├── zstd_ldm.c
+    │   │   │       │   │   ├── zstd_ldm_geartab.h
+    │   │   │       │   │   ├── zstd_ldm.h
+    │   │   │       │   │   ├── zstdmt_compress.c
+    │   │   │       │   │   ├── zstdmt_compress.h
+    │   │   │       │   │   ├── zstd_opt.c
+    │   │   │       │   │   └── zstd_opt.h
+    │   │   │       │   ├── decompress
+    │   │   │       │   │   ├── huf_decompress_amd64.S
+    │   │   │       │   │   ├── huf_decompress.c
+    │   │   │       │   │   ├── zstd_ddict.c
+    │   │   │       │   │   ├── zstd_ddict.h
+    │   │   │       │   │   ├── zstd_decompress_block.c
+    │   │   │       │   │   ├── zstd_decompress_block.h
+    │   │   │       │   │   ├── zstd_decompress.c
+    │   │   │       │   │   └── zstd_decompress_internal.h
+    │   │   │       │   ├── deprecated
+    │   │   │       │   │   ├── zbuff_common.c
+    │   │   │       │   │   ├── zbuff_compress.c
+    │   │   │       │   │   ├── zbuff_decompress.c
+    │   │   │       │   │   └── zbuff.h
+    │   │   │       │   ├── dictBuilder
+    │   │   │       │   │   ├── cover.c
+    │   │   │       │   │   ├── cover.h
+    │   │   │       │   │   ├── divsufsort.c
+    │   │   │       │   │   ├── divsufsort.h
+    │   │   │       │   │   ├── fastcover.c
+    │   │   │       │   │   └── zdict.c
+    │   │   │       │   ├── dll
+    │   │   │       │   │   └── example
+    │   │   │       │   │       ├── build_package.bat
+    │   │   │       │   │       ├── fullbench-dll.sln
+    │   │   │       │   │       ├── fullbench-dll.vcxproj
+    │   │   │       │   │       ├── Makefile
+    │   │   │       │   │       └── README.md
+    │   │   │       │   ├── legacy
+    │   │   │       │   │   ├── zstd_legacy.h
+    │   │   │       │   │   ├── zstd_v01.c
+    │   │   │       │   │   ├── zstd_v01.h
+    │   │   │       │   │   ├── zstd_v02.c
+    │   │   │       │   │   ├── zstd_v02.h
+    │   │   │       │   │   ├── zstd_v03.c
+    │   │   │       │   │   ├── zstd_v03.h
+    │   │   │       │   │   ├── zstd_v04.c
+    │   │   │       │   │   ├── zstd_v04.h
+    │   │   │       │   │   ├── zstd_v05.c
+    │   │   │       │   │   ├── zstd_v05.h
+    │   │   │       │   │   ├── zstd_v06.c
+    │   │   │       │   │   ├── zstd_v06.h
+    │   │   │       │   │   ├── zstd_v07.c
+    │   │   │       │   │   └── zstd_v07.h
+    │   │   │       │   ├── libzstd.mk
+    │   │   │       │   ├── libzstd.pc.in
+    │   │   │       │   ├── Makefile
+    │   │   │       │   ├── module.modulemap
+    │   │   │       │   ├── README.md
+    │   │   │       │   ├── zdict.h
+    │   │   │       │   ├── zstd_errors.h
+    │   │   │       │   └── zstd.h
+    │   │   │       ├── LICENSE
+    │   │   │       ├── Makefile
+    │   │   │       ├── Package.swift
+    │   │   │       ├── programs
+    │   │   │       │   ├── benchfn.c
+    │   │   │       │   ├── benchfn.h
+    │   │   │       │   ├── benchzstd.c
+    │   │   │       │   ├── benchzstd.h
+    │   │   │       │   ├── BUCK
+    │   │   │       │   ├── datagen.c
+    │   │   │       │   ├── datagen.h
+    │   │   │       │   ├── dibio.c
+    │   │   │       │   ├── dibio.h
+    │   │   │       │   ├── fileio_asyncio.c
+    │   │   │       │   ├── fileio_asyncio.h
+    │   │   │       │   ├── fileio.c
+    │   │   │       │   ├── fileio_common.h
+    │   │   │       │   ├── fileio.h
+    │   │   │       │   ├── fileio_types.h
+    │   │   │       │   ├── lorem.c
+    │   │   │       │   ├── lorem.h
+    │   │   │       │   ├── Makefile
+    │   │   │       │   ├── platform.h
+    │   │   │       │   ├── README.md
+    │   │   │       │   ├── timefn.c
+    │   │   │       │   ├── timefn.h
+    │   │   │       │   ├── util.c
+    │   │   │       │   ├── util.h
+    │   │   │       │   ├── windres
+    │   │   │       │   │   ├── verrsrc.h
+    │   │   │       │   │   ├── zstd32.res
+    │   │   │       │   │   ├── zstd64.res
+    │   │   │       │   │   └── zstd.rc
+    │   │   │       │   ├── zstd.1
+    │   │   │       │   ├── zstd.1.md
+    │   │   │       │   ├── zstdcli.c
+    │   │   │       │   ├── zstdcli_trace.c
+    │   │   │       │   ├── zstdcli_trace.h
+    │   │   │       │   ├── zstdgrep
+    │   │   │       │   ├── zstdgrep.1
+    │   │   │       │   ├── zstdgrep.1.md
+    │   │   │       │   ├── zstdless
+    │   │   │       │   ├── zstdless.1
+    │   │   │       │   └── zstdless.1.md
+    │   │   │       ├── README.md
+    │   │   │       ├── SECURITY.md
+    │   │   │       ├── TESTING.md
+    │   │   │       ├── tests
+    │   │   │       │   ├── automated_benchmarking.py
+    │   │   │       │   ├── bigdict.c
+    │   │   │       │   ├── check_size.py
+    │   │   │       │   ├── checkTag.c
+    │   │   │       │   ├── cli-tests
+    │   │   │       │   │   ├── basic
+    │   │   │       │   │   │   ├── args.sh
+    │   │   │       │   │   │   ├── args.sh.exit
+    │   │   │       │   │   │   ├── args.sh.stderr.glob
+    │   │   │       │   │   │   ├── help.sh
+    │   │   │       │   │   │   ├── help.sh.stdout.glob
+    │   │   │       │   │   │   ├── memlimit.sh
+    │   │   │       │   │   │   ├── memlimit.sh.stderr.exact
+    │   │   │       │   │   │   ├── memlimit.sh.stdout.exact
+    │   │   │       │   │   │   ├── output_dir.sh
+    │   │   │       │   │   │   ├── output_dir.sh.stderr.exact
+    │   │   │       │   │   │   ├── output_dir.sh.stdout.exact
+    │   │   │       │   │   │   ├── version.sh
+    │   │   │       │   │   │   └── version.sh.stdout.glob
+    │   │   │       │   │   ├── bin
+    │   │   │       │   │   │   ├── cmp_size
+    │   │   │       │   │   │   ├── datagen
+    │   │   │       │   │   │   ├── die
+    │   │   │       │   │   │   ├── println
+    │   │   │       │   │   │   ├── unzstd
+    │   │   │       │   │   │   ├── zstd
+    │   │   │       │   │   │   ├── zstdcat
+    │   │   │       │   │   │   ├── zstdgrep
+    │   │   │       │   │   │   └── zstdless
+    │   │   │       │   │   ├── cltools
+    │   │   │       │   │   │   ├── setup
+    │   │   │       │   │   │   ├── zstdgrep.sh
+    │   │   │       │   │   │   ├── zstdgrep.sh.exit
+    │   │   │       │   │   │   ├── zstdgrep.sh.stderr.exact
+    │   │   │       │   │   │   ├── zstdgrep.sh.stdout.glob
+    │   │   │       │   │   │   ├── zstdless.sh
+    │   │   │       │   │   │   ├── zstdless.sh.stderr.exact
+    │   │   │       │   │   │   └── zstdless.sh.stdout.glob
+    │   │   │       │   │   ├── common
+    │   │   │       │   │   │   ├── format.sh
+    │   │   │       │   │   │   ├── mtime.sh
+    │   │   │       │   │   │   ├── permissions.sh
+    │   │   │       │   │   │   └── platform.sh
+    │   │   │       │   │   ├── compression
+    │   │   │       │   │   │   ├── adapt.sh
+    │   │   │       │   │   │   ├── basic.sh
+    │   │   │       │   │   │   ├── compress-literals.sh
+    │   │   │       │   │   │   ├── format.sh
+    │   │   │       │   │   │   ├── golden.sh
+    │   │   │       │   │   │   ├── gzip-compat.sh
+    │   │   │       │   │   │   ├── levels.sh
+    │   │   │       │   │   │   ├── levels.sh.stderr.exact
+    │   │   │       │   │   │   ├── long-distance-matcher.sh
+    │   │   │       │   │   │   ├── multiple-files.sh
+    │   │   │       │   │   │   ├── multiple-files.sh.stdout.exact
+    │   │   │       │   │   │   ├── multi-threaded.sh
+    │   │   │       │   │   │   ├── multi-threaded.sh.stderr.exact
+    │   │   │       │   │   │   ├── row-match-finder.sh
+    │   │   │       │   │   │   ├── setup
+    │   │   │       │   │   │   ├── stream-size.sh
+    │   │   │       │   │   │   ├── verbose-wlog.sh
+    │   │   │       │   │   │   ├── verbose-wlog.sh.stderr.glob
+    │   │   │       │   │   │   ├── verbose-wlog.sh.stdout.glob
+    │   │   │       │   │   │   ├── window-resize.sh
+    │   │   │       │   │   │   ├── window-resize.sh.stderr.ignore
+    │   │   │       │   │   │   └── window-resize.sh.stdout.glob
+    │   │   │       │   │   ├── decompression
+    │   │   │       │   │   │   ├── detectErrors.sh
+    │   │   │       │   │   │   ├── golden.sh
+    │   │   │       │   │   │   ├── pass-through.sh
+    │   │   │       │   │   │   ├── pass-through.sh.stderr.exact
+    │   │   │       │   │   │   └── pass-through.sh.stdout.exact
+    │   │   │       │   │   ├── dict-builder
+    │   │   │       │   │   │   ├── empty-input.sh
+    │   │   │       │   │   │   ├── empty-input.sh.stderr.exact
+    │   │   │       │   │   │   ├── no-inputs.sh
+    │   │   │       │   │   │   ├── no-inputs.sh.exit
+    │   │   │       │   │   │   └── no-inputs.sh.stderr.exact
+    │   │   │       │   │   ├── dictionaries
+    │   │   │       │   │   │   ├── dictionary-mismatch.sh
+    │   │   │       │   │   │   ├── dictionary-mismatch.sh.stderr.exact
+    │   │   │       │   │   │   ├── golden.sh
+    │   │   │       │   │   │   ├── setup
+    │   │   │       │   │   │   └── setup_once
+    │   │   │       │   │   ├── file-handling
+    │   │   │       │   │   │   ├── directory-mirror.sh
+    │   │   │       │   │   │   ├── directory-mirror.sh.stderr.exact
+    │   │   │       │   │   │   └── directory-mirror.sh.stdout.exact
+    │   │   │       │   │   ├── file-stat
+    │   │   │       │   │   │   ├── compress-file-to-dir-without-write-perm.sh
+    │   │   │       │   │   │   ├── compress-file-to-dir-without-write-perm.sh.stderr.exact
+    │   │   │       │   │   │   ├── compress-file-to-file.sh
+    │   │   │       │   │   │   ├── compress-file-to-file.sh.stderr.exact
+    │   │   │       │   │   │   ├── compress-file-to-stdout.sh
+    │   │   │       │   │   │   ├── compress-file-to-stdout.sh.stderr.exact
+    │   │   │       │   │   │   ├── compress-stdin-to-file.sh
+    │   │   │       │   │   │   ├── compress-stdin-to-file.sh.stderr.exact
+    │   │   │       │   │   │   ├── compress-stdin-to-stdout.sh
+    │   │   │       │   │   │   ├── compress-stdin-to-stdout.sh.stderr.exact
+    │   │   │       │   │   │   ├── decompress-file-to-file.sh
+    │   │   │       │   │   │   ├── decompress-file-to-file.sh.stderr.exact
+    │   │   │       │   │   │   ├── decompress-file-to-stdout.sh
+    │   │   │       │   │   │   ├── decompress-file-to-stdout.sh.stderr.exact
+    │   │   │       │   │   │   ├── decompress-stdin-to-file.sh
+    │   │   │       │   │   │   ├── decompress-stdin-to-file.sh.stderr.exact
+    │   │   │       │   │   │   ├── decompress-stdin-to-stdout.sh
+    │   │   │       │   │   │   └── decompress-stdin-to-stdout.sh.stderr.exact
+    │   │   │       │   │   ├── progress
+    │   │   │       │   │   │   ├── no-progress.sh
+    │   │   │       │   │   │   ├── no-progress.sh.stderr.glob
+    │   │   │       │   │   │   ├── progress.sh
+    │   │   │       │   │   │   └── progress.sh.stderr.glob
+    │   │   │       │   │   ├── README.md
+    │   │   │       │   │   ├── run.py
+    │   │   │       │   │   └── zstd-symlinks
+    │   │   │       │   │       ├── setup
+    │   │   │       │   │       ├── zstdcat.sh
+    │   │   │       │   │       └── zstdcat.sh.stdout.exact
+    │   │   │       │   ├── datagencli.c
+    │   │   │       │   ├── decodecorpus.c
+    │   │   │       │   ├── DEPRECATED-test-zstd-speed.py
+    │   │   │       │   ├── dict-files
+    │   │   │       │   │   └── zero-weight-dict
+    │   │   │       │   ├── external_matchfinder.c
+    │   │   │       │   ├── external_matchfinder.h
+    │   │   │       │   ├── fullbench.c
+    │   │   │       │   ├── fuzz
+    │   │   │       │   │   ├── block_decompress.c
+    │   │   │       │   │   ├── block_round_trip.c
+    │   │   │       │   │   ├── decompress_cross_format.c
+    │   │   │       │   │   ├── decompress_dstSize_tooSmall.c
+    │   │   │       │   │   ├── dictionary_decompress.c
+    │   │   │       │   │   ├── dictionary_loader.c
+    │   │   │       │   │   ├── dictionary_round_trip.c
+    │   │   │       │   │   ├── dictionary_stream_round_trip.c
+    │   │   │       │   │   ├── fse_read_ncount.c
+    │   │   │       │   │   ├── fuzz_data_producer.c
+    │   │   │       │   │   ├── fuzz_data_producer.h
+    │   │   │       │   │   ├── fuzz.h
+    │   │   │       │   │   ├── fuzz_helpers.c
+    │   │   │       │   │   ├── fuzz_helpers.h
+    │   │   │       │   │   ├── fuzz.py
+    │   │   │       │   │   ├── fuzz_third_party_seq_prod.h
+    │   │   │       │   │   ├── generate_sequences.c
+    │   │   │       │   │   ├── huf_decompress.c
+    │   │   │       │   │   ├── huf_round_trip.c
+    │   │   │       │   │   ├── Makefile
+    │   │   │       │   │   ├── raw_dictionary_round_trip.c
+    │   │   │       │   │   ├── README.md
+    │   │   │       │   │   ├── regression_driver.c
+    │   │   │       │   │   ├── seekable_roundtrip.c
+    │   │   │       │   │   ├── seq_prod_fuzz_example
+    │   │   │       │   │   │   ├── example_seq_prod.c
+    │   │   │       │   │   │   ├── Makefile
+    │   │   │       │   │   │   └── README.md
+    │   │   │       │   │   ├── sequence_compression_api.c
+    │   │   │       │   │   ├── simple_compress.c
+    │   │   │       │   │   ├── simple_decompress.c
+    │   │   │       │   │   ├── simple_round_trip.c
+    │   │   │       │   │   ├── stream_decompress.c
+    │   │   │       │   │   ├── stream_round_trip.c
+    │   │   │       │   │   ├── zstd_frame_info.c
+    │   │   │       │   │   ├── zstd_helpers.c
+    │   │   │       │   │   └── zstd_helpers.h
+    │   │   │       │   ├── fuzzer.c
+    │   │   │       │   ├── golden-compression
+    │   │   │       │   │   ├── http
+    │   │   │       │   │   ├── huffman-compressed-larger
+    │   │   │       │   │   ├── large-literal-and-match-lengths
+    │   │   │       │   │   └── PR-3517-block-splitter-corruption-test
+    │   │   │       │   ├── golden-decompression
+    │   │   │       │   │   ├── block-128k.zst
+    │   │   │       │   │   ├── empty-block.zst
+    │   │   │       │   │   ├── rle-first-block.zst
+    │   │   │       │   │   └── zeroSeq_2B.zst
+    │   │   │       │   ├── golden-decompression-errors
+    │   │   │       │   │   ├── off0.bin.zst
+    │   │   │       │   │   └── zeroSeq_extraneous.zst
+    │   │   │       │   ├── golden-dictionaries
+    │   │   │       │   │   └── http-dict-missing-symbols
+    │   │   │       │   ├── gzip
+    │   │   │       │   │   ├── gzip-env.sh
+    │   │   │       │   │   ├── helin-segv.sh
+    │   │   │       │   │   ├── help-version.sh
+    │   │   │       │   │   ├── hufts-segv.gz
+    │   │   │       │   │   ├── hufts.sh
+    │   │   │       │   │   ├── init.cfg
+    │   │   │       │   │   ├── init.sh
+    │   │   │       │   │   ├── keep.sh
+    │   │   │       │   │   ├── list.sh
+    │   │   │       │   │   ├── Makefile
+    │   │   │       │   │   ├── memcpy-abuse.sh
+    │   │   │       │   │   ├── mixed.sh
+    │   │   │       │   │   ├── null-suffix-clobber.sh
+    │   │   │       │   │   ├── stdin.sh
+    │   │   │       │   │   ├── test-driver.sh
+    │   │   │       │   │   ├── trailing-nul.sh
+    │   │   │       │   │   ├── unpack-invalid.sh
+    │   │   │       │   │   ├── zdiff.sh
+    │   │   │       │   │   ├── zgrep-context.sh
+    │   │   │       │   │   ├── zgrep-f.sh
+    │   │   │       │   │   ├── zgrep-signal.sh
+    │   │   │       │   │   ├── znew-k.sh
+    │   │   │       │   │   └── z-suffix.sh
+    │   │   │       │   ├── invalidDictionaries.c
+    │   │   │       │   ├── legacy.c
+    │   │   │       │   ├── libzstd_builds.sh
+    │   │   │       │   ├── longmatch.c
+    │   │   │       │   ├── loremOut.c
+    │   │   │       │   ├── loremOut.h
+    │   │   │       │   ├── Makefile
+    │   │   │       │   ├── paramgrill.c
+    │   │   │       │   ├── playTests.sh
+    │   │   │       │   ├── poolTests.c
+    │   │   │       │   ├── rateLimiter.py
+    │   │   │       │   ├── README.md
+    │   │   │       │   ├── regression
+    │   │   │       │   │   ├── config.c
+    │   │   │       │   │   ├── config.h
+    │   │   │       │   │   ├── data.c
+    │   │   │       │   │   ├── data.h
+    │   │   │       │   │   ├── levels.h
+    │   │   │       │   │   ├── Makefile
+    │   │   │       │   │   ├── method.c
+    │   │   │       │   │   ├── method.h
+    │   │   │       │   │   ├── README.md
+    │   │   │       │   │   ├── result.c
+    │   │   │       │   │   ├── result.h
+    │   │   │       │   │   ├── results.csv
+    │   │   │       │   │   └── test.c
+    │   │   │       │   ├── roundTripCrash.c
+    │   │   │       │   ├── seqgen.c
+    │   │   │       │   ├── seqgen.h
+    │   │   │       │   ├── test-license.py
+    │   │   │       │   ├── test-variants.sh
+    │   │   │       │   ├── test-zstd-versions.py
+    │   │   │       │   └── zstreamtest.c
+    │   │   │       └── zlibWrapper
+    │   │   │           ├── BUCK
+    │   │   │           ├── examples
+    │   │   │           │   ├── example.c
+    │   │   │           │   ├── example_original.c
+    │   │   │           │   ├── fitblk.c
+    │   │   │           │   ├── fitblk_original.c
+    │   │   │           │   ├── minigzip.c
+    │   │   │           │   └── zwrapbench.c
+    │   │   │           ├── gzclose.c
+    │   │   │           ├── gzcompatibility.h
+    │   │   │           ├── gzguts.h
+    │   │   │           ├── gzlib.c
+    │   │   │           ├── gzread.c
+    │   │   │           ├── gzwrite.c
+    │   │   │           ├── Makefile
+    │   │   │           ├── README.md
+    │   │   │           ├── zstd_zlibwrapper.c
+    │   │   │           └── zstd_zlibwrapper.h
+    │   │   ├── include
+    │   │   │   ├── dr_libs
+    │   │   │   │   └── dr_flac.h
+    │   │   │   └── libchdr
+    │   │   │       ├── bitstream.h
+    │   │   │       ├── cdrom.h
+    │   │   │       ├── chdconfig.h
+    │   │   │       ├── chd.h
+    │   │   │       ├── coretypes.h
+    │   │   │       ├── flac.h
+    │   │   │       └── huffman.h
+    │   │   ├── LICENSE.txt
+    │   │   ├── pkg-config.pc.in
+    │   │   ├── README.md
+    │   │   ├── src
+    │   │   │   ├── libchdr_bitstream.c
+    │   │   │   ├── libchdr_cdrom.c
+    │   │   │   ├── libchdr_chd.c
+    │   │   │   ├── libchdr_flac.c
+    │   │   │   ├── libchdr_huffman.c
+    │   │   │   └── link.T
+    │   │   └── tests
+    │   │       ├── benchmark.c
+    │   │       └── CMakeLists.txt
+    │   ├── lzma-19.00
+    │   │   ├── CMakeLists.txt
+    │   │   ├── include
+    │   │   │   ├── 7zTypes.h
+    │   │   │   ├── Alloc.h
+    │   │   │   ├── Bra.h
+    │   │   │   ├── Compiler.h
+    │   │   │   ├── CpuArch.h
+    │   │   │   ├── Delta.h
+    │   │   │   ├── LzFind.h
+    │   │   │   ├── LzHash.h
+    │   │   │   ├── Lzma86.h
+    │   │   │   ├── LzmaDec.h
+    │   │   │   ├── LzmaEnc.h
+    │   │   │   ├── LzmaLib.h
+    │   │   │   ├── Precomp.h
+    │   │   │   └── Sort.h
+    │   │   ├── LICENSE
+    │   │   ├── lzma-history.txt
+    │   │   ├── lzma.txt
+    │   │   ├── lzma.vcxproj
+    │   │   ├── lzma.vcxproj.filters
+    │   │   └── src
+    │   │       ├── Alloc.c
+    │   │       ├── Bra86.c
+    │   │       ├── BraIA64.c
+    │   │       ├── CpuArch.c
+    │   │       ├── Delta.c
+    │   │       ├── LzFind.c
+    │   │       ├── Lzma86Dec.c
+    │   │       ├── Lzma86Enc.c
+    │   │       ├── LzmaDec.c
+    │   │       └── LzmaEnc.c
+    │   └── zlib-1.2.11
+    │       ├── adler32.c
+    │       ├── ChangeLog
+    │       ├── CMakeLists.txt
+    │       ├── configure
+    │       ├── crc32.c
+    │       ├── crc32.h
+    │       ├── doc
+    │       │   ├── algorithm.txt
+    │       │   ├── rfc1950.txt
+    │       │   ├── rfc1951.txt
+    │       │   ├── rfc1952.txt
+    │       │   └── txtvsbin.txt
+    │       ├── FAQ
+    │       ├── gzguts.h
+    │       ├── INDEX
+    │       ├── infback.c
+    │       ├── inffast.c
+    │       ├── inffast.h
+    │       ├── inffixed.h
+    │       ├── inflate.c
+    │       ├── inflate.h
+    │       ├── inftrees.c
+    │       ├── inftrees.h
+    │       ├── Makefile
+    │       ├── Makefile.in
+    │       ├── make_vms.com
+    │       ├── README
+    │       ├── treebuild.xml
+    │       ├── zconf.h
+    │       ├── zconf.h.cmakein
+    │       ├── zconf.h.in
+    │       ├── zlib2ansi
+    │       ├── zlib.3
+    │       ├── zlib.3.pdf
+    │       ├── zlib.h
+    │       ├── zlib.map
+    │       ├── zlib.pc.cmakein
+    │       ├── zlib.pc.in
+    │       ├── zutil.c
+    │       └── zutil.h
+    ├── intl
+    │   ├── activate.py
+    │   ├── core_option_regex.py
+    │   ├── core_option_translation.py
+    │   ├── crowdin_prep.py
+    │   ├── crowdin_source_upload.py
+    │   ├── crowdin_translate.py
+    │   ├── crowdin_translation_download.py
+    │   ├── crowdin.yaml
+    │   ├── download_workflow.py
+    │   ├── initial_sync.py
+    │   ├── remove_initial_cycle.py
+    │   ├── upload_workflow.py
+    │   └── v1_to_v2_converter.py
+    ├── jni
+    │   ├── Android.mk
+    │   └── Application.mk
+    ├── libretro-common
+    │   ├── cdrom
+    │   │   └── cdrom.c
+    │   ├── compat
+    │   │   ├── compat_posix_string.c
+    │   │   ├── compat_snprintf.c
+    │   │   ├── compat_strcasestr.c
+    │   │   ├── compat_strl.c
+    │   │   └── fopen_utf8.c
+    │   ├── encodings
+    │   │   ├── encoding_crc32.c
+    │   │   └── encoding_utf.c
+    │   ├── file
+    │   │   ├── file_path.c
+    │   │   └── retro_dirent.c
+    │   ├── include
+    │   │   ├── boolean.h
+    │   │   ├── cdrom
+    │   │   │   └── cdrom.h
+    │   │   ├── compat
+    │   │   │   ├── apple_compat.h
+    │   │   │   ├── fnmatch.h
+    │   │   │   ├── fopen_utf8.h
+    │   │   │   ├── getopt.h
+    │   │   │   ├── ifaddrs.h
+    │   │   │   ├── intrinsics.h
+    │   │   │   ├── msvc
+    │   │   │   │   └── stdint.h
+    │   │   │   ├── msvc.h
+    │   │   │   ├── posix_string.h
+    │   │   │   ├── strcasestr.h
+    │   │   │   ├── strl.h
+    │   │   │   ├── zconf.h
+    │   │   │   ├── zconf.h.in
+    │   │   │   ├── zlib.h
+    │   │   │   └── zutil.h
+    │   │   ├── encodings
+    │   │   │   ├── crc32.h
+    │   │   │   └── utf.h
+    │   │   ├── file
+    │   │   │   └── file_path.h
+    │   │   ├── libretro.h
+    │   │   ├── lists
+    │   │   │   ├── dir_list.h
+    │   │   │   └── string_list.h
+    │   │   ├── memalign.h
+    │   │   ├── memmap.h
+    │   │   ├── retro_assert.h
+    │   │   ├── retro_common_api.h
+    │   │   ├── retro_common.h
+    │   │   ├── retro_dirent.h
+    │   │   ├── retro_endianness.h
+    │   │   ├── retro_environment.h
+    │   │   ├── retro_inline.h
+    │   │   ├── retro_math.h
+    │   │   ├── retro_miscellaneous.h
+    │   │   ├── retro_timers.h
+    │   │   ├── streams
+    │   │   │   ├── file_stream.h
+    │   │   │   └── file_stream_transforms.h
+    │   │   ├── string
+    │   │   │   └── stdstring.h
+    │   │   ├── time
+    │   │   │   └── rtime.h
+    │   │   └── vfs
+    │   │       ├── vfs.h
+    │   │       ├── vfs_implementation_cdrom.h
+    │   │       └── vfs_implementation.h
+    │   ├── lists
+    │   │   ├── dir_list.c
+    │   │   └── string_list.c
+    │   ├── memmap
+    │   │   └── memalign.c
+    │   ├── streams
+    │   │   ├── file_stream.c
+    │   │   └── file_stream_transforms.c
+    │   ├── string
+    │   │   └── stdstring.c
+    │   ├── time
+    │   │   └── rtime.c
+    │   └── vfs
+    │       ├── vfs_implementation.c
+    │       └── vfs_implementation_cdrom.c
+    ├── libretro_core_options.h
+    ├── libretro_core_options_intl.h
+    ├── libretro.cpp
+    ├── link.T
+    ├── Makefile
+    ├── Makefile.common
+    ├── mednafen
+    │   ├── cdrom
+    │   │   ├── CDAccess_CCD.cpp
+    │   │   ├── CDAccess_CCD.h
+    │   │   ├── CDAccess_CHD.cpp
+    │   │   ├── CDAccess_CHD.h
+    │   │   ├── CDAccess.cpp
+    │   │   ├── CDAccess.h
+    │   │   ├── CDAccess_Image.cpp
+    │   │   ├── CDAccess_Image.h
+    │   │   ├── CDAFReader.cpp
+    │   │   ├── CDAFReader.h
+    │   │   ├── CDAFReader_MPC.cpp
+    │   │   ├── CDAFReader_MPC.h
+    │   │   ├── CDAFReader_Vorbis.cpp
+    │   │   ├── CDAFReader_Vorbis.h
+    │   │   ├── cdromif.cpp
+    │   │   ├── cdromif.h
+    │   │   ├── CDUtility.cpp
+    │   │   ├── CDUtility.h
+    │   │   ├── dvdisaster.h
+    │   │   ├── edc_crc32.cpp
+    │   │   ├── galois.cpp
+    │   │   ├── galois-inlines.h
+    │   │   ├── l-ec.cpp
+    │   │   ├── lec.cpp
+    │   │   ├── lec.h
+    │   │   ├── recover-raw.cpp
+    │   │   ├── scsicd_cdda_filter.inc
+    │   │   ├── scsicd.cpp
+    │   │   ├── scsicd.h
+    │   │   ├── scsicd-pce-commands.inc
+    │   │   └── SimpleFIFO.h
+    │   ├── cputest
+    │   │   ├── cputest.c
+    │   │   └── cputest.h
+    │   ├── file.c
+    │   ├── file.h
+    │   ├── FileStream.cpp
+    │   ├── FileStream.h
+    │   ├── general.cpp
+    │   ├── general.h
+    │   ├── git.h
+    │   ├── hw_misc
+    │   │   └── arcade_card
+    │   │       ├── arcade_card.cpp
+    │   │       └── arcade_card.h
+    │   ├── hw_sound
+    │   │   └── pce_psg
+    │   │       ├── pce_psg.cpp
+    │   │       └── pce_psg.h
+    │   ├── hw_video
+    │   │   └── huc6270
+    │   │       ├── vdc.cpp
+    │   │       └── vdc.h
+    │   ├── include
+    │   │   └── blip
+    │   │       └── Blip_Buffer.h
+    │   ├── lepacker.h
+    │   ├── masmem.h
+    │   ├── math_ops.h
+    │   ├── mednafen-driver.h
+    │   ├── mednafen-endian.c
+    │   ├── mednafen-endian.h
+    │   ├── mednafen.h
+    │   ├── mednafen-types.h
+    │   ├── MemoryStream.cpp
+    │   ├── MemoryStream.h
+    │   ├── mempatcher.cpp
+    │   ├── mempatcher-driver.h
+    │   ├── mempatcher.h
+    │   ├── msvc_compat.h
+    │   ├── pce
+    │   │   ├── huc6280.cpp
+    │   │   ├── huc6280.h
+    │   │   ├── huc6280_ops.inc
+    │   │   ├── huc.cpp
+    │   │   ├── huc.h
+    │   │   ├── input
+    │   │   │   ├── gamepad.cpp
+    │   │   │   ├── gamepad.h
+    │   │   │   ├── mouse.cpp
+    │   │   │   ├── mouse.h
+    │   │   │   ├── tsushinkb.cpp
+    │   │   │   └── tsushinkb.h
+    │   │   ├── input.cpp
+    │   │   ├── input.h
+    │   │   ├── mcgenjin.cpp
+    │   │   ├── mcgenjin.h
+    │   │   ├── pcecd.cpp
+    │   │   ├── pcecd.h
+    │   │   ├── pce.cpp
+    │   │   ├── pce.h
+    │   │   ├── tsushin.cpp
+    │   │   ├── tsushin.h
+    │   │   ├── vce.cpp
+    │   │   └── vce.h
+    │   ├── settings.cpp
+    │   ├── settings.h
+    │   ├── sound
+    │   │   ├── Blip_Buffer.c
+    │   │   ├── okiadpcm.cpp
+    │   │   ├── okiadpcm-deltatable.h
+    │   │   ├── okiadpcm.h
+    │   │   ├── OwlResampler_altivec.inc
+    │   │   ├── OwlResampler.cpp
+    │   │   ├── OwlResampler.h
+    │   │   ├── OwlResampler_neon.inc
+    │   │   └── OwlResampler_x86.inc
+    │   ├── state.cpp
+    │   ├── state.h
+    │   ├── Stream.cpp
+    │   ├── Stream.h
+    │   ├── tremor
+    │   │   ├── asm_arm.h
+    │   │   ├── backends.h
+    │   │   ├── bitwise.c
+    │   │   ├── block.c
+    │   │   ├── block.h
+    │   │   ├── codebook.c
+    │   │   ├── codebook.h
+    │   │   ├── codec_internal.h
+    │   │   ├── COPYING
+    │   │   ├── floor0.c
+    │   │   ├── floor1.c
+    │   │   ├── framing.c
+    │   │   ├── info.c
+    │   │   ├── ivorbiscodec.h
+    │   │   ├── ivorbisfile.h
+    │   │   ├── lsp_lookup.h
+    │   │   ├── mapping0.c
+    │   │   ├── mdct.c
+    │   │   ├── mdct.h
+    │   │   ├── mdct_lookup.h
+    │   │   ├── misc.h
+    │   │   ├── ogg.h
+    │   │   ├── os.h
+    │   │   ├── README
+    │   │   ├── registry.c
+    │   │   ├── registry.h
+    │   │   ├── res012.c
+    │   │   ├── sharedbook.c
+    │   │   ├── synthesis.c
+    │   │   ├── vorbisfile.c
+    │   │   ├── window.c
+    │   │   ├── window.h
+    │   │   └── window_lookup.h
+    │   └── video.h
+    └── README.md
+
+200 directories, 1187 files

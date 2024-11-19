@@ -1,0 +1,807 @@
+src
+└── libretro-melonds
+    ├── cmake
+    │   ├── FindVTune.cmake
+    │   └── Toolchain-cross-MinGW-w64-x86_64.cmake
+    ├── CMakeLists.txt
+    ├── contributing.md
+    ├── freebios
+    │   ├── bios_common.S
+    │   ├── drastic_bios_arm7.bin
+    │   ├── drastic_bios_arm9.bin
+    │   ├── drastic_bios_readme.txt
+    │   └── Makefile
+    ├── icon
+    │   ├── melon_128x128.png
+    │   ├── melon_16x16.png
+    │   ├── melon_256x256.png
+    │   ├── melon_32x32.png
+    │   ├── melon_48x48.png
+    │   └── melon_64x64.png
+    ├── jni
+    │   ├── Android.mk
+    │   └── Application.mk
+    ├── LICENSE
+    ├── Makefile
+    ├── Makefile.common
+    ├── melon_grc.xml
+    ├── melon.icns
+    ├── melon.ico
+    ├── melon.plist.in
+    ├── melon.qrc
+    ├── melon.rc.in
+    ├── net.kuribo64.melonDS.desktop
+    ├── README.md
+    ├── src
+    │   ├── ARCodeFile.cpp
+    │   ├── ARCodeFile.h
+    │   ├── AREngine.cpp
+    │   ├── AREngine.h
+    │   ├── ARM.cpp
+    │   ├── ARM.h
+    │   ├── ARM_InstrInfo.cpp
+    │   ├── ARM_InstrInfo.h
+    │   ├── ARM_InstrTable.h
+    │   ├── ARMInterpreter_ALU.cpp
+    │   ├── ARMInterpreter_ALU.h
+    │   ├── ARMInterpreter_Branch.cpp
+    │   ├── ARMInterpreter_Branch.h
+    │   ├── ARMInterpreter.cpp
+    │   ├── ARMInterpreter.h
+    │   ├── ARMInterpreter_LoadStore.cpp
+    │   ├── ARMInterpreter_LoadStore.h
+    │   ├── ARMJIT_A64
+    │   │   ├── ARMJIT_ALU.cpp
+    │   │   ├── ARMJIT_Branch.cpp
+    │   │   ├── ARMJIT_Compiler.cpp
+    │   │   ├── ARMJIT_Compiler.h
+    │   │   ├── ARMJIT_Linkage.S
+    │   │   └── ARMJIT_LoadStore.cpp
+    │   ├── ARMJIT_Compiler.h
+    │   ├── ARMJIT.cpp
+    │   ├── ARMJIT.h
+    │   ├── ARMJIT_Internal.h
+    │   ├── ARMJIT_Memory.cpp
+    │   ├── ARMJIT_Memory.h
+    │   ├── ARMJIT_RegisterCache.h
+    │   ├── ARMJIT_x64
+    │   │   ├── ARMJIT_ALU.cpp
+    │   │   ├── ARMJIT_Branch.cpp
+    │   │   ├── ARMJIT_Compiler.cpp
+    │   │   ├── ARMJIT_Compiler.h
+    │   │   ├── ARMJIT_GenOffsets.cpp
+    │   │   ├── ARMJIT_Linkage.S
+    │   │   ├── ARMJIT_LoadStore.cpp
+    │   │   └── ARMJIT_Offsets.h
+    │   ├── CMakeLists.txt
+    │   ├── Config.cpp
+    │   ├── Config.h
+    │   ├── CP15.cpp
+    │   ├── CRC32.cpp
+    │   ├── CRC32.h
+    │   ├── DMA.cpp
+    │   ├── DMA.h
+    │   ├── DMA_Timings.h
+    │   ├── dolphin
+    │   │   ├── Align.h
+    │   │   ├── Arm64Emitter.cpp
+    │   │   ├── Arm64Emitter.h
+    │   │   ├── ArmCommon.h
+    │   │   ├── BitSet.h
+    │   │   ├── BitUtils.h
+    │   │   ├── CommonFuncs.cpp
+    │   │   ├── CommonFuncs.h
+    │   │   ├── Compat.h
+    │   │   ├── CPUDetect.h
+    │   │   ├── license_dolphin.txt
+    │   │   ├── MathUtil.cpp
+    │   │   ├── MathUtil.h
+    │   │   ├── x64ABI.cpp
+    │   │   ├── x64ABI.h
+    │   │   ├── x64CPUDetect.cpp
+    │   │   ├── x64Emitter.cpp
+    │   │   ├── x64Emitter.h
+    │   │   └── x64Reg.h
+    │   ├── DSi_AES.cpp
+    │   ├── DSi_AES.h
+    │   ├── DSi_Camera.cpp
+    │   ├── DSi_Camera.h
+    │   ├── DSi.cpp
+    │   ├── DSiCrypto.cpp
+    │   ├── DSiCrypto.h
+    │   ├── DSi_DSP.cpp
+    │   ├── DSi_DSP.h
+    │   ├── DSi.h
+    │   ├── DSi_I2C.cpp
+    │   ├── DSi_I2C.h
+    │   ├── DSi_NAND.cpp
+    │   ├── DSi_NAND.h
+    │   ├── DSi_NDMA.cpp
+    │   ├── DSi_NDMA.h
+    │   ├── DSi_NWifi.cpp
+    │   ├── DSi_NWifi.h
+    │   ├── DSi_SD.cpp
+    │   ├── DSi_SD.h
+    │   ├── DSi_SPI_TSC.cpp
+    │   ├── DSi_SPI_TSC.h
+    │   ├── fatfs
+    │   │   ├── 00history.txt
+    │   │   ├── 00readme.txt
+    │   │   ├── diskio.c
+    │   │   ├── diskio.h
+    │   │   ├── ff.c
+    │   │   ├── ffconf.h
+    │   │   ├── ff.h
+    │   │   ├── ffsystem.c
+    │   │   ├── ffunicode.c
+    │   │   └── LICENSE.txt
+    │   ├── FIFO.h
+    │   ├── FreeBIOS.h
+    │   ├── frontend
+    │   │   ├── FrontendUtil.h
+    │   │   ├── mic_blow.h
+    │   │   ├── qt_sdl
+    │   │   │   ├── ArchiveUtil.cpp
+    │   │   │   ├── ArchiveUtil.h
+    │   │   │   ├── AudioSettingsDialog.cpp
+    │   │   │   ├── AudioSettingsDialog.h
+    │   │   │   ├── AudioSettingsDialog.ui
+    │   │   │   ├── CheatsDialog.cpp
+    │   │   │   ├── CheatsDialog.h
+    │   │   │   ├── CheatsDialog.ui
+    │   │   │   ├── CMakeLists.txt
+    │   │   │   ├── EmuSettingsDialog.cpp
+    │   │   │   ├── EmuSettingsDialog.h
+    │   │   │   ├── EmuSettingsDialog.ui
+    │   │   │   ├── FirmwareSettingsDialog.cpp
+    │   │   │   ├── FirmwareSettingsDialog.h
+    │   │   │   ├── FirmwareSettingsDialog.ui
+    │   │   │   ├── font.h
+    │   │   │   ├── InputConfigDialog.cpp
+    │   │   │   ├── InputConfigDialog.h
+    │   │   │   ├── InputConfigDialog.ui
+    │   │   │   ├── Input.cpp
+    │   │   │   ├── Input.h
+    │   │   │   ├── InterfaceSettingsDialog.cpp
+    │   │   │   ├── InterfaceSettingsDialog.h
+    │   │   │   ├── InterfaceSettingsDialog.ui
+    │   │   │   ├── LAN_PCap.cpp
+    │   │   │   ├── LAN_PCap.h
+    │   │   │   ├── LAN_Socket.cpp
+    │   │   │   ├── LAN_Socket.h
+    │   │   │   ├── main.cpp
+    │   │   │   ├── main.h
+    │   │   │   ├── main_shaders.h
+    │   │   │   ├── OSD.cpp
+    │   │   │   ├── OSD.h
+    │   │   │   ├── OSD_shaders.h
+    │   │   │   ├── pcap
+    │   │   │   │   ├── bluetooth.h
+    │   │   │   │   ├── bpf.h
+    │   │   │   │   ├── can_socketcan.h
+    │   │   │   │   ├── compiler-tests.h
+    │   │   │   │   ├── dlt.h
+    │   │   │   │   ├── funcattrs.h
+    │   │   │   │   ├── ipnet.h
+    │   │   │   │   ├── namedb.h
+    │   │   │   │   ├── nflog.h
+    │   │   │   │   ├── pcap.h
+    │   │   │   │   ├── pcap-inttypes.h
+    │   │   │   │   ├── sll.h
+    │   │   │   │   ├── usb.h
+    │   │   │   │   └── vlan.h
+    │   │   │   ├── PlatformConfig.cpp
+    │   │   │   ├── PlatformConfig.h
+    │   │   │   ├── Platform.cpp
+    │   │   │   ├── QPathInput.h
+    │   │   │   ├── ROMInfoDialog.cpp
+    │   │   │   ├── ROMInfoDialog.h
+    │   │   │   ├── ROMInfoDialog.ui
+    │   │   │   ├── TitleImportDialog.ui
+    │   │   │   ├── TitleManagerDialog.cpp
+    │   │   │   ├── TitleManagerDialog.h
+    │   │   │   ├── TitleManagerDialog.ui
+    │   │   │   ├── VideoSettingsDialog.cpp
+    │   │   │   ├── VideoSettingsDialog.h
+    │   │   │   ├── VideoSettingsDialog.ui
+    │   │   │   ├── WifiSettingsDialog.cpp
+    │   │   │   ├── WifiSettingsDialog.h
+    │   │   │   └── WifiSettingsDialog.ui
+    │   │   ├── SharedConfig.h
+    │   │   ├── Util_Audio.cpp
+    │   │   ├── Util_ROM.cpp
+    │   │   └── Util_Video.cpp
+    │   ├── GBACart.cpp
+    │   ├── GBACart.h
+    │   ├── GPU2D.cpp
+    │   ├── GPU2D.h
+    │   ├── GPU2D_Soft.cpp
+    │   ├── GPU2D_Soft.h
+    │   ├── GPU3D.cpp
+    │   ├── GPU3D.h
+    │   ├── GPU3D_OpenGL.cpp
+    │   ├── GPU3D_OpenGL.h
+    │   ├── GPU3D_OpenGL_shaders.h
+    │   ├── GPU3D_Soft.cpp
+    │   ├── GPU3D_Soft.h
+    │   ├── GPU.cpp
+    │   ├── GPU.h
+    │   ├── GPU_OpenGL.cpp
+    │   ├── GPU_OpenGL.h
+    │   ├── GPU_OpenGL_shaders.h
+    │   ├── libretro
+    │   │   ├── config.cpp
+    │   │   ├── input.cpp
+    │   │   ├── input.h
+    │   │   ├── libretro-common
+    │   │   │   ├── audio
+    │   │   │   │   ├── audio_mix.c
+    │   │   │   │   ├── audio_mixer.c
+    │   │   │   │   ├── conversion
+    │   │   │   │   │   ├── float_to_s16.c
+    │   │   │   │   │   ├── float_to_s16_neon.c
+    │   │   │   │   │   ├── float_to_s16_neon.S
+    │   │   │   │   │   ├── s16_to_float.c
+    │   │   │   │   │   ├── s16_to_float_neon.c
+    │   │   │   │   │   └── s16_to_float_neon.S
+    │   │   │   │   ├── dsp_filter.c
+    │   │   │   │   ├── dsp_filters
+    │   │   │   │   │   ├── BassBoost.dsp
+    │   │   │   │   │   ├── ChipTuneEnhance.dsp
+    │   │   │   │   │   ├── chorus.c
+    │   │   │   │   │   ├── Chorus.dsp
+    │   │   │   │   │   ├── configure
+    │   │   │   │   │   ├── crystalizer.c
+    │   │   │   │   │   ├── Crystalizer.dsp
+    │   │   │   │   │   ├── echo.c
+    │   │   │   │   │   ├── Echo.dsp
+    │   │   │   │   │   ├── EchoReverb.dsp
+    │   │   │   │   │   ├── eq.c
+    │   │   │   │   │   ├── EQ.dsp
+    │   │   │   │   │   ├── fft
+    │   │   │   │   │   │   ├── fft.c
+    │   │   │   │   │   │   └── fft.h
+    │   │   │   │   │   ├── HighShelfDampen.dsp
+    │   │   │   │   │   ├── iir.c
+    │   │   │   │   │   ├── IIR.dsp
+    │   │   │   │   │   ├── link.T
+    │   │   │   │   │   ├── LowPassCPS.dsp
+    │   │   │   │   │   ├── Makefile
+    │   │   │   │   │   ├── Mono.dsp
+    │   │   │   │   │   ├── panning.c
+    │   │   │   │   │   ├── Panning.dsp
+    │   │   │   │   │   ├── phaser.c
+    │   │   │   │   │   ├── Phaser.dsp
+    │   │   │   │   │   ├── reverb.c
+    │   │   │   │   │   ├── Reverb.dsp
+    │   │   │   │   │   ├── tremolo.c
+    │   │   │   │   │   ├── Tremolo.dsp
+    │   │   │   │   │   ├── vibrato.c
+    │   │   │   │   │   ├── Vibrato.dsp
+    │   │   │   │   │   ├── wahwah.c
+    │   │   │   │   │   └── WahWah.dsp
+    │   │   │   │   └── resampler
+    │   │   │   │       ├── audio_resampler.c
+    │   │   │   │       └── drivers
+    │   │   │   │           ├── nearest_resampler.c
+    │   │   │   │           ├── null_resampler.c
+    │   │   │   │           ├── sinc_resampler.c
+    │   │   │   │           └── sinc_resampler_neon.S
+    │   │   │   ├── cdrom
+    │   │   │   │   └── cdrom.c
+    │   │   │   ├── compat
+    │   │   │   │   ├── compat_fnmatch.c
+    │   │   │   │   ├── compat_getopt.c
+    │   │   │   │   ├── compat_ifaddrs.c
+    │   │   │   │   ├── compat_posix_string.c
+    │   │   │   │   ├── compat_snprintf.c
+    │   │   │   │   ├── compat_strcasestr.c
+    │   │   │   │   ├── compat_strl.c
+    │   │   │   │   ├── compat_vscprintf.c
+    │   │   │   │   └── fopen_utf8.c
+    │   │   │   ├── crt
+    │   │   │   │   ├── include
+    │   │   │   │   │   └── string.h
+    │   │   │   │   └── string.c
+    │   │   │   ├── dynamic
+    │   │   │   │   └── dylib.c
+    │   │   │   ├── encodings
+    │   │   │   │   ├── encoding_base64.c
+    │   │   │   │   ├── encoding_crc32.c
+    │   │   │   │   └── encoding_utf.c
+    │   │   │   ├── features
+    │   │   │   │   └── features_cpu.c
+    │   │   │   ├── file
+    │   │   │   │   ├── archive_file_7z.c
+    │   │   │   │   ├── archive_file.c
+    │   │   │   │   ├── archive_file_zlib.c
+    │   │   │   │   ├── config_file.c
+    │   │   │   │   ├── config_file_userdata.c
+    │   │   │   │   ├── file_path.c
+    │   │   │   │   ├── nbio
+    │   │   │   │   │   ├── nbio_intf.c
+    │   │   │   │   │   ├── nbio_linux.c
+    │   │   │   │   │   ├── nbio_orbis.c
+    │   │   │   │   │   ├── nbio_stdio.c
+    │   │   │   │   │   ├── nbio_unixmmap.c
+    │   │   │   │   │   └── nbio_windowsmmap.c
+    │   │   │   │   └── retro_dirent.c
+    │   │   │   ├── formats
+    │   │   │   │   ├── bmp
+    │   │   │   │   │   ├── rbmp.c
+    │   │   │   │   │   └── rbmp_encode.c
+    │   │   │   │   ├── cdfs
+    │   │   │   │   │   └── cdfs.c
+    │   │   │   │   ├── image_texture.c
+    │   │   │   │   ├── image_transfer.c
+    │   │   │   │   ├── jpeg
+    │   │   │   │   │   └── rjpeg.c
+    │   │   │   │   ├── json
+    │   │   │   │   │   ├── jsonsax.c
+    │   │   │   │   │   └── jsonsax_full.c
+    │   │   │   │   ├── libchdr
+    │   │   │   │   │   ├── libchdr_bitstream.c
+    │   │   │   │   │   ├── libchdr_cdrom.c
+    │   │   │   │   │   ├── libchdr_chd.c
+    │   │   │   │   │   ├── libchdr_flac.c
+    │   │   │   │   │   ├── libchdr_flac_codec.c
+    │   │   │   │   │   ├── libchdr_huffman.c
+    │   │   │   │   │   ├── libchdr_lzma.c
+    │   │   │   │   │   └── libchdr_zlib.c
+    │   │   │   │   ├── png
+    │   │   │   │   │   ├── rpng.c
+    │   │   │   │   │   ├── rpng_encode.c
+    │   │   │   │   │   └── rpng_internal.h
+    │   │   │   │   ├── tga
+    │   │   │   │   │   └── rtga.c
+    │   │   │   │   ├── wav
+    │   │   │   │   │   └── rwav.c
+    │   │   │   │   └── xml
+    │   │   │   │       ├── rxml.c
+    │   │   │   │       └── test
+    │   │   │   │           ├── Makefile
+    │   │   │   │           └── rxml_test.c
+    │   │   │   ├── gfx
+    │   │   │   │   ├── gl_capabilities.c
+    │   │   │   │   └── scaler
+    │   │   │   │       ├── pixconv.c
+    │   │   │   │       ├── scaler.c
+    │   │   │   │       ├── scaler_filter.c
+    │   │   │   │       └── scaler_int.c
+    │   │   │   ├── glsm
+    │   │   │   │   └── glsm.c
+    │   │   │   ├── glsym
+    │   │   │   │   ├── glgen.py
+    │   │   │   │   ├── glsym_es2.c
+    │   │   │   │   ├── glsym_es3.c
+    │   │   │   │   ├── glsym_gl.c
+    │   │   │   │   ├── README.md
+    │   │   │   │   ├── rglgen.c
+    │   │   │   │   ├── rglgen.py
+    │   │   │   │   └── xglgen.py
+    │   │   │   ├── hash
+    │   │   │   │   └── rhash.c
+    │   │   │   ├── include
+    │   │   │   │   ├── array
+    │   │   │   │   │   └── dynarray.h
+    │   │   │   │   ├── audio
+    │   │   │   │   │   ├── audio_mixer.h
+    │   │   │   │   │   ├── audio_mix.h
+    │   │   │   │   │   ├── audio_resampler.h
+    │   │   │   │   │   ├── conversion
+    │   │   │   │   │   │   ├── float_to_s16.h
+    │   │   │   │   │   │   └── s16_to_float.h
+    │   │   │   │   │   └── dsp_filter.h
+    │   │   │   │   ├── boolean.h
+    │   │   │   │   ├── cdrom
+    │   │   │   │   │   └── cdrom.h
+    │   │   │   │   ├── clamping.h
+    │   │   │   │   ├── compat
+    │   │   │   │   │   ├── apple_compat.h
+    │   │   │   │   │   ├── fnmatch.h
+    │   │   │   │   │   ├── fopen_utf8.h
+    │   │   │   │   │   ├── getopt.h
+    │   │   │   │   │   ├── ifaddrs.h
+    │   │   │   │   │   ├── intrinsics.h
+    │   │   │   │   │   ├── msvc
+    │   │   │   │   │   │   └── stdint.h
+    │   │   │   │   │   ├── msvc.h
+    │   │   │   │   │   ├── posix_string.h
+    │   │   │   │   │   ├── strcasestr.h
+    │   │   │   │   │   ├── strl.h
+    │   │   │   │   │   ├── zconf.h
+    │   │   │   │   │   ├── zconf.h.in
+    │   │   │   │   │   ├── zlib
+    │   │   │   │   │   │   ├── zconf.h
+    │   │   │   │   │   │   ├── zconf.h.in
+    │   │   │   │   │   │   ├── zlib.h
+    │   │   │   │   │   │   └── zutil.h
+    │   │   │   │   │   ├── zlib.h
+    │   │   │   │   │   └── zutil.h
+    │   │   │   │   ├── dynamic
+    │   │   │   │   │   └── dylib.h
+    │   │   │   │   ├── encodings
+    │   │   │   │   │   ├── base64.h
+    │   │   │   │   │   ├── crc32.h
+    │   │   │   │   │   ├── utf.h
+    │   │   │   │   │   └── win32.h
+    │   │   │   │   ├── fastcpy.h
+    │   │   │   │   ├── features
+    │   │   │   │   │   └── features_cpu.h
+    │   │   │   │   ├── file
+    │   │   │   │   │   ├── archive_file.h
+    │   │   │   │   │   ├── config_file.h
+    │   │   │   │   │   ├── config_file_userdata.h
+    │   │   │   │   │   ├── file_path.h
+    │   │   │   │   │   └── nbio.h
+    │   │   │   │   ├── filters.h
+    │   │   │   │   ├── formats
+    │   │   │   │   │   ├── cdfs.h
+    │   │   │   │   │   ├── image.h
+    │   │   │   │   │   ├── jsonsax_full.h
+    │   │   │   │   │   ├── jsonsax.h
+    │   │   │   │   │   ├── rbmp.h
+    │   │   │   │   │   ├── rjpeg.h
+    │   │   │   │   │   ├── rpng.h
+    │   │   │   │   │   ├── rtga.h
+    │   │   │   │   │   ├── rwav.h
+    │   │   │   │   │   └── rxml.h
+    │   │   │   │   ├── gfx
+    │   │   │   │   │   ├── gl_capabilities.h
+    │   │   │   │   │   ├── math
+    │   │   │   │   │   │   ├── matrix_3x3.h
+    │   │   │   │   │   │   ├── matrix_4x4.h
+    │   │   │   │   │   │   ├── vector_2.h
+    │   │   │   │   │   │   ├── vector_3.h
+    │   │   │   │   │   │   └── vector_4.h
+    │   │   │   │   │   ├── scaler
+    │   │   │   │   │   │   ├── filter.h
+    │   │   │   │   │   │   ├── pixconv.h
+    │   │   │   │   │   │   ├── scaler.h
+    │   │   │   │   │   │   └── scaler_int.h
+    │   │   │   │   │   └── video_frame.h
+    │   │   │   │   ├── glsm
+    │   │   │   │   │   ├── glsm.h
+    │   │   │   │   │   └── glsmsym.h
+    │   │   │   │   ├── glsym
+    │   │   │   │   │   ├── glsym_es2.h
+    │   │   │   │   │   ├── glsym_es3.h
+    │   │   │   │   │   ├── glsym_gl.h
+    │   │   │   │   │   ├── glsym.h
+    │   │   │   │   │   ├── rglgen.h
+    │   │   │   │   │   ├── rglgen_headers.h
+    │   │   │   │   │   ├── rglgen_private_headers.h
+    │   │   │   │   │   └── switch
+    │   │   │   │   │       ├── nx_gl.h
+    │   │   │   │   │       └── nx_glsym.h
+    │   │   │   │   ├── libchdr
+    │   │   │   │   │   ├── bitstream.h
+    │   │   │   │   │   ├── cdrom.h
+    │   │   │   │   │   ├── chd.h
+    │   │   │   │   │   ├── coretypes.h
+    │   │   │   │   │   ├── flac.h
+    │   │   │   │   │   ├── huffman.h
+    │   │   │   │   │   ├── libchdr_zlib.h
+    │   │   │   │   │   ├── lzma.h
+    │   │   │   │   │   └── minmax.h
+    │   │   │   │   ├── libco.h
+    │   │   │   │   ├── libretro_d3d.h
+    │   │   │   │   ├── libretro_dspfilter.h
+    │   │   │   │   ├── libretro_gskit_ps2.h
+    │   │   │   │   ├── libretro.h
+    │   │   │   │   ├── libretro_vulkan.h
+    │   │   │   │   ├── lists
+    │   │   │   │   │   ├── dir_list.h
+    │   │   │   │   │   ├── file_list.h
+    │   │   │   │   │   └── string_list.h
+    │   │   │   │   ├── math
+    │   │   │   │   │   ├── complex.h
+    │   │   │   │   │   ├── float_minmax.h
+    │   │   │   │   │   └── fxp.h
+    │   │   │   │   ├── media
+    │   │   │   │   │   └── media_detect_cd.h
+    │   │   │   │   ├── memalign.h
+    │   │   │   │   ├── memmap.h
+    │   │   │   │   ├── net
+    │   │   │   │   │   ├── net_compat.h
+    │   │   │   │   │   ├── net_http.h
+    │   │   │   │   │   ├── net_http_parse.h
+    │   │   │   │   │   ├── net_ifinfo.h
+    │   │   │   │   │   ├── net_natt.h
+    │   │   │   │   │   ├── net_socket.h
+    │   │   │   │   │   └── net_socket_ssl.h
+    │   │   │   │   ├── playlists
+    │   │   │   │   │   └── label_sanitization.h
+    │   │   │   │   ├── queues
+    │   │   │   │   │   ├── fifo_queue.h
+    │   │   │   │   │   ├── message_queue.h
+    │   │   │   │   │   └── task_queue.h
+    │   │   │   │   ├── retro_assert.h
+    │   │   │   │   ├── retro_common_api.h
+    │   │   │   │   ├── retro_common.h
+    │   │   │   │   ├── retro_dirent.h
+    │   │   │   │   ├── retro_endianness.h
+    │   │   │   │   ├── retro_environment.h
+    │   │   │   │   ├── retro_inline.h
+    │   │   │   │   ├── retro_math.h
+    │   │   │   │   ├── retro_miscellaneous.h
+    │   │   │   │   ├── retro_stat.h
+    │   │   │   │   ├── retro_timers.h
+    │   │   │   │   ├── rhash.h
+    │   │   │   │   ├── rthreads
+    │   │   │   │   │   ├── async_job.h
+    │   │   │   │   │   ├── rsemaphore.h
+    │   │   │   │   │   └── rthreads.h
+    │   │   │   │   ├── streams
+    │   │   │   │   │   ├── chd_stream.h
+    │   │   │   │   │   ├── file_stream.h
+    │   │   │   │   │   ├── file_stream_transforms.h
+    │   │   │   │   │   ├── interface_stream.h
+    │   │   │   │   │   ├── memory_stream.h
+    │   │   │   │   │   ├── stdin_stream.h
+    │   │   │   │   │   └── trans_stream.h
+    │   │   │   │   ├── string
+    │   │   │   │   │   └── stdstring.h
+    │   │   │   │   ├── utils
+    │   │   │   │   │   └── md5.h
+    │   │   │   │   ├── vfs
+    │   │   │   │   │   ├── vfs.h
+    │   │   │   │   │   ├── vfs_implementation_cdrom.h
+    │   │   │   │   │   └── vfs_implementation.h
+    │   │   │   │   └── vulkan
+    │   │   │   │       └── vulkan_symbol_wrapper.h
+    │   │   │   ├── libco
+    │   │   │   │   ├── aarch64.c
+    │   │   │   │   ├── amd64.c
+    │   │   │   │   ├── armeabi.c
+    │   │   │   │   ├── fiber.c
+    │   │   │   │   ├── genode.cpp
+    │   │   │   │   ├── libco.c
+    │   │   │   │   ├── ppc.c
+    │   │   │   │   ├── psp2.c
+    │   │   │   │   ├── scefiber.c
+    │   │   │   │   ├── sjlj.c
+    │   │   │   │   ├── ucontext.c
+    │   │   │   │   └── x86.c
+    │   │   │   ├── lists
+    │   │   │   │   ├── dir_list.c
+    │   │   │   │   ├── file_list.c
+    │   │   │   │   ├── string_list.c
+    │   │   │   │   └── vector_list.c
+    │   │   │   ├── media
+    │   │   │   │   └── media_detect_cd.c
+    │   │   │   ├── memmap
+    │   │   │   │   ├── memalign.c
+    │   │   │   │   └── memmap.c
+    │   │   │   ├── net
+    │   │   │   │   ├── net_compat.c
+    │   │   │   │   ├── net_http.c
+    │   │   │   │   ├── net_http_parse.c
+    │   │   │   │   ├── net_ifinfo.c
+    │   │   │   │   ├── net_natt.c
+    │   │   │   │   ├── net_socket.c
+    │   │   │   │   └── net_socket_ssl.c
+    │   │   │   ├── playlists
+    │   │   │   │   └── label_sanitization.c
+    │   │   │   ├── queues
+    │   │   │   │   ├── fifo_queue.c
+    │   │   │   │   ├── message_queue.c
+    │   │   │   │   └── task_queue.c
+    │   │   │   ├── rthreads
+    │   │   │   │   ├── ctr_pthread.h
+    │   │   │   │   ├── gx_pthread.h
+    │   │   │   │   ├── psp_pthread.h
+    │   │   │   │   ├── rsemaphore.c
+    │   │   │   │   ├── rthreads.c
+    │   │   │   │   ├── wiiu_pthread.h
+    │   │   │   │   └── xenon_sdl_threads.c
+    │   │   │   ├── samples
+    │   │   │   │   ├── core_options
+    │   │   │   │   │   ├── example_default
+    │   │   │   │   │   │   ├── libretro_core_options.h
+    │   │   │   │   │   │   └── libretro_core_options_intl.h
+    │   │   │   │   │   ├── example_hide_option
+    │   │   │   │   │   │   ├── libretro_core_options.h
+    │   │   │   │   │   │   └── libretro_core_options_intl.h
+    │   │   │   │   │   ├── example_translation
+    │   │   │   │   │   │   ├── libretro_core_options.h
+    │   │   │   │   │   │   └── libretro_core_options_intl.h
+    │   │   │   │   │   └── README.md
+    │   │   │   │   ├── file
+    │   │   │   │   │   └── nbio
+    │   │   │   │   │       ├── Makefile
+    │   │   │   │   │       └── nbio_test.c
+    │   │   │   │   ├── formats
+    │   │   │   │   │   └── png
+    │   │   │   │   │       ├── Makefile
+    │   │   │   │   │       └── rpng_test.c
+    │   │   │   │   ├── net
+    │   │   │   │   │   ├── http_test
+    │   │   │   │   │   ├── Makefile
+    │   │   │   │   │   ├── net_http_test.c
+    │   │   │   │   │   ├── net_ifinfo
+    │   │   │   │   │   ├── net_ifinfo_test.c
+    │   │   │   │   │   └── udp-test.c
+    │   │   │   │   └── utils
+    │   │   │   │       └── Makefile
+    │   │   │   ├── streams
+    │   │   │   │   ├── chd_stream.c
+    │   │   │   │   ├── file_stream.c
+    │   │   │   │   ├── file_stream_transforms.c
+    │   │   │   │   ├── interface_stream.c
+    │   │   │   │   ├── memory_stream.c
+    │   │   │   │   ├── stdin_stream.c
+    │   │   │   │   ├── trans_stream.c
+    │   │   │   │   ├── trans_stream_pipe.c
+    │   │   │   │   └── trans_stream_zlib.c
+    │   │   │   ├── string
+    │   │   │   │   └── stdstring.c
+    │   │   │   ├── utils
+    │   │   │   │   ├── crc32.c
+    │   │   │   │   ├── djb2.c
+    │   │   │   │   ├── md5.c
+    │   │   │   │   ├── sha1.c
+    │   │   │   │   └── sha1_main.c
+    │   │   │   ├── vfs
+    │   │   │   │   ├── vfs_implementation.c
+    │   │   │   │   ├── vfs_implementation_cdrom.c
+    │   │   │   │   └── vfs_implementation_uwp.cpp
+    │   │   │   └── vulkan
+    │   │   │       └── vulkan_symbol_wrapper.c
+    │   │   ├── libretro_core_options.h
+    │   │   ├── libretro_core_options_intl.h
+    │   │   ├── libretro.cpp
+    │   │   ├── libretro_state.h
+    │   │   ├── link.T
+    │   │   ├── opengl.cpp
+    │   │   ├── opengl.h
+    │   │   ├── platform.cpp
+    │   │   ├── screenlayout.cpp
+    │   │   ├── screenlayout.h
+    │   │   ├── shaders.h
+    │   │   ├── utils.cpp
+    │   │   └── utils.h
+    │   ├── melonDLDI.h
+    │   ├── NDSCart.cpp
+    │   ├── NDSCart.h
+    │   ├── NDSCart_SRAMManager.cpp
+    │   ├── NDSCart_SRAMManager.h
+    │   ├── NDS.cpp
+    │   ├── NDS.h
+    │   ├── NDS_Header.h
+    │   ├── NonStupidBitfield.h
+    │   ├── OpenGLSupport.cpp
+    │   ├── OpenGLSupport.h
+    │   ├── Platform.h
+    │   ├── ROMList.h
+    │   ├── RTC.cpp
+    │   ├── RTC.h
+    │   ├── Savestate.cpp
+    │   ├── Savestate.h
+    │   ├── sha1
+    │   │   ├── sha1.c
+    │   │   ├── sha1.h
+    │   │   └── sha1.hpp
+    │   ├── SPI.cpp
+    │   ├── SPI.h
+    │   ├── SPU.cpp
+    │   ├── SPU.h
+    │   ├── switch
+    │   │   └── compat_switch.h
+    │   ├── teakra
+    │   │   ├── appveyor.yml
+    │   │   ├── CMakeLists.txt
+    │   │   ├── CMakeModules
+    │   │   │   └── CreateDirectoryGroups.cmake
+    │   │   ├── externals
+    │   │   │   ├── catch
+    │   │   │   │   └── catch.hpp
+    │   │   │   └── CMakeLists.txt
+    │   │   ├── include
+    │   │   │   └── teakra
+    │   │   │       ├── disassembler_c.h
+    │   │   │       ├── disassembler.h
+    │   │   │       ├── teakra_c.h
+    │   │   │       └── teakra.h
+    │   │   ├── LICENSE
+    │   │   ├── README.md
+    │   │   └── src
+    │   │       ├── ahbm.cpp
+    │   │       ├── ahbm.h
+    │   │       ├── ahbm.md
+    │   │       ├── apbp.cpp
+    │   │       ├── apbp.h
+    │   │       ├── apbp.md
+    │   │       ├── bit.h
+    │   │       ├── btdmp.cpp
+    │   │       ├── btdmp.h
+    │   │       ├── btdmp.md
+    │   │       ├── CMakeLists.txt
+    │   │       ├── coff_reader
+    │   │       │   ├── CMakeLists.txt
+    │   │       │   ├── coff.h
+    │   │       │   └── main.cpp
+    │   │       ├── common_types.h
+    │   │       ├── core_timing.h
+    │   │       ├── crash.h
+    │   │       ├── cru.md
+    │   │       ├── decoder.h
+    │   │       ├── decoder.md
+    │   │       ├── disassembler_c.cpp
+    │   │       ├── disassembler.cpp
+    │   │       ├── dma.cpp
+    │   │       ├── dma.h
+    │   │       ├── dma.md
+    │   │       ├── dsp1_reader
+    │   │       │   ├── CMakeLists.txt
+    │   │       │   └── main.cpp
+    │   │       ├── icu.h
+    │   │       ├── icu.md
+    │   │       ├── interpreter.h
+    │   │       ├── makedsp1
+    │   │       │   ├── CMakeLists.txt
+    │   │       │   ├── main.cpp
+    │   │       │   ├── sha256.cpp
+    │   │       │   └── sha256.h
+    │   │       ├── matcher.h
+    │   │       ├── memory_interface.cpp
+    │   │       ├── memory_interface.h
+    │   │       ├── miu.md
+    │   │       ├── mmio.cpp
+    │   │       ├── mmio.h
+    │   │       ├── mmio.md
+    │   │       ├── mod_test_generator
+    │   │       │   ├── CMakeLists.txt
+    │   │       │   └── main.cpp
+    │   │       ├── ocem.md
+    │   │       ├── operand.h
+    │   │       ├── parser.cpp
+    │   │       ├── parser.h
+    │   │       ├── pmu.md
+    │   │       ├── processor.cpp
+    │   │       ├── processor_general.md
+    │   │       ├── processor.h
+    │   │       ├── README.md
+    │   │       ├── register.h
+    │   │       ├── register.md
+    │   │       ├── shared_memory.h
+    │   │       ├── sio.md
+    │   │       ├── step2_test_generator
+    │   │       │   ├── CMakeLists.txt
+    │   │       │   └── main.cpp
+    │   │       ├── teakra_c.cpp
+    │   │       ├── teakra.cpp
+    │   │       ├── test_generator
+    │   │       │   ├── CMakeLists.txt
+    │   │       │   └── main.cpp
+    │   │       ├── test_generator.cpp
+    │   │       ├── test_generator.h
+    │   │       ├── test.h
+    │   │       ├── test_verifier
+    │   │       │   ├── CMakeLists.txt
+    │   │       │   └── main.cpp
+    │   │       ├── timer.cpp
+    │   │       ├── timer.h
+    │   │       └── timer.md
+    │   ├── tiny-AES-c
+    │   │   ├── aes.c
+    │   │   ├── aes.h
+    │   │   ├── aes.hpp
+    │   │   ├── README.md
+    │   │   └── unlicense.txt
+    │   ├── types.h
+    │   ├── version.h
+    │   ├── WifiAP.cpp
+    │   ├── WifiAP.h
+    │   ├── Wifi.cpp
+    │   ├── Wifi.h
+    │   └── xxhash
+    │       ├── xxh3.h
+    │       ├── xxhash.c
+    │       └── xxhash.h
+    ├── tools
+    │   ├── mac-libs.rb
+    │   └── msys-dist.sh
+    └── xp.manifest
+
+122 directories, 683 files

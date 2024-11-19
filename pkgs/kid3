@@ -1,0 +1,887 @@
+src
+├── kid3-3.9.6
+│   ├── android
+│   │   ├── AndroidManifest-qt6.xml.in
+│   │   ├── AndroidManifest.xml.in
+│   │   ├── CMakeLists.txt
+│   │   ├── Kid3Activity.java
+│   │   └── qt-android-cmake
+│   │       ├── AddQtAndroidApk.cmake
+│   │       ├── AndroidManifest.xml.in
+│   │       ├── license.txt
+│   │       ├── qtdeploy.json.in
+│   │       ├── readme.md
+│   │       └── toolchain
+│   │           └── android.toolchain.cmake
+│   ├── AUTHORS
+│   ├── build.sh
+│   ├── ChangeLog
+│   ├── CMakeLists.txt
+│   ├── config.h.cmake
+│   ├── COPYING
+│   ├── COPYING-CMAKE-SCRIPTS.txt
+│   ├── deb
+│   │   ├── changelog
+│   │   ├── compat
+│   │   ├── control
+│   │   ├── copyright
+│   │   ├── kid3-cli.install
+│   │   ├── kid3-core.install
+│   │   ├── kid3-core.lintian-overrides
+│   │   ├── kid3.install
+│   │   ├── kid3-qt.doc-base
+│   │   ├── kid3-qt.install
+│   │   ├── rules
+│   │   ├── source
+│   │   │   ├── format
+│   │   │   └── lintian-overrides
+│   │   ├── upstream
+│   │   │   └── signing-key.asc
+│   │   └── watch
+│   ├── doc
+│   │   ├── CMakeLists.txt
+│   │   ├── download-pos.cmake
+│   │   ├── download-pos.sh
+│   │   ├── en
+│   │   │   └── index.docbook
+│   │   ├── extract-merge.sh
+│   │   ├── fixdocbook.py
+│   │   ├── fixhtml.py
+│   │   ├── fixmandocbook.py
+│   │   └── fromkdoctools.ent
+│   ├── Doxyfile
+│   ├── INSTALL
+│   ├── kid3.spec
+│   ├── lgpl-2.0.txt
+│   ├── lgpl-2.1.txt
+│   ├── lgpl-3.0.txt
+│   ├── LICENSE
+│   ├── linux
+│   │   └── glibc_version_nightmare.h
+│   ├── logo.png
+│   ├── macosx
+│   │   ├── buildkid3.sh
+│   │   ├── build-osxcross.sh
+│   │   ├── Info.plist.in
+│   │   ├── mac-codesign.cmake
+│   │   └── mac-strip-arm64.sh
+│   ├── Messages.sh
+│   ├── mpl-1.1.txt
+│   ├── NEWS
+│   ├── packaging
+│   │   ├── craft
+│   │   │   ├── extragear
+│   │   │   │   └── kid3
+│   │   │   │       ├── blacklist.txt
+│   │   │   │       └── kid3.py
+│   │   │   └── libs
+│   │   │       └── chromaprint
+│   │   │           └── chromaprint.py
+│   │   ├── f-droid
+│   │   │   └── net.sourceforge.kid3.yml
+│   │   ├── flatpak
+│   │   │   ├── org.kde.kid3-local.json
+│   │   │   ├── org.kde.kid3-nightly.json
+│   │   │   └── org.kde.kid3-stable.json
+│   │   └── patches
+│   │       ├── flac-1.2.1-00-size_t_max.patch
+│   │       ├── flac-1.2.1-mac00-fink.patch
+│   │       ├── id3lib-3.8.3-00-add-libz-to-compilation.patch
+│   │       ├── id3lib-3.8.3-05-create-m4-directory.patch
+│   │       ├── id3lib-3.8.3-10-fix-compilation-with-cpp-headers.patch
+│   │       ├── id3lib-3.8.3-15-fix-headers-of-main-functions.patch
+│   │       ├── id3lib-3.8.3-30-fix-utf16.patch
+│   │       ├── id3lib-3.8.3-31-fix-utf16-stringlists.patch
+│   │       ├── id3lib-3.8.3-40-deal-with-mkstemp.patch
+│   │       ├── id3lib-3.8.3-50-remove-outdated-check.patch
+│   │       ├── id3lib-3.8.3-60-add-c-wrapper-functions.patch
+│   │       ├── id3lib-3.8.3-60-fix_make_check.patch
+│   │       ├── id3lib-3.8.3-60-id3lib-missing-nullpointer-check.patch
+│   │       ├── id3lib-3.8.3-60-spelling.patch
+│   │       ├── id3lib-3.8.3-61-fix_vbr_stack_smash.patch
+│   │       ├── id3lib-3.8.3-62-remove-remote-icons.patch
+│   │       ├── id3lib-3.8.3-win00-mingw.patch
+│   │       ├── id3lib-3.8.3-win01-tempfile.patch
+│   │       ├── libogg-1.3.4-00-mac.patch
+│   │       ├── openssl-1.1.1-android00-setenv.patch
+│   │       └── taglib-1.13.1-win00-large_file.patch
+│   ├── po
+│   │   ├── ca
+│   │   │   └── docs
+│   │   │       └── kid3
+│   │   │           └── index.docbook
+│   │   ├── de
+│   │   │   └── docs
+│   │   │       └── kid3
+│   │   │           └── index.docbook
+│   │   ├── it
+│   │   │   └── docs
+│   │   │       └── kid3
+│   │   │           └── index.docbook
+│   │   ├── nl
+│   │   │   └── docs
+│   │   │       └── kid3
+│   │   │           └── index.docbook
+│   │   ├── pt
+│   │   │   └── docs
+│   │   │       └── kid3
+│   │   │           └── index.docbook
+│   │   ├── ru
+│   │   │   └── docs
+│   │   │       └── kid3
+│   │   │           └── index.docbook
+│   │   ├── sv
+│   │   │   └── docs
+│   │   │       └── kid3
+│   │   │           └── index.docbook
+│   │   └── uk
+│   │       └── docs
+│   │           └── kid3
+│   │               └── index.docbook
+│   ├── poqm
+│   │   ├── ar
+│   │   │   └── kid3_qt.po
+│   │   ├── ca
+│   │   │   └── kid3_qt.po
+│   │   ├── ca@valencia
+│   │   │   └── kid3_qt.po
+│   │   ├── cs
+│   │   │   └── kid3_qt.po
+│   │   ├── da
+│   │   │   └── kid3_qt.po
+│   │   ├── de
+│   │   │   └── kid3_qt.po
+│   │   ├── el
+│   │   │   └── kid3_qt.po
+│   │   ├── en
+│   │   │   └── kid3_qt.po
+│   │   ├── en_GB
+│   │   │   └── kid3_qt.po
+│   │   ├── eo
+│   │   │   └── kid3_qt.po
+│   │   ├── es
+│   │   │   └── kid3_qt.po
+│   │   ├── et
+│   │   │   └── kid3_qt.po
+│   │   ├── eu
+│   │   │   └── kid3_qt.po
+│   │   ├── fi
+│   │   │   └── kid3_qt.po
+│   │   ├── fr
+│   │   │   └── kid3_qt.po
+│   │   ├── gl
+│   │   │   └── kid3_qt.po
+│   │   ├── is
+│   │   │   └── kid3_qt.po
+│   │   ├── it
+│   │   │   └── kid3_qt.po
+│   │   ├── ja
+│   │   │   └── kid3_qt.po
+│   │   ├── ka
+│   │   │   └── kid3_qt.po
+│   │   ├── ko
+│   │   │   └── kid3_qt.po
+│   │   ├── lt
+│   │   │   └── kid3_qt.po
+│   │   ├── nl
+│   │   │   └── kid3_qt.po
+│   │   ├── nn
+│   │   │   └── kid3_qt.po
+│   │   ├── pl
+│   │   │   └── kid3_qt.po
+│   │   ├── pt
+│   │   │   └── kid3_qt.po
+│   │   ├── pt_BR
+│   │   │   └── kid3_qt.po
+│   │   ├── ro
+│   │   │   └── kid3_qt.po
+│   │   ├── ru
+│   │   │   └── kid3_qt.po
+│   │   ├── sk
+│   │   │   └── kid3_qt.po
+│   │   ├── sl
+│   │   │   └── kid3_qt.po
+│   │   ├── sr
+│   │   │   └── kid3_qt.po
+│   │   ├── sr@ijekavian
+│   │   │   └── kid3_qt.po
+│   │   ├── sr@ijekavianlatin
+│   │   │   └── kid3_qt.po
+│   │   ├── sr@latin
+│   │   │   └── kid3_qt.po
+│   │   ├── sv
+│   │   │   └── kid3_qt.po
+│   │   ├── tr
+│   │   │   └── kid3_qt.po
+│   │   ├── uk
+│   │   │   └── kid3_qt.po
+│   │   ├── zh_CN
+│   │   │   └── kid3_qt.po
+│   │   └── zh_TW
+│   │       └── kid3_qt.po
+│   ├── README
+│   ├── snapcraft.yaml
+│   ├── src
+│   │   ├── app
+│   │   │   ├── 128-apps-kid3.png
+│   │   │   ├── 16-apps-kid3.png
+│   │   │   ├── 32-apps-kid3.png
+│   │   │   ├── 48-apps-kid3.png
+│   │   │   ├── 64-apps-kid3.png
+│   │   │   ├── cli
+│   │   │   │   ├── abstractcli.cpp
+│   │   │   │   ├── abstractcliformatter.cpp
+│   │   │   │   ├── abstractcliformatter.h
+│   │   │   │   ├── abstractcli.h
+│   │   │   │   ├── clicommand.cpp
+│   │   │   │   ├── clicommand.h
+│   │   │   │   ├── cliconfig.h.cmake
+│   │   │   │   ├── clierror.h
+│   │   │   │   ├── CMakeLists.txt
+│   │   │   │   ├── jsoncliformatter.cpp
+│   │   │   │   ├── jsoncliformatter.h
+│   │   │   │   ├── kid3cli.cpp
+│   │   │   │   ├── kid3cli.h
+│   │   │   │   ├── maincli.cpp
+│   │   │   │   ├── readlinecompleter.cpp
+│   │   │   │   ├── readlinecompleter.h
+│   │   │   │   ├── standardiohandler.cpp
+│   │   │   │   ├── standardiohandler.h
+│   │   │   │   ├── textcliformatter.cpp
+│   │   │   │   └── textcliformatter.h
+│   │   │   ├── CMakeLists.txt
+│   │   │   ├── kde
+│   │   │   │   ├── CMakeLists.txt
+│   │   │   │   ├── kdeconfigdialog.cpp
+│   │   │   │   ├── kdeconfigdialog.h
+│   │   │   │   ├── kdemainwindow.cpp
+│   │   │   │   ├── kdemainwindow.h
+│   │   │   │   ├── kdeplatformtools.cpp
+│   │   │   │   ├── kdeplatformtools.h
+│   │   │   │   ├── kdesettings.cpp
+│   │   │   │   ├── kdesettings.h
+│   │   │   │   ├── kid3ui.rc
+│   │   │   │   └── mainkde.cpp
+│   │   │   ├── org.kde.kid3.appdata.xml
+│   │   │   ├── org.kde.kid3.desktop
+│   │   │   ├── qml
+│   │   │   │   ├── CMakeLists.txt
+│   │   │   │   ├── gentranslationsqrc.cmake
+│   │   │   │   ├── mainqml.cpp
+│   │   │   │   └── qmlapp.qrc
+│   │   │   ├── qt
+│   │   │   │   ├── browserdialog.cpp
+│   │   │   │   ├── browserdialog.h
+│   │   │   │   ├── CMakeLists.txt
+│   │   │   │   ├── configdialog.cpp
+│   │   │   │   ├── configdialog.h
+│   │   │   │   ├── fixappdata.py
+│   │   │   │   ├── fixdesktop.py
+│   │   │   │   ├── images
+│   │   │   │   │   ├── application-exit@2x.png
+│   │   │   │   │   ├── application-exit.png
+│   │   │   │   │   ├── configure@2x.png
+│   │   │   │   │   ├── configure.png
+│   │   │   │   │   ├── document-export@2x.png
+│   │   │   │   │   ├── document-export.png
+│   │   │   │   │   ├── document-import@2x.png
+│   │   │   │   │   ├── document-import.png
+│   │   │   │   │   ├── document-open@2x.png
+│   │   │   │   │   ├── document-open.png
+│   │   │   │   │   ├── document-open-recent@2x.png
+│   │   │   │   │   ├── document-open-recent.png
+│   │   │   │   │   ├── document-revert@2x.png
+│   │   │   │   │   ├── document-revert.png
+│   │   │   │   │   ├── document-save@2x.png
+│   │   │   │   │   ├── document-save.png
+│   │   │   │   │   ├── edit-select-all@2x.png
+│   │   │   │   │   ├── edit-select-all.png
+│   │   │   │   │   ├── go-next@2x.png
+│   │   │   │   │   ├── go-next.png
+│   │   │   │   │   ├── go-previous@2x.png
+│   │   │   │   │   ├── go-previous.png
+│   │   │   │   │   ├── help-contents@2x.png
+│   │   │   │   │   ├── help-contents.png
+│   │   │   │   │   ├── view-media-playlist@2x.png
+│   │   │   │   │   ├── view-media-playlist.png
+│   │   │   │   │   ├── view-refresh@2x.png
+│   │   │   │   │   └── view-refresh.png
+│   │   │   │   ├── kid3.icns
+│   │   │   │   ├── kid3.ico
+│   │   │   │   ├── kid3mainwindow.cpp
+│   │   │   │   ├── kid3mainwindow.h
+│   │   │   │   ├── kid3.qrc
+│   │   │   │   ├── kid3qtapplication.cpp
+│   │   │   │   ├── kid3qtapplication.h
+│   │   │   │   ├── kid3win.rc
+│   │   │   │   ├── mainqt.cpp
+│   │   │   │   ├── messagedialog.cpp
+│   │   │   │   ├── messagedialog.h
+│   │   │   │   ├── platformtools.cpp
+│   │   │   │   ├── platformtools.h
+│   │   │   │   ├── qt.conf
+│   │   │   │   ├── recentfilesmenu.cpp
+│   │   │   │   ├── recentfilesmenu.h
+│   │   │   │   ├── shortcutsdelegate.cpp
+│   │   │   │   ├── shortcutsdelegate.h
+│   │   │   │   ├── shortcutsmodel.cpp
+│   │   │   │   └── shortcutsmodel.h
+│   │   │   └── sc-apps-kid3.svgz
+│   │   ├── CMakeLists.txt
+│   │   ├── core
+│   │   │   ├── CMakeLists.txt
+│   │   │   ├── config
+│   │   │   │   ├── batchimportconfig.cpp
+│   │   │   │   ├── batchimportconfig.h
+│   │   │   │   ├── batchimportprofile.cpp
+│   │   │   │   ├── batchimportprofile.h
+│   │   │   │   ├── batchimportsourcesmodel.cpp
+│   │   │   │   ├── batchimportsourcesmodel.h
+│   │   │   │   ├── configstore.cpp
+│   │   │   │   ├── configstore.h
+│   │   │   │   ├── exportconfig.cpp
+│   │   │   │   ├── exportconfig.h
+│   │   │   │   ├── fileconfig.cpp
+│   │   │   │   ├── fileconfig.h
+│   │   │   │   ├── filterconfig.cpp
+│   │   │   │   ├── filterconfig.h
+│   │   │   │   ├── findreplaceconfig.cpp
+│   │   │   │   ├── findreplaceconfig.h
+│   │   │   │   ├── formatconfig.cpp
+│   │   │   │   ├── formatconfig.h
+│   │   │   │   ├── generalconfig.cpp
+│   │   │   │   ├── generalconfig.h
+│   │   │   │   ├── guiconfig.cpp
+│   │   │   │   ├── guiconfig.h
+│   │   │   │   ├── importconfig.cpp
+│   │   │   │   ├── importconfig.h
+│   │   │   │   ├── isettings.cpp
+│   │   │   │   ├── isettings.h
+│   │   │   │   ├── kid3settings.cpp
+│   │   │   │   ├── kid3settings.h
+│   │   │   │   ├── mainwindowconfig.cpp
+│   │   │   │   ├── mainwindowconfig.h
+│   │   │   │   ├── networkconfig.cpp
+│   │   │   │   ├── networkconfig.h
+│   │   │   │   ├── numbertracksconfig.cpp
+│   │   │   │   ├── numbertracksconfig.h
+│   │   │   │   ├── playlistconfig.cpp
+│   │   │   │   ├── playlistconfig.h
+│   │   │   │   ├── rendirconfig.cpp
+│   │   │   │   ├── rendirconfig.h
+│   │   │   │   ├── serverimporterconfig.cpp
+│   │   │   │   ├── serverimporterconfig.h
+│   │   │   │   ├── starratingmappingsmodel.cpp
+│   │   │   │   ├── starratingmappingsmodel.h
+│   │   │   │   ├── tagconfig.cpp
+│   │   │   │   ├── tagconfig.h
+│   │   │   │   ├── useractionsconfig.cpp
+│   │   │   │   └── useractionsconfig.h
+│   │   │   ├── export
+│   │   │   │   ├── playlistcreator.cpp
+│   │   │   │   ├── playlistcreator.h
+│   │   │   │   ├── textexporter.cpp
+│   │   │   │   └── textexporter.h
+│   │   │   ├── import
+│   │   │   │   ├── batchimporter.cpp
+│   │   │   │   ├── batchimporter.h
+│   │   │   │   ├── httpclient.cpp
+│   │   │   │   ├── httpclient.h
+│   │   │   │   ├── importclient.cpp
+│   │   │   │   ├── importclient.h
+│   │   │   │   ├── importparser.cpp
+│   │   │   │   ├── importparser.h
+│   │   │   │   ├── iserverimporterfactory.cpp
+│   │   │   │   ├── iserverimporterfactory.h
+│   │   │   │   ├── iservertrackimporterfactory.cpp
+│   │   │   │   ├── iservertrackimporterfactory.h
+│   │   │   │   ├── serverimporter.cpp
+│   │   │   │   ├── serverimporter.h
+│   │   │   │   ├── servertrackimporter.cpp
+│   │   │   │   ├── servertrackimporter.h
+│   │   │   │   ├── textimporter.cpp
+│   │   │   │   ├── textimporter.h
+│   │   │   │   ├── trackdatamatcher.cpp
+│   │   │   │   └── trackdatamatcher.h
+│   │   │   ├── model
+│   │   │   │   ├── abstractfiledecorationprovider.cpp
+│   │   │   │   ├── abstractfiledecorationprovider.h
+│   │   │   │   ├── bidirfileproxymodeliterator.cpp
+│   │   │   │   ├── bidirfileproxymodeliterator.h
+│   │   │   │   ├── checkablestringlistmodel.cpp
+│   │   │   │   ├── checkablestringlistmodel.h
+│   │   │   │   ├── commandformatreplacer.cpp
+│   │   │   │   ├── commandformatreplacer.h
+│   │   │   │   ├── commandstablemodel.cpp
+│   │   │   │   ├── commandstablemodel.h
+│   │   │   │   ├── configtablemodel.cpp
+│   │   │   │   ├── configtablemodel.h
+│   │   │   │   ├── coretaggedfileiconprovider.cpp
+│   │   │   │   ├── coretaggedfileiconprovider.h
+│   │   │   │   ├── dirproxymodel.cpp
+│   │   │   │   ├── dirproxymodel.h
+│   │   │   │   ├── dirrenamer.cpp
+│   │   │   │   ├── dirrenamer.h
+│   │   │   │   ├── downloadclient.cpp
+│   │   │   │   ├── downloadclient.h
+│   │   │   │   ├── eventtimingcode.cpp
+│   │   │   │   ├── eventtimingcode.h
+│   │   │   │   ├── expressionparser.cpp
+│   │   │   │   ├── expressionparser.h
+│   │   │   │   ├── externalprocess.cpp
+│   │   │   │   ├── externalprocess.h
+│   │   │   │   ├── filefilter.cpp
+│   │   │   │   ├── filefilter.h
+│   │   │   │   ├── fileinfogatherer.cpp
+│   │   │   │   ├── fileinfogatherer_p.h
+│   │   │   │   ├── fileproxymodel.cpp
+│   │   │   │   ├── fileproxymodel.h
+│   │   │   │   ├── fileproxymodeliterator.cpp
+│   │   │   │   ├── fileproxymodeliterator.h
+│   │   │   │   ├── filesystemmodel.cpp
+│   │   │   │   ├── filesystemmodel.h
+│   │   │   │   ├── filesystemmodel_p.h
+│   │   │   │   ├── frameeditorobject.cpp
+│   │   │   │   ├── frameeditorobject.h
+│   │   │   │   ├── framelist.cpp
+│   │   │   │   ├── framelist.h
+│   │   │   │   ├── frameobjectmodel.cpp
+│   │   │   │   ├── frameobjectmodel.h
+│   │   │   │   ├── frametablemodel.cpp
+│   │   │   │   ├── frametablemodel.h
+│   │   │   │   ├── genremodel.cpp
+│   │   │   │   ├── genremodel.h
+│   │   │   │   ├── iabortable.cpp
+│   │   │   │   ├── iabortable.h
+│   │   │   │   ├── iframeeditor.cpp
+│   │   │   │   ├── iframeeditor.h
+│   │   │   │   ├── imagedataprovider.h
+│   │   │   │   ├── iusercommandprocessor.cpp
+│   │   │   │   ├── iusercommandprocessor.h
+│   │   │   │   ├── kid3application.cpp
+│   │   │   │   ├── kid3application.h
+│   │   │   │   ├── modeliterator.cpp
+│   │   │   │   ├── modeliterator.h
+│   │   │   │   ├── modelsectionresizemode.h
+│   │   │   │   ├── org.kde.Kid3.xml
+│   │   │   │   ├── playlistmodel.cpp
+│   │   │   │   ├── playlistmodel.h
+│   │   │   │   ├── proxyitemselectionmodel.cpp
+│   │   │   │   ├── proxyitemselectionmodel.h
+│   │   │   │   ├── scriptinterface.cpp
+│   │   │   │   ├── scriptinterface.h
+│   │   │   │   ├── standardtablemodel.cpp
+│   │   │   │   ├── standardtablemodel.h
+│   │   │   │   ├── taggedfileselection.cpp
+│   │   │   │   ├── taggedfileselection.h
+│   │   │   │   ├── taggedfilesystemmodel.cpp
+│   │   │   │   ├── taggedfilesystemmodel.h
+│   │   │   │   ├── tagsearcher.cpp
+│   │   │   │   ├── tagsearcher.h
+│   │   │   │   ├── texttablemodel.cpp
+│   │   │   │   ├── texttablemodel.h
+│   │   │   │   ├── timeeventmodel.cpp
+│   │   │   │   ├── timeeventmodel.h
+│   │   │   │   ├── trackdatamodel.cpp
+│   │   │   │   └── trackdatamodel.h
+│   │   │   ├── tags
+│   │   │   │   ├── attributedata.cpp
+│   │   │   │   ├── attributedata.h
+│   │   │   │   ├── formatreplacer.cpp
+│   │   │   │   ├── formatreplacer.h
+│   │   │   │   ├── frame.cpp
+│   │   │   │   ├── frame.h
+│   │   │   │   ├── framenotice.cpp
+│   │   │   │   ├── framenotice.h
+│   │   │   │   ├── genres.cpp
+│   │   │   │   ├── genres.h
+│   │   │   │   ├── itaggedfilefactory.cpp
+│   │   │   │   ├── itaggedfilefactory.h
+│   │   │   │   ├── pictureframe.cpp
+│   │   │   │   ├── pictureframe.h
+│   │   │   │   ├── taggedfile.cpp
+│   │   │   │   ├── taggedfile.h
+│   │   │   │   ├── trackdata.cpp
+│   │   │   │   └── trackdata.h
+│   │   │   └── utils
+│   │   │       ├── androidutils.cpp
+│   │   │       ├── androidutils.h
+│   │   │       ├── coreplatformtools.cpp
+│   │   │       ├── coreplatformtools.h
+│   │   │       ├── debugutils.cpp
+│   │   │       ├── debugutils.h
+│   │   │       ├── icoreplatformtools.cpp
+│   │   │       ├── icoreplatformtools.h
+│   │   │       ├── kid3api.h
+│   │   │       ├── loadtranslation.cpp
+│   │   │       ├── loadtranslation.h
+│   │   │       ├── saferename.cpp
+│   │   │       └── saferename.h
+│   │   ├── gui
+│   │   │   ├── CMakeLists.txt
+│   │   │   ├── dialogs
+│   │   │   │   ├── batchimportdialog.cpp
+│   │   │   │   ├── batchimportdialog.h
+│   │   │   │   ├── batchimportsourcedialog.cpp
+│   │   │   │   ├── batchimportsourcedialog.h
+│   │   │   │   ├── browsecoverartdialog.cpp
+│   │   │   │   ├── browsecoverartdialog.h
+│   │   │   │   ├── configdialogpages.cpp
+│   │   │   │   ├── configdialogpages.h
+│   │   │   │   ├── contexthelp.cpp
+│   │   │   │   ├── contexthelp.h
+│   │   │   │   ├── downloaddialog.cpp
+│   │   │   │   ├── downloaddialog.h
+│   │   │   │   ├── editframefieldsdialog.cpp
+│   │   │   │   ├── editframefieldsdialog.h
+│   │   │   │   ├── exportdialog.cpp
+│   │   │   │   ├── exportdialog.h
+│   │   │   │   ├── filterdialog.cpp
+│   │   │   │   ├── filterdialog.h
+│   │   │   │   ├── findreplacedialog.cpp
+│   │   │   │   ├── findreplacedialog.h
+│   │   │   │   ├── importdialog.cpp
+│   │   │   │   ├── importdialog.h
+│   │   │   │   ├── numbertracksdialog.cpp
+│   │   │   │   ├── numbertracksdialog.h
+│   │   │   │   ├── playlistdialog.cpp
+│   │   │   │   ├── playlistdialog.h
+│   │   │   │   ├── playlisteditdialog.cpp
+│   │   │   │   ├── playlisteditdialog.h
+│   │   │   │   ├── rendirdialog.cpp
+│   │   │   │   ├── rendirdialog.h
+│   │   │   │   ├── serverimportdialog.cpp
+│   │   │   │   ├── serverimportdialog.h
+│   │   │   │   ├── servertrackimportdialog.cpp
+│   │   │   │   ├── servertrackimportdialog.h
+│   │   │   │   ├── stringlisteditdialog.cpp
+│   │   │   │   ├── stringlisteditdialog.h
+│   │   │   │   ├── tagimportdialog.cpp
+│   │   │   │   ├── tagimportdialog.h
+│   │   │   │   ├── textimportdialog.cpp
+│   │   │   │   └── textimportdialog.h
+│   │   │   ├── forms
+│   │   │   │   ├── audioplayer.cpp
+│   │   │   │   ├── audioplayer.h
+│   │   │   │   ├── basemainwindow.cpp
+│   │   │   │   ├── basemainwindow.h
+│   │   │   │   ├── configurabletreeview.cpp
+│   │   │   │   ├── configurabletreeview.h
+│   │   │   │   ├── filelist.cpp
+│   │   │   │   ├── filelist.h
+│   │   │   │   ├── guiplatformtools.cpp
+│   │   │   │   ├── guiplatformtools.h
+│   │   │   │   ├── iplatformtools.cpp
+│   │   │   │   ├── iplatformtools.h
+│   │   │   │   ├── kid3form.cpp
+│   │   │   │   ├── kid3form.h
+│   │   │   │   ├── mprisinterface.cpp
+│   │   │   │   ├── mprisinterface.h
+│   │   │   │   ├── pixmapprovider.cpp
+│   │   │   │   ├── pixmapprovider.h
+│   │   │   │   ├── playlistview.cpp
+│   │   │   │   ├── playlistview.h
+│   │   │   │   ├── sectionactions.cpp
+│   │   │   │   ├── sectionactions.h
+│   │   │   │   ├── taggedfileiconprovider.cpp
+│   │   │   │   └── taggedfileiconprovider.h
+│   │   │   └── widgets
+│   │   │       ├── abstractlistedit.cpp
+│   │   │       ├── abstractlistedit.h
+│   │   │       ├── chaptereditor.cpp
+│   │   │       ├── chaptereditor.h
+│   │   │       ├── comboboxdelegate.cpp
+│   │   │       ├── comboboxdelegate.h
+│   │   │       ├── configtable.cpp
+│   │   │       ├── configtable.h
+│   │   │       ├── enumdelegate.cpp
+│   │   │       ├── enumdelegate.h
+│   │   │       ├── eventcodedelegate.cpp
+│   │   │       ├── eventcodedelegate.h
+│   │   │       ├── filenameformatbox.cpp
+│   │   │       ├── filenameformatbox.h
+│   │   │       ├── formatbox.cpp
+│   │   │       ├── formatbox.h
+│   │   │       ├── formatlistedit.cpp
+│   │   │       ├── formatlistedit.h
+│   │   │       ├── frameitemdelegate.cpp
+│   │   │       ├── frameitemdelegate.h
+│   │   │       ├── frametable.cpp
+│   │   │       ├── frametable.h
+│   │   │       ├── imageviewer.cpp
+│   │   │       ├── imageviewer.h
+│   │   │       ├── picturelabel.cpp
+│   │   │       ├── picturelabel.h
+│   │   │       ├── playtoolbar.cpp
+│   │   │       ├── playtoolbar.h
+│   │   │       ├── progresswidget.cpp
+│   │   │       ├── progresswidget.h
+│   │   │       ├── stringlistedit.cpp
+│   │   │       ├── stringlistedit.h
+│   │   │       ├── subframeseditor.cpp
+│   │   │       ├── subframeseditor.h
+│   │   │       ├── tablemodeledit.cpp
+│   │   │       ├── tablemodeledit.h
+│   │   │       ├── tableofcontentseditor.cpp
+│   │   │       ├── tableofcontentseditor.h
+│   │   │       ├── tagformatbox.cpp
+│   │   │       ├── tagformatbox.h
+│   │   │       ├── timeeventeditor.cpp
+│   │   │       ├── timeeventeditor.h
+│   │   │       ├── timestampdelegate.cpp
+│   │   │       ├── timestampdelegate.h
+│   │   │       ├── tracknumbervalidator.cpp
+│   │   │       └── tracknumbervalidator.h
+│   │   ├── plugins
+│   │   │   ├── acoustidimport
+│   │   │   │   ├── abstractfingerprintdecoder.cpp
+│   │   │   │   ├── abstractfingerprintdecoder.h
+│   │   │   │   ├── acoustidconfig.h.cmake
+│   │   │   │   ├── acoustidimportplugin.cpp
+│   │   │   │   ├── acoustidimportplugin.h
+│   │   │   │   ├── cmake
+│   │   │   │   │   └── modules
+│   │   │   │   │       ├── FindChromaprint.cmake
+│   │   │   │   │       ├── FindFFmpeg.cmake
+│   │   │   │   │       └── FindGStreamer.cmake
+│   │   │   │   ├── CMakeLists.txt
+│   │   │   │   ├── ffmpegfingerprintdecoder.cpp
+│   │   │   │   ├── ffmpegfingerprintdecoder.h
+│   │   │   │   ├── fingerprintcalculator.cpp
+│   │   │   │   ├── fingerprintcalculator.h
+│   │   │   │   ├── gstfingerprintdecoder.cpp
+│   │   │   │   ├── gstfingerprintdecoder.h
+│   │   │   │   ├── musicbrainzclient.cpp
+│   │   │   │   ├── musicbrainzclient.h
+│   │   │   │   ├── qtfingerprintdecoder.cpp
+│   │   │   │   └── qtfingerprintdecoder.h
+│   │   │   ├── amazonimport
+│   │   │   │   ├── amazonconfig.cpp
+│   │   │   │   ├── amazonconfig.h
+│   │   │   │   ├── amazonimporter.cpp
+│   │   │   │   ├── amazonimporter.h
+│   │   │   │   ├── amazonimportplugin.cpp
+│   │   │   │   ├── amazonimportplugin.h
+│   │   │   │   └── CMakeLists.txt
+│   │   │   ├── CMakeLists.txt
+│   │   │   ├── discogsimport
+│   │   │   │   ├── CMakeLists.txt
+│   │   │   │   ├── discogsconfig.cpp
+│   │   │   │   ├── discogsconfig.h
+│   │   │   │   ├── discogsimporter.cpp
+│   │   │   │   ├── discogsimporter.h
+│   │   │   │   ├── discogsimportplugin.cpp
+│   │   │   │   └── discogsimportplugin.h
+│   │   │   ├── freedbimport
+│   │   │   │   ├── CMakeLists.txt
+│   │   │   │   ├── freedbconfig.cpp
+│   │   │   │   ├── freedbconfig.h
+│   │   │   │   ├── freedbimporter.cpp
+│   │   │   │   ├── freedbimporter.h
+│   │   │   │   ├── freedbimportplugin.cpp
+│   │   │   │   └── freedbimportplugin.h
+│   │   │   ├── id3libmetadata
+│   │   │   │   ├── cmake
+│   │   │   │   │   └── modules
+│   │   │   │   │       └── FindId3lib.cmake
+│   │   │   │   ├── CMakeLists.txt
+│   │   │   │   ├── id3libconfig.h.cmake
+│   │   │   │   ├── id3libmetadataplugin.cpp
+│   │   │   │   ├── id3libmetadataplugin.h
+│   │   │   │   ├── mp3file.cpp
+│   │   │   │   └── mp3file.h
+│   │   │   ├── importplugins.h.cmake
+│   │   │   ├── kid3qml
+│   │   │   │   ├── checkablelistmodel.cpp
+│   │   │   │   ├── checkablelistmodel.h
+│   │   │   │   ├── CMakeLists.txt
+│   │   │   │   ├── configobjects.cpp
+│   │   │   │   ├── configobjects.h
+│   │   │   │   ├── kid3qmlplugin.cpp
+│   │   │   │   ├── kid3qmlplugin.h
+│   │   │   │   ├── Kid3Script.qml
+│   │   │   │   ├── qmldir
+│   │   │   │   ├── qmldir.in
+│   │   │   │   ├── qmlimageprovider.cpp
+│   │   │   │   ├── qmlimageprovider.h
+│   │   │   │   ├── qmlpp.py
+│   │   │   │   ├── runqmlplugindump.cmake.in
+│   │   │   │   ├── scriptutils.cpp
+│   │   │   │   └── scriptutils.h
+│   │   │   ├── mp4v2metadata
+│   │   │   │   ├── cmake
+│   │   │   │   │   └── modules
+│   │   │   │   │       └── FindMp4v2.cmake
+│   │   │   │   ├── CMakeLists.txt
+│   │   │   │   ├── m4afile.cpp
+│   │   │   │   ├── m4afile.h
+│   │   │   │   ├── mp4v2config.h.cmake
+│   │   │   │   ├── mp4v2metadataplugin.cpp
+│   │   │   │   └── mp4v2metadataplugin.h
+│   │   │   ├── musicbrainzimport
+│   │   │   │   ├── CMakeLists.txt
+│   │   │   │   ├── musicbrainzconfig.cpp
+│   │   │   │   ├── musicbrainzconfig.h
+│   │   │   │   ├── musicbrainzimporter.cpp
+│   │   │   │   ├── musicbrainzimporter.h
+│   │   │   │   ├── musicbrainzimportplugin.cpp
+│   │   │   │   └── musicbrainzimportplugin.h
+│   │   │   ├── oggflacmetadata
+│   │   │   │   ├── cmake
+│   │   │   │   │   └── modules
+│   │   │   │   │       ├── FindFLAC.cmake
+│   │   │   │   │       ├── FindOgg.cmake
+│   │   │   │   │       └── FindVorbis.cmake
+│   │   │   │   ├── CMakeLists.txt
+│   │   │   │   ├── flacfile.cpp
+│   │   │   │   ├── flacfile.hpp
+│   │   │   │   ├── oggfile.cpp
+│   │   │   │   ├── oggfile.hpp
+│   │   │   │   ├── oggflacconfig.h.cmake
+│   │   │   │   ├── oggflacmetadataplugin.cpp
+│   │   │   │   ├── oggflacmetadataplugin.h
+│   │   │   │   ├── vcedit.c
+│   │   │   │   └── vcedit.h
+│   │   │   ├── qmlcommand
+│   │   │   │   ├── CMakeLists.txt
+│   │   │   │   ├── qmlcommandplugin.cpp
+│   │   │   │   └── qmlcommandplugin.h
+│   │   │   └── taglibmetadata
+│   │   │       ├── cmake
+│   │   │       │   └── modules
+│   │   │       │       └── FindTagLib.cmake
+│   │   │       ├── CMakeLists.txt
+│   │   │       ├── taglibext
+│   │   │       │   ├── aac
+│   │   │       │   │   ├── aacfiletyperesolver.cpp
+│   │   │       │   │   └── aacfiletyperesolver.h
+│   │   │       │   ├── dsdiff
+│   │   │       │   │   ├── dsdifffile.cpp
+│   │   │       │   │   ├── dsdifffile.h
+│   │   │       │   │   ├── dsdifffiletyperesolver.cpp
+│   │   │       │   │   ├── dsdifffiletyperesolver.h
+│   │   │       │   │   ├── dsdiffproperties.cpp
+│   │   │       │   │   └── dsdiffproperties.h
+│   │   │       │   ├── dsf
+│   │   │       │   │   ├── dsffile.cpp
+│   │   │       │   │   ├── dsffile.h
+│   │   │       │   │   ├── dsffiletyperesolver.cpp
+│   │   │       │   │   ├── dsffiletyperesolver.h
+│   │   │       │   │   ├── dsfheader.cpp
+│   │   │       │   │   ├── dsfheader.h
+│   │   │       │   │   ├── dsfproperties.cpp
+│   │   │       │   │   └── dsfproperties.h
+│   │   │       │   ├── eventtimingcodesframe.cpp
+│   │   │       │   ├── eventtimingcodesframe.h
+│   │   │       │   ├── mp2
+│   │   │       │   │   ├── mp2filetyperesolver.cpp
+│   │   │       │   │   └── mp2filetyperesolver.h
+│   │   │       │   ├── synchronizedlyricsframe.cpp
+│   │   │       │   ├── synchronizedlyricsframe.h
+│   │   │       │   └── tdebug.h
+│   │   │       ├── taglibfile.cpp
+│   │   │       ├── taglibfile.h
+│   │   │       ├── taglibmetadataplugin.cpp
+│   │   │       └── taglibmetadataplugin.h
+│   │   ├── qml
+│   │   │   ├── app
+│   │   │   │   ├── AboutDialog.qml
+│   │   │   │   ├── AbstractSettingsPage.qml
+│   │   │   │   ├── BatchImportPage.qml
+│   │   │   │   ├── Collapsible.qml
+│   │   │   │   ├── Empty.qml
+│   │   │   │   ├── FileCollapsible.qml
+│   │   │   │   ├── FileList.qml
+│   │   │   │   ├── FileSelectDialog.qml
+│   │   │   │   ├── FilterPage.qml
+│   │   │   │   ├── FrameDelegate.qml
+│   │   │   │   ├── FrameEditDialog.qml
+│   │   │   │   ├── FrameSelectDialog.qml
+│   │   │   │   ├── IconButton.qml
+│   │   │   │   ├── ImportProfilesEditPage.qml
+│   │   │   │   ├── MainPage.qml
+│   │   │   │   ├── Main.qml
+│   │   │   │   ├── MapEditPage.qml
+│   │   │   │   ├── MessageDialog.qml
+│   │   │   │   ├── NumberTracksDialog.qml
+│   │   │   │   ├── PictureCollapsible.qml
+│   │   │   │   ├── RenameDirectoryPage.qml
+│   │   │   │   ├── ScaledImage.qml
+│   │   │   │   ├── SettingsElement.qml
+│   │   │   │   ├── SettingsItem.qml
+│   │   │   │   ├── SettingsPage.qml
+│   │   │   │   ├── Standard.qml
+│   │   │   │   ├── StringListEditPage.qml
+│   │   │   │   ├── TagCollapsible.qml
+│   │   │   │   ├── ThinDivider.qml
+│   │   │   │   └── UiConstants.qml
+│   │   │   ├── CMakeLists.txt
+│   │   │   ├── icons
+│   │   │   │   ├── add.svg
+│   │   │   │   ├── chevron_left.svg
+│   │   │   │   ├── chevron_right.svg
+│   │   │   │   ├── clear.svg
+│   │   │   │   ├── create.svg
+│   │   │   │   ├── expand_less.svg
+│   │   │   │   ├── expand_more.svg
+│   │   │   │   ├── kid3material.ttf
+│   │   │   │   ├── LICENSE
+│   │   │   │   ├── menu.svg
+│   │   │   │   ├── modified.svg
+│   │   │   │   ├── more_vert.svg
+│   │   │   │   ├── remove.svg
+│   │   │   │   ├── select_all.svg
+│   │   │   │   ├── svgs2ttf
+│   │   │   │   ├── triangle_down.svg
+│   │   │   │   └── triangle_right.svg
+│   │   │   └── script
+│   │   │       ├── EmbedAlbumArt.qml
+│   │   │       ├── EmbedLyrics.qml
+│   │   │       ├── ExportCsv.qml
+│   │   │       ├── ExportHtmlPlayer.qml
+│   │   │       ├── ExportJson.qml
+│   │   │       ├── ExportPlaylist.qml
+│   │   │       ├── ExtractAlbumArt.qml
+│   │   │       ├── FixId3v2StandardViolations.qml
+│   │   │       ├── ImportCsv.qml
+│   │   │       ├── ImportJson.qml
+│   │   │       ├── QmlConsole.qml
+│   │   │       ├── ReplayGain2SoundCheck.qml
+│   │   │       ├── ResizeAlbumArt.qml
+│   │   │       ├── RewriteTags.qml
+│   │   │       ├── ShowTextEncodingV1.qml
+│   │   │       ├── Tag1ToAscii.qml
+│   │   │       └── TitleCase.qml
+│   │   └── test
+│   │       ├── CMakeLists.txt
+│   │       ├── dummysettings.cpp
+│   │       ├── dummysettings.h
+│   │       ├── kid3testsupport.py
+│   │       ├── maintest.cpp
+│   │       ├── testamazonimporter.cpp
+│   │       ├── testamazonimporter.h
+│   │       ├── test_cli_functions.py
+│   │       ├── testdiscogsimporter.cpp
+│   │       ├── testdiscogsimporter.h
+│   │       ├── testmusicbrainzreleaseimporter.cpp
+│   │       ├── testmusicbrainzreleaseimporter.h
+│   │       ├── testmusicbrainzreleaseimportparser.cpp
+│   │       ├── testmusicbrainzreleaseimportparser.h
+│   │       ├── testserverimporterbase.cpp
+│   │       ├── testserverimporterbase.h
+│   │       ├── testutils.cpp
+│   │       └── testutils.h
+│   ├── strip_silent.sh.in
+│   ├── translations
+│   │   ├── CMakeLists.txt
+│   │   ├── download-pos.cmake
+│   │   ├── download-pos.sh
+│   │   ├── extract-merge.sh
+│   │   └── po2ts.py
+│   └── win32
+│       ├── buildkid3.bat
+│       └── build-mxe.sh
+├── kid3-3.9.6.tar.gz -> /home/felix/packages/kid3/kid3-3.9.6.tar.gz
+└── kid3-3.9.6.tar.gz.sig -> /home/felix/packages/kid3/kid3-3.9.6.tar.gz.sig
+
+139 directories, 746 files

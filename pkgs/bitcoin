@@ -1,0 +1,2874 @@
+src
+├── bitcoin-28.0
+│   ├── autogen.sh
+│   ├── build-aux
+│   │   └── m4
+│   │       ├── ax_boost_base.m4
+│   │       ├── ax_check_compile_flag.m4
+│   │       ├── ax_check_link_flag.m4
+│   │       ├── ax_check_preproc_flag.m4
+│   │       ├── ax_cxx_compile_stdcxx.m4
+│   │       ├── ax_pthread.m4
+│   │       ├── bitcoin_find_bdb48.m4
+│   │       ├── bitcoin_qt.m4
+│   │       ├── bitcoin_subdir_to_include.m4
+│   │       ├── l_atomic.m4
+│   │       └── l_socket.m4
+│   ├── build_msvc
+│   │   ├── bench_bitcoin
+│   │   │   └── bench_bitcoin.vcxproj.in
+│   │   ├── bitcoin-cli
+│   │   │   └── bitcoin-cli.vcxproj
+│   │   ├── bitcoin_config.h.in
+│   │   ├── bitcoind
+│   │   │   └── bitcoind.vcxproj
+│   │   ├── bitcoin-qt
+│   │   │   └── bitcoin-qt.vcxproj
+│   │   ├── bitcoin.sln
+│   │   ├── bitcoin-tx
+│   │   │   └── bitcoin-tx.vcxproj
+│   │   ├── bitcoin-util
+│   │   │   └── bitcoin-util.vcxproj
+│   │   ├── bitcoin-wallet
+│   │   │   └── bitcoin-wallet.vcxproj
+│   │   ├── common.init.vcxproj.in
+│   │   ├── common.qt.init.vcxproj
+│   │   ├── common.vcxproj
+│   │   ├── fuzz
+│   │   │   └── fuzz.vcxproj
+│   │   ├── libbitcoin_cli
+│   │   │   └── libbitcoin_cli.vcxproj.in
+│   │   ├── libbitcoin_common
+│   │   │   └── libbitcoin_common.vcxproj.in
+│   │   ├── libbitcoin_consensus
+│   │   │   └── libbitcoin_consensus.vcxproj
+│   │   ├── libbitcoin_crypto
+│   │   │   └── libbitcoin_crypto.vcxproj.in
+│   │   ├── libbitcoin_node
+│   │   │   └── libbitcoin_node.vcxproj.in
+│   │   ├── libbitcoin_qt
+│   │   │   └── libbitcoin_qt.vcxproj
+│   │   ├── libbitcoin_util
+│   │   │   └── libbitcoin_util.vcxproj.in
+│   │   ├── libbitcoin_wallet
+│   │   │   └── libbitcoin_wallet.vcxproj.in
+│   │   ├── libbitcoin_wallet_tool
+│   │   │   └── libbitcoin_wallet_tool.vcxproj.in
+│   │   ├── libbitcoin_zmq
+│   │   │   └── libbitcoin_zmq.vcxproj.in
+│   │   ├── libleveldb
+│   │   │   └── libleveldb.vcxproj
+│   │   ├── libminisketch
+│   │   │   └── libminisketch.vcxproj
+│   │   ├── libsecp256k1
+│   │   │   └── libsecp256k1.vcxproj
+│   │   ├── libtest_util
+│   │   │   └── libtest_util.vcxproj.in
+│   │   ├── libunivalue
+│   │   │   └── libunivalue.vcxproj
+│   │   ├── msbuild
+│   │   │   └── tasks
+│   │   │       ├── hexdump.targets
+│   │   │       └── replaceinfile.targets
+│   │   ├── msvc-autogen.py
+│   │   ├── README.md
+│   │   ├── test_bitcoin
+│   │   │   └── test_bitcoin.vcxproj
+│   │   ├── test_bitcoin-qt
+│   │   │   └── test_bitcoin-qt.vcxproj
+│   │   └── vcpkg.json
+│   ├── ci
+│   │   ├── lint
+│   │   │   ├── 04_install.sh
+│   │   │   ├── 06_script.sh
+│   │   │   └── container-entrypoint.sh
+│   │   ├── lint_imagefile
+│   │   ├── lint_run_all.sh
+│   │   ├── README.md
+│   │   ├── retry
+│   │   │   ├── README.md
+│   │   │   └── retry
+│   │   ├── test
+│   │   │   ├── 00_setup_env_arm.sh
+│   │   │   ├── 00_setup_env_i686_centos.sh
+│   │   │   ├── 00_setup_env_i686_multiprocess.sh
+│   │   │   ├── 00_setup_env_mac_cross.sh
+│   │   │   ├── 00_setup_env_mac_native.sh
+│   │   │   ├── 00_setup_env_native_asan.sh
+│   │   │   ├── 00_setup_env_native_fuzz.sh
+│   │   │   ├── 00_setup_env_native_fuzz_with_msan.sh
+│   │   │   ├── 00_setup_env_native_fuzz_with_valgrind.sh
+│   │   │   ├── 00_setup_env_native_msan.sh
+│   │   │   ├── 00_setup_env_native_nowallet_libbitcoinkernel.sh
+│   │   │   ├── 00_setup_env_native_previous_releases.sh
+│   │   │   ├── 00_setup_env_native_tidy.sh
+│   │   │   ├── 00_setup_env_native_tsan.sh
+│   │   │   ├── 00_setup_env_native_valgrind.sh
+│   │   │   ├── 00_setup_env_s390x.sh
+│   │   │   ├── 00_setup_env.sh
+│   │   │   ├── 00_setup_env_win64.sh
+│   │   │   ├── 01_base_install.sh
+│   │   │   ├── 02_run_container.sh
+│   │   │   ├── 03_test_script.sh
+│   │   │   ├── wrap-valgrind.sh
+│   │   │   └── wrap-wine.sh
+│   │   ├── test_imagefile
+│   │   └── test_run_all.sh
+│   ├── configure.ac
+│   ├── contrib
+│   │   ├── asmap
+│   │   │   ├── asmap.py
+│   │   │   ├── asmap-tool.py
+│   │   │   └── README.md
+│   │   ├── completions
+│   │   │   ├── bash
+│   │   │   │   ├── bitcoin-cli.bash
+│   │   │   │   ├── bitcoind.bash
+│   │   │   │   └── bitcoin-tx.bash
+│   │   │   └── fish
+│   │   │       ├── bitcoin-cli.fish
+│   │   │       ├── bitcoind.fish
+│   │   │       ├── bitcoin-qt.fish
+│   │   │       ├── bitcoin-tx.fish
+│   │   │       ├── bitcoin-util.fish
+│   │   │       └── bitcoin-wallet.fish
+│   │   ├── debian
+│   │   │   └── copyright
+│   │   ├── devtools
+│   │   │   ├── bitcoin-tidy
+│   │   │   │   ├── bitcoin-tidy.cpp
+│   │   │   │   ├── CMakeLists.txt
+│   │   │   │   ├── example_logprintf.cpp
+│   │   │   │   ├── example_nontrivial-threadlocal.cpp
+│   │   │   │   ├── logprintf.cpp
+│   │   │   │   ├── logprintf.h
+│   │   │   │   ├── nontrivial-threadlocal.cpp
+│   │   │   │   ├── nontrivial-threadlocal.h
+│   │   │   │   └── README.md
+│   │   │   ├── check-deps.sh
+│   │   │   ├── circular-dependencies.py
+│   │   │   ├── clang-format-diff.py
+│   │   │   ├── copyright_header.py
+│   │   │   ├── gen-bitcoin-conf.sh
+│   │   │   ├── gen-manpages.py
+│   │   │   ├── headerssync-params.py
+│   │   │   ├── iwyu
+│   │   │   │   └── bitcoin.core.imp
+│   │   │   ├── README.md
+│   │   │   ├── security-check.py
+│   │   │   ├── split-debug.sh.in
+│   │   │   ├── symbol-check.py
+│   │   │   ├── test_deterministic_coverage.sh
+│   │   │   ├── test-security-check.py
+│   │   │   ├── test-symbol-check.py
+│   │   │   ├── test_utxo_snapshots.sh
+│   │   │   ├── utils.py
+│   │   │   └── utxo_snapshot.sh
+│   │   ├── filter-lcov.py
+│   │   ├── guix
+│   │   │   ├── guix-attest
+│   │   │   ├── guix-build
+│   │   │   ├── guix-clean
+│   │   │   ├── guix-codesign
+│   │   │   ├── guix-verify
+│   │   │   ├── INSTALL.md
+│   │   │   ├── libexec
+│   │   │   │   ├── build.sh
+│   │   │   │   ├── codesign.sh
+│   │   │   │   └── prelude.bash
+│   │   │   ├── manifest.scm
+│   │   │   ├── patches
+│   │   │   │   ├── binutils-unaligned-default.patch
+│   │   │   │   ├── gcc-remap-guix-store.patch
+│   │   │   │   ├── glibc-guix-prefix.patch
+│   │   │   │   ├── oscrypto-hard-code-openssl.patch
+│   │   │   │   └── winpthreads-remap-guix-store.patch
+│   │   │   └── README.md
+│   │   ├── init
+│   │   │   ├── bitcoind.conf
+│   │   │   ├── bitcoind.init
+│   │   │   ├── bitcoind.openrc
+│   │   │   ├── bitcoind.openrcconf
+│   │   │   ├── bitcoind.service
+│   │   │   ├── org.bitcoin.bitcoind.plist
+│   │   │   └── README.md
+│   │   ├── linearize
+│   │   │   ├── example-linearize.cfg
+│   │   │   ├── linearize-data.py
+│   │   │   ├── linearize-hashes.py
+│   │   │   └── README.md
+│   │   ├── macdeploy
+│   │   │   ├── detached-sig-create.sh
+│   │   │   ├── gen-sdk
+│   │   │   ├── LICENSE
+│   │   │   ├── macdeployqtplus
+│   │   │   └── README.md
+│   │   ├── message-capture
+│   │   │   ├── message-capture-docs.md
+│   │   │   └── message-capture-parser.py
+│   │   ├── qos
+│   │   │   ├── README.md
+│   │   │   └── tc.sh
+│   │   ├── README.md
+│   │   ├── seeds
+│   │   │   ├── generate-seeds.py
+│   │   │   ├── makeseeds.py
+│   │   │   ├── nodes_main.txt
+│   │   │   ├── nodes_testnet4.txt
+│   │   │   ├── nodes_test.txt
+│   │   │   └── README.md
+│   │   ├── shell
+│   │   │   ├── git-utils.bash
+│   │   │   └── realpath.bash
+│   │   ├── signet
+│   │   │   ├── getcoins.py
+│   │   │   ├── miner
+│   │   │   └── README.md
+│   │   ├── testgen
+│   │   │   ├── gen_key_io_test_vectors.py
+│   │   │   └── README.md
+│   │   ├── tracing
+│   │   │   ├── connectblock_benchmark.bt
+│   │   │   ├── log_p2p_traffic.bt
+│   │   │   ├── log_raw_p2p_msgs.py
+│   │   │   ├── log_utxocache_flush.py
+│   │   │   ├── log_utxos.bt
+│   │   │   ├── mempool_monitor.py
+│   │   │   ├── p2p_monitor.py
+│   │   │   └── README.md
+│   │   ├── valgrind.supp
+│   │   ├── verify-binaries
+│   │   │   ├── README.md
+│   │   │   ├── test.py
+│   │   │   └── verify.py
+│   │   ├── verify-commits
+│   │   │   ├── allow-incorrect-sha512-commits
+│   │   │   ├── allow-revsig-commits
+│   │   │   ├── allow-unclean-merge-commits
+│   │   │   ├── gpg.sh
+│   │   │   ├── pre-push-hook.sh
+│   │   │   ├── README.md
+│   │   │   ├── trusted-git-root
+│   │   │   ├── trusted-keys
+│   │   │   ├── trusted-sha512-root-commit
+│   │   │   └── verify-commits.py
+│   │   ├── windeploy
+│   │   │   ├── detached-sig-create.sh
+│   │   │   └── win-codesign.cert
+│   │   └── zmq
+│   │       └── zmq_sub.py
+│   ├── CONTRIBUTING.md
+│   ├── COPYING
+│   ├── depends
+│   │   ├── builders
+│   │   │   ├── darwin.mk
+│   │   │   ├── default.mk
+│   │   │   ├── freebsd.mk
+│   │   │   ├── linux.mk
+│   │   │   ├── netbsd.mk
+│   │   │   └── openbsd.mk
+│   │   ├── config.guess
+│   │   ├── config.site.in
+│   │   ├── config.sub
+│   │   ├── description.md
+│   │   ├── funcs.mk
+│   │   ├── gen_id
+│   │   ├── hosts
+│   │   │   ├── darwin.mk
+│   │   │   ├── default.mk
+│   │   │   ├── freebsd.mk
+│   │   │   ├── linux.mk
+│   │   │   ├── mingw32.mk
+│   │   │   ├── netbsd.mk
+│   │   │   └── openbsd.mk
+│   │   ├── Makefile
+│   │   ├── packages
+│   │   │   ├── bdb.mk
+│   │   │   ├── boost.mk
+│   │   │   ├── capnp.mk
+│   │   │   ├── expat.mk
+│   │   │   ├── fontconfig.mk
+│   │   │   ├── freetype.mk
+│   │   │   ├── libevent.mk
+│   │   │   ├── libmultiprocess.mk
+│   │   │   ├── libnatpmp.mk
+│   │   │   ├── libXau.mk
+│   │   │   ├── libxcb.mk
+│   │   │   ├── libxcb_util_image.mk
+│   │   │   ├── libxcb_util_keysyms.mk
+│   │   │   ├── libxcb_util.mk
+│   │   │   ├── libxcb_util_render.mk
+│   │   │   ├── libxcb_util_wm.mk
+│   │   │   ├── libxkbcommon.mk
+│   │   │   ├── miniupnpc.mk
+│   │   │   ├── native_capnp.mk
+│   │   │   ├── native_libmultiprocess.mk
+│   │   │   ├── packages.mk
+│   │   │   ├── qrencode.mk
+│   │   │   ├── qt.mk
+│   │   │   ├── sqlite.mk
+│   │   │   ├── systemtap.mk
+│   │   │   ├── xcb_proto.mk
+│   │   │   ├── xproto.mk
+│   │   │   └── zeromq.mk
+│   │   ├── packages.md
+│   │   ├── patches
+│   │   │   ├── bdb
+│   │   │   │   └── clang_cxx_11.patch
+│   │   │   ├── expat
+│   │   │   │   └── cmake_minimum.patch
+│   │   │   ├── fontconfig
+│   │   │   │   └── gperf_header_regen.patch
+│   │   │   ├── libevent
+│   │   │   │   ├── cmake_fixups.patch
+│   │   │   │   └── fix_mingw_link.patch
+│   │   │   ├── libxcb
+│   │   │   │   └── remove_pthread_stubs.patch
+│   │   │   ├── miniupnpc
+│   │   │   │   ├── cmake_get_src_addr.patch
+│   │   │   │   ├── dont_leak_info.patch
+│   │   │   │   └── fix_windows_snprintf.patch
+│   │   │   ├── qrencode
+│   │   │   │   └── cmake_fixups.patch
+│   │   │   ├── qt
+│   │   │   │   ├── clang_18_libpng.patch
+│   │   │   │   ├── darwin_no_libm.patch
+│   │   │   │   ├── dont_hardcode_pwd.patch
+│   │   │   │   ├── duplicate_lcqpafonts.patch
+│   │   │   │   ├── fix-macos-linker.patch
+│   │   │   │   ├── fix_qt_pkgconfig.patch
+│   │   │   │   ├── guix_cross_lib_path.patch
+│   │   │   │   ├── mac-qmake.conf
+│   │   │   │   ├── memory_resource.patch
+│   │   │   │   ├── no_warnings_for_symbols.patch
+│   │   │   │   ├── no-xlib.patch
+│   │   │   │   ├── qtbase-moc-ignore-gcc-macro.patch
+│   │   │   │   ├── qt.pro
+│   │   │   │   ├── qttools_src.pro
+│   │   │   │   ├── rcc_hardcode_timestamp.patch
+│   │   │   │   ├── utc_from_string_no_optimize.patch
+│   │   │   │   ├── windows_lto.patch
+│   │   │   │   └── zlib-timebits64.patch
+│   │   │   ├── systemtap
+│   │   │   │   └── remove_SDT_ASM_SECTION_AUTOGROUP_SUPPORT_check.patch
+│   │   │   └── zeromq
+│   │   │       ├── builtin_sha1.patch
+│   │   │       ├── cacheline_undefined.patch
+│   │   │       ├── cmake_minimum.patch
+│   │   │       ├── fix_have_windows.patch
+│   │   │       ├── macos_mktemp_check.patch
+│   │   │       ├── no_librt.patch
+│   │   │       ├── openbsd_kqueue_headers.patch
+│   │   │       └── remove_libstd_link.patch
+│   │   └── README.md
+│   ├── doc
+│   │   ├── assets-attribution.md
+│   │   ├── benchmarking.md
+│   │   ├── bips.md
+│   │   ├── bitcoin-conf.md
+│   │   ├── bitcoin_logo_doxygen.png
+│   │   ├── build-freebsd.md
+│   │   ├── build-netbsd.md
+│   │   ├── build-openbsd.md
+│   │   ├── build-osx.md
+│   │   ├── build-unix.md
+│   │   ├── build-windows.md
+│   │   ├── cjdns.md
+│   │   ├── dependencies.md
+│   │   ├── descriptors.md
+│   │   ├── design
+│   │   │   ├── assumeutxo.md
+│   │   │   ├── libraries.md
+│   │   │   └── multiprocess.md
+│   │   ├── developer-notes.md
+│   │   ├── dnsseed-policy.md
+│   │   ├── Doxyfile.in
+│   │   ├── external-signer.md
+│   │   ├── files.md
+│   │   ├── fuzzing.md
+│   │   ├── guix.md
+│   │   ├── i2p.md
+│   │   ├── init.md
+│   │   ├── JSON-RPC-interface.md
+│   │   ├── man
+│   │   │   ├── bitcoin-cli.1
+│   │   │   ├── bitcoind.1
+│   │   │   ├── bitcoin-qt.1
+│   │   │   ├── bitcoin-tx.1
+│   │   │   ├── bitcoin-util.1
+│   │   │   ├── bitcoin-wallet.1
+│   │   │   └── Makefile.am
+│   │   ├── managing-wallets.md
+│   │   ├── multiprocess.md
+│   │   ├── multisig-tutorial.md
+│   │   ├── offline-signing-tutorial.md
+│   │   ├── p2p-bad-ports.md
+│   │   ├── policy
+│   │   │   ├── mempool-limits.md
+│   │   │   ├── mempool-replacements.md
+│   │   │   ├── packages.md
+│   │   │   └── README.md
+│   │   ├── productivity.md
+│   │   ├── psbt.md
+│   │   ├── README_doxygen.md
+│   │   ├── README.md
+│   │   ├── README_windows.txt
+│   │   ├── reduce-memory.md
+│   │   ├── reduce-traffic.md
+│   │   ├── release-notes
+│   │   │   ├── release-notes-0.10.0.md
+│   │   │   ├── release-notes-0.10.1.md
+│   │   │   ├── release-notes-0.10.2.md
+│   │   │   ├── release-notes-0.10.3.md
+│   │   │   ├── release-notes-0.10.4.md
+│   │   │   ├── release-notes-0.11.0.md
+│   │   │   ├── release-notes-0.11.1.md
+│   │   │   ├── release-notes-0.11.2.md
+│   │   │   ├── release-notes-0.12.0.md
+│   │   │   ├── release-notes-0.12.1.md
+│   │   │   ├── release-notes-0.13.0.md
+│   │   │   ├── release-notes-0.13.1.md
+│   │   │   ├── release-notes-0.13.2.md
+│   │   │   ├── release-notes-0.14.0.md
+│   │   │   ├── release-notes-0.14.1.md
+│   │   │   ├── release-notes-0.14.2.md
+│   │   │   ├── release-notes-0.14.3.md
+│   │   │   ├── release-notes-0.15.0.1.md
+│   │   │   ├── release-notes-0.15.0.md
+│   │   │   ├── release-notes-0.15.1.md
+│   │   │   ├── release-notes-0.15.2.md
+│   │   │   ├── release-notes-0.16.0.md
+│   │   │   ├── release-notes-0.16.1.md
+│   │   │   ├── release-notes-0.16.2.md
+│   │   │   ├── release-notes-0.16.3.md
+│   │   │   ├── release-notes-0.17.0.1.md
+│   │   │   ├── release-notes-0.17.0.md
+│   │   │   ├── release-notes-0.17.1.md
+│   │   │   ├── release-notes-0.18.0.md
+│   │   │   ├── release-notes-0.18.1.md
+│   │   │   ├── release-notes-0.19.0.1.md
+│   │   │   ├── release-notes-0.19.0.md
+│   │   │   ├── release-notes-0.19.1.md
+│   │   │   ├── release-notes-0.20.0.md
+│   │   │   ├── release-notes-0.20.1.md
+│   │   │   ├── release-notes-0.20.2.md
+│   │   │   ├── release-notes-0.21.0.md
+│   │   │   ├── release-notes-0.21.1.md
+│   │   │   ├── release-notes-0.21.2.md
+│   │   │   ├── release-notes-0.3.12.md
+│   │   │   ├── release-notes-0.3.13.md
+│   │   │   ├── release-notes-0.3.14.md
+│   │   │   ├── release-notes-0.3.15.md
+│   │   │   ├── release-notes-0.3.16.md
+│   │   │   ├── release-notes-0.3.17.md
+│   │   │   ├── release-notes-0.3.18.md
+│   │   │   ├── release-notes-0.3.19.md
+│   │   │   ├── release-notes-0.3.20.1.md
+│   │   │   ├── release-notes-0.3.20.2.md
+│   │   │   ├── release-notes-0.3.20.md
+│   │   │   ├── release-notes-0.3.21.md
+│   │   │   ├── release-notes-0.3.22.md
+│   │   │   ├── release-notes-0.3.23.md
+│   │   │   ├── release-notes-0.3.24.md
+│   │   │   ├── release-notes-0.4.0.md
+│   │   │   ├── release-notes-0.4.1.md
+│   │   │   ├── release-notes-0.4.2.md
+│   │   │   ├── release-notes-0.4.3.md
+│   │   │   ├── release-notes-0.4.4.md
+│   │   │   ├── release-notes-0.4.5.md
+│   │   │   ├── release-notes-0.4.6.md
+│   │   │   ├── release-notes-0.5.0.md
+│   │   │   ├── release-notes-0.5.1.md
+│   │   │   ├── release-notes-0.5.2.md
+│   │   │   ├── release-notes-0.5.3.md
+│   │   │   ├── release-notes-0.5.4.md
+│   │   │   ├── release-notes-0.5.5.md
+│   │   │   ├── release-notes-0.6.0.md
+│   │   │   ├── release-notes-0.6.1.md
+│   │   │   ├── release-notes-0.6.2.md
+│   │   │   ├── release-notes-0.6.3.md
+│   │   │   ├── release-notes-0.7.0.md
+│   │   │   ├── release-notes-0.7.1.md
+│   │   │   ├── release-notes-0.7.2.md
+│   │   │   ├── release-notes-0.8.0.md
+│   │   │   ├── release-notes-0.8.1.md
+│   │   │   ├── release-notes-0.8.2.md
+│   │   │   ├── release-notes-0.8.3.md
+│   │   │   ├── release-notes-0.8.4.md
+│   │   │   ├── release-notes-0.8.5.md
+│   │   │   ├── release-notes-0.8.6.md
+│   │   │   ├── release-notes-0.9.0.md
+│   │   │   ├── release-notes-0.9.1.md
+│   │   │   ├── release-notes-0.9.2.1.md
+│   │   │   ├── release-notes-0.9.2.md
+│   │   │   ├── release-notes-0.9.3.md
+│   │   │   ├── release-notes-0.9.4.md
+│   │   │   ├── release-notes-0.9.5.md
+│   │   │   ├── release-notes-22.0.md
+│   │   │   ├── release-notes-22.1.md
+│   │   │   ├── release-notes-23.0.md
+│   │   │   ├── release-notes-23.1.md
+│   │   │   ├── release-notes-23.2.md
+│   │   │   ├── release-notes-24.0.1.md
+│   │   │   ├── release-notes-24.0.md
+│   │   │   ├── release-notes-24.1.md
+│   │   │   ├── release-notes-24.2.md
+│   │   │   ├── release-notes-25.0.md
+│   │   │   ├── release-notes-25.1.md
+│   │   │   ├── release-notes-25.2.md
+│   │   │   ├── release-notes-26.0.md
+│   │   │   ├── release-notes-26.1.md
+│   │   │   ├── release-notes-26.2.md
+│   │   │   ├── release-notes-27.0.md
+│   │   │   └── release-notes-27.1.md
+│   │   ├── release-notes.md
+│   │   ├── release-process.md
+│   │   ├── REST-interface.md
+│   │   ├── tor.md
+│   │   ├── tracing.md
+│   │   ├── translation_process.md
+│   │   ├── translation_strings_policy.md
+│   │   └── zmq.md
+│   ├── INSTALL.md
+│   ├── Makefile.am
+│   ├── README.md
+│   ├── SECURITY.md
+│   ├── share
+│   │   ├── examples
+│   │   │   └── bitcoin.conf
+│   │   ├── genbuild.sh
+│   │   ├── pixmaps
+│   │   │   ├── bitcoin128.png
+│   │   │   ├── bitcoin128.xpm
+│   │   │   ├── bitcoin16.png
+│   │   │   ├── bitcoin16.xpm
+│   │   │   ├── bitcoin256.png
+│   │   │   ├── bitcoin256.xpm
+│   │   │   ├── bitcoin32.png
+│   │   │   ├── bitcoin32.xpm
+│   │   │   ├── bitcoin64.png
+│   │   │   ├── bitcoin64.xpm
+│   │   │   ├── bitcoin.ico
+│   │   │   ├── nsis-header.bmp
+│   │   │   └── nsis-wizard.bmp
+│   │   ├── qt
+│   │   │   ├── extract_strings_qt.py
+│   │   │   └── Info.plist.in
+│   │   ├── rpcauth
+│   │   │   ├── README.md
+│   │   │   └── rpcauth.py
+│   │   └── setup.nsi.in
+│   ├── src
+│   │   ├── addrdb.cpp
+│   │   ├── addrdb.h
+│   │   ├── addresstype.cpp
+│   │   ├── addresstype.h
+│   │   ├── addrman.cpp
+│   │   ├── addrman.h
+│   │   ├── addrman_impl.h
+│   │   ├── arith_uint256.cpp
+│   │   ├── arith_uint256.h
+│   │   ├── attributes.h
+│   │   ├── banman.cpp
+│   │   ├── banman.h
+│   │   ├── base58.cpp
+│   │   ├── base58.h
+│   │   ├── bech32.cpp
+│   │   ├── bech32.h
+│   │   ├── bench
+│   │   │   ├── addrman.cpp
+│   │   │   ├── base58.cpp
+│   │   │   ├── bech32.cpp
+│   │   │   ├── bench_bitcoin.cpp
+│   │   │   ├── bench.cpp
+│   │   │   ├── bench.h
+│   │   │   ├── bip324_ecdh.cpp
+│   │   │   ├── block_assemble.cpp
+│   │   │   ├── ccoins_caching.cpp
+│   │   │   ├── chacha20.cpp
+│   │   │   ├── checkblock.cpp
+│   │   │   ├── checkblockindex.cpp
+│   │   │   ├── checkqueue.cpp
+│   │   │   ├── cluster_linearize.cpp
+│   │   │   ├── coin_selection.cpp
+│   │   │   ├── crypto_hash.cpp
+│   │   │   ├── data
+│   │   │   │   └── block413567.raw
+│   │   │   ├── data.cpp
+│   │   │   ├── data.h
+│   │   │   ├── descriptors.cpp
+│   │   │   ├── disconnected_transactions.cpp
+│   │   │   ├── duplicate_inputs.cpp
+│   │   │   ├── ellswift.cpp
+│   │   │   ├── examples.cpp
+│   │   │   ├── gcs_filter.cpp
+│   │   │   ├── hashpadding.cpp
+│   │   │   ├── index_blockfilter.cpp
+│   │   │   ├── load_external.cpp
+│   │   │   ├── lockedpool.cpp
+│   │   │   ├── logging.cpp
+│   │   │   ├── mempool_eviction.cpp
+│   │   │   ├── mempool_stress.cpp
+│   │   │   ├── merkle_root.cpp
+│   │   │   ├── nanobench.cpp
+│   │   │   ├── nanobench.h
+│   │   │   ├── parse_hex.cpp
+│   │   │   ├── peer_eviction.cpp
+│   │   │   ├── poly1305.cpp
+│   │   │   ├── pool.cpp
+│   │   │   ├── prevector.cpp
+│   │   │   ├── random.cpp
+│   │   │   ├── readblock.cpp
+│   │   │   ├── rollingbloom.cpp
+│   │   │   ├── rpc_blockchain.cpp
+│   │   │   ├── rpc_mempool.cpp
+│   │   │   ├── sign_transaction.cpp
+│   │   │   ├── streams_findbyte.cpp
+│   │   │   ├── strencodings.cpp
+│   │   │   ├── util_time.cpp
+│   │   │   ├── verify_script.cpp
+│   │   │   ├── wallet_balance.cpp
+│   │   │   ├── wallet_create.cpp
+│   │   │   ├── wallet_create_tx.cpp
+│   │   │   ├── wallet_ismine.cpp
+│   │   │   ├── wallet_loading.cpp
+│   │   │   └── xor.cpp
+│   │   ├── bip324.cpp
+│   │   ├── bip324.h
+│   │   ├── bitcoin-chainstate.cpp
+│   │   ├── bitcoin-cli.cpp
+│   │   ├── bitcoin-cli-res.rc
+│   │   ├── bitcoind.cpp
+│   │   ├── bitcoind-res.rc
+│   │   ├── bitcoin-tx.cpp
+│   │   ├── bitcoin-tx-res.rc
+│   │   ├── bitcoin-util.cpp
+│   │   ├── bitcoin-util-res.rc
+│   │   ├── bitcoin-wallet.cpp
+│   │   ├── bitcoin-wallet-res.rc
+│   │   ├── blockencodings.cpp
+│   │   ├── blockencodings.h
+│   │   ├── blockfilter.cpp
+│   │   ├── blockfilter.h
+│   │   ├── chain.cpp
+│   │   ├── chain.h
+│   │   ├── chainparamsbase.cpp
+│   │   ├── chainparamsbase.h
+│   │   ├── chainparams.cpp
+│   │   ├── chainparams.h
+│   │   ├── chainparamsseeds.h
+│   │   ├── checkqueue.h
+│   │   ├── clientversion.cpp
+│   │   ├── clientversion.h
+│   │   ├── cluster_linearize.h
+│   │   ├── coins.cpp
+│   │   ├── coins.h
+│   │   ├── common
+│   │   │   ├── args.cpp
+│   │   │   ├── args.h
+│   │   │   ├── bloom.cpp
+│   │   │   ├── bloom.h
+│   │   │   ├── config.cpp
+│   │   │   ├── init.cpp
+│   │   │   ├── init.h
+│   │   │   ├── interfaces.cpp
+│   │   │   ├── messages.cpp
+│   │   │   ├── messages.h
+│   │   │   ├── run_command.cpp
+│   │   │   ├── run_command.h
+│   │   │   ├── settings.cpp
+│   │   │   ├── settings.h
+│   │   │   ├── signmessage.cpp
+│   │   │   ├── signmessage.h
+│   │   │   ├── system.cpp
+│   │   │   ├── system.h
+│   │   │   ├── types.h
+│   │   │   ├── url.cpp
+│   │   │   └── url.h
+│   │   ├── compat
+│   │   │   ├── assumptions.h
+│   │   │   ├── byteswap.h
+│   │   │   ├── compat.h
+│   │   │   ├── cpuid.h
+│   │   │   ├── endian.h
+│   │   │   ├── stdin.cpp
+│   │   │   └── stdin.h
+│   │   ├── compressor.cpp
+│   │   ├── compressor.h
+│   │   ├── config
+│   │   ├── consensus
+│   │   │   ├── amount.h
+│   │   │   ├── consensus.h
+│   │   │   ├── merkle.cpp
+│   │   │   ├── merkle.h
+│   │   │   ├── params.h
+│   │   │   ├── tx_check.cpp
+│   │   │   ├── tx_check.h
+│   │   │   ├── tx_verify.cpp
+│   │   │   ├── tx_verify.h
+│   │   │   └── validation.h
+│   │   ├── core_io.h
+│   │   ├── core_memusage.h
+│   │   ├── core_read.cpp
+│   │   ├── core_write.cpp
+│   │   ├── crc32c
+│   │   │   ├── AUTHORS
+│   │   │   ├── CMakeLists.txt
+│   │   │   ├── CONTRIBUTING.md
+│   │   │   ├── Crc32cConfig.cmake.in
+│   │   │   ├── include
+│   │   │   │   └── crc32c
+│   │   │   │       └── crc32c.h
+│   │   │   ├── LICENSE
+│   │   │   ├── README.md
+│   │   │   └── src
+│   │   │       ├── crc32c_arm64.cc
+│   │   │       ├── crc32c_arm64_check.h
+│   │   │       ├── crc32c_arm64.h
+│   │   │       ├── crc32c_arm64_unittest.cc
+│   │   │       ├── crc32c_benchmark.cc
+│   │   │       ├── crc32c_capi_unittest.c
+│   │   │       ├── crc32c.cc
+│   │   │       ├── crc32c_config.h.in
+│   │   │       ├── crc32c_extend_unittests.h
+│   │   │       ├── crc32c_internal.h
+│   │   │       ├── crc32c_portable.cc
+│   │   │       ├── crc32c_portable_unittest.cc
+│   │   │       ├── crc32c_prefetch.h
+│   │   │       ├── crc32c_prefetch_unittest.cc
+│   │   │       ├── crc32c_read_le.h
+│   │   │       ├── crc32c_read_le_unittest.cc
+│   │   │       ├── crc32c_round_up.h
+│   │   │       ├── crc32c_round_up_unittest.cc
+│   │   │       ├── crc32c_sse42.cc
+│   │   │       ├── crc32c_sse42_check.h
+│   │   │       ├── crc32c_sse42.h
+│   │   │       ├── crc32c_sse42_unittest.cc
+│   │   │       ├── crc32c_test_main.cc
+│   │   │       └── crc32c_unittest.cc
+│   │   ├── crypto
+│   │   │   ├── aes.cpp
+│   │   │   ├── aes.h
+│   │   │   ├── chacha20.cpp
+│   │   │   ├── chacha20.h
+│   │   │   ├── chacha20poly1305.cpp
+│   │   │   ├── chacha20poly1305.h
+│   │   │   ├── common.h
+│   │   │   ├── ctaes
+│   │   │   │   ├── bench.c
+│   │   │   │   ├── COPYING
+│   │   │   │   ├── ctaes.c
+│   │   │   │   ├── ctaes.h
+│   │   │   │   ├── README.md
+│   │   │   │   └── test.c
+│   │   │   ├── hex_base.cpp
+│   │   │   ├── hex_base.h
+│   │   │   ├── hkdf_sha256_32.cpp
+│   │   │   ├── hkdf_sha256_32.h
+│   │   │   ├── hmac_sha256.cpp
+│   │   │   ├── hmac_sha256.h
+│   │   │   ├── hmac_sha512.cpp
+│   │   │   ├── hmac_sha512.h
+│   │   │   ├── muhash.cpp
+│   │   │   ├── muhash.h
+│   │   │   ├── poly1305.cpp
+│   │   │   ├── poly1305.h
+│   │   │   ├── ripemd160.cpp
+│   │   │   ├── ripemd160.h
+│   │   │   ├── sha1.cpp
+│   │   │   ├── sha1.h
+│   │   │   ├── sha256_arm_shani.cpp
+│   │   │   ├── sha256_avx2.cpp
+│   │   │   ├── sha256.cpp
+│   │   │   ├── sha256.h
+│   │   │   ├── sha256_sse41.cpp
+│   │   │   ├── sha256_sse4.cpp
+│   │   │   ├── sha256_x86_shani.cpp
+│   │   │   ├── sha3.cpp
+│   │   │   ├── sha3.h
+│   │   │   ├── sha512.cpp
+│   │   │   ├── sha512.h
+│   │   │   ├── siphash.cpp
+│   │   │   └── siphash.h
+│   │   ├── cuckoocache.h
+│   │   ├── dbwrapper.cpp
+│   │   ├── dbwrapper.h
+│   │   ├── deploymentinfo.cpp
+│   │   ├── deploymentinfo.h
+│   │   ├── deploymentstatus.cpp
+│   │   ├── deploymentstatus.h
+│   │   ├── dummywallet.cpp
+│   │   ├── external_signer.cpp
+│   │   ├── external_signer.h
+│   │   ├── flatfile.cpp
+│   │   ├── flatfile.h
+│   │   ├── hash.cpp
+│   │   ├── hash.h
+│   │   ├── headerssync.cpp
+│   │   ├── headerssync.h
+│   │   ├── httprpc.cpp
+│   │   ├── httprpc.h
+│   │   ├── httpserver.cpp
+│   │   ├── httpserver.h
+│   │   ├── i2p.cpp
+│   │   ├── i2p.h
+│   │   ├── index
+│   │   │   ├── base.cpp
+│   │   │   ├── base.h
+│   │   │   ├── blockfilterindex.cpp
+│   │   │   ├── blockfilterindex.h
+│   │   │   ├── coinstatsindex.cpp
+│   │   │   ├── coinstatsindex.h
+│   │   │   ├── disktxpos.h
+│   │   │   ├── txindex.cpp
+│   │   │   └── txindex.h
+│   │   ├── indirectmap.h
+│   │   ├── init
+│   │   │   ├── bitcoind.cpp
+│   │   │   ├── bitcoin-gui.cpp
+│   │   │   ├── bitcoin-node.cpp
+│   │   │   ├── bitcoin-qt.cpp
+│   │   │   ├── bitcoin-wallet.cpp
+│   │   │   ├── common.cpp
+│   │   │   └── common.h
+│   │   ├── init.cpp
+│   │   ├── init.h
+│   │   ├── interfaces
+│   │   │   ├── chain.h
+│   │   │   ├── echo.h
+│   │   │   ├── handler.h
+│   │   │   ├── init.h
+│   │   │   ├── ipc.h
+│   │   │   ├── mining.h
+│   │   │   ├── node.h
+│   │   │   ├── README.md
+│   │   │   └── wallet.h
+│   │   ├── ipc
+│   │   │   ├── capnp
+│   │   │   │   ├── common-types.h
+│   │   │   │   ├── context.h
+│   │   │   │   ├── echo.capnp
+│   │   │   │   ├── init.capnp
+│   │   │   │   ├── init-types.h
+│   │   │   │   ├── protocol.cpp
+│   │   │   │   └── protocol.h
+│   │   │   ├── context.h
+│   │   │   ├── exception.h
+│   │   │   ├── interfaces.cpp
+│   │   │   ├── process.cpp
+│   │   │   ├── process.h
+│   │   │   └── protocol.h
+│   │   ├── kernel
+│   │   │   ├── bitcoinkernel.cpp
+│   │   │   ├── blockmanager_opts.h
+│   │   │   ├── chain.cpp
+│   │   │   ├── chain.h
+│   │   │   ├── chainparams.cpp
+│   │   │   ├── chainparams.h
+│   │   │   ├── chainstatemanager_opts.h
+│   │   │   ├── checks.cpp
+│   │   │   ├── checks.h
+│   │   │   ├── coinstats.cpp
+│   │   │   ├── coinstats.h
+│   │   │   ├── context.cpp
+│   │   │   ├── context.h
+│   │   │   ├── cs_main.cpp
+│   │   │   ├── cs_main.h
+│   │   │   ├── disconnected_transactions.cpp
+│   │   │   ├── disconnected_transactions.h
+│   │   │   ├── mempool_entry.h
+│   │   │   ├── mempool_limits.h
+│   │   │   ├── mempool_options.h
+│   │   │   ├── mempool_removal_reason.cpp
+│   │   │   ├── mempool_removal_reason.h
+│   │   │   ├── messagestartchars.h
+│   │   │   ├── notifications_interface.h
+│   │   │   └── warning.h
+│   │   ├── key.cpp
+│   │   ├── key.h
+│   │   ├── key_io.cpp
+│   │   ├── key_io.h
+│   │   ├── leveldb
+│   │   │   ├── AUTHORS
+│   │   │   ├── benchmarks
+│   │   │   │   ├── db_bench.cc
+│   │   │   │   ├── db_bench_sqlite3.cc
+│   │   │   │   └── db_bench_tree_db.cc
+│   │   │   ├── cmake
+│   │   │   │   └── leveldbConfig.cmake
+│   │   │   ├── CMakeLists.txt
+│   │   │   ├── CONTRIBUTING.md
+│   │   │   ├── db
+│   │   │   │   ├── autocompact_test.cc
+│   │   │   │   ├── builder.cc
+│   │   │   │   ├── builder.h
+│   │   │   │   ├── c.cc
+│   │   │   │   ├── corruption_test.cc
+│   │   │   │   ├── c_test.c
+│   │   │   │   ├── dbformat.cc
+│   │   │   │   ├── dbformat.h
+│   │   │   │   ├── dbformat_test.cc
+│   │   │   │   ├── db_impl.cc
+│   │   │   │   ├── db_impl.h
+│   │   │   │   ├── db_iter.cc
+│   │   │   │   ├── db_iter.h
+│   │   │   │   ├── db_test.cc
+│   │   │   │   ├── dumpfile.cc
+│   │   │   │   ├── fault_injection_test.cc
+│   │   │   │   ├── filename.cc
+│   │   │   │   ├── filename.h
+│   │   │   │   ├── filename_test.cc
+│   │   │   │   ├── leveldbutil.cc
+│   │   │   │   ├── log_format.h
+│   │   │   │   ├── log_reader.cc
+│   │   │   │   ├── log_reader.h
+│   │   │   │   ├── log_test.cc
+│   │   │   │   ├── log_writer.cc
+│   │   │   │   ├── log_writer.h
+│   │   │   │   ├── memtable.cc
+│   │   │   │   ├── memtable.h
+│   │   │   │   ├── recovery_test.cc
+│   │   │   │   ├── repair.cc
+│   │   │   │   ├── skiplist.h
+│   │   │   │   ├── skiplist_test.cc
+│   │   │   │   ├── snapshot.h
+│   │   │   │   ├── table_cache.cc
+│   │   │   │   ├── table_cache.h
+│   │   │   │   ├── version_edit.cc
+│   │   │   │   ├── version_edit.h
+│   │   │   │   ├── version_edit_test.cc
+│   │   │   │   ├── version_set.cc
+│   │   │   │   ├── version_set.h
+│   │   │   │   ├── version_set_test.cc
+│   │   │   │   ├── write_batch.cc
+│   │   │   │   ├── write_batch_internal.h
+│   │   │   │   └── write_batch_test.cc
+│   │   │   ├── doc
+│   │   │   │   ├── benchmark.html
+│   │   │   │   ├── impl.md
+│   │   │   │   ├── index.md
+│   │   │   │   ├── log_format.md
+│   │   │   │   └── table_format.md
+│   │   │   ├── helpers
+│   │   │   │   └── memenv
+│   │   │   │       ├── memenv.cc
+│   │   │   │       ├── memenv.h
+│   │   │   │       └── memenv_test.cc
+│   │   │   ├── include
+│   │   │   │   └── leveldb
+│   │   │   │       ├── cache.h
+│   │   │   │       ├── c.h
+│   │   │   │       ├── comparator.h
+│   │   │   │       ├── db.h
+│   │   │   │       ├── dumpfile.h
+│   │   │   │       ├── env.h
+│   │   │   │       ├── export.h
+│   │   │   │       ├── filter_policy.h
+│   │   │   │       ├── iterator.h
+│   │   │   │       ├── options.h
+│   │   │   │       ├── slice.h
+│   │   │   │       ├── status.h
+│   │   │   │       ├── table_builder.h
+│   │   │   │       ├── table.h
+│   │   │   │       └── write_batch.h
+│   │   │   ├── issues
+│   │   │   │   ├── issue178_test.cc
+│   │   │   │   ├── issue200_test.cc
+│   │   │   │   └── issue320_test.cc
+│   │   │   ├── LICENSE
+│   │   │   ├── NEWS
+│   │   │   ├── port
+│   │   │   │   ├── port_config.h.in
+│   │   │   │   ├── port_example.h
+│   │   │   │   ├── port.h
+│   │   │   │   ├── port_stdcxx.h
+│   │   │   │   ├── README.md
+│   │   │   │   └── thread_annotations.h
+│   │   │   ├── README.md
+│   │   │   ├── table
+│   │   │   │   ├── block_builder.cc
+│   │   │   │   ├── block_builder.h
+│   │   │   │   ├── block.cc
+│   │   │   │   ├── block.h
+│   │   │   │   ├── filter_block.cc
+│   │   │   │   ├── filter_block.h
+│   │   │   │   ├── filter_block_test.cc
+│   │   │   │   ├── format.cc
+│   │   │   │   ├── format.h
+│   │   │   │   ├── iterator.cc
+│   │   │   │   ├── iterator_wrapper.h
+│   │   │   │   ├── merger.cc
+│   │   │   │   ├── merger.h
+│   │   │   │   ├── table_builder.cc
+│   │   │   │   ├── table.cc
+│   │   │   │   ├── table_test.cc
+│   │   │   │   ├── two_level_iterator.cc
+│   │   │   │   └── two_level_iterator.h
+│   │   │   ├── TODO
+│   │   │   └── util
+│   │   │       ├── arena.cc
+│   │   │       ├── arena.h
+│   │   │       ├── arena_test.cc
+│   │   │       ├── bloom.cc
+│   │   │       ├── bloom_test.cc
+│   │   │       ├── cache.cc
+│   │   │       ├── cache_test.cc
+│   │   │       ├── coding.cc
+│   │   │       ├── coding.h
+│   │   │       ├── coding_test.cc
+│   │   │       ├── comparator.cc
+│   │   │       ├── crc32c.cc
+│   │   │       ├── crc32c.h
+│   │   │       ├── crc32c_test.cc
+│   │   │       ├── env.cc
+│   │   │       ├── env_posix.cc
+│   │   │       ├── env_posix_test.cc
+│   │   │       ├── env_posix_test_helper.h
+│   │   │       ├── env_test.cc
+│   │   │       ├── env_windows.cc
+│   │   │       ├── env_windows_test.cc
+│   │   │       ├── env_windows_test_helper.h
+│   │   │       ├── filter_policy.cc
+│   │   │       ├── hash.cc
+│   │   │       ├── hash.h
+│   │   │       ├── hash_test.cc
+│   │   │       ├── histogram.cc
+│   │   │       ├── histogram.h
+│   │   │       ├── logging.cc
+│   │   │       ├── logging.h
+│   │   │       ├── logging_test.cc
+│   │   │       ├── mutexlock.h
+│   │   │       ├── no_destructor.h
+│   │   │       ├── no_destructor_test.cc
+│   │   │       ├── options.cc
+│   │   │       ├── posix_logger.h
+│   │   │       ├── random.h
+│   │   │       ├── status.cc
+│   │   │       ├── status_test.cc
+│   │   │       ├── testharness.cc
+│   │   │       ├── testharness.h
+│   │   │       ├── testutil.cc
+│   │   │       ├── testutil.h
+│   │   │       └── windows_logger.h
+│   │   ├── logging
+│   │   │   └── timer.h
+│   │   ├── logging.cpp
+│   │   ├── logging.h
+│   │   ├── Makefile.am
+│   │   ├── Makefile.bench.include
+│   │   ├── Makefile.crc32c.include
+│   │   ├── Makefile.leveldb.include
+│   │   ├── Makefile.minisketch.include
+│   │   ├── Makefile.qt.include
+│   │   ├── Makefile.qt_locale.include
+│   │   ├── Makefile.qttest.include
+│   │   ├── Makefile.test_fuzz.include
+│   │   ├── Makefile.test.include
+│   │   ├── Makefile.test_util.include
+│   │   ├── Makefile.univalue.include
+│   │   ├── mapport.cpp
+│   │   ├── mapport.h
+│   │   ├── memusage.h
+│   │   ├── merkleblock.cpp
+│   │   ├── merkleblock.h
+│   │   ├── minisketch
+│   │   │   ├── autogen.sh
+│   │   │   ├── build-aux
+│   │   │   │   └── m4
+│   │   │   │       ├── ax_check_compile_flag.m4
+│   │   │   │       ├── ax_check_link_flag.m4
+│   │   │   │       ├── ax_check_preproc_flag.m4
+│   │   │   │       └── ax_cxx_compile_stdcxx.m4
+│   │   │   ├── ci
+│   │   │   │   ├── cirrus.sh
+│   │   │   │   └── linux-debian.Dockerfile
+│   │   │   ├── configure.ac
+│   │   │   ├── doc
+│   │   │   │   ├── example.c
+│   │   │   │   ├── gen_basefpbits.sage
+│   │   │   │   ├── gen_params.sage
+│   │   │   │   ├── log2_factorial.sage
+│   │   │   │   ├── math.md
+│   │   │   │   ├── minisketch-vs.png
+│   │   │   │   ├── moduli.md
+│   │   │   │   ├── plot_bits.png
+│   │   │   │   ├── plot_capacity.png
+│   │   │   │   ├── plot_diff.png
+│   │   │   │   ├── plot_size.png
+│   │   │   │   └── protocoltips.md
+│   │   │   ├── include
+│   │   │   │   └── minisketch.h
+│   │   │   ├── LICENSE
+│   │   │   ├── Makefile.am
+│   │   │   ├── README.md
+│   │   │   ├── sources.mk
+│   │   │   ├── src
+│   │   │   │   ├── bench.cpp
+│   │   │   │   ├── false_positives.h
+│   │   │   │   ├── fielddefines.h
+│   │   │   │   ├── fields
+│   │   │   │   │   ├── clmul_1byte.cpp
+│   │   │   │   │   ├── clmul_2bytes.cpp
+│   │   │   │   │   ├── clmul_3bytes.cpp
+│   │   │   │   │   ├── clmul_4bytes.cpp
+│   │   │   │   │   ├── clmul_5bytes.cpp
+│   │   │   │   │   ├── clmul_6bytes.cpp
+│   │   │   │   │   ├── clmul_7bytes.cpp
+│   │   │   │   │   ├── clmul_8bytes.cpp
+│   │   │   │   │   ├── clmul_common_impl.h
+│   │   │   │   │   ├── generic_1byte.cpp
+│   │   │   │   │   ├── generic_2bytes.cpp
+│   │   │   │   │   ├── generic_3bytes.cpp
+│   │   │   │   │   ├── generic_4bytes.cpp
+│   │   │   │   │   ├── generic_5bytes.cpp
+│   │   │   │   │   ├── generic_6bytes.cpp
+│   │   │   │   │   ├── generic_7bytes.cpp
+│   │   │   │   │   ├── generic_8bytes.cpp
+│   │   │   │   │   └── generic_common_impl.h
+│   │   │   │   ├── int_utils.h
+│   │   │   │   ├── lintrans.h
+│   │   │   │   ├── minisketch.cpp
+│   │   │   │   ├── sketch.h
+│   │   │   │   ├── sketch_impl.h
+│   │   │   │   ├── test.cpp
+│   │   │   │   └── util.h
+│   │   │   └── tests
+│   │   │       └── pyminisketch.py
+│   │   ├── netaddress.cpp
+│   │   ├── netaddress.h
+│   │   ├── netbase.cpp
+│   │   ├── netbase.h
+│   │   ├── net.cpp
+│   │   ├── netgroup.cpp
+│   │   ├── netgroup.h
+│   │   ├── net.h
+│   │   ├── netmessagemaker.h
+│   │   ├── net_permissions.cpp
+│   │   ├── net_permissions.h
+│   │   ├── net_processing.cpp
+│   │   ├── net_processing.h
+│   │   ├── net_types.cpp
+│   │   ├── net_types.h
+│   │   ├── node
+│   │   │   ├── abort.cpp
+│   │   │   ├── abort.h
+│   │   │   ├── blockmanager_args.cpp
+│   │   │   ├── blockmanager_args.h
+│   │   │   ├── blockstorage.cpp
+│   │   │   ├── blockstorage.h
+│   │   │   ├── caches.cpp
+│   │   │   ├── caches.h
+│   │   │   ├── chainstate.cpp
+│   │   │   ├── chainstate.h
+│   │   │   ├── chainstatemanager_args.cpp
+│   │   │   ├── chainstatemanager_args.h
+│   │   │   ├── coin.cpp
+│   │   │   ├── coin.h
+│   │   │   ├── coins_view_args.cpp
+│   │   │   ├── coins_view_args.h
+│   │   │   ├── connection_types.cpp
+│   │   │   ├── connection_types.h
+│   │   │   ├── context.cpp
+│   │   │   ├── context.h
+│   │   │   ├── database_args.cpp
+│   │   │   ├── database_args.h
+│   │   │   ├── eviction.cpp
+│   │   │   ├── eviction.h
+│   │   │   ├── interfaces.cpp
+│   │   │   ├── interface_ui.cpp
+│   │   │   ├── interface_ui.h
+│   │   │   ├── kernel_notifications.cpp
+│   │   │   ├── kernel_notifications.h
+│   │   │   ├── mempool_args.cpp
+│   │   │   ├── mempool_args.h
+│   │   │   ├── mempool_persist_args.cpp
+│   │   │   ├── mempool_persist_args.h
+│   │   │   ├── mempool_persist.cpp
+│   │   │   ├── mempool_persist.h
+│   │   │   ├── miner.cpp
+│   │   │   ├── miner.h
+│   │   │   ├── mini_miner.cpp
+│   │   │   ├── mini_miner.h
+│   │   │   ├── minisketchwrapper.cpp
+│   │   │   ├── minisketchwrapper.h
+│   │   │   ├── peerman_args.cpp
+│   │   │   ├── peerman_args.h
+│   │   │   ├── protocol_version.h
+│   │   │   ├── psbt.cpp
+│   │   │   ├── psbt.h
+│   │   │   ├── README.md
+│   │   │   ├── timeoffsets.cpp
+│   │   │   ├── timeoffsets.h
+│   │   │   ├── transaction.cpp
+│   │   │   ├── transaction.h
+│   │   │   ├── txreconciliation.cpp
+│   │   │   ├── txreconciliation.h
+│   │   │   ├── types.h
+│   │   │   ├── utxo_snapshot.cpp
+│   │   │   ├── utxo_snapshot.h
+│   │   │   ├── warnings.cpp
+│   │   │   └── warnings.h
+│   │   ├── noui.cpp
+│   │   ├── noui.h
+│   │   ├── outputtype.cpp
+│   │   ├── outputtype.h
+│   │   ├── policy
+│   │   │   ├── feerate.cpp
+│   │   │   ├── feerate.h
+│   │   │   ├── fees_args.cpp
+│   │   │   ├── fees_args.h
+│   │   │   ├── fees.cpp
+│   │   │   ├── fees.h
+│   │   │   ├── packages.cpp
+│   │   │   ├── packages.h
+│   │   │   ├── policy.cpp
+│   │   │   ├── policy.h
+│   │   │   ├── rbf.cpp
+│   │   │   ├── rbf.h
+│   │   │   ├── settings.cpp
+│   │   │   ├── settings.h
+│   │   │   ├── truc_policy.cpp
+│   │   │   └── truc_policy.h
+│   │   ├── pow.cpp
+│   │   ├── pow.h
+│   │   ├── prevector.h
+│   │   ├── primitives
+│   │   │   ├── block.cpp
+│   │   │   ├── block.h
+│   │   │   ├── transaction.cpp
+│   │   │   └── transaction.h
+│   │   ├── protocol.cpp
+│   │   ├── protocol.h
+│   │   ├── psbt.cpp
+│   │   ├── psbt.h
+│   │   ├── pubkey.cpp
+│   │   ├── pubkey.h
+│   │   ├── qt
+│   │   │   ├── addressbookpage.cpp
+│   │   │   ├── addressbookpage.h
+│   │   │   ├── addresstablemodel.cpp
+│   │   │   ├── addresstablemodel.h
+│   │   │   ├── askpassphrasedialog.cpp
+│   │   │   ├── askpassphrasedialog.h
+│   │   │   ├── bantablemodel.cpp
+│   │   │   ├── bantablemodel.h
+│   │   │   ├── bitcoinaddressvalidator.cpp
+│   │   │   ├── bitcoinaddressvalidator.h
+│   │   │   ├── bitcoinamountfield.cpp
+│   │   │   ├── bitcoinamountfield.h
+│   │   │   ├── bitcoin.cpp
+│   │   │   ├── bitcoingui.cpp
+│   │   │   ├── bitcoingui.h
+│   │   │   ├── bitcoin.h
+│   │   │   ├── bitcoin_locale.qrc
+│   │   │   ├── bitcoin.qrc
+│   │   │   ├── bitcoinstrings.cpp
+│   │   │   ├── bitcoinunits.cpp
+│   │   │   ├── bitcoinunits.h
+│   │   │   ├── clientmodel.cpp
+│   │   │   ├── clientmodel.h
+│   │   │   ├── coincontroldialog.cpp
+│   │   │   ├── coincontroldialog.h
+│   │   │   ├── coincontroltreewidget.cpp
+│   │   │   ├── coincontroltreewidget.h
+│   │   │   ├── createwalletdialog.cpp
+│   │   │   ├── createwalletdialog.h
+│   │   │   ├── csvmodelwriter.cpp
+│   │   │   ├── csvmodelwriter.h
+│   │   │   ├── editaddressdialog.cpp
+│   │   │   ├── editaddressdialog.h
+│   │   │   ├── forms
+│   │   │   │   ├── addressbookpage.ui
+│   │   │   │   ├── askpassphrasedialog.ui
+│   │   │   │   ├── coincontroldialog.ui
+│   │   │   │   ├── createwalletdialog.ui
+│   │   │   │   ├── debugwindow.ui
+│   │   │   │   ├── editaddressdialog.ui
+│   │   │   │   ├── helpmessagedialog.ui
+│   │   │   │   ├── intro.ui
+│   │   │   │   ├── modaloverlay.ui
+│   │   │   │   ├── openuridialog.ui
+│   │   │   │   ├── optionsdialog.ui
+│   │   │   │   ├── overviewpage.ui
+│   │   │   │   ├── psbtoperationsdialog.ui
+│   │   │   │   ├── receivecoinsdialog.ui
+│   │   │   │   ├── receiverequestdialog.ui
+│   │   │   │   ├── sendcoinsdialog.ui
+│   │   │   │   ├── sendcoinsentry.ui
+│   │   │   │   ├── signverifymessagedialog.ui
+│   │   │   │   └── transactiondescdialog.ui
+│   │   │   ├── guiconstants.h
+│   │   │   ├── guiutil.cpp
+│   │   │   ├── guiutil.h
+│   │   │   ├── initexecutor.cpp
+│   │   │   ├── initexecutor.h
+│   │   │   ├── intro.cpp
+│   │   │   ├── intro.h
+│   │   │   ├── locale
+│   │   │   │   ├── bitcoin_am.ts
+│   │   │   │   ├── bitcoin_ar.ts
+│   │   │   │   ├── bitcoin_az@latin.ts
+│   │   │   │   ├── bitcoin_az.ts
+│   │   │   │   ├── bitcoin_be.ts
+│   │   │   │   ├── bitcoin_bg.ts
+│   │   │   │   ├── bitcoin_bn.ts
+│   │   │   │   ├── bitcoin_br.ts
+│   │   │   │   ├── bitcoin_bs.ts
+│   │   │   │   ├── bitcoin_ca.ts
+│   │   │   │   ├── bitcoin_cmn.ts
+│   │   │   │   ├── bitcoin_cs.ts
+│   │   │   │   ├── bitcoin_cy.ts
+│   │   │   │   ├── bitcoin_da.ts
+│   │   │   │   ├── bitcoin_de_AT.ts
+│   │   │   │   ├── bitcoin_de_CH.ts
+│   │   │   │   ├── bitcoin_de.ts
+│   │   │   │   ├── bitcoin_el.ts
+│   │   │   │   ├── bitcoin_en.ts
+│   │   │   │   ├── bitcoin_en.xlf
+│   │   │   │   ├── bitcoin_eo.ts
+│   │   │   │   ├── bitcoin_es_CL.ts
+│   │   │   │   ├── bitcoin_es_CO.ts
+│   │   │   │   ├── bitcoin_es_DO.ts
+│   │   │   │   ├── bitcoin_es_MX.ts
+│   │   │   │   ├── bitcoin_es_SV.ts
+│   │   │   │   ├── bitcoin_es.ts
+│   │   │   │   ├── bitcoin_es_VE.ts
+│   │   │   │   ├── bitcoin_et.ts
+│   │   │   │   ├── bitcoin_eu.ts
+│   │   │   │   ├── bitcoin_fa.ts
+│   │   │   │   ├── bitcoin_fil.ts
+│   │   │   │   ├── bitcoin_fi.ts
+│   │   │   │   ├── bitcoin_fo.ts
+│   │   │   │   ├── bitcoin_fr_CM.ts
+│   │   │   │   ├── bitcoin_fr_LU.ts
+│   │   │   │   ├── bitcoin_fr.ts
+│   │   │   │   ├── bitcoin_ga_IE.ts
+│   │   │   │   ├── bitcoin_ga.ts
+│   │   │   │   ├── bitcoin_gd.ts
+│   │   │   │   ├── bitcoin_gl_ES.ts
+│   │   │   │   ├── bitcoin_gl.ts
+│   │   │   │   ├── bitcoin_gu.ts
+│   │   │   │   ├── bitcoin_hak.ts
+│   │   │   │   ├── bitcoin_ha.ts
+│   │   │   │   ├── bitcoin_he.ts
+│   │   │   │   ├── bitcoin_hi.ts
+│   │   │   │   ├── bitcoin_hr.ts
+│   │   │   │   ├── bitcoin_hu.ts
+│   │   │   │   ├── bitcoin_id.ts
+│   │   │   │   ├── bitcoin_is.ts
+│   │   │   │   ├── bitcoin_it.ts
+│   │   │   │   ├── bitcoin_ja.ts
+│   │   │   │   ├── bitcoin_ka.ts
+│   │   │   │   ├── bitcoin_kk@latin.ts
+│   │   │   │   ├── bitcoin_kk.ts
+│   │   │   │   ├── bitcoin_kl.ts
+│   │   │   │   ├── bitcoin_km.ts
+│   │   │   │   ├── bitcoin_kn.ts
+│   │   │   │   ├── bitcoin_ko.ts
+│   │   │   │   ├── bitcoin_ku_IQ.ts
+│   │   │   │   ├── bitcoin_ku.ts
+│   │   │   │   ├── bitcoin_ky.ts
+│   │   │   │   ├── bitcoin_la.ts
+│   │   │   │   ├── bitcoin_lb.ts
+│   │   │   │   ├── bitcoin_lt.ts
+│   │   │   │   ├── bitcoin_lv.ts
+│   │   │   │   ├── bitcoin_mg.ts
+│   │   │   │   ├── bitcoin_mi.ts
+│   │   │   │   ├── bitcoin_mk.ts
+│   │   │   │   ├── bitcoin_ml.ts
+│   │   │   │   ├── bitcoin_mn.ts
+│   │   │   │   ├── bitcoin_mr_IN.ts
+│   │   │   │   ├── bitcoin_mr.ts
+│   │   │   │   ├── bitcoin_ms.ts
+│   │   │   │   ├── bitcoin_mt.ts
+│   │   │   │   ├── bitcoin_my.ts
+│   │   │   │   ├── bitcoin_nb.ts
+│   │   │   │   ├── bitcoin_ne.ts
+│   │   │   │   ├── bitcoin_nl.ts
+│   │   │   │   ├── bitcoin_no.ts
+│   │   │   │   ├── bitcoin_pam.ts
+│   │   │   │   ├── bitcoin_pa.ts
+│   │   │   │   ├── bitcoin_pl.ts
+│   │   │   │   ├── bitcoin_pt_BR.ts
+│   │   │   │   ├── bitcoin_pt.ts
+│   │   │   │   ├── bitcoin_ro.ts
+│   │   │   │   ├── bitcoin_ru.ts
+│   │   │   │   ├── bitcoin_sc.ts
+│   │   │   │   ├── bitcoin_sd.ts
+│   │   │   │   ├── bitcoin_si.ts
+│   │   │   │   ├── bitcoin_sk.ts
+│   │   │   │   ├── bitcoin_sl.ts
+│   │   │   │   ├── bitcoin_sn.ts
+│   │   │   │   ├── bitcoin_so.ts
+│   │   │   │   ├── bitcoin_sq.ts
+│   │   │   │   ├── bitcoin_sr@ijekavianlatin.ts
+│   │   │   │   ├── bitcoin_sr@latin.ts
+│   │   │   │   ├── bitcoin_sr.ts
+│   │   │   │   ├── bitcoin_sv.ts
+│   │   │   │   ├── bitcoin_sw.ts
+│   │   │   │   ├── bitcoin_szl.ts
+│   │   │   │   ├── bitcoin_ta.ts
+│   │   │   │   ├── bitcoin_te.ts
+│   │   │   │   ├── bitcoin_th.ts
+│   │   │   │   ├── bitcoin_tk.ts
+│   │   │   │   ├── bitcoin_tl.ts
+│   │   │   │   ├── bitcoin_tr.ts
+│   │   │   │   ├── bitcoin_ug.ts
+│   │   │   │   ├── bitcoin_uk.ts
+│   │   │   │   ├── bitcoin_ur.ts
+│   │   │   │   ├── bitcoin_uz@Cyrl.ts
+│   │   │   │   ├── bitcoin_uz@Latn.ts
+│   │   │   │   ├── bitcoin_uz.ts
+│   │   │   │   ├── bitcoin_vi.ts
+│   │   │   │   ├── bitcoin_yo.ts
+│   │   │   │   ├── bitcoin_yue.ts
+│   │   │   │   ├── bitcoin_zh_CN.ts
+│   │   │   │   ├── bitcoin_zh-Hans.ts
+│   │   │   │   ├── bitcoin_zh-Hant.ts
+│   │   │   │   ├── bitcoin_zh_HK.ts
+│   │   │   │   ├── bitcoin_zh.ts
+│   │   │   │   ├── bitcoin_zh_TW.ts
+│   │   │   │   └── bitcoin_zu.ts
+│   │   │   ├── macdockiconhandler.h
+│   │   │   ├── macdockiconhandler.mm
+│   │   │   ├── macnotificationhandler.h
+│   │   │   ├── macnotificationhandler.mm
+│   │   │   ├── macos_appnap.h
+│   │   │   ├── macos_appnap.mm
+│   │   │   ├── main.cpp
+│   │   │   ├── Makefile
+│   │   │   ├── modaloverlay.cpp
+│   │   │   ├── modaloverlay.h
+│   │   │   ├── networkstyle.cpp
+│   │   │   ├── networkstyle.h
+│   │   │   ├── notificator.cpp
+│   │   │   ├── notificator.h
+│   │   │   ├── openuridialog.cpp
+│   │   │   ├── openuridialog.h
+│   │   │   ├── optionsdialog.cpp
+│   │   │   ├── optionsdialog.h
+│   │   │   ├── optionsmodel.cpp
+│   │   │   ├── optionsmodel.h
+│   │   │   ├── overviewpage.cpp
+│   │   │   ├── overviewpage.h
+│   │   │   ├── paymentserver.cpp
+│   │   │   ├── paymentserver.h
+│   │   │   ├── peertablemodel.cpp
+│   │   │   ├── peertablemodel.h
+│   │   │   ├── peertablesortproxy.cpp
+│   │   │   ├── peertablesortproxy.h
+│   │   │   ├── platformstyle.cpp
+│   │   │   ├── platformstyle.h
+│   │   │   ├── psbtoperationsdialog.cpp
+│   │   │   ├── psbtoperationsdialog.h
+│   │   │   ├── qrimagewidget.cpp
+│   │   │   ├── qrimagewidget.h
+│   │   │   ├── qvalidatedlineedit.cpp
+│   │   │   ├── qvalidatedlineedit.h
+│   │   │   ├── qvaluecombobox.cpp
+│   │   │   ├── qvaluecombobox.h
+│   │   │   ├── README.md
+│   │   │   ├── receivecoinsdialog.cpp
+│   │   │   ├── receivecoinsdialog.h
+│   │   │   ├── receiverequestdialog.cpp
+│   │   │   ├── receiverequestdialog.h
+│   │   │   ├── recentrequeststablemodel.cpp
+│   │   │   ├── recentrequeststablemodel.h
+│   │   │   ├── res
+│   │   │   │   ├── animation
+│   │   │   │   │   ├── makespinner.sh
+│   │   │   │   │   ├── spinner-000.png
+│   │   │   │   │   ├── spinner-001.png
+│   │   │   │   │   ├── spinner-002.png
+│   │   │   │   │   ├── spinner-003.png
+│   │   │   │   │   ├── spinner-004.png
+│   │   │   │   │   ├── spinner-005.png
+│   │   │   │   │   ├── spinner-006.png
+│   │   │   │   │   ├── spinner-007.png
+│   │   │   │   │   ├── spinner-008.png
+│   │   │   │   │   ├── spinner-009.png
+│   │   │   │   │   ├── spinner-010.png
+│   │   │   │   │   ├── spinner-011.png
+│   │   │   │   │   ├── spinner-012.png
+│   │   │   │   │   ├── spinner-013.png
+│   │   │   │   │   ├── spinner-014.png
+│   │   │   │   │   ├── spinner-015.png
+│   │   │   │   │   ├── spinner-016.png
+│   │   │   │   │   ├── spinner-017.png
+│   │   │   │   │   ├── spinner-018.png
+│   │   │   │   │   ├── spinner-019.png
+│   │   │   │   │   ├── spinner-020.png
+│   │   │   │   │   ├── spinner-021.png
+│   │   │   │   │   ├── spinner-022.png
+│   │   │   │   │   ├── spinner-023.png
+│   │   │   │   │   ├── spinner-024.png
+│   │   │   │   │   ├── spinner-025.png
+│   │   │   │   │   ├── spinner-026.png
+│   │   │   │   │   ├── spinner-027.png
+│   │   │   │   │   ├── spinner-028.png
+│   │   │   │   │   ├── spinner-029.png
+│   │   │   │   │   ├── spinner-030.png
+│   │   │   │   │   ├── spinner-031.png
+│   │   │   │   │   ├── spinner-032.png
+│   │   │   │   │   ├── spinner-033.png
+│   │   │   │   │   ├── spinner-034.png
+│   │   │   │   │   └── spinner-035.png
+│   │   │   │   ├── bitcoin-qt-res.rc
+│   │   │   │   ├── fonts
+│   │   │   │   │   └── RobotoMono-Bold.ttf
+│   │   │   │   ├── icons
+│   │   │   │   │   ├── add.png
+│   │   │   │   │   ├── address-book.png
+│   │   │   │   │   ├── bitcoin.icns
+│   │   │   │   │   ├── bitcoin.ico
+│   │   │   │   │   ├── bitcoin.png
+│   │   │   │   │   ├── bitcoin_testnet.ico
+│   │   │   │   │   ├── chevron.png
+│   │   │   │   │   ├── clock1.png
+│   │   │   │   │   ├── clock2.png
+│   │   │   │   │   ├── clock3.png
+│   │   │   │   │   ├── clock4.png
+│   │   │   │   │   ├── clock5.png
+│   │   │   │   │   ├── connect0.png
+│   │   │   │   │   ├── connect1.png
+│   │   │   │   │   ├── connect2.png
+│   │   │   │   │   ├── connect3.png
+│   │   │   │   │   ├── connect4.png
+│   │   │   │   │   ├── editcopy.png
+│   │   │   │   │   ├── editpaste.png
+│   │   │   │   │   ├── edit.png
+│   │   │   │   │   ├── export.png
+│   │   │   │   │   ├── eye_minus.png
+│   │   │   │   │   ├── eye_plus.png
+│   │   │   │   │   ├── eye.png
+│   │   │   │   │   ├── fontbigger.png
+│   │   │   │   │   ├── fontsmaller.png
+│   │   │   │   │   ├── hd_disabled.png
+│   │   │   │   │   ├── hd_enabled.png
+│   │   │   │   │   ├── history.png
+│   │   │   │   │   ├── lock_closed.png
+│   │   │   │   │   ├── lock_open.png
+│   │   │   │   │   ├── network_disabled.png
+│   │   │   │   │   ├── overview.png
+│   │   │   │   │   ├── proxy.png
+│   │   │   │   │   ├── receive.png
+│   │   │   │   │   ├── remove.png
+│   │   │   │   │   ├── send.png
+│   │   │   │   │   ├── synced.png
+│   │   │   │   │   ├── transaction0.png
+│   │   │   │   │   ├── transaction2.png
+│   │   │   │   │   ├── transaction_abandoned.png
+│   │   │   │   │   ├── transaction_conflicted.png
+│   │   │   │   │   ├── tx_inout.png
+│   │   │   │   │   ├── tx_input.png
+│   │   │   │   │   ├── tx_mined.png
+│   │   │   │   │   ├── tx_output.png
+│   │   │   │   │   └── warning.png
+│   │   │   │   └── src
+│   │   │   │       ├── bitcoin.svg
+│   │   │   │       ├── clock_0.svg
+│   │   │   │       ├── clock_1.svg
+│   │   │   │       ├── clock_2.svg
+│   │   │   │       ├── clock_3.svg
+│   │   │   │       ├── clock_4.svg
+│   │   │   │       ├── connect-0.svg
+│   │   │   │       ├── connect-1.svg
+│   │   │   │       ├── connect-2.svg
+│   │   │   │       ├── connect-3.svg
+│   │   │   │       ├── connect-4.svg
+│   │   │   │       ├── hd_disabled.svg
+│   │   │   │       ├── hd_enabled.svg
+│   │   │   │       ├── mine.svg
+│   │   │   │       ├── network_disabled.svg
+│   │   │   │       ├── proxy.svg
+│   │   │   │       ├── qt.svg
+│   │   │   │       ├── spinner.png
+│   │   │   │       ├── transaction0.svg
+│   │   │   │       ├── tx_inout.svg
+│   │   │   │       └── tx_in.svg
+│   │   │   ├── rpcconsole.cpp
+│   │   │   ├── rpcconsole.h
+│   │   │   ├── sendcoinsdialog.cpp
+│   │   │   ├── sendcoinsdialog.h
+│   │   │   ├── sendcoinsentry.cpp
+│   │   │   ├── sendcoinsentry.h
+│   │   │   ├── sendcoinsrecipient.h
+│   │   │   ├── signverifymessagedialog.cpp
+│   │   │   ├── signverifymessagedialog.h
+│   │   │   ├── splashscreen.cpp
+│   │   │   ├── splashscreen.h
+│   │   │   ├── test
+│   │   │   │   ├── addressbooktests.cpp
+│   │   │   │   ├── addressbooktests.h
+│   │   │   │   ├── apptests.cpp
+│   │   │   │   ├── apptests.h
+│   │   │   │   ├── Makefile
+│   │   │   │   ├── optiontests.cpp
+│   │   │   │   ├── optiontests.h
+│   │   │   │   ├── rpcnestedtests.cpp
+│   │   │   │   ├── rpcnestedtests.h
+│   │   │   │   ├── test_main.cpp
+│   │   │   │   ├── uritests.cpp
+│   │   │   │   ├── uritests.h
+│   │   │   │   ├── util.cpp
+│   │   │   │   ├── util.h
+│   │   │   │   ├── wallettests.cpp
+│   │   │   │   └── wallettests.h
+│   │   │   ├── trafficgraphwidget.cpp
+│   │   │   ├── trafficgraphwidget.h
+│   │   │   ├── transactiondesc.cpp
+│   │   │   ├── transactiondescdialog.cpp
+│   │   │   ├── transactiondescdialog.h
+│   │   │   ├── transactiondesc.h
+│   │   │   ├── transactionfilterproxy.cpp
+│   │   │   ├── transactionfilterproxy.h
+│   │   │   ├── transactionoverviewwidget.cpp
+│   │   │   ├── transactionoverviewwidget.h
+│   │   │   ├── transactionrecord.cpp
+│   │   │   ├── transactionrecord.h
+│   │   │   ├── transactiontablemodel.cpp
+│   │   │   ├── transactiontablemodel.h
+│   │   │   ├── transactionview.cpp
+│   │   │   ├── transactionview.h
+│   │   │   ├── utilitydialog.cpp
+│   │   │   ├── utilitydialog.h
+│   │   │   ├── walletcontroller.cpp
+│   │   │   ├── walletcontroller.h
+│   │   │   ├── walletframe.cpp
+│   │   │   ├── walletframe.h
+│   │   │   ├── walletmodel.cpp
+│   │   │   ├── walletmodel.h
+│   │   │   ├── walletmodeltransaction.cpp
+│   │   │   ├── walletmodeltransaction.h
+│   │   │   ├── walletview.cpp
+│   │   │   ├── walletview.h
+│   │   │   ├── winshutdownmonitor.cpp
+│   │   │   └── winshutdownmonitor.h
+│   │   ├── random.cpp
+│   │   ├── randomenv.cpp
+│   │   ├── randomenv.h
+│   │   ├── random.h
+│   │   ├── rest.cpp
+│   │   ├── rest.h
+│   │   ├── rpc
+│   │   │   ├── blockchain.cpp
+│   │   │   ├── blockchain.h
+│   │   │   ├── client.cpp
+│   │   │   ├── client.h
+│   │   │   ├── external_signer.cpp
+│   │   │   ├── fees.cpp
+│   │   │   ├── mempool.cpp
+│   │   │   ├── mempool.h
+│   │   │   ├── mining.cpp
+│   │   │   ├── mining.h
+│   │   │   ├── net.cpp
+│   │   │   ├── node.cpp
+│   │   │   ├── output_script.cpp
+│   │   │   ├── protocol.h
+│   │   │   ├── rawtransaction.cpp
+│   │   │   ├── rawtransaction_util.cpp
+│   │   │   ├── rawtransaction_util.h
+│   │   │   ├── register.h
+│   │   │   ├── request.cpp
+│   │   │   ├── request.h
+│   │   │   ├── server.cpp
+│   │   │   ├── server.h
+│   │   │   ├── server_util.cpp
+│   │   │   ├── server_util.h
+│   │   │   ├── signmessage.cpp
+│   │   │   ├── txoutproof.cpp
+│   │   │   ├── util.cpp
+│   │   │   └── util.h
+│   │   ├── scheduler.cpp
+│   │   ├── scheduler.h
+│   │   ├── script
+│   │   │   ├── descriptor.cpp
+│   │   │   ├── descriptor.h
+│   │   │   ├── interpreter.cpp
+│   │   │   ├── interpreter.h
+│   │   │   ├── keyorigin.h
+│   │   │   ├── miniscript.cpp
+│   │   │   ├── miniscript.h
+│   │   │   ├── parsing.cpp
+│   │   │   ├── parsing.h
+│   │   │   ├── script.cpp
+│   │   │   ├── script_error.cpp
+│   │   │   ├── script_error.h
+│   │   │   ├── script.h
+│   │   │   ├── sigcache.cpp
+│   │   │   ├── sigcache.h
+│   │   │   ├── sign.cpp
+│   │   │   ├── sign.h
+│   │   │   ├── signingprovider.cpp
+│   │   │   ├── signingprovider.h
+│   │   │   ├── solver.cpp
+│   │   │   └── solver.h
+│   │   ├── secp256k1
+│   │   │   ├── autogen.sh
+│   │   │   ├── build-aux
+│   │   │   │   └── m4
+│   │   │   │       └── bitcoin_secp.m4
+│   │   │   ├── CHANGELOG.md
+│   │   │   ├── ci
+│   │   │   │   ├── ci.sh
+│   │   │   │   └── linux-debian.Dockerfile
+│   │   │   ├── cmake
+│   │   │   │   ├── arm-linux-gnueabihf.toolchain.cmake
+│   │   │   │   ├── CheckArm32Assembly.cmake
+│   │   │   │   ├── CheckMemorySanitizer.cmake
+│   │   │   │   ├── CheckStringOptionValue.cmake
+│   │   │   │   ├── CheckX86_64Assembly.cmake
+│   │   │   │   ├── config.cmake.in
+│   │   │   │   ├── FindValgrind.cmake
+│   │   │   │   ├── GeneratePkgConfigFile.cmake
+│   │   │   │   ├── source_arm32.s
+│   │   │   │   ├── TryAppendCFlags.cmake
+│   │   │   │   └── x86_64-w64-mingw32.toolchain.cmake
+│   │   │   ├── CMakeLists.txt
+│   │   │   ├── CMakePresets.json
+│   │   │   ├── configure.ac
+│   │   │   ├── contrib
+│   │   │   │   ├── lax_der_parsing.c
+│   │   │   │   ├── lax_der_parsing.h
+│   │   │   │   ├── lax_der_privatekey_parsing.c
+│   │   │   │   └── lax_der_privatekey_parsing.h
+│   │   │   ├── CONTRIBUTING.md
+│   │   │   ├── COPYING
+│   │   │   ├── doc
+│   │   │   │   ├── ellswift.md
+│   │   │   │   ├── release-process.md
+│   │   │   │   └── safegcd_implementation.md
+│   │   │   ├── examples
+│   │   │   │   ├── CMakeLists.txt
+│   │   │   │   ├── ecdh.c
+│   │   │   │   ├── ecdsa.c
+│   │   │   │   ├── ellswift.c
+│   │   │   │   ├── EXAMPLES_COPYING
+│   │   │   │   ├── examples_util.h
+│   │   │   │   └── schnorr.c
+│   │   │   ├── include
+│   │   │   │   ├── secp256k1_ecdh.h
+│   │   │   │   ├── secp256k1_ellswift.h
+│   │   │   │   ├── secp256k1_extrakeys.h
+│   │   │   │   ├── secp256k1.h
+│   │   │   │   ├── secp256k1_preallocated.h
+│   │   │   │   ├── secp256k1_recovery.h
+│   │   │   │   └── secp256k1_schnorrsig.h
+│   │   │   ├── libsecp256k1.pc.in
+│   │   │   ├── Makefile.am
+│   │   │   ├── README.md
+│   │   │   ├── sage
+│   │   │   │   ├── gen_exhaustive_groups.sage
+│   │   │   │   ├── gen_split_lambda_constants.sage
+│   │   │   │   ├── group_prover.sage
+│   │   │   │   ├── prove_group_implementations.sage
+│   │   │   │   ├── secp256k1_params.sage
+│   │   │   │   └── weierstrass_prover.sage
+│   │   │   ├── SECURITY.md
+│   │   │   ├── src
+│   │   │   │   ├── asm
+│   │   │   │   │   └── field_10x26_arm.s
+│   │   │   │   ├── assumptions.h
+│   │   │   │   ├── bench.c
+│   │   │   │   ├── bench_ecmult.c
+│   │   │   │   ├── bench.h
+│   │   │   │   ├── bench_internal.c
+│   │   │   │   ├── checkmem.h
+│   │   │   │   ├── CMakeLists.txt
+│   │   │   │   ├── ctime_tests.c
+│   │   │   │   ├── ecdsa.h
+│   │   │   │   ├── ecdsa_impl.h
+│   │   │   │   ├── eckey.h
+│   │   │   │   ├── eckey_impl.h
+│   │   │   │   ├── ecmult_compute_table.h
+│   │   │   │   ├── ecmult_compute_table_impl.h
+│   │   │   │   ├── ecmult_const.h
+│   │   │   │   ├── ecmult_const_impl.h
+│   │   │   │   ├── ecmult_gen_compute_table.h
+│   │   │   │   ├── ecmult_gen_compute_table_impl.h
+│   │   │   │   ├── ecmult_gen.h
+│   │   │   │   ├── ecmult_gen_impl.h
+│   │   │   │   ├── ecmult.h
+│   │   │   │   ├── ecmult_impl.h
+│   │   │   │   ├── field_10x26.h
+│   │   │   │   ├── field_10x26_impl.h
+│   │   │   │   ├── field_5x52.h
+│   │   │   │   ├── field_5x52_impl.h
+│   │   │   │   ├── field_5x52_int128_impl.h
+│   │   │   │   ├── field.h
+│   │   │   │   ├── field_impl.h
+│   │   │   │   ├── group.h
+│   │   │   │   ├── group_impl.h
+│   │   │   │   ├── hash.h
+│   │   │   │   ├── hash_impl.h
+│   │   │   │   ├── hsort.h
+│   │   │   │   ├── hsort_impl.h
+│   │   │   │   ├── int128.h
+│   │   │   │   ├── int128_impl.h
+│   │   │   │   ├── int128_native.h
+│   │   │   │   ├── int128_native_impl.h
+│   │   │   │   ├── int128_struct.h
+│   │   │   │   ├── int128_struct_impl.h
+│   │   │   │   ├── modinv32.h
+│   │   │   │   ├── modinv32_impl.h
+│   │   │   │   ├── modinv64.h
+│   │   │   │   ├── modinv64_impl.h
+│   │   │   │   ├── modules
+│   │   │   │   │   ├── ecdh
+│   │   │   │   │   │   ├── bench_impl.h
+│   │   │   │   │   │   ├── main_impl.h
+│   │   │   │   │   │   ├── Makefile.am.include
+│   │   │   │   │   │   └── tests_impl.h
+│   │   │   │   │   ├── ellswift
+│   │   │   │   │   │   ├── bench_impl.h
+│   │   │   │   │   │   ├── main_impl.h
+│   │   │   │   │   │   ├── Makefile.am.include
+│   │   │   │   │   │   ├── tests_exhaustive_impl.h
+│   │   │   │   │   │   └── tests_impl.h
+│   │   │   │   │   ├── extrakeys
+│   │   │   │   │   │   ├── main_impl.h
+│   │   │   │   │   │   ├── Makefile.am.include
+│   │   │   │   │   │   ├── tests_exhaustive_impl.h
+│   │   │   │   │   │   └── tests_impl.h
+│   │   │   │   │   ├── recovery
+│   │   │   │   │   │   ├── bench_impl.h
+│   │   │   │   │   │   ├── main_impl.h
+│   │   │   │   │   │   ├── Makefile.am.include
+│   │   │   │   │   │   ├── tests_exhaustive_impl.h
+│   │   │   │   │   │   └── tests_impl.h
+│   │   │   │   │   └── schnorrsig
+│   │   │   │   │       ├── bench_impl.h
+│   │   │   │   │       ├── main_impl.h
+│   │   │   │   │       ├── Makefile.am.include
+│   │   │   │   │       ├── tests_exhaustive_impl.h
+│   │   │   │   │       └── tests_impl.h
+│   │   │   │   ├── precomputed_ecmult.c
+│   │   │   │   ├── precomputed_ecmult_gen.c
+│   │   │   │   ├── precomputed_ecmult_gen.h
+│   │   │   │   ├── precomputed_ecmult.h
+│   │   │   │   ├── precompute_ecmult.c
+│   │   │   │   ├── precompute_ecmult_gen.c
+│   │   │   │   ├── scalar_4x64.h
+│   │   │   │   ├── scalar_4x64_impl.h
+│   │   │   │   ├── scalar_8x32.h
+│   │   │   │   ├── scalar_8x32_impl.h
+│   │   │   │   ├── scalar.h
+│   │   │   │   ├── scalar_impl.h
+│   │   │   │   ├── scalar_low.h
+│   │   │   │   ├── scalar_low_impl.h
+│   │   │   │   ├── scratch.h
+│   │   │   │   ├── scratch_impl.h
+│   │   │   │   ├── secp256k1.c
+│   │   │   │   ├── selftest.h
+│   │   │   │   ├── testrand.h
+│   │   │   │   ├── testrand_impl.h
+│   │   │   │   ├── tests.c
+│   │   │   │   ├── tests_exhaustive.c
+│   │   │   │   ├── testutil.h
+│   │   │   │   ├── util.h
+│   │   │   │   └── wycheproof
+│   │   │   │       ├── ecdsa_secp256k1_sha256_bitcoin_test.h
+│   │   │   │       ├── ecdsa_secp256k1_sha256_bitcoin_test.json
+│   │   │   │       └── WYCHEPROOF_COPYING
+│   │   │   └── tools
+│   │   │       ├── check-abi.sh
+│   │   │       └── tests_wycheproof_generate.py
+│   │   ├── serialize.h
+│   │   ├── signet.cpp
+│   │   ├── signet.h
+│   │   ├── span.h
+│   │   ├── streams.cpp
+│   │   ├── streams.h
+│   │   ├── support
+│   │   │   ├── allocators
+│   │   │   │   ├── pool.h
+│   │   │   │   ├── secure.h
+│   │   │   │   └── zeroafterfree.h
+│   │   │   ├── cleanse.cpp
+│   │   │   ├── cleanse.h
+│   │   │   ├── events.h
+│   │   │   ├── lockedpool.cpp
+│   │   │   └── lockedpool.h
+│   │   ├── sync.cpp
+│   │   ├── sync.h
+│   │   ├── test
+│   │   │   ├── addrman_tests.cpp
+│   │   │   ├── allocator_tests.cpp
+│   │   │   ├── amount_tests.cpp
+│   │   │   ├── argsman_tests.cpp
+│   │   │   ├── arith_uint256_tests.cpp
+│   │   │   ├── banman_tests.cpp
+│   │   │   ├── base32_tests.cpp
+│   │   │   ├── base58_tests.cpp
+│   │   │   ├── base64_tests.cpp
+│   │   │   ├── bech32_tests.cpp
+│   │   │   ├── bip324_tests.cpp
+│   │   │   ├── bip32_tests.cpp
+│   │   │   ├── blockchain_tests.cpp
+│   │   │   ├── blockencodings_tests.cpp
+│   │   │   ├── blockfilter_index_tests.cpp
+│   │   │   ├── blockfilter_tests.cpp
+│   │   │   ├── blockmanager_tests.cpp
+│   │   │   ├── bloom_tests.cpp
+│   │   │   ├── bswap_tests.cpp
+│   │   │   ├── checkqueue_tests.cpp
+│   │   │   ├── cluster_linearize_tests.cpp
+│   │   │   ├── coinscachepair_tests.cpp
+│   │   │   ├── coinstatsindex_tests.cpp
+│   │   │   ├── coins_tests.cpp
+│   │   │   ├── common_url_tests.cpp
+│   │   │   ├── compilerbug_tests.cpp
+│   │   │   ├── compress_tests.cpp
+│   │   │   ├── crypto_tests.cpp
+│   │   │   ├── cuckoocache_tests.cpp
+│   │   │   ├── data
+│   │   │   │   ├── asmap.raw
+│   │   │   │   ├── base58_encode_decode.json
+│   │   │   │   ├── bip341_wallet_vectors.json
+│   │   │   │   ├── blockfilters.json
+│   │   │   │   ├── key_io_invalid.json
+│   │   │   │   ├── key_io_valid.json
+│   │   │   │   ├── README.md
+│   │   │   │   ├── script_tests.json
+│   │   │   │   ├── sighash.json
+│   │   │   │   ├── tx_invalid.json
+│   │   │   │   └── tx_valid.json
+│   │   │   ├── dbwrapper_tests.cpp
+│   │   │   ├── denialofservice_tests.cpp
+│   │   │   ├── descriptor_tests.cpp
+│   │   │   ├── disconnected_transactions.cpp
+│   │   │   ├── feefrac_tests.cpp
+│   │   │   ├── flatfile_tests.cpp
+│   │   │   ├── fs_tests.cpp
+│   │   │   ├── fuzz
+│   │   │   │   ├── addition_overflow.cpp
+│   │   │   │   ├── addrman.cpp
+│   │   │   │   ├── asmap.cpp
+│   │   │   │   ├── asmap_direct.cpp
+│   │   │   │   ├── autofile.cpp
+│   │   │   │   ├── banman.cpp
+│   │   │   │   ├── base_encode_decode.cpp
+│   │   │   │   ├── bech32.cpp
+│   │   │   │   ├── bip324.cpp
+│   │   │   │   ├── bitdeque.cpp
+│   │   │   │   ├── bitset.cpp
+│   │   │   │   ├── block.cpp
+│   │   │   │   ├── blockfilter.cpp
+│   │   │   │   ├── block_header.cpp
+│   │   │   │   ├── block_index.cpp
+│   │   │   │   ├── bloom_filter.cpp
+│   │   │   │   ├── buffered_file.cpp
+│   │   │   │   ├── chain.cpp
+│   │   │   │   ├── checkqueue.cpp
+│   │   │   │   ├── cluster_linearize.cpp
+│   │   │   │   ├── coinscache_sim.cpp
+│   │   │   │   ├── coins_view.cpp
+│   │   │   │   ├── connman.cpp
+│   │   │   │   ├── crypto_aes256cbc.cpp
+│   │   │   │   ├── crypto_aes256.cpp
+│   │   │   │   ├── crypto_chacha20.cpp
+│   │   │   │   ├── crypto_chacha20poly1305.cpp
+│   │   │   │   ├── crypto_common.cpp
+│   │   │   │   ├── crypto.cpp
+│   │   │   │   ├── crypto_diff_fuzz_chacha20.cpp
+│   │   │   │   ├── crypto_hkdf_hmac_sha256_l32.cpp
+│   │   │   │   ├── crypto_poly1305.cpp
+│   │   │   │   ├── cuckoocache.cpp
+│   │   │   │   ├── decode_tx.cpp
+│   │   │   │   ├── descriptor_parse.cpp
+│   │   │   │   ├── deserialize.cpp
+│   │   │   │   ├── eval_script.cpp
+│   │   │   │   ├── feefrac.cpp
+│   │   │   │   ├── fee_rate.cpp
+│   │   │   │   ├── feeratediagram.cpp
+│   │   │   │   ├── fees.cpp
+│   │   │   │   ├── flatfile.cpp
+│   │   │   │   ├── float.cpp
+│   │   │   │   ├── fuzz.cpp
+│   │   │   │   ├── FuzzedDataProvider.h
+│   │   │   │   ├── fuzz.h
+│   │   │   │   ├── golomb_rice.cpp
+│   │   │   │   ├── headerssync.cpp
+│   │   │   │   ├── hex.cpp
+│   │   │   │   ├── http_request.cpp
+│   │   │   │   ├── i2p.cpp
+│   │   │   │   ├── integer.cpp
+│   │   │   │   ├── key.cpp
+│   │   │   │   ├── key_io.cpp
+│   │   │   │   ├── kitchen_sink.cpp
+│   │   │   │   ├── load_external_block_file.cpp
+│   │   │   │   ├── locale.cpp
+│   │   │   │   ├── merkleblock.cpp
+│   │   │   │   ├── message.cpp
+│   │   │   │   ├── mini_miner.cpp
+│   │   │   │   ├── miniscript.cpp
+│   │   │   │   ├── minisketch.cpp
+│   │   │   │   ├── muhash.cpp
+│   │   │   │   ├── multiplication_overflow.cpp
+│   │   │   │   ├── netaddress.cpp
+│   │   │   │   ├── netbase_dns_lookup.cpp
+│   │   │   │   ├── net.cpp
+│   │   │   │   ├── net_permissions.cpp
+│   │   │   │   ├── node_eviction.cpp
+│   │   │   │   ├── p2p_handshake.cpp
+│   │   │   │   ├── p2p_transport_serialization.cpp
+│   │   │   │   ├── package_eval.cpp
+│   │   │   │   ├── parse_hd_keypath.cpp
+│   │   │   │   ├── parse_numbers.cpp
+│   │   │   │   ├── parse_script.cpp
+│   │   │   │   ├── parse_univalue.cpp
+│   │   │   │   ├── partially_downloaded_block.cpp
+│   │   │   │   ├── policy_estimator.cpp
+│   │   │   │   ├── policy_estimator_io.cpp
+│   │   │   │   ├── poolresource.cpp
+│   │   │   │   ├── pow.cpp
+│   │   │   │   ├── prevector.cpp
+│   │   │   │   ├── primitives_transaction.cpp
+│   │   │   │   ├── process_message.cpp
+│   │   │   │   ├── process_messages.cpp
+│   │   │   │   ├── protocol.cpp
+│   │   │   │   ├── psbt.cpp
+│   │   │   │   ├── random.cpp
+│   │   │   │   ├── rbf.cpp
+│   │   │   │   ├── rolling_bloom_filter.cpp
+│   │   │   │   ├── rpc.cpp
+│   │   │   │   ├── script_assets_test_minimizer.cpp
+│   │   │   │   ├── script.cpp
+│   │   │   │   ├── script_descriptor_cache.cpp
+│   │   │   │   ├── script_flags.cpp
+│   │   │   │   ├── script_format.cpp
+│   │   │   │   ├── script_interpreter.cpp
+│   │   │   │   ├── scriptnum_ops.cpp
+│   │   │   │   ├── script_ops.cpp
+│   │   │   │   ├── script_parsing.cpp
+│   │   │   │   ├── script_sigcache.cpp
+│   │   │   │   ├── script_sign.cpp
+│   │   │   │   ├── secp256k1_ecdsa_signature_parse_der_lax.cpp
+│   │   │   │   ├── secp256k1_ec_seckey_import_export_der.cpp
+│   │   │   │   ├── signature_checker.cpp
+│   │   │   │   ├── signet.cpp
+│   │   │   │   ├── socks5.cpp
+│   │   │   │   ├── span.cpp
+│   │   │   │   ├── string.cpp
+│   │   │   │   ├── strprintf.cpp
+│   │   │   │   ├── system.cpp
+│   │   │   │   ├── timeoffsets.cpp
+│   │   │   │   ├── torcontrol.cpp
+│   │   │   │   ├── transaction.cpp
+│   │   │   │   ├── tx_in.cpp
+│   │   │   │   ├── txorphan.cpp
+│   │   │   │   ├── tx_out.cpp
+│   │   │   │   ├── tx_pool.cpp
+│   │   │   │   ├── txrequest.cpp
+│   │   │   │   ├── util
+│   │   │   │   │   ├── descriptor.cpp
+│   │   │   │   │   ├── descriptor.h
+│   │   │   │   │   ├── mempool.cpp
+│   │   │   │   │   ├── mempool.h
+│   │   │   │   │   ├── net.cpp
+│   │   │   │   │   └── net.h
+│   │   │   │   ├── util.cpp
+│   │   │   │   ├── util.h
+│   │   │   │   ├── utxo_snapshot.cpp
+│   │   │   │   ├── utxo_total_supply.cpp
+│   │   │   │   ├── validation_load_mempool.cpp
+│   │   │   │   ├── vecdeque.cpp
+│   │   │   │   └── versionbits.cpp
+│   │   │   ├── getarg_tests.cpp
+│   │   │   ├── hash_tests.cpp
+│   │   │   ├── headers_sync_chainwork_tests.cpp
+│   │   │   ├── httpserver_tests.cpp
+│   │   │   ├── i2p_tests.cpp
+│   │   │   ├── interfaces_tests.cpp
+│   │   │   ├── ipc_test.capnp
+│   │   │   ├── ipc_test.cpp
+│   │   │   ├── ipc_test.h
+│   │   │   ├── ipc_tests.cpp
+│   │   │   ├── key_io_tests.cpp
+│   │   │   ├── key_tests.cpp
+│   │   │   ├── logging_tests.cpp
+│   │   │   ├── main.cpp
+│   │   │   ├── Makefile
+│   │   │   ├── mempool_tests.cpp
+│   │   │   ├── merkleblock_tests.cpp
+│   │   │   ├── merkle_tests.cpp
+│   │   │   ├── miner_tests.cpp
+│   │   │   ├── miniminer_tests.cpp
+│   │   │   ├── miniscript_tests.cpp
+│   │   │   ├── minisketch_tests.cpp
+│   │   │   ├── multisig_tests.cpp
+│   │   │   ├── netbase_tests.cpp
+│   │   │   ├── net_peer_connection_tests.cpp
+│   │   │   ├── net_peer_eviction_tests.cpp
+│   │   │   ├── net_tests.cpp
+│   │   │   ├── node_warnings_tests.cpp
+│   │   │   ├── orphanage_tests.cpp
+│   │   │   ├── peerman_tests.cpp
+│   │   │   ├── pmt_tests.cpp
+│   │   │   ├── policyestimator_tests.cpp
+│   │   │   ├── policy_fee_tests.cpp
+│   │   │   ├── pool_tests.cpp
+│   │   │   ├── pow_tests.cpp
+│   │   │   ├── prevector_tests.cpp
+│   │   │   ├── raii_event_tests.cpp
+│   │   │   ├── random_tests.cpp
+│   │   │   ├── rbf_tests.cpp
+│   │   │   ├── README.md
+│   │   │   ├── rest_tests.cpp
+│   │   │   ├── result_tests.cpp
+│   │   │   ├── reverselock_tests.cpp
+│   │   │   ├── rpc_tests.cpp
+│   │   │   ├── sanity_tests.cpp
+│   │   │   ├── scheduler_tests.cpp
+│   │   │   ├── scriptnum10.h
+│   │   │   ├── scriptnum_tests.cpp
+│   │   │   ├── script_p2sh_tests.cpp
+│   │   │   ├── script_parse_tests.cpp
+│   │   │   ├── script_segwit_tests.cpp
+│   │   │   ├── script_standard_tests.cpp
+│   │   │   ├── script_tests.cpp
+│   │   │   ├── serfloat_tests.cpp
+│   │   │   ├── serialize_tests.cpp
+│   │   │   ├── settings_tests.cpp
+│   │   │   ├── sighash_tests.cpp
+│   │   │   ├── sigopcount_tests.cpp
+│   │   │   ├── skiplist_tests.cpp
+│   │   │   ├── sock_tests.cpp
+│   │   │   ├── span_tests.cpp
+│   │   │   ├── streams_tests.cpp
+│   │   │   ├── sync_tests.cpp
+│   │   │   ├── system_tests.cpp
+│   │   │   ├── timeoffsets_tests.cpp
+│   │   │   ├── torcontrol_tests.cpp
+│   │   │   ├── transaction_tests.cpp
+│   │   │   ├── translation_tests.cpp
+│   │   │   ├── txindex_tests.cpp
+│   │   │   ├── txpackage_tests.cpp
+│   │   │   ├── txreconciliation_tests.cpp
+│   │   │   ├── txrequest_tests.cpp
+│   │   │   ├── txvalidationcache_tests.cpp
+│   │   │   ├── txvalidation_tests.cpp
+│   │   │   ├── uint256_tests.cpp
+│   │   │   ├── util
+│   │   │   │   ├── blockfilter.cpp
+│   │   │   │   ├── blockfilter.h
+│   │   │   │   ├── chainstate.h
+│   │   │   │   ├── cluster_linearize.h
+│   │   │   │   ├── coins.cpp
+│   │   │   │   ├── coins.h
+│   │   │   │   ├── index.cpp
+│   │   │   │   ├── index.h
+│   │   │   │   ├── json.cpp
+│   │   │   │   ├── json.h
+│   │   │   │   ├── logging.cpp
+│   │   │   │   ├── logging.h
+│   │   │   │   ├── mining.cpp
+│   │   │   │   ├── mining.h
+│   │   │   │   ├── net.cpp
+│   │   │   │   ├── net.h
+│   │   │   │   ├── poolresourcetester.h
+│   │   │   │   ├── random.cpp
+│   │   │   │   ├── random.h
+│   │   │   │   ├── README.md
+│   │   │   │   ├── script.cpp
+│   │   │   │   ├── script.h
+│   │   │   │   ├── setup_common.cpp
+│   │   │   │   ├── setup_common.h
+│   │   │   │   ├── str.cpp
+│   │   │   │   ├── str.h
+│   │   │   │   ├── transaction_utils.cpp
+│   │   │   │   ├── transaction_utils.h
+│   │   │   │   ├── txmempool.cpp
+│   │   │   │   ├── txmempool.h
+│   │   │   │   ├── validation.cpp
+│   │   │   │   └── validation.h
+│   │   │   ├── util_tests.cpp
+│   │   │   ├── util_threadnames_tests.cpp
+│   │   │   ├── validation_block_tests.cpp
+│   │   │   ├── validation_chainstatemanager_tests.cpp
+│   │   │   ├── validation_chainstate_tests.cpp
+│   │   │   ├── validation_flush_tests.cpp
+│   │   │   ├── validationinterface_tests.cpp
+│   │   │   ├── validation_tests.cpp
+│   │   │   └── versionbits_tests.cpp
+│   │   ├── threadsafety.h
+│   │   ├── tinyformat.h
+│   │   ├── torcontrol.cpp
+│   │   ├── torcontrol.h
+│   │   ├── txdb.cpp
+│   │   ├── txdb.h
+│   │   ├── txmempool.cpp
+│   │   ├── txmempool.h
+│   │   ├── txorphanage.cpp
+│   │   ├── txorphanage.h
+│   │   ├── txrequest.cpp
+│   │   ├── txrequest.h
+│   │   ├── uint256.cpp
+│   │   ├── uint256.h
+│   │   ├── undo.h
+│   │   ├── univalue
+│   │   │   ├── include
+│   │   │   │   ├── univalue_escapes.h
+│   │   │   │   ├── univalue.h
+│   │   │   │   └── univalue_utffilter.h
+│   │   │   ├── lib
+│   │   │   │   ├── univalue.cpp
+│   │   │   │   ├── univalue_get.cpp
+│   │   │   │   ├── univalue_read.cpp
+│   │   │   │   └── univalue_write.cpp
+│   │   │   ├── sources.mk
+│   │   │   └── test
+│   │   │       ├── fail10.json
+│   │   │       ├── fail11.json
+│   │   │       ├── fail12.json
+│   │   │       ├── fail13.json
+│   │   │       ├── fail14.json
+│   │   │       ├── fail15.json
+│   │   │       ├── fail16.json
+│   │   │       ├── fail17.json
+│   │   │       ├── fail18.json
+│   │   │       ├── fail19.json
+│   │   │       ├── fail1.json
+│   │   │       ├── fail20.json
+│   │   │       ├── fail21.json
+│   │   │       ├── fail22.json
+│   │   │       ├── fail23.json
+│   │   │       ├── fail24.json
+│   │   │       ├── fail25.json
+│   │   │       ├── fail26.json
+│   │   │       ├── fail27.json
+│   │   │       ├── fail28.json
+│   │   │       ├── fail29.json
+│   │   │       ├── fail2.json
+│   │   │       ├── fail30.json
+│   │   │       ├── fail31.json
+│   │   │       ├── fail32.json
+│   │   │       ├── fail33.json
+│   │   │       ├── fail34.json
+│   │   │       ├── fail35.json
+│   │   │       ├── fail36.json
+│   │   │       ├── fail37.json
+│   │   │       ├── fail38.json
+│   │   │       ├── fail39.json
+│   │   │       ├── fail3.json
+│   │   │       ├── fail40.json
+│   │   │       ├── fail41.json
+│   │   │       ├── fail42.json
+│   │   │       ├── fail44.json
+│   │   │       ├── fail45.json
+│   │   │       ├── fail4.json
+│   │   │       ├── fail5.json
+│   │   │       ├── fail6.json
+│   │   │       ├── fail7.json
+│   │   │       ├── fail8.json
+│   │   │       ├── fail9.json
+│   │   │       ├── object.cpp
+│   │   │       ├── pass1.json
+│   │   │       ├── pass2.json
+│   │   │       ├── pass3.json
+│   │   │       ├── pass4.json
+│   │   │       ├── round1.json
+│   │   │       ├── round2.json
+│   │   │       ├── round3.json
+│   │   │       ├── round4.json
+│   │   │       ├── round5.json
+│   │   │       ├── round6.json
+│   │   │       ├── round7.json
+│   │   │       ├── test_json.cpp
+│   │   │       └── unitester.cpp
+│   │   ├── util
+│   │   │   ├── any.h
+│   │   │   ├── asmap.cpp
+│   │   │   ├── asmap.h
+│   │   │   ├── batchpriority.cpp
+│   │   │   ├── batchpriority.h
+│   │   │   ├── bip32.cpp
+│   │   │   ├── bip32.h
+│   │   │   ├── bitdeque.h
+│   │   │   ├── bitset.h
+│   │   │   ├── bytevectorhash.cpp
+│   │   │   ├── bytevectorhash.h
+│   │   │   ├── chaintype.cpp
+│   │   │   ├── chaintype.h
+│   │   │   ├── check.cpp
+│   │   │   ├── check.h
+│   │   │   ├── epochguard.h
+│   │   │   ├── exception.cpp
+│   │   │   ├── exception.h
+│   │   │   ├── fastrange.h
+│   │   │   ├── feefrac.cpp
+│   │   │   ├── feefrac.h
+│   │   │   ├── fs.cpp
+│   │   │   ├── fs.h
+│   │   │   ├── fs_helpers.cpp
+│   │   │   ├── fs_helpers.h
+│   │   │   ├── golombrice.h
+│   │   │   ├── hasher.cpp
+│   │   │   ├── hasher.h
+│   │   │   ├── hash_type.h
+│   │   │   ├── insert.h
+│   │   │   ├── macros.h
+│   │   │   ├── moneystr.cpp
+│   │   │   ├── moneystr.h
+│   │   │   ├── overflow.h
+│   │   │   ├── overloaded.h
+│   │   │   ├── rbf.cpp
+│   │   │   ├── rbf.h
+│   │   │   ├── readwritefile.cpp
+│   │   │   ├── readwritefile.h
+│   │   │   ├── result.h
+│   │   │   ├── serfloat.cpp
+│   │   │   ├── serfloat.h
+│   │   │   ├── signalinterrupt.cpp
+│   │   │   ├── signalinterrupt.h
+│   │   │   ├── sock.cpp
+│   │   │   ├── sock.h
+│   │   │   ├── strencodings.cpp
+│   │   │   ├── strencodings.h
+│   │   │   ├── string.cpp
+│   │   │   ├── string.h
+│   │   │   ├── subprocess.h
+│   │   │   ├── syserror.cpp
+│   │   │   ├── syserror.h
+│   │   │   ├── task_runner.h
+│   │   │   ├── thread.cpp
+│   │   │   ├── thread.h
+│   │   │   ├── threadinterrupt.cpp
+│   │   │   ├── threadinterrupt.h
+│   │   │   ├── threadnames.cpp
+│   │   │   ├── threadnames.h
+│   │   │   ├── time.cpp
+│   │   │   ├── time.h
+│   │   │   ├── tokenpipe.cpp
+│   │   │   ├── tokenpipe.h
+│   │   │   ├── trace.h
+│   │   │   ├── transaction_identifier.h
+│   │   │   ├── translation.h
+│   │   │   ├── types.h
+│   │   │   ├── ui_change_type.h
+│   │   │   ├── vecdeque.h
+│   │   │   └── vector.h
+│   │   ├── validation.cpp
+│   │   ├── validation.h
+│   │   ├── validationinterface.cpp
+│   │   ├── validationinterface.h
+│   │   ├── versionbits.cpp
+│   │   ├── versionbits.h
+│   │   ├── wallet
+│   │   │   ├── bdb.cpp
+│   │   │   ├── bdb.h
+│   │   │   ├── coincontrol.cpp
+│   │   │   ├── coincontrol.h
+│   │   │   ├── coinselection.cpp
+│   │   │   ├── coinselection.h
+│   │   │   ├── context.cpp
+│   │   │   ├── context.h
+│   │   │   ├── crypter.cpp
+│   │   │   ├── crypter.h
+│   │   │   ├── db.cpp
+│   │   │   ├── db.h
+│   │   │   ├── dump.cpp
+│   │   │   ├── dump.h
+│   │   │   ├── external_signer_scriptpubkeyman.cpp
+│   │   │   ├── external_signer_scriptpubkeyman.h
+│   │   │   ├── feebumper.cpp
+│   │   │   ├── feebumper.h
+│   │   │   ├── fees.cpp
+│   │   │   ├── fees.h
+│   │   │   ├── init.cpp
+│   │   │   ├── interfaces.cpp
+│   │   │   ├── load.cpp
+│   │   │   ├── load.h
+│   │   │   ├── migrate.cpp
+│   │   │   ├── migrate.h
+│   │   │   ├── receive.cpp
+│   │   │   ├── receive.h
+│   │   │   ├── rpc
+│   │   │   │   ├── addresses.cpp
+│   │   │   │   ├── backup.cpp
+│   │   │   │   ├── coins.cpp
+│   │   │   │   ├── encrypt.cpp
+│   │   │   │   ├── signmessage.cpp
+│   │   │   │   ├── spend.cpp
+│   │   │   │   ├── transactions.cpp
+│   │   │   │   ├── util.cpp
+│   │   │   │   ├── util.h
+│   │   │   │   ├── wallet.cpp
+│   │   │   │   └── wallet.h
+│   │   │   ├── salvage.cpp
+│   │   │   ├── salvage.h
+│   │   │   ├── scriptpubkeyman.cpp
+│   │   │   ├── scriptpubkeyman.h
+│   │   │   ├── spend.cpp
+│   │   │   ├── spend.h
+│   │   │   ├── sqlite.cpp
+│   │   │   ├── sqlite.h
+│   │   │   ├── test
+│   │   │   │   ├── coinselector_tests.cpp
+│   │   │   │   ├── db_tests.cpp
+│   │   │   │   ├── feebumper_tests.cpp
+│   │   │   │   ├── fuzz
+│   │   │   │   │   ├── coincontrol.cpp
+│   │   │   │   │   ├── coinselection.cpp
+│   │   │   │   │   ├── crypter.cpp
+│   │   │   │   │   ├── fees.cpp
+│   │   │   │   │   ├── notifications.cpp
+│   │   │   │   │   ├── parse_iso8601.cpp
+│   │   │   │   │   ├── scriptpubkeyman.cpp
+│   │   │   │   │   └── wallet_bdb_parser.cpp
+│   │   │   │   ├── group_outputs_tests.cpp
+│   │   │   │   ├── init_test_fixture.cpp
+│   │   │   │   ├── init_test_fixture.h
+│   │   │   │   ├── init_tests.cpp
+│   │   │   │   ├── ismine_tests.cpp
+│   │   │   │   ├── psbt_wallet_tests.cpp
+│   │   │   │   ├── rpc_util_tests.cpp
+│   │   │   │   ├── scriptpubkeyman_tests.cpp
+│   │   │   │   ├── spend_tests.cpp
+│   │   │   │   ├── util.cpp
+│   │   │   │   ├── util.h
+│   │   │   │   ├── wallet_crypto_tests.cpp
+│   │   │   │   ├── walletdb_tests.cpp
+│   │   │   │   ├── walletload_tests.cpp
+│   │   │   │   ├── wallet_test_fixture.cpp
+│   │   │   │   ├── wallet_test_fixture.h
+│   │   │   │   ├── wallet_tests.cpp
+│   │   │   │   └── wallet_transaction_tests.cpp
+│   │   │   ├── transaction.cpp
+│   │   │   ├── transaction.h
+│   │   │   ├── types.h
+│   │   │   ├── wallet.cpp
+│   │   │   ├── walletdb.cpp
+│   │   │   ├── walletdb.h
+│   │   │   ├── wallet.h
+│   │   │   ├── wallettool.cpp
+│   │   │   ├── wallettool.h
+│   │   │   ├── walletutil.cpp
+│   │   │   └── walletutil.h
+│   │   ├── walletinitinterface.h
+│   │   └── zmq
+│   │       ├── zmqabstractnotifier.cpp
+│   │       ├── zmqabstractnotifier.h
+│   │       ├── zmqnotificationinterface.cpp
+│   │       ├── zmqnotificationinterface.h
+│   │       ├── zmqpublishnotifier.cpp
+│   │       ├── zmqpublishnotifier.h
+│   │       ├── zmqrpc.cpp
+│   │       ├── zmqrpc.h
+│   │       ├── zmqutil.cpp
+│   │       └── zmqutil.h
+│   └── test
+│       ├── config.ini.in
+│       ├── functional
+│       │   ├── combined_log_template.html
+│       │   ├── combine_logs.py
+│       │   ├── create_cache.py
+│       │   ├── data
+│       │   │   ├── blockheader_testnet3.hex
+│       │   │   ├── __init__.py
+│       │   │   ├── invalid_txs.py
+│       │   │   ├── rpc_bip67.json
+│       │   │   ├── rpc_decodescript.json
+│       │   │   ├── rpc_getblockstats.json
+│       │   │   └── rpc_psbt.json
+│       │   ├── example_test.py
+│       │   ├── feature_abortnode.py
+│       │   ├── feature_addrman.py
+│       │   ├── feature_anchors.py
+│       │   ├── feature_asmap.py
+│       │   ├── feature_assumeutxo.py
+│       │   ├── feature_assumevalid.py
+│       │   ├── feature_bind_extra.py
+│       │   ├── feature_bind_port_discover.py
+│       │   ├── feature_bind_port_externalip.py
+│       │   ├── feature_bip68_sequence.py
+│       │   ├── feature_block.py
+│       │   ├── feature_blocksdir.py
+│       │   ├── feature_blocksxor.py
+│       │   ├── feature_cltv.py
+│       │   ├── feature_coinstatsindex.py
+│       │   ├── feature_config_args.py
+│       │   ├── feature_csv_activation.py
+│       │   ├── feature_dbcrash.py
+│       │   ├── feature_dersig.py
+│       │   ├── feature_dirsymlinks.py
+│       │   ├── feature_discover.py
+│       │   ├── feature_fastprune.py
+│       │   ├── feature_fee_estimation.py
+│       │   ├── feature_filelock.py
+│       │   ├── feature_framework_miniwallet.py
+│       │   ├── feature_framework_unit_tests.py
+│       │   ├── feature_help.py
+│       │   ├── feature_includeconf.py
+│       │   ├── feature_index_prune.py
+│       │   ├── feature_init.py
+│       │   ├── feature_loadblock.py
+│       │   ├── feature_logging.py
+│       │   ├── feature_maxtipage.py
+│       │   ├── feature_maxuploadtarget.py
+│       │   ├── feature_minchainwork.py
+│       │   ├── feature_notifications.py
+│       │   ├── feature_nulldummy.py
+│       │   ├── feature_posix_fs_permissions.py
+│       │   ├── feature_presegwit_node_upgrade.py
+│       │   ├── feature_proxy.py
+│       │   ├── feature_pruning.py
+│       │   ├── feature_rbf.py
+│       │   ├── feature_reindex.py
+│       │   ├── feature_reindex_readonly.py
+│       │   ├── feature_remove_pruned_files_on_startup.py
+│       │   ├── feature_segwit.py
+│       │   ├── feature_settings.py
+│       │   ├── feature_shutdown.py
+│       │   ├── feature_signet.py
+│       │   ├── feature_startupnotify.py
+│       │   ├── feature_taproot.py
+│       │   ├── feature_uacomment.py
+│       │   ├── feature_unsupported_utxo_db.py
+│       │   ├── feature_utxo_set_hash.py
+│       │   ├── feature_versionbits_warning.py
+│       │   ├── interface_bitcoin_cli.py
+│       │   ├── interface_http.py
+│       │   ├── interface_rest.py
+│       │   ├── interface_rpc.py
+│       │   ├── interface_usdt_coinselection.py
+│       │   ├── interface_usdt_mempool.py
+│       │   ├── interface_usdt_net.py
+│       │   ├── interface_usdt_utxocache.py
+│       │   ├── interface_usdt_validation.py
+│       │   ├── interface_zmq.py
+│       │   ├── mempool_accept.py
+│       │   ├── mempool_accept_wtxid.py
+│       │   ├── mempool_compatibility.py
+│       │   ├── mempool_datacarrier.py
+│       │   ├── mempool_dust.py
+│       │   ├── mempool_expiry.py
+│       │   ├── mempool_limit.py
+│       │   ├── mempool_package_limits.py
+│       │   ├── mempool_package_onemore.py
+│       │   ├── mempool_package_rbf.py
+│       │   ├── mempool_packages.py
+│       │   ├── mempool_persist.py
+│       │   ├── mempool_reorg.py
+│       │   ├── mempool_resurrect.py
+│       │   ├── mempool_sigoplimit.py
+│       │   ├── mempool_spend_coinbase.py
+│       │   ├── mempool_truc.py
+│       │   ├── mempool_unbroadcast.py
+│       │   ├── mempool_updatefromblock.py
+│       │   ├── mining_basic.py
+│       │   ├── mining_getblocktemplate_longpoll.py
+│       │   ├── mining_prioritisetransaction.py
+│       │   ├── mocks
+│       │   │   ├── invalid_signer.py
+│       │   │   ├── multi_signers.py
+│       │   │   └── signer.py
+│       │   ├── p2p_1p1c_network.py
+│       │   ├── p2p_add_connections.py
+│       │   ├── p2p_addrfetch.py
+│       │   ├── p2p_addr_relay.py
+│       │   ├── p2p_addrv2_relay.py
+│       │   ├── p2p_blockfilters.py
+│       │   ├── p2p_blocksonly.py
+│       │   ├── p2p_block_sync.py
+│       │   ├── p2p_compactblocks_blocksonly.py
+│       │   ├── p2p_compactblocks_hb.py
+│       │   ├── p2p_compactblocks.py
+│       │   ├── p2p_disconnect_ban.py
+│       │   ├── p2p_dns_seeds.py
+│       │   ├── p2p_dos_header_tree.py
+│       │   ├── p2p_eviction.py
+│       │   ├── p2p_feefilter.py
+│       │   ├── p2p_filter.py
+│       │   ├── p2p_fingerprint.py
+│       │   ├── p2p_getaddr_caching.py
+│       │   ├── p2p_getdata.py
+│       │   ├── p2p_handshake.py
+│       │   ├── p2p_headers_sync_with_minchainwork.py
+│       │   ├── p2p_i2p_ports.py
+│       │   ├── p2p_i2p_sessions.py
+│       │   ├── p2p_ibd_stalling.py
+│       │   ├── p2p_ibd_txrelay.py
+│       │   ├── p2p_initial_headers_sync.py
+│       │   ├── p2p_invalid_block.py
+│       │   ├── p2p_invalid_locator.py
+│       │   ├── p2p_invalid_messages.py
+│       │   ├── p2p_invalid_tx.py
+│       │   ├── p2p_leak.py
+│       │   ├── p2p_leak_tx.py
+│       │   ├── p2p_message_capture.py
+│       │   ├── p2p_mutated_blocks.py
+│       │   ├── p2p_net_deadlock.py
+│       │   ├── p2p_nobloomfilter_messages.py
+│       │   ├── p2p_node_network_limited.py
+│       │   ├── p2p_opportunistic_1p1c.py
+│       │   ├── p2p_orphan_handling.py
+│       │   ├── p2p_outbound_eviction.py
+│       │   ├── p2p_permissions.py
+│       │   ├── p2p_ping.py
+│       │   ├── p2p_segwit.py
+│       │   ├── p2p_sendheaders.py
+│       │   ├── p2p_sendtxrcncl.py
+│       │   ├── p2p_timeouts.py
+│       │   ├── p2p_tx_download.py
+│       │   ├── p2p_tx_privacy.py
+│       │   ├── p2p_unrequested_blocks.py
+│       │   ├── p2p_v2_encrypted.py
+│       │   ├── p2p_v2_misbehaving.py
+│       │   ├── p2p_v2_transport.py
+│       │   ├── README.md
+│       │   ├── rpc_bind.py
+│       │   ├── rpc_blockchain.py
+│       │   ├── rpc_createmultisig.py
+│       │   ├── rpc_decodescript.py
+│       │   ├── rpc_deprecated.py
+│       │   ├── rpc_deriveaddresses.py
+│       │   ├── rpc_dumptxoutset.py
+│       │   ├── rpc_estimatefee.py
+│       │   ├── rpc_generate.py
+│       │   ├── rpc_getblockfilter.py
+│       │   ├── rpc_getblockfrompeer.py
+│       │   ├── rpc_getblockstats.py
+│       │   ├── rpc_getchaintips.py
+│       │   ├── rpc_getdescriptorinfo.py
+│       │   ├── rpc_help.py
+│       │   ├── rpc_invalid_address_message.py
+│       │   ├── rpc_invalidateblock.py
+│       │   ├── rpc_mempool_info.py
+│       │   ├── rpc_misc.py
+│       │   ├── rpc_named_arguments.py
+│       │   ├── rpc_net.py
+│       │   ├── rpc_packages.py
+│       │   ├── rpc_preciousblock.py
+│       │   ├── rpc_psbt.py
+│       │   ├── rpc_rawtransaction.py
+│       │   ├── rpc_scanblocks.py
+│       │   ├── rpc_scantxoutset.py
+│       │   ├── rpc_setban.py
+│       │   ├── rpc_signer.py
+│       │   ├── rpc_signmessagewithprivkey.py
+│       │   ├── rpc_signrawtransactionwithkey.py
+│       │   ├── rpc_txoutproof.py
+│       │   ├── rpc_uptime.py
+│       │   ├── rpc_users.py
+│       │   ├── rpc_validateaddress.py
+│       │   ├── rpc_whitelist.py
+│       │   ├── test_framework
+│       │   │   ├── address.py
+│       │   │   ├── authproxy.py
+│       │   │   ├── bdb.py
+│       │   │   ├── bip340_test_vectors.csv
+│       │   │   ├── blockfilter.py
+│       │   │   ├── blocktools.py
+│       │   │   ├── coverage.py
+│       │   │   ├── crypto
+│       │   │   │   ├── bip324_cipher.py
+│       │   │   │   ├── chacha20.py
+│       │   │   │   ├── ellswift_decode_test_vectors.csv
+│       │   │   │   ├── ellswift.py
+│       │   │   │   ├── hkdf.py
+│       │   │   │   ├── muhash.py
+│       │   │   │   ├── poly1305.py
+│       │   │   │   ├── ripemd160.py
+│       │   │   │   ├── secp256k1.py
+│       │   │   │   ├── siphash.py
+│       │   │   │   └── xswiftec_inv_test_vectors.csv
+│       │   │   ├── descriptors.py
+│       │   │   ├── __init__.py
+│       │   │   ├── key.py
+│       │   │   ├── mempool_util.py
+│       │   │   ├── messages.py
+│       │   │   ├── netutil.py
+│       │   │   ├── p2p.py
+│       │   │   ├── psbt.py
+│       │   │   ├── script.py
+│       │   │   ├── script_util.py
+│       │   │   ├── segwit_addr.py
+│       │   │   ├── socks5.py
+│       │   │   ├── test_framework.py
+│       │   │   ├── test_node.py
+│       │   │   ├── test_shell.py
+│       │   │   ├── util.py
+│       │   │   ├── v2_p2p.py
+│       │   │   ├── wallet.py
+│       │   │   └── wallet_util.py
+│       │   ├── test_runner.py
+│       │   ├── test-shell.md
+│       │   ├── tool_signet_miner.py
+│       │   ├── tool_wallet.py
+│       │   ├── wallet_abandonconflict.py
+│       │   ├── wallet_address_types.py
+│       │   ├── wallet_assumeutxo.py
+│       │   ├── wallet_avoid_mixing_output_types.py
+│       │   ├── wallet_avoidreuse.py
+│       │   ├── wallet_backup.py
+│       │   ├── wallet_backwards_compatibility.py
+│       │   ├── wallet_balance.py
+│       │   ├── wallet_basic.py
+│       │   ├── wallet_blank.py
+│       │   ├── wallet_bumpfee.py
+│       │   ├── wallet_change_address.py
+│       │   ├── wallet_coinbase_category.py
+│       │   ├── wallet_conflicts.py
+│       │   ├── wallet_create_tx.py
+│       │   ├── wallet_createwalletdescriptor.py
+│       │   ├── wallet_createwallet.py
+│       │   ├── wallet_crosschain.py
+│       │   ├── wallet_descriptor.py
+│       │   ├── wallet_disable.py
+│       │   ├── wallet_dump.py
+│       │   ├── wallet_encryption.py
+│       │   ├── wallet_fallbackfee.py
+│       │   ├── wallet_fast_rescan.py
+│       │   ├── wallet_fundrawtransaction.py
+│       │   ├── wallet_gethdkeys.py
+│       │   ├── wallet_groups.py
+│       │   ├── wallet_hd.py
+│       │   ├── wallet_implicitsegwit.py
+│       │   ├── wallet_importdescriptors.py
+│       │   ├── wallet_importmulti.py
+│       │   ├── wallet_importprunedfunds.py
+│       │   ├── wallet_import_rescan.py
+│       │   ├── wallet_import_with_label.py
+│       │   ├── wallet_inactive_hdchains.py
+│       │   ├── wallet_keypool.py
+│       │   ├── wallet_keypool_topup.py
+│       │   ├── wallet_labels.py
+│       │   ├── wallet_listdescriptors.py
+│       │   ├── wallet_listreceivedby.py
+│       │   ├── wallet_listsinceblock.py
+│       │   ├── wallet_listtransactions.py
+│       │   ├── wallet_migration.py
+│       │   ├── wallet_miniscript.py
+│       │   ├── wallet_multisig_descriptor_psbt.py
+│       │   ├── wallet_multiwallet.py
+│       │   ├── wallet_orphanedreward.py
+│       │   ├── wallet_pruning.py
+│       │   ├── wallet_reindex.py
+│       │   ├── wallet_reorgsrestore.py
+│       │   ├── wallet_rescan_unconfirmed.py
+│       │   ├── wallet_resendwallettransactions.py
+│       │   ├── wallet_sendall.py
+│       │   ├── wallet_sendmany.py
+│       │   ├── wallet_send.py
+│       │   ├── wallet_signer.py
+│       │   ├── wallet_signmessagewithaddress.py
+│       │   ├── wallet_signrawtransactionwithwallet.py
+│       │   ├── wallet_simulaterawtx.py
+│       │   ├── wallet_spend_unconfirmed.py
+│       │   ├── wallet_startup.py
+│       │   ├── wallet_taproot.py
+│       │   ├── wallet_timelock.py
+│       │   ├── wallet_transactiontime_rescan.py
+│       │   ├── wallet_txn_clone.py
+│       │   ├── wallet_txn_doublespend.py
+│       │   ├── wallet_upgradewallet.py
+│       │   └── wallet_watchonly.py
+│       ├── fuzz
+│       │   └── test_runner.py
+│       ├── get_previous_releases.py
+│       ├── lint
+│       │   ├── check-doc.py
+│       │   ├── commit-script-check.sh
+│       │   ├── git-subtree-check.sh
+│       │   ├── lint-assertions.py
+│       │   ├── lint-circular-dependencies.py
+│       │   ├── lint-files.py
+│       │   ├── lint-format-strings.py
+│       │   ├── lint-git-commit-check.py
+│       │   ├── lint_ignore_dirs.py
+│       │   ├── lint-include-guards.py
+│       │   ├── lint-includes.py
+│       │   ├── lint-locale-dependence.py
+│       │   ├── lint-python-dead-code.py
+│       │   ├── lint-python.py
+│       │   ├── lint-python-utf8-encoding.py
+│       │   ├── lint-qt-translation.py
+│       │   ├── lint-shell-locale.py
+│       │   ├── lint-shell.py
+│       │   ├── lint-spelling.py
+│       │   ├── lint-submodule.py
+│       │   ├── lint-tests.py
+│       │   ├── README.md
+│       │   ├── run-lint-format-strings.py
+│       │   ├── spelling.ignore-words.txt
+│       │   └── test_runner
+│       │       ├── Cargo.lock
+│       │       ├── Cargo.toml
+│       │       └── src
+│       │           └── main.rs
+│       ├── README.md
+│       ├── sanitizer_suppressions
+│       │   ├── lsan
+│       │   ├── tsan
+│       │   └── ubsan
+│       └── util
+│           ├── data
+│           │   ├── bitcoin-util-test.json
+│           │   ├── blanktxv1.hex
+│           │   ├── blanktxv1.json
+│           │   ├── blanktxv2.hex
+│           │   ├── blanktxv2.json
+│           │   ├── tt-delin1-out.hex
+│           │   ├── tt-delin1-out.json
+│           │   ├── tt-delout1-out.hex
+│           │   ├── tt-delout1-out.json
+│           │   ├── tt-locktime317000-out.hex
+│           │   ├── tt-locktime317000-out.json
+│           │   ├── tx394b54bb.hex
+│           │   ├── txcreate1.hex
+│           │   ├── txcreate1.json
+│           │   ├── txcreate2.hex
+│           │   ├── txcreate2.json
+│           │   ├── txcreatedata1.hex
+│           │   ├── txcreatedata1.json
+│           │   ├── txcreatedata2.hex
+│           │   ├── txcreatedata2.json
+│           │   ├── txcreatedata_seq0.hex
+│           │   ├── txcreatedata_seq0.json
+│           │   ├── txcreatedata_seq1.hex
+│           │   ├── txcreatedata_seq1.json
+│           │   ├── txcreatemultisig1.hex
+│           │   ├── txcreatemultisig1.json
+│           │   ├── txcreatemultisig2.hex
+│           │   ├── txcreatemultisig2.json
+│           │   ├── txcreatemultisig3.hex
+│           │   ├── txcreatemultisig3.json
+│           │   ├── txcreatemultisig4.hex
+│           │   ├── txcreatemultisig4.json
+│           │   ├── txcreatemultisig5.json
+│           │   ├── txcreateoutpubkey1.hex
+│           │   ├── txcreateoutpubkey1.json
+│           │   ├── txcreateoutpubkey2.hex
+│           │   ├── txcreateoutpubkey2.json
+│           │   ├── txcreateoutpubkey3.hex
+│           │   ├── txcreateoutpubkey3.json
+│           │   ├── txcreatescript1.hex
+│           │   ├── txcreatescript1.json
+│           │   ├── txcreatescript2.hex
+│           │   ├── txcreatescript2.json
+│           │   ├── txcreatescript3.hex
+│           │   ├── txcreatescript3.json
+│           │   ├── txcreatescript4.hex
+│           │   ├── txcreatescript4.json
+│           │   ├── txcreatescript5.hex
+│           │   ├── txcreatescript6.hex
+│           │   ├── txcreatesignsegwit1.hex
+│           │   ├── txcreatesignv1.hex
+│           │   ├── txcreatesignv1.json
+│           │   ├── txcreatesignv2.hex
+│           │   ├── txreplace1.hex
+│           │   ├── txreplacenoinputs.hex
+│           │   ├── txreplaceomittedn.hex
+│           │   └── txreplacesingleinput.hex
+│           ├── rpcauth-test.py
+│           └── test_runner.py
+├── bitcoin-28.0.SHA256SUMS -> /home/felix/packages/bitcoin/bitcoin-28.0.SHA256SUMS
+├── bitcoin-28.0.SHA256SUMS.asc -> /home/felix/packages/bitcoin/bitcoin-28.0.SHA256SUMS.asc
+├── bitcoin-28.0.tar.gz -> /home/felix/packages/bitcoin/bitcoin-28.0.tar.gz
+├── bitcoin-qt.appdata.xml -> /home/felix/packages/bitcoin/bitcoin-qt.appdata.xml
+├── bitcoin-qt.desktop -> /home/felix/packages/bitcoin/bitcoin-qt.desktop
+├── bitcoin.sysusers -> /home/felix/packages/bitcoin/bitcoin.sysusers
+└── bitcoin.tmpfiles -> /home/felix/packages/bitcoin/bitcoin.tmpfiles
+
+193 directories, 2679 files

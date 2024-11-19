@@ -1,0 +1,1219 @@
+src
+├── apptainer
+│   ├── CHANGELOG.md
+│   ├── cmd
+│   │   ├── apptainer
+│   │   │   └── cli.go
+│   │   ├── bash_completion
+│   │   │   └── bash_completion.go
+│   │   ├── docs
+│   │   │   └── docs.go
+│   │   ├── internal
+│   │   │   └── cli
+│   │   │       ├── action_flags.go
+│   │   │       ├── actions.go
+│   │   │       ├── apptainer.go
+│   │   │       ├── apptainer_test.go
+│   │   │       ├── buildconfig.go
+│   │   │       ├── build.go
+│   │   │       ├── build_linux.go
+│   │   │       ├── cache_clean_linux.go
+│   │   │       ├── cache_linux.go
+│   │   │       ├── cache_list_linux.go
+│   │   │       ├── capability_linux.go
+│   │   │       ├── cgroups.go
+│   │   │       ├── cgroups_test.go
+│   │   │       ├── checkpoint.go
+│   │   │       ├── confgen.go
+│   │   │       ├── config_fakeroot_linux.go
+│   │   │       ├── config_global_linux.go
+│   │   │       ├── config_linux.go
+│   │   │       ├── delete.go
+│   │   │       ├── inspect.go
+│   │   │       ├── instance_actions_linux.go
+│   │   │       ├── instance_linux.go
+│   │   │       ├── instance_list_linux.go
+│   │   │       ├── instance_stats_linux.go
+│   │   │       ├── instance_stop_linux.go
+│   │   │       ├── key_export.go
+│   │   │       ├── key.go
+│   │   │       ├── key_import.go
+│   │   │       ├── key_list.go
+│   │   │       ├── key_newpair.go
+│   │   │       ├── key_newpair_test.go
+│   │   │       ├── key_pull.go
+│   │   │       ├── key_push.go
+│   │   │       ├── key_remove.go
+│   │   │       ├── key_search.go
+│   │   │       ├── keyserver.go
+│   │   │       ├── loginargs.go
+│   │   │       ├── oci_linux.go
+│   │   │       ├── overlay_create.go
+│   │   │       ├── overlay.go
+│   │   │       ├── pgp.go
+│   │   │       ├── plugin_compile_linux.go
+│   │   │       ├── plugin_create_linux.go
+│   │   │       ├── plugin_disable_linux.go
+│   │   │       ├── plugin_enable_linux.go
+│   │   │       ├── plugin_inspect_linux.go
+│   │   │       ├── plugin_install_linux.go
+│   │   │       ├── plugin_linux.go
+│   │   │       ├── plugin_list_linux.go
+│   │   │       ├── plugin_uninstall_linux.go
+│   │   │       ├── pull.go
+│   │   │       ├── push.go
+│   │   │       ├── registry.go
+│   │   │       ├── remote.go
+│   │   │       ├── run_help_linux.go
+│   │   │       ├── search.go
+│   │   │       ├── siftool.go
+│   │   │       ├── sign.go
+│   │   │       ├── term.go
+│   │   │       ├── verify.go
+│   │   │       └── x509.go
+│   │   └── starter
+│   │       ├── c
+│   │       │   ├── capability.c
+│   │       │   ├── include
+│   │       │   │   ├── capability.h
+│   │       │   │   ├── message.h
+│   │       │   │   ├── securebits.h
+│   │       │   │   ├── setns.h
+│   │       │   │   └── starter.h
+│   │       │   ├── message.c
+│   │       │   ├── setns.c
+│   │       │   └── starter.c
+│   │       ├── engines
+│   │       │   ├── apptainer_linux.go
+│   │       │   ├── engines.go
+│   │       │   ├── fakeroot_linux.go
+│   │       │   └── oci_linux.go
+│   │       └── main_linux.go
+│   ├── CODE_OF_CONDUCT.md
+│   ├── CONTRIBUTING.md
+│   ├── CONTRIBUTORS.md
+│   ├── DCO.md
+│   ├── dist
+│   │   ├── debian
+│   │   │   ├── apparmor-placeholder
+│   │   │   ├── apparmor-userns
+│   │   │   ├── apptainer.examples
+│   │   │   ├── apptainer.install
+│   │   │   ├── apptainer.lintian-overrides
+│   │   │   ├── apptainer-suid.lintian-overrides
+│   │   │   ├── changelog
+│   │   │   ├── compat
+│   │   │   ├── control
+│   │   │   ├── copyright
+│   │   │   ├── DEBIAN_PACKAGE.md
+│   │   │   ├── docs
+│   │   │   ├── gbp.conf
+│   │   │   ├── rules
+│   │   │   ├── source
+│   │   │   │   └── format
+│   │   │   └── watch
+│   │   ├── docker
+│   │   │   ├── buildenv.sh
+│   │   │   └── Dockerfile
+│   │   ├── nfpm
+│   │   │   ├── Dockerfile
+│   │   │   ├── generate.go
+│   │   │   ├── nfpm.yaml
+│   │   │   └── session_dir
+│   │   └── rpm
+│   │       └── apptainer.spec.in
+│   ├── docs
+│   │   ├── content.go
+│   │   ├── keyserver.go
+│   │   ├── logos
+│   │   │   ├── apptainer_v3.png
+│   │   │   └── apptainer_v3.svg
+│   │   ├── plugin.go
+│   │   ├── registry.go
+│   │   ├── remote.go
+│   │   └── templates.go
+│   ├── e2e
+│   │   ├── actions
+│   │   │   ├── actions.go
+│   │   │   └── regressions.go
+│   │   ├── buildcfg
+│   │   │   └── buildcfg.go
+│   │   ├── cache
+│   │   │   ├── cache.go
+│   │   │   └── regressions.go
+│   │   ├── cgroups
+│   │   │   └── cgroups.go
+│   │   ├── cmdenvvars
+│   │   │   └── cmdenvvars.go
+│   │   ├── config
+│   │   │   └── config.go
+│   │   ├── delete
+│   │   │   └── delete.go
+│   │   ├── docker
+│   │   │   ├── docker.go
+│   │   │   └── regressions.go
+│   │   ├── e2e.go
+│   │   ├── e2e_test.go
+│   │   ├── ecl
+│   │   │   └── ecl.go
+│   │   ├── env
+│   │   │   ├── env.go
+│   │   │   └── regressions.go
+│   │   ├── gpu
+│   │   │   └── gpu.go
+│   │   ├── help
+│   │   │   ├── help.go
+│   │   │   └── README.md
+│   │   ├── imgbuild
+│   │   │   ├── imgbuild.go
+│   │   │   └── regressions.go
+│   │   ├── inspect
+│   │   │   └── inspect.go
+│   │   ├── instance
+│   │   │   ├── checkpoint.go
+│   │   │   ├── instance.go
+│   │   │   ├── instance_utils.go
+│   │   │   └── regressions.go
+│   │   ├── internal
+│   │   │   ├── e2e
+│   │   │   │   ├── apptainercmd.go
+│   │   │   │   ├── cgroups.go
+│   │   │   │   ├── config.go
+│   │   │   │   ├── docker_auth_server.go
+│   │   │   │   ├── docker.go
+│   │   │   │   ├── dockerhub_auth.go
+│   │   │   │   ├── ecl_key.go
+│   │   │   │   ├── encrypt.go
+│   │   │   │   ├── env.go
+│   │   │   │   ├── fileutil.go
+│   │   │   │   ├── home.go
+│   │   │   │   ├── imagebuild.go
+│   │   │   │   ├── image.go
+│   │   │   │   ├── imageverify.go
+│   │   │   │   ├── init
+│   │   │   │   │   └── init_linux.go
+│   │   │   │   ├── plugin.go
+│   │   │   │   ├── priv.go
+│   │   │   │   ├── profile.go
+│   │   │   │   ├── remote.go
+│   │   │   │   └── user.go
+│   │   │   └── testhelper
+│   │   │       ├── doc.go
+│   │   │       └── testhelper.go
+│   │   ├── key
+│   │   │   └── key.go
+│   │   ├── keyserver
+│   │   │   └── keyserver.go
+│   │   ├── legacy
+│   │   │   └── actions.go
+│   │   ├── oci
+│   │   │   └── oci.go
+│   │   ├── overlay
+│   │   │   └── overlay.go
+│   │   ├── plugin
+│   │   │   ├── plugin.go
+│   │   │   └── testdata
+│   │   │       ├── cli
+│   │   │       │   └── callback.go
+│   │   │       └── runtime_apptainer
+│   │   │           └── callback.go
+│   │   ├── pull
+│   │   │   ├── concurrency.go
+│   │   │   ├── pull.go
+│   │   │   └── regressions.go
+│   │   ├── push
+│   │   │   └── push.go
+│   │   ├── README.md
+│   │   ├── registry
+│   │   │   └── registry.go
+│   │   ├── remote
+│   │   │   └── remote.go
+│   │   ├── run
+│   │   │   ├── regressions.go
+│   │   │   └── run.go
+│   │   ├── runhelp
+│   │   │   └── runhelp.go
+│   │   ├── security
+│   │   │   ├── security.go
+│   │   │   └── testdata
+│   │   │       └── seccomp-profile.json
+│   │   ├── sign
+│   │   │   └── sign.go
+│   │   ├── suite.go
+│   │   ├── testdata
+│   │   │   ├── Apptainer
+│   │   │   ├── busybox_amd64.sif
+│   │   │   ├── busybox_arm64.sif
+│   │   │   ├── busybox_ppc64le.sif
+│   │   │   ├── cgroups
+│   │   │   │   ├── cpu_success.toml
+│   │   │   │   ├── deny_device.toml
+│   │   │   │   ├── invalid.toml
+│   │   │   │   ├── memory_limit.toml
+│   │   │   │   ├── null.toml
+│   │   │   │   └── pids_limit.toml
+│   │   │   ├── deffile.tmpl
+│   │   │   ├── ecl-pgpkeys
+│   │   │   │   ├── key1.asc
+│   │   │   │   ├── key2.asc
+│   │   │   │   ├── pubkey1.asc
+│   │   │   │   └── pubkey2.asc
+│   │   │   ├── help
+│   │   │   │   ├── help-oci-attach.txt
+│   │   │   │   ├── help-oci-create.txt
+│   │   │   │   ├── help-oci-delete.txt
+│   │   │   │   ├── help-oci-exec.txt
+│   │   │   │   ├── help-oci-kill.txt
+│   │   │   │   ├── help-oci-mount.txt
+│   │   │   │   ├── help-oci-pause.txt
+│   │   │   │   ├── help-oci-resume.txt
+│   │   │   │   ├── help-oci-run.txt
+│   │   │   │   ├── help-oci-start.txt
+│   │   │   │   ├── help-oci-state.txt
+│   │   │   │   ├── help-oci.txt
+│   │   │   │   ├── help-oci-umount.txt
+│   │   │   │   └── help-oci-update.txt
+│   │   │   ├── inspector_container.def
+│   │   │   ├── regressions
+│   │   │   │   ├── issue_1097.def
+│   │   │   │   ├── issue_4203.def
+│   │   │   │   ├── issue_4583.def
+│   │   │   │   ├── issue_4820.def
+│   │   │   │   ├── issue_4967.def
+│   │   │   │   ├── issue_4969.def
+│   │   │   │   ├── issue_5315.def
+│   │   │   │   ├── issue_5399.def
+│   │   │   │   └── legacy-environment
+│   │   │   ├── runscript.sh
+│   │   │   ├── seccomp-profile.json
+│   │   │   ├── Singularity_legacy.def
+│   │   │   ├── sshfs.def
+│   │   │   ├── state-server.def
+│   │   │   ├── unprivileged_build_2.def
+│   │   │   ├── unprivileged_build_4.def
+│   │   │   └── unprivileged_build.def
+│   │   ├── verify
+│   │   │   ├── ocspcertificates
+│   │   │   │   ├── download_chain.sh
+│   │   │   │   ├── intermediate.pem
+│   │   │   │   └── leaf.pem
+│   │   │   ├── ocspresponder
+│   │   │   │   ├── index.txt
+│   │   │   │   ├── ocsp_responder.go
+│   │   │   │   └── standalone
+│   │   │   │       ├── add_cert_to_index.sh
+│   │   │   │       └── main.go
+│   │   │   └── verify.go
+│   │   └── version
+│   │       └── version.go
+│   ├── etc
+│   │   ├── configure_transform.py
+│   │   ├── default-nsswitch.conf
+│   │   ├── dmtcp-conf.yaml
+│   │   ├── global-pgp-public
+│   │   ├── init
+│   │   ├── network
+│   │   │   ├── 00_bridge.conflist
+│   │   │   ├── 10_ptp.conflist
+│   │   │   ├── 20_ipvlan.conflist
+│   │   │   ├── 30_macvlan.conflist
+│   │   │   └── 40_fakeroot.conflist
+│   │   ├── nvliblist.conf
+│   │   ├── remote.yaml
+│   │   ├── rocmliblist.conf
+│   │   └── seccomp-profiles
+│   │       └── default.json
+│   ├── examples
+│   │   ├── almalinux
+│   │   │   └── Apptainer
+│   │   ├── almalinux-arm64
+│   │   │   └── Apptainer
+│   │   ├── apps
+│   │   │   ├── Apptainer
+│   │   │   ├── Apptainer.cowsay
+│   │   │   └── README.md
+│   │   ├── arch
+│   │   │   ├── Apptainer
+│   │   │   └── README.md
+│   │   ├── asciinema
+│   │   │   └── Apptainer
+│   │   ├── build-apptainer
+│   │   │   ├── build-apptainer.def
+│   │   │   └── README.md
+│   │   ├── busybox
+│   │   │   └── Apptainer
+│   │   ├── centos
+│   │   │   └── Apptainer
+│   │   ├── centos-arm64
+│   │   │   └── Apptainer
+│   │   ├── debian
+│   │   │   └── Apptainer
+│   │   ├── docker
+│   │   │   └── Apptainer
+│   │   ├── fedora
+│   │   │   └── Apptainer
+│   │   ├── fedora-arm64
+│   │   │   └── Apptainer
+│   │   ├── instances
+│   │   │   └── Apptainer
+│   │   ├── library
+│   │   │   └── Apptainer
+│   │   ├── multistage
+│   │   │   └── Apptainer
+│   │   ├── opensuse
+│   │   │   └── Apptainer
+│   │   ├── opensuse-arm64
+│   │   │   └── Apptainer
+│   │   ├── plugins
+│   │   │   ├── cli-plugin
+│   │   │   │   ├── main.go
+│   │   │   │   └── README.md
+│   │   │   ├── config-plugin
+│   │   │   │   └── main.go
+│   │   │   ├── log-plugin
+│   │   │   │   └── main.go
+│   │   │   └── ubuntu-userns-overlay-plugin
+│   │   │       └── main.go
+│   │   ├── raspbian
+│   │   │   └── Apptainer
+│   │   ├── README.md
+│   │   ├── scientific
+│   │   │   └── Apptainer
+│   │   ├── scratch
+│   │   │   ├── Apptainer.alpine
+│   │   │   └── Apptainer.busybox
+│   │   ├── self
+│   │   │   ├── Apptainer
+│   │   │   └── README.md
+│   │   ├── shub
+│   │   │   └── Apptainer
+│   │   ├── sle
+│   │   │   └── Apptainer
+│   │   └── ubuntu
+│   │       └── Apptainer
+│   ├── go.mod
+│   ├── go.sum
+│   ├── INSTALL.md
+│   ├── internal
+│   │   ├── app
+│   │   │   ├── apptainer
+│   │   │   │   ├── cache_clean_linux.go
+│   │   │   │   ├── cache_list_linux.go
+│   │   │   │   ├── capability_avail_linux.go
+│   │   │   │   ├── capability_list_linux.go
+│   │   │   │   ├── capability_manage_linux.go
+│   │   │   │   ├── config_fakeroot_linux.go
+│   │   │   │   ├── config_global_linux.go
+│   │   │   │   ├── delete.go
+│   │   │   │   ├── instance_linux.go
+│   │   │   │   ├── keyserver_add.go
+│   │   │   │   ├── keyserver_list.go
+│   │   │   │   ├── keyserver_login.go
+│   │   │   │   ├── keyserver_logout.go
+│   │   │   │   ├── keyserver_remove.go
+│   │   │   │   ├── oci_attach_linux.go
+│   │   │   │   ├── oci_create_linux.go
+│   │   │   │   ├── oci_delete_linux.go
+│   │   │   │   ├── oci_exec_linux.go
+│   │   │   │   ├── oci_kill_linux.go
+│   │   │   │   ├── oci_linux.go
+│   │   │   │   ├── oci_mount_linux.go
+│   │   │   │   ├── oci_pause_linux.go
+│   │   │   │   ├── oci_run_linux.go
+│   │   │   │   ├── oci_start_linux.go
+│   │   │   │   ├── oci_state_linux.go
+│   │   │   │   ├── oci_update_linux.go
+│   │   │   │   ├── overlay_create.go
+│   │   │   │   ├── plugin_compile_linux.go
+│   │   │   │   ├── plugin_create_linux.go
+│   │   │   │   ├── plugin_disable_linux.go
+│   │   │   │   ├── plugin_enable_linux.go
+│   │   │   │   ├── plugin_inspect_linux.go
+│   │   │   │   ├── plugin_install_linux.go
+│   │   │   │   ├── plugin_list_linux.go
+│   │   │   │   ├── plugin_uninstall_linux.go
+│   │   │   │   ├── registry_list.go
+│   │   │   │   ├── registry_login.go
+│   │   │   │   ├── registry_logout.go
+│   │   │   │   ├── remote_add.go
+│   │   │   │   ├── remote_add_test.go
+│   │   │   │   ├── remote_list.go
+│   │   │   │   ├── remote_login.go
+│   │   │   │   ├── remote_logout.go
+│   │   │   │   ├── remote_remove.go
+│   │   │   │   ├── remote_remove_test.go
+│   │   │   │   ├── remote_status.go
+│   │   │   │   └── remote_use.go
+│   │   │   └── starter
+│   │   │       ├── master_linux.go
+│   │   │       ├── master_linux_test.go
+│   │   │       ├── rpc_linux.go
+│   │   │       └── stage_linux.go
+│   │   └── pkg
+│   │       ├── build
+│   │       │   ├── apps
+│   │       │   │   └── apps.go
+│   │       │   ├── args
+│   │       │   │   ├── args.go
+│   │       │   │   ├── args_test.go
+│   │       │   │   └── reader.go
+│   │       │   ├── assembler.go
+│   │       │   ├── assemblers
+│   │       │   │   ├── sandbox.go
+│   │       │   │   ├── sandbox_test.go
+│   │       │   │   ├── sif.go
+│   │       │   │   └── sif_test.go
+│   │       │   ├── build.go
+│   │       │   ├── build_test.go
+│   │       │   ├── conveyorPacker.go
+│   │       │   ├── files
+│   │       │   │   ├── copy.go
+│   │       │   │   ├── copy_test.go
+│   │       │   │   ├── files.go
+│   │       │   │   └── files_test.go
+│   │       │   ├── metadata.go
+│   │       │   ├── oci
+│   │       │   │   ├── oci.go
+│   │       │   │   └── oci_test.go
+│   │       │   ├── sources
+│   │       │   │   ├── 01-base.sh
+│   │       │   │   ├── 90-environment.sh
+│   │       │   │   ├── 91-environment.sh
+│   │       │   │   ├── 95-apps.sh
+│   │       │   │   ├── 99-base.sh
+│   │       │   │   ├── 99-runtimevars.sh
+│   │       │   │   ├── base_environment.go
+│   │       │   │   ├── base_environment_test.go
+│   │       │   │   ├── conveyorPacker_arch.go
+│   │       │   │   ├── conveyorPacker_arch_test.go
+│   │       │   │   ├── conveyorPacker_busybox.go
+│   │       │   │   ├── conveyorPacker_busybox_test.go
+│   │       │   │   ├── conveyorPacker_debootstrap.go
+│   │       │   │   ├── conveyorPacker_debootstrap_test.go
+│   │       │   │   ├── conveyorPacker_library.go
+│   │       │   │   ├── conveyorPacker_library_test.go
+│   │       │   │   ├── conveyorPacker_local.go
+│   │       │   │   ├── conveyorPacker_local_test.go
+│   │       │   │   ├── conveyorPacker_oci.go
+│   │       │   │   ├── conveyorPacker_oci_test.go
+│   │       │   │   ├── conveyorPacker_oras.go
+│   │       │   │   ├── conveyorPacker_scratch.go
+│   │       │   │   ├── conveyorPacker_scratch_test.go
+│   │       │   │   ├── conveyorPacker_shub.go
+│   │       │   │   ├── conveyorPacker_shub_test.go
+│   │       │   │   ├── conveyorPacker_yum.go
+│   │       │   │   ├── conveyorPacker_yum_test.go
+│   │       │   │   ├── conveyorPacker_zypper.go
+│   │       │   │   ├── conveyorPacker_zypper_test.go
+│   │       │   │   ├── exec.sh
+│   │       │   │   ├── oci_unpack.go
+│   │       │   │   ├── packer_ext3.go
+│   │       │   │   ├── packer_sandbox.go
+│   │       │   │   ├── packer_sif.go
+│   │       │   │   ├── packer_squashfs.go
+│   │       │   │   ├── runscript.sh
+│   │       │   │   ├── run.sh
+│   │       │   │   ├── shell.sh
+│   │       │   │   ├── startscript.sh
+│   │       │   │   ├── start.sh
+│   │       │   │   ├── test.sh
+│   │       │   │   └── verify_sif.go
+│   │       │   ├── stage.go
+│   │       │   └── util.go
+│   │       ├── buildcfg
+│   │       │   ├── confgen
+│   │       │   │   └── gen.go
+│   │       │   └── config_gen.go
+│   │       ├── cache
+│   │       │   ├── cache.go
+│   │       │   └── entry.go
+│   │       ├── cgroups
+│   │       │   ├── config_linux.go
+│   │       │   ├── example
+│   │       │   │   ├── cgroups-no-hugetlb.toml
+│   │       │   │   ├── cgroups.toml
+│   │       │   │   └── cgroups-unified.toml
+│   │       │   ├── manager_linux.go
+│   │       │   ├── manager_linux_test.go
+│   │       │   ├── manager_linux_v1_test.go
+│   │       │   ├── manager_linux_v2_test.go
+│   │       │   └── util.go
+│   │       ├── checkpoint
+│   │       │   ├── checkpoint.go
+│   │       │   └── dmtcp
+│   │       │       ├── checkpoint.go
+│   │       │       ├── commands.go
+│   │       │       └── dmtcp.go
+│   │       ├── client
+│   │       │   ├── library
+│   │       │   │   ├── library.go
+│   │       │   │   ├── library_test.go
+│   │       │   │   ├── pull.go
+│   │       │   │   ├── push.go
+│   │       │   │   ├── user.go
+│   │       │   │   └── user_test.go
+│   │       │   ├── net
+│   │       │   │   └── pull.go
+│   │       │   ├── oci
+│   │       │   │   ├── pull.go
+│   │       │   │   ├── transports.go
+│   │       │   │   └── transports_test.go
+│   │       │   ├── oras
+│   │       │   │   ├── auth.go
+│   │       │   │   ├── image.go
+│   │       │   │   ├── layer.go
+│   │       │   │   ├── oras.go
+│   │       │   │   └── pull.go
+│   │       │   ├── progress.go
+│   │       │   ├── progress_roundtrip.go
+│   │       │   ├── progress_test.go
+│   │       │   └── shub
+│   │       │       ├── api.go
+│   │       │       ├── pull.go
+│   │       │       ├── pull_test.go
+│   │       │       ├── util.go
+│   │       │       └── util_test.go
+│   │       ├── confgen
+│   │       │   ├── gen.go
+│   │       │   ├── gen_test.go
+│   │       │   └── testdata
+│   │       │       ├── test_1.out.correct
+│   │       │       ├── test_2.in
+│   │       │       ├── test_2.out.correct
+│   │       │       ├── test_3.in
+│   │       │       ├── test_3.out.correct
+│   │       │       └── test_default.tmpl
+│   │       ├── fakeroot
+│   │       │   ├── fakefake.go
+│   │       │   ├── fakeroot.go
+│   │       │   └── fakeroot_test.go
+│   │       ├── image
+│   │       │   ├── driver
+│   │       │   │   └── imagedriver.go
+│   │       │   ├── packer
+│   │       │   │   ├── gocryptfs.go
+│   │       │   │   ├── squashfs.go
+│   │       │   │   └── squashfs_test.go
+│   │       │   └── unpacker
+│   │       │       ├── squashfs_apptainer.go
+│   │       │       ├── squashfs_apptainer_test.go
+│   │       │       ├── squashfs.go
+│   │       │       ├── squashfs_no_apptainer.go
+│   │       │       └── squashfs_test.go
+│   │       ├── instance
+│   │       │   ├── instance_linux.go
+│   │       │   ├── instance_linux_test.go
+│   │       │   ├── logger.go
+│   │       │   └── logger_test.go
+│   │       ├── metric
+│   │       │   └── apptheus.go
+│   │       ├── plugin
+│   │       │   ├── binary.go
+│   │       │   ├── callback
+│   │       │   │   └── callback.go
+│   │       │   ├── create.go
+│   │       │   ├── load.go
+│   │       │   ├── meta.go
+│   │       │   ├── module.go
+│   │       │   └── sif.go
+│   │       ├── remote
+│   │       │   ├── credential
+│   │       │   │   ├── config.go
+│   │       │   │   ├── login_handler.go
+│   │       │   │   └── manager.go
+│   │       │   ├── endpoint
+│   │       │   │   ├── client.go
+│   │       │   │   ├── client_test.go
+│   │       │   │   ├── config.go
+│   │       │   │   ├── keyserver.go
+│   │       │   │   ├── keyserver_test.go
+│   │       │   │   ├── service.go
+│   │       │   │   └── token.go
+│   │       │   ├── remote.go
+│   │       │   ├── remote_test.go
+│   │       │   └── util
+│   │       │       ├── util.go
+│   │       │       └── util_test.go
+│   │       ├── runtime
+│   │       │   ├── engine
+│   │       │   │   ├── apptainer
+│   │       │   │   │   ├── cleanup_linux.go
+│   │       │   │   │   ├── container_linux.go
+│   │       │   │   │   ├── create_linux.go
+│   │       │   │   │   ├── engine_linux.go
+│   │       │   │   │   ├── monitor_linux.go
+│   │       │   │   │   ├── plugins_linux.go
+│   │       │   │   │   ├── prepare_linux.go
+│   │       │   │   │   ├── process_linux.go
+│   │       │   │   │   └── rpc
+│   │       │   │   │       ├── args.go
+│   │       │   │   │       ├── client
+│   │       │   │   │       │   └── client.go
+│   │       │   │   │       └── server
+│   │       │   │   │           └── server_linux.go
+│   │       │   │   ├── config
+│   │       │   │   │   ├── oci
+│   │       │   │   │   │   ├── config.go
+│   │       │   │   │   │   └── generate
+│   │       │   │   │   │       ├── generate.go
+│   │       │   │   │   │       └── generate_test.go
+│   │       │   │   │   └── starter
+│   │       │   │   │       └── starter_linux.go
+│   │       │   │   ├── engine_linux.go
+│   │       │   │   ├── fakeroot
+│   │       │   │   │   ├── config
+│   │       │   │   │   │   └── config.go
+│   │       │   │   │   └── engine_linux.go
+│   │       │   │   └── oci
+│   │       │   │       ├── cleanup_linux.go
+│   │       │   │       ├── config_linux.go
+│   │       │   │       ├── create_linux.go
+│   │       │   │       ├── engine_linux.go
+│   │       │   │       ├── monitor_linux.go
+│   │       │   │       ├── prepare_linux.go
+│   │       │   │       ├── process_linux.go
+│   │       │   │       └── rpc
+│   │       │   │           ├── args.go
+│   │       │   │           ├── client
+│   │       │   │           │   └── client.go
+│   │       │   │           └── server
+│   │       │   │               └── server_linux.go
+│   │       │   └── launch
+│   │       │       ├── launcher_linux.go
+│   │       │       └── options.go
+│   │       ├── security
+│   │       │   ├── apparmor
+│   │       │   │   ├── apparmor_supported.go
+│   │       │   │   └── apparmor_unsupported.go
+│   │       │   ├── seccomp
+│   │       │   │   ├── seccomp_supported.go
+│   │       │   │   ├── seccomp_supported_test.go
+│   │       │   │   ├── seccomp_unsupported.go
+│   │       │   │   └── test_profile
+│   │       │   │       └── test.json
+│   │       │   ├── security.go
+│   │       │   ├── security_test.go
+│   │       │   └── selinux
+│   │       │       ├── selinux_supported.go
+│   │       │       └── selinux_unsupported.go
+│   │       ├── signature
+│   │       │   ├── sign.go
+│   │       │   ├── sign_test.go
+│   │       │   ├── verify.go
+│   │       │   ├── verify_ocsp.go
+│   │       │   └── verify_test.go
+│   │       ├── syecl
+│   │       │   ├── syecl.go
+│   │       │   ├── syecl_test.go
+│   │       │   ├── syecl.toml.example
+│   │       │   └── testdata
+│   │       │       ├── configs
+│   │       │       │   ├── ActivatedLegacy.toml
+│   │       │       │   ├── Activated.toml
+│   │       │       │   ├── BlackListLegacy.toml
+│   │       │       │   ├── BlackList.toml
+│   │       │       │   ├── DeactivatedLegacy.toml
+│   │       │       │   ├── Deactivated.toml
+│   │       │       │   ├── KitchenSinkLegacy.toml
+│   │       │       │   ├── KitchenSink.toml
+│   │       │       │   ├── WhiteListLegacy.toml
+│   │       │       │   ├── WhiteList.toml
+│   │       │       │   ├── WhiteStrictLegacy.toml
+│   │       │       │   └── WhiteStrict.toml
+│   │       │       └── TestAPutConfig
+│   │       │           ├── Activated.golden
+│   │       │           ├── ActivatedLegacy.golden
+│   │       │           ├── BlackList.golden
+│   │       │           ├── BlackListLegacy.golden
+│   │       │           ├── Deactivated.golden
+│   │       │           ├── DeactivatedLegacy.golden
+│   │       │           ├── KitchenSink.golden
+│   │       │           ├── KitchenSinkLegacy.golden
+│   │       │           ├── WhiteList.golden
+│   │       │           ├── WhiteListLegacy.golden
+│   │       │           ├── WhiteStrict.golden
+│   │       │           └── WhiteStrictLegacy.golden
+│   │       ├── sypgp
+│   │       │   ├── keyring.go
+│   │       │   ├── select.go
+│   │       │   ├── sypgp.go
+│   │       │   ├── sypgp_test.go
+│   │       │   └── testdata_test.go
+│   │       ├── test
+│   │       │   ├── privilege_linux.go
+│   │       │   └── tool
+│   │       │       ├── cache
+│   │       │       │   └── cache.go
+│   │       │       ├── doc.go
+│   │       │       ├── exec
+│   │       │       │   └── exec.go
+│   │       │       └── require
+│   │       │           └── require.go
+│   │       └── util
+│   │           ├── auth
+│   │           │   ├── auth_test.go
+│   │           │   ├── test_data
+│   │           │   │   ├── test_token
+│   │           │   │   └── test_token_toosmall
+│   │           │   └── token.go
+│   │           ├── bin
+│   │           │   ├── bin_apptainer.go
+│   │           │   ├── bin.go
+│   │           │   ├── bin_no_apptainer.go
+│   │           │   └── bin_test.go
+│   │           ├── crypt
+│   │           │   ├── crypt_dev.go
+│   │           │   └── crypt_dev_test.go
+│   │           ├── env
+│   │           │   ├── create.go
+│   │           │   ├── create_test.go
+│   │           │   ├── env.go
+│   │           │   └── env_test.go
+│   │           ├── exec
+│   │           │   └── hook.go
+│   │           ├── fs
+│   │           │   ├── files
+│   │           │   │   ├── action_scripts.go
+│   │           │   │   ├── action_script.sh
+│   │           │   │   ├── default_hosts.go
+│   │           │   │   ├── files_linux_test.go
+│   │           │   │   ├── group.go
+│   │           │   │   ├── hostname.go
+│   │           │   │   ├── passwd.go
+│   │           │   │   ├── passwd_test.go
+│   │           │   │   ├── resolv_conf.go
+│   │           │   │   ├── runtime_vars.sh
+│   │           │   │   └── testdata
+│   │           │   │       ├── passwd.in
+│   │           │   │       └── passwd.root.customhome.golden
+│   │           │   ├── helper.go
+│   │           │   ├── helper_linux_test.go
+│   │           │   ├── layout
+│   │           │   │   ├── layer
+│   │           │   │   │   ├── overlay
+│   │           │   │   │   │   └── overlay_linux.go
+│   │           │   │   │   └── underlay
+│   │           │   │   │       └── underlay_linux.go
+│   │           │   │   ├── manager.go
+│   │           │   │   ├── manager_test.go
+│   │           │   │   └── session_linux.go
+│   │           │   ├── mount
+│   │           │   │   ├── mount_linux.go
+│   │           │   │   ├── mount_linux_test.go
+│   │           │   │   ├── system_linux.go
+│   │           │   │   └── system_linux_test.go
+│   │           │   ├── overlay
+│   │           │   │   ├── overlay_linux.go
+│   │           │   │   └── overlay_linux_test.go
+│   │           │   └── squashfs
+│   │           │       └── squashfs.go
+│   │           ├── gpu
+│   │           │   ├── nvidia.go
+│   │           │   ├── nvidia_legacy.go
+│   │           │   ├── nvidia_test.go
+│   │           │   ├── paths.go
+│   │           │   ├── paths_test.go
+│   │           │   ├── rocm.go
+│   │           │   └── testdata
+│   │           │       └── testliblist.conf
+│   │           ├── hack
+│   │           │   ├── file_finalizer.go
+│   │           │   └── file_finalizer_test.go
+│   │           ├── interactive
+│   │           │   ├── interactive.go
+│   │           │   └── interactive_test.go
+│   │           ├── machine
+│   │           │   └── machine.go
+│   │           ├── mainthread
+│   │           │   └── mainthread.go
+│   │           ├── paths
+│   │           │   ├── resolve.go
+│   │           │   └── resolve_test.go
+│   │           ├── priv
+│   │           │   └── priv_linux.go
+│   │           ├── rpm
+│   │           │   ├── rpm.go
+│   │           │   └── rpm_test.go
+│   │           ├── shell
+│   │           │   ├── escape.go
+│   │           │   ├── escape_test.go
+│   │           │   └── interpreter
+│   │           │       ├── interpreter.go
+│   │           │       └── interpreter_test.go
+│   │           ├── signal
+│   │           │   ├── signal_linux.go
+│   │           │   └── signal_linux_test.go
+│   │           ├── starter
+│   │           │   └── starter.go
+│   │           ├── uri
+│   │           │   ├── uri.go
+│   │           │   └── uri_test.go
+│   │           └── user
+│   │               ├── cgo_lookup_unix.go
+│   │               ├── identity_unix.go
+│   │               ├── identity_unix_test.go
+│   │               ├── membership.go
+│   │               └── membership_test.go
+│   ├── LICENSE_DEPENDENCIES.md
+│   ├── LICENSE.md
+│   ├── LICENSE_THIRD_PARTY.md
+│   ├── makeit
+│   │   ├── CONTRIBUTORS
+│   │   ├── gengodep
+│   │   ├── genmod.awk
+│   │   ├── install.sh
+│   │   ├── LICENSE
+│   │   ├── README.md
+│   │   └── tmpl
+│   │       ├── data.tmpl
+│   │       ├── lib.tmpl
+│   │       ├── prog.tmpl
+│   │       ├── suffix_bldir.tmpl
+│   │       ├── suffix_data.tmpl
+│   │       └── suffix.tmpl
+│   ├── mconfig
+│   ├── mlocal
+│   │   ├── checks
+│   │   │   ├── basechecks.chk
+│   │   │   ├── project-post.chk
+│   │   │   └── project-pre.chk
+│   │   ├── frags
+│   │   │   ├── arch_i386_opts.mk
+│   │   │   ├── arch_x86_64_opts.mk
+│   │   │   ├── build_cli.mk
+│   │   │   ├── build_network.mk
+│   │   │   ├── build_runtime.mk
+│   │   │   ├── build_runtime_suid.mk
+│   │   │   ├── build_scripts.mk
+│   │   │   ├── common_opts.mk
+│   │   │   ├── debug_opts.mk
+│   │   │   ├── go_appsec_opts.mk
+│   │   │   ├── go_common_opts.mk
+│   │   │   ├── go_debug_opts.mk
+│   │   │   ├── go_normal_opts.mk
+│   │   │   ├── go_runtime_opts.mk
+│   │   │   ├── go_stripped_opts.mk
+│   │   │   ├── go_unix_opts.mk
+│   │   │   ├── Makefile.stub
+│   │   │   └── release_opts.mk
+│   │   └── scripts
+│   │       ├── check-min-go-version
+│   │       └── config_h.sh
+│   ├── pkg
+│   │   ├── build
+│   │   │   └── types
+│   │   │       ├── bundle.go
+│   │   │       ├── bundle_test.go
+│   │   │       ├── definition.go
+│   │   │       ├── definition_test.go
+│   │   │       └── parser
+│   │   │           ├── deffile.go
+│   │   │           ├── deffile_test.go
+│   │   │           ├── testdata_bad
+│   │   │           │   ├── bad_section
+│   │   │           │   ├── empty
+│   │   │           │   ├── emptycomments
+│   │   │           │   ├── json_input_1
+│   │   │           │   └── json_input_2
+│   │   │           ├── testdata_good
+│   │   │           │   ├── apps
+│   │   │           │   │   ├── apps
+│   │   │           │   │   ├── apps.json
+│   │   │           │   │   └── apps_sections.json
+│   │   │           │   ├── arch
+│   │   │           │   │   ├── arch
+│   │   │           │   │   ├── arch.json
+│   │   │           │   │   ├── arch_sections.json
+│   │   │           │   │   └── result
+│   │   │           │   ├── busybox
+│   │   │           │   │   ├── busybox
+│   │   │           │   │   ├── busybox.json
+│   │   │           │   │   ├── busybox_sections.json
+│   │   │           │   │   └── result
+│   │   │           │   ├── debootstrap
+│   │   │           │   │   ├── debootstrap
+│   │   │           │   │   ├── debootstrap.json
+│   │   │           │   │   ├── debootstrap_sections.json
+│   │   │           │   │   └── result
+│   │   │           │   ├── docker
+│   │   │           │   │   ├── docker
+│   │   │           │   │   ├── docker.json
+│   │   │           │   │   └── docker_sections.json
+│   │   │           │   ├── fingerprint
+│   │   │           │   │   ├── fingerprint
+│   │   │           │   │   ├── fingerprint.json
+│   │   │           │   │   ├── fingerprint_sections.json
+│   │   │           │   │   └── result
+│   │   │           │   ├── localimage
+│   │   │           │   │   ├── localimage
+│   │   │           │   │   ├── localimage.json
+│   │   │           │   │   ├── localimage_sections.json
+│   │   │           │   │   └── result
+│   │   │           │   ├── multiplefiles
+│   │   │           │   │   ├── multiplefiles
+│   │   │           │   │   └── multiplefiles.json
+│   │   │           │   ├── multiplescripts
+│   │   │           │   │   ├── multiplescripts
+│   │   │           │   │   └── multiplescripts.json
+│   │   │           │   ├── multistage
+│   │   │           │   │   ├── multistage
+│   │   │           │   │   └── multistage.json
+│   │   │           │   ├── noheader
+│   │   │           │   │   ├── noheader
+│   │   │           │   │   └── noheader.json
+│   │   │           │   ├── noheadercomments
+│   │   │           │   │   ├── noheadercomments
+│   │   │           │   │   └── noheadercomments.json
+│   │   │           │   ├── noheaderwhitespace
+│   │   │           │   │   ├── noheaderwhitespace
+│   │   │           │   │   └── noheaderwhitespace.json
+│   │   │           │   ├── quotedfiles
+│   │   │           │   │   ├── quotedfiles
+│   │   │           │   │   └── quotedfiles.json
+│   │   │           │   ├── scratch
+│   │   │           │   │   ├── result
+│   │   │           │   │   ├── scratch
+│   │   │           │   │   ├── scratch.json
+│   │   │           │   │   └── scratch_sections.json
+│   │   │           │   ├── sectionargs
+│   │   │           │   │   ├── sectionargs
+│   │   │           │   │   └── sectionargs.json
+│   │   │           │   ├── shebang
+│   │   │           │   │   ├── shebang
+│   │   │           │   │   └── shebang.json
+│   │   │           │   ├── shebang_test
+│   │   │           │   │   ├── shebang_test
+│   │   │           │   │   └── shebang_test.json
+│   │   │           │   ├── shub
+│   │   │           │   │   ├── result
+│   │   │           │   │   ├── shub
+│   │   │           │   │   ├── shub.json
+│   │   │           │   │   └── shub_sections.json
+│   │   │           │   ├── yum
+│   │   │           │   │   ├── result
+│   │   │           │   │   ├── yum
+│   │   │           │   │   ├── yum.json
+│   │   │           │   │   └── yum_sections.json
+│   │   │           │   ├── zypper
+│   │   │           │   │   ├── result
+│   │   │           │   │   ├── zypper
+│   │   │           │   │   ├── zypper.json
+│   │   │           │   │   └── zypper_sections.json
+│   │   │           │   └── zypper_sle
+│   │   │           │       ├── zypper
+│   │   │           │       ├── zypper.json
+│   │   │           │       └── zypper_sections.json
+│   │   │           └── testdata_multi
+│   │   │               ├── noheader
+│   │   │               │   ├── noheader
+│   │   │               │   └── noheader.json
+│   │   │               ├── noheadercomments
+│   │   │               │   ├── noheadercomments
+│   │   │               │   └── noheadercomments.json
+│   │   │               ├── noheaderwhitespace
+│   │   │               │   ├── noheaderwhitespace
+│   │   │               │   └── noheaderwhitespace.json
+│   │   │               ├── simple
+│   │   │               │   ├── simple
+│   │   │               │   └── simple.json
+│   │   │               └── single
+│   │   │                   ├── docker
+│   │   │                   └── docker.json
+│   │   ├── cmdline
+│   │   │   ├── cmd.go
+│   │   │   ├── cmd_test.go
+│   │   │   ├── env.go
+│   │   │   ├── env_test.go
+│   │   │   ├── flag.go
+│   │   │   └── flag_test.go
+│   │   ├── image
+│   │   │   ├── doc.go
+│   │   │   ├── driver.go
+│   │   │   ├── ext3.go
+│   │   │   ├── ext3_test.go
+│   │   │   ├── image.go
+│   │   │   ├── image_test.go
+│   │   │   ├── reader.go
+│   │   │   ├── sandbox.go
+│   │   │   ├── sandbox_test.go
+│   │   │   ├── sif.go
+│   │   │   ├── sif_test.go
+│   │   │   ├── squashfs.go
+│   │   │   ├── squashfs_test.go
+│   │   │   └── testdata
+│   │   │       ├── squashfs.lzo
+│   │   │       ├── squashfs.v3
+│   │   │       └── squashfs.v4
+│   │   ├── inspect
+│   │   │   └── metadata.go
+│   │   ├── network
+│   │   │   ├── network_linux.go
+│   │   │   └── network_linux_test.go
+│   │   ├── ocibundle
+│   │   │   ├── bundle.go
+│   │   │   ├── sif
+│   │   │   │   ├── bundle_linux.go
+│   │   │   │   └── bundle_linux_test.go
+│   │   │   └── tools
+│   │   │       ├── loop.go
+│   │   │       ├── oci.go
+│   │   │       └── overlay_linux.go
+│   │   ├── ociruntime
+│   │   │   └── ociruntime.go
+│   │   ├── plugin
+│   │   │   ├── callback
+│   │   │   │   ├── cli
+│   │   │   │   │   └── cli.go
+│   │   │   │   └── runtime
+│   │   │   │       ├── engine
+│   │   │   │       │   └── apptainer
+│   │   │   │       │       └── apptainer.go
+│   │   │   │       └── fakeroot
+│   │   │   │           └── fakeroot.go
+│   │   │   ├── manifest.go
+│   │   │   └── plugin.go
+│   │   ├── runtime
+│   │   │   └── engine
+│   │   │       ├── apptainer
+│   │   │       │   └── config
+│   │   │       │       ├── bind.go
+│   │   │       │       ├── bind_test.go
+│   │   │       │       ├── config.go
+│   │   │       │       ├── mount.go
+│   │   │       │       └── mount_test.go
+│   │   │       └── config
+│   │   │           └── config.go
+│   │   ├── syfs
+│   │   │   └── syfs.go
+│   │   ├── sylog
+│   │   │   ├── doc.go
+│   │   │   ├── sylog_common.go
+│   │   │   ├── sylog_dummy.go
+│   │   │   ├── sylog_dummy_test.go
+│   │   │   ├── sylog.go
+│   │   │   └── sylog_test.go
+│   │   └── util
+│   │       ├── apptainerconf
+│   │       │   ├── config.go
+│   │       │   ├── parser.go
+│   │       │   └── parser_test.go
+│   │       ├── archive
+│   │       │   ├── copy.go
+│   │       │   └── copy_test.go
+│   │       ├── capabilities
+│   │       │   ├── capabilities.go
+│   │       │   ├── capabilities_test.go
+│   │       │   ├── config.go
+│   │       │   ├── config_test.go
+│   │       │   ├── process_linux.go
+│   │       │   └── process_linux_test.go
+│   │       ├── copy
+│   │       │   ├── buffer.go
+│   │       │   ├── buffer_test.go
+│   │       │   ├── writer.go
+│   │       │   └── writer_test.go
+│   │       ├── cryptkey
+│   │       │   ├── key.go
+│   │       │   ├── key_test.go
+│   │       │   └── rsa.go
+│   │       ├── fs
+│   │       │   ├── lock
+│   │       │   │   ├── lock.go
+│   │       │   │   ├── lock_test.go
+│   │       │   │   └── var.go
+│   │       │   └── proc
+│   │       │       ├── proc.go
+│   │       │       └── proc_linux_test.go
+│   │       ├── loop
+│   │       │   ├── loop_apptainer.go
+│   │       │   ├── loop.go
+│   │       │   ├── loop_no_apptainer.go
+│   │       │   └── loop_test.go
+│   │       ├── namespaces
+│   │       │   ├── setns_linux.go
+│   │       │   ├── setns_linux_test.go
+│   │       │   └── user_linux.go
+│   │       ├── rlimit
+│   │       │   ├── rlimit_linux.go
+│   │       │   └── rlimit_linux_test.go
+│   │       ├── slice
+│   │       │   ├── slice.go
+│   │       │   └── slice_test.go
+│   │       ├── sysctl
+│   │       │   ├── sysctl_linux.go
+│   │       │   └── sysctl_linux_test.go
+│   │       ├── unix
+│   │       │   ├── socket.go
+│   │       │   └── socket_test.go
+│   │       └── user-agent
+│   │           ├── agent.go
+│   │           └── agent_test.go
+│   ├── README.md
+│   ├── RELEASE_PROCEDURE.md
+│   ├── scripts
+│   │   ├── check-go.mod
+│   │   ├── ci-deb-build-test
+│   │   ├── ci-docker-run
+│   │   ├── ci-rpm-build-test
+│   │   ├── ci-unpriv-test
+│   │   ├── clean-dependencies
+│   │   ├── compile-dependencies
+│   │   ├── download-dependencies
+│   │   ├── e2e-test
+│   │   ├── expand-env.go
+│   │   ├── get-min-go-version
+│   │   ├── get-shell-files.sh
+│   │   ├── get-version
+│   │   ├── go-generate.in
+│   │   ├── go-test.in
+│   │   ├── install-dependencies
+│   │   ├── make-dist.sh
+│   │   ├── rpm-version
+│   │   ├── run-singularity
+│   │   ├── should-e2e-run
+│   │   ├── test-sudo
+│   │   └── update-license-dependencies.sh
+│   ├── SECURITY.md
+│   ├── SUPPORT.md
+│   ├── test
+│   │   ├── build-args
+│   │   │   ├── multiple-stage.def
+│   │   │   ├── multiple-stage-unit-test.def
+│   │   │   ├── script.sh
+│   │   │   ├── single-stage.def
+│   │   │   └── single-stage-unit-test.def
+│   │   ├── certs
+│   │   │   ├── gen_certs.go
+│   │   │   ├── intermediate.pem
+│   │   │   ├── leaf.pem
+│   │   │   └── root.pem
+│   │   ├── defs
+│   │   │   └── issue1704.def
+│   │   ├── images
+│   │   │   ├── empty.sif
+│   │   │   ├── one-group.sif
+│   │   │   ├── one-group-signed-dsse.sif
+│   │   │   ├── one-group-signed-legacy-all.sif
+│   │   │   ├── one-group-signed-legacy-group.sif
+│   │   │   ├── one-group-signed-legacy.sif
+│   │   │   └── one-group-signed-pgp.sif
+│   │   ├── keys
+│   │   │   ├── ecdsa-private.pem
+│   │   │   ├── ecdsa-public.pem
+│   │   │   ├── ed25519-private.pem
+│   │   │   ├── ed25519-public.pem
+│   │   │   ├── pgp-private.asc
+│   │   │   ├── pgp-public.asc
+│   │   │   ├── rsa-private.pem
+│   │   │   └── rsa-public.pem
+│   │   ├── README.md
+│   │   └── remote
+│   │       └── config.example.json
+│   └── tools
+│       ├── Dockerfile.local.testing
+│       ├── install-unprivileged.sh
+│       └── offsetpreload.c
+├── ftbfs-redefined-fortify_source.patch -> /home/felix/packages/apptainer/ftbfs-redefined-fortify_source.patch
+└── tmpfiles.conf -> /home/felix/packages/apptainer/tmpfiles.conf
+
+296 directories, 921 files

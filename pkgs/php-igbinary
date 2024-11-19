@@ -1,0 +1,234 @@
+src
+├── igbinary-3.2.16
+│   ├── azure-pipelines.yml
+│   ├── benchmark
+│   │   ├── bench.php
+│   │   ├── comparisons.php
+│   │   ├── l10n-en.ser
+│   │   ├── run-bench.php
+│   │   ├── serialize-arrayarray.b.php
+│   │   ├── serialize-objectarray.b.php
+│   │   ├── serialize-scalararray.b.php
+│   │   ├── serialize-scalar-int.b.php
+│   │   ├── serialize-stringarray.b.php
+│   │   ├── unserialize-arrayarray.php
+│   │   ├── unserialize-emptyarray.php
+│   │   ├── unserialize-intarray.b.php
+│   │   ├── unserialize-largearrayarray.php
+│   │   ├── unserialize-objectarray.b.php
+│   │   ├── unserialize-objectarray.totalmem.php
+│   │   ├── unserialize-object.b.php
+│   │   ├── unserialize-scalararray.b.php
+│   │   ├── unserialize-scalar-int.b.php
+│   │   ├── unserialize-stdclass.b.php
+│   │   ├── unserialize-stringarray.b.php
+│   │   └── unserialize-structured-array.b.php
+│   ├── ci
+│   │   ├── Dockerfile
+│   │   ├── Dockerfile.valgrind
+│   │   ├── g++-32.sh
+│   │   ├── gcc-32.sh
+│   │   ├── generate_php_install_dir.sh
+│   │   ├── get_global_php_version.sh
+│   │   ├── install_php_custom.sh
+│   │   ├── php.ini
+│   │   ├── print_php_int_max.php
+│   │   ├── run-tests-parallel.php
+│   │   ├── test_dockerized.sh
+│   │   ├── test_dockerized_valgrind.sh
+│   │   ├── test_inner.sh
+│   │   ├── test_inner_valgrind.sh
+│   │   └── wipe_travis_cache.sh
+│   ├── CODE_COVERAGE.md
+│   ├── config.m4
+│   ├── config.w32
+│   ├── COPYING
+│   ├── CREDITS
+│   ├── docker
+│   │   ├── Dockerfile
+│   │   ├── README.md
+│   │   ├── test_arm64_emulated.sh
+│   │   └── test_S390X.sh
+│   ├── igbinary.h
+│   ├── igbinary.php
+│   ├── igbinary.php.ini
+│   ├── igbinary.spec
+│   ├── Makefile.bench
+│   ├── NEWS
+│   ├── package.xml
+│   ├── php_igbinary.h
+│   ├── README.md
+│   ├── RELEASE_CHECKLIST
+│   ├── src
+│   │   └── php7
+│   │       ├── hash.h
+│   │       ├── hash_ptr.h
+│   │       ├── hash_si.c
+│   │       ├── hash_si_ptr.c
+│   │       ├── igbinary_bswap.h
+│   │       ├── igbinary.c
+│   │       ├── igbinary.h
+│   │       ├── igbinary_macros.h
+│   │       ├── igbinary_zend_hash.h
+│   │       ├── ig_win32.h
+│   │       └── php_igbinary.h
+│   ├── tags.sh
+│   ├── TECH_NOTES.md
+│   ├── TESTING.md
+│   ├── tests
+│   │   ├── igbinary_001.phpt
+│   │   ├── igbinary_002.phpt
+│   │   ├── igbinary_003.phpt
+│   │   ├── igbinary_004.phpt
+│   │   ├── igbinary_005.phpt
+│   │   ├── igbinary_006.phpt
+│   │   ├── igbinary_007.phpt
+│   │   ├── igbinary_008.phpt
+│   │   ├── igbinary_009b_php8.phpt
+│   │   ├── igbinary_009b.phpt
+│   │   ├── igbinary_009.phpt
+│   │   ├── igbinary_010.phpt
+│   │   ├── igbinary_012.phpt
+│   │   ├── igbinary_013.phpt
+│   │   ├── igbinary_014.phpt
+│   │   ├── igbinary_015b.phpt
+│   │   ├── igbinary_015c.phpt
+│   │   ├── igbinary_015.phpt
+│   │   ├── igbinary_016.phpt
+│   │   ├── igbinary_017.phpt
+│   │   ├── igbinary_018.phpt
+│   │   ├── igbinary_019.phpt
+│   │   ├── igbinary_020.phpt
+│   │   ├── igbinary_021.phpt
+│   │   ├── igbinary_022_php82.phpt
+│   │   ├── igbinary_022.phpt
+│   │   ├── igbinary_023.phpt
+│   │   ├── igbinary_024.phpt
+│   │   ├── igbinary_025b.phpt
+│   │   ├── igbinary_025.phpt
+│   │   ├── igbinary_026b_php8.phpt
+│   │   ├── igbinary_026b.phpt
+│   │   ├── igbinary_026_php8.phpt
+│   │   ├── igbinary_026.phpt
+│   │   ├── igbinary_027.phpt
+│   │   ├── igbinary_028.phpt
+│   │   ├── igbinary_029.phpt
+│   │   ├── igbinary_030_php72.phpt
+│   │   ├── igbinary_030_php7.phpt
+│   │   ├── igbinary_031.phpt
+│   │   ├── igbinary_032.phpt
+│   │   ├── igbinary_033.phpt
+│   │   ├── igbinary_034.phpt
+│   │   ├── igbinary_040.phpt
+│   │   ├── igbinary_041.phpt
+│   │   ├── igbinary_043.phpt
+│   │   ├── igbinary_044.phpt
+│   │   ├── igbinary_045b.phpt
+│   │   ├── igbinary_045c.phpt
+│   │   ├── igbinary_046b.phpt
+│   │   ├── igbinary_046c.phpt
+│   │   ├── igbinary_046d.phpt
+│   │   ├── igbinary_046.phpt
+│   │   ├── igbinary_047.phpt
+│   │   ├── igbinary_048b.phpt
+│   │   ├── igbinary_048.phpt
+│   │   ├── igbinary_049b.phpt
+│   │   ├── igbinary_049.phpt
+│   │   ├── igbinary_050.phpt
+│   │   ├── igbinary_051.phpt
+│   │   ├── igbinary_052.phpt
+│   │   ├── igbinary_053.phpt
+│   │   ├── igbinary_054.phpt
+│   │   ├── igbinary_055.phpt
+│   │   ├── igbinary_057.phpt
+│   │   ├── igbinary_058b.phpt
+│   │   ├── igbinary_058.phpt
+│   │   ├── igbinary_059.phpt
+│   │   ├── igbinary_060.phpt
+│   │   ├── igbinary_061.phpt
+│   │   ├── igbinary_062.phpt
+│   │   ├── igbinary_063_php72.phpt
+│   │   ├── igbinary_063_php7.phpt
+│   │   ├── igbinary_064.phpt
+│   │   ├── igbinary_065.phpt
+│   │   ├── igbinary_066.phpt
+│   │   ├── igbinary_067.phpt
+│   │   ├── igbinary_068.phpt
+│   │   ├── igbinary_069.phpt
+│   │   ├── igbinary_070.phpt
+│   │   ├── igbinary_071_php8.phpt
+│   │   ├── igbinary_071.phpt
+│   │   ├── igbinary_072.phpt
+│   │   ├── igbinary_073.phpt
+│   │   ├── igbinary_074.phpt
+│   │   ├── igbinary_075.phpt
+│   │   ├── igbinary_076.phpt
+│   │   ├── igbinary_077.phpt
+│   │   ├── igbinary_078.phpt
+│   │   ├── igbinary_079.phpt
+│   │   ├── igbinary_080.phpt
+│   │   ├── igbinary_081.phpt
+│   │   ├── igbinary_082_php74.phpt
+│   │   ├── igbinary_082.phpt
+│   │   ├── igbinary_083.phpt
+│   │   ├── igbinary_084b.phpt
+│   │   ├── igbinary_084.phpt
+│   │   ├── igbinary_085.phpt
+│   │   ├── igbinary_086.phpt
+│   │   ├── igbinary_087.phpt
+│   │   ├── igbinary_088.phpt
+│   │   ├── igbinary_089_32bit.phpt
+│   │   ├── igbinary_089.phpt
+│   │   ├── igbinary_090.phpt
+│   │   ├── igbinary_091.phpt
+│   │   ├── igbinary_092.phpt
+│   │   ├── igbinary_093.phpt
+│   │   ├── igbinary_094.phpt
+│   │   ├── igbinary_095.phpt
+│   │   ├── igbinary_096.phpt
+│   │   ├── igbinary_097.phpt
+│   │   ├── igbinary_098.phpt
+│   │   ├── igbinary_099.phpt
+│   │   ├── igbinary_bug54662.phpt
+│   │   ├── igbinary_bug72134.phpt
+│   │   ├── igbinary_enums_1.phpt
+│   │   ├── igbinary_enums_2.phpt
+│   │   ├── igbinary_enums_3_php83.phpt
+│   │   ├── igbinary_enums_3.phpt
+│   │   ├── igbinary_unserialize_v1_compatible.phpt
+│   │   ├── php82_suppress_dynamic_properties_warning.inc
+│   │   ├── __serialize_001.phpt
+│   │   ├── __serialize_002.phpt
+│   │   ├── __serialize_003.phpt
+│   │   ├── __serialize_004.phpt
+│   │   ├── __serialize_005.phpt
+│   │   ├── __serialize_006.phpt
+│   │   ├── __serialize_007.phpt
+│   │   ├── __serialize_008.phpt
+│   │   ├── __serialize_009.phpt
+│   │   ├── __serialize_010.phpt
+│   │   ├── __serialize_011.phpt
+│   │   ├── __serialize_012.phpt
+│   │   ├── __serialize_013_php8.phpt
+│   │   ├── __serialize_013.phpt
+│   │   ├── __serialize_014_php8.phpt
+│   │   ├── __serialize_014.phpt
+│   │   ├── __serialize_015.phpt
+│   │   ├── __serialize_016_php8.phpt
+│   │   ├── __serialize_016.phpt
+│   │   ├── __serialize_017.phpt
+│   │   ├── __serialize_018.phpt
+│   │   ├── __serialize_019.phpt
+│   │   ├── __serialize_020.phpt
+│   │   ├── __serialize_021.phpt
+│   │   ├── __serialize_022.phpt
+│   │   ├── sleep_mangled_name_clash.phpt
+│   │   ├── typed_property_ref_assignment_failure.phpt
+│   │   ├── typed_property_ref_overwrite2.phpt
+│   │   ├── typed_property_ref_overwrite.phpt
+│   │   ├── typed_property_refs_php74.phpt
+│   │   └── typed_property_refs.phpt
+│   └── WINDOWS.md
+└── php-igbinary-3.2.16.tar.gz -> /home/felix/packages/php-igbinary/php-igbinary-3.2.16.tar.gz
+
+8 directories, 224 files

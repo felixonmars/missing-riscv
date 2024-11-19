@@ -1,0 +1,131 @@
+src
+├── repro-get-0.4.1
+│   ├── cmd
+│   │   └── repro-get
+│   │       ├── cache_clean.go
+│   │       ├── cache_export.go
+│   │       ├── cache.go
+│   │       ├── cache_import.go
+│   │       ├── dockerfile_generate.go
+│   │       ├── dockerfile.go
+│   │       ├── download.go
+│   │       ├── hash_generate.go
+│   │       ├── hash.go
+│   │       ├── hash_inspect.go
+│   │       ├── hash_update.go
+│   │       ├── info.go
+│   │       ├── install.go
+│   │       ├── ipfs.go
+│   │       ├── ipfs_push.go
+│   │       └── main.go
+│   ├── Dockerfile
+│   ├── examples
+│   │   ├── gcc
+│   │   │   ├── Dockerfile
+│   │   │   ├── Dockerfile.generate-hash
+│   │   │   ├── PACKAGES
+│   │   │   ├── README.md
+│   │   │   ├── SHA256SUMS-amd64
+│   │   │   └── SOURCE_DATE_EPOCH
+│   │   ├── hello
+│   │   │   ├── Dockerfile
+│   │   │   ├── README.md
+│   │   │   ├── SHA256SUMS-amd64
+│   │   │   ├── SHA256SUMS-arm64
+│   │   │   ├── SHA256SUMS-arm-v7
+│   │   │   ├── SHA256SUMS-ppc64le
+│   │   │   ├── SHA256SUMS-s390x
+│   │   │   └── SOURCE_DATE_EPOCH
+│   │   ├── Makefile
+│   │   ├── neofetch-alpine
+│   │   │   ├── README.md
+│   │   │   └── SHA256SUMS-amd64
+│   │   ├── neofetch-arch
+│   │   │   ├── README.md
+│   │   │   └── SHA256SUMS-amd64
+│   │   ├── neofetch-debian
+│   │   │   ├── README.md
+│   │   │   └── SHA256SUMS-amd64
+│   │   ├── neofetch-fedora
+│   │   │   ├── README.md
+│   │   │   └── SHA256SUMS-amd64
+│   │   ├── neofetch-ubuntu
+│   │   │   ├── README.md
+│   │   │   └── SHA256SUMS-amd64
+│   │   └── README.md
+│   ├── go.mod
+│   ├── go.sum
+│   ├── hack
+│   │   └── test-dockerfile-repro.sh
+│   ├── LICENSE
+│   ├── Makefile
+│   ├── Makefile.d
+│   │   └── Dockerfile.integration
+│   ├── pkg
+│   │   ├── apkutil
+│   │   │   ├── apkutil.go
+│   │   │   └── apkutil_test.go
+│   │   ├── archutil
+│   │   │   └── archutil.go
+│   │   ├── cache
+│   │   │   ├── cache.go
+│   │   │   └── cache_test.go
+│   │   ├── distro
+│   │   │   ├── alpine
+│   │   │   │   ├── alpine.go
+│   │   │   │   └── alpine_test.go
+│   │   │   ├── arch
+│   │   │   │   ├── arch.go
+│   │   │   │   ├── arch_test.go
+│   │   │   │   ├── Dockerfile.generate-hash.tmpl
+│   │   │   │   └── Dockerfile.tmpl
+│   │   │   ├── debian
+│   │   │   │   ├── debian.go
+│   │   │   │   ├── debian_test.go
+│   │   │   │   ├── Dockerfile.generate-hash.tmpl
+│   │   │   │   └── Dockerfile.tmpl
+│   │   │   ├── distro.go
+│   │   │   ├── distroutil
+│   │   │   │   ├── detect
+│   │   │   │   │   ├── detect.go
+│   │   │   │   │   └── detect_test.go
+│   │   │   │   └── dockerfilesnippets
+│   │   │   │       └── Dockerfile.fetch-repro-get.snippet
+│   │   │   ├── fedora
+│   │   │   │   └── fedora.go
+│   │   │   ├── none
+│   │   │   │   └── none.go
+│   │   │   └── ubuntu
+│   │   │       └── ubuntu.go
+│   │   ├── downloader
+│   │   │   └── downloader.go
+│   │   ├── dpkgutil
+│   │   │   ├── dpkgutil.go
+│   │   │   └── dpkgutil_test.go
+│   │   ├── envutil
+│   │   │   └── envutil.go
+│   │   ├── filespec
+│   │   │   ├── filespec.go
+│   │   │   └── filespec_test.go
+│   │   ├── ocidistutil
+│   │   │   └── ocidistutil.go
+│   │   ├── pacmanutil
+│   │   │   ├── pacmanutil.go
+│   │   │   └── pacmanutil_test.go
+│   │   ├── progressbar
+│   │   │   └── progressbar.go
+│   │   ├── rpmutil
+│   │   │   ├── rpmutil.go
+│   │   │   └── rpmutil_test.go
+│   │   ├── sha256sums
+│   │   │   ├── sha256sums.go
+│   │   │   └── sha256sums_test.go
+│   │   ├── urlopener
+│   │   │   └── urlopener.go
+│   │   └── version
+│   │       ├── version.go
+│   │       └── version_test.go
+│   └── README.md
+└── repro-get-0.4.1.tar.gz -> /home/felix/packages/repro-get/repro-get-0.4.1.tar.gz
+
+39 directories, 90 files

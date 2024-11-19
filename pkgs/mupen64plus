@@ -1,0 +1,750 @@
+src
+├── 010-mupen64plus-install-fix.patch -> /home/felix/packages/mupen64plus/010-mupen64plus-install-fix.patch
+├── mupen64plus-audio-sdl
+│   ├── appveyor.yml
+│   ├── INSTALL
+│   ├── LICENSES
+│   ├── projects
+│   │   ├── msvc
+│   │   │   └── mupen64plus-audio-sdl.vcxproj
+│   │   └── unix
+│   │       └── Makefile
+│   ├── RELEASE
+│   └── src
+│       ├── circular_buffer.c
+│       ├── circular_buffer.h
+│       ├── main.c
+│       ├── main.h
+│       ├── osal_dynamiclib.h
+│       ├── osal_dynamiclib_unix.c
+│       ├── osal_dynamiclib_win32.c
+│       ├── resamplers
+│       │   ├── resamplers.c
+│       │   ├── resamplers.h
+│       │   ├── speex.c
+│       │   ├── src.c
+│       │   └── trivial.c
+│       ├── sdl_backend.c
+│       ├── sdl_backend.h
+│       ├── volume.c
+│       └── volume.h
+├── mupen64plus-core
+│   ├── appveyor.yml
+│   ├── CREDITS
+│   ├── data
+│   │   ├── font.ttf
+│   │   ├── mupen64plus.ini
+│   │   └── mupencheat.txt
+│   ├── doc
+│   │   ├── emuwiki-api-doc
+│   │   │   ├── Home.mediawiki
+│   │   │   ├── Mupen64Plus-Core-Parameters.mediawiki
+│   │   │   ├── Mupen64Plus-Plugin-Parameters.mediawiki
+│   │   │   ├── Mupen64Plus-v2.0-API-Versioning.mediawiki
+│   │   │   ├── Mupen64Plus-v2.0-Core-API-v1.0.mediawiki
+│   │   │   ├── Mupen64Plus-v2.0-Core-Basic.mediawiki
+│   │   │   ├── Mupen64Plus-v2.0-Core-Config.mediawiki
+│   │   │   ├── Mupen64Plus-v2.0-Core-Debugger.mediawiki
+│   │   │   ├── Mupen64Plus-v2.0-Core-Front-End.mediawiki
+│   │   │   ├── Mupen64Plus-v2.0-Core-Video-Extension.mediawiki
+│   │   │   ├── Mupen64Plus-v2.0-Design-Proposal-3.mediawiki
+│   │   │   ├── Mupen64Plus-v2.0-headers.mediawiki
+│   │   │   ├── Mupen64Plus-v2.0-Netplay-API.mediawiki
+│   │   │   └── Mupen64Plus-v2.0-Plugin-API.mediawiki
+│   │   ├── font-license
+│   │   ├── gpl-license
+│   │   ├── lgpl-license
+│   │   └── new_dynarec.mediawiki
+│   ├── INSTALL
+│   ├── LICENSES
+│   ├── projects
+│   │   ├── msvc
+│   │   │   ├── mupen64plus-core.vcxproj
+│   │   │   └── mupen64plus-core.vcxproj.filters
+│   │   └── unix
+│   │       └── Makefile
+│   ├── README
+│   ├── README.md
+│   ├── RELEASE
+│   ├── src
+│   │   ├── api
+│   │   │   ├── api_export.ver
+│   │   │   ├── callbacks.c
+│   │   │   ├── callbacks.h
+│   │   │   ├── common.c
+│   │   │   ├── config.c
+│   │   │   ├── config.h
+│   │   │   ├── debugger.c
+│   │   │   ├── debugger.h
+│   │   │   ├── frontend.c
+│   │   │   ├── m64p_common.h
+│   │   │   ├── m64p_config.h
+│   │   │   ├── m64p_debugger.h
+│   │   │   ├── m64p_frontend.h
+│   │   │   ├── m64p_plugin.h
+│   │   │   ├── m64p_types.h
+│   │   │   ├── m64p_vidext.h
+│   │   │   ├── vidext.c
+│   │   │   ├── vidext.h
+│   │   │   └── vidext_sdl2_compat.h
+│   │   ├── asm_defines
+│   │   │   └── asm_defines.c
+│   │   ├── backends
+│   │   │   ├── api
+│   │   │   │   ├── audio_out_backend.h
+│   │   │   │   ├── clock_backend.h
+│   │   │   │   ├── controller_input_backend.h
+│   │   │   │   ├── joybus.h
+│   │   │   │   ├── rumble_backend.h
+│   │   │   │   ├── storage_backend.h
+│   │   │   │   ├── video_capture_backend.c
+│   │   │   │   └── video_capture_backend.h
+│   │   │   ├── clock_ctime_plus_delta.c
+│   │   │   ├── clock_ctime_plus_delta.h
+│   │   │   ├── dummy_video_capture.c
+│   │   │   ├── file_storage.c
+│   │   │   ├── file_storage.h
+│   │   │   ├── opencv_video_capture.cpp
+│   │   │   └── plugins_compat
+│   │   │       ├── audio_plugin_compat.c
+│   │   │       ├── input_plugin_compat.c
+│   │   │       └── plugins_compat.h
+│   │   ├── debugger
+│   │   │   ├── dbg_breakpoints.c
+│   │   │   ├── dbg_breakpoints.h
+│   │   │   ├── dbg_debugger.c
+│   │   │   ├── dbg_debugger.h
+│   │   │   ├── dbg_decoder.c
+│   │   │   ├── dbg_decoder.h
+│   │   │   ├── dbg_decoder_local.h
+│   │   │   ├── dbg_memory.c
+│   │   │   └── dbg_memory.h
+│   │   ├── device
+│   │   │   ├── cart
+│   │   │   │   ├── af_rtc.c
+│   │   │   │   ├── af_rtc.h
+│   │   │   │   ├── cart.c
+│   │   │   │   ├── cart.h
+│   │   │   │   ├── cart_rom.c
+│   │   │   │   ├── cart_rom.h
+│   │   │   │   ├── eeprom.c
+│   │   │   │   ├── eeprom.h
+│   │   │   │   ├── flashram.c
+│   │   │   │   ├── flashram.h
+│   │   │   │   ├── is_viewer.c
+│   │   │   │   ├── is_viewer.h
+│   │   │   │   ├── sram.c
+│   │   │   │   └── sram.h
+│   │   │   ├── controllers
+│   │   │   │   ├── game_controller.c
+│   │   │   │   ├── game_controller.h
+│   │   │   │   ├── paks
+│   │   │   │   │   ├── biopak.c
+│   │   │   │   │   ├── biopak.h
+│   │   │   │   │   ├── mempak.c
+│   │   │   │   │   ├── mempak.h
+│   │   │   │   │   ├── rumblepak.c
+│   │   │   │   │   ├── rumblepak.h
+│   │   │   │   │   ├── transferpak.c
+│   │   │   │   │   └── transferpak.h
+│   │   │   │   ├── vru_controller.c
+│   │   │   │   └── vru_controller.h
+│   │   │   ├── dd
+│   │   │   │   ├── dd_controller.c
+│   │   │   │   ├── dd_controller.h
+│   │   │   │   ├── disk.c
+│   │   │   │   └── disk.h
+│   │   │   ├── device.c
+│   │   │   ├── device.h
+│   │   │   ├── gb
+│   │   │   │   ├── gb_cart.c
+│   │   │   │   ├── gb_cart.h
+│   │   │   │   ├── m64282fp.c
+│   │   │   │   ├── m64282fp.h
+│   │   │   │   ├── mbc3_rtc.c
+│   │   │   │   └── mbc3_rtc.h
+│   │   │   ├── memory
+│   │   │   │   ├── memory.c
+│   │   │   │   └── memory.h
+│   │   │   ├── pif
+│   │   │   │   ├── bootrom_hle.c
+│   │   │   │   ├── bootrom_hle.h
+│   │   │   │   ├── cic.c
+│   │   │   │   ├── cic.h
+│   │   │   │   ├── n64_cic_nus_6105.c
+│   │   │   │   ├── n64_cic_nus_6105.h
+│   │   │   │   ├── pif.c
+│   │   │   │   └── pif.h
+│   │   │   ├── r4300
+│   │   │   │   ├── cached_interp.c
+│   │   │   │   ├── cached_interp.h
+│   │   │   │   ├── cp0.c
+│   │   │   │   ├── cp0.h
+│   │   │   │   ├── cp1.c
+│   │   │   │   ├── cp1.h
+│   │   │   │   ├── cp2.c
+│   │   │   │   ├── cp2.h
+│   │   │   │   ├── fpu.h
+│   │   │   │   ├── idec.c
+│   │   │   │   ├── idec.h
+│   │   │   │   ├── instr_counters.c
+│   │   │   │   ├── instr_counters.h
+│   │   │   │   ├── interrupt.c
+│   │   │   │   ├── interrupt.h
+│   │   │   │   ├── mips_instructions.def
+│   │   │   │   ├── new_dynarec
+│   │   │   │   │   ├── arm
+│   │   │   │   │   │   ├── arm_cpu_features.c
+│   │   │   │   │   │   ├── arm_cpu_features.h
+│   │   │   │   │   │   ├── assem_arm.c
+│   │   │   │   │   │   ├── assem_arm.h
+│   │   │   │   │   │   └── linkage_arm.S
+│   │   │   │   │   ├── arm64
+│   │   │   │   │   │   ├── assem_arm64.c
+│   │   │   │   │   │   ├── assem_arm64.h
+│   │   │   │   │   │   └── linkage_arm64.S
+│   │   │   │   │   ├── new_dynarec.c
+│   │   │   │   │   ├── new_dynarec.h
+│   │   │   │   │   ├── recomp_dbg.c
+│   │   │   │   │   ├── x64
+│   │   │   │   │   │   ├── assem_x64.c
+│   │   │   │   │   │   ├── assem_x64.h
+│   │   │   │   │   │   └── linkage_x64.asm
+│   │   │   │   │   └── x86
+│   │   │   │   │       ├── assem_x86.c
+│   │   │   │   │       ├── assem_x86.h
+│   │   │   │   │       └── linkage_x86.asm
+│   │   │   │   ├── opcodes.md
+│   │   │   │   ├── pure_interp.c
+│   │   │   │   ├── pure_interp.h
+│   │   │   │   ├── r4300_core.c
+│   │   │   │   ├── r4300_core.h
+│   │   │   │   ├── recomp.c
+│   │   │   │   ├── recomp.h
+│   │   │   │   ├── recomp_types.h
+│   │   │   │   ├── tlb.c
+│   │   │   │   ├── tlb.h
+│   │   │   │   ├── x86
+│   │   │   │   │   ├── assemble.c
+│   │   │   │   │   ├── assemble.h
+│   │   │   │   │   ├── assemble_struct.h
+│   │   │   │   │   ├── dynarec.c
+│   │   │   │   │   ├── dyna_start.asm
+│   │   │   │   │   ├── interpret.h
+│   │   │   │   │   ├── regcache.c
+│   │   │   │   │   └── regcache.h
+│   │   │   │   └── x86_64
+│   │   │   │       ├── assemble.c
+│   │   │   │       ├── assemble.h
+│   │   │   │       ├── assemble_struct.h
+│   │   │   │       ├── dynarec.c
+│   │   │   │       ├── dyna_start.asm
+│   │   │   │       ├── interpret.h
+│   │   │   │       ├── regcache.c
+│   │   │   │       └── regcache.h
+│   │   │   ├── rcp
+│   │   │   │   ├── ai
+│   │   │   │   │   ├── ai_controller.c
+│   │   │   │   │   └── ai_controller.h
+│   │   │   │   ├── mi
+│   │   │   │   │   ├── mi_controller.c
+│   │   │   │   │   └── mi_controller.h
+│   │   │   │   ├── pi
+│   │   │   │   │   ├── pi_controller.c
+│   │   │   │   │   └── pi_controller.h
+│   │   │   │   ├── rdp
+│   │   │   │   │   ├── fb.c
+│   │   │   │   │   ├── fb.h
+│   │   │   │   │   ├── rdp_core.c
+│   │   │   │   │   └── rdp_core.h
+│   │   │   │   ├── ri
+│   │   │   │   │   ├── ri_controller.c
+│   │   │   │   │   └── ri_controller.h
+│   │   │   │   ├── rsp
+│   │   │   │   │   ├── rsp_core.c
+│   │   │   │   │   └── rsp_core.h
+│   │   │   │   ├── si
+│   │   │   │   │   ├── si_controller.c
+│   │   │   │   │   └── si_controller.h
+│   │   │   │   └── vi
+│   │   │   │       ├── vi_controller.c
+│   │   │   │       └── vi_controller.h
+│   │   │   └── rdram
+│   │   │       ├── rdram.c
+│   │   │       └── rdram.h
+│   │   ├── main
+│   │   │   ├── cheat.c
+│   │   │   ├── cheat.h
+│   │   │   ├── eventloop.c
+│   │   │   ├── eventloop.h
+│   │   │   ├── lirc.c
+│   │   │   ├── lirc.h
+│   │   │   ├── list.h
+│   │   │   ├── main.c
+│   │   │   ├── main.h
+│   │   │   ├── netplay.c
+│   │   │   ├── netplay.h
+│   │   │   ├── profile.c
+│   │   │   ├── profile.h
+│   │   │   ├── rom.c
+│   │   │   ├── rom.h
+│   │   │   ├── savestates.c
+│   │   │   ├── savestates.h
+│   │   │   ├── screenshot.c
+│   │   │   ├── screenshot.h
+│   │   │   ├── sdl_key_converter.c
+│   │   │   ├── sdl_key_converter.h
+│   │   │   ├── util.c
+│   │   │   ├── util.h
+│   │   │   ├── version.h
+│   │   │   ├── workqueue.c
+│   │   │   └── workqueue.h
+│   │   ├── osal
+│   │   │   ├── dynamiclib.h
+│   │   │   ├── dynamiclib_unix.c
+│   │   │   ├── dynamiclib_win32.c
+│   │   │   ├── files.h
+│   │   │   ├── files_macos.c
+│   │   │   ├── files_unix.c
+│   │   │   ├── files_win32.c
+│   │   │   └── preproc.h
+│   │   ├── osd
+│   │   │   ├── oglft_c.cpp
+│   │   │   ├── oglft_c.h
+│   │   │   ├── osd.c
+│   │   │   └── osd.h
+│   │   └── plugin
+│   │       ├── dummy_audio.c
+│   │       ├── dummy_audio.h
+│   │       ├── dummy_input.c
+│   │       ├── dummy_input.h
+│   │       ├── dummy_rsp.c
+│   │       ├── dummy_rsp.h
+│   │       ├── dummy_video.c
+│   │       ├── dummy_video.h
+│   │       ├── plugin.c
+│   │       └── plugin.h
+│   ├── subprojects
+│   │   ├── md5
+│   │   │   ├── md5.c
+│   │   │   └── md5.h
+│   │   ├── minizip
+│   │   │   ├── crypt.h
+│   │   │   ├── ioapi.c
+│   │   │   ├── ioapi.h
+│   │   │   ├── unzip.c
+│   │   │   ├── unzip.h
+│   │   │   ├── zip.c
+│   │   │   └── zip.h
+│   │   ├── oglft
+│   │   │   ├── OGLFT.cpp
+│   │   │   └── OGLFT.h
+│   │   └── xxhash
+│   │       └── xxhash.h
+│   └── tools
+│       ├── build_bundle_bin.sh
+│       ├── build_bundle_src.sh
+│       ├── build_modules_src.sh
+│       ├── cheat_code_convert.py
+│       ├── gen_asm_defines.awk
+│       ├── gen_asm_script.cmd
+│       ├── gen_asm_script.sh
+│       ├── gen_sdl_key_converter.c
+│       ├── install_binary_bundle.sh
+│       ├── joymodel.c
+│       ├── joymodel.png
+│       ├── m64p_helper_scripts.tar.gz
+│       ├── osx_build_bundle.sh
+│       ├── osx_build_instructions.txt
+│       ├── profiling.txt
+│       ├── r4300prof.c
+│       ├── regtests
+│       │   ├── daily-tests.cfg
+│       │   └── regression-video.py
+│       ├── savestate_convert.c
+│       ├── savestate_convert.txt
+│       └── uninstall_binary_bundle.sh
+├── mupen64plus-input-sdl
+│   ├── appveyor.yml
+│   ├── AUTHORS
+│   ├── COPYING
+│   ├── data
+│   │   └── InputAutoCfg.ini
+│   ├── INSTALL
+│   ├── LICENSES
+│   ├── projects
+│   │   ├── cmake
+│   │   │   ├── CMake
+│   │   │   │   └── Find
+│   │   │   │       └── FindSDL2.cmake
+│   │   │   └── CMakeLists.txt
+│   │   ├── msvc
+│   │   │   └── mupen64plus-input-sdl.vcxproj
+│   │   └── unix
+│   │       └── Makefile
+│   ├── README.md
+│   ├── RELEASE
+│   └── src
+│       ├── autoconfig.c
+│       ├── autoconfig.h
+│       ├── config.c
+│       ├── config.h
+│       ├── osal_dynamiclib.h
+│       ├── osal_dynamiclib_unix.c
+│       ├── osal_dynamiclib_win32.c
+│       ├── osal_preproc.h
+│       ├── plugin.c
+│       ├── plugin.h
+│       ├── sdl_key_converter.c
+│       ├── sdl_key_converter.h
+│       └── version.h
+├── mupen64plus-rsp-hle
+│   ├── appveyor.yml
+│   ├── INSTALL
+│   ├── LICENSES
+│   ├── projects
+│   │   ├── msvc
+│   │   │   └── mupen64plus-rsp-hle.vcxproj
+│   │   └── unix
+│   │       └── Makefile
+│   ├── RELEASE
+│   └── src
+│       ├── alist_audio.c
+│       ├── alist.c
+│       ├── alist.h
+│       ├── alist_naudio.c
+│       ├── alist_nead.c
+│       ├── arithmetics.h
+│       ├── audio.c
+│       ├── audio.h
+│       ├── cicx105.c
+│       ├── common.h
+│       ├── hle.c
+│       ├── hle_external.h
+│       ├── hle.h
+│       ├── hle_internal.h
+│       ├── hvqm.c
+│       ├── jpeg.c
+│       ├── memory.c
+│       ├── memory.h
+│       ├── mp3.c
+│       ├── musyx.c
+│       ├── osal_dynamiclib.h
+│       ├── osal_dynamiclib_unix.c
+│       ├── osal_dynamiclib_win32.c
+│       ├── plugin.c
+│       ├── re2.c
+│       ├── rsp_api_export.ver
+│       └── ucodes.h
+├── mupen64plus-ui-console
+│   ├── appveyor.yml
+│   ├── data
+│   │   ├── icons
+│   │   │   ├── 48x48
+│   │   │   │   └── apps
+│   │   │   │       └── mupen64plus.png
+│   │   │   └── scalable
+│   │   │       └── apps
+│   │   │           └── mupen64plus.svg
+│   │   └── mupen64plus.desktop
+│   ├── doc
+│   │   └── mupen64plus.6
+│   ├── INSTALL
+│   ├── LICENSES
+│   ├── projects
+│   │   ├── msvc
+│   │   │   ├── mupen64plus-ui-console.sln
+│   │   │   └── mupen64plus-ui-console.vcxproj
+│   │   └── unix
+│   │       └── Makefile
+│   ├── README
+│   ├── RELEASE
+│   └── src
+│       ├── cheat.c
+│       ├── cheat.h
+│       ├── compare_core.c
+│       ├── compare_core.h
+│       ├── core_interface.c
+│       ├── core_interface.h
+│       ├── debugger.c
+│       ├── debugger.h
+│       ├── main.c
+│       ├── main.h
+│       ├── osal_dynamiclib.h
+│       ├── osal_dynamiclib_unix.c
+│       ├── osal_dynamiclib_win32.c
+│       ├── osal_files.h
+│       ├── osal_files_unix.c
+│       ├── osal_files_win32.c
+│       ├── osal_preproc.h
+│       ├── plugin.c
+│       ├── plugin.h
+│       └── version.h
+├── mupen64plus-video-glide64mk2
+│   ├── appveyor.yml
+│   ├── data
+│   │   └── Glide64mk2.ini
+│   ├── doc
+│   │   ├── fxt1-license
+│   │   └── gpl-license
+│   ├── INSTALL
+│   ├── LICENSES
+│   ├── projects
+│   │   ├── msvc
+│   │   │   ├── mupen64plus-video-glide64mk2.vcxproj
+│   │   │   └── mupen64plus-video-glide64mk2.vcxproj.filters
+│   │   └── unix
+│   │       └── Makefile
+│   ├── RELEASE
+│   ├── src
+│   │   ├── Glide64
+│   │   │   ├── 3dmath.cpp
+│   │   │   ├── 3dmath.h
+│   │   │   ├── Combine.cpp
+│   │   │   ├── Combine.h
+│   │   │   ├── Config.cpp
+│   │   │   ├── Config.h
+│   │   │   ├── CRC.cpp
+│   │   │   ├── CRC.h
+│   │   │   ├── cursor.h
+│   │   │   ├── Debugger.cpp
+│   │   │   ├── Debugger.h
+│   │   │   ├── DepthBufferRender.cpp
+│   │   │   ├── DepthBufferRender.h
+│   │   │   ├── FBtoScreen.cpp
+│   │   │   ├── FBtoScreen.h
+│   │   │   ├── font.h
+│   │   │   ├── FrameSkipper.cpp
+│   │   │   ├── FrameSkipper.h
+│   │   │   ├── Gfx_1.3.h
+│   │   │   ├── GlideExtensions.h
+│   │   │   ├── Help
+│   │   │   │   ├── Glide64 compatibility list.html
+│   │   │   │   ├── Glide64 Known Issues.html
+│   │   │   │   └── Glide64 Readme.html
+│   │   │   ├── Ini.cpp
+│   │   │   ├── Ini.h
+│   │   │   ├── Keys.cpp
+│   │   │   ├── Keys.h
+│   │   │   ├── m64p.h
+│   │   │   ├── Main.cpp
+│   │   │   ├── MiClWr16b.h
+│   │   │   ├── MiClWr32b.h
+│   │   │   ├── MiClWr8b.h
+│   │   │   ├── osal_dynamiclib.h
+│   │   │   ├── osal_dynamiclib_unix.c
+│   │   │   ├── osal_dynamiclib_win32.c
+│   │   │   ├── rdp.cpp
+│   │   │   ├── rdp.h
+│   │   │   ├── TexBuffer.cpp
+│   │   │   ├── TexBuffer.h
+│   │   │   ├── TexCache.cpp
+│   │   │   ├── TexCache.h
+│   │   │   ├── TexConv.h
+│   │   │   ├── TexLoad16b.h
+│   │   │   ├── TexLoad32b.h
+│   │   │   ├── TexLoad4b.h
+│   │   │   ├── TexLoad8b.h
+│   │   │   ├── TexLoad.h
+│   │   │   ├── TexModCI.h
+│   │   │   ├── TexMod.h
+│   │   │   ├── turbo3D.h
+│   │   │   ├── ucode00.h
+│   │   │   ├── ucode01.h
+│   │   │   ├── ucode02.h
+│   │   │   ├── ucode03.h
+│   │   │   ├── ucode04.h
+│   │   │   ├── ucode05.h
+│   │   │   ├── ucode06.h
+│   │   │   ├── ucode07.h
+│   │   │   ├── ucode08.h
+│   │   │   ├── ucode09.h
+│   │   │   ├── ucode09rdp.h
+│   │   │   ├── ucode10.h
+│   │   │   ├── ucodeFB.h
+│   │   │   ├── ucode.h
+│   │   │   ├── Util.cpp
+│   │   │   ├── Util.h
+│   │   │   └── winlnxdefs.h
+│   │   ├── GlideHQ
+│   │   │   ├── Ext_TxFilter.cpp
+│   │   │   ├── Ext_TxFilter.h
+│   │   │   ├── osal_export.h
+│   │   │   ├── osal_files.h
+│   │   │   ├── osal_files_unix.c
+│   │   │   ├── osal_files_win32.c
+│   │   │   ├── README.txt
+│   │   │   ├── tc-1.1+
+│   │   │   │   ├── fxt1.c
+│   │   │   │   ├── fxt1.h
+│   │   │   │   ├── internal.h
+│   │   │   │   ├── s2tc
+│   │   │   │   │   ├── s2tc_algorithm.cpp
+│   │   │   │   │   ├── s2tc_algorithm.h
+│   │   │   │   │   ├── s2tc_common.h
+│   │   │   │   │   ├── s2tc_libtxc_dxtn.cpp
+│   │   │   │   │   ├── s2tc_license.h
+│   │   │   │   │   └── txc_dxtn.h
+│   │   │   │   ├── texstore.c
+│   │   │   │   ├── types.h
+│   │   │   │   └── wrapper.c
+│   │   │   ├── TextureFilters_2xsai.cpp
+│   │   │   ├── TextureFilters_2xsai.h
+│   │   │   ├── TextureFilters.cpp
+│   │   │   ├── TextureFilters.h
+│   │   │   ├── TextureFilters_hq2x.cpp
+│   │   │   ├── TextureFilters_hq2x.h
+│   │   │   ├── TextureFilters_hq4x.cpp
+│   │   │   ├── TextureFilters_hq4x.h
+│   │   │   ├── TextureFilters_lq2x.h
+│   │   │   ├── TxCache.cpp
+│   │   │   ├── TxCache.h
+│   │   │   ├── TxDbg.cpp
+│   │   │   ├── TxDbg.h
+│   │   │   ├── TxFilter.cpp
+│   │   │   ├── TxFilterExport.cpp
+│   │   │   ├── TxFilter.h
+│   │   │   ├── TxHiResCache.cpp
+│   │   │   ├── TxHiResCache.h
+│   │   │   ├── TxImage.cpp
+│   │   │   ├── TxImage.h
+│   │   │   ├── TxInternal.h
+│   │   │   ├── TxQuantize.cpp
+│   │   │   ├── TxQuantize.h
+│   │   │   ├── TxReSample.cpp
+│   │   │   ├── TxReSample.h
+│   │   │   ├── TxTexCache.cpp
+│   │   │   ├── TxTexCache.h
+│   │   │   ├── TxUtil.cpp
+│   │   │   └── TxUtil.h
+│   │   ├── Glitch64
+│   │   │   ├── glitchmain.h
+│   │   │   ├── inc
+│   │   │   │   ├── 3dfx.h
+│   │   │   │   ├── g3ext.h
+│   │   │   │   ├── glide.h
+│   │   │   │   ├── glidesys.h
+│   │   │   │   ├── glideutl.h
+│   │   │   │   └── sst1vid.h
+│   │   │   ├── m64p.h
+│   │   │   ├── OGLcombiner.cpp
+│   │   │   ├── OGLEScombiner.cpp
+│   │   │   ├── OGLESgeometry.cpp
+│   │   │   ├── OGLESglitchmain.cpp
+│   │   │   ├── OGLEStextures.cpp
+│   │   │   ├── OGLESwrappers.h
+│   │   │   ├── OGLgeometry.cpp
+│   │   │   ├── OGLglitchmain.cpp
+│   │   │   └── OGLtextures.cpp
+│   │   └── video_api_export.ver
+│   └── todo!.txt
+└── mupen64plus-video-rice
+    ├── appveyor.yml
+    ├── data
+    │   └── RiceVideoLinux.ini
+    ├── INSTALL
+    ├── LICENSES
+    ├── projects
+    │   ├── msvc
+    │   │   └── mupen64plus-video-rice.vcxproj
+    │   └── unix
+    │       └── Makefile
+    ├── README
+    ├── RELEASE
+    └── src
+        ├── Blender.cpp
+        ├── Blender.h
+        ├── COLOR.h
+        ├── Combiner.cpp
+        ├── CombinerDefs.h
+        ├── Combiner.h
+        ├── Config.cpp
+        ├── Config.h
+        ├── ConvertImage16.cpp
+        ├── ConvertImage.cpp
+        ├── ConvertImage.h
+        ├── CritSect.h
+        ├── CSortedList.h
+        ├── Debugger.cpp
+        ├── Debugger.h
+        ├── DeviceBuilder.cpp
+        ├── DeviceBuilder.h
+        ├── ExtendedRender.h
+        ├── FrameBuffer.cpp
+        ├── FrameBuffer.h
+        ├── GraphicsContext.cpp
+        ├── GraphicsContext.h
+        ├── liblinux
+        │   ├── BMGDLL.h
+        │   ├── BMGImage.c
+        │   ├── BMGImage.h
+        │   ├── BMGLibPNG.h
+        │   ├── BMGUtils.c
+        │   ├── BMGUtils.h
+        │   ├── bmp.c
+        │   ├── jpegrw.h
+        │   ├── pngrw.c
+        │   ├── pngrw.h
+        │   └── tiffrw.h
+        ├── OGLCombiner.cpp
+        ├── OGLCombiner.h
+        ├── OGLDebug.h
+        ├── OGLExtensions.cpp
+        ├── OGLExtensions.h
+        ├── OGLGraphicsContext.cpp
+        ├── OGLGraphicsContext.h
+        ├── OGLRender.cpp
+        ├── OGLRenderExt.cpp
+        ├── OGLRender.h
+        ├── OGLTexture.cpp
+        ├── OGLTexture.h
+        ├── osal_dynamiclib.h
+        ├── osal_dynamiclib_unix.c
+        ├── osal_dynamiclib_win32.c
+        ├── osal_files.h
+        ├── osal_files_unix.c
+        ├── osal_files_win32.c
+        ├── osal_opengl.h
+        ├── osal_preproc.h
+        ├── RDP_Texture.h
+        ├── RenderBase.cpp
+        ├── RenderBase.h
+        ├── Render.cpp
+        ├── RenderExt.cpp
+        ├── Render.h
+        ├── RenderTexture.cpp
+        ├── RenderTexture.h
+        ├── RSP_GBI0.h
+        ├── RSP_GBI1.h
+        ├── RSP_GBI2_ext.h
+        ├── RSP_GBI2.h
+        ├── RSP_GBI_Others.h
+        ├── RSP_GBI_Sprite2D.h
+        ├── RSP_Parser.cpp
+        ├── RSP_Parser.h
+        ├── RSP_S2DEX.cpp
+        ├── RSP_S2DEX.h
+        ├── Texture.cpp
+        ├── TextureFilters_2xsai.cpp
+        ├── TextureFilters.cpp
+        ├── TextureFilters.h
+        ├── TextureFilters_hq2x.cpp
+        ├── TextureFilters_hq2x.h
+        ├── TextureFilters_hq4x.cpp
+        ├── TextureFilters_hq4x.h
+        ├── TextureFilters_lq2x.h
+        ├── Texture.h
+        ├── TextureManager.cpp
+        ├── TextureManager.h
+        ├── Timing.h
+        ├── typedefs.h
+        ├── UcodeDefs.h
+        ├── ucode.h
+        ├── VectorMath.cpp
+        ├── VectorMath.h
+        ├── version.h
+        ├── video_api_export.ver
+        ├── Video.cpp
+        └── Video.h
+
+105 directories, 643 files

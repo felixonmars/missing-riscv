@@ -1,0 +1,1616 @@
+src
+├── llama.cpp
+│   ├── AUTHORS
+│   ├── ci
+│   │   ├── README.md
+│   │   └── run.sh
+│   ├── cmake
+│   │   ├── arm64-windows-llvm.cmake
+│   │   ├── arm64-windows-msvc.cmake
+│   │   ├── build-info.cmake
+│   │   ├── git-vars.cmake
+│   │   ├── llama-config.cmake.in
+│   │   └── llama.pc.in
+│   ├── CMakeLists.txt
+│   ├── CMakePresets.json
+│   ├── common
+│   │   ├── base64.hpp
+│   │   ├── build-info.cpp.in
+│   │   ├── cmake
+│   │   │   └── build-info-gen-cpp.cmake
+│   │   ├── CMakeLists.txt
+│   │   ├── common.cpp
+│   │   ├── common.h
+│   │   ├── console.cpp
+│   │   ├── console.h
+│   │   ├── grammar-parser.cpp
+│   │   ├── grammar-parser.h
+│   │   ├── json.hpp
+│   │   ├── json-schema-to-grammar.cpp
+│   │   ├── json-schema-to-grammar.h
+│   │   ├── log.h
+│   │   ├── ngram-cache.cpp
+│   │   ├── ngram-cache.h
+│   │   ├── sampling.cpp
+│   │   ├── sampling.h
+│   │   ├── stb_image.h
+│   │   ├── train.cpp
+│   │   └── train.h
+│   ├── CONTRIBUTING.md
+│   ├── convert_hf_to_gguf.py
+│   ├── convert_hf_to_gguf_update.py
+│   ├── convert_llama_ggml_to_gguf.py
+│   ├── convert_lora_to_gguf.py
+│   ├── docs
+│   │   ├── android.md
+│   │   ├── backend
+│   │   │   ├── BLIS.md
+│   │   │   ├── CANN.md
+│   │   │   └── SYCL.md
+│   │   ├── build.md
+│   │   ├── development
+│   │   │   ├── debugging-tests.md
+│   │   │   ├── HOWTO-add-model.md
+│   │   │   ├── llama-star
+│   │   │   │   ├── idea-arch.key
+│   │   │   │   └── idea-arch.pdf
+│   │   │   └── token_generation_performance_tips.md
+│   │   ├── docker.md
+│   │   └── install.md
+│   ├── examples
+│   │   ├── baby-llama
+│   │   │   ├── baby-llama.cpp
+│   │   │   └── CMakeLists.txt
+│   │   ├── base-translate.sh
+│   │   ├── batched
+│   │   │   ├── batched.cpp
+│   │   │   ├── CMakeLists.txt
+│   │   │   └── README.md
+│   │   ├── batched-bench
+│   │   │   ├── batched-bench.cpp
+│   │   │   ├── CMakeLists.txt
+│   │   │   └── README.md
+│   │   ├── batched.swift
+│   │   │   ├── Makefile
+│   │   │   ├── Package.swift
+│   │   │   ├── README.md
+│   │   │   └── Sources
+│   │   │       └── main.swift
+│   │   ├── benchmark
+│   │   │   ├── benchmark-matmult.cpp
+│   │   │   └── CMakeLists.txt
+│   │   ├── chat-13B.bat
+│   │   ├── chat-13B.sh
+│   │   ├── chat-persistent.sh
+│   │   ├── chat.sh
+│   │   ├── chat-vicuna.sh
+│   │   ├── CMakeLists.txt
+│   │   ├── convert_legacy_llama.py
+│   │   ├── convert-llama2c-to-ggml
+│   │   │   ├── CMakeLists.txt
+│   │   │   ├── convert-llama2c-to-ggml.cpp
+│   │   │   └── README.md
+│   │   ├── cvector-generator
+│   │   │   ├── CMakeLists.txt
+│   │   │   ├── completions.txt
+│   │   │   ├── cvector-generator.cpp
+│   │   │   ├── mean.hpp
+│   │   │   ├── negative.txt
+│   │   │   ├── pca.hpp
+│   │   │   ├── positive.txt
+│   │   │   └── README.md
+│   │   ├── deprecation-warning
+│   │   │   ├── deprecation-warning.cpp
+│   │   │   └── README.md
+│   │   ├── embedding
+│   │   │   ├── CMakeLists.txt
+│   │   │   ├── embedding.cpp
+│   │   │   └── README.md
+│   │   ├── eval-callback
+│   │   │   ├── CMakeLists.txt
+│   │   │   ├── eval-callback.cpp
+│   │   │   └── README.md
+│   │   ├── export-lora
+│   │   │   ├── CMakeLists.txt
+│   │   │   ├── export-lora.cpp
+│   │   │   └── README.md
+│   │   ├── gbnf-validator
+│   │   │   ├── CMakeLists.txt
+│   │   │   └── gbnf-validator.cpp
+│   │   ├── gguf
+│   │   │   ├── CMakeLists.txt
+│   │   │   └── gguf.cpp
+│   │   ├── gguf-hash
+│   │   │   ├── CMakeLists.txt
+│   │   │   ├── deps
+│   │   │   │   ├── rotate-bits
+│   │   │   │   │   ├── package.json
+│   │   │   │   │   └── rotate-bits.h
+│   │   │   │   ├── sha1
+│   │   │   │   │   ├── package.json
+│   │   │   │   │   ├── sha1.c
+│   │   │   │   │   └── sha1.h
+│   │   │   │   ├── sha256
+│   │   │   │   │   ├── package.json
+│   │   │   │   │   ├── sha256.c
+│   │   │   │   │   └── sha256.h
+│   │   │   │   └── xxhash
+│   │   │   │       ├── clib.json
+│   │   │   │       ├── xxhash.c
+│   │   │   │       └── xxhash.h
+│   │   │   ├── gguf-hash.cpp
+│   │   │   └── README.md
+│   │   ├── gguf-split
+│   │   │   ├── CMakeLists.txt
+│   │   │   ├── gguf-split.cpp
+│   │   │   ├── README.md
+│   │   │   └── tests.sh
+│   │   ├── gritlm
+│   │   │   ├── CMakeLists.txt
+│   │   │   ├── gritlm.cpp
+│   │   │   └── README.md
+│   │   ├── imatrix
+│   │   │   ├── CMakeLists.txt
+│   │   │   ├── imatrix.cpp
+│   │   │   └── README.md
+│   │   ├── infill
+│   │   │   ├── CMakeLists.txt
+│   │   │   ├── infill.cpp
+│   │   │   └── README.md
+│   │   ├── jeopardy
+│   │   │   ├── graph.py
+│   │   │   ├── jeopardy.sh
+│   │   │   ├── qasheet.csv
+│   │   │   ├── questions.txt
+│   │   │   └── README.md
+│   │   ├── json_schema_pydantic_example.py
+│   │   ├── json_schema_to_grammar.py
+│   │   ├── llama.android
+│   │   │   ├── app
+│   │   │   │   ├── build.gradle.kts
+│   │   │   │   ├── proguard-rules.pro
+│   │   │   │   └── src
+│   │   │   │       └── main
+│   │   │   │           ├── AndroidManifest.xml
+│   │   │   │           ├── java
+│   │   │   │           │   └── com
+│   │   │   │           │       └── example
+│   │   │   │           │           └── llama
+│   │   │   │           │               ├── Downloadable.kt
+│   │   │   │           │               ├── MainActivity.kt
+│   │   │   │           │               ├── MainViewModel.kt
+│   │   │   │           │               └── ui
+│   │   │   │           │                   └── theme
+│   │   │   │           │                       ├── Color.kt
+│   │   │   │           │                       ├── Theme.kt
+│   │   │   │           │                       └── Type.kt
+│   │   │   │           └── res
+│   │   │   │               ├── drawable
+│   │   │   │               │   ├── ic_launcher_background.xml
+│   │   │   │               │   └── ic_launcher_foreground.xml
+│   │   │   │               ├── mipmap-anydpi
+│   │   │   │               │   ├── ic_launcher_round.xml
+│   │   │   │               │   └── ic_launcher.xml
+│   │   │   │               ├── mipmap-hdpi
+│   │   │   │               │   ├── ic_launcher_round.webp
+│   │   │   │               │   └── ic_launcher.webp
+│   │   │   │               ├── mipmap-mdpi
+│   │   │   │               │   ├── ic_launcher_round.webp
+│   │   │   │               │   └── ic_launcher.webp
+│   │   │   │               ├── mipmap-xhdpi
+│   │   │   │               │   ├── ic_launcher_round.webp
+│   │   │   │               │   └── ic_launcher.webp
+│   │   │   │               ├── mipmap-xxhdpi
+│   │   │   │               │   ├── ic_launcher_round.webp
+│   │   │   │               │   └── ic_launcher.webp
+│   │   │   │               ├── mipmap-xxxhdpi
+│   │   │   │               │   ├── ic_launcher_round.webp
+│   │   │   │               │   └── ic_launcher.webp
+│   │   │   │               ├── values
+│   │   │   │               │   ├── colors.xml
+│   │   │   │               │   ├── strings.xml
+│   │   │   │               │   └── themes.xml
+│   │   │   │               └── xml
+│   │   │   │                   ├── backup_rules.xml
+│   │   │   │                   └── data_extraction_rules.xml
+│   │   │   ├── build.gradle.kts
+│   │   │   ├── gradle
+│   │   │   │   └── wrapper
+│   │   │   │       ├── gradle-wrapper.jar
+│   │   │   │       └── gradle-wrapper.properties
+│   │   │   ├── gradle.properties
+│   │   │   ├── gradlew
+│   │   │   ├── llama
+│   │   │   │   ├── build.gradle.kts
+│   │   │   │   ├── consumer-rules.pro
+│   │   │   │   ├── proguard-rules.pro
+│   │   │   │   └── src
+│   │   │   │       ├── androidTest
+│   │   │   │       │   └── java
+│   │   │   │       │       └── android
+│   │   │   │       │           └── llama
+│   │   │   │       │               └── cpp
+│   │   │   │       │                   └── ExampleInstrumentedTest.kt
+│   │   │   │       ├── main
+│   │   │   │       │   ├── AndroidManifest.xml
+│   │   │   │       │   ├── cpp
+│   │   │   │       │   │   ├── CMakeLists.txt
+│   │   │   │       │   │   └── llama-android.cpp
+│   │   │   │       │   └── java
+│   │   │   │       │       └── android
+│   │   │   │       │           └── llama
+│   │   │   │       │               └── cpp
+│   │   │   │       │                   └── LLamaAndroid.kt
+│   │   │   │       └── test
+│   │   │   │           └── java
+│   │   │   │               └── android
+│   │   │   │                   └── llama
+│   │   │   │                       └── cpp
+│   │   │   │                           └── ExampleUnitTest.kt
+│   │   │   ├── README.md
+│   │   │   └── settings.gradle.kts
+│   │   ├── llama-bench
+│   │   │   ├── CMakeLists.txt
+│   │   │   ├── llama-bench.cpp
+│   │   │   └── README.md
+│   │   ├── llama.swiftui
+│   │   │   ├── llama.cpp.swift
+│   │   │   │   └── LibLlama.swift
+│   │   │   ├── llama.swiftui
+│   │   │   │   ├── Assets.xcassets
+│   │   │   │   │   ├── AppIcon.appiconset
+│   │   │   │   │   │   └── Contents.json
+│   │   │   │   │   └── Contents.json
+│   │   │   │   ├── llama_swiftuiApp.swift
+│   │   │   │   ├── Models
+│   │   │   │   │   └── LlamaState.swift
+│   │   │   │   ├── Resources
+│   │   │   │   │   └── models
+│   │   │   │   └── UI
+│   │   │   │       ├── ContentView.swift
+│   │   │   │       ├── DownloadButton.swift
+│   │   │   │       ├── InputButton.swift
+│   │   │   │       └── LoadCustomButton.swift
+│   │   │   ├── llama.swiftui.xcodeproj
+│   │   │   │   ├── project.pbxproj
+│   │   │   │   └── project.xcworkspace
+│   │   │   │       ├── contents.xcworkspacedata
+│   │   │   │       └── xcshareddata
+│   │   │   │           └── IDEWorkspaceChecks.plist
+│   │   │   └── README.md
+│   │   ├── llama.vim
+│   │   ├── llava
+│   │   │   ├── android
+│   │   │   │   ├── adb_run.sh
+│   │   │   │   └── build_64.sh
+│   │   │   ├── clip.cpp
+│   │   │   ├── clip.h
+│   │   │   ├── CMakeLists.txt
+│   │   │   ├── convert_image_encoder_to_gguf.py
+│   │   │   ├── llava-cli.cpp
+│   │   │   ├── llava.cpp
+│   │   │   ├── llava.h
+│   │   │   ├── llava_surgery.py
+│   │   │   ├── llava_surgery_v2.py
+│   │   │   ├── minicpmv-cli.cpp
+│   │   │   ├── minicpmv-convert-image-encoder-to-gguf.py
+│   │   │   ├── minicpmv-surgery.py
+│   │   │   ├── MobileVLM-README.md
+│   │   │   ├── README.md
+│   │   │   ├── README-minicpmv2.5.md
+│   │   │   ├── README-minicpmv2.6.md
+│   │   │   └── requirements.txt
+│   │   ├── llm.vim
+│   │   ├── lookahead
+│   │   │   ├── CMakeLists.txt
+│   │   │   ├── lookahead.cpp
+│   │   │   └── README.md
+│   │   ├── lookup
+│   │   │   ├── CMakeLists.txt
+│   │   │   ├── lookup.cpp
+│   │   │   ├── lookup-create.cpp
+│   │   │   ├── lookup-merge.cpp
+│   │   │   ├── lookup-stats.cpp
+│   │   │   └── README.md
+│   │   ├── main
+│   │   │   ├── CMakeLists.txt
+│   │   │   ├── main.cpp
+│   │   │   └── README.md
+│   │   ├── main-cmake-pkg
+│   │   │   ├── CMakeLists.txt
+│   │   │   └── README.md
+│   │   ├── Miku.sh
+│   │   ├── parallel
+│   │   │   ├── CMakeLists.txt
+│   │   │   ├── parallel.cpp
+│   │   │   └── README.md
+│   │   ├── passkey
+│   │   │   ├── CMakeLists.txt
+│   │   │   ├── passkey.cpp
+│   │   │   └── README.md
+│   │   ├── perplexity
+│   │   │   ├── CMakeLists.txt
+│   │   │   ├── perplexity.cpp
+│   │   │   └── README.md
+│   │   ├── pydantic_models_to_grammar_examples.py
+│   │   ├── pydantic_models_to_grammar.py
+│   │   ├── quantize
+│   │   │   ├── CMakeLists.txt
+│   │   │   ├── quantize.cpp
+│   │   │   ├── README.md
+│   │   │   └── tests.sh
+│   │   ├── quantize-stats
+│   │   │   ├── CMakeLists.txt
+│   │   │   └── quantize-stats.cpp
+│   │   ├── reason-act.sh
+│   │   ├── regex_to_grammar.py
+│   │   ├── retrieval
+│   │   │   ├── CMakeLists.txt
+│   │   │   ├── README.md
+│   │   │   └── retrieval.cpp
+│   │   ├── rpc
+│   │   │   ├── CMakeLists.txt
+│   │   │   ├── README.md
+│   │   │   └── rpc-server.cpp
+│   │   ├── save-load-state
+│   │   │   ├── CMakeLists.txt
+│   │   │   └── save-load-state.cpp
+│   │   ├── server
+│   │   │   ├── bench
+│   │   │   │   ├── bench.py
+│   │   │   │   ├── prometheus.yml
+│   │   │   │   ├── README.md
+│   │   │   │   ├── requirements.txt
+│   │   │   │   └── script.js
+│   │   │   ├── chat-llama2.sh
+│   │   │   ├── chat.mjs
+│   │   │   ├── chat.sh
+│   │   │   ├── CMakeLists.txt
+│   │   │   ├── deps.sh
+│   │   │   ├── httplib.h
+│   │   │   ├── public
+│   │   │   │   ├── colorthemes.css
+│   │   │   │   ├── completion.js
+│   │   │   │   ├── favicon.ico
+│   │   │   │   ├── index.html
+│   │   │   │   ├── index.js
+│   │   │   │   ├── index-new.html
+│   │   │   │   ├── json-schema-to-grammar.mjs
+│   │   │   │   ├── prompt-formats.js
+│   │   │   │   ├── style.css
+│   │   │   │   ├── system-prompts.js
+│   │   │   │   ├── theme-beeninorder.css
+│   │   │   │   ├── theme-ketivah.css
+│   │   │   │   ├── theme-mangotango.css
+│   │   │   │   ├── theme-playground.css
+│   │   │   │   ├── theme-polarnight.css
+│   │   │   │   └── theme-snowstorm.css
+│   │   │   ├── public_simplechat
+│   │   │   │   ├── datautils.mjs
+│   │   │   │   ├── index.html
+│   │   │   │   ├── readme.md
+│   │   │   │   ├── simplechat.css
+│   │   │   │   ├── simplechat.js
+│   │   │   │   ├── simplechat_screens.webp
+│   │   │   │   └── ui.mjs
+│   │   │   ├── README.md
+│   │   │   ├── server.cpp
+│   │   │   ├── tests
+│   │   │   │   ├── features
+│   │   │   │   │   ├── embeddings.feature
+│   │   │   │   │   ├── environment.py
+│   │   │   │   │   ├── issues.feature
+│   │   │   │   │   ├── lora.feature
+│   │   │   │   │   ├── parallel.feature
+│   │   │   │   │   ├── passkey.feature
+│   │   │   │   │   ├── results.feature
+│   │   │   │   │   ├── security.feature
+│   │   │   │   │   ├── server.feature
+│   │   │   │   │   ├── slotsave.feature
+│   │   │   │   │   ├── steps
+│   │   │   │   │   │   └── steps.py
+│   │   │   │   │   └── wrong_usages.feature
+│   │   │   │   ├── README.md
+│   │   │   │   ├── requirements.txt
+│   │   │   │   └── tests.sh
+│   │   │   ├── themes
+│   │   │   │   ├── buttons-top
+│   │   │   │   │   ├── buttons_top.png
+│   │   │   │   │   ├── favicon.ico
+│   │   │   │   │   ├── index.html
+│   │   │   │   │   └── README.md
+│   │   │   │   ├── README.md
+│   │   │   │   └── wild
+│   │   │   │       ├── favicon.ico
+│   │   │   │       ├── index.html
+│   │   │   │       ├── llama_cpp.png
+│   │   │   │       ├── llamapattern.png
+│   │   │   │       ├── README.md
+│   │   │   │       └── wild.png
+│   │   │   └── utils.hpp
+│   │   ├── server_embd.py
+│   │   ├── server-llama2-13B.sh
+│   │   ├── simple
+│   │   │   ├── CMakeLists.txt
+│   │   │   ├── README.md
+│   │   │   └── simple.cpp
+│   │   ├── speculative
+│   │   │   ├── CMakeLists.txt
+│   │   │   ├── README.md
+│   │   │   └── speculative.cpp
+│   │   ├── sycl
+│   │   │   ├── build.sh
+│   │   │   ├── CMakeLists.txt
+│   │   │   ├── ls-sycl-device.cpp
+│   │   │   ├── README.md
+│   │   │   ├── run-llama2.sh
+│   │   │   ├── win-build-sycl.bat
+│   │   │   └── win-run-llama2.bat
+│   │   ├── tokenize
+│   │   │   ├── CMakeLists.txt
+│   │   │   └── tokenize.cpp
+│   │   └── ts-type-to-grammar.sh
+│   ├── flake.lock
+│   ├── flake.nix
+│   ├── ggml
+│   │   ├── cmake
+│   │   │   └── FindSIMD.cmake
+│   │   ├── CMakeLists.txt
+│   │   ├── include
+│   │   │   ├── ggml-alloc.h
+│   │   │   ├── ggml-backend.h
+│   │   │   ├── ggml-blas.h
+│   │   │   ├── ggml-cann.h
+│   │   │   ├── ggml-cuda.h
+│   │   │   ├── ggml.h
+│   │   │   ├── ggml-kompute.h
+│   │   │   ├── ggml-metal.h
+│   │   │   ├── ggml-rpc.h
+│   │   │   ├── ggml-sycl.h
+│   │   │   └── ggml-vulkan.h
+│   │   └── src
+│   │       ├── CMakeLists.txt
+│   │       ├── ggml-aarch64.c
+│   │       ├── ggml-aarch64.h
+│   │       ├── ggml-alloc.c
+│   │       ├── ggml-backend.c
+│   │       ├── ggml-backend-impl.h
+│   │       ├── ggml-blas.cpp
+│   │       ├── ggml.c
+│   │       ├── ggml-cann
+│   │       │   ├── aclnn_ops.cpp
+│   │       │   ├── aclnn_ops.h
+│   │       │   ├── acl_tensor.cpp
+│   │       │   ├── acl_tensor.h
+│   │       │   ├── common.h
+│   │       │   ├── Doxyfile
+│   │       │   └── kernels
+│   │       │       ├── ascendc_kernels.h
+│   │       │       ├── CMakeLists.txt
+│   │       │       ├── dup.cpp
+│   │       │       ├── get_row_f16.cpp
+│   │       │       ├── get_row_f32.cpp
+│   │       │       ├── get_row_q4_0.cpp
+│   │       │       ├── get_row_q8_0.cpp
+│   │       │       ├── quantize_f16_q8_0.cpp
+│   │       │       ├── quantize_f32_q8_0.cpp
+│   │       │       └── quantize_float_to_q4_0.cpp
+│   │       ├── ggml-cann.cpp
+│   │       ├── ggml-common.h
+│   │       ├── ggml-cuda
+│   │       │   ├── acc.cu
+│   │       │   ├── acc.cuh
+│   │       │   ├── arange.cu
+│   │       │   ├── arange.cuh
+│   │       │   ├── argsort.cu
+│   │       │   ├── argsort.cuh
+│   │       │   ├── binbcast.cu
+│   │       │   ├── binbcast.cuh
+│   │       │   ├── clamp.cu
+│   │       │   ├── clamp.cuh
+│   │       │   ├── common.cuh
+│   │       │   ├── concat.cu
+│   │       │   ├── concat.cuh
+│   │       │   ├── convert.cu
+│   │       │   ├── convert.cuh
+│   │       │   ├── conv-transpose-1d.cu
+│   │       │   ├── conv-transpose-1d.cuh
+│   │       │   ├── cpy.cu
+│   │       │   ├── cpy.cuh
+│   │       │   ├── cross-entropy-loss.cu
+│   │       │   ├── cross-entropy-loss.cuh
+│   │       │   ├── dequantize.cuh
+│   │       │   ├── diagmask.cu
+│   │       │   ├── diagmask.cuh
+│   │       │   ├── dmmv.cu
+│   │       │   ├── dmmv.cuh
+│   │       │   ├── fattn-common.cuh
+│   │       │   ├── fattn.cu
+│   │       │   ├── fattn.cuh
+│   │       │   ├── fattn-tile-f16.cu
+│   │       │   ├── fattn-tile-f16.cuh
+│   │       │   ├── fattn-tile-f32.cu
+│   │       │   ├── fattn-tile-f32.cuh
+│   │       │   ├── fattn-vec-f16.cuh
+│   │       │   ├── fattn-vec-f32.cuh
+│   │       │   ├── fattn-wmma-f16.cuh
+│   │       │   ├── getrows.cu
+│   │       │   ├── getrows.cuh
+│   │       │   ├── im2col.cu
+│   │       │   ├── im2col.cuh
+│   │       │   ├── mma.cuh
+│   │       │   ├── mmq.cu
+│   │       │   ├── mmq.cuh
+│   │       │   ├── mmvq.cu
+│   │       │   ├── mmvq.cuh
+│   │       │   ├── norm.cu
+│   │       │   ├── norm.cuh
+│   │       │   ├── pad.cu
+│   │       │   ├── pad.cuh
+│   │       │   ├── pool2d.cu
+│   │       │   ├── pool2d.cuh
+│   │       │   ├── quantize.cu
+│   │       │   ├── quantize.cuh
+│   │       │   ├── rope.cu
+│   │       │   ├── rope.cuh
+│   │       │   ├── scale.cu
+│   │       │   ├── scale.cuh
+│   │       │   ├── softmax.cu
+│   │       │   ├── softmax.cuh
+│   │       │   ├── sumrows.cu
+│   │       │   ├── sumrows.cuh
+│   │       │   ├── template-instances
+│   │       │   │   ├── fattn-vec-f16-instance-hs128-f16-f16.cu
+│   │       │   │   ├── fattn-vec-f16-instance-hs128-f16-q4_0.cu
+│   │       │   │   ├── fattn-vec-f16-instance-hs128-f16-q4_1.cu
+│   │       │   │   ├── fattn-vec-f16-instance-hs128-f16-q5_0.cu
+│   │       │   │   ├── fattn-vec-f16-instance-hs128-f16-q5_1.cu
+│   │       │   │   ├── fattn-vec-f16-instance-hs128-f16-q8_0.cu
+│   │       │   │   ├── fattn-vec-f16-instance-hs128-q4_0-f16.cu
+│   │       │   │   ├── fattn-vec-f16-instance-hs128-q4_0-q4_0.cu
+│   │       │   │   ├── fattn-vec-f16-instance-hs128-q4_0-q4_1.cu
+│   │       │   │   ├── fattn-vec-f16-instance-hs128-q4_0-q5_0.cu
+│   │       │   │   ├── fattn-vec-f16-instance-hs128-q4_0-q5_1.cu
+│   │       │   │   ├── fattn-vec-f16-instance-hs128-q4_0-q8_0.cu
+│   │       │   │   ├── fattn-vec-f16-instance-hs128-q4_1-f16.cu
+│   │       │   │   ├── fattn-vec-f16-instance-hs128-q4_1-q4_0.cu
+│   │       │   │   ├── fattn-vec-f16-instance-hs128-q4_1-q4_1.cu
+│   │       │   │   ├── fattn-vec-f16-instance-hs128-q4_1-q5_0.cu
+│   │       │   │   ├── fattn-vec-f16-instance-hs128-q4_1-q5_1.cu
+│   │       │   │   ├── fattn-vec-f16-instance-hs128-q4_1-q8_0.cu
+│   │       │   │   ├── fattn-vec-f16-instance-hs128-q5_0-f16.cu
+│   │       │   │   ├── fattn-vec-f16-instance-hs128-q5_0-q4_0.cu
+│   │       │   │   ├── fattn-vec-f16-instance-hs128-q5_0-q4_1.cu
+│   │       │   │   ├── fattn-vec-f16-instance-hs128-q5_0-q5_0.cu
+│   │       │   │   ├── fattn-vec-f16-instance-hs128-q5_0-q5_1.cu
+│   │       │   │   ├── fattn-vec-f16-instance-hs128-q5_0-q8_0.cu
+│   │       │   │   ├── fattn-vec-f16-instance-hs128-q5_1-f16.cu
+│   │       │   │   ├── fattn-vec-f16-instance-hs128-q5_1-q4_0.cu
+│   │       │   │   ├── fattn-vec-f16-instance-hs128-q5_1-q4_1.cu
+│   │       │   │   ├── fattn-vec-f16-instance-hs128-q5_1-q5_0.cu
+│   │       │   │   ├── fattn-vec-f16-instance-hs128-q5_1-q5_1.cu
+│   │       │   │   ├── fattn-vec-f16-instance-hs128-q5_1-q8_0.cu
+│   │       │   │   ├── fattn-vec-f16-instance-hs128-q8_0-f16.cu
+│   │       │   │   ├── fattn-vec-f16-instance-hs128-q8_0-q4_0.cu
+│   │       │   │   ├── fattn-vec-f16-instance-hs128-q8_0-q4_1.cu
+│   │       │   │   ├── fattn-vec-f16-instance-hs128-q8_0-q5_0.cu
+│   │       │   │   ├── fattn-vec-f16-instance-hs128-q8_0-q5_1.cu
+│   │       │   │   ├── fattn-vec-f16-instance-hs128-q8_0-q8_0.cu
+│   │       │   │   ├── fattn-vec-f16-instance-hs256-f16-f16.cu
+│   │       │   │   ├── fattn-vec-f16-instance-hs64-f16-f16.cu
+│   │       │   │   ├── fattn-vec-f16-instance-hs64-f16-q4_0.cu
+│   │       │   │   ├── fattn-vec-f16-instance-hs64-f16-q4_1.cu
+│   │       │   │   ├── fattn-vec-f16-instance-hs64-f16-q5_0.cu
+│   │       │   │   ├── fattn-vec-f16-instance-hs64-f16-q5_1.cu
+│   │       │   │   ├── fattn-vec-f16-instance-hs64-f16-q8_0.cu
+│   │       │   │   ├── fattn-vec-f32-instance-hs128-f16-f16.cu
+│   │       │   │   ├── fattn-vec-f32-instance-hs128-f16-q4_0.cu
+│   │       │   │   ├── fattn-vec-f32-instance-hs128-f16-q4_1.cu
+│   │       │   │   ├── fattn-vec-f32-instance-hs128-f16-q5_0.cu
+│   │       │   │   ├── fattn-vec-f32-instance-hs128-f16-q5_1.cu
+│   │       │   │   ├── fattn-vec-f32-instance-hs128-f16-q8_0.cu
+│   │       │   │   ├── fattn-vec-f32-instance-hs128-q4_0-f16.cu
+│   │       │   │   ├── fattn-vec-f32-instance-hs128-q4_0-q4_0.cu
+│   │       │   │   ├── fattn-vec-f32-instance-hs128-q4_0-q4_1.cu
+│   │       │   │   ├── fattn-vec-f32-instance-hs128-q4_0-q5_0.cu
+│   │       │   │   ├── fattn-vec-f32-instance-hs128-q4_0-q5_1.cu
+│   │       │   │   ├── fattn-vec-f32-instance-hs128-q4_0-q8_0.cu
+│   │       │   │   ├── fattn-vec-f32-instance-hs128-q4_1-f16.cu
+│   │       │   │   ├── fattn-vec-f32-instance-hs128-q4_1-q4_0.cu
+│   │       │   │   ├── fattn-vec-f32-instance-hs128-q4_1-q4_1.cu
+│   │       │   │   ├── fattn-vec-f32-instance-hs128-q4_1-q5_0.cu
+│   │       │   │   ├── fattn-vec-f32-instance-hs128-q4_1-q5_1.cu
+│   │       │   │   ├── fattn-vec-f32-instance-hs128-q4_1-q8_0.cu
+│   │       │   │   ├── fattn-vec-f32-instance-hs128-q5_0-f16.cu
+│   │       │   │   ├── fattn-vec-f32-instance-hs128-q5_0-q4_0.cu
+│   │       │   │   ├── fattn-vec-f32-instance-hs128-q5_0-q4_1.cu
+│   │       │   │   ├── fattn-vec-f32-instance-hs128-q5_0-q5_0.cu
+│   │       │   │   ├── fattn-vec-f32-instance-hs128-q5_0-q5_1.cu
+│   │       │   │   ├── fattn-vec-f32-instance-hs128-q5_0-q8_0.cu
+│   │       │   │   ├── fattn-vec-f32-instance-hs128-q5_1-f16.cu
+│   │       │   │   ├── fattn-vec-f32-instance-hs128-q5_1-q4_0.cu
+│   │       │   │   ├── fattn-vec-f32-instance-hs128-q5_1-q4_1.cu
+│   │       │   │   ├── fattn-vec-f32-instance-hs128-q5_1-q5_0.cu
+│   │       │   │   ├── fattn-vec-f32-instance-hs128-q5_1-q5_1.cu
+│   │       │   │   ├── fattn-vec-f32-instance-hs128-q5_1-q8_0.cu
+│   │       │   │   ├── fattn-vec-f32-instance-hs128-q8_0-f16.cu
+│   │       │   │   ├── fattn-vec-f32-instance-hs128-q8_0-q4_0.cu
+│   │       │   │   ├── fattn-vec-f32-instance-hs128-q8_0-q4_1.cu
+│   │       │   │   ├── fattn-vec-f32-instance-hs128-q8_0-q5_0.cu
+│   │       │   │   ├── fattn-vec-f32-instance-hs128-q8_0-q5_1.cu
+│   │       │   │   ├── fattn-vec-f32-instance-hs128-q8_0-q8_0.cu
+│   │       │   │   ├── fattn-vec-f32-instance-hs256-f16-f16.cu
+│   │       │   │   ├── fattn-vec-f32-instance-hs64-f16-f16.cu
+│   │       │   │   ├── fattn-vec-f32-instance-hs64-f16-q4_0.cu
+│   │       │   │   ├── fattn-vec-f32-instance-hs64-f16-q4_1.cu
+│   │       │   │   ├── fattn-vec-f32-instance-hs64-f16-q5_0.cu
+│   │       │   │   ├── fattn-vec-f32-instance-hs64-f16-q5_1.cu
+│   │       │   │   ├── fattn-vec-f32-instance-hs64-f16-q8_0.cu
+│   │       │   │   ├── fattn-wmma-f16-instance-kqfloat-cpb16.cu
+│   │       │   │   ├── fattn-wmma-f16-instance-kqfloat-cpb32.cu
+│   │       │   │   ├── fattn-wmma-f16-instance-kqhalf-cpb16.cu
+│   │       │   │   ├── fattn-wmma-f16-instance-kqhalf-cpb32.cu
+│   │       │   │   ├── fattn-wmma-f16-instance-kqhalf-cpb8.cu
+│   │       │   │   ├── generate_cu_files.py
+│   │       │   │   ├── mmq-instance-iq1_s.cu
+│   │       │   │   ├── mmq-instance-iq2_s.cu
+│   │       │   │   ├── mmq-instance-iq2_xs.cu
+│   │       │   │   ├── mmq-instance-iq2_xxs.cu
+│   │       │   │   ├── mmq-instance-iq3_s.cu
+│   │       │   │   ├── mmq-instance-iq3_xxs.cu
+│   │       │   │   ├── mmq-instance-iq4_nl.cu
+│   │       │   │   ├── mmq-instance-iq4_xs.cu
+│   │       │   │   ├── mmq-instance-q2_k.cu
+│   │       │   │   ├── mmq-instance-q3_k.cu
+│   │       │   │   ├── mmq-instance-q4_0.cu
+│   │       │   │   ├── mmq-instance-q4_1.cu
+│   │       │   │   ├── mmq-instance-q4_k.cu
+│   │       │   │   ├── mmq-instance-q5_0.cu
+│   │       │   │   ├── mmq-instance-q5_1.cu
+│   │       │   │   ├── mmq-instance-q5_k.cu
+│   │       │   │   ├── mmq-instance-q6_k.cu
+│   │       │   │   └── mmq-instance-q8_0.cu
+│   │       │   ├── tsembd.cu
+│   │       │   ├── tsembd.cuh
+│   │       │   ├── unary.cu
+│   │       │   ├── unary.cuh
+│   │       │   ├── upscale.cu
+│   │       │   ├── upscale.cuh
+│   │       │   ├── vecdotq.cuh
+│   │       │   └── vendors
+│   │       │       ├── cuda.h
+│   │       │       ├── hip.h
+│   │       │       └── musa.h
+│   │       ├── ggml-cuda.cu
+│   │       ├── ggml-impl.h
+│   │       ├── ggml-kompute.cpp
+│   │       ├── ggml-metal.m
+│   │       ├── ggml-metal.metal
+│   │       ├── ggml-quants.c
+│   │       ├── ggml-quants.h
+│   │       ├── ggml-rpc.cpp
+│   │       ├── ggml-sycl
+│   │       │   ├── backend.hpp
+│   │       │   ├── common.cpp
+│   │       │   ├── common.hpp
+│   │       │   ├── concat.cpp
+│   │       │   ├── concat.hpp
+│   │       │   ├── conv.cpp
+│   │       │   ├── convert.cpp
+│   │       │   ├── convert.hpp
+│   │       │   ├── conv.hpp
+│   │       │   ├── dequantize.hpp
+│   │       │   ├── dmmv.cpp
+│   │       │   ├── dmmv.hpp
+│   │       │   ├── dpct
+│   │       │   │   └── helper.hpp
+│   │       │   ├── gemm.hpp
+│   │       │   ├── im2col.cpp
+│   │       │   ├── im2col.hpp
+│   │       │   ├── mmq.cpp
+│   │       │   ├── mmq.hpp
+│   │       │   ├── mmvq.cpp
+│   │       │   ├── mmvq.hpp
+│   │       │   ├── norm.cpp
+│   │       │   ├── norm.hpp
+│   │       │   ├── presets.hpp
+│   │       │   ├── rope.cpp
+│   │       │   ├── rope.hpp
+│   │       │   ├── softmax.cpp
+│   │       │   ├── softmax.hpp
+│   │       │   ├── tsembd.cpp
+│   │       │   ├── tsembd.hpp
+│   │       │   └── vecdotq.hpp
+│   │       ├── ggml-sycl.cpp
+│   │       ├── ggml-vulkan.cpp
+│   │       ├── kompute
+│   │       ├── kompute-shaders
+│   │       │   ├── common.comp
+│   │       │   ├── op_add.comp
+│   │       │   ├── op_addrow.comp
+│   │       │   ├── op_cpy_f16_f16.comp
+│   │       │   ├── op_cpy_f16_f32.comp
+│   │       │   ├── op_cpy_f32_f16.comp
+│   │       │   ├── op_cpy_f32_f32.comp
+│   │       │   ├── op_diagmask.comp
+│   │       │   ├── op_gelu.comp
+│   │       │   ├── op_getrows.comp
+│   │       │   ├── op_getrows_f16.comp
+│   │       │   ├── op_getrows_f32.comp
+│   │       │   ├── op_getrows_q4_0.comp
+│   │       │   ├── op_getrows_q4_1.comp
+│   │       │   ├── op_getrows_q6_k.comp
+│   │       │   ├── op_mul.comp
+│   │       │   ├── op_mul_mat_f16.comp
+│   │       │   ├── op_mul_mat_mat_f32.comp
+│   │       │   ├── op_mul_mat_q4_0.comp
+│   │       │   ├── op_mul_mat_q4_1.comp
+│   │       │   ├── op_mul_mat_q6_k.comp
+│   │       │   ├── op_mul_mat_q8_0.comp
+│   │       │   ├── op_mul_mv_q_n.comp
+│   │       │   ├── op_mul_mv_q_n_pre.comp
+│   │       │   ├── op_norm.comp
+│   │       │   ├── op_relu.comp
+│   │       │   ├── op_rmsnorm.comp
+│   │       │   ├── op_rope_f16.comp
+│   │       │   ├── op_rope_f32.comp
+│   │       │   ├── op_scale_8.comp
+│   │       │   ├── op_scale.comp
+│   │       │   ├── op_silu.comp
+│   │       │   ├── op_softmax.comp
+│   │       │   └── rope_common.comp
+│   │       ├── llamafile
+│   │       │   ├── sgemm.cpp
+│   │       │   └── sgemm.h
+│   │       └── vulkan-shaders
+│   │           ├── acc.comp
+│   │           ├── add.comp
+│   │           ├── argsort.comp
+│   │           ├── clamp.comp
+│   │           ├── CMakeLists.txt
+│   │           ├── concat.comp
+│   │           ├── copy.comp
+│   │           ├── cos.comp
+│   │           ├── dequant_f32.comp
+│   │           ├── dequant_funcs.comp
+│   │           ├── dequant_head.comp
+│   │           ├── dequant_iq4_nl.comp
+│   │           ├── dequant_q2_k.comp
+│   │           ├── dequant_q3_k.comp
+│   │           ├── dequant_q4_0.comp
+│   │           ├── dequant_q4_1.comp
+│   │           ├── dequant_q4_k.comp
+│   │           ├── dequant_q5_0.comp
+│   │           ├── dequant_q5_1.comp
+│   │           ├── dequant_q5_k.comp
+│   │           ├── dequant_q6_k.comp
+│   │           ├── dequant_q8_0.comp
+│   │           ├── diag_mask_inf.comp
+│   │           ├── div.comp
+│   │           ├── gelu.comp
+│   │           ├── gelu_quick.comp
+│   │           ├── generic_binary_head.comp
+│   │           ├── generic_head.comp
+│   │           ├── generic_unary_head.comp
+│   │           ├── get_rows.comp
+│   │           ├── get_rows_quant.comp
+│   │           ├── group_norm.comp
+│   │           ├── im2col.comp
+│   │           ├── leaky_relu.comp
+│   │           ├── mul.comp
+│   │           ├── mul_mat_split_k_reduce.comp
+│   │           ├── mul_mat_vec_base.comp
+│   │           ├── mul_mat_vec.comp
+│   │           ├── mul_mat_vec_nc.comp
+│   │           ├── mul_mat_vec_p021.comp
+│   │           ├── mul_mat_vec_q2_k.comp
+│   │           ├── mul_mat_vec_q3_k.comp
+│   │           ├── mul_mat_vec_q4_k.comp
+│   │           ├── mul_mat_vec_q5_k.comp
+│   │           ├── mul_mat_vec_q6_k.comp
+│   │           ├── mul_mm.comp
+│   │           ├── norm.comp
+│   │           ├── pad.comp
+│   │           ├── relu.comp
+│   │           ├── repeat.comp
+│   │           ├── rms_norm.comp
+│   │           ├── rope_head.comp
+│   │           ├── rope_neox.comp
+│   │           ├── rope_norm.comp
+│   │           ├── scale.comp
+│   │           ├── silu.comp
+│   │           ├── sin.comp
+│   │           ├── soft_max.comp
+│   │           ├── square.comp
+│   │           ├── sum_rows.comp
+│   │           ├── tanh.comp
+│   │           ├── timestep_embedding.comp
+│   │           ├── types.comp
+│   │           ├── upscale.comp
+│   │           └── vulkan-shaders-gen.cpp
+│   ├── gguf-py
+│   │   ├── examples
+│   │   │   ├── reader.py
+│   │   │   └── writer.py
+│   │   ├── gguf
+│   │   │   ├── constants.py
+│   │   │   ├── gguf.py
+│   │   │   ├── gguf_reader.py
+│   │   │   ├── gguf_writer.py
+│   │   │   ├── __init__.py
+│   │   │   ├── lazy.py
+│   │   │   ├── metadata.py
+│   │   │   ├── py.typed
+│   │   │   ├── quants.py
+│   │   │   ├── tensor_mapping.py
+│   │   │   ├── utility.py
+│   │   │   └── vocab.py
+│   │   ├── LICENSE
+│   │   ├── pyproject.toml
+│   │   ├── README.md
+│   │   ├── scripts
+│   │   │   ├── gguf_convert_endian.py
+│   │   │   ├── gguf_dump.py
+│   │   │   ├── gguf_hash.py
+│   │   │   ├── gguf_new_metadata.py
+│   │   │   ├── gguf_set_metadata.py
+│   │   │   └── __init__.py
+│   │   └── tests
+│   │       ├── __init__.py
+│   │       ├── test_metadata.py
+│   │       └── test_quants.py
+│   ├── grammars
+│   │   ├── arithmetic.gbnf
+│   │   ├── c.gbnf
+│   │   ├── chess.gbnf
+│   │   ├── japanese.gbnf
+│   │   ├── json_arr.gbnf
+│   │   ├── json.gbnf
+│   │   ├── list.gbnf
+│   │   └── README.md
+│   ├── include
+│   │   └── llama.h
+│   ├── LICENSE
+│   ├── Makefile
+│   ├── media
+│   │   ├── llama0-banner.png
+│   │   ├── llama0-logo.png
+│   │   ├── llama1-banner.png
+│   │   ├── llama1-logo.png
+│   │   ├── llama-leader.jpeg
+│   │   ├── matmul.png
+│   │   └── matmul.svg
+│   ├── models
+│   │   ├── ggml-vocab-aquila.gguf
+│   │   ├── ggml-vocab-baichuan.gguf
+│   │   ├── ggml-vocab-bert-bge.gguf
+│   │   ├── ggml-vocab-bert-bge.gguf.inp
+│   │   ├── ggml-vocab-bert-bge.gguf.out
+│   │   ├── ggml-vocab-command-r.gguf
+│   │   ├── ggml-vocab-command-r.gguf.inp
+│   │   ├── ggml-vocab-command-r.gguf.out
+│   │   ├── ggml-vocab-deepseek-coder.gguf
+│   │   ├── ggml-vocab-deepseek-coder.gguf.inp
+│   │   ├── ggml-vocab-deepseek-coder.gguf.out
+│   │   ├── ggml-vocab-deepseek-llm.gguf
+│   │   ├── ggml-vocab-deepseek-llm.gguf.inp
+│   │   ├── ggml-vocab-deepseek-llm.gguf.out
+│   │   ├── ggml-vocab-falcon.gguf
+│   │   ├── ggml-vocab-falcon.gguf.inp
+│   │   ├── ggml-vocab-falcon.gguf.out
+│   │   ├── ggml-vocab-gpt-2.gguf
+│   │   ├── ggml-vocab-gpt-2.gguf.inp
+│   │   ├── ggml-vocab-gpt-2.gguf.out
+│   │   ├── ggml-vocab-gpt-neox.gguf
+│   │   ├── ggml-vocab-llama-bpe.gguf
+│   │   ├── ggml-vocab-llama-bpe.gguf.inp
+│   │   ├── ggml-vocab-llama-bpe.gguf.out
+│   │   ├── ggml-vocab-llama-spm.gguf
+│   │   ├── ggml-vocab-llama-spm.gguf.inp
+│   │   ├── ggml-vocab-llama-spm.gguf.out
+│   │   ├── ggml-vocab-mpt.gguf
+│   │   ├── ggml-vocab-mpt.gguf.inp
+│   │   ├── ggml-vocab-mpt.gguf.out
+│   │   ├── ggml-vocab-phi-3.gguf
+│   │   ├── ggml-vocab-phi-3.gguf.inp
+│   │   ├── ggml-vocab-phi-3.gguf.out
+│   │   ├── ggml-vocab-qwen2.gguf
+│   │   ├── ggml-vocab-qwen2.gguf.inp
+│   │   ├── ggml-vocab-qwen2.gguf.out
+│   │   ├── ggml-vocab-refact.gguf
+│   │   ├── ggml-vocab-refact.gguf.inp
+│   │   ├── ggml-vocab-refact.gguf.out
+│   │   ├── ggml-vocab-starcoder.gguf
+│   │   ├── ggml-vocab-starcoder.gguf.inp
+│   │   └── ggml-vocab-starcoder.gguf.out
+│   ├── mypy.ini
+│   ├── Package.swift
+│   ├── pocs
+│   │   ├── CMakeLists.txt
+│   │   └── vdot
+│   │       ├── CMakeLists.txt
+│   │       ├── q8dot.cpp
+│   │       └── vdot.cpp
+│   ├── poetry.lock
+│   ├── prompts
+│   │   ├── alpaca.txt
+│   │   ├── assistant.txt
+│   │   ├── chat.txt
+│   │   ├── chat-with-baichuan.txt
+│   │   ├── chat-with-bob.txt
+│   │   ├── chat-with-qwen.txt
+│   │   ├── chat-with-vicuna-v0.txt
+│   │   ├── chat-with-vicuna-v1.txt
+│   │   ├── dan-modified.txt
+│   │   ├── dan.txt
+│   │   ├── LLM-questions.txt
+│   │   ├── mnemonics.txt
+│   │   ├── parallel-questions.txt
+│   │   └── reason-act.txt
+│   ├── pyproject.toml
+│   ├── pyrightconfig.json
+│   ├── README.md
+│   ├── requirements
+│   │   ├── requirements-all.txt
+│   │   ├── requirements-compare-llama-bench.txt
+│   │   ├── requirements-convert_hf_to_gguf.txt
+│   │   ├── requirements-convert_hf_to_gguf_update.txt
+│   │   ├── requirements-convert_legacy_llama.txt
+│   │   ├── requirements-convert_llama_ggml_to_gguf.txt
+│   │   ├── requirements-convert_lora_to_gguf.txt
+│   │   ├── requirements-pydantic.txt
+│   │   └── requirements-test-tokenizer-random.txt
+│   ├── requirements.txt
+│   ├── scripts
+│   │   ├── build-info.sh
+│   │   ├── check-requirements.sh
+│   │   ├── ci-run.sh
+│   │   ├── compare-commits.sh
+│   │   ├── compare-llama-bench.py
+│   │   ├── debug-test.sh
+│   │   ├── gen-authors.sh
+│   │   ├── gen-unicode-data.py
+│   │   ├── get-flags.mk
+│   │   ├── get-hellaswag.sh
+│   │   ├── get-pg.sh
+│   │   ├── get-wikitext-103.sh
+│   │   ├── get-wikitext-2.sh
+│   │   ├── get-winogrande.sh
+│   │   ├── hf.sh
+│   │   ├── install-oneapi.bat
+│   │   ├── pod-llama.sh
+│   │   ├── qnt-all.sh
+│   │   ├── run-all-perf.sh
+│   │   ├── run-all-ppl.sh
+│   │   ├── run-with-preset.py
+│   │   ├── server-llm.sh
+│   │   ├── sync-ggml-am.sh
+│   │   ├── sync-ggml.last
+│   │   ├── sync-ggml.sh
+│   │   ├── verify-checksum-models.py
+│   │   └── xxd.cmake
+│   ├── SECURITY.md
+│   ├── spm-headers
+│   │   ├── ggml-alloc.h -> ../ggml/include/ggml-alloc.h
+│   │   ├── ggml-backend.h -> ../ggml/include/ggml-backend.h
+│   │   ├── ggml.h -> ../ggml/include/ggml.h
+│   │   ├── ggml-metal.h -> ../ggml/include/ggml-metal.h
+│   │   └── llama.h -> ../include/llama.h
+│   ├── src
+│   │   ├── CMakeLists.txt
+│   │   ├── llama.cpp
+│   │   ├── llama-grammar.cpp
+│   │   ├── llama-grammar.h
+│   │   ├── llama-impl.h
+│   │   ├── llama-sampling.cpp
+│   │   ├── llama-sampling.h
+│   │   ├── llama-vocab.cpp
+│   │   ├── llama-vocab.h
+│   │   ├── unicode.cpp
+│   │   ├── unicode-data.cpp
+│   │   ├── unicode-data.h
+│   │   └── unicode.h
+│   └── tests
+│       ├── CMakeLists.txt
+│       ├── get-model.cpp
+│       ├── get-model.h
+│       ├── run-json-schema-to-grammar.mjs
+│       ├── test-autorelease.cpp
+│       ├── test-backend-ops.cpp
+│       ├── test-c.c
+│       ├── test-chat-template.cpp
+│       ├── test-double-float.cpp
+│       ├── test-grad0.cpp
+│       ├── test-grammar-integration.cpp
+│       ├── test-grammar-parser.cpp
+│       ├── test-json-schema-to-grammar.cpp
+│       ├── test-llama-grammar.cpp
+│       ├── test-lora-conversion-inference.sh
+│       ├── test-model-load-cancel.cpp
+│       ├── test-opt.cpp
+│       ├── test-quantize-fns.cpp
+│       ├── test-quantize-perf.cpp
+│       ├── test-rope.cpp
+│       ├── test-sampling.cpp
+│       ├── test-tokenizer-0.cpp
+│       ├── test-tokenizer-0.py
+│       ├── test-tokenizer-0.sh
+│       ├── test-tokenizer-1-bpe.cpp
+│       ├── test-tokenizer-1-spm.cpp
+│       └── test-tokenizer-random.py
+├── ollama
+│   ├── api
+│   │   ├── client.go
+│   │   ├── client_test.go
+│   │   ├── types.go
+│   │   └── types_test.go
+│   ├── app
+│   │   ├── assets
+│   │   │   ├── app.ico
+│   │   │   ├── assets.go
+│   │   │   ├── setup.bmp
+│   │   │   ├── tray.ico
+│   │   │   └── tray_upgrade.ico
+│   │   ├── lifecycle
+│   │   │   ├── getstarted_nonwindows.go
+│   │   │   ├── getstarted_windows.go
+│   │   │   ├── lifecycle.go
+│   │   │   ├── logging.go
+│   │   │   ├── logging_nonwindows.go
+│   │   │   ├── logging_test.go
+│   │   │   ├── logging_windows.go
+│   │   │   ├── paths.go
+│   │   │   ├── server.go
+│   │   │   ├── server_unix.go
+│   │   │   ├── server_windows.go
+│   │   │   ├── updater.go
+│   │   │   ├── updater_nonwindows.go
+│   │   │   └── updater_windows.go
+│   │   ├── main.go
+│   │   ├── ollama.iss
+│   │   ├── ollama.rc
+│   │   ├── ollama_welcome.ps1
+│   │   ├── README.md
+│   │   ├── store
+│   │   │   ├── store_darwin.go
+│   │   │   ├── store.go
+│   │   │   ├── store_linux.go
+│   │   │   └── store_windows.go
+│   │   └── tray
+│   │       ├── commontray
+│   │       │   └── types.go
+│   │       ├── tray.go
+│   │       ├── tray_nonwindows.go
+│   │       ├── tray_windows.go
+│   │       └── wintray
+│   │           ├── eventloop.go
+│   │           ├── menus.go
+│   │           ├── messages.go
+│   │           ├── notifyicon.go
+│   │           ├── tray.go
+│   │           ├── w32api.go
+│   │           └── winclass.go
+│   ├── auth
+│   │   └── auth.go
+│   ├── build
+│   │   ├── darwin
+│   │   │   ├── amd64
+│   │   │   │   └── placeholder
+│   │   │   └── arm64
+│   │   │       └── placeholder
+│   │   ├── embed_darwin_amd64.go
+│   │   ├── embed_darwin_arm64.go
+│   │   ├── embed_linux.go
+│   │   ├── embed_unused.go
+│   │   └── linux
+│   │       ├── amd64
+│   │       │   └── placeholder
+│   │       └── arm64
+│   │           └── placeholder
+│   ├── cmd
+│   │   ├── cmd.go
+│   │   ├── cmd_test.go
+│   │   ├── interactive.go
+│   │   ├── interactive_test.go
+│   │   ├── start_darwin.go
+│   │   ├── start_default.go
+│   │   ├── start.go
+│   │   └── start_windows.go
+│   ├── CONTRIBUTING.md
+│   ├── convert
+│   │   ├── convert_bert.go
+│   │   ├── convert_gemma2_adapter.go
+│   │   ├── convert_gemma2.go
+│   │   ├── convert_gemma.go
+│   │   ├── convert.go
+│   │   ├── convert_llama_adapter.go
+│   │   ├── convert_llama.go
+│   │   ├── convert_mixtral.go
+│   │   ├── convert_phi3.go
+│   │   ├── convert_test.go
+│   │   ├── fs.go
+│   │   ├── reader.go
+│   │   ├── reader_safetensors.go
+│   │   ├── reader_torch.go
+│   │   ├── sentencepiece
+│   │   │   └── sentencepiece_model.pb.go
+│   │   ├── sentencepiece_model.proto
+│   │   ├── testdata
+│   │   │   ├── all-MiniLM-L6-v2.json
+│   │   │   ├── gemma-2-2b-it.json
+│   │   │   ├── gemma-2-9b-it.json
+│   │   │   ├── gemma-2b-it.json
+│   │   │   ├── Meta-Llama-3.1-8B-Instruct.json
+│   │   │   ├── Meta-Llama-3-8B-Instruct.json
+│   │   │   ├── Mistral-7B-Instruct-v0.2.json
+│   │   │   ├── Mixtral-8x7B-Instruct-v0.1.json
+│   │   │   └── Phi-3-mini-128k-instruct.json
+│   │   ├── tokenizer.go
+│   │   ├── tokenizer_spm.go
+│   │   └── tokenizer_test.go
+│   ├── Dockerfile
+│   ├── docs
+│   │   ├── api.md
+│   │   ├── development.md
+│   │   ├── docker.md
+│   │   ├── faq.md
+│   │   ├── gpu.md
+│   │   ├── images
+│   │   │   ├── ollama-keys.png
+│   │   │   └── signup.png
+│   │   ├── import.md
+│   │   ├── linux.md
+│   │   ├── modelfile.md
+│   │   ├── openai.md
+│   │   ├── README.md
+│   │   ├── template.md
+│   │   ├── troubleshooting.md
+│   │   ├── tutorials
+│   │   │   ├── fly-gpu.md
+│   │   │   ├── langchainjs.md
+│   │   │   ├── langchainpy.md
+│   │   │   └── nvidia-jetson.md
+│   │   ├── tutorials.md
+│   │   └── windows.md
+│   ├── envconfig
+│   │   ├── config.go
+│   │   └── config_test.go
+│   ├── examples
+│   │   ├── flyio
+│   │   │   └── README.md
+│   │   ├── go-chat
+│   │   │   └── main.go
+│   │   ├── go-generate
+│   │   │   └── main.go
+│   │   ├── go-generate-streaming
+│   │   │   └── main.go
+│   │   ├── go-http-generate
+│   │   │   └── main.go
+│   │   ├── go-multimodal
+│   │   │   └── main.go
+│   │   ├── go-pull-progress
+│   │   │   └── main.go
+│   │   ├── jupyter-notebook
+│   │   │   ├── ollama.ipynb
+│   │   │   └── README.md
+│   │   ├── kubernetes
+│   │   │   ├── cpu.yaml
+│   │   │   ├── gpu.yaml
+│   │   │   └── README.md
+│   │   ├── langchain-python-rag-document
+│   │   │   ├── main.py
+│   │   │   ├── README.md
+│   │   │   └── requirements.txt
+│   │   ├── langchain-python-rag-privategpt
+│   │   │   ├── constants.py
+│   │   │   ├── ingest.py
+│   │   │   ├── LICENSE
+│   │   │   ├── poetry.lock
+│   │   │   ├── privateGPT.py
+│   │   │   ├── pyproject.toml
+│   │   │   ├── README.md
+│   │   │   └── requirements.txt
+│   │   ├── langchain-python-rag-websummary
+│   │   │   ├── main.py
+│   │   │   ├── README.md
+│   │   │   └── requirements.txt
+│   │   ├── langchain-python-simple
+│   │   │   ├── main.py
+│   │   │   ├── README.md
+│   │   │   └── requirements.txt
+│   │   ├── langchain-typescript-simple
+│   │   │   ├── main.ts
+│   │   │   ├── package.json
+│   │   │   ├── package-lock.json
+│   │   │   └── README.md
+│   │   ├── modelfile-mario
+│   │   │   ├── logo.png
+│   │   │   ├── Modelfile
+│   │   │   └── readme.md
+│   │   ├── python-dockerit
+│   │   │   ├── dockerit.py
+│   │   │   ├── Modelfile
+│   │   │   ├── README.md
+│   │   │   └── requirements.txt
+│   │   ├── python-grounded-factuality-rag-check
+│   │   │   ├── main.py
+│   │   │   ├── README.md
+│   │   │   └── requirements.txt
+│   │   ├── python-grounded-factuality-simple-check
+│   │   │   ├── main.py
+│   │   │   ├── readme.md
+│   │   │   └── requirements.txt
+│   │   ├── python-json-datagenerator
+│   │   │   ├── predefinedschema.py
+│   │   │   ├── randomaddresses.py
+│   │   │   ├── readme.md
+│   │   │   └── requirements.txt
+│   │   ├── python-loganalysis
+│   │   │   ├── loganalysis.py
+│   │   │   ├── logtest.logfile
+│   │   │   ├── Modelfile
+│   │   │   ├── readme.md
+│   │   │   └── requirements.txt
+│   │   ├── python-rag-newssummary
+│   │   │   ├── README.md
+│   │   │   ├── requirements.txt
+│   │   │   ├── summ.py
+│   │   │   └── utils.py
+│   │   ├── python-simplechat
+│   │   │   ├── client.py
+│   │   │   ├── readme.md
+│   │   │   └── requirements.txt
+│   │   ├── python-simplegenerate
+│   │   │   ├── client.py
+│   │   │   ├── README.md
+│   │   │   └── requirements.txt
+│   │   ├── README.md
+│   │   ├── typescript-functioncalling
+│   │   │   ├── extractemail.ts
+│   │   │   ├── extractwp.ts
+│   │   │   ├── info.txt
+│   │   │   ├── package.json
+│   │   │   ├── package-lock.json
+│   │   │   ├── readme.md
+│   │   │   └── wp.txt
+│   │   ├── typescript-mentors
+│   │   │   ├── character-generator.ts
+│   │   │   ├── mentors.ts
+│   │   │   ├── package.json
+│   │   │   └── README.md
+│   │   └── typescript-simplechat
+│   │       ├── client.ts
+│   │       ├── package.json
+│   │       └── readme.md
+│   ├── format
+│   │   ├── bytes.go
+│   │   ├── format.go
+│   │   ├── format_test.go
+│   │   ├── time.go
+│   │   └── time_test.go
+│   ├── go.mod
+│   ├── go.sum
+│   ├── gpu
+│   │   ├── amd_common.go
+│   │   ├── amd_hip_windows.go
+│   │   ├── amd_linux.go
+│   │   ├── amd_windows.go
+│   │   ├── cpu_common.go
+│   │   ├── cuda_common.go
+│   │   ├── gpu_darwin.go
+│   │   ├── gpu.go
+│   │   ├── gpu_info_cudart.c
+│   │   ├── gpu_info_cudart.h
+│   │   ├── gpu_info_darwin.h
+│   │   ├── gpu_info_darwin.m
+│   │   ├── gpu_info.h
+│   │   ├── gpu_info_nvcuda.c
+│   │   ├── gpu_info_nvcuda.h
+│   │   ├── gpu_info_nvml.c
+│   │   ├── gpu_info_nvml.h
+│   │   ├── gpu_info_oneapi.c
+│   │   ├── gpu_info_oneapi.h
+│   │   ├── gpu_linux.go
+│   │   ├── gpu_oneapi.go
+│   │   ├── gpu_test.go
+│   │   ├── gpu_windows.go
+│   │   └── types.go
+│   ├── integration
+│   │   ├── basic_test.go
+│   │   ├── concurrency_test.go
+│   │   ├── context_test.go
+│   │   ├── embed_test.go
+│   │   ├── llm_image_test.go
+│   │   ├── llm_test.go
+│   │   ├── max_queue_test.go
+│   │   ├── README.md
+│   │   └── utils_test.go
+│   ├── LICENSE
+│   ├── llm
+│   │   ├── ext_server
+│   │   │   ├── CMakeLists.txt
+│   │   │   ├── httplib.h
+│   │   │   ├── server.cpp
+│   │   │   └── utils.hpp
+│   │   ├── filetype.go
+│   │   ├── generate
+│   │   │   ├── gen_common.sh
+│   │   │   ├── gen_darwin.sh
+│   │   │   ├── generate_darwin.go
+│   │   │   ├── generate_linux.go
+│   │   │   ├── generate_windows.go
+│   │   │   ├── gen_linux.sh
+│   │   │   └── gen_windows.ps1
+│   │   ├── ggla.go
+│   │   ├── ggml.go
+│   │   ├── ggml_test.go
+│   │   ├── gguf.go
+│   │   ├── llama.cpp
+│   │   ├── llm_darwin.go
+│   │   ├── llm.go
+│   │   ├── llm_linux.go
+│   │   ├── llm_windows.go
+│   │   ├── memory.go
+│   │   ├── memory_test.go
+│   │   ├── patches
+│   │   │   ├── 0000-cmakelist.patch
+│   │   │   ├── 0001-load-progress.patch
+│   │   │   ├── 0002-clip-log.patch
+│   │   │   ├── 0003-load_exception.patch
+│   │   │   ├── 0004-metal.patch
+│   │   │   ├── 0005-default-pretokenizer.patch
+│   │   │   ├── 0006-embeddings.patch
+│   │   │   ├── 0007-clip-unicode.patch
+│   │   │   └── 0008-solar-pro.patch
+│   │   ├── server.go
+│   │   └── status.go
+│   ├── macapp
+│   │   ├── assets
+│   │   │   ├── iconDarkTemplate@2x.png
+│   │   │   ├── iconDarkTemplate.png
+│   │   │   ├── iconDarkUpdateTemplate@2x.png
+│   │   │   ├── iconDarkUpdateTemplate.png
+│   │   │   ├── icon.icns
+│   │   │   ├── iconTemplate@2x.png
+│   │   │   ├── iconTemplate.png
+│   │   │   ├── iconUpdateTemplate@2x.png
+│   │   │   └── iconUpdateTemplate.png
+│   │   ├── forge.config.ts
+│   │   ├── package.json
+│   │   ├── package-lock.json
+│   │   ├── postcss.config.js
+│   │   ├── README.md
+│   │   ├── src
+│   │   │   ├── app.css
+│   │   │   ├── app.tsx
+│   │   │   ├── declarations.d.ts
+│   │   │   ├── index.html
+│   │   │   ├── index.ts
+│   │   │   ├── install.ts
+│   │   │   ├── ollama.svg
+│   │   │   ├── preload.ts
+│   │   │   └── renderer.tsx
+│   │   ├── tailwind.config.js
+│   │   ├── tsconfig.json
+│   │   ├── webpack.main.config.ts
+│   │   ├── webpack.plugins.ts
+│   │   ├── webpack.renderer.config.ts
+│   │   └── webpack.rules.ts
+│   ├── main.go
+│   ├── openai
+│   │   ├── openai.go
+│   │   └── openai_test.go
+│   ├── parser
+│   │   ├── parser.go
+│   │   └── parser_test.go
+│   ├── progress
+│   │   ├── bar.go
+│   │   ├── progress.go
+│   │   └── spinner.go
+│   ├── readline
+│   │   ├── buffer.go
+│   │   ├── errors.go
+│   │   ├── history.go
+│   │   ├── readline.go
+│   │   ├── readline_unix.go
+│   │   ├── readline_windows.go
+│   │   ├── term_bsd.go
+│   │   ├── term.go
+│   │   ├── term_linux.go
+│   │   ├── term_windows.go
+│   │   └── types.go
+│   ├── README.md
+│   ├── runners
+│   │   ├── common.go
+│   │   └── runners_test.go
+│   ├── scripts
+│   │   ├── build_darwin.sh
+│   │   ├── build_docker.sh
+│   │   ├── build_linux.sh
+│   │   ├── build_remote.py
+│   │   ├── build.sh
+│   │   ├── build_windows.ps1
+│   │   ├── env.sh
+│   │   ├── install.sh
+│   │   ├── publish.sh
+│   │   ├── push_docker.sh
+│   │   ├── rh_linux_deps.sh
+│   │   └── tag_latest.sh
+│   ├── SECURITY.md
+│   ├── server
+│   │   ├── auth.go
+│   │   ├── download.go
+│   │   ├── fixblobs.go
+│   │   ├── fixblobs_test.go
+│   │   ├── images.go
+│   │   ├── layer.go
+│   │   ├── manifest.go
+│   │   ├── manifest_test.go
+│   │   ├── model.go
+│   │   ├── modelpath.go
+│   │   ├── modelpath_test.go
+│   │   ├── model_test.go
+│   │   ├── prompt.go
+│   │   ├── prompt_test.go
+│   │   ├── routes_create_test.go
+│   │   ├── routes_delete_test.go
+│   │   ├── routes_generate_test.go
+│   │   ├── routes.go
+│   │   ├── routes_list_test.go
+│   │   ├── routes_test.go
+│   │   ├── sched.go
+│   │   ├── sched_test.go
+│   │   ├── sparse_common.go
+│   │   ├── sparse_windows.go
+│   │   ├── testdata
+│   │   │   └── tools
+│   │   │       ├── command-r-plus.gotmpl
+│   │   │       ├── command-r-plus.out
+│   │   │       ├── firefunction.gotmpl
+│   │   │       ├── firefunction.out
+│   │   │       ├── llama3-groq-tool-use.gotmpl
+│   │   │       ├── llama3-groq-tool-use.out
+│   │   │       ├── messages.json
+│   │   │       ├── mistral.gotmpl
+│   │   │       ├── mistral.out
+│   │   │       ├── nemotron.gotmpl
+│   │   │       ├── nemotron.out
+│   │   │       ├── tools.json
+│   │   │       ├── xlam.gotmpl
+│   │   │       └── xlam.out
+│   │   └── upload.go
+│   ├── template
+│   │   ├── alfred.gotmpl
+│   │   ├── alfred.json
+│   │   ├── alpaca.gotmpl
+│   │   ├── alpaca.json
+│   │   ├── chatml.gotmpl
+│   │   ├── chatml.json
+│   │   ├── chatqa.gotmpl
+│   │   ├── chatqa.json
+│   │   ├── codellama-70b-instruct.gotmpl
+│   │   ├── codellama-70b-instruct.json
+│   │   ├── falcon-instruct.gotmpl
+│   │   ├── falcon-instruct.json
+│   │   ├── gemma-instruct.gotmpl
+│   │   ├── gemma-instruct.json
+│   │   ├── granite-instruct.gotmpl
+│   │   ├── granite-instruct.json
+│   │   ├── index.json
+│   │   ├── llama2-chat.gotmpl
+│   │   ├── llama2-chat.json
+│   │   ├── llama3-instruct.gotmpl
+│   │   ├── llama3-instruct.json
+│   │   ├── magicoder.gotmpl
+│   │   ├── magicoder.json
+│   │   ├── mistral-instruct.gotmpl
+│   │   ├── mistral-instruct.json
+│   │   ├── openchat.gotmpl
+│   │   ├── openchat.json
+│   │   ├── phi-3.gotmpl
+│   │   ├── phi-3.json
+│   │   ├── solar-instruct.gotmpl
+│   │   ├── solar-instruct.json
+│   │   ├── starcoder2-instruct.gotmpl
+│   │   ├── starcoder2-instruct.json
+│   │   ├── template.go
+│   │   ├── template_test.go
+│   │   ├── testdata
+│   │   │   ├── alfred.gotmpl
+│   │   │   │   ├── system-user-assistant-user
+│   │   │   │   ├── user
+│   │   │   │   └── user-assistant-user
+│   │   │   ├── alpaca.gotmpl
+│   │   │   │   ├── system-user-assistant-user
+│   │   │   │   ├── user
+│   │   │   │   └── user-assistant-user
+│   │   │   ├── chatml.gotmpl
+│   │   │   │   ├── system-user-assistant-user
+│   │   │   │   ├── user
+│   │   │   │   └── user-assistant-user
+│   │   │   ├── chatqa.gotmpl
+│   │   │   │   ├── system-user-assistant-user
+│   │   │   │   ├── user
+│   │   │   │   └── user-assistant-user
+│   │   │   ├── codellama-70b-instruct.gotmpl
+│   │   │   │   ├── system-user-assistant-user
+│   │   │   │   ├── user
+│   │   │   │   └── user-assistant-user
+│   │   │   ├── falcon-instruct.gotmpl
+│   │   │   │   ├── system-user-assistant-user
+│   │   │   │   ├── user
+│   │   │   │   └── user-assistant-user
+│   │   │   ├── gemma-instruct.gotmpl
+│   │   │   │   ├── system-user-assistant-user
+│   │   │   │   ├── user
+│   │   │   │   └── user-assistant-user
+│   │   │   ├── granite-instruct.gotmpl
+│   │   │   │   ├── system-user-assistant-user
+│   │   │   │   ├── user
+│   │   │   │   └── user-assistant-user
+│   │   │   ├── llama2-chat.gotmpl
+│   │   │   │   ├── system-user-assistant-user
+│   │   │   │   ├── user
+│   │   │   │   └── user-assistant-user
+│   │   │   ├── llama3-instruct.gotmpl
+│   │   │   │   ├── system-user-assistant-user
+│   │   │   │   ├── user
+│   │   │   │   └── user-assistant-user
+│   │   │   ├── magicoder.gotmpl
+│   │   │   │   ├── system-user-assistant-user
+│   │   │   │   ├── user
+│   │   │   │   └── user-assistant-user
+│   │   │   ├── mistral-instruct.gotmpl
+│   │   │   │   ├── system-user-assistant-user
+│   │   │   │   ├── user
+│   │   │   │   └── user-assistant-user
+│   │   │   ├── openchat.gotmpl
+│   │   │   │   ├── system-user-assistant-user
+│   │   │   │   ├── user
+│   │   │   │   └── user-assistant-user
+│   │   │   ├── phi-3.gotmpl
+│   │   │   │   ├── system-user-assistant-user
+│   │   │   │   ├── user
+│   │   │   │   └── user-assistant-user
+│   │   │   ├── solar-instruct.gotmpl
+│   │   │   │   ├── system-user-assistant-user
+│   │   │   │   ├── user
+│   │   │   │   └── user-assistant-user
+│   │   │   ├── starcoder2-instruct.gotmpl
+│   │   │   │   ├── system-user-assistant-user
+│   │   │   │   ├── user
+│   │   │   │   └── user-assistant-user
+│   │   │   ├── templates.jsonl
+│   │   │   ├── vicuna.gotmpl
+│   │   │   │   ├── system-user-assistant-user
+│   │   │   │   ├── user
+│   │   │   │   └── user-assistant-user
+│   │   │   └── zephyr.gotmpl
+│   │   │       ├── system-user-assistant-user
+│   │   │       ├── user
+│   │   │       └── user-assistant-user
+│   │   ├── vicuna.gotmpl
+│   │   ├── vicuna.json
+│   │   ├── zephyr.gotmpl
+│   │   └── zephyr.json
+│   ├── types
+│   │   ├── errtypes
+│   │   │   └── errtypes.go
+│   │   └── model
+│   │       ├── name.go
+│   │       ├── name_test.go
+│   │       └── testdata
+│   │           └── fuzz
+│   │               └── FuzzName
+│   │                   └── d37463aa416f6bab
+│   ├── util
+│   │   └── bufioutil
+│   │       ├── buffer_seeker.go
+│   │       └── buffer_seeker_test.go
+│   └── version
+│       └── version.go
+├── ollama.service -> /home/felix/packages/ollama-rocm/ollama.service
+├── sysusers.conf -> /home/felix/packages/ollama-rocm/sysusers.conf
+└── tmpfiles.d -> /home/felix/packages/ollama-rocm/tmpfiles.d
+
+250 directories, 1364 files

@@ -1,0 +1,899 @@
+src
+├── dotnet-core-runtime-disable-package-validation.patch -> /home/felix/packages/dotnet-core-6.0/dotnet-core-runtime-disable-package-validation.patch
+├── dotnet-core-sdk-telemetry-optout.patch -> /home/felix/packages/dotnet-core-6.0/dotnet-core-sdk-telemetry-optout.patch
+├── dotnet-installer
+│   ├── build.cmd
+│   ├── build.sh
+│   ├── CODE-OF-CONDUCT.md
+│   ├── CODEOWNERS
+│   ├── CONTRIBUTING.md
+│   ├── Directory.Build.props
+│   ├── Directory.Build.targets
+│   ├── Downloads2.x.md
+│   ├── eng
+│   │   ├── BuildConfiguration
+│   │   │   └── build-configuration.json
+│   │   ├── Build.props
+│   │   ├── build-pr.yml
+│   │   ├── build.yml
+│   │   ├── common
+│   │   │   ├── build.ps1
+│   │   │   ├── build.sh
+│   │   │   ├── CIBuild.cmd
+│   │   │   ├── cibuild.sh
+│   │   │   ├── cross
+│   │   │   │   ├── arm
+│   │   │   │   │   ├── sources.list.bionic
+│   │   │   │   │   ├── sources.list.jessie
+│   │   │   │   │   ├── sources.list.xenial
+│   │   │   │   │   └── sources.list.zesty
+│   │   │   │   ├── arm64
+│   │   │   │   │   ├── sources.list.bionic
+│   │   │   │   │   ├── sources.list.buster
+│   │   │   │   │   ├── sources.list.stretch
+│   │   │   │   │   ├── sources.list.xenial
+│   │   │   │   │   ├── sources.list.zesty
+│   │   │   │   │   ├── tizen
+│   │   │   │   │   │   └── tizen.patch
+│   │   │   │   │   ├── tizen-build-rootfs.sh
+│   │   │   │   │   └── tizen-fetch.sh
+│   │   │   │   ├── armel
+│   │   │   │   │   ├── armel.jessie.patch
+│   │   │   │   │   ├── sources.list.jessie
+│   │   │   │   │   ├── tizen
+│   │   │   │   │   │   ├── tizen-dotnet.ks
+│   │   │   │   │   │   └── tizen.patch
+│   │   │   │   │   ├── tizen-build-rootfs.sh
+│   │   │   │   │   └── tizen-fetch.sh
+│   │   │   │   ├── build-android-rootfs.sh
+│   │   │   │   ├── build-rootfs.sh
+│   │   │   │   ├── s390x
+│   │   │   │   │   └── sources.list.bionic
+│   │   │   │   ├── toolchain.cmake
+│   │   │   │   └── x86
+│   │   │   │       ├── sources.list.bionic
+│   │   │   │       └── sources.list.xenial
+│   │   │   ├── darc-init.ps1
+│   │   │   ├── darc-init.sh
+│   │   │   ├── dotnet-install.cmd
+│   │   │   ├── dotnet-install.ps1
+│   │   │   ├── dotnet-install.sh
+│   │   │   ├── enable-cross-org-publishing.ps1
+│   │   │   ├── generate-locproject.ps1
+│   │   │   ├── generate-sbom-prep.ps1
+│   │   │   ├── generate-sbom-prep.sh
+│   │   │   ├── helixpublish.proj
+│   │   │   ├── init-tools-native.cmd
+│   │   │   ├── init-tools-native.ps1
+│   │   │   ├── init-tools-native.sh
+│   │   │   ├── internal
+│   │   │   │   ├── Directory.Build.props
+│   │   │   │   ├── NuGet.config
+│   │   │   │   └── Tools.csproj
+│   │   │   ├── internal-feed-operations.ps1
+│   │   │   ├── internal-feed-operations.sh
+│   │   │   ├── msbuild.ps1
+│   │   │   ├── msbuild.sh
+│   │   │   ├── native
+│   │   │   │   ├── CommonLibrary.psm1
+│   │   │   │   ├── common-library.sh
+│   │   │   │   ├── find-native-compiler.sh
+│   │   │   │   ├── install-cmake.sh
+│   │   │   │   ├── install-cmake-test.sh
+│   │   │   │   └── install-tool.ps1
+│   │   │   ├── pipeline-logging-functions.ps1
+│   │   │   ├── pipeline-logging-functions.sh
+│   │   │   ├── post-build
+│   │   │   │   ├── check-channel-consistency.ps1
+│   │   │   │   ├── nuget-validation.ps1
+│   │   │   │   ├── nuget-verification.ps1
+│   │   │   │   ├── publish-using-darc.ps1
+│   │   │   │   ├── sourcelink-validation.ps1
+│   │   │   │   └── symbols-validation.ps1
+│   │   │   ├── PSScriptAnalyzerSettings.psd1
+│   │   │   ├── README.md
+│   │   │   ├── retain-build.ps1
+│   │   │   ├── sdk-task.ps1
+│   │   │   ├── sdl
+│   │   │   │   ├── configure-sdl-tool.ps1
+│   │   │   │   ├── execute-all-sdl-tools.ps1
+│   │   │   │   ├── extract-artifact-archives.ps1
+│   │   │   │   ├── extract-artifact-packages.ps1
+│   │   │   │   ├── init-sdl.ps1
+│   │   │   │   ├── NuGet.config
+│   │   │   │   ├── packages.config
+│   │   │   │   ├── run-sdl.ps1
+│   │   │   │   └── sdl.ps1
+│   │   │   ├── SetupNugetSources.ps1
+│   │   │   ├── SetupNugetSources.sh
+│   │   │   ├── templates
+│   │   │   │   ├── job
+│   │   │   │   │   ├── execute-sdl.yml
+│   │   │   │   │   ├── job.yml
+│   │   │   │   │   ├── onelocbuild.yml
+│   │   │   │   │   ├── publish-build-assets.yml
+│   │   │   │   │   ├── source-build.yml
+│   │   │   │   │   └── source-index-stage1.yml
+│   │   │   │   ├── jobs
+│   │   │   │   │   ├── codeql-build.yml
+│   │   │   │   │   ├── jobs.yml
+│   │   │   │   │   └── source-build.yml
+│   │   │   │   ├── post-build
+│   │   │   │   │   ├── common-variables.yml
+│   │   │   │   │   ├── post-build.yml
+│   │   │   │   │   └── setup-maestro-vars.yml
+│   │   │   │   ├── steps
+│   │   │   │   │   ├── build-reason.yml
+│   │   │   │   │   ├── component-governance.yml
+│   │   │   │   │   ├── enable-internal-runtimes.yml
+│   │   │   │   │   ├── execute-codeql.yml
+│   │   │   │   │   ├── execute-sdl.yml
+│   │   │   │   │   ├── generate-sbom.yml
+│   │   │   │   │   ├── get-delegation-sas.yml
+│   │   │   │   │   ├── get-federated-access-token.yml
+│   │   │   │   │   ├── publish-logs.yml
+│   │   │   │   │   ├── retain-build.yml
+│   │   │   │   │   ├── run-on-unix.yml
+│   │   │   │   │   ├── run-on-windows.yml
+│   │   │   │   │   ├── run-script-ifequalelse.yml
+│   │   │   │   │   ├── send-to-helix.yml
+│   │   │   │   │   ├── source-build.yml
+│   │   │   │   │   ├── telemetry-end.yml
+│   │   │   │   │   └── telemetry-start.yml
+│   │   │   │   └── variables
+│   │   │   │       └── sdl-variables.yml
+│   │   │   ├── templates-official
+│   │   │   │   ├── job
+│   │   │   │   │   ├── job.yml
+│   │   │   │   │   ├── onelocbuild.yml
+│   │   │   │   │   ├── publish-build-assets.yml
+│   │   │   │   │   ├── source-build.yml
+│   │   │   │   │   └── source-index-stage1.yml
+│   │   │   │   ├── jobs
+│   │   │   │   │   ├── codeql-build.yml
+│   │   │   │   │   ├── jobs.yml
+│   │   │   │   │   └── source-build.yml
+│   │   │   │   ├── post-build
+│   │   │   │   │   ├── common-variables.yml
+│   │   │   │   │   ├── post-build.yml
+│   │   │   │   │   └── setup-maestro-vars.yml
+│   │   │   │   ├── steps
+│   │   │   │   │   ├── component-governance.yml
+│   │   │   │   │   ├── enable-internal-runtimes.yml
+│   │   │   │   │   ├── execute-codeql.yml
+│   │   │   │   │   ├── generate-sbom.yml
+│   │   │   │   │   ├── get-delegation-sas.yml
+│   │   │   │   │   ├── get-federated-access-token.yml
+│   │   │   │   │   ├── publish-logs.yml
+│   │   │   │   │   ├── retain-build.yml
+│   │   │   │   │   ├── send-to-helix.yml
+│   │   │   │   │   └── source-build.yml
+│   │   │   │   └── variables
+│   │   │   │       └── sdl-variables.yml
+│   │   │   ├── tools.ps1
+│   │   │   └── tools.sh
+│   │   ├── configure-toolset.ps1
+│   │   ├── configure-toolset.sh
+│   │   ├── CopyToLatest.cmd
+│   │   ├── core-sdk-build-env.sh
+│   │   ├── core-sdk-test-env.bat
+│   │   ├── core-sdk-test-env.sh
+│   │   ├── docker
+│   │   │   ├── alpine.3.13
+│   │   │   │   └── Dockerfile
+│   │   │   ├── centos
+│   │   │   │   └── Dockerfile
+│   │   │   ├── debian
+│   │   │   │   └── Dockerfile
+│   │   │   ├── fedora.29
+│   │   │   │   └── Dockerfile
+│   │   │   ├── rhel
+│   │   │   │   └── Dockerfile
+│   │   │   └── ubuntu.18.04
+│   │   │       └── Dockerfile
+│   │   ├── dockerrun.ps1
+│   │   ├── dockerrun.sh
+│   │   ├── Key.snk
+│   │   ├── ManualVersions.props
+│   │   ├── native.proj
+│   │   ├── _prettyprint.sh
+│   │   ├── Publishing.props
+│   │   ├── restore-toolset.ps1
+│   │   ├── restore-toolset.sh
+│   │   ├── sdl-tsa-vars.config
+│   │   ├── SignCheckExclusionsFile.txt
+│   │   ├── Signing.props
+│   │   ├── SourceBuildPrebuiltBaseline.xml
+│   │   ├── SourceBuild.props
+│   │   ├── source-build-tarball-build-official.yml
+│   │   ├── TestVersions.props
+│   │   ├── version.csproj
+│   │   ├── Version.Details.xml
+│   │   └── Versions.props
+│   ├── global.json
+│   ├── LICENSE
+│   ├── Microsoft.DotNet.Cli.sln
+│   ├── Native.sln
+│   ├── NuGet.config
+│   ├── PULL_REQUEST_TEMPLATE
+│   ├── README.md
+│   ├── resources
+│   │   └── images
+│   │       └── version_badge.svg
+│   ├── run-build.ps1
+│   ├── run-build.sh
+│   ├── SECURITY.md
+│   ├── source-build.slnf
+│   ├── src
+│   │   ├── core-sdk-tasks
+│   │   │   ├── AddMetadataIsPE.cs
+│   │   │   ├── AzurePublisher.cs
+│   │   │   ├── BuildFPMToolPreReqs.cs
+│   │   │   ├── CalculateTemplateVersions.cs
+│   │   │   ├── Chmod.cs
+│   │   │   ├── CollatePackageDownloads.cs
+│   │   │   ├── Constants.cs
+│   │   │   ├── core-sdk-tasks.csproj
+│   │   │   ├── Crossgen.cs
+│   │   │   ├── DotNetDebTool.cs
+│   │   │   ├── DotNetTool.cs
+│   │   │   ├── Enumerations
+│   │   │   │   └── BuildPlatform.cs
+│   │   │   ├── EnvironmentVariableFilter.cs
+│   │   │   ├── ExtractArchiveToDirectory.cs
+│   │   │   ├── GenerateDefaultRuntimeFrameworkVersion.cs
+│   │   │   ├── GenerateGuidFromName.cs
+│   │   │   ├── GenerateMSBuildExtensionsSWR.cs
+│   │   │   ├── GenerateMsiVersionFromFullVersion.cs
+│   │   │   ├── GenerateSdkRuntimeIdentifierChain.cs
+│   │   │   ├── GetLinuxNativeInstallerDependencyVersions.cs
+│   │   │   ├── GetRuntimePackRids.cs
+│   │   │   ├── ReplaceFileContents.cs
+│   │   │   ├── TarGzFileCreateFromDirectory.cs
+│   │   │   ├── UpdateRuntimeConfig.cs
+│   │   │   ├── Utils
+│   │   │   │   └── Version.cs
+│   │   │   └── ZipFileCreateFromDirectory.cs
+│   │   ├── finalizer
+│   │   │   ├── CMakeLists.txt
+│   │   │   ├── finalizer.cpp
+│   │   │   ├── finalizer.proj
+│   │   │   ├── native.rc
+│   │   │   ├── precomp.h
+│   │   │   └── README.md
+│   │   ├── finalizer_shim
+│   │   │   └── finalizer_shim.csproj
+│   │   ├── Microsoft.Dotnet.Sdk.Internal
+│   │   │   ├── Class1.cs
+│   │   │   └── Microsoft.Dotnet.Sdk.Internal.csproj
+│   │   ├── redist
+│   │   │   ├── redist.csproj
+│   │   │   └── targets
+│   │   │       ├── Badge.targets
+│   │   │       ├── Branding.targets
+│   │   │       ├── BuildCoreSdkTasks.targets
+│   │   │       ├── BundledDotnetTools.targets
+│   │   │       ├── BundledManifests.targets
+│   │   │       ├── BundledTemplates.targets
+│   │   │       ├── Checksum.targets
+│   │   │       ├── Crossgen.targets
+│   │   │       ├── DownloadPackage.csproj
+│   │   │       ├── FileExtensions.targets
+│   │   │       ├── GenerateArchives.targets
+│   │   │       ├── GenerateBundledVersions.targets
+│   │   │       ├── GenerateDebs.targets
+│   │   │       ├── GenerateInstallers.targets
+│   │   │       ├── GenerateLayout.targets
+│   │   │       ├── GenerateMSBuildExtensions.targets
+│   │   │       ├── GenerateMSIs.targets
+│   │   │       ├── GeneratePKG.targets
+│   │   │       ├── GenerateRPMs.targets
+│   │   │       ├── GetRuntimeInformation.targets
+│   │   │       ├── LayoutTool.csproj
+│   │   │       ├── LinuxNativeInstallerDependencyVersions.targets
+│   │   │       ├── packaging
+│   │   │       │   ├── deb
+│   │   │       │   │   ├── dotnet-debian_config.json
+│   │   │       │   │   └── postinst
+│   │   │       │   ├── osx
+│   │   │       │   │   └── clisdk
+│   │   │       │   │       ├── Distribution-Template
+│   │   │       │   │       ├── Distribution-Template-x64
+│   │   │       │   │       ├── resources
+│   │   │       │   │       │   ├── cs.lproj
+│   │   │       │   │       │   │   ├── conclusion.html
+│   │   │       │   │       │   │   └── welcome.html
+│   │   │       │   │       │   ├── de.lproj
+│   │   │       │   │       │   │   ├── conclusion.html
+│   │   │       │   │       │   │   └── welcome.html
+│   │   │       │   │       │   ├── dotnetbackground.png
+│   │   │       │   │       │   ├── en.lproj
+│   │   │       │   │       │   │   ├── conclusion.html
+│   │   │       │   │       │   │   └── welcome.html
+│   │   │       │   │       │   ├── es.lproj
+│   │   │       │   │       │   │   ├── conclusion.html
+│   │   │       │   │       │   │   └── welcome.html
+│   │   │       │   │       │   ├── fr.lproj
+│   │   │       │   │       │   │   ├── conclusion.html
+│   │   │       │   │       │   │   └── welcome.html
+│   │   │       │   │       │   ├── it.lproj
+│   │   │       │   │       │   │   ├── conclusion.html
+│   │   │       │   │       │   │   └── welcome.html
+│   │   │       │   │       │   ├── ja.lproj
+│   │   │       │   │       │   │   ├── conclusion.html
+│   │   │       │   │       │   │   └── welcome.html
+│   │   │       │   │       │   ├── ko.lproj
+│   │   │       │   │       │   │   ├── conclusion.html
+│   │   │       │   │       │   │   └── welcome.html
+│   │   │       │   │       │   ├── pl.lproj
+│   │   │       │   │       │   │   ├── conclusion.html
+│   │   │       │   │       │   │   └── welcome.html
+│   │   │       │   │       │   ├── pt-br.lproj
+│   │   │       │   │       │   │   ├── conclusion.html
+│   │   │       │   │       │   │   └── welcome.html
+│   │   │       │   │       │   ├── ru.lproj
+│   │   │       │   │       │   │   ├── conclusion.html
+│   │   │       │   │       │   │   └── welcome.html
+│   │   │       │   │       │   ├── tr.lproj
+│   │   │       │   │       │   │   ├── conclusion.html
+│   │   │       │   │       │   │   └── welcome.html
+│   │   │       │   │       │   ├── zh-hans.lproj
+│   │   │       │   │       │   │   ├── conclusion.html
+│   │   │       │   │       │   │   └── welcome.html
+│   │   │       │   │       │   └── zh-hant.lproj
+│   │   │       │   │       │       ├── conclusion.html
+│   │   │       │   │       │       └── welcome.html
+│   │   │       │   │       └── scripts
+│   │   │       │   │           └── postinstall
+│   │   │       │   ├── rpm
+│   │   │       │   │   ├── dotnet-config.json
+│   │   │       │   │   ├── scripts
+│   │   │       │   │   │   ├── after_install_host.sh
+│   │   │       │   │   │   └── after_remove_host.sh
+│   │   │       │   │   └── templates
+│   │   │       │   │       ├── changelog
+│   │   │       │   │       └── copyright
+│   │   │       │   └── windows
+│   │   │       │       └── clisdk
+│   │   │       │           ├── bundle.thm
+│   │   │       │           ├── bundle.wxs
+│   │   │       │           ├── dotnethome_x64.wxs
+│   │   │       │           ├── dotnet.wxs
+│   │   │       │           ├── dummyeula.rtf
+│   │   │       │           ├── generatebundle.ps1
+│   │   │       │           ├── generatemsi.ps1
+│   │   │       │           ├── generatenupkg.ps1
+│   │   │       │           ├── generatesdkplaceholdermsi.ps1
+│   │   │       │           ├── generatetemplatesmsi.ps1
+│   │   │       │           ├── Init.cmd
+│   │   │       │           ├── LCID
+│   │   │       │           │   ├── 1028
+│   │   │       │           │   │   └── bundle.wxl
+│   │   │       │           │   ├── 1029
+│   │   │       │           │   │   └── bundle.wxl
+│   │   │       │           │   ├── 1031
+│   │   │       │           │   │   └── bundle.wxl
+│   │   │       │           │   ├── 1033
+│   │   │       │           │   │   └── bundle.wxl
+│   │   │       │           │   ├── 1036
+│   │   │       │           │   │   └── bundle.wxl
+│   │   │       │           │   ├── 1040
+│   │   │       │           │   │   └── bundle.wxl
+│   │   │       │           │   ├── 1041
+│   │   │       │           │   │   └── bundle.wxl
+│   │   │       │           │   ├── 1042
+│   │   │       │           │   │   └── bundle.wxl
+│   │   │       │           │   ├── 1045
+│   │   │       │           │   │   └── bundle.wxl
+│   │   │       │           │   ├── 1046
+│   │   │       │           │   │   └── bundle.wxl
+│   │   │       │           │   ├── 1049
+│   │   │       │           │   │   └── bundle.wxl
+│   │   │       │           │   ├── 1055
+│   │   │       │           │   │   └── bundle.wxl
+│   │   │       │           │   ├── 2052
+│   │   │       │           │   │   └── bundle.wxl
+│   │   │       │           │   └── 3082
+│   │   │       │           │       └── bundle.wxl
+│   │   │       │           ├── manifests.wxs
+│   │   │       │           ├── msi
+│   │   │       │           ├── msi.ico
+│   │   │       │           ├── provider.wxs
+│   │   │       │           ├── registrykeys.wxs
+│   │   │       │           ├── sdkplaceholder.wxs
+│   │   │       │           ├── StableFileIdForApphostTransform.xslt
+│   │   │       │           ├── templates.wxs
+│   │   │       │           ├── variables.wxi
+│   │   │       │           ├── VS.Redist.Common.Net.Core.SDK.MSBuildExtensions.nuspec
+│   │   │       │           ├── VS.Redist.Common.NetCore.SdkPlaceholder.nuspec
+│   │   │       │           ├── VS.Redist.Common.Net.Core.SDK.VSTemplateLocator.nuspec
+│   │   │       │           ├── VS.Redist.Common.NetCore.Templates.nuspec
+│   │   │       │           ├── VS.Redist.Common.NetCore.Toolset.nuspec
+│   │   │       │           ├── VS.Tools.Net.Core.SDK.nuspec
+│   │   │       │           ├── VS.Tools.Net.Core.SDK.Resolver.cxspec
+│   │   │       │           └── VS.Tools.Net.Core.SDK.Resolver.nuspec
+│   │   │       ├── SetBuildDefaults.targets
+│   │   │       ├── Signing.targets
+│   │   │       └── Versions.targets
+│   │   ├── SdkResolver
+│   │   │   └── SdkResolver.csproj
+│   │   ├── snaps
+│   │   │   ├── arm
+│   │   │   │   ├── dotnet-sdk-3.1
+│   │   │   │   │   └── snap
+│   │   │   │   │       └── snapcraft.yaml
+│   │   │   │   └── dotnet-sdk-5.0
+│   │   │   │       └── snap
+│   │   │   │           └── snapcraft.yaml
+│   │   │   ├── arm64
+│   │   │   │   └── dotnet-sdk-5.0
+│   │   │   │       └── snap
+│   │   │   │           └── snapcraft.yaml
+│   │   │   ├── dotnet-sdk
+│   │   │   │   └── snap
+│   │   │   │       └── snapcraft.yaml
+│   │   │   ├── dotnet-sdk-2.1
+│   │   │   │   └── snap
+│   │   │   │       └── snapcraft.yaml
+│   │   │   ├── dotnet-sdk-3.1
+│   │   │   │   └── snap
+│   │   │   │       └── snapcraft.yaml
+│   │   │   ├── dotnet-sdk-5.0
+│   │   │   │   └── snap
+│   │   │   │       └── snapcraft.yaml
+│   │   │   └── dotnet-sdk-6.0
+│   │   │       └── snap
+│   │   │           └── snapcraft.yaml
+│   │   ├── SourceBuild
+│   │   │   ├── Arcade
+│   │   │   │   ├── eng
+│   │   │   │   │   └── common
+│   │   │   │   │       └── templates
+│   │   │   │   │           └── job
+│   │   │   │   │               ├── source-build-build-tarball-pr.yml
+│   │   │   │   │               ├── source-build-build-tarball.yml
+│   │   │   │   │               ├── source-build-create-tarball-pr.yml
+│   │   │   │   │               ├── source-build-create-tarball.yml
+│   │   │   │   │               ├── source-build-run-tarball-build-pr.yml
+│   │   │   │   │               └── source-build-run-tarball-build.yml
+│   │   │   │   ├── README.md
+│   │   │   │   ├── src
+│   │   │   │   │   ├── SourceBuild.Tasks.csproj
+│   │   │   │   │   ├── Tarball_ReadSourceBuildIntermediateNupkgDependencies.cs
+│   │   │   │   │   └── Tarball_WriteSourceRepoProperties.cs
+│   │   │   │   └── tools
+│   │   │   │       ├── BuildTasks.props
+│   │   │   │       ├── SourceBuildArcadeTarball.targets
+│   │   │   │       └── TextOnlyPackages.csproj
+│   │   │   ├── README.md
+│   │   │   └── tarball
+│   │   │       ├── BuildSourceBuildTarball.proj
+│   │   │       ├── content
+│   │   │       │   ├── ArcadeOverrides
+│   │   │       │   │   ├── AfterSourceBuild.proj
+│   │   │       │   │   └── SourceBuildArcadeBuild.targets
+│   │   │       │   ├── build.proj
+│   │   │       │   ├── build.sh
+│   │   │       │   ├── Directory.Build.props
+│   │   │       │   ├── Directory.Build.targets
+│   │   │       │   ├── eng
+│   │   │       │   │   ├── Build.props
+│   │   │       │   │   ├── install-nuget-credprovider.sh
+│   │   │       │   │   ├── No.proj
+│   │   │       │   │   ├── pipelines
+│   │   │       │   │   │   └── security-partners-dotnet.yml
+│   │   │       │   │   └── Versions.props
+│   │   │       │   ├── global.json
+│   │   │       │   ├── keys
+│   │   │       │   │   ├── Newtonsoft.Json.snk
+│   │   │       │   │   ├── NuGet.Client.snk
+│   │   │       │   │   └── README.md
+│   │   │       │   ├── prep.sh
+│   │   │       │   ├── repos
+│   │   │       │   │   ├── arcade.proj
+│   │   │       │   │   ├── aspnetcore.proj
+│   │   │       │   │   ├── clicommandlineparser.proj
+│   │   │       │   │   ├── command-line-api.proj
+│   │   │       │   │   ├── deployment-tools.proj
+│   │   │       │   │   ├── diagnostics.proj
+│   │   │       │   │   ├── Directory.Build.props
+│   │   │       │   │   ├── Directory.Build.targets
+│   │   │       │   │   ├── format.proj
+│   │   │       │   │   ├── fsharp.proj
+│   │   │       │   │   ├── installer.proj
+│   │   │       │   │   ├── known-good.proj
+│   │   │       │   │   ├── known-good-tests.proj
+│   │   │       │   │   ├── linker.proj
+│   │   │       │   │   ├── msbuild.proj
+│   │   │       │   │   ├── nuget-client.proj
+│   │   │       │   │   ├── package-source-build.proj
+│   │   │       │   │   ├── roslyn-analyzers.proj
+│   │   │       │   │   ├── roslyn.proj
+│   │   │       │   │   ├── runtime.common.props
+│   │   │       │   │   ├── runtime.common.targets
+│   │   │       │   │   ├── runtime-portable.proj
+│   │   │       │   │   ├── runtime.proj
+│   │   │       │   │   ├── sdk.proj
+│   │   │       │   │   ├── source-build.proj
+│   │   │       │   │   ├── source-build-reference-packages.proj
+│   │   │       │   │   ├── sourcelink.proj
+│   │   │       │   │   ├── symreader.proj
+│   │   │       │   │   ├── templating.proj
+│   │   │       │   │   ├── test-templates.proj
+│   │   │       │   │   ├── vstest.proj
+│   │   │       │   │   ├── xdt.proj
+│   │   │       │   │   └── xliff-tasks.proj
+│   │   │       │   ├── scripts
+│   │   │       │   │   ├── bootstrap
+│   │   │       │   │   │   ├── buildBootstrapPreviouslySB.csproj
+│   │   │       │   │   │   └── OverrideBootstrapVersions.props
+│   │   │       │   │   ├── docker
+│   │   │       │   │   │   ├── docker-run.cmd
+│   │   │       │   │   │   └── docker-run.sh
+│   │   │       │   │   └── generate-readme-table.sh
+│   │   │       │   ├── src
+│   │   │       │   │   ├── Directory.Build.props
+│   │   │       │   │   └── Directory.Build.targets
+│   │   │       │   ├── test
+│   │   │       │   │   ├── Directory.Build.props
+│   │   │       │   │   ├── Directory.Build.targets
+│   │   │       │   │   └── Microsoft.DotNet.SourceBuild.SmokeTests
+│   │   │       │   │       ├── assets
+│   │   │       │   │       │   ├── baselines
+│   │   │       │   │       │   │   ├── FormatTestFormatted.cs
+│   │   │       │   │       │   │   ├── MsftToSbSdk.diff
+│   │   │       │   │       │   │   └── PoisonUsage.txt
+│   │   │       │   │       │   ├── FormatTestUnformatted.cs
+│   │   │       │   │       │   ├── local.NuGet.Config
+│   │   │       │   │       │   ├── online.NuGet.Config
+│   │   │       │   │       │   └── SdkDiffExclusions.txt
+│   │   │       │   │       ├── BaselineHelper.cs
+│   │   │       │   │       ├── BasicScenarioTests.cs
+│   │   │       │   │       ├── Config.cs
+│   │   │       │   │       ├── DotNetActions.cs
+│   │   │       │   │       ├── DotNetFormatTests.cs
+│   │   │       │   │       ├── DotNetHelper.cs
+│   │   │       │   │       ├── DotNetLanguage.cs
+│   │   │       │   │       ├── DotNetLanguageExtensions.cs
+│   │   │       │   │       ├── DotNetTemplate.cs
+│   │   │       │   │       ├── DotNetTemplateExtensions.cs
+│   │   │       │   │       ├── DotNetWatchTests.cs
+│   │   │       │   │       ├── ExecuteHelper.cs
+│   │   │       │   │       ├── HttpClientExtensions.cs
+│   │   │       │   │       ├── Microsoft.DotNet.SourceBuild.SmokeTests.csproj
+│   │   │       │   │       ├── Microsoft.DotNet.SourceBuild.SmokeTests.sln
+│   │   │       │   │       ├── OmniSharpTests.cs
+│   │   │       │   │       ├── PoisonTests.cs
+│   │   │       │   │       ├── README.md
+│   │   │       │   │       ├── SdkContentTests.cs
+│   │   │       │   │       ├── SkippableFactAttribute.cs
+│   │   │       │   │       ├── SkippableTheoryAttribute.cs
+│   │   │       │   │       ├── SmokeTests.cs
+│   │   │       │   │       ├── TestScenario.cs
+│   │   │       │   │       ├── Utilities.cs
+│   │   │       │   │       └── WebScenarioTests.cs
+│   │   │       │   └── tools-local
+│   │   │       │       ├── Directory.Build.props
+│   │   │       │       ├── EmptySdk
+│   │   │       │       │   └── Sdk
+│   │   │       │       │       ├── Sdk.props
+│   │   │       │       │       └── Sdk.targets
+│   │   │       │       ├── generate-graphviz
+│   │   │       │       │   └── generate-graphviz.proj
+│   │   │       │       ├── init-build.proj
+│   │   │       │       └── tasks
+│   │   │       │           ├── Directory.Build.props
+│   │   │       │           ├── Microsoft.DotNet.SourceBuild.Tasks.LeakDetection
+│   │   │       │           │   ├── _._
+│   │   │       │           │   ├── CatalogFileEntry.cs
+│   │   │       │           │   ├── CatalogPackageEntry.cs
+│   │   │       │           │   ├── CheckForPoison.cs
+│   │   │       │           │   ├── MarkAndCatalogPackages.cs
+│   │   │       │           │   ├── Microsoft.DotNet.SourceBuild.Tasks.LeakDetection.csproj
+│   │   │       │           │   ├── NuGet.Config
+│   │   │       │           │   ├── PoisonedFileEntry.cs
+│   │   │       │           │   ├── PoisonMatch.cs
+│   │   │       │           │   ├── PoisonType.cs
+│   │   │       │           │   └── Utility.cs
+│   │   │       │           ├── Microsoft.DotNet.SourceBuild.Tasks.XPlat
+│   │   │       │           │   ├── _._
+│   │   │       │           │   ├── AddRidToRuntimeJson.cs
+│   │   │       │           │   ├── AddSourceToNuGetConfig.cs
+│   │   │       │           │   ├── AzureConnectionStringBuildTask.cs
+│   │   │       │           │   ├── AzureHelper.cs
+│   │   │       │           │   ├── BuildTask.cs
+│   │   │       │           │   ├── DownloadFileSB.cs
+│   │   │       │           │   ├── EnumerableExtensions.cs
+│   │   │       │           │   ├── FileUtilities.cs
+│   │   │       │           │   ├── FixPathSeparator.cs
+│   │   │       │           │   ├── GetSourceBuiltNupkgCacheConflicts.cs
+│   │   │       │           │   ├── Log.cs
+│   │   │       │           │   ├── Microsoft.DotNet.SourceBuild.Tasks.XPlat.csproj
+│   │   │       │           │   ├── Models
+│   │   │       │           │   │   └── VersionDetailsXml.cs
+│   │   │       │           │   ├── NuGetPack.cs
+│   │   │       │           │   ├── NuspecPropertyStringProvider.cs
+│   │   │       │           │   ├── PackagingTask.cs
+│   │   │       │           │   ├── ReadNuGetPackageInfos.cs
+│   │   │       │           │   ├── RemoveInternetSourcesFromNuGetConfig.cs
+│   │   │       │           │   ├── ReplaceFeedsInNuGetConfig.cs
+│   │   │       │           │   ├── ReplaceRegexInFiles.cs
+│   │   │       │           │   ├── ReplaceTextInFile.cs
+│   │   │       │           │   ├── ReplaceTextInFiles.cs
+│   │   │       │           │   ├── RepoTasks
+│   │   │       │           │   │   └── JoinItems.cs
+│   │   │       │           │   ├── UpdateJson.cs
+│   │   │       │           │   ├── UploadClient.cs
+│   │   │       │           │   ├── UploadToAzure.cs
+│   │   │       │           │   ├── UsageReport
+│   │   │       │           │   │   ├── AnnotatedUsage.cs
+│   │   │       │           │   │   ├── Usage.cs
+│   │   │       │           │   │   ├── UsageData.cs
+│   │   │       │           │   │   ├── ValidateUsageAgainstBaseline.cs
+│   │   │       │           │   │   ├── WritePackageUsageData.cs
+│   │   │       │           │   │   ├── WriteUsageBurndownData.cs
+│   │   │       │           │   │   ├── WriteUsageReports.cs
+│   │   │       │           │   │   └── XmlParsingHelpers.cs
+│   │   │       │           │   ├── WriteBuildOutputProps.cs
+│   │   │       │           │   ├── WriteRestoreSourceAndVersionProps.cs
+│   │   │       │           │   ├── WriteRestoreSourceProps.cs
+│   │   │       │           │   ├── WriteVersionsFile.cs
+│   │   │       │           │   └── ZipFileExtractToDirectory.cs
+│   │   │       │           └── SourceBuild.MSBuildSdkResolver
+│   │   │       │               ├── SourceBuild.MSBuildSdkResolver.csproj
+│   │   │       │               └── SourceBuiltSdkResolver.cs
+│   │   │       └── patches
+│   │   │           ├── aspnetcore
+│   │   │           │   └── 0004-Revert-sourcelink-submodule-workaround.patch
+│   │   │           ├── clicommandlineparser
+│   │   │           │   └── 0001-Remove-installation-of-runtime-2.1.0-from-build.sh.patch
+│   │   │           ├── command-line-api
+│   │   │           │   └── 0001-Enable-work-tree-and-unsafe-paths-to-be-able-to-appl.patch
+│   │   │           ├── format
+│   │   │           │   ├── 0001-Fix-MicrosoftExtensionsVersion.patch
+│   │   │           │   └── 0002-Add-explicit-System.Text.Json-dependency.patch
+│   │   │           ├── fsharp
+│   │   │           │   ├── 0001-Disable-apphost-on-downlevel-frameworks-during-sourc.patch
+│   │   │           │   └── 0002-Enable-work-tree-and-unsafe-paths-to-be-able-to-appl.patch
+│   │   │           ├── linker
+│   │   │           │   ├── 0001-fix-tlens-Mono.Cecil-reference.patch
+│   │   │           │   ├── 0002-Exclude-Microsoft.DotNet.ApiCompat-from-source-build.patch
+│   │   │           │   └── 0003-Upgrade-Microsoft.NETFramework.ReferenceAssemblies-f.patch
+│   │   │           ├── msbuild
+│   │   │           │   ├── 0001-Remove-prebuilt-jnm2.ReferenceAssemblies.net35.patch
+│   │   │           │   ├── 0002-Disable-BannedApiAnalyzers-during-source-build.patch
+│   │   │           │   ├── 0003-Restore-building-all-TFMs-for-source-build.patch
+│   │   │           │   └── 0004-Remove-dependency-on-MS.VS.Setup.Configuration.Inter.patch
+│   │   │           ├── nuget-client
+│   │   │           │   ├── 0001-Enable-work-tree-and-unsafe-paths-to-be-able-to-appl.patch
+│   │   │           │   ├── 0001-Remove-uneeded-source-build-patches-and-re-patch.patch
+│   │   │           │   └── 0010-Re-enable-fullfx-TFM-in-NuGet.patch
+│   │   │           ├── roslyn
+│   │   │           │   ├── 0001-lift-version-of-Microsoft.CodeAnalysis.Common-depend.patch
+│   │   │           │   ├── 0002-Apply-arcade-powered-source-build-patches-55823.patch
+│   │   │           │   ├── 0003-remove-Microsoft.DotNet-prebuilts.patch
+│   │   │           │   └── 0004-Disable-apphost-build-of-csi-vbi-for-source-build.patch
+│   │   │           ├── roslyn-analyzers
+│   │   │           │   └── 0001-Eliminate-pre-built-assets-during-source-build-for-r.patch
+│   │   │           ├── runtime
+│   │   │           │   └── 0003-Enable-source-link-in-source-build-for-.version-file.patch
+│   │   │           ├── vstest
+│   │   │           │   ├── 0001-Drop-vstest.console-netcoreapp2.1-support.patch
+│   │   │           │   ├── 0001-Enable-work-tree-and-unsafe-paths-to-be-able-to-appl.patch
+│   │   │           │   └── 0002-Don-t-publish-for-win-runtime-identifier-in-source-b.patch
+│   │   │           ├── xdt
+│   │   │           │   └── 0001-Also-build-for-netstandard2.0-to-support-NuGet.patch
+│   │   │           └── xliff-tasks
+│   │   │               └── 0001-Enable-work-tree-and-unsafe-paths-to-be-able-to-appl.patch
+│   │   └── VSTemplateLocator
+│   │       └── VSTemplateLocator.csproj
+│   ├── test
+│   │   ├── core-sdk-tasks.Tests
+│   │   │   ├── CalculateTemplateVerionsTests.cs
+│   │   │   ├── core-sdk-tasks.Tests.csproj
+│   │   │   └── GenerateDefaultRuntimeFrameworkVersionTests.cs
+│   │   ├── Directory.Build.props
+│   │   ├── EndToEnd
+│   │   │   ├── EndToEnd.Tests.csproj
+│   │   │   ├── GivenDotNetLinuxInstallers.cs
+│   │   │   ├── GivenDotnetUsesDotnetTools.cs
+│   │   │   ├── GivenFrameworkDependentApps.cs
+│   │   │   ├── GivenNetFrameworkSupportsNetStandard2.cs
+│   │   │   ├── GivenSelfContainedAppsRollForward.cs
+│   │   │   ├── GivenUnixPlatform.cs
+│   │   │   ├── GivenUsingDefaultRuntimeFrameworkVersions.cs
+│   │   │   ├── GivenWeWantToRequireWindowsForDesktopApps.cs
+│   │   │   ├── GivenWindowsApp.cs
+│   │   │   ├── ProjectBuildTests.cs
+│   │   │   ├── SupportedNetCoreAppVersions.cs
+│   │   │   ├── TestProjectCreator.cs
+│   │   │   ├── ValidateInsertedManifests.cs
+│   │   │   ├── VersionTests.cs
+│   │   │   └── xunit.runner.json
+│   │   ├── Microsoft.DotNet.Cli.Tests.sln
+│   │   ├── Microsoft.DotNet.Tools.Tests.Utilities
+│   │   │   ├── Assertions
+│   │   │   │   ├── CommandResultAssertions.cs
+│   │   │   │   ├── CommandResultExtensions.cs
+│   │   │   │   ├── DirectoryInfoAssertions.cs
+│   │   │   │   ├── DirectoryInfoExtensions.cs
+│   │   │   │   ├── FileInfoAssertions.cs
+│   │   │   │   ├── FileInfoExtensions.cs
+│   │   │   │   ├── FileInfoExtensions.FileInfoLock.cs
+│   │   │   │   ├── FileInfoExtensions.FileInfoNuGetLock.cs
+│   │   │   │   └── StringAssertionsExtensions.cs
+│   │   │   ├── BufferedReporter.cs
+│   │   │   ├── Commands
+│   │   │   │   ├── AddReferenceCommand.cs
+│   │   │   │   ├── BuildCommand.cs
+│   │   │   │   ├── BuildServerCommand.cs
+│   │   │   │   ├── CleanCommand.cs
+│   │   │   │   ├── DependencyToolInvokerCommand.cs
+│   │   │   │   ├── DotnetCommand.cs
+│   │   │   │   ├── DotnetTestCommand.cs
+│   │   │   │   ├── HelpCommand.cs
+│   │   │   │   ├── ListPackageCommand.cs
+│   │   │   │   ├── ListReferenceCommand.cs
+│   │   │   │   ├── MigrateCommand.cs
+│   │   │   │   ├── MSBuildCommand.cs
+│   │   │   │   ├── NewCommand.cs
+│   │   │   │   ├── NewCommandShim.cs
+│   │   │   │   ├── PackCommand.cs
+│   │   │   │   ├── PublishCommand.cs
+│   │   │   │   ├── RemoveReferenceCommand.cs
+│   │   │   │   ├── RestoreCommand.cs
+│   │   │   │   ├── RunCommand.cs
+│   │   │   │   ├── StoreCommand.cs
+│   │   │   │   ├── TestCommand.cs
+│   │   │   │   ├── ToolCommand.cs
+│   │   │   │   └── VSTestCommand.cs
+│   │   │   ├── Extensions
+│   │   │   │   ├── DirectoryInfoExtensions.cs
+│   │   │   │   ├── ProcessExtensions.cs
+│   │   │   │   └── TestCommandExtensions.cs
+│   │   │   ├── Microsoft.DotNet.Tools.Tests.Utilities.csproj
+│   │   │   ├── NuGetFrameworks.cs
+│   │   │   ├── PlatformSpecificFact.cs
+│   │   │   ├── PlatformSpecificTheory.cs
+│   │   │   ├── Properties
+│   │   │   │   └── Properties.cs
+│   │   │   ├── RepoDirectoriesProvider.cs
+│   │   │   ├── RequiresAspNetCore.cs
+│   │   │   ├── RuntimeConfig.cs
+│   │   │   ├── TempFileSystem
+│   │   │   │   ├── DisposableDirectory.cs
+│   │   │   │   ├── DisposableFile.cs
+│   │   │   │   ├── FileNameUtilities.cs
+│   │   │   │   ├── ImmutableArrayTestExtensions.cs
+│   │   │   │   ├── PathKind.cs
+│   │   │   │   ├── PathUtilities.cs
+│   │   │   │   ├── TempDirectory.cs
+│   │   │   │   ├── TempFile.cs
+│   │   │   │   └── TempRoot.cs
+│   │   │   ├── TestAssetInfo.cs
+│   │   │   ├── TestAssetInstance.cs
+│   │   │   ├── TestAssetInventoryFiles.cs
+│   │   │   ├── TestAssetKinds.cs
+│   │   │   ├── TestAssets.cs
+│   │   │   ├── TestBase.cs
+│   │   │   ├── UnixOnlyFactAttribute.cs
+│   │   │   ├── UnixOnlyTheoryAttribute.cs
+│   │   │   ├── WindowsOnlyFactAttribute.cs
+│   │   │   └── WindowsOnlyTheoryAttribute.cs
+│   │   └── SdkTests
+│   │       ├── SdkTests.csproj
+│   │       ├── TestConfig.xml
+│   │       ├── TestsToSkipLinux.xml
+│   │       ├── TestsToSkipPortableLinux.xml
+│   │       └── TestsToSkipx86.xml
+│   ├── TestAssets
+│   │   ├── DesktopTestProjects
+│   │   │   └── NETFrameworkReferenceNETStandard20
+│   │   │       ├── MultiTFMTestApp
+│   │   │       │   ├── MultiTFMTestApp.csproj
+│   │   │       │   └── Program.cs
+│   │   │       ├── TestApp
+│   │   │       │   ├── Program.cs
+│   │   │       │   └── TestApp.csproj
+│   │   │       └── TestLibrary
+│   │   │           ├── Helper.cs
+│   │   │           └── TestLibrary.csproj
+│   │   ├── Directory.Build.props
+│   │   ├── Directory.Build.targets
+│   │   ├── NonRestoredTestProjects
+│   │   │   └── DotnetAddP2PProjects
+│   │   │       └── Empty
+│   │   │           └── README
+│   │   ├── TestPackages
+│   │   │   ├── dotnet-portable
+│   │   │   │   ├── dotnet-portable.csproj
+│   │   │   │   └── Program.cs
+│   │   │   └── dotnet-prefercliruntime
+│   │   │       ├── dotnet-prefercliruntime.csproj
+│   │   │       ├── prefercliruntime
+│   │   │       └── Program.cs
+│   │   └── TestProjects
+│   │       ├── AppWithApplicationUrlInLaunchSettings
+│   │       │   ├── AppWithApplicationUrlInLaunchSettings.csproj
+│   │       │   ├── Program.cs
+│   │       │   └── Properties
+│   │       │       └── launchSettings.json
+│   │       ├── docker-compose
+│   │       │   ├── docker-compose.dcproj
+│   │       │   └── docker-compose.yml
+│   │       ├── MSBuildTestApp
+│   │       │   ├── MSBuildTestApp.csproj
+│   │       │   └── Program.cs
+│   │       ├── SlnFileWithNoProjectReferencesAndUnknownProjectType
+│   │       │   ├── App.sln
+│   │       │   └── UnknownProject
+│   │       │       └── UnknownProject.unknownproj
+│   │       ├── TestAppSimple
+│   │       │   ├── Program.cs
+│   │       │   └── TestAppSimple.csproj
+│   │       ├── TestAppWithSlnAndCsprojFiles
+│   │       │   ├── Empty
+│   │       │   │   └── README
+│   │       │   └── Multiple
+│   │       │       ├── First.csproj
+│   │       │       └── Second.csproj
+│   │       ├── TestAppWithSlnAndCsprojToRemove
+│   │       │   ├── Empty
+│   │       │   │   └── README
+│   │       │   └── Multiple
+│   │       │       ├── First.csproj
+│   │       │       └── Second.csproj
+│   │       ├── TestAppWithSlnAndProjectConfigs
+│   │       │   ├── App.sln
+│   │       │   ├── ProjectWithAdditionalConfigs
+│   │       │   │   ├── Library.cs
+│   │       │   │   └── ProjectWithAdditionalConfigs.csproj
+│   │       │   ├── ProjectWithMatchingConfigs
+│   │       │   │   ├── Library.cs
+│   │       │   │   └── ProjectWithMatchingConfigs.csproj
+│   │       │   └── ProjectWithoutMatchingConfigs
+│   │       │       ├── Library.cs
+│   │       │       └── ProjectWithoutMatchingConfigs.csproj
+│   │       ├── TestAppWithSlnProjectDependencyToRemove
+│   │       │   ├── App
+│   │       │   │   ├── App.csproj
+│   │       │   │   └── Program.cs
+│   │       │   ├── App.sln
+│   │       │   ├── First
+│   │       │   │   ├── Class1.cs
+│   │       │   │   └── First.csproj
+│   │       │   └── Second
+│   │       │       ├── Class1.cs
+│   │       │       └── Second.csproj
+│   │       ├── TestRazorApp
+│   │       │   ├── Areas
+│   │       │   │   └── MyFeature
+│   │       │   │       └── Pages
+│   │       │   │           ├── Page1.cshtml
+│   │       │   │           └── Page1.cshtml.cs
+│   │       │   └── TestRazorApp.csproj
+│   │       ├── TestWebAppSimple
+│   │       │   ├── Program.cs
+│   │       │   ├── Startup.cs
+│   │       │   └── TestWebAppSimple.csproj
+│   │       └── UseCswinrt
+│   │           ├── consolecswinrt.csproj
+│   │           └── Program.cs
+│   ├── THIRD-PARTY-NOTICES
+│   └── tools
+│       └── sdk-readme-table-generator
+│           ├── old.config
+│           ├── README.md
+│           ├── TableGenerator
+│           │   ├── Program.fs
+│           │   ├── Reference.fs
+│           │   ├── Shared.fs
+│           │   ├── Table.fs
+│           │   └── TableGenerator.fsproj
+│           ├── TableGenerator.sln
+│           └── TableGenerator.Tests
+│               ├── DomainTests.fs
+│               └── TableGenerator.Tests.fsproj
+└── dotnet.sh -> /home/felix/packages/dotnet-core-6.0/dotnet.sh
+
+211 directories, 686 files

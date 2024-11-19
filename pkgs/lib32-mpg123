@@ -1,0 +1,395 @@
+src
+├── mpg123-1.32.9
+│   ├── aclocal.m4
+│   ├── AUTHORS
+│   ├── build
+│   │   ├── compile
+│   │   ├── config.guess
+│   │   ├── config.sub
+│   │   ├── depcomp
+│   │   ├── install-sh
+│   │   ├── ltmain.sh
+│   │   ├── missing
+│   │   └── test-driver
+│   ├── ChangeLog
+│   ├── configure
+│   ├── configure.ac
+│   ├── COPYING
+│   ├── doc
+│   │   ├── ACCURACY
+│   │   ├── BENCHMARKING
+│   │   ├── BUGS
+│   │   ├── CONTACT
+│   │   ├── doxy_examples.c
+│   │   ├── doxyfoot.xhtml
+│   │   ├── doxygen.conf
+│   │   ├── doxyhead.xhtml
+│   │   ├── examples
+│   │   │   ├── dump_seekindex.c
+│   │   │   ├── extract_frames.c
+│   │   │   ├── feedseek.c
+│   │   │   ├── id3dump.c
+│   │   │   ├── Makefile
+│   │   │   ├── mpg123_to_out123.c
+│   │   │   ├── mpg123_to_wav_reader64.c
+│   │   │   ├── mpg123_to_wav_replaced_io.c
+│   │   │   ├── mpglib.c
+│   │   │   └── scan.c
+│   │   ├── LARGEFILE
+│   │   ├── libmpg123_speed.txt
+│   │   ├── LICENSE
+│   │   ├── Makemodule.am
+│   │   ├── PATENTS
+│   │   ├── READERS
+│   │   ├── README.3DNOW
+│   │   ├── README.gain
+│   │   ├── README.remote
+│   │   ├── ROAD_TO_LGPL
+│   │   ├── THANKS
+│   │   ├── TODO
+│   │   └── windows-notes.html
+│   ├── equalize.dat
+│   ├── INSTALL
+│   ├── libmpg123.pc.in
+│   ├── libout123.pc.in
+│   ├── libsyn123.pc.in
+│   ├── m4
+│   │   ├── libtool.m4
+│   │   ├── lt~obsolete.m4
+│   │   ├── ltoptions.m4
+│   │   ├── ltsugar.m4
+│   │   └── ltversion.m4
+│   ├── makedll.sh
+│   ├── Makefile.am
+│   ├── Makefile.in
+│   ├── man1
+│   │   ├── mpg123.1
+│   │   └── out123.1
+│   ├── mpg123.spec
+│   ├── mpg123.spec.in
+│   ├── NEWS
+│   ├── NEWS.libmpg123
+│   ├── NEWS.libout123
+│   ├── NEWS.libsyn123
+│   ├── ports
+│   │   ├── cmake
+│   │   │   ├── cmake
+│   │   │   │   ├── CheckCPUArch.c.in
+│   │   │   │   ├── CheckCPUArch.cmake
+│   │   │   │   ├── read_api_version.cmake
+│   │   │   │   └── search_libs.cmake
+│   │   │   ├── CMakeLists.txt
+│   │   │   ├── linux_i686.toolchain.cmake
+│   │   │   ├── mpg123-config.cmake.in
+│   │   │   └── src
+│   │   │       ├── CMakeLists.txt
+│   │   │       ├── compat
+│   │   │       │   └── CMakeLists.txt
+│   │   │       ├── config.cmake.h.in
+│   │   │       ├── libmpg123
+│   │   │       │   └── CMakeLists.txt
+│   │   │       ├── libout123
+│   │   │       │   ├── CMakeLists.txt
+│   │   │       │   └── modules
+│   │   │       │       └── CMakeLists.txt
+│   │   │       ├── libsyn123
+│   │   │       │   └── CMakeLists.txt
+│   │   │       └── tests
+│   │   │           └── CMakeLists.txt
+│   │   └── README
+│   ├── README
+│   ├── scripts
+│   │   ├── benchmark-cpu.pl
+│   │   ├── conplay
+│   │   ├── mpg123info
+│   │   └── tag_lyrics.py
+│   ├── src
+│   │   ├── audio.c
+│   │   ├── audio.h
+│   │   ├── common
+│   │   │   ├── abi_align.h
+│   │   │   ├── debug.h
+│   │   │   ├── Makemodule.am
+│   │   │   ├── sample.h
+│   │   │   ├── swap_bytes_impl.h
+│   │   │   └── true.h
+│   │   ├── common.c
+│   │   ├── common.h
+│   │   ├── compat
+│   │   │   ├── compat.c
+│   │   │   ├── compat_dl.c
+│   │   │   ├── compat.h
+│   │   │   ├── compat_str.c
+│   │   │   ├── Makemodule.am
+│   │   │   └── wpathconv.h
+│   │   ├── config.h.in
+│   │   ├── control_generic.c
+│   │   ├── equalizer.c
+│   │   ├── filters.c
+│   │   ├── filters.h
+│   │   ├── genre.c
+│   │   ├── genre.h
+│   │   ├── getlopt.c
+│   │   ├── getlopt.h
+│   │   ├── httpget.c
+│   │   ├── httpget.h
+│   │   ├── include
+│   │   │   ├── fmt123.h
+│   │   │   ├── mpg123.h
+│   │   │   ├── out123.h
+│   │   │   └── syn123.h
+│   │   ├── libmpg123
+│   │   │   ├── aarch64_defs.h
+│   │   │   ├── calctables.c
+│   │   │   ├── check_neon.S
+│   │   │   ├── costabs.h
+│   │   │   ├── dct36_3dnowext.S
+│   │   │   ├── dct36_3dnow.S
+│   │   │   ├── dct36_avx.S
+│   │   │   ├── dct36_neon64.S
+│   │   │   ├── dct36_neon.S
+│   │   │   ├── dct36_sse.S
+│   │   │   ├── dct36_x86_64.S
+│   │   │   ├── dct64_3dnowext.S
+│   │   │   ├── dct64_3dnow.S
+│   │   │   ├── dct64_altivec.c
+│   │   │   ├── dct64_avx_float.S
+│   │   │   ├── dct64_avx.S
+│   │   │   ├── dct64.c
+│   │   │   ├── dct64_i386.c
+│   │   │   ├── dct64_i486.c
+│   │   │   ├── dct64_mmx.S
+│   │   │   ├── dct64_neon64_float.S
+│   │   │   ├── dct64_neon64.S
+│   │   │   ├── dct64_neon_float.S
+│   │   │   ├── dct64_neon.S
+│   │   │   ├── dct64_sse_float.S
+│   │   │   ├── dct64_sse.S
+│   │   │   ├── dct64_x86_64_float.S
+│   │   │   ├── dct64_x86_64.S
+│   │   │   ├── decode.h
+│   │   │   ├── dither.c
+│   │   │   ├── dither.h
+│   │   │   ├── dither_impl.h
+│   │   │   ├── equalizer_3dnow.S
+│   │   │   ├── equalizer.c
+│   │   │   ├── feature.c
+│   │   │   ├── format.c
+│   │   │   ├── frame.c
+│   │   │   ├── frame.h
+│   │   │   ├── gapless.h
+│   │   │   ├── getbits.h
+│   │   │   ├── getcpuflags_arm.c
+│   │   │   ├── getcpuflags.h
+│   │   │   ├── getcpuflags.S
+│   │   │   ├── getcpuflags_x86_64.S
+│   │   │   ├── huffman.h
+│   │   │   ├── icy2utf8.c
+│   │   │   ├── icy2utf8.h
+│   │   │   ├── icy.c
+│   │   │   ├── icy.h
+│   │   │   ├── id3.c
+│   │   │   ├── id3.h
+│   │   │   ├── index.c
+│   │   │   ├── index.h
+│   │   │   ├── init_costabs.h
+│   │   │   ├── init_layer12.h
+│   │   │   ├── init_layer3.h
+│   │   │   ├── l12tabs.h
+│   │   │   ├── l2tables.h
+│   │   │   ├── l3bandgain.h
+│   │   │   ├── l3tabs.h
+│   │   │   ├── layer1.c
+│   │   │   ├── layer2.c
+│   │   │   ├── layer3.c
+│   │   │   ├── lfs_wrap.c
+│   │   │   ├── lfs_wrap.h
+│   │   │   ├── libmpg123.c
+│   │   │   ├── Makemodule.am
+│   │   │   ├── mangle.h
+│   │   │   ├── mpeghead.h
+│   │   │   ├── mpg123lib_intern.h
+│   │   │   ├── newhuffman.h
+│   │   │   ├── ntom.c
+│   │   │   ├── optimize.c
+│   │   │   ├── optimize.h
+│   │   │   ├── parse.c
+│   │   │   ├── parse.h
+│   │   │   ├── reader.h
+│   │   │   ├── readers.c
+│   │   │   ├── stringbuf.c
+│   │   │   ├── synth_3dnowext.S
+│   │   │   ├── synth_3dnow.S
+│   │   │   ├── synth_8bit.c
+│   │   │   ├── synth_8bit.h
+│   │   │   ├── synth_altivec.c
+│   │   │   ├── synth_arm_accurate.S
+│   │   │   ├── synth_arm.S
+│   │   │   ├── synth.c
+│   │   │   ├── synth.h
+│   │   │   ├── synth_i486.c
+│   │   │   ├── synth_i586_dither.S
+│   │   │   ├── synth_i586.S
+│   │   │   ├── synth_mmx.S
+│   │   │   ├── synth_mono.h
+│   │   │   ├── synth_neon64_accurate.S
+│   │   │   ├── synth_neon64_float.S
+│   │   │   ├── synth_neon64.S
+│   │   │   ├── synth_neon64_s32.S
+│   │   │   ├── synth_neon_accurate.S
+│   │   │   ├── synth_neon_float.S
+│   │   │   ├── synth_neon.S
+│   │   │   ├── synth_neon_s32.S
+│   │   │   ├── synth_ntom.h
+│   │   │   ├── synth_real.c
+│   │   │   ├── synth_s32.c
+│   │   │   ├── synths.h
+│   │   │   ├── synth_sse3d.h
+│   │   │   ├── synth_sse_accurate.S
+│   │   │   ├── synth_sse_float.S
+│   │   │   ├── synth_sse.S
+│   │   │   ├── synth_sse_s32.S
+│   │   │   ├── synth_stereo_avx_accurate.S
+│   │   │   ├── synth_stereo_avx_float.S
+│   │   │   ├── synth_stereo_avx.S
+│   │   │   ├── synth_stereo_avx_s32.S
+│   │   │   ├── synth_stereo_neon64_accurate.S
+│   │   │   ├── synth_stereo_neon64_float.S
+│   │   │   ├── synth_stereo_neon64.S
+│   │   │   ├── synth_stereo_neon64_s32.S
+│   │   │   ├── synth_stereo_neon_accurate.S
+│   │   │   ├── synth_stereo_neon_float.S
+│   │   │   ├── synth_stereo_neon.S
+│   │   │   ├── synth_stereo_neon_s32.S
+│   │   │   ├── synth_stereo_sse_accurate.S
+│   │   │   ├── synth_stereo_sse_float.S
+│   │   │   ├── synth_stereo_sse_s32.S
+│   │   │   ├── synth_stereo_x86_64_accurate.S
+│   │   │   ├── synth_stereo_x86_64_float.S
+│   │   │   ├── synth_stereo_x86_64.S
+│   │   │   ├── synth_stereo_x86_64_s32.S
+│   │   │   ├── synth_x86_64_accurate.S
+│   │   │   ├── synth_x86_64_float.S
+│   │   │   ├── synth_x86_64.S
+│   │   │   ├── synth_x86_64_s32.S
+│   │   │   ├── tabinit.c
+│   │   │   ├── tabinit_mmx.S
+│   │   │   └── testcpu.c
+│   │   ├── libout123
+│   │   │   ├── buffer.c
+│   │   │   ├── buffer.h
+│   │   │   ├── hextxt.c
+│   │   │   ├── hextxt.h
+│   │   │   ├── legacy_module.c
+│   │   │   ├── libout123.c
+│   │   │   ├── Makemodule.am
+│   │   │   ├── module.c
+│   │   │   ├── module.h
+│   │   │   ├── modules
+│   │   │   │   ├── aix.c
+│   │   │   │   ├── alib.c
+│   │   │   │   ├── alsa.c
+│   │   │   │   ├── arts.c
+│   │   │   │   ├── coreaudio.c
+│   │   │   │   ├── dummy.c
+│   │   │   │   ├── esd.c
+│   │   │   │   ├── hp.c
+│   │   │   │   ├── jack.c
+│   │   │   │   ├── Makemodule.am
+│   │   │   │   ├── mint.c
+│   │   │   │   ├── nas.c
+│   │   │   │   ├── openal.c
+│   │   │   │   ├── os2.c
+│   │   │   │   ├── oss.c
+│   │   │   │   ├── portaudio.c
+│   │   │   │   ├── pulse.c
+│   │   │   │   ├── qsa.c
+│   │   │   │   ├── sdl.c
+│   │   │   │   ├── sgi.c
+│   │   │   │   ├── sndio.c
+│   │   │   │   ├── sun.c
+│   │   │   │   ├── tinyalsa.c
+│   │   │   │   ├── win32.c
+│   │   │   │   └── win32_wasapi.c
+│   │   │   ├── out123_int.h
+│   │   │   ├── sfifo.c
+│   │   │   ├── sfifo.h
+│   │   │   ├── stringlists.c
+│   │   │   ├── stringlists.h
+│   │   │   ├── wav.c
+│   │   │   ├── wav.h
+│   │   │   ├── wavhead.h
+│   │   │   ├── xfermem.c
+│   │   │   └── xfermem.h
+│   │   ├── libsyn123
+│   │   │   ├── filter.c
+│   │   │   ├── g711_impl.h
+│   │   │   ├── geiger.c
+│   │   │   ├── libsyn123.c
+│   │   │   ├── Makemodule.am
+│   │   │   ├── pinknoise.c
+│   │   │   ├── resample.c
+│   │   │   ├── sampleconv.c
+│   │   │   ├── syn123_int.h
+│   │   │   └── volume.c
+│   │   ├── local.c
+│   │   ├── local.h
+│   │   ├── Makemodule.am
+│   │   ├── metaprint.c
+│   │   ├── metaprint.h
+│   │   ├── mpg123app.h
+│   │   ├── mpg123.c
+│   │   ├── mpg123-id3dump.c
+│   │   ├── mpg123-strip.c
+│   │   ├── mpg123-with-modules
+│   │   ├── net123_exec.c
+│   │   ├── net123.h
+│   │   ├── net123_winhttp.c
+│   │   ├── net123_wininet.c
+│   │   ├── out123.c
+│   │   ├── out123-with-modules
+│   │   ├── playlist.c
+│   │   ├── playlist.h
+│   │   ├── resolver.c
+│   │   ├── resolver.h
+│   │   ├── streamdump.c
+│   │   ├── streamdump.h
+│   │   ├── sysutil.c
+│   │   ├── sysutil.h
+│   │   ├── term.c
+│   │   ├── term.h
+│   │   ├── term_none.c
+│   │   ├── term_posix.c
+│   │   ├── terms.h
+│   │   ├── term_win32.c
+│   │   ├── tests
+│   │   │   ├── decode_fixed.c
+│   │   │   ├── decode_fixed.sh
+│   │   │   ├── Makemodule.am
+│   │   │   ├── noise.c
+│   │   │   ├── plain_id3.c
+│   │   │   ├── plain_id3.sh
+│   │   │   ├── plain_id3.txt
+│   │   │   ├── resample_total.c
+│   │   │   ├── seek_accuracy.c
+│   │   │   ├── seek_accuracy.sh
+│   │   │   ├── seek_whence.c
+│   │   │   ├── seek_whence.sh
+│   │   │   ├── sweeper.c
+│   │   │   ├── sweep.mp3
+│   │   │   ├── testtext.h
+│   │   │   ├── testtext.sh
+│   │   │   ├── text.c
+│   │   │   ├── textprint.c
+│   │   │   └── volume.c
+│   │   ├── version.h
+│   │   ├── win32_net.c
+│   │   ├── win32_support.c
+│   │   └── win32_support.h
+│   ├── test_c99.c
+│   ├── TODO
+│   └── windows-builds.sh
+├── mpg123-1.32.9.tar.bz2 -> /home/felix/packages/lib32-mpg123/mpg123-1.32.9.tar.bz2
+└── mpg123-1.32.9.tar.bz2.sig -> /home/felix/packages/lib32-mpg123/mpg123-1.32.9.tar.bz2.sig
+
+27 directories, 366 files

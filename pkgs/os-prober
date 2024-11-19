@@ -1,0 +1,74 @@
+src
+├── os-prober-1.81
+│   ├── common.sh
+│   ├── debian
+│   │   ├── changelog
+│   │   ├── control
+│   │   ├── copyright
+│   │   ├── gbp.conf
+│   │   ├── os-prober.dirs -> os-prober-udeb.dirs
+│   │   ├── os-prober.docs
+│   │   ├── os-prober.install
+│   │   ├── os-prober-udeb.dirs
+│   │   ├── os-prober-udeb.install
+│   │   ├── rules
+│   │   └── source
+│   │       └── format
+│   ├── linux-boot-prober
+│   ├── linux-boot-probes
+│   │   ├── common
+│   │   │   └── 50mounted-tests
+│   │   └── mounted
+│   │       ├── common
+│   │       │   ├── 40grub2
+│   │       │   └── 90fallback
+│   │       ├── powerpc
+│   │       │   └── 40yaboot
+│   │       ├── sparc
+│   │       │   └── 50silo
+│   │       └── x86
+│   │           ├── 40grub
+│   │           └── 50lilo
+│   ├── Makefile
+│   ├── newns.c
+│   ├── os-prober
+│   ├── os-probes
+│   │   ├── common
+│   │   │   └── 50mounted-tests
+│   │   ├── init
+│   │   │   └── common
+│   │   │       └── 10filesystems
+│   │   └── mounted
+│   │       ├── arm64
+│   │       │   ├── 05efi
+│   │       │   ├── 20microsoft
+│   │       │   └── efi
+│   │       │       └── 20microsoft
+│   │       ├── common
+│   │       │   ├── 40lsb
+│   │       │   └── 90linux-distro
+│   │       ├── m68k
+│   │       │   └── 10macos6-9
+│   │       ├── powerpc
+│   │       │   ├── 10macos6-9
+│   │       │   └── 20macosx
+│   │       ├── sparc
+│   │       │   └── 80solaris
+│   │       └── x86
+│   │           ├── 05efi
+│   │           ├── 10freedos
+│   │           ├── 10qnx
+│   │           ├── 20microsoft
+│   │           ├── 30utility
+│   │           ├── 70hurd
+│   │           ├── 80minix
+│   │           ├── 83haiku
+│   │           ├── 90solaris
+│   │           └── efi
+│   │               ├── 10elilo
+│   │               └── 20microsoft
+│   ├── README
+│   └── TODO
+└── os-prober_1.81.tar.xz -> /home/felix/packages/os-prober/os-prober_1.81.tar.xz
+
+24 directories, 48 files

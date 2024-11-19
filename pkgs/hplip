@@ -1,0 +1,2829 @@
+src
+├── 0003-models.dat-Re-add-drivers-missing-from-3.19.1.patch -> /home/felix/packages/hplip/0003-models.dat-Re-add-drivers-missing-from-3.19.1.patch
+├── 0018-Allow-non-JPEG-scanning-on-the-HP-DeskJet-3520-All-i.patch -> /home/felix/packages/hplip/0018-Allow-non-JPEG-scanning-on-the-HP-DeskJet-3520-All-i.patch
+├── 0022-Add-include-cups-ppd.h-in-various-places-as-CUPS-2.2.patch -> /home/felix/packages/hplip/0022-Add-include-cups-ppd.h-in-various-places-as-CUPS-2.2.patch
+├── 0023-Fix-handling-of-unicode-filenames-in-sixext.py.patch -> /home/felix/packages/hplip/0023-Fix-handling-of-unicode-filenames-in-sixext.py.patch
+├── disable_upgrade.patch -> /home/felix/packages/hplip/disable_upgrade.patch
+├── hplip-1_3_23_12-4-python3_12-fix.patch -> /home/felix/packages/hplip/hplip-1_3_23_12-4-python3_12-fix.patch
+├── hplip-3.24.4
+│   ├── aclocal.m4
+│   ├── align.py
+│   ├── apparmor
+│   │   ├── abstractions
+│   │   │   └── hplip
+│   │   └── usr.share.hplip
+│   ├── base
+│   │   ├── avahi.py
+│   │   ├── CdmWifi.py
+│   │   ├── codes.py
+│   │   ├── device.py
+│   │   ├── dime.py
+│   │   ├── exif.py
+│   │   ├── g.py
+│   │   ├── imageprocessing.py
+│   │   ├── imagesize.py
+│   │   ├── __init__.py
+│   │   ├── ldif.py
+│   │   ├── LedmWifi.py
+│   │   ├── local.py
+│   │   ├── logger.py
+│   │   ├── magic.py
+│   │   ├── maint.py
+│   │   ├── mdns.py
+│   │   ├── mfpdtf.py
+│   │   ├── models.py
+│   │   ├── module.py
+│   │   ├── os_utils.py
+│   │   ├── password.py
+│   │   ├── pexpect
+│   │   │   └── __init__.py
+│   │   ├── pkit.py
+│   │   ├── pml.py
+│   │   ├── queues.py
+│   │   ├── services.py
+│   │   ├── sixext.py
+│   │   ├── six.py
+│   │   ├── slp.py
+│   │   ├── smart_install.py
+│   │   ├── status.py
+│   │   ├── strings.py
+│   │   ├── tui.py
+│   │   ├── utils.py
+│   │   ├── validation.py
+│   │   ├── vcard.py
+│   │   └── wifi.py
+│   ├── check-plugin.py
+│   ├── check.py
+│   ├── class_cups_drv.inc
+│   ├── class_rpm_build.sh
+│   ├── clean.py
+│   ├── colorcal.py
+│   ├── common
+│   │   ├── utils.c
+│   │   └── utils.h
+│   ├── Common.h
+│   ├── config.guess
+│   ├── config.sub
+│   ├── configure
+│   ├── configure.in
+│   ├── config_usb_printer.py
+│   ├── copier
+│   │   ├── copier.py
+│   │   └── __init__.py
+│   ├── COPYING
+│   ├── copyright
+│   ├── createPPD.sh
+│   ├── cups_drv.inc
+│   ├── Dat2drv.cpp
+│   ├── Dat2drv.h
+│   ├── dat2drv.py
+│   ├── data
+│   │   ├── images
+│   │   │   ├── 128x128
+│   │   │   │   ├── audio.png
+│   │   │   │   ├── bmp.png
+│   │   │   │   ├── gif.png
+│   │   │   │   ├── hp_logo.png
+│   │   │   │   ├── jpg.png
+│   │   │   │   ├── movie.png
+│   │   │   │   ├── mpg.png
+│   │   │   │   ├── png.png
+│   │   │   │   ├── tif.png
+│   │   │   │   └── unknown.png
+│   │   │   ├── 16x16
+│   │   │   │   ├── active.png
+│   │   │   │   ├── add_user.png
+│   │   │   │   ├── add_user_quick.png
+│   │   │   │   ├── add_users.png
+│   │   │   │   ├── battery.png
+│   │   │   │   ├── busy.png
+│   │   │   │   ├── cancel.png
+│   │   │   │   ├── close.png
+│   │   │   │   ├── download.png
+│   │   │   │   ├── down.png
+│   │   │   │   ├── down_user.png
+│   │   │   │   ├── edit.png
+│   │   │   │   ├── error.png
+│   │   │   │   ├── fab.png
+│   │   │   │   ├── fax.png
+│   │   │   │   ├── folder_open.png
+│   │   │   │   ├── folder_remove.png
+│   │   │   │   ├── help.png
+│   │   │   │   ├── hp_logo.png
+│   │   │   │   ├── idle.png
+│   │   │   │   ├── info.png
+│   │   │   │   ├── inkdrop.png
+│   │   │   │   ├── list_add.png
+│   │   │   │   ├── list_remove.png
+│   │   │   │   ├── makecopies.png
+│   │   │   │   ├── mimetypes.png
+│   │   │   │   ├── minus.png
+│   │   │   │   ├── next.png
+│   │   │   │   ├── ok.png
+│   │   │   │   ├── paper.png
+│   │   │   │   ├── pcard.png
+│   │   │   │   ├── plus.png
+│   │   │   │   ├── prev.png
+│   │   │   │   ├── print.png
+│   │   │   │   ├── quit.png
+│   │   │   │   ├── refresh1.png
+│   │   │   │   ├── refresh.png
+│   │   │   │   ├── remove_user.png
+│   │   │   │   ├── scan.png
+│   │   │   │   ├── settings.png
+│   │   │   │   ├── status_refresh.png
+│   │   │   │   ├── thumbnail.png
+│   │   │   │   ├── toner.png
+│   │   │   │   ├── troubleshoot.png
+│   │   │   │   ├── up.png
+│   │   │   │   ├── up_user.png
+│   │   │   │   └── warning.png
+│   │   │   ├── 24x24
+│   │   │   │   ├── add_to_group.png
+│   │   │   │   ├── new_group_from_selection.png
+│   │   │   │   ├── new_group.png
+│   │   │   │   ├── new_user.png
+│   │   │   │   ├── remove_from_group.png
+│   │   │   │   ├── remove_group.png
+│   │   │   │   ├── remove_user.png
+│   │   │   │   └── rename_group.png
+│   │   │   ├── 256x256
+│   │   │   │   ├── hp_logo.png
+│   │   │   │   └── logo.png
+│   │   │   ├── 32x32
+│   │   │   │   ├── align.png
+│   │   │   │   ├── battery.png
+│   │   │   │   ├── busy.png
+│   │   │   │   ├── clean.png
+│   │   │   │   ├── colorcal.png
+│   │   │   │   ├── cups.png
+│   │   │   │   ├── download.png
+│   │   │   │   ├── error.png
+│   │   │   │   ├── ews.png
+│   │   │   │   ├── fab.png
+│   │   │   │   ├── fax-disabled.png
+│   │   │   │   ├── fax_machine.png
+│   │   │   │   ├── fax.png
+│   │   │   │   ├── fax_setup.png
+│   │   │   │   ├── firmware.png
+│   │   │   │   ├── help.png
+│   │   │   │   ├── hp_logo.png
+│   │   │   │   ├── idle.png
+│   │   │   │   ├── info.png
+│   │   │   │   ├── inkdrop.png
+│   │   │   │   ├── keys.png
+│   │   │   │   ├── linefeed_cal.png
+│   │   │   │   ├── lock.png
+│   │   │   │   ├── lporg.png
+│   │   │   │   ├── makecopies-disabled.png
+│   │   │   │   ├── makecopies.png
+│   │   │   │   ├── ok.png
+│   │   │   │   ├── paper.png
+│   │   │   │   ├── pcard-disabled.png
+│   │   │   │   ├── pcard.png
+│   │   │   │   ├── plugin.png
+│   │   │   │   ├── pq_diag.png
+│   │   │   │   ├── print-disabled.png
+│   │   │   │   ├── print.png
+│   │   │   │   ├── scan-disabled.png
+│   │   │   │   ├── scan.png
+│   │   │   │   ├── settings.png
+│   │   │   │   ├── testpage.png
+│   │   │   │   ├── toner_cartridge.png
+│   │   │   │   ├── toner.png
+│   │   │   │   ├── troubleshoot.png
+│   │   │   │   ├── warning.png
+│   │   │   │   └── wireless.png
+│   │   │   ├── 64x64
+│   │   │   │   └── hp_logo.png
+│   │   │   ├── devices
+│   │   │   │   ├── 120.png
+│   │   │   │   ├── COLOR_INKJET_PRINTER_CP1700.png
+│   │   │   │   ├── cp1160.png
+│   │   │   │   ├── CP_1700.png
+│   │   │   │   ├── default_business_inkjet.png
+│   │   │   │   ├── default_designjet.png
+│   │   │   │   ├── default_deskjet.png
+│   │   │   │   ├── default_laserjet.png
+│   │   │   │   ├── default_officejet.png
+│   │   │   │   ├── default_photosmart.png
+│   │   │   │   ├── default_printer.png
+│   │   │   │   ├── default_psc.png
+│   │   │   │   ├── desket_5650.png
+│   │   │   │   ├── DESKJET_1120C.png
+│   │   │   │   ├── DESKJET_1220C.png
+│   │   │   │   ├── deskjet_1280.png
+│   │   │   │   ├── DESKJET_2500C.png
+│   │   │   │   ├── deskjet_3200.png
+│   │   │   │   ├── deskjet_3320.png
+│   │   │   │   ├── deskjet_3325.png
+│   │   │   │   ├── deskjet_3420.png
+│   │   │   │   ├── deskjet_3425.png
+│   │   │   │   ├── deskjet_3500.png
+│   │   │   │   ├── deskjet_3600.png
+│   │   │   │   ├── Deskjet_3740.png
+│   │   │   │   ├── DESKJET_3820.png
+│   │   │   │   ├── deskjet_3840.png
+│   │   │   │   ├── deskjet_5100.png
+│   │   │   │   ├── Deskjet_5400_series.png
+│   │   │   │   ├── deskjet_5550.png
+│   │   │   │   ├── deskjet_5552.png
+│   │   │   │   ├── deskjet_5600.png
+│   │   │   │   ├── Deskjet_5700.png
+│   │   │   │   ├── DESKJET_5740.png
+│   │   │   │   ├── Deskjet_5900_series.png
+│   │   │   │   ├── DESKJET_610.png
+│   │   │   │   ├── deskjet_6120.png
+│   │   │   │   ├── DESKJET_630C.png
+│   │   │   │   ├── Deskjet_6500.png
+│   │   │   │   ├── DESKJET_650C.png
+│   │   │   │   ├── Deskjet_6800.png
+│   │   │   │   ├── deskjet_6980.png
+│   │   │   │   ├── DESKJET_840C.png
+│   │   │   │   ├── DESKJET_916C.png
+│   │   │   │   ├── DESKJET_9600.png
+│   │   │   │   ├── DESKJET_960C.png
+│   │   │   │   ├── DESKJET_970C.png
+│   │   │   │   ├── DESKJET_990C.png
+│   │   │   │   ├── DESKJET_995C.png
+│   │   │   │   ├── deskjet_D2360.png
+│   │   │   │   ├── dj350.png
+│   │   │   │   ├── dj450.png
+│   │   │   │   ├── HP_2000C.png
+│   │   │   │   ├── HP_2500C.png
+│   │   │   │   ├── HP_BI_3000.png
+│   │   │   │   ├── hp_business_inkjet_1100.png
+│   │   │   │   ├── HP_Business_Inkjet_1200.png
+│   │   │   │   ├── hp_business_inkjet_2200.png
+│   │   │   │   ├── hp_business_inkjet_2600.png
+│   │   │   │   ├── hp_business_inkjet_3000.png
+│   │   │   │   ├── HP_Color_LaserJet_1500.png
+│   │   │   │   ├── hp_color_LaserJet_2550.png
+│   │   │   │   ├── HP_Color_LaserJet_2840.png
+│   │   │   │   ├── hp_color_LaserJet_3700.png
+│   │   │   │   ├── HP_Color_LaserJet_4500.png
+│   │   │   │   ├── hp_color_LaserJet_4600.png
+│   │   │   │   ├── HP_Color_LaserJet_4730mfp.png
+│   │   │   │   ├── HP_Color_LaserJet_8550.png
+│   │   │   │   ├── hp_color_LaserJet_9500.png
+│   │   │   │   ├── hp_color_laserjet_cm1015_mfp.png
+│   │   │   │   ├── hp_color_laserjet_cm1312_mfp.png
+│   │   │   │   ├── hp_color_laserjet_cp2025.png
+│   │   │   │   ├── hp_color_laserjet_cp3505.png
+│   │   │   │   ├── hp_color_laserjet_cp3525.png
+│   │   │   │   ├── hp_color_laserjet_cp4005.png
+│   │   │   │   ├── hp_color_laserjet_cp6015.png
+│   │   │   │   ├── hp_deskjet_9300.png
+│   │   │   │   ├── hp_deskjet_f4200.png
+│   │   │   │   ├── HP_LaserJet_1012.png
+│   │   │   │   ├── hp_LaserJet_1200.png
+│   │   │   │   ├── HP_LaserJet_1220.png
+│   │   │   │   ├── hp_LaserJet_2100.png
+│   │   │   │   ├── hp_LaserJet_3015.png
+│   │   │   │   ├── hp_LaserJet_3020.png
+│   │   │   │   ├── hp_laserjet_3050.png
+│   │   │   │   ├── HP_LaserJet_3200M.png
+│   │   │   │   ├── HP_LaserJet_3300_3310_3320.png
+│   │   │   │   ├── HP_LaserJet_4000.png
+│   │   │   │   ├── HP_LaserJet_4100_MFP.png
+│   │   │   │   ├── hp_LaserJet_4345_mfp.png
+│   │   │   │   ├── HP_LaserJet_4M.png
+│   │   │   │   ├── hp_LaserJet_5000.png
+│   │   │   │   ├── HP_LaserJet_5Si.png
+│   │   │   │   ├── HP_LaserJet_6MP.png
+│   │   │   │   ├── hp_LaserJet_8000.png
+│   │   │   │   ├── HP_LaserJet_8100_Series.png
+│   │   │   │   ├── HP_LaserJet_9000_MFP.png
+│   │   │   │   ├── HP_LaserJet_9040_MFP.png
+│   │   │   │   ├── HP_LaserJet_9500dn.png
+│   │   │   │   ├── HP_LaserJet_m1005.png
+│   │   │   │   ├── HP_LaserJet_m1522.png
+│   │   │   │   ├── hp_laserjet_m2727_mfp.png
+│   │   │   │   ├── hp_laserjet_p2015.png
+│   │   │   │   ├── HP_LJ1xxx.png
+│   │   │   │   ├── HP_Officejet_Pro_L7700.png
+│   │   │   │   ├── hp_photosmart_b8500_series.png
+│   │   │   │   ├── laserjet_2410.png
+│   │   │   │   ├── LASERJET_3500.png
+│   │   │   │   ├── LASERJET_4650dtn.png
+│   │   │   │   ├── LASERJET_4650.png
+│   │   │   │   ├── LASERJET_5500dtn.png
+│   │   │   │   ├── LASERJET_5500.png
+│   │   │   │   ├── LASERJET_5550DTN.png
+│   │   │   │   ├── LASERJET_5550.png
+│   │   │   │   ├── officejet_4200_series.png
+│   │   │   │   ├── officejet_500.png
+│   │   │   │   ├── OfficeJet_5105.png
+│   │   │   │   ├── officejet_5500_series.png
+│   │   │   │   ├── officejet_5600.png
+│   │   │   │   ├── OfficeJet_6100_Series.png
+│   │   │   │   ├── Officejet_6150_Series.png
+│   │   │   │   ├── Officejet_6200_series.png
+│   │   │   │   ├── Officejet_7200_series.png
+│   │   │   │   ├── OfficeJet_8500_a910.png
+│   │   │   │   ├── Officejet_9100_series.png
+│   │   │   │   ├── OfficeJet_G85.png
+│   │   │   │   ├── officejet_j3600_series.png
+│   │   │   │   ├── officejet_j5500_series.png
+│   │   │   │   ├── officejet_k550.png
+│   │   │   │   ├── officejet_k80.png
+│   │   │   │   ├── OFFICEJET_PRO_1150C.png
+│   │   │   │   ├── OfficeJet_Series_300.png
+│   │   │   │   ├── PHOTOSMART_100.png
+│   │   │   │   ├── PHOTOSMART_1218.png
+│   │   │   │   ├── PHOTOSMART_1315.png
+│   │   │   │   ├── Photosmart_2600_series.png
+│   │   │   │   ├── Photosmart_2700_series.png
+│   │   │   │   ├── Photosmart_3300_series.png
+│   │   │   │   ├── Photosmart_370_series.png
+│   │   │   │   ├── photosmart_7150.png
+│   │   │   │   ├── Photosmart_7400_series.png
+│   │   │   │   ├── photosmart_7900_series.png
+│   │   │   │   ├── Photosmart_8050.png
+│   │   │   │   ├── Photosmart_8100_series.png
+│   │   │   │   ├── Photosmart_8250.png
+│   │   │   │   ├── Photosmart_8400_series.png
+│   │   │   │   ├── Photosmart_8750_series.png
+│   │   │   │   ├── Photosmart_a310.png
+│   │   │   │   ├── Photosmart_a510.png
+│   │   │   │   ├── photosmart_a610.png
+│   │   │   │   ├── Photosmart_a710.png
+│   │   │   │   ├── photosmart_a820_series.png
+│   │   │   │   ├── Photosmart_C3100.png
+│   │   │   │   ├── Photosmart_C4100.png
+│   │   │   │   ├── Photosmart_C5100.png
+│   │   │   │   ├── Photosmart_C6100.png
+│   │   │   │   ├── Photosmart_D5060.png
+│   │   │   │   ├── Photosmart_D5100.png
+│   │   │   │   ├── Photosmart_D6160.png
+│   │   │   │   ├── Photosmart_D7100.png
+│   │   │   │   ├── Photosmart_D7300.png
+│   │   │   │   ├── PHOTOSMART_P1100.png
+│   │   │   │   ├── Photosmart_Pro_B8300.png
+│   │   │   │   ├── Photosmart_Pro_B9180.png
+│   │   │   │   ├── psc_1100_series.png
+│   │   │   │   ├── psc_1610.png
+│   │   │   │   ├── psc_2300_series.png
+│   │   │   │   └── PSC_900_Series.png
+│   │   │   └── other
+│   │   │       ├── aio_align.png
+│   │   │       ├── align10.png
+│   │   │       ├── clean.png
+│   │   │       ├── color_adj.png
+│   │   │       ├── confidential_coverpage.png
+│   │   │       ├── confidential_title.png
+│   │   │       ├── fax2.png
+│   │   │       ├── fax.png
+│   │   │       ├── flat1.png
+│   │   │       ├── generic_coverpage.png
+│   │   │       ├── generic_title.png
+│   │   │       ├── h-k-2.png
+│   │   │       ├── h-k-3.png
+│   │   │       ├── h-kc-2.png
+│   │   │       ├── h-kc-3.png
+│   │   │       ├── hp-tux-printer.png
+│   │   │       ├── load_paper.png
+│   │   │       ├── opensource-75x65.png
+│   │   │       ├── panel_lcd.png
+│   │   │       ├── pens.png
+│   │   │       ├── powered_by_python.png
+│   │   │       ├── resolution.png
+│   │   │       ├── signal0.png
+│   │   │       ├── signal1.png
+│   │   │       ├── signal2.png
+│   │   │       ├── signal3.png
+│   │   │       ├── signal4.png
+│   │   │       ├── signal5.png
+│   │   │       ├── standard_coverpage.png
+│   │   │       ├── type4_color_patch.png
+│   │   │       ├── type4_gray_patch.png
+│   │   │       ├── urgent_coverpage.png
+│   │   │       ├── urgent_title.png
+│   │   │       ├── usb_connection.png
+│   │   │       ├── v-c-2.png
+│   │   │       ├── v-c-3.png
+│   │   │       ├── viewer.png
+│   │   │       ├── v-k-2.png
+│   │   │       ├── v-k-3.png
+│   │   │       ├── v-kc-2.png
+│   │   │       ├── v-kc-3.png
+│   │   │       └── zca.png
+│   │   ├── ldl
+│   │   │   ├── cb2pcal_done.ldl.gz
+│   │   │   ├── cb2pcal.ldl.gz
+│   │   │   ├── cbbcal.ldl.gz
+│   │   │   ├── cbccal_done.ldl.gz
+│   │   │   ├── cbccal.ldl.gz
+│   │   │   ├── cbcpcal.ldl.gz
+│   │   │   └── cbpcal.ldl.gz
+│   │   ├── localization
+│   │   │   ├── hplip_de.qm
+│   │   │   ├── hplip_de.ts
+│   │   │   ├── hplip_es.qm
+│   │   │   ├── hplip_es.ts
+│   │   │   ├── hplip_fr.qm
+│   │   │   ├── hplip_fr.ts
+│   │   │   ├── hplip_it.qm
+│   │   │   ├── hplip_it.ts
+│   │   │   ├── hplip_pt.qm
+│   │   │   ├── hplip_pt.ts
+│   │   │   ├── hplip_ru.qm
+│   │   │   ├── hplip_ru.ts
+│   │   │   ├── hplip_zh.qm
+│   │   │   └── hplip_zh.ts
+│   │   ├── models
+│   │   │   └── models.dat
+│   │   ├── pcl
+│   │   │   ├── align1_8xx.pcl.gz
+│   │   │   ├── align1_9xx.pcl.gz
+│   │   │   ├── align2_8xx.pcl.gz
+│   │   │   ├── align2_9xx.pcl.gz
+│   │   │   ├── align3_8xx.pcl.gz
+│   │   │   ├── align3_9xx.pcl.gz
+│   │   │   ├── align4_450.pcl.gz
+│   │   │   ├── align4_8xx.pcl.gz
+│   │   │   ├── align5_8xx.pcl.gz
+│   │   │   ├── align6_450.pcl.gz
+│   │   │   ├── colorcal1_450.pcl.gz
+│   │   │   ├── colorcal2_450.pcl.gz
+│   │   │   ├── crbcal.pcl.gz
+│   │   │   ├── crcaldone.pcl.gz
+│   │   │   ├── crcbcal.pcl.gz
+│   │   │   ├── crccal.pcl.gz
+│   │   │   ├── crcpcal.pcl.gz
+│   │   │   └── crpcal.pcl.gz
+│   │   ├── policykit
+│   │   │   ├── com.hp.hplip.conf
+│   │   │   ├── com.hp.hplip.policy
+│   │   │   ├── com.hp.hplip.service
+│   │   │   └── com.hp.hplip.service.in
+│   │   ├── ps
+│   │   │   ├── clean_page.pdf.gz
+│   │   │   └── testpage.ps.gz
+│   │   └── rules
+│   │       ├── 20-hplip-devices.fdi
+│   │       ├── 56-hpmud.rules
+│   │       ├── 56-hpmud_sysfs.rules
+│   │       └── hplip-printer@.service
+│   ├── depcomp
+│   ├── devicesettings.py
+│   ├── diagnose_plugin.py
+│   ├── diagnose_queues.py
+│   ├── doc
+│   │   ├── commandline.html
+│   │   ├── copying.html
+│   │   ├── devicemanager.html
+│   │   ├── faxtrouble.html
+│   │   ├── gettinghelp.html
+│   │   ├── hpscan.html
+│   │   ├── images
+│   │   │   ├── favicon.ico
+│   │   │   ├── print.png
+│   │   │   ├── toolbox_actions.png
+│   │   │   ├── toolbox_fax.png
+│   │   │   ├── toolbox_print_control.png
+│   │   │   ├── toolbox_print_settings.png
+│   │   │   ├── toolbox_status.png
+│   │   │   ├── toolbox_supplies.png
+│   │   │   └── xsane.png
+│   │   ├── index.html
+│   │   ├── mainttask.html
+│   │   ├── plugins.html
+│   │   ├── print.html
+│   │   ├── printing.html
+│   │   ├── printoptions.html
+│   │   ├── printtroubleshooting.html
+│   │   ├── scanning.html
+│   │   ├── scantrouble.html
+│   │   ├── sendfax.html
+│   │   ├── setup.html
+│   │   ├── styles
+│   │   │   └── css.css
+│   │   ├── systray.html
+│   │   ├── troubleshooting.html
+│   │   ├── uninstalling.html
+│   │   └── upgrading.html
+│   ├── doctor.py
+│   ├── fab.py
+│   ├── fax
+│   │   ├── backend
+│   │   │   └── hpfax.py
+│   │   ├── cdmfax.py
+│   │   ├── coverpages.py
+│   │   ├── faxdevice.py
+│   │   ├── fax.py
+│   │   ├── filters
+│   │   │   ├── cdmfax
+│   │   │   │   ├── hpcupscdmfax.cpp
+│   │   │   │   ├── hpcupscdmfax.h
+│   │   │   │   ├── jetlib.cpp
+│   │   │   │   └── jetlib.h
+│   │   │   ├── pstotiff
+│   │   │   ├── pstotiff.convs
+│   │   │   └── pstotiff.types
+│   │   ├── __init__.py
+│   │   ├── ledmfax.py
+│   │   ├── ledmsoapfax.py
+│   │   ├── marvellfax.py
+│   │   ├── pmlfax.py
+│   │   ├── ppd
+│   │   │   ├── HP-Fax2-hpcups.ppd.gz
+│   │   │   ├── HP-Fax2-hpijs.ppd.gz
+│   │   │   ├── HP-Fax3-hpcups.ppd.gz
+│   │   │   ├── HP-Fax3-hpijs.ppd.gz
+│   │   │   ├── HP-Fax4-hpcups.ppd.gz
+│   │   │   ├── HP-Fax4-hpijs.ppd.gz
+│   │   │   ├── HP-Fax-CDM-hpcups.ppd.gz
+│   │   │   ├── HP-Fax-hpcups.ppd.gz
+│   │   │   └── HP-Fax-hpijs.ppd.gz
+│   │   └── soapfax.py
+│   ├── faxsetup.py
+│   ├── FindPPD.cpp
+│   ├── FindPPD.h
+│   ├── firmware.py
+│   ├── foomatic_drv.inc
+│   ├── hpdio.py
+│   ├── hpijs-drv
+│   ├── hplipclassdriver.spec
+│   ├── hplip_clean.sh
+│   ├── hplip.conf.in
+│   ├── hplip.desktop.in
+│   ├── hplip-install
+│   ├── hplip.list.in
+│   ├── hplip-systray.desktop.in
+│   ├── hpssd.py
+│   ├── hp-uiscan.desktop.in
+│   ├── info.py
+│   ├── init-iptables-firewall
+│   ├── __init__.py
+│   ├── init-suse-firewall
+│   ├── installer
+│   │   ├── core_install.py
+│   │   ├── dcheck.py
+│   │   ├── distros.dat
+│   │   ├── __init__.py
+│   │   ├── pluginhandler.py
+│   │   └── text_install.py
+│   ├── install.py
+│   ├── install-sh
+│   ├── io
+│   │   ├── hpmud
+│   │   │   ├── dot4.c
+│   │   │   ├── dot4.h
+│   │   │   ├── hpmud.c
+│   │   │   ├── hpmud.h
+│   │   │   ├── hpmudi.h
+│   │   │   ├── jd.c
+│   │   │   ├── jd.h
+│   │   │   ├── list.h
+│   │   │   ├── mlc.c
+│   │   │   ├── mlc.h
+│   │   │   ├── model.c
+│   │   │   ├── musb.c
+│   │   │   ├── musb.h
+│   │   │   ├── musb_libusb01.c
+│   │   │   ├── pml.c
+│   │   │   ├── pml.h
+│   │   │   ├── pp.c
+│   │   │   └── pp.h
+│   │   └── mudext
+│   │       └── hpmudext.c
+│   ├── ip
+│   │   ├── hpip.h
+│   │   ├── ipdefs.h
+│   │   ├── ipmain.c
+│   │   ├── xbi2gray.c
+│   │   ├── xchgbpp.c
+│   │   ├── xcolrspc.c
+│   │   ├── xconvolve.c
+│   │   ├── xcrop.c
+│   │   ├── xfakemono.c
+│   │   ├── xfax.c
+│   │   ├── xform.h
+│   │   ├── xgamma.c
+│   │   ├── xgray2bi.c
+│   │   ├── xgrayout.c
+│   │   ├── xinvert.c
+│   │   ├── xjpg_dct.c
+│   │   ├── xjpg_dct.h
+│   │   ├── xjpg_dec.c
+│   │   ├── xjpg_enc.c
+│   │   ├── xjpg_fix.c
+│   │   ├── xjpg_huf.c
+│   │   ├── xjpg_huf.h
+│   │   ├── xjpg_mrk.h
+│   │   ├── xmatrix.c
+│   │   ├── xpad.c
+│   │   ├── xpcx.c
+│   │   ├── xpnm.c
+│   │   ├── xrotate.c
+│   │   ├── xsaturation.c
+│   │   ├── xscale.c
+│   │   ├── xskel.c
+│   │   ├── xtable.c
+│   │   ├── xthumb.c
+│   │   ├── xtiff.c
+│   │   ├── xtonemap.c
+│   │   └── xyxtract.c
+│   ├── levels.py
+│   ├── linefeedcal.py
+│   ├── locatedriver
+│   ├── logcapture.py
+│   ├── ltmain.sh
+│   ├── makecopies.py
+│   ├── Makefile.am
+│   ├── Makefile_dat2drv
+│   ├── Makefile.in
+│   ├── makeuri.py
+│   ├── missing
+│   ├── Normalize.cpp
+│   ├── Normalize.h
+│   ├── pcard
+│   │   ├── fat.c
+│   │   ├── fat.h
+│   │   ├── __init__.py
+│   │   ├── pcardext
+│   │   │   └── pcardext.c
+│   │   ├── photocard.py
+│   │   ├── ptest.c
+│   │   └── ptest.h
+│   ├── pkservice.py
+│   ├── plugin.py
+│   ├── plugins
+│   │   ├── Deskjet_460.py
+│   │   ├── dj450.py
+│   │   ├── __init__.py
+│   │   ├── Officejet_H470.py
+│   │   ├── powersettings2.py
+│   │   ├── powersettingsdialog_base.py
+│   │   ├── powersettingsdialog_base.ui
+│   │   ├── powersettingsdialog.py
+│   │   └── powersettings.py
+│   ├── ppd
+│   │   ├── classppd
+│   │   │   ├── hpcups
+│   │   │   │   ├── hp-Ampere-Normal.ppd.gz
+│   │   │   │   ├── hp-Athena-L-Normal.ppd.gz
+│   │   │   │   ├── hp-CLE17-Normal.ppd.gz
+│   │   │   │   ├── hp-CLE-Normal.ppd.gz
+│   │   │   │   ├── hp-Copperhead12-Advanced.ppd.gz
+│   │   │   │   ├── hp-Copperhead12-Normal.ppd.gz
+│   │   │   │   ├── hp-Copperhead-AutoDuplex.ppd.gz
+│   │   │   │   ├── hp-CopperheadIPH15-Normal.ppd.gz
+│   │   │   │   ├── hp-CopperheadIPH17-Normal.ppd.gz
+│   │   │   │   ├── hp-CopperheadIPH-Normal.ppd.gz
+│   │   │   │   ├── hp-Copperhead-Normal.ppd.gz
+│   │   │   │   ├── hp-Copperhead-Trim.ppd.gz
+│   │   │   │   ├── hp-CopperheadXLP-Normal.ppd.gz
+│   │   │   │   ├── hp-Corbett-Normal.ppd.gz
+│   │   │   │   ├── hp-DJ55xx-Normal.ppd.gz
+│   │   │   │   ├── hp-DJ9xxVIP-LargeFormatSuperB.ppd.gz
+│   │   │   │   ├── hp-DJ9xxVIP-No1200dpiNoSensor.ppd.gz
+│   │   │   │   ├── hp-DJ9xxVIP-Normal.ppd.gz
+│   │   │   │   ├── hp-DJGenericVIP-4x6FullBleed.ppd.gz
+│   │   │   │   ├── hp-DJGenericVIP-LargeFormatSuperB-NoAutoTray.ppd.gz
+│   │   │   │   ├── hp-DJGenericVIP-LargeFormatSuperB-NoFullBleed.ppd.gz
+│   │   │   │   ├── hp-DJGenericVIP-LargeFormatSuperB.ppd.gz
+│   │   │   │   ├── hp-DJGenericVIP-NoEvenDuplex.ppd.gz
+│   │   │   │   ├── hp-DJGenericVIP-NoFullBleed.ppd.gz
+│   │   │   │   ├── hp-DJGenericVIP-Normal.ppd.gz
+│   │   │   │   ├── hp-Gemstone-Normal.ppd.gz
+│   │   │   │   ├── hp-Kapan-Duplex.ppd.gz
+│   │   │   │   ├── hp-LJ-Class1.ppd.gz
+│   │   │   │   ├── hp-LJ-Class2.ppd.gz
+│   │   │   │   ├── hp-LJ-Class3.ppd.gz
+│   │   │   │   ├── hp-LJ-Class4A.ppd.gz
+│   │   │   │   ├── hp-LJ-Class4.ppd.gz
+│   │   │   │   ├── hp-LJ-Class5.ppd.gz
+│   │   │   │   ├── hp-LJ-Class6.ppd.gz
+│   │   │   │   ├── hp-Mimas15-Normal.ppd.gz
+│   │   │   │   ├── hp-Mimas17-Normal.ppd.gz
+│   │   │   │   ├── hp-Mimas-NoCDDVD.ppd.gz
+│   │   │   │   ├── hp-MimasTDR-Normal.ppd.gz
+│   │   │   │   ├── hp-OJ7000-LargeFormatA3.ppd.gz
+│   │   │   │   ├── hp-OJ7000-LargeFormatA3-SmallMargins.ppd.gz
+│   │   │   │   ├── hp-OJProKx50-LargeFormatSuperB-NoFullBleed.ppd.gz
+│   │   │   │   ├── hp-OJProKx50-NoFullBleed.ppd.gz
+│   │   │   │   ├── hp-P15-CISS-Normal.ppd.gz
+│   │   │   │   ├── hp-PCL3-Class3A.ppd.gz
+│   │   │   │   ├── hp-PCL3-Class3B.ppd.gz
+│   │   │   │   ├── hp-PCL3-Class3.ppd.gz
+│   │   │   │   ├── hp-PCL4-Class1.ppd.gz
+│   │   │   │   ├── hp-PCLM-COLOR.ppd.gz
+│   │   │   │   ├── hp-PCLM-MONO.ppd.gz
+│   │   │   │   ├── hp-Peaks-mod-mech-Normal.ppd.gz
+│   │   │   │   ├── hp-PSP100-Normal.ppd.gz
+│   │   │   │   ├── hp-PSP470-FullBleed.ppd.gz
+│   │   │   │   ├── hp-Pyramid15-Normal.ppd.gz
+│   │   │   │   ├── hp-Pyramid-K10.ppd.gz
+│   │   │   │   ├── hp-Pyramid-NoAutoDuplex-NoCDDVD.ppd.gz
+│   │   │   │   ├── hp-PyramidPlus-NoAutoDuplex.ppd.gz
+│   │   │   │   ├── hp-PyramidRefresh15-Normal.ppd.gz
+│   │   │   │   ├── hp-PyramidRefresh17-Normal.ppd.gz
+│   │   │   │   ├── hp-Python10-NoAutoTray.ppd.gz
+│   │   │   │   ├── hp-Python10-NoCDDVD-NoMaxDPI.ppd.gz
+│   │   │   │   ├── hp-Python11-Advanced.ppd.gz
+│   │   │   │   ├── hp-Python11-Normal.ppd.gz
+│   │   │   │   ├── hp-Python-LargeFormatA3-NoAutoDuplex-Advanced.ppd.gz
+│   │   │   │   ├── hp-Python-LargeFormatA3-NoAutoDuplex.ppd.gz
+│   │   │   │   ├── hp-Python-NoAutoDuplex-NoCDDVD-NoMaxDPI.ppd.gz
+│   │   │   │   ├── hp-Python-NoAutoDuplex-NoCDDVD.ppd.gz
+│   │   │   │   ├── hp-Python-NoCDDVD-NoMaxDPI.ppd.gz
+│   │   │   │   ├── hp-Python-NoCDDVD.ppd.gz
+│   │   │   │   ├── hp-Python-NoMaxDPI.ppd.gz
+│   │   │   │   ├── hp-Saipan15B-Normal.ppd.gz
+│   │   │   │   ├── hp-Saipan-Advanced.ppd.gz
+│   │   │   │   ├── hp-Saipan-AutoDuplex.ppd.gz
+│   │   │   │   ├── hp-Saipan-Normal.ppd.gz
+│   │   │   │   ├── hp-SPDOfficejetProAsize-Normal.ppd.gz
+│   │   │   │   ├── hp-SPDOfficejetProBsize-Normal.ppd.gz
+│   │   │   │   ├── hp-Stabler-Normal.ppd.gz
+│   │   │   │   ├── hp-StingrayOJ-Normal.ppd.gz
+│   │   │   │   ├── hp-ViperMinusVIP-Normal.ppd.gz
+│   │   │   │   ├── hp-ViperPlusVIP-Normal.ppd.gz
+│   │   │   │   └── hp-ViperPlusVIP-Trim.ppd.gz
+│   │   │   └── ps
+│   │   │       ├── hp-postscript-inkjet.ppd.gz
+│   │   │       ├── hp-postscript-laserjet.ppd.gz
+│   │   │       └── hp-postscript-laserjet-pro.ppd.gz
+│   │   └── hpcups
+│   │       ├── apollo-2100.ppd.gz
+│   │       ├── apollo-2150.ppd.gz
+│   │       ├── apollo-2200.ppd.gz
+│   │       ├── apollo-2500.ppd.gz
+│   │       ├── apollo-2600.ppd.gz
+│   │       ├── apollo-2650.ppd.gz
+│   │       ├── apollo-p2000-u.ppd.gz
+│   │       ├── apollo-p2250.ppd.gz
+│   │       ├── hp-2000c.ppd.gz
+│   │       ├── hp-2500c.ppd.gz
+│   │       ├── hp-910.ppd.gz
+│   │       ├── hp-915.ppd.gz
+│   │       ├── hp-amp.ppd.gz
+│   │       ├── hp-business_inkjet_1000.ppd.gz
+│   │       ├── hp-business_inkjet_1100.ppd.gz
+│   │       ├── hp-business_inkjet_1200.ppd.gz
+│   │       ├── hp-business_inkjet_2200.ppd.gz
+│   │       ├── hp-business_inkjet_2230.ppd.gz
+│   │       ├── hp-business_inkjet_2250-pcl3.ppd.gz
+│   │       ├── hp-business_inkjet_2280-pcl3.ppd.gz
+│   │       ├── hp-business_inkjet_2300-pcl3.ppd.gz
+│   │       ├── hp-business_inkjet_2600-pcl3.ppd.gz
+│   │       ├── hp-business_inkjet_2800-pcl3.ppd.gz
+│   │       ├── hp-business_inkjet_3000-pcl3.ppd.gz
+│   │       ├── hp-color_inkjet_printer_cp1700.ppd.gz
+│   │       ├── hp-color_laserjet_1600.ppd.gz
+│   │       ├── hp-color_laserjet_2500_series.ppd.gz
+│   │       ├── hp-color_laserjet_2600n.ppd.gz
+│   │       ├── hp-color_laserjet_3000-pcl3.ppd.gz
+│   │       ├── hp-color_laserjet_3500n.ppd.gz
+│   │       ├── hp-color_laserjet_3500.ppd.gz
+│   │       ├── hp-color_laserjet_3550n.ppd.gz
+│   │       ├── hp-color_laserjet_3550.ppd.gz
+│   │       ├── hp-color_laserjet_3600.ppd.gz
+│   │       ├── hp-color_laserjet_3700n.ppd.gz
+│   │       ├── hp-color_laserjet_3700-pcl3.ppd.gz
+│   │       ├── hp-color_laserjet_3800-pcl3.ppd.gz
+│   │       ├── hp-color_laserjet_4500-pcl3.ppd.gz
+│   │       ├── hp-color_laserjet_4550-pcl3.ppd.gz
+│   │       ├── hp-color_laserjet_4600-pcl3.ppd.gz
+│   │       ├── hp-color_laserjet_4610-pcl3.ppd.gz
+│   │       ├── hp-color_laserjet_4650-pcl3.ppd.gz
+│   │       ├── hp-color_laserjet_4700-pcl3.ppd.gz
+│   │       ├── hp-color_laserjet_4730mfp-pcl3.ppd.gz
+│   │       ├── hp-color_laserjet_5500-pcl3.ppd.gz
+│   │       ├── hp-color_laserjet_5550-pcl3.ppd.gz
+│   │       ├── hp-color_laserjet_5m-pcl3.ppd.gz
+│   │       ├── hp-color_laserjet_5.ppd.gz
+│   │       ├── hp-color_laserjet_8500-pcl3.ppd.gz
+│   │       ├── hp-color_laserjet_8550-pcl3.ppd.gz
+│   │       ├── hp-color_laserjet_9500-pcl3.ppd.gz
+│   │       ├── hp-color_laserjet_cm1312_mfp-pcl3.ppd.gz
+│   │       ├── hp-color_laserjet_cm1312nfi_mfp-pcl3.ppd.gz
+│   │       ├── hp-color_laserjet_cm2320fxi_mfp-pcl3.ppd.gz
+│   │       ├── hp-color_laserjet_cm2320_mfp-pcl3.ppd.gz
+│   │       ├── hp-color_laserjet_cm2320nf_mfp-pcl3.ppd.gz
+│   │       ├── hp-color_laserjet_cm2320n_mfp-pcl3.ppd.gz
+│   │       ├── hp-color_laserjet_cm3530_mfp-pcl3.ppd.gz
+│   │       ├── hp-color_laserjet_cm4540_mfp-pcl3.ppd.gz
+│   │       ├── hp-color_laserjet_cm4730_mfp-pcl3.ppd.gz
+│   │       ├── hp-color_laserjet_cm6030_mfp-pcl3.ppd.gz
+│   │       ├── hp-color_laserjet_cm6040_mfp.ppd.gz
+│   │       ├── hp-color_laserjet_cm6049_mfp.ppd.gz
+│   │       ├── hp-color_laserjet_cp1215.ppd.gz
+│   │       ├── hp-color_laserjet_cp1217.ppd.gz
+│   │       ├── hp-color_laserjet_cp1514n-pcl3.ppd.gz
+│   │       ├── hp-color_laserjet_cp1515n-pcl3.ppd.gz
+│   │       ├── hp-color_laserjet_cp1518ni-pcl3.ppd.gz
+│   │       ├── hp-color_laserjet_cp2025dn-pcl3.ppd.gz
+│   │       ├── hp-color_laserjet_cp2025n-pcl3.ppd.gz
+│   │       ├── hp-color_laserjet_cp2025-pcl3.ppd.gz
+│   │       ├── hp-color_laserjet_cp2025x-pcl3.ppd.gz
+│   │       ├── hp-color_laserjet_cp3505-pcl3.ppd.gz
+│   │       ├── hp-color_laserjet_cp3525-pcl3.ppd.gz
+│   │       ├── hp-color_laserjet_cp4005-pcl3.ppd.gz
+│   │       ├── hp-color_laserjet_cp4020_series-pcl3.ppd.gz
+│   │       ├── hp-color_laserjet_cp4520_series-pcl3.ppd.gz
+│   │       ├── hp-color_laserjet_cp5225dn-pcl3.ppd.gz
+│   │       ├── hp-color_laserjet_cp5225n-pcl3.ppd.gz
+│   │       ├── hp-color_laserjet_cp5225-pcl3.ppd.gz
+│   │       ├── hp-color_laserjet_cp5520_series-pcl3.ppd.gz
+│   │       ├── hp-color_laserjet_cp6015-pcl3.ppd.gz
+│   │       ├── hp-color_laserjet_pro_mfp_m176n.ppd.gz
+│   │       ├── hp-color_laserjet_pro_mfp_m177fw.ppd.gz
+│   │       ├── hp-cp1160.ppd.gz
+│   │       ├── hp-deskjet_1000_j110_series.ppd.gz
+│   │       ├── hp-deskjet_1010_series.ppd.gz
+│   │       ├── hp-deskjet_1050_j410_series.ppd.gz
+│   │       ├── hp-deskjet_1100.ppd.gz
+│   │       ├── hp-deskjet_1110_series.ppd.gz
+│   │       ├── hp-deskjet_1120.ppd.gz
+│   │       ├── hp-deskjet_1125.ppd.gz
+│   │       ├── hp-deskjet_1200c.ppd.gz
+│   │       ├── hp-deskjet_1200_series.ppd.gz
+│   │       ├── hp-deskjet_1220c.ppd.gz
+│   │       ├── hp-deskjet_1280.ppd.gz
+│   │       ├── hp-deskjet_1510_series.ppd.gz
+│   │       ├── hp-deskjet_1600cm.ppd.gz
+│   │       ├── hp-deskjet_1600cn.ppd.gz
+│   │       ├── hp-deskjet_1600c.ppd.gz
+│   │       ├── hp-deskjet_2000_j210_series.ppd.gz
+│   │       ├── hp-deskjet_2020_series.ppd.gz
+│   │       ├── hp-deskjet_2050_j510_series.ppd.gz
+│   │       ├── hp-deskjet_2130_series.ppd.gz
+│   │       ├── hp-deskjet_2200_series.ppd.gz
+│   │       ├── hp-deskjet_2300_series.ppd.gz
+│   │       ├── hp-deskjet_2510_series.ppd.gz
+│   │       ├── hp-deskjet_2520_series.ppd.gz
+│   │       ├── hp-deskjet_2540_series.ppd.gz
+│   │       ├── hp-deskjet_2600_series.ppd.gz
+│   │       ├── hp-deskjet_2640_series.ppd.gz
+│   │       ├── hp-deskjet_2700_series.ppd.gz
+│   │       ├── hp-Deskjet_2800_series.ppd.gz
+│   │       ├── hp-deskjet_3000_j310_series.ppd.gz
+│   │       ├── hp-deskjet_3050a_j611_series.ppd.gz
+│   │       ├── hp-deskjet_3050_j610_series.ppd.gz
+│   │       ├── hp-deskjet_3070_b611_series.ppd.gz
+│   │       ├── hp-deskjet_3320.ppd.gz
+│   │       ├── hp-deskjet_3325.ppd.gz
+│   │       ├── hp-deskjet_3420.ppd.gz
+│   │       ├── hp-deskjet_3425.ppd.gz
+│   │       ├── hp-deskjet_3450.ppd.gz
+│   │       ├── hp-deskjet_3500.ppd.gz
+│   │       ├── hp-deskjet_350.ppd.gz
+│   │       ├── hp-deskjet_3510_series.ppd.gz
+│   │       ├── hp-deskjet_3520_series.ppd.gz
+│   │       ├── hp-deskjet_3540_series.ppd.gz
+│   │       ├── hp-deskjet_3550.ppd.gz
+│   │       ├── hp-deskjet_3600.ppd.gz
+│   │       ├── hp-deskjet_3630_series.ppd.gz
+│   │       ├── hp-deskjet_3650.ppd.gz
+│   │       ├── hp-deskjet_3700_series.ppd.gz
+│   │       ├── hp-deskjet_3740.ppd.gz
+│   │       ├── hp-deskjet_3810.ppd.gz
+│   │       ├── hp-deskjet_3816.ppd.gz
+│   │       ├── hp-deskjet_3819.ppd.gz
+│   │       ├── hp-deskjet_3820.ppd.gz
+│   │       ├── hp-deskjet_3822.ppd.gz
+│   │       ├── hp-deskjet_3830_series.ppd.gz
+│   │       ├── hp-deskjet_3840.ppd.gz
+│   │       ├── hp-deskjet_3870.ppd.gz
+│   │       ├── hp-deskjet_3900.ppd.gz
+│   │       ├── hp-deskjet_3910.ppd.gz
+│   │       ├── hp-deskjet_3920.ppd.gz
+│   │       ├── hp-deskjet_3940.ppd.gz
+│   │       ├── hp-deskjet_400l.ppd.gz
+│   │       ├── hp-deskjet_400.ppd.gz
+│   │       ├── hp-deskjet_4100_series.ppd.gz
+│   │       ├── hp-Deskjet_4200_series.ppd.gz
+│   │       ├── hp-deskjet_450.ppd.gz
+│   │       ├── hp-deskjet_4510_series.ppd.gz
+│   │       ├── hp-deskjet_4530_series.ppd.gz
+│   │       ├── hp-deskjet_460.ppd.gz
+│   │       ├── hp-deskjet_4610_series.ppd.gz
+│   │       ├── hp-deskjet_4620_series.ppd.gz
+│   │       ├── hp-deskjet_4640_series.ppd.gz
+│   │       ├── hp-deskjet_4670_series.ppd.gz
+│   │       ├── hp-deskjet_4720_series.ppd.gz
+│   │       ├── hp-deskjet_4800_series.ppd.gz
+│   │       ├── hp-Deskjet_4900_series.ppd.gz
+│   │       ├── hp-deskjet_5000_series.ppd.gz
+│   │       ├── hp-deskjet_500c.ppd.gz
+│   │       ├── hp-deskjet_500.ppd.gz
+│   │       ├── hp-deskjet_505j.ppd.gz
+│   │       ├── hp-deskjet_5100.ppd.gz
+│   │       ├── hp-deskjet_510.ppd.gz
+│   │       ├── hp-deskjet_5200_series.ppd.gz
+│   │       ├── hp-deskjet_520.ppd.gz
+│   │       ├── hp-deskjet_5400_series.ppd.gz
+│   │       ├── hp-deskjet_540.ppd.gz
+│   │       ├── hp-deskjet_550c.ppd.gz
+│   │       ├── hp-deskjet_5520_series.ppd.gz
+│   │       ├── hp-deskjet_5550.ppd.gz
+│   │       ├── hp-deskjet_5551.ppd.gz
+│   │       ├── hp-deskjet_5552.ppd.gz
+│   │       ├── hp-deskjet_5570_series.ppd.gz
+│   │       ├── hp-deskjet_5600.ppd.gz
+│   │       ├── hp-deskjet_5640_series.ppd.gz
+│   │       ├── hp-deskjet_5650.ppd.gz
+│   │       ├── hp-deskjet_5652.ppd.gz
+│   │       ├── hp-deskjet_5700.ppd.gz
+│   │       ├── hp-deskjet_5730_series.ppd.gz
+│   │       ├── hp-deskjet_5800.ppd.gz
+│   │       ├── hp-deskjet_5810_series.ppd.gz
+│   │       ├── hp-deskjet_5820_series.ppd.gz
+│   │       ├── hp-deskjet_5850.ppd.gz
+│   │       ├── hp-deskjet_5900_series.ppd.gz
+│   │       ├── hp-deskjet_600.ppd.gz
+│   │       ├── hp-deskjet_610cl.ppd.gz
+│   │       ├── hp-deskjet_610c.ppd.gz
+│   │       ├── hp-deskjet_6120.ppd.gz
+│   │       ├── hp-deskjet_6122.ppd.gz
+│   │       ├── hp-deskjet_6127.ppd.gz
+│   │       ├── hp-deskjet_612c.ppd.gz
+│   │       ├── hp-deskjet_630c.ppd.gz
+│   │       ├── hp-deskjet_632c.ppd.gz
+│   │       ├── hp-deskjet_640c.ppd.gz
+│   │       ├── hp-deskjet_648c.ppd.gz
+│   │       ├── hp-deskjet_6500.ppd.gz
+│   │       ├── hp-deskjet_6520_series.ppd.gz
+│   │       ├── hp-deskjet_656c.ppd.gz
+│   │       ├── hp-deskjet_6600.ppd.gz
+│   │       ├── hp-deskjet_660.ppd.gz
+│   │       ├── hp-deskjet_670c.ppd.gz
+│   │       ├── hp-deskjet_670.ppd.gz
+│   │       ├── hp-deskjet_670tv.ppd.gz
+│   │       ├── hp-deskjet_672c.ppd.gz
+│   │       ├── hp-deskjet_6800.ppd.gz
+│   │       ├── hp-deskjet_680.ppd.gz
+│   │       ├── hp-deskjet_682.ppd.gz
+│   │       ├── hp-deskjet_690c.ppd.gz
+│   │       ├── hp-deskjet_692.ppd.gz
+│   │       ├── hp-deskjet_693.ppd.gz
+│   │       ├── hp-deskjet_6940_series.ppd.gz
+│   │       ├── hp-deskjet_694.ppd.gz
+│   │       ├── hp-deskjet_695.ppd.gz
+│   │       ├── hp-deskjet_697.ppd.gz
+│   │       ├── hp-deskjet_6980_series.ppd.gz
+│   │       ├── hp-deskjet_810c.ppd.gz
+│   │       ├── hp-deskjet_812c.ppd.gz
+│   │       ├── hp-deskjet_815c.ppd.gz
+│   │       ├── hp-deskjet_816c.ppd.gz
+│   │       ├── hp-deskjet_825c.ppd.gz
+│   │       ├── hp-deskjet_830c.ppd.gz
+│   │       ├── hp-deskjet_832c.ppd.gz
+│   │       ├── hp-deskjet_840c.ppd.gz
+│   │       ├── hp-deskjet_841c.ppd.gz
+│   │       ├── hp-deskjet_842c.ppd.gz
+│   │       ├── hp-deskjet_843c.ppd.gz
+│   │       ├── hp-deskjet_845c.ppd.gz
+│   │       ├── hp-deskjet_850c.ppd.gz
+│   │       ├── hp-deskjet_855c.ppd.gz
+│   │       ├── hp-deskjet_870c.ppd.gz
+│   │       ├── hp-deskjet_880c.ppd.gz
+│   │       ├── hp-deskjet_882c.ppd.gz
+│   │       ├── hp-deskjet_890c.ppd.gz
+│   │       ├── hp-deskjet_895c.ppd.gz
+│   │       ├── hp-deskjet_916c.ppd.gz
+│   │       ├── hp-deskjet_920c.ppd.gz
+│   │       ├── hp-deskjet_9300.ppd.gz
+│   │       ├── hp-deskjet_930c.ppd.gz
+│   │       ├── hp-deskjet_932c.ppd.gz
+│   │       ├── hp-deskjet_933c.ppd.gz
+│   │       ├── hp-deskjet_934c.ppd.gz
+│   │       ├── hp-deskjet_935c.ppd.gz
+│   │       ├── hp-deskjet_940c.ppd.gz
+│   │       ├── hp-deskjet_948c.ppd.gz
+│   │       ├── hp-deskjet_950c.ppd.gz
+│   │       ├── hp-deskjet_952c.ppd.gz
+│   │       ├── hp-deskjet_955c.ppd.gz
+│   │       ├── hp-deskjet_957c.ppd.gz
+│   │       ├── hp-deskjet_959c.ppd.gz
+│   │       ├── hp-deskjet_9600.ppd.gz
+│   │       ├── hp-deskjet_960c.ppd.gz
+│   │       ├── hp-deskjet_970c.ppd.gz
+│   │       ├── hp-deskjet_975c.ppd.gz
+│   │       ├── hp-deskjet_9800.ppd.gz
+│   │       ├── hp-deskjet_980c.ppd.gz
+│   │       ├── hp-deskjet_990c.ppd.gz
+│   │       ├── hp-deskjet_995c.ppd.gz
+│   │       ├── hp-deskjet_d1300_series.ppd.gz
+│   │       ├── hp-deskjet_d1400_series.ppd.gz
+│   │       ├── hp-deskjet_d1500_series.ppd.gz
+│   │       ├── hp-deskjet_d1600_series.ppd.gz
+│   │       ├── hp-deskjet_d2300_series.ppd.gz
+│   │       ├── hp-deskjet_d2400_series.ppd.gz
+│   │       ├── hp-deskjet_d2500_series.ppd.gz
+│   │       ├── hp-deskjet_d2600_series.ppd.gz
+│   │       ├── hp-deskjet_d4100_series.ppd.gz
+│   │       ├── hp-deskjet_d4200_series.ppd.gz
+│   │       ├── hp-deskjet_d4300_series.ppd.gz
+│   │       ├── hp-deskjet_d5500_series.ppd.gz
+│   │       ├── hp-deskjet_d730.ppd.gz
+│   │       ├── hp-deskjet_f2100_series.ppd.gz
+│   │       ├── hp-deskjet_f2200_series.ppd.gz
+│   │       ├── hp-deskjet_f2400_series.ppd.gz
+│   │       ├── hp-deskjet_f300_series.ppd.gz
+│   │       ├── hp-deskjet_f4100_series.ppd.gz
+│   │       ├── hp-deskjet_f4200_series.ppd.gz
+│   │       ├── hp-deskjet_f4400_series.ppd.gz
+│   │       ├── hp-deskjet_f4500_series.ppd.gz
+│   │       ├── hp-deskjet_f735.ppd.gz
+│   │       ├── hp-deskjet_ink_adv_2010_k010.ppd.gz
+│   │       ├── hp-deskjet_ink_adv_2060_k110.ppd.gz
+│   │       ├── hp-deskjet_ink_advant_k109a-z.ppd.gz
+│   │       ├── hp-deskjet_ink_advant_k209a-z.ppd.gz
+│   │       ├── hp-deskjet_plus_4100_series.ppd.gz
+│   │       ├── hp-deskjet_plus_6000_series.ppd.gz
+│   │       ├── hp-deskjet_plus_6400_series.ppd.gz
+│   │       ├── hp-envy_100_d410_series.ppd.gz
+│   │       ├── hp-envy_110_series.ppd.gz
+│   │       ├── hp-envy_120_series.ppd.gz
+│   │       ├── hp-envy_4500_series.ppd.gz
+│   │       ├── hp-envy_4510_series.ppd.gz
+│   │       ├── hp-envy_4520_series.ppd.gz
+│   │       ├── hp-envy_5000_series.ppd.gz
+│   │       ├── hp-envy_5530_series.ppd.gz
+│   │       ├── hp-envy_5540_series.ppd.gz
+│   │       ├── hp-envy_5640_series.ppd.gz
+│   │       ├── hp-envy_5660_series.ppd.gz
+│   │       ├── hp-envy_6000_series.ppd.gz
+│   │       ├── hp-envy_6400_series.ppd.gz
+│   │       ├── hp-envy_7640_series.ppd.gz
+│   │       ├── hp-envy_8000_series.ppd.gz
+│   │       ├── hp-envy_inspire_7200_series.ppd.gz
+│   │       ├── hp-envy_inspire_7900_series.ppd.gz
+│   │       ├── hp-envy_photo_6200_series.ppd.gz
+│   │       ├── hp-envy_photo_7100_series.ppd.gz
+│   │       ├── hp-envy_photo_7800_series.ppd.gz
+│   │       ├── hp-envy_pro_6400_series.ppd.gz
+│   │       ├── hp-ink_tank_110_series.ppd.gz
+│   │       ├── hp-ink_tank_310_series.ppd.gz
+│   │       ├── hp-ink_tank_wireless_410_series.ppd.gz
+│   │       ├── hp-laserjet_1000.ppd.gz
+│   │       ├── hp-laserjet_1005_series.ppd.gz
+│   │       ├── hp-laserjet_1010.ppd.gz
+│   │       ├── hp-laserjet_1012.ppd.gz
+│   │       ├── hp-laserjet_1015.ppd.gz
+│   │       ├── hp-laserjet_1018.ppd.gz
+│   │       ├── hp-laserjet_1020.ppd.gz
+│   │       ├── hp-laserjet_1022n-pcl3.ppd.gz
+│   │       ├── hp-laserjet_1022nw-pcl3.ppd.gz
+│   │       ├── hp-laserjet_1022-pcl3.ppd.gz
+│   │       ├── hp-laserjet_1100a.ppd.gz
+│   │       ├── hp-laserjet_1100.ppd.gz
+│   │       ├── hp-laserjet_1100xi.ppd.gz
+│   │       ├── hp-laserjet_1150.ppd.gz
+│   │       ├── hp-laserjet_1160_series.ppd.gz
+│   │       ├── hp-laserjet_1200n.ppd.gz
+│   │       ├── hp-laserjet_1200-pcl3.ppd.gz
+│   │       ├── hp-laserjet_1220-pcl3.ppd.gz
+│   │       ├── hp-laserjet_1220se.ppd.gz
+│   │       ├── hp-laserjet_1300n-pcl3.ppd.gz
+│   │       ├── hp-laserjet_1300-pcl3.ppd.gz
+│   │       ├── hp-laserjet_1300xi-pcl3.ppd.gz
+│   │       ├── hp-laserjet_1320n.ppd.gz
+│   │       ├── hp-laserjet_1320nw.ppd.gz
+│   │       ├── hp-laserjet_1320.ppd.gz
+│   │       ├── hp-laserjet_1320_series-pcl3.ppd.gz
+│   │       ├── hp-laserjet_1320tn.ppd.gz
+│   │       ├── hp-laserjet_2100_series-pcl3.ppd.gz
+│   │       ├── hp-laserjet_2200_series.ppd.gz
+│   │       ├── hp-laserjet_2300_series.ppd.gz
+│   │       ├── hp-laserjet_2410-pcl3.ppd.gz
+│   │       ├── hp-laserjet_2420-pcl3.ppd.gz
+│   │       ├── hp-laserjet_2430-pcl3.ppd.gz
+│   │       ├── hp-laserjet_3015-pcl3.ppd.gz
+│   │       ├── hp-laserjet_3020-pcl3.ppd.gz
+│   │       ├── hp-laserjet_3030-pcl3.ppd.gz
+│   │       ├── hp-laserjet_3050-pcl3.ppd.gz
+│   │       ├── hp-laserjet_3052-pcl3.ppd.gz
+│   │       ├── hp-laserjet_3055.ppd.gz
+│   │       ├── hp-laserjet_3100.ppd.gz
+│   │       ├── hp-laserjet_3150.ppd.gz
+│   │       ├── hp-laserjet_3200.ppd.gz
+│   │       ├── hp-laserjet_3300_3310_3320-pcl3.ppd.gz
+│   │       ├── hp-laserjet_3330.ppd.gz
+│   │       ├── hp-laserjet_3380-pcl3.ppd.gz
+│   │       ├── hp-laserjet_3390-pcl3.ppd.gz
+│   │       ├── hp-laserjet_3392.ppd.gz
+│   │       ├── hp-laserjet_4000_series-pcl3.ppd.gz
+│   │       ├── hp-laserjet_4050_series-pcl3.ppd.gz
+│   │       ├── hp-laserjet_4100_mfp-pcl3.ppd.gz
+│   │       ├── hp-laserjet_4100_series-pcl3.ppd.gz
+│   │       ├── hp-laserjet_4150_series.ppd.gz
+│   │       ├── hp-laserjet_4200-pcl3.ppd.gz
+│   │       ├── hp-laserjet_4240-pcl3.ppd.gz
+│   │       ├── hp-laserjet_4250-pcl3.ppd.gz
+│   │       ├── hp-laserjet_4300-pcl3.ppd.gz
+│   │       ├── hp-laserjet_4345_mfp-pcl3.ppd.gz
+│   │       ├── hp-laserjet_4350-pcl3.ppd.gz
+│   │       ├── hp-laserjet_4l.ppd.gz
+│   │       ├── hp-laserjet_4ml.ppd.gz
+│   │       ├── hp-laserjet_4mp-pcl3.ppd.gz
+│   │       ├── hp-laserjet_4_plus-pcl3.ppd.gz
+│   │       ├── hp-laserjet_4si-pcl3.ppd.gz
+│   │       ├── hp-laserjet_4v-pcl3.ppd.gz
+│   │       ├── hp-laserjet_5000_series-pcl3.ppd.gz
+│   │       ├── hp-laserjet_5100_series-pcl3.ppd.gz
+│   │       ├── hp-laserjet_5200l-pcl3.ppd.gz
+│   │       ├── hp-laserjet_5200lx.ppd.gz
+│   │       ├── hp-laserjet_5200-pcl3.ppd.gz
+│   │       ├── hp-laserjet_5l.ppd.gz
+│   │       ├── hp-laserjet_5mp-pcl3.ppd.gz
+│   │       ├── hp-laserjet_5p.ppd.gz
+│   │       ├── hp-laserjet_5si_mopier-pcl3.ppd.gz
+│   │       ├── hp-laserjet_5si-pcl3.ppd.gz
+│   │       ├── hp-laserjet_6l.ppd.gz
+│   │       ├── hp-laserjet_6mp-pcl3.ppd.gz
+│   │       ├── hp-laserjet_6p.ppd.gz
+│   │       ├── hp-laserjet_8000_series-pcl3.ppd.gz
+│   │       ├── hp-laserjet_8100_mfp.ppd.gz
+│   │       ├── hp-laserjet_8100_series-pcl3.ppd.gz
+│   │       ├── hp-laserjet_8150_mfp.ppd.gz
+│   │       ├── hp-laserjet_8150_series-pcl3.ppd.gz
+│   │       ├── hp-laserjet_9000_mfp-pcl3.ppd.gz
+│   │       ├── hp-laserjet_9000_series-pcl3.ppd.gz
+│   │       ├── hp-laserjet_9040_mfp-pcl3.ppd.gz
+│   │       ├── hp-laserjet_9040-pcl3.ppd.gz
+│   │       ├── hp-laserjet_9050_mfp-pcl3.ppd.gz
+│   │       ├── hp-laserjet_9050-pcl3.ppd.gz
+│   │       ├── hp-laserjet_9055mfp-pcl3.ppd.gz
+│   │       ├── hp-laserjet_9065mfp-pcl3.ppd.gz
+│   │       ├── hp-laserjet_cm1411fn-pcl3.ppd.gz
+│   │       ├── hp-laserjet_cm1412fn-pcl3.ppd.gz
+│   │       ├── hp-laserjet_cm1413fn-pcl3.ppd.gz
+│   │       ├── hp-laserjet_cm1415fn-pcl3.ppd.gz
+│   │       ├── hp-laserjet_cm1415fnw-pcl3.ppd.gz
+│   │       ├── hp-laserjet_cm1416fnw-pcl3.ppd.gz
+│   │       ├── hp-laserjet_cm1417fnw-pcl3.ppd.gz
+│   │       ├── hp-laserjet_cm1418fnw-pcl3.ppd.gz
+│   │       ├── hp-laserjet_cp1025nw.ppd.gz
+│   │       ├── hp-laserjet_cp1025.ppd.gz
+│   │       ├── hp-laserjet_m1005.ppd.gz
+│   │       ├── hp-laserjet_m101-m106.ppd.gz
+│   │       ├── hp-laserjet_m109-m112.ppd.gz
+│   │       ├── hp-laserjet_m1120_mfp.ppd.gz
+│   │       ├── hp-laserjet_m1120n_mfp.ppd.gz
+│   │       ├── hp-laserjet_m1319f_mfp.ppd.gz
+│   │       ├── hp-laserjet_m14-m17.ppd.gz
+│   │       ├── hp-laserjet_m1522nf_mfp-pcl3.ppd.gz
+│   │       ├── hp-laserjet_m1537dnf_mfp-pcl3.ppd.gz
+│   │       ├── hp-laserjet_m1538dnf_mfp-pcl3.ppd.gz
+│   │       ├── hp-laserjet_m1539dnf_mfp-pcl3.ppd.gz
+│   │       ├── hp-laserjet_m207-m212.ppd.gz
+│   │       ├── hp-laserjet_m2727_mfp-pcl3.ppd.gz
+│   │       ├── hp-laserjet_m3027_mfp-pcl3.ppd.gz
+│   │       ├── hp-laserjet_m3035_mfp-pcl3.ppd.gz
+│   │       ├── hp-laserjet_m4345_mfp-pcl3.ppd.gz
+│   │       ├── hp-laserjet_m4349_mfp-pcl3.ppd.gz
+│   │       ├── hp-laserjet_m5025_mfp-pcl3.ppd.gz
+│   │       ├── hp-laserjet_m5035_mfp-pcl3.ppd.gz
+│   │       ├── hp-laserjet_m5039_mfp-pcl3.ppd.gz
+│   │       ├── hp-laserjet_m9040_mfp-pcl3.ppd.gz
+│   │       ├── hp-laserjet_m9050_mfp-pcl3.ppd.gz
+│   │       ├── hp-laserjet_m9059_mfp-pcl3.ppd.gz
+│   │       ├── hp-laserjet_mfp_m129-m134.ppd.gz
+│   │       ├── hp-laserjet_mfp_m139-m142.ppd.gz
+│   │       ├── hp-laserjet_mfp_m232-m237.ppd.gz
+│   │       ├── hp-laserjet_mfp_m28-m31.ppd.gz
+│   │       ├── hp-laserjet_p1005.ppd.gz
+│   │       ├── hp-laserjet_p1006.ppd.gz
+│   │       ├── hp-laserjet_p1007.ppd.gz
+│   │       ├── hp-laserjet_p1008.ppd.gz
+│   │       ├── hp-laserjet_p1009.ppd.gz
+│   │       ├── hp-laserjet_p1505n-zxs.ppd.gz
+│   │       ├── hp-laserjet_p1505.ppd.gz
+│   │       ├── hp-laserjet_p2014n-zxs.ppd.gz
+│   │       ├── hp-laserjet_p2014-zxs.ppd.gz
+│   │       ├── hp-laserjet_p2015dn_series.ppd.gz
+│   │       ├── hp-laserjet_p2015d_series.ppd.gz
+│   │       ├── hp-laserjet_p2015n_series.ppd.gz
+│   │       ├── hp-laserjet_p2015_series-pcl3.ppd.gz
+│   │       ├── hp-laserjet_p2015x_series.ppd.gz
+│   │       ├── hp-laserjet_p2035n-pcl3.ppd.gz
+│   │       ├── hp-laserjet_p2035-pcl3.ppd.gz
+│   │       ├── hp-laserjet_p2055dn-pcl3.ppd.gz
+│   │       ├── hp-laserjet_p2055d-pcl3.ppd.gz
+│   │       ├── hp-laserjet_p2055-pcl3.ppd.gz
+│   │       ├── hp-laserjet_p2055x-pcl3.ppd.gz
+│   │       ├── hp-laserjet_p3004-pcl3.ppd.gz
+│   │       ├── hp-laserjet_p3005-pcl3.ppd.gz
+│   │       ├── hp-laserjet_p3010_series-pcl3.ppd.gz
+│   │       ├── hp-laserjet_p4014dn.ppd.gz
+│   │       ├── hp-laserjet_p4014n.ppd.gz
+│   │       ├── hp-laserjet_p4014.ppd.gz
+│   │       ├── hp-laserjet_p4015dn.ppd.gz
+│   │       ├── hp-laserjet_p4015n.ppd.gz
+│   │       ├── hp-laserjet_p4015.ppd.gz
+│   │       ├── hp-laserjet_p4015tn.ppd.gz
+│   │       ├── hp-laserjet_p4015x.ppd.gz
+│   │       ├── hp-laserjet_p4515n.ppd.gz
+│   │       ├── hp-laserjet_p4515.ppd.gz
+│   │       ├── hp-laserjet_p4515tn.ppd.gz
+│   │       ├── hp-laserjet_p4515xm.ppd.gz
+│   │       ├── hp-laserjet_p4515x.ppd.gz
+│   │       ├── hp-laserjet_professional_m1132_mfp.ppd.gz
+│   │       ├── hp-laserjet_professional_m1136_mfp.ppd.gz
+│   │       ├── hp-laserjet_professional_m1137_mfp.ppd.gz
+│   │       ├── hp-laserjet_professional_m1138_mfp.ppd.gz
+│   │       ├── hp-laserjet_professional_m1139_mfp.ppd.gz
+│   │       ├── hp-laserjet_professional_m1212nf_mfp.ppd.gz
+│   │       ├── hp-laserjet_professional_m1213nf_mfp.ppd.gz
+│   │       ├── hp-laserjet_professional_m1214nfh_mfp.ppd.gz
+│   │       ├── hp-laserjet_professional_m1216nfh_mfp.ppd.gz
+│   │       ├── hp-laserjet_professional_m1217nfw_mfp.ppd.gz
+│   │       ├── hp-laserjet_professional_m1218nfg_mfp.ppd.gz
+│   │       ├── hp-laserjet_professional_m1218nfs_mfp.ppd.gz
+│   │       ├── hp-laserjet_professional_m1219nfg_mfp.ppd.gz
+│   │       ├── hp-laserjet_professional_m1219nf_mfp.ppd.gz
+│   │       ├── hp-laserjet_professional_m1219nfs_mfp.ppd.gz
+│   │       ├── hp-laserjet_professional_p1102.ppd.gz
+│   │       ├── hp-laserjet_professional_p_1102w.ppd.gz
+│   │       ├── hp-laserjet_professional_p1106.ppd.gz
+│   │       ├── hp-laserjet_professional_p1106w.ppd.gz
+│   │       ├── hp-laserjet_professional_p1107.ppd.gz
+│   │       ├── hp-laserjet_professional_p1107w.ppd.gz
+│   │       ├── hp-laserjet_professional_p1108.ppd.gz
+│   │       ├── hp-laserjet_professional_p1108w.ppd.gz
+│   │       ├── hp-laserjet_professional_p1109.ppd.gz
+│   │       ├── hp-laserjet_professional_p1109w.ppd.gz
+│   │       ├── hp-laserjet_professional_p1566.ppd.gz
+│   │       ├── hp-laserjet_professional_p1567.ppd.gz
+│   │       ├── hp-laserjet_professional_p1568.ppd.gz
+│   │       ├── hp-laserjet_professional_p1569.ppd.gz
+│   │       ├── hp-laserjet_professional_p1606dn.ppd.gz
+│   │       ├── hp-laserjet_professional_p1607dn.ppd.gz
+│   │       ├── hp-laserjet_professional_p1608dn.ppd.gz
+│   │       ├── hp-laserjet_professional_p1609dn.ppd.gz
+│   │       ├── hp-laserjet_pro_mfp_m125a.ppd.gz
+│   │       ├── hp-laserjet_pro_mfp_m125nr.ppd.gz
+│   │       ├── hp-laserjet_pro_mfp_m125nw.ppd.gz
+│   │       ├── hp-laserjet_pro_mfp_m125rnw.ppd.gz
+│   │       ├── hp-laserjet_pro_mfp_m125r.ppd.gz
+│   │       ├── hp-laserjet_pro_mfp_m125s.ppd.gz
+│   │       ├── hp-laserjet_pro_mfp_m126a.ppd.gz
+│   │       ├── hp-laserjet_pro_mfp_m126nw.ppd.gz
+│   │       ├── hp-laserjet_pro_mfp_m127fn.ppd.gz
+│   │       ├── hp-laserjet_pro_mfp_m127fp.ppd.gz
+│   │       ├── hp-laserjet_pro_mfp_m127fs.ppd.gz
+│   │       ├── hp-laserjet_pro_mfp_m127fw.ppd.gz
+│   │       ├── hp-laserjet_pro_mfp_m128fn.ppd.gz
+│   │       ├── hp-laserjet_pro_mfp_m128fp.ppd.gz
+│   │       ├── hp-laserjet_pro_mfp_m128fw.ppd.gz
+│   │       ├── hp-laserjet_pro_mfp_m25a.ppd.gz
+│   │       ├── hp-laserjet_pro_mfp_m25nw.ppd.gz
+│   │       ├── hp-laserjet_pro_mfp_m26a.ppd.gz
+│   │       ├── hp-laserjet_pro_mfp_m26nw.ppd.gz
+│   │       ├── hp-laserjet_pro_mfp_m27cnw.ppd.gz
+│   │       ├── hp-laserjet_pro_mfp_m27c.ppd.gz
+│   │       ├── hp-laserjet_pro_p1100_plus_series.ppd.gz
+│   │       ├── hp-laserjet_tank_1020.ppd.gz
+│   │       ├── hp-laserjet_tank_150x.ppd.gz
+│   │       ├── hp-laserjet_tank_250x.ppd.gz
+│   │       ├── hp-laserjet_tank_mfp_1005.ppd.gz
+│   │       ├── hp-laserjet_tank_mfp_160x.ppd.gz
+│   │       ├── hp-laserjet_tank_mfp_260x.ppd.gz
+│   │       ├── hp-laser_ns_1020.ppd.gz
+│   │       ├── hp-laser_ns_mfp_1005.ppd.gz
+│   │       ├── hp-mopier_240-pcl3.ppd.gz
+│   │       ├── hp-mopier_320-pcl3.ppd.gz
+│   │       ├── hp-neverstop_laser_100x.ppd.gz
+│   │       ├── hp-neverstop_laser_mfp_120x.ppd.gz
+│   │       ├── hp-officejet_100_mobile_l411.ppd.gz
+│   │       ├── hp-officejet_150_mobile_l511.ppd.gz
+│   │       ├── hp-officejet_200_mobile_series.ppd.gz
+│   │       ├── hp-officejet_250_mobile_series.ppd.gz
+│   │       ├── hp-officejet_2620_series.ppd.gz
+│   │       ├── hp-officejet_3830_series.ppd.gz
+│   │       ├── hp-officejet_4000_k210.ppd.gz
+│   │       ├── hp-officejet_4100_series.ppd.gz
+│   │       ├── hp-officejet_4105.ppd.gz
+│   │       ├── hp-officejet_4115_series.ppd.gz
+│   │       ├── hp-officejet_4200_series.ppd.gz
+│   │       ├── hp-officejet_4255.ppd.gz
+│   │       ├── hp-officejet_4300_series.ppd.gz
+│   │       ├── hp-officejet_4400_k410.ppd.gz
+│   │       ├── hp-officejet_4500_g510a-f.ppd.gz
+│   │       ├── hp-officejet_4500_g510g-m.ppd.gz
+│   │       ├── hp-officejet_4500_g510n-z.ppd.gz
+│   │       ├── hp-officejet_4500_k710.ppd.gz
+│   │       ├── hp-officejet_4610_series.ppd.gz
+│   │       ├── hp-officejet_4620_series.ppd.gz
+│   │       ├── hp-officejet_4630_series.ppd.gz
+│   │       ├── hp-officejet_4650_series.ppd.gz
+│   │       ├── hp-officejet_5100_series.ppd.gz
+│   │       ├── hp-officejet_5200_series.ppd.gz
+│   │       ├── hp-officejet_5500_series.ppd.gz
+│   │       ├── hp-officejet_5600_series.ppd.gz
+│   │       ├── hp-officejet_5740_series.ppd.gz
+│   │       ├── hp-officejet_6000_e609a.ppd.gz
+│   │       ├── hp-officejet_6000_e609n.ppd.gz
+│   │       ├── hp-officejet_6100.ppd.gz
+│   │       ├── hp-officejet_6100_series.ppd.gz
+│   │       ├── hp-officejet_6150_series.ppd.gz
+│   │       ├── hp-officejet_6200_series.ppd.gz
+│   │       ├── hp-officejet_6300_series.ppd.gz
+│   │       ├── hp-officejet_6500_e709a.ppd.gz
+│   │       ├── hp-officejet_6500_e709n.ppd.gz
+│   │       ├── hp-officejet_6500_e710a-f.ppd.gz
+│   │       ├── hp-officejet_6500_e710n-z.ppd.gz
+│   │       ├── hp-officejet_6600.ppd.gz
+│   │       ├── hp-officejet_6700.ppd.gz
+│   │       ├── hp-officejet_6800.ppd.gz
+│   │       ├── hp-officejet_6950.ppd.gz
+│   │       ├── hp-officejet_6960.ppd.gz
+│   │       ├── hp-officejet_7000_e809a_series.ppd.gz
+│   │       ├── hp-officejet_7100_series.ppd.gz
+│   │       ├── hp-officejet_7110_series.ppd.gz
+│   │       ├── hp-officejet_7200_series.ppd.gz
+│   │       ├── hp-officejet_7300_series.ppd.gz
+│   │       ├── hp-officejet_7400_series.ppd.gz
+│   │       ├── hp-officejet_7500_e910.ppd.gz
+│   │       ├── hp-officejet_7510_series.ppd.gz
+│   │       ├── hp-officejet_7610_series.ppd.gz
+│   │       ├── hp-officejet_8010_series.ppd.gz
+│   │       ├── hp-officejet_8020_series.ppd.gz
+│   │       ├── hp-officejet_8040_series.ppd.gz
+│   │       ├── hp-officejet_8120e_series.ppd.gz
+│   │       ├── hp-officejet_8120_series.ppd.gz
+│   │       ├── hp-officejet_8130e_series.ppd.gz
+│   │       ├── hp-officejet_8130_series.ppd.gz
+│   │       ├── hp-officejet_8700.ppd.gz
+│   │       ├── hp-officejet_9010_series.ppd.gz
+│   │       ├── hp-officejet_9100_series-pcl3.ppd.gz
+│   │       ├── hp-officejet_d_series.ppd.gz
+│   │       ├── hp-officejet_g55.ppd.gz
+│   │       ├── hp-officejet_g55xi.ppd.gz
+│   │       ├── hp-officejet_g85.ppd.gz
+│   │       ├── hp-officejet_g85xi.ppd.gz
+│   │       ├── hp-officejet_g95.ppd.gz
+│   │       ├── hp-officejet_h470.ppd.gz
+│   │       ├── hp-officejet_j3500_series.ppd.gz
+│   │       ├── hp-officejet_j3600_series.ppd.gz
+│   │       ├── hp-officejet_j4500_series.ppd.gz
+│   │       ├── hp-officejet_j4660_series.ppd.gz
+│   │       ├── hp-officejet_j4680_series.ppd.gz
+│   │       ├── hp-officejet_j5500_series.ppd.gz
+│   │       ├── hp-officejet_j5700_series.ppd.gz
+│   │       ├── hp-officejet_j6400_series.ppd.gz
+│   │       ├── hp-officejet_k60.ppd.gz
+│   │       ├── hp-officejet_k60xi.ppd.gz
+│   │       ├── hp-officejet_k7100.ppd.gz
+│   │       ├── hp-officejet_k80.ppd.gz
+│   │       ├── hp-officejet_k80xi.ppd.gz
+│   │       ├── hp-officejet_lx.ppd.gz
+│   │       ├── hp-officejet.ppd.gz
+│   │       ├── hp-officejet_pro_1150c.ppd.gz
+│   │       ├── hp-officejet_pro_1170c_series.ppd.gz
+│   │       ├── hp-officejet_pro_3610.ppd.gz
+│   │       ├── hp-officejet_pro_3620.ppd.gz
+│   │       ├── hp-officejet_pro_6230.ppd.gz
+│   │       ├── hp-officejet_pro_6830.ppd.gz
+│   │       ├── hp-officejet_pro_6960.ppd.gz
+│   │       ├── hp-officejet_pro_6970.ppd.gz
+│   │       ├── hp-officejet_pro_7720_series.ppd.gz
+│   │       ├── hp-officejet_pro_7730_series.ppd.gz
+│   │       ├── hp-officejet_pro_7740_series.ppd.gz
+│   │       ├── hp-officejet_pro_8000_a809.ppd.gz
+│   │       ├── hp-officejet_pro_8020_series.ppd.gz
+│   │       ├── hp-officejet_pro_8030_series.ppd.gz
+│   │       ├── hp-officejet_pro_8100.ppd.gz
+│   │       ├── hp-officejet_pro_8120e_series.ppd.gz
+│   │       ├── hp-officejet_pro_8120_series.ppd.gz
+│   │       ├── hp-officejet_pro_8130e_series.ppd.gz
+│   │       ├── hp-officejet_pro_8130_series.ppd.gz
+│   │       ├── hp-officejet_pro_8500_a909a.ppd.gz
+│   │       ├── hp-officejet_pro_8500_a909g.ppd.gz
+│   │       ├── hp-officejet_pro_8500_a909n.ppd.gz
+│   │       ├── hp-officejet_pro_8500_a910.ppd.gz
+│   │       ├── hp-officejet_pro_8600.ppd.gz
+│   │       ├── hp-officejet_pro_8610.ppd.gz
+│   │       ├── hp-officejet_pro_8620.ppd.gz
+│   │       ├── hp-officejet_pro_8630.ppd.gz
+│   │       ├── hp-officejet_pro_8640.ppd.gz
+│   │       ├── hp-officejet_pro_8660.ppd.gz
+│   │       ├── hp-officejet_pro_8710.ppd.gz
+│   │       ├── hp-officejet_pro_8720.ppd.gz
+│   │       ├── hp-officejet_pro_9010_series.ppd.gz
+│   │       ├── hp-officejet_pro_9020_series.ppd.gz
+│   │       ├── hp-officejet_pro_9110b_series.ppd.gz
+│   │       ├── hp-officejet_pro_9120b_series.ppd.gz
+│   │       ├── hp-officejet_pro_9130b_series.ppd.gz
+│   │       ├── hp-officejet_pro_9720e_series.ppd.gz
+│   │       ├── hp-officejet_pro_9720_series.ppd.gz
+│   │       ├── hp-officejet_pro_9730e_series.ppd.gz
+│   │       ├── hp-officejet_pro_9730_series.ppd.gz
+│   │       ├── hp-officejet_pro_k5300.ppd.gz
+│   │       ├── hp-officejet_pro_k5400.ppd.gz
+│   │       ├── hp-officejet_pro_k550.ppd.gz
+│   │       ├── hp-officejet_pro_k850.ppd.gz
+│   │       ├── hp-officejet_pro_k8600.ppd.gz
+│   │       ├── hp-officejet_pro_l7300.ppd.gz
+│   │       ├── hp-officejet_pro_l7400.ppd.gz
+│   │       ├── hp-officejet_pro_l7500.ppd.gz
+│   │       ├── hp-officejet_pro_l7600.ppd.gz
+│   │       ├── hp-officejet_pro_l7700.ppd.gz
+│   │       ├── hp-officejet_r40.ppd.gz
+│   │       ├── hp-officejet_r40xi.ppd.gz
+│   │       ├── hp-officejet_r45.ppd.gz
+│   │       ├── hp-officejet_r60.ppd.gz
+│   │       ├── hp-officejet_r65.ppd.gz
+│   │       ├── hp-officejet_r80.ppd.gz
+│   │       ├── hp-officejet_r80xi.ppd.gz
+│   │       ├── hp-officejet_series_300.ppd.gz
+│   │       ├── hp-officejet_series_310.ppd.gz
+│   │       ├── hp-officejet_series_320.ppd.gz
+│   │       ├── hp-officejet_series_330.ppd.gz
+│   │       ├── hp-officejet_series_350.ppd.gz
+│   │       ├── hp-officejet_series_520.ppd.gz
+│   │       ├── hp-officejet_series_570.ppd.gz
+│   │       ├── hp-officejet_series_580.ppd.gz
+│   │       ├── hp-officejet_series_590.ppd.gz
+│   │       ├── hp-officejet_series_600.ppd.gz
+│   │       ├── hp-officejet_series_610.ppd.gz
+│   │       ├── hp-officejet_series_630.ppd.gz
+│   │       ├── hp-officejet_series_700.ppd.gz
+│   │       ├── hp-officejet_series_710.ppd.gz
+│   │       ├── hp-officejet_series_720.ppd.gz
+│   │       ├── hp-officejet_series_725.ppd.gz
+│   │       ├── hp-officejet_t_series.ppd.gz
+│   │       ├── hp-officejet_v30.ppd.gz
+│   │       ├── hp-officejet_v40.ppd.gz
+│   │       ├── hp-officejet_v40xi.ppd.gz
+│   │       ├── hp-officejet_v45.ppd.gz
+│   │       ├── hp-photosmart_100.ppd.gz
+│   │       ├── hp-photosmart_1115.ppd.gz
+│   │       ├── hp-photosmart_1215.ppd.gz
+│   │       ├── hp-photosmart_1218.ppd.gz
+│   │       ├── hp-photosmart_130.ppd.gz
+│   │       ├── hp-photosmart_1315.ppd.gz
+│   │       ├── hp-photosmart_140_series.ppd.gz
+│   │       ├── hp-photosmart_230.ppd.gz
+│   │       ├── hp-photosmart_240_series.ppd.gz
+│   │       ├── hp-photosmart_2570_series.ppd.gz
+│   │       ├── hp-photosmart_2600_series.ppd.gz
+│   │       ├── hp-photosmart_2700_series.ppd.gz
+│   │       ├── hp-photosmart_3100_series.ppd.gz
+│   │       ├── hp-photosmart_3200_series.ppd.gz
+│   │       ├── hp-photosmart_320_series.ppd.gz
+│   │       ├── hp-photosmart_3300_series.ppd.gz
+│   │       ├── hp-photosmart_330_series.ppd.gz
+│   │       ├── hp-photosmart_370_series.ppd.gz
+│   │       ├── hp-photosmart_380_series.ppd.gz
+│   │       ├── hp-photosmart_420_series.ppd.gz
+│   │       ├── hp-photosmart_470_series.ppd.gz
+│   │       ├── hp-photosmart_5510d_series.ppd.gz
+│   │       ├── hp-photosmart_5510_series.ppd.gz
+│   │       ├── hp-photosmart_5520_series.ppd.gz
+│   │       ├── hp-photosmart_6510_series.ppd.gz
+│   │       ├── hp-photosmart_6520_series.ppd.gz
+│   │       ├── hp-photosmart_7200_series.ppd.gz
+│   │       ├── hp-photosmart_7345.ppd.gz
+│   │       ├── hp-photosmart_7400_series.ppd.gz
+│   │       ├── hp-photosmart_7510_series.ppd.gz
+│   │       ├── hp-photosmart_7520_series.ppd.gz
+│   │       ├── hp-photosmart_7550.ppd.gz
+│   │       ├── hp-photosmart_7600_series.ppd.gz
+│   │       ├── hp-photosmart_7700_series.ppd.gz
+│   │       ├── hp-photosmart_7800_series.ppd.gz
+│   │       ├── hp-photosmart_7900_series.ppd.gz
+│   │       ├── hp-photosmart_8000_series.ppd.gz
+│   │       ├── hp-photosmart_8100_series.ppd.gz
+│   │       ├── hp-photosmart_8200_series.ppd.gz
+│   │       ├── hp-photosmart_8400_series.ppd.gz
+│   │       ├── hp-photosmart_8700_series.ppd.gz
+│   │       ├── hp-photosmart_a310_series.ppd.gz
+│   │       ├── hp-photosmart_a320_series.ppd.gz
+│   │       ├── hp-photosmart_a430_series.ppd.gz
+│   │       ├── hp-photosmart_a440_series.ppd.gz
+│   │       ├── hp-photosmart_a510_series.ppd.gz
+│   │       ├── hp-photosmart_a520_series.ppd.gz
+│   │       ├── hp-photosmart_a530_series.ppd.gz
+│   │       ├── hp-photosmart_a610_series.ppd.gz
+│   │       ├── hp-photosmart_a620_series.ppd.gz
+│   │       ├── hp-photosmart_a630_series.ppd.gz
+│   │       ├── hp-photosmart_a640_series.ppd.gz
+│   │       ├── hp-photosmart_a710_series.ppd.gz
+│   │       ├── hp-photosmart_a820_series.ppd.gz
+│   │       ├── hp-photosmart_b010_series.ppd.gz
+│   │       ├── hp-photosmart_b109a_series.ppd.gz
+│   │       ├── hp-photosmart_b110_series.ppd.gz
+│   │       ├── hp-photosmart_b8500_series.ppd.gz
+│   │       ├── hp-photosmart_c309a_series.ppd.gz
+│   │       ├── hp-photosmart_c3100_series.ppd.gz
+│   │       ├── hp-photosmart_c4100_series.ppd.gz
+│   │       ├── hp-photosmart_c4200_series.ppd.gz
+│   │       ├── hp-photosmart_c4340_series.ppd.gz
+│   │       ├── hp-photosmart_c4380_series.ppd.gz
+│   │       ├── hp-photosmart_c4400_series.ppd.gz
+│   │       ├── hp-photosmart_c4500_series.ppd.gz
+│   │       ├── hp-photosmart_c4600_series.ppd.gz
+│   │       ├── hp-photosmart_c4700_series.ppd.gz
+│   │       ├── hp-photosmart_c5100_series.ppd.gz
+│   │       ├── hp-photosmart_c5200_series.ppd.gz
+│   │       ├── hp-photosmart_c5300_series.ppd.gz
+│   │       ├── hp-photosmart_c5500_series.ppd.gz
+│   │       ├── hp-photosmart_c6100_series.ppd.gz
+│   │       ├── hp-photosmart_c6200_series.ppd.gz
+│   │       ├── hp-photosmart_c6300_series.ppd.gz
+│   │       ├── hp-photosmart_c7100_series.ppd.gz
+│   │       ├── hp-photosmart_c7200_series.ppd.gz
+│   │       ├── hp-photosmart_c8100_series.ppd.gz
+│   │       ├── hp-photosmart_d110_series.ppd.gz
+│   │       ├── hp-photosmart_d5060_series.ppd.gz
+│   │       ├── hp-photosmart_d5100_series.ppd.gz
+│   │       ├── hp-photosmart_d5300_series.ppd.gz
+│   │       ├── hp-photosmart_d5400_series.ppd.gz
+│   │       ├── hp-photosmart_d6100_series.ppd.gz
+│   │       ├── hp-photosmart_d7100_series.ppd.gz
+│   │       ├── hp-photosmart_d7200_series.ppd.gz
+│   │       ├── hp-photosmart_d7300_series.ppd.gz
+│   │       ├── hp-photosmart_d7400_series.ppd.gz
+│   │       ├── hp-photosmart_d7500_series.ppd.gz
+│   │       ├── hp-photosmart_estn_c510_series.ppd.gz
+│   │       ├── hp-photosmart_ink_adv_k510.ppd.gz
+│   │       ├── hp-photosmart_p1000.ppd.gz
+│   │       ├── hp-photosmart_p1100.ppd.gz
+│   │       ├── hp-photosmart_plus_b209a-m.ppd.gz
+│   │       ├── hp-photosmart_plus_b210_series.ppd.gz
+│   │       ├── hp-photosmart_prem_c310_series.ppd.gz
+│   │       ├── hp-photosmart_prem_c410_series.ppd.gz
+│   │       ├── hp-photosmart_premium_c309g-m.ppd.gz
+│   │       ├── hp-photosmart_prem-web_c309n-s.ppd.gz
+│   │       ├── hp-photosmart_pro_b8300_series.ppd.gz
+│   │       ├── hp-photosmart_pro_b8800_series.ppd.gz
+│   │       ├── hp-photosmart_wireless_b109n-z.ppd.gz
+│   │       ├── hp-printer_scanner_copier_300.ppd.gz
+│   │       ├── hp-psc_1000_series.ppd.gz
+│   │       ├── hp-psc_1100_series.ppd.gz
+│   │       ├── hp-psc_1200_series.ppd.gz
+│   │       ├── hp-psc_1300_series.ppd.gz
+│   │       ├── hp-psc_1310_series.ppd.gz
+│   │       ├── hp-psc_1358_series.ppd.gz
+│   │       ├── hp-psc_1400_series.ppd.gz
+│   │       ├── hp-psc_1500_series.ppd.gz
+│   │       ├── hp-psc_1600_series.ppd.gz
+│   │       ├── hp-psc_2100_series.ppd.gz
+│   │       ├── hp-psc_2150_series.ppd.gz
+│   │       ├── hp-psc_2170_series.ppd.gz
+│   │       ├── hp-psc_2200_series.ppd.gz
+│   │       ├── hp-psc_2210_series.ppd.gz
+│   │       ├── hp-psc_2300_series.ppd.gz
+│   │       ├── hp-psc_2350_series.ppd.gz
+│   │       ├── hp-psc_2400_series.ppd.gz
+│   │       ├── hp-psc_2500_series.ppd.gz
+│   │       ├── hp-psc_500.ppd.gz
+│   │       ├── hp-psc_720.ppd.gz
+│   │       ├── hp-psc_750.ppd.gz
+│   │       ├── hp-psc_750xi.ppd.gz
+│   │       ├── hp-psc_760.ppd.gz
+│   │       ├── hp-psc_780.ppd.gz
+│   │       ├── hp-psc_780xi.ppd.gz
+│   │       ├── hp-psc_900_series.ppd.gz
+│   │       ├── hp-psc_920.ppd.gz
+│   │       ├── hp-psc_950.ppd.gz
+│   │       ├── hp-psc_950vr.ppd.gz
+│   │       ├── hp-psc_950xi.ppd.gz
+│   │       ├── hp-smart_tank_210-220_series.ppd.gz
+│   │       ├── hp-smart_tank_350_series.ppd.gz
+│   │       ├── hp-smart_tank_500_series.ppd.gz
+│   │       ├── hp-smart_tank_5100_series.ppd.gz
+│   │       ├── hp-smart_tank_510_series.ppd.gz
+│   │       ├── hp-smart_tank_520_540_series.ppd.gz
+│   │       ├── hp-smart_tank_530_series.ppd.gz
+│   │       ├── hp-smart_tank_580-590_series.ppd.gz
+│   │       ├── hp-smart_tank_6000_series.ppd.gz
+│   │       ├── hp-smart_tank_610_series.ppd.gz
+│   │       ├── hp-smart_tank_660-670_series.ppd.gz
+│   │       ├── hp-smart_tank_7000_series.ppd.gz
+│   │       ├── hp-smart_tank_710-720_series.ppd.gz
+│   │       ├── hp-smart_tank_7300_series.ppd.gz
+│   │       ├── hp-smart_tank_750_series.ppd.gz
+│   │       ├── hp-smart_tank_7600_series.ppd.gz
+│   │       ├── hp-smart_tank_790_series.ppd.gz
+│   │       ├── hp-smart_tank_plus_550_series.ppd.gz
+│   │       ├── hp-smart_tank_plus_570_series.ppd.gz
+│   │       ├── hp-smart_tank_plus_650_series.ppd.gz
+│   │       ├── hp-smart_tank_wireless_450_series.ppd.gz
+│   │       └── hp-tango.ppd.gz
+│   ├── pqdiag.py
+│   ├── print.py
+│   ├── printsettings.py
+│   ├── prnt
+│   │   ├── backend
+│   │   │   └── hp.c
+│   │   ├── colorcal.py
+│   │   ├── cupsext
+│   │   │   ├── cupsext.c
+│   │   │   └── cupsext.h
+│   │   ├── cups.py
+│   │   ├── drv
+│   │   │   ├── hpcups.drv.in
+│   │   │   ├── hpcups.drv.in.template
+│   │   │   ├── hpijs.drv.in
+│   │   │   └── hpijs.drv.in.template
+│   │   ├── filters
+│   │   │   └── hpps
+│   │   ├── hpcups
+│   │   │   ├── apPrintModes.h
+│   │   │   ├── BreakTables.cpp
+│   │   │   ├── ColorMaps.h
+│   │   │   ├── ColorMatcher.cpp
+│   │   │   ├── ColorMatcher.h
+│   │   │   ├── common_defines.h
+│   │   │   ├── CommonDefinitions.h
+│   │   │   ├── Compressor.cpp
+│   │   │   ├── Compressor.h
+│   │   │   ├── dbuscomm.cpp
+│   │   │   ├── dbuscomm.h
+│   │   │   ├── dj3320ColorMaps.cpp
+│   │   │   ├── dj3320PrintModes.h
+│   │   │   ├── dj3600ColorMaps.cpp
+│   │   │   ├── dj400ColorMaps.cpp
+│   │   │   ├── dj400PrintModes.h
+│   │   │   ├── dj4100ColorMaps.cpp
+│   │   │   ├── dj4100PrintModes.h
+│   │   │   ├── dj540PrintModes.h
+│   │   │   ├── dj600ColorMaps.cpp
+│   │   │   ├── dj600PrintModes.h
+│   │   │   ├── dj630PrintModes.h
+│   │   │   ├── dj690PrintModes.h
+│   │   │   ├── dj850PrintModes.h
+│   │   │   ├── dj890PrintModes.h
+│   │   │   ├── dj895PrintModes.h
+│   │   │   ├── dj8x5PrintModes.h
+│   │   │   ├── dj8xxColorMaps.cpp
+│   │   │   ├── dj970ColorMaps.cpp
+│   │   │   ├── dj970PrintModes.h
+│   │   │   ├── Encapsulator.cpp
+│   │   │   ├── EncapsulatorFactory.cpp
+│   │   │   ├── EncapsulatorFactory.h
+│   │   │   ├── Encapsulator.h
+│   │   │   ├── ErnieFilter.cpp
+│   │   │   ├── ErnieFilter.h
+│   │   │   ├── flate_colorspace.h
+│   │   │   ├── genJPEGStrips.cpp
+│   │   │   ├── genPCLm.cpp
+│   │   │   ├── genPCLm.h
+│   │   │   ├── Halftoner.cpp
+│   │   │   ├── Halftoner.h
+│   │   │   ├── Hbpl1.cpp
+│   │   │   ├── Hbpl1.h
+│   │   │   ├── Hbpl1_Wrapper.cpp
+│   │   │   ├── Hbpl1_Wrapper.h
+│   │   │   ├── HPCupsFilter.cpp
+│   │   │   ├── HPCupsFilter.h
+│   │   │   ├── hpjbig_wrapper.h
+│   │   │   ├── ImageProcessor.h
+│   │   │   ├── jccolor.c
+│   │   │   ├── jdatadbf.c
+│   │   │   ├── jinclude.h
+│   │   │   ├── Job.cpp
+│   │   │   ├── Job.h
+│   │   │   ├── libImageProcessor-x86_32.so
+│   │   │   ├── libImageProcessor-x86_64.so
+│   │   │   ├── LidilCompress.cpp
+│   │   │   ├── LidilCompress.h
+│   │   │   ├── Lidil.cpp
+│   │   │   ├── Lidil.h
+│   │   │   ├── LidilPrintModes.h
+│   │   │   ├── LJColor.cpp
+│   │   │   ├── LJColor.h
+│   │   │   ├── LJFastRaster.cpp
+│   │   │   ├── LJFastRaster.h
+│   │   │   ├── LJJetReady.cpp
+│   │   │   ├── LJJetReady.h
+│   │   │   ├── LJMono.cpp
+│   │   │   ├── LJMono.h
+│   │   │   ├── LJZjStream.cpp
+│   │   │   ├── LJZjStream.h
+│   │   │   ├── LJZxStream.cpp
+│   │   │   ├── LJZxStream.h
+│   │   │   ├── Mode10.cpp
+│   │   │   ├── Mode10.h
+│   │   │   ├── Mode2.cpp
+│   │   │   ├── Mode2.h
+│   │   │   ├── Mode3.cpp
+│   │   │   ├── Mode3.h
+│   │   │   ├── Mode9.cpp
+│   │   │   ├── Mode9.h
+│   │   │   ├── ModeDeltaPlus.cpp
+│   │   │   ├── ModeDeltaPlus.h
+│   │   │   ├── ModeJbig.cpp
+│   │   │   ├── ModeJbig.h
+│   │   │   ├── ModeJpeg.cpp
+│   │   │   ├── ModeJpeg.h
+│   │   │   ├── Pcl3.cpp
+│   │   │   ├── Pcl3Gui2.cpp
+│   │   │   ├── Pcl3Gui2.h
+│   │   │   ├── Pcl3Gui.cpp
+│   │   │   ├── Pcl3Gui.h
+│   │   │   ├── Pcl3GuiPrintModes.h
+│   │   │   ├── Pcl3.h
+│   │   │   ├── Pcl3PrintModes.h
+│   │   │   ├── PCLmGenerator.h
+│   │   │   ├── Pipeline.cpp
+│   │   │   ├── Pipeline.h
+│   │   │   ├── PrinterCommands.h
+│   │   │   ├── Processor.cpp
+│   │   │   ├── Processor.h
+│   │   │   ├── QuickConnect.cpp
+│   │   │   ├── QuickConnect.h
+│   │   │   ├── RasterSender.cpp
+│   │   │   ├── RasterSender.h
+│   │   │   ├── resources.h
+│   │   │   ├── RunLenEncoding.cpp
+│   │   │   ├── RunLenEncoding.h
+│   │   │   ├── Scaler.cpp
+│   │   │   ├── Scaler.h
+│   │   │   ├── SystemServices.cpp
+│   │   │   ├── SystemServices.h
+│   │   │   ├── Utils.cpp
+│   │   │   └── Utils.h
+│   │   ├── hpijs
+│   │   │   ├── apollo21xx.cpp
+│   │   │   ├── apollo21xx.h
+│   │   │   ├── apollo2560.cpp
+│   │   │   ├── apollo2560.h
+│   │   │   ├── apollo2xxx.cpp
+│   │   │   ├── apollo2xxx.h
+│   │   │   ├── breaks_open.cpp
+│   │   │   ├── bug.h
+│   │   │   ├── capture.cpp
+│   │   │   ├── colormatch.cpp
+│   │   │   ├── colormatcher_open.cpp
+│   │   │   ├── colormatcher_open.h
+│   │   │   ├── colormatch.h
+│   │   │   ├── compression.cpp
+│   │   │   ├── compression.h
+│   │   │   ├── config.h
+│   │   │   ├── context2.cpp
+│   │   │   ├── context.h
+│   │   │   ├── create_so.cpp
+│   │   │   ├── creator.cpp
+│   │   │   ├── debug.h
+│   │   │   ├── dj3320_cmap.cpp
+│   │   │   ├── dj3320.cpp
+│   │   │   ├── dj3320.h
+│   │   │   ├── dj350.cpp
+│   │   │   ├── dj350.h
+│   │   │   ├── dj3600_cmap.cpp
+│   │   │   ├── dj3600.cpp
+│   │   │   ├── dj3600.h
+│   │   │   ├── dj400.h
+│   │   │   ├── dj4100_cmap.cpp
+│   │   │   ├── dj4100.h
+│   │   │   ├── dj540.cpp
+│   │   │   ├── dj540.h
+│   │   │   ├── dj55xx.h
+│   │   │   ├── dj600.cpp
+│   │   │   ├── dj600.h
+│   │   │   ├── dj600_maps.cpp
+│   │   │   ├── dj630.cpp
+│   │   │   ├── dj630.h
+│   │   │   ├── dj660.cpp
+│   │   │   ├── dj660.h
+│   │   │   ├── dj660_maps.cpp
+│   │   │   ├── dj690.cpp
+│   │   │   ├── dj690.h
+│   │   │   ├── dj690_maps.cpp
+│   │   │   ├── dj6xx.cpp
+│   │   │   ├── dj6xx.h
+│   │   │   ├── dj850.cpp
+│   │   │   ├── dj850.h
+│   │   │   ├── dj850_maps.cpp
+│   │   │   ├── dj890.cpp
+│   │   │   ├── dj890.h
+│   │   │   ├── dj895_maps2.cpp
+│   │   │   ├── dj895_maps.cpp
+│   │   │   ├── dj8x5.cpp
+│   │   │   ├── dj8x5.h
+│   │   │   ├── dj8xx.cpp
+│   │   │   ├── dj8xx.h
+│   │   │   ├── dj970_maps2.cpp
+│   │   │   ├── dj970_maps3.cpp
+│   │   │   ├── dj970_maps.cpp
+│   │   │   ├── dj9xx.cpp
+│   │   │   ├── dj9xx.h
+│   │   │   ├── dj9xxvip.cpp
+│   │   │   ├── dj9xxvip.h
+│   │   │   ├── djd2600.h
+│   │   │   ├── djgenericvip.cpp
+│   │   │   ├── djgenericvip.h
+│   │   │   ├── ernieplatform.h
+│   │   │   ├── filterhpa.cpp
+│   │   │   ├── filterhpa.h
+│   │   │   ├── font.h
+│   │   │   ├── foomatic-rip-hplip
+│   │   │   ├── gdevijs-krgb-1.5-gs8.61.patch
+│   │   │   ├── globals.cpp
+│   │   │   ├── global_types.h
+│   │   │   ├── halftoner.cpp
+│   │   │   ├── halftoner.h
+│   │   │   ├── halftoner_open.cpp
+│   │   │   ├── halftoner_open.h
+│   │   │   ├── header2.cpp
+│   │   │   ├── header.h
+│   │   │   ├── hpcupsfax.cpp
+│   │   │   ├── hpcupsfax.h
+│   │   │   ├── hpijs.cpp
+│   │   │   ├── hpijsfax.cpp
+│   │   │   ├── hpijsfax.h
+│   │   │   ├── hpijs.h
+│   │   │   ├── hpiom.c
+│   │   │   ├── hpiom.h
+│   │   │   ├── hpjbig_wrapper.h
+│   │   │   ├── hpprintapi.h
+│   │   │   ├── hpprint_c_api.h
+│   │   │   ├── hptypes.h
+│   │   │   ├── htfed.h
+│   │   │   ├── htmtxhi.cpp
+│   │   │   ├── ijs.c
+│   │   │   ├── ijs_client.h
+│   │   │   ├── ijs.h
+│   │   │   ├── ijs_server.c
+│   │   │   ├── ijs_server.h
+│   │   │   ├── internal.h
+│   │   │   ├── interp_data_50.h
+│   │   │   ├── interp.h
+│   │   │   ├── io_defs.h
+│   │   │   ├── jccolor.c
+│   │   │   ├── jdatadbf.c
+│   │   │   ├── jinclude.h
+│   │   │   ├── job.cpp
+│   │   │   ├── job.h
+│   │   │   ├── jpegint.h
+│   │   │   ├── ldlencap.h
+│   │   │   ├── ljcolor.cpp
+│   │   │   ├── ljcolor.h
+│   │   │   ├── ljfastraster.cpp
+│   │   │   ├── ljfastraster.h
+│   │   │   ├── ljjetready.cpp
+│   │   │   ├── ljjetready.h
+│   │   │   ├── ljm1005.cpp
+│   │   │   ├── ljm1005.h
+│   │   │   ├── ljmono.cpp
+│   │   │   ├── ljmono.h
+│   │   │   ├── ljp1xxx.h
+│   │   │   ├── ljzjscolor.cpp
+│   │   │   ├── ljzjscolor.h
+│   │   │   ├── ljzjs.cpp
+│   │   │   ├── ljzjs.h
+│   │   │   ├── ljzjsmono.cpp
+│   │   │   ├── ljzjsmono.h
+│   │   │   ├── models.cpp
+│   │   │   ├── models.h
+│   │   │   ├── modes.h
+│   │   │   ├── ojprokx50.h
+│   │   │   ├── phobos_cmaps.cpp
+│   │   │   ├── pmselect.cpp
+│   │   │   ├── pmselect.h
+│   │   │   ├── printer.cpp
+│   │   │   ├── printerfactory.cpp
+│   │   │   ├── printerfactory.h
+│   │   │   ├── printer.h
+│   │   │   ├── PrinterProperties.cpp
+│   │   │   ├── PrinterProperties.h
+│   │   │   ├── printerproxy.cpp
+│   │   │   ├── printerproxy.h
+│   │   │   ├── pscript.h
+│   │   │   ├── psp100.cpp
+│   │   │   ├── psp100.h
+│   │   │   ├── psp470.h
+│   │   │   ├── quickconnect.cpp
+│   │   │   ├── quickconnect.h
+│   │   │   ├── README_LIBJPG
+│   │   │   ├── registry.cpp
+│   │   │   ├── resources.h
+│   │   │   ├── scaler.cpp
+│   │   │   ├── scaler_open.cpp
+│   │   │   ├── scaler_open.h
+│   │   │   ├── scaler_prop.h
+│   │   │   ├── script.cpp
+│   │   │   ├── script.h
+│   │   │   ├── services.cpp
+│   │   │   ├── services.h
+│   │   │   ├── systemservices.cpp
+│   │   │   ├── systemservices.h
+│   │   │   ├── translator.cpp
+│   │   │   ├── unistd_.h
+│   │   │   ├── versioncode.cpp
+│   │   │   └── version.cpp
+│   │   ├── hpps
+│   │   │   ├── hppsfilter.c
+│   │   │   ├── hppsfilter.h
+│   │   │   ├── patchlev.h
+│   │   │   ├── psbooklet.c
+│   │   │   ├── pserror.c
+│   │   │   ├── pserror.h
+│   │   │   ├── psspec.c
+│   │   │   ├── psspec.h
+│   │   │   ├── psutil.c
+│   │   │   └── psutil.h
+│   │   ├── __init__.py
+│   │   ├── ipp-usb
+│   │   │   └── HPLIP.conf
+│   │   ├── ldl.py
+│   │   ├── pcl.py
+│   │   ├── plugins
+│   │   │   ├── hbpl1-arm32.so
+│   │   │   ├── hbpl1-arm64.so
+│   │   │   ├── hbpl1-x86_32.so
+│   │   │   ├── hbpl1-x86_64.so
+│   │   │   ├── lj-arm32.so
+│   │   │   ├── lj-arm64.so
+│   │   │   ├── lj-x86_32.so
+│   │   │   └── lj-x86_64.so
+│   │   └── ps
+│   │       ├── hp-business_inkjet_2250-ps.ppd.gz
+│   │       ├── hp-business_inkjet_2280-ps.ppd.gz
+│   │       ├── hp-business_inkjet_2300-ps.ppd.gz
+│   │       ├── hp-business_inkjet_2600-ps.ppd.gz
+│   │       ├── hp-business_inkjet_2800-ps.ppd.gz
+│   │       ├── hp-business_inkjet_3000-ps.ppd.gz
+│   │       ├── hp-cm8050_mfp_with_edgeline-ps.ppd.gz
+│   │       ├── hp-cm8060_mfp_with_edgeline-ps.ppd.gz
+│   │       ├── hp-color_designjet_xl_3600-ps.ppd.gz
+│   │       ├── hp-color_laserjet_2500-ps.ppd.gz
+│   │       ├── hp-color_laserjet_2500_series-ps.ppd.gz
+│   │       ├── hp-color_laserjet_2550_series-ps.ppd.gz
+│   │       ├── hp-color_laserjet_2605dn-ps.ppd.gz
+│   │       ├── hp-color_laserjet_2605dtn-ps.ppd.gz
+│   │       ├── hp-color_laserjet_2605-ps.ppd.gz
+│   │       ├── hp-color_laserjet_2700n-ps.ppd.gz
+│   │       ├── hp-color_laserjet_2700-ps.ppd.gz
+│   │       ├── hp-color_laserjet_2800-ps.ppd.gz
+│   │       ├── hp-color_laserjet_2820-ps.ppd.gz
+│   │       ├── hp-color_laserjet_2830-ps.ppd.gz
+│   │       ├── hp-color_laserjet_2840-ps.ppd.gz
+│   │       ├── hp-color_laserjet_3000-ps.ppd.gz
+│   │       ├── hp-color_laserjet_3700n-ps.ppd.gz
+│   │       ├── hp-color_laserjet_3700-ps.ppd.gz
+│   │       ├── hp-color_laserjet_3800-ps.ppd.gz
+│   │       ├── hp-color_laserjet_4500-ps.ppd.gz
+│   │       ├── hp-color_laserjet_4550-ps.ppd.gz
+│   │       ├── hp-color_laserjet_4600-ps.ppd.gz
+│   │       ├── hp-color_laserjet_4600_series-ps.ppd.gz
+│   │       ├── hp-color_laserjet_4610-ps.ppd.gz
+│   │       ├── hp-color_laserjet_4650-ps.ppd.gz
+│   │       ├── hp-color_laserjet_4700-ps.ppd.gz
+│   │       ├── hp-color_laserjet_4730mfp-ps.ppd.gz
+│   │       ├── hp-color_laserjet_5500-ps.ppd.gz
+│   │       ├── hp-color_laserjet_5550-ps.ppd.gz
+│   │       ├── hp-color_laserjet_5700-ps.ppd.gz
+│   │       ├── hp-color_laserjet_5m-ps.ppd.gz
+│   │       ├── hp-color_laserjet_6700-ps.ppd.gz
+│   │       ├── hp-color_laserjet_6701-ps.ppd.gz
+│   │       ├── hp-color_laserjet_8500-ps.ppd.gz
+│   │       ├── hp-color_laserjet_8550-ps.ppd.gz
+│   │       ├── hp-color_laserjet_9500_mfp-ps.ppd.gz
+│   │       ├── hp-color_laserjet_9500-ps.ppd.gz
+│   │       ├── hp-color_laserjet_cm1015-ps.ppd.gz
+│   │       ├── hp-color_laserjet_cm1017-ps.ppd.gz
+│   │       ├── hp-color_laserjet_cm1312_mfp-ps.ppd.gz
+│   │       ├── hp-color_laserjet_cm1312nfi_mfp-ps.ppd.gz
+│   │       ├── hp-color_laserjet_cm2320fxi_mfp-ps.ppd.gz
+│   │       ├── hp-color_laserjet_cm2320_mfp-ps.ppd.gz
+│   │       ├── hp-color_laserjet_cm2320nf_mfp-ps.ppd.gz
+│   │       ├── hp-color_laserjet_cm2320n_mfp-ps.ppd.gz
+│   │       ├── hp-color_laserjet_cm3530_mfp-ps.ppd.gz
+│   │       ├── hp-color_laserjet_cm4540_mfp-ps.ppd.gz
+│   │       ├── hp-color_laserjet_cm4730_mfp-ps.ppd.gz
+│   │       ├── hp-color_laserjet_cm6030_mfp-ps.ppd.gz
+│   │       ├── hp-color_laserjet_cm6040_mfp-ps.ppd.gz
+│   │       ├── hp-color_laserjet_cm6049_mfp-ps.ppd.gz
+│   │       ├── hp-color_laserjet_cp1514n-ps.ppd.gz
+│   │       ├── hp-color_laserjet_cp1515n-ps.ppd.gz
+│   │       ├── hp-color_laserjet_cp1518ni-ps.ppd.gz
+│   │       ├── hp-color_laserjet_cp2025dn-ps.ppd.gz
+│   │       ├── hp-color_laserjet_cp2025n-ps.ppd.gz
+│   │       ├── hp-color_laserjet_cp2025-ps.ppd.gz
+│   │       ├── hp-color_laserjet_cp2025x-ps.ppd.gz
+│   │       ├── hp-color_laserjet_cp3505-ps.ppd.gz
+│   │       ├── hp-color_laserjet_cp3525-ps.ppd.gz
+│   │       ├── hp-color_laserjet_cp4005-ps.ppd.gz
+│   │       ├── hp-color_laserjet_cp4020_series-ps.ppd.gz
+│   │       ├── hp-color_laserjet_cp4520_series-ps.ppd.gz
+│   │       ├── hp-color_laserjet_cp5225dn-ps.ppd.gz
+│   │       ├── hp-color_laserjet_cp5225n-ps.ppd.gz
+│   │       ├── hp-color_laserjet_cp5225-ps.ppd.gz
+│   │       ├── hp-color_laserjet_cp5520_series-ps.ppd.gz
+│   │       ├── hp-color_laserjet_cp6015-ps.ppd.gz
+│   │       ├── hp-color_laserjet_e45028-ps.ppd.gz
+│   │       ├── hp-color_laserjet_e55040-ps.ppd.gz
+│   │       ├── hp-color_laserjet_e65050_e65060-ps.ppd.gz
+│   │       ├── hp-color_laserjet_E65150_E65160-ps.ppd.gz
+│   │       ├── hp-color_laserjet_e67550_e67560-ps.ppd.gz
+│   │       ├── hp-color_laserjet_e67650_e67660-ps.ppd.gz
+│   │       ├── hp-color_laserjet_e75245-ps.ppd.gz
+│   │       ├── hp-color_laserjet_e85055-ps.ppd.gz
+│   │       ├── hp-color_laserjet_flow_5800-ps.ppd.gz
+│   │       ├── hp-color_laserjet_flow_6800-ps.ppd.gz
+│   │       ├── hp-color_laserjet_flow_e57540-ps.ppd.gz
+│   │       ├── hp-color_laserjet_flow_e78625-ps.ppd.gz
+│   │       ├── hp-color_laserjet_flow_e78630-ps.ppd.gz
+│   │       ├── hp-color_laserjet_flow_e78635-ps.ppd.gz
+│   │       ├── hp-color_laserjet_flow_e87740-ps.ppd.gz
+│   │       ├── hp-color_laserjet_flow_e87750-ps.ppd.gz
+│   │       ├── hp-color_laserjet_flow_e87760-ps.ppd.gz
+│   │       ├── hp-color_laserjet_flow_e87770-ps.ppd.gz
+│   │       ├── hp-color_laserjet_flow_mfp_e786-ps.ppd.gz
+│   │       ├── hp-color_laserjet_flow_mfp_e877-ps.ppd.gz
+│   │       ├── hp-color_laserjet_flowmfp_m578-ps.ppd.gz
+│   │       ├── hp-color_laserjet_flow_mfp_m680-ps.ppd.gz
+│   │       ├── hp-color_laserjet_flowmfp_m776-ps.ppd.gz
+│   │       ├── hp-color_laserjet_flow_mfp_m880-ps.ppd.gz
+│   │       ├── hp-color_laserjet_flow_X57945-ps.ppd.gz
+│   │       ├── hp-color_laserjet_flow_X579-ps.ppd.gz
+│   │       ├── hp-color_laserjet_flow_X580-ps.ppd.gz
+│   │       ├── hp-color_laserjet_m153-m154-ps.ppd.gz
+│   │       ├── hp-color_laserjet_m155-m156-ps.ppd.gz
+│   │       ├── hp-color_laserjet_m182-m185-ps.ppd.gz
+│   │       ├── hp-color_laserjet_m253-m254-ps.ppd.gz
+│   │       ├── hp-color_laserjet_m255-m256-ps.ppd.gz
+│   │       ├── hp-color_laserjet_m282-m285-ps.ppd.gz
+│   │       ├── hp-color_laserjet_m452d-ps.ppd.gz
+│   │       ├── hp-color_laserjet_m452-ps.ppd.gz
+│   │       ├── hp-color_laserjet_m455-ps.ppd.gz
+│   │       ├── hp-color_laserjet_m552-ps.ppd.gz
+│   │       ├── hp-color_laserjet_m553-ps.ppd.gz
+│   │       ├── hp-color_laserjet_m554-ps.ppd.gz
+│   │       ├── hp-color_laserjet_m555-ps.ppd.gz
+│   │       ├── hp-color_laserjet_m651-ps.ppd.gz
+│   │       ├── hp-color_laserjet_m652_m653-ps.ppd.gz
+│   │       ├── hp-color_laserjet_m750-ps.ppd.gz
+│   │       ├── hp-color_laserjet_m751-ps.ppd.gz
+│   │       ├── hp-color_laserjet_m855-ps.ppd.gz
+│   │       ├── hp-color_laserjet_m856-ps.ppd.gz
+│   │       ├── hp-color_laserjet_mfp_5800-ps.ppd.gz
+│   │       ├── hp-color_laserjet_mfp_6800-ps.ppd.gz
+│   │       ├── hp-color_laserjet_mfp_6801-ps.ppd.gz
+│   │       ├── hp-color_laserjet_mfp_e47528-ps.ppd.gz
+│   │       ├── hp-color_laserjet_mfp_e57540-ps.ppd.gz
+│   │       ├── hp-color_laserjet_mfp_e77422-ps.ppd.gz
+│   │       ├── hp-color_laserjet_mfp_e77428-ps.ppd.gz
+│   │       ├── hp-color_laserjet_mfp_e78223-ps.ppd.gz
+│   │       ├── hp-color_laserjet_mfp_e78228-ps.ppd.gz
+│   │       ├── hp-color_laserjet_mfp_e78323-25-30-ps.ppd.gz
+│   │       ├── hp-color_laserjet_mfp_e78523-ps.ppd.gz
+│   │       ├── hp-color_laserjet_mfp_e78528-ps.ppd.gz
+│   │       ├── hp-color_laserjet_mfp_e785-ps.ppd.gz
+│   │       ├── hp-color_laserjet_mfp_e78625-ps.ppd.gz
+│   │       ├── hp-color_laserjet_mfp_e78630-ps.ppd.gz
+│   │       ├── hp-color_laserjet_mfp_e78635-ps.ppd.gz
+│   │       ├── hp-color_laserjet_mfp_e786-ps.ppd.gz
+│   │       ├── hp-color_laserjet_mfp_e87740-ps.ppd.gz
+│   │       ├── hp-color_laserjet_mfp_e87750-ps.ppd.gz
+│   │       ├── hp-color_laserjet_mfp_e87760-ps.ppd.gz
+│   │       ├── hp-color_laserjet_mfp_e87770-ps.ppd.gz
+│   │       ├── hp-color_laserjet_mfp_e877-ps.ppd.gz
+│   │       ├── hp-color_laserjet_mfp_m178-m181-ps.ppd.gz
+│   │       ├── hp-color_laserjet_mfp_m274-ps.ppd.gz
+│   │       ├── hp-color_laserjet_mfp_m278-m281-ps.ppd.gz
+│   │       ├── hp-color_laserjet_mfp_m480-ps.ppd.gz
+│   │       ├── hp-color_laserjet_mfp_m577-ps.ppd.gz
+│   │       ├── hp-color_laserjet_mfp_m578-ps.ppd.gz
+│   │       ├── hp-color_laserjet_mfp_m680-ps.ppd.gz
+│   │       ├── hp-color_laserjet_mfp_m681_m682-ps.ppd.gz
+│   │       ├── hp-color_laserjet_mfp_m776-ps.ppd.gz
+│   │       ├── hp-color_laserjet_mfp_x67755-ps.ppd.gz
+│   │       ├── hp-color_laserjet_mfp_x67765-ps.ppd.gz
+│   │       ├── hp-color_laserjet_mfp_x677-ps.ppd.gz
+│   │       ├── hp-color_laserjet_pro_4201-ps.ppd.gz
+│   │       ├── hp-color_laserjet_pro_m252-ps.ppd.gz
+│   │       ├── hp-color_laserjet_pro_m453-4-ps.ppd.gz
+│   │       ├── hp-color_laserjet_pro_m478f-9f-ps.ppd.gz
+│   │       ├── hp-color_laserjet_pro_m479-ps.ppd.gz
+│   │       ├── hp-color_laserjet_pro_mfp_4301-ps.ppd.gz
+│   │       ├── hp-color_laserjet_pro_mfp_m277-ps.ppd.gz
+│   │       ├── hp-color_laserjet_pro_mfp_m377-ps.ppd.gz
+│   │       ├── hp-color_laserjet_pro_mfp_m476-ps.ppd.gz
+│   │       ├── hp-color_laserjet_pro_mfp_m477d-ps.ppd.gz
+│   │       ├── hp-color_laserjet_pro_mfp_m477-ps.ppd.gz
+│   │       ├── hp-color_laserjet-ps.ppd.gz
+│   │       ├── hp-color_laserjet_X557-ps.ppd.gz
+│   │       ├── hp-color_laserjet_x65455-ps.ppd.gz
+│   │       ├── hp-color_laserjet_x65465-ps.ppd.gz
+│   │       ├── hp-color_laserjet_x654-ps.ppd.gz
+│   │       ├── hp-designjet_4000ps.ppd.gz
+│   │       ├── hp-designjet_4020ps-ps.ppd.gz
+│   │       ├── hp-designjet_4500mfp.ppd.gz
+│   │       ├── hp-designjet_4500ps.ppd.gz
+│   │       ├── hp-designjet_4520mfp-ps.ppd.gz
+│   │       ├── hp-designjet_4520ps-ps.ppd.gz
+│   │       ├── hp-designjet_d5800-ps.ppd.gz
+│   │       ├── hp-designjet_t1100ps_24in-ps.ppd.gz
+│   │       ├── hp-designjet_t1100ps_44in-ps.ppd.gz
+│   │       ├── hp-designjet_t1120ps_24in-ps.ppd.gz
+│   │       ├── hp-designjet_t1120ps_44in-ps.ppd.gz
+│   │       ├── hp-designjet_t1200_postscript-ps.ppd.gz
+│   │       ├── hp-designjet_t1300_postscript-ps.ppd.gz
+│   │       ├── hp-designjet_t1500-postscript.ppd.gz
+│   │       ├── hp-designjet_t1530-postscript.ppd.gz
+│   │       ├── hp-designjet_t1600dr-ps.ppd.gz
+│   │       ├── hp-designjet_t1600_printer-ps.ppd.gz
+│   │       ├── hp-designjet_t1700dr_postscript-ps.ppd.gz
+│   │       ├── hp-designjet_t1700_postscript-ps.ppd.gz
+│   │       ├── hp-designjet_t1708dr_postscript-ps.ppd.gz
+│   │       ├── hp-designjet_t1708_postscript-ps.ppd.gz
+│   │       ├── hp-designjet_t2300_postscript-ps.ppd.gz
+│   │       ├── hp-designjet_t2500-postscript.ppd.gz
+│   │       ├── hp-designjet_t2530-postscript.ppd.gz
+│   │       ├── hp-designjet_t2600dr-ps.ppd.gz
+│   │       ├── hp-designjet_t2600-ps.ppd.gz
+│   │       ├── hp-designjet_t3500-ps.ppd.gz
+│   │       ├── hp-designjet_t7100ps_monochrome-ps.ppd.gz
+│   │       ├── hp-designjet_t7100ps-ps.ppd.gz
+│   │       ├── hp-designjet_t7200-ps.ppd.gz
+│   │       ├── hp-designjet_t770_postscript-ps.ppd.gz
+│   │       ├── hp-designjet_t770ps_24in-ps.ppd.gz
+│   │       ├── hp-designjet_t790ps_24in-ps.ppd.gz
+│   │       ├── hp-designjet_t790ps_44in-ps.ppd.gz
+│   │       ├── hp-designjet_t795ps_44in-ps.ppd.gz
+│   │       ├── hp-designjet_t920-postscript.ppd.gz
+│   │       ├── hp-designjet_t930-postscript.ppd.gz
+│   │       ├── hp-designjet_z2600_postscript-ps.ppd.gz
+│   │       ├── hp-designjet_z5200_postscript-ps.ppd.gz
+│   │       ├── hp-designjet_z5400-postscript.ppd.gz
+│   │       ├── hp-designjet_z5600_postscript-ps.ppd.gz
+│   │       ├── hp-designjet_z6100ps_42in_photo-ps.ppd.gz
+│   │       ├── hp-designjet_z6100ps_60in_photo-ps.ppd.gz
+│   │       ├── hp-designjet_z6200_42in_photo-ps.ppd.gz
+│   │       ├── hp-designjet_z6200_60in_photo-ps.ppd.gz
+│   │       ├── hp-designjet_Z6_24in-ps.ppd.gz
+│   │       ├── hp-designjet_Z6_44in-ps.ppd.gz
+│   │       ├── hp-designjet_z6600-postscript.ppd.gz
+│   │       ├── hp-designjet_z6610ps_60in-ps.ppd.gz
+│   │       ├── hp-designjet_z6800_photo-postscript.ppd.gz
+│   │       ├── hp-designjet_z6810ps_42in-ps.ppd.gz
+│   │       ├── hp-designjet_z6810ps_60in-ps.ppd.gz
+│   │       ├── hp-designjet_Z6dr_44in-ps.ppd.gz
+│   │       ├── hp-designjet_z6_pro_64in_ps-ps.ppd.gz
+│   │       ├── hp-designjet_Z9_24in-ps.ppd.gz
+│   │       ├── hp-designjet_Z9_44in-ps.ppd.gz
+│   │       ├── hp-designjet_Z9dr_44in-ps.ppd.gz
+│   │       ├── hp-designjet_z9_pro_64in_ps-ps.ppd.gz
+│   │       ├── hp-laserjet_100_color_mfp_m175-ps.ppd.gz
+│   │       ├── hp-laserjet_1200n-ps.ppd.gz
+│   │       ├── hp-laserjet_1200-ps.ppd.gz
+│   │       ├── hp-laserjet_1220-ps.ppd.gz
+│   │       ├── hp-laserjet_1220se-ps.ppd.gz
+│   │       ├── hp-laserjet_1300n-ps.ppd.gz
+│   │       ├── hp-laserjet_1300-ps.ppd.gz
+│   │       ├── hp-laserjet_1300xi-ps.ppd.gz
+│   │       ├── hp-laserjet_1320n-ps.ppd.gz
+│   │       ├── hp-laserjet_1320nw-ps.ppd.gz
+│   │       ├── hp-laserjet_1320-ps.ppd.gz
+│   │       ├── hp-laserjet_1320_series-ps.ppd.gz
+│   │       ├── hp-laserjet_1320tn-ps.ppd.gz
+│   │       ├── hp-laserjet_200_color_m251-ps.ppd.gz
+│   │       ├── hp-laserjet_200_colormfp_m275-ps.ppd.gz
+│   │       ├── hp-laserjet_200_colormfp_m276-ps.ppd.gz
+│   │       ├── hp-laserjet_2100-ps.ppd.gz
+│   │       ├── hp-laserjet_2100_series-ps.ppd.gz
+│   │       ├── hp-laserjet_2200-ps.ppd.gz
+│   │       ├── hp-laserjet_2200_series-ps.ppd.gz
+│   │       ├── hp-laserjet_2300-ps.ppd.gz
+│   │       ├── hp-laserjet_2300_series-ps.ppd.gz
+│   │       ├── hp-laserjet_2410-ps.ppd.gz
+│   │       ├── hp-laserjet_2420-ps.ppd.gz
+│   │       ├── hp-laserjet_2430-ps.ppd.gz
+│   │       ├── hp-laserjet_3015-ps.ppd.gz
+│   │       ├── hp-laserjet_3020-ps.ppd.gz
+│   │       ├── hp-laserjet_3030-ps.ppd.gz
+│   │       ├── hp-laserjet_3050-ps.ppd.gz
+│   │       ├── hp-laserjet_3052-ps.ppd.gz
+│   │       ├── hp-laserjet_3200m-ps.ppd.gz
+│   │       ├── hp-laserjet_3300_3310_3320-ps.ppd.gz
+│   │       ├── hp-laserjet_3380-ps.ppd.gz
+│   │       ├── hp-laserjet_3390-ps.ppd.gz
+│   │       ├── hp-laserjet_4000_series-ps.ppd.gz
+│   │       ├── hp-laserjet_400_m401dne-ps.ppd.gz
+│   │       ├── hp-laserjet_400_m401-ps.ppd.gz
+│   │       ├── hp-laserjet_400_mfp_m425-ps.ppd.gz
+│   │       ├── hp-laserjet_4050_series-ps.ppd.gz
+│   │       ├── hp-laserjet_4100_mfp-ps.ppd.gz
+│   │       ├── hp-laserjet_4100_series-ps.ppd.gz
+│   │       ├── hp-laserjet_4200-ps.ppd.gz
+│   │       ├── hp-laserjet_4240-ps.ppd.gz
+│   │       ├── hp-laserjet_4250-ps.ppd.gz
+│   │       ├── hp-laserjet_4300-ps.ppd.gz
+│   │       ├── hp-laserjet_4345_mfp-ps.ppd.gz
+│   │       ├── hp-laserjet_4350-ps.ppd.gz
+│   │       ├── hp-laserjet_4ml-ps.ppd.gz
+│   │       ├── hp-laserjet_4mp-ps.ppd.gz
+│   │       ├── hp-laserjet_4_plus-ps.ppd.gz
+│   │       ├── hp-laserjet_4-ps.ppd.gz
+│   │       ├── hp-laserjet_4si-ps.ppd.gz
+│   │       ├── hp-laserjet_4v-ps.ppd.gz
+│   │       ├── hp-laserjet_5000-ps.ppd.gz
+│   │       ├── hp-laserjet_5000_series-ps.ppd.gz
+│   │       ├── hp-laserjet_500_color_m551-ps.ppd.gz
+│   │       ├── hp-laserjet_500_color_mfp_m570-ps.ppd.gz
+│   │       ├── hp-laserjet_500_color_mfp_m575-ps.ppd.gz
+│   │       ├── hp-laserjet_500_mfp_m525-ps.ppd.gz
+│   │       ├── hp-laserjet_5100_series-ps.ppd.gz
+│   │       ├── hp-laserjet_5200l-ps.ppd.gz
+│   │       ├── hp-laserjet_5200lx-ps.ppd.gz
+│   │       ├── hp-laserjet_5200-ps.ppd.gz
+│   │       ├── hp-laserjet_5mp-ps.ppd.gz
+│   │       ├── hp-laserjet_5p-ps.ppd.gz
+│   │       ├── hp-laserjet_5si_mopier-ps.ppd.gz
+│   │       ├── hp-laserjet_5si-ps.ppd.gz
+│   │       ├── hp-laserjet_600_m601_m602_m603-ps.ppd.gz
+│   │       ├── hp-laserjet_6mp-ps.ppd.gz
+│   │       ├── hp-laserjet_6p-ps.ppd.gz
+│   │       ├── hp-laserjet_700_color_mfp_m775-ps.ppd.gz
+│   │       ├── hp-laserjet_700_m712-ps.ppd.gz
+│   │       ├── hp-laserjet_8000-ps.ppd.gz
+│   │       ├── hp-laserjet_8000_series-ps.ppd.gz
+│   │       ├── hp-laserjet_8100_mfp-ps.ppd.gz
+│   │       ├── hp-laserjet_8100_series-ps.ppd.gz
+│   │       ├── hp-laserjet_8150_mfp-ps.ppd.gz
+│   │       ├── hp-laserjet_9000_mfp-ps.ppd.gz
+│   │       ├── hp-laserjet_9000_series-ps.ppd.gz
+│   │       ├── hp-laserjet_9040_mfp-ps.ppd.gz
+│   │       ├── hp-laserjet_9040-ps.ppd.gz
+│   │       ├── hp-laserjet_9050_mfp-ps.ppd.gz
+│   │       ├── hp-laserjet_9050-ps.ppd.gz
+│   │       ├── hp-laserjet_9055mfp-ps.ppd.gz
+│   │       ├── hp-laserjet_9065mfp-ps.ppd.gz
+│   │       ├── hp-laserjet_cm1410_series-ps.ppd.gz
+│   │       ├── hp-laserjet_color_flow_mfp_m575-ps.ppd.gz
+│   │       ├── hp-laserjet_cp1520_series-ps.ppd.gz
+│   │       ├── hp-laserjet_e40040-ps.ppd.gz
+│   │       ├── hp-laserjet_e50145-ps.ppd.gz
+│   │       ├── hp-laserjet_e60055-e60075-ps.ppd.gz
+│   │       ├── hp-laserjet_e60155-ps.ppd.gz
+│   │       ├── hp-laserjet_e60165-ps.ppd.gz
+│   │       ├── hp-laserjet_e60175-ps.ppd.gz
+│   │       ├── hp-laserjet_e62555-e62575-ps.ppd.gz
+│   │       ├── hp-laserjet_e62655-e62675-ps.ppd.gz
+│   │       ├── hp-laserjet_flow_e73130-ps.ppd.gz
+│   │       ├── hp-laserjet_flow_e73135-ps.ppd.gz
+│   │       ├── hp-laserjet_flow_e73140-ps.ppd.gz
+│   │       ├── hp-laserjet_flow_e82650-ps.ppd.gz
+│   │       ├── hp-laserjet_flow_e82660-ps.ppd.gz
+│   │       ├── hp-laserjet_flow_e82670-ps.ppd.gz
+│   │       ├── hp-laserjet_flow_mfp_e52645-ps.ppd.gz
+│   │       ├── hp-laserjet_flow_mfp_e731-ps.ppd.gz
+│   │       ├── hp-laserjet_flow_mfp_e826-ps.ppd.gz
+│   │       ├── hp-laserjet_flow_mfp_m525-ps.ppd.gz
+│   │       ├── hp-laserjet_flow_mfp_m528-ps.ppd.gz
+│   │       ├── hp-laserjet_flow_mfp_m630-ps.ppd.gz
+│   │       ├── hp-laserjet_flow_mfp_m830-ps.ppd.gz
+│   │       ├── hp-laserjet_m1522_mfp-ps.ppd.gz
+│   │       ├── hp-laserjet_m1522nf_mfp-ps.ppd.gz
+│   │       ├── hp-laserjet_m1522n_mfp-ps.ppd.gz
+│   │       ├── hp-laserjet_m1530_mfp_series-ps.ppd.gz
+│   │       ├── hp-laserjet_m2727_mfp_series-ps.ppd.gz
+│   │       ├── hp-laserjet_m3027_mfp-ps.ppd.gz
+│   │       ├── hp-laserjet_m3035_mfp-ps.ppd.gz
+│   │       ├── hp-laserjet_m406-ps.ppd.gz
+│   │       ├── hp-laserjet_m407-ps.ppd.gz
+│   │       ├── hp-laserjet_m4345_mfp-ps.ppd.gz
+│   │       ├── hp-laserjet_m4349_mfp-ps.ppd.gz
+│   │       ├── hp-laserjet_m4555_mfp-ps.ppd.gz
+│   │       ├── hp-laserjet_m5025_mfp-ps.ppd.gz
+│   │       ├── hp-laserjet_m5035_mfp-ps.ppd.gz
+│   │       ├── hp-laserjet_m506-ps.ppd.gz
+│   │       ├── hp-laserjet_m507-ps.ppd.gz
+│   │       ├── hp-laserjet_m604_m605_m606-ps.ppd.gz
+│   │       ├── hp-laserjet_m607_m608_m609-ps.ppd.gz
+│   │       ├── hp-laserJet_m610_m611_m612-ps.ppd.gz
+│   │       ├── hp-laserjet_m806-ps.ppd.gz
+│   │       ├── hp-laserjet_m9040_mfp-ps.ppd.gz
+│   │       ├── hp-laserjet_m9050_mfp-ps.ppd.gz
+│   │       ├── hp-laserjet_m9059_mfp-ps.ppd.gz
+│   │       ├── hp-laserjet_mfp_e42540-ps.ppd.gz
+│   │       ├── hp-laserjet_mfp_e72425-ps.ppd.gz
+│   │       ├── hp-laserjet_mfp_e72430-ps.ppd.gz
+│   │       ├── hp-laserjet_mfp_e72525-25-30-35-ps.ppd.gz
+│   │       ├── hp-laserjet_mfp_e73025-ps.ppd.gz
+│   │       ├── hp-laserjet_mfp_e73030-ps.ppd.gz
+│   │       ├── hp-laserjet_mfp_e730-ps.ppd.gz
+│   │       ├── hp-laserjet_mfp_e73130-ps.ppd.gz
+│   │       ├── hp-laserjet_mfp_e73135-ps.ppd.gz
+│   │       ├── hp-laserjet_mfp_e73140-ps.ppd.gz
+│   │       ├── hp-laserjet_mfp_e731-ps.ppd.gz
+│   │       ├── hp-laserjet_mfp_e77822-25-30-ps.ppd.gz
+│   │       ├── hp-laserjet_mfp_e82540-50-60-ps.ppd.gz
+│   │       ├── hp-laserjet_mfp_e82650-ps.ppd.gz
+│   │       ├── hp-laserjet_mfp_e82660-ps.ppd.gz
+│   │       ├── hp-laserjet_mfp_e82670-ps.ppd.gz
+│   │       ├── hp-laserjet_mfp_e826-ps.ppd.gz
+│   │       ├── hp-laserjet_mfp_e87640-50-60-ps.ppd.gz
+│   │       ├── hp-laserjet_mfp_m426_m427-ps.ppd.gz
+│   │       ├── hp-laserjet_mfp_m430-ps.ppd.gz
+│   │       ├── hp-laserjet_mfp_m431-ps.ppd.gz
+│   │       ├── hp-laserjet_mfp_m521-ps.ppd.gz
+│   │       ├── hp-laserjet_mfp_m527-ps.ppd.gz
+│   │       ├── hp-laserjet_mfp_m630-ps.ppd.gz
+│   │       ├── hp-laserjet_mfp_m631_m632_m633-ps.ppd.gz
+│   │       ├── hp-laserjet_mfp_m634_m635_m636-ps.ppd.gz
+│   │       ├── hp-laserjet_mfp_m725-ps.ppd.gz
+│   │       ├── hp-laserjet_p2015_series-ps.ppd.gz
+│   │       ├── hp-laserjet_p2055_series-ps.ppd.gz
+│   │       ├── hp-laserjet_p3004-ps.ppd.gz
+│   │       ├── hp-laserjet_p3005-ps.ppd.gz
+│   │       ├── hp-laserjet_p3010_series-ps.ppd.gz
+│   │       ├── hp-laserjet_p4010_series-ps.ppd.gz
+│   │       ├── hp-laserjet_pro_4001-ps.ppd.gz
+│   │       ├── hp-laserjet_pro_4002-ps.ppd.gz
+│   │       ├── hp-laserjet_pro_4003-ps.ppd.gz
+│   │       ├── hp-laserjet_pro_4004-ps.ppd.gz
+│   │       ├── hp-laserjet_pro_m118-m119-ps.ppd.gz
+│   │       ├── hp-laserjet_pro_m148f-m149f-ps.ppd.gz
+│   │       ├── hp-laserjet_pro_m148-m149-ps.ppd.gz
+│   │       ├── hp-laserjet_pro_m201_m202-ps.ppd.gz
+│   │       ├── hp-laserjet_pro_m203_m206-ps.ppd.gz
+│   │       ├── hp-laserjet_pro_m304-m305-ps.ppd.gz
+│   │       ├── hp-laserjet_pro_m402_m403d-ps.ppd.gz
+│   │       ├── hp-laserjet_pro_m402_m403-ps.ppd.gz
+│   │       ├── hp-laserjet_pro_m404-m405-ps.ppd.gz
+│   │       ├── hp-laserjet_pro_m428f-m429f-ps.ppd.gz
+│   │       ├── hp-laserjet_pro_m428-m429-ps.ppd.gz
+│   │       ├── hp-laserjet_pro_m501dn-ps.ppd.gz
+│   │       ├── hp-laserjet_pro_m501n-ps.ppd.gz
+│   │       ├── hp-laserjet_pro_m701-ps.ppd.gz
+│   │       ├── hp-laserjet_pro_m706-ps.ppd.gz
+│   │       ├── hp-laserjet_pro_mfp_3001-3008-ps.ppd.gz
+│   │       ├── hp-laserjet_pro_mfp_3101-3108-ps.ppd.gz
+│   │       ├── hp-laserjet_pro_mfp_4101-ps.ppd.gz
+│   │       ├── hp-laserjet_pro_mfp_4102-ps.ppd.gz
+│   │       ├── hp-laserjet_pro_mfp_4103-ps.ppd.gz
+│   │       ├── hp-laserjet_pro_mfp_4104-ps.ppd.gz
+│   │       ├── hp-laserjet_pro_mfp_m225_m226-ps.ppd.gz
+│   │       ├── hp-laserjet_pro_mfp_m227-m231-ps.ppd.gz
+│   │       ├── hp-laserjet_pro_mfp_m329-ps.ppd.gz
+│   │       ├── hp-laserjet_pro_mfp_m435-ps.ppd.gz
+│   │       ├── hp-lj_300_400_color_m351_m451-ps.ppd.gz
+│   │       ├── hp-lj_300_400_color_mfp_m375_m475-ps.ppd.gz
+│   │       ├── hp-mopier_240-ps.ppd.gz
+│   │       ├── hp-mopier_320-ps.ppd.gz
+│   │       ├── hp-officejet_color_mfp_x585.ppd.gz
+│   │       ├── hp-officejet_color_x555-ps.ppd.gz
+│   │       ├── hp-officejet_pro_251dw_printer-ps.ppd.gz
+│   │       ├── hp-officejet_pro_276dw_mfp-ps.ppd.gz
+│   │       ├── hp-officejet_pro_451_series-ps.ppd.gz
+│   │       ├── hp-officejet_pro_476_576_series-ps.ppd.gz
+│   │       ├── hp-officejet_pro_551_series-ps.ppd.gz
+│   │       ├── hp-officejet_pro_8000_enterprise_a811a-ps.ppd.gz
+│   │       ├── hp-officejet_pro_8210-ps.ppd.gz
+│   │       ├── hp-officejet_pro_8730-ps.ppd.gz
+│   │       ├── hp-officejet_pro_8732-ps.ppd.gz
+│   │       ├── hp-officejet_pro_8740-ps.ppd.gz
+│   │       ├── hp-pagewide_352_printer-ps.ppd.gz
+│   │       ├── hp-pagewide_377_mfp-ps.ppd.gz
+│   │       ├── hp-pagewide_color_556-ps.ppd.gz
+│   │       ├── hp-pagewide_color_755-ps.ppd.gz
+│   │       ├── hp-pagewide_color_765-ps.ppd.gz
+│   │       ├── hp-pagewide_color_e55650-ps.ppd.gz
+│   │       ├── hp-pagewide_color_e75160-ps.ppd.gz
+│   │       ├── hp-pagewide_color_e77650-e77660-ps.ppd.gz
+│   │       ├── hp-pagewide_color_flow_mfp_586-ps.ppd.gz
+│   │       ├── hp-pagewide_color_mfp_586-ps.ppd.gz
+│   │       ├── hp-pagewide_color_mfp_774-779-ps.ppd.gz
+│   │       ├── hp-pagewide_color_mfp_780-785-ps.ppd.gz
+│   │       ├── hp-pagewide_color_mfp_e58650-ps.ppd.gz
+│   │       ├── hp-pagewide_color_P75250-ps.ppd.gz
+│   │       ├── hp-pagewide_mfp_p57750-ps.ppd.gz
+│   │       ├── hp-pagewide_mfp_p77740-60zs-ps.ppd.gz
+│   │       ├── hp-pagewide_p55250-ps.ppd.gz
+│   │       ├── hp-pagewide_p75050-60-ps.ppd.gz
+│   │       ├── hp-pagewide_P77440_P77940-60-ps.ppd.gz
+│   │       ├── hp-pagewide_pro_452_printer-ps.ppd.gz
+│   │       ├── hp-pagewide_pro_477_mfp-ps.ppd.gz
+│   │       ├── hp-pagewide_pro_552_printer-ps.ppd.gz
+│   │       ├── hp-pagewide_pro_577_mfp-ps.ppd.gz
+│   │       ├── hp-pagewide_pro_750-ps.ppd.gz
+│   │       ├── hp-pagewide_pro_mfp_772-777-ps.ppd.gz
+│   │       ├── hp-pagewide_xl_3900ps_mfp-ps.ppd.gz
+│   │       ├── hp-pagewide_xl_3920_ps_mfp-ps.ppd.gz
+│   │       ├── hp-pagewide_xl_4000ps_mfp-ps.ppd.gz
+│   │       ├── hp-pagewide_xl_4000ps-ps.ppd.gz
+│   │       ├── hp-pagewide_xl_4100ps_mfp-ps.ppd.gz
+│   │       ├── hp-pagewide_xl_4100ps-ps.ppd.gz
+│   │       ├── hp-pagewide_xl_4200_ps_mfp_series-ps.ppd.gz
+│   │       ├── hp-pagewide_xl_4200_ps_series-ps.ppd.gz
+│   │       ├── hp-pagewide_xl_4500ps_mfp-ps.ppd.gz
+│   │       ├── hp-pagewide_xl_4500ps-ps.ppd.gz
+│   │       ├── hp-pagewide_xl_4600ps_mfp-ps.ppd.gz
+│   │       ├── hp-pagewide_xl_4600ps-ps.ppd.gz
+│   │       ├── hp-pagewide_xl_4700_ps_mfp_series-ps.ppd.gz
+│   │       ├── hp-pagewide_xl_4700_ps_series-ps.ppd.gz
+│   │       ├── hp-pagewide_xl_5000ps_blueprinter-ps.ppd.gz
+│   │       ├── hp-pagewide_xl_5000ps_mfp-ps.ppd.gz
+│   │       ├── hp-pagewide_xl_5000ps-ps.ppd.gz
+│   │       ├── hp-pagewide_xl_5100ps_mfp_blueprinter-ps.ppd.gz
+│   │       ├── hp-pagewide_xl_5100ps_mfp-ps.ppd.gz
+│   │       ├── hp-pagewide_xl_5100ps-ps.ppd.gz
+│   │       ├── hp-pagewide_xl_5200_ps_mfp_series-ps.ppd.gz
+│   │       ├── hp-pagewide_xl_5200_ps_series-ps.ppd.gz
+│   │       ├── hp-pagewide_xl_6000ps_mfp-ps.ppd.gz
+│   │       ├── hp-pagewide_xl_6000ps-ps.ppd.gz
+│   │       ├── hp-pagewide_xl_8000ps_blueprinter-ps.ppd.gz
+│   │       ├── hp-pagewide_xl_8000ps-ps.ppd.gz
+│   │       ├── hp-pagewide_xl_8200_ps_series-ps.ppd.gz
+│   │       ├── hp-pagewide_xl_pro_5200_ps_mfp_series-ps.ppd.gz
+│   │       ├── hp-pagewide_xl_pro_8200_ps_mfp_series-ps.ppd.gz
+│   │       ├── hp-postscript-inkjet.ppd.gz
+│   │       ├── hp-postscript-laserjet.ppd.gz
+│   │       └── hp-postscript-laserjet-pro.ppd.gz
+│   ├── probe.py
+│   ├── protocol
+│   │   ├── discovery
+│   │   │   ├── avahiDiscovery.c
+│   │   │   └── avahiDiscovery.h
+│   │   ├── hp_ipp.c
+│   │   ├── hp_ipp.h
+│   │   └── hp_ipp_i.h
+│   ├── query.py
+│   ├── scan
+│   │   ├── __init__.py
+│   │   ├── sane
+│   │   │   ├── bb_ledm.c
+│   │   │   ├── common.c
+│   │   │   ├── common.h
+│   │   │   ├── escl.c
+│   │   │   ├── escl.h
+│   │   │   ├── escli.h
+│   │   │   ├── hpaio.c
+│   │   │   ├── hpaio.desc
+│   │   │   ├── hpaio.h
+│   │   │   ├── http.c
+│   │   │   ├── http.h
+│   │   │   ├── io.c
+│   │   │   ├── io.h
+│   │   │   ├── ledm.c
+│   │   │   ├── ledm.h
+│   │   │   ├── ledmi.h
+│   │   │   ├── marvell.c
+│   │   │   ├── marvell.h
+│   │   │   ├── marvelli.h
+│   │   │   ├── mfpdtf.c
+│   │   │   ├── mfpdtf.h
+│   │   │   ├── orblite.c
+│   │   │   ├── orblite.h
+│   │   │   ├── orblitei.h
+│   │   │   ├── OrbliteScan
+│   │   │   │   ├── LinuxCommon.h
+│   │   │   │   └── MacCommon.h
+│   │   │   ├── pml.c
+│   │   │   ├── pml.h
+│   │   │   ├── sane.h
+│   │   │   ├── sanei_debug.h
+│   │   │   ├── sanei.h
+│   │   │   ├── sanei_init_debug.c
+│   │   │   ├── saneopts.h
+│   │   │   ├── scl.c
+│   │   │   ├── scl.h
+│   │   │   ├── sclpml.c
+│   │   │   ├── sclpml.h
+│   │   │   ├── soap.c
+│   │   │   ├── soap.h
+│   │   │   ├── soapht.c
+│   │   │   ├── soapht.h
+│   │   │   ├── soaphti.h
+│   │   │   ├── soapi.h
+│   │   │   ├── tables.h
+│   │   │   ├── xml.c
+│   │   │   └── xml.h
+│   │   ├── sane.py
+│   │   └── scanext
+│   │       └── scanext.c
+│   ├── scan.py
+│   ├── selinux
+│   │   ├── hplip.fc
+│   │   ├── hplip.if
+│   │   ├── hplip.pp
+│   │   ├── hplip.te
+│   │   ├── mypol.pp
+│   │   └── mypol.te
+│   ├── sendfax.py
+│   ├── setup.py
+│   ├── systray.py
+│   ├── testpage.py
+│   ├── timedate.py
+│   ├── toolbox.py
+│   ├── ui
+│   │   ├── aboutdlg_base.py
+│   │   ├── aboutdlg_base.ui
+│   │   ├── aboutdlg.py
+│   │   ├── align10form_base.py
+│   │   ├── align10form_base.ui
+│   │   ├── align10form.py
+│   │   ├── align13form_base.py
+│   │   ├── align13form_base.ui
+│   │   ├── align13form.py
+│   │   ├── alignform.py
+│   │   ├── aligntype6form1_base.py
+│   │   ├── aligntype6form1_base.ui
+│   │   ├── aligntype6form1.py
+│   │   ├── aligntype6form2_base.py
+│   │   ├── aligntype6form2_base.ui
+│   │   ├── aligntype6form2.py
+│   │   ├── allowabletypesdlg_base.py
+│   │   ├── allowabletypesdlg_base.ui
+│   │   ├── allowabletypesdlg.py
+│   │   ├── choosedevicedlg.py
+│   │   ├── chooseprinterdlg.py
+│   │   ├── cleaningform2_base.py
+│   │   ├── cleaningform2_base.ui
+│   │   ├── cleaningform2.py
+│   │   ├── cleaningform_base.py
+│   │   ├── cleaningform_base.ui
+│   │   ├── cleaningform.py
+│   │   ├── coloradjform_base.py
+│   │   ├── coloradjform_base.ui
+│   │   ├── coloradjform.py
+│   │   ├── colorcal4form_base.py
+│   │   ├── colorcal4form_base.ui
+│   │   ├── colorcal4form.py
+│   │   ├── colorcalform2_base.py
+│   │   ├── colorcalform2_base.ui
+│   │   ├── colorcalform2.py
+│   │   ├── colorcalform_base.py
+│   │   ├── colorcalform_base.ui
+│   │   ├── colorcalform.py
+│   │   ├── coverpageform_base.py
+│   │   ├── coverpageform_base.ui
+│   │   ├── coverpageform.py
+│   │   ├── deviceuricombobox.py
+│   │   ├── devmgr4_base.py
+│   │   ├── devmgr4_base.ui
+│   │   ├── devmgr4.py
+│   │   ├── faxaddrbookeditform_base.py
+│   │   ├── faxaddrbookeditform_base.ui
+│   │   ├── faxaddrbookform_base.py
+│   │   ├── faxaddrbookform_base.ui
+│   │   ├── faxaddrbookform.py
+│   │   ├── faxaddrbookgroupeditform_base.py
+│   │   ├── faxaddrbookgroupeditform_base.ui
+│   │   ├── faxaddrbookgroupsform_base.py
+│   │   ├── faxaddrbookgroupsform_base.ui
+│   │   ├── faxsendjobform.py
+│   │   ├── faxsettingsform_base.py
+│   │   ├── faxsettingsform_base.ui
+│   │   ├── faxsettingsform.py
+│   │   ├── firmwaredialog_base.py
+│   │   ├── firmwaredialog_base.ui
+│   │   ├── firmwaredialog.py
+│   │   ├── imagepropertiesdlg_base.py
+│   │   ├── imagepropertiesdlg_base.ui
+│   │   ├── imagepropertiesdlg.py
+│   │   ├── __init__.py
+│   │   ├── jobstoragemixin.py
+│   │   ├── loadpaperform_base.py
+│   │   ├── loadpaperform_base.ui
+│   │   ├── loadpaperform.py
+│   │   ├── makecopiesform.py
+│   │   ├── nodevicesform_base.py
+│   │   ├── nodevicesform_base.ui
+│   │   ├── nodevicesform.py
+│   │   ├── paperedgealignform_base.py
+│   │   ├── paperedgealignform_base.ui
+│   │   ├── paperedgealignform.py
+│   │   ├── pluginform2_base.py
+│   │   ├── pluginform2_base.ui
+│   │   ├── pluginform2.py
+│   │   ├── pluginlicenseform_base.py
+│   │   ├── pluginlicenseform_base.ui
+│   │   ├── pluginlicenseform.py
+│   │   ├── printerform.py
+│   │   ├── scrollcopy.py
+│   │   ├── scrollfax.py
+│   │   ├── scrollprint.py
+│   │   ├── scrollprintsettings.py
+│   │   ├── scrollunload.py
+│   │   ├── scrollview.py
+│   │   ├── settingsdialog_base.py
+│   │   ├── settingsdialog_base.ui
+│   │   ├── settingsdialog.py
+│   │   ├── setupform_base.py
+│   │   ├── setupform_base.ui
+│   │   ├── setupform.py
+│   │   ├── setupmanualfind_base.py
+│   │   ├── setupmanualfind_base.ui
+│   │   ├── setupmanualfind.py
+│   │   ├── setupsettings_base.py
+│   │   ├── setupsettings_base.ui
+│   │   ├── setupsettings.py
+│   │   ├── systemtray.py
+│   │   ├── ui_utils.py
+│   │   ├── unloadform.py
+│   │   ├── upgradeform_base.py
+│   │   ├── upgradeform.py
+│   │   ├── waitform_base.py
+│   │   ├── waitform_base.ui
+│   │   └── waitform.py
+│   ├── ui4
+│   │   ├── aboutdialog_base.py
+│   │   ├── aboutdialog_base.ui
+│   │   ├── aboutdialog.py
+│   │   ├── aligndialog_base.py
+│   │   ├── aligndialog_base.ui
+│   │   ├── aligndialog.py
+│   │   ├── cleandialog_base.py
+│   │   ├── cleandialog_base.ui
+│   │   ├── cleandialog.py
+│   │   ├── colorcaldialog_base.py
+│   │   ├── colorcaldialog_base.ui
+│   │   ├── colorcaldialog.py
+│   │   ├── devicesetupdialog_base.py
+│   │   ├── devicesetupdialog_base.ui
+│   │   ├── devicesetupdialog.py
+│   │   ├── deviceuricombobox.py
+│   │   ├── devmgr5_base.py
+│   │   ├── devmgr5_base.ui
+│   │   ├── devmgr5.py
+│   │   ├── fabgrouptable.py
+│   │   ├── fabnametable.py
+│   │   ├── fabwindow_base.py
+│   │   ├── fabwindow_base.ui
+│   │   ├── fabwindow.py
+│   │   ├── faxsetupdialog_base.py
+│   │   ├── faxsetupdialog_base.ui
+│   │   ├── faxsetupdialog.py
+│   │   ├── filetable.py
+│   │   ├── firmwaredialog_base.py
+│   │   ├── firmwaredialog_base.ui
+│   │   ├── firmwaredialog.py
+│   │   ├── infodialog_base.py
+│   │   ├── infodialog_base.ui
+│   │   ├── infodialog.py
+│   │   ├── __init__.py
+│   │   ├── linefeedcaldialog_base.py
+│   │   ├── linefeedcaldialog_base.ui
+│   │   ├── linefeedcaldialog.py
+│   │   ├── loadpapergroupbox.py
+│   │   ├── makecopiesdialog_base.py
+│   │   ├── makecopiesdialog_base.ui
+│   │   ├── makecopiesdialog.py
+│   │   ├── mimetypesdialog_base.py
+│   │   ├── mimetypesdialog_base.ui
+│   │   ├── mimetypesdialog.py
+│   │   ├── nodevicesdialog_base.py
+│   │   ├── nodevicesdialog_base.ui
+│   │   ├── nodevicesdialog.py
+│   │   ├── plugindiagnose_base.py
+│   │   ├── plugindiagnose_base.ui
+│   │   ├── plugindiagnose.py
+│   │   ├── plugindialog_base.py
+│   │   ├── plugindialog_base.ui
+│   │   ├── plugindialog.py
+│   │   ├── pluginlicensedialog_base.py
+│   │   ├── pluginlicensedialog_base.ui
+│   │   ├── pluginlicensedialog.py
+│   │   ├── pqdiagdialog_base.py
+│   │   ├── pqdiagdialog_base.ui
+│   │   ├── pqdiagdialog.py
+│   │   ├── printdialog_base.py
+│   │   ├── printdialog_base.ui
+│   │   ├── printdialog.py
+│   │   ├── printernamecombobox.py
+│   │   ├── printsettingsdialog_base.py
+│   │   ├── printsettingsdialog_base.ui
+│   │   ├── printsettingsdialog.py
+│   │   ├── printsettingstoolbox.py
+│   │   ├── printtestpagedialog_base.py
+│   │   ├── printtestpagedialog_base.ui
+│   │   ├── printtestpagedialog.py
+│   │   ├── queuesconf.py
+│   │   ├── readonlyradiobutton.py
+│   │   ├── scandialog.py
+│   │   ├── sendfaxdialog_base.py
+│   │   ├── sendfaxdialog_base.ui
+│   │   ├── sendfaxdialog.py
+│   │   ├── settingsdialog_base.py
+│   │   ├── settingsdialog_base.ui
+│   │   ├── settingsdialog.py
+│   │   ├── setupdialog_base.py
+│   │   ├── setupdialog_base.ui
+│   │   ├── setupdialog.py
+│   │   ├── systemtray.py
+│   │   ├── systrayframe_base.py
+│   │   ├── systrayframe_base.ui
+│   │   ├── systrayframe.py
+│   │   ├── ui_utils.py
+│   │   ├── upgradedialog_base.py
+│   │   ├── upgradedialog_base.ui
+│   │   ├── upgradedialog.py
+│   │   ├── wifisetupdialog_base.py
+│   │   ├── wifisetupdialog_base.ui
+│   │   └── wifisetupdialog.py
+│   ├── ui5
+│   │   ├── aboutdialog_base.py
+│   │   ├── aboutdialog_base.ui
+│   │   ├── aboutdialog.py
+│   │   ├── aligndialog_base.py
+│   │   ├── aligndialog_base.ui
+│   │   ├── aligndialog.py
+│   │   ├── cleandialog_base.py
+│   │   ├── cleandialog_base.ui
+│   │   ├── cleandialog.py
+│   │   ├── colorcaldialog_base.py
+│   │   ├── colorcaldialog_base.ui
+│   │   ├── colorcaldialog.py
+│   │   ├── devicesetupdialog_base.py
+│   │   ├── devicesetupdialog_base.ui
+│   │   ├── devicesetupdialog.py
+│   │   ├── deviceuricombobox.py
+│   │   ├── devmgr5_base.py
+│   │   ├── devmgr5_base.ui
+│   │   ├── devmgr5.py
+│   │   ├── devmgr_ext.py
+│   │   ├── fabgrouptable.py
+│   │   ├── fabnametable.py
+│   │   ├── fabwindow_base.py
+│   │   ├── fabwindow_base.ui
+│   │   ├── fabwindow.py
+│   │   ├── faxsetupdialog_base.py
+│   │   ├── faxsetupdialog_base.ui
+│   │   ├── faxsetupdialog.py
+│   │   ├── filetable.py
+│   │   ├── firmwaredialog_base.py
+│   │   ├── firmwaredialog_base.ui
+│   │   ├── firmwaredialog.py
+│   │   ├── infodialog_base.py
+│   │   ├── infodialog_base.ui
+│   │   ├── infodialog.py
+│   │   ├── __init__.py
+│   │   ├── linefeedcaldialog_base.py
+│   │   ├── linefeedcaldialog_base.ui
+│   │   ├── linefeedcaldialog.py
+│   │   ├── loadpapergroupbox.py
+│   │   ├── makecopiesdialog_base.py
+│   │   ├── makecopiesdialog_base.ui
+│   │   ├── makecopiesdialog.py
+│   │   ├── mimetypesdialog_base.py
+│   │   ├── mimetypesdialog_base.ui
+│   │   ├── mimetypesdialog.py
+│   │   ├── nodevicesdialog_base.py
+│   │   ├── nodevicesdialog_base.ui
+│   │   ├── nodevicesdialog.py
+│   │   ├── plugindiagnose_base.py
+│   │   ├── plugindiagnose_base.ui
+│   │   ├── plugindiagnose.py
+│   │   ├── plugindialog_base.py
+│   │   ├── plugindialog_base.ui
+│   │   ├── plugindialog.py
+│   │   ├── pluginlicensedialog_base.py
+│   │   ├── pluginlicensedialog_base.ui
+│   │   ├── pluginlicensedialog.py
+│   │   ├── pqdiagdialog_base.py
+│   │   ├── pqdiagdialog_base.ui
+│   │   ├── pqdiagdialog.py
+│   │   ├── printdialog_base.py
+│   │   ├── printdialog_base.ui
+│   │   ├── printdialog.py
+│   │   ├── printernamecombobox.py
+│   │   ├── printsettings_base.py
+│   │   ├── printsettingsdialog_base.py
+│   │   ├── printsettingsdialog_base.ui
+│   │   ├── printsettingsdialog.py
+│   │   ├── printsettingstoolbox.py
+│   │   ├── printtestpagedialog_base.py
+│   │   ├── printtestpagedialog_base.ui
+│   │   ├── printtestpagedialog.py
+│   │   ├── queuesconf.py
+│   │   ├── readonlyradiobutton.py
+│   │   ├── scandialog.py
+│   │   ├── sendfaxdialog_base.py
+│   │   ├── sendfaxdialog_base.ui
+│   │   ├── sendfaxdialog.py
+│   │   ├── settingsdialog_base.py
+│   │   ├── settingsdialog_base.ui
+│   │   ├── settingsdialog.py
+│   │   ├── setupdialog_base5.py
+│   │   ├── setupdialog_base.py
+│   │   ├── setupdialog_base.ui
+│   │   ├── setupdialog.py
+│   │   ├── systemtray.py
+│   │   ├── systrayframe_base.py
+│   │   ├── systrayframe_base.ui
+│   │   ├── systrayframe.py
+│   │   ├── ui_utils.py
+│   │   ├── upgradedialog_base.py
+│   │   ├── upgradedialog_base.ui
+│   │   ├── upgradedialog.py
+│   │   ├── wifisetupdialog_base.py
+│   │   ├── wifisetupdialog_base.ui
+│   │   └── wifisetupdialog.py
+│   ├── uiscan.py
+│   ├── uninstall.py
+│   ├── unload.py
+│   ├── unreleased.inc
+│   ├── upgrade.py
+│   └── wificonfig.py
+├── hplip-3.24.4.tar.gz -> /home/felix/packages/hplip/hplip-3.24.4.tar.gz
+├── hplip-3.24.4.tar.gz.asc -> /home/felix/packages/hplip/hplip-3.24.4.tar.gz.asc
+├── hplip-configure-python.patch -> /home/felix/packages/hplip/hplip-configure-python.patch
+├── hplip-hpaio-gcc14.patch -> /home/felix/packages/hplip/hplip-hpaio-gcc14.patch
+├── hplip-locale-format.patch -> /home/felix/packages/hplip/hplip-locale-format.patch
+├── hplip-pserror-gcc14.patch -> /home/felix/packages/hplip/hplip-pserror-gcc14.patch
+├── python3.diff -> /home/felix/packages/hplip/python3.diff
+└── reproducible-gzip.patch -> /home/felix/packages/hplip/reproducible-gzip.patch
+
+67 directories, 2760 files

@@ -1,0 +1,1094 @@
+src
+├── roc-toolkit-0.4.0
+│   ├── 3rdparty
+│   │   ├── _distfiles
+│   │   ├── dr_wav
+│   │   │   └── dr_wav.h
+│   │   ├── hedley
+│   │   │   ├── COPYING
+│   │   │   ├── hedley.h
+│   │   │   ├── NEWS
+│   │   │   └── README.md
+│   │   └── SConscript
+│   ├── debian
+│   │   ├── changelog
+│   │   ├── compat
+│   │   ├── control
+│   │   ├── copyright
+│   │   ├── libroc-dev.install
+│   │   ├── libroc.install
+│   │   ├── roc.install
+│   │   ├── rules
+│   │   ├── source
+│   │   │   └── format
+│   │   └── watch
+│   ├── docs
+│   │   ├── images
+│   │   │   ├── icon80.png
+│   │   │   ├── icon.png
+│   │   │   ├── logo80.png
+│   │   │   └── logo.png
+│   │   ├── man
+│   │   │   ├── roc-copy.1
+│   │   │   ├── roc-recv.1
+│   │   │   ├── roc-send.1
+│   │   │   └── _static
+│   │   │       ├── twemoji.css
+│   │   │       └── twemoji.js
+│   │   ├── SConscript
+│   │   └── sphinx
+│   │       ├── about_project
+│   │       │   ├── authors.rst
+│   │       │   ├── contacts.rst
+│   │       │   ├── features.rst
+│   │       │   ├── licensing.rst
+│   │       │   ├── overview.rst
+│   │       │   ├── publications.rst
+│   │       │   └── sponsors.rst
+│   │       ├── about_project.rst
+│   │       ├── api
+│   │       │   ├── bindings.rst
+│   │       │   ├── examples.rst
+│   │       │   └── reference.rst
+│   │       ├── api.rst
+│   │       ├── building
+│   │       │   ├── dependencies.rst
+│   │       │   ├── developer_cookbook.rst
+│   │       │   ├── scons_options.rst
+│   │       │   └── user_cookbook.rst
+│   │       ├── building.rst
+│   │       ├── conf.py
+│   │       ├── development
+│   │       │   ├── changelog.rst
+│   │       │   ├── coding_guidelines.rst
+│   │       │   ├── continuous_integration.rst
+│   │       │   ├── contribution_guidelines.rst
+│   │       │   ├── history.rst
+│   │       │   ├── maintainer_notes.rst
+│   │       │   ├── roadmap.rst
+│   │       │   └── workflow.rst
+│   │       ├── development.rst
+│   │       ├── _images
+│   │       │   ├── clock_difference.png
+│   │       │   ├── code_structure.drawio
+│   │       │   ├── code_structure.png
+│   │       │   ├── fec_reader_overview.dia
+│   │       │   ├── fec_reader_overview.png
+│   │       │   ├── fec_writer_overview.dia
+│   │       │   ├── fec_writer_overview.png
+│   │       │   ├── fe_resampler.dia
+│   │       │   ├── fe_resampler.png
+│   │       │   ├── pipeline_overview.dia
+│   │       │   ├── pipeline_overview.png
+│   │       │   ├── queues.dia
+│   │       │   ├── queues.png
+│   │       │   ├── receiver_pipeline.drawio
+│   │       │   ├── receiver_pipeline.png
+│   │       │   ├── receiver_session_pipeline.dia
+│   │       │   ├── receiver_session_pipeline.png
+│   │       │   ├── sender_pipeline.drawio
+│   │       │   ├── sender_pipeline.png
+│   │       │   ├── sender_session_pipeline.dia
+│   │       │   └── sender_session_pipeline.png
+│   │       ├── index.rst
+│   │       ├── internals
+│   │       │   ├── audio_backends.rst
+│   │       │   ├── code_structure.rst
+│   │       │   ├── fec.rst
+│   │       │   ├── fe_resampler.rst
+│   │       │   ├── glossary.rst
+│   │       │   ├── network_protocols.rst
+│   │       │   ├── packets_frames.rst
+│   │       │   ├── pipelines.rst
+│   │       │   ├── threads.rst
+│   │       │   └── timestamps.rst
+│   │       ├── internals.rst
+│   │       ├── manuals
+│   │       │   ├── roc_copy.rst
+│   │       │   ├── roc_recv.rst
+│   │       │   └── roc_send.rst
+│   │       ├── manuals.rst
+│   │       ├── portability
+│   │       │   ├── android_environment.rst
+│   │       │   ├── cross_compiling.rst
+│   │       │   ├── supported_platforms.rst
+│   │       │   └── tested_devices.rst
+│   │       ├── portability.rst
+│   │       ├── _static
+│   │       │   └── roc.css
+│   │       ├── tools
+│   │       │   ├── applications.rst
+│   │       │   ├── command_line_tools.rst
+│   │       │   └── sound_server_modules.rst
+│   │       └── tools.rst
+│   ├── LICENSE
+│   ├── README.md
+│   ├── rpm
+│   │   └── roc-toolkit.spec
+│   ├── SConstruct
+│   ├── scripts
+│   │   ├── android_emu
+│   │   │   ├── run.sh
+│   │   │   └── start.sh
+│   │   ├── android_emu.sh
+│   │   ├── ci_checks
+│   │   │   ├── android
+│   │   │   │   ├── linux.sh
+│   │   │   │   └── macos.sh
+│   │   │   ├── docker.sh
+│   │   │   ├── failure.sh
+│   │   │   ├── linux-arm
+│   │   │   │   ├── aarch64-linux-gnu-gcc-7.4.sh
+│   │   │   │   ├── arm-bcm2708hardfp-linux-gnueabi-gcc-4.7.sh
+│   │   │   │   └── arm-linux-gnueabihf-gcc-4.9.sh
+│   │   │   ├── linux-checks
+│   │   │   │   ├── check-formatting.sh
+│   │   │   │   ├── check-version.sh
+│   │   │   │   ├── conditional-build.sh
+│   │   │   │   ├── debug-build.sh
+│   │   │   │   ├── pulseaudio-versions.sh
+│   │   │   │   ├── sanitizers.sh
+│   │   │   │   ├── static-shared.sh
+│   │   │   │   └── valgrind.sh
+│   │   │   ├── linux-mips
+│   │   │   │   ├── openwrt-linux-musl.sh
+│   │   │   │   └── openwrt-linux-uclibc.sh
+│   │   │   ├── linux-x86_64
+│   │   │   │   ├── alpine.sh
+│   │   │   │   ├── archlinux.sh
+│   │   │   │   ├── debian.sh
+│   │   │   │   ├── fedora.sh
+│   │   │   │   ├── opensuse.sh
+│   │   │   │   ├── ubuntu-14.04.sh
+│   │   │   │   ├── ubuntu-16.04.sh
+│   │   │   │   ├── ubuntu-18.04.sh
+│   │   │   │   ├── ubuntu-20.04.sh
+│   │   │   │   ├── ubuntu-22.04.sh
+│   │   │   │   └── ubuntu-24.04.sh
+│   │   │   ├── macos
+│   │   │   │   ├── build-3rdparty.sh
+│   │   │   │   ├── standard-build.sh
+│   │   │   │   └── universal-binaries.sh
+│   │   │   └── trigger.sh
+│   │   ├── help2rst.py
+│   │   ├── make_deb.sh
+│   │   ├── make_doc.sh
+│   │   ├── plot
+│   │   │   ├── plot_csv.py
+│   │   │   └── plot_resampler_test_dump.py
+│   │   ├── pr.py
+│   │   ├── rebase.sh
+│   │   ├── scons_helpers
+│   │   │   ├── build-3rdparty.py
+│   │   │   ├── clangdb.py
+│   │   │   ├── compose-libs.py
+│   │   │   ├── docfilt.py
+│   │   │   ├── format-header.py
+│   │   │   ├── parse-version.py
+│   │   │   └── timeout-run.py
+│   │   ├── scons_plugin
+│   │   │   ├── arguments.py
+│   │   │   ├── commands.py
+│   │   │   ├── config.py
+│   │   │   ├── distfiles.py
+│   │   │   ├── __init__.py
+│   │   │   ├── osutils.py
+│   │   │   ├── parallel.py
+│   │   │   ├── parsers.py
+│   │   │   ├── pretty.py
+│   │   │   ├── sconsutils.py
+│   │   │   ├── systemdeps.py
+│   │   │   ├── tests.py
+│   │   │   ├── thirdparty.py
+│   │   │   └── wrapper.py
+│   │   ├── update_authors.sh
+│   │   └── update_packages.py
+│   └── src
+│       ├── internal_modules
+│       │   ├── Doxyfile
+│       │   ├── main.dox
+│       │   ├── roc_address
+│       │   │   ├── addr_family.cpp
+│       │   │   ├── addr_family.h
+│       │   │   ├── endpoint_uri.cpp
+│       │   │   ├── endpoint_uri_format.cpp
+│       │   │   ├── endpoint_uri.h
+│       │   │   ├── endpoint_uri_parse.rl
+│       │   │   ├── endpoint_uri_to_str.cpp
+│       │   │   ├── endpoint_uri_to_str.h
+│       │   │   ├── interface.cpp
+│       │   │   ├── interface.h
+│       │   │   ├── io_uri.cpp
+│       │   │   ├── io_uri_format.cpp
+│       │   │   ├── io_uri.h
+│       │   │   ├── io_uri_parse.rl
+│       │   │   ├── io_uri_to_str.cpp
+│       │   │   ├── io_uri_to_str.h
+│       │   │   ├── parse_socket_addr.cpp
+│       │   │   ├── parse_socket_addr.h
+│       │   │   ├── pct.cpp
+│       │   │   ├── pct.h
+│       │   │   ├── print_supported.cpp
+│       │   │   ├── print_supported.h
+│       │   │   ├── protocol.cpp
+│       │   │   ├── protocol.h
+│       │   │   ├── protocol_map.cpp
+│       │   │   ├── protocol_map.h
+│       │   │   ├── socket_addr_to_str.cpp
+│       │   │   ├── socket_addr_to_str.h
+│       │   │   └── target_posix
+│       │   │       └── roc_address
+│       │   │           ├── socket_addr.cpp
+│       │   │           └── socket_addr.h
+│       │   ├── roc_audio
+│       │   │   ├── builtin_resampler.cpp
+│       │   │   ├── builtin_resampler.h
+│       │   │   ├── channel_defs.cpp
+│       │   │   ├── channel_defs.h
+│       │   │   ├── channel_mapper.cpp
+│       │   │   ├── channel_mapper.h
+│       │   │   ├── channel_mapper_matrix.cpp
+│       │   │   ├── channel_mapper_matrix.h
+│       │   │   ├── channel_mapper_reader.cpp
+│       │   │   ├── channel_mapper_reader.h
+│       │   │   ├── channel_mapper_writer.cpp
+│       │   │   ├── channel_mapper_writer.h
+│       │   │   ├── channel_set.cpp
+│       │   │   ├── channel_set_format.cpp
+│       │   │   ├── channel_set.h
+│       │   │   ├── channel_set_to_str.cpp
+│       │   │   ├── channel_set_to_str.h
+│       │   │   ├── channel_tables.cpp
+│       │   │   ├── channel_tables_gen.py
+│       │   │   ├── channel_tables.h
+│       │   │   ├── decimation_resampler.cpp
+│       │   │   ├── decimation_resampler.h
+│       │   │   ├── depacketizer.cpp
+│       │   │   ├── depacketizer.h
+│       │   │   ├── fanout.cpp
+│       │   │   ├── fanout.h
+│       │   │   ├── feedback_monitor.cpp
+│       │   │   ├── feedback_monitor.h
+│       │   │   ├── frame.cpp
+│       │   │   ├── frame_factory.cpp
+│       │   │   ├── frame_factory.h
+│       │   │   ├── frame.h
+│       │   │   ├── freq_estimator.cpp
+│       │   │   ├── freq_estimator_decim.cpp
+│       │   │   ├── freq_estimator_decim.h
+│       │   │   ├── freq_estimator.h
+│       │   │   ├── iframe_decoder.cpp
+│       │   │   ├── iframe_decoder.h
+│       │   │   ├── iframe_encoder.cpp
+│       │   │   ├── iframe_encoder.h
+│       │   │   ├── iframe_reader.cpp
+│       │   │   ├── iframe_reader.h
+│       │   │   ├── iframe_writer.cpp
+│       │   │   ├── iframe_writer.h
+│       │   │   ├── iresampler.cpp
+│       │   │   ├── iresampler.h
+│       │   │   ├── latency_monitor.cpp
+│       │   │   ├── latency_monitor.h
+│       │   │   ├── latency_tuner.cpp
+│       │   │   ├── latency_tuner.h
+│       │   │   ├── mixer.cpp
+│       │   │   ├── mixer.h
+│       │   │   ├── null_writer.cpp
+│       │   │   ├── null_writer.h
+│       │   │   ├── packetizer.cpp
+│       │   │   ├── packetizer.h
+│       │   │   ├── pcm_decoder.cpp
+│       │   │   ├── pcm_decoder.h
+│       │   │   ├── pcm_encoder.cpp
+│       │   │   ├── pcm_encoder.h
+│       │   │   ├── pcm_format.cpp
+│       │   │   ├── pcm_format_gen.py
+│       │   │   ├── pcm_format.h
+│       │   │   ├── pcm_mapper.cpp
+│       │   │   ├── pcm_mapper.h
+│       │   │   ├── pcm_mapper_reader.cpp
+│       │   │   ├── pcm_mapper_reader.h
+│       │   │   ├── pcm_mapper_writer.cpp
+│       │   │   ├── pcm_mapper_writer.h
+│       │   │   ├── print_supported.cpp
+│       │   │   ├── print_supported.h
+│       │   │   ├── profiler.cpp
+│       │   │   ├── profiler.h
+│       │   │   ├── profiling_reader.cpp
+│       │   │   ├── profiling_reader.h
+│       │   │   ├── profiling_writer.cpp
+│       │   │   ├── profiling_writer.h
+│       │   │   ├── resampler_config.cpp
+│       │   │   ├── resampler_config.h
+│       │   │   ├── resampler_map.cpp
+│       │   │   ├── resampler_map.h
+│       │   │   ├── resampler_reader.cpp
+│       │   │   ├── resampler_reader.h
+│       │   │   ├── resampler_writer.cpp
+│       │   │   ├── resampler_writer.h
+│       │   │   ├── sample.cpp
+│       │   │   ├── sample_format.cpp
+│       │   │   ├── sample_format.h
+│       │   │   ├── sample.h
+│       │   │   ├── sample_spec.cpp
+│       │   │   ├── sample_spec_format.cpp
+│       │   │   ├── sample_spec.h
+│       │   │   ├── sample_spec_parse.rl
+│       │   │   ├── sample_spec_to_str.cpp
+│       │   │   ├── sample_spec_to_str.h
+│       │   │   ├── target_speexdsp
+│       │   │   │   └── roc_audio
+│       │   │   │       ├── speex_resampler.cpp
+│       │   │   │       └── speex_resampler.h
+│       │   │   ├── watchdog.cpp
+│       │   │   └── watchdog.h
+│       │   ├── roc_core
+│       │   │   ├── aligned_storage.h
+│       │   │   ├── align_ops.cpp
+│       │   │   ├── align_ops.h
+│       │   │   ├── allocation_policy.h
+│       │   │   ├── array.h
+│       │   │   ├── atomic.h
+│       │   │   ├── attributes.h
+│       │   │   ├── backtrace.h
+│       │   │   ├── buffer.cpp
+│       │   │   ├── buffer.h
+│       │   │   ├── csv_dumper.cpp
+│       │   │   ├── csv_dumper.h
+│       │   │   ├── endian.h
+│       │   │   ├── endian_ops.cpp
+│       │   │   ├── endian_ops.h
+│       │   │   ├── fast_random.cpp
+│       │   │   ├── fast_random.h
+│       │   │   ├── global_destructor.cpp
+│       │   │   ├── global_destructor.h
+│       │   │   ├── hashmap.h
+│       │   │   ├── hashmap_impl.cpp
+│       │   │   ├── hashmap_impl.h
+│       │   │   ├── hashmap_node.h
+│       │   │   ├── hashsum.cpp
+│       │   │   ├── hashsum.h
+│       │   │   ├── heap_arena.cpp
+│       │   │   ├── heap_arena.h
+│       │   │   ├── iarena.cpp
+│       │   │   ├── iarena.h
+│       │   │   ├── ipool.cpp
+│       │   │   ├── ipool.h
+│       │   │   ├── limited_arena.cpp
+│       │   │   ├── limited_arena.h
+│       │   │   ├── limited_pool.cpp
+│       │   │   ├── limited_pool.h
+│       │   │   ├── list.h
+│       │   │   ├── list_impl.cpp
+│       │   │   ├── list_impl.h
+│       │   │   ├── list_node.h
+│       │   │   ├── log.cpp
+│       │   │   ├── log.h
+│       │   │   ├── macro_helpers.h
+│       │   │   ├── memory_limiter.cpp
+│       │   │   ├── memory_limiter.h
+│       │   │   ├── memory_ops.cpp
+│       │   │   ├── memory_ops.h
+│       │   │   ├── mov_stats.h
+│       │   │   ├── mpsc_queue.h
+│       │   │   ├── mpsc_queue_impl.cpp
+│       │   │   ├── mpsc_queue_impl.h
+│       │   │   ├── mpsc_queue_node.h
+│       │   │   ├── noncopyable.h
+│       │   │   ├── noop_arena.cpp
+│       │   │   ├── noop_arena.h
+│       │   │   ├── optional.h
+│       │   │   ├── ownership_policy.h
+│       │   │   ├── panic.cpp
+│       │   │   ├── panic.h
+│       │   │   ├── parse_units.cpp
+│       │   │   ├── parse_units.h
+│       │   │   ├── printer.cpp
+│       │   │   ├── printer.h
+│       │   │   ├── print_memory.cpp
+│       │   │   ├── print_memory.h
+│       │   │   ├── rate_limiter.cpp
+│       │   │   ├── rate_limiter.h
+│       │   │   ├── ref_counted.h
+│       │   │   ├── ref_counted_impl.cpp
+│       │   │   ├── ref_counted_impl.h
+│       │   │   ├── ring_queue.h
+│       │   │   ├── scoped_lock.h
+│       │   │   ├── scoped_ptr.h
+│       │   │   ├── seqlock.h
+│       │   │   ├── seqlock_impl.cpp
+│       │   │   ├── seqlock_impl.h
+│       │   │   ├── shared_ptr.h
+│       │   │   ├── slab_pool.h
+│       │   │   ├── slab_pool_impl.cpp
+│       │   │   ├── slab_pool_impl.h
+│       │   │   ├── slice.h
+│       │   │   ├── spsc_byte_buffer.cpp
+│       │   │   ├── spsc_byte_buffer.h
+│       │   │   ├── spsc_ring_buffer.h
+│       │   │   ├── string_buffer.cpp
+│       │   │   ├── string_buffer.h
+│       │   │   ├── string_builder.cpp
+│       │   │   ├── string_builder.h
+│       │   │   ├── string_list.cpp
+│       │   │   ├── string_list.h
+│       │   │   ├── target_android
+│       │   │   │   └── roc_core
+│       │   │   │       ├── backtrace.cpp
+│       │   │   │       ├── console.cpp
+│       │   │   │       ├── console.h
+│       │   │   │       ├── log_backend.cpp
+│       │   │   │       └── log_backend.h
+│       │   │   ├── target_c11
+│       │   │   │   └── roc_core
+│       │   │   │       └── atomic_ops.h
+│       │   │   ├── target_darwin
+│       │   │   │   └── roc_core
+│       │   │   │       ├── semaphore.cpp
+│       │   │   │       └── semaphore.h
+│       │   │   ├── target_gnu
+│       │   │   │   └── roc_core
+│       │   │   │       └── demangle_symbol.cpp
+│       │   │   ├── target_libatomic_ops
+│       │   │   │   └── roc_core
+│       │   │   │       ├── atomic_ops_gen.py
+│       │   │   │       └── atomic_ops.h
+│       │   │   ├── target_libunwind
+│       │   │   │   └── roc_core
+│       │   │   │       └── backtrace.cpp
+│       │   │   ├── target_nobacktrace
+│       │   │   │   └── roc_core
+│       │   │   │       └── backtrace.cpp
+│       │   │   ├── target_nodemangle
+│       │   │   │   └── roc_core
+│       │   │   │       └── demangle_symbol.cpp
+│       │   │   ├── target_pc
+│       │   │   │   └── roc_core
+│       │   │   │       ├── log_backend.cpp
+│       │   │   │       └── log_backend.h
+│       │   │   ├── target_posix
+│       │   │   │   └── roc_core
+│       │   │   │       ├── cond.cpp
+│       │   │   │       ├── cond.h
+│       │   │   │       ├── cpu_instructions.h
+│       │   │   │       ├── cpu_traits.h
+│       │   │   │       ├── crash_handler.cpp
+│       │   │   │       ├── crash_handler.h
+│       │   │   │       ├── die.cpp
+│       │   │   │       ├── die.h
+│       │   │   │       ├── errno_to_str.cpp
+│       │   │   │       ├── errno_to_str.h
+│       │   │   │       ├── mutex.cpp
+│       │   │   │       ├── mutex.h
+│       │   │   │       ├── singleton.h
+│       │   │   │       ├── stddefs.h
+│       │   │   │       ├── temp_file.cpp
+│       │   │   │       ├── temp_file.h
+│       │   │   │       ├── thread.cpp
+│       │   │   │       ├── thread.h
+│       │   │   │       └── time.cpp
+│       │   │   ├── target_posix_ext
+│       │   │   │   └── roc_core
+│       │   │   │       ├── semaphore.cpp
+│       │   │   │       └── semaphore.h
+│       │   │   ├── target_posix_pc
+│       │   │   │   └── roc_core
+│       │   │   │       ├── console.cpp
+│       │   │   │       └── console.h
+│       │   │   ├── ticker.cpp
+│       │   │   ├── ticker.h
+│       │   │   ├── time.cpp
+│       │   │   ├── time.h
+│       │   │   ├── timer.cpp
+│       │   │   ├── timer.h
+│       │   │   ├── uuid.cpp
+│       │   │   └── uuid.h
+│       │   ├── roc_ctl
+│       │   │   ├── basic_control_endpoint.cpp
+│       │   │   ├── basic_control_endpoint.h
+│       │   │   ├── control_interface_map.cpp
+│       │   │   ├── control_interface_map.h
+│       │   │   ├── control_loop.cpp
+│       │   │   ├── control_loop.h
+│       │   │   ├── control_task.cpp
+│       │   │   ├── control_task_executor.cpp
+│       │   │   ├── control_task_executor.h
+│       │   │   ├── control_task.h
+│       │   │   ├── control_task_queue.cpp
+│       │   │   ├── control_task_queue.h
+│       │   │   ├── icontrol_task_completer.cpp
+│       │   │   └── icontrol_task_completer.h
+│       │   ├── roc_fec
+│       │   │   ├── codec_config.h
+│       │   │   ├── codec_map.cpp
+│       │   │   ├── codec_map.h
+│       │   │   ├── composer.h
+│       │   │   ├── headers.h
+│       │   │   ├── iblock_decoder.cpp
+│       │   │   ├── iblock_decoder.h
+│       │   │   ├── iblock_encoder.cpp
+│       │   │   ├── iblock_encoder.h
+│       │   │   ├── parser.h
+│       │   │   ├── reader.cpp
+│       │   │   ├── reader.h
+│       │   │   ├── target_openfec
+│       │   │   │   └── roc_fec
+│       │   │   │       ├── openfec_decoder.cpp
+│       │   │   │       ├── openfec_decoder.h
+│       │   │   │       ├── openfec_encoder.cpp
+│       │   │   │       └── openfec_encoder.h
+│       │   │   ├── writer.cpp
+│       │   │   └── writer.h
+│       │   ├── roc_netio
+│       │   │   ├── target_libuv
+│       │   │   │   └── roc_netio
+│       │   │   │       ├── basic_port.cpp
+│       │   │   │       ├── basic_port.h
+│       │   │   │       ├── iclose_handler.cpp
+│       │   │   │       ├── iclose_handler.h
+│       │   │   │       ├── iconn_acceptor.cpp
+│       │   │   │       ├── iconn_acceptor.h
+│       │   │   │       ├── iconn.cpp
+│       │   │   │       ├── iconn.h
+│       │   │   │       ├── iconn_handler.cpp
+│       │   │   │       ├── iconn_handler.h
+│       │   │   │       ├── inetwork_task_completer.cpp
+│       │   │   │       ├── inetwork_task_completer.h
+│       │   │   │       ├── iresolver_request_handler.cpp
+│       │   │   │       ├── iresolver_request_handler.h
+│       │   │   │       ├── iterminate_handler.cpp
+│       │   │   │       ├── iterminate_handler.h
+│       │   │   │       ├── network_loop.cpp
+│       │   │   │       ├── network_loop.h
+│       │   │   │       ├── network_task.cpp
+│       │   │   │       ├── network_task.h
+│       │   │   │       ├── operation_status.h
+│       │   │   │       ├── resolver.cpp
+│       │   │   │       ├── resolver.h
+│       │   │   │       ├── resolver_request.h
+│       │   │   │       ├── tcp_connection_port.cpp
+│       │   │   │       ├── tcp_connection_port.h
+│       │   │   │       ├── tcp_server_port.cpp
+│       │   │   │       ├── tcp_server_port.h
+│       │   │   │       ├── termination_mode.cpp
+│       │   │   │       ├── termination_mode.h
+│       │   │   │       ├── udp_port.cpp
+│       │   │   │       └── udp_port.h
+│       │   │   └── target_posix
+│       │   │       └── roc_netio
+│       │   │           ├── socket_ops.cpp
+│       │   │           └── socket_ops.h
+│       │   ├── roc_node
+│       │   │   ├── context.cpp
+│       │   │   ├── context.h
+│       │   │   ├── node.cpp
+│       │   │   ├── node.h
+│       │   │   ├── receiver.cpp
+│       │   │   ├── receiver_decoder.cpp
+│       │   │   ├── receiver_decoder.h
+│       │   │   ├── receiver.h
+│       │   │   ├── sender.cpp
+│       │   │   ├── sender_encoder.cpp
+│       │   │   ├── sender_encoder.h
+│       │   │   └── sender.h
+│       │   ├── roc_packet
+│       │   │   ├── concurrent_queue.cpp
+│       │   │   ├── concurrent_queue.h
+│       │   │   ├── delayed_reader.cpp
+│       │   │   ├── delayed_reader.h
+│       │   │   ├── fec.cpp
+│       │   │   ├── fec.h
+│       │   │   ├── fec_scheme_to_str.cpp
+│       │   │   ├── fec_scheme_to_str.h
+│       │   │   ├── icomposer.cpp
+│       │   │   ├── icomposer.h
+│       │   │   ├── ilink_meter.cpp
+│       │   │   ├── ilink_meter.h
+│       │   │   ├── interleaver.cpp
+│       │   │   ├── interleaver.h
+│       │   │   ├── iparser.cpp
+│       │   │   ├── iparser.h
+│       │   │   ├── ireader.cpp
+│       │   │   ├── ireader.h
+│       │   │   ├── isequencer.cpp
+│       │   │   ├── isequencer.h
+│       │   │   ├── iwriter.cpp
+│       │   │   ├── iwriter.h
+│       │   │   ├── ntp.cpp
+│       │   │   ├── ntp.h
+│       │   │   ├── packet.cpp
+│       │   │   ├── packet_factory.cpp
+│       │   │   ├── packet_factory.h
+│       │   │   ├── packet_flags_to_str.cpp
+│       │   │   ├── packet_flags_to_str.h
+│       │   │   ├── packet.h
+│       │   │   ├── print_packet.cpp
+│       │   │   ├── print_packet.h
+│       │   │   ├── queue.cpp
+│       │   │   ├── queue.h
+│       │   │   ├── router.cpp
+│       │   │   ├── router.h
+│       │   │   ├── rtcp.cpp
+│       │   │   ├── rtcp.h
+│       │   │   ├── rtp.cpp
+│       │   │   ├── rtp.h
+│       │   │   ├── shipper.cpp
+│       │   │   ├── shipper.h
+│       │   │   ├── sorted_queue.cpp
+│       │   │   ├── sorted_queue.h
+│       │   │   ├── target_libuv
+│       │   │   │   └── roc_packet
+│       │   │   │       ├── udp.cpp
+│       │   │   │       └── udp.h
+│       │   │   ├── units.cpp
+│       │   │   └── units.h
+│       │   ├── roc_pipeline
+│       │   │   ├── config.cpp
+│       │   │   ├── config.h
+│       │   │   ├── endpoint_helpers.cpp
+│       │   │   ├── endpoint_helpers.h
+│       │   │   ├── ipipeline_task_completer.cpp
+│       │   │   ├── ipipeline_task_completer.h
+│       │   │   ├── ipipeline_task_scheduler.cpp
+│       │   │   ├── ipipeline_task_scheduler.h
+│       │   │   ├── metrics.h
+│       │   │   ├── pipeline_loop.cpp
+│       │   │   ├── pipeline_loop.h
+│       │   │   ├── pipeline_task.cpp
+│       │   │   ├── pipeline_task.h
+│       │   │   ├── receiver_endpoint.cpp
+│       │   │   ├── receiver_endpoint.h
+│       │   │   ├── receiver_loop.cpp
+│       │   │   ├── receiver_loop.h
+│       │   │   ├── receiver_session.cpp
+│       │   │   ├── receiver_session_group.cpp
+│       │   │   ├── receiver_session_group.h
+│       │   │   ├── receiver_session.h
+│       │   │   ├── receiver_session_router.cpp
+│       │   │   ├── receiver_session_router.h
+│       │   │   ├── receiver_slot.cpp
+│       │   │   ├── receiver_slot.h
+│       │   │   ├── receiver_source.cpp
+│       │   │   ├── receiver_source.h
+│       │   │   ├── sender_endpoint.cpp
+│       │   │   ├── sender_endpoint.h
+│       │   │   ├── sender_loop.cpp
+│       │   │   ├── sender_loop.h
+│       │   │   ├── sender_session.cpp
+│       │   │   ├── sender_session.h
+│       │   │   ├── sender_sink.cpp
+│       │   │   ├── sender_sink.h
+│       │   │   ├── sender_slot.cpp
+│       │   │   ├── sender_slot.h
+│       │   │   ├── state_tracker.cpp
+│       │   │   ├── state_tracker.h
+│       │   │   ├── transcoder_sink.cpp
+│       │   │   ├── transcoder_sink.h
+│       │   │   ├── transcoder_source.cpp
+│       │   │   └── transcoder_source.h
+│       │   ├── roc_rtcp
+│       │   │   ├── builder.cpp
+│       │   │   ├── builder.h
+│       │   │   ├── bye_traverser.cpp
+│       │   │   ├── bye_traverser.h
+│       │   │   ├── cname.cpp
+│       │   │   ├── cname.h
+│       │   │   ├── communicator.cpp
+│       │   │   ├── communicator.h
+│       │   │   ├── composer.cpp
+│       │   │   ├── composer.h
+│       │   │   ├── config.h
+│       │   │   ├── headers.h
+│       │   │   ├── iparticipant.cpp
+│       │   │   ├── iparticipant.h
+│       │   │   ├── loss_estimator.cpp
+│       │   │   ├── loss_estimator.h
+│       │   │   ├── ntp.cpp
+│       │   │   ├── ntp.h
+│       │   │   ├── packet_counter.cpp
+│       │   │   ├── packet_counter.h
+│       │   │   ├── parser.cpp
+│       │   │   ├── parser.h
+│       │   │   ├── participant_info.h
+│       │   │   ├── print_packet.cpp
+│       │   │   ├── print_packet.h
+│       │   │   ├── reporter.cpp
+│       │   │   ├── reporter.h
+│       │   │   ├── reports.h
+│       │   │   ├── rtt_estimator.cpp
+│       │   │   ├── rtt_estimator.h
+│       │   │   ├── sdes.h
+│       │   │   ├── sdes_traverser.cpp
+│       │   │   ├── sdes_traverser.h
+│       │   │   ├── traverser.cpp
+│       │   │   ├── traverser.h
+│       │   │   ├── xr_traverser.cpp
+│       │   │   └── xr_traverser.h
+│       │   ├── roc_rtp
+│       │   │   ├── composer.cpp
+│       │   │   ├── composer.h
+│       │   │   ├── encoding.cpp
+│       │   │   ├── encoding.h
+│       │   │   ├── encoding_map.cpp
+│       │   │   ├── encoding_map.h
+│       │   │   ├── filter.cpp
+│       │   │   ├── filter.h
+│       │   │   ├── headers.h
+│       │   │   ├── identity.cpp
+│       │   │   ├── identity.h
+│       │   │   ├── link_meter.cpp
+│       │   │   ├── link_meter.h
+│       │   │   ├── parser.cpp
+│       │   │   ├── parser.h
+│       │   │   ├── sequencer.cpp
+│       │   │   ├── sequencer.h
+│       │   │   ├── timestamp_extractor.cpp
+│       │   │   ├── timestamp_extractor.h
+│       │   │   ├── timestamp_injector.cpp
+│       │   │   └── timestamp_injector.h
+│       │   ├── roc_sdp
+│       │   │   ├── connection_data.cpp
+│       │   │   ├── connection_data.h
+│       │   │   ├── media_description.cpp
+│       │   │   ├── media_description.h
+│       │   │   ├── media_transport.h
+│       │   │   ├── media_type.h
+│       │   │   ├── parser.h
+│       │   │   ├── parser.rl
+│       │   │   ├── session_description.cpp
+│       │   │   └── session_description.h
+│       │   ├── roc_sndio
+│       │   │   ├── backend_dispatcher.cpp
+│       │   │   ├── backend_dispatcher.h
+│       │   │   ├── backend_map.cpp
+│       │   │   ├── backend_map.h
+│       │   │   ├── config.h
+│       │   │   ├── device_state.cpp
+│       │   │   ├── device_state.h
+│       │   │   ├── device_type.cpp
+│       │   │   ├── device_type.h
+│       │   │   ├── driver.cpp
+│       │   │   ├── driver.h
+│       │   │   ├── ibackend.cpp
+│       │   │   ├── ibackend.h
+│       │   │   ├── idevice.cpp
+│       │   │   ├── idevice.h
+│       │   │   ├── isink.cpp
+│       │   │   ├── isink.h
+│       │   │   ├── isource.cpp
+│       │   │   ├── isource.h
+│       │   │   ├── print_supported.cpp
+│       │   │   ├── print_supported.h
+│       │   │   ├── pump.cpp
+│       │   │   ├── pump.h
+│       │   │   ├── target_pulseaudio
+│       │   │   │   └── roc_sndio
+│       │   │   │       ├── pulseaudio_backend.cpp
+│       │   │   │       ├── pulseaudio_backend.h
+│       │   │   │       ├── pulseaudio_device.cpp
+│       │   │   │       └── pulseaudio_device.h
+│       │   │   ├── target_sndfile
+│       │   │   │   └── roc_sndio
+│       │   │   │       ├── sndfile_backend.cpp
+│       │   │   │       ├── sndfile_backend.h
+│       │   │   │       ├── sndfile_extension_table.cpp
+│       │   │   │       ├── sndfile_extension_table.h
+│       │   │   │       ├── sndfile_sink.cpp
+│       │   │   │       ├── sndfile_sink.h
+│       │   │   │       ├── sndfile_source.cpp
+│       │   │   │       └── sndfile_source.h
+│       │   │   ├── target_sox
+│       │   │   │   └── roc_sndio
+│       │   │   │       ├── sox_backend.cpp
+│       │   │   │       ├── sox_backend.h
+│       │   │   │       ├── sox_sink.cpp
+│       │   │   │       ├── sox_sink.h
+│       │   │   │       ├── sox_source.cpp
+│       │   │   │       └── sox_source.h
+│       │   │   ├── wav_backend.cpp
+│       │   │   ├── wav_backend.h
+│       │   │   ├── wav_header.cpp
+│       │   │   ├── wav_header.h
+│       │   │   ├── wav_sink.cpp
+│       │   │   ├── wav_sink.h
+│       │   │   ├── wav_source.cpp
+│       │   │   └── wav_source.h
+│       │   └── roc_status
+│       │       ├── code_to_str.cpp
+│       │       ├── code_to_str.h
+│       │       └── status_code.h
+│       ├── public_api
+│       │   ├── Doxyfile
+│       │   ├── examples
+│       │   │   ├── basic_receiver_to_pulseaudio.c
+│       │   │   ├── basic_sender_from_pulseaudio.c
+│       │   │   ├── basic_sender_sine_wave.c
+│       │   │   ├── send_receive_rtp.c
+│       │   │   ├── send_receive_rtp_with_fecframe.c
+│       │   │   └── uri_manipulation.c
+│       │   ├── include
+│       │   │   └── roc
+│       │   │       ├── config.h
+│       │   │       ├── context.h
+│       │   │       ├── endpoint.h
+│       │   │       ├── frame.h
+│       │   │       ├── log.h
+│       │   │       ├── metrics.h
+│       │   │       ├── packet.h
+│       │   │       ├── platform.h
+│       │   │       ├── receiver_decoder.h
+│       │   │       ├── receiver.h
+│       │   │       ├── sender_encoder.h
+│       │   │       ├── sender.h
+│       │   │       └── version.h
+│       │   ├── roc.version
+│       │   └── src
+│       │       ├── adapters.cpp
+│       │       ├── adapters.h
+│       │       ├── arena.cpp
+│       │       ├── arena.h
+│       │       ├── context.cpp
+│       │       ├── endpoint.cpp
+│       │       ├── log.cpp
+│       │       ├── receiver.cpp
+│       │       ├── receiver_decoder.cpp
+│       │       ├── sender.cpp
+│       │       ├── sender_encoder.cpp
+│       │       └── version.cpp
+│       ├── sanitizer_options.cpp
+│       ├── SConscript
+│       ├── tests
+│       │   ├── bench_main.cpp
+│       │   ├── public_api
+│       │   │   ├── test_context.cpp
+│       │   │   ├── test_endpoint.cpp
+│       │   │   ├── test_helpers
+│       │   │   │   ├── context.h
+│       │   │   │   ├── proxy.h
+│       │   │   │   ├── receiver.h
+│       │   │   │   ├── sender.h
+│       │   │   │   └── utils.h
+│       │   │   ├── test_loopback_encoder_2_decoder.cpp
+│       │   │   ├── test_loopback_sender_2_receiver.cpp
+│       │   │   ├── test_receiver.cpp
+│       │   │   ├── test_receiver_decoder.cpp
+│       │   │   ├── test_sender.cpp
+│       │   │   ├── test_sender_encoder.cpp
+│       │   │   └── test_version.cpp
+│       │   ├── roc_address
+│       │   │   ├── test_endpoint_uri.cpp
+│       │   │   ├── test_io_uri.cpp
+│       │   │   ├── test_pct.cpp
+│       │   │   ├── test_socket_addr.cpp
+│       │   │   └── test_socket_addr_parse.cpp
+│       │   ├── roc_audio
+│       │   │   ├── test_channel_mapper.cpp
+│       │   │   ├── test_channel_mapper_reader.cpp
+│       │   │   ├── test_channel_mapper_writer.cpp
+│       │   │   ├── test_channel_set.cpp
+│       │   │   ├── test_channel_tables.cpp
+│       │   │   ├── test_depacketizer.cpp
+│       │   │   ├── test_fanout.cpp
+│       │   │   ├── test_frame_encoder_decoder.cpp
+│       │   │   ├── test_freq_estimator.cpp
+│       │   │   ├── test_helpers
+│       │   │   │   ├── mock_reader.h
+│       │   │   │   └── mock_writer.h
+│       │   │   ├── test_mixer.cpp
+│       │   │   ├── test_packetizer.cpp
+│       │   │   ├── test_pcm_mapper.cpp
+│       │   │   ├── test_pcm_mapper_reader.cpp
+│       │   │   ├── test_pcm_mapper_writer.cpp
+│       │   │   ├── test_pcm_samples.cpp
+│       │   │   ├── test_profiler.cpp
+│       │   │   ├── test_resampler.cpp
+│       │   │   ├── test_samples
+│       │   │   │   ├── generate_samples.py
+│       │   │   │   ├── original_samples.dat
+│       │   │   │   ├── pcm_float32_be.blob
+│       │   │   │   ├── pcm_float32_be.h
+│       │   │   │   ├── pcm_float32_le.blob
+│       │   │   │   ├── pcm_float32_le.h
+│       │   │   │   ├── pcm_sint16_be.blob
+│       │   │   │   ├── pcm_sint16_be.h
+│       │   │   │   ├── pcm_sint16_le.blob
+│       │   │   │   ├── pcm_sint16_le.h
+│       │   │   │   ├── pcm_sint24_be.blob
+│       │   │   │   ├── pcm_sint24_be.h
+│       │   │   │   ├── pcm_sint24_le.blob
+│       │   │   │   ├── pcm_sint24_le.h
+│       │   │   │   ├── pcm_sint32_be.blob
+│       │   │   │   ├── pcm_sint32_be.h
+│       │   │   │   ├── pcm_sint32_le.blob
+│       │   │   │   ├── pcm_sint32_le.h
+│       │   │   │   ├── pcm_sint8_be.blob
+│       │   │   │   ├── pcm_sint8_be.h
+│       │   │   │   ├── pcm_sint8_le.blob
+│       │   │   │   ├── pcm_sint8_le.h
+│       │   │   │   ├── pcm_uint16_be.blob
+│       │   │   │   ├── pcm_uint16_be.h
+│       │   │   │   ├── pcm_uint16_le.blob
+│       │   │   │   ├── pcm_uint16_le.h
+│       │   │   │   ├── pcm_uint24_be.blob
+│       │   │   │   ├── pcm_uint24_be.h
+│       │   │   │   ├── pcm_uint24_le.blob
+│       │   │   │   ├── pcm_uint24_le.h
+│       │   │   │   ├── pcm_uint32_be.blob
+│       │   │   │   ├── pcm_uint32_be.h
+│       │   │   │   ├── pcm_uint32_le.blob
+│       │   │   │   ├── pcm_uint32_le.h
+│       │   │   │   ├── pcm_uint8_be.blob
+│       │   │   │   ├── pcm_uint8_be.h
+│       │   │   │   ├── pcm_uint8_le.blob
+│       │   │   │   ├── pcm_uint8_le.h
+│       │   │   │   └── sample_info.h
+│       │   │   ├── test_sample_spec.cpp
+│       │   │   └── test_watchdog.cpp
+│       │   ├── roc_core
+│       │   │   ├── bench_mpsc_queue.cpp
+│       │   │   ├── bench_random.cpp
+│       │   │   ├── test_array.cpp
+│       │   │   ├── test_atomic.cpp
+│       │   │   ├── test_cpu.cpp
+│       │   │   ├── test_endian.cpp
+│       │   │   ├── test_fast_random.cpp
+│       │   │   ├── test_hashmap.cpp
+│       │   │   ├── test_heap_arena.cpp
+│       │   │   ├── test_limited_arena.cpp
+│       │   │   ├── test_limited_pool.cpp
+│       │   │   ├── test_list.cpp
+│       │   │   ├── test_macro_helpers.cpp
+│       │   │   ├── test_memory_limiter.cpp
+│       │   │   ├── test_mov_stats.cpp
+│       │   │   ├── test_mpsc_queue.cpp
+│       │   │   ├── test_parse_units.cpp
+│       │   │   ├── test_printer.cpp
+│       │   │   ├── test_seqlock.cpp
+│       │   │   ├── test_slab_pool.cpp
+│       │   │   ├── test_spsc_byte_buffer.cpp
+│       │   │   ├── test_spsc_ring_buffer.cpp
+│       │   │   ├── test_string_buffer.cpp
+│       │   │   ├── test_string_builder.cpp
+│       │   │   ├── test_string_list.cpp
+│       │   │   ├── test_time.cpp
+│       │   │   └── test_timer.cpp
+│       │   ├── roc_ctl
+│       │   │   ├── bench_task_queue_contention.cpp
+│       │   │   └── test_task_queue.cpp
+│       │   ├── roc_fec
+│       │   │   ├── test_composer.cpp
+│       │   │   ├── test_composer_parser.cpp
+│       │   │   ├── test_encoder_decoder.cpp
+│       │   │   ├── test_helpers
+│       │   │   │   ├── mock_arena.h
+│       │   │   │   └── packet_dispatcher.h
+│       │   │   └── test_writer_reader.cpp
+│       │   ├── roc_netio
+│       │   │   ├── test_helpers
+│       │   │   │   ├── conn_expectation.h
+│       │   │   │   ├── conn_reader.h
+│       │   │   │   ├── conn_writer.h
+│       │   │   │   ├── mock_conn_acceptor.h
+│       │   │   │   └── mock_conn_handler.h
+│       │   │   ├── test_resolve.cpp
+│       │   │   ├── test_tasks.cpp
+│       │   │   ├── test_tcp_io.cpp
+│       │   │   ├── test_tcp_ports.cpp
+│       │   │   ├── test_udp_io.cpp
+│       │   │   └── test_udp_ports.cpp
+│       │   ├── roc_node
+│       │   │   ├── test_context.cpp
+│       │   │   ├── test_receiver.cpp
+│       │   │   ├── test_receiver_decoder.cpp
+│       │   │   ├── test_sender.cpp
+│       │   │   └── test_sender_encoder.cpp
+│       │   ├── roc_packet
+│       │   │   ├── test_concurrent_queue.cpp
+│       │   │   ├── test_delayed_reader.cpp
+│       │   │   ├── test_interleaver.cpp
+│       │   │   ├── test_ntp.cpp
+│       │   │   ├── test_router.cpp
+│       │   │   ├── test_shipper.cpp
+│       │   │   ├── test_sorted_queue.cpp
+│       │   │   └── test_units.cpp
+│       │   ├── roc_pipeline
+│       │   │   ├── bench_pipeline_loop_contention.cpp
+│       │   │   ├── bench_pipeline_loop_peak_load.cpp
+│       │   │   ├── test_helpers
+│       │   │   │   ├── control_reader.h
+│       │   │   │   ├── control_writer.h
+│       │   │   │   ├── frame_reader.h
+│       │   │   │   ├── frame_writer.h
+│       │   │   │   ├── mock_scheduler.h
+│       │   │   │   ├── mock_sink.h
+│       │   │   │   ├── mock_source.h
+│       │   │   │   ├── packet_reader.h
+│       │   │   │   ├── packet_writer.h
+│       │   │   │   └── utils.h
+│       │   │   ├── test_loopback_sink_2_source.cpp
+│       │   │   ├── test_pipeline_loop.cpp
+│       │   │   ├── test_receiver_endpoint.cpp
+│       │   │   ├── test_receiver_loop.cpp
+│       │   │   ├── test_receiver_source.cpp
+│       │   │   ├── test_sender_endpoint.cpp
+│       │   │   ├── test_sender_loop.cpp
+│       │   │   ├── test_sender_sink.cpp
+│       │   │   ├── test_session_router.cpp
+│       │   │   ├── test_transcoder_sink.cpp
+│       │   │   └── test_transcoder_source.cpp
+│       │   ├── roc_rtcp
+│       │   │   ├── test_builder_traverser.cpp
+│       │   │   ├── test_communicator.cpp
+│       │   │   ├── test_headers.cpp
+│       │   │   ├── test_loss_estimator.cpp
+│       │   │   ├── test_ntp.cpp
+│       │   │   ├── test_packet_counter.cpp
+│       │   │   └── test_traverser.cpp
+│       │   ├── roc_rtp
+│       │   │   ├── test_encoding.cpp
+│       │   │   ├── test_encoding_map.cpp
+│       │   │   ├── test_filter.cpp
+│       │   │   ├── test_helpers
+│       │   │   │   └── status_reader.h
+│       │   │   ├── test_link_meter.cpp
+│       │   │   ├── test_packet_formats.cpp
+│       │   │   ├── test_packets
+│       │   │   │   ├── generate_headers.py
+│       │   │   │   ├── packet_info.h
+│       │   │   │   ├── rtp_l16_1ch_10s_12ext.blob
+│       │   │   │   ├── rtp_l16_1ch_10s_12ext.h
+│       │   │   │   ├── rtp_l16_1ch_10s_12ext.json
+│       │   │   │   ├── rtp_l16_1ch_10s_4pad_2csrc_12ext_marker.blob
+│       │   │   │   ├── rtp_l16_1ch_10s_4pad_2csrc_12ext_marker.h
+│       │   │   │   ├── rtp_l16_1ch_10s_4pad_2csrc_12ext_marker.json
+│       │   │   │   ├── rtp_l16_2ch_300s_80pad.blob
+│       │   │   │   ├── rtp_l16_2ch_300s_80pad.h
+│       │   │   │   ├── rtp_l16_2ch_300s_80pad.json
+│       │   │   │   ├── rtp_l16_2ch_320s.blob
+│       │   │   │   ├── rtp_l16_2ch_320s.h
+│       │   │   │   └── rtp_l16_2ch_320s.json
+│       │   │   ├── test_timestamp_extractor.cpp
+│       │   │   └── test_timestamp_injector.cpp
+│       │   ├── roc_sdp
+│       │   │   └── test_sdp_parse.cpp
+│       │   ├── roc_sndio
+│       │   │   ├── test_backend_sink.cpp
+│       │   │   ├── test_backend_source.cpp
+│       │   │   ├── test_helpers
+│       │   │   │   ├── mock_sink.h
+│       │   │   │   └── mock_source.h
+│       │   │   └── test_pump.cpp
+│       │   └── test_main.cpp
+│       └── tools
+│           ├── roc_copy
+│           │   ├── cmdline.ggo
+│           │   └── main.cpp
+│           ├── roc_recv
+│           │   ├── cmdline.ggo
+│           │   └── main.cpp
+│           └── roc_send
+│               ├── cmdline.ggo
+│               └── main.cpp
+└── roc-toolkit-v0.4.0.tar.gz -> /home/felix/packages/roc-toolkit/roc-toolkit-v0.4.0.tar.gz
+
+127 directories, 965 files

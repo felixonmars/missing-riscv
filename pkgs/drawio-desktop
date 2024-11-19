@@ -1,0 +1,3649 @@
+src
+├── drawio
+│   ├── ChangeLog
+│   ├── CITATION.cff
+│   ├── CODE_OF_CONDUCT.md
+│   ├── docs
+│   │   └── code-review.md
+│   ├── etc
+│   │   ├── build
+│   │   │   ├── build.properties
+│   │   │   ├── build.xml
+│   │   │   ├── compiler.jar
+│   │   │   ├── Xml2Js.class
+│   │   │   └── Xml2Js.java
+│   │   ├── dependencies
+│   │   │   ├── package.json
+│   │   │   └── README.md
+│   │   ├── docker
+│   │   │   └── README.md
+│   │   ├── imageResize
+│   │   │   ├── drawImageResize.js
+│   │   │   ├── package.json
+│   │   │   ├── package-lock.json
+│   │   │   └── README.md
+│   │   ├── integrate
+│   │   │   └── Integrate.js
+│   │   └── propgen
+│   │       ├── build.xml
+│   │       ├── com
+│   │       │   └── mxgraph
+│   │       │       └── properties
+│   │       │           └── PropGen.java
+│   │       ├── convert.js
+│   │       ├── package.json
+│   │       ├── package-lock.json
+│   │       └── README
+│   ├── LICENSE
+│   ├── README.md
+│   ├── SECURITY.md
+│   ├── src
+│   │   └── main
+│   │       ├── java
+│   │       │   ├── com
+│   │       │   │   └── mxgraph
+│   │       │   │       └── online
+│   │       │   │           ├── AbsAuth.java
+│   │       │   │           ├── AbsCache.java
+│   │       │   │           ├── AbsComm.java
+│   │       │   │           ├── AtlasAuth.java
+│   │       │   │           ├── Constants.java
+│   │       │   │           ├── ConverterServlet.java
+│   │       │   │           ├── DropboxAuth.java
+│   │       │   │           ├── DropboxAuthServlet.java
+│   │       │   │           ├── EmbedServlet2.java
+│   │       │   │           ├── ExportProxyServlet.java
+│   │       │   │           ├── GitHubAuth.java
+│   │       │   │           ├── GitHubAuthServlet.java
+│   │       │   │           ├── GitlabAuth.java
+│   │       │   │           ├── GitlabAuthServlet.java
+│   │       │   │           ├── GoogleAuth.java
+│   │       │   │           ├── GoogleAuthServlet.java
+│   │       │   │           ├── ImgurRedirectServlet.java
+│   │       │   │           ├── LogServlet.java
+│   │       │   │           ├── MSGraphAuth.java
+│   │       │   │           ├── MSGraphAuthServlet.java
+│   │       │   │           ├── mxBase64.java
+│   │       │   │           ├── ProxyServlet.java
+│   │       │   │           ├── ServletComm.java
+│   │       │   │           ├── Utils.java
+│   │       │   │           └── WellKnownServlet.java
+│   │       │   └── log4j.properties
+│   │       └── webapp
+│   │           ├── clear.html
+│   │           ├── connect
+│   │           │   └── common
+│   │           │       └── js
+│   │           │           └── mxReader.js
+│   │           ├── dropbox.html
+│   │           ├── export3.html
+│   │           ├── export-fonts.css
+│   │           ├── favicon.ico
+│   │           ├── github.html
+│   │           ├── gitlab.html
+│   │           ├── images
+│   │           │   ├── 1x1.png
+│   │           │   ├── 2x2.png
+│   │           │   ├── 3x3.png
+│   │           │   ├── ajax-loader.gif
+│   │           │   ├── all-diagrams-sel.svg
+│   │           │   ├── all-diagrams.svg
+│   │           │   ├── android-chrome-512x512.png
+│   │           │   ├── apple-touch-icon.png
+│   │           │   ├── aui-wait.gif
+│   │           │   ├── broken.png
+│   │           │   ├── browserconfig.xml
+│   │           │   ├── checkmark.gif
+│   │           │   ├── check.png
+│   │           │   ├── chevron-down.png
+│   │           │   ├── chevron-up.png
+│   │           │   ├── clear.gif
+│   │           │   ├── close.png
+│   │           │   ├── cloud-connector-atlas.png
+│   │           │   ├── collapsed.gif
+│   │           │   ├── connector.png
+│   │           │   ├── defaultcolor.png
+│   │           │   ├── default-user.jpg
+│   │           │   ├── delete.png
+│   │           │   ├── document-google-drive-icon-80.png
+│   │           │   ├── download.png
+│   │           │   ├── draw.io-logo.svg
+│   │           │   ├── drawlogo128.png
+│   │           │   ├── drawlogo144.png
+│   │           │   ├── drawlogo256.png
+│   │           │   ├── drawlogo48-gray.png
+│   │           │   ├── drawlogo48.png
+│   │           │   ├── drawlogo80.png
+│   │           │   ├── drawlogo-color.svg
+│   │           │   ├── drawlogo-gray.svg
+│   │           │   ├── drawlogo.svg
+│   │           │   ├── drawlogo-text-bottom.svg
+│   │           │   ├── draw-search.png
+│   │           │   ├── draw-search.svg
+│   │           │   ├── dropbox-logo.svg
+│   │           │   ├── dropbox-logo-white.svg
+│   │           │   ├── dropdown.gif
+│   │           │   ├── dropdown.png
+│   │           │   ├── droptarget.png
+│   │           │   ├── edit16.png
+│   │           │   ├── edit32.png
+│   │           │   ├── edit80.png
+│   │           │   ├── edit.gif
+│   │           │   ├── embed-icon.png
+│   │           │   ├── expanded.gif
+│   │           │   ├── facebook.png
+│   │           │   ├── favicon-16x16.png
+│   │           │   ├── favicon-32x32.png
+│   │           │   ├── file.png
+│   │           │   ├── folder.png
+│   │           │   ├── format-hide.png
+│   │           │   ├── format-show.png
+│   │           │   ├── fullscreen.png
+│   │           │   ├── gadget-screenshot.png
+│   │           │   ├── gadget-thumb.png
+│   │           │   ├── github-logo.svg
+│   │           │   ├── github-logo-white.svg
+│   │           │   ├── gitlab-logo.svg
+│   │           │   ├── gitlab-logo-white.svg
+│   │           │   ├── glyphicons_blogger.png
+│   │           │   ├── glyphicons_facebook.png
+│   │           │   ├── glyphicons_github.png
+│   │           │   ├── glyphicons_google.png
+│   │           │   ├── glyphicons_star.png
+│   │           │   ├── glyphicons_twitter.png
+│   │           │   ├── glyphicons_youtube.png
+│   │           │   ├── google-drive-connector-atlas.png
+│   │           │   ├── google-drive-connector-atlas.svg
+│   │           │   ├── google-drive-logo.svg
+│   │           │   ├── google-drive-logo-white.svg
+│   │           │   ├── google-share.png
+│   │           │   ├── grid.gif
+│   │           │   ├── handle-connect.png
+│   │           │   ├── help.png
+│   │           │   ├── hs.png
+│   │           │   ├── hv.png
+│   │           │   ├── icon-192-maskable.png
+│   │           │   ├── icon-192.png
+│   │           │   ├── icon-512-maskable.png
+│   │           │   ├── icon-512.png
+│   │           │   ├── icon-search.svg
+│   │           │   ├── img-hi-res.png
+│   │           │   ├── img-lo-res.png
+│   │           │   ├── list-sel.svg
+│   │           │   ├── list.svg
+│   │           │   ├── locked.png
+│   │           │   ├── logo-confluence.png
+│   │           │   ├── logo-flat.png
+│   │           │   ├── logo-flat-small.png
+│   │           │   ├── logo-jira.png
+│   │           │   ├── logo.png
+│   │           │   ├── logo-quip.png
+│   │           │   ├── logo-small.gif
+│   │           │   ├── logo-white.png
+│   │           │   ├── log.png
+│   │           │   ├── manifest.json
+│   │           │   ├── move.png
+│   │           │   ├── my-diagrams-sel.svg
+│   │           │   ├── my-diagrams.svg
+│   │           │   ├── nocolor.png
+│   │           │   ├── notion-logo.svg
+│   │           │   ├── notion-logo-white.svg
+│   │           │   ├── onedrive-connector-atlas.png
+│   │           │   ├── onedrive-connector-atlas.svg
+│   │           │   ├── onedrive-logo.svg
+│   │           │   ├── onedrive-logo-white.svg
+│   │           │   ├── osa_database.png
+│   │           │   ├── osa_drive-harddisk.png
+│   │           │   ├── plant-uml-atlas.png
+│   │           │   ├── plus.png
+│   │           │   ├── refresh.png
+│   │           │   ├── round-drop.png
+│   │           │   ├── samepage-icon-color.svg
+│   │           │   ├── save.png
+│   │           │   ├── sidebar-active_directory.png
+│   │           │   ├── sidebar-allied_telesis.png
+│   │           │   ├── sidebar-android.png
+│   │           │   ├── sidebar-archimate3.png
+│   │           │   ├── sidebar-archimate.png
+│   │           │   ├── sidebar-arrows2.png
+│   │           │   ├── sidebar-arrows.png
+│   │           │   ├── sidebar-atlassian.png
+│   │           │   ├── sidebar-aws3d.png
+│   │           │   ├── sidebar-aws3.png
+│   │           │   ├── sidebar-aws4b.png
+│   │           │   ├── sidebar-aws4.png
+│   │           │   ├── sidebar-aws.png
+│   │           │   ├── sidebar-azure.png
+│   │           │   ├── sidebar-basic.png
+│   │           │   ├── sidebar-bootstrap.png
+│   │           │   ├── sidebar-bpmn.png
+│   │           │   ├── sidebar-c4.png
+│   │           │   ├── sidebar-cabinets.png
+│   │           │   ├── sidebar-cisco19.png
+│   │           │   ├── sidebar-cisco.png
+│   │           │   ├── sidebar-cisco_safe.png
+│   │           │   ├── sidebar-citrix.png
+│   │           │   ├── sidebar-clipart.png
+│   │           │   ├── sidebar-cumulus.png
+│   │           │   ├── sidebar-dfd.png
+│   │           │   ├── sidebar-eip.png
+│   │           │   ├── sidebar-electrical.png
+│   │           │   ├── sidebar-er.png
+│   │           │   ├── sidebar-floorplans.png
+│   │           │   ├── sidebar-flowchart.png
+│   │           │   ├── sidebar-fluid_power.png
+│   │           │   ├── sidebar-gcp19.png
+│   │           │   ├── sidebar-gcp2.png
+│   │           │   ├── sidebar-gcpicons.png
+│   │           │   ├── sidebar-gcp.png
+│   │           │   ├── sidebar-general.png
+│   │           │   ├── sidebar-gmdl.png
+│   │           │   ├── sidebar-ibm.png
+│   │           │   ├── sidebar-infographic.png
+│   │           │   ├── sidebar-ios.png
+│   │           │   ├── sidebar-kubernetes.png
+│   │           │   ├── sidebar-leanmapping.png
+│   │           │   ├── sidebar-mockups.png
+│   │           │   ├── sidebar-mscae.png
+│   │           │   ├── sidebar-network.png
+│   │           │   ├── sidebar-office.png
+│   │           │   ├── sidebar-pid.png
+│   │           │   ├── sidebar-rack.png
+│   │           │   ├── sidebar-salesforce.png
+│   │           │   ├── sidebar-sap.png
+│   │           │   ├── sidebar-signs.png
+│   │           │   ├── sidebar-sitemap.png
+│   │           │   ├── sidebar-sysml.png
+│   │           │   ├── sidebar-threatmodeling.png
+│   │           │   ├── sidebar-uml25.png
+│   │           │   ├── sidebar-uml.png
+│   │           │   ├── sidebar-veeam.png
+│   │           │   ├── sidebar-vvd.png
+│   │           │   ├── sidebar-webIcons.png
+│   │           │   ├── sketch-logo128.png
+│   │           │   ├── spin.gif
+│   │           │   ├── sprites.png
+│   │           │   ├── stop-flat-icon-80.png
+│   │           │   ├── submenu.gif
+│   │           │   ├── tiles-sel.svg
+│   │           │   ├── tiles.svg
+│   │           │   ├── touch-submenu.png
+│   │           │   ├── transparent.gif
+│   │           │   ├── trello-logo.svg
+│   │           │   ├── trello-logo-white-orange.svg
+│   │           │   ├── trello-logo-white.svg
+│   │           │   ├── triangle-down.png
+│   │           │   ├── triangle-left.png
+│   │           │   ├── triangle-right.png
+│   │           │   ├── triangle-up.png
+│   │           │   ├── tweet.png
+│   │           │   ├── unlocked.png
+│   │           │   ├── update16.png
+│   │           │   ├── update32.png
+│   │           │   ├── update80.png
+│   │           │   └── youtube.png
+│   │           ├── img
+│   │           │   ├── clipart
+│   │           │   │   ├── Battery_0_128x128.png
+│   │           │   │   ├── Battery_100_128x128.png
+│   │           │   │   ├── Battery_50_128x128.png
+│   │           │   │   ├── Battery_75_128x128.png
+│   │           │   │   ├── Battery_allstates_128x128.png
+│   │           │   │   ├── Bluetooth_128x128.png
+│   │           │   │   ├── Earth_globe_128x128.png
+│   │           │   │   ├── Empty_Folder_128x128.png
+│   │           │   │   ├── Full_Folder_128x128.png
+│   │           │   │   ├── Gear_128x128.png
+│   │           │   │   ├── Keys_128x128.png
+│   │           │   │   ├── Lock_128x128.png
+│   │           │   │   ├── Mouse_Pointer_128x128.png
+│   │           │   │   ├── Plug_128x128.png
+│   │           │   │   ├── Ships_Wheel_128x128.png
+│   │           │   │   ├── Star_128x128.png
+│   │           │   │   └── Tire_128x128.png
+│   │           │   ├── computers
+│   │           │   │   ├── Antivirus_128x128.png
+│   │           │   │   ├── Database_128x128.png
+│   │           │   │   ├── Database_Add_128x128.png
+│   │           │   │   ├── Database_Minus_128x128.png
+│   │           │   │   ├── Database_Move_Stack_128x128.png
+│   │           │   │   ├── Database_Remove_128x128.png
+│   │           │   │   ├── Data_Filtering_128x128.png
+│   │           │   │   ├── Fujitsu_Tablet_128x128.png
+│   │           │   │   ├── Harddrive_128x128.png
+│   │           │   │   ├── IBM_Tablet_128x128.png
+│   │           │   │   ├── iMac_128x128.png
+│   │           │   │   ├── iPad_128x128.png
+│   │           │   │   ├── Laptop_128x128.png
+│   │           │   │   ├── MacBook_128x128.png
+│   │           │   │   ├── Mainframe_128x128.png
+│   │           │   │   ├── Monitor_128x128.png
+│   │           │   │   ├── Monitor_Tower_128x128.png
+│   │           │   │   ├── Monitor_Tower_Behind_128x128.png
+│   │           │   │   ├── Netbook_128x128.png
+│   │           │   │   ├── Network_128x128.png
+│   │           │   │   ├── Network_2_128x128.png
+│   │           │   │   ├── Printer_128x128.png
+│   │           │   │   ├── Printer_Commercial_128x128.png
+│   │           │   │   ├── Secure_System_128x128.png
+│   │           │   │   ├── Server_128x128.png
+│   │           │   │   ├── Server_Rack_128x128.png
+│   │           │   │   ├── Server_Rack_Empty_128x128.png
+│   │           │   │   ├── Server_Rack_Partial_128x128.png
+│   │           │   │   ├── Server_Tower_128x128.png
+│   │           │   │   ├── Software_128x128.png
+│   │           │   │   ├── Stylus_128x128.png
+│   │           │   │   ├── Touch_128x128.png
+│   │           │   │   ├── USB_Hub_128x128.png
+│   │           │   │   ├── Virtual_Application_128x128.png
+│   │           │   │   ├── Virtual_Machine_128x128.png
+│   │           │   │   ├── Virus_128x128.png
+│   │           │   │   └── Workstation_128x128.png
+│   │           │   ├── finance
+│   │           │   │   ├── Arrow_Down_128x128.png
+│   │           │   │   ├── Arrow_Up_128x128.png
+│   │           │   │   ├── Coins_128x128.png
+│   │           │   │   ├── Credit_Card_128x128.png
+│   │           │   │   ├── Dollar_128x128.png
+│   │           │   │   ├── Graph_128x128.png
+│   │           │   │   ├── Pie_Chart_128x128.png
+│   │           │   │   ├── Piggy_Bank_128x128.png
+│   │           │   │   ├── Safe_128x128.png
+│   │           │   │   ├── Shopping_Cart_128x128.png
+│   │           │   │   ├── Stock_Down_128x128.png
+│   │           │   │   └── Stock_Up_128x128.png
+│   │           │   ├── google-app
+│   │           │   │   ├── edit.png
+│   │           │   │   ├── insert.png
+│   │           │   │   ├── new.png
+│   │           │   │   ├── update-all.png
+│   │           │   │   └── update-selected.png
+│   │           │   ├── lib
+│   │           │   │   ├── active_directory
+│   │           │   │   │   ├── active_directory.svg
+│   │           │   │   │   ├── cd_dvd.svg
+│   │           │   │   │   ├── cell_phone.svg
+│   │           │   │   │   ├── cluster_server.svg
+│   │           │   │   │   ├── community_discussion.svg
+│   │           │   │   │   ├── database_cube.svg
+│   │           │   │   │   ├── database_partition_2.svg
+│   │           │   │   │   ├── database_partition_3.svg
+│   │           │   │   │   ├── database_partition_4.svg
+│   │           │   │   │   ├── database_partition_5.svg
+│   │           │   │   │   ├── database_server.svg
+│   │           │   │   │   ├── databases.svg
+│   │           │   │   │   ├── database.svg
+│   │           │   │   │   ├── data_jack.svg
+│   │           │   │   │   ├── documents.svg
+│   │           │   │   │   ├── domain_controller.svg
+│   │           │   │   │   ├── fax.svg
+│   │           │   │   │   ├── firewall.svg
+│   │           │   │   │   ├── folder_open.svg
+│   │           │   │   │   ├── folder.svg
+│   │           │   │   │   ├── generic_node.svg
+│   │           │   │   │   ├── generic_server.svg
+│   │           │   │   │   ├── hard_disk.svg
+│   │           │   │   │   ├── home_page.svg
+│   │           │   │   │   ├── home.svg
+│   │           │   │   │   ├── input_output_filter.svg
+│   │           │   │   │   ├── interface.svg
+│   │           │   │   │   ├── internet_cloud.svg
+│   │           │   │   │   ├── internet_globe.svg
+│   │           │   │   │   ├── key.svg
+│   │           │   │   │   ├── laptop_client.svg
+│   │           │   │   │   ├── list.svg
+│   │           │   │   │   ├── mac_client.svg
+│   │           │   │   │   ├── mainframe_host.svg
+│   │           │   │   │   ├── mainframe.svg
+│   │           │   │   │   ├── meeting.svg
+│   │           │   │   │   ├── modem.svg
+│   │           │   │   │   ├── my_sites.svg
+│   │           │   │   │   ├── not_secure.svg
+│   │           │   │   │   ├── pda.svg
+│   │           │   │   │   ├── phone.svg
+│   │           │   │   │   ├── printer.svg
+│   │           │   │   │   ├── router.svg
+│   │           │   │   │   ├── secure.svg
+│   │           │   │   │   ├── security.svg
+│   │           │   │   │   ├── server_farm.svg
+│   │           │   │   │   ├── shadowed_router.svg
+│   │           │   │   │   ├── site_collection.svg
+│   │           │   │   │   ├── sql_server.svg
+│   │           │   │   │   ├── sub_site.svg
+│   │           │   │   │   ├── switch.svg
+│   │           │   │   │   ├── tablet_pc.svg
+│   │           │   │   │   ├── tunnel.svg
+│   │           │   │   │   ├── user_accounts.svg
+│   │           │   │   │   ├── users.svg
+│   │           │   │   │   ├── user.svg
+│   │           │   │   │   ├── vista_client.svg
+│   │           │   │   │   ├── vista_terminal.svg
+│   │           │   │   │   ├── web_server.svg
+│   │           │   │   │   ├── wiki_site.svg
+│   │           │   │   │   ├── windows_domain.svg
+│   │           │   │   │   ├── windows_router.svg
+│   │           │   │   │   ├── windows_server_2.svg
+│   │           │   │   │   ├── windows_server.svg
+│   │           │   │   │   ├── wiring_hub.svg
+│   │           │   │   │   ├── workspace_site.svg
+│   │           │   │   │   ├── workstation_client.svg
+│   │           │   │   │   ├── writer.svg
+│   │           │   │   │   └── writing.svg
+│   │           │   │   ├── allied_telesis
+│   │           │   │   │   ├── buildings
+│   │           │   │   │   │   ├── Apartments.svg
+│   │           │   │   │   │   ├── Building_Cluster.svg
+│   │           │   │   │   │   ├── Large_Building.svg
+│   │           │   │   │   │   ├── Long_Building.svg
+│   │           │   │   │   │   ├── Medium_Business_Building.svg
+│   │           │   │   │   │   ├── School_Building.svg
+│   │           │   │   │   │   └── Secure_Building.svg
+│   │           │   │   │   ├── computer_and_terminals
+│   │           │   │   │   │   ├── IP_TV.svg
+│   │           │   │   │   │   ├── Keypad.svg
+│   │           │   │   │   │   ├── Laptop.svg
+│   │           │   │   │   │   ├── Personal_Computer.svg
+│   │           │   │   │   │   ├── Personal Computer Wireless.svg
+│   │           │   │   │   │   ├── Personal_Computer_Wireless.svg
+│   │           │   │   │   │   ├── Personal_Computer_with_Server.svg
+│   │           │   │   │   │   ├── POS_keypad.svg
+│   │           │   │   │   │   ├── POS_Printer.svg
+│   │           │   │   │   │   ├── Server_Desktop.svg
+│   │           │   │   │   │   ├── Smartphone.svg
+│   │           │   │   │   │   ├── Tablet_Alternative.svg
+│   │           │   │   │   │   ├── Tablet.svg
+│   │           │   │   │   │   ├── Vdeo_Conference_Terminal.svg
+│   │           │   │   │   │   └── VOIP_IP_phone.svg
+│   │           │   │   │   ├── media_converters
+│   │           │   │   │   │   ├── Industrial_Media_Converter_POE.svg
+│   │           │   │   │   │   ├── Industrial_Media_Converter.svg
+│   │           │   │   │   │   ├── Media_Converter_Modular.svg
+│   │           │   │   │   │   ├── Media_Converter_Standalone_POE.svg
+│   │           │   │   │   │   └── Media_Converter_Standalone.svg
+│   │           │   │   │   ├── security
+│   │           │   │   │   │   ├── DVS_Surveillance_Monitor.svg
+│   │           │   │   │   │   ├── EtherGRID.svg
+│   │           │   │   │   │   ├── POE_DVS_Camera.svg
+│   │           │   │   │   │   ├── POS.svg
+│   │           │   │   │   │   ├── Router_UTM.svg
+│   │           │   │   │   │   ├── Router_VPN.svg
+│   │           │   │   │   │   └── Surveillance_Camera_Ceiling.svg
+│   │           │   │   │   ├── storage
+│   │           │   │   │   │   ├── Datacenter_Server_Half_Rack_ToR.svg
+│   │           │   │   │   │   ├── Datacenter_Server_Rack_EoR.svg
+│   │           │   │   │   │   ├── Datacenter_Server_Rack_Storage_Unit_Small.svg
+│   │           │   │   │   │   ├── Datacenter_Server_Rack.svg
+│   │           │   │   │   │   ├── Datacenter_Server_Rack_ToR.svg
+│   │           │   │   │   │   └── Datacenter_Server_Storage_Unit_Large.svg
+│   │           │   │   │   ├── switch
+│   │           │   │   │   │   ├── Industrial_Ethernet_IE200_POE.svg
+│   │           │   │   │   │   ├── Industrial_Ethernet_IE200.svg
+│   │           │   │   │   │   ├── Industrial_Ethernet_IE300.svg
+│   │           │   │   │   │   ├── Modular_Switch_SBx8106.svg
+│   │           │   │   │   │   ├── Modular_Switch_SBx8112.svg
+│   │           │   │   │   │   ├── Modular_Switch_SXx908GEN2.svg
+│   │           │   │   │   │   ├── Switch_24_port_L2_POE.svg
+│   │           │   │   │   │   ├── Switch_24_port_L2.svg
+│   │           │   │   │   │   ├── Switch_24_port_L3_Alternative.svg
+│   │           │   │   │   │   ├── Switch_24_port_L3_POE.svg
+│   │           │   │   │   │   ├── Switch_24_port_L3.svg
+│   │           │   │   │   │   ├── Switch_48_port_L2_POE.svg
+│   │           │   │   │   │   ├── Switch_48_port_L2.svg
+│   │           │   │   │   │   ├── Switch_48_port_L3_POE.svg
+│   │           │   │   │   │   ├── Switch_48_port_L3.svg
+│   │           │   │   │   │   └── Switch_52_port_L3.svg
+│   │           │   │   │   └── wireless
+│   │           │   │   │       ├── Access_Point_Indoor.svg
+│   │           │   │   │       ├── Access_Point_Outdoor.svg
+│   │           │   │   │       └── Laptop_Wireless.svg
+│   │           │   │   ├── atlassian
+│   │           │   │   │   ├── Atlassian_Logo.svg
+│   │           │   │   │   ├── Bamboo_Logo.svg
+│   │           │   │   │   ├── Bitbucket_Logo.svg
+│   │           │   │   │   ├── Clover_Logo.svg
+│   │           │   │   │   ├── Confluence_Logo.svg
+│   │           │   │   │   ├── Crowd_Logo.svg
+│   │           │   │   │   ├── Crucible_Logo.svg
+│   │           │   │   │   ├── Fisheye_Logo.svg
+│   │           │   │   │   ├── Hipchat_Logo.svg
+│   │           │   │   │   ├── Jira_Core_Logo.svg
+│   │           │   │   │   ├── Jira_Logo.svg
+│   │           │   │   │   ├── Jira_Service_Desk_Logo.svg
+│   │           │   │   │   ├── Jira_Software_Logo.svg
+│   │           │   │   │   ├── Sourcetree_Logo.svg
+│   │           │   │   │   ├── Statuspage_Logo.svg
+│   │           │   │   │   ├── Stride_Logo.svg
+│   │           │   │   │   └── Trello_Logo.svg
+│   │           │   │   ├── azure2
+│   │           │   │   │   ├── ai_machine_learning
+│   │           │   │   │   │   ├── AI_Studio.svg
+│   │           │   │   │   │   ├── Anomaly_Detector.svg
+│   │           │   │   │   │   ├── Azure_Applied_AI.svg
+│   │           │   │   │   │   ├── Azure_Experimentation_Studio.svg
+│   │           │   │   │   │   ├── Azure_Object_Understanding.svg
+│   │           │   │   │   │   ├── Azure_OpenAI.svg
+│   │           │   │   │   │   ├── Batch_AI.svg
+│   │           │   │   │   │   ├── Bonsai.svg
+│   │           │   │   │   │   ├── Bot_Services.svg
+│   │           │   │   │   │   ├── Cognitive_Services_Decisions.svg
+│   │           │   │   │   │   ├── Cognitive_Services.svg
+│   │           │   │   │   │   ├── Computer_Vision.svg
+│   │           │   │   │   │   ├── Content_Moderators.svg
+│   │           │   │   │   │   ├── Content_Safety.svg
+│   │           │   │   │   │   ├── Custom_Vision.svg
+│   │           │   │   │   │   ├── Face_APIs.svg
+│   │           │   │   │   │   ├── Form_Recognizers.svg
+│   │           │   │   │   │   ├── Genomics.svg
+│   │           │   │   │   │   ├── Immersive_Readers.svg
+│   │           │   │   │   │   ├── Language_Services.svg
+│   │           │   │   │   │   ├── Language_Understanding.svg
+│   │           │   │   │   │   ├── Machine_Learning_Studio_Classic_Web_Services.svg
+│   │           │   │   │   │   ├── Machine_Learning_Studio_Web_Service_Plans.svg
+│   │           │   │   │   │   ├── Machine_Learning_Studio_Workspaces.svg
+│   │           │   │   │   │   ├── Machine_Learning.svg
+│   │           │   │   │   │   ├── Personalizers.svg
+│   │           │   │   │   │   ├── QnA_Makers.svg
+│   │           │   │   │   │   ├── Serverless_Search.svg
+│   │           │   │   │   │   ├── Speech_Services.svg
+│   │           │   │   │   │   └── Translator_Text.svg
+│   │           │   │   │   ├── analytics
+│   │           │   │   │   │   ├── Analysis_Services.svg
+│   │           │   │   │   │   ├── Azure_Databricks.svg
+│   │           │   │   │   │   ├── Azure_Synapse_Analytics.svg
+│   │           │   │   │   │   ├── Azure_Workbooks.svg
+│   │           │   │   │   │   ├── Data_Lake_Analytics.svg
+│   │           │   │   │   │   ├── Data_Lake_Store_Gen1.svg
+│   │           │   │   │   │   ├── Endpoint_Analytics.svg
+│   │           │   │   │   │   ├── Event_Hub_Clusters.svg
+│   │           │   │   │   │   ├── Event_Hubs.svg
+│   │           │   │   │   │   ├── HD_Insight_Clusters.svg
+│   │           │   │   │   │   ├── Log_Analytics_Workspaces.svg
+│   │           │   │   │   │   ├── Power_BI_Embedded.svg
+│   │           │   │   │   │   ├── Power_Platform.svg
+│   │           │   │   │   │   └── Stream_Analytics_Jobs.svg
+│   │           │   │   │   ├── app_services
+│   │           │   │   │   │   ├── API_Management_Services.svg
+│   │           │   │   │   │   ├── App_Service_Certificates.svg
+│   │           │   │   │   │   ├── App_Service_Domains.svg
+│   │           │   │   │   │   ├── App_Service_Environments.svg
+│   │           │   │   │   │   ├── App_Service_Plans.svg
+│   │           │   │   │   │   ├── App_Services.svg
+│   │           │   │   │   │   ├── CDN_Profiles.svg
+│   │           │   │   │   │   ├── Notification_Hubs.svg
+│   │           │   │   │   │   └── Search_Services.svg
+│   │           │   │   │   ├── azure_ecosystem
+│   │           │   │   │   │   ├── Applens.svg
+│   │           │   │   │   │   ├── Azure_Hybrid_Center.svg
+│   │           │   │   │   │   └── Collaborative_Service.svg
+│   │           │   │   │   ├── azure_stack
+│   │           │   │   │   │   ├── Azure_Stack.svg
+│   │           │   │   │   │   ├── Capacity.svg
+│   │           │   │   │   │   ├── Infrastructure_Backup.svg
+│   │           │   │   │   │   ├── Multi_Tenancy.svg
+│   │           │   │   │   │   ├── Offers.svg
+│   │           │   │   │   │   ├── Plans.svg
+│   │           │   │   │   │   ├── Updates.svg
+│   │           │   │   │   │   └── User_Subscriptions.svg
+│   │           │   │   │   ├── azure_vmware_solution
+│   │           │   │   │   │   └── AVS.svg
+│   │           │   │   │   ├── blockchain
+│   │           │   │   │   │   ├── ABS_Member.svg
+│   │           │   │   │   │   ├── Azure_Blockchain_Service.svg
+│   │           │   │   │   │   ├── Azure_Token_Service.svg
+│   │           │   │   │   │   ├── Blockchain_Applications.svg
+│   │           │   │   │   │   ├── Consortium.svg
+│   │           │   │   │   │   └── Outbound_Connection.svg
+│   │           │   │   │   ├── compute
+│   │           │   │   │   │   ├── Application_Group.svg
+│   │           │   │   │   │   ├── App_Services.svg
+│   │           │   │   │   │   ├── Automanaged_VM.svg
+│   │           │   │   │   │   ├── Availability_Sets.svg
+│   │           │   │   │   │   ├── Azure_Compute_Galleries.svg
+│   │           │   │   │   │   ├── Azure_Spring_Cloud.svg
+│   │           │   │   │   │   ├── Batch_Accounts.svg
+│   │           │   │   │   │   ├── Cloud_Services_Classic.svg
+│   │           │   │   │   │   ├── Container_Instances.svg
+│   │           │   │   │   │   ├── Container_Services_Deprecated.svg
+│   │           │   │   │   │   ├── Disk_Encryption_Sets.svg
+│   │           │   │   │   │   ├── Disks_Classic.svg
+│   │           │   │   │   │   ├── Disks_Snapshots.svg
+│   │           │   │   │   │   ├── Disks.svg
+│   │           │   │   │   │   ├── Function_Apps.svg
+│   │           │   │   │   │   ├── Host_Groups.svg
+│   │           │   │   │   │   ├── Host_Pools.svg
+│   │           │   │   │   │   ├── Hosts.svg
+│   │           │   │   │   │   ├── Image_Definitions.svg
+│   │           │   │   │   │   ├── Images.svg
+│   │           │   │   │   │   ├── Image_Templates.svg
+│   │           │   │   │   │   ├── Image_Versions.svg
+│   │           │   │   │   │   ├── Kubernetes_Services.svg
+│   │           │   │   │   │   ├── Maintenance_Configuration.svg
+│   │           │   │   │   │   ├── Managed_Service_Fabric.svg
+│   │           │   │   │   │   ├── Mesh_Applications.svg
+│   │           │   │   │   │   ├── Metrics_Advisor.svg
+│   │           │   │   │   │   ├── OS_Images_Classic.svg
+│   │           │   │   │   │   ├── Restore_Points_Collections.svg
+│   │           │   │   │   │   ├── Restore_Points.svg
+│   │           │   │   │   │   ├── Service_Fabric_Clusters.svg
+│   │           │   │   │   │   ├── Shared_Image_Galleries.svg
+│   │           │   │   │   │   ├── Virtual_Machines_Classic.svg
+│   │           │   │   │   │   ├── Virtual_Machine.svg
+│   │           │   │   │   │   ├── VM_Images_Classic.svg
+│   │           │   │   │   │   ├── VM_Scale_Sets.svg
+│   │           │   │   │   │   ├── Workspaces2.svg
+│   │           │   │   │   │   └── Workspaces.svg
+│   │           │   │   │   ├── containers
+│   │           │   │   │   │   ├── App_Services.svg
+│   │           │   │   │   │   ├── Azure_Red_Hat_OpenShift.svg
+│   │           │   │   │   │   ├── Batch_Accounts.svg
+│   │           │   │   │   │   ├── Container_Instances.svg
+│   │           │   │   │   │   ├── Container_Registries.svg
+│   │           │   │   │   │   ├── Kubernetes_Services.svg
+│   │           │   │   │   │   └── Service_Fabric_Clusters.svg
+│   │           │   │   │   ├── cxp
+│   │           │   │   │   │   ├── Elixir_Purple.svg
+│   │           │   │   │   │   └── Elixir.svg
+│   │           │   │   │   ├── databases
+│   │           │   │   │   │   ├── Azure_Cosmos_DB.svg
+│   │           │   │   │   │   ├── Azure_Database_MariaDB_Server.svg
+│   │           │   │   │   │   ├── Azure_Database_Migration_Services.svg
+│   │           │   │   │   │   ├── Azure_Database_MySQL_Server.svg
+│   │           │   │   │   │   ├── Azure_Database_PostgreSQL_Server_Group.svg
+│   │           │   │   │   │   ├── Azure_Database_PostgreSQL_Server.svg
+│   │           │   │   │   │   ├── Azure_Data_Explorer_Clusters.svg
+│   │           │   │   │   │   ├── Azure_Purview_Accounts.svg
+│   │           │   │   │   │   ├── Azure_SQL_Edge.svg
+│   │           │   │   │   │   ├── Azure_SQL_Server_Stretch_Databases.svg
+│   │           │   │   │   │   ├── Azure_SQL.svg
+│   │           │   │   │   │   ├── Azure_SQL_VM.svg
+│   │           │   │   │   │   ├── Azure_Synapse_Analytics.svg
+│   │           │   │   │   │   ├── Cache_Redis.svg
+│   │           │   │   │   │   ├── Data_Factory.svg
+│   │           │   │   │   │   ├── Elastic_Job_Agents.svg
+│   │           │   │   │   │   ├── Instance_Pools.svg
+│   │           │   │   │   │   ├── Managed_Database.svg
+│   │           │   │   │   │   ├── Oracle_Database.svg
+│   │           │   │   │   │   ├── SQL_Database.svg
+│   │           │   │   │   │   ├── SQL_Data_Warehouses.svg
+│   │           │   │   │   │   ├── SQL_Elastic_Pools.svg
+│   │           │   │   │   │   ├── SQL_Managed_Instance.svg
+│   │           │   │   │   │   ├── SQL_Server_Registries.svg
+│   │           │   │   │   │   ├── SQL_Server.svg
+│   │           │   │   │   │   ├── SSIS_Lift_And_Shift_IR.svg
+│   │           │   │   │   │   └── Virtual_Clusters.svg
+│   │           │   │   │   ├── devops
+│   │           │   │   │   │   ├── API_Connections.svg
+│   │           │   │   │   │   ├── Application_Insights.svg
+│   │           │   │   │   │   ├── Azure_DevOps.svg
+│   │           │   │   │   │   ├── Change_Analysis.svg
+│   │           │   │   │   │   ├── CloudTest.svg
+│   │           │   │   │   │   ├── Code_Optimization.svg
+│   │           │   │   │   │   ├── DevOps_Starter.svg
+│   │           │   │   │   │   ├── DevTest_Labs.svg
+│   │           │   │   │   │   ├── Lab_Accounts.svg
+│   │           │   │   │   │   └── Lab_Services.svg
+│   │           │   │   │   ├── general
+│   │           │   │   │   │   ├── All_Resources.svg
+│   │           │   │   │   │   ├── Backlog.svg
+│   │           │   │   │   │   ├── Biz_Talk.svg
+│   │           │   │   │   │   ├── Blob_Block.svg
+│   │           │   │   │   │   ├── Blob_Page.svg
+│   │           │   │   │   │   ├── Branch.svg
+│   │           │   │   │   │   ├── Browser.svg
+│   │           │   │   │   │   ├── Bug.svg
+│   │           │   │   │   │   ├── Builds.svg
+│   │           │   │   │   │   ├── Cache.svg
+│   │           │   │   │   │   ├── Code.svg
+│   │           │   │   │   │   ├── Commit.svg
+│   │           │   │   │   │   ├── Controls_Horizontal.svg
+│   │           │   │   │   │   ├── Controls.svg
+│   │           │   │   │   │   ├── Cost_Alerts.svg
+│   │           │   │   │   │   ├── Cost_Analysis.svg
+│   │           │   │   │   │   ├── Cost_Budgets.svg
+│   │           │   │   │   │   ├── Cost_Management_and_Billing.svg
+│   │           │   │   │   │   ├── Cost_Management.svg
+│   │           │   │   │   │   ├── Counter.svg
+│   │           │   │   │   │   ├── Cubes.svg
+│   │           │   │   │   │   ├── Dashboard2.svg
+│   │           │   │   │   │   ├── Dashboard.svg
+│   │           │   │   │   │   ├── Dev_Console.svg
+│   │           │   │   │   │   ├── Download.svg
+│   │           │   │   │   │   ├── Error.svg
+│   │           │   │   │   │   ├── Extensions.svg
+│   │           │   │   │   │   ├── Files.svg
+│   │           │   │   │   │   ├── File.svg
+│   │           │   │   │   │   ├── Folder_Blank.svg
+│   │           │   │   │   │   ├── Folder_Website.svg
+│   │           │   │   │   │   ├── Free_Services.svg
+│   │           │   │   │   │   ├── FTP.svg
+│   │           │   │   │   │   ├── Gear.svg
+│   │           │   │   │   │   ├── Globe_Error.svg
+│   │           │   │   │   │   ├── Globe_Success.svg
+│   │           │   │   │   │   ├── Globe.svg
+│   │           │   │   │   │   ├── Globe_Warning.svg
+│   │           │   │   │   │   ├── Guide.svg
+│   │           │   │   │   │   ├── Heart.svg
+│   │           │   │   │   │   ├── Help_and_Support.svg
+│   │           │   │   │   │   ├── Image.svg
+│   │           │   │   │   │   ├── Information.svg
+│   │           │   │   │   │   ├── Input_Output.svg
+│   │           │   │   │   │   ├── Journey_Hub.svg
+│   │           │   │   │   │   ├── Launch_Portal.svg
+│   │           │   │   │   │   ├── Learn.svg
+│   │           │   │   │   │   ├── Load_Test.svg
+│   │           │   │   │   │   ├── Location.svg
+│   │           │   │   │   │   ├── Log_Streaming.svg
+│   │           │   │   │   │   ├── Management_Groups.svg
+│   │           │   │   │   │   ├── Management_Portal.svg
+│   │           │   │   │   │   ├── Marketplace.svg
+│   │           │   │   │   │   ├── Media_File.svg
+│   │           │   │   │   │   ├── Media.svg
+│   │           │   │   │   │   ├── Mobile_Engagement.svg
+│   │           │   │   │   │   ├── Mobile.svg
+│   │           │   │   │   │   ├── Module.svg
+│   │           │   │   │   │   ├── Powershell.svg
+│   │           │   │   │   │   ├── Power.svg
+│   │           │   │   │   │   ├── Power_Up.svg
+│   │           │   │   │   │   ├── Preview_Features.svg
+│   │           │   │   │   │   ├── Preview.svg
+│   │           │   │   │   │   ├── Process_Explorer.svg
+│   │           │   │   │   │   ├── Production_Ready_Database.svg
+│   │           │   │   │   │   ├── Quickstart_Center.svg
+│   │           │   │   │   │   ├── Recent.svg
+│   │           │   │   │   │   ├── Reservations.svg
+│   │           │   │   │   │   ├── Resource_Explorer.svg
+│   │           │   │   │   │   ├── Resource_Group_List.svg
+│   │           │   │   │   │   ├── Resource_Groups.svg
+│   │           │   │   │   │   ├── Resource_Linked.svg
+│   │           │   │   │   │   ├── Scale.svg
+│   │           │   │   │   │   ├── Scheduler.svg
+│   │           │   │   │   │   ├── Search_Grid.svg
+│   │           │   │   │   │   ├── Search.svg
+│   │           │   │   │   │   ├── Server_Farm.svg
+│   │           │   │   │   │   ├── Service_Bus.svg
+│   │           │   │   │   │   ├── Service_Health.svg
+│   │           │   │   │   │   ├── SSD.svg
+│   │           │   │   │   │   ├── Storage_Azure_Files.svg
+│   │           │   │   │   │   ├── Storage_Container.svg
+│   │           │   │   │   │   ├── Storage_Queue.svg
+│   │           │   │   │   │   ├── Subscriptions.svg
+│   │           │   │   │   │   ├── Table.svg
+│   │           │   │   │   │   ├── Tags.svg
+│   │           │   │   │   │   ├── Tag.svg
+│   │           │   │   │   │   ├── Templates.svg
+│   │           │   │   │   │   ├── TFS_VC_Repository.svg
+│   │           │   │   │   │   ├── Toolbox.svg
+│   │           │   │   │   │   ├── Troubleshoot.svg
+│   │           │   │   │   │   ├── Versions.svg
+│   │           │   │   │   │   ├── Website_Power.svg
+│   │           │   │   │   │   ├── Website_Staging.svg
+│   │           │   │   │   │   ├── Web_Slots.svg
+│   │           │   │   │   │   ├── Web_Test.svg
+│   │           │   │   │   │   ├── Workbooks.svg
+│   │           │   │   │   │   └── Workflow.svg
+│   │           │   │   │   ├── hybrid_multicloud
+│   │           │   │   │   │   ├── Azure_Operator_5G_Core.svg
+│   │           │   │   │   │   ├── Azure_Operator_Insights.svg
+│   │           │   │   │   │   ├── Azure_Operator_Nexus.svg
+│   │           │   │   │   │   ├── Azure_Operator_Service_Manager.svg
+│   │           │   │   │   │   └── Azure_Programmable_Connectivity.svg
+│   │           │   │   │   ├── identity
+│   │           │   │   │   │   ├── AAD_Licenses.svg
+│   │           │   │   │   │   ├── Active_Directory_Connect_Health2.svg
+│   │           │   │   │   │   ├── Active_Directory_Connect_Health.svg
+│   │           │   │   │   │   ├── Administrative_Units.svg
+│   │           │   │   │   │   ├── App_Registrations.svg
+│   │           │   │   │   │   ├── Azure_Active_Directory.svg
+│   │           │   │   │   │   ├── Azure_AD_B2C2.svg
+│   │           │   │   │   │   ├── Azure_AD_B2C.svg
+│   │           │   │   │   │   ├── Azure_AD_Domain_Services.svg
+│   │           │   │   │   │   ├── Azure_AD_Identity_Protection.svg
+│   │           │   │   │   │   ├── Azure_AD_Privilege_Identity_Management.svg
+│   │           │   │   │   │   ├── Azure_Information_Protection.svg
+│   │           │   │   │   │   ├── Custom_Azure_AD_Roles.svg
+│   │           │   │   │   │   ├── Enterprise_Applications.svg
+│   │           │   │   │   │   ├── Entra_Connect.svg
+│   │           │   │   │   │   ├── Entra_Domain_Services.svg
+│   │           │   │   │   │   ├── Entra_Global_Secure_Access.svg
+│   │           │   │   │   │   ├── Entra_ID_Protection.svg
+│   │           │   │   │   │   ├── Entra_Internet_Access.svg
+│   │           │   │   │   │   ├── Entra_Managed_Identities.svg
+│   │           │   │   │   │   ├── Entra_Private_Access.svg
+│   │           │   │   │   │   ├── Entra_Privileged_Identity_Management.svg
+│   │           │   │   │   │   ├── Entra_Verified_ID.svg
+│   │           │   │   │   │   ├── External_Identities.svg
+│   │           │   │   │   │   ├── Groups.svg
+│   │           │   │   │   │   ├── Identity_Governance.svg
+│   │           │   │   │   │   ├── Managed_Identities.svg
+│   │           │   │   │   │   ├── Multi_Factor_Authentication.svg
+│   │           │   │   │   │   ├── PIM.svg
+│   │           │   │   │   │   ├── Security.svg
+│   │           │   │   │   │   ├── Tenant_Properties.svg
+│   │           │   │   │   │   ├── User_Settings.svg
+│   │           │   │   │   │   ├── Users.svg
+│   │           │   │   │   │   ├── Verifiable_Credentials.svg
+│   │           │   │   │   │   └── Verification_As_A_Service.svg
+│   │           │   │   │   ├── integration
+│   │           │   │   │   │   ├── API_Management_Services.svg
+│   │           │   │   │   │   ├── App_Configuration.svg
+│   │           │   │   │   │   ├── Azure_API_for_FHIR.svg
+│   │           │   │   │   │   ├── Azure_Data_Catalog.svg
+│   │           │   │   │   │   ├── Event_Grid_Domains.svg
+│   │           │   │   │   │   ├── Event_Grid_Subscriptions.svg
+│   │           │   │   │   │   ├── Event_Grid_Topics.svg
+│   │           │   │   │   │   ├── Integration_Accounts.svg
+│   │           │   │   │   │   ├── Integration_Environments.svg
+│   │           │   │   │   │   ├── Integration_Service_Environments.svg
+│   │           │   │   │   │   ├── Logic_Apps_Custom_Connector.svg
+│   │           │   │   │   │   ├── Logic_Apps.svg
+│   │           │   │   │   │   ├── Partner_Namespace.svg
+│   │           │   │   │   │   ├── Partner_Registration.svg
+│   │           │   │   │   │   ├── Partner_Topic.svg
+│   │           │   │   │   │   ├── Relays.svg
+│   │           │   │   │   │   ├── SendGrid_Accounts.svg
+│   │           │   │   │   │   ├── Service_Bus.svg
+│   │           │   │   │   │   ├── Software_as_a_Service.svg
+│   │           │   │   │   │   ├── SQL_Data_Warehouses.svg
+│   │           │   │   │   │   └── System_Topic.svg
+│   │           │   │   │   ├── internet_of_things
+│   │           │   │   │   │   ├── Digital_Twins.svg
+│   │           │   │   │   │   ├── Logic_Apps.svg
+│   │           │   │   │   │   └── Time_Series_Insights_Access_Policies.svg
+│   │           │   │   │   ├── intune
+│   │           │   │   │   │   ├── Azure_AD_Roles_and_Administrators.svg
+│   │           │   │   │   │   ├── Client_Apps.svg
+│   │           │   │   │   │   ├── Device_Compliance.svg
+│   │           │   │   │   │   ├── Device_Configuration.svg
+│   │           │   │   │   │   ├── Device_Enrollment.svg
+│   │           │   │   │   │   ├── Device_Security_Apple.svg
+│   │           │   │   │   │   ├── Device_Security_Google.svg
+│   │           │   │   │   │   ├── Device_Security_Windows.svg
+│   │           │   │   │   │   ├── Devices.svg
+│   │           │   │   │   │   ├── eBooks.svg
+│   │           │   │   │   │   ├── Exchange_Access.svg
+│   │           │   │   │   │   ├── Intune_For_Education.svg
+│   │           │   │   │   │   ├── Intune.svg
+│   │           │   │   │   │   ├── Mindaro.svg
+│   │           │   │   │   │   ├── Security_Baselines.svg
+│   │           │   │   │   │   ├── Software_Updates.svg
+│   │           │   │   │   │   └── Tenant_Status.svg
+│   │           │   │   │   ├── iot
+│   │           │   │   │   │   ├── Azure_IoT_Operations.svg
+│   │           │   │   │   │   ├── Azure_Maps_Accounts.svg
+│   │           │   │   │   │   ├── Azure_Stack_HCI_Sizer.svg
+│   │           │   │   │   │   ├── Device_Provisioning_Services.svg
+│   │           │   │   │   │   ├── Digital_Twins.svg
+│   │           │   │   │   │   ├── Event_Hubs.svg
+│   │           │   │   │   │   ├── Function_Apps.svg
+│   │           │   │   │   │   ├── Industrial_IoT.svg
+│   │           │   │   │   │   ├── IoT_Central_Applications.svg
+│   │           │   │   │   │   ├── IoT_Edge.svg
+│   │           │   │   │   │   ├── IoT_Hub.svg
+│   │           │   │   │   │   ├── Logic_Apps.svg
+│   │           │   │   │   │   ├── Notification_Hubs.svg
+│   │           │   │   │   │   ├── Stack_HCI_Premium.svg
+│   │           │   │   │   │   ├── Stream_Analytics_Jobs.svg
+│   │           │   │   │   │   ├── Time_Series_Data_Sets.svg
+│   │           │   │   │   │   ├── Time_Series_Insights_Environments.svg
+│   │           │   │   │   │   ├── Time_Series_Insights_Event_Sources.svg
+│   │           │   │   │   │   └── Windows10_Core_Services.svg
+│   │           │   │   │   ├── management_governance
+│   │           │   │   │   │   ├── Activity_Log.svg
+│   │           │   │   │   │   ├── Advisor.svg
+│   │           │   │   │   │   ├── Alerts.svg
+│   │           │   │   │   │   ├── Application_Insights.svg
+│   │           │   │   │   │   ├── Arc_Machines.svg
+│   │           │   │   │   │   ├── Automation_Accounts.svg
+│   │           │   │   │   │   ├── Azure_Arc.svg
+│   │           │   │   │   │   ├── Azure_Lighthouse.svg
+│   │           │   │   │   │   ├── Blueprints.svg
+│   │           │   │   │   │   ├── Compliance.svg
+│   │           │   │   │   │   ├── Cost_Management_and_Billing.svg
+│   │           │   │   │   │   ├── Customer_Lockbox_for_MS_Azure.svg
+│   │           │   │   │   │   ├── Diagnostics_Settings.svg
+│   │           │   │   │   │   ├── Education.svg
+│   │           │   │   │   │   ├── Log_Analytics_Workspaces.svg
+│   │           │   │   │   │   ├── MachinesAzureArc.svg
+│   │           │   │   │   │   ├── Managed_Applications_Center.svg
+│   │           │   │   │   │   ├── Managed_Desktop.svg
+│   │           │   │   │   │   ├── Metrics.svg
+│   │           │   │   │   │   ├── Monitor.svg
+│   │           │   │   │   │   ├── My_Customers.svg
+│   │           │   │   │   │   ├── Operation_Log_Classic.svg
+│   │           │   │   │   │   ├── Policy.svg
+│   │           │   │   │   │   ├── Recovery_Services_Vaults.svg
+│   │           │   │   │   │   ├── Resource_Graph_Explorer.svg
+│   │           │   │   │   │   ├── Resources_Provider.svg
+│   │           │   │   │   │   ├── Scheduler_Job_Collections.svg
+│   │           │   │   │   │   ├── Service_Catalog_MAD.svg
+│   │           │   │   │   │   ├── Service_Providers.svg
+│   │           │   │   │   │   ├── Solutions.svg
+│   │           │   │   │   │   ├── Universal_Print.svg
+│   │           │   │   │   │   └── User_Privacy.svg
+│   │           │   │   │   ├── menu
+│   │           │   │   │   │   └── Keys.svg
+│   │           │   │   │   ├── migrate
+│   │           │   │   │   │   ├── Azure_Migrate.svg
+│   │           │   │   │   │   ├── Cost_Management_and_Billing.svg
+│   │           │   │   │   │   ├── Data_Box_Edge.svg
+│   │           │   │   │   │   ├── Data_Box.svg
+│   │           │   │   │   │   └── Recovery_Services_Vaults.svg
+│   │           │   │   │   ├── mixed_reality
+│   │           │   │   │   │   ├── Remote_Rendering.svg
+│   │           │   │   │   │   └── Spatial_Anchor_Accounts.svg
+│   │           │   │   │   ├── monitor
+│   │           │   │   │   │   └── SAP_Azure_Monitor.svg
+│   │           │   │   │   ├── networking
+│   │           │   │   │   │   ├── Application_Gateway_Containers.svg
+│   │           │   │   │   │   ├── Application_Gateways.svg
+│   │           │   │   │   │   ├── ATM_Multistack.svg
+│   │           │   │   │   │   ├── Azure_Communications_Gateway.svg
+│   │           │   │   │   │   ├── Azure_Firewall_Manager.svg
+│   │           │   │   │   │   ├── Azure_Firewall_Policy.svg
+│   │           │   │   │   │   ├── Bastions.svg
+│   │           │   │   │   │   ├── CDN_Profiles.svg
+│   │           │   │   │   │   ├── Connections.svg
+│   │           │   │   │   │   ├── DDoS_Protection_Plans.svg
+│   │           │   │   │   │   ├── DNS_Multistack.svg
+│   │           │   │   │   │   ├── DNS_Private_Resolver.svg
+│   │           │   │   │   │   ├── DNS_Security_Policy.svg
+│   │           │   │   │   │   ├── DNS_Zones.svg
+│   │           │   │   │   │   ├── ExpressRoute_Circuits.svg
+│   │           │   │   │   │   ├── Firewalls.svg
+│   │           │   │   │   │   ├── Front_Doors.svg
+│   │           │   │   │   │   ├── IP_Address_manager.svg
+│   │           │   │   │   │   ├── IP_Groups.svg
+│   │           │   │   │   │   ├── Load_Balancer_Hub.svg
+│   │           │   │   │   │   ├── Load_Balancers.svg
+│   │           │   │   │   │   ├── Local_Network_Gateways.svg
+│   │           │   │   │   │   ├── NAT.svg
+│   │           │   │   │   │   ├── Network_Interfaces.svg
+│   │           │   │   │   │   ├── Network_Security_Groups.svg
+│   │           │   │   │   │   ├── Network_Watcher.svg
+│   │           │   │   │   │   ├── On_Premises_Data_Gateways.svg
+│   │           │   │   │   │   ├── Private_Endpoint.svg
+│   │           │   │   │   │   ├── Private_Link_Hub.svg
+│   │           │   │   │   │   ├── Private_Link_Service.svg
+│   │           │   │   │   │   ├── Private_Link.svg
+│   │           │   │   │   │   ├── Proximity_Placement_Groups.svg
+│   │           │   │   │   │   ├── Public_IP_Addresses_Classic.svg
+│   │           │   │   │   │   ├── Public_IP_Addresses.svg
+│   │           │   │   │   │   ├── Public_IP_Prefixes.svg
+│   │           │   │   │   │   ├── Reserved_IP_Addresses_Classic.svg
+│   │           │   │   │   │   ├── Resource_Management_Private_Link.svg
+│   │           │   │   │   │   ├── Route_Filters.svg
+│   │           │   │   │   │   ├── Route_Tables.svg
+│   │           │   │   │   │   ├── Service_Endpoint_Policies.svg
+│   │           │   │   │   │   ├── Spot_VMSS.svg
+│   │           │   │   │   │   ├── Spot_VM.svg
+│   │           │   │   │   │   ├── Subnet.svg
+│   │           │   │   │   │   ├── Traffic_Manager_Profiles.svg
+│   │           │   │   │   │   ├── Virtual_Network_Gateways.svg
+│   │           │   │   │   │   ├── Virtual_Networks_Classic.svg
+│   │           │   │   │   │   ├── Virtual_Networks.svg
+│   │           │   │   │   │   ├── Virtual_Router.svg
+│   │           │   │   │   │   ├── Virtual_WAN_Hub.svg
+│   │           │   │   │   │   ├── Virtual_WANs.svg
+│   │           │   │   │   │   └── Web_Application_Firewall_Policies_WAF.svg
+│   │           │   │   │   ├── other
+│   │           │   │   │   │   ├── ACS_Solutions_Builder.svg
+│   │           │   │   │   │   ├── AKS_Automatic.svg
+│   │           │   │   │   │   ├── AKS_Istio.svg
+│   │           │   │   │   │   ├── API_Proxy.svg
+│   │           │   │   │   │   ├── App_Compliance_Automation.svg
+│   │           │   │   │   │   ├── App_Space_Component.svg
+│   │           │   │   │   │   ├── Aquila.svg
+│   │           │   │   │   │   ├── Arc_Data_services.svg
+│   │           │   │   │   │   ├── Arc_Kubernetes.svg
+│   │           │   │   │   │   ├── Arc_PostgreSQL.svg
+│   │           │   │   │   │   ├── Arc_SQL_Managed_Instance.svg
+│   │           │   │   │   │   ├── Arc_SQL_Server.svg
+│   │           │   │   │   │   ├── AVS_VM.svg
+│   │           │   │   │   │   ├── Azure_A.svg
+│   │           │   │   │   │   ├── AzureAttestation.svg
+│   │           │   │   │   │   ├── Azure_Backup_Center.svg
+│   │           │   │   │   │   ├── Azure_Center_for_SAP.svg
+│   │           │   │   │   │   ├── Azure_Chaos_Studio.svg
+│   │           │   │   │   │   ├── Azure_Cloud_Shell.svg
+│   │           │   │   │   │   ├── Azure_Communication_Services.svg
+│   │           │   │   │   │   ├── Azure_Deployment_Environments.svg
+│   │           │   │   │   │   ├── Azure_Dev_Tunnels.svg
+│   │           │   │   │   │   ├── Azure_Edge_Hardware_Center.svg
+│   │           │   │   │   │   ├── Azure_HPC_Workbench.svg
+│   │           │   │   │   │   ├── Azure_Load_Testing.svg
+│   │           │   │   │   │   ├── Azure_Monitor_Dashboard.svg
+│   │           │   │   │   │   ├── Azure_Monitor_Pipeline.svg
+│   │           │   │   │   │   ├── Azure_Network_Function_Manager_Functions.svg
+│   │           │   │   │   │   ├── Azure_Network_Function_Manager.svg
+│   │           │   │   │   │   ├── Azure_Network_Manager.svg
+│   │           │   │   │   │   ├── Azure_Orbital.svg
+│   │           │   │   │   │   ├── Azure_Quotas.svg
+│   │           │   │   │   │   ├── Azure_Sphere.svg
+│   │           │   │   │   │   ├── Azure_Storage_Mover.svg
+│   │           │   │   │   │   ├── Azure_Support_Center_Blue.svg
+│   │           │   │   │   │   ├── Azure_Sustainability.svg
+│   │           │   │   │   │   ├── Azure_Video_Indexer.svg
+│   │           │   │   │   │   ├── Azurite.svg
+│   │           │   │   │   │   ├── Backup_Vault.svg
+│   │           │   │   │   │   ├── Bare_Metal_Infrastructure.svg
+│   │           │   │   │   │   ├── Business_Process_Tracking.svg
+│   │           │   │   │   │   ├── Central_Service_Instance_for_SAP.svg
+│   │           │   │   │   │   ├── Ceres.svg
+│   │           │   │   │   │   ├── Cloud_Services_(extended_support).svg
+│   │           │   │   │   │   ├── Compliance_Center.svg
+│   │           │   │   │   │   ├── Compute_Fleet.svg
+│   │           │   │   │   │   ├── Confidential_Ledger.svg
+│   │           │   │   │   │   ├── Connected_Cache.svg
+│   │           │   │   │   │   ├── Connected_Vehicle_Platform.svg
+│   │           │   │   │   │   ├── Container_App_Environments.svg
+│   │           │   │   │   │   ├── Cost_Export.svg
+│   │           │   │   │   │   ├── Custom_IP_Prefix.svg
+│   │           │   │   │   │   ├── Dashboard_Hub.svg
+│   │           │   │   │   │   ├── Database_Instance_For_SAP.svg
+│   │           │   │   │   │   ├── Data_Collection_Rules.svg
+│   │           │   │   │   │   ├── Dedicated_HSM.svg
+│   │           │   │   │   │   ├── Defender_CM_Local_Manager.svg
+│   │           │   │   │   │   ├── Defender_DCS_Controller.svg
+│   │           │   │   │   │   ├── Defender_Distributer_Control_System.svg
+│   │           │   │   │   │   ├── Defender_Engineering_Station.svg
+│   │           │   │   │   │   ├── Defender_External_Management.svg
+│   │           │   │   │   │   ├── Defender_Freezer_Monitor.svg
+│   │           │   │   │   │   ├── Defender_Historian.svg
+│   │           │   │   │   │   ├── Defender_HMI.svg
+│   │           │   │   │   │   ├── Defender_Industrial_Packaging_System.svg
+│   │           │   │   │   │   ├── Defender_Industrial_Printer.svg
+│   │           │   │   │   │   ├── Defender_Industrial_Robot.svg
+│   │           │   │   │   │   ├── Defender_Industrial_Scale_System.svg
+│   │           │   │   │   │   ├── Defender_Marquee.svg
+│   │           │   │   │   │   ├── Defender_Meter.svg
+│   │           │   │   │   │   ├── Defender_PLC.svg
+│   │           │   │   │   │   ├── Defender_Pneumatic_Device.svg
+│   │           │   │   │   │   ├── Defender_Programable_Board.svg
+│   │           │   │   │   │   ├── Defender_Relay.svg
+│   │           │   │   │   │   ├── Defender_Robot_Controller.svg
+│   │           │   │   │   │   ├── Defender_RTU.svg
+│   │           │   │   │   │   ├── Defender_Sensor.svg
+│   │           │   │   │   │   ├── Defender_Slot.svg
+│   │           │   │   │   │   ├── Defender_Web_Guiding_System.svg
+│   │           │   │   │   │   ├── Detonation.svg
+│   │           │   │   │   │   ├── Device_Update_IoT_Hub.svg
+│   │           │   │   │   │   ├── Disk_Pool.svg
+│   │           │   │   │   │   ├── Edge_Management.svg
+│   │           │   │   │   │   ├── Elastic_SAN.svg
+│   │           │   │   │   │   ├── Entra_Connect_Health.svg
+│   │           │   │   │   │   ├── Entra_Connect_Sync.svg
+│   │           │   │   │   │   ├── Entra_Identity.svg
+│   │           │   │   │   │   ├── Exchange_On_Premises_Access.svg
+│   │           │   │   │   │   ├── ExpressRoute_Direct.svg
+│   │           │   │   │   │   ├── Express_Route_Traffic_Collector.svg
+│   │           │   │   │   │   ├── FHIR_Service.svg
+│   │           │   │   │   │   ├── Fiji.svg
+│   │           │   │   │   │   ├── Grafana.svg
+│   │           │   │   │   │   ├── HDI_AKS_Cluster.svg
+│   │           │   │   │   │   ├── IcM_Troubleshooting.svg
+│   │           │   │   │   │   ├── Image_Definition.svg
+│   │           │   │   │   │   ├── Image_Version.svg
+│   │           │   │   │   │   ├── Instance_Pools.svg
+│   │           │   │   │   │   ├── Internet_Analyzer_Profiles.svg
+│   │           │   │   │   │   ├── Intune_Trends.svg
+│   │           │   │   │   │   ├── Kubernetes_Fleet_Manager.svg
+│   │           │   │   │   │   ├── Load_Testing.svg
+│   │           │   │   │   │   ├── Local_Network_Gateways.svg
+│   │           │   │   │   │   ├── Log_Analytics_Query_Pack.svg
+│   │           │   │   │   │   ├── Managed_DevOps_Pools.svg
+│   │           │   │   │   │   ├── Managed_File_Shares.svg
+│   │           │   │   │   │   ├── Managed_Instance_Apache_Cassandra.svg
+│   │           │   │   │   │   ├── Marketplace_Management.svg
+│   │           │   │   │   │   ├── MedTech_Service.svg
+│   │           │   │   │   │   ├── Mission_Landing_Zone.svg
+│   │           │   │   │   │   ├── Modular_Data_Center.svg
+│   │           │   │   │   │   ├── Monitor_Health_Models.svg
+│   │           │   │   │   │   ├── MS_Dev_Box.svg
+│   │           │   │   │   │   ├── Network_Security_Perimeters.svg
+│   │           │   │   │   │   ├── Open_Supply_Chain_Platform.svg
+│   │           │   │   │   │   ├── OSConfig.svg
+│   │           │   │   │   │   ├── Peering_Service.svg
+│   │           │   │   │   │   ├── Peerings.svg
+│   │           │   │   │   │   ├── Private_Endpoints.svg
+│   │           │   │   │   │   ├── Private_Mobile_Network.svg
+│   │           │   │   │   │   ├── Reserved_Capacity_Groups.svg
+│   │           │   │   │   │   ├── Reserved_Capacity.svg
+│   │           │   │   │   │   ├── Resource_Guard.svg
+│   │           │   │   │   │   ├── Resource_Mover.svg
+│   │           │   │   │   │   ├── RTOS.svg
+│   │           │   │   │   │   ├── Savings_Plan.svg
+│   │           │   │   │   │   ├── SCVMM_Management_Servers.svg
+│   │           │   │   │   │   ├── Sonic_Dash.svg
+│   │           │   │   │   │   ├── SSH_Keys.svg
+│   │           │   │   │   │   ├── Storage_Actions.svg
+│   │           │   │   │   │   ├── Storage_Tasks.svg
+│   │           │   │   │   │   ├── Targets_Management.svg
+│   │           │   │   │   │   ├── Template_Specs.svg
+│   │           │   │   │   │   ├── Test_Base.svg
+│   │           │   │   │   │   ├── Universal_Print.svg
+│   │           │   │   │   │   ├── Update_Center.svg
+│   │           │   │   │   │   ├── Video_Analyzers.svg
+│   │           │   │   │   │   ├── Virtual_Enclaves.svg
+│   │           │   │   │   │   ├── Virtual_Instance_for_SAP.svg
+│   │           │   │   │   │   ├── VM_Application_Definition.svg
+│   │           │   │   │   │   ├── VM_Application_Version.svg
+│   │           │   │   │   │   ├── WAC_Installer.svg
+│   │           │   │   │   │   ├── WAC.svg
+│   │           │   │   │   │   ├── Web_App_Database.svg
+│   │           │   │   │   │   ├── Web_Jobs.svg
+│   │           │   │   │   │   ├── Windows_Notification_Services.svg
+│   │           │   │   │   │   ├── Windows_Virtual_Desktop.svg
+│   │           │   │   │   │   ├── Worker_Container_App.svg
+│   │           │   │   │   │   └── Workspace_Gateway.svg
+│   │           │   │   │   ├── preview
+│   │           │   │   │   │   ├── Azure_Cloud_Shell.svg
+│   │           │   │   │   │   ├── Azure_Sphere.svg
+│   │           │   │   │   │   ├── Azure_Workbooks.svg
+│   │           │   │   │   │   ├── IoT_Edge.svg
+│   │           │   │   │   │   ├── Private_Link_Hub.svg
+│   │           │   │   │   │   ├── RTOS.svg
+│   │           │   │   │   │   ├── Static_Apps.svg
+│   │           │   │   │   │   ├── Time_Series_Data_Sets.svg
+│   │           │   │   │   │   └── Web_Environment.svg
+│   │           │   │   │   ├── security
+│   │           │   │   │   │   ├── Application_Security_Groups.svg
+│   │           │   │   │   │   ├── Azure_AD_Risky_Signins.svg
+│   │           │   │   │   │   ├── Azure_AD_Risky_Users.svg
+│   │           │   │   │   │   ├── Azure_Defender.svg
+│   │           │   │   │   │   ├── Azure_Sentinel.svg
+│   │           │   │   │   │   ├── Conditional_Access.svg
+│   │           │   │   │   │   ├── Detonation.svg
+│   │           │   │   │   │   ├── ExtendedSecurityUpdates.svg
+│   │           │   │   │   │   ├── Identity_Secure_Score.svg
+│   │           │   │   │   │   ├── Keys.svg
+│   │           │   │   │   │   ├── Key_Vaults.svg
+│   │           │   │   │   │   ├── MS_Defender_EASM.svg
+│   │           │   │   │   │   ├── Multifactor_Authentication.svg
+│   │           │   │   │   │   └── Security_Center.svg
+│   │           │   │   │   ├── storage
+│   │           │   │   │   │   ├── Azure_Fileshare.svg
+│   │           │   │   │   │   ├── Azure_HCP_Cache.svg
+│   │           │   │   │   │   ├── Azure_NetApp_Files.svg
+│   │           │   │   │   │   ├── Azure_Stack_Edge.svg
+│   │           │   │   │   │   ├── Data_Box_Edge.svg
+│   │           │   │   │   │   ├── Data_Box.svg
+│   │           │   │   │   │   ├── Data_Lake_Storage_Gen1.svg
+│   │           │   │   │   │   ├── Data_Share_Invitations.svg
+│   │           │   │   │   │   ├── Data_Shares.svg
+│   │           │   │   │   │   ├── Import_Export_Jobs.svg
+│   │           │   │   │   │   ├── Recovery_Services_Vaults.svg
+│   │           │   │   │   │   ├── Storage_Accounts_Classic.svg
+│   │           │   │   │   │   ├── Storage_Accounts.svg
+│   │           │   │   │   │   ├── Storage_Explorer.svg
+│   │           │   │   │   │   ├── Storage_Sync_Services.svg
+│   │           │   │   │   │   ├── StorSimple_Data_Managers.svg
+│   │           │   │   │   │   └── StorSimple_Device_Managers.svg
+│   │           │   │   │   └── web
+│   │           │   │   │       ├── API_Center.svg
+│   │           │   │   │       ├── App_Space.svg
+│   │           │   │   │       ├── Azure_Media_Service.svg
+│   │           │   │   │       ├── Notification_Hub_Namespaces.svg
+│   │           │   │   │       └── SignalR.svg
+│   │           │   │   ├── clip_art
+│   │           │   │   │   ├── computers
+│   │           │   │   │   │   ├── Antivirus_128x128.png
+│   │           │   │   │   │   ├── Database_128x128.png
+│   │           │   │   │   │   ├── Database_Add_128x128.png
+│   │           │   │   │   │   ├── Database_Minus_128x128.png
+│   │           │   │   │   │   ├── Database_Move_Stack_128x128.png
+│   │           │   │   │   │   ├── Database_Remove_128x128.png
+│   │           │   │   │   │   ├── Data_Filtering_128x128.png
+│   │           │   │   │   │   ├── Fujitsu_Tablet_128x128.png
+│   │           │   │   │   │   ├── Harddrive_128x128.png
+│   │           │   │   │   │   ├── IBM_Tablet_128x128.png
+│   │           │   │   │   │   ├── iMac_128x128.png
+│   │           │   │   │   │   ├── iPad_128x128.png
+│   │           │   │   │   │   ├── Laptop_128x128.png
+│   │           │   │   │   │   ├── MacBook_128x128.png
+│   │           │   │   │   │   ├── Mainframe_128x128.png
+│   │           │   │   │   │   ├── Monitor_128x128.png
+│   │           │   │   │   │   ├── Monitor_Tower_128x128.png
+│   │           │   │   │   │   ├── Monitor_Tower_Behind_128x128.png
+│   │           │   │   │   │   ├── Netbook_128x128.png
+│   │           │   │   │   │   ├── Network_128x128.png
+│   │           │   │   │   │   ├── Network_2_128x128.png
+│   │           │   │   │   │   ├── Printer_128x128.png
+│   │           │   │   │   │   ├── Printer_Commercial_128x128.png
+│   │           │   │   │   │   ├── Secure_System_128x128.png
+│   │           │   │   │   │   ├── Server_128x128.png
+│   │           │   │   │   │   ├── Server_Rack_128x128.png
+│   │           │   │   │   │   ├── Server_Rack_Empty_128x128.png
+│   │           │   │   │   │   ├── Server_Rack_Partial_128x128.png
+│   │           │   │   │   │   ├── Server_Tower_128x128.png
+│   │           │   │   │   │   ├── Software_128x128.png
+│   │           │   │   │   │   ├── Stylus_128x128.png
+│   │           │   │   │   │   ├── Touch_128x128.png
+│   │           │   │   │   │   ├── USB_Hub_128x128.png
+│   │           │   │   │   │   ├── Virtual_Application_128x128.png
+│   │           │   │   │   │   ├── Virtual_Machine_128x128.png
+│   │           │   │   │   │   ├── Virus_128x128.png
+│   │           │   │   │   │   └── Workstation_128x128.png
+│   │           │   │   │   ├── finance
+│   │           │   │   │   │   ├── Arrow_Down_128x128.png
+│   │           │   │   │   │   ├── Arrow_Up_128x128.png
+│   │           │   │   │   │   ├── Coins_128x128.png
+│   │           │   │   │   │   ├── Credit_Card_128x128.png
+│   │           │   │   │   │   ├── Dollar_128x128.png
+│   │           │   │   │   │   ├── Graph_128x128.png
+│   │           │   │   │   │   ├── Pie_Chart_128x128.png
+│   │           │   │   │   │   ├── Piggy_Bank_128x128.png
+│   │           │   │   │   │   ├── Safe_128x128.png
+│   │           │   │   │   │   ├── Shopping_Cart_128x128.png
+│   │           │   │   │   │   ├── Stock_Down_128x128.png
+│   │           │   │   │   │   └── Stock_Up_128x128.png
+│   │           │   │   │   ├── general
+│   │           │   │   │   │   ├── Battery_0_128x128.png
+│   │           │   │   │   │   ├── Battery_100_128x128.png
+│   │           │   │   │   │   ├── Battery_50_128x128.png
+│   │           │   │   │   │   ├── Battery_75_128x128.png
+│   │           │   │   │   │   ├── Battery_allstates_128x128.png
+│   │           │   │   │   │   ├── Bluetooth_128x128.png
+│   │           │   │   │   │   ├── Earth_globe_128x128.png
+│   │           │   │   │   │   ├── Empty_Folder_128x128.png
+│   │           │   │   │   │   ├── Full_Folder_128x128.png
+│   │           │   │   │   │   ├── Gear_128x128.png
+│   │           │   │   │   │   ├── Keys_128x128.png
+│   │           │   │   │   │   ├── Lock_128x128.png
+│   │           │   │   │   │   ├── Mouse_Pointer_128x128.png
+│   │           │   │   │   │   ├── Plug_128x128.png
+│   │           │   │   │   │   ├── Ships_Wheel_128x128.png
+│   │           │   │   │   │   ├── Star_128x128.png
+│   │           │   │   │   │   └── Tire_128x128.png
+│   │           │   │   │   ├── networking
+│   │           │   │   │   │   ├── Bridge_128x128.png
+│   │           │   │   │   │   ├── Certificate_128x128.png
+│   │           │   │   │   │   ├── Certificate_Off_128x128.png
+│   │           │   │   │   │   ├── Cloud_128x128.png
+│   │           │   │   │   │   ├── Cloud_Computer_128x128.png
+│   │           │   │   │   │   ├── Cloud_Computer_Private_128x128.png
+│   │           │   │   │   │   ├── Cloud_Rack_128x128.png
+│   │           │   │   │   │   ├── Cloud_Rack_Private_128x128.png
+│   │           │   │   │   │   ├── Cloud_Server_128x128.png
+│   │           │   │   │   │   ├── Cloud_Server_Private_128x128.png
+│   │           │   │   │   │   ├── Cloud_Storage_128x128.png
+│   │           │   │   │   │   ├── Concentrator_128x128.png
+│   │           │   │   │   │   ├── Email_128x128.png
+│   │           │   │   │   │   ├── Firewall_02_128x128.png
+│   │           │   │   │   │   ├── Firewall_128x128.png
+│   │           │   │   │   │   ├── Firewall-page1_128x128.png
+│   │           │   │   │   │   ├── Ip_Camera_128x128.png
+│   │           │   │   │   │   ├── Modem_128x128.png
+│   │           │   │   │   │   ├── power_distribution_unit_128x128.png
+│   │           │   │   │   │   ├── Print_Server_128x128.png
+│   │           │   │   │   │   ├── Print_Server_Wireless_128x128.png
+│   │           │   │   │   │   ├── Repeater_128x128.png
+│   │           │   │   │   │   ├── Router_128x128.png
+│   │           │   │   │   │   ├── Router_Icon_128x128.png
+│   │           │   │   │   │   ├── Switch_128x128.png
+│   │           │   │   │   │   ├── UPS_128x128.png
+│   │           │   │   │   │   ├── Wireless_Router_128x128.png
+│   │           │   │   │   │   └── Wireless_Router_N_128x128.png
+│   │           │   │   │   ├── people
+│   │           │   │   │   │   ├── Construction_Worker_Man_128x128.png
+│   │           │   │   │   │   ├── Construction_Worker_Man_Black_128x128.png
+│   │           │   │   │   │   ├── Construction_Worker_Woman_128x128.png
+│   │           │   │   │   │   ├── Construction_Worker_Woman_Black_128x128.png
+│   │           │   │   │   │   ├── Doctor_Man_128x128.png
+│   │           │   │   │   │   ├── Doctor_Man_Black_128x128.png
+│   │           │   │   │   │   ├── Doctor_Woman_128x128.png
+│   │           │   │   │   │   ├── Doctor_Woman_Black_128x128.png
+│   │           │   │   │   │   ├── Farmer_Man_128x128.png
+│   │           │   │   │   │   ├── Farmer_Man_Black_128x128.png
+│   │           │   │   │   │   ├── Farmer_Woman_128x128.png
+│   │           │   │   │   │   ├── Farmer_Woman_Black_128x128.png
+│   │           │   │   │   │   ├── Military_Officer_128x128.png
+│   │           │   │   │   │   ├── Military_Officer_Black_128x128.png
+│   │           │   │   │   │   ├── Military_Officer_Woman_128x128.png
+│   │           │   │   │   │   ├── Military_Officer_Woman_Black_128x128.png
+│   │           │   │   │   │   ├── Nurse_Man_128x128.png
+│   │           │   │   │   │   ├── Nurse_Man_Black_128x128.png
+│   │           │   │   │   │   ├── Nurse_Man_Green_128x128.png
+│   │           │   │   │   │   ├── Nurse_Man_Red_128x128.png
+│   │           │   │   │   │   ├── Nurse_Woman_128x128.png
+│   │           │   │   │   │   ├── Nurse_Woman_Black_128x128.png
+│   │           │   │   │   │   ├── Nurse_Woman_Green_128x128.png
+│   │           │   │   │   │   ├── Nurse_Woman_Red_128x128.png
+│   │           │   │   │   │   ├── Pilot_Man_128x128.png
+│   │           │   │   │   │   ├── Pilot_Man_Black_128x128.png
+│   │           │   │   │   │   ├── Pilot_Woman_128x128.png
+│   │           │   │   │   │   ├── Pilot_Woman_Black_128x128.png
+│   │           │   │   │   │   ├── Scientist_Man_128x128.png
+│   │           │   │   │   │   ├── Scientist_Man_Black_128x128.png
+│   │           │   │   │   │   ├── Scientist_Woman_128x128.png
+│   │           │   │   │   │   ├── Scientist_Woman_Black_128x128.png
+│   │           │   │   │   │   ├── Security_Man_128x128.png
+│   │           │   │   │   │   ├── Security_Man_Black_128x128.png
+│   │           │   │   │   │   ├── Security_Woman_128x128.png
+│   │           │   │   │   │   ├── Security_Woman_Black_128x128.png
+│   │           │   │   │   │   ├── Soldier_128x128.png
+│   │           │   │   │   │   ├── Soldier_Black_128x128.png
+│   │           │   │   │   │   ├── Suit_Man_128x128.png
+│   │           │   │   │   │   ├── Suit_Man_Black_128x128.png
+│   │           │   │   │   │   ├── Suit_Man_Blue_128x128.png
+│   │           │   │   │   │   ├── Suit_Man_Green_128x128.png
+│   │           │   │   │   │   ├── Suit_Man_Green_Black_128x128.png
+│   │           │   │   │   │   ├── Suit_Woman_128x128.png
+│   │           │   │   │   │   ├── Suit_Woman_Black_128x128.png
+│   │           │   │   │   │   ├── Suit_Woman_Blue_128x128.png
+│   │           │   │   │   │   ├── Suit_Woman_Green_128x128.png
+│   │           │   │   │   │   ├── Suit_Woman_Green_Black_128x128.png
+│   │           │   │   │   │   ├── Tech_Man_128x128.png
+│   │           │   │   │   │   ├── Tech_Man_Black_128x128.png
+│   │           │   │   │   │   ├── Telesales_Man_128x128.png
+│   │           │   │   │   │   ├── Telesales_Man_Black_128x128.png
+│   │           │   │   │   │   ├── Telesales_Woman_128x128.png
+│   │           │   │   │   │   ├── Telesales_Woman_Black_128x128.png
+│   │           │   │   │   │   ├── Waiter_128x128.png
+│   │           │   │   │   │   ├── Waiter_Black_128x128.png
+│   │           │   │   │   │   ├── Waiter_Woman_128x128.png
+│   │           │   │   │   │   ├── Waiter_Woman_Black_128x128.png
+│   │           │   │   │   │   ├── Worker_Black_128x128.png
+│   │           │   │   │   │   ├── Worker_Man_128x128.png
+│   │           │   │   │   │   ├── Worker_Woman_128x128.png
+│   │           │   │   │   │   └── Worker_Woman_Black_128x128.png
+│   │           │   │   │   └── telecommunication
+│   │           │   │   │       ├── BlackBerry_128x128.png
+│   │           │   │   │       ├── Cellphone_128x128.png
+│   │           │   │   │       ├── HTC_smartphone_128x128.png
+│   │           │   │   │       ├── iPhone_128x128.png
+│   │           │   │   │       ├── Palm_Treo_128x128.png
+│   │           │   │   │       ├── Signal_tower_off_128x128.png
+│   │           │   │   │       ├── Signal_tower_on_128x128.png
+│   │           │   │   │       └── Telephone_128x128.png
+│   │           │   │   ├── cumulus
+│   │           │   │   │   ├── chassis_bare_metal_empty.svg
+│   │           │   │   │   ├── chassis_cumulus_linux.svg
+│   │           │   │   │   ├── container.svg
+│   │           │   │   │   ├── cumulus_linux_icon.svg
+│   │           │   │   │   ├── cumulus_netq_icon.svg
+│   │           │   │   │   ├── ddos_server.svg
+│   │           │   │   │   ├── internet.svg
+│   │           │   │   │   ├── limed_spruce.svg
+│   │           │   │   │   ├── netq_agent.svg
+│   │           │   │   │   ├── netq_chassis.svg
+│   │           │   │   │   ├── netq_server.svg
+│   │           │   │   │   ├── netq_telemetry_server.svg
+│   │           │   │   │   ├── rack_bare_metal.svg
+│   │           │   │   │   ├── rack_cumulus_linux.svg
+│   │           │   │   │   ├── rack_out_of_band.svg
+│   │           │   │   │   ├── rack_voyager.svg
+│   │           │   │   │   ├── server_bare_metal.svg
+│   │           │   │   │   ├── switch_bare_metal_empty.svg
+│   │           │   │   │   ├── switch_cumulus_linux.svg
+│   │           │   │   │   ├── switch_out_of_band.svg
+│   │           │   │   │   ├── switch.svg
+│   │           │   │   │   └── switch_voyager.svg
+│   │           │   │   ├── ibm
+│   │           │   │   │   ├── analytics
+│   │           │   │   │   │   ├── analytics.svg
+│   │           │   │   │   │   ├── data_integration.svg
+│   │           │   │   │   │   ├── data_repositories.svg
+│   │           │   │   │   │   ├── device_analytics.svg
+│   │           │   │   │   │   └── streaming_computing.svg
+│   │           │   │   │   ├── applications
+│   │           │   │   │   │   ├── actionable_insight.svg
+│   │           │   │   │   │   ├── annotate.svg
+│   │           │   │   │   │   ├── api_developer_portal.svg
+│   │           │   │   │   │   ├── api_polyglot_runtimes.svg
+│   │           │   │   │   │   ├── application_logic.svg
+│   │           │   │   │   │   ├── app_server.svg
+│   │           │   │   │   │   ├── automation_tools.svg
+│   │           │   │   │   │   ├── enterprise_applications.svg
+│   │           │   │   │   │   ├── index.svg
+│   │           │   │   │   │   ├── iot_application.svg
+│   │           │   │   │   │   ├── microservice.svg
+│   │           │   │   │   │   ├── mobile_app.svg
+│   │           │   │   │   │   ├── ontology.svg
+│   │           │   │   │   │   ├── open_source_tools.svg
+│   │           │   │   │   │   ├── runtime_services.svg
+│   │           │   │   │   │   ├── saas_applications.svg
+│   │           │   │   │   │   ├── service_broker.svg
+│   │           │   │   │   │   ├── speech_to_text.svg
+│   │           │   │   │   │   ├── visualization.svg
+│   │           │   │   │   │   └── visual_recognition.svg
+│   │           │   │   │   ├── blockchain
+│   │           │   │   │   │   ├── blockchain_developer.svg
+│   │           │   │   │   │   ├── blockchain.svg
+│   │           │   │   │   │   ├── certificate_authority.svg
+│   │           │   │   │   │   ├── client_application.svg
+│   │           │   │   │   │   ├── communication.svg
+│   │           │   │   │   │   ├── consensus.svg
+│   │           │   │   │   │   ├── e_cert.svg
+│   │           │   │   │   │   ├── event_listener.svg
+│   │           │   │   │   │   ├── event.svg
+│   │           │   │   │   │   ├── existing_enterprise_systems.svg
+│   │           │   │   │   │   ├── hyperledger_fabric.svg
+│   │           │   │   │   │   ├── identity_access_manager.svg
+│   │           │   │   │   │   ├── key_management.svg
+│   │           │   │   │   │   ├── ledger.svg
+│   │           │   │   │   │   ├── membership_services_provider_api.svg
+│   │           │   │   │   │   ├── membership.svg
+│   │           │   │   │   │   ├── message_bus.svg
+│   │           │   │   │   │   ├── node.svg
+│   │           │   │   │   │   ├── services.svg
+│   │           │   │   │   │   ├── smart_contract.svg
+│   │           │   │   │   │   ├── transaction_manager.svg
+│   │           │   │   │   │   └── wallet.svg
+│   │           │   │   │   ├── data
+│   │           │   │   │   │   ├── caches.svg
+│   │           │   │   │   │   ├── cloud.svg
+│   │           │   │   │   │   ├── conversation_trained_deployed.svg
+│   │           │   │   │   │   ├── data_services.svg
+│   │           │   │   │   │   ├── data_sources.svg
+│   │           │   │   │   │   ├── device_identity_service.svg
+│   │           │   │   │   │   ├── device_registry.svg
+│   │           │   │   │   │   ├── enterprise_data.svg
+│   │           │   │   │   │   ├── enterprise_user_directory.svg
+│   │           │   │   │   │   ├── file_repository.svg
+│   │           │   │   │   │   ├── ground_truth.svg
+│   │           │   │   │   │   ├── model.svg
+│   │           │   │   │   │   └── tms_data_interface.svg
+│   │           │   │   │   ├── devops
+│   │           │   │   │   │   ├── artifact_management.svg
+│   │           │   │   │   │   ├── build_test.svg
+│   │           │   │   │   │   ├── code_editor.svg
+│   │           │   │   │   │   ├── collaborative_development.svg
+│   │           │   │   │   │   ├── configuration_management.svg
+│   │           │   │   │   │   ├── continuous_deploy.svg
+│   │           │   │   │   │   ├── continuous_testing.svg
+│   │           │   │   │   │   ├── devops.svg
+│   │           │   │   │   │   ├── provision.svg
+│   │           │   │   │   │   └── release_management.svg
+│   │           │   │   │   ├── infrastructure
+│   │           │   │   │   │   ├── channels.svg
+│   │           │   │   │   │   ├── cloud_messaging.svg
+│   │           │   │   │   │   ├── dashboard.svg
+│   │           │   │   │   │   ├── diagnostics.svg
+│   │           │   │   │   │   ├── edge_services.svg
+│   │           │   │   │   │   ├── enterprise_messaging.svg
+│   │           │   │   │   │   ├── event_feed.svg
+│   │           │   │   │   │   ├── infrastructure_services.svg
+│   │           │   │   │   │   ├── interservice_communication.svg
+│   │           │   │   │   │   ├── load_balancing_routing.svg
+│   │           │   │   │   │   ├── microservices_mesh.svg
+│   │           │   │   │   │   ├── mobile_backend.svg
+│   │           │   │   │   │   ├── mobile_provider_network.svg
+│   │           │   │   │   │   ├── monitoring_logging.svg
+│   │           │   │   │   │   ├── monitoring.svg
+│   │           │   │   │   │   ├── peer_services.svg
+│   │           │   │   │   │   ├── service_discovery_configuration.svg
+│   │           │   │   │   │   └── transformation_connectivity.svg
+│   │           │   │   │   ├── management
+│   │           │   │   │   │   ├── alert_notification.svg
+│   │           │   │   │   │   ├── api_management.svg
+│   │           │   │   │   │   ├── cloud_management.svg
+│   │           │   │   │   │   ├── cluster_management.svg
+│   │           │   │   │   │   ├── content_management.svg
+│   │           │   │   │   │   ├── data_services.svg
+│   │           │   │   │   │   ├── device_management.svg
+│   │           │   │   │   │   ├── information_governance.svg
+│   │           │   │   │   │   ├── it_service_management.svg
+│   │           │   │   │   │   ├── management.svg
+│   │           │   │   │   │   ├── monitoring_metrics.svg
+│   │           │   │   │   │   ├── process_management.svg
+│   │           │   │   │   │   ├── provider_cloud_portal_service.svg
+│   │           │   │   │   │   ├── push_notifications.svg
+│   │           │   │   │   │   └── service_management_tools.svg
+│   │           │   │   │   ├── miscellaneous
+│   │           │   │   │   │   ├── bluemix.svg
+│   │           │   │   │   │   ├── cloudant.svg
+│   │           │   │   │   │   ├── cognitive_services.svg
+│   │           │   │   │   │   ├── ibm_containers.svg
+│   │           │   │   │   │   ├── ibm_public_cloud.svg
+│   │           │   │   │   │   ├── iot_cloud.svg
+│   │           │   │   │   │   ├── microservices_application.svg
+│   │           │   │   │   │   ├── object_storage.svg
+│   │           │   │   │   │   ├── offline_capabilities.svg
+│   │           │   │   │   │   ├── openwhisk.svg
+│   │           │   │   │   │   ├── peer_cloud.svg
+│   │           │   │   │   │   ├── retrieve_rank.svg
+│   │           │   │   │   │   ├── scalable.svg
+│   │           │   │   │   │   └── text_to_speech.svg
+│   │           │   │   │   ├── security
+│   │           │   │   │   │   ├── api_security.svg
+│   │           │   │   │   │   ├── blockchain_security_service.svg
+│   │           │   │   │   │   ├── data_security.svg
+│   │           │   │   │   │   ├── firewall.svg
+│   │           │   │   │   │   ├── gateway.svg
+│   │           │   │   │   │   ├── governance_risk_compliance.svg
+│   │           │   │   │   │   ├── identity_access_management.svg
+│   │           │   │   │   │   ├── identity_provider.svg
+│   │           │   │   │   │   ├── infrastructure_security.svg
+│   │           │   │   │   │   ├── physical_security.svg
+│   │           │   │   │   │   ├── security_monitoring_intelligence.svg
+│   │           │   │   │   │   ├── security_services.svg
+│   │           │   │   │   │   ├── trustend_computing.svg
+│   │           │   │   │   │   └── vpn.svg
+│   │           │   │   │   ├── social
+│   │           │   │   │   │   ├── communities.svg
+│   │           │   │   │   │   ├── file_sync.svg
+│   │           │   │   │   │   ├── live_collaboration.svg
+│   │           │   │   │   │   ├── messaging.svg
+│   │           │   │   │   │   └── networking.svg
+│   │           │   │   │   ├── users
+│   │           │   │   │   │   ├── browser.svg
+│   │           │   │   │   │   ├── device.svg
+│   │           │   │   │   │   ├── integrated_digital_experiences.svg
+│   │           │   │   │   │   ├── physical_entity.svg
+│   │           │   │   │   │   ├── sensor.svg
+│   │           │   │   │   │   └── user.svg
+│   │           │   │   │   └── vpc
+│   │           │   │   │       ├── ACLRules.svg
+│   │           │   │   │       ├── BareMetalServer.svg
+│   │           │   │   │       ├── BlockStorage.svg
+│   │           │   │   │       ├── Bridge.svg
+│   │           │   │   │       ├── ClassicInfrastructure.svg
+│   │           │   │   │       ├── ClassicInfrastructureTag.svg
+│   │           │   │   │       ├── CloudServices.svg
+│   │           │   │   │       ├── CloudTag.svg
+│   │           │   │   │       ├── DirectLink.svg
+│   │           │   │   │       ├── Enterprise2.svg
+│   │           │   │   │       ├── Enterprise.svg
+│   │           │   │   │       ├── EnterpriseTag.svg
+│   │           │   │   │       ├── Firewall.svg
+│   │           │   │   │       ├── FloatingIP.svg
+│   │           │   │   │       ├── GatewayAppliance.svg
+│   │           │   │   │       ├── IBMCloud.svg
+│   │           │   │   │       ├── ImageService.svg
+│   │           │   │   │       ├── Image.svg
+│   │           │   │   │       ├── Instance.svg
+│   │           │   │   │       ├── InternetServices2.svg
+│   │           │   │   │       ├── InternetServices.svg
+│   │           │   │   │       ├── Internet.svg
+│   │           │   │   │       ├── Key.svg
+│   │           │   │   │       ├── LoadBalancerListener.svg
+│   │           │   │   │       ├── LoadBalancerPool.svg
+│   │           │   │   │       ├── LoadBalancer.svg
+│   │           │   │   │       ├── Marketplace.svg
+│   │           │   │   │       ├── ObjectStorage.svg
+│   │           │   │   │       ├── PowerInstance.svg
+│   │           │   │   │       ├── PublicGateway.svg
+│   │           │   │   │       ├── PublicTag.svg
+│   │           │   │   │       ├── RegionTag.svg
+│   │           │   │   │       ├── Router.svg
+│   │           │   │   │       ├── Rules.svg
+│   │           │   │   │       ├── SecurityGroupRules.svg
+│   │           │   │   │       ├── Subnet.svg
+│   │           │   │   │       ├── SubnetTag2.svg
+│   │           │   │   │       ├── SubnetTag.svg
+│   │           │   │   │       ├── TransitGateway.svg
+│   │           │   │   │       ├── VirtualPrivateCloud.svg
+│   │           │   │   │       ├── VPCTag.svg
+│   │           │   │   │       ├── VPNConnection.svg
+│   │           │   │   │       ├── VPNGateway.svg
+│   │           │   │   │       ├── VPNPolicy.svg
+│   │           │   │   │       ├── VPN.svg
+│   │           │   │   │       └── ZoneTag.svg
+│   │           │   │   ├── mscae
+│   │           │   │   │   ├── Access_Review.svg
+│   │           │   │   │   ├── ActiveDirectoryDomain.svg
+│   │           │   │   │   ├── Active_Directory_Health_Monitoring.svg
+│   │           │   │   │   ├── Active_Directory.svg
+│   │           │   │   │   ├── ActiveDirectory.svg
+│   │           │   │   │   ├── Address_Space.svg
+│   │           │   │   │   ├── AddTeamMember.svg
+│   │           │   │   │   ├── ADFS.svg
+│   │           │   │   │   ├── Advisor.svg
+│   │           │   │   │   ├── AlienSad.svg
+│   │           │   │   │   ├── Alien.svg
+│   │           │   │   │   ├── Analysis_Services.svg
+│   │           │   │   │   ├── APIDefinition.svg
+│   │           │   │   │   ├── API_Management.svg
+│   │           │   │   │   ├── API.svg
+│   │           │   │   │   ├── App_Configuration.svg
+│   │           │   │   │   ├── Application_Gateway.svg
+│   │           │   │   │   ├── Application_Insights.svg
+│   │           │   │   │   ├── Application_Security_Groups.svg
+│   │           │   │   │   ├── App_Registrations.svg
+│   │           │   │   │   ├── App_Service_API_Apps.svg
+│   │           │   │   │   ├── AppServiceConnectivity.svg
+│   │           │   │   │   ├── AppServiceEnvironment.svg
+│   │           │   │   │   ├── App_Service_Frontend.svg
+│   │           │   │   │   ├── App_Service_IPAddress.svg
+│   │           │   │   │   ├── App_Service_Mobile_App.svg
+│   │           │   │   │   ├── App_Services.svg
+│   │           │   │   │   ├── App_Service.svg
+│   │           │   │   │   ├── App_Service_Worker_Pools.svg
+│   │           │   │   │   ├── Archive_Storage.svg
+│   │           │   │   │   ├── ARMExplorer.svg
+│   │           │   │   │   ├── AuditingServer.svg
+│   │           │   │   │   ├── Auditing.svg
+│   │           │   │   │   ├── AutoBackup.svg
+│   │           │   │   │   ├── Automation.svg
+│   │           │   │   │   ├── AvatarDefault.svg
+│   │           │   │   │   ├── Avatar.svg
+│   │           │   │   │   ├── AvatarUnknown.svg
+│   │           │   │   │   ├── Azure_AD_B2C.svg
+│   │           │   │   │   ├── Azure_AD_Domain_Services.svg
+│   │           │   │   │   ├── Azure_AD_Identity_Protection.svg
+│   │           │   │   │   ├── Azure_AD_Privileged_Identity_Management.svg
+│   │           │   │   │   ├── Azure API for FHIR.svg
+│   │           │   │   │   ├── Azure_API_for_FHIR.svg
+│   │           │   │   │   ├── Azure_Artifacts.svg
+│   │           │   │   │   ├── Azure_Boards.svg
+│   │           │   │   │   ├── Azure_Cache_for_Redis.svg
+│   │           │   │   │   ├── Azure_Database_for_MariaDB_servers.svg
+│   │           │   │   │   ├── Azure_Database_for_MySQL_servers.svg
+│   │           │   │   │   ├── Azure_Database_for_PostgreSQL_servers.svg
+│   │           │   │   │   ├── Azure_Database_Migration_Services.svg
+│   │           │   │   │   ├── Azure_Data_Explorer_Clusters.svg
+│   │           │   │   │   ├── Azure_DevOps.svg
+│   │           │   │   │   ├── Azure_Digital_Twins.svg
+│   │           │   │   │   ├── Azure_Firewall.svg
+│   │           │   │   │   ├── AzureFXTEdgeFiler.svg
+│   │           │   │   │   ├── Azure_Home.svg
+│   │           │   │   │   ├── Azure_IoT_Hub_Security.svg
+│   │           │   │   │   ├── Azure_IoT_Hub.svg
+│   │           │   │   │   ├── Azure_Maps.svg
+│   │           │   │   │   ├── Azure_Media_Player.svg
+│   │           │   │   │   ├── Azure_NetApp_files.svg
+│   │           │   │   │   ├── Azure_Pipelines.svg
+│   │           │   │   │   ├── Azure_Repos.svg
+│   │           │   │   │   ├── Azure_Sentinel.svg
+│   │           │   │   │   ├── Azure_Sphere.svg
+│   │           │   │   │   ├── Azure_Test_Plans.svg
+│   │           │   │   │   ├── Backlog.svg
+│   │           │   │   │   ├── Backup.svg
+│   │           │   │   │   ├── Batch_Accounts.svg
+│   │           │   │   │   ├── Batch_AI.svg
+│   │           │   │   │   ├── Batch.svg
+│   │           │   │   │   ├── Batch_Task.svg
+│   │           │   │   │   ├── Batch_TaskVM.svg
+│   │           │   │   │   ├── BillingHub.svg
+│   │           │   │   │   ├── BizTalk_Services_Hybrid_Connections.svg
+│   │           │   │   │   ├── BizTalk_Services.svg
+│   │           │   │   │   ├── BlobBlock.svg
+│   │           │   │   │   ├── BlobPage.svg
+│   │           │   │   │   ├── Blockchain.svg
+│   │           │   │   │   ├── Blog_Storage.svg
+│   │           │   │   │   ├── Blueprints.svg
+│   │           │   │   │   ├── Book.svg
+│   │           │   │   │   ├── Bot_Services.svg
+│   │           │   │   │   ├── Branch.svg
+│   │           │   │   │   ├── Browser.svg
+│   │           │   │   │   ├── Bug.svg
+│   │           │   │   │   ├── Building_Blocks.svg
+│   │           │   │   │   ├── Builds.svg
+│   │           │   │   │   ├── Cache_including_Redis.svg
+│   │           │   │   │   ├── Cache_Redis_Product.svg
+│   │           │   │   │   ├── Calendar.svg
+│   │           │   │   │   ├── CDNrocket.svg
+│   │           │   │   │   ├── Certificate.svg
+│   │           │   │   │   ├── Chart.svg
+│   │           │   │   │   ├── Check.svg
+│   │           │   │   │   ├── Citrix_Virtual_Desktops_Essentials.svg
+│   │           │   │   │   ├── ClassicIPAddress.svg
+│   │           │   │   │   ├── ClassicStorage.svg
+│   │           │   │   │   ├── Client_Apps.svg
+│   │           │   │   │   ├── Clock.svg
+│   │           │   │   │   ├── Cloud_Cycle.svg
+│   │           │   │   │   ├── Cloud_Services_Classic.svg
+│   │           │   │   │   ├── Cloud_Service.svg
+│   │           │   │   │   ├── CloudSimple_Nodes.svg
+│   │           │   │   │   ├── CloudSimple_Services.svg
+│   │           │   │   │   ├── CloudSimple_Virtual_Machines.svg
+│   │           │   │   │   ├── Code.svg
+│   │           │   │   │   ├── Cognitive_Services_Computer_Vision.svg
+│   │           │   │   │   ├── Cognitive_Services_emotion.svg
+│   │           │   │   │   ├── Cognitive_Services_face.svg
+│   │           │   │   │   ├── Cognitive_Services_luis.svg
+│   │           │   │   │   ├── Cognitive_Services_recommendations.svg
+│   │           │   │   │   ├── Cognitive_Services_Speech.svg
+│   │           │   │   │   ├── Cognitive_Services.svg
+│   │           │   │   │   ├── Cognitive_Services_textanalytics.svg
+│   │           │   │   │   ├── Cognitive_Services_web_language_model.svg
+│   │           │   │   │   ├── Commits.svg
+│   │           │   │   │   ├── Connections.svg
+│   │           │   │   │   ├── Connection.svg
+│   │           │   │   │   ├── ContactInfo.svg
+│   │           │   │   │   ├── Container_Instances.svg
+│   │           │   │   │   ├── Container_Registries.svg
+│   │           │   │   │   ├── Container_Service.svg
+│   │           │   │   │   ├── Content_Delivery_Network.svg
+│   │           │   │   │   ├── ContentManagementSystem.svg
+│   │           │   │   │   ├── Content_Protection.svg
+│   │           │   │   │   ├── ContinuousExport.svg
+│   │           │   │   │   ├── Controllers.svg
+│   │           │   │   │   ├── ControlsHorizontal.svg
+│   │           │   │   │   ├── Controls.svg
+│   │           │   │   │   ├── CosmosDB.svg
+│   │           │   │   │   ├── Counter.svg
+│   │           │   │   │   ├── Cubes.svg
+│   │           │   │   │   ├── CustomDomain.svg
+│   │           │   │   │   ├── CustomerInsights.svg
+│   │           │   │   │   ├── Customer_Lockbox.svg
+│   │           │   │   │   ├── Database_General.svg
+│   │           │   │   │   ├── DatabaseRestore.svg
+│   │           │   │   │   ├── Data_Box_Edge_Data_Box_Gateway.svg
+│   │           │   │   │   ├── Data_Box.svg
+│   │           │   │   │   ├── Databricks.svg
+│   │           │   │   │   ├── Data_Catalog.svg
+│   │           │   │   │   ├── dataExport.svg
+│   │           │   │   │   ├── Data_Factory.svg
+│   │           │   │   │   ├── Data_Lake_Analytics.svg
+│   │           │   │   │   ├── Data_Lake_Storage.svg
+│   │           │   │   │   ├── Data_Lake_Store.svg
+│   │           │   │   │   ├── Data_Lake.svg
+│   │           │   │   │   ├── dataRetention.svg
+│   │           │   │   │   ├── DataServices_category_rollup.svg
+│   │           │   │   │   ├── Data_Warehouse.svg
+│   │           │   │   │   ├── DC_OS.svg
+│   │           │   │   │   ├── DDOS_Protection_Plans.svg
+│   │           │   │   │   ├── Dedicated_Event_Hub.svg
+│   │           │   │   │   ├── dep
+│   │           │   │   │   │   ├── Application_Gateway.svg
+│   │           │   │   │   │   ├── App_Service_Logic_App.svg
+│   │           │   │   │   │   ├── Content_Delivery_Network.svg
+│   │           │   │   │   │   ├── Data_Lake_Analytics.svg
+│   │           │   │   │   │   ├── Data_Lake_Store.svg
+│   │           │   │   │   │   ├── Data_Lake.svg
+│   │           │   │   │   │   ├── DataWarehouse.svg
+│   │           │   │   │   │   └── SQL_Server_Stretch_DB.svg
+│   │           │   │   │   ├── DevConsole.svg
+│   │           │   │   │   ├── Developer_Tools.svg
+│   │           │   │   │   ├── Device_Compliance.svg
+│   │           │   │   │   ├── Device_Config.svg
+│   │           │   │   │   ├── Device_Provisioning_Services.svg
+│   │           │   │   │   ├── Devices_Groups.svg
+│   │           │   │   │   ├── DevTest_Labs.svg
+│   │           │   │   │   ├── DirectorySync.svg
+│   │           │   │   │   ├── Discard.svg
+│   │           │   │   │   ├── Discs.svg
+│   │           │   │   │   ├── DNS_Private_Zones.svg
+│   │           │   │   │   ├── DNS.svg
+│   │           │   │   │   ├── Docker.svg
+│   │           │   │   │   ├── DocumentDB.svg
+│   │           │   │   │   ├── Download.svg
+│   │           │   │   │   ├── eBooks.svg
+│   │           │   │   │   ├── Education.svg
+│   │           │   │   │   ├── Elastic_Database_Pools.svg
+│   │           │   │   │   ├── Elastic_Job_Agents.svg
+│   │           │   │   │   ├── Enrollment.svg
+│   │           │   │   │   ├── Enterprise_Applications.svg
+│   │           │   │   │   ├── Event_Grid.svg
+│   │           │   │   │   ├── Event_Grid_Topics.svg
+│   │           │   │   │   ├── Event_Hub_Clusters.svg
+│   │           │   │   │   ├── Event_Hubs.svg
+│   │           │   │   │   ├── EventLog.svg
+│   │           │   │   │   ├── Exchange_On_premises_Access.svg
+│   │           │   │   │   ├── Express_Route.svg
+│   │           │   │   │   ├── Extensions.svg
+│   │           │   │   │   ├── Favorite.svg
+│   │           │   │   │   ├── Files.svg
+│   │           │   │   │   ├── File.svg
+│   │           │   │   │   ├── FolderBlank.svg
+│   │           │   │   │   ├── FolderCube.svg
+│   │           │   │   │   ├── Folder.svg
+│   │           │   │   │   ├── FolderWebsite.svg
+│   │           │   │   │   ├── ForPlacementOnly.svg
+│   │           │   │   │   ├── Free_Services.svg
+│   │           │   │   │   ├── Front_Doors.svg
+│   │           │   │   │   ├── Ftp.svg
+│   │           │   │   │   ├── Functions.svg
+│   │           │   │   │   ├── GalleryManagement.svg
+│   │           │   │   │   ├── Gateway.svg
+│   │           │   │   │   ├── Gear_2.svg
+│   │           │   │   │   ├── GearAlternate_2.svg
+│   │           │   │   │   ├── GearAlternate.svg
+│   │           │   │   │   ├── Gear.svg
+│   │           │   │   │   ├── General_Storage.svg
+│   │           │   │   │   ├── Genomics_Accounts.svg
+│   │           │   │   │   ├── GeoReplicationPremium.svg
+│   │           │   │   │   ├── GeoReplicationStandard.svg
+│   │           │   │   │   ├── GetMoreLicense.svg
+│   │           │   │   │   ├── GetStarted.svg
+│   │           │   │   │   ├── Gift.svg
+│   │           │   │   │   ├── GlobeError.svg
+│   │           │   │   │   ├── GlobeSuccess.svg
+│   │           │   │   │   ├── Globe.svg
+│   │           │   │   │   ├── GlobeWarning.svg
+│   │           │   │   │   ├── Go.svg
+│   │           │   │   │   ├── GreatScott.svg
+│   │           │   │   │   ├── Grid3x3.svg
+│   │           │   │   │   ├── Grid.svg
+│   │           │   │   │   ├── Guest_Assignments.svg
+│   │           │   │   │   ├── Guide_2.svg
+│   │           │   │   │   ├── Guide.svg
+│   │           │   │   │   ├── Hammer.svg
+│   │           │   │   │   ├── HDInsightClusters.svg
+│   │           │   │   │   ├── HDInsight.svg
+│   │           │   │   │   ├── healthErrorBadge.svg
+│   │           │   │   │   ├── healthWarningBadge.svg
+│   │           │   │   │   ├── HeartPulse.svg
+│   │           │   │   │   ├── Heart.svg
+│   │           │   │   │   ├── Home.svg
+│   │           │   │   │   ├── HybridConnectionEndpoint.svg
+│   │           │   │   │   ├── Identity_Governance.svg
+│   │           │   │   │   ├── Image_Definitions.svg
+│   │           │   │   │   ├── Image.svg
+│   │           │   │   │   ├── Image_Versions.svg
+│   │           │   │   │   ├── InboundNAT.svg
+│   │           │   │   │   ├── InboundRule.svg
+│   │           │   │   │   ├── Info_2.svg
+│   │           │   │   │   ├── Info.svg
+│   │           │   │   │   ├── InputOutput.svg
+│   │           │   │   │   ├── Input.svg
+│   │           │   │   │   ├── InstallVisualStudio.svg
+│   │           │   │   │   ├── Integration_Accounts.svg
+│   │           │   │   │   ├── Integration_Service_Environments.svg
+│   │           │   │   │   ├── Intune_App_Protection.svg
+│   │           │   │   │   ├── IOT_edge.svg
+│   │           │   │   │   ├── Job.svg
+│   │           │   │   │   ├── JourneyHub.svg
+│   │           │   │   │   ├── KeyboardShortcuts.svg
+│   │           │   │   │   ├── Key.svg
+│   │           │   │   │   ├── Key_Vaults.svg
+│   │           │   │   │   ├── KeyVault.svg
+│   │           │   │   │   ├── Kubernetes_Services.svg
+│   │           │   │   │   ├── Kubernetes.svg
+│   │           │   │   │   ├── KuduKnife.svg
+│   │           │   │   │   ├── LaunchPortal.svg
+│   │           │   │   │   ├── Load_Balancer_feature.svg
+│   │           │   │   │   ├── LoadTest.svg
+│   │           │   │   │   ├── Local_Network_Gateways.svg
+│   │           │   │   │   ├── LocalNetwork.svg
+│   │           │   │   │   ├── Location.svg
+│   │           │   │   │   ├── Log_Analytics_Workspaces.svg
+│   │           │   │   │   ├── LogDiagnostics.svg
+│   │           │   │   │   ├── Logic_Apps_Custom_Connector.svg
+│   │           │   │   │   ├── Logic_Apps.svg
+│   │           │   │   │   ├── LogStreaming.svg
+│   │           │   │   │   ├── Log.svg
+│   │           │   │   │   ├── MachineLearningServicePlans.svg
+│   │           │   │   │   ├── Machine_Learning_Service_Workspaces.svg
+│   │           │   │   │   ├── Machine_Learning_Studio_Web_Service_Plans.svg
+│   │           │   │   │   ├── Machine_Learning_Studio_Web_Services.svg
+│   │           │   │   │   ├── Machine_Learning_Studio_Workspaces.svg
+│   │           │   │   │   ├── Machine_Learning.svg
+│   │           │   │   │   ├── MachineLearningWebServices.svg
+│   │           │   │   │   ├── MachineLearningWorkspaces.svg
+│   │           │   │   │   ├── Managed_Applications.svg
+│   │           │   │   │   ├── ManagedApplications.svg
+│   │           │   │   │   ├── Managed_Databases.svg
+│   │           │   │   │   ├── Managed_Desktop.svg
+│   │           │   │   │   ├── Managed_Identities.svg
+│   │           │   │   │   ├── Management_Groups.svg
+│   │           │   │   │   ├── Management_Portal.svg
+│   │           │   │   │   ├── ManagePortal.svg
+│   │           │   │   │   ├── MD_snapshot.svg
+│   │           │   │   │   ├── Media_Encoding.svg
+│   │           │   │   │   ├── MediaFile.svg
+│   │           │   │   │   ├── Media_On_Demand.svg
+│   │           │   │   │   ├── Media_Services.svg
+│   │           │   │   │   ├── Migration_Projects.svg
+│   │           │   │   │   ├── Mobile_Engagement.svg
+│   │           │   │   │   ├── Module.svg
+│   │           │   │   │   ├── Monitoring.svg
+│   │           │   │   │   ├── Monitor.svg
+│   │           │   │   │   ├── Multi_Factor_Authentication.svg
+│   │           │   │   │   ├── MySQL_ClearDB_database.svg
+│   │           │   │   │   ├── NetworkInterfaceCard.svg
+│   │           │   │   │   ├── Network_Security_Groups_Classic.svg
+│   │           │   │   │   ├── Network_watcher.svg
+│   │           │   │   │   ├── New.svg
+│   │           │   │   │   ├── NextBill.svg
+│   │           │   │   │   ├── Non_Azure_Machine.svg
+│   │           │   │   │   ├── Notification_Hubs.svg
+│   │           │   │   │   ├── Notification.svg
+│   │           │   │   │   ├── NSG.svg
+│   │           │   │   │   ├── Offer.svg
+│   │           │   │   │   ├── On_Premises_Data_Gateways.svg
+│   │           │   │   │   ├── OnPremiseSetup.svg
+│   │           │   │   │   ├── OpenShift.svg
+│   │           │   │   │   ├── Operations_Management_Suite.svg
+│   │           │   │   │   ├── OS_Images_Classic.svg
+│   │           │   │   │   ├── OutboundNAT.svg
+│   │           │   │   │   ├── OutboundRule.svg
+│   │           │   │   │   ├── Output.svg
+│   │           │   │   │   ├── overageCosts.svg
+│   │           │   │   │   ├── Paused.svg
+│   │           │   │   │   ├── Peerings.svg
+│   │           │   │   │   ├── Pending.svg
+│   │           │   │   │   ├── Person.svg
+│   │           │   │   │   ├── PersonWithFriend.svg
+│   │           │   │   │   ├── Phone.svg
+│   │           │   │   │   ├── PluralSight_mono.svg
+│   │           │   │   │   ├── Policy.svg
+│   │           │   │   │   ├── PortalCurrent.svg
+│   │           │   │   │   ├── Postpone.svg
+│   │           │   │   │   ├── Powershell.svg
+│   │           │   │   │   ├── Power.svg
+│   │           │   │   │   ├── PowerUp_2.svg
+│   │           │   │   │   ├── PowerUp.svg
+│   │           │   │   │   ├── PreviewRight.svg
+│   │           │   │   │   ├── Probe.svg
+│   │           │   │   │   ├── ProcessExplorer.svg
+│   │           │   │   │   ├── ProductionReadyDB.svg
+│   │           │   │   │   ├── Publish.svg
+│   │           │   │   │   ├── PullRequest.svg
+│   │           │   │   │   ├── QSDiagnostics.svg
+│   │           │   │   │   ├── QSFile.svg
+│   │           │   │   │   ├── QSMail.svg
+│   │           │   │   │   ├── QSWarning.svg
+│   │           │   │   │   ├── Queued.svg
+│   │           │   │   │   ├── Queues_Storage.svg
+│   │           │   │   │   ├── Quick_Start_Center.svg
+│   │           │   │   │   ├── Quickstart.svg
+│   │           │   │   │   ├── Quota.svg
+│   │           │   │   │   ├── Rain.svg
+│   │           │   │   │   ├── RDMA.svg
+│   │           │   │   │   ├── Recommendation.svg
+│   │           │   │   │   ├── RemoteApp.svg
+│   │           │   │   │   ├── Reservations.svg
+│   │           │   │   │   ├── ResourceDefault.svg
+│   │           │   │   │   ├── Resource_Explorer.svg
+│   │           │   │   │   ├── Resource_Graph_Explorer.svg
+│   │           │   │   │   ├── Resource_Groups.svg
+│   │           │   │   │   ├── ResourceGroup.svg
+│   │           │   │   │   ├── ResourceLinked.svg
+│   │           │   │   │   ├── ResourceProvider.svg
+│   │           │   │   │   ├── ResourceRole.svg
+│   │           │   │   │   ├── Route_Filter.svg
+│   │           │   │   │   ├── Rule.svg
+│   │           │   │   │   ├── RunbookSource.svg
+│   │           │   │   │   ├── Runbooks.svg
+│   │           │   │   │   ├── SAP_HANA_on_Azure.svg
+│   │           │   │   │   ├── ScaleAlt.svg
+│   │           │   │   │   ├── Scale.svg
+│   │           │   │   │   ├── SchedulerJobCollection.svg
+│   │           │   │   │   ├── SchedulerJob.svg
+│   │           │   │   │   ├── SDK.svg
+│   │           │   │   │   ├── SearchGrid.svg
+│   │           │   │   │   ├── Search.svg
+│   │           │   │   │   ├── Security_Baselines.svg
+│   │           │   │   │   ├── Security_Center.svg
+│   │           │   │   │   ├── SendGrid_Accounts.svg
+│   │           │   │   │   ├── ServerFarm.svg
+│   │           │   │   │   ├── ServerProxy.svg
+│   │           │   │   │   ├── serversAndMobileDevices.svg
+│   │           │   │   │   ├── Server.svg
+│   │           │   │   │   ├── Service_Bus_Queues.svg
+│   │           │   │   │   ├── Service_Bus_Relay.svg
+│   │           │   │   │   ├── Service_Bus.svg
+│   │           │   │   │   ├── Service_Bus_Topics.svg
+│   │           │   │   │   ├── Service_Catalog_Managed_Application_Definitions.svg
+│   │           │   │   │   ├── Service_Endpoint_Policies.svg
+│   │           │   │   │   ├── Service_Fabric.svg
+│   │           │   │   │   ├── ServiceHealth.svg
+│   │           │   │   │   ├── Shared_Dashboard.svg
+│   │           │   │   │   ├── Shared_Image_Galleries.svg
+│   │           │   │   │   ├── ShieldFirewall.svg
+│   │           │   │   │   ├── SignalR.svg
+│   │           │   │   │   ├── Site_Recovery.svg
+│   │           │   │   │   ├── Software_as_a_Service.svg
+│   │           │   │   │   ├── Software_Update.svg
+│   │           │   │   │   ├── Solutions.svg
+│   │           │   │   │   ├── Spatial_Anchor.svg
+│   │           │   │   │   ├── SQL_Database_generic.svg
+│   │           │   │   │   ├── SQL_DataWarehouse.svg
+│   │           │   │   │   ├── SQL_Managed_Instances.svg
+│   │           │   │   │   ├── SQLQueryPerformanceCheck.svg
+│   │           │   │   │   ├── SQL_Servers.svg
+│   │           │   │   │   ├── SQL_Stretch_Database.svg
+│   │           │   │   │   ├── SSD.svg
+│   │           │   │   │   ├── StackOverflow.svg
+│   │           │   │   │   ├── Storage_Accounts.svg
+│   │           │   │   │   ├── StorageAzureFiles.svg
+│   │           │   │   │   ├── StorageContainer.svg
+│   │           │   │   │   ├── Storage_Explorer.svg
+│   │           │   │   │   ├── StorageQueue.svg
+│   │           │   │   │   ├── StorageReplica.svg
+│   │           │   │   │   ├── Storage.svg
+│   │           │   │   │   ├── Storage_sync_service.svg
+│   │           │   │   │   ├── Store_Marketplace.svg
+│   │           │   │   │   ├── StorSimple_Data_Managers.svg
+│   │           │   │   │   ├── StorSimple.svg
+│   │           │   │   │   ├── Stream_Analytics.svg
+│   │           │   │   │   ├── Subnet.svg
+│   │           │   │   │   ├── Support_2.svg
+│   │           │   │   │   ├── Support_Requests.svg
+│   │           │   │   │   ├── Support.svg
+│   │           │   │   │   ├── Table_Storage.svg
+│   │           │   │   │   ├── Tags.svg
+│   │           │   │   │   ├── Tag.svg
+│   │           │   │   │   ├── TasksPolychromatic.svg
+│   │           │   │   │   ├── Tasks.svg
+│   │           │   │   │   ├── Task.svg
+│   │           │   │   │   ├── TaskVM.svg
+│   │           │   │   │   ├── Tax.svg
+│   │           │   │   │   ├── TeamProject.svg
+│   │           │   │   │   ├── Templates.svg
+│   │           │   │   │   ├── Tenant_Status.svg
+│   │           │   │   │   ├── TFSVCRepository.svg
+│   │           │   │   │   ├── Time_Series_Insights_environments.svg
+│   │           │   │   │   ├── TimeSeriesInsights.svg
+│   │           │   │   │   ├── Toolbox.svg
+│   │           │   │   │   ├── Tools.svg
+│   │           │   │   │   ├── TrafficManagerDisabled.svg
+│   │           │   │   │   ├── TrafficManagerEnabled.svg
+│   │           │   │   │   ├── Traffic_Manager.svg
+│   │           │   │   │   ├── Two_User_Icon.svg
+│   │           │   │   │   ├── Unidentified_Feature_Object.svg
+│   │           │   │   │   ├── UserDefinedRoute.svg
+│   │           │   │   │   ├── User_Health_Icon.svg
+│   │           │   │   │   ├── User_Privacy.svg
+│   │           │   │   │   ├── User_Resource.svg
+│   │           │   │   │   ├── Variables.svg
+│   │           │   │   │   ├── Versions.svg
+│   │           │   │   │   ├── Virtual_Clusters.svg
+│   │           │   │   │   ├── Virtual_Datacenter.svg
+│   │           │   │   │   ├── Virtual_Machine_2.svg
+│   │           │   │   │   ├── VirtualMachineLinux.svg
+│   │           │   │   │   ├── Virtual_Machines_Availability_Set.svg
+│   │           │   │   │   ├── Virtual_Machines_Linux.svg
+│   │           │   │   │   ├── Virtual_Machine.svg
+│   │           │   │   │   ├── VirtualMachineWindows.svg
+│   │           │   │   │   ├── Virtual_Network_Classic.svg
+│   │           │   │   │   ├── Virtual_Network.svg
+│   │           │   │   │   ├── Virtual_WANs.svg
+│   │           │   │   │   ├── Visual_Studio_Team_Services_CodePlex_source.svg
+│   │           │   │   │   ├── VM_Images.svg
+│   │           │   │   │   ├── VM_Linux_Non_Azure.svg
+│   │           │   │   │   ├── VM_Linux.svg
+│   │           │   │   │   ├── VM_Non_Azure.svg
+│   │           │   │   │   ├── VM_Scale_Set.svg
+│   │           │   │   │   ├── VMScale.svg
+│   │           │   │   │   ├── VM_Windows_Non_Azure.svg
+│   │           │   │   │   ├── VPN_Gateway.svg
+│   │           │   │   │   ├── VPNPointToSite.svg
+│   │           │   │   │   ├── VPNSiteToSite.svg
+│   │           │   │   │   ├── Web_App_Firewall.svg
+│   │           │   │   │   ├── WebAppUmbraco.svg
+│   │           │   │   │   ├── WebApp_WebJobs.svg
+│   │           │   │   │   ├── WebAppWordPress.svg
+│   │           │   │   │   ├── WebEnvironment.svg
+│   │           │   │   │   ├── Webhooks.svg
+│   │           │   │   │   ├── WebHosting.svg
+│   │           │   │   │   ├── WebNetwork.svg
+│   │           │   │   │   ├── WebsitePower.svg
+│   │           │   │   │   ├── WebsiteReplicator.svg
+│   │           │   │   │   ├── WebsiteSettings.svg
+│   │           │   │   │   ├── WebsiteStaging.svg
+│   │           │   │   │   ├── WebSlots.svg
+│   │           │   │   │   ├── WebTest.svg
+│   │           │   │   │   ├── Windows_10_IoT_Core_Services.svg
+│   │           │   │   │   ├── Workflow.svg
+│   │           │   │   │   ├── Wrench.svg
+│   │           │   │   │   └── XboxController.svg
+│   │           │   │   └── sap
+│   │           │   │       ├── 10.svg
+│   │           │   │       ├── 11.svg
+│   │           │   │       ├── 12.svg
+│   │           │   │       ├── 13.svg
+│   │           │   │       ├── 1.svg
+│   │           │   │       ├── 2.svg
+│   │           │   │       ├── 3.svg
+│   │           │   │       ├── 4.svg
+│   │           │   │       ├── 5.svg
+│   │           │   │       ├── 6.svg
+│   │           │   │       ├── 7.svg
+│   │           │   │       ├── 8.svg
+│   │           │   │       ├── 9.svg
+│   │           │   │       ├── Adapter.svg
+│   │           │   │       ├── Admin.svg
+│   │           │   │       ├── Alert.svg
+│   │           │   │       ├── API_Business_Hub_Enterprise.svg
+│   │           │   │       ├── API.svg
+│   │           │   │       ├── Application_Autoscaler.svg
+│   │           │   │       ├── App.svg
+│   │           │   │       ├── Building.svg
+│   │           │   │       ├── Business_Application_Studio.svg
+│   │           │   │       ├── Cloud_Connector2.svg
+│   │           │   │       ├── Cloud_Connector.svg
+│   │           │   │       ├── Cloud_Integration_Automation2.svg
+│   │           │   │       ├── Cloud_Integration_Automation.svg
+│   │           │   │       ├── Cloud.svg
+│   │           │   │       ├── Cloud_Transport_Management.svg
+│   │           │   │       ├── Data_Attribute_Recommendation.svg
+│   │           │   │       ├── Deploy.svg
+│   │           │   │       ├── Desktop.svg
+│   │           │   │       ├── Devices.svg
+│   │           │   │       ├── Document_Information_Extraction.svg
+│   │           │   │       ├── Documents.svg
+│   │           │   │       ├── Document.svg
+│   │           │   │       ├── Edge_Integration_Cell.svg
+│   │           │   │       ├── Event.svg
+│   │           │   │       ├── Factory.svg
+│   │           │   │       ├── Feature.svg
+│   │           │   │       ├── HTML5_App_Repository.svg
+│   │           │   │       ├── Identity_Authentication2.svg
+│   │           │   │       ├── Identity_Authentication.svg
+│   │           │   │       ├── Identity_Directory2.svg
+│   │           │   │       ├── Identity_Directory.svg
+│   │           │   │       ├── Identity_Provisioning2.svg
+│   │           │   │       ├── Identity_Provisioning.svg
+│   │           │   │       ├── Info.svg
+│   │           │   │       ├── Invoice_Object_Recommendation2.svg
+│   │           │   │       ├── Invoice_Object_Recommendation.svg
+│   │           │   │       ├── Key.svg
+│   │           │   │       ├── Link.svg
+│   │           │   │       ├── Locked.svg
+│   │           │   │       ├── Machine.svg
+│   │           │   │       ├── Message.svg
+│   │           │   │       ├── Mobile.svg
+│   │           │   │       ├── Object_Store_on_SAP_BTP.svg
+│   │           │   │       ├── On-Premise.svg
+│   │           │   │       ├── Personalized_Recommendation.svg
+│   │           │   │       ├── SAP_AI_Core.svg
+│   │           │   │       ├── SAP_AI_Launchpad.svg
+│   │           │   │       ├── SAP_Alert_Notification_service_for_SAP_BTP.svg
+│   │           │   │       ├── SAP_Analytics_Cloud_Embedded_Edition.svg
+│   │           │   │       ├── SAP_Analytics_Cloud.svg
+│   │           │   │       ├── SAP_Application_Logging_service_for_SAP_BTP.svg
+│   │           │   │       ├── SAP_Audit_Log_Service.svg
+│   │           │   │       ├── SAP_Authorization_and_Trust_Management_service.svg
+│   │           │   │       ├── SAP_Authorization_Management_Service.svg
+│   │           │   │       ├── SAP_Automation_Pilot.svg
+│   │           │   │       ├── SAP_BTP,_ABAP_environment.svg
+│   │           │   │       ├── SAP_BTP,_Cloud_Foundry_runtime.svg
+│   │           │   │       ├── SAP_BTP,_Kyma_runtime.svg
+│   │           │   │       ├── SAP_Build_Apps_-_Copy.svg
+│   │           │   │       ├── SAP_Build_Apps.svg
+│   │           │   │       ├── SAP_Build_Code.svg
+│   │           │   │       ├── SAP_Build_Process_Automation_-_Copy.svg
+│   │           │   │       ├── SAP_Build_Process_Automation.svg
+│   │           │   │       ├── SAP_Build_Work_Zone_-_Advanced_Edition.svg
+│   │           │   │       ├── SAP_Build_Work_Zone_-_Standard_Edition.svg
+│   │           │   │       ├── SAP_Business_Accelerator_Hub.svg
+│   │           │   │       ├── SAP_Cloud_Identity,_SAP_Malware_Scanning_Service.svg
+│   │           │   │       ├── SAP_Cloud_Identity_Service.svg
+│   │           │   │       ├── SAP_Cloud_Logging.svg
+│   │           │   │       ├── SAP_Cloud_Transport_Management.svg
+│   │           │   │       ├── SAP_Connectivity_Service.svg
+│   │           │   │       ├── SAP_Continuous_Integration_and_Delivery.svg
+│   │           │   │       ├── SAP_Credential_Store.svg
+│   │           │   │       ├── SAP_Custom_Domain_service.svg
+│   │           │   │       ├── SAP_Datasphere.svg
+│   │           │   │       ├── SAP_Destination_service.svg
+│   │           │   │       ├── SAP_Digital_Assistant_Service.svg
+│   │           │   │       ├── SAP_Document_Grounding.svg
+│   │           │   │       ├── SAP_Event_Broker_for_SAP_Cloud_Applications.svg
+│   │           │   │       ├── SAP_HANA_Cloud.svg
+│   │           │   │       ├── SAP_HANA_Spatial_Services.svg
+│   │           │   │       ├── SAP_Integration_Suite_-_Advanced_Event_Mesh.svg
+│   │           │   │       ├── SAP_Integration_Suite_-_API_Managment.svg
+│   │           │   │       ├── SAP_Integration_Suite_-_Cloud_Integration.svg
+│   │           │   │       ├── SAP_Integration_Suite_-_Data_Space_Integration.svg
+│   │           │   │       ├── SAP_Integration_Suite_-_Event_Mesh.svg
+│   │           │   │       ├── SAP_Integration_Suite_-_Integration_Advisor.svg
+│   │           │   │       ├── SAP_Integration_Suite_-_Integration_Assessment.svg
+│   │           │   │       ├── SAP_Integration_Suite_-_Migration_Assessment.svg
+│   │           │   │       ├── SAP_Integration_Suite_-_Open_Connectors.svg
+│   │           │   │       ├── SAP_Integration_Suite_-_SAP_Graph.svg
+│   │           │   │       ├── SAP_Integration_Suite.svg
+│   │           │   │       ├── SAP_Integration_Suite_-_Trading_Partner_Management.svg
+│   │           │   │       ├── SAP_Job_Scheduling_service.svg
+│   │           │   │       ├── SAP_Keystore_Service.svg
+│   │           │   │       ├── SAP_Logo.svg
+│   │           │   │       ├── SAP_Master_Data_Governance.svg
+│   │           │   │       ├── SAP_Master_Data_Integration.svg
+│   │           │   │       ├── SAP_Mobile_Services.svg
+│   │           │   │       ├── SAP_Monitoring_service_for_SAP_BTP.svg
+│   │           │   │       ├── SAP_Persistence_Service_ASE.svg
+│   │           │   │       ├── SAP_Private_Link_service.svg
+│   │           │   │       ├── SAP_Secure_Login_Service_for_SAP_GUI.svg
+│   │           │   │       ├── SAP_Service_Manager.svg
+│   │           │   │       ├── SAP_Task_Center.svg
+│   │           │   │       ├── SAP_Translation_Hub.svg
+│   │           │   │       ├── Service_Ticket_Intelligence2.svg
+│   │           │   │       ├── Service_Ticket_Intelligence.svg
+│   │           │   │       ├── Settings.svg
+│   │           │   │       ├── Success.svg
+│   │           │   │       ├── Third_Party.svg
+│   │           │   │       ├── UI5_flexibility_for_key_users.svg
+│   │           │   │       ├── UI_Theme_Designer.svg
+│   │           │   │       ├── User.svg
+│   │           │   │       └── Web.svg
+│   │           │   ├── LICENSE
+│   │           │   ├── networking
+│   │           │   │   ├── Bridge_128x128.png
+│   │           │   │   ├── Certificate_128x128.png
+│   │           │   │   ├── Certificate_Off_128x128.png
+│   │           │   │   ├── Cloud_128x128.png
+│   │           │   │   ├── Cloud_Computer_128x128.png
+│   │           │   │   ├── Cloud_Computer_Private_128x128.png
+│   │           │   │   ├── Cloud_Rack_128x128.png
+│   │           │   │   ├── Cloud_Rack_Private_128x128.png
+│   │           │   │   ├── Cloud_Server_128x128.png
+│   │           │   │   ├── Cloud_Server_Private_128x128.png
+│   │           │   │   ├── Cloud_Storage_128x128.png
+│   │           │   │   ├── Concentrator_128x128.png
+│   │           │   │   ├── Database_128x128.png
+│   │           │   │   ├── Database_Add_128x128.png
+│   │           │   │   ├── Database_Minus_128x128.png
+│   │           │   │   ├── Database_Move_Stack_128x128.png
+│   │           │   │   ├── Database_Remove_128x128.png
+│   │           │   │   ├── Data_Filtering_128x128.png
+│   │           │   │   ├── Email_128x128.png
+│   │           │   │   ├── Firewall_02_128x128.png
+│   │           │   │   ├── Firewall_128x128.png
+│   │           │   │   ├── Firewall-page1_128x128.png
+│   │           │   │   ├── Ip_Camera_128x128.png
+│   │           │   │   ├── Mainframe_128x128.png
+│   │           │   │   ├── Modem_128x128.png
+│   │           │   │   ├── power_distribution_unit_128x128.png
+│   │           │   │   ├── Print_Server_128x128.png
+│   │           │   │   ├── Print_Server_Wireless_128x128.png
+│   │           │   │   ├── Repeater_128x128.png
+│   │           │   │   ├── Router_128x128.png
+│   │           │   │   ├── Router_Icon_128x128.png
+│   │           │   │   ├── Server_128x128.png
+│   │           │   │   ├── Server_Rack_128x128.png
+│   │           │   │   ├── Server_Rack_Empty_128x128.png
+│   │           │   │   ├── Server_Rack_Partial_128x128.png
+│   │           │   │   ├── Switch_128x128.png
+│   │           │   │   ├── UPS_128x128.png
+│   │           │   │   ├── Wireless_Router_128x128.png
+│   │           │   │   └── Wireless_Router_N_128x128.png
+│   │           │   ├── people
+│   │           │   │   ├── Construction_Worker_Man_128x128.png
+│   │           │   │   ├── Construction_Worker_Man_Black_128x128.png
+│   │           │   │   ├── Construction_Worker_Woman_128x128.png
+│   │           │   │   ├── Construction_Worker_Woman_Black_128x128.png
+│   │           │   │   ├── Doctor_Man_128x128.png
+│   │           │   │   ├── Doctor_Man_Black_128x128.png
+│   │           │   │   ├── Doctor_Woman_128x128.png
+│   │           │   │   ├── Doctor_Woman_Black_128x128.png
+│   │           │   │   ├── Farmer_Man_128x128.png
+│   │           │   │   ├── Farmer_Man_Black_128x128.png
+│   │           │   │   ├── Farmer_Woman_128x128.png
+│   │           │   │   ├── Farmer_Woman_Black_128x128.png
+│   │           │   │   ├── Military_Officer_128x128.png
+│   │           │   │   ├── Military_Officer_Black_128x128.png
+│   │           │   │   ├── Military_Officer_Woman_128x128.png
+│   │           │   │   ├── Military_Officer_Woman_Black_128x128.png
+│   │           │   │   ├── Nurse_Man_128x128.png
+│   │           │   │   ├── Nurse_Man_Black_128x128.png
+│   │           │   │   ├── Nurse_Man_Green_128x128.png
+│   │           │   │   ├── Nurse_Man_Red_128x128.png
+│   │           │   │   ├── Nurse_Woman_128x128.png
+│   │           │   │   ├── Nurse_Woman_Black_128x128.png
+│   │           │   │   ├── Nurse_Woman_Green_128x128.png
+│   │           │   │   ├── Nurse_Woman_Red_128x128.png
+│   │           │   │   ├── Pilot_Man_128x128.png
+│   │           │   │   ├── Pilot_Man_Black_128x128.png
+│   │           │   │   ├── Pilot_Woman_128x128.png
+│   │           │   │   ├── Pilot_Woman_Black_128x128.png
+│   │           │   │   ├── Scientist_Man_128x128.png
+│   │           │   │   ├── Scientist_Man_Black_128x128.png
+│   │           │   │   ├── Scientist_Woman_128x128.png
+│   │           │   │   ├── Scientist_Woman_Black_128x128.png
+│   │           │   │   ├── Security_Man_128x128.png
+│   │           │   │   ├── Security_Man_Black_128x128.png
+│   │           │   │   ├── Security_Woman_128x128.png
+│   │           │   │   ├── Security_Woman_Black_128x128.png
+│   │           │   │   ├── Soldier_128x128.png
+│   │           │   │   ├── Soldier_Black_128x128.png
+│   │           │   │   ├── Suit_Man_128x128.png
+│   │           │   │   ├── Suit_Man_Black_128x128.png
+│   │           │   │   ├── Suit_Man_Blue_128x128.png
+│   │           │   │   ├── Suit_Man_Green_128x128.png
+│   │           │   │   ├── Suit_Man_Green_Black_128x128.png
+│   │           │   │   ├── Suit_Woman_128x128.png
+│   │           │   │   ├── Suit_Woman_Black_128x128.png
+│   │           │   │   ├── Suit_Woman_Blue_128x128.png
+│   │           │   │   ├── Suit_Woman_Green_128x128.png
+│   │           │   │   ├── Suit_Woman_Green_Black_128x128.png
+│   │           │   │   ├── Tech_Man_128x128.png
+│   │           │   │   ├── Tech_Man_Black_128x128.png
+│   │           │   │   ├── Telesales_Man_128x128.png
+│   │           │   │   ├── Telesales_Man_Black_128x128.png
+│   │           │   │   ├── Telesales_Woman_128x128.png
+│   │           │   │   ├── Telesales_Woman_Black_128x128.png
+│   │           │   │   ├── Waiter_128x128.png
+│   │           │   │   ├── Waiter_Black_128x128.png
+│   │           │   │   ├── Waiter_Woman_128x128.png
+│   │           │   │   ├── Waiter_Woman_Black_128x128.png
+│   │           │   │   ├── Worker_Black_128x128.png
+│   │           │   │   ├── Worker_Man_128x128.png
+│   │           │   │   ├── Worker_Woman_128x128.png
+│   │           │   │   └── Worker_Woman_Black_128x128.png
+│   │           │   └── telecommunication
+│   │           │       ├── Battery_0_128x128.png
+│   │           │       ├── Battery_100_128x128.png
+│   │           │       ├── Battery_50_128x128.png
+│   │           │       ├── Battery_75_128x128.png
+│   │           │       ├── Battery_allstates_128x128.png
+│   │           │       ├── BlackBerry_128x128.png
+│   │           │       ├── Cellphone_128x128.png
+│   │           │       ├── HTC_smartphone_128x128.png
+│   │           │       ├── iPhone_128x128.png
+│   │           │       ├── Palm_Treo_128x128.png
+│   │           │       ├── Signal_tower_off_128x128.png
+│   │           │       └── Signal_tower_on_128x128.png
+│   │           ├── index.html
+│   │           ├── js
+│   │           │   ├── app.min.js
+│   │           │   ├── clear.js
+│   │           │   ├── cryptojs
+│   │           │   │   ├── aes.min.js
+│   │           │   │   └── README.md
+│   │           │   ├── deflate
+│   │           │   │   ├── base64.js
+│   │           │   │   ├── pako.min.js
+│   │           │   │   └── README.md
+│   │           │   ├── diagramly
+│   │           │   │   ├── App.js
+│   │           │   │   ├── DesktopLibrary.js
+│   │           │   │   ├── Devel.js
+│   │           │   │   ├── DevTools.js
+│   │           │   │   ├── Dialogs.js
+│   │           │   │   ├── DiffSync.js
+│   │           │   │   ├── DistanceGuides.js
+│   │           │   │   ├── DrawioClient.js
+│   │           │   │   ├── DrawioComment.js
+│   │           │   │   ├── DrawioFile.js
+│   │           │   │   ├── DrawioFilePolling.js
+│   │           │   │   ├── DrawioFileSync.js
+│   │           │   │   ├── DrawioUser.js
+│   │           │   │   ├── DriveClient.js
+│   │           │   │   ├── DriveComment.js
+│   │           │   │   ├── DriveFile.js
+│   │           │   │   ├── DriveLibrary.js
+│   │           │   │   ├── DropboxClient.js
+│   │           │   │   ├── DropboxFile.js
+│   │           │   │   ├── DropboxLibrary.js
+│   │           │   │   ├── Editor.js
+│   │           │   │   ├── EditorUi.js
+│   │           │   │   ├── ElectronApp.js
+│   │           │   │   ├── EmbedFile.js
+│   │           │   │   ├── Embed.js
+│   │           │   │   ├── Extensions.js
+│   │           │   │   ├── GitHubClient.js
+│   │           │   │   ├── GitHubFile.js
+│   │           │   │   ├── GitHubLibrary.js
+│   │           │   │   ├── GitLabClient.js
+│   │           │   │   ├── GitLabFile.js
+│   │           │   │   ├── GitLabLibrary.js
+│   │           │   │   ├── graphml
+│   │           │   │   │   └── mxGraphMlCodec.js
+│   │           │   │   ├── GraphViewer.js
+│   │           │   │   ├── Init.js
+│   │           │   │   ├── LocalFile.js
+│   │           │   │   ├── LocalLibrary.js
+│   │           │   │   ├── Menus.js
+│   │           │   │   ├── Minimal.js
+│   │           │   │   ├── miro
+│   │           │   │   │   └── MiroImporter.js
+│   │           │   │   ├── mxFreehand.js
+│   │           │   │   ├── mxRuler.js
+│   │           │   │   ├── OneDriveClient.js
+│   │           │   │   ├── OneDriveFile.js
+│   │           │   │   ├── OneDriveLibrary.js
+│   │           │   │   ├── P2PCollab.js
+│   │           │   │   ├── Pages.js
+│   │           │   │   ├── RemoteFile.js
+│   │           │   │   ├── RemoteLibrary.js
+│   │           │   │   ├── Settings.js
+│   │           │   │   ├── sidebar
+│   │           │   │   │   ├── Sidebar-ActiveDirectory.js
+│   │           │   │   │   ├── Sidebar-Advanced.js
+│   │           │   │   │   ├── Sidebar-AlliedTelesis.js
+│   │           │   │   │   ├── Sidebar-Android.js
+│   │           │   │   │   ├── Sidebar-ArchiMate3.js
+│   │           │   │   │   ├── Sidebar-ArchiMate.js
+│   │           │   │   │   ├── Sidebar-Arrows2.js
+│   │           │   │   │   ├── Sidebar-Atlassian.js
+│   │           │   │   │   ├── Sidebar-AWS3D.js
+│   │           │   │   │   ├── Sidebar-AWS3.js
+│   │           │   │   │   ├── Sidebar-AWS4b.js
+│   │           │   │   │   ├── Sidebar-AWS4.js
+│   │           │   │   │   ├── Sidebar-AWS.js
+│   │           │   │   │   ├── Sidebar-Azure2.js
+│   │           │   │   │   ├── Sidebar-Azure.js
+│   │           │   │   │   ├── Sidebar-Basic.js
+│   │           │   │   │   ├── Sidebar-Bootstrap.js
+│   │           │   │   │   ├── Sidebar-BPMN.js
+│   │           │   │   │   ├── Sidebar-C4.js
+│   │           │   │   │   ├── Sidebar-Cabinet.js
+│   │           │   │   │   ├── Sidebar-Cisco19.js
+│   │           │   │   │   ├── Sidebar-Cisco.js
+│   │           │   │   │   ├── Sidebar-CiscoSafe.js
+│   │           │   │   │   ├── Sidebar-Citrix.js
+│   │           │   │   │   ├── Sidebar-Cumulus.js
+│   │           │   │   │   ├── Sidebar-DFD.js
+│   │           │   │   │   ├── Sidebar-EIP.js
+│   │           │   │   │   ├── Sidebar-Electrical.js
+│   │           │   │   │   ├── Sidebar-ER.js
+│   │           │   │   │   ├── Sidebar-Floorplan.js
+│   │           │   │   │   ├── Sidebar-Flowchart.js
+│   │           │   │   │   ├── Sidebar-FluidPower.js
+│   │           │   │   │   ├── Sidebar-GCP2.js
+│   │           │   │   │   ├── Sidebar-GCPIcons.js
+│   │           │   │   │   ├── Sidebar-GCP.js
+│   │           │   │   │   ├── Sidebar-Gmdl.js
+│   │           │   │   │   ├── Sidebar-IBM.js
+│   │           │   │   │   ├── Sidebar-Infographic.js
+│   │           │   │   │   ├── Sidebar-Ios7.js
+│   │           │   │   │   ├── Sidebar-Ios.js
+│   │           │   │   │   ├── Sidebar.js
+│   │           │   │   │   ├── Sidebar-Kubernetes.js
+│   │           │   │   │   ├── Sidebar-LeanMapping.js
+│   │           │   │   │   ├── Sidebar-Mockup.js
+│   │           │   │   │   ├── Sidebar-MSCAE.js
+│   │           │   │   │   ├── Sidebar-Network.js
+│   │           │   │   │   ├── Sidebar-Office.js
+│   │           │   │   │   ├── Sidebar-PID.js
+│   │           │   │   │   ├── Sidebar-Rack.js
+│   │           │   │   │   ├── Sidebar-Salesforce.js
+│   │           │   │   │   ├── Sidebar-SAP.js
+│   │           │   │   │   ├── Sidebar-Signs.js
+│   │           │   │   │   ├── Sidebar-Sitemap.js
+│   │           │   │   │   ├── Sidebar-Sysml.js
+│   │           │   │   │   ├── Sidebar-ThreatModeling.js
+│   │           │   │   │   ├── Sidebar-UML25.js
+│   │           │   │   │   ├── Sidebar-Veeam2.js
+│   │           │   │   │   ├── Sidebar-Veeam.js
+│   │           │   │   │   ├── Sidebar-VVD.js
+│   │           │   │   │   └── Sidebar-WebIcons.js
+│   │           │   │   ├── StorageFile.js
+│   │           │   │   ├── StorageLibrary.js
+│   │           │   │   ├── Trees.js
+│   │           │   │   ├── TrelloClient.js
+│   │           │   │   ├── TrelloFile.js
+│   │           │   │   ├── TrelloLibrary.js
+│   │           │   │   ├── UrlLibrary.js
+│   │           │   │   ├── util
+│   │           │   │   │   ├── mxAsyncCanvas.js
+│   │           │   │   │   └── mxJsCanvas.js
+│   │           │   │   └── vsdx
+│   │           │   │       ├── bmpDecoder.js
+│   │           │   │       ├── importer.js
+│   │           │   │       ├── mxVsdxCanvas2D.js
+│   │           │   │       └── VsdxExport.js
+│   │           │   ├── dropbox
+│   │           │   │   └── Dropbox-sdk.min.js
+│   │           │   ├── embed.dev.js
+│   │           │   ├── export-init.js
+│   │           │   ├── export.js
+│   │           │   ├── extensions.min.js
+│   │           │   ├── freehand
+│   │           │   │   ├── perfect-freehand.js
+│   │           │   │   └── README.md
+│   │           │   ├── grapheditor
+│   │           │   │   ├── Actions.js
+│   │           │   │   ├── Dialogs.js
+│   │           │   │   ├── Editor.js
+│   │           │   │   ├── EditorUi.js
+│   │           │   │   ├── Format.js
+│   │           │   │   ├── Graph.js
+│   │           │   │   ├── Init.js
+│   │           │   │   ├── Menus.js
+│   │           │   │   ├── Shapes.js
+│   │           │   │   ├── Sidebar.js
+│   │           │   │   └── Toolbar.js
+│   │           │   ├── integrate.min.js
+│   │           │   ├── jquery
+│   │           │   │   └── jquery-3.6.0.min.js
+│   │           │   ├── jscolor
+│   │           │   │   └── jscolor.js
+│   │           │   ├── jszip
+│   │           │   │   └── jszip.min.js
+│   │           │   ├── math-print.js
+│   │           │   ├── mermaid
+│   │           │   │   └── mermaid.min.js
+│   │           │   ├── onedrive
+│   │           │   │   ├── mxODPicker.js
+│   │           │   │   ├── OneDrive.js
+│   │           │   │   └── OneDriveOrig.js
+│   │           │   ├── open.js
+│   │           │   ├── orgchart
+│   │           │   │   ├── bridge.collections.min.js
+│   │           │   │   ├── bridge.min.js
+│   │           │   │   ├── mxOrgChartLayout.js
+│   │           │   │   └── OrgChart.Layout.min.js
+│   │           │   ├── orgchart.min.js
+│   │           │   ├── PostConfig.js
+│   │           │   ├── PreConfig.js
+│   │           │   ├── rough
+│   │           │   │   ├── README.md
+│   │           │   │   └── rough.min.js
+│   │           │   ├── sanitizer
+│   │           │   │   └── purify.min.js
+│   │           │   ├── shapes-14-6-5.min.js
+│   │           │   ├── shapes.min.js
+│   │           │   ├── simplepeer
+│   │           │   │   └── simplepeer9.10.0.min.js
+│   │           │   ├── spin
+│   │           │   │   └── spin.min.js
+│   │           │   ├── stencils.min.js
+│   │           │   ├── viewer.min.js
+│   │           │   ├── viewer-static.min.js
+│   │           │   └── vsdxImporter.js
+│   │           ├── math
+│   │           │   ├── bower.json
+│   │           │   ├── composer.json
+│   │           │   ├── CONTRIBUTING.md
+│   │           │   ├── es5
+│   │           │   │   ├── a11y
+│   │           │   │   │   ├── assistive-mml.js
+│   │           │   │   │   ├── complexity.js
+│   │           │   │   │   ├── explorer.js
+│   │           │   │   │   ├── semantic-enrich.js
+│   │           │   │   │   └── sre.js
+│   │           │   │   ├── adaptors
+│   │           │   │   │   └── liteDOM.js
+│   │           │   │   ├── core.js
+│   │           │   │   ├── input
+│   │           │   │   │   ├── asciimath.js
+│   │           │   │   │   ├── mml
+│   │           │   │   │   │   ├── entities.js
+│   │           │   │   │   │   └── extensions
+│   │           │   │   │   │       ├── mml3.js
+│   │           │   │   │   │       └── mml3.sef.json
+│   │           │   │   │   ├── mml.js
+│   │           │   │   │   ├── tex
+│   │           │   │   │   │   └── extensions
+│   │           │   │   │   │       ├── action.js
+│   │           │   │   │   │       ├── all-packages.js
+│   │           │   │   │   │       ├── amscd.js
+│   │           │   │   │   │       ├── ams.js
+│   │           │   │   │   │       ├── autoload.js
+│   │           │   │   │   │       ├── bbox.js
+│   │           │   │   │   │       ├── boldsymbol.js
+│   │           │   │   │   │       ├── braket.js
+│   │           │   │   │   │       ├── bussproofs.js
+│   │           │   │   │   │       ├── cancel.js
+│   │           │   │   │   │       ├── cases.js
+│   │           │   │   │   │       ├── centernot.js
+│   │           │   │   │   │       ├── color.js
+│   │           │   │   │   │       ├── colortbl.js
+│   │           │   │   │   │       ├── colorv2.js
+│   │           │   │   │   │       ├── configmacros.js
+│   │           │   │   │   │       ├── empheq.js
+│   │           │   │   │   │       ├── enclose.js
+│   │           │   │   │   │       ├── extpfeil.js
+│   │           │   │   │   │       ├── gensymb.js
+│   │           │   │   │   │       ├── html.js
+│   │           │   │   │   │       ├── mathtools.js
+│   │           │   │   │   │       ├── mhchem.js
+│   │           │   │   │   │       ├── newcommand.js
+│   │           │   │   │   │       ├── noerrors.js
+│   │           │   │   │   │       ├── noundefined.js
+│   │           │   │   │   │       ├── physics.js
+│   │           │   │   │   │       ├── require.js
+│   │           │   │   │   │       ├── setoptions.js
+│   │           │   │   │   │       ├── tagformat.js
+│   │           │   │   │   │       ├── textcomp.js
+│   │           │   │   │   │       ├── textmacros.js
+│   │           │   │   │   │       ├── unicode.js
+│   │           │   │   │   │       ├── upgreek.js
+│   │           │   │   │   │       └── verb.js
+│   │           │   │   │   ├── tex-base.js
+│   │           │   │   │   ├── tex-full.js
+│   │           │   │   │   └── tex.js
+│   │           │   │   ├── latest.js
+│   │           │   │   ├── loader.js
+│   │           │   │   ├── mml-chtml.js
+│   │           │   │   ├── mml-svg.js
+│   │           │   │   ├── node-main.js
+│   │           │   │   ├── output
+│   │           │   │   │   ├── chtml
+│   │           │   │   │   │   └── fonts
+│   │           │   │   │   │       ├── tex.js
+│   │           │   │   │   │       └── woff-v2
+│   │           │   │   │   │           ├── MathJax_AMS-Regular.woff
+│   │           │   │   │   │           ├── MathJax_Calligraphic-Bold.woff
+│   │           │   │   │   │           ├── MathJax_Calligraphic-Regular.woff
+│   │           │   │   │   │           ├── MathJax_Fraktur-Bold.woff
+│   │           │   │   │   │           ├── MathJax_Fraktur-Regular.woff
+│   │           │   │   │   │           ├── MathJax_Main-Bold.woff
+│   │           │   │   │   │           ├── MathJax_Main-Italic.woff
+│   │           │   │   │   │           ├── MathJax_Main-Regular.woff
+│   │           │   │   │   │           ├── MathJax_Math-BoldItalic.woff
+│   │           │   │   │   │           ├── MathJax_Math-Italic.woff
+│   │           │   │   │   │           ├── MathJax_Math-Regular.woff
+│   │           │   │   │   │           ├── MathJax_SansSerif-Bold.woff
+│   │           │   │   │   │           ├── MathJax_SansSerif-Italic.woff
+│   │           │   │   │   │           ├── MathJax_SansSerif-Regular.woff
+│   │           │   │   │   │           ├── MathJax_Script-Regular.woff
+│   │           │   │   │   │           ├── MathJax_Size1-Regular.woff
+│   │           │   │   │   │           ├── MathJax_Size2-Regular.woff
+│   │           │   │   │   │           ├── MathJax_Size3-Regular.woff
+│   │           │   │   │   │           ├── MathJax_Size4-Regular.woff
+│   │           │   │   │   │           ├── MathJax_Typewriter-Regular.woff
+│   │           │   │   │   │           ├── MathJax_Vector-Bold.woff
+│   │           │   │   │   │           ├── MathJax_Vector-Regular.woff
+│   │           │   │   │   │           └── MathJax_Zero.woff
+│   │           │   │   │   ├── chtml.js
+│   │           │   │   │   ├── svg
+│   │           │   │   │   │   └── fonts
+│   │           │   │   │   │       └── tex.js
+│   │           │   │   │   └── svg.js
+│   │           │   │   ├── sre
+│   │           │   │   │   └── mathmaps
+│   │           │   │   │       ├── base.json
+│   │           │   │   │       ├── ca.json
+│   │           │   │   │       ├── da.json
+│   │           │   │   │       ├── de.json
+│   │           │   │   │       ├── en.json
+│   │           │   │   │       ├── es.json
+│   │           │   │   │       ├── fr.json
+│   │           │   │   │       ├── hi.json
+│   │           │   │   │       ├── it.json
+│   │           │   │   │       ├── nb.json
+│   │           │   │   │       ├── nemeth.json
+│   │           │   │   │       ├── nn.json
+│   │           │   │   │       └── sv.json
+│   │           │   │   ├── startup.js
+│   │           │   │   ├── tex-chtml-full.js
+│   │           │   │   ├── tex-chtml-full-speech.js
+│   │           │   │   ├── tex-chtml.js
+│   │           │   │   ├── tex-mml-chtml.js
+│   │           │   │   ├── tex-mml-svg.js
+│   │           │   │   ├── tex-svg-full.js
+│   │           │   │   ├── tex-svg.js
+│   │           │   │   └── ui
+│   │           │   │       ├── lazy.js
+│   │           │   │       ├── menu.js
+│   │           │   │       └── safe.js
+│   │           │   ├── package.json
+│   │           │   └── README.md
+│   │           ├── META-INF
+│   │           │   └── MANIFEST.MF
+│   │           ├── monday-app-association.json
+│   │           ├── mxgraph
+│   │           │   ├── css
+│   │           │   │   ├── common.css
+│   │           │   │   └── explorer.css
+│   │           │   ├── images
+│   │           │   │   ├── button.gif
+│   │           │   │   ├── close.gif
+│   │           │   │   ├── collapsed.gif
+│   │           │   │   ├── error.gif
+│   │           │   │   ├── expanded.gif
+│   │           │   │   ├── maximize.gif
+│   │           │   │   ├── minimize.gif
+│   │           │   │   ├── normalize.gif
+│   │           │   │   ├── point.gif
+│   │           │   │   ├── resize.gif
+│   │           │   │   ├── separator.gif
+│   │           │   │   ├── submenu.gif
+│   │           │   │   ├── transparent.gif
+│   │           │   │   ├── warning.gif
+│   │           │   │   ├── warning.png
+│   │           │   │   ├── window.gif
+│   │           │   │   └── window-title.gif
+│   │           │   ├── mxClient.js
+│   │           │   └── src
+│   │           │       ├── handler
+│   │           │       │   ├── mxCellHighlight.js
+│   │           │       │   ├── mxCellMarker.js
+│   │           │       │   ├── mxCellTracker.js
+│   │           │       │   ├── mxConnectionHandler.js
+│   │           │       │   ├── mxConstraintHandler.js
+│   │           │       │   ├── mxEdgeHandler.js
+│   │           │       │   ├── mxEdgeSegmentHandler.js
+│   │           │       │   ├── mxElbowEdgeHandler.js
+│   │           │       │   ├── mxGraphHandler.js
+│   │           │       │   ├── mxHandle.js
+│   │           │       │   ├── mxKeyHandler.js
+│   │           │       │   ├── mxPanningHandler.js
+│   │           │       │   ├── mxPopupMenuHandler.js
+│   │           │       │   ├── mxRubberband.js
+│   │           │       │   ├── mxSelectionCellsHandler.js
+│   │           │       │   ├── mxTooltipHandler.js
+│   │           │       │   └── mxVertexHandler.js
+│   │           │       ├── index.txt
+│   │           │       ├── io
+│   │           │       │   ├── mxCellCodec.js
+│   │           │       │   ├── mxChildChangeCodec.js
+│   │           │       │   ├── mxCodec.js
+│   │           │       │   ├── mxCodecRegistry.js
+│   │           │       │   ├── mxGenericChangeCodec.js
+│   │           │       │   ├── mxGraphCodec.js
+│   │           │       │   ├── mxGraphViewCodec.js
+│   │           │       │   ├── mxModelCodec.js
+│   │           │       │   ├── mxObjectCodec.js
+│   │           │       │   ├── mxRootChangeCodec.js
+│   │           │       │   ├── mxStylesheetCodec.js
+│   │           │       │   └── mxTerminalChangeCodec.js
+│   │           │       ├── layout
+│   │           │       │   ├── hierarchical
+│   │           │       │   │   ├── model
+│   │           │       │   │   │   ├── mxGraphAbstractHierarchyCell.js
+│   │           │       │   │   │   ├── mxGraphHierarchyEdge.js
+│   │           │       │   │   │   ├── mxGraphHierarchyModel.js
+│   │           │       │   │   │   ├── mxGraphHierarchyNode.js
+│   │           │       │   │   │   └── mxSwimlaneModel.js
+│   │           │       │   │   ├── mxHierarchicalLayout.js
+│   │           │       │   │   ├── mxSwimlaneLayout.js
+│   │           │       │   │   └── stage
+│   │           │       │   │       ├── mxCoordinateAssignment.js
+│   │           │       │   │       ├── mxHierarchicalLayoutStage.js
+│   │           │       │   │       ├── mxMedianHybridCrossingReduction.js
+│   │           │       │   │       ├── mxMinimumCycleRemover.js
+│   │           │       │   │       └── mxSwimlaneOrdering.js
+│   │           │       │   ├── mxCircleLayout.js
+│   │           │       │   ├── mxCompactTreeLayout.js
+│   │           │       │   ├── mxCompositeLayout.js
+│   │           │       │   ├── mxEdgeLabelLayout.js
+│   │           │       │   ├── mxFastOrganicLayout.js
+│   │           │       │   ├── mxGraphLayout.js
+│   │           │       │   ├── mxParallelEdgeLayout.js
+│   │           │       │   ├── mxPartitionLayout.js
+│   │           │       │   ├── mxRadialTreeLayout.js
+│   │           │       │   └── mxStackLayout.js
+│   │           │       ├── model
+│   │           │       │   ├── mxCell.js
+│   │           │       │   ├── mxCellPath.js
+│   │           │       │   ├── mxGeometry.js
+│   │           │       │   └── mxGraphModel.js
+│   │           │       ├── mxClient.js
+│   │           │       ├── shape
+│   │           │       │   ├── mxActor.js
+│   │           │       │   ├── mxArrowConnector.js
+│   │           │       │   ├── mxArrow.js
+│   │           │       │   ├── mxCloud.js
+│   │           │       │   ├── mxConnector.js
+│   │           │       │   ├── mxCylinder.js
+│   │           │       │   ├── mxDoubleEllipse.js
+│   │           │       │   ├── mxEllipse.js
+│   │           │       │   ├── mxHexagon.js
+│   │           │       │   ├── mxImageShape.js
+│   │           │       │   ├── mxLabel.js
+│   │           │       │   ├── mxLine.js
+│   │           │       │   ├── mxMarker.js
+│   │           │       │   ├── mxPolyline.js
+│   │           │       │   ├── mxRectangleShape.js
+│   │           │       │   ├── mxRhombus.js
+│   │           │       │   ├── mxShape.js
+│   │           │       │   ├── mxStencil.js
+│   │           │       │   ├── mxStencilRegistry.js
+│   │           │       │   ├── mxSwimlane.js
+│   │           │       │   ├── mxText.js
+│   │           │       │   └── mxTriangle.js
+│   │           │       ├── util
+│   │           │       │   ├── mxAbstractCanvas2D.js
+│   │           │       │   ├── mxAnimation.js
+│   │           │       │   ├── mxAutoSaveManager.js
+│   │           │       │   ├── mxClipboard.js
+│   │           │       │   ├── mxConstants.js
+│   │           │       │   ├── mxDictionary.js
+│   │           │       │   ├── mxDivResizer.js
+│   │           │       │   ├── mxDragSource.js
+│   │           │       │   ├── mxEffects.js
+│   │           │       │   ├── mxEvent.js
+│   │           │       │   ├── mxEventObject.js
+│   │           │       │   ├── mxEventSource.js
+│   │           │       │   ├── mxForm.js
+│   │           │       │   ├── mxGuide.js
+│   │           │       │   ├── mxImageBundle.js
+│   │           │       │   ├── mxImageExport.js
+│   │           │       │   ├── mxImage.js
+│   │           │       │   ├── mxLog.js
+│   │           │       │   ├── mxMorphing.js
+│   │           │       │   ├── mxMouseEvent.js
+│   │           │       │   ├── mxObjectIdentity.js
+│   │           │       │   ├── mxPanningManager.js
+│   │           │       │   ├── mxPoint.js
+│   │           │       │   ├── mxPopupMenu.js
+│   │           │       │   ├── mxRectangle.js
+│   │           │       │   ├── mxResources.js
+│   │           │       │   ├── mxSvgCanvas2D.js
+│   │           │       │   ├── mxToolbar.js
+│   │           │       │   ├── mxUndoableEdit.js
+│   │           │       │   ├── mxUndoManager.js
+│   │           │       │   ├── mxUrlConverter.js
+│   │           │       │   ├── mxUtils.js
+│   │           │       │   ├── mxWindow.js
+│   │           │       │   ├── mxXmlCanvas2D.js
+│   │           │       │   └── mxXmlRequest.js
+│   │           │       └── view
+│   │           │           ├── mxCellEditor.js
+│   │           │           ├── mxCellOverlay.js
+│   │           │           ├── mxCellRenderer.js
+│   │           │           ├── mxCellState.js
+│   │           │           ├── mxCellStatePreview.js
+│   │           │           ├── mxConnectionConstraint.js
+│   │           │           ├── mxEdgeStyle.js
+│   │           │           ├── mxGraph.js
+│   │           │           ├── mxGraphSelectionModel.js
+│   │           │           ├── mxGraphView.js
+│   │           │           ├── mxLayoutManager.js
+│   │           │           ├── mxMultiplicity.js
+│   │           │           ├── mxOutline.js
+│   │           │           ├── mxPerimeter.js
+│   │           │           ├── mxPrintPreview.js
+│   │           │           ├── mxStyleRegistry.js
+│   │           │           ├── mxStylesheet.js
+│   │           │           ├── mxSwimlaneManager.js
+│   │           │           └── mxTemporaryCellStates.js
+│   │           ├── onedrive3.html
+│   │           ├── open.html
+│   │           ├── plugins
+│   │           │   ├── animation.js
+│   │           │   ├── anonymize.js
+│   │           │   ├── edgeConnection.js
+│   │           │   ├── explore.js
+│   │           │   ├── flow.js
+│   │           │   ├── googledrive.js
+│   │           │   ├── import.js
+│   │           │   ├── nextcloud.js
+│   │           │   ├── number.js
+│   │           │   ├── page.js
+│   │           │   ├── props.js
+│   │           │   ├── rackF5.js
+│   │           │   ├── random.js
+│   │           │   ├── replay.js
+│   │           │   ├── sql.js
+│   │           │   ├── svgdata.js
+│   │           │   ├── tags.js
+│   │           │   ├── text.js
+│   │           │   ├── tooltips.js
+│   │           │   ├── trees
+│   │           │   │   ├── handle-move.gif
+│   │           │   │   └── trees.js
+│   │           │   ├── trello.js
+│   │           │   ├── update.js
+│   │           │   └── webcola
+│   │           │       ├── cola.min.js
+│   │           │       ├── mxWebColaAdaptor.js
+│   │           │       ├── mxWebColaLayout.js
+│   │           │       └── webcola.js
+│   │           ├── resources
+│   │           │   ├── dia_am.txt
+│   │           │   ├── dia_ar.txt
+│   │           │   ├── dia_bg.txt
+│   │           │   ├── dia_bn.txt
+│   │           │   ├── dia_bs.txt
+│   │           │   ├── dia_ca.txt
+│   │           │   ├── dia_cs.txt
+│   │           │   ├── dia_da.txt
+│   │           │   ├── dia_de.txt
+│   │           │   ├── dia_el.txt
+│   │           │   ├── dia_eo.txt
+│   │           │   ├── dia_es.txt
+│   │           │   ├── dia_et.txt
+│   │           │   ├── dia_eu.txt
+│   │           │   ├── dia_fa.txt
+│   │           │   ├── dia_fil.txt
+│   │           │   ├── dia_fi.txt
+│   │           │   ├── dia_fr.txt
+│   │           │   ├── dia_gl.txt
+│   │           │   ├── dia_gu.txt
+│   │           │   ├── dia_he.txt
+│   │           │   ├── dia_hi.txt
+│   │           │   ├── dia_hr.txt
+│   │           │   ├── dia_hu.txt
+│   │           │   ├── dia_i18n.txt
+│   │           │   ├── dia_id.txt
+│   │           │   ├── dia_it.txt
+│   │           │   ├── dia_ja.txt
+│   │           │   ├── dia_kn.txt
+│   │           │   ├── dia_ko.txt
+│   │           │   ├── dia_lt.txt
+│   │           │   ├── dia_lv.txt
+│   │           │   ├── dia_ml.txt
+│   │           │   ├── dia_mr.txt
+│   │           │   ├── dia_ms.txt
+│   │           │   ├── dia_my.txt
+│   │           │   ├── dia_nl.txt
+│   │           │   ├── dia_no.txt
+│   │           │   ├── dia_pl.txt
+│   │           │   ├── dia_pt-br.txt
+│   │           │   ├── dia_pt.txt
+│   │           │   ├── dia_ro.txt
+│   │           │   ├── dia_ru.txt
+│   │           │   ├── dia_si.txt
+│   │           │   ├── dia_sk.txt
+│   │           │   ├── dia_sl.txt
+│   │           │   ├── dia_sr.txt
+│   │           │   ├── dia_sv.txt
+│   │           │   ├── dia_sw.txt
+│   │           │   ├── dia_ta.txt
+│   │           │   ├── dia_te.txt
+│   │           │   ├── dia_th.txt
+│   │           │   ├── dia_tr.txt
+│   │           │   ├── dia.txt
+│   │           │   ├── dia_uk.txt
+│   │           │   ├── dia_vi.txt
+│   │           │   ├── dia_zh-tw.txt
+│   │           │   ├── dia_zh.txt
+│   │           │   └── README.md
+│   │           ├── service-worker.js
+│   │           ├── service-worker.js.map
+│   │           ├── shapes
+│   │           │   ├── bpmn
+│   │           │   │   └── mxBpmnShape2.js
+│   │           │   ├── emoji
+│   │           │   │   └── mxEmoji.js
+│   │           │   ├── er
+│   │           │   │   └── mxER.js
+│   │           │   ├── ios7
+│   │           │   │   └── mxIOS7Ui.js
+│   │           │   ├── mockup
+│   │           │   │   ├── mxMockupButtons.js
+│   │           │   │   ├── mxMockupContainers.js
+│   │           │   │   ├── mxMockupForms.js
+│   │           │   │   ├── mxMockupGraphics.js
+│   │           │   │   ├── mxMockupiOS.js
+│   │           │   │   ├── mxMockupMarkup.js
+│   │           │   │   ├── mxMockupMisc.js
+│   │           │   │   ├── mxMockupNavigation.js
+│   │           │   │   └── mxMockupText.js
+│   │           │   ├── mxAndroid.js
+│   │           │   ├── mxArchiMate3.js
+│   │           │   ├── mxArchiMate.js
+│   │           │   ├── mxArrows.js
+│   │           │   ├── mxAtlassian.js
+│   │           │   ├── mxAWS3D.js
+│   │           │   ├── mxAWS4.js
+│   │           │   ├── mxBasic.js
+│   │           │   ├── mxBootstrap.js
+│   │           │   ├── mxC4.js
+│   │           │   ├── mxCabinets.js
+│   │           │   ├── mxCisco19.js
+│   │           │   ├── mxCiscoSafe.js
+│   │           │   ├── mxDFD.js
+│   │           │   ├── mxEip.js
+│   │           │   ├── mxElectrical.js
+│   │           │   ├── mxFloorplan.js
+│   │           │   ├── mxFlowchart.js
+│   │           │   ├── mxGCP2.js
+│   │           │   ├── mxGmdl.js
+│   │           │   ├── mxIBM.js
+│   │           │   ├── mxInfographic.js
+│   │           │   ├── mxKubernetes.js
+│   │           │   ├── mxLeanMap.js
+│   │           │   ├── mxNetworks.js
+│   │           │   ├── mxSAP.js
+│   │           │   ├── mxSysML.js
+│   │           │   ├── mxUML25.js
+│   │           │   ├── pid2
+│   │           │   │   ├── mxPidInstruments.js
+│   │           │   │   ├── mxPidMisc.js
+│   │           │   │   └── mxPidValves.js
+│   │           │   └── rack
+│   │           │       └── mxRack.js
+│   │           ├── shortcuts.svg
+│   │           ├── stencils
+│   │           │   ├── android
+│   │           │   │   └── android.xml
+│   │           │   ├── arrows.xml
+│   │           │   ├── atlassian.xml
+│   │           │   ├── aws
+│   │           │   │   ├── compute.xml
+│   │           │   │   ├── content_delivery.xml
+│   │           │   │   ├── database.xml
+│   │           │   │   ├── deployment_management.xml
+│   │           │   │   ├── groups.xml
+│   │           │   │   ├── messaging.xml
+│   │           │   │   ├── misc.xml
+│   │           │   │   ├── networking.xml
+│   │           │   │   ├── non_service_specific.xml
+│   │           │   │   ├── on_demand_workforce.xml
+│   │           │   │   └── storage.xml
+│   │           │   ├── aws2
+│   │           │   │   ├── administration_and_security.xml
+│   │           │   │   ├── analytics.xml
+│   │           │   │   ├── app_services.xml
+│   │           │   │   ├── compute_and_networking.xml
+│   │           │   │   ├── database.xml
+│   │           │   │   ├── deployment_and_management.xml
+│   │           │   │   ├── developer_tools.xml
+│   │           │   │   ├── enterprise_applications.xml
+│   │           │   │   ├── game_development.xml
+│   │           │   │   ├── internet_of_things.xml
+│   │           │   │   ├── management_tools.xml
+│   │           │   │   ├── mobile_services.xml
+│   │           │   │   ├── networking.xml
+│   │           │   │   ├── non-service_specific.xml
+│   │           │   │   ├── on-demand_workforce.xml
+│   │           │   │   ├── sdks.xml
+│   │           │   │   ├── security_and_identity.xml
+│   │           │   │   └── storage_and_content_delivery.xml
+│   │           │   ├── aws3d.xml
+│   │           │   ├── aws3.xml
+│   │           │   ├── aws4.xml
+│   │           │   ├── azure.xml
+│   │           │   ├── basic.xml
+│   │           │   ├── bootstrap.xml
+│   │           │   ├── bpmn.xml
+│   │           │   ├── cabinets.xml
+│   │           │   ├── cisco
+│   │           │   │   ├── buildings.xml
+│   │           │   │   ├── computers_and_peripherals.xml
+│   │           │   │   ├── controllers_and_modules.xml
+│   │           │   │   ├── directors.xml
+│   │           │   │   ├── hubs_and_gateways.xml
+│   │           │   │   ├── misc.xml
+│   │           │   │   ├── modems_and_phones.xml
+│   │           │   │   ├── people.xml
+│   │           │   │   ├── routers.xml
+│   │           │   │   ├── security.xml
+│   │           │   │   ├── servers.xml
+│   │           │   │   ├── storage.xml
+│   │           │   │   ├── switches.xml
+│   │           │   │   └── wireless.xml
+│   │           │   ├── cisco19.xml
+│   │           │   ├── cisco_safe
+│   │           │   │   ├── architecture.xml
+│   │           │   │   ├── business_icons.xml
+│   │           │   │   ├── capability.xml
+│   │           │   │   ├── design.xml
+│   │           │   │   ├── iot_things_icons.xml
+│   │           │   │   ├── people_places_things_icons.xml
+│   │           │   │   ├── security_icons.xml
+│   │           │   │   ├── technology_icons.xml
+│   │           │   │   └── threat.xml
+│   │           │   ├── citrix.xml
+│   │           │   ├── clipart
+│   │           │   │   └── Gear_128x128.png
+│   │           │   ├── eip.xml
+│   │           │   ├── electrical
+│   │           │   │   ├── abstract.xml
+│   │           │   │   ├── capacitors.xml
+│   │           │   │   ├── diodes.xml
+│   │           │   │   ├── electro-mechanical.xml
+│   │           │   │   ├── iec417.xml
+│   │           │   │   ├── iec_logic_gates.xml
+│   │           │   │   ├── inductors.xml
+│   │           │   │   ├── instruments.xml
+│   │           │   │   ├── logic_gates.xml
+│   │           │   │   ├── miscellaneous.xml
+│   │           │   │   ├── mosfets1.xml
+│   │           │   │   ├── mosfets2.xml
+│   │           │   │   ├── op_amps.xml
+│   │           │   │   ├── opto_electronics.xml
+│   │           │   │   ├── plc_ladder.xml
+│   │           │   │   ├── power_semiconductors.xml
+│   │           │   │   ├── radio.xml
+│   │           │   │   ├── resistors.xml
+│   │           │   │   ├── rot_mech.xml
+│   │           │   │   ├── signal_sources.xml
+│   │           │   │   ├── thermionic_devices.xml
+│   │           │   │   ├── transistors.xml
+│   │           │   │   ├── transmission.xml
+│   │           │   │   └── waveforms.xml
+│   │           │   ├── floorplan.xml
+│   │           │   ├── flowchart.xml
+│   │           │   ├── fluid_power.xml
+│   │           │   ├── gcp
+│   │           │   │   ├── big_data.xml
+│   │           │   │   ├── compute.xml
+│   │           │   │   ├── developer_tools.xml
+│   │           │   │   ├── extras.xml
+│   │           │   │   ├── identity_and_security.xml
+│   │           │   │   ├── machine_learning.xml
+│   │           │   │   ├── management_tools.xml
+│   │           │   │   ├── networking.xml
+│   │           │   │   ├── product_cards.xml
+│   │           │   │   └── storage_databases.xml
+│   │           │   ├── gcp2.xml
+│   │           │   ├── gmdl.xml
+│   │           │   ├── ibm.xml
+│   │           │   ├── ios7
+│   │           │   │   ├── icons.xml
+│   │           │   │   └── misc.xml
+│   │           │   ├── kubernetes2.xml
+│   │           │   ├── kubernetes.xml
+│   │           │   ├── lean_mapping.xml
+│   │           │   ├── LICENSE
+│   │           │   ├── mockup
+│   │           │   │   ├── advertising.xml
+│   │           │   │   ├── calendars.xml
+│   │           │   │   ├── carousel.xml
+│   │           │   │   ├── charts_and_tables.xml
+│   │           │   │   ├── controls.xml
+│   │           │   │   ├── form_elements.xml
+│   │           │   │   ├── menus_and_buttons.xml
+│   │           │   │   ├── misc.xml
+│   │           │   │   └── tabs.xml
+│   │           │   ├── mscae
+│   │           │   │   ├── cloud.xml
+│   │           │   │   ├── deprecated.xml
+│   │           │   │   ├── enterprise.xml
+│   │           │   │   ├── general_symbols.xml
+│   │           │   │   ├── general.xml
+│   │           │   │   ├── intune.xml
+│   │           │   │   ├── oms.xml
+│   │           │   │   ├── opsmanager.xml
+│   │           │   │   ├── other.xml
+│   │           │   │   ├── system_center.xml
+│   │           │   │   └── vm.xml
+│   │           │   ├── networks.xml
+│   │           │   ├── office
+│   │           │   │   ├── clouds.xml
+│   │           │   │   ├── communications.xml
+│   │           │   │   ├── concepts.xml
+│   │           │   │   ├── databases.xml
+│   │           │   │   ├── devices.xml
+│   │           │   │   ├── security.xml
+│   │           │   │   ├── servers.xml
+│   │           │   │   ├── services.xml
+│   │           │   │   ├── sites.xml
+│   │           │   │   └── users.xml
+│   │           │   ├── pid
+│   │           │   │   ├── agitators.xml
+│   │           │   │   ├── apparatus_elements.xml
+│   │           │   │   ├── centrifuges.xml
+│   │           │   │   ├── compressors_iso.xml
+│   │           │   │   ├── compressors.xml
+│   │           │   │   ├── crushers_grinding.xml
+│   │           │   │   ├── driers.xml
+│   │           │   │   ├── engines.xml
+│   │           │   │   ├── feeders.xml
+│   │           │   │   ├── filters.xml
+│   │           │   │   ├── fittings.xml
+│   │           │   │   ├── flow_sensors.xml
+│   │           │   │   ├── heat_exchangers.xml
+│   │           │   │   ├── instruments.xml
+│   │           │   │   ├── misc.xml
+│   │           │   │   ├── mixers.xml
+│   │           │   │   ├── piping.xml
+│   │           │   │   ├── pumps_din.xml
+│   │           │   │   ├── pumps_iso.xml
+│   │           │   │   ├── pumps.xml
+│   │           │   │   ├── separators.xml
+│   │           │   │   ├── shaping_machines.xml
+│   │           │   │   ├── valves.xml
+│   │           │   │   └── vessels.xml
+│   │           │   ├── rack
+│   │           │   │   ├── apc.xml
+│   │           │   │   ├── cisco.xml
+│   │           │   │   ├── dell.xml
+│   │           │   │   ├── f5.xml
+│   │           │   │   ├── general.xml
+│   │           │   │   ├── hpe_aruba
+│   │           │   │   │   ├── gateways_controllers.xml
+│   │           │   │   │   ├── security.xml
+│   │           │   │   │   └── switches.xml
+│   │           │   │   ├── hp.xml
+│   │           │   │   ├── ibm.xml
+│   │           │   │   └── oracle.xml
+│   │           │   ├── salesforce.xml
+│   │           │   ├── signs
+│   │           │   │   ├── animals.xml
+│   │           │   │   ├── food.xml
+│   │           │   │   ├── healthcare.xml
+│   │           │   │   ├── nature.xml
+│   │           │   │   ├── people.xml
+│   │           │   │   ├── safety.xml
+│   │           │   │   ├── science.xml
+│   │           │   │   ├── sports.xml
+│   │           │   │   ├── tech.xml
+│   │           │   │   ├── transportation.xml
+│   │           │   │   └── travel.xml
+│   │           │   ├── sitemap.xml
+│   │           │   ├── veeam
+│   │           │   │   ├── 2d.xml
+│   │           │   │   ├── 3d.xml
+│   │           │   │   ├── veeam2.xml
+│   │           │   │   └── veeam.xml
+│   │           │   ├── vvd.xml
+│   │           │   ├── webicons.xml
+│   │           │   └── weblogos.xml
+│   │           ├── styles
+│   │           │   ├── atlas.css
+│   │           │   ├── dark.css
+│   │           │   ├── dark-default.xml
+│   │           │   ├── default-old.xml
+│   │           │   ├── default.xml
+│   │           │   ├── fonts
+│   │           │   │   └── ArchitectsDaughter-Regular.ttf
+│   │           │   ├── grapheditor.css
+│   │           │   ├── high-contrast.css
+│   │           │   ├── thumb_horz.png
+│   │           │   └── thumb_vertical.png
+│   │           ├── teams.html
+│   │           ├── templates
+│   │           │   ├── basic
+│   │           │   │   ├── classes.png
+│   │           │   │   ├── classes.xml
+│   │           │   │   ├── cross.png
+│   │           │   │   ├── cross.xml
+│   │           │   │   ├── erd.png
+│   │           │   │   ├── erd.xml
+│   │           │   │   ├── flowchart.png
+│   │           │   │   ├── flowchart.xml
+│   │           │   │   ├── kanban.png
+│   │           │   │   ├── kanban.xml
+│   │           │   │   ├── mindmap.png
+│   │           │   │   ├── mindmap.xml
+│   │           │   │   ├── orgchart.png
+│   │           │   │   ├── orgchart.xml
+│   │           │   │   ├── placeholder.png
+│   │           │   │   ├── placeholder.xml
+│   │           │   │   ├── sequence.png
+│   │           │   │   ├── sequence.xml
+│   │           │   │   ├── swimlanes.png
+│   │           │   │   └── swimlanes.xml
+│   │           │   ├── business
+│   │           │   │   ├── accd.png
+│   │           │   │   ├── accd.xml
+│   │           │   │   ├── archimate.png
+│   │           │   │   ├── archimate.xml
+│   │           │   │   ├── bpmn.png
+│   │           │   │   ├── bpmn.xml
+│   │           │   │   ├── business_model_1.png
+│   │           │   │   ├── business_model_1.xml
+│   │           │   │   ├── business_model_2.png
+│   │           │   │   ├── business_model_2.xml
+│   │           │   │   ├── business_model_canvas_1.png
+│   │           │   │   ├── business_model_canvas_1.xml
+│   │           │   │   ├── ishikawa_1.png
+│   │           │   │   ├── ishikawa_1.xml
+│   │           │   │   ├── ishikawa_2.png
+│   │           │   │   ├── ishikawa_2.xml
+│   │           │   │   ├── pert_1.png
+│   │           │   │   ├── pert_1.xml
+│   │           │   │   ├── pert_2.png
+│   │           │   │   ├── pert_2.xml
+│   │           │   │   ├── swimlane.png
+│   │           │   │   ├── swimlane.xml
+│   │           │   │   ├── timeline_1.png
+│   │           │   │   ├── timeline_1.xml
+│   │           │   │   ├── timeline_2.png
+│   │           │   │   ├── timeline_2.xml
+│   │           │   │   ├── timeline_3.png
+│   │           │   │   ├── timeline_3.xml
+│   │           │   │   ├── timeline_4.png
+│   │           │   │   └── timeline_4.xml
+│   │           │   ├── charts
+│   │           │   │   ├── bar_chart_1.png
+│   │           │   │   ├── bar_chart_1.xml
+│   │           │   │   ├── coc.png
+│   │           │   │   ├── coc.xml
+│   │           │   │   ├── org_chart_1.png
+│   │           │   │   ├── org_chart_1.xml
+│   │           │   │   ├── org_chart_2.png
+│   │           │   │   ├── org_chart_2.xml
+│   │           │   │   ├── processbar.png
+│   │           │   │   ├── processbar.xml
+│   │           │   │   ├── work_breakdown_structure.png
+│   │           │   │   └── work_breakdown_structure.xml
+│   │           │   ├── cloud
+│   │           │   │   ├── aws
+│   │           │   │   │   ├── aws_10.png
+│   │           │   │   │   ├── aws_10.xml
+│   │           │   │   │   ├── aws_1.png
+│   │           │   │   │   ├── aws_1.xml
+│   │           │   │   │   ├── aws_2.png
+│   │           │   │   │   ├── aws_2.xml
+│   │           │   │   │   ├── aws_3d.png
+│   │           │   │   │   ├── aws_3d.xml
+│   │           │   │   │   ├── aws_3.png
+│   │           │   │   │   ├── aws_3.xml
+│   │           │   │   │   ├── aws_4.png
+│   │           │   │   │   ├── aws_4.xml
+│   │           │   │   │   ├── aws_5.png
+│   │           │   │   │   ├── aws_5.xml
+│   │           │   │   │   ├── aws_6.png
+│   │           │   │   │   ├── aws_6.xml
+│   │           │   │   │   ├── aws_7.png
+│   │           │   │   │   ├── aws_7.xml
+│   │           │   │   │   ├── aws_8.png
+│   │           │   │   │   ├── aws_8.xml
+│   │           │   │   │   ├── aws_9.png
+│   │           │   │   │   └── aws_9.xml
+│   │           │   │   ├── azure
+│   │           │   │   │   ├── azure_1.png
+│   │           │   │   │   ├── azure_1.xml
+│   │           │   │   │   ├── azure_2.png
+│   │           │   │   │   ├── azure_2.xml
+│   │           │   │   │   ├── azure_3.png
+│   │           │   │   │   ├── azure_3.xml
+│   │           │   │   │   ├── azure_4.png
+│   │           │   │   │   ├── azure_4.xml
+│   │           │   │   │   ├── azure_5.png
+│   │           │   │   │   ├── azure_5.xml
+│   │           │   │   │   ├── azure_6.png
+│   │           │   │   │   ├── azure_6.xml
+│   │           │   │   │   ├── azure_7.png
+│   │           │   │   │   ├── azure_7.xml
+│   │           │   │   │   ├── azure_8.png
+│   │           │   │   │   ├── azure_8.xml
+│   │           │   │   │   ├── azure_9.png
+│   │           │   │   │   └── azure_9.xml
+│   │           │   │   ├── gcp
+│   │           │   │   │   ├── gcp_backup_and_archive_api_hosting.png
+│   │           │   │   │   ├── gcp_backup_and_archive_api_hosting.xml
+│   │           │   │   │   ├── gcp_big_data_complex_event_processing.png
+│   │           │   │   │   ├── gcp_big_data_complex_event_processing.xml
+│   │           │   │   │   ├── gcp_dev_test_continuous_delivery_with_spinnaker.png
+│   │           │   │   │   ├── gcp_dev_test_continuous_delivery_with_spinnaker.xml
+│   │           │   │   │   ├── gcp_digital_marketing_dmp_data_warehouse.png
+│   │           │   │   │   ├── gcp_digital_marketing_dmp_data_warehouse.xml
+│   │           │   │   │   ├── gcp_financial_services_monte_carlo_simulations.png
+│   │           │   │   │   ├── gcp_financial_services_monte_carlo_simulations.xml
+│   │           │   │   │   ├── gcp_gaming_backend_database.png
+│   │           │   │   │   ├── gcp_gaming_backend_database.xml
+│   │           │   │   │   ├── gcp_general_app_engine_and_cloud_endpoints.png
+│   │           │   │   │   ├── gcp_general_app_engine_and_cloud_endpoints.xml
+│   │           │   │   │   ├── gcp_internet_of_things_mqtt_to_pubsub_broker.png
+│   │           │   │   │   ├── gcp_internet_of_things_mqtt_to_pubsub_broker.xml
+│   │           │   │   │   ├── gcp_lifesciences_genomics_secondary_analysis.png
+│   │           │   │   │   ├── gcp_lifesciences_genomics_secondary_analysis.xml
+│   │           │   │   │   ├── gcp_media_hybrid_rendering.png
+│   │           │   │   │   ├── gcp_media_hybrid_rendering.xml
+│   │           │   │   │   ├── gcp_retail_beacons_and_targeted_marketing.png
+│   │           │   │   │   ├── gcp_retail_beacons_and_targeted_marketing.xml
+│   │           │   │   │   ├── gcp_websites_content_hosting.png
+│   │           │   │   │   └── gcp_websites_content_hosting.xml
+│   │           │   │   └── ibm
+│   │           │   │       ├── ibm_bda_reference_architecture.png
+│   │           │   │       ├── ibm_bda_reference_architecture.xml
+│   │           │   │       ├── ibm_blockchain.png
+│   │           │   │       ├── ibm_blockchain.xml
+│   │           │   │       ├── ibm_cognitive_conversation.png
+│   │           │   │       ├── ibm_cognitive_conversation.xml
+│   │           │   │       ├── ibm_cognitive_discovery.png
+│   │           │   │       ├── ibm_cognitive_discovery.xml
+│   │           │   │       ├── ibm_iot_architecture.png
+│   │           │   │       ├── ibm_iot_architecture.xml
+│   │           │   │       ├── ibm_microservices.png
+│   │           │   │       ├── ibm_microservices.xml
+│   │           │   │       ├── ibm_private_cloud.png
+│   │           │   │       ├── ibm_private_cloud.xml
+│   │           │   │       ├── ibm_vcenter_server_platform.png
+│   │           │   │       ├── ibm_vcenter_server_platform.xml
+│   │           │   │       ├── ibm_vpc_architecture.png
+│   │           │   │       └── ibm_vpc_architecture.xml
+│   │           │   ├── engineering
+│   │           │   │   ├── cabinet.png
+│   │           │   │   ├── cabinet.xml
+│   │           │   │   ├── electrical_1.png
+│   │           │   │   ├── electrical_1.xml
+│   │           │   │   ├── electrical_2.png
+│   │           │   │   └── electrical_2.xml
+│   │           │   ├── flowcharts
+│   │           │   │   ├── cross_functional_flowchart_1.png
+│   │           │   │   ├── cross_functional_flowchart_1.xml
+│   │           │   │   ├── cross_functional_flowchart_2.png
+│   │           │   │   ├── cross_functional_flowchart_2.xml
+│   │           │   │   ├── data_flow_1.png
+│   │           │   │   ├── data_flow_1.xml
+│   │           │   │   ├── data_flow_2.png
+│   │           │   │   ├── data_flow_2.xml
+│   │           │   │   ├── data_flow_3.png
+│   │           │   │   ├── data_flow_3.xml
+│   │           │   │   ├── epc.png
+│   │           │   │   ├── epc.xml
+│   │           │   │   ├── flowchart_1.png
+│   │           │   │   ├── flowchart_1.xml
+│   │           │   │   ├── flowchart_2.png
+│   │           │   │   ├── flowchart_2.xml
+│   │           │   │   ├── workflow_1.png
+│   │           │   │   └── workflow_1.xml
+│   │           │   ├── index.xml
+│   │           │   ├── layout
+│   │           │   │   ├── blog_wireframe.png
+│   │           │   │   ├── blog_wireframe.xml
+│   │           │   │   ├── bootstrap.png
+│   │           │   │   ├── bootstrap.xml
+│   │           │   │   ├── wireframe_1.png
+│   │           │   │   ├── wireframe_1.xml
+│   │           │   │   ├── wireframe_2.png
+│   │           │   │   └── wireframe_2.xml
+│   │           │   ├── LICENSE
+│   │           │   ├── maps
+│   │           │   │   ├── concept_map_1.png
+│   │           │   │   ├── concept_map_1.xml
+│   │           │   │   ├── concept_map_2.png
+│   │           │   │   ├── concept_map_2.xml
+│   │           │   │   ├── living_beings_mind_map.png
+│   │           │   │   ├── living_beings_mind_map.xml
+│   │           │   │   ├── mind_map.png
+│   │           │   │   ├── mind_map.xml
+│   │           │   │   ├── site_map.png
+│   │           │   │   └── site_map.xml
+│   │           │   ├── network
+│   │           │   │   ├── active_directory.png
+│   │           │   │   ├── active_directory.xml
+│   │           │   │   ├── arista.png
+│   │           │   │   ├── arista.xml
+│   │           │   │   ├── cisco_1.png
+│   │           │   │   ├── cisco_1.xml
+│   │           │   │   ├── cisco_2.png
+│   │           │   │   ├── cisco_2.xml
+│   │           │   │   ├── citrix.png
+│   │           │   │   ├── citrix.xml
+│   │           │   │   ├── enterprise_1.png
+│   │           │   │   ├── enterprise_1.xml
+│   │           │   │   ├── fortinet.png
+│   │           │   │   ├── fortinet.xml
+│   │           │   │   ├── internet.png
+│   │           │   │   ├── internet.xml
+│   │           │   │   ├── lan.png
+│   │           │   │   ├── lan.xml
+│   │           │   │   ├── network.png
+│   │           │   │   ├── network.xml
+│   │           │   │   ├── telecomm.png
+│   │           │   │   ├── telecomm.xml
+│   │           │   │   ├── veeam.png
+│   │           │   │   ├── veeam.xml
+│   │           │   │   ├── wireless_home_network.png
+│   │           │   │   └── wireless_home_network.xml
+│   │           │   ├── other
+│   │           │   │   ├── block.png
+│   │           │   │   ├── block.xml
+│   │           │   │   ├── cycle_1.png
+│   │           │   │   ├── cycle_1.xml
+│   │           │   │   ├── decision_tree.png
+│   │           │   │   ├── decision_tree.xml
+│   │           │   │   ├── delivery_diagram.png
+│   │           │   │   ├── delivery_diagram.xml
+│   │           │   │   ├── educational.png
+│   │           │   │   ├── educational.xml
+│   │           │   │   ├── floor_plan.png
+│   │           │   │   ├── floor_plan.xml
+│   │           │   │   ├── infographic_1.png
+│   │           │   │   ├── infographic_1.xml
+│   │           │   │   ├── infographic_2.png
+│   │           │   │   ├── infographic_2.xml
+│   │           │   │   ├── infographic_3.png
+│   │           │   │   ├── infographic_3.xml
+│   │           │   │   ├── infographic_4.png
+│   │           │   │   ├── infographic_4.xml
+│   │           │   │   ├── lan_plan.png
+│   │           │   │   ├── lan_plan.xml
+│   │           │   │   ├── water_cycle.png
+│   │           │   │   └── water_cycle.xml
+│   │           │   ├── software
+│   │           │   │   ├── class_1.png
+│   │           │   │   ├── class_1.xml
+│   │           │   │   ├── class_2.png
+│   │           │   │   ├── class_2.xml
+│   │           │   │   ├── component.png
+│   │           │   │   ├── component.xml
+│   │           │   │   ├── database_1.png
+│   │           │   │   ├── database_1.xml
+│   │           │   │   ├── database_2.png
+│   │           │   │   ├── database_2.xml
+│   │           │   │   ├── database_3.png
+│   │           │   │   ├── database_3.xml
+│   │           │   │   ├── data_flow_1.png
+│   │           │   │   ├── data_flow_1.xml
+│   │           │   │   ├── eip.png
+│   │           │   │   ├── eip.xml
+│   │           │   │   ├── entity_relationship.png
+│   │           │   │   ├── entity_relationship.xml
+│   │           │   │   ├── git_flow_1.png
+│   │           │   │   ├── git_flow_1.xml
+│   │           │   │   ├── git_flow_2.png
+│   │           │   │   ├── git_flow_2.xml
+│   │           │   │   ├── git_flow_3.png
+│   │           │   │   └── git_flow_3.xml
+│   │           │   ├── tables
+│   │           │   │   ├── authority_matrix.png
+│   │           │   │   ├── authority_matrix.xml
+│   │           │   │   ├── gantt_1.png
+│   │           │   │   ├── gantt_1.xml
+│   │           │   │   ├── gantt_2.png
+│   │           │   │   ├── gantt_2.xml
+│   │           │   │   ├── gantt_3.png
+│   │           │   │   └── gantt_3.xml
+│   │           │   ├── uml
+│   │           │   │   ├── activity_diagram_1.png
+│   │           │   │   ├── activity_diagram_1.xml
+│   │           │   │   ├── activity_diagram_2.png
+│   │           │   │   ├── activity_diagram_2.xml
+│   │           │   │   ├── sequence_1.png
+│   │           │   │   ├── sequence_1.xml
+│   │           │   │   ├── sequence_2.png
+│   │           │   │   ├── sequence_2.xml
+│   │           │   │   ├── state_machine.png
+│   │           │   │   ├── state_machine.xml
+│   │           │   │   ├── sysml.png
+│   │           │   │   ├── sysml.xml
+│   │           │   │   ├── uml_1.png
+│   │           │   │   ├── uml_1.xml
+│   │           │   │   ├── uml_2.png
+│   │           │   │   └── uml_2.xml
+│   │           │   ├── venn
+│   │           │   │   ├── spider_1.png
+│   │           │   │   ├── spider_1.xml
+│   │           │   │   ├── spider_2.png
+│   │           │   │   ├── spider_2.xml
+│   │           │   │   ├── venn_1.png
+│   │           │   │   ├── venn_1.xml
+│   │           │   │   ├── venn_2.png
+│   │           │   │   ├── venn_2.xml
+│   │           │   │   ├── venn_3.png
+│   │           │   │   ├── venn_3.xml
+│   │           │   │   ├── venn_4.png
+│   │           │   │   ├── venn_4.xml
+│   │           │   │   ├── venn_5.png
+│   │           │   │   ├── venn_5.xml
+│   │           │   │   ├── venn_6.png
+│   │           │   │   └── venn_6.xml
+│   │           │   └── wireframes
+│   │           │       ├── blog_1.png
+│   │           │       ├── blog_1.xml
+│   │           │       ├── bootstrap_1.png
+│   │           │       ├── bootstrap_1.xml
+│   │           │       ├── home_page_1.png
+│   │           │       ├── home_page_1.xml
+│   │           │       ├── home_page_2.png
+│   │           │       ├── home_page_2.xml
+│   │           │       ├── home_page_hero_video_1.png
+│   │           │       └── home_page_hero_video_1.xml
+│   │           ├── vsdxImporter.html
+│   │           ├── WEB-INF
+│   │           │   ├── appengine-web.xml
+│   │           │   ├── cloud_convert_api_key
+│   │           │   ├── dropbox_client_id
+│   │           │   ├── dropbox_client_secret
+│   │           │   ├── github_client_id
+│   │           │   ├── github_client_secret
+│   │           │   ├── gitlab_client_id
+│   │           │   ├── gitlab_client_secret
+│   │           │   ├── google_client_id
+│   │           │   ├── google_client_secret
+│   │           │   ├── iconfinder_client_id
+│   │           │   ├── iconfinder_client_secret
+│   │           │   ├── lib
+│   │           │   │   ├── cache-api-1.1.1.jar
+│   │           │   │   ├── commons-codec-1.15.jar
+│   │           │   │   ├── commons-fileupload-1.4.jar
+│   │           │   │   ├── commons-io-2.11.0.jar
+│   │           │   │   ├── commons-lang3-3.12.0.jar
+│   │           │   │   ├── commons-logging-1.2.jar
+│   │           │   │   ├── commons-text-1.10.0.jar
+│   │           │   │   ├── ehcache-3.8.1.jar
+│   │           │   │   ├── gae-stub-1.0.9.jar
+│   │           │   │   ├── gson-2.8.9.jar
+│   │           │   │   ├── httpclient-4.5.13.jar
+│   │           │   │   ├── httpcore-4.4.13.jar
+│   │           │   │   ├── pusher-http-java-1.1.0.jar
+│   │           │   │   ├── servlet-api.jar
+│   │           │   │   └── slf4j-api-1.7.25.jar
+│   │           │   ├── logging.properties
+│   │           │   ├── msgraph_client_id
+│   │           │   ├── msgraph_client_secret
+│   │           │   ├── pusher_properties
+│   │           │   └── web.xml
+│   │           ├── workbox-12cca165.js
+│   │           ├── workbox-12cca165.js.map
+│   │           ├── workbox-4768a546.js
+│   │           ├── workbox-4768a546.js.map
+│   │           ├── workbox-50a29d49.js
+│   │           ├── workbox-50a29d49.js.map
+│   │           ├── workbox-5490a1bd.js
+│   │           ├── workbox-5490a1bd.js.map
+│   │           ├── workbox-7a2a8380.js
+│   │           ├── workbox-7a2a8380.js.map
+│   │           ├── workbox-99ba3a23.js
+│   │           ├── workbox-99ba3a23.js.map
+│   │           ├── workbox-9fe249eb.js
+│   │           ├── workbox-9fe249eb.js.map
+│   │           ├── workbox-bed83ea8.js
+│   │           ├── workbox-bed83ea8.js.map
+│   │           ├── workbox-d4d5b410.js
+│   │           ├── workbox-d4d5b410.js.map
+│   │           ├── workbox-dfbb910f.js
+│   │           ├── workbox-dfbb910f.js.map
+│   │           ├── workbox-eb9c7348.js
+│   │           ├── workbox-eb9c7348.js.map
+│   │           ├── workbox-f163abaa.js
+│   │           ├── workbox-f163abaa.js.map
+│   │           ├── workbox-fa8c4ce5.js
+│   │           └── workbox-fa8c4ce5.js.map
+│   ├── teams.html
+│   └── VERSION
+├── drawio-desktop
+│   ├── appveyor.yml
+│   ├── build
+│   │   ├── 1024x1024.png
+│   │   ├── 128x128.png
+│   │   ├── 16x16.png
+│   │   ├── 192x192.png
+│   │   ├── 256x256.png
+│   │   ├── 32x32.png
+│   │   ├── 48x48.png
+│   │   ├── 512x512.png
+│   │   ├── 64x64.png
+│   │   ├── 720x720.png
+│   │   ├── 96x96.png
+│   │   ├── appx
+│   │   │   ├── BadgeLogo.png
+│   │   │   ├── LargeTile.png
+│   │   │   ├── SmallTile.png
+│   │   │   ├── Square150x150Logo.png
+│   │   │   ├── Square44x44Logo.png
+│   │   │   ├── StoreLogo.png
+│   │   │   └── Wide310x150Logo.png
+│   │   ├── create_macos_icon.sh
+│   │   ├── entitlements.mac.plist
+│   │   ├── fuses.cjs
+│   │   ├── icon.hqx
+│   │   ├── icon.icns
+│   │   ├── icon.ico
+│   │   ├── icon.png
+│   │   ├── icon.svg
+│   │   └── notarize.cjs
+│   ├── CODE_OF_CONDUCT.md
+│   ├── dependency-diagram.png
+│   ├── DEVELOPMENT.md
+│   ├── doc
+│   ├── drawio
+│   ├── electron-builder-appx.json
+│   ├── electron-builder-linux-mac.json
+│   ├── electron-builder-snap.json
+│   ├── electron-builder-win32.json
+│   ├── electron-builder-win-arm64.json
+│   ├── electron-builder-win.json
+│   ├── LICENSE
+│   ├── package.json
+│   ├── preload.js
+│   ├── README.md
+│   ├── screenshot.png
+│   ├── SECURITY.md
+│   ├── src
+│   │   └── main
+│   │       ├── disableUpdate.js
+│   │       ├── electron.js
+│   │       └── electron-preload.js
+│   ├── sync.cjs
+│   └── yarn.lock
+├── drawio.desktop -> /home/felix/packages/drawio-desktop/drawio.desktop
+├── drawio.sh -> /home/felix/packages/drawio-desktop/drawio.sh
+└── drawio.xml -> /home/felix/packages/drawio-desktop/drawio.xml
+
+214 directories, 3433 files

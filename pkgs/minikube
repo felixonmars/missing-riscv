@@ -1,0 +1,2271 @@
+src
+└── minikube
+    ├── CHANGELOG.md
+    ├── cmd
+    │   ├── auto-pause
+    │   │   ├── auto-pause.go
+    │   │   └── auto-pause-hook
+    │   │       ├── certs.go
+    │   │       ├── config.go
+    │   │       └── main.go
+    │   ├── drivers
+    │   │   ├── hyperkit
+    │   │   │   └── main.go
+    │   │   └── kvm
+    │   │       ├── main.go
+    │   │       └── main-nolinux.go
+    │   ├── extract
+    │   │   └── extract.go
+    │   ├── gvisor
+    │   │   └── gvisor.go
+    │   ├── minikube
+    │   │   ├── cmd
+    │   │   │   ├── cache.go
+    │   │   │   ├── cache_list.go
+    │   │   │   ├── completion.go
+    │   │   │   ├── config
+    │   │   │   │   ├── addons.go
+    │   │   │   │   ├── addons_list.go
+    │   │   │   │   ├── addons_list_test.go
+    │   │   │   │   ├── config.go
+    │   │   │   │   ├── config_test.go
+    │   │   │   │   ├── configure.go
+    │   │   │   │   ├── defaults.go
+    │   │   │   │   ├── defaults_test.go
+    │   │   │   │   ├── disable.go
+    │   │   │   │   ├── enable.go
+    │   │   │   │   ├── flags.go
+    │   │   │   │   ├── get.go
+    │   │   │   │   ├── get_test.go
+    │   │   │   │   ├── images.go
+    │   │   │   │   ├── kubernetes_version.go
+    │   │   │   │   ├── open.go
+    │   │   │   │   ├── profile.go
+    │   │   │   │   ├── profile_list.go
+    │   │   │   │   ├── prompt.go
+    │   │   │   │   ├── set.go
+    │   │   │   │   ├── set_test.go
+    │   │   │   │   ├── unset.go
+    │   │   │   │   ├── unset_test.go
+    │   │   │   │   ├── util.go
+    │   │   │   │   ├── util_test.go
+    │   │   │   │   ├── validations.go
+    │   │   │   │   ├── validations_test.go
+    │   │   │   │   └── view.go
+    │   │   │   ├── cp.go
+    │   │   │   ├── cp_test.go
+    │   │   │   ├── dashboard.go
+    │   │   │   ├── delete.go
+    │   │   │   ├── delete_test.go
+    │   │   │   ├── docker-env.go
+    │   │   │   ├── docker-env_test.go
+    │   │   │   ├── generate-docs.go
+    │   │   │   ├── generate-docs_test.go
+    │   │   │   ├── image.go
+    │   │   │   ├── ip.go
+    │   │   │   ├── kubectl.go
+    │   │   │   ├── license.go
+    │   │   │   ├── logs.go
+    │   │   │   ├── mount.go
+    │   │   │   ├── node_add.go
+    │   │   │   ├── node_delete.go
+    │   │   │   ├── node.go
+    │   │   │   ├── node_list.go
+    │   │   │   ├── node_start.go
+    │   │   │   ├── node_stop.go
+    │   │   │   ├── options.go
+    │   │   │   ├── pause.go
+    │   │   │   ├── podman-env.go
+    │   │   │   ├── podman-env_test.go
+    │   │   │   ├── root.go
+    │   │   │   ├── root_test.go
+    │   │   │   ├── service.go
+    │   │   │   ├── service_list.go
+    │   │   │   ├── ssh.go
+    │   │   │   ├── ssh-host.go
+    │   │   │   ├── ssh-key.go
+    │   │   │   ├── start_flags.go
+    │   │   │   ├── start.go
+    │   │   │   ├── start_test.go
+    │   │   │   ├── status.go
+    │   │   │   ├── status_test.go
+    │   │   │   ├── stop.go
+    │   │   │   ├── tunnel.go
+    │   │   │   ├── unpause.go
+    │   │   │   ├── update-check.go
+    │   │   │   ├── update-context.go
+    │   │   │   └── version.go
+    │   │   └── main.go
+    │   ├── performance
+    │   │   ├── mkcmp
+    │   │   │   ├── cmd
+    │   │   │   │   ├── mkcmp.go
+    │   │   │   │   └── README.md
+    │   │   │   └── main.go
+    │   │   └── pr-bot
+    │   │       └── bot.go
+    │   └── storage-provisioner
+    │       └── main.go
+    ├── code-of-conduct.md
+    ├── CONTRIBUTING.md
+    ├── default.profraw
+    ├── deploy
+    │   ├── addons
+    │   │   ├── aliyun_mirror.json
+    │   │   ├── ambassador
+    │   │   │   ├── ambassadorinstallation.yaml
+    │   │   │   ├── ambassador-operator-crds.yaml
+    │   │   │   └── ambassador-operator.yaml.tmpl
+    │   │   ├── assets.go
+    │   │   ├── auto-pause
+    │   │   │   ├── auto-pause-hook.yaml.tmpl
+    │   │   │   ├── auto-pause.service.tmpl
+    │   │   │   ├── auto-pause.yaml
+    │   │   │   ├── Dockerfile
+    │   │   │   ├── haproxy.cfg.tmpl
+    │   │   │   └── unpause.lua
+    │   │   ├── cloud-spanner
+    │   │   │   └── deployment.yaml.tmpl
+    │   │   ├── csi-hostpath-driver
+    │   │   │   ├── deploy
+    │   │   │   │   ├── csi-hostpath-attacher.yaml.tmpl
+    │   │   │   │   ├── csi-hostpath-driverinfo.yaml
+    │   │   │   │   ├── csi-hostpath-plugin.yaml.tmpl
+    │   │   │   │   ├── csi-hostpath-resizer.yaml.tmpl
+    │   │   │   │   └── csi-hostpath-storageclass.yaml
+    │   │   │   └── rbac
+    │   │   │       ├── rbac-external-attacher.yaml
+    │   │   │       ├── rbac-external-health-monitor-controller.yaml
+    │   │   │       ├── rbac-external-provisioner.yaml
+    │   │   │       ├── rbac-external-resizer.yaml
+    │   │   │       ├── rbac-external-snapshotter.yaml
+    │   │   │       └── rbac-hostpath.yaml
+    │   │   ├── dashboard
+    │   │   │   ├── dashboard-clusterrolebinding.yaml
+    │   │   │   ├── dashboard-clusterrole.yaml
+    │   │   │   ├── dashboard-configmap.yaml
+    │   │   │   ├── dashboard-dp.yaml.tmpl
+    │   │   │   ├── dashboard-ns.yaml
+    │   │   │   ├── dashboard-rolebinding.yaml
+    │   │   │   ├── dashboard-role.yaml
+    │   │   │   ├── dashboard-sa.yaml
+    │   │   │   ├── dashboard-secret.yaml
+    │   │   │   └── dashboard-svc.yaml
+    │   │   ├── efk
+    │   │   │   ├── elasticsearch-rc.yaml.tmpl
+    │   │   │   ├── elasticsearch-svc.yaml
+    │   │   │   ├── fluentd-es-configmap.yaml
+    │   │   │   ├── fluentd-es-rc.yaml.tmpl
+    │   │   │   ├── kibana-rc.yaml.tmpl
+    │   │   │   └── kibana-svc.yaml
+    │   │   ├── freshpod
+    │   │   │   └── freshpod-rc.yaml.tmpl
+    │   │   ├── gcp-auth
+    │   │   │   ├── gcp-auth-ns.yaml
+    │   │   │   ├── gcp-auth-service.yaml
+    │   │   │   └── gcp-auth-webhook.yaml.tmpl
+    │   │   ├── gpu
+    │   │   │   ├── nvidia-driver-installer.yaml.tmpl
+    │   │   │   └── nvidia-gpu-device-plugin.yaml.tmpl
+    │   │   ├── gvisor
+    │   │   │   ├── gvisor-pod.yaml.tmpl
+    │   │   │   ├── gvisor-runtimeclass.yaml.tmpl
+    │   │   │   └── README.md
+    │   │   ├── headlamp
+    │   │   │   ├── headlamp-clusterrolebinding.yaml
+    │   │   │   ├── headlamp-deployment.yaml.tmpl
+    │   │   │   ├── headlamp-namespace.yaml
+    │   │   │   ├── headlamp-serviceaccount.yaml
+    │   │   │   └── headlamp-service.yaml
+    │   │   ├── helm-tiller
+    │   │   │   ├── helm-tiller-dp.yaml.tmpl
+    │   │   │   ├── helm-tiller-rbac.yaml
+    │   │   │   ├── helm-tiller-svc.yaml
+    │   │   │   └── README.md
+    │   │   ├── inaccel
+    │   │   │   ├── fpga-operator.yaml.tmpl
+    │   │   │   └── README.md
+    │   │   ├── ingress
+    │   │   │   └── ingress-deploy.yaml.tmpl
+    │   │   ├── ingress-dns
+    │   │   │   ├── example
+    │   │   │   │   └── example.yaml
+    │   │   │   └── ingress-dns-pod.yaml.tmpl
+    │   │   ├── inspektor-gadget
+    │   │   │   ├── ig-clusterrolebinding.yaml
+    │   │   │   ├── ig-clusterrole.yaml
+    │   │   │   ├── ig-crd.yaml
+    │   │   │   ├── ig-daemonset.yaml.tmpl
+    │   │   │   ├── ig-namespace.yaml
+    │   │   │   ├── ig-rolebinding.yaml
+    │   │   │   ├── ig-role.yaml
+    │   │   │   └── ig-serviceaccount.yaml
+    │   │   ├── istio
+    │   │   │   ├── istio-default-profile.yaml
+    │   │   │   └── README.md
+    │   │   ├── istio-provisioner
+    │   │   │   └── istio-operator.yaml.tmpl
+    │   │   ├── kong
+    │   │   │   └── kong-ingress-controller.yaml.tmpl
+    │   │   ├── kubeflow
+    │   │   │   └── kubeflow.yaml
+    │   │   ├── kubevirt
+    │   │   │   ├── pod.yaml.tmpl
+    │   │   │   └── README.md
+    │   │   ├── layouts
+    │   │   │   ├── gvisor
+    │   │   │   │   └── single.html
+    │   │   │   ├── helm-tiller
+    │   │   │   │   └── single.html
+    │   │   │   ├── ingress-dns
+    │   │   │   │   └── single.html
+    │   │   │   ├── istio
+    │   │   │   │   └── single.html
+    │   │   │   └── storage-provisioner-gluster
+    │   │   │       └── single.html
+    │   │   ├── logviewer
+    │   │   │   ├── logviewer-dp-and-svc.yaml.tmpl
+    │   │   │   └── logviewer-rbac.yaml
+    │   │   ├── metallb
+    │   │   │   ├── metallb-config.yaml.tmpl
+    │   │   │   └── metallb.yaml.tmpl
+    │   │   ├── metrics-server
+    │   │   │   ├── metrics-apiservice.yaml
+    │   │   │   ├── metrics-server-deployment.yaml.tmpl
+    │   │   │   ├── metrics-server-rbac.yaml
+    │   │   │   └── metrics-server-service.yaml
+    │   │   ├── nvidia-device-plugin
+    │   │   │   └── nvidia-device-plugin.yaml.tmpl
+    │   │   ├── olm
+    │   │   │   ├── crds.yaml
+    │   │   │   └── olm.yaml.tmpl
+    │   │   ├── pod-security-policy
+    │   │   │   └── pod-security-policy.yaml
+    │   │   ├── portainer
+    │   │   │   └── portainer.yaml.tmpl
+    │   │   ├── registry
+    │   │   │   ├── registry-proxy.yaml.tmpl
+    │   │   │   ├── registry-rc.yaml.tmpl
+    │   │   │   └── registry-svc.yaml
+    │   │   ├── registry-aliases
+    │   │   │   ├── node-etc-hosts-update.yaml.tmpl
+    │   │   │   ├── patch-coredns-job.yaml.tmpl
+    │   │   │   ├── README.md
+    │   │   │   ├── registry-aliases-config.yaml.tmpl
+    │   │   │   ├── registry-aliases-sa-crb.yaml
+    │   │   │   └── registry-aliases-sa.yaml
+    │   │   ├── registry-creds
+    │   │   │   └── registry-creds-rc.yaml.tmpl
+    │   │   ├── storageclass
+    │   │   │   └── storageclass.yaml
+    │   │   ├── storage-provisioner
+    │   │   │   └── storage-provisioner.yaml.tmpl
+    │   │   ├── storage-provisioner-gluster
+    │   │   │   ├── glusterfs-daemonset.yaml.tmpl
+    │   │   │   ├── heketi-deployment.yaml.tmpl
+    │   │   │   ├── README.md
+    │   │   │   ├── storage-gluster-ns.yaml
+    │   │   │   └── storage-provisioner-glusterfile.yaml.tmpl
+    │   │   ├── storage-provisioner-rancher
+    │   │   │   └── storage-provisioner-rancher.yaml.tmpl
+    │   │   ├── volcano
+    │   │   │   └── volcano-development.yaml.tmpl
+    │   │   ├── volumesnapshots
+    │   │   │   ├── csi-hostpath-snapshotclass.yaml
+    │   │   │   ├── rbac-volume-snapshot-controller.yaml
+    │   │   │   ├── snapshot.storage.k8s.io_volumesnapshotclasses.yaml
+    │   │   │   ├── snapshot.storage.k8s.io_volumesnapshotcontents.yaml
+    │   │   │   ├── snapshot.storage.k8s.io_volumesnapshots.yaml
+    │   │   │   └── volume-snapshot-controller-deployment.yaml.tmpl
+    │   │   └── yakd
+    │   │       ├── yakd-crb.yaml
+    │   │       ├── yakd-dp.yaml.tmpl
+    │   │       ├── yakd-ns.yaml
+    │   │       ├── yakd-sa.yaml
+    │   │       └── yakd-svc.yaml
+    │   ├── gvisor
+    │   │   └── Dockerfile
+    │   ├── iso
+    │   │   └── minikube-iso
+    │   │       ├── arch
+    │   │       │   ├── aarch64
+    │   │       │   │   ├── Config.in.tmpl
+    │   │       │   │   └── package
+    │   │       │   │       ├── buildkit-bin-aarch64
+    │   │       │   │       │   ├── 51-buildkit.preset
+    │   │       │   │       │   ├── buildkit-bin.hash
+    │   │       │   │       │   ├── buildkit-bin.mk
+    │   │       │   │       │   ├── buildkit.conf
+    │   │       │   │       │   ├── buildkitd.toml
+    │   │       │   │       │   ├── buildkit.service
+    │   │       │   │       │   ├── buildkit.socket
+    │   │       │   │       │   └── Config.in
+    │   │       │   │       ├── cni-plugins-latest-aarch64
+    │   │       │   │       │   ├── cni-plugins-latest.hash
+    │   │       │   │       │   ├── cni-plugins-latest.mk
+    │   │       │   │       │   └── Config.in
+    │   │       │   │       ├── Config.in
+    │   │       │   │       ├── containerd-bin-aarch64
+    │   │       │   │       │   ├── 50-minikube.preset
+    │   │       │   │       │   ├── Config.in
+    │   │       │   │       │   ├── config.toml
+    │   │       │   │       │   ├── containerd-bin.hash
+    │   │       │   │       │   ├── containerd-bin.mk
+    │   │       │   │       │   ├── containerd_docker_io_hosts.toml
+    │   │       │   │       │   └── containerd.service
+    │   │       │   │       ├── crictl-bin-aarch64
+    │   │       │   │       │   ├── Config.in
+    │   │       │   │       │   ├── crictl-bin.hash
+    │   │       │   │       │   └── crictl-bin.mk
+    │   │       │   │       ├── cri-dockerd-aarch64
+    │   │       │   │       │   ├── Config.in
+    │   │       │   │       │   ├── cri-dockerd.hash
+    │   │       │   │       │   └── cri-dockerd.mk
+    │   │       │   │       ├── docker-bin-aarch64
+    │   │       │   │       │   ├── Config.in
+    │   │       │   │       │   ├── daemon.json
+    │   │       │   │       │   ├── docker-bin.hash
+    │   │       │   │       │   ├── docker-bin.mk
+    │   │       │   │       │   ├── docker.socket
+    │   │       │   │       │   └── forward.conf
+    │   │       │   │       ├── docker-buildx-aarch64
+    │   │       │   │       │   ├── Config.in
+    │   │       │   │       │   ├── docker-buildx.hash
+    │   │       │   │       │   └── docker-buildx.mk
+    │   │       │   │       └── nerdctl-bin-aarch64
+    │   │       │   │           ├── Config.in
+    │   │       │   │           ├── nerdctl-bin.hash
+    │   │       │   │           └── nerdctl-bin.mk
+    │   │       │   └── x86_64
+    │   │       │       ├── Config.in.tmpl
+    │   │       │       └── package
+    │   │       │           ├── buildkit-bin
+    │   │       │           │   ├── 51-buildkit.preset
+    │   │       │           │   ├── buildkit-bin.hash
+    │   │       │           │   ├── buildkit-bin.mk
+    │   │       │           │   ├── buildkit.conf
+    │   │       │           │   ├── buildkitd.toml
+    │   │       │           │   ├── buildkit.service
+    │   │       │           │   ├── buildkit.socket
+    │   │       │           │   └── Config.in
+    │   │       │           ├── cni-plugins-latest
+    │   │       │           │   ├── cni-plugins-latest.hash
+    │   │       │           │   ├── cni-plugins-latest.mk
+    │   │       │           │   └── Config.in
+    │   │       │           ├── Config.in
+    │   │       │           ├── containerd-bin
+    │   │       │           │   ├── 50-minikube.preset
+    │   │       │           │   ├── Config.in
+    │   │       │           │   ├── config.toml
+    │   │       │           │   ├── containerd-bin.hash
+    │   │       │           │   ├── containerd-bin.mk
+    │   │       │           │   ├── containerd_docker_io_hosts.toml
+    │   │       │           │   └── containerd.service
+    │   │       │           ├── crictl-bin
+    │   │       │           │   ├── Config.in
+    │   │       │           │   ├── crictl-bin.hash
+    │   │       │           │   └── crictl-bin.mk
+    │   │       │           ├── cri-dockerd
+    │   │       │           │   ├── Config.in
+    │   │       │           │   ├── cri-dockerd.hash
+    │   │       │           │   └── cri-dockerd.mk
+    │   │       │           ├── docker-bin
+    │   │       │           │   ├── Config.in
+    │   │       │           │   ├── daemon.json
+    │   │       │           │   ├── docker-bin.hash
+    │   │       │           │   ├── docker-bin.mk
+    │   │       │           │   ├── docker.socket
+    │   │       │           │   └── forward.conf
+    │   │       │           ├── docker-buildx
+    │   │       │           │   ├── Config.in
+    │   │       │           │   ├── docker-buildx.hash
+    │   │       │           │   └── docker-buildx.mk
+    │   │       │           ├── hyperv-daemons
+    │   │       │           │   ├── 70-hv_fcopy.rules
+    │   │       │           │   ├── 70-hv_kvp.rules
+    │   │       │           │   ├── 70-hv_vss.rules
+    │   │       │           │   ├── Config.in
+    │   │       │           │   ├── hv_fcopy_daemon.service
+    │   │       │           │   ├── hv_kvp_daemon.service
+    │   │       │           │   ├── hv_vss_daemon.service
+    │   │       │           │   └── hyperv-daemons.mk
+    │   │       │           ├── nerdctl-bin
+    │   │       │           │   ├── Config.in
+    │   │       │           │   ├── nerdctl-bin.hash
+    │   │       │           │   └── nerdctl-bin.mk
+    │   │       │           └── vbox-mount-service
+    │   │       │               ├── Config.in
+    │   │       │               ├── vbox-mount-service.hash
+    │   │       │               ├── vbox-mount-service.mk
+    │   │       │               └── vboxservice.service
+    │   │       ├── board
+    │   │       │   └── minikube
+    │   │       │       ├── aarch64
+    │   │       │       │   ├── genimage.cfg
+    │   │       │       │   ├── grub.cfg
+    │   │       │       │   ├── grub-stub.cfg
+    │   │       │       │   ├── linux_aarch64_defconfig
+    │   │       │       │   ├── patches
+    │   │       │       │   │   ├── go
+    │   │       │       │   │   │   └── 1.15.15
+    │   │       │       │   │   │       └── dist-generate-stub-go.mod-in-workdir.patch
+    │   │       │       │   │   ├── sysdig
+    │   │       │       │   │   │   └── 0.23.1
+    │   │       │       │   │   │       ├── driver.patch
+    │   │       │       │   │   │       └── luajit.patch
+    │   │       │       │   │   ├── systemd
+    │   │       │       │   │   │   └── 240
+    │   │       │       │   │   │       ├── dhcp-multiple-addresses-for-router.patch
+    │   │       │       │   │   │       └── rdrand-workaround-on-amd.patch
+    │   │       │       │   │   └── varlink
+    │   │       │       │   │       └── 19
+    │   │       │       │   │           └── ctags.patch
+    │   │       │       │   ├── permissions
+    │   │       │       │   ├── post-build.sh
+    │   │       │       │   ├── post-image.sh
+    │   │       │       │   ├── rootfs-overlay
+    │   │       │       │   │   ├── etc
+    │   │       │       │   │   │   ├── cni
+    │   │       │       │   │   │   │   └── net.d
+    │   │       │       │   │   │   ├── docker
+    │   │       │       │   │   │   ├── fstab
+    │   │       │       │   │   │   ├── motd
+    │   │       │       │   │   │   ├── ssh
+    │   │       │       │   │   │   │   └── sshd_config
+    │   │       │       │   │   │   ├── sudoers
+    │   │       │       │   │   │   ├── sysctl.d
+    │   │       │       │   │   │   │   ├── 11-tcp-mtu-probing.conf
+    │   │       │       │   │   │   │   ├── 50-fs-inotify.conf
+    │   │       │       │   │   │   │   ├── 90-cilium-rp_filter.conf
+    │   │       │       │   │   │   │   └── disable-ipv6.conf
+    │   │       │       │   │   │   ├── systemd
+    │   │       │       │   │   │   │   ├── journald.conf
+    │   │       │       │   │   │   │   ├── network
+    │   │       │       │   │   │   │   │   ├── 10-eth1.network
+    │   │       │       │   │   │   │   │   └── 20-dhcp.network
+    │   │       │       │   │   │   │   ├── resolved.conf.d
+    │   │       │       │   │   │   │   │   └── 50-dnssec.conf
+    │   │       │       │   │   │   │   └── system
+    │   │       │       │   │   │   │       ├── getty.target.wants
+    │   │       │       │   │   │   │       │   └── getty@tty1.service -> /usr/lib/systemd/system/getty@.service
+    │   │       │       │   │   │   │       └── systemd-timesyncd.service.d
+    │   │       │       │   │   │   │           └── disable-virtualbox.conf
+    │   │       │       │   │   │   └── udev
+    │   │       │       │   │   │       └── rules.d
+    │   │       │       │   │   │           └── 80-net-setup-link.rules -> 80-net-setup-link.rules
+    │   │       │       │   │   ├── init
+    │   │       │       │   │   ├── usr
+    │   │       │       │   │   │   └── bin
+    │   │       │       │   │   │       └── toolbox
+    │   │       │       │   │   └── var
+    │   │       │       │   │       ├── lib
+    │   │       │       │   │       │   └── boot2docker
+    │   │       │       │   │       └── log
+    │   │       │       │   └── users
+    │   │       │       └── x86_64
+    │   │       │           ├── genimage.cfg
+    │   │       │           ├── grub.cfg
+    │   │       │           ├── grub-stub.cfg
+    │   │       │           ├── isolinux.cfg
+    │   │       │           ├── linux_x86_64_defconfig
+    │   │       │           ├── patches
+    │   │       │           │   ├── go
+    │   │       │           │   │   └── 1.15.15
+    │   │       │           │   │       └── dist-generate-stub-go.mod-in-workdir.patch
+    │   │       │           │   ├── sysdig
+    │   │       │           │   │   └── 0.23.1
+    │   │       │           │   │       ├── driver.patch
+    │   │       │           │   │       └── luajit.patch
+    │   │       │           │   ├── systemd
+    │   │       │           │   │   └── 240
+    │   │       │           │   │       ├── dhcp-multiple-addresses-for-router.patch
+    │   │       │           │   │       └── rdrand-workaround-on-amd.patch
+    │   │       │           │   └── varlink
+    │   │       │           │       └── 19
+    │   │       │           │           └── ctags.patch
+    │   │       │           ├── permissions
+    │   │       │           ├── post-build.sh
+    │   │       │           ├── post-image.sh
+    │   │       │           ├── rootfs-overlay
+    │   │       │           │   ├── etc
+    │   │       │           │   │   ├── cni
+    │   │       │           │   │   │   └── net.d
+    │   │       │           │   │   ├── docker
+    │   │       │           │   │   ├── fstab
+    │   │       │           │   │   ├── motd
+    │   │       │           │   │   ├── ssh
+    │   │       │           │   │   │   └── sshd_config
+    │   │       │           │   │   ├── sudoers
+    │   │       │           │   │   ├── sysctl.d
+    │   │       │           │   │   │   ├── 11-tcp-mtu-probing.conf
+    │   │       │           │   │   │   ├── 50-fs-inotify.conf
+    │   │       │           │   │   │   ├── 90-cilium-rp_filter.conf
+    │   │       │           │   │   │   └── disable-ipv6.conf
+    │   │       │           │   │   ├── systemd
+    │   │       │           │   │   │   ├── journald.conf
+    │   │       │           │   │   │   ├── network
+    │   │       │           │   │   │   │   ├── 10-eth1.network
+    │   │       │           │   │   │   │   └── 20-dhcp.network
+    │   │       │           │   │   │   ├── resolved.conf.d
+    │   │       │           │   │   │   │   └── 50-dnssec.conf
+    │   │       │           │   │   │   └── system
+    │   │       │           │   │   │       ├── getty.target.wants
+    │   │       │           │   │   │       │   └── getty@tty1.service -> /usr/lib/systemd/system/getty@.service
+    │   │       │           │   │   │       └── systemd-timesyncd.service.d
+    │   │       │           │   │   │           └── disable-virtualbox.conf
+    │   │       │           │   │   └── udev
+    │   │       │           │   │       └── rules.d
+    │   │       │           │   │           └── 80-net-setup-link.rules -> 80-net-setup-link.rules
+    │   │       │           │   ├── init
+    │   │       │           │   ├── usr
+    │   │       │           │   │   └── bin
+    │   │       │           │   │       └── toolbox
+    │   │       │           │   └── var
+    │   │       │           │       ├── lib
+    │   │       │           │       │   └── boot2docker
+    │   │       │           │       └── log
+    │   │       │           └── users
+    │   │       ├── configs
+    │   │       │   ├── minikube_aarch64_defconfig
+    │   │       │   └── minikube_x86_64_defconfig
+    │   │       ├── Dockerfile
+    │   │       ├── external.desc
+    │   │       ├── external.mk
+    │   │       ├── go.hash
+    │   │       ├── linux
+    │   │       │   └── install-module-symvers.mk
+    │   │       ├── package
+    │   │       │   ├── automount
+    │   │       │   │   ├── automount.mk
+    │   │       │   │   ├── Config.in
+    │   │       │   │   ├── minikube-automount
+    │   │       │   │   └── minikube-automount.service
+    │   │       │   ├── cni
+    │   │       │   │   ├── cni.hash
+    │   │       │   │   ├── cni.mk
+    │   │       │   │   └── Config.in
+    │   │       │   ├── Config.in
+    │   │       │   ├── conmon
+    │   │       │   │   ├── Config.in
+    │   │       │   │   ├── conmon.hash
+    │   │       │   │   └── conmon.mk
+    │   │       │   ├── crio-bin
+    │   │       │   │   ├── 02-crio.conf
+    │   │       │   │   ├── Config.in
+    │   │       │   │   ├── conmon-config.h
+    │   │       │   │   ├── crio-bin.hash
+    │   │       │   │   ├── crio-bin.mk
+    │   │       │   │   ├── crio.conf
+    │   │       │   │   ├── crio.conf.default
+    │   │       │   │   ├── crio.service
+    │   │       │   │   ├── policy.json
+    │   │       │   │   └── registries.conf
+    │   │       │   ├── crun-latest
+    │   │       │   │   ├── Config.in
+    │   │       │   │   ├── crun-latest.hash
+    │   │       │   │   └── crun-latest.mk
+    │   │       │   ├── falco-module
+    │   │       │   │   ├── Config.in
+    │   │       │   │   ├── falco-module.hash
+    │   │       │   │   └── falco-module.mk
+    │   │       │   ├── gluster
+    │   │       │   │   ├── 0001-set-distribution.patch
+    │   │       │   │   ├── 0002-use-gnu-rpcgen.patch
+    │   │       │   │   ├── Config.in
+    │   │       │   │   ├── gluster.hash
+    │   │       │   │   └── gluster.mk
+    │   │       │   ├── podman
+    │   │       │   │   ├── Config.in
+    │   │       │   │   ├── override.conf
+    │   │       │   │   ├── podman.conf
+    │   │       │   │   ├── podman.hash
+    │   │       │   │   └── podman.mk
+    │   │       │   ├── runc-master
+    │   │       │   │   ├── Config.in
+    │   │       │   │   ├── runc-master.hash
+    │   │       │   │   └── runc-master.mk
+    │   │       │   ├── scheduled-stop
+    │   │       │   │   ├── Config.in
+    │   │       │   │   ├── minikube-scheduled-stop
+    │   │       │   │   ├── minikube-scheduled-stop.service
+    │   │       │   │   └── scheduled-stop.mk
+    │   │       │   └── sysdig
+    │   │       │       ├── 0001-libsinsp-Apply-PATCH_COMMAND-to-fix-lua-types-and-fu.patch
+    │   │       │       ├── Config.in
+    │   │       │       ├── sysdig.hash
+    │   │       │       └── sysdig.mk
+    │   │       └── README.md
+    │   ├── kicbase
+    │   │   ├── 02-crio.conf
+    │   │   ├── 10-network-security.conf
+    │   │   ├── 11-tcp-mtu-probing.conf
+    │   │   ├── automount
+    │   │   │   ├── minikube-automount
+    │   │   │   └── minikube-automount.service
+    │   │   ├── build_auto_pause.sh
+    │   │   ├── clean-install
+    │   │   ├── containerd_docker_io_hosts.toml
+    │   │   ├── containerd.toml
+    │   │   ├── Dockerfile
+    │   │   ├── entrypoint
+    │   │   ├── nerdctld
+    │   │   │   ├── nerdctld.service
+    │   │   │   └── nerdctld.socket
+    │   │   └── scheduled-stop
+    │   │       ├── minikube-scheduled-stop
+    │   │       └── minikube-scheduled-stop.service
+    │   ├── minikube
+    │   │   ├── release_sanity_test.go
+    │   │   ├── releases-beta.json
+    │   │   ├── releases-beta-v2.json
+    │   │   ├── releases.json
+    │   │   ├── releases-v2.json
+    │   │   ├── schema_check.go
+    │   │   ├── schema.json
+    │   │   └── schema-v2.json
+    │   ├── prow
+    │   │   ├── Dockerfile
+    │   │   ├── README.md
+    │   │   └── wrapper.sh
+    │   └── storage-provisioner
+    │       └── Dockerfile
+    ├── enhancements
+    │   ├── implemented
+    │   │   ├── 20190925-minikube-enhancement-process
+    │   │   │   └── README.md
+    │   │   └── 20210624-flake-rate
+    │   │       └── flake-rate.md
+    │   ├── proposed
+    │   │   ├── 20200130-multinode
+    │   │   │   └── multinode-proposal.md
+    │   │   ├── 20200316-release-schedule
+    │   │   │   └── schedule-proposal.md
+    │   │   ├── 20200424-scheduled-shutdown
+    │   │   │   └── 20200424-scheduled-shutdown.md
+    │   │   ├── 20200921-dedicated-network-kic
+    │   │   │   └── dedicated-network-kic.md
+    │   │   ├── 20201030-tracing
+    │   │   │   └── README.md
+    │   │   └── 20210618-tips
+    │   │       └── tips.md
+    │   ├── README.md
+    │   ├── rejected
+    │   │   ├── container-default.md
+    │   │   └── standard-distro.md
+    │   └── template.md
+    ├── go.mod
+    ├── go.sum
+    ├── hack
+    │   ├── benchmark
+    │   │   ├── cpu_usage
+    │   │   │   ├── auto_pause
+    │   │   │   │   ├── benchmark_local_k8s.sh
+    │   │   │   │   ├── chart.go
+    │   │   │   │   ├── README.md
+    │   │   │   │   └── update_summary.sh
+    │   │   │   └── idle_only
+    │   │   │       ├── benchmark_local_k8s.sh
+    │   │   │       ├── chart.go
+    │   │   │       ├── README.md
+    │   │   │       └── update_summary.sh
+    │   │   ├── image-build
+    │   │   │   ├── generate-chart.go
+    │   │   │   ├── minikube-image-benchmark
+    │   │   │   └── publish-chart.sh
+    │   │   └── time-to-k8s
+    │   │       ├── chart.go
+    │   │       ├── cpu.go
+    │   │       ├── page.go
+    │   │       ├── public-chart
+    │   │       │   ├── docker-containerd-benchmark.yaml
+    │   │       │   ├── docker-docker-benchmark.yaml
+    │   │       │   ├── generate-chart.go
+    │   │       │   ├── public-chart.sh
+    │   │       │   ├── virtualbox-containerd-benchmark.yaml
+    │   │       │   └── virtualbox-docker-benchmark.yaml
+    │   │       ├── time-to-k8s-repo
+    │   │       └── time-to-k8s.sh
+    │   ├── boilerplate
+    │   │   ├── boilerplate.Dockerfile.txt
+    │   │   ├── boilerplate.go
+    │   │   ├── boilerplate.go.txt
+    │   │   ├── boilerplate.Makefile.txt
+    │   │   ├── boilerplate.py.txt
+    │   │   ├── boilerplate.sh.txt
+    │   │   └── fix.sh
+    │   ├── conformance_tests.sh
+    │   ├── cover.sh
+    │   ├── generate_licenses.sh
+    │   ├── gh_actions
+    │   │   ├── cleanup.sh
+    │   │   └── install_cleanup.sh
+    │   ├── help_text
+    │   │   └── gen_help_text.go
+    │   ├── jenkins
+    │   │   ├── build_changelog.sh
+    │   │   ├── build_iso.sh
+    │   │   ├── cloud_shell_functional_tests_docker.sh
+    │   │   ├── common.ps1
+    │   │   ├── common.sh
+    │   │   ├── cron
+    │   │   │   ├── cleanup_and_reboot_Darwin.sh
+    │   │   │   ├── cleanup_and_reboot_Linux.sh
+    │   │   │   └── cleanup_go_modules.sh
+    │   │   ├── installers
+    │   │   │   ├── check_install_cni_plugins.sh
+    │   │   │   ├── check_install_docker.sh
+    │   │   │   ├── check_install_gh.sh
+    │   │   │   ├── check_install_github_release.sh
+    │   │   │   ├── check_install_golang.ps1
+    │   │   │   ├── check_install_golang.sh
+    │   │   │   ├── check_install_gopogh.sh
+    │   │   │   ├── check_install_gotestsum.sh
+    │   │   │   ├── check_install_linux_crons.sh
+    │   │   │   └── check_install_osx_crons.sh
+    │   │   ├── kicbase_auto_build.sh
+    │   │   ├── linux_integration_tests_docker_arm64.sh
+    │   │   ├── linux_integration_tests_docker_containerd_arm64.sh
+    │   │   ├── linux_integration_tests_docker_containerd.sh
+    │   │   ├── linux_integration_tests_docker_crio_arm64.sh
+    │   │   ├── linux_integration_tests_docker_crio.sh
+    │   │   ├── linux_integration_tests_docker.sh
+    │   │   ├── linux_integration_tests_kvm_containerd.sh
+    │   │   ├── linux_integration_tests_kvm_crio.sh
+    │   │   ├── linux_integration_tests_kvm.sh
+    │   │   ├── linux_integration_tests_none.sh
+    │   │   ├── linux_integration_tests_podman.sh
+    │   │   ├── linux_integration_tests_virtualbox.sh
+    │   │   ├── minikube_cross_build_and_upload.sh
+    │   │   ├── minikube_set_pending.sh
+    │   │   ├── osx_integration_tests_docker.sh
+    │   │   ├── osx_integration_tests_hyperkit.sh
+    │   │   ├── osx_integration_tests_qemu.sh
+    │   │   ├── osx_integration_tests_vfkit.sh
+    │   │   ├── osx_integration_tests_virtualbox.sh
+    │   │   ├── prbot.sh
+    │   │   ├── preload_generation.sh
+    │   │   ├── release_build_and_upload.sh
+    │   │   ├── release_github_page.sh
+    │   │   ├── release_update_brew.sh
+    │   │   ├── release_update_releases_json.go
+    │   │   ├── release_update_releases_json.sh
+    │   │   ├── setup_docker_desktop_macos.sh
+    │   │   ├── setup_docker_desktop_windows.ps1
+    │   │   ├── storage_provisioner.sh
+    │   │   ├── test-flake-chart
+    │   │   │   ├── collect_data_manual.sh
+    │   │   │   ├── compute_flake_rate.go
+    │   │   │   ├── compute_flake_rate.sh
+    │   │   │   ├── compute_flake_rate_test.go
+    │   │   │   ├── flake_chart.html
+    │   │   │   ├── flake_chart.js
+    │   │   │   ├── optimize_data.sh
+    │   │   │   ├── process_data.sh
+    │   │   │   ├── process_last_90
+    │   │   │   │   ├── process_last_90.go
+    │   │   │   │   └── process_last_90.sh
+    │   │   │   ├── report_flakes
+    │   │   │   │   ├── go.mod
+    │   │   │   │   ├── go.sum
+    │   │   │   │   ├── main.go
+    │   │   │   │   └── report_flake.go
+    │   │   │   ├── sync_tests.sh
+    │   │   │   └── upload_tests.sh
+    │   │   ├── unix_white_box_integration_tests.sh
+    │   │   ├── upload_integration_report.sh
+    │   │   ├── windows_cleanup_and_reboot.ps1
+    │   │   ├── windows_cleanup_cron.ps1
+    │   │   ├── windows_integration_setup.ps1
+    │   │   ├── windows_integration_teardown.ps1
+    │   │   ├── windows_integration_test_docker.ps1
+    │   │   ├── windows_integration_test_hyperv.ps1
+    │   │   └── windows_integration_test_virtualbox.ps1
+    │   ├── kicbase_version
+    │   │   └── release_kicbase_version.go
+    │   ├── legacy_fill_db
+    │   │   └── filldb.go
+    │   ├── metrics
+    │   │   ├── metrics.go
+    │   │   ├── minikube.go
+    │   │   └── README.md
+    │   ├── preload-images
+    │   │   ├── generate.go
+    │   │   ├── kubernetes.go
+    │   │   ├── preload_images.go
+    │   │   └── upload.go
+    │   ├── release_notes.sh
+    │   ├── tag_release.sh
+    │   ├── update
+    │   │   ├── buildkit_version
+    │   │   │   └── update_buildkit_version.go
+    │   │   ├── calico_version
+    │   │   │   └── update_calico_version.go
+    │   │   ├── cilium_version
+    │   │   │   └── update_cilium_version.go
+    │   │   ├── cloud_spanner_emulator_version
+    │   │   │   └── update_cloud_spanner_emulator_version.go
+    │   │   ├── cni_plugins_version
+    │   │   │   └── update_cni_plugins_version.go
+    │   │   ├── containerd_version
+    │   │   │   └── update_containerd_version.go
+    │   │   ├── crictl_version
+    │   │   │   └── update_crictl_version.go
+    │   │   ├── cri_dockerd_version
+    │   │   │   ├── build_and_upload_cri_dockerd_binaries.sh
+    │   │   │   └── update_cri_dockerd_version.go
+    │   │   ├── cri-o_version
+    │   │   │   └── update_cri-o_version.go
+    │   │   ├── crun_version
+    │   │   │   └── update_crun_version.go
+    │   │   ├── docker_buildx_version
+    │   │   │   └── update_docker_buildx_version.go
+    │   │   ├── dockerhub.go
+    │   │   ├── docker_version
+    │   │   │   └── update_docker_version.go
+    │   │   ├── docsy_version
+    │   │   │   ├── update_docsy_version.go
+    │   │   │   └── update_docsy_version.sh
+    │   │   ├── filesystem.go
+    │   │   ├── flannel_version
+    │   │   │   └── update_flannel_version.go
+    │   │   ├── gcp_auth_version
+    │   │   │   └── update_gcp_auth_version.go
+    │   │   ├── get_version
+    │   │   │   └── get_version.go
+    │   │   ├── gh_version
+    │   │   │   └── update_gh_version.go
+    │   │   ├── github.go
+    │   │   ├── go_github_version
+    │   │   │   └── update_go_github_version.go
+    │   │   ├── golang_version
+    │   │   │   └── update_golang_version.go
+    │   │   ├── golint_version
+    │   │   │   └── update_golint_version.go
+    │   │   ├── gopogh_version
+    │   │   │   └── update_gopogh_version.go
+    │   │   ├── gotestsum_version
+    │   │   │   └── update_gotestsum_version.go
+    │   │   ├── hugo_version
+    │   │   │   └── update_hugo_version.go
+    │   │   ├── image.go
+    │   │   ├── ingress_version
+    │   │   │   └── update_ingress_version.go
+    │   │   ├── inspektor_gadget_version
+    │   │   │   └── update_inspektor_gadget_version.go
+    │   │   ├── istio_operator_version
+    │   │   │   └── update_istio_operator_version.go
+    │   │   ├── k8s-lib
+    │   │   │   └── bumpk8slib.sh
+    │   │   ├── kicbase_version
+    │   │   │   └── update_kicbase_version.go
+    │   │   ├── kindnetd_version
+    │   │   │   └── update_kindnetd_version.go
+    │   │   ├── kong_ingress_controller_version
+    │   │   │   └── update_kong_ingress_controller_version.go
+    │   │   ├── kong_version
+    │   │   │   └── update_kong_version.go
+    │   │   ├── kubeadm_constants
+    │   │   │   └── update_kubeadm_constants.go
+    │   │   ├── kubectl_version
+    │   │   │   └── update_kubectl_version.go
+    │   │   ├── kubernetes_version
+    │   │   │   ├── templates
+    │   │   │   │   └── v1beta3
+    │   │   │   │       ├── containerd-api-port.yaml
+    │   │   │   │       ├── containerd-pod-network-cidr.yaml
+    │   │   │   │       ├── containerd.yaml
+    │   │   │   │       ├── crio-options-gates.yaml
+    │   │   │   │       ├── crio.yaml
+    │   │   │   │       ├── default.yaml
+    │   │   │   │       ├── dns.yaml
+    │   │   │   │       ├── image-repository.yaml
+    │   │   │   │       └── options.yaml
+    │   │   │   └── update_kubernetes_version.go
+    │   │   ├── kubernetes_versions_list
+    │   │   │   └── update_kubernetes_versions_list.go
+    │   │   ├── metrics_server_version
+    │   │   │   └── update_metrics_server_version.go
+    │   │   ├── nerdctld_version
+    │   │   │   └── update_nerdctld_version.go
+    │   │   ├── nerdctl_version
+    │   │   │   └── update_nerdctl_version.go
+    │   │   ├── nvidia_device_plugin_version
+    │   │   │   └── update_nvidia_device_plugin_version.go
+    │   │   ├── preload_version
+    │   │   │   └── update_preload_version.go
+    │   │   ├── registry.go
+    │   │   ├── registry_version
+    │   │   │   └── update_registry_version.go
+    │   │   ├── runc_version
+    │   │   │   └── update_runc_version.go
+    │   │   ├── site_node_version
+    │   │   │   └── update_site_node_version.go
+    │   │   ├── ubuntu_version
+    │   │   │   └── update_ubuntu_version.go
+    │   │   ├── update.go
+    │   │   ├── volcano_version
+    │   │   │   └── update_volcano_version.go
+    │   │   └── yakd_version
+    │   │       └── update_yakd_version.go
+    │   ├── update_contributions.sh
+    │   └── yearly-leaderboard.sh
+    ├── images
+    │   └── logo
+    │       ├── LICENSE
+    │       ├── logo.eps
+    │       ├── logo.png
+    │       ├── logo.svg
+    │       ├── logo_white.eps
+    │       ├── logo_white.png
+    │       ├── logo_white.svg
+    │       ├── logo_white_with_name.eps
+    │       ├── logo_white_with_name.png
+    │       ├── logo_white_with_name.svg
+    │       ├── logo_with_name.eps
+    │       ├── logo_with_name.png
+    │       ├── logo_with_name.svg
+    │       ├── minikube_logo_name.jpg
+    │       └── minikube-logo.png
+    ├── installers
+    │   ├── darwin
+    │   │   └── brew-cask
+    │   │       └── minikube.rb.tmpl
+    │   ├── linux
+    │   │   ├── archlinux
+    │   │   │   └── PKGBUILD
+    │   │   ├── archlinux-driver
+    │   │   │   └── PKGBUILD
+    │   │   ├── deb
+    │   │   │   ├── kvm2_deb_template
+    │   │   │   │   └── DEBIAN
+    │   │   │   │       └── control
+    │   │   │   └── minikube_deb_template
+    │   │   │       └── DEBIAN
+    │   │   │           └── control
+    │   │   ├── kvm
+    │   │   │   ├── Dockerfile.amd64
+    │   │   │   └── Dockerfile.arm64
+    │   │   └── rpm
+    │   │       ├── kvm2_rpm_template
+    │   │       │   └── docker-machine-driver-kvm2.spec
+    │   │       └── minikube_rpm_template
+    │   │           └── minikube.spec
+    │   └── windows
+    │       ├── logo.bmp
+    │       ├── logo.ico
+    │       ├── minikube.nsi
+    │       └── update_path.ps1
+    ├── LICENSE
+    ├── Makefile
+    ├── netlify.toml
+    ├── OWNERS
+    ├── pkg
+    │   ├── addons
+    │   │   ├── addons_autopause.go
+    │   │   ├── addons_gcpauth.go
+    │   │   ├── addons.go
+    │   │   ├── addons_storage_classes.go
+    │   │   ├── addons_test.go
+    │   │   ├── config.go
+    │   │   ├── kubectl.go
+    │   │   ├── kubectl_test.go
+    │   │   ├── validations.go
+    │   │   └── validations_test.go
+    │   ├── drivers
+    │   │   ├── common.go
+    │   │   ├── common_test.go
+    │   │   ├── hyperkit
+    │   │   │   ├── driver.go
+    │   │   │   ├── driver_test.go
+    │   │   │   ├── network.go
+    │   │   │   ├── version.go
+    │   │   │   ├── vmnet.go
+    │   │   │   └── vmnet_stub.go
+    │   │   ├── iso.go
+    │   │   ├── iso_test.go
+    │   │   ├── iso_test.iso
+    │   │   ├── kic
+    │   │   │   ├── kic.go
+    │   │   │   ├── oci
+    │   │   │   │   ├── cgroups_linux.go
+    │   │   │   │   ├── cgroups_other.go
+    │   │   │   │   ├── cli_runner.go
+    │   │   │   │   ├── cli_runner_test.go
+    │   │   │   │   ├── env.go
+    │   │   │   │   ├── errors.go
+    │   │   │   │   ├── errors_test.go
+    │   │   │   │   ├── info.go
+    │   │   │   │   ├── info_test.go
+    │   │   │   │   ├── network_create.go
+    │   │   │   │   ├── network_create_test.go
+    │   │   │   │   ├── network.go
+    │   │   │   │   ├── oci.go
+    │   │   │   │   ├── oci_test.go
+    │   │   │   │   ├── types.go
+    │   │   │   │   ├── types_test.go
+    │   │   │   │   └── volumes.go
+    │   │   │   └── types.go
+    │   │   ├── kvm
+    │   │   │   ├── disks.go
+    │   │   │   ├── domain_definition_arm64.go
+    │   │   │   ├── domain_definition_x86.go
+    │   │   │   ├── domain.go
+    │   │   │   ├── gpu.go
+    │   │   │   ├── kvm.go
+    │   │   │   ├── network.go
+    │   │   │   ├── numa.go
+    │   │   │   ├── numa_test.go
+    │   │   │   └── version.go
+    │   │   ├── none
+    │   │   │   └── none.go
+    │   │   ├── qemu
+    │   │   │   └── qemu.go
+    │   │   ├── ssh
+    │   │   │   └── ssh.go
+    │   │   └── vfkit
+    │   │       └── vfkit.go
+    │   ├── generate
+    │   │   ├── docs.go
+    │   │   ├── docs_templates.go
+    │   │   ├── errorcodes.go
+    │   │   ├── rewrite.go
+    │   │   └── testdocs.go
+    │   ├── gvisor
+    │   │   ├── disable.go
+    │   │   └── enable.go
+    │   ├── kapi
+    │   │   └── kapi.go
+    │   ├── minikube
+    │   │   ├── assets
+    │   │   │   ├── addons.go
+    │   │   │   ├── addons_test.go
+    │   │   │   ├── aliyun_mirror.go
+    │   │   │   └── vm_assets.go
+    │   │   ├── audit
+    │   │   │   ├── audit.go
+    │   │   │   ├── audit_test.go
+    │   │   │   ├── logFile.go
+    │   │   │   ├── logFile_test.go
+    │   │   │   ├── report.go
+    │   │   │   ├── report_test.go
+    │   │   │   ├── row.go
+    │   │   │   └── row_test.go
+    │   │   ├── bootstrapper
+    │   │   │   ├── bootstrapper.go
+    │   │   │   ├── bsutil
+    │   │   │   │   ├── binaries.go
+    │   │   │   │   ├── extraconfig.go
+    │   │   │   │   ├── extraconfig_test.go
+    │   │   │   │   ├── featuregates.go
+    │   │   │   │   ├── featuregates_test.go
+    │   │   │   │   ├── files.go
+    │   │   │   │   ├── ktmpl
+    │   │   │   │   │   ├── kubelet.go
+    │   │   │   │   │   ├── template.go
+    │   │   │   │   │   ├── template_test.go
+    │   │   │   │   │   ├── v1beta1.go
+    │   │   │   │   │   ├── v1beta2.go
+    │   │   │   │   │   └── v1beta3.go
+    │   │   │   │   ├── kubeadm.go
+    │   │   │   │   ├── kubeadm_test.go
+    │   │   │   │   ├── kubelet.go
+    │   │   │   │   ├── kubelet_test.go
+    │   │   │   │   ├── kverify
+    │   │   │   │   │   ├── api_server.go
+    │   │   │   │   │   ├── default_sa.go
+    │   │   │   │   │   ├── kverify.go
+    │   │   │   │   │   ├── node_conditions.go
+    │   │   │   │   │   ├── node_ready.go
+    │   │   │   │   │   ├── pod_ready.go
+    │   │   │   │   │   ├── system_pods.go
+    │   │   │   │   │   └── system_svc.go
+    │   │   │   │   ├── ops.go
+    │   │   │   │   ├── testdata
+    │   │   │   │   │   ├── v1.16
+    │   │   │   │   │   │   ├── containerd-api-port.yaml
+    │   │   │   │   │   │   ├── containerd-pod-network-cidr.yaml
+    │   │   │   │   │   │   ├── containerd.yaml
+    │   │   │   │   │   │   ├── crio-options-gates.yaml
+    │   │   │   │   │   │   ├── crio.yaml
+    │   │   │   │   │   │   ├── default.yaml
+    │   │   │   │   │   │   ├── dns.yaml
+    │   │   │   │   │   │   ├── image-repository.yaml
+    │   │   │   │   │   │   └── options.yaml
+    │   │   │   │   │   ├── v1.17
+    │   │   │   │   │   │   ├── containerd-api-port.yaml
+    │   │   │   │   │   │   ├── containerd-pod-network-cidr.yaml
+    │   │   │   │   │   │   ├── containerd.yaml
+    │   │   │   │   │   │   ├── crio-options-gates.yaml
+    │   │   │   │   │   │   ├── crio.yaml
+    │   │   │   │   │   │   ├── default.yaml
+    │   │   │   │   │   │   ├── dns.yaml
+    │   │   │   │   │   │   ├── image-repository.yaml
+    │   │   │   │   │   │   └── options.yaml
+    │   │   │   │   │   ├── v1.18
+    │   │   │   │   │   │   ├── containerd-api-port.yaml
+    │   │   │   │   │   │   ├── containerd-pod-network-cidr.yaml
+    │   │   │   │   │   │   ├── containerd.yaml
+    │   │   │   │   │   │   ├── crio-options-gates.yaml
+    │   │   │   │   │   │   ├── crio.yaml
+    │   │   │   │   │   │   ├── default.yaml
+    │   │   │   │   │   │   ├── dns.yaml
+    │   │   │   │   │   │   ├── image-repository.yaml
+    │   │   │   │   │   │   └── options.yaml
+    │   │   │   │   │   ├── v1.19
+    │   │   │   │   │   │   ├── containerd-api-port.yaml
+    │   │   │   │   │   │   ├── containerd-pod-network-cidr.yaml
+    │   │   │   │   │   │   ├── containerd.yaml
+    │   │   │   │   │   │   ├── crio-options-gates.yaml
+    │   │   │   │   │   │   ├── crio.yaml
+    │   │   │   │   │   │   ├── default.yaml
+    │   │   │   │   │   │   ├── dns.yaml
+    │   │   │   │   │   │   ├── image-repository.yaml
+    │   │   │   │   │   │   └── options.yaml
+    │   │   │   │   │   ├── v1.20
+    │   │   │   │   │   │   ├── containerd-api-port.yaml
+    │   │   │   │   │   │   ├── containerd-pod-network-cidr.yaml
+    │   │   │   │   │   │   ├── containerd.yaml
+    │   │   │   │   │   │   ├── crio-options-gates.yaml
+    │   │   │   │   │   │   ├── crio.yaml
+    │   │   │   │   │   │   ├── default.yaml
+    │   │   │   │   │   │   ├── dns.yaml
+    │   │   │   │   │   │   ├── image-repository.yaml
+    │   │   │   │   │   │   └── options.yaml
+    │   │   │   │   │   ├── v1.21
+    │   │   │   │   │   │   ├── containerd-api-port.yaml
+    │   │   │   │   │   │   ├── containerd-pod-network-cidr.yaml
+    │   │   │   │   │   │   ├── containerd.yaml
+    │   │   │   │   │   │   ├── crio-options-gates.yaml
+    │   │   │   │   │   │   ├── crio.yaml
+    │   │   │   │   │   │   ├── default.yaml
+    │   │   │   │   │   │   ├── dns.yaml
+    │   │   │   │   │   │   ├── image-repository.yaml
+    │   │   │   │   │   │   └── options.yaml
+    │   │   │   │   │   ├── v1.22
+    │   │   │   │   │   │   ├── containerd-api-port.yaml
+    │   │   │   │   │   │   ├── containerd-pod-network-cidr.yaml
+    │   │   │   │   │   │   ├── containerd.yaml
+    │   │   │   │   │   │   ├── crio-options-gates.yaml
+    │   │   │   │   │   │   ├── crio.yaml
+    │   │   │   │   │   │   ├── default.yaml
+    │   │   │   │   │   │   ├── dns.yaml
+    │   │   │   │   │   │   ├── image-repository.yaml
+    │   │   │   │   │   │   └── options.yaml
+    │   │   │   │   │   ├── v1.23
+    │   │   │   │   │   │   ├── containerd-api-port.yaml
+    │   │   │   │   │   │   ├── containerd-pod-network-cidr.yaml
+    │   │   │   │   │   │   ├── containerd.yaml
+    │   │   │   │   │   │   ├── crio-options-gates.yaml
+    │   │   │   │   │   │   ├── crio.yaml
+    │   │   │   │   │   │   ├── default.yaml
+    │   │   │   │   │   │   ├── dns.yaml
+    │   │   │   │   │   │   ├── image-repository.yaml
+    │   │   │   │   │   │   └── options.yaml
+    │   │   │   │   │   ├── v1.24
+    │   │   │   │   │   │   ├── containerd-api-port.yaml
+    │   │   │   │   │   │   ├── containerd-pod-network-cidr.yaml
+    │   │   │   │   │   │   ├── containerd.yaml
+    │   │   │   │   │   │   ├── crio-options-gates.yaml
+    │   │   │   │   │   │   ├── crio.yaml
+    │   │   │   │   │   │   ├── default.yaml
+    │   │   │   │   │   │   ├── dns.yaml
+    │   │   │   │   │   │   ├── image-repository.yaml
+    │   │   │   │   │   │   └── options.yaml
+    │   │   │   │   │   ├── v1.25
+    │   │   │   │   │   │   ├── containerd-api-port.yaml
+    │   │   │   │   │   │   ├── containerd-pod-network-cidr.yaml
+    │   │   │   │   │   │   ├── containerd.yaml
+    │   │   │   │   │   │   ├── crio-options-gates.yaml
+    │   │   │   │   │   │   ├── crio.yaml
+    │   │   │   │   │   │   ├── default.yaml
+    │   │   │   │   │   │   ├── dns.yaml
+    │   │   │   │   │   │   ├── image-repository.yaml
+    │   │   │   │   │   │   └── options.yaml
+    │   │   │   │   │   ├── v1.26
+    │   │   │   │   │   │   ├── containerd-api-port.yaml
+    │   │   │   │   │   │   ├── containerd-pod-network-cidr.yaml
+    │   │   │   │   │   │   ├── containerd.yaml
+    │   │   │   │   │   │   ├── crio-options-gates.yaml
+    │   │   │   │   │   │   ├── crio.yaml
+    │   │   │   │   │   │   ├── default.yaml
+    │   │   │   │   │   │   ├── dns.yaml
+    │   │   │   │   │   │   ├── image-repository.yaml
+    │   │   │   │   │   │   └── options.yaml
+    │   │   │   │   │   ├── v1.27
+    │   │   │   │   │   │   ├── containerd-api-port.yaml
+    │   │   │   │   │   │   ├── containerd-pod-network-cidr.yaml
+    │   │   │   │   │   │   ├── containerd.yaml
+    │   │   │   │   │   │   ├── crio-options-gates.yaml
+    │   │   │   │   │   │   ├── crio.yaml
+    │   │   │   │   │   │   ├── default.yaml
+    │   │   │   │   │   │   ├── dns.yaml
+    │   │   │   │   │   │   ├── image-repository.yaml
+    │   │   │   │   │   │   └── options.yaml
+    │   │   │   │   │   ├── v1.28
+    │   │   │   │   │   │   ├── containerd-api-port.yaml
+    │   │   │   │   │   │   ├── containerd-pod-network-cidr.yaml
+    │   │   │   │   │   │   ├── containerd.yaml
+    │   │   │   │   │   │   ├── crio-options-gates.yaml
+    │   │   │   │   │   │   ├── crio.yaml
+    │   │   │   │   │   │   ├── default.yaml
+    │   │   │   │   │   │   ├── dns.yaml
+    │   │   │   │   │   │   ├── image-repository.yaml
+    │   │   │   │   │   │   └── options.yaml
+    │   │   │   │   │   ├── v1.29
+    │   │   │   │   │   │   ├── containerd-api-port.yaml
+    │   │   │   │   │   │   ├── containerd-pod-network-cidr.yaml
+    │   │   │   │   │   │   ├── containerd.yaml
+    │   │   │   │   │   │   ├── crio-options-gates.yaml
+    │   │   │   │   │   │   ├── crio.yaml
+    │   │   │   │   │   │   ├── default.yaml
+    │   │   │   │   │   │   ├── dns.yaml
+    │   │   │   │   │   │   ├── image-repository.yaml
+    │   │   │   │   │   │   └── options.yaml
+    │   │   │   │   │   ├── v1.30
+    │   │   │   │   │   │   ├── containerd-api-port.yaml
+    │   │   │   │   │   │   ├── containerd-pod-network-cidr.yaml
+    │   │   │   │   │   │   ├── containerd.yaml
+    │   │   │   │   │   │   ├── crio-options-gates.yaml
+    │   │   │   │   │   │   ├── crio.yaml
+    │   │   │   │   │   │   ├── default.yaml
+    │   │   │   │   │   │   ├── dns.yaml
+    │   │   │   │   │   │   ├── image-repository.yaml
+    │   │   │   │   │   │   └── options.yaml
+    │   │   │   │   │   └── v1.31
+    │   │   │   │   │       ├── containerd-api-port.yaml
+    │   │   │   │   │       ├── containerd-pod-network-cidr.yaml
+    │   │   │   │   │       ├── containerd.yaml
+    │   │   │   │   │       ├── crio-options-gates.yaml
+    │   │   │   │   │       ├── crio.yaml
+    │   │   │   │   │       ├── default.yaml
+    │   │   │   │   │       ├── dns.yaml
+    │   │   │   │   │       ├── image-repository.yaml
+    │   │   │   │   │       └── options.yaml
+    │   │   │   │   ├── types.go
+    │   │   │   │   ├── versions.go
+    │   │   │   │   └── versions_test.go
+    │   │   │   ├── certs.go
+    │   │   │   ├── certs_test.go
+    │   │   │   ├── images
+    │   │   │   │   ├── images.go
+    │   │   │   │   ├── images_test.go
+    │   │   │   │   ├── kubeadm.go
+    │   │   │   │   ├── kubeadm_test.go
+    │   │   │   │   ├── repo.go
+    │   │   │   │   └── repo_test.go
+    │   │   │   └── kubeadm
+    │   │   │       ├── errors.go
+    │   │   │       └── kubeadm.go
+    │   │   ├── browser
+    │   │   │   └── browser.go
+    │   │   ├── cluster
+    │   │   │   ├── cluster.go
+    │   │   │   ├── ha
+    │   │   │   │   └── kube-vip
+    │   │   │   │       └── kube-vip.go
+    │   │   │   ├── ip.go
+    │   │   │   ├── mount.go
+    │   │   │   ├── mount_test.go
+    │   │   │   └── pause.go
+    │   │   ├── cni
+    │   │   │   ├── bridge.go
+    │   │   │   ├── calico.go
+    │   │   │   ├── calico.yaml
+    │   │   │   ├── cilium.go
+    │   │   │   ├── cilium.yaml
+    │   │   │   ├── cni.go
+    │   │   │   ├── cni_test.go
+    │   │   │   ├── custom.go
+    │   │   │   ├── disabled.go
+    │   │   │   ├── flannel.go
+    │   │   │   ├── flannel.yaml
+    │   │   │   └── kindnet.go
+    │   │   ├── command
+    │   │   │   ├── command_runner.go
+    │   │   │   ├── exec_runner.go
+    │   │   │   ├── fake_runner.go
+    │   │   │   ├── fake_runner_test.go
+    │   │   │   ├── kic_runner.go
+    │   │   │   ├── kic_runner_test.go
+    │   │   │   ├── ssh_runner.go
+    │   │   │   └── ssh_runner_test.go
+    │   │   ├── config
+    │   │   │   ├── config.go
+    │   │   │   ├── config_test.go
+    │   │   │   ├── extra_options.go
+    │   │   │   ├── extra_options_test.go
+    │   │   │   ├── profile.go
+    │   │   │   ├── profile_test.go
+    │   │   │   ├── testdata
+    │   │   │   │   ├── delete-all
+    │   │   │   │   ├── delete-single
+    │   │   │   │   └── profile
+    │   │   │   └── types.go
+    │   │   ├── constants
+    │   │   │   ├── constants_darwin.go
+    │   │   │   ├── constants_freebsd.go
+    │   │   │   ├── constants_gendocs.go
+    │   │   │   ├── constants.go
+    │   │   │   ├── constants_kubeadm_images.go
+    │   │   │   ├── constants_kubernetes_versions.go
+    │   │   │   ├── constants_linux.go
+    │   │   │   └── constants_windows.go
+    │   │   ├── cruntime
+    │   │   │   ├── containerd.go
+    │   │   │   ├── containerd_test.go
+    │   │   │   ├── cri.go
+    │   │   │   ├── crio.go
+    │   │   │   ├── cruntime.go
+    │   │   │   ├── cruntime_test.go
+    │   │   │   └── docker.go
+    │   │   ├── delete
+    │   │   │   └── delete.go
+    │   │   ├── detect
+    │   │   │   ├── detect.go
+    │   │   │   ├── detect_linux.go
+    │   │   │   └── detect_nonlinux.go
+    │   │   ├── docker
+    │   │   │   ├── store.go
+    │   │   │   └── store_test.go
+    │   │   ├── download
+    │   │   │   ├── binary.go
+    │   │   │   ├── download.go
+    │   │   │   ├── download_test.go
+    │   │   │   ├── driver.go
+    │   │   │   ├── image.go
+    │   │   │   ├── iso.go
+    │   │   │   ├── json_output.go
+    │   │   │   ├── licenses.go
+    │   │   │   ├── preload.go
+    │   │   │   └── progressbar.go
+    │   │   ├── driver
+    │   │   │   ├── auxdriver
+    │   │   │   │   ├── install.go
+    │   │   │   │   ├── install_test.go
+    │   │   │   │   ├── version.go
+    │   │   │   │   └── version_test.go
+    │   │   │   ├── driver_darwin.go
+    │   │   │   ├── driver_freebsd.go
+    │   │   │   ├── driver.go
+    │   │   │   ├── driver_linux.go
+    │   │   │   ├── driver_test.go
+    │   │   │   ├── driver_windows.go
+    │   │   │   └── endpoint.go
+    │   │   ├── exit
+    │   │   │   └── exit.go
+    │   │   ├── extract
+    │   │   │   ├── extract.go
+    │   │   │   ├── extract_test.go
+    │   │   │   └── testdata
+    │   │   │       ├── sample_file.go
+    │   │   │       └── test.json
+    │   │   ├── firewall
+    │   │   │   └── firewall.go
+    │   │   ├── image
+    │   │   │   ├── cache.go
+    │   │   │   ├── image.go
+    │   │   │   ├── image_test.go
+    │   │   │   └── types.go
+    │   │   ├── kubeconfig
+    │   │   │   ├── context.go
+    │   │   │   ├── context_test.go
+    │   │   │   ├── extension.go
+    │   │   │   ├── kubeconfig.go
+    │   │   │   ├── kubeconfig_test.go
+    │   │   │   ├── settings.go
+    │   │   │   └── testdata
+    │   │   │       └── kubeconfig
+    │   │   │           ├── config1
+    │   │   │           └── config2
+    │   │   ├── localpath
+    │   │   │   ├── localpath.go
+    │   │   │   └── localpath_test.go
+    │   │   ├── logs
+    │   │   │   ├── logs.go
+    │   │   │   └── logs_test.go
+    │   │   ├── machine
+    │   │   │   ├── advice.go
+    │   │   │   ├── build_images.go
+    │   │   │   ├── cache_binaries.go
+    │   │   │   ├── cache_binaries_test.go
+    │   │   │   ├── cache_images.go
+    │   │   │   ├── cache_image_test.go
+    │   │   │   ├── client.go
+    │   │   │   ├── client_test.go
+    │   │   │   ├── cluster_test.go
+    │   │   │   ├── delete.go
+    │   │   │   ├── filesync.go
+    │   │   │   ├── filesync_test.go
+    │   │   │   ├── fix.go
+    │   │   │   ├── host.go
+    │   │   │   ├── info.go
+    │   │   │   ├── machine.go
+    │   │   │   ├── machine_test.go
+    │   │   │   ├── ssh.go
+    │   │   │   ├── start.go
+    │   │   │   ├── start_test.go
+    │   │   │   ├── stop.go
+    │   │   │   └── testdata
+    │   │   │       └── list-machines
+    │   │   ├── mustload
+    │   │   │   ├── mustload.go
+    │   │   │   └── mustload_test.go
+    │   │   ├── node
+    │   │   │   ├── advice.go
+    │   │   │   ├── cache.go
+    │   │   │   ├── config.go
+    │   │   │   ├── node.go
+    │   │   │   └── start.go
+    │   │   ├── notify
+    │   │   │   ├── constants.go
+    │   │   │   ├── notify.go
+    │   │   │   └── notify_test.go
+    │   │   ├── out
+    │   │   │   ├── out.go
+    │   │   │   ├── out_reason.go
+    │   │   │   ├── out_reason_test.go
+    │   │   │   ├── out_style.go
+    │   │   │   ├── out_style_test.go
+    │   │   │   ├── out_test.go
+    │   │   │   └── register
+    │   │   │       ├── cloud_events.go
+    │   │   │       ├── json.go
+    │   │   │       ├── json_test.go
+    │   │   │       ├── log.go
+    │   │   │       ├── register.go
+    │   │   │       └── register_test.go
+    │   │   ├── pause
+    │   │   │   └── pause.go
+    │   │   ├── perf
+    │   │   │   ├── binary.go
+    │   │   │   ├── binary_test.go
+    │   │   │   ├── logs.go
+    │   │   │   ├── logs_test.go
+    │   │   │   ├── result.go
+    │   │   │   ├── result_manager.go
+    │   │   │   ├── start.go
+    │   │   │   └── start_test.go
+    │   │   ├── proxy
+    │   │   │   ├── proxy.go
+    │   │   │   └── proxy_test.go
+    │   │   ├── reason
+    │   │   │   ├── exitcodes.go
+    │   │   │   ├── k8s.go
+    │   │   │   ├── known_issues.go
+    │   │   │   ├── match.go
+    │   │   │   ├── match_test.go
+    │   │   │   └── reason.go
+    │   │   ├── registry
+    │   │   │   ├── doc.go
+    │   │   │   ├── drvs
+    │   │   │   │   ├── docker
+    │   │   │   │   │   ├── docker.go
+    │   │   │   │   │   └── docker_test.go
+    │   │   │   │   ├── hyperkit
+    │   │   │   │   │   ├── doc.go
+    │   │   │   │   │   ├── hyperkit.go
+    │   │   │   │   │   └── hyperkit_test.go
+    │   │   │   │   ├── hyperv
+    │   │   │   │   │   ├── doc.go
+    │   │   │   │   │   ├── hyperv.go
+    │   │   │   │   │   ├── powershell.go
+    │   │   │   │   │   └── vswitch.go
+    │   │   │   │   ├── init.go
+    │   │   │   │   ├── kvm2
+    │   │   │   │   │   ├── doc.go
+    │   │   │   │   │   └── kvm2.go
+    │   │   │   │   ├── none
+    │   │   │   │   │   ├── doc.go
+    │   │   │   │   │   └── none.go
+    │   │   │   │   ├── parallels
+    │   │   │   │   │   ├── doc.go
+    │   │   │   │   │   └── parallels.go
+    │   │   │   │   ├── podman
+    │   │   │   │   │   └── podman.go
+    │   │   │   │   ├── qemu2
+    │   │   │   │   │   ├── doc.go
+    │   │   │   │   │   └── qemu2.go
+    │   │   │   │   ├── ssh
+    │   │   │   │   │   └── ssh.go
+    │   │   │   │   ├── vfkit
+    │   │   │   │   │   ├── doc.go
+    │   │   │   │   │   └── vfkit.go
+    │   │   │   │   ├── virtualbox
+    │   │   │   │   │   └── virtualbox.go
+    │   │   │   │   └── vmware
+    │   │   │   │       ├── doc.go
+    │   │   │   │       └── vmware.go
+    │   │   │   ├── global.go
+    │   │   │   ├── global_test.go
+    │   │   │   ├── registry.go
+    │   │   │   └── registry_test.go
+    │   │   ├── schedule
+    │   │   │   ├── daemonize_unix.go
+    │   │   │   ├── daemonize_windows.go
+    │   │   │   └── schedule.go
+    │   │   ├── service
+    │   │   │   ├── service.go
+    │   │   │   └── service_test.go
+    │   │   ├── shell
+    │   │   │   ├── shell.go
+    │   │   │   └── shell_test.go
+    │   │   ├── sshagent
+    │   │   │   └── sshagent.go
+    │   │   ├── sshutil
+    │   │   │   └── sshutil.go
+    │   │   ├── storageclass
+    │   │   │   ├── storageclass.go
+    │   │   │   └── storageclass_test.go
+    │   │   ├── style
+    │   │   │   ├── style_enum.go
+    │   │   │   ├── style.go
+    │   │   │   └── style_test.go
+    │   │   ├── sysinit
+    │   │   │   ├── openrc.go
+    │   │   │   ├── sysinit.go
+    │   │   │   ├── systemd.go
+    │   │   │   └── systemd_test.go
+    │   │   ├── tests
+    │   │   │   ├── api_mock.go
+    │   │   │   ├── dir_utils.go
+    │   │   │   ├── driver_mock.go
+    │   │   │   ├── fake_store.go
+    │   │   │   ├── host_mock.go
+    │   │   │   ├── json_utils.go
+    │   │   │   ├── provision_mock.go
+    │   │   │   └── ssh_mock.go
+    │   │   ├── translate
+    │   │   │   ├── translate.go
+    │   │   │   └── translate_test.go
+    │   │   ├── tunnel
+    │   │   │   ├── cluster_inspector.go
+    │   │   │   ├── cluster_inspector_test.go
+    │   │   │   ├── kic
+    │   │   │   │   ├── service_tunnel.go
+    │   │   │   │   ├── ssh_conn.go
+    │   │   │   │   └── ssh_tunnel.go
+    │   │   │   ├── loadbalancer_patcher.go
+    │   │   │   ├── loadbalancer_patcher_test.go
+    │   │   │   ├── process.go
+    │   │   │   ├── registry.go
+    │   │   │   ├── registry_test.go
+    │   │   │   ├── reporter.go
+    │   │   │   ├── reporter_test.go
+    │   │   │   ├── route_darwin.go
+    │   │   │   ├── route_darwin_test.go
+    │   │   │   ├── route_freebsd.go
+    │   │   │   ├── route.go
+    │   │   │   ├── route_linux.go
+    │   │   │   ├── route_linux_test.go
+    │   │   │   ├── route_test.go
+    │   │   │   ├── route_windows.go
+    │   │   │   ├── route_windows_test.go
+    │   │   │   ├── test_doubles.go
+    │   │   │   ├── tunnel.go
+    │   │   │   ├── tunnel_manager.go
+    │   │   │   ├── tunnel_manager_test.go
+    │   │   │   ├── tunnel_test.go
+    │   │   │   └── types.go
+    │   │   └── vmpath
+    │   │       └── constants.go
+    │   ├── network
+    │   │   ├── network.go
+    │   │   └── network_test.go
+    │   ├── perf
+    │   │   └── monitor
+    │   │       ├── constants.go
+    │   │       ├── execute.go
+    │   │       └── github.go
+    │   ├── provision
+    │   │   ├── buildroot.go
+    │   │   ├── provision.go
+    │   │   └── ubuntu.go
+    │   ├── storage
+    │   │   └── storage_provisioner.go
+    │   ├── trace
+    │   │   ├── gcp.go
+    │   │   └── trace.go
+    │   ├── util
+    │   │   ├── constants.go
+    │   │   ├── constants_test.go
+    │   │   ├── crypto.go
+    │   │   ├── crypto_test.go
+    │   │   ├── lock
+    │   │   │   ├── lock.go
+    │   │   │   └── lock_test.go
+    │   │   ├── retry
+    │   │   │   ├── retry.go
+    │   │   │   └── retry_test.go
+    │   │   ├── utils.go
+    │   │   └── utils_test.go
+    │   └── version
+    │       └── version.go
+    ├── README.md
+    ├── SECURITY_CONTACTS
+    ├── SECURITY-INSIGHTS.yml
+    ├── SECURITY.md
+    ├── site
+    │   ├── assets
+    │   │   ├── icons
+    │   │   │   └── logo.svg
+    │   │   └── scss
+    │   │       ├── _styles_project.scss
+    │   │       └── _variables_project.scss
+    │   ├── config.toml
+    │   ├── content
+    │   │   └── en
+    │   │       ├── community
+    │   │       │   └── _index.md
+    │   │       ├── docs
+    │   │       │   ├── benchmarks
+    │   │       │   │   ├── cpuUsage
+    │   │       │   │   │   ├── _index.md
+    │   │       │   │   │   ├── linux.md
+    │   │       │   │   │   └── macos.md
+    │   │       │   │   ├── imageBuild
+    │   │       │   │   │   ├── benchmarkingprocess.md
+    │   │       │   │   │   ├── _index.md
+    │   │       │   │   │   ├── linuxbenchmark.md
+    │   │       │   │   │   ├── macbenchmark.md
+    │   │       │   │   │   ├── minikubevsothers.md
+    │   │       │   │   │   └── weekly-benchmark.md
+    │   │       │   │   ├── _index.md
+    │   │       │   │   └── timeToK8s
+    │   │       │   │       ├── daily_benchmark.md
+    │   │       │   │       ├── _index.md
+    │   │       │   │       ├── v1.20.0.md
+    │   │       │   │       ├── v1.21.0.md
+    │   │       │   │       ├── v1.22.0.md
+    │   │       │   │       ├── v1.23.0.md
+    │   │       │   │       ├── v1.23.1.md
+    │   │       │   │       ├── v1.23.2.md
+    │   │       │   │       ├── v1.24.0.md
+    │   │       │   │       ├── v1.25.0.md
+    │   │       │   │       ├── v1.25.1.md
+    │   │       │   │       ├── v1.25.2.md
+    │   │       │   │       ├── v1.26.0.md
+    │   │       │   │       ├── v1.26.1.md
+    │   │       │   │       ├── v1.27.0.md
+    │   │       │   │       ├── v1.27.1.md
+    │   │       │   │       ├── v1.28.0.md
+    │   │       │   │       ├── v1.29.0.md
+    │   │       │   │       ├── v1.30.0.md
+    │   │       │   │       ├── v1.30.1.md
+    │   │       │   │       ├── v1.31.0.md
+    │   │       │   │       ├── v1.31.1.md
+    │   │       │   │       ├── v1.31.2.md
+    │   │       │   │       ├── v1.32.0.md
+    │   │       │   │       ├── v1.33.0.md
+    │   │       │   │       ├── v1.33.1.md
+    │   │       │   │       └── weekly_benchmark.md
+    │   │       │   ├── commands
+    │   │       │   │   ├── addons.md
+    │   │       │   │   ├── cache.md
+    │   │       │   │   ├── completion.md
+    │   │       │   │   ├── config.md
+    │   │       │   │   ├── cp.md
+    │   │       │   │   ├── dashboard.md
+    │   │       │   │   ├── delete.md
+    │   │       │   │   ├── docker-env.md
+    │   │       │   │   ├── help.md
+    │   │       │   │   ├── image.md
+    │   │       │   │   ├── _index.md
+    │   │       │   │   ├── ip.md
+    │   │       │   │   ├── kubectl.md
+    │   │       │   │   ├── license.md
+    │   │       │   │   ├── logs.md
+    │   │       │   │   ├── mount.md
+    │   │       │   │   ├── node.md
+    │   │       │   │   ├── options.md
+    │   │       │   │   ├── pause.md
+    │   │       │   │   ├── podman-env.md
+    │   │       │   │   ├── profile.md
+    │   │       │   │   ├── service.md
+    │   │       │   │   ├── ssh-host.md
+    │   │       │   │   ├── ssh-key.md
+    │   │       │   │   ├── ssh.md
+    │   │       │   │   ├── start.md
+    │   │       │   │   ├── status.md
+    │   │       │   │   ├── stop.md
+    │   │       │   │   ├── tunnel.md
+    │   │       │   │   ├── unpause.md
+    │   │       │   │   ├── update-check.md
+    │   │       │   │   ├── update-context.md
+    │   │       │   │   └── version.md
+    │   │       │   ├── contrib
+    │   │       │   │   ├── addons.en.md
+    │   │       │   │   ├── building
+    │   │       │   │   │   ├── binaries.md
+    │   │       │   │   │   ├── _index.md
+    │   │       │   │   │   └── iso.md
+    │   │       │   │   ├── documentation.en.md
+    │   │       │   │   ├── drivers.en.md
+    │   │       │   │   ├── errorcodes.en.md
+    │   │       │   │   ├── external-packages.en.md
+    │   │       │   │   ├── guide.en.md
+    │   │       │   │   ├── _index.md
+    │   │       │   │   ├── json_output.en.md
+    │   │       │   │   ├── leaderboard
+    │   │       │   │   │   ├── 2016.html
+    │   │       │   │   │   ├── 2017.html
+    │   │       │   │   │   ├── 2018.html
+    │   │       │   │   │   ├── 2019.html
+    │   │       │   │   │   ├── 2020.html
+    │   │       │   │   │   ├── 2021.html
+    │   │       │   │   │   ├── 2022.html
+    │   │       │   │   │   ├── 2023.html
+    │   │       │   │   │   ├── 2024.html
+    │   │       │   │   │   ├── _index.md
+    │   │       │   │   │   ├── v0.10.0.html
+    │   │       │   │   │   ├── v0.11.0.html
+    │   │       │   │   │   ├── v0.12.0.html
+    │   │       │   │   │   ├── v0.12.1.html
+    │   │       │   │   │   ├── v0.12.2.html
+    │   │       │   │   │   ├── v0.13.0.html
+    │   │       │   │   │   ├── v0.13.1.html
+    │   │       │   │   │   ├── v0.14.0.html
+    │   │       │   │   │   ├── v0.15.0.html
+    │   │       │   │   │   ├── v0.16.0.html
+    │   │       │   │   │   ├── v0.17.0.html
+    │   │       │   │   │   ├── v0.17.1.html
+    │   │       │   │   │   ├── v0.18.0.html
+    │   │       │   │   │   ├── v0.19.0.html
+    │   │       │   │   │   ├── v0.19.1.html
+    │   │       │   │   │   ├── v0.20.0.html
+    │   │       │   │   │   ├── v0.2.0.html
+    │   │       │   │   │   ├── v0.21.0.html
+    │   │       │   │   │   ├── v0.22.0.html
+    │   │       │   │   │   ├── v0.22.1.html
+    │   │       │   │   │   ├── v0.22.2.html
+    │   │       │   │   │   ├── v0.22.3.html
+    │   │       │   │   │   ├── v0.23.0.html
+    │   │       │   │   │   ├── v0.24.0.html
+    │   │       │   │   │   ├── v0.24.1.html
+    │   │       │   │   │   ├── v0.25.0.html
+    │   │       │   │   │   ├── v0.25.1.html
+    │   │       │   │   │   ├── v0.25.2.html
+    │   │       │   │   │   ├── v0.26.0.html
+    │   │       │   │   │   ├── v0.26.1.html
+    │   │       │   │   │   ├── v0.27.0.html
+    │   │       │   │   │   ├── v0.28.0.html
+    │   │       │   │   │   ├── v0.28.1.html
+    │   │       │   │   │   ├── v0.28.2.html
+    │   │       │   │   │   ├── v0.29.0.html
+    │   │       │   │   │   ├── v0.30.0.html
+    │   │       │   │   │   ├── v0.3.0.html
+    │   │       │   │   │   ├── v0.31.0.html
+    │   │       │   │   │   ├── v0.32.0.html
+    │   │       │   │   │   ├── v0.33.0.html
+    │   │       │   │   │   ├── v0.33.1.html
+    │   │       │   │   │   ├── v0.34.0.html
+    │   │       │   │   │   ├── v0.34.1.html
+    │   │       │   │   │   ├── v0.35.0.html
+    │   │       │   │   │   ├── v0.4.0.html
+    │   │       │   │   │   ├── v0.5.0.html
+    │   │       │   │   │   ├── v0.6.0.html
+    │   │       │   │   │   ├── v0.7.0.html
+    │   │       │   │   │   ├── v0.7.1.html
+    │   │       │   │   │   ├── v0.8.0.html
+    │   │       │   │   │   ├── v0.9.0.html
+    │   │       │   │   │   ├── v1.0.0.html
+    │   │       │   │   │   ├── v1.0.1.html
+    │   │       │   │   │   ├── v1.10.0.html
+    │   │       │   │   │   ├── v1.10.1.html
+    │   │       │   │   │   ├── v1.1.0.html
+    │   │       │   │   │   ├── v1.11.0.html
+    │   │       │   │   │   ├── v1.1.1.html
+    │   │       │   │   │   ├── v1.12.0.html
+    │   │       │   │   │   ├── v1.12.1.html
+    │   │       │   │   │   ├── v1.12.2.html
+    │   │       │   │   │   ├── v1.12.3.html
+    │   │       │   │   │   ├── v1.13.0.html
+    │   │       │   │   │   ├── v1.13.1.html
+    │   │       │   │   │   ├── v1.14.0.html
+    │   │       │   │   │   ├── v1.14.1.html
+    │   │       │   │   │   ├── v1.14.2.html
+    │   │       │   │   │   ├── v1.15.0.html
+    │   │       │   │   │   ├── v1.15.1.html
+    │   │       │   │   │   ├── v1.16.0.html
+    │   │       │   │   │   ├── v1.17.0.html
+    │   │       │   │   │   ├── v1.17.1.html
+    │   │       │   │   │   ├── v1.18.0.html
+    │   │       │   │   │   ├── v1.18.1.html
+    │   │       │   │   │   ├── v1.19.0.html
+    │   │       │   │   │   ├── v1.20.0.html
+    │   │       │   │   │   ├── v1.2.0.html
+    │   │       │   │   │   ├── v1.21.0.html
+    │   │       │   │   │   ├── v1.22.0.html
+    │   │       │   │   │   ├── v1.23.0.html
+    │   │       │   │   │   ├── v1.23.1.html
+    │   │       │   │   │   ├── v1.23.2.html
+    │   │       │   │   │   ├── v1.24.0.html
+    │   │       │   │   │   ├── v1.25.0.html
+    │   │       │   │   │   ├── v1.25.1.html
+    │   │       │   │   │   ├── v1.25.2.html
+    │   │       │   │   │   ├── v1.26.0.html
+    │   │       │   │   │   ├── v1.26.1.html
+    │   │       │   │   │   ├── v1.27.0.html
+    │   │       │   │   │   ├── v1.27.1.html
+    │   │       │   │   │   ├── v1.28.0.html
+    │   │       │   │   │   ├── v1.29.0.html
+    │   │       │   │   │   ├── v1.30.0.html
+    │   │       │   │   │   ├── v1.30.1.html
+    │   │       │   │   │   ├── v1.3.0.html
+    │   │       │   │   │   ├── v1.31.0.html
+    │   │       │   │   │   ├── v1.31.1.html
+    │   │       │   │   │   ├── v1.31.2.html
+    │   │       │   │   │   ├── v1.3.1.html
+    │   │       │   │   │   ├── v1.32.0.html
+    │   │       │   │   │   ├── v1.33.0.html
+    │   │       │   │   │   ├── v1.33.1.html
+    │   │       │   │   │   ├── v1.4.0.html
+    │   │       │   │   │   ├── v1.5.0.html
+    │   │       │   │   │   ├── v1.5.1.html
+    │   │       │   │   │   ├── v1.5.2.html
+    │   │       │   │   │   ├── v1.6.0.html
+    │   │       │   │   │   ├── v1.6.1.html
+    │   │       │   │   │   ├── v1.6.2.html
+    │   │       │   │   │   ├── v1.7.0.html
+    │   │       │   │   │   ├── v1.7.1.html
+    │   │       │   │   │   ├── v1.7.2.html
+    │   │       │   │   │   ├── v1.7.3.html
+    │   │       │   │   │   ├── v1.8.0.html
+    │   │       │   │   │   ├── v1.8.1.html
+    │   │       │   │   │   ├── v1.8.2.html
+    │   │       │   │   │   ├── v1.9.0.html
+    │   │       │   │   │   ├── v1.9.1.html
+    │   │       │   │   │   └── v1.9.2.html
+    │   │       │   │   ├── principles.en.md
+    │   │       │   │   ├── release_schedule.en.md
+    │   │       │   │   ├── releasing
+    │   │       │   │   │   ├── binaries.md
+    │   │       │   │   │   ├── gvisor.md
+    │   │       │   │   │   ├── _index.md
+    │   │       │   │   │   └── iso.md
+    │   │       │   │   ├── roadmap.en.md
+    │   │       │   │   ├── test_flakes.en.md
+    │   │       │   │   ├── testing.en.md
+    │   │       │   │   ├── tests.en.md
+    │   │       │   │   ├── translations.md
+    │   │       │   │   └── triage.md
+    │   │       │   ├── drivers
+    │   │       │   │   ├── docker.md
+    │   │       │   │   ├── hyperkit.md
+    │   │       │   │   ├── hyperv.md
+    │   │       │   │   ├── includes
+    │   │       │   │   │   ├── check_baremetal_linux.inc
+    │   │       │   │   │   ├── check_virtualization_linux.inc
+    │   │       │   │   │   ├── check_virtualization_windows.inc
+    │   │       │   │   │   ├── hyperkit_usage.inc
+    │   │       │   │   │   ├── hyperv_usage.inc
+    │   │       │   │   │   ├── kvm2_usage.inc
+    │   │       │   │   │   ├── none_usage.inc
+    │   │       │   │   │   ├── parallels_usage.inc
+    │   │       │   │   │   ├── podman_usage.inc
+    │   │       │   │   │   ├── ssh_usage.inc
+    │   │       │   │   │   ├── virtualbox_usage.inc
+    │   │       │   │   │   ├── vmware_macos_usage.inc
+    │   │       │   │   │   └── vmware_windows_usage.inc
+    │   │       │   │   ├── _index.md
+    │   │       │   │   ├── kvm2.md
+    │   │       │   │   ├── none.md
+    │   │       │   │   ├── parallels.md
+    │   │       │   │   ├── podman.md
+    │   │       │   │   ├── qemu2.md
+    │   │       │   │   ├── qemu.md
+    │   │       │   │   ├── ssh.md
+    │   │       │   │   ├── vfkit.md
+    │   │       │   │   ├── virtualbox.md
+    │   │       │   │   └── vmware.md
+    │   │       │   ├── faq
+    │   │       │   │   └── _index.md
+    │   │       │   ├── handbook
+    │   │       │   │   ├── accessing.md
+    │   │       │   │   ├── addons
+    │   │       │   │   │   ├── ambassador.md
+    │   │       │   │   │   ├── cloud-spanner.md
+    │   │       │   │   │   ├── custom-images.md
+    │   │       │   │   │   ├── gcp-auth.md
+    │   │       │   │   │   ├── gvisor.md
+    │   │       │   │   │   ├── headlamp.md
+    │   │       │   │   │   ├── helm-tiller.md
+    │   │       │   │   │   ├── _index.md
+    │   │       │   │   │   ├── ingress-dns.md
+    │   │       │   │   │   ├── inspektor-gadget.md
+    │   │       │   │   │   ├── istio.md
+    │   │       │   │   │   ├── kong-ingress.md
+    │   │       │   │   │   ├── kubevirt.md
+    │   │       │   │   │   ├── pod-security-policy.md
+    │   │       │   │   │   ├── registry-aliases.md
+    │   │       │   │   │   ├── storage-provisioner-gluster.md
+    │   │       │   │   │   └── yakd-kubernetes-dashboard.md
+    │   │       │   │   ├── config.md
+    │   │       │   │   ├── controls.md
+    │   │       │   │   ├── dashboard.md
+    │   │       │   │   ├── deploying.md
+    │   │       │   │   ├── filesync.md
+    │   │       │   │   ├── host-access.md
+    │   │       │   │   ├── _index.md
+    │   │       │   │   ├── kubectl.md
+    │   │       │   │   ├── mount.md
+    │   │       │   │   ├── network_policy.md
+    │   │       │   │   ├── offline.md
+    │   │       │   │   ├── persistent_volumes.md
+    │   │       │   │   ├── pushing.md
+    │   │       │   │   ├── registry.md
+    │   │       │   │   ├── troubleshooting.md
+    │   │       │   │   ├── uninstalling_minikube.md
+    │   │       │   │   ├── untrusted_certs.md
+    │   │       │   │   └── vpn_and_proxy.md
+    │   │       │   ├── _index.md
+    │   │       │   ├── presentations
+    │   │       │   │   └── _index.md
+    │   │       │   ├── runtimes
+    │   │       │   │   ├── containerd.md
+    │   │       │   │   ├── cri-o.md
+    │   │       │   │   ├── docker.md
+    │   │       │   │   └── _index.md
+    │   │       │   ├── start
+    │   │       │   │   └── _index.md
+    │   │       │   └── tutorials
+    │   │       │       ├── audit-policy.md
+    │   │       │       ├── configuring_creds_for_aws_ecr.md
+    │   │       │       ├── continuous_integration.md
+    │   │       │       ├── custom_cert_ingress.md
+    │   │       │       ├── docker_desktop_replacement.md
+    │   │       │       ├── ebpf_tools_in_minikube.md
+    │   │       │       ├── _index.md
+    │   │       │       ├── kubernetes_101
+    │   │       │       │   ├── _index.md
+    │   │       │       │   ├── module1.md
+    │   │       │       │   ├── module2.md
+    │   │       │       │   ├── module3.md
+    │   │       │       │   ├── module4.md
+    │   │       │       │   ├── module5.md
+    │   │       │       │   └── module6.md
+    │   │       │       ├── local_path_provisioner.md
+    │   │       │       ├── multi_control_plane_ha_clusters.md
+    │   │       │       ├── multi_node.md
+    │   │       │       ├── nginx_tcp_udp_ingress.md
+    │   │       │       ├── nvidia.md
+    │   │       │       ├── openid_connect_auth.md
+    │   │       │       ├── setup_minikube_gui.md
+    │   │       │       ├── setup_minikube_in_github_actions.md
+    │   │       │       ├── static_ip.md
+    │   │       │       ├── telemetry.md
+    │   │       │       ├── token-auth-file.md
+    │   │       │       ├── user_flag.md
+    │   │       │       ├── volume_snapshots_and_csi.md
+    │   │       │       └── wsl_docker_driver.md
+    │   │       ├── _index.html
+    │   │       └── search.md
+    │   ├── layouts
+    │   │   ├── community
+    │   │   │   └── list.html
+    │   │   ├── partials
+    │   │   │   ├── community_links.html
+    │   │   │   ├── footer.html
+    │   │   │   ├── hooks
+    │   │   │   │   ├── body-end.html
+    │   │   │   │   └── head-end.html
+    │   │   │   ├── section-index.html
+    │   │   │   └── sidebar-tree.html
+    │   │   └── shortcodes
+    │   │       ├── button.html
+    │   │       ├── card.html
+    │   │       ├── linuxtab.html
+    │   │       ├── mactab.html
+    │   │       ├── quiz_button.html
+    │   │       ├── quiz_instruction.html
+    │   │       ├── quiz_instruction_plain.html
+    │   │       ├── quiz_row.html
+    │   │       ├── tab.html
+    │   │       ├── tabs.html
+    │   │       └── windowstab.html
+    │   ├── package.json
+    │   ├── package-lock.json
+    │   ├── README.md
+    │   ├── static
+    │   │   ├── css
+    │   │   │   ├── button.css
+    │   │   │   └── tabs.css
+    │   │   ├── favicons
+    │   │   │   ├── android-144x144.png
+    │   │   │   ├── android-192x192.png
+    │   │   │   ├── android-36x36.png
+    │   │   │   ├── android-48x48.png
+    │   │   │   ├── android-72x72.png
+    │   │   │   ├── android-96x96.png
+    │   │   │   ├── apple-touch-icon-180x180.png
+    │   │   │   ├── favicon-16x16.png
+    │   │   │   ├── favicon-32x32.png
+    │   │   │   └── favicon.ico
+    │   │   ├── images
+    │   │   │   ├── benchmarks
+    │   │   │   │   ├── containerdRuntime
+    │   │   │   │   │   ├── initial.png
+    │   │   │   │   │   └── iterative.png
+    │   │   │   │   ├── cpuUsage
+    │   │   │   │   │   ├── autoPause
+    │   │   │   │   │   │   ├── linux.png
+    │   │   │   │   │   │   └── mac.png
+    │   │   │   │   │   └── idleOnly
+    │   │   │   │   │       ├── linux.png
+    │   │   │   │   │       └── mac.png
+    │   │   │   │   ├── crioRuntime
+    │   │   │   │   │   ├── initial.png
+    │   │   │   │   │   └── iterative.png
+    │   │   │   │   ├── dockerRuntime
+    │   │   │   │   │   ├── initial.png
+    │   │   │   │   │   └── iterative.png
+    │   │   │   │   ├── macArchitecture
+    │   │   │   │   │   ├── initial.png
+    │   │   │   │   │   └── iterative.png
+    │   │   │   │   ├── minikubeVsOthers
+    │   │   │   │   │   ├── initial.png
+    │   │   │   │   │   └── iterative.png
+    │   │   │   │   └── timeToK8s
+    │   │   │   │       ├── v1.20.0.png
+    │   │   │   │       ├── v1.21.0.png
+    │   │   │   │       ├── v1.22.0.png
+    │   │   │   │       ├── v1.23.0.png
+    │   │   │   │       ├── v1.23.1.png
+    │   │   │   │       ├── v1.23.2.png
+    │   │   │   │       ├── v1.24.0.png
+    │   │   │   │       ├── v1.25.0.png
+    │   │   │   │       ├── v1.25.1.png
+    │   │   │   │       ├── v1.25.2.png
+    │   │   │   │       ├── v1.26.0-cpu.png
+    │   │   │   │       ├── v1.26.0-time.png
+    │   │   │   │       ├── v1.26.1-cpu.png
+    │   │   │   │       ├── v1.26.1-time.png
+    │   │   │   │       ├── v1.27.0-cpu.png
+    │   │   │   │       ├── v1.27.0-time.png
+    │   │   │   │       ├── v1.27.1-cpu.png
+    │   │   │   │       ├── v1.27.1-time.png
+    │   │   │   │       ├── v1.28.0-cpu.png
+    │   │   │   │       ├── v1.28.0-time.png
+    │   │   │   │       ├── v1.29.0-cpu.png
+    │   │   │   │       ├── v1.29.0-time.png
+    │   │   │   │       ├── v1.30.0-cpu.png
+    │   │   │   │       ├── v1.30.0-time.png
+    │   │   │   │       ├── v1.30.1-cpu.png
+    │   │   │   │       ├── v1.30.1-time.png
+    │   │   │   │       ├── v1.31.0-cpu.png
+    │   │   │   │       ├── v1.31.0-time.png
+    │   │   │   │       ├── v1.31.1-cpu.png
+    │   │   │   │       ├── v1.31.1-time.png
+    │   │   │   │       ├── v1.31.2-cpu.png
+    │   │   │   │       ├── v1.31.2-time.png
+    │   │   │   │       ├── v1.32.0-cpu.png
+    │   │   │   │       ├── v1.32.0-time.png
+    │   │   │   │       ├── v1.33.0-cpu.png
+    │   │   │   │       ├── v1.33.0-time.png
+    │   │   │   │       ├── v1.33.1-cpu.png
+    │   │   │   │       └── v1.33.1-time.png
+    │   │   │   ├── gui
+    │   │   │   │   └── windows.png
+    │   │   │   └── screenshot.png
+    │   │   └── js
+    │   │       ├── quiz.js
+    │   │       └── tabs.js
+    │   └── themes
+    │       └── docsy
+    ├── sonar-project.properties
+    ├── test
+    │   ├── integration
+    │   │   ├── aaa_download_only_test.go
+    │   │   ├── aab_offline_test.go
+    │   │   ├── addons_test.go
+    │   │   ├── cert_options_test.go
+    │   │   ├── docker_test.go
+    │   │   ├── driver_install_or_update_test.go
+    │   │   ├── error_spam_test.go
+    │   │   ├── functional_test.go
+    │   │   ├── functional_test_mount_test.go
+    │   │   ├── functional_test_pvc_test.go
+    │   │   ├── functional_test_tunnel_test.go
+    │   │   ├── guest_env_test.go
+    │   │   ├── gvisor_addon_test.go
+    │   │   ├── ha_test.go
+    │   │   ├── helpers_test.go
+    │   │   ├── image_test.go
+    │   │   ├── json_output_test.go
+    │   │   ├── kic_custom_network_test.go
+    │   │   ├── main_test.go
+    │   │   ├── minikube_profile_test.go
+    │   │   ├── mount_start_test.go
+    │   │   ├── multinode_test.go
+    │   │   ├── net_test.go
+    │   │   ├── no_kubernetes_test.go
+    │   │   ├── none_test.go
+    │   │   ├── pause_test.go
+    │   │   ├── preload_test.go
+    │   │   ├── README.md
+    │   │   ├── scheduled_stop_test.go
+    │   │   ├── skaffold_test.go
+    │   │   ├── start_stop_delete_test.go
+    │   │   ├── status_test.go
+    │   │   ├── testdata
+    │   │   │   ├── build
+    │   │   │   │   ├── content.txt
+    │   │   │   │   └── Dockerfile
+    │   │   │   ├── busybox-mount-test.yaml
+    │   │   │   ├── busybox.yaml
+    │   │   │   ├── cp-test.txt
+    │   │   │   ├── csi-hostpath-driver
+    │   │   │   │   ├── pvc-restore.yaml
+    │   │   │   │   ├── pvc.yaml
+    │   │   │   │   ├── pv-pod-restore.yaml
+    │   │   │   │   ├── pv-pod.yaml
+    │   │   │   │   └── snapshot.yaml
+    │   │   │   ├── docker-env
+    │   │   │   │   └── Dockerfile
+    │   │   │   ├── etcd.yaml
+    │   │   │   ├── gcp-creds.json
+    │   │   │   ├── gvisor-addon-Dockerfile
+    │   │   │   ├── ha
+    │   │   │   │   └── ha-pod-dns-test.yaml
+    │   │   │   ├── hyperkit-driver-older-version
+    │   │   │   │   └── docker-machine-driver-hyperkit
+    │   │   │   ├── hyperkit-driver-version-1.11.0
+    │   │   │   │   ├── docker-machine-driver-hyperkit
+    │   │   │   │   └── README
+    │   │   │   ├── hyperkit-driver-without-version
+    │   │   │   │   └── docker-machine-driver-hyperkit
+    │   │   │   ├── image-build
+    │   │   │   │   ├── test-arg
+    │   │   │   │   │   └── Dockerfile
+    │   │   │   │   ├── test-env
+    │   │   │   │   │   └── Dockerfile
+    │   │   │   │   ├── test-f
+    │   │   │   │   │   └── inner
+    │   │   │   │   │       └── Dockerfile
+    │   │   │   │   ├── test-ignore
+    │   │   │   │   │   └── Dockerfile
+    │   │   │   │   └── test-normal
+    │   │   │   │       └── Dockerfile
+    │   │   │   ├── inaccel.yaml
+    │   │   │   ├── ingress-dns-example-v1beta1.yaml
+    │   │   │   ├── ingress-dns-example-v1.yaml
+    │   │   │   ├── invalidsvc.yaml
+    │   │   │   ├── kube-flannel.yaml
+    │   │   │   ├── kvm2-driver-older-version
+    │   │   │   │   └── docker-machine-driver-kvm2
+    │   │   │   ├── kvm2-driver-without-version
+    │   │   │   │   └── docker-machine-driver-kvm2
+    │   │   │   ├── minikube_test2.pem
+    │   │   │   ├── minikube_test.pem
+    │   │   │   ├── multinodes
+    │   │   │   │   └── multinode-pod-dns-test.yaml
+    │   │   │   ├── mysql.yaml
+    │   │   │   ├── netcat-deployment-nomaster.yaml
+    │   │   │   ├── netcat-deployment.yaml
+    │   │   │   ├── nginx-gvisor.yaml
+    │   │   │   ├── nginx-ingress-v1beta1.yaml
+    │   │   │   ├── nginx-ingress-v1.yaml
+    │   │   │   ├── nginx-pod-svc.yaml
+    │   │   │   ├── private-image-eu.yaml
+    │   │   │   ├── private-image.yaml
+    │   │   │   ├── skaffold
+    │   │   │   │   ├── base
+    │   │   │   │   │   └── Dockerfile
+    │   │   │   │   ├── leeroy-app
+    │   │   │   │   │   ├── app.go
+    │   │   │   │   │   ├── Dockerfile
+    │   │   │   │   │   ├── go.mod
+    │   │   │   │   │   └── kubernetes
+    │   │   │   │   │       └── deployment.yaml
+    │   │   │   │   ├── leeroy-web
+    │   │   │   │   │   ├── Dockerfile
+    │   │   │   │   │   ├── go.mod
+    │   │   │   │   │   ├── kubernetes
+    │   │   │   │   │   │   └── deployment.yaml
+    │   │   │   │   │   └── web.go
+    │   │   │   │   ├── README.md
+    │   │   │   │   └── skaffold.yaml
+    │   │   │   ├── storage-provisioner
+    │   │   │   │   ├── pod.yaml
+    │   │   │   │   └── pvc.yaml
+    │   │   │   ├── storage-provisioner-rancher
+    │   │   │   │   ├── pod.yaml
+    │   │   │   │   └── pvc.yaml
+    │   │   │   ├── sync.test
+    │   │   │   ├── testsvc.yaml
+    │   │   │   └── vcjob.yaml
+    │   │   ├── util_test.go
+    │   │   └── version_upgrade_test.go
+    │   └── stress
+    │       ├── main_test.go
+    │       ├── stress.sh
+    │       └── stress_test.go
+    ├── test.sh
+    ├── third_party
+    │   ├── go9p
+    │   │   ├── clnt_clnt.go
+    │   │   ├── clnt_close.go
+    │   │   ├── clnt_mount.go
+    │   │   ├── clnt_open.go
+    │   │   ├── clnt_pool.go
+    │   │   ├── clnt_read.go
+    │   │   ├── clnt_remove.go
+    │   │   ├── clnt_stat.go
+    │   │   ├── clnt_stats_http.go
+    │   │   ├── clnt_tag.go
+    │   │   ├── clnt_walk.go
+    │   │   ├── clnt_write.go
+    │   │   ├── debug.go
+    │   │   ├── fmt.go
+    │   │   ├── LICENSE
+    │   │   ├── log.go
+    │   │   ├── osusers.go
+    │   │   ├── p9.go
+    │   │   ├── packr.go
+    │   │   ├── packt.go
+    │   │   ├── README.md
+    │   │   ├── srv_conn.go
+    │   │   ├── srv_fcall.go
+    │   │   ├── srv_file.go
+    │   │   ├── srv_pipe_darwin.go
+    │   │   ├── srv_pipe_freebsd.go
+    │   │   ├── srv_pipe.go
+    │   │   ├── srv_pipe_linux.go
+    │   │   ├── srv_pipe_windows.go
+    │   │   ├── srv_respond.go
+    │   │   ├── srv_srv.go
+    │   │   ├── srv_stats_http.go
+    │   │   ├── stats.go
+    │   │   ├── ufs
+    │   │   │   └── ufs.go
+    │   │   ├── ufs_darwin.go
+    │   │   ├── ufs_freebsd.go
+    │   │   ├── ufs.go
+    │   │   ├── ufs_linux.go
+    │   │   ├── ufs_windows.go
+    │   │   ├── ufs_windows_test.go
+    │   │   └── unpack.go
+    │   ├── go-dockerclient
+    │   │   ├── LICENSE
+    │   │   └── tar.go
+    │   └── kubeadm
+    │       ├── app
+    │       │   ├── constants
+    │       │   │   ├── constants.go
+    │       │   │   ├── constants_unix.go
+    │       │   │   └── constants_windows.go
+    │       │   └── features
+    │       │       └── features.go
+    │       └── README.md
+    └── translations
+        ├── de.json
+        ├── es.json
+        ├── fr.json
+        ├── ja.json
+        ├── ko.json
+        ├── pl.json
+        ├── ru.json
+        ├── strings.txt
+        ├── translations.go
+        └── zh-CN.json
+
+486 directories, 1783 files
