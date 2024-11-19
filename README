@@ -2,6 +2,8 @@ File-and-directory based analysis of Arch Linux packages.
 
 The "pkgs" folder contains `tree` outputs of generated src directories of Arch Linux packages, which contains `arm64` or `aarch64`, but not `riscv`.
 
-This provides an overview of Linux packages that are available and/or optimized for ARM but **maybe** not for RISC-V.
+`weights-direct` counts for reverse dependencies of each package in the `pkgs` folder, and `weights-accumulated` accumulates the whole reverse dependencies tree for each package.
+
+This provides an overview of Linux packages that are available and/or optimized for ARM but **maybe** not for RISC-V, and also the importance for each of them.
 
 False-positives and non-applicable packages are expected.

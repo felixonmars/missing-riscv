@@ -1,0 +1,90 @@
+#!/usr/bin/ruby
+
+require 'set'
+require 'pycall/import'
+require 'tsort'
+
+include PyCall::Import
+
+pyimport :pyalpm
+
+packages = Hash.new{|h,k| h[k] = {}}
+pkgbase_map = Hash.new{|h,k| h[k] = Set[]}
+rdep_map = Hash.new{|h,k| h[k] = Set[]}
+
+STDOUT.sync = true
+
+handle = pyalpm.Handle.new(".", "/var/lib/pacman")
+
+["core", "extra"].each do |db|
+    puts "Reading x86_64 #{db}..."
+    db_handle = handle.register_syncdb(db, 0)
+    db_handle.search("").each do |package|
+        ["depends", "makedepends", "checkdepends", "provides", "base"].each do |field|
+            packages[package.name][field] = package.send(field)
+        end
+        packages[package.name]["db"] = db
+
+        (package.depends + package.makedepends + package.checkdepends).each do |dep|
+            dep = dep.split("=")[0].split(">")[0].split("<")[0]
+            rdep_map[dep] << package.base
+        end
+
+        pkgbase_map[package.base] << package.name
+        package.provides.each do |_package|
+            pkgbase_map[package.base] << _package.split("=")[0]
+        end
+    end
+end
+
+rdep_base_map = Hash.new{|h,k| h[k] = Set[]}
+
+pkgbase_map.each do |pkgbase, packages|
+    packages.each do |package|
+        rdep_base_map[pkgbase] += rdep_map[package]
+    end
+end
+
+rdep_base_accum_map = Hash.new{|h,k| h[k] = Set[]}
+
+def get_accum_rdeps(scc, rdep_base_accum_map, rdep_base_map, sccs)
+    if ! rdep_base_accum_map.has_key?(scc[0])
+        rdep_accum = Set[]
+        scc.each do |pkgbase|
+            rdep_accum += rdep_base_map[pkgbase]
+            rdep_base_map[pkgbase].each do |rdep_base|
+                target = sccs.select{|scc| scc.include?(rdep_base)}
+                next if target == scc
+                rdep_accum += get_accum_rdeps(target, rdep_base_accum_map, rdep_base_map, sccs)
+            end
+        end
+        scc.each do |pkgbase|
+            rdep_base_accum_map[pkgbase] = rdep_accum
+        end
+    end
+    rdep_base_accum_map[scc[0]]
+end
+
+sccs = Set[]
+
+each_node = lambda {|&block| rdep_base_map.each_key(&block)}
+each_child = lambda {|node, &block| rdep_base_map[node].each(&block)}
+TSort.strongly_connected_components(each_node, each_child).each do |scc|
+    sccs << scc
+end
+
+sccs.each do |scc|
+    puts "Processing #{scc}"
+    get_accum_rdeps(scc, rdep_base_accum_map, rdep_base_map, sccs)
+end
+
+File.open("weights-direct", "w") do |f|
+    rdep_base_map.sort_by{|k,v| -v.size}.each do |pkgbase, rdep_bases|
+        f.puts "#{pkgbase} #{rdep_bases.size}" if File.exist?("pkgs/#{pkgbase}")
+    end
+end
+File.open("weights-accumulated", "w") do |f|
+    rdep_base_accum_map.sort_by{|k,v| -v.size}.each do |pkgbase, rdep_bases|
+        f.puts "#{pkgbase} #{rdep_bases.size}" if File.exist?("pkgs/#{pkgbase}")
+    end
+end
